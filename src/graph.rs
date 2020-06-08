@@ -7,6 +7,9 @@ use std::{
 };
 use rayon::prelude::*;
 
+use crate::csv_utils::check_consistent_lines;
+
+
 type NodeT = usize;
 type EdgeT = usize;
 type WeightT = f64;
@@ -169,13 +172,19 @@ impl Graph {
         node_sep: Option<String>,
         edge_file_has_header: Option<bool>,
         node_file_has_header: Option<bool>,
-        check_for_rows_consistency: Option<bool>,
         check_for_duplicates: Option<bool>,
     ) {
         let _edge_sep = edge_sep.unwrap_or_else(|| "\t".to_string());
         let _node_sep = node_sep.unwrap_or_else(|| "\t".to_string());
         let _edge_file_has_header = edge_file_has_header.unwrap_or(true);
         let _node_file_has_header = node_file_has_header.unwrap_or(true);
+
+        check_consistent_lines(&*edge_path, &*_edge_sep);
+
+        if let Some(np) = &node_path {
+            check_consistent_lines(np, &*_node_sep);
+        }
+
     }
 
     fn compute_outbounds(nodes_number: NodeT, sources: Vec<NodeT>) -> Vec<EdgeT> {
