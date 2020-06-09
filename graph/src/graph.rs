@@ -67,7 +67,7 @@ pub fn validate(
     if let Some(nt) = node_types {
         debug!("Checking that nodes and node types are of the same length.");
         if nodes.len() != nt.len() {
-            panic!("The number of given nodes does not match the number of node_types");
+            panic!("The number of given nodes ({}) does not match the number of node_types ({}).", nodes.len(), nt.len());
         }
     }
 
