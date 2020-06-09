@@ -1,12 +1,5 @@
 sudo: required
 language: rust
-os:
-  - linux
-  - osx
-
-# Cache cargo symbols for faster build
-cache: cargo
-
 # Dependencies of kcov, used by coverage
 addons:
   apt:
@@ -15,8 +8,7 @@ addons:
       - libelf-dev
       - libdw-dev
       - binutils-dev
-      - gcc
-      - cmake # also required for cargo-update
+      - cmake
     sources:
       - kalakris-cmake
 
@@ -28,42 +20,17 @@ rust:
   - stable
 
 before_script:
-  - export PATH=$HOME/.cargo/bin:$PATH
-  - cargo install cargo-update || echo "cargo-update already installed"
-  - cargo install cargo-travis || echo "cargo-travis already installed"
-  - cargo install-update -a # update outdated cached binaries
   - |
-    if [[ "$TRAVIS_RUST_VERSION" == "nightly" ]]; then
-      ( ( cargo install clippy && export CLIPPY=true ) || export CLIPPY=false );
-    fi
+      cargo install &&
+      export PATH=$HOME/.cargo/bin:$PATH
 
 # the main build
 script:
   - |
-    cargo build &&
-    cargo test &&
-    cargo bench &&
-    cargo doc
-  - |
-    if [[ "$TRAVIS_RUST_VERSION" == "nightly" && $CLIPPY ]]; then
-      cargo clippy
-    fi
-
+      cargo build &&
+      cargo test &&
+      cargo bench &&
+      cargo doc
 after_success:
-  # Coverage report
-  - |
-    if [[ "$TRAVIS_OS_NAME" == "linux" && "$TRAVIS_RUST_VERSION" == "stable" ]]; then
-      wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz &&
-      tar xzf master.tar.gz &&
-      cd kcov-master &&
-      mkdir build &&
-      cd build &&
-      cmake .. &&
-      make &&
-      sudo make install &&
-      cd ../.. &&
-      rm -rf kcov-master &&
-      for file in target/debug/examplerust-*[^\.d]; do mkdir -p "target/cov/$(basename $file)"; kcov --exclude-pattern=/.cargo,/usr/lib --verify "target/cov/$(basename $file)" "$file"; done &&
-      bash <(curl -s https://codecov.io/bash) &&
-      echo "Uploaded code coverage"
-    fi
+# measure code coverage and upload to coveralls.io
+  - cargo coveralls
