@@ -1,3 +1,4 @@
+use itertools::Itertools;
 use log::debug;
 use rand::distributions::WeightedIndex;
 use rand::prelude::*;
@@ -6,9 +7,6 @@ use std::{
     collections::{HashMap, HashSet},
     iter::FromIterator,
 };
-use itertools::Itertools;
-
-use crate::csv_utils::{check_consistent_lines, has_columns, read_csv};
 
 type NodeT = usize;
 type EdgeT = usize;
@@ -28,6 +26,82 @@ pub struct Graph {
     weights: Option<Vec<WeightT>>,
     node_types: Option<Vec<NodeTypeT>>,
     edge_types: Option<Vec<EdgeTypeT>>,
+    edge_types_mapping: Option<HashMap<String, EdgeTypeT>>,
+    node_types_mapping: Option<HashMap<String, NodeTypeT>>,
+}
+
+fn check_uniqueness(values: Vec<&[String]>) {
+    let vector_len = values[0].len();
+
+    if !values.iter().all(|x| x.len() == vector_len) {
+        panic!(
+            "All the vectors must have the same number of records. But got instead {:?}",
+            values.iter().map(|x| x.len()).collect::<Vec<usize>>()
+        );
+    }
+
+    let uniques_number = (0..vector_len)
+        .map(|i| values.iter().map(|v| v[i].clone()).collect::<Vec<String>>())
+        .unique()
+        .count();
+
+    if uniques_number != vector_len {
+        panic!("The vectors have duplicated rows.");
+    }
+}
+
+fn validate(
+    nodes: &[String],
+    sources_names: &[String],
+    destinations_names: &[String],
+    node_types: &Option<Vec<String>>,
+    edge_types: &Option<Vec<String>>,
+    weights: &Option<Vec<WeightT>>,
+) {
+
+    if let Some(nt) = node_types{
+        debug!("Checking that nodes and node types are of the same length.");
+        if nodes.len() != nt.len() {
+            panic!("The number of given nodes does not match the number of node_types");
+        }
+    }
+
+    debug!("Computing that edges are contained within given nodes.");
+    let unique_nodes: HashSet<String> = 
+        sources_names
+            .iter()
+            .chain(destinations_names.iter())
+            .cloned()
+            .collect();
+
+    debug!("Checking if every node used by the edges exists.");
+    nodes.iter().for_each(|node| {
+        if !unique_nodes.contains(node) {
+            panic!(
+                "A node provided with the edges ('{}') does not exists within given nodes.",
+                node
+            );
+        }
+    });
+
+    debug!("Checking that nodes must be uniques.");
+    if nodes.len() != nodes.iter().unique().count() {
+        panic!("The nodes must be uniques. Duplicates were found in the data.")
+    }
+
+    debug!("Checking if that the edges must be uniques.");
+    if let Some(et) = edge_types {
+        check_uniqueness(vec![&sources_names, &destinations_names, &et]);
+    }
+
+    debug!("Checking for non-zero weights.");
+    if let Some(w) = weights {
+        w.iter().for_each(|weight| {
+            if *weight == 0.0 {
+                panic!("One of the provided weights is either 0 or within float error to zero.");
+            }
+        });
+    }
 }
 
 impl Graph {
@@ -35,13 +109,61 @@ impl Graph {
         nodes: Vec<String>,
         sources_names: Vec<String>,
         destinations_names: Vec<String>,
-        node_types: Option<Vec<NodeTypeT>>,
-        edge_types: Option<Vec<EdgeTypeT>>,
+        node_types: Option<Vec<String>>,
+        edge_types: Option<Vec<String>>,
         weights: Option<Vec<WeightT>>,
+        validate_input_data: Option<bool>,
     ) -> Graph {
+        if validate_input_data.unwrap_or_else(|| true) {
+            validate(
+                &nodes,
+                &sources_names,
+                &destinations_names,
+                &node_types,
+                &edge_types,
+                &weights,
+            );
+        }
+
         debug!("Computing nodes to node IDs mapping.");
         let nodes_mapping: HashMap<String, NodeT> =
             HashMap::from_iter(nodes.iter().cloned().zip(0..nodes.len()));
+
+        debug!("Computing node types to node type IDs mapping.");
+        let (node_types_mapping, remapped_node_types) = if let Some(nt) = &node_types {
+            let unique_node_types: Vec<String> = nt.iter().cloned().unique().collect();
+            let node_types_mapping: HashMap<String, NodeTypeT> = unique_node_types
+                .iter()
+                .enumerate()
+                .map(|(i, n)| (n.clone(), i as NodeTypeT))
+                .collect();
+            let remapped_node_types: Vec<NodeTypeT> = nt
+                .iter()
+                .cloned()
+                .map(|node| *node_types_mapping.get(&node).unwrap() as NodeTypeT)
+                .collect();
+            (Some(node_types_mapping), Some(remapped_node_types))
+        } else {
+            (None, None)
+        };
+
+        debug!("Computing edge types to edge type IDs mapping.");
+        let (edge_types_mapping, remapped_edge_types) = if let Some(nt) = &edge_types {
+            let unique_edge_types: Vec<String> = nt.iter().cloned().unique().collect();
+            let edge_types_mapping: HashMap<String, EdgeTypeT> = unique_edge_types
+                .iter()
+                .enumerate()
+                .map(|(i, n)| (n.clone(), i as EdgeTypeT))
+                .collect();
+            let remapped_edge_types: Vec<EdgeTypeT> = nt
+                .iter()
+                .cloned()
+                .map(|edge| *edge_types_mapping.get(&edge).unwrap() as EdgeTypeT)
+                .collect();
+            (Some(edge_types_mapping), Some(remapped_edge_types))
+        } else {
+            (None, None)
+        };
 
         debug!("Computing sources node IDs.");
         let sources: Vec<NodeT> = sources_names
@@ -61,27 +183,27 @@ impl Graph {
 
         debug!("Computing sorting of given edges based on sources.");
         let permutation = permutation::sort(&sources[..]);
-
         debug!("Sorting given sources.");
         let sorted_sources = permutation.apply_slice(&sources[..]);
         debug!("Sorting given destinations.");
         let sorted_destinations = permutation.apply_slice(&destinations[..]);
         debug!("Sorting given weights.");
-
         let sorted_weights = weights.map(|w| permutation.apply_slice(&w[..]));
-
-        let sorted_edge_types = edge_types.map(|et| permutation.apply_slice(&et[..]));
+        debug!("Sorting given edge types.");
+        let sorted_edge_types = remapped_edge_types.map(|et| permutation.apply_slice(&et[..]));
 
         Graph {
             nodes_mapping,
+            node_types_mapping,
+            node_types: remapped_node_types,
             unique_edges,
-            node_types,
             sources: sorted_sources,
             destinations: sorted_destinations,
+            edge_types: sorted_edge_types,
+            edge_types_mapping,
             outbounds: Graph::compute_outbounds(nodes.len(), sources),
             reverse_nodes_mapping: nodes,
             weights: sorted_weights,
-            edge_types: sorted_edge_types,
         }
     }
 
@@ -89,10 +211,22 @@ impl Graph {
         nodes: Vec<String>,
         sources_names: Vec<String>,
         destinations_names: Vec<String>,
-        node_types: Option<Vec<NodeTypeT>>,
-        edge_types: Option<Vec<EdgeTypeT>>,
+        node_types: Option<Vec<String>>,
+        edge_types: Option<Vec<String>>,
         weights: Option<Vec<WeightT>>,
+        validate_input_data: Option<bool>,
     ) -> Graph {
+        if validate_input_data.unwrap_or_else(|| true) {
+            validate(
+                &nodes,
+                &sources_names,
+                &destinations_names,
+                &node_types,
+                &edge_types,
+                &weights,
+            );
+        };
+
         debug!("Identifying self-loops present in given graph.");
         let loops_mask: Vec<bool> = sources_names
             .iter()
@@ -129,10 +263,10 @@ impl Graph {
                 e.iter()
                     .zip(loops_mask.iter())
                     .filter(|&(_, &mask)| mask)
-                    .map(|(value, _)| *value)
-                    .collect::<Vec<NodeTypeT>>(),
+                    .map(|(value, _)| value.clone())
+                    .collect::<Vec<String>>(),
             );
-        }
+        };
 
         let mut full_weights = weights;
         if let Some(w) = &mut full_weights {
@@ -144,7 +278,7 @@ impl Graph {
                     .map(|(value, _)| *value)
                     .collect::<Vec<WeightT>>(),
             );
-        }
+        };
 
         Graph::new_directed(
             nodes,
@@ -153,91 +287,8 @@ impl Graph {
             node_types,
             full_edge_types,
             full_weights,
+            Some(false)
         )
-    }
-
-    pub fn from_csv(
-        edge_path: String,
-        sources_column: String,
-        destinations_column: String,
-        edge_types_column: Option<String>,
-        weights_column: Option<String>,
-        node_path: Option<String>,
-        nodes_column: Option<String>,
-        node_types_column: Option<String>,
-        edge_sep: Option<String>,
-        node_sep: Option<String>,
-        edge_file_has_header: Option<bool>,
-        node_file_has_header: Option<bool>,
-        check_for_duplicates: Option<bool>,
-    ) {
-        let _edge_sep = edge_sep.unwrap_or_else(|| "\t".to_string());
-        let _node_sep = node_sep.unwrap_or_else(|| "\t".to_string());
-        let _edge_file_has_header = edge_file_has_header.unwrap_or(true);
-        let _node_file_has_header = node_file_has_header.unwrap_or(true);
-
-        check_consistent_lines(&*edge_path, &*_edge_sep);
-
-        let edge_columns = vec![
-            sources_column.clone(),
-            destinations_column.clone()
-        ];
-        let edge_optional_columns = vec![
-            edge_types_column.clone(),
-            weights_column.clone()
-        ];
-
-        has_columns(
-            &*edge_path,
-            &*_edge_sep,
-            &edge_columns,
-            &edge_optional_columns,
-        );
-
-        let mut edges_hashmap: HashMap<String, Vec<String>> = read_csv(
-            &*edge_path,
-            &*_edge_sep,
-            &edge_columns,
-            &edge_optional_columns,
-        );
-
-        
-        let sources_names: Vec<String> = edges_hashmap.remove(&sources_column).unwrap();
-        let destinations_names: Vec<String> = edges_hashmap.remove(&destinations_column).unwrap();
-        let edge_types: Option<Vec<String>> = edge_types_column.map(|et| edges_hashmap.remove(&et).unwrap());
-        
-        let weights: Option<Vec<WeightT>> = weights_column.map(|w| 
-            edges_hashmap.remove(&w).unwrap().iter().map(|weight| weight.parse::<WeightT>().unwrap()).collect()
-        );
-
-        let (nodes, node_type) = if let Some(path) = &node_path {
-            check_consistent_lines(path, &*_node_sep);
-            let node_columns = vec![];
-            let node_optional_columns = vec![
-                nodes_column.clone(),
-                node_types_column.clone()
-            ];
-            has_columns(path, &*_node_sep, &node_columns, &node_optional_columns);
-            let mut nodes_hashmap = read_csv(
-                &*path,
-                &*_edge_sep,
-                &node_columns,
-                &node_optional_columns,
-            );
-            let nodes: Vec<String> = nodes_hashmap.remove(&nodes_column.unwrap()).unwrap();
-            let node_types: Option<Vec<String>> = node_types_column.map(|et| nodes_hashmap.remove(&et).unwrap());
-            (nodes, node_types)
-        } else {
-            let nodes: Vec<String> = sources_names.iter()
-                            .chain(destinations_names.iter())
-                            .unique().cloned().collect::<Vec<String>>();
-            (nodes, None)
-        };
-
-        // TODO: check duplicates within nodes
-        // TODO: check duplicates within edges
-        // TODO: check source and destination nodes that do appear in given nodes.
-        
     }
 
     fn compute_outbounds(nodes_number: NodeT, sources: Vec<NodeT>) -> Vec<EdgeT> {
