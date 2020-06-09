@@ -7,8 +7,14 @@ import json
 
 start = time()
 graph = EnsmallenGraph.from_csv(
-    "pos_train_edges.tsv",
-    "pos_train_nodes.tsv"
+    "../embiggen/pos_train_edges.tsv",
+    "subject",
+    "object",
+    True,
+    "edge_label",
+    node_path="../embiggen/pos_train_nodes.tsv",
+    nodes_column="id",
+    node_types_column="category"
 )
 completed_graph = time() - start
 start_walk = time()
