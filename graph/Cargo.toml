@@ -26,3 +26,4 @@ derive-getters = "0.1.0"
 [profile.release]
 opt-level = 3
 lto = "fat"
+overflow-checks = false     # Disable integer overflow checks.
