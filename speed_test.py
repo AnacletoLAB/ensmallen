@@ -7,11 +7,11 @@ import json
 
 start = time()
 graph = EnsmallenGraph(
-    "../embiggen/pos_train_edges.tsv",
-    "subject",
-    "object",
-    True,
-    "edge_label",
+    edge_path="../embiggen/pos_train_edges.tsv",
+    sources_column="subject",
+    destinations_column="object",
+    directed=True,
+    edge_types_column="edge_label",
     node_path="../embiggen/pos_train_nodes.tsv",
     nodes_column="id",
     node_types_column="category"
