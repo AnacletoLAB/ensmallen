@@ -1,1 +1,0 @@
-initSidebarItems({"derive":[["Getters","Derive getters Generate getter methods for all named struct fields in a seperate struct `impl` block. Getter methods share the name of the field they're 'getting'. Methods return an immutable reference to the field."]]});

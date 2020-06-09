@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["check_uniqueness",""],["validate",""]],"struct":[["Graph",""]],"type":[["EdgeT",""],["EdgeTypeT",""],["NodeT",""],["NodeTypeT",""],["ParamsT",""],["WeightT",""]]});
