@@ -6,7 +6,7 @@ import json
 
 
 start = time()
-graph = EnsmallenGraph.from_csv(
+graph = EnsmallenGraph(
     "../embiggen/pos_train_edges.tsv",
     "subject",
     "object",
