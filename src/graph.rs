@@ -408,6 +408,31 @@ impl Graph {
         }
 
         outbounds
+    
+    }
+
+    pub fn get_nodes_number(&self) -> usize {
+        self.reverse_nodes_mapping.len()
+    }
+
+    pub fn get_edges_number(&self) -> usize {
+        self.sources.len()
+    }
+
+    pub fn get_edge_types_number(&self) -> usize {
+        if let Some(etm) = &self.edge_types_mapping{
+            etm.keys().len()
+        } else {
+            0
+        }
+    }
+
+    pub fn get_node_types_number(&self) -> usize {
+        if let Some(etm) = &self.node_types_mapping{
+            etm.keys().len()
+        } else {
+            0
+        }
     }
 
     fn get_min_max_edge(&self, node: NodeT) -> (EdgeT, EdgeT) {
