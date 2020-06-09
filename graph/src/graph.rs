@@ -655,10 +655,10 @@ impl Graph {
                 self.single_walk(
                     length,
                     node % self.get_nodes_number(),
-                    _change_edge_type_weight,
-                    _change_node_type_weight,
                     _return_weight,
                     _explore_weight,
+                    _change_node_type_weight,
+                    _change_edge_type_weight
                 )
             })
             .filter(|walk| walk.len() >= _min_length)
