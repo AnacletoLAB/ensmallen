@@ -1,14 +1,14 @@
 use log::debug;
 use rand::distributions::WeightedIndex;
 use rand::prelude::*;
+use rayon::prelude::*;
 use std::{
     collections::{HashMap, HashSet},
     iter::FromIterator,
 };
-use rayon::prelude::*;
+use itertools::Itertools;
 
-use crate::csv_utils::check_consistent_lines;
-
+use crate::csv_utils::{check_consistent_lines, has_columns, read_csv};
 
 type NodeT = usize;
 type EdgeT = usize;
@@ -56,11 +56,8 @@ impl Graph {
             .collect();
 
         debug!("Computing unique edges.");
-        let unique_edges: HashSet<(NodeT, NodeT)> = HashSet::from_iter(
-            sources
-                .iter().cloned()
-                .zip(destinations.iter().cloned())
-        );
+        let unique_edges: HashSet<(NodeT, NodeT)> =
+            HashSet::from_iter(sources.iter().cloned().zip(destinations.iter().cloned()));
 
         debug!("Computing sorting of given edges based on sources.");
         let permutation = permutation::sort(&sources[..]);
@@ -166,7 +163,7 @@ impl Graph {
         edge_types_column: Option<String>,
         weights_column: Option<String>,
         node_path: Option<String>,
-        nodes_columns: Option<String>,
+        nodes_column: Option<String>,
         node_types_column: Option<String>,
         edge_sep: Option<String>,
         node_sep: Option<String>,
@@ -181,10 +178,66 @@ impl Graph {
 
         check_consistent_lines(&*edge_path, &*_edge_sep);
 
-        if let Some(np) = &node_path {
-            check_consistent_lines(np, &*_node_sep);
-        }
+        let edge_columns = vec![
+            sources_column.clone(),
+            destinations_column.clone()
+        ];
+        let edge_optional_columns = vec![
+            edge_types_column.clone(),
+            weights_column.clone()
+        ];
 
+        has_columns(
+            &*edge_path,
+            &*_edge_sep,
+            &edge_columns,
+            &edge_optional_columns,
+        );
+
+        let mut edges_hashmap: HashMap<String, Vec<String>> = read_csv(
+            &*edge_path,
+            &*_edge_sep,
+            &edge_columns,
+            &edge_optional_columns,
+        );
+
+        
+        let sources_names: Vec<String> = edges_hashmap.remove(&sources_column).unwrap();
+        let destinations_names: Vec<String> = edges_hashmap.remove(&destinations_column).unwrap();
+        let edge_types: Option<Vec<String>> = edge_types_column.map(|et| edges_hashmap.remove(&et).unwrap());
+        
+        let weights: Option<Vec<WeightT>> = weights_column.map(|w| 
+            edges_hashmap.remove(&w).unwrap().iter().map(|weight| weight.parse::<WeightT>().unwrap()).collect()
+        );
+
+        let (nodes, node_type) = if let Some(path) = &node_path {
+            check_consistent_lines(path, &*_node_sep);
+            let node_columns = vec![];
+            let node_optional_columns = vec![
+                nodes_column.clone(),
+                node_types_column.clone()
+            ];
+            has_columns(path, &*_node_sep, &node_columns, &node_optional_columns);
+            let mut nodes_hashmap = read_csv(
+                &*path,
+                &*_edge_sep,
+                &node_columns,
+                &node_optional_columns,
+            );
+            let nodes: Vec<String> = nodes_hashmap.remove(&nodes_column.unwrap()).unwrap();
+            let node_types: Option<Vec<String>> = node_types_column.map(|et| nodes_hashmap.remove(&et).unwrap());
+            (nodes, node_types)
+        } else {
+            let nodes: Vec<String> = sources_names.iter()
+                            .chain(destinations_names.iter())
+                            .unique().cloned().collect::<Vec<String>>();
+            (nodes, None)
+        };
+
+        // TODO: check duplicates within nodes
+        // TODO: check duplicates within edges
+        // TODO: check source and destination nodes that do appear in given nodes.
+        
     }
 
     fn compute_outbounds(nodes_number: NodeT, sources: Vec<NodeT>) -> Vec<EdgeT> {
@@ -199,7 +252,9 @@ impl Graph {
             if last_src != *src {
                 // Assigning to range instead of single value, so that traps
                 // have as delta between previous and next node zero.
-                for o in & mut outbounds[last_src..*src] {*o = i;}
+                for o in &mut outbounds[last_src..*src] {
+                    *o = i;
+                }
                 last_src = *src;
             }
         }
