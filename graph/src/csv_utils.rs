@@ -98,7 +98,7 @@ pub fn read_csv(
     buf_reader.read_line(&mut line).unwrap();
     // convert the csv to a dict of lists
     for line in buf_reader.lines() {
-        for (value, column) in line.unwrap().trim().split(sep).zip(headers.iter()) {
+        for (value, column) in line.unwrap().trim_end_matches(|c| c == '\n').split(sep).zip(headers.iter()) {
             if result.contains_key(column) {
                 result.get_mut(column).unwrap().push(String::from(value));
             }

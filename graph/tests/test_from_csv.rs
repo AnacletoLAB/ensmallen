@@ -212,6 +212,36 @@ fn test_graph_from_csv_with_edge_and_nodes() {
 }
 
 #[test]
+fn test_graph_from_csv_with_edge_and_nodes_types() {
+    let edge_path = "tests/data/edge_file.tsv";
+    let node_path = "tests/data/node_file.tsv";
+    for directed in &[true, false]{
+        let graph = Graph::from_csv(
+            edge_path.to_string(),
+            "subject".to_string(),
+            "object".to_string(),
+            *directed,
+            Some("edge_label".to_string()),
+            Some("weight".to_string()),
+            Some(node_path.to_string()),
+            Some("id".to_string()),
+            Some("category".to_string()),
+            None,
+            None,
+            None,
+        );
+        let edge_lines: usize = count_lines(File::open(edge_path).unwrap()).unwrap();
+        if *directed{
+            assert_eq!(edge_lines, graph.get_edges_number());
+        }
+        assert_eq!(graph.get_edge_types_number(), 2);
+        let node_lines: usize = count_lines(File::open(node_path).unwrap()).unwrap();
+        assert_eq!(node_lines, graph.get_nodes_number());
+        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
+    };
+}
+
+#[test]
 fn test_graph_from_csv_het() {
     let edge_path = "tests/data/het_graph_edges.tsv";
     let node_path = "tests/data/het_graph_nodes.tsv";
