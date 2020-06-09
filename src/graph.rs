@@ -1,3 +1,4 @@
+use crate::csv_utils::{check_consistent_lines, has_columns, read_csv};
 use itertools::Itertools;
 use log::debug;
 use rand::distributions::WeightedIndex;
@@ -58,8 +59,7 @@ fn validate(
     edge_types: &Option<Vec<String>>,
     weights: &Option<Vec<WeightT>>,
 ) {
-
-    if let Some(nt) = node_types{
+    if let Some(nt) = node_types {
         debug!("Checking that nodes and node types are of the same length.");
         if nodes.len() != nt.len() {
             panic!("The number of given nodes does not match the number of node_types");
@@ -67,12 +67,11 @@ fn validate(
     }
 
     debug!("Computing that edges are contained within given nodes.");
-    let unique_nodes: HashSet<String> = 
-        sources_names
-            .iter()
-            .chain(destinations_names.iter())
-            .cloned()
-            .collect();
+    let unique_nodes: HashSet<String> = sources_names
+        .iter()
+        .chain(destinations_names.iter())
+        .cloned()
+        .collect();
 
     debug!("Checking if every node used by the edges exists.");
     nodes.iter().for_each(|node| {
@@ -287,8 +286,106 @@ impl Graph {
             node_types,
             full_edge_types,
             full_weights,
-            Some(false)
+            Some(false),
         )
+    }
+
+    pub fn from_csv(
+        edge_path: String,
+        sources_column: String,
+        destinations_column: String,
+        directed: bool,
+        edge_types_column: Option<String>,
+        weights_column: Option<String>,
+        node_path: Option<String>,
+        nodes_column: Option<String>,
+        node_types_column: Option<String>,
+        edge_sep: Option<String>,
+        node_sep: Option<String>,
+        edge_file_has_header: Option<bool>,
+        node_file_has_header: Option<bool>,
+        validate_input_data: Option<bool>
+    ) -> Graph {
+        let _edge_sep = edge_sep.unwrap_or_else(|| "\t".to_string());
+        let _node_sep = node_sep.unwrap_or_else(|| "\t".to_string());
+        let _edge_file_has_header = edge_file_has_header.unwrap_or(true);
+        let _node_file_has_header = node_file_has_header.unwrap_or(true);
+
+        check_consistent_lines(&*edge_path, &*_edge_sep);
+
+        let edge_columns = vec![sources_column.clone(), destinations_column.clone()];
+        let edge_optional_columns = vec![edge_types_column.clone(), weights_column.clone()];
+
+        has_columns(
+            &*edge_path,
+            &*_edge_sep,
+            &edge_columns,
+            &edge_optional_columns,
+        );
+
+        let mut edges_hashmap: HashMap<String, Vec<String>> = read_csv(
+            &*edge_path,
+            &*_edge_sep,
+            &edge_columns,
+            &edge_optional_columns,
+        );
+
+        let sources_names: Vec<String> = edges_hashmap.remove(&sources_column).unwrap();
+        let destinations_names: Vec<String> = edges_hashmap.remove(&destinations_column).unwrap();
+        let edge_types: Option<Vec<String>> =
+            edge_types_column.map(|et| edges_hashmap.remove(&et).unwrap());
+
+        let weights: Option<Vec<WeightT>> = weights_column.map(|w| {
+            edges_hashmap
+                .remove(&w)
+                .unwrap()
+                .iter()
+                .map(|weight| weight.parse::<WeightT>().unwrap())
+                .collect()
+        });
+
+        let (nodes, node_types) = if let Some(path) = &node_path {
+            check_consistent_lines(path, &*_node_sep);
+            let node_columns = vec![];
+            let node_optional_columns = vec![nodes_column.clone(), node_types_column.clone()];
+            has_columns(path, &*_node_sep, &node_columns, &node_optional_columns);
+            let mut nodes_hashmap =
+                read_csv(&*path, &*_edge_sep, &node_columns, &node_optional_columns);
+            let nodes: Vec<String> = nodes_hashmap.remove(&nodes_column.unwrap()).unwrap();
+            let node_types: Option<Vec<String>> =
+                node_types_column.map(|et| nodes_hashmap.remove(&et).unwrap());
+            (nodes, node_types)
+        } else {
+            let nodes: Vec<String> = sources_names
+                .iter()
+                .chain(destinations_names.iter())
+                .unique()
+                .cloned()
+                .collect::<Vec<String>>();
+            (nodes, None)
+        };
+
+        if directed {
+            Graph::new_directed(
+                nodes,
+                sources_names,
+                destinations_names, 
+                node_types, 
+                edge_types, 
+                weights, 
+                validate_input_data
+            )
+        } else {
+            Graph::new_undirected(
+                nodes,
+                sources_names,
+                destinations_names, 
+                node_types, 
+                edge_types, 
+                weights, 
+                validate_input_data
+            )
+        }
     }
 
     fn compute_outbounds(nodes_number: NodeT, sources: Vec<NodeT>) -> Vec<EdgeT> {

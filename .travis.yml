@@ -1,0 +1,47 @@
+sudo: required
+language: rust
+
+# Cache cargo symbols for faster build
+cache: cargo
+
+# Dependencies of kcov, used by coverage
+addons:
+  apt:
+    packages:
+      - libcurl4-openssl-dev
+      - libelf-dev
+      - libdw-dev
+      - binutils-dev
+      - cmake # also required for cargo-update
+    sources:
+      - kalakris-cmake
+
+# run builds for all the trains (and more)
+rust:
+  - nightly
+  - beta
+  # check it compiles on the latest stable compiler
+  - stable
+  # and the first stable one (this should be bumped as the minimum
+  # Rust version required changes)
+  - 1.0.0
+
+before_script:
+  - export PATH=$HOME/.cargo/bin:$PATH
+  - cargo install cargo-update || echo "cargo-update already installed"
+  - cargo install cargo-travis || echo "cargo-travis already installed"
+  - cargo install-update -a # update outdated cached binaries
+
+# the main build
+script:
+  - |
+      cargo build &&
+      cargo test &&
+      cargo bench &&
+      cargo doc
+
+after_success:
+# measure code coverage and upload to coveralls.io
+  - cargo coveralls
+# upload documentation to github.io (gh-pages branch)
+  - cargo doc-upload
