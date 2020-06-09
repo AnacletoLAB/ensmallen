@@ -34,15 +34,8 @@ pub struct Graph {
     node_types_mapping: Option<HashMap<String, NodeTypeT>>,
 }
 
-fn check_uniqueness(values: Vec<&[String]>) {
+pub fn check_uniqueness(values: Vec<&[String]>) {
     let vector_len = values[0].len();
-
-    if !values.par_iter().all(|x| x.len() == vector_len) {
-        panic!(
-            "All the vectors must have the same number of records. But got instead {:?}",
-            values.par_iter().map(|x| x.len()).collect::<Vec<usize>>()
-        );
-    }
 
     let uniques_number = (0..vector_len)
         .map(|i| {
@@ -63,7 +56,7 @@ fn check_uniqueness(values: Vec<&[String]>) {
     }
 }
 
-fn validate(
+pub fn validate(
     nodes: &[String],
     sources_names: &[String],
     destinations_names: &[String],
@@ -255,10 +248,10 @@ impl Graph {
         debug!("Building undirected graph sources.");
         let mut full_sources: Vec<String> = sources_names.clone();
         full_sources.extend(
-            sources_names
+            destinations_names
                 .par_iter()
                 .zip(loops_mask.par_iter())
-                .filter(|&(_, &mask)| mask)
+                .filter(|&(_, &mask)| !mask)
                 .map(|(value, _)| value.clone())
                 .collect::<Vec<String>>(),
         );
@@ -266,10 +259,10 @@ impl Graph {
         debug!("Building undirected graph destinations.");
         let mut full_destinations: Vec<String> = destinations_names.clone();
         full_destinations.extend(
-            destinations_names
+            sources_names
                 .par_iter()
                 .zip(loops_mask.par_iter())
-                .filter(|&(_, &mask)| mask)
+                .filter(|&(_, &mask)| !mask)
                 .map(|(value, _)| value.clone())
                 .collect::<Vec<String>>(),
         );
@@ -280,7 +273,7 @@ impl Graph {
             e.extend(
                 e.par_iter()
                     .zip(loops_mask.par_iter())
-                    .filter(|&(_, &mask)| mask)
+                    .filter(|&(_, &mask)| !mask)
                     .map(|(value, _)| value.clone())
                     .collect::<Vec<String>>(),
             );
@@ -292,7 +285,7 @@ impl Graph {
             w.extend(
                 w.par_iter()
                     .zip(loops_mask.par_iter())
-                    .filter(|&(_, &mask)| mask)
+                    .filter(|&(_, &mask)| !mask)
                     .map(|(value, _)| *value)
                     .collect::<Vec<WeightT>>(),
             );
@@ -406,7 +399,7 @@ impl Graph {
         }
     }
 
-    fn compute_outbounds(nodes_number: NodeT, sources: &Vec<NodeT>) -> Vec<EdgeT> {
+    fn compute_outbounds(nodes_number: NodeT, sources: &[NodeT]) -> Vec<EdgeT> {
         debug!("Computing outbound edges ranges from each node.");
         let mut last_src: NodeT = 0;
         // Instead of fixing the last values after the loop, we set directly

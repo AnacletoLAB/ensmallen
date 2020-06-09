@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<title>Grcov report &mdash;test_validation.rs</title>
+<link rel="stylesheet" href="../grcov.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<div class="header">
+<div class="view">
+<div class="viewRow"><span class="viewItem">Current view:</span><span class="viewValue"><a href="../index.html">top level</a> - <a href="index.html">tests</a> - test_validation.rs</span></div>
+<div class="viewRow"><span class="viewItem">Date:</span><span class="viewValue">2020-06-09 20:19:24</span></div>
+</div>
+<div class="stats">
+<div class="statsRow"><span></span><span class="statsHit">Hit</span><span class="statsTotal">Total</span><span class="statsCoverage">Coverage</span></div>
+<div class="statsRow"><span class="statsLine">Lines</span><span class="linesHit">2</span><span class="linesTotal">3</span><span class="linesPercentage lineLow">66.7 %</span></div>
+<div class="statsRow"><span class="statsFun">Functions</span><span class="funsHit">2</span><span class="funsTotal">2</span><span class="funsPercentage funHi">100.0 %</span></div>
+</div>
+</div>
+<div class="sourceCode">
+<div class="line"><span id="1" class="lineNum"><a href="#1">1</a></span><span class="counterUnCov"></span><span class="lineUnCov">extern crate graph;</span></div>
+<div class="line"><span id="2" class="lineNum"><a href="#2">2</a></span><span class="counterUnCov"></span><span class="lineUnCov">use graph::graph::{check_uniqueness, validate};</span></div>
+<div class="line"><span id="3" class="lineNum"><a href="#3">3</a></span><span class="counterUnCov"></span><span class="lineUnCov"></span></div>
+<div class="line"><span id="4" class="lineNum"><a href="#4">4</a></span><span class="counterUnCov"></span><span class="lineUnCov">#[test]</span></div>
+<div class="line"><span id="5" class="lineNum"><a href="#5">5</a></span><span class="counterUnCov"></span><span class="lineUnCov">#[should_panic]</span></div>
+<div class="line"><span id="6" class="lineNum"><a href="#6">6</a></span><span class="counterCov">4</span><span class="lineCov">fn test_different_nodes_and_nodes_type() {</span></div>
+<div class="line"><span id="7" class="lineNum"><a href="#7">7</a></span><span class="counterCov">2</span><span class="lineCov">    validate(&amp;[&quot;a&quot;.to_string(), &quot;b&quot;.to_string(), &quot;c&quot;.to_string()], &amp;[], &amp;[], &amp;Some(vec![]), &amp;None, &amp;None)</span></div>
+<div class="line"><span id="8" class="lineNum"><a href="#8">8</a></span><span class="counterNoCov">0</span><span class="lineNoCov">}</span></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["sort","Return the permutation that would sort a given slice."],["sort_by","Return the permutation that would sort a given slice by a comparator."],["sort_by_key","Return the permutation that would sort a given slice by a key function."]],"struct":[["Permutation",""]]});

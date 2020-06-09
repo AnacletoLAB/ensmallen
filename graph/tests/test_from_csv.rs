@@ -22,8 +22,11 @@ fn test_graph_from_csv_edge_only() {
             None,
         );
         let lines: usize = count_lines(File::open(path).unwrap()).unwrap();
-        assert_eq!(lines, graph.get_edges_number());
-        graph.walk(10, 10, Some(0), Some(1.0), Some(2.0), Some(3.0), Some(4.0));
+        if *directed{
+            assert_eq!(lines, graph.get_edges_number());
+        }
+        let walks = graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
+        
     }
 }
 
@@ -48,9 +51,11 @@ fn test_graph_from_csv_edge_types() {
             None,
         );
         let lines: usize = count_lines(File::open(path).unwrap()).unwrap();
-        assert_eq!(lines, graph.get_edges_number());
+        if *directed{
+            assert_eq!(lines, graph.get_edges_number());
+        }
         assert_eq!(graph.get_edge_types_number(), 2);
-        graph.walk(10, 10, Some(0), Some(1.0), Some(2.0), Some(3.0), Some(4.0));
+        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
     }
 }
 
@@ -196,11 +201,13 @@ fn test_graph_from_csv_with_edge_and_nodes() {
             None,
         );
         let edge_lines: usize = count_lines(File::open(edge_path).unwrap()).unwrap();
-        assert_eq!(edge_lines, graph.get_edges_number());
+        if *directed{
+            assert_eq!(edge_lines, graph.get_edges_number());
+        }
         assert_eq!(graph.get_edge_types_number(), 2);
         let node_lines: usize = count_lines(File::open(node_path).unwrap()).unwrap();
         assert_eq!(node_lines, graph.get_nodes_number());
-        graph.walk(10, 10, Some(0), Some(1.0), Some(2.0), Some(3.0), Some(4.0));
+        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
     };
 }
 
@@ -224,10 +231,12 @@ fn test_graph_from_csv_het() {
             None,
         );
         let edge_lines: usize = count_lines(File::open(edge_path).unwrap()).unwrap();
-        assert_eq!(edge_lines, graph.get_edges_number());
+        if *directed{
+            assert_eq!(edge_lines, graph.get_edges_number());
+        }
         let node_lines: usize = count_lines(File::open(node_path).unwrap()).unwrap();
         assert_eq!(node_lines, graph.get_nodes_number());
-        graph.walk(10, 10, Some(0), Some(1.0), Some(2.0), Some(3.0), Some(4.0));
+        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
     };
 }
 

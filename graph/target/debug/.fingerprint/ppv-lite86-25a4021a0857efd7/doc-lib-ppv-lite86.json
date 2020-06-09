@@ -1,0 +1,1 @@
+{"rustc":18322855349230877909,"features":"[\"simd\", \"std\"]","target":3618425480033327174,"profile":2947498973218496406,"path":13765546816915092693,"deps":[],"local":[{"Precalculated":"0.2.8"}],"rustflags":["-Cpanic=abort"],"metadata":14155036307809790115,"config":0}
