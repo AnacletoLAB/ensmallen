@@ -72,10 +72,12 @@ fn validate(
         .chain(destinations_names.iter())
         .cloned()
         .collect();
+    
+    let nodes_set: HashSet<String> = nodes.iter().cloned().collect();
 
     debug!("Checking if every node used by the edges exists.");
-    nodes.iter().for_each(|node| {
-        if !unique_nodes.contains(node) {
+    unique_nodes.iter().for_each(|node| {
+        if !nodes_set.contains(node) {
             panic!(
                 "A node provided with the edges ('{}') does not exists within given nodes.",
                 node
@@ -302,14 +304,10 @@ impl Graph {
         node_types_column: Option<String>,
         edge_sep: Option<String>,
         node_sep: Option<String>,
-        edge_file_has_header: Option<bool>,
-        node_file_has_header: Option<bool>,
-        validate_input_data: Option<bool>
+        validate_input_data: Option<bool>,
     ) -> Graph {
         let _edge_sep = edge_sep.unwrap_or_else(|| "\t".to_string());
         let _node_sep = node_sep.unwrap_or_else(|| "\t".to_string());
-        let _edge_file_has_header = edge_file_has_header.unwrap_or(true);
-        let _node_file_has_header = node_file_has_header.unwrap_or(true);
 
         check_consistent_lines(&*edge_path, &*_edge_sep);
 
@@ -346,6 +344,9 @@ impl Graph {
 
         let (nodes, node_types) = if let Some(path) = &node_path {
             check_consistent_lines(path, &*_node_sep);
+            if nodes_column.is_none() {
+                panic!("Argument {} for node files was given but nodes_column parameter was left empty!", path);
+            }
             let node_columns = vec![];
             let node_optional_columns = vec![nodes_column.clone(), node_types_column.clone()];
             has_columns(path, &*_node_sep, &node_columns, &node_optional_columns);
@@ -369,21 +370,21 @@ impl Graph {
             Graph::new_directed(
                 nodes,
                 sources_names,
-                destinations_names, 
-                node_types, 
-                edge_types, 
-                weights, 
-                validate_input_data
+                destinations_names,
+                node_types,
+                edge_types,
+                weights,
+                validate_input_data,
             )
         } else {
             Graph::new_undirected(
                 nodes,
                 sources_names,
-                destinations_names, 
-                node_types, 
-                edge_types, 
-                weights, 
-                validate_input_data
+                destinations_names,
+                node_types,
+                edge_types,
+                weights,
+                validate_input_data,
             )
         }
     }
@@ -408,7 +409,6 @@ impl Graph {
         }
 
         outbounds
-    
     }
 
     pub fn get_nodes_number(&self) -> usize {
@@ -420,7 +420,7 @@ impl Graph {
     }
 
     pub fn get_edge_types_number(&self) -> usize {
-        if let Some(etm) = &self.edge_types_mapping{
+        if let Some(etm) = &self.edge_types_mapping {
             etm.keys().len()
         } else {
             0
@@ -428,7 +428,7 @@ impl Graph {
     }
 
     pub fn get_node_types_number(&self) -> usize {
-        if let Some(etm) = &self.node_types_mapping{
+        if let Some(etm) = &self.node_types_mapping {
             etm.keys().len()
         } else {
             0
