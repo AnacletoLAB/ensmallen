@@ -23,7 +23,14 @@ itertools = "0.9.0"
 permutation = "0.2.5"
 derive-getters = "0.1.0"
 
+
+[build]
+rustflags = ["-C target-cpu=native"]
+
 [profile.release]
 opt-level = 3
+codgen-units=1
 lto = "fat"
 overflow-checks = false     # Disable integer overflow checks.
+debug = false             # Include debug info.
+debug-assertions = false  # Enables debug assertions.

@@ -67,7 +67,7 @@ pub fn validate(
     if let Some(nt) = node_types {
         debug!("Checking that nodes and node types are of the same length.");
         if nodes.len() != nt.len() {
-            panic!("The number of given nodes ({}) does not match the number of node_types ({}).", nodes.len(), nt.len());
+            panic!("The number of given nodes does not match the number of node_types");
         }
     }
 
@@ -193,15 +193,26 @@ impl Graph {
             HashSet::from_iter(sources.iter().cloned().zip(destinations.iter().cloned()));
 
         debug!("Computing sorting of given edges based on sources.");
-        let permutation = permutation::sort(&sources[..]);
+        let mut pairs: Vec<(usize, &NodeT)> = sources.par_iter().enumerate().collect();
+        pairs.sort_unstable_by_key(|(_, &v)| v);
+        let indices: Vec<&usize> = pairs.par_iter().map(|(i, _)| i).collect();
+        
         debug!("Sorting given sources.");
-        let sorted_sources = permutation.apply_slice(&sources[..]);
+        let sorted_sources: Vec<NodeT> = indices.par_iter()
+            .map(|&&x| sources[x]).collect();
         debug!("Sorting given destinations.");
-        let sorted_destinations = permutation.apply_slice(&destinations[..]);
+        let sorted_destinations: Vec<NodeT> = indices.par_iter()
+            .map(|&&x| destinations[x]).collect();
         debug!("Sorting given weights.");
-        let sorted_weights = weights.map(|w| permutation.apply_slice(&w[..]));
+        let sorted_weights: Option<Vec<WeightT>> = weights.map(|w| 
+            indices.par_iter()
+            .map(|&&x| w[x]).collect()
+        ); 
         debug!("Sorting given edge types.");
-        let sorted_edge_types = remapped_edge_types.map(|et| permutation.apply_slice(&et[..]));
+        let sorted_edge_types: Option<Vec<EdgeTypeT>> = remapped_edge_types.map(|et| 
+            indices.par_iter()
+            .map(|&&x| et[x]).collect()
+        );
 
         Graph {
             nodes_mapping,
@@ -408,6 +419,7 @@ impl Graph {
         let mut outbounds: Vec<EdgeT> = vec![sources.len(); nodes_number];
 
         for (i, src) in sources.iter().enumerate() {
+            println!("{} {}", last_src, src);
             if last_src != *src {
                 // Assigning to range instead of single value, so that traps
                 // have as delta between previous and next node zero.
