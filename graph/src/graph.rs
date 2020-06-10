@@ -419,7 +419,6 @@ impl Graph {
         let mut outbounds: Vec<EdgeT> = vec![sources.len(); nodes_number];
 
         for (i, src) in sources.iter().enumerate() {
-            println!("{} {}", last_src, src);
             if last_src != *src {
                 // Assigning to range instead of single value, so that traps
                 // have as delta between previous and next node zero.
