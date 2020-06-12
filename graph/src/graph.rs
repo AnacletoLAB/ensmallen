@@ -1,5 +1,5 @@
 use derive_getters::Getters;
-use log::debug;
+use log::info;
 use rand::distributions::WeightedIndex;
 use rand::prelude::*;
 use rayon::prelude::*;
@@ -27,7 +27,7 @@ pub struct Graph {
 impl Graph {
 
     pub fn compute_outbounds(nodes_number: NodeT, sources: &[NodeT]) -> Vec<EdgeT> {
-        debug!("Computing outbound edges ranges from each node.");
+        info!("Computing outbound edges ranges from each node.");
         let mut last_src: NodeT = 0;
         // Instead of fixing the last values after the loop, we set directly
         // all values to the length of the sources, which is the sum of all
@@ -258,6 +258,7 @@ impl Graph {
             panic!("Given 'change_edge_type_weight' is not a strictly positive real number.")
         }
 
+        info!("Starting random walk.");
         let number_of_results = iterations * self.get_nodes_number();
 
         (0..number_of_results)

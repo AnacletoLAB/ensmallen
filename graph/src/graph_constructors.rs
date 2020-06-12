@@ -1,5 +1,5 @@
 use super::*;
-use log::debug;
+use log::info;
 use std::collections::{HashMap, HashSet};
 use std::iter::FromIterator;
 use itertools::Itertools;
@@ -15,7 +15,7 @@ pub fn validate(
     weights: &Option<Vec<WeightT>>,
 ) {
     
-    debug!("Checking that the nodes mappings are of the same length.");
+    info!("Checking that the nodes mappings are of the same length.");
     if nodes_mapping.len() != nodes_reverse_mapping.len() {
         panic!("The size of the node_mapping ({}) does not match the size of the nodes_reverse_mapping ({}).",
             nodes_mapping.len(), nodes_reverse_mapping.len()
@@ -23,7 +23,7 @@ pub fn validate(
     }
 
     if let Some(nt) = &node_types {
-        debug!("Checking that nodes and node types are of the same length.");
+        info!("Checking that nodes and node types are of the same length.");
         if nt.len() != nodes_reverse_mapping.len() {
             panic!("The number of given nodes ({}) does not match the number of node_types ({}).",
                 nt.len(), nodes_reverse_mapping.len()
@@ -32,7 +32,7 @@ pub fn validate(
     }
 
     if let Some(nt) = &node_types{
-        debug!("Checking if every node used by the edges exists.");
+        info!("Checking if every node used by the edges exists.");
         sources
             .iter()
             .chain(destinations.iter())
@@ -46,18 +46,18 @@ pub fn validate(
         });
     }
 
-    debug!("Checking that nodes must be uniques.");
+    info!("Checking that nodes must be uniques.");
     if nodes_reverse_mapping.len() != nodes_reverse_mapping.iter().unique().count() {
         panic!("The nodes must be uniques. Duplicates were found in the data.")
     }
 
     if let Some(w) = weights {
-        debug!("Checking for length between weights and given edges.");
+        info!("Checking for length between weights and given edges.");
         if w.len() != sources.len(){
             panic!("Length of given weights ({}) does not match length of given edges ({}).",
             w.len(), sources.len())
         }
-        debug!("Checking for non-zero weights.");
+        info!("Checking for non-zero weights.");
         w.par_iter().for_each(|weight| {
             if *weight == 0.0 {
                 panic!(
@@ -69,7 +69,7 @@ pub fn validate(
     }
     
     if let Some(et) = edge_types {
-        debug!("Checking for length between edge types and given edges.");
+        info!("Checking for length between edge types and given edges.");
         if et.len() != sources.len(){
             panic!(
                 "The len of edge types ({}) is different than the len of given edges ({}).  ",
@@ -109,27 +109,27 @@ impl Graph {
 
         let nodes_number = nodes_reverse_mapping.len();
 
-        debug!("Computing unique edges.");
+        info!("Computing unique edges.");
         let unique_edges: HashSet<(NodeT, NodeT)> =
             HashSet::from_iter(sources.iter().cloned().zip(destinations.iter().cloned()));
 
-        debug!("Computing sorting of given edges based on sources.");
+        info!("Computing sorting of given edges based on sources.");
         let mut pairs: Vec<(usize, &NodeT)> = sources.par_iter().enumerate().collect();
         pairs.sort_unstable_by_key(|(_, &v)| v);
         let indices: Vec<&usize> = pairs.par_iter().map(|(i, _)| i).collect();
         
-        debug!("Sorting given sources.");
+        info!("Sorting given sources.");
         let sorted_sources: Vec<NodeT> = indices.par_iter()
             .map(|&&x| sources[x]).collect();
-        debug!("Sorting given destinations.");
+        info!("Sorting given destinations.");
         let sorted_destinations: Vec<NodeT> = indices.par_iter()
             .map(|&&x| destinations[x]).collect();
-        debug!("Sorting given weights.");
+        info!("Sorting given weights.");
         let sorted_weights: Option<Vec<WeightT>> = weights.map(|w| 
             indices.par_iter()
             .map(|&&x| w[x]).collect()
         ); 
-        debug!("Sorting given edge types.");
+        info!("Sorting given edge types.");
         let sorted_edge_types: Option<Vec<EdgeTypeT>> = edge_types.map(|et| 
             indices.par_iter()
             .map(|&&x| et[x]).collect()
@@ -181,14 +181,14 @@ impl Graph {
             );
         }
 
-        debug!("Identifying self-loops present in given graph.");
+        info!("Identifying self-loops present in given graph.");
         let loops_mask: Vec<bool> = sources
             .par_iter()
             .zip(destinations.par_iter())
             .map(|(a, b)| a == b)
             .collect();
 
-        debug!("Building undirected graph sources.");
+        info!("Building undirected graph sources.");
         let mut full_sources: Vec<NodeT> = sources.clone();
         full_sources.extend(
             destinations
@@ -199,7 +199,7 @@ impl Graph {
                 .collect::<Vec<NodeT>>(),
         );
 
-        debug!("Building undirected graph destinations.");
+        info!("Building undirected graph destinations.");
         let mut full_destinations: Vec<NodeT> = destinations.clone();
         full_destinations.extend(
             sources
@@ -212,7 +212,7 @@ impl Graph {
 
         let mut full_edge_types = edge_types;
         if let Some(e) = &mut full_edge_types {
-            debug!("Building undirected graph edge types.");
+            info!("Building undirected graph edge types.");
             e.extend(
                 e.par_iter()
                     .zip(loops_mask.par_iter())
@@ -224,7 +224,7 @@ impl Graph {
 
         let mut full_weights = weights;
         if let Some(w) = &mut full_weights {
-            debug!("Building undirected graph weights.");
+            info!("Building undirected graph weights.");
             w.extend(
                 w.par_iter()
                     .zip(loops_mask.par_iter())
