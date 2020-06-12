@@ -18,6 +18,7 @@ version = "0.10.1"
 features = ["extension-module"]
 
 [dependencies]
+env_logger
 graph = { path = "graph" }
 
 [profile.release]

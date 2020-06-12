@@ -1,7 +1,7 @@
-
 use graph::{Graph, NodeT, ParamsT, WeightT};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
+use env_logger;
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
@@ -10,6 +10,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
     // Python objects to Rust values, and the Rust return value back into a Python object.
     // The `_py` argument represents that we're holding the GIL.
     m.add_class::<EnsmallenGraph>()?;
+    env_logger::init();
     Ok(())
 }
 
@@ -52,7 +53,6 @@ impl EnsmallenGraph {
             directed: bool,
             py_kwargs: Option<&PyDict>
         ) -> Self {
-
         if py_kwargs.is_none() {
             let graph: Graph = Graph::from_csv(
                 edge_path,
