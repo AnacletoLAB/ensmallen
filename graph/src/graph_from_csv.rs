@@ -100,12 +100,12 @@ impl Graph {
             if unique_edges_set.contains(&triple){
                 panic!(
                     concat!(
-                        "Found duplicated line in edges file!\n",
+                        "\nFound duplicated line in edges file!\n",
                         "Specifically, the duplicated line is the number {i}.\n",
-                        "with source node {source} and destination node {destination}.\n",
+                        "The source node is {source} and destination node is {destination}.\n",
                         "{edge_type_string}",
                         "The path of the document was {path}.\n",
-                        "The complete line in question is: {line}."
+                        "The complete line in question is:\n{line}\n"
                     ),
                     i=i,
                     source=sources[i],
@@ -200,12 +200,12 @@ impl Graph {
             if new_node && unique_nodes_set.contains(&nodes[nodes.len()-1]){
                 panic!(
                     concat!(
-                        "Found duplicated line in nodes file!\n",
+                        "\nFound duplicated line in nodes file!\n",
                         "Specifically, the duplicated line is the number {j}.\n",
-                        "with the node {node}.\n",
+                        "The node is {node}.\n",
                         "The node type of the row is {node_type}.\n",
                         "The path of the document was {path}.\n",
-                        "The complete line in question is: {line}."
+                        "The complete line in question is:\n{line}\n"
                     ),
                     j=j,
                     node=nodes[nodes.len()-1],
