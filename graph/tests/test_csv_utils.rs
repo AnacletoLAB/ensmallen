@@ -19,10 +19,10 @@ fn test_has_columns() {
         "tests/data/edge_file.tsv",
         "\t",
         &[
-            "subject".to_string(),
-            "object".to_string(),
-            "relation".to_string(),
-            "edge_label".to_string(),
+            "subject",
+            "object",
+            "relation",
+            "edge_label",
         ],
         &[],
     );
@@ -30,38 +30,38 @@ fn test_has_columns() {
         "tests/data/edge_file.tsv",
         "\t",
         &[
-            "subject".to_string(),
-            "object".to_string(),
-            "relation".to_string(),
-            "edge_label".to_string(),
+            "subject",
+            "object",
+            "relation",
+            "edge_label",
         ],
-        &[None],
+        &[&None],
     );
     has_columns(
         "tests/data/edge_file.tsv",
         "\t",
-        &["subject".to_string(), "object".to_string()],
-        &[Some("relation".to_string()), Some("edge_label".to_string())],
+        &["subject", "object"],
+        &[&Some("relation"), &Some("edge_label")],
     );
     has_columns(
         "tests/data/edge_file.tsv",
         "\t",
-        &["subject".to_string()],
+        &["subject"],
         &[],
     );
     has_columns(
         "tests/data/node_file.tsv",
         "\t",
         &[
-            "id".to_string(),
-            "name".to_string(),
-            "category".to_string(),
-            "description".to_string(),
-            "alias".to_string(),
+            "id",
+            "name",
+            "category",
+            "description",
+            "alias",
         ],
         &[],
     );
-    has_columns("tests/data/node_file.tsv", "\t", &["id".to_string()], &[]);
+    has_columns("tests/data/node_file.tsv", "\t", &["id"], &[]);
 }
 
 #[test]
@@ -70,7 +70,7 @@ fn test_has_columns_should_panic() {
     has_columns(
         "tests/data/should_panic.csv",
         ",",
-        &["a".to_string(), "b".to_string(), "c".to_string()],
+        &["a", "b", "c"],
         &[],
     );
 }

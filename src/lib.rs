@@ -1,5 +1,5 @@
 
-use graph::graph::{Graph, NodeT, ParamsT};
+use graph::{Graph, NodeT, ParamsT, WeightT};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 
@@ -36,8 +36,8 @@ struct EnsmallenGraph {
     graph: Graph
 }
 
-fn extract_value(val: &PyAny) -> String {
-    val.extract::<String>().unwrap()
+fn extract_value(val: &PyAny) -> &str {
+    val.extract::<&str>().unwrap()
 }
 
 #[pymethods]
@@ -46,9 +46,9 @@ impl EnsmallenGraph {
     #[args(
         py_kwargs = "**"
     )]
-    fn new( edge_path: String,
-            sources_column: String,
-            destinations_column: String,
+    fn new( edge_path: &str,
+            sources_column: &str,
+            destinations_column: &str,
             directed: bool,
             py_kwargs: Option<&PyDict>
         ) -> Self {
@@ -60,7 +60,8 @@ impl EnsmallenGraph {
                 destinations_column, 
                 directed,
                 None, None, None, None,
-                None, None, None, None
+                None, None, None, None,
+                None, None, None
             );
     
             return EnsmallenGraph{
@@ -76,10 +77,13 @@ impl EnsmallenGraph {
             destinations_column, 
             directed,
             kwargs.get_item("edge_types_column").map(extract_value),
+            kwargs.get_item("default_edge_type").map(extract_value),
             kwargs.get_item("weights_column").map(extract_value),
+            kwargs.get_item("default_weight").map(|val| val.extract::<WeightT>().unwrap()),
             kwargs.get_item("node_path").map(extract_value),
             kwargs.get_item("nodes_column").map(extract_value),
             kwargs.get_item("node_types_column").map(extract_value),
+            kwargs.get_item("default_node_type").map(extract_value),
             kwargs.get_item("edge_sep").map(extract_value),
             kwargs.get_item("node_sep").map(extract_value),
             kwargs.get_item("validate_input_data").map(|val| val.extract::<bool>().unwrap())
