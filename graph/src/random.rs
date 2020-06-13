@@ -18,12 +18,14 @@ pub fn xorshiro256plus() -> f64{
     // based on xorshiro256+ which seems to be the fastest floating point generator
     // http://prng.di.unimi.it/xoshiro256plus.c
     // the conversion from u64 to f64 is taken from:
-    // https://experilous.com/1/blog/post/perfect-fast-random-floating-point-numbers
-    // this exploits type punning to build a float with constant exponent
-    // and use only the "high-quality" bits from xorshiro for the mantissa
+    // http://prng.di.unimi.it/
     // the informations about the structure of a f64 was taken from IEEE 754
     // https://standards.ieee.org/content/ieee-standards/en/standard/754-2019.html
     // https://en.wikipedia.org/wiki/Double-precision_floating-point_format
+    // if this is still a bottleneck we can consider to implement
+    // http://prng.di.unimi.it/xoshiro256+-vect-speed.c
+    // which exploits avx to generate in parallel 8 random numbers and fill a 
+    // cache with it
     unsafe {
     // normal xorshiro implementation
 	let (result, _): (u64, bool) = seed[0].overflowing_add(seed[3]);
@@ -38,20 +40,8 @@ pub fn xorshiro256plus() -> f64{
 	seed[2] ^= t;
 
     seed[3] = rotl(seed[3], 45);
-    
-    // convert the u64 to f64
-    // the first 12 bits of the representation of f64 are the sign and the exponent
-    // therefore we fill them with zero and get rid of the low quality lower bits
-    // then we set 1023 as the exponent of the f64 so that it's a number between 1 and 2
-    // (this offset is due to how the floating value is computed: 
-    //      -1^(sign) * (1 + mantissa) * 2 ** (exponent - 1023) 
-    //
-    let v: u64 = (result >> 12) | (1023 << 52);
-    // use type punning to make rust happy, this should result in 0 assembly instructions
-    // since it should have 0 effects on the memory
-    let r: f64 = f64::from_le_bytes(v.to_le_bytes());
-    // subtract 1 from the generate number
-    r - 1f64
+    // method proposed by vigna on http://prng.di.unimi.it/ 
+    (result >> 11) as f64 * 1.0e-53f64
     }
 }
 
