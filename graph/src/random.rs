@@ -41,7 +41,12 @@ pub fn xorshiro256plus() -> f64{
 
     seed[3] = rotl(seed[3], 45);
     // method proposed by vigna on http://prng.di.unimi.it/ 
-    (result >> 11) as f64 * 1.0e-53f64
+    // (result >> 11) as f64 * 1.0e-53f64
+    // this method doesn't seems to work in rust so temporally we 
+    // craft the float by hand:
+    let v: u64 = (result >> 11) | (1023 << 52);
+    let r: f64 = f64::from_le_bytes(v.to_le_bytes());
+    r - 1f64
     }
 }
 
