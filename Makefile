@@ -1,6 +1,6 @@
 
-setup_for_build:
-	pip install maturin
+setup:
+	pip install -r requirements.txt
 
 build:
 	rm -fdr target
