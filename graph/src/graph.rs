@@ -5,6 +5,8 @@ use rand::prelude::*;
 use rayon::prelude::*;
 use std::collections::{HashMap, HashSet};
 use super::types::*;
+use super::random::sample;
+
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
 #[derive(Debug, Clone, Getters)]
@@ -198,15 +200,9 @@ impl Graph {
         (transition, destinations, min_edge, max_edge)
     }
 
-    fn extract(&self, weights: Vec<WeightT>) -> NodeT {
-        WeightedIndex::new(&weights)
-            .unwrap()
-            .sample(&mut thread_rng())
-    }
-
     fn extract_node(&self, node: NodeT, change_node_type_weight: ParamsT) -> (NodeT, EdgeT) {
         let (weights, dsts, min_edge, _) = self.get_node_transition(node, change_node_type_weight);
-        let index = self.extract(weights);
+        let index = sample(&weights);
         (dsts[index], min_edge + index)
     }
 
@@ -225,7 +221,7 @@ impl Graph {
             return_weight,
             explore_weight,
         );
-        let index = self.extract(weights);
+        let index = sample(&weights);
         (dsts[index], min_edge + index)
     }
 

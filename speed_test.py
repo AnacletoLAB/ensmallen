@@ -14,7 +14,9 @@ graph = EnsmallenGraph(
     edge_types_column="edge_label",
     node_path="../embiggen/pos_train_nodes.tsv",
     nodes_column="id",
-    node_types_column="category"
+    node_types_column="category",
+    default_edge_type='biolink:interacts_with',
+    default_node_type='biolink:NamedThing'
 )
 completed_graph = time() - start
 start_walk = time()
