@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# gcc, make, ecc
+sudo apt-get update -qyy
+sudo apt-get install build-essential -qyy
+
 ###########################################################
 # Install anaconda to have an easily reporducible python environments
 ###########################################################
@@ -16,3 +20,6 @@ chmod +x /$HOME/rustup.sh
 $HOME/rustup.sh --default-host x86_64-unknown-linux-gnu --default-toolchain nightly --profile default -y
 echo "source $HOME/.cargo/env" >> $HOME/.bashrc
 rm $HOME/rustup.sh
+
+# load for current shell
+source $HOME/.bashrc
