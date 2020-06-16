@@ -262,7 +262,7 @@ impl Graph {
             .map(|node| {
                 self.single_walk(
                     length,
-                    node % self.get_nodes_number(),
+                    node / iterations,
                     _return_weight,
                     _explore_weight,
                     _change_node_type_weight,
