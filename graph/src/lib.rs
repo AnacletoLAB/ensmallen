@@ -7,7 +7,4 @@ pub mod random;
 pub use self::graph_constructors::validate;
 pub use self::graph::Graph;
 pub use self::types::*;
-pub use self::random::{
-    xorshiro256plus,
-    sample
-};
+pub use self::random::*;

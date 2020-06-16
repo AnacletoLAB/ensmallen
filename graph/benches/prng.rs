@@ -17,7 +17,6 @@ fn rotl(x : u64, k: u64) -> u64{
 	return (x << k) | (x >> (64 - k));
 }
 
-
 static mut s: [u64; 4] = [0xdeadbeefc0febabe, 0xdeadbeefc0febabe, 0xdeadbeefc0febabe, 0xdeadbeefc0febabe];
 
 #[inline(always)]
