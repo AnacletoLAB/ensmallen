@@ -48,10 +48,7 @@ pub fn xorshiro256plus_mul() -> f64{
 
     s[3] = rotl(s[3], 45);
     // method proposed by vigna on http://prng.di.unimi.it/ 
-    //(result >> 11) as f64 * 1.0e-53f64
-    // the original value didn't work. after thinkering around we found
-    // this value which seems to work
-    (result >> 11) as f64 * 1.0e-16f64
+    (result >> 11) as f64 * 2.0f64.powf(-53.0)
     }
 }
 

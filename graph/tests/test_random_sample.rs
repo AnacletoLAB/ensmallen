@@ -3,7 +3,7 @@ use graph::sample;
 use rand::Rng;
 use rayon::prelude::*;
 
-const N_OF_ITERATIONS: usize = 1000000;
+const N_OF_ITERATIONS: usize = 100000;
 const N_OF_CLASSES: usize = 1000;
 
 pub fn gen_random_vec(number: usize) -> Vec<f64> {
@@ -17,6 +17,8 @@ pub fn gen_random_vec(number: usize) -> Vec<f64> {
 
 #[test]
 fn test_random_sample() {
+    // TODO instead of sum of errors,
+    //  use a wilcoxon test which currently isn't available in rust
     let random_weights = gen_random_vec(N_OF_CLASSES);
 
     let mut measurements: Vec<usize> = vec![0; N_OF_CLASSES];
@@ -36,9 +38,10 @@ fn test_random_sample() {
         .zip(normalized_measurements.par_iter())
         .map(
             |(a, b)|
-                (a - b).powf(2.0)
+                (a - b).abs()
         ).sum();
 
-    println!("Difference: {}", difference);
-    assert_eq!(true, difference < 1e-5);
+    println!("Difference on measurements: {}", difference);
+
+    assert_eq!(true, difference < 0.1);
 }

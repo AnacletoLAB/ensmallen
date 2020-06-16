@@ -31,31 +31,21 @@ pub fn xorshiro256plus() -> f64{
     // which exploits avx to generate in parallel 8 random numbers and fill a 
     // cache with it
     unsafe {
-    // normal xorshiro implementation
-	let (result, _): (u64, bool) = seed[0].overflowing_add(seed[3]);
+        // normal xorshiro implementation
+        let (result, _): (u64, bool) = seed[0].overflowing_add(seed[3]);
 
-	let t: u64 = seed[1] << 17;
+        let t: u64 = seed[1] << 17;
 
-	seed[2] ^= seed[0];
-	seed[3] ^= seed[1];
-	seed[1] ^= seed[2];
-	seed[0] ^= seed[3];
+        seed[2] ^= seed[0];
+        seed[3] ^= seed[1];
+        seed[1] ^= seed[2];
+        seed[0] ^= seed[3];
 
-	seed[2] ^= t;
+        seed[2] ^= t;
 
-    seed[3] = rotl(seed[3], 45);
-    // method proposed by vigna on http://prng.di.unimi.it/ 
-    // (result >> 11) as f64 * 1.0e-53f64
-    // this method doesn't seems to work in rust
-    // we found a differnt value which seems to work
-    // (result >> 11) as f64 * 1.0e-16f64
-    // but we prefer to craft the float by hand 
-    // (which is also expained on the same page of the other method)
-    // because it's faster (even though Vigna says that on modern hardware this
-    // difference in performances should be negligible)
-    let v: u64 = (result >> 11) | (1023 << 52);
-    let r: f64 = f64::from_le_bytes(v.to_le_bytes());
-    r - 1f64
+        seed[3] = rotl(seed[3], 45);
+        // method proposed by vigna on http://prng.di.unimi.it/ 
+        (result >> 11) as f64 * 2.0f64.powf(-53.0)
     }
 }
 
