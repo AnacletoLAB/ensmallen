@@ -22,7 +22,6 @@ RUN  apt-get update -qyy && apt-get install -qyy \
     pkg-config \
     libstdc++6:i386
 
-#####################################
 
 ###########################################################
 # Install anaconda to have an easily reporducible python environments
@@ -32,7 +31,7 @@ RUN bash ./anaconda.sh -b
 RUN echo "export PATH=\$PATH:/root/anaconda3/bin" >> /root/.bashrc
 RUN /root/anaconda3/bin/pip install maturin
 
-######################
+###########################################################
 # Setup Rust nightly
 ###########################################################
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > /root/rustup.sh

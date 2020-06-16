@@ -1,3 +1,6 @@
+use super::types::*;
+use ::core::cmp::Ordering;
+
 // global static seed, this could be moved inside a struct
 // WARNING
 // the current implementation is not thread safe because we
@@ -7,6 +10,7 @@
 // this way.
 // The only real problem could be that we lose determinism
 static mut seed: [u64; 4] = [0xdeadbeefc0febabe, 0xdeadbeefc0febabe, 0xdeadbeefc0febabe, 0xdeadbeefc0febabe];
+
 
 #[inline(always)]
 fn rotl(x : u64, k: u64) -> u64{
@@ -42,33 +46,36 @@ pub fn xorshiro256plus() -> f64{
     seed[3] = rotl(seed[3], 45);
     // method proposed by vigna on http://prng.di.unimi.it/ 
     // (result >> 11) as f64 * 1.0e-53f64
-    // this method doesn't seems to work in rust so temporally we 
-    // craft the float by hand:
+    // this method doesn't seems to work in rust
+    // we found a differnt value which seems to work
+    // (result >> 11) as f64 * 1.0e-16f64
+    // but we prefer to craft the float by hand 
+    // (which is also expained on the same page of the other method)
+    // because it's faster (even though Vigna says that on modern hardware this
+    // difference in performances should be negligible)
     let v: u64 = (result >> 11) | (1023 << 52);
     let r: f64 = f64::from_le_bytes(v.to_le_bytes());
     r - 1f64
     }
 }
 
-pub fn sample(weights: &Vec<f64>) -> usize {
-    let rnd: f64 = xorshiro256plus();
-
-    // this should be faster than binary search.
-    // of course the binary search take O(ln(n))
-    // but to build the cumulative sum it tale O(n)
-    // so we can just do a linear scan which is at most O(n)
-    // And, the average complexity should be the median of the vector.
-    // Of-course this could not hold for parallel / AVX implementations
-    // but this function is called in a loop that already satruate all the
-    // cores so the benefits from parallelization sould be marginal.
-    let mut acc: f64 = 0f64;
-    let mut i: usize = 0;
+pub fn sample(weights: &Vec<WeightT>) -> usize {
+    let mut cumulative_sum: Vec<f64> = Vec::with_capacity(weights.len());
+    let mut total_weight = 0f64;
     for w in weights {
-        acc += w;
-        if acc > rnd{
-            return i;
-        }
-        i += 1;
+        total_weight += w;
+        cumulative_sum.push(total_weight.clone());
     }
-    i
+
+    let rnd: f64 = xorshiro256plus() * cumulative_sum[cumulative_sum.len() - 1];
+
+    // Find the first item which has a weight *higher* than the chosen weight.
+    cumulative_sum.binary_search_by(
+        |w|
+            if *w <= rnd { 
+                Ordering::Less 
+            } else { 
+                Ordering::Greater 
+            }
+        ).unwrap_err()
 }

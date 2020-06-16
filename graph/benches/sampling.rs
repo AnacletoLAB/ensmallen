@@ -8,6 +8,7 @@ use std::mem;
 use rand::Rng;
 use rand::distributions::WeightedIndex;
 
+use ::core::cmp::Ordering;
 use core::arch::x86_64::_rdtsc;
 
 const NUMBER: u64 = 100000;
@@ -31,6 +32,13 @@ fn gen_xorshift_random_float() -> f64 {
         seed ^= seed << 13;
     }
    seed as f64 / u64::max_value() as f64
+}
+
+#[bench]
+fn test_gen_xorshift_random_float(b: &mut Bencher) {
+    b.iter(|| {
+        gen_xorshift_random_float()
+    });
 }
 
 #[inline(always)]
@@ -69,8 +77,18 @@ pub fn xorshiro256plus_mul() -> f64{
 
     s[3] = rotl(s[3], 45);
     // method proposed by vigna on http://prng.di.unimi.it/ 
-    (result >> 11) as f64 * 1.0e-53f64
+    //(result >> 11) as f64 * 1.0e-53f64
+    // the original value didn't work. after thinkering around we found
+    // this value which seems to work
+    (result >> 11) as f64 * 1.0e-16f64
     }
+}
+
+#[bench]
+fn test_gen_xorshiro256plus_mul(b: &mut Bencher) {
+    b.iter(|| {
+        xorshiro256plus_mul()
+    });
 }
 
 #[inline(always)]
@@ -98,12 +116,6 @@ fn xorshiro256plus() -> f64{
     }
 }
 
-#[bench]
-fn test_gen_xorshiro256plus_mul(b: &mut Bencher) {
-    b.iter(|| {
-        println!("{}", xorshiro256plus_mul())
-    });
-}
 
 #[bench]
 fn test_gen_xorshiro256plus(b: &mut Bencher) {
@@ -112,12 +124,49 @@ fn test_gen_xorshiro256plus(b: &mut Bencher) {
     });
 }
 
+#[inline(always)]
+fn extract_with_scan(weight: &Vec<f64>, rnd_val: f64) -> usize{
+    let cumulative_sum: Vec<f64> = weight
+    .iter()
+    .scan(0f64, |acc, &x| {
+        *acc = *acc + x;
+        Some(*acc)
+    })
+    .collect();
 
-#[bench]
-fn test_gen_xorshift_random_float(b: &mut Bencher) {
-    b.iter(|| {
-        gen_xorshift_random_float()
-    });
+    let rnd: f64 = rnd_val * cumulative_sum[cumulative_sum.len() - 1];
+
+    // Find the first item which has a weight *higher* than the chosen weight.
+    cumulative_sum.binary_search_by(
+        |w|
+            if *w <= rnd { 
+                Ordering::Less 
+            } else { 
+                Ordering::Greater 
+            }
+        ).unwrap_err()
+}
+
+#[inline(always)]
+fn extract_with_while(weight: &Vec<f64>, rnd_val: f64) -> usize{
+    let mut cumulative_sum: Vec<f64> = Vec::with_capacity(weight.len());
+    let mut total_weight = 0f64;
+    for w in weight {
+        total_weight += w;
+        cumulative_sum.push(total_weight.clone());
+    }
+
+    let rnd: f64 = rnd_val * cumulative_sum[cumulative_sum.len() - 1];
+
+    // Find the first item which has a weight *higher* than the chosen weight.
+    cumulative_sum.binary_search_by(
+        |w|
+            if *w <= rnd { 
+                Ordering::Less 
+            } else { 
+                Ordering::Greater 
+            }
+        ).unwrap_err()
 }
 
 #[bench]
@@ -132,60 +181,49 @@ fn using_weighted_index_sample(b: &mut Bencher) {
 
 
 #[bench]
-fn using_xorshift(b: &mut Bencher) {
+fn using_xorshift_and_scan(b: &mut Bencher) {
     let random_vec = gen_random_vec();
     b.iter(|| {
-        let rnd: f64 = gen_xorshift_random_float();
-        //println!("{}", rnd);
-
-        let mut acc: f64 = 0f64;
-        let mut i: usize = 0;
-        for w in &random_vec {
-            acc += w;
-            if acc > rnd{
-                return i;
-            }
-            i += 1;
-        }
-        i
-    });
+        extract_with_scan(&random_vec, gen_xorshift_random_float())
+    })
 }
 
 #[bench]
-fn using_xorshiro256plus(b: &mut Bencher) {
+fn using_xorshiro256plus_and_scan(b: &mut Bencher) {
     let random_vec = gen_random_vec();
     b.iter(|| {
-        let rnd: f64 = xorshiro256plus();
-        //println!("{}", rnd);
-
-        let mut acc: f64 = 0f64;
-        let mut i: usize = 0;
-        for w in &random_vec {
-            acc += w;
-            if acc > rnd{
-                return i;
-            }
-            i += 1;
-        }
-        i
-    });
+        extract_with_scan(&random_vec, xorshiro256plus())
+    })
 }
+
 #[bench]
-fn using_xorshiro256plus_mul(b: &mut Bencher) {
+fn using_xorshiro256plus_mul_and_scan(b: &mut Bencher) {
     let random_vec = gen_random_vec();
     b.iter(|| {
-        let rnd: f64 = xorshiro256plus_mul();
-        //println!("{}", rnd);
+        extract_with_scan(&random_vec, xorshiro256plus_mul())
+    })
+}
 
-        let mut acc: f64 = 0f64;
-        let mut i: usize = 0;
-        for w in &random_vec {
-            acc += w;
-            if acc > rnd{
-                return i;
-            }
-            i += 1;
-        }
-        i
-    });
+#[bench]
+fn using_xorshift_and_while(b: &mut Bencher) {
+    let random_vec = gen_random_vec();
+    b.iter(|| {
+        extract_with_while(&random_vec, gen_xorshift_random_float())
+    })
+}
+
+#[bench]
+fn using_xorshiro256plus_and_while(b: &mut Bencher) {
+    let random_vec = gen_random_vec();
+    b.iter(|| {
+        extract_with_while(&random_vec, xorshiro256plus())
+    })
+}
+
+#[bench]
+fn using_xorshiro256plus_mul_and_while(b: &mut Bencher) {
+    let random_vec = gen_random_vec();
+    b.iter(|| {
+        extract_with_while(&random_vec, xorshiro256plus_mul())
+    })
 }
