@@ -176,6 +176,10 @@ impl Graph {
         //#
         //# We weight the edge weight with the given return weight.
 
+        // If the return weight, which is the inverse of p, is not 1, hence
+        // it has some impact, we procced and increase by the given weight
+        // the probability of transitions that go back a previously visited
+        // node.
         if (return_weight  - 1.0).abs() > f64::EPSILON {
             transition
                 .par_iter_mut()

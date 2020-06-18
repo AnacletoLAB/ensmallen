@@ -24,6 +24,8 @@ fn test_graph_from_csv_edge_only() {
             None,
             None
         );
+        assert_eq!(graph.get_edge_types_number(), 0);
+        assert_eq!(graph.get_node_types_number(), 0);
         let lines: usize = count_lines(File::open(path).unwrap()).unwrap();
         if *directed{
             assert_eq!(lines, graph.get_edges_number());
@@ -60,9 +62,103 @@ fn test_graph_from_csv_edge_types() {
         if *directed{
             assert_eq!(lines, graph.get_edges_number());
         }
-        assert_eq!(graph.get_edge_types_number(), 2);
+        assert_eq!(graph.get_edge_types_number(), 3);
+        assert_eq!(graph.get_node_types_number(), 0);
         graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
     }
+}
+
+
+#[test]
+#[should_panic]
+fn test_walk_wrong_return_weights_parameter() {
+    let path = "tests/data/edge_file.tsv";
+    Graph::from_csv(
+        &path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        Some("biolink:Association"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).walk(10, 10, Some(0), Some(0.0), Some(2.0), Some(3.0), Some(4.0));
+}
+
+#[test]
+#[should_panic]
+fn test_walk_wrong_explore_weight_parameter() {
+    let path = "tests/data/edge_file.tsv";
+    Graph::from_csv(
+        &path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        Some("biolink:Association"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).walk(10, 10, Some(0), Some(1.0), Some(0.0), Some(3.0), Some(4.0));
+}
+
+#[test]
+#[should_panic]
+fn test_walk_wrong_change_node_type_weight_parameter() {
+    let path = "tests/data/edge_file.tsv";
+    Graph::from_csv(
+        &path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        Some("biolink:Association"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).walk(10, 10, Some(0), Some(1.0), Some(1.0), Some(0.0), Some(4.0));
+}
+
+#[test]
+#[should_panic]
+fn test_walk_wrong_change_edge_type_weight_parameter() {
+    let path = "tests/data/edge_file.tsv";
+    Graph::from_csv(
+        &path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        Some("biolink:Association"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).walk(10, 10, Some(0), Some(1.0), Some(1.0), Some(1.0), Some(0.0));
 }
 
 #[test]
@@ -147,7 +243,7 @@ fn test_graph_from_csv_duplicated_nodes_panic() {
         Some("edge_label"),
         Some("biolink:Association"),
         Some("weight"),
-        None,
+        Some(1.0),
         Some(node_path),
         Some("id"),
         Some("category"),
@@ -157,6 +253,7 @@ fn test_graph_from_csv_duplicated_nodes_panic() {
         None,
     );
 }
+
 #[test]
 #[should_panic]
 fn test_graph_from_csv_no_nodes_column_panic() {
@@ -180,6 +277,58 @@ fn test_graph_from_csv_no_nodes_column_panic() {
         None
     );
 }
+
+
+#[test]
+#[should_panic]
+fn test_graph_from_csv_no_node_types_column_panic() {
+    let edge_path = "tests/data/edge_file.tsv";
+    let node_path = "tests/data/node_file.tsv";
+    Graph::from_csv(
+        edge_path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        Some("biolink:Association"),
+        Some("weight"),
+        Some(1.0),
+        Some(node_path),
+        Some("id"),
+        None,
+        Some("biolink:NamedThing"),
+        None,
+        None,
+        None
+    );
+}
+
+
+#[test]
+#[should_panic]
+fn test_graph_from_csv_no_default_node_types_panic() {
+    let edge_path = "tests/data/edge_file.tsv";
+    let node_path = "tests/data/node_file.tsv";
+    Graph::from_csv(
+        edge_path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        Some("biolink:Association"),
+        Some("weight"),
+        Some(1.0),
+        Some(node_path),
+        Some("id"),
+        Some("category"),
+        None,
+        None,
+        None,
+        None
+    );
+}
+
+
 
 #[test]
 #[should_panic]
@@ -231,7 +380,8 @@ fn test_graph_from_csv_with_edge_and_nodes() {
         if *directed{
             assert_eq!(edge_lines, graph.get_edges_number());
         }
-        assert_eq!(graph.get_edge_types_number(), 2);
+        assert_eq!(graph.get_edge_types_number(), 3);
+        assert_eq!(graph.get_node_types_number(), 3);
         graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
     };
 }
@@ -262,7 +412,7 @@ fn test_graph_from_csv_with_edge_and_nodes_types() {
         if *directed{
             assert_eq!(edge_lines, graph.get_edges_number());
         }
-        assert_eq!(graph.get_edge_types_number(), 2);
+        assert_eq!(graph.get_edge_types_number(), 3);
         graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
     };
 }

@@ -276,6 +276,9 @@ impl Graph {
             if node_types_column.is_none(){
                 panic!("If the node_path is passed, the node_types_column is required");
             }
+            if default_node_type.is_none(){
+                panic!("If the node_path is passed, the default_node_type is required");
+            }
             // Then we check if the given columns actually exists in the file.
             has_columns(
                 &*path,
@@ -311,15 +314,6 @@ impl Graph {
             node_types_mapping,
             node_types_reverse_mapping
         ) = if let Some(path) = &node_path {
-            if nodes_column.is_none() {
-                panic!("Argument path with value '{}' for node files was given but nodes_column parameter was left empty!", path);
-            }
-            if node_types_column.is_none() {
-                panic!("Argument path with value '{}' for node files was given but node_types_column parameter was left empty!", path);
-            }
-            if default_node_type.is_none() {
-                panic!("Argument path with value '{}' for node files was given but default_node_type parameter was left empty!", path);
-            }
             let (
                 node_types,
                 node_types_mapping,
