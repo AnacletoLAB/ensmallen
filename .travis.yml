@@ -1,8 +1,19 @@
-sudo: required
 language: rust
+
+# pyo3 currently is only supported by the nightly version
+rust:
+  - nightly
 
 # Cache cargo symbols for faster build
 cache: cargo
+
+# In future we could also add windows testing
+jobs:
+  include:
+    - os: linux
+      dist: bionic
+    - os: osx
+      osx_image: xcode7.2
 
 # Dependencies of kcov, used by coverage
 addons:
@@ -13,29 +24,41 @@ addons:
       - libdw-dev
       - binutils-dev
       - cmake # also required for cargo-update
-    sources:
-      - kalakris-cmake
+      - python3
+      - python3-pip
 
-# run builds for all the trains (and more)
-rust:
-  - nightly
-  - beta
-  # check it compiles on the latest stable compiler
-  - stable
-
+before_install:
+  - curl -L https://github.com/mozilla/grcov/releases/latest/download/grcov-linux-x86_64.tar.bz2 | tar jxf -
+      
 before_script:
   - export PATH=$HOME/.cargo/bin:$PATH
   - cargo install cargo-update || echo "cargo-update already installed"
-  - cargo install cargo-travis || echo "cargo-travis already installed"
   - cargo install-update -a # update outdated cached binaries
+  - python3 -m pip install maturin pytest
 
 # the main build
 script:
-  - |
-    cargo build &&
-    cargo test &&
-    cargo bench
-
-after_success:
-  # measure code coverage and upload to coveralls.io
-  - cargo coveralls
+  # Build, test, bench the graph crate
+  - cargo build --verbose --all --manifest-path=graph/Cargo.toml
+  - cargo test --verbose --all --manifest-path=graph/Cargo.toml
+  - cargo bench --verbose --all --manifest-path=graph/Cargo.toml
+  # Build the bindings
+  - maturin build --release
+  # Install the binding
+  - python3 -m pip install --user --upgrade ./target/wheels/*.whl
+  # Run the python tests
+  - python3 -m pytest -s ./pytests
+  # Get the coverage for the graph crate
+  # This is done as the last step because we have to re-build the crate with no
+  # optimizations
+  - export CARGO_INCREMENTAL=0
+  - export RUSTFLAGS="-Zprofile -Ccodegen-units=1 -Copt-level=0 -Clink-dead-code -Coverflow-checks=off -Zpanic_abort_tests -Cpanic=abort"
+  - export RUSTDOCFLAGS="-Cpanic=abort"
+  - cargo build --verbose $CARGO_OPTIONS --manifest-path=graph/Cargo.toml
+  - cargo test --verbose $CARGO_OPTIONS --manifest-path=graph/Cargo.toml
+  # Generate report and sed it to codecov
+  - zip -0 ccov.zip `find . \( -name "graph-*.gc*" \) -print`;
+    ./grcov ccov.zip -s . -t lcov --llvm --branch --ignore-not-existing --ignore "/*" -o lcov.info;
+    bash <(curl -s https://codecov.io/bash) -f lcov.info;
+  # Generate coveralls doc
+  - ./grcov ./graph/target/debug -t coveralls -s . --token IiIxQt2aP1pBG7aRBIHlbHz2fzdcCT52QlZlH > coveralls.json
