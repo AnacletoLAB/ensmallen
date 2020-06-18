@@ -43,6 +43,6 @@ script:
   # Build the bindings
   - maturin build --release
   # Install the binding
-  -  python3 -m pip install --user --upgrade ./target/wheels/*.whl
+  - python3 -m pip install --user --upgrade ./target/wheels/*.whl
   # Run the python tests
-  -  python3 -m pytest ./pytests -s
+  - python3 -m pytest -s ./pytests
