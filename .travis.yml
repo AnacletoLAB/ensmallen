@@ -43,6 +43,6 @@ script:
   # Build the bindings
   - maturin build --release
   # Install the binding
-  -  python3 -m pip install --user --upgrade ./target/wheels/ensmallen_graph-0.1.0-cp36-cp36m-manylinux1_x86_64.whl
+  -  python3 -m pip install --user --upgrade ./target/wheels/*.whl
   # Run the python tests
   -  python3 -m pytest ./pytests -s
