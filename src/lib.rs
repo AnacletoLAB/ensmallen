@@ -1,7 +1,6 @@
 use graph::{Graph, NodeT, ParamsT, WeightT};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
-use env_logger;
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
