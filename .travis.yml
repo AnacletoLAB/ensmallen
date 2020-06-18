@@ -34,7 +34,7 @@ before_script:
   - export PATH=$HOME/.cargo/bin:$PATH
   - cargo install cargo-update || echo "cargo-update already installed"
   - cargo install-update -a # update outdated cached binaries
-  - python3 -m pip install maturin pytest
+  - python3 -m pip install maturin pytest coveralls
 
 # the main build
 script:
@@ -62,3 +62,4 @@ script:
     bash <(curl -s https://codecov.io/bash) -f lcov.info;
   # Generate coveralls doc
   - ./grcov ./graph/target/debug -t coveralls -s . --token IiIxQt2aP1pBG7aRBIHlbHz2fzdcCT52QlZlH > coveralls.json
+  - coveralls
