@@ -2,7 +2,6 @@ use super::*;
 use log::info;
 use std::collections::{HashMap, HashSet};
 use std::iter::FromIterator;
-use itertools::Itertools;
 use rayon::prelude::*;
 
 pub fn validate(
@@ -44,11 +43,6 @@ pub fn validate(
                 );
             }
         });
-    }
-
-    info!("Checking that nodes must be uniques.");
-    if nodes_reverse_mapping.len() != nodes_reverse_mapping.iter().unique().count() {
-        panic!("The nodes must be uniques. Duplicates were found in the data.")
     }
 
     if let Some(w) = weights {
