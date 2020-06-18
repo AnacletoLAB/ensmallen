@@ -214,7 +214,9 @@ impl Graph {
                     line=line.unwrap()
                 )
             }
-            unique_nodes_set.insert(nodes[nodes.len()-1]);
+            if new_node {
+                unique_nodes_set.insert(nodes[nodes.len()-1]);
+            }
         };
 
         // Sort the node types using the indices order specified by the nodes
