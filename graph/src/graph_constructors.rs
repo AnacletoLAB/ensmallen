@@ -6,10 +6,10 @@ use itertools::Itertools;
 use rayon::prelude::*;
 
 pub fn validate(
-    sources: &Vec<NodeT>,
-    destinations: &Vec<NodeT>,
+    sources: &[NodeT],
+    destinations: &[NodeT],
     nodes_mapping: &HashMap<String, NodeT>,
-    nodes_reverse_mapping: &Vec<String>,
+    nodes_reverse_mapping: &[String],
     node_types: &Option<Vec<NodeTypeT>>,
     edge_types: &Option<Vec<EdgeTypeT>>,
     weights: &Option<Vec<WeightT>>,
@@ -146,9 +146,9 @@ impl Graph {
             node_types_reverse_mapping,
             edge_types_mapping,
             edge_types_reverse_mapping,
+            outbounds,
             sources: sorted_sources,
             destinations: sorted_destinations,
-            outbounds: outbounds,
             weights: sorted_weights,
             edge_types: sorted_edge_types,
         }
@@ -195,18 +195,18 @@ impl Graph {
                 .par_iter()
                 .zip(loops_mask.par_iter())
                 .filter(|&(_, &mask)| !mask)
-                .map(|(value, _)| value.clone())
+                .map(|(value, _)| *value)
                 .collect::<Vec<NodeT>>(),
         );
 
         info!("Building undirected graph destinations.");
-        let mut full_destinations: Vec<NodeT> = destinations.clone();
+        let mut full_destinations: Vec<NodeT> = destinations;
         full_destinations.extend(
             sources
                 .par_iter()
                 .zip(loops_mask.par_iter())
                 .filter(|&(_, &mask)| !mask)
-                .map(|(value, _)| value.clone())
+                .map(|(value, _)| *value)
                 .collect::<Vec<NodeT>>(),
         );
 
@@ -217,7 +217,7 @@ impl Graph {
                 e.par_iter()
                     .zip(loops_mask.par_iter())
                     .filter(|&(_, &mask)| !mask)
-                    .map(|(value, _)| value.clone())
+                    .map(|(value, _)| *value)
                     .collect::<Vec<NodeTypeT>>(),
             );
         };

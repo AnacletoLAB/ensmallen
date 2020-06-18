@@ -1,7 +1,5 @@
 use derive_getters::Getters;
 use log::info;
-use rand::distributions::WeightedIndex;
-use rand::prelude::*;
 use rayon::prelude::*;
 use std::collections::{HashMap, HashSet};
 use super::types::*;

@@ -87,7 +87,7 @@ impl Graph {
                     if column == wc {
                         weights.push(
                             if value.is_empty(){
-                                default_weight.unwrap().clone()
+                                default_weight.unwrap()
                             } else {
                                 value.parse::<WeightT>().unwrap()
                             }

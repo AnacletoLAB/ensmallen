@@ -11,7 +11,7 @@ fn splitmix64(x: u64) -> u64 {
 	let mut z: u64 = x + 0x9e3779b97f4a7c15;
 	z = (z ^ (z >> 30)) * 0xbf58476d1ce4e5b9;
 	z = (z ^ (z >> 27)) * 0x94d049bb133111eb;
-	return z ^ (z >> 31);
+	z ^ (z >> 31)
 }
 
 pub fn initialize_seed(start_seed: u64) {
@@ -47,7 +47,7 @@ static mut GLOBAL_SEED: [u64; 4] = [6591408588322595484, 5451729388608518856, 89
 
 #[inline(always)]
 fn rotl(x : u64, k: u64) -> u64{
-	return (x << k) | (x >> (64 - k));
+	(x << k) | (x >> (64 - k))
 }
 
 #[inline(always)]
@@ -82,12 +82,12 @@ pub fn xorshiro256plus() -> f64{
     }
 }
 
-pub fn sample(weights: &Vec<WeightT>) -> usize {
+pub fn sample(weights: &[WeightT]) -> usize {
     let mut cumulative_sum: Vec<f64> = Vec::with_capacity(weights.len());
     let mut total_weight = 0f64;
     for w in weights {
         total_weight += w;
-        cumulative_sum.push(total_weight.clone());
+        cumulative_sum.push(total_weight);
     }
 
     let rnd: f64 = xorshiro256plus() * cumulative_sum[cumulative_sum.len() - 1];
