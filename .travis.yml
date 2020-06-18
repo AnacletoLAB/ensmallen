@@ -56,6 +56,9 @@ script:
   - export RUSTDOCFLAGS="-Cpanic=abort"
   - cargo build --verbose $CARGO_OPTIONS --manifest-path=graph/Cargo.toml
   - cargo test --verbose $CARGO_OPTIONS --manifest-path=graph/Cargo.toml
+  # Generate report and sed it to codecov
   - zip -0 ccov.zip `find . \( -name "graph-*.gc*" \) -print`;
     ./grcov ccov.zip -s . -t lcov --llvm --branch --ignore-not-existing --ignore "/*" -o lcov.info;
     bash <(curl -s https://codecov.io/bash) -f lcov.info;
+  # Generate coveralls doc
+  - grcov ./graph/target/debug -t coveralls -s . --token IiIxQt2aP1pBG7aRBIHlbHz2fzdcCT52QlZlH > coveralls.json
