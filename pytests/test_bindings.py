@@ -1,14 +1,13 @@
 from ensmallen_graph import EnsmallenGraph
 
 def test_placeholder():
-    return 
     graph = EnsmallenGraph(
-        edge_path="data/edges.tsv",
+        edge_path="./pytests/data/edges.tsv",
         sources_column="subject",
         destinations_column="object",
         directed=True,
         edge_types_column="edge_label",
-        node_path="data/nodes.tsv",
+        node_path="./pytests/data/nodes.tsv",
         nodes_column="id",
         node_types_column="category",
         default_edge_type='biolink:interacts_with',
