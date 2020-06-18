@@ -48,6 +48,13 @@ impl Graph {
         outbounds
     }
 
+    pub fn get_node_type_id(&self, node_id:NodeT) -> NodeTypeT {
+        if let Some(nt) = &self.node_types{
+            return nt[node_id]
+        }
+        panic!("Node types are not defined for current class.");
+    }
+
     pub fn get_nodes_number(&self) -> usize {
         self.nodes_reverse_mapping.len()
     }
@@ -133,10 +140,10 @@ impl Graph {
     fn get_edge_transition(
         &self,
         edge: EdgeT,
-        change_edge_type_weight: ParamsT,
-        change_node_type_weight: ParamsT,
         return_weight: ParamsT,
         explore_weight: ParamsT,
+        change_node_type_weight: ParamsT,
+        change_edge_type_weight: ParamsT,
     ) -> (Vec<WeightT>, Vec<NodeT>, EdgeT, EdgeT) {
         // Get the source and destination for current edge.
         let (src, dst) = (&self.sources[edge], self.destinations[edge]);
@@ -165,7 +172,7 @@ impl Graph {
         }
 
         //############################################################
-        //# Handling of the Q parameter: the return coefficient      #
+        //# Handling of the P parameter: the return coefficient      #
         //############################################################
 
         //# If the neigbour matches with the source, hence this is
@@ -188,14 +195,14 @@ impl Graph {
                 .for_each(|(transition_value, _)| *transition_value *= return_weight);
         }
         //############################################################
-        //# Handling of the P parameter: the exploration coefficient #
+        //# Handling of the Q parameter: the exploration coefficient #
         //############################################################
 
         if (explore_weight  - 1.0).abs() > f64::EPSILON {
             transition
                 .par_iter_mut()
                 .zip(destinations.par_iter())
-                .filter(|&(_, ndst)| !self.unique_edges.contains(&(*ndst, *src)))
+                .filter(|&(_, ndst)| ndst != src && !self.unique_edges.contains(&(*ndst, *src)))
                 .for_each(|(transition_value, _)| *transition_value *= explore_weight);
         }
 
@@ -211,17 +218,17 @@ impl Graph {
     fn extract_edge(
         &self,
         edge: EdgeT,
-        change_edge_type_weight: ParamsT,
-        change_node_type_weight: ParamsT,
         return_weight: ParamsT,
         explore_weight: ParamsT,
+        change_node_type_weight: ParamsT,
+        change_edge_type_weight: ParamsT,
     ) -> (NodeT, EdgeT) {
         let (weights, dsts, min_edge, _) = self.get_edge_transition(
             edge,
-            change_edge_type_weight,
-            change_node_type_weight,
             return_weight,
             explore_weight,
+            change_node_type_weight,
+            change_edge_type_weight,
         );
         let index = sample(&weights);
         (dsts[index], min_edge + index)
@@ -279,10 +286,10 @@ impl Graph {
         &self,
         length: usize,
         node: NodeT,
-        change_edge_type_weight: ParamsT,
-        change_node_type_weight: ParamsT,
         return_weight: ParamsT,
         explore_weight: ParamsT,
+        change_node_type_weight: ParamsT,
+        change_edge_type_weight: ParamsT,
     ) -> Vec<NodeT> {
         let mut walk: Vec<NodeT> = Vec::with_capacity(length);
         walk.push(node);
@@ -300,10 +307,10 @@ impl Graph {
             }
             let (dst, inner_edge) = self.extract_edge(
                 edge,
-                change_edge_type_weight,
-                change_node_type_weight,
                 return_weight,
                 explore_weight,
+                change_node_type_weight,
+                change_edge_type_weight,
             );
             edge = inner_edge;
             walk.push(dst);

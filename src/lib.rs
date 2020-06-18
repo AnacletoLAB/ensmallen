@@ -1,4 +1,4 @@
-use graph::{Graph, NodeT, ParamsT, WeightT};
+use graph::{Graph, NodeT, ParamsT, WeightT, NodeTypeT};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 
@@ -98,6 +98,21 @@ impl EnsmallenGraph {
     /// 
     /// Parameters
     /// ---------------------
+    /// node_id: int,
+    ///     Numeric ID of the node.
+    /// 
+    /// Returns
+    /// ---------------------
+    /// Return the id of the node type of the node.
+    fn get_node_type_id(&self, node_id: NodeT)->NodeTypeT{
+        self.graph.get_node_type_id(node_id)
+    }
+
+    #[text_signature = "(iterations, length, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
+    /// Return random walks done on the graph using Rust.
+    /// 
+    /// Parameters
+    /// ---------------------
     /// iterations,
     ///     Number of cycles on the graphs to execute.
     /// length,
@@ -137,19 +152,19 @@ impl EnsmallenGraph {
         iterations: usize,
         length: usize,
         min_length: usize,
-        change_edge_type_weight: ParamsT,
-        change_node_type_weight: ParamsT,
         return_weight: ParamsT,
-        explore_weight: ParamsT
+        explore_weight: ParamsT,
+        change_node_type_weight: ParamsT,
+        change_edge_type_weight: ParamsT
     ) -> PyResult<Vec<Vec<NodeT>>> {
         Ok(self.graph.walk(
             iterations,
             length, 
             Some(min_length),
+            Some(return_weight),
+            Some(explore_weight),
+            Some(change_node_type_weight),
             Some(change_edge_type_weight), 
-            Some(change_node_type_weight), 
-            Some(return_weight), 
-            Some(explore_weight)
         ))
     }
 
