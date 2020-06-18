@@ -32,7 +32,7 @@ before_script:
   - export PATH=$HOME/.cargo/bin:$PATH
   - cargo install cargo-update || echo "cargo-update already installed"
   - cargo install-update -a # update outdated cached binaries
-  - python3 -m pip install maturin
+  - python3 -m pip install maturin pytest
 
 # the main build
 script:
@@ -43,6 +43,6 @@ script:
   # Build the bindings
   - maturin build --release
   # Install the binding
-  -  python3 -mpip install ./target/wheel/*.whl --user --upgrade
+  -  python3 -m pip install --user --upgrade ./target/wheels/ensmallen_graph-0.1.0-cp36-cp36m-manylinux1_x86_64.whl
   # Run the python tests
   -  python3 -m pytest ./pytests -s
