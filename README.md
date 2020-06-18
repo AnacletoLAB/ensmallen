@@ -1,4 +1,4 @@
-# EnsmallenGraph ![](https://travis-ci.org/LucaCappelletti94/ensmallen_graph.svg?branch=master)
+# EnsmallenGraph ![](https://travis-ci.org/LucaCappelletti94/ensmallen_graph.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/LucaCappelletti94/ensmallen_graph/badge.svg?branch=master)](https://coveralls.io/github/LucaCappelletti94/ensmallen_graph?branch=master)
 Rust library to run weighted random walks on very big graphs.
 
 ## Build the python library
