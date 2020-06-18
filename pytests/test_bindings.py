@@ -131,3 +131,45 @@ def test_explore_weight_behaviour():
 
     print("explore_weights", correlation, p_value)
     #assert p_value < 0.01 and correlation < -0.8
+
+
+
+def test_explore_weight_behaviour_string():
+    """The return weight parameter is the 'exploitation' parameter.
+
+    The higher the explore_weight parameter goes, the less exploration should
+    happen in the walk.
+
+    We test here that there is an inverse correlation between the number of
+    different nodes present in the walk and the parameter.
+    """
+    graph = EnsmallenGraph(
+        edge_path="/home/cappelletti_luca94/graph/string/edges.tsv",
+        sources_column="subject",
+        destinations_column="object",
+        directed=False,
+    )
+
+    mean_uniques_counts = []
+    explore_weights = np.linspace(0.01, 10, num=100)
+
+    for explore_weight in tqdm(
+            explore_weights, desc="Computing walks for different explore_weights"):
+        walks = graph.walk(
+            iterations=1,
+            length=50,
+            min_length=0,
+            return_weight=1,
+            explore_weight=explore_weight,
+            change_node_type_weight=1,
+            change_edge_type_weight=1
+        )
+        mean_uniques_counts.append(np.mean([
+            np.unique(walk).size
+            for walk in walks
+        ]))
+
+    correlation, p_value = pearsonr(explore_weights, mean_uniques_counts)
+
+    print("explore_weights", correlation, p_value)
+    #assert p_value < 0.01 and correlation < -0.8
