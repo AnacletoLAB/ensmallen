@@ -1,4 +1,4 @@
-from ensmallen_graph import EnsmallenGraph
+from ensmallen_graph import EnsmallenGraph  # pylint: disable=no-name-in-module
 from scipy.stats import pearsonr
 import numpy as np
 from tqdm.auto import tqdm
