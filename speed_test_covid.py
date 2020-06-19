@@ -1,18 +1,18 @@
 from time import time
 from humanize import naturaldelta
-from ensmallen_graph import EnsmallenGraph
+from ensmallen_graph import EnsmallenGraph # pylint: disable=no-name-in-module
 import compress_json
 import json
 
 
 start = time()
 graph = EnsmallenGraph(
-    edge_path="../embiggen/pos_train_edges.tsv",
+    edge_path="../graph/pos_train_edges.tsv",
     sources_column="subject",
     destinations_column="object",
     directed=True,
     edge_types_column="edge_label",
-    node_path="../embiggen/pos_train_nodes.tsv",
+    node_path="../graph/pos_train_nodes.tsv",
     nodes_column="id",
     node_types_column="category",
     default_edge_type='biolink:interacts_with',
