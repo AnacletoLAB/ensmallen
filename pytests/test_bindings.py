@@ -27,13 +27,13 @@ def test_return_weight_behaviour_hpo():
     )
 
     mean_uniques_counts = []
-    return_weights = np.linspace(0.01, 10, num=50)
+    return_weights = np.linspace(0.01, 10, num=100)
 
     for return_weight in tqdm(
             return_weights, desc="Computing walks for different return_weight"):
         walks = graph.walk(
             iterations=1,
-            length=50,
+            length=100,
             min_length=0,
             return_weight=return_weight,
             explore_weight=1,
@@ -67,13 +67,13 @@ def test_return_weight_behaviour_pathway():
     )
 
     mean_uniques_counts = []
-    return_weights = np.linspace(0.01, 10, num=50)
+    return_weights = np.linspace(0.01, 10, num=100)
 
     for return_weight in tqdm(
             return_weights, desc="Computing walks for different return_weight"):
         walks = graph.walk(
             iterations=1,
-            length=50,
+            length=100,
             min_length=0,
             return_weight=return_weight,
             explore_weight=1,
@@ -113,13 +113,13 @@ def test_explore_weight_behaviour_hpo():
     )
 
     mean_uniques_counts = []
-    explore_weights = np.linspace(0.01, 10, num=50)
+    explore_weights = np.linspace(0.01, 10, num=100)
 
     for explore_weight in tqdm(
             explore_weights, desc="Computing walks for different explore_weights"):
         walks = graph.walk(
             iterations=1,
-            length=50,
+            length=100,
             min_length=0,
             return_weight=1,
             explore_weight=explore_weight,
@@ -159,7 +159,7 @@ def test_explore_weight_behaviour_pathway():
             explore_weights, desc="Computing walks for different explore_weights"):
         walks = graph.walk(
             iterations=1,
-            length=50,
+            length=100,
             min_length=0,
             return_weight=1,
             explore_weight=explore_weight,
