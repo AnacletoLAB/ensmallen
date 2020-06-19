@@ -133,7 +133,7 @@ def test_explore_weight_behaviour_hpo():
 
     correlation, p_value = pearsonr(explore_weights, mean_uniques_counts)
     print("HPO explore_weights", correlation, p_value)
-    assert p_value < 0.01 and correlation > 0.5
+    assert p_value < 0.01 and correlation > 0.6
 
 
 def test_explore_weight_behaviour_pathway():
@@ -173,4 +173,4 @@ def test_explore_weight_behaviour_pathway():
 
     correlation, p_value = pearsonr(explore_weights, mean_uniques_counts)
     print("Pathway explore_weights", correlation, p_value)
-    assert p_value < 0.01 and correlation > 0.5
+    assert p_value < 0.01 and correlation > 0.6

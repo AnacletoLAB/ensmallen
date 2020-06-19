@@ -36,6 +36,7 @@ before_script:
   - cargo install cargo-update || echo "cargo-update already installed"
   - cargo install-update -a # update outdated cached binaries
   - python3 -m pip install maturin pytest coveralls
+  - python3 -m pip install -r requirements.txt
 
 # the main build
 script:
