@@ -138,8 +138,8 @@ impl Graph {
                 let this_type: NodeTypeT = nt[node];
 
                 transition
-                    .par_iter_mut()
-                    .zip(destinations.par_iter().map(|dst| nt[*dst]))
+                    .iter_mut()
+                    .zip(destinations.iter().map(|dst| nt[*dst]))
                     .filter(|(_, neigh_type)| this_type == *neigh_type)
                     .for_each(|(transition_value, _)| *transition_value /= change_node_type_weight);
                 // credo non serva collect perche' modifichiamo i valori direttamente
@@ -175,8 +175,8 @@ impl Graph {
                 //# we weigth using the provided change_edge_type_weight weight.
                 let this_type: EdgeTypeT = et[edge];
                 transition
-                    .par_iter_mut()
-                    .zip(et[min_edge..max_edge].par_iter())
+                    .iter_mut()
+                    .zip(et[min_edge..max_edge].iter())
                     .filter(|(_, &neigh_type)| this_type == neigh_type)
                     .for_each(|(transition_value, _)| *transition_value /= change_edge_type_weight);
             }
@@ -200,8 +200,8 @@ impl Graph {
         // node.
         if (return_weight  - 1.0).abs() > f64::EPSILON {
             transition
-                .par_iter_mut()
-                .zip(destinations.par_iter())
+                .iter_mut()
+                .zip(destinations.iter())
                 .filter(|&(_, ndst)| src == *ndst || dst == *ndst)
                 .for_each(|(transition_value, _)| *transition_value *= return_weight);
         }
@@ -211,8 +211,8 @@ impl Graph {
 
         if (explore_weight  - 1.0).abs() > f64::EPSILON {
             transition
-                .par_iter_mut()
-                .zip(destinations.par_iter())
+                .iter_mut()
+                .zip(destinations.iter())
                 .filter(|&(_, ndst)| (src != *ndst || dst == *ndst) && !self.unique_edges.contains_key(&(*ndst, src)))
                 .for_each(|(transition_value, _)| *transition_value *= explore_weight);
         }
