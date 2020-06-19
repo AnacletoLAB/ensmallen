@@ -1,7 +1,7 @@
 use derive_getters::Getters;
 use log::info;
 use rayon::prelude::*;
-use std::collections::{HashMap, HashSet};
+use std::collections::{HashMap};
 use super::types::*;
 use super::random::sample;
 
@@ -13,7 +13,7 @@ pub struct Graph {
     pub destinations: Vec<NodeT>,
     pub nodes_mapping: HashMap<String, NodeT>,
     pub nodes_reverse_mapping: Vec<String>,
-    pub unique_edges: HashSet<(NodeT, NodeT)>,
+    pub unique_edges: HashMap<(NodeT, NodeT), EdgeT>,
     pub outbounds: Vec<EdgeT>,
     pub weights: Option<Vec<WeightT>>,
     pub node_types: Option<Vec<NodeTypeT>>,
@@ -53,6 +53,17 @@ impl Graph {
             return nt[node_id]
         }
         panic!("Node types are not defined for current class.");
+    }
+
+    pub fn get_edge_type_id(&self, edge_id:EdgeT) -> EdgeTypeT {
+        if let Some(et) = &self.edge_types{
+            return et[edge_id]
+        }
+        panic!("Edge types are not defined for current class.");
+    }
+
+    pub fn get_edge_id(&self, src:NodeT, dst:NodeT) -> EdgeT {
+        *self.unique_edges.get(&(src, dst)).unwrap()
     }
 
     pub fn get_nodes_number(&self) -> usize {
@@ -202,7 +213,7 @@ impl Graph {
             transition
                 .par_iter_mut()
                 .zip(destinations.par_iter())
-                .filter(|&(_, ndst)| (src != *ndst || dst == *ndst) && !self.unique_edges.contains(&(*ndst, src)))
+                .filter(|&(_, ndst)| (src != *ndst || dst == *ndst) && !self.unique_edges.contains_key(&(*ndst, src)))
                 .for_each(|(transition_value, _)| *transition_value *= explore_weight);
         }
 

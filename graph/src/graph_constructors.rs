@@ -1,6 +1,6 @@
 use super::*;
 use log::info;
-use std::collections::{HashMap, HashSet};
+use std::collections::{HashMap};
 use std::iter::FromIterator;
 use rayon::prelude::*;
 
@@ -104,8 +104,12 @@ impl Graph {
         let nodes_number = nodes_reverse_mapping.len();
 
         info!("Computing unique edges.");
-        let unique_edges: HashSet<(NodeT, NodeT)> =
-            HashSet::from_iter(sources.iter().cloned().zip(destinations.iter().cloned()));
+        let unique_edges: HashMap<(NodeT, NodeT), EdgeT> =
+            HashMap::from_iter(
+                sources.iter().cloned().zip(
+                    destinations.iter().cloned()
+                ).enumerate().map(|(i, (src, dst))| ((src, dst), i))
+            );
             
         info!("Computing sorting of given edges based on sources.");
         let mut pairs: Vec<(usize, &NodeT)> = sources.par_iter().enumerate().collect();

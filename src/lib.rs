@@ -1,4 +1,4 @@
-use graph::{Graph, NodeT, ParamsT, WeightT, NodeTypeT};
+use graph::{Graph, NodeT, ParamsT, WeightT, NodeTypeT, EdgeT, EdgeTypeT};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 
@@ -93,7 +93,7 @@ impl EnsmallenGraph {
         }
     }
 
-    #[text_signature = "(iterations, length, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
+    #[text_signature = "(node_id)"]
     /// Return random walks done on the graph using Rust.
     /// 
     /// Parameters
@@ -106,6 +106,36 @@ impl EnsmallenGraph {
     /// Return the id of the node type of the node.
     fn get_node_type_id(&self, node_id: NodeT)->NodeTypeT{
         self.graph.get_node_type_id(node_id)
+    }
+
+    #[text_signature = "(edge_id)"]
+    /// Return random walks done on the graph using Rust.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// edge_id: int,
+    ///     Numeric ID of the edge.
+    /// 
+    /// Returns
+    /// ---------------------
+    /// Return the id of the edge type of the edge.
+    fn get_edge_type_id(&self, edge_id: EdgeT)->EdgeTypeT{
+        self.graph.get_edge_type_id(edge_id)
+    }
+
+    #[text_signature = "(src, dst)"]
+    /// Return random walks done on the graph using Rust.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// edge_id: int,
+    ///     Numeric ID of the edge.
+    /// 
+    /// Returns
+    /// ---------------------
+    /// Return the id of the edge type of the edge.
+    fn get_edge_id(&self, src: NodeT, dst:NodeT)->EdgeT{
+        self.graph.get_edge_id(src, dst)
     }
 
     #[text_signature = "(iterations, length, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
