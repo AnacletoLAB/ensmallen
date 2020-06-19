@@ -7,21 +7,17 @@ import json
 
 start = time()
 graph = EnsmallenGraph(
-    edge_path="../graph/entity_cooccurrence_edges_UNIQUE.tsv",
+    edge_path="../graph/new_monarch_edges.tsv",
     sources_column="subject",
     destinations_column="object",
     directed=True,
     edge_types_column="edge_label",
-    node_path="../graph/entity_cooccurrence_nodes_UNIQUE.tsv",
-    nodes_column="id",
-    node_types_column="category",
     default_edge_type='biolink:interacts_with',
-    default_node_type='biolink:NamedThing'
 )
 completed_graph = time() - start
 start_walk = time()
 graph.walk(
-    iterations=10,
+    iterations=1,
     length=80,
     min_length=0,
     return_weight=1,
