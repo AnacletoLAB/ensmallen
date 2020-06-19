@@ -287,4 +287,4 @@ def test_change_edge_type_weight_behaviour_hpo():
     correlation, p_value = pearsonr(
         change_edge_type_weights, mean_changes_counts)
     print("HPO change_edge_type_weight", correlation, p_value)
-    #assert p_value < 0.01 and correlation > 0.8
+    assert p_value < 0.01 and correlation > 0.9
