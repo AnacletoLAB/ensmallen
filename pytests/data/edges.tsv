@@ -355,238 +355,238 @@ http://purl.obolibrary.org/obo/HP_0003521	http://purl.obolibrary.org/obo/HP_0003
 http://purl.obolibrary.org/obo/HP_0001204	http://purl.obolibrary.org/obo/HP_0009700	rdfs:subClassOf	
 http://purl.obolibrary.org/obo/HP_0001204	http://purl.obolibrary.org/obo/HP_0009832	rdfs:subClassOf	
 http://purl.obolibrary.org/obo/HP_0001204	http://purl.obolibrary.org/obo/HP_0009773	rdfs:subClassOf	
-http://purl.obolibrary.org/obo/HP_0001204	http://purl.obolibrary.org/obo/HP_0100263	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009700	http://purl.obolibrary.org/obo/HP_0004278	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009700	http://purl.obolibrary.org/obo/HP_0100262	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0200012	http://purl.obolibrary.org/obo/HP_0200011	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0200011	http://purl.obolibrary.org/obo/HP_0001273	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0030283	http://purl.obolibrary.org/obo/HP_0007375	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0007375	http://purl.obolibrary.org/obo/HP_0002060	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012883	http://purl.obolibrary.org/obo/HP_0011027	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0011027	http://purl.obolibrary.org/obo/HP_0000008	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002017	http://purl.obolibrary.org/obo/HP_0011458	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0011458	http://purl.obolibrary.org/obo/HP_0025032	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0032697	http://purl.obolibrary.org/obo/HP_0032680	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003842	http://purl.obolibrary.org/obo/HP_0003839	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003842	http://purl.obolibrary.org/obo/HP_0010582	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009630	http://purl.obolibrary.org/obo/HP_0009618	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009630	http://purl.obolibrary.org/obo/HP_0009844	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009630	http://purl.obolibrary.org/obo/HP_0009852	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009630	http://purl.obolibrary.org/obo/HP_0011304	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100834	http://purl.obolibrary.org/obo/HP_0007378	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100834	http://purl.obolibrary.org/obo/HP_0002250	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0007378	http://purl.obolibrary.org/obo/HP_0011793	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0007378	http://purl.obolibrary.org/obo/HP_0011024	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100880	http://purl.obolibrary.org/obo/HP_0012210	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012210	http://purl.obolibrary.org/obo/HP_0000077	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0410372	http://purl.obolibrary.org/obo/HP_0012358	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012358	http://purl.obolibrary.org/obo/HP_0012346	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003893	http://purl.obolibrary.org/obo/HP_0010656	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003893	http://purl.obolibrary.org/obo/HP_0003891	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010656	http://purl.obolibrary.org/obo/HP_0003336	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009898	http://purl.obolibrary.org/obo/HP_0009895	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009895	http://purl.obolibrary.org/obo/HP_0011039	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009895	http://purl.obolibrary.org/obo/HP_3000022	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0410019	http://purl.obolibrary.org/obo/HP_0012531	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012531	http://purl.obolibrary.org/obo/HP_0025142	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0032126	http://purl.obolibrary.org/obo/HP_0032124	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0032124	http://purl.obolibrary.org/obo/HP_0030373	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003840	http://purl.obolibrary.org/obo/HP_0003839	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003840	http://purl.obolibrary.org/obo/HP_0002663	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009200	http://purl.obolibrary.org/obo/HP_0009153	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009200	http://purl.obolibrary.org/obo/HP_0009389	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009200	http://purl.obolibrary.org/obo/HP_0010275	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009153	http://purl.obolibrary.org/obo/HP_0009150	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009153	http://purl.obolibrary.org/obo/HP_0009152	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009153	http://purl.obolibrary.org/obo/HP_0010245	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002048	http://purl.obolibrary.org/obo/HP_0012585	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002048	http://purl.obolibrary.org/obo/HP_0011035	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012585	http://purl.obolibrary.org/obo/HP_0012210	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031004	http://purl.obolibrary.org/obo/HP_0001284	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0001284	http://purl.obolibrary.org/obo/HP_0001315	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0032696	http://purl.obolibrary.org/obo/HP_0032680	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0410070	http://purl.obolibrary.org/obo/HP_0031979	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031979	http://purl.obolibrary.org/obo/HP_0003110	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012627	http://purl.obolibrary.org/obo/HP_0004328	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0500226	http://purl.obolibrary.org/obo/HP_0500225	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0500225	http://purl.obolibrary.org/obo/HP_0500184	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002607	http://purl.obolibrary.org/obo/HP_0031064	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002607	http://purl.obolibrary.org/obo/HP_0012700	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031064	http://purl.obolibrary.org/obo/HP_0031058	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002445	http://purl.obolibrary.org/obo/HP_0030182	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0030182	http://purl.obolibrary.org/obo/HP_0010549	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0008114	http://purl.obolibrary.org/obo/HP_0001832	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0008114	http://purl.obolibrary.org/obo/HP_0100925	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0008114	http://purl.obolibrary.org/obo/HP_0000940	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0001832	http://purl.obolibrary.org/obo/HP_0001760	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0001832	http://purl.obolibrary.org/obo/HP_0040069	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0007642	http://purl.obolibrary.org/obo/HP_0000662	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0007642	http://purl.obolibrary.org/obo/HP_0000556	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0000662	http://purl.obolibrary.org/obo/HP_0000504	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0032483	http://purl.obolibrary.org/obo/HP_0001939	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0001939	http://purl.obolibrary.org/obo/HP_0000118	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003637	http://purl.obolibrary.org/obo/HP_0012379	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0025410	http://purl.obolibrary.org/obo/HP_0025408	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0025410	http://purl.obolibrary.org/obo/HP_0000812	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0025408	http://purl.obolibrary.org/obo/HP_0001743	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010334	http://purl.obolibrary.org/obo/HP_0010112	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010334	http://purl.obolibrary.org/obo/HP_0010320	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010112	http://purl.obolibrary.org/obo/HP_0100260	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010112	http://purl.obolibrary.org/obo/HP_0001829	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009760	http://purl.obolibrary.org/obo/HP_0001059	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0001059	http://purl.obolibrary.org/obo/HP_0001367	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0001059	http://purl.obolibrary.org/obo/HP_0011356	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010323	http://purl.obolibrary.org/obo/HP_0010160	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010323	http://purl.obolibrary.org/obo/HP_0010319	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009328	http://purl.obolibrary.org/obo/HP_0009334	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009328	http://purl.obolibrary.org/obo/HP_0009417	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009328	http://purl.obolibrary.org/obo/HP_0010264	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0000114	http://purl.obolibrary.org/obo/HP_0000124	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0000124	http://purl.obolibrary.org/obo/HP_0012211	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0011641	http://purl.obolibrary.org/obo/HP_0011686	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0011686	http://purl.obolibrary.org/obo/HP_0006704	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100482	http://purl.obolibrary.org/obo/HP_0010366	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100482	http://purl.obolibrary.org/obo/HP_0100237	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100482	http://purl.obolibrary.org/obo/HP_0100472	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100482	http://purl.obolibrary.org/obo/HP_0100475	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010366	http://purl.obolibrary.org/obo/HP_0010330	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010366	http://purl.obolibrary.org/obo/HP_0010180	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0005332	http://purl.obolibrary.org/obo/HP_0032153	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0005332	http://purl.obolibrary.org/obo/HP_0000277	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0032153	http://purl.obolibrary.org/obo/HP_0001367	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0032583	http://purl.obolibrary.org/obo/HP_0000095	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0000095	http://purl.obolibrary.org/obo/HP_0012575	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0000095	http://purl.obolibrary.org/obo/HP_0031263	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100601	http://purl.obolibrary.org/obo/HP_0100603	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100603	http://purl.obolibrary.org/obo/HP_0002686	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0006778	http://purl.obolibrary.org/obo/HP_0007379	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0007379	http://purl.obolibrary.org/obo/HP_0000119	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0007379	http://purl.obolibrary.org/obo/HP_0011793	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0032671	http://purl.obolibrary.org/obo/HP_0031475	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031475	http://purl.obolibrary.org/obo/HP_0002133	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0011536	http://purl.obolibrary.org/obo/HP_0031855	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0011536	http://purl.obolibrary.org/obo/HP_0011535	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031855	http://purl.obolibrary.org/obo/HP_0031853	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0000264	http://purl.obolibrary.org/obo/HP_0000929	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0011653	http://purl.obolibrary.org/obo/HP_0001719	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0040330	http://purl.obolibrary.org/obo/HP_0030890	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0040330	http://purl.obolibrary.org/obo/HP_0007204	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0030890	http://purl.obolibrary.org/obo/HP_0002500	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0025239	http://purl.obolibrary.org/obo/HP_0025240	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0025240	http://purl.obolibrary.org/obo/HP_0031803	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002717	http://purl.obolibrary.org/obo/HP_0011733	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0011733	http://purl.obolibrary.org/obo/HP_0000834	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0032430	http://purl.obolibrary.org/obo/HP_0032426	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0001804	http://purl.obolibrary.org/obo/HP_0001792	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0001804	http://purl.obolibrary.org/obo/HP_0001231	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0001792	http://purl.obolibrary.org/obo/HP_0008386	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009175	http://purl.obolibrary.org/obo/HP_0100907	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009175	http://purl.obolibrary.org/obo/HP_0009848	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009175	http://purl.obolibrary.org/obo/HP_0009377	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009175	http://purl.obolibrary.org/obo/HP_0004219	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100907	http://purl.obolibrary.org/obo/HP_0100921	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100907	http://purl.obolibrary.org/obo/HP_0100916	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031497	http://purl.obolibrary.org/obo/HP_0031495	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003836	http://purl.obolibrary.org/obo/HP_0003043	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003043	http://purl.obolibrary.org/obo/HP_0011844	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003043	http://purl.obolibrary.org/obo/HP_0000765	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012185	http://purl.obolibrary.org/obo/HP_0012181	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012181	http://purl.obolibrary.org/obo/HP_0009830	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0008591	http://purl.obolibrary.org/obo/HP_0000405	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0000405	http://purl.obolibrary.org/obo/HP_0011452	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0000405	http://purl.obolibrary.org/obo/HP_0000365	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002984	http://purl.obolibrary.org/obo/HP_0006501	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002984	http://purl.obolibrary.org/obo/HP_0009821	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002984	http://purl.obolibrary.org/obo/HP_0045009	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0006501	http://purl.obolibrary.org/obo/HP_0002818	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0006501	http://purl.obolibrary.org/obo/HP_0006503	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012096	http://purl.obolibrary.org/obo/HP_0010576	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010576	http://purl.obolibrary.org/obo/HP_0030724	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0030802	http://purl.obolibrary.org/obo/HP_0500043	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0500043	http://purl.obolibrary.org/obo/HP_0000492	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0032728	http://purl.obolibrary.org/obo/HP_0020220	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0032728	http://purl.obolibrary.org/obo/HP_0032712	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0020220	http://purl.obolibrary.org/obo/HP_0011153	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0020220	http://purl.obolibrary.org/obo/HP_0010819	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009633	http://purl.obolibrary.org/obo/HP_0009618	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009633	http://purl.obolibrary.org/obo/HP_0009654	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009633	http://purl.obolibrary.org/obo/HP_0009847	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0011654	http://purl.obolibrary.org/obo/HP_0001719	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100833	http://purl.obolibrary.org/obo/HP_0007378	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012226	http://purl.obolibrary.org/obo/HP_0009792	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012226	http://purl.obolibrary.org/obo/HP_0100615	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009792	http://purl.obolibrary.org/obo/HP_0100728	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009792	http://purl.obolibrary.org/obo/HP_0002898	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003978	http://purl.obolibrary.org/obo/HP_0003084	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003978	http://purl.obolibrary.org/obo/HP_0003961	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003978	http://purl.obolibrary.org/obo/HP_0045009	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003084	http://purl.obolibrary.org/obo/HP_0002757	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0003084	http://purl.obolibrary.org/obo/HP_0011314	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002194	http://purl.obolibrary.org/obo/HP_0001270	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0001270	http://purl.obolibrary.org/obo/HP_0012758	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002863	http://purl.obolibrary.org/obo/HP_0004377	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0004377	http://purl.obolibrary.org/obo/HP_0001871	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0004377	http://purl.obolibrary.org/obo/HP_0011793	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0025107	http://purl.obolibrary.org/obo/HP_0025104	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002733	http://purl.obolibrary.org/obo/HP_0100763	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100763	http://purl.obolibrary.org/obo/HP_0002597	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100763	http://purl.obolibrary.org/obo/HP_0002715	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031364	http://purl.obolibrary.org/obo/HP_0031365	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031365	http://purl.obolibrary.org/obo/HP_0000979	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0002014	http://purl.obolibrary.org/obo/HP_0011458	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009771	http://purl.obolibrary.org/obo/HP_0009699	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009771	http://purl.obolibrary.org/obo/HP_0005918	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009699	http://purl.obolibrary.org/obo/HP_0001155	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009699	http://purl.obolibrary.org/obo/HP_0045039	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100464	http://purl.obolibrary.org/obo/HP_0100932	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100464	http://purl.obolibrary.org/obo/HP_0010364	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100464	http://purl.obolibrary.org/obo/HP_0010208	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100932	http://purl.obolibrary.org/obo/HP_0100927	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100932	http://purl.obolibrary.org/obo/HP_0100946	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012373	http://purl.obolibrary.org/obo/HP_0000478	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009576	http://purl.obolibrary.org/obo/HP_0010239	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009576	http://purl.obolibrary.org/obo/HP_0009568	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009576	http://purl.obolibrary.org/obo/HP_0009535	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010239	http://purl.obolibrary.org/obo/HP_0009380	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010239	http://purl.obolibrary.org/obo/HP_0009802	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010239	http://purl.obolibrary.org/obo/HP_0009843	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0030373	http://purl.obolibrary.org/obo/HP_0025539	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100532	http://purl.obolibrary.org/obo/HP_0000591	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100532	http://purl.obolibrary.org/obo/HP_0100533	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012884	http://purl.obolibrary.org/obo/HP_0011027	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031226	http://purl.obolibrary.org/obo/HP_0012210	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009555	http://purl.obolibrary.org/obo/HP_0000600	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0000600	http://purl.obolibrary.org/obo/HP_0000234	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0500073	http://purl.obolibrary.org/obo/HP_0000496	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031156	http://purl.obolibrary.org/obo/HP_0011878	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0011878	http://purl.obolibrary.org/obo/HP_0011869	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0030440	http://purl.obolibrary.org/obo/HP_0004378	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0004378	http://purl.obolibrary.org/obo/HP_0012732	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031108	http://purl.obolibrary.org/obo/HP_0008997	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0008997	http://purl.obolibrary.org/obo/HP_0003701	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0008997	http://purl.obolibrary.org/obo/HP_0003484	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0008997	http://purl.obolibrary.org/obo/HP_0001446	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0005343	http://purl.obolibrary.org/obo/HP_0010476	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0010476	http://purl.obolibrary.org/obo/HP_0025487	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0006321	http://purl.obolibrary.org/obo/HP_0000696	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0000696	http://purl.obolibrary.org/obo/HP_0000684	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0006509	http://purl.obolibrary.org/obo/HP_0002778	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0410222	http://purl.obolibrary.org/obo/HP_0410227	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0040164	http://purl.obolibrary.org/obo/HP_0012032	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0040164	http://purl.obolibrary.org/obo/HP_0000492	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0012032	http://purl.obolibrary.org/obo/HP_0012031	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0030828	http://purl.obolibrary.org/obo/HP_0030829	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0030829	http://purl.obolibrary.org/obo/HP_0002795	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0030354	http://purl.obolibrary.org/obo/HP_0011112	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0011112	http://purl.obolibrary.org/obo/HP_0011111	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009425	http://purl.obolibrary.org/obo/HP_0100901	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009425	http://purl.obolibrary.org/obo/HP_0009840	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009425	http://purl.obolibrary.org/obo/HP_0009357	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0009425	http://purl.obolibrary.org/obo/HP_0009444	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100901	http://purl.obolibrary.org/obo/HP_0100919	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0100901	http://purl.obolibrary.org/obo/HP_0100915	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031232	http://purl.obolibrary.org/obo/HP_0031228	rdfs:subClassOf	biolink:subclass_of
-http://purl.obolibrary.org/obo/HP_0031228	http://purl.obolibrary.org/obo/HP_0011039	rdfs:subClassOf	biolink:subclass_of
+http://purl.obolibrary.org/obo/HP_0001204	http://purl.obolibrary.org/obo/HP_0100263	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009700	http://purl.obolibrary.org/obo/HP_0004278	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009700	http://purl.obolibrary.org/obo/HP_0100262	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0200012	http://purl.obolibrary.org/obo/HP_0200011	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0200011	http://purl.obolibrary.org/obo/HP_0001273	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0030283	http://purl.obolibrary.org/obo/HP_0007375	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0007375	http://purl.obolibrary.org/obo/HP_0002060	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012883	http://purl.obolibrary.org/obo/HP_0011027	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0011027	http://purl.obolibrary.org/obo/HP_0000008	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002017	http://purl.obolibrary.org/obo/HP_0011458	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0011458	http://purl.obolibrary.org/obo/HP_0025032	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0032697	http://purl.obolibrary.org/obo/HP_0032680	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003842	http://purl.obolibrary.org/obo/HP_0003839	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003842	http://purl.obolibrary.org/obo/HP_0010582	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009630	http://purl.obolibrary.org/obo/HP_0009618	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009630	http://purl.obolibrary.org/obo/HP_0009844	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009630	http://purl.obolibrary.org/obo/HP_0009852	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009630	http://purl.obolibrary.org/obo/HP_0011304	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100834	http://purl.obolibrary.org/obo/HP_0007378	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100834	http://purl.obolibrary.org/obo/HP_0002250	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0007378	http://purl.obolibrary.org/obo/HP_0011793	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0007378	http://purl.obolibrary.org/obo/HP_0011024	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100880	http://purl.obolibrary.org/obo/HP_0012210	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012210	http://purl.obolibrary.org/obo/HP_0000077	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0410372	http://purl.obolibrary.org/obo/HP_0012358	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012358	http://purl.obolibrary.org/obo/HP_0012346	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003893	http://purl.obolibrary.org/obo/HP_0010656	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003893	http://purl.obolibrary.org/obo/HP_0003891	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010656	http://purl.obolibrary.org/obo/HP_0003336	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009898	http://purl.obolibrary.org/obo/HP_0009895	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009895	http://purl.obolibrary.org/obo/HP_0011039	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009895	http://purl.obolibrary.org/obo/HP_3000022	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0410019	http://purl.obolibrary.org/obo/HP_0012531	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012531	http://purl.obolibrary.org/obo/HP_0025142	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0032126	http://purl.obolibrary.org/obo/HP_0032124	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0032124	http://purl.obolibrary.org/obo/HP_0030373	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003840	http://purl.obolibrary.org/obo/HP_0003839	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003840	http://purl.obolibrary.org/obo/HP_0002663	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009200	http://purl.obolibrary.org/obo/HP_0009153	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009200	http://purl.obolibrary.org/obo/HP_0009389	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009200	http://purl.obolibrary.org/obo/HP_0010275	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009153	http://purl.obolibrary.org/obo/HP_0009150	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009153	http://purl.obolibrary.org/obo/HP_0009152	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009153	http://purl.obolibrary.org/obo/HP_0010245	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002048	http://purl.obolibrary.org/obo/HP_0012585	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002048	http://purl.obolibrary.org/obo/HP_0011035	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012585	http://purl.obolibrary.org/obo/HP_0012210	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031004	http://purl.obolibrary.org/obo/HP_0001284	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0001284	http://purl.obolibrary.org/obo/HP_0001315	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0032696	http://purl.obolibrary.org/obo/HP_0032680	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0410070	http://purl.obolibrary.org/obo/HP_0031979	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031979	http://purl.obolibrary.org/obo/HP_0003110	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012627	http://purl.obolibrary.org/obo/HP_0004328	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0500226	http://purl.obolibrary.org/obo/HP_0500225	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0500225	http://purl.obolibrary.org/obo/HP_0500184	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002607	http://purl.obolibrary.org/obo/HP_0031064	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002607	http://purl.obolibrary.org/obo/HP_0012700	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031064	http://purl.obolibrary.org/obo/HP_0031058	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002445	http://purl.obolibrary.org/obo/HP_0030182	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0030182	http://purl.obolibrary.org/obo/HP_0010549	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0008114	http://purl.obolibrary.org/obo/HP_0001832	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0008114	http://purl.obolibrary.org/obo/HP_0100925	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0008114	http://purl.obolibrary.org/obo/HP_0000940	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0001832	http://purl.obolibrary.org/obo/HP_0001760	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0001832	http://purl.obolibrary.org/obo/HP_0040069	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0007642	http://purl.obolibrary.org/obo/HP_0000662	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0007642	http://purl.obolibrary.org/obo/HP_0000556	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0000662	http://purl.obolibrary.org/obo/HP_0000504	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0032483	http://purl.obolibrary.org/obo/HP_0001939	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0001939	http://purl.obolibrary.org/obo/HP_0000118	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003637	http://purl.obolibrary.org/obo/HP_0012379	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0025410	http://purl.obolibrary.org/obo/HP_0025408	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0025410	http://purl.obolibrary.org/obo/HP_0000812	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0025408	http://purl.obolibrary.org/obo/HP_0001743	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010334	http://purl.obolibrary.org/obo/HP_0010112	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010334	http://purl.obolibrary.org/obo/HP_0010320	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010112	http://purl.obolibrary.org/obo/HP_0100260	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010112	http://purl.obolibrary.org/obo/HP_0001829	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009760	http://purl.obolibrary.org/obo/HP_0001059	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0001059	http://purl.obolibrary.org/obo/HP_0001367	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0001059	http://purl.obolibrary.org/obo/HP_0011356	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010323	http://purl.obolibrary.org/obo/HP_0010160	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010323	http://purl.obolibrary.org/obo/HP_0010319	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009328	http://purl.obolibrary.org/obo/HP_0009334	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009328	http://purl.obolibrary.org/obo/HP_0009417	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009328	http://purl.obolibrary.org/obo/HP_0010264	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0000114	http://purl.obolibrary.org/obo/HP_0000124	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0000124	http://purl.obolibrary.org/obo/HP_0012211	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0011641	http://purl.obolibrary.org/obo/HP_0011686	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0011686	http://purl.obolibrary.org/obo/HP_0006704	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100482	http://purl.obolibrary.org/obo/HP_0010366	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100482	http://purl.obolibrary.org/obo/HP_0100237	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100482	http://purl.obolibrary.org/obo/HP_0100472	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100482	http://purl.obolibrary.org/obo/HP_0100475	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010366	http://purl.obolibrary.org/obo/HP_0010330	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010366	http://purl.obolibrary.org/obo/HP_0010180	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0005332	http://purl.obolibrary.org/obo/HP_0032153	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0005332	http://purl.obolibrary.org/obo/HP_0000277	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0032153	http://purl.obolibrary.org/obo/HP_0001367	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0032583	http://purl.obolibrary.org/obo/HP_0000095	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0000095	http://purl.obolibrary.org/obo/HP_0012575	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0000095	http://purl.obolibrary.org/obo/HP_0031263	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100601	http://purl.obolibrary.org/obo/HP_0100603	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100603	http://purl.obolibrary.org/obo/HP_0002686	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0006778	http://purl.obolibrary.org/obo/HP_0007379	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0007379	http://purl.obolibrary.org/obo/HP_0000119	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0007379	http://purl.obolibrary.org/obo/HP_0011793	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0032671	http://purl.obolibrary.org/obo/HP_0031475	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031475	http://purl.obolibrary.org/obo/HP_0002133	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0011536	http://purl.obolibrary.org/obo/HP_0031855	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0011536	http://purl.obolibrary.org/obo/HP_0011535	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031855	http://purl.obolibrary.org/obo/HP_0031853	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0000264	http://purl.obolibrary.org/obo/HP_0000929	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0011653	http://purl.obolibrary.org/obo/HP_0001719	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0040330	http://purl.obolibrary.org/obo/HP_0030890	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0040330	http://purl.obolibrary.org/obo/HP_0007204	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0030890	http://purl.obolibrary.org/obo/HP_0002500	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0025239	http://purl.obolibrary.org/obo/HP_0025240	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0025240	http://purl.obolibrary.org/obo/HP_0031803	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002717	http://purl.obolibrary.org/obo/HP_0011733	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0011733	http://purl.obolibrary.org/obo/HP_0000834	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0032430	http://purl.obolibrary.org/obo/HP_0032426	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0001804	http://purl.obolibrary.org/obo/HP_0001792	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0001804	http://purl.obolibrary.org/obo/HP_0001231	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0001792	http://purl.obolibrary.org/obo/HP_0008386	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009175	http://purl.obolibrary.org/obo/HP_0100907	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009175	http://purl.obolibrary.org/obo/HP_0009848	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009175	http://purl.obolibrary.org/obo/HP_0009377	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009175	http://purl.obolibrary.org/obo/HP_0004219	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100907	http://purl.obolibrary.org/obo/HP_0100921	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100907	http://purl.obolibrary.org/obo/HP_0100916	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031497	http://purl.obolibrary.org/obo/HP_0031495	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003836	http://purl.obolibrary.org/obo/HP_0003043	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003043	http://purl.obolibrary.org/obo/HP_0011844	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003043	http://purl.obolibrary.org/obo/HP_0000765	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012185	http://purl.obolibrary.org/obo/HP_0012181	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012181	http://purl.obolibrary.org/obo/HP_0009830	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0008591	http://purl.obolibrary.org/obo/HP_0000405	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0000405	http://purl.obolibrary.org/obo/HP_0011452	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0000405	http://purl.obolibrary.org/obo/HP_0000365	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002984	http://purl.obolibrary.org/obo/HP_0006501	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002984	http://purl.obolibrary.org/obo/HP_0009821	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002984	http://purl.obolibrary.org/obo/HP_0045009	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0006501	http://purl.obolibrary.org/obo/HP_0002818	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0006501	http://purl.obolibrary.org/obo/HP_0006503	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012096	http://purl.obolibrary.org/obo/HP_0010576	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010576	http://purl.obolibrary.org/obo/HP_0030724	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0030802	http://purl.obolibrary.org/obo/HP_0500043	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0500043	http://purl.obolibrary.org/obo/HP_0000492	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0032728	http://purl.obolibrary.org/obo/HP_0020220	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0032728	http://purl.obolibrary.org/obo/HP_0032712	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0020220	http://purl.obolibrary.org/obo/HP_0011153	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0020220	http://purl.obolibrary.org/obo/HP_0010819	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009633	http://purl.obolibrary.org/obo/HP_0009618	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009633	http://purl.obolibrary.org/obo/HP_0009654	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009633	http://purl.obolibrary.org/obo/HP_0009847	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0011654	http://purl.obolibrary.org/obo/HP_0001719	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100833	http://purl.obolibrary.org/obo/HP_0007378	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012226	http://purl.obolibrary.org/obo/HP_0009792	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012226	http://purl.obolibrary.org/obo/HP_0100615	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009792	http://purl.obolibrary.org/obo/HP_0100728	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009792	http://purl.obolibrary.org/obo/HP_0002898	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003978	http://purl.obolibrary.org/obo/HP_0003084	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003978	http://purl.obolibrary.org/obo/HP_0003961	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003978	http://purl.obolibrary.org/obo/HP_0045009	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003084	http://purl.obolibrary.org/obo/HP_0002757	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0003084	http://purl.obolibrary.org/obo/HP_0011314	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002194	http://purl.obolibrary.org/obo/HP_0001270	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0001270	http://purl.obolibrary.org/obo/HP_0012758	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002863	http://purl.obolibrary.org/obo/HP_0004377	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0004377	http://purl.obolibrary.org/obo/HP_0001871	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0004377	http://purl.obolibrary.org/obo/HP_0011793	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0025107	http://purl.obolibrary.org/obo/HP_0025104	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002733	http://purl.obolibrary.org/obo/HP_0100763	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100763	http://purl.obolibrary.org/obo/HP_0002597	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100763	http://purl.obolibrary.org/obo/HP_0002715	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031364	http://purl.obolibrary.org/obo/HP_0031365	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031365	http://purl.obolibrary.org/obo/HP_0000979	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0002014	http://purl.obolibrary.org/obo/HP_0011458	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009771	http://purl.obolibrary.org/obo/HP_0009699	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009771	http://purl.obolibrary.org/obo/HP_0005918	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009699	http://purl.obolibrary.org/obo/HP_0001155	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009699	http://purl.obolibrary.org/obo/HP_0045039	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100464	http://purl.obolibrary.org/obo/HP_0100932	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100464	http://purl.obolibrary.org/obo/HP_0010364	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100464	http://purl.obolibrary.org/obo/HP_0010208	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100932	http://purl.obolibrary.org/obo/HP_0100927	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100932	http://purl.obolibrary.org/obo/HP_0100946	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012373	http://purl.obolibrary.org/obo/HP_0000478	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009576	http://purl.obolibrary.org/obo/HP_0010239	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009576	http://purl.obolibrary.org/obo/HP_0009568	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009576	http://purl.obolibrary.org/obo/HP_0009535	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010239	http://purl.obolibrary.org/obo/HP_0009380	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010239	http://purl.obolibrary.org/obo/HP_0009802	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010239	http://purl.obolibrary.org/obo/HP_0009843	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0030373	http://purl.obolibrary.org/obo/HP_0025539	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100532	http://purl.obolibrary.org/obo/HP_0000591	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100532	http://purl.obolibrary.org/obo/HP_0100533	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012884	http://purl.obolibrary.org/obo/HP_0011027	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031226	http://purl.obolibrary.org/obo/HP_0012210	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009555	http://purl.obolibrary.org/obo/HP_0000600	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0000600	http://purl.obolibrary.org/obo/HP_0000234	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0500073	http://purl.obolibrary.org/obo/HP_0000496	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031156	http://purl.obolibrary.org/obo/HP_0011878	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0011878	http://purl.obolibrary.org/obo/HP_0011869	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0030440	http://purl.obolibrary.org/obo/HP_0004378	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0004378	http://purl.obolibrary.org/obo/HP_0012732	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031108	http://purl.obolibrary.org/obo/HP_0008997	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0008997	http://purl.obolibrary.org/obo/HP_0003701	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0008997	http://purl.obolibrary.org/obo/HP_0003484	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0008997	http://purl.obolibrary.org/obo/HP_0001446	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0005343	http://purl.obolibrary.org/obo/HP_0010476	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0010476	http://purl.obolibrary.org/obo/HP_0025487	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0006321	http://purl.obolibrary.org/obo/HP_0000696	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0000696	http://purl.obolibrary.org/obo/HP_0000684	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0006509	http://purl.obolibrary.org/obo/HP_0002778	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0410222	http://purl.obolibrary.org/obo/HP_0410227	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0040164	http://purl.obolibrary.org/obo/HP_0012032	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0040164	http://purl.obolibrary.org/obo/HP_0000492	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0012032	http://purl.obolibrary.org/obo/HP_0012031	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0030828	http://purl.obolibrary.org/obo/HP_0030829	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0030829	http://purl.obolibrary.org/obo/HP_0002795	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0030354	http://purl.obolibrary.org/obo/HP_0011112	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0011112	http://purl.obolibrary.org/obo/HP_0011111	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009425	http://purl.obolibrary.org/obo/HP_0100901	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009425	http://purl.obolibrary.org/obo/HP_0009840	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009425	http://purl.obolibrary.org/obo/HP_0009357	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0009425	http://purl.obolibrary.org/obo/HP_0009444	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100901	http://purl.obolibrary.org/obo/HP_0100919	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0100901	http://purl.obolibrary.org/obo/HP_0100915	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031232	http://purl.obolibrary.org/obo/HP_0031228	rdfs:subClassOf	
+http://purl.obolibrary.org/obo/HP_0031228	http://purl.obolibrary.org/obo/HP_0011039	rdfs:subClassOf	
 http://purl.obolibrary.org/obo/HP_0032695	http://purl.obolibrary.org/obo/HP_0032680	rdfs:subClassOf	biolink:subclass_of
 http://purl.obolibrary.org/obo/HP_0032258	http://purl.obolibrary.org/obo/HP_0032256	rdfs:subClassOf	biolink:subclass_of
 http://purl.obolibrary.org/obo/HP_0032256	http://purl.obolibrary.org/obo/HP_0032255	rdfs:subClassOf	biolink:subclass_of

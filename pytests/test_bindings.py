@@ -229,4 +229,62 @@ def test_change_node_type_weight_behaviour_hpo():
     correlation, p_value = pearsonr(
         change_node_type_weights, mean_changes_counts)
     print("HPO change_node_type_weight", correlation, p_value)
-    #assert p_value < 0.01 and correlation > 0.6
+    assert p_value < 0.01 and correlation > 0.8
+
+
+def test_change_edge_type_weight_behaviour_hpo():
+    """The return weight parameter is the 'exploitation' parameter.
+
+    The higher the return_weight parameter goes, the less exploration should
+    happen in the walk.
+
+    We test here that there is an inverse correlation between the number of
+    different edges present in the walk and the parameter.
+    """
+    graph = EnsmallenGraph(
+        edge_path="./pytests/data/edges.tsv",
+        sources_column="subject",
+        destinations_column="object",
+        directed=False,
+        edge_types_column="edge_label",
+        node_path="./pytests/data/nodes.tsv",
+        nodes_column="id",
+        node_types_column="category",
+        default_edge_type='biolink:interacts_with',
+        default_node_type='biolink:NamedThing'
+    )
+
+    mean_changes_counts = []
+    change_edge_type_weights = np.linspace(0.01, 10, num=100)
+
+    for change_edge_type_weight in tqdm(
+        change_edge_type_weights,
+        desc="Computing walks for different change_edge_type_weights"
+    ):
+        walks = graph.walk(
+            iterations=1,
+            length=100,
+            min_length=0,
+            return_weight=1,
+            explore_weight=1,
+            change_node_type_weight=1,
+            change_edge_type_weight=change_edge_type_weight
+        )
+        edge_changes = []
+        for walk in walks:
+            changes = 0
+            previous_egde_type = -1
+            for src, dst in zip(walk[:-1], walk[1:]):
+                edge_type_id = graph.get_edge_type_id(
+                    graph.get_edge_id(src, dst)
+                )
+                if previous_egde_type != edge_type_id:
+                    changes += 1
+                    previous_egde_type = edge_type_id
+            edge_changes.append(changes/len(walk))
+        mean_changes_counts.append(np.mean(edge_changes))
+
+    correlation, p_value = pearsonr(
+        change_edge_type_weights, mean_changes_counts)
+    print("HPO change_edge_type_weight", correlation, p_value)
+    #assert p_value < 0.01 and correlation > 0.8
