@@ -1,3 +1,4 @@
 maturin
 compress_json
 humanize
+scipy
