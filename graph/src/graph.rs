@@ -146,7 +146,7 @@ impl Graph {
         change_edge_type_weight: ParamsT,
     ) -> (Vec<WeightT>, Vec<NodeT>, EdgeT, EdgeT) {
         // Get the source and destination for current edge.
-        let (src, dst) = (&self.sources[edge], self.destinations[edge]);
+        let (src, dst) = (self.sources[edge], self.destinations[edge]);
 
         // Compute the transition weights relative to the node weights.
         let (mut transition, destinations, min_edge, max_edge) =
@@ -191,7 +191,7 @@ impl Graph {
             transition
                 .par_iter_mut()
                 .zip(destinations.par_iter())
-                .filter(|&(_, ndst)| src == ndst)
+                .filter(|&(_, ndst)| src == *ndst || dst == *ndst)
                 .for_each(|(transition_value, _)| *transition_value *= return_weight);
         }
         //############################################################
@@ -202,7 +202,7 @@ impl Graph {
             transition
                 .par_iter_mut()
                 .zip(destinations.par_iter())
-                .filter(|&(_, ndst)| ndst != src && !self.unique_edges.contains(&(*ndst, *src)))
+                .filter(|&(_, ndst)| (src != *ndst || dst == *ndst) && !self.unique_edges.contains(&(*ndst, src)))
                 .for_each(|(transition_value, _)| *transition_value *= explore_weight);
         }
 

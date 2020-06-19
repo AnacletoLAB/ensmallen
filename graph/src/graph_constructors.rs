@@ -106,7 +106,7 @@ impl Graph {
         info!("Computing unique edges.");
         let unique_edges: HashSet<(NodeT, NodeT)> =
             HashSet::from_iter(sources.iter().cloned().zip(destinations.iter().cloned()));
-
+            
         info!("Computing sorting of given edges based on sources.");
         let mut pairs: Vec<(usize, &NodeT)> = sources.par_iter().enumerate().collect();
         pairs.sort_unstable_by_key(|(_, &v)| v);
