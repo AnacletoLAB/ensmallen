@@ -13,7 +13,10 @@ build_with_docker:
 	sudo docker run -it -v "${PWD}:/build" ensmallen-env
 
 coverage:
-	make -C graph coverage
+	(cd graph && make coverage)
+
+fuzz:
+	(cd graph && make fuzz)
 
 install:
 	pip install --upgrade --user ./target/*.whl

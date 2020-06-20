@@ -14,3 +14,5 @@ coverage:
 	grcov ./target/debug/ -s . -t html --llvm --branch --ignore-not-existing -o ./target/debug/coverage/
 	$(OPEN_COMMAND) ./target/debug/coverage/index.html
 
+fuzz:
+	cargo fuzz run only_edge_file --release
