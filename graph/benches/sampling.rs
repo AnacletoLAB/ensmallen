@@ -13,14 +13,19 @@ pub fn extract_with_scan(weight: &Vec<f64>, rnd_val: f64) -> usize{
     let rnd: f64 = rnd_val * cumulative_sum[cumulative_sum.len() - 1];
 
     // Find the first item which has a weight *higher* than the chosen weight.
-    cumulative_sum.binary_search_by(
+    match cumulative_sum.binary_search_by(
         |w|
             if *w <= rnd { 
                 Ordering::Less 
             } else { 
                 Ordering::Greater 
             }
-        ).unwrap_err()
+        ){
+            Ok(g) => g,
+            Err(g) => {
+                panic!("Sampling error, rnd: {}, index: {}, weights: {:?}", rnd, g, weight);
+            }
+        }
 }
 
 #[inline(always)]
@@ -35,12 +40,17 @@ pub fn extract_with_while(weight: &Vec<f64>, rnd_val: f64) -> usize{
     let rnd: f64 = rnd_val * cumulative_sum[cumulative_sum.len() - 1];
 
     // Find the first item which has a weight *higher* than the chosen weight.
-    cumulative_sum.binary_search_by(
+    match cumulative_sum.binary_search_by(
         |w|
             if *w <= rnd { 
                 Ordering::Less 
             } else { 
                 Ordering::Greater 
             }
-        ).unwrap_err()
+        ) {
+            Ok(g) => g,
+            Err(g) => {
+                panic!("Sampling error, rnd: {}, index: {}, weights: {:?}", rnd, g, weight);
+            }
+        }
 }

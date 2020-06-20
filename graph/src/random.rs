@@ -1,5 +1,6 @@
 use super::types::*;
 use ::core::cmp::Ordering;
+use std::cmp::min;
 
 // global static seed, this could be moved inside a struct
 // WARNING
@@ -49,11 +50,20 @@ pub fn xorshiro256plus() -> f64 {
 
         GLOBAL_SEED[3] = rotl(GLOBAL_SEED[3], 45);
         // method proposed by vigna on http://prng.di.unimi.it/
-        (result >> 11) as f64 * 2.0f64.powf(-53.0)
+        let v: u64 = (result >> 11) | (1023 << 52);
+        let r: f64 = f64::from_le_bytes(v.to_le_bytes());
+        r - 1f64
     }
 }
 
 pub fn sample(weights: &[WeightT]) -> usize {
+    if weights.len() == 0{
+        panic!("Sample weights cannot be empty.");
+    }
+    if weights.len() == 1{
+        return 0;
+    }
+
     let mut cumulative_sum: Vec<f64> = Vec::with_capacity(weights.len());
     let mut total_weight = 0f64;
     for w in weights {
@@ -61,10 +71,11 @@ pub fn sample(weights: &[WeightT]) -> usize {
         cumulative_sum.push(total_weight);
     }
 
-    let rnd: f64 = xorshiro256plus() * cumulative_sum[cumulative_sum.len() - 1];
+    let frnd = xorshiro256plus();
+    let rnd: f64 = frnd * cumulative_sum[cumulative_sum.len() - 1];
 
     // Find the first item which has a weight *higher* than the chosen weight.
-    cumulative_sum
+    match cumulative_sum
         .binary_search_by(|w| {
             if *w <= rnd {
                 Ordering::Less
@@ -72,5 +83,10 @@ pub fn sample(weights: &[WeightT]) -> usize {
                 Ordering::Greater
             }
         })
-        .unwrap_err()
+    {
+        Ok(g) => g,
+        Err(g) => {
+            min(g, weights.len() - 1)
+        }
+    }
 }

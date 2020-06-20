@@ -5,6 +5,7 @@ extern crate graph;
 use std::path::Path;
 use std::fs::File;
 use std::io::prelude::*;
+use std::fs::remove_file;
 
 mod utils;
 use utils::*;
@@ -17,14 +18,15 @@ fuzz_target!(|data: &[u8]| {
 
     // to speedup the fuzzing it might be sensible to mount the /tmp
     // to a ramdisk https://wiki.gentoo.org/wiki/Tmpfs
-    let filename = Path::new("/tmp").join(random_string(64));
+    let fname = Path::new("/tmp").join(random_string(64));
+    let filename = fname.to_str().unwrap();
 
     // Write the fuzzer output to the file
     let mut file = File::create(&filename).unwrap();
     file.write_all(data).unwrap();
 
     let graph = graph::Graph::from_csv(
-        filename.to_str().unwrap(),
+        &filename,
         "subject",
         "object",
         true,
@@ -44,4 +46,6 @@ fuzz_target!(|data: &[u8]| {
     if graph.is_ok(){
         graph.unwrap().walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
     }
+
+    remove_file(&filename);
 });
