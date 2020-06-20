@@ -18,5 +18,8 @@ coverage:
 fuzz:
 	(cd graph && make fuzz)
 
+fuzz_coverage:
+	(cd graph && make fuzz_coverage)
+
 install:
 	pip install --upgrade --user ./target/*.whl
