@@ -8,6 +8,9 @@ pub fn check_consistent_lines(path: &str, sep: &str) -> Result<(), String>{
     let mut expected_length: Option<usize> = None;
 
     for (counter, line) in buf_reader.lines().enumerate() {
+        if line.is_err() {
+            return Err(String::from("The file is empty!"));
+        }
         let current_line = line.unwrap();
         let separators_number = current_line.matches(sep).count();
         if *expected_length.get_or_insert(separators_number) != separators_number {

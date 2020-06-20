@@ -1,0 +1,47 @@
+#![no_main]
+use libfuzzer_sys::fuzz_target;
+extern crate graph;
+
+use std::path::Path;
+use std::fs::File;
+use std::io::prelude::*;
+
+mod utils;
+use utils::*;
+
+fuzz_target!(|data: &[u8]| {
+    // writing to file is REALLY slow but
+    // the from_csv function read the file line by line
+    // and we want coverage on this function
+    // so I don't think there are any workarounds or mocking
+
+    // to speedup the fuzzing it might be sensible to mount the /tmp
+    // to a ramdisk https://wiki.gentoo.org/wiki/Tmpfs
+    let filename = Path::new("/tmp").join(random_string(64));
+
+    // Write the fuzzer output to the file
+    let mut file = File::create(&filename).unwrap();
+    file.write_all(data).unwrap();
+
+    let graph = graph::Graph::from_csv(
+        filename.to_str().unwrap(),
+        "subject",
+        "object",
+        true,
+        None,
+        None,
+        Some("weight"),
+        Some(1.0),
+        None,
+        Some("id"),
+        Some("category"),
+        Some("biolink:NamedThing"),
+        None,
+        None,
+        None,
+    );
+
+    if graph.is_ok(){
+        graph.unwrap().walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
+    }
+});

@@ -11,6 +11,7 @@ cargo-fuzz = true
 
 [dependencies]
 libfuzzer-sys = "0.3"
+rand = "0.7.3"
 
 [dependencies.graph]
 path = ".."
@@ -20,7 +21,7 @@ path = ".."
 members = ["."]
 
 [[bin]]
-name = "fuzz_target_1"
-path = "fuzz_targets/fuzz_target_1.rs"
+name = "only_edge_file"
+path = "fuzz_targets/only_edge_file.rs"
 test = false
 doc = false
