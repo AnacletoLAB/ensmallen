@@ -2,12 +2,14 @@
 extern crate test;
 use test::Bencher;
 
+const NUMBER: u64 = 100000;
+
 mod utils;
 use utils::*;
 
 #[bench]
 fn test_naife_cumulative_sum(b: &mut Bencher) {
-    let random_vec = gen_random_vec();
+    let random_vec = gen_random_vec(NUMBER);
     b.iter(|| {
         let mut cumulative_sum: Vec<f64> = Vec::with_capacity(random_vec.len());
         let mut total_weight = 0f64;
@@ -20,7 +22,7 @@ fn test_naife_cumulative_sum(b: &mut Bencher) {
 
 #[bench]
 fn test_scan_cumulative_sum(b: &mut Bencher) {
-    let random_vec = gen_random_vec();
+    let random_vec = gen_random_vec(NUMBER);
     b.iter(|| {
         let cumulative_sum: Vec<f64> = random_vec
         .iter()

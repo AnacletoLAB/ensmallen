@@ -112,7 +112,7 @@ impl Graph {
             
         info!("Computing sorting of given edges based on sources.");
         let mut pairs: Vec<(usize, &NodeT)> = sources.par_iter().enumerate().collect();
-        pairs.sort_unstable_by_key(|(_, &v)| v);
+        pairs.par_sort_unstable_by_key(|(_, &v)| v);
         let indices: Vec<&usize> = pairs.par_iter().map(|(i, _)| i).collect();
         
         info!("Sorting given sources.");
