@@ -89,7 +89,10 @@ impl Graph {
                             if value.is_empty(){
                                 default_weight.unwrap()
                             } else {
-                                value.parse::<WeightT>().unwrap()
+                                match value.parse::<WeightT>() {
+                                    Ok(g) => Ok(g),
+                                    Err(_) => Err(format!("Cannot parse {} as float", value))
+                                }?
                             }
                         );
                         continue;
