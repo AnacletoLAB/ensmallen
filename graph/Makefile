@@ -18,5 +18,6 @@ fuzz:
 	cargo fuzz run only_edge_file --release
 
 fuzz_coverage:
+	cargo fuzz build only_edge_file 
 	kcov --include-path .,.. ./fuzz/cov ./fuzz/target/x86_64-unknown-linux-gnu/debug/only_edge_file ./fuzz/corpus/only_edge_file/*
 	$(OPEN_COMMAND) ./fuzz/cov/index.html
