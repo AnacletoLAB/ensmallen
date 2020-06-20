@@ -23,7 +23,7 @@ fn test_graph_from_csv_edge_only() {
             None,
             None,
             None
-        );
+        ).unwrap();
         assert_eq!(graph.get_edge_types_number(), 0);
         assert_eq!(graph.get_node_types_number(), 0);
         let lines: usize = count_lines(File::open(path).unwrap()).unwrap();
@@ -57,14 +57,14 @@ fn test_graph_from_csv_edge_types() {
             None,
             None,
             None
-        );
+        ).unwrap();
         let lines: usize = count_lines(File::open(path).unwrap()).unwrap();
         if *directed{
             assert_eq!(lines, graph.get_edges_number());
         }
         assert_eq!(graph.get_edge_types_number(), 3);
         assert_eq!(graph.get_node_types_number(), 0);
-        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
+        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
     }
 }
 
@@ -89,7 +89,7 @@ fn test_walk_wrong_return_weights_parameter() {
         None,
         None,
         None
-    ).walk(10, 10, Some(0), Some(0.0), Some(2.0), Some(3.0), Some(4.0));
+    ).unwrap().walk(10, 10, Some(0), Some(0.0), Some(2.0), Some(3.0), Some(4.0)).unwrap();
 }
 
 #[test]
@@ -112,7 +112,8 @@ fn test_walk_wrong_explore_weight_parameter() {
         None,
         None,
         None
-    ).walk(10, 10, Some(0), Some(1.0), Some(0.0), Some(3.0), Some(4.0));
+    ).unwrap()
+    .walk(10, 10, Some(0), Some(1.0), Some(0.0), Some(3.0), Some(4.0)).unwrap();
 }
 
 #[test]
@@ -135,7 +136,8 @@ fn test_walk_wrong_change_node_type_weight_parameter() {
         None,
         None,
         None
-    ).walk(10, 10, Some(0), Some(1.0), Some(1.0), Some(0.0), Some(4.0));
+    ).unwrap()
+    .walk(10, 10, Some(0), Some(1.0), Some(1.0), Some(0.0), Some(4.0)).unwrap();
 }
 
 #[test]
@@ -158,7 +160,8 @@ fn test_walk_wrong_change_edge_type_weight_parameter() {
         None,
         None,
         None
-    ).walk(10, 10, Some(0), Some(1.0), Some(1.0), Some(1.0), Some(0.0));
+    ).unwrap()
+    .walk(10, 10, Some(0), Some(1.0), Some(1.0), Some(1.0), Some(0.0)).unwrap();
 }
 
 #[test]
@@ -181,7 +184,7 @@ fn test_graph_from_csv_weights_panic() {
         None,
         None,
         None
-    );
+    ).unwrap();
 }
 
 #[test]
@@ -204,7 +207,7 @@ fn test_graph_from_csv_duplicated_edges_panic() {
         None,
         None,
         None
-    );
+    ).unwrap();
 }
 
 #[test]
@@ -227,7 +230,7 @@ fn test_graph_from_csv_duplicated_edges_without_label_panic() {
         None,
         None,
         None
-    );
+    ).unwrap();
 }
 
 #[test]
@@ -251,7 +254,7 @@ fn test_graph_from_csv_duplicated_nodes_panic() {
         None,
         None,
         None,
-    );
+    ).unwrap();
 }
 
 #[test]
@@ -275,7 +278,7 @@ fn test_graph_from_csv_no_nodes_column_panic() {
         None,
         None,
         None
-    );
+    ).unwrap();
 }
 
 
@@ -300,7 +303,7 @@ fn test_graph_from_csv_no_node_types_column_panic() {
         None,
         None,
         None
-    );
+    ).unwrap();
 }
 
 
@@ -325,7 +328,7 @@ fn test_graph_from_csv_no_default_node_types_panic() {
         None,
         None,
         None
-    );
+    ).unwrap();
 }
 
 
@@ -351,7 +354,7 @@ fn test_graph_from_csv_weird_edge_nodes() {
         None,
         None,
         None
-    );
+    ).unwrap();
 }
 
 #[test]
@@ -375,14 +378,14 @@ fn test_graph_from_csv_with_edge_and_nodes() {
             None,
             None,
             None
-        );
+        ).unwrap();
         let edge_lines: usize = count_lines(File::open(edge_path).unwrap()).unwrap();
         if *directed{
             assert_eq!(edge_lines, graph.get_edges_number());
         }
         assert_eq!(graph.get_edge_types_number(), 3);
         assert_eq!(graph.get_node_types_number(), 3);
-        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
+        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
     };
 }
 
@@ -407,13 +410,13 @@ fn test_graph_from_csv_with_edge_and_nodes_types() {
             None,
             None,
             None,
-        );
+        ).unwrap();
         let edge_lines: usize = count_lines(File::open(edge_path).unwrap()).unwrap();
         if *directed{
             assert_eq!(edge_lines, graph.get_edges_number());
         }
         assert_eq!(graph.get_edge_types_number(), 3);
-        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
+        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
     };
 }
 
@@ -438,12 +441,12 @@ fn test_graph_from_csv_het() {
             None,
             None,
             None,
-        );
+        ).unwrap();
         let edge_lines: usize = count_lines(File::open(edge_path).unwrap()).unwrap();
         if *directed{
             assert_eq!(edge_lines, graph.get_edges_number());
         }
-        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
+        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
     };
 }
 

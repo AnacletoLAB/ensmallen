@@ -3,14 +3,14 @@ use graph::csv_utils::*;
 
 #[test]
 fn test_check_consistent_lines() {
-    check_consistent_lines("tests/data/edge_file.tsv", "\t");
-    check_consistent_lines("tests/data/node_file.tsv", "\t");
+    check_consistent_lines("tests/data/edge_file.tsv", "\t").unwrap();
+    check_consistent_lines("tests/data/node_file.tsv", "\t").unwrap();
 }
 
 #[test]
 #[should_panic]
 fn test_check_consistent_lines_should_panic() {
-    check_consistent_lines("tests/data/should_panic.csv", ",");
+    check_consistent_lines("tests/data/should_panic.csv", ",").unwrap();
 }
 
 #[test]
@@ -25,7 +25,7 @@ fn test_has_columns() {
             "edge_label",
         ],
         &[],
-    );
+    ).unwrap();
     has_columns(
         "tests/data/edge_file.tsv",
         "\t",
@@ -36,19 +36,19 @@ fn test_has_columns() {
             "edge_label",
         ],
         &[&None],
-    );
+    ).unwrap();
     has_columns(
         "tests/data/edge_file.tsv",
         "\t",
         &["subject", "object"],
         &[&Some("relation"), &Some("edge_label")],
-    );
+    ).unwrap();
     has_columns(
         "tests/data/edge_file.tsv",
         "\t",
         &["subject"],
         &[],
-    );
+    ).unwrap();
     has_columns(
         "tests/data/node_file.tsv",
         "\t",
@@ -60,8 +60,8 @@ fn test_has_columns() {
             "alias",
         ],
         &[],
-    );
-    has_columns("tests/data/node_file.tsv", "\t", &["id"], &[]);
+    ).unwrap();
+    has_columns("tests/data/node_file.tsv", "\t", &["id"], &[]).unwrap();
 }
 
 #[test]
@@ -72,5 +72,5 @@ fn test_has_columns_should_panic() {
         ",",
         &["a", "b", "c"],
         &[],
-    );
+    ).unwrap();
 }

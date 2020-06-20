@@ -4,9 +4,11 @@ use rayon::prelude::*;
 use std::collections::{HashMap};
 use super::types::*;
 use super::random::sample;
+use arbitrary::Arbitrary;
 
 
-// TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
+// TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTESuse arbitrary::Arbitrary;
+#[derive(Arbitrary)]
 #[derive(Debug, Clone, Getters)]
 pub struct Graph {
     pub sources: Vec<NodeT>,
@@ -48,18 +50,18 @@ impl Graph {
         outbounds
     }
 
-    pub fn get_node_type_id(&self, node_id:NodeT) -> NodeTypeT {
+    pub fn get_node_type_id(&self, node_id:NodeT) -> Result<NodeTypeT, &str> {
         if let Some(nt) = &self.node_types{
-            return nt[node_id]
+            return Ok(nt[node_id]);
         }
-        panic!("Node types are not defined for current class.");
+        Err("Node types are not defined for current class.")
     }
 
-    pub fn get_edge_type_id(&self, edge_id:EdgeT) -> EdgeTypeT {
+    pub fn get_edge_type_id(&self, edge_id:EdgeT) -> Result<EdgeTypeT, &str> {
         if let Some(et) = &self.edge_types{
-            return et[edge_id]
+            return Ok(et[edge_id]);
         }
-        panic!("Edge types are not defined for current class.");
+        Err("Edge types are not defined for current class.")
     }
 
     pub fn get_edge_id(&self, src:NodeT, dst:NodeT) -> EdgeT {
@@ -254,7 +256,7 @@ impl Graph {
         explore_weight: Option<ParamsT>,
         change_node_type_weight: Option<ParamsT>,
         change_edge_type_weight: Option<ParamsT>,
-    ) -> Vec<Vec<NodeT>> {
+    ) -> Result<Vec<Vec<NodeT>>, String> {
         let _min_length = min_length.unwrap_or(0);
         let _return_weight = return_weight.unwrap_or(1.0);
         let _explore_weight = explore_weight.unwrap_or(1.0);
@@ -262,35 +264,53 @@ impl Graph {
         let _change_edge_type_weight = change_edge_type_weight.unwrap_or(1.0);
 
         if _return_weight <= 0.0 {
-            panic!("Given 'return_weight' is not a strictly positive real number.")
+            return Err(
+                String::from(
+                    "Given 'return_weight' is not a strictly positive real number."
+                )
+            );
         }
         if _explore_weight <= 0.0 {
-            panic!("Given 'explore_weight' is not a strictly positive real number.")
+            return Err(
+                String::from(
+                    "Given 'explore_weight' is not a strictly positive real number."
+                )
+            );
         }
         if _change_node_type_weight <= 0.0 {
-            panic!("Given 'change_node_type_weight' is not a strictly positive real number.")
+            return Err(
+                String::from(
+                    "Given 'change_node_type_weight' is not a strictly positive real number."
+                )
+            );
         }
         if _change_edge_type_weight <= 0.0 {
-            panic!("Given 'change_edge_type_weight' is not a strictly positive real number.")
+            return Err(
+                String::from(
+                    "Given 'change_edge_type_weight' is not a strictly positive real number."
+                )
+            );
         }
 
         info!("Starting random walk.");
         let number_of_results = iterations * self.get_nodes_number();
 
-        (0..number_of_results)
-            .into_par_iter()
-            .map(|node| {
-                self.single_walk(
-                    length,
-                    node / iterations,
-                    _return_weight,
-                    _explore_weight,
-                    _change_node_type_weight,
-                    _change_edge_type_weight
-                )
-            })
-            .filter(|walk| walk.len() >= _min_length)
-            .collect::<Vec<Vec<NodeT>>>()
+        Ok(
+            (0..number_of_results)
+                .into_par_iter()
+                .map(|node| {
+                    self.single_walk(
+                        length,
+                        node / iterations,
+                        _return_weight,
+                        _explore_weight,
+                        _change_node_type_weight,
+                        _change_edge_type_weight
+                    )
+                })
+                .filter(|walk| walk.len() >= _min_length)
+                .collect::<Vec<Vec<NodeT>>>()
+        )
     }
 
     fn single_walk(

@@ -22,6 +22,7 @@ rand = "0.7.3"
 itertools = "0.9.0"
 permutation = "0.2.5"
 derive-getters = "0.1.0"
+arbitrary = { version = "0.4.5", features = ["derive"] }
 
 
 [build]

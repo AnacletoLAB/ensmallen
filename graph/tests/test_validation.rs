@@ -18,7 +18,7 @@ fn test_validation() {
         &None, 
         &None, 
         &Some(vec![1.0, 1.0, 1.0])
-    )
+    ).unwrap();
 }
 
 #[test]
@@ -36,7 +36,7 @@ fn test_validation_wrong_node_types_number() {
         &Some(vec![8, 6]), 
         &None, 
         &Some(vec![1.0, 1.0, 1.0])
-    )
+    ).unwrap();
 }
 
 #[test]
@@ -54,7 +54,7 @@ fn test_validation_wrong_edge_types_number() {
         &None,
         &Some(vec![8, 6]), 
         &Some(vec![1.0, 1.0, 1.0])
-    )
+    ).unwrap();
 }
 
 
@@ -73,7 +73,7 @@ fn test_validation_wrong_weights_number() {
         &None,
         &None, 
         &Some(vec![1.0, 1.0])
-    )
+    ).unwrap();
 }
 
 #[test]
@@ -91,7 +91,7 @@ fn test_validation_wrong_weights_zeros() {
         &None,
         &None, 
         &Some(vec![1.0, 1.0, 0.0])
-    )
+    ).unwrap();
 }
 
 #[test]
@@ -109,5 +109,5 @@ fn test_validation_wrong_edges_with_non_existant_nodes() {
         &Some(vec![1,2, 3]),
         &None,
         &Some(vec![1.0, 1.0, 1.0])
-    )
+    ).unwrap();
 }

@@ -15,7 +15,7 @@ impl Graph {
         weights_column: &Option<&str>,
         default_weight: &Option<WeightT>,
     )
-     -> (
+     -> Result<(
         Vec<NodeT>,
         Vec<NodeT>,
         HashMap<String, NodeT>, 
@@ -24,7 +24,7 @@ impl Graph {
         Option<HashMap<String, EdgeTypeT>>, 
         Option<Vec<String>>,
         Option<Vec<WeightT>>
-    )
+    ), String>
      {
         // TODO figure out how to use references and lifetimes so that
         // we don't duplicate the strings in the mappings
@@ -98,7 +98,7 @@ impl Graph {
             }
             let triple = (sources[i], destinations[i], if edge_types_column.is_some() {Some(edge_types[i])} else {None});
             if unique_edges_set.contains(&triple){
-                panic!(
+                return Err(format!(
                     concat!(
                         "\nFound duplicated line in edges file!\n",
                         "Specifically, the duplicated line is the number {i}.\n",
@@ -119,12 +119,12 @@ impl Graph {
                     ),
                     path=path,
                     line=line.unwrap()
-                )
+                ));
             }
             unique_edges_set.insert(triple);
         };
 
-        (
+        Ok((
             sources,
             destinations,
             nodes_mapping,
@@ -133,7 +133,7 @@ impl Graph {
             if edge_types_column.is_some() {Some(edge_types_mapping)} else {None},
             if edge_types_column.is_some() {Some(edge_types_reverse_mapping)} else {None},
             if weights_column.is_some() {Some(weights)} else {None}
-        )
+        ))
     }
 
     fn read_nodes_csv(
@@ -143,11 +143,11 @@ impl Graph {
         nodes_mapping: &HashMap<String, NodeT>,
         node_types_column: &str,
         default_node_type: &str
-    ) -> (
+    ) -> Result<(
         Vec<NodeTypeT>,
         HashMap<String, NodeTypeT>,
         Vec<String>
-    ){
+    ), String> {
         let mut nodes: Vec<NodeT> = Vec::new();
         
         let mut node_types: Vec<NodeTypeT> = Vec::new();
@@ -198,21 +198,24 @@ impl Graph {
                 }
             }
             if new_node && unique_nodes_set.contains(&nodes[nodes.len()-1]){
-                panic!(
-                    concat!(
-                        "\nFound duplicated line in nodes file!\n",
-                        "Specifically, the duplicated line is the number {j}.\n",
-                        "The node is {node}.\n",
-                        "The node type of the row is {node_type}.\n",
-                        "The path of the document was {path}.\n",
-                        "The complete line in question is:\n{line}\n"
-                    ),
-                    j=j,
-                    node=nodes[nodes.len()-1],
-                    node_type=node_types[nodes.len()-1],
-                    path=path,
-                    line=line.unwrap()
-                )
+                
+                return Err(
+                        format!(
+                            concat!(
+                            "\nFound duplicated line in nodes file!\n",
+                            "Specifically, the duplicated line is the number {j}.\n",
+                            "The node is {node}.\n",
+                            "The node type of the row is {node_type}.\n",
+                            "The path of the document was {path}.\n",
+                            "The complete line in question is:\n{line}\n"
+                            ),
+                            j=j,
+                            node=nodes[nodes.len()-1],
+                            node_type=node_types[nodes.len()-1],
+                            path=path,
+                            line=line.unwrap()
+                        )
+                    );
             }
             if new_node {
                 unique_nodes_set.insert(nodes[nodes.len()-1]);
@@ -225,11 +228,11 @@ impl Graph {
             ).collect();
         
         // return the results
-        (
+        Ok((
             sorted_node_types,
             node_types_mapping,
             node_types_reverse_mapping
-        )
+        ))
     }
 
 
@@ -249,7 +252,7 @@ impl Graph {
         edge_sep: Option<&str>,
         node_sep: Option<&str>,
         validate_input_data: Option<bool>,
-    ) -> Graph {
+    ) -> Result<Graph, String> {
         // If the separators were not provided we use by default tabs.
         let _edge_sep = edge_sep.unwrap_or_else(|| "\t");
         let _node_sep = node_sep.unwrap_or_else(|| "\t");
@@ -257,7 +260,7 @@ impl Graph {
         // We validate the provided files, starting from the edges file.
         // Specifically, we start by checking if every line has the same amount
         // of the given separator character.
-        check_consistent_lines(&*edge_path, &*_edge_sep);
+        check_consistent_lines(&*edge_path, &*_edge_sep)?;
         // Then we check if the given columns actually exist in the given file
         // header.
         has_columns(
@@ -265,21 +268,33 @@ impl Graph {
             &*_edge_sep,
             &[&sources_column, &destinations_column],
             &[&edge_types_column, &weights_column],
-        );
+        )?;
         
         // If the nodes path was provided, we also validate it.
         if let Some(path) = &node_path {
             // As for the previous file, first we check that the file has the
             // same amount of separators in each line.
-            check_consistent_lines(&*path, &*_node_sep);
+            check_consistent_lines(&*path, &*_node_sep)?;
             if nodes_column.is_none(){
-                panic!("If the node_path is passed, the nodes_column is required");
+                return Err(
+                    String::from(
+                        "If the node_path is passed, the nodes_column is required"
+                    )
+                );
             }
             if node_types_column.is_none(){
-                panic!("If the node_path is passed, the node_types_column is required");
+                
+                return Err(
+                    String::from("If the node_path is passed, the node_types_column is required"
+                    )
+                );
             }
             if default_node_type.is_none(){
-                panic!("If the node_path is passed, the default_node_type is required");
+                
+                return Err(
+                    String::from("If the node_path is passed, the default_node_type is required"
+                    )
+                );
             }
             // Then we check if the given columns actually exists in the file.
             has_columns(
@@ -287,7 +302,7 @@ impl Graph {
                 &*_node_sep,
                 &[&nodes_column.clone().unwrap()],
                 &[&node_types_column],
-            );
+            )?;
         }
 
         let (
@@ -308,7 +323,7 @@ impl Graph {
             &default_edge_type,
             &weights_column,
             &default_weight
-        );
+        )?;
         
 
         let (
@@ -327,7 +342,7 @@ impl Graph {
                 &nodes_mapping,
                 &node_types_column.unwrap(),
                 &default_node_type.unwrap(),
-            );
+            )?;
             (Some(node_types), Some(node_types_mapping), Some(node_types_reverse_mapping))
         } else {
             (None, None, None)

@@ -2,7 +2,7 @@ use std::{fs::File, io::prelude::*, io::BufReader};
 
 use rayon::prelude::*;
 
-pub fn check_consistent_lines(path: &str, sep: &str) {
+pub fn check_consistent_lines(path: &str, sep: &str) -> Result<(), String>{
     let file = File::open(path).expect("Cannot open file.");
     let buf_reader = BufReader::new(file);
     let mut expected_length: Option<usize> = None;
@@ -11,25 +11,28 @@ pub fn check_consistent_lines(path: &str, sep: &str) {
         let current_line = line.unwrap();
         let separators_number = current_line.matches(sep).count();
         if *expected_length.get_or_insert(separators_number) != separators_number {
-            panic!(
-                concat!(
-                    "Provided file has malformed lines. ",
-                    "The provided lines have different numbers ",
-                    "of the given separator.\n",
-                    "The expected number of separators was {expected_length}, ",
-                    "but a line with {separators_number} separators was found. \n",
-                    "The line is the number {counter}.\n",
-                    "The given file is at path {path}.\n",
-                    "The line in question is: '{line}'\n",
-                ),
-                expected_length = expected_length.unwrap(),
-                separators_number = separators_number,
-                counter = counter,
-                path = path,
-                line = current_line
+            return Err(
+                format!(
+                    concat!(
+                        "Provided file has malformed lines. ",
+                        "The provided lines have different numbers ",
+                        "of the given separator.\n",
+                        "The expected number of separators was {expected_length}, ",
+                        "but a line with {separators_number} separators was found. \n",
+                        "The line is the number {counter}.\n",
+                        "The given file is at path {path}.\n",
+                        "The line in question is: '{line}'\n",
+                    ),
+                    expected_length = expected_length.unwrap(),
+                    separators_number = separators_number,
+                    counter = counter,
+                    path = path,
+                    line = current_line
+                )
             )
         };
     }
+    Ok(())
 }
 
 pub fn get_headers(path: &str, sep: &str) -> Vec<String> {
@@ -57,23 +60,27 @@ pub fn has_columns(
     sep: &str,
     columns: &[&str],
     optional_columns: &[&Option<&str>],
-) {
+) -> Result<(), String> {
     let rendered_columns = render_columns(columns, optional_columns);
     let candidate_columns = get_headers(path, sep);
 
     for column in rendered_columns {
         if !candidate_columns.contains(&String::from(column)) {
-            panic!(
-                concat!(
-                    "Provided file hasn't the required columns.\n",
-                    "Specifically, the given column {column} was not found ",
-                    "within the available set of columns {columns:?}.",
-                    "The given file is at path {path}.\n",
-                ),
-                column = column,
-                columns = candidate_columns,
-                path = path,
-            )
+            return Err(
+                format!(
+                    concat!(
+                        "Provided file hasn't the required columns.\n",
+                        "Specifically, the given column {column} was not found ",
+                        "within the available set of columns {columns:?}.",
+                        "The given file is at path {path}.\n",
+                    ),
+                    column = column,
+                    columns = candidate_columns,
+                    path = path,
+                )
+            );
         }
     }
+
+    Ok(())
 }

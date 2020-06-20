@@ -1,5 +1,6 @@
 use graph::{Graph, NodeT, ParamsT, WeightT, NodeTypeT, EdgeT, EdgeTypeT};
 use pyo3::prelude::*;
+use pyo3::exceptions;
 use pyo3::types::PyDict;
 
 #[pymodule]
@@ -51,9 +52,10 @@ impl EnsmallenGraph {
             destinations_column: &str,
             directed: bool,
             py_kwargs: Option<&PyDict>
-        ) -> Self {
+        ) -> PyResult<Self> {
+
         if py_kwargs.is_none() {
-            let graph: Graph = Graph::from_csv(
+            let graph = Graph::from_csv(
                 edge_path,
                 sources_column, 
                 destinations_column, 
@@ -62,15 +64,16 @@ impl EnsmallenGraph {
                 None, None, None, None,
                 None, None, None
             );
-    
-            return EnsmallenGraph{
-                graph
+
+            return match graph {
+                Ok(g) => Ok(EnsmallenGraph{ graph: g }),
+                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e))
             }
         }
         
         let kwargs = py_kwargs.unwrap();
 
-        let graph: Graph = Graph::from_csv(
+        let graph = Graph::from_csv(
             edge_path,
             sources_column, 
             destinations_column, 
@@ -88,8 +91,10 @@ impl EnsmallenGraph {
             kwargs.get_item("validate_input_data").map(|val| val.extract::<bool>().unwrap())
         );
 
-        EnsmallenGraph{
-            graph
+        
+        return match graph {
+            Ok(g) => Ok(EnsmallenGraph{ graph: g }),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e))
         }
     }
 
@@ -104,8 +109,8 @@ impl EnsmallenGraph {
     /// Returns
     /// ---------------------
     /// Return the id of the node type of the node.
-    fn get_node_type_id(&self, node_id: NodeT)->NodeTypeT{
-        self.graph.get_node_type_id(node_id)
+    fn get_node_type_id(&self, node_id: NodeT) -> NodeTypeT{
+         self.graph.get_node_type_id(node_id).unwrap()
     }
 
     #[text_signature = "(edge_id)"]
@@ -120,7 +125,7 @@ impl EnsmallenGraph {
     /// ---------------------
     /// Return the id of the edge type of the edge.
     fn get_edge_type_id(&self, edge_id: EdgeT)->EdgeTypeT{
-        self.graph.get_edge_type_id(edge_id)
+        self.graph.get_edge_type_id(edge_id).unwrap()
     }
 
     #[text_signature = "(src, dst)"]
@@ -187,7 +192,7 @@ impl EnsmallenGraph {
         change_node_type_weight: ParamsT,
         change_edge_type_weight: ParamsT
     ) -> PyResult<Vec<Vec<NodeT>>> {
-        Ok(self.graph.walk(
+        let w = self.graph.walk(
             iterations,
             length, 
             Some(min_length),
@@ -195,11 +200,16 @@ impl EnsmallenGraph {
             Some(explore_weight),
             Some(change_node_type_weight),
             Some(change_edge_type_weight), 
-        ))
+        );
+        
+        return match w {
+            Ok(g) => Ok(g),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e))
+        };
     }
 
     #[getter]
-    fn sources(&self) -> PyResult<Vec<NodeT>> {
-        Ok(self.graph.sources().clone())
+    fn sources(&self) -> Vec<NodeT> {
+        self.graph.sources().clone()
     }
 }

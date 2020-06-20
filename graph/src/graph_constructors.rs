@@ -11,66 +11,65 @@ pub fn validate(
     nodes_reverse_mapping: &[String],
     node_types: &Option<Vec<NodeTypeT>>,
     edge_types: &Option<Vec<EdgeTypeT>>,
-    weights: &Option<Vec<WeightT>>,
-) {
+    weights: &Option<Vec<WeightT>>
+) -> Result<(), String> {
     
     info!("Checking that the nodes mappings are of the same length.");
     if nodes_mapping.len() != nodes_reverse_mapping.len() {
-        panic!("The size of the node_mapping ({}) does not match the size of the nodes_reverse_mapping ({}).",
+        return Err(format!("The size of the node_mapping ({}) does not match the size of the nodes_reverse_mapping ({}).",
             nodes_mapping.len(), nodes_reverse_mapping.len()
-        );
+        ));
     }
 
     if let Some(nt) = &node_types {
         info!("Checking that nodes and node types are of the same length.");
         if nt.len() != nodes_reverse_mapping.len() {
-            panic!("The number of given nodes ({}) does not match the number of node_types ({}).",
+            return Err(format!("The number of given nodes ({}) does not match the number of node_types ({}).",
                 nt.len(), nodes_reverse_mapping.len()
-            );
+            ));
         }
     }
 
     if let Some(nt) = &node_types{
         info!("Checking if every node used by the edges exists.");
-        sources
-            .iter()
-            .chain(destinations.iter())
-            .for_each(|node| {
+        for node in sources.iter().chain(destinations.iter()) {
             if *node >= nt.len() {
-                panic!(
+                return Err(format!(
                     "A node provided with the edges ('{}') does not exists within given nodes.",
                     node
-                );
+                ));
             }
-        });
+        }
     }
 
     if let Some(w) = weights {
         info!("Checking for length between weights and given edges.");
         if w.len() != sources.len(){
-            panic!("Length of given weights ({}) does not match length of given edges ({}).",
-            w.len(), sources.len())
+            return Err(format!("Length of given weights ({}) does not match length of given edges ({}).",
+            w.len(), sources.len()));
         }
         info!("Checking for non-zero weights.");
-        w.par_iter().for_each(|weight| {
+        for weight in w.iter() {
             if *weight == 0.0 {
-                panic!(
+                return Err(format!(
                     "One of the provided weights '{}' is either 0 or within float error to zero.",
                     weight
-                );
+                ));
             }
-        });
+        }
     }
     
     if let Some(et) = edge_types {
         info!("Checking for length between edge types and given edges.");
         if et.len() != sources.len(){
-            panic!(
+            return Err(format!(
                 "The len of edge types ({}) is different than the len of given edges ({}).  ",
                 et.len(), sources.len()
-            );
+            ));
         }
     }
+
+    Ok(())
 }
 
 impl Graph {
@@ -88,7 +87,7 @@ impl Graph {
         edge_types_reverse_mapping: Option<Vec<String>>,
         weights: Option<Vec<WeightT>>,
         validate_input_data: Option<bool>,
-    ) -> Graph {
+    ) -> Result<Graph, String> {
         if validate_input_data.unwrap_or_else(|| true) {
             validate(
                 &sources,
@@ -98,7 +97,7 @@ impl Graph {
                 &node_types,
                 &edge_types,
                 &weights
-            );
+            )?;
         }
 
         let nodes_number = nodes_reverse_mapping.len();
@@ -135,7 +134,8 @@ impl Graph {
 
         let outbounds = Graph::compute_outbounds(nodes_number, &sorted_sources);
 
-        Graph {
+        Ok(
+            Graph {
             nodes_mapping,
             nodes_reverse_mapping,
             unique_edges,
@@ -149,7 +149,7 @@ impl Graph {
             destinations: sorted_destinations,
             weights: sorted_weights,
             edge_types: sorted_edge_types,
-        }
+        })
     }
 
     pub fn new_undirected(
@@ -165,7 +165,7 @@ impl Graph {
         edge_types_reverse_mapping: Option<Vec<String>>,
         weights: Option<Vec<WeightT>>,
         validate_input_data: Option<bool>,
-    ) -> Graph {
+    ) -> Result<Graph, String> {
 
         if validate_input_data.unwrap_or_else(|| true) {
             validate(
@@ -176,7 +176,7 @@ impl Graph {
                 &node_types,
                 &edge_types,
                 &weights
-            );
+            )?;
         }
 
         info!("Identifying self-loops present in given graph.");
