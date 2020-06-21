@@ -181,7 +181,7 @@ impl Graph {
                 .collect();
 
             let node = parsed.get(nodes_column).unwrap();
-            let result = nodes_mapping.get(node.clone());
+            let result = nodes_mapping.get(*node);
             // if the node is not present in the mapping, then it's a
             // singleton. Therefore it can be ignored and is type doesn't
             // matter

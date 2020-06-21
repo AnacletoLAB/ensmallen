@@ -1,6 +1,5 @@
 use super::types::*;
 use ::core::cmp::Ordering;
-use std::cmp::min;
 
 // global static seed, this could be moved inside a struct
 // WARNING
