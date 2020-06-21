@@ -25,3 +25,6 @@ rm $HOME/rustup.sh
 
 # load for current shell
 source $HOME/.bashrc
+
+# Setup cargo-fuzz
+cargo install cargo-fuzz

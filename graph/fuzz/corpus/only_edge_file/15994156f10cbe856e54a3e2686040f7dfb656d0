@@ -1,0 +1,13 @@
+subject	object	weight
+g1	g2	10
+g1	g3	10
+g1	g4	10
+g0	g19	10
+g2	2	10
+p1	p3	10
+p1	p4	NaN
+	501	10
+p1	p6	10
+p1	p7	10
+p1	p29	
+1pp3	100	10

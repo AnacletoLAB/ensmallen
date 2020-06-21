@@ -56,6 +56,12 @@ pub fn validate(
                     weight
                 ));
             }
+            if *weight < 0.0 {
+                return Err(format!(
+                    "One of the provided weights '{}' is negative.",
+                    weight
+                ));
+            }
             if weight.is_nan(){
                 return Err(String::from(
                     "One of the provided weights is NaN."

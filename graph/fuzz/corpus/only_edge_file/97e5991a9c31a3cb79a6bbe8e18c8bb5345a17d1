@@ -1,0 +1,3 @@
+subject	object	relation	edeg_el	weight
+EG00000104029	DNSEM#000	R5	lobiink:las_gene_product	15
+EN00233	En8S	:0002434	biolinh	23
