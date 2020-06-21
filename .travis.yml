@@ -33,6 +33,8 @@ before_install:
       
 before_script:
   - export PATH=$HOME/.cargo/bin:$PATH
+  - source ~/.bashrc
+  - source ~/.cargo/env
   - cargo install cargo-update || echo "cargo-update already installed"
   - cargo install-update -a # update outdated cached binaries
   - python3 -m pip install maturin pytest coveralls
