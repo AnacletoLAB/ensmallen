@@ -56,6 +56,16 @@ pub fn validate(
                     weight
                 ));
             }
+            if weight.is_nan(){
+                return Err(String::from(
+                    "One of the provided weights is NaN."
+                ));
+            }
+            if weight.is_infinite(){
+                return Err(String::from(
+                    "One of the provided weights is infinite."
+                ));
+            }
         }
     }
     

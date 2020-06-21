@@ -1,0 +1,5 @@
+subject	object	relation	e_label	weight
+kebab:ENSG4058	kebab:=NSP00000000234	RO:0004r05	biolink:has_gent	23
+kebab:ENSP33	kebab:ENSP000$00401445	RO:0002434	biolink:g8interacts_with	31
+kebab:ENSP000000002	kebab:EP0006737	RO:0002434	biolink:interacth	23
+keb00000000233	kebab:ENSP000003000427900	RO:0002434	oilibnk:interacts_with	23

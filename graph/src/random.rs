@@ -72,7 +72,7 @@ pub fn sample(weights: &[WeightT]) -> usize {
     let rnd: f64 = frnd * cumulative_sum[cumulative_sum.len() - 1];
 
     // Find the first item which has a weight *higher* than the chosen weight.
-    match cumulative_sum
+    let result = match cumulative_sum
         .binary_search_by(|w| {
             if *w <= rnd {
                 Ordering::Less
@@ -83,7 +83,16 @@ pub fn sample(weights: &[WeightT]) -> usize {
     {
         Ok(g) => g,
         Err(g) => {
-            min(g, weights.len() - 1)
+            g //min(g, weights.len() - 1)
         }
+    };
+
+    if result >= weights.len() {
+        panic!(
+            "Sampling Error: weights: {:?} cumsum: {:?} frnd: {} rnd: {} result: {}",
+            weights, cumulative_sum, frnd, rnd, result
+        )
     }
+
+    result
 }
