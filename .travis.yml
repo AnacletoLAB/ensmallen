@@ -43,7 +43,7 @@ script:
   # Build, test, bench the graph crate
   - cargo build --verbose --all --manifest-path=graph/Cargo.toml
   - cargo test --verbose --all --manifest-path=graph/Cargo.toml
-  - cargo bench --verbose --all --manifest-path=graph/Cargo.toml
+  # - cargo bench --verbose --all --manifest-path=graph/Cargo.toml
   # Build the bindings
   - maturin build --release
   # Install the binding
