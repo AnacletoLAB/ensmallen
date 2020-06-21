@@ -1,0 +1,19 @@
+{
+  "files": [
+    {"file": "/home/zom/Github/ensmallen_graph/graph/src/random.rs", "percent_covered": "0.00", "covered_lines": "0", "total_lines": "35"},
+    {"file": "/home/zom/Github/ensmallen_graph/graph/src/lib.rs", "percent_covered": "0.00", "covered_lines": "0", "total_lines": "1"},
+    {"file": "/home/zom/Github/ensmallen_graph/graph/src/csv_utils.rs", "percent_covered": "4.55", "covered_lines": "2", "total_lines": "44"},
+    {"file": "/home/zom/Github/ensmallen_graph/graph/src/graph.rs", "percent_covered": "0.00", "covered_lines": "0", "total_lines": "180"},
+    {"file": "/home/zom/Github/ensmallen_graph/graph/src/graph_from_csv.rs", "percent_covered": "1.75", "covered_lines": "4", "total_lines": "228"},
+    {"file": "/home/zom/Github/ensmallen_graph/graph/fuzz/fuzz_targets/with_nodes.rs", "percent_covered": "77.27", "covered_lines": "17", "total_lines": "22"},
+    {"file": "/home/zom/Github/ensmallen_graph/graph/src/graph_constructors.rs", "percent_covered": "0.00", "covered_lines": "0", "total_lines": "160"},
+    {"file": "/home/zom/Github/ensmallen_graph/graph/fuzz/fuzz_targets/utils.rs", "percent_covered": "100.00", "covered_lines": "9", "total_lines": "9"}
+  ],
+  "percent_covered": "4.71",
+  "covered_lines": 32,
+  "total_lines": 679,
+  "percent_low": 25,
+  "percent_high": 75,
+  "command": "with_nodes",
+  "date": "2020-06-21 18:12:12"
+}
