@@ -25,3 +25,9 @@ name = "only_edge_file"
 path = "fuzz_targets/only_edge_file.rs"
 test = false
 doc = false
+
+[[bin]]
+name = "with_nodes"
+path = "fuzz_targets/with_nodes.rs"
+test = false
+doc = false

@@ -1,0 +1,4 @@
+subject	object	relation	edge_label	weight
+kebS100000000234	kebab:ENSP00000356737	RO:0002434	biolink:intEracts_with	23
+kebab:ENSP00000000233	kebab:ENSP00000319192	RO:0002434	biolink:interacts_with	23
+kebab:ENSP00000000466	kebab:ENSP00000427900	RO:0002434	biolink:iNteracts_with	23

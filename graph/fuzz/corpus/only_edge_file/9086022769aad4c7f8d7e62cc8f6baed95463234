@@ -1,0 +1,21 @@
+sg22nk:haen	edge_label	wei——‹õº±¬ºMBL:ENSG00000004059	ENSEMBL:UNSP00000000233	RO:0002205	biolink:has_gene_product	23
+ENSEMBL:ENSP00g70000000233subject	object	weight
+g1	g2	10
+g1	g3	10
+g1	g4	10
+g1	g5	10
+g1subject	object	weight
+g0	g2	80
+g1	g3	10
+g1	g4	10
+g
+g1	g5	10
+g15	g	10
+g1	g	610
+g1	g7	10
+g1	g8	10
+g1	g9	10
+g	g6	10
+g1	™Á	10
+g1	1NaN	g10	10
+g1	g11	g8

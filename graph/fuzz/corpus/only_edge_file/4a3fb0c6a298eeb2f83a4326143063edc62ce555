@@ -1,0 +1,16 @@
+subject	object	weight
+g1	g2	10
+g1	g3	10
+g1	g3	10
+g1	g5	10
+g1	g6	10
+g0	g7	10
++1	g8	1
+p1	p22	10
+p1	p23	10
+p1	p"4	10
+p1	p25	p5
+p1	p26	10
+p1	p27	10
+:1	p28	10
+p1	p29	10

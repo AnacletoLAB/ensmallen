@@ -16,6 +16,8 @@ fuzz_target!(|data: &[u8]| {
     // and we want coverage on this function
     // so I don't think there are any workarounds or mocking
 
+    // TEST Directed
+    
     // to speedup the fuzzing it might be sensible to mount the /tmp
     // to a ramdisk https://wiki.gentoo.org/wiki/Tmpfs
     let fname = Path::new("/tmp").join(random_string(64));
@@ -45,6 +47,30 @@ fuzz_target!(|data: &[u8]| {
 
     if graph.is_ok(){
         graph.unwrap().walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
+    }
+
+    // TEST Undirected
+
+    let graph2 = graph::Graph::from_csv(
+        &filename,
+        "subject",
+        "object",
+        false,
+        None,
+        None,
+        Some("weight"),
+        Some(1.0),
+        None,
+        Some("id"),
+        Some("category"),
+        Some("biolink:NamedThing"),
+        None,
+        None,
+        None,
+    );
+
+    if graph2.is_ok(){
+        graph2.unwrap().walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
     }
 
     remove_file(&filename);

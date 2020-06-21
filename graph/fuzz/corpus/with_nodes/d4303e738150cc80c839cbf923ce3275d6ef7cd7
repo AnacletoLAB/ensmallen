@@ -1,0 +1,49 @@
+id	name	category	description	alias	tclin	tchem	ncbi_taxid	TTD_ID	iri	synonym	taxon
+ENSEMBL:ENSG00000004059	ARF5	biolink:Gene	ADP ribosylation factor 5	NCBIGene:381							
+ENSEMBL:ENSP00000000233		biolink:Protein									
+ENSEMBL:ENSG00000143933	CALM2	biolink:Gene	calmodulin 2	NCBIGene:805							
+ENSEMBL:ENQP00000272298		biolink:Protein									
+ENSEMBL:ENSG00000131089	ARHGEF9	biolink:Gene	Cdc42 guanine nucleotide exchange factor 9	NCBIGene:23229							
+ENSEMBL:ENSP00000253401		biolink:Protein									
+ENSEMBL:ENSG00000178607	ERN1	biolink:Gene	endoplasmic reticulum to nucleus signaling 1	NCBIGene:2081							
+ENSEMBL:ENSP00000401445		biolink:Protein									
+ENSEMBL:ENSG00000147889	CDKN2A	biolink:Gene	cyclin dependent kinase inhibitor 2A	NCBIGene:9343							
+ENSEMBL:ENSP00000418915		biolink:Protein					id	name	category
+d1	disease1	biolink:Disease
+d2	disease2	biolink:Disease
+d3	disease3	biolink:Disease
+d4	disease4	biolink:Disease
+d5	dis(ase5	biolink:Disease
+d6	disease6	biolink:Disease
+d7				
+ENSEMBL:ENSG00000185624	P4HB	biolink:Gene	prolyl 4-hydroxylase subunit beta	NCBIGene:5034							
+ENSEMBL:ENSP00000327801		biolink:Protein									
+ENSEMBL:ENSG00000104915	STX10	biolink:Gene	syntaxin 10	NCBIGene:8677							
+ENSEMBL:ENSP00000466298		biolink:Protein									
+ENSEMBL:ENSG000001144id	name	category
+d1	disease1	biolink:Disease
+d2	disease2	biolink:Disease
+d3	disease3	biolink:Disease
+d4	disease4	biolink:Disease
+d5	dis(ase5	biolink:Disease
+d6	disease6	bi50	GNB4	biolink:Gene	G protein subunit beta 4	NCBIGene:59345							
+ENSEMBL:ENSP00000232564		biolink:Protein									
+ENSEMBL:ENSG00000168280	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGene:3800							
+ENSEMBL:ENSP00000248929	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGe2	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGene:3800		=					
+ENSEMBL:Kebab	KIF5C										
+ENSEM~BL:Kewbab	KIF5C										
+ENSEMBL:Kewddbab	KIF5C										
+ENSEMBL:ENSP00000427900	KIF5C	biolink:Geneolink:Disease
+d7	disease7	biolink:Diseas	disease7	biolink:Disease
+d8	disease8	biolink:Disease
+d9	disease9	bie
+d8	disease8	biolink:Disease
+d9	disease9	biolink:Disease
+d10	dis[ase10	biolink:Diseolink:Disease
+d1ase
+d11	di	kinesin family member 5C	NCBIGene:3800							sease11	biolink:Disease
+d12	disease12	biolink:Disease
+d13	disease13	biolink:Disease
+d14	disease14	biolink:Disease0	d
+d15	disease15	biolink:Diseaseis[ase10	biolink:Disease
+d11

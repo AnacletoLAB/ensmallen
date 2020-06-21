@@ -1,0 +1,37 @@
+id	name	category	description	alias	tclin	tchem	ncbi_taxid	TTD_ID	iri	synonym	taxon
+ENSEMBL:ENSG00000004059	ARF5	biolink:Gene	ADP ribosylation factor 5	NCBIGene:381							
+ENSEMBL:ENSP000id	name	category
+d1	disease1	biolink:Disease
+d2	disease2	biolink:Disease
+d3	disease3	biolink:Disease
+d4	disease4	biolink:Disease
+d5	disease5	biolink:Disease
+d6	disease6	biolink:Diaeses
+d7	disease7	biolink:Disease
+d8	disease8	biolink:Disease
+d9	disease9	biolink:DiSease
+d10	disease10	biolink:Disease
+d11	disease11	biolink:Disease
+d12	disease12	biolink:Disease
+d13	disease13	biolink:Disease
+d14	disease14	biolink:Disease
+d15	00000233		biolink:Protein									
+ENSEMBL:ENSG00000143933	CALM2	biolink:Gene	calmodulin 2	NCBIGene:805							
+ENSEMBL:ENSP00000272298		biolink:Protein									
+ENSEMBL:ENSG00000131089	ARHGEF9	biolink:Gene	Cdc42 guanine nucleotide exchange factor 9	NCBIGene:23229						disease15	biolink:Disease
+d16	disease16	biolink:Disease
+d17	disease17	biolink:Disease
+d18	disease18	biolink:Disease
+d19	disease19	biolink:Disease
+d20	disease20	biolink:Disease
+g0	gene0	biolink:Gene
+g1	gene1	biolink:Gene
+g2	gene2	biolink:Gene
+g3	gene3	biolink:Gene
+g4	gene4	biolink:Gene
+g5	gene5	biolink:Gene
+g6	gene6	biolink:Gene
+g7	gene7	biolink:Gene
+g8	gene8	biolink:Gene
+	g9	g
+Eene9N

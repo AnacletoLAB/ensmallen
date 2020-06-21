@@ -1,0 +1,66 @@
+subject	object	relation	edge_label	weight
+kebab:ENSG00000004059	kebab:ENSP00000000233	RO:0002205	biolink:has_gene_product	23subject	object	weight
+g1	g2	10
+g1	g3	10
+g1	g4	10
+g1	g5	10
+g1	g6	10
+g1	g7	10
+g3	g8	10
+g1	g9	10
+g1	g10	10
+g1	g11	10
+g1	g12	10
+g1	g13	10
+g1	g14	10
+g1	g15	10
+g1	g16	10
+g1	g17	10
+g1	g18	10
+g1	g19	10
+g1	g20	110
+g1	g54	10
+g1	g55	10
+g1	g56	10
+g1	g57	10
+g1	g58	10
+g1	g59	10
+g1	g60	10
+g1	g61	10
+g1	g62	10
+g1	g63	10
+g1	g64	10
+g1	g65	10
+g1	g66	10
+g1	g67	
+g101	g68	10
+g1	g69	10
+g1	g70	10
+g1	g71	10
+g1	g72	10
+g1	g73	10
+g1	g74	10
+g1	g75	10
+g1	g76	10
+g1	g77	10
+g1	g78	10
+g1	g79	10
+g1	g80	10
+	d14	10
+d1	d15	10
+d1	d16	10
+d1	d17	10
+d1	d18	10
+d1	d19	10
+d1	d20	10
+g1	p1	10
+p1	p2	
+kebab:ENSP00000000233	kebab:ENSP00000272298	RO:0002434	biolink:interacts_with	23
+kebab:ENSP00000000233	kebab:ENSP0010
+p1	p3	10
+p000253401	RO:00024;1	p4	NaN
+	501	10
+p1	p6	10
+p1	p7	10
+p1	p8	10
+p1	p94	

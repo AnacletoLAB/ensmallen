@@ -1,0 +1,3 @@
+subject	object	relation	edg_el	weight
+029	DNSEMBL:ENSP000	R5	biolink:has_gene_product	00
+EN00233	En8S	:)0002434	biolinh	23

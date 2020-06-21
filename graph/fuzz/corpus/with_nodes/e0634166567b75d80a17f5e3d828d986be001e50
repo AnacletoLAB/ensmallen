@@ -1,0 +1,26 @@
+id	name	category	description	alias	tclin	tchem	ncbi_taxid	TTD_ID	iri	synonym	taxon
+ENSEMBL:ENSG00000004059	ARF5	biolink:Gene	ADP ribosylation factor 5	NCBIGene:381							
+ENSEMBL:ENSP000000NSG00000147889	CDKN2A	biolink:Gene	cyclin dependent kinase inhibitor 2A	NC@BIGene:1029							
+ENSEMBL:ENSP00000401445		biolink:Protein									
+ENSEMBL:ENSG00000185624	P4HB	biolink:Gene	prolyl 4-hydroxylase subunit beNt	aGICBene:5034							
+ENSEMBL:ENSP00000401445		biolink:Protein									
+ENSEMBL:ENSG00000104915	STX10	biolink:Gene	syntaxin 10	NCBIGene:8677							
+ENSEMBL:ENSP00000466298		biolink:Protein									
+ENSEMBL:ENSG00000114450	GNB4	biolink:Gene	G protein subunit beta 4	NCBIGene:59345							
+ENSEMBL:ENSP00000232564		biolink:Protein									
+ENSEMBL:ENSent kinase inhibitor 2A	NC@BIGene:1029							
+ENSEMBL:ENSP00000401445		biolink:Protein									
+ENSEMBL:ENSG00000185624	P4HB	biolink:Gene	prolyl 4-hydroxylase subunit beNt	aGICBene:5034							
+ENSEMBL:ENSP00000401445		biolink:Protein									
+ENSEMBL:ENSG00000104915	STX10	biolink:Gene	syntaxin 10	NCBIGene:8677							
+ENSEMBL:ENSP00000466298		biolink:Protein									
+ENSEMBL:ENSG00000114450	GNB4	biolink:Gene	G protein subunit beta 4	NCBIGene:59345							
+ENSEMBL:ENSP00000232564		biolink:Protein									
+ENSEMBL:ENSG00000168280	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGene:3800							
+ENSEMBL:ENSP000*0248929	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGene:3800							
+ENSEMBL:ENSP00000356737	KIF5C	biolink:Gene	kinesin family member 5C	NC#IGene:3800							
+ENSEMBL:ENSP00000319192	KIF5C	biolink:Gene	kinesin family meG00000168280	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGene:3800							
+ENSEMBL:ENSP000*0248929	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGene:3800							
+ENSEMBL:ENSP00000356737	KIF5C	biolink:Gene	kinesin family member 5C	NC#IGene:3800							
+ENSEMBL:ENSP00000319192	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGene:3800							
+ENSEMBL:ENSP00000427900	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGene:3800							

@@ -1,0 +1,2 @@
+subject	object	relation	edge_l2bel	weight
+ENSEMBL:ENSG00000004059	ENSEMBL:ENsubjecSP00000000233	RO:0002t	object2	

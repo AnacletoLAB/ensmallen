@@ -170,36 +170,39 @@ impl Graph {
         // Flag for when a new non-singleton node has been added
         let mut new_node;
         // convert the csv to a dict of lists
-        for (j, line) in buf_reader.lines().enumerate() {
+        for (j, line) in buf_reader.lines() .enumerate() {
             new_node = false;
-            for (value, column) in line.as_ref().unwrap().trim_end_matches(|c| c == '\n').split(sep).zip(headers.iter()) {
-                if column == nodes_column {
-                    let result = nodes_mapping.get(value);
-                    // if the node is not present in the mapping, then it's a
-                    // singleton. Therefore it can be ignored and is type doesn't
-                    // matter
-                    if result.is_none(){
-                        continue;
-                    }
-                    // since the node is not a singleton, add it to the list.
-                    nodes.push(*result.unwrap());
-                    new_node = true;
-                    continue;
-                }
+            let parsed: HashMap<String, &str> = headers.iter().cloned()
+                .zip(
+                    line.as_ref().unwrap()
+                    .trim_end_matches(|c| c == '\n')
+                    .split(sep)
+                )
+                .collect();
 
-                if column == node_types_column{
-                    let _value = if value.is_empty(){
-                        default_node_type
-                    } else {
-                        value
-                    };
-                    if ! node_types_mapping.contains_key(value){
-                        node_types_mapping.insert(String::from(value), node_types_reverse_mapping.len() as NodeTypeT);
-                        node_types_reverse_mapping.push(String::from(value));
-                    }
-                    node_types.push(*node_types_mapping.get(value).unwrap());
-                }
+            let node = parsed.get(nodes_column).unwrap();
+            let result = nodes_mapping.get(node.clone());
+            // if the node is not present in the mapping, then it's a
+            // singleton. Therefore it can be ignored and is type doesn't
+            // matter
+            if result.is_none(){
+                continue;
             }
+            // since the node is not a singleton, add it to the list.
+            nodes.push(*result.unwrap());
+
+            let value = parsed.get(node_types_column).unwrap();
+            let _value = if value.is_empty(){
+                default_node_type
+            } else {
+                value
+            };
+            if ! node_types_mapping.contains_key(*value){
+                node_types_mapping.insert(String::from(*value), node_types_reverse_mapping.len() as NodeTypeT);
+                node_types_reverse_mapping.push(String::from(*value));
+            }
+            node_types.push(*node_types_mapping.get(*value).unwrap());
+            
             if new_node && unique_nodes_set.contains(&nodes[nodes.len()-1]){
                 
                 return Err(
@@ -224,6 +227,28 @@ impl Graph {
                 unique_nodes_set.insert(nodes[nodes.len()-1]);
             }
         };
+        
+        if nodes.len() != nodes_mapping.len() {
+            return Err(
+                format!(
+                    concat!(
+                        "The size of the given nodes_mapping {} does not match the number of nodes found {}.",
+                        "This might be due to a mismatch between the edge and node files."
+                    ),
+                    nodes.len(), nodes_mapping.len()
+                )
+            )
+        }
+
+        if nodes.len() != node_types.len() {
+            panic!(
+                "Nodes {} and node types {} lengths mismatchs: nodes {:?} node types {:?}",
+                nodes.len(),
+                node_types.len(),
+                nodes,
+                node_types
+            )
+        }
 
         // Sort the node types using the indices order specified by the nodes
         let sorted_node_types: Vec<NodeTypeT> = nodes.par_iter().map(

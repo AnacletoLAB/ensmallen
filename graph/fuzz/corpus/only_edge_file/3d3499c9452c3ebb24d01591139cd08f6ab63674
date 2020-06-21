@@ -1,0 +1,4 @@
+subject	object	relatigedno	e_label	weight
+k000233	kNS630	RO:0002434	biolink:interacts_wg5h	23
+kebab:ENSX00000000233	kabab:ENSP00000638384	RO:0002434	biolink:interacts_with	23
+keba0000003	bab:ENSP00000427900	RO:0002434	biolink:interacts_with	23

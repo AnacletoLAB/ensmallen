@@ -1,0 +1,4 @@
+subject	object	object	tieoge_label	weight
+k000004059	kebab:ENSP00000000233	RO:0002205	biolink:has_gene_product	23
+kebab:ab00023	kebab:192	RO:0002434	biolink:int_with	23
+kp21b:E6	kebab:ENSP0004279O0	R:00002434	biolink:interacts_with	23

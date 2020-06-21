@@ -1,0 +1,3 @@
+subject	object	relation	edg0e_label	weight
+kebSPcts_wi00	RO:000000000233	relation	edg0e_label	weight
+kebSPcts_wi00	RO:000000000233	kebab:340	biolink:intesacts_h	23

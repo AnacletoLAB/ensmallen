@@ -57,9 +57,6 @@ pub fn xorshiro256plus() -> f64 {
 }
 
 pub fn sample(weights: &[WeightT]) -> usize {
-    if weights.len() == 0{
-        panic!("Sample weights cannot be empty.");
-    }
     if weights.len() == 1{
         return 0;
     }

@@ -1,0 +1,6 @@
+subject	object	weight
+1	g2	10
+g1	g3	10
+g1	1	inf
+d11	d4101	inf
+dd1	d30	10

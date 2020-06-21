@@ -1,0 +1,5 @@
+subject	object	relation	e_label	weight
+kebab:ENSG4059	kebab:=NSP00000000233	RO:0004r05	biolink:has_gene_product	23
+kebab:ENSP33	kebab:ENSP000$00401445	RO:0002434	biolink:interacts_with	31
+kebab:ENSP000000002	kebab:EP0006737	RO:0002434	biolink:interacts_with	23
+keb00000000233	kebab:ENSP000003000427900	RO:0002434	biolink:interacts_with	23

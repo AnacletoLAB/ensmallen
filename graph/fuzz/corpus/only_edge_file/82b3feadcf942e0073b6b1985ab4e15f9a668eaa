@@ -1,0 +1,4 @@
+subject	ebab:ENSP00000356737	RO:0002434	biolink:interacts_with	23
+kebab:ENSP00000000233	kobject	relation	edge_label23
+keba233	kebab:ENSP00000356737	RO:0002434	biolink:interacts_with	23
+kebab:ENSP00000000233	kebab:ENSP000003000427900	RO:0002434	biolink:interacts_with	23
