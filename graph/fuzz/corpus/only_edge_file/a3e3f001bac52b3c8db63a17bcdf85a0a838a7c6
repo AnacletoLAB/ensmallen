@@ -1,3 +1,0 @@
-subject	object	relation	edge_label	weight
-kebab:ENSG00000004059	kebab:ENSP00000000233	RO0002205	biolink:hasd_gene_product	23
-kebab:ENSP00000000233	kebab:ENSP00000272298	RO:0002434	biolcts_with	23

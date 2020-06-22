@@ -1,4 +1,0 @@
-subject	object	relation	edg0e_label	weight
-kebSP00000000233	kebab:ENSP00000356737	RO:0002	o3b4i4link:interacts_with	46
-kebab:ENSP00000000233	kebab:ENSP000003q:192	RO:0002434	biolink:interacts_with	23
-kebab:ENSP00000000233	kebab:ENSP00000427900	RO:0002434	biolink:interacts_with	23

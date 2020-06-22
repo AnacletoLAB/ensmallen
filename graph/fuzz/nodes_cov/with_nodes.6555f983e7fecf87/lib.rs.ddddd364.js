@@ -11,5 +11,5 @@ var data = {lines:[
 {"lineNum":"   10","line":"pub use self::random::*;"},
 ]};
 var percent_low = 25;var percent_high = 75;
-var header = { "command" : "with_nodes", "date" : "2020-06-21 18:12:12", "instrumented" : 1, "covered" : 0,};
+var header = { "command" : "with_nodes", "date" : "2020-06-22 09:16:05", "instrumented" : 1, "covered" : 0,};
 var merged_data = [];

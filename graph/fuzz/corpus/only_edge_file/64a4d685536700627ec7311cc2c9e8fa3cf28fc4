@@ -1,5 +1,0 @@
-subject	object	relation=	edge_label	weight
-NESEMBL:ENSG00000004059	ENSEMBL:ENSP00000000233	RO:0002205	biolink:has_gene_product	00
-ENS72298	RO:00022434	biolink:intera434	biolith7	23
-ENSP00000000233	ENSEMBL9871	RO:0002434	biolink:interacts_with	23
-EP00000000233	ENSEMBL:ENSp00000427900	RO:000243%	biolink:interacts_with	23

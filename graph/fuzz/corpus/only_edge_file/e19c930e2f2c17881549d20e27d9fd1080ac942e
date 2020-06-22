@@ -1,3 +1,0 @@
-subject	object	relation	edge_label	weight
-ENSEMBL:ENSG00000004059	DNSEMBL:ENSP000	R5	biolink:has_gene_product	00
-EN00233	En8S	:0002434	biolinh	23

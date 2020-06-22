@@ -182,7 +182,7 @@ var data = {lines:[
 {"lineNum":"  181","line":"                .collect();","class":"lineNoCov","hits":"0","possible_hits":"1",},
 {"lineNum":"  182","line":""},
 {"lineNum":"  183","line":"            let node = parsed.get(nodes_column).unwrap();","class":"lineNoCov","hits":"0","possible_hits":"2",},
-{"lineNum":"  184","line":"            let result = nodes_mapping.get(node.clone());","class":"lineNoCov","hits":"0","possible_hits":"1",},
+{"lineNum":"  184","line":"            let result = nodes_mapping.get(*node);","class":"lineNoCov","hits":"0","possible_hits":"1",},
 {"lineNum":"  185","line":"            // if the node is not present in the mapping, then it\'s a"},
 {"lineNum":"  186","line":"            // singleton. Therefore it can be ignored and is type doesn\'t"},
 {"lineNum":"  187","line":"            // matter"},
@@ -412,5 +412,5 @@ var data = {lines:[
 {"lineNum":"  411","line":"}"},
 ]};
 var percent_low = 25;var percent_high = 75;
-var header = { "command" : "with_nodes", "date" : "2020-06-21 18:12:12", "instrumented" : 228, "covered" : 4,};
+var header = { "command" : "with_nodes", "date" : "2020-06-22 09:16:05", "instrumented" : 228, "covered" : 4,};
 var merged_data = [];

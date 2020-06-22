@@ -1,7 +1,0 @@
-subject	object	weight
-g1	g2	10
-g1	g3	10
-gg1	g100	10
-g0	g1	10
-g1	d1	inf
-d,	p30	10

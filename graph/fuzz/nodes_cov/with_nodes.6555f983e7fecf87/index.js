@@ -9,5 +9,5 @@ var data = {files:[
 {"link":"utils.rs.b40de664.html","title":"utils.rs","summary_name":"[...]/ensmallen_graph/graph/fuzz/fuzz_targets/utils.rs","covered_class":"lineCov","covered":"100.0","covered_lines":"9","uncovered_lines":"0","total_lines" : "9"},
 ]};
 var percent_low = 25;var percent_high = 75;
-var header = { "command" : "with_nodes", "date" : "2020-06-21 18:12:12", "instrumented" : 679, "covered" : 32,};
+var header = { "command" : "with_nodes", "date" : "2020-06-22 09:16:05", "instrumented" : 679, "covered" : 32,};
 var merged_data = [];

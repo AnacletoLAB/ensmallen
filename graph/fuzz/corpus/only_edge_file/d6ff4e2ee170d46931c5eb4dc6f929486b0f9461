@@ -1,4 +1,0 @@
-subject	object	relation	0dgee_label	weight
-kebSP00000000233	kebab:ENSP00000356737	RO:0002434	biolink:i'teracts_with	23
-kebab:ENSP00000000233	kebab:ENSP00000319192[	RO:0002434	biolink:interacts_with	23
-kebab:ENSP00000000233	kebab:ENSP00000427900	RO:00024340	biolink:intesacts_with	23

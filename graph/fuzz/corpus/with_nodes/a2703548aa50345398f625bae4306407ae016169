@@ -1,6 +1,0 @@
-id	name	category	description	alias	tclin	tchem	ncbi_taxid	TTD_ID	iri	synonym	taxon
-ENSEMBL:ENSG00000004059	ARF5	biolink:Gene	ADP ribosylati~on factor 5	NCBIGene:381							
-ENSEMBL:ENSP000000002)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))SEMBL:ENSP000*0248929	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGene:3800							
-ENSEMBL:ENSP00000356737	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGene:3800							
-ENSEMBL:ENSP00000319192	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGene:3800							
-ENSEMBL:ENSP00000427900	KIF5C	biolink:Gene	kinesin family member 5C	NCBIGene:3800							

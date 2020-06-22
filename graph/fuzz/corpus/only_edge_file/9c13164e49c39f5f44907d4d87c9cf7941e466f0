@@ -1,3 +1,0 @@
-subject	object	relation	edge_label	weight
-ENSEMBL:ENSG00000004059	ENSEMBL:ENSP00000000233	RO:0002205	biolink:has_gene_product	00
-ENSEMBL:ENSP00000000233	EnS8	:0002434	biolink:intith	23

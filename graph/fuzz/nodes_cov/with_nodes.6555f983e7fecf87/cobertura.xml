@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-04.dtd'>
-<coverage line-rate="0.047" lines-covered="32" lines-valid="679" branch-rate="1.0" branches-covered="1.0" branches-rate="1.0" complexity="1.0" version="1.9" timestamp="1592755932">
+<coverage line-rate="0.047" lines-covered="32" lines-valid="679" branch-rate="1.0" branches-covered="1.0" branches-rate="1.0" complexity="1.0" version="1.9" timestamp="1592810165">
 	<sources>
 		<source>/home/zom/Github/ensmallen_graph/graph/</source>
 	</sources>

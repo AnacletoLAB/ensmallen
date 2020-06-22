@@ -1,4 +1,0 @@
-subject	object	relation	edabel	weight
-ke3	kebab:ENSP00000356737	34	binlink:interacts_with	23
-kebab:E00000000233	kebab:EN00000319192	RO:0002434	biolknk:ints_with	23
-kebab:ENSP000000233	kebab:ENSP00000427900	RO:0002434	biolink:interacts_with	23
