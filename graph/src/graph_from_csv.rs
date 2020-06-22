@@ -4,6 +4,7 @@ use std::{fs::File, io::prelude::*, io::BufReader};
 use std::collections::{HashMap, HashSet};
 use rayon::prelude::*;
 
+/// Construction of the graph from csv / tsv
 impl Graph {
     fn read_edges_csv(
         path: &str,

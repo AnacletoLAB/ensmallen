@@ -88,6 +88,7 @@ pub fn validate(
     Ok(())
 }
 
+/// Graph Constructors
 impl Graph {
 
     pub fn new_directed(

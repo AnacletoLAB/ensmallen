@@ -32,6 +32,7 @@ pub struct Graph {
     pub edge_types_reverse_mapping: Option<Vec<String>>
 }
 
+/// Graph utility methods
 impl Graph {
 
     pub fn compute_outbounds(nodes_number: NodeT, sources: &[NodeT]) -> Vec<EdgeT> {

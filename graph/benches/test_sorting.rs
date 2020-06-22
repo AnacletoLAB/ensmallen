@@ -1,7 +1,6 @@
 #![feature(test)]
 extern crate test;
 use test::Bencher;
-use rand::prelude::*;
 
 const NUMBER: u64 = 100000;
 

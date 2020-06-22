@@ -1,6 +1,5 @@
 extern crate graph;
 use graph::graph::Graph;
-use std::fs::File;
 
 #[test]
 fn test_graph_metrics() {

@@ -17,7 +17,7 @@ fn rotl(x : u64, k: u64) -> u64{
 	return (x << k) | (x >> (64 - k));
 }
 
-static mut s: [u64; 4] = [0xdeadbeefc0febabe, 0xdeadbeefc0febabe, 0xdeadbeefc0febabe, 0xdeadbeefc0febabe];
+static mut GLOBAL_SEED: [u64; 4] = [0xdeadbeefc0febabe, 0xdeadbeefc0febabe, 0xdeadbeefc0febabe, 0xdeadbeefc0febabe];
 
 #[inline(always)]
 pub fn xorshiro256plus_mul() -> f64{
@@ -34,18 +34,18 @@ pub fn xorshiro256plus_mul() -> f64{
     // cache with it
     unsafe {
     // normal xorshiro implementation
-	let (result, _): (u64, bool) = s[0].overflowing_add(s[3]);
+	let (result, _): (u64, bool) = GLOBAL_SEED[0].overflowing_add(GLOBAL_SEED[3]);
 
-	let t: u64 = s[1] << 17;
+	let t: u64 = GLOBAL_SEED[1] << 17;
 
-	s[2] ^= s[0];
-	s[3] ^= s[1];
-	s[1] ^= s[2];
-	s[0] ^= s[3];
+	GLOBAL_SEED[2] ^= GLOBAL_SEED[0];
+	GLOBAL_SEED[3] ^= GLOBAL_SEED[1];
+	GLOBAL_SEED[1] ^= GLOBAL_SEED[2];
+	GLOBAL_SEED[0] ^= GLOBAL_SEED[3];
 
-	s[2] ^= t;
+	GLOBAL_SEED[2] ^= t;
 
-    s[3] = rotl(s[3], 45);
+    GLOBAL_SEED[3] = rotl(GLOBAL_SEED[3], 45);
     // method proposed by vigna on http://prng.di.unimi.it/ 
     (result >> 11) as f64 * 2.0f64.powf(-53.0)
     }
@@ -53,23 +53,23 @@ pub fn xorshiro256plus_mul() -> f64{
 
 
 #[inline(always)]
+/// based on
+/// https://experilous.com/1/blog/post/perfect-fast-random-floating-point-numbers
+/// http://prng.di.unimi.it/xoshiro256plus.c
 pub fn xorshiro256plus() -> f64{
-    /// based on
-    /// https://experilous.com/1/blog/post/perfect-fast-random-floating-point-numbers
-    /// http://prng.di.unimi.it/xoshiro256plus.c
     unsafe {
-	let result: u64 = s[0] + s[3];
+	let result: u64 = GLOBAL_SEED[0] + GLOBAL_SEED[3];
 
-	let t: u64 = s[1] << 17;
+	let t: u64 = GLOBAL_SEED[1] << 17;
 
-	s[2] ^= s[0];
-	s[3] ^= s[1];
-	s[1] ^= s[2];
-	s[0] ^= s[3];
+	GLOBAL_SEED[2] ^= GLOBAL_SEED[0];
+	GLOBAL_SEED[3] ^= GLOBAL_SEED[1];
+	GLOBAL_SEED[1] ^= GLOBAL_SEED[2];
+	GLOBAL_SEED[0] ^= GLOBAL_SEED[3];
 
-	s[2] ^= t;
+	GLOBAL_SEED[2] ^= t;
 
-    s[3] = rotl(s[3], 45);
+    GLOBAL_SEED[3] = rotl(GLOBAL_SEED[3], 45);
     
     let v: u64 = (result >> 11) | (1023 << 52);
     let r: f64 = f64::from_le_bytes(v.to_le_bytes());

@@ -1,6 +1,6 @@
-use graph::{Graph, NodeT, ParamsT, WeightT, NodeTypeT, EdgeT, EdgeTypeT};
-use pyo3::prelude::*;
+use graph::{EdgeT, EdgeTypeT, Graph, NodeT, NodeTypeT, ParamsT, WeightT};
 use pyo3::exceptions;
+use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use std::collections::HashMap;
 
@@ -18,7 +18,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
 #[pyclass]
 #[text_signature = "(edge_path, sources_column, destinations_column, directed, *, edge_types_column, weights_column, node_path, nodes_column, node_types_column, edge_sep, node_sep, validate_input_data)"]
 /// Build the graph from a csv (or tsv) in Rust.
-/// 
+///
 /// Parameters
 /// ---------------------
 /// edge_path,
@@ -28,14 +28,14 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
 /// edge_types_column,
 /// weights_column,
 /// node_path,
-/// nodes_column, 
-/// node_types_column, 
-/// edge_sep, 
-/// node_sep, 
+/// nodes_column,
+/// node_types_column,
+/// edge_sep,
+/// node_sep,
 /// validate_input_data
-/// 
+///
 struct EnsmallenGraph {
-    graph: Graph
+    graph: Graph,
 }
 
 fn extract_value(val: &PyAny) -> &str {
@@ -44,109 +44,127 @@ fn extract_value(val: &PyAny) -> &str {
 
 #[pymethods]
 impl EnsmallenGraph {
-    #[new]  
-    #[args(
-        py_kwargs = "**"
-    )]
-    fn new( edge_path: &str,
-            sources_column: &str,
-            destinations_column: &str,
-            directed: bool,
-            py_kwargs: Option<&PyDict>
-        ) -> PyResult<Self> {
-
+    #[new]
+    #[args(py_kwargs = "**")]
+    fn new(
+        edge_path: &str,
+        sources_column: &str,
+        destinations_column: &str,
+        directed: bool,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<Self> {
         if py_kwargs.is_none() {
             let graph = Graph::from_csv(
                 edge_path,
-                sources_column, 
-                destinations_column, 
+                sources_column,
+                destinations_column,
                 directed,
-                None, None, None, None,
-                None, None, None, None,
-                None, None, None
+                None,
+                None,
+                None,
+                None,
+                None,
+                None,
+                None,
+                None,
+                None,
+                None,
+                None,
             );
 
             return match graph {
-                Ok(g) => Ok(EnsmallenGraph{ graph: g }),
-                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e))
-            }
+                Ok(g) => Ok(EnsmallenGraph { graph: g }),
+                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+            };
         }
-        
+
         let kwargs = py_kwargs.unwrap();
 
         let graph = Graph::from_csv(
             edge_path,
-            sources_column, 
-            destinations_column, 
+            sources_column,
+            destinations_column,
             directed,
             kwargs.get_item("edge_types_column").map(extract_value),
             kwargs.get_item("default_edge_type").map(extract_value),
             kwargs.get_item("weights_column").map(extract_value),
-            kwargs.get_item("default_weight").map(|val| val.extract::<WeightT>().unwrap()),
+            kwargs
+                .get_item("default_weight")
+                .map(|val| val.extract::<WeightT>().unwrap()),
             kwargs.get_item("node_path").map(extract_value),
             kwargs.get_item("nodes_column").map(extract_value),
             kwargs.get_item("node_types_column").map(extract_value),
             kwargs.get_item("default_node_type").map(extract_value),
             kwargs.get_item("edge_sep").map(extract_value),
             kwargs.get_item("node_sep").map(extract_value),
-            kwargs.get_item("validate_input_data").map(|val| val.extract::<bool>().unwrap())
+            kwargs
+                .get_item("validate_input_data")
+                .map(|val| val.extract::<bool>().unwrap()),
         );
 
-        
-        return match graph {
-            Ok(g) => Ok(EnsmallenGraph{ graph: g }),
-            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e))
+        match graph {
+            Ok(g) => Ok(EnsmallenGraph { graph: g }),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
 
     #[text_signature = "(node_id)"]
     /// Return random walks done on the graph using Rust.
-    /// 
+    ///
     /// Parameters
     /// ---------------------
     /// node_id: int,
     ///     Numeric ID of the node.
-    /// 
+    ///
     /// Returns
     /// ---------------------
     /// Return the id of the node type of the node.
-    fn get_node_type_id(&self, node_id: NodeT) -> NodeTypeT{
-         self.graph.get_node_type_id(node_id).unwrap()
+    fn get_node_type_id(&self, node_id: NodeT) -> PyResult<NodeTypeT> {
+        match self.graph.get_node_type_id(node_id) {
+            Ok(g) => Ok(g),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
     }
 
     #[text_signature = "(edge_id)"]
     /// Return random walks done on the graph using Rust.
-    /// 
+    ///
     /// Parameters
     /// ---------------------
     /// edge_id: int,
     ///     Numeric ID of the edge.
-    /// 
+    ///
     /// Returns
     /// ---------------------
     /// Return the id of the edge type of the edge.
-    fn get_edge_type_id(&self, edge_id: EdgeT)->EdgeTypeT{
-        self.graph.get_edge_type_id(edge_id).unwrap()
+    fn get_edge_type_id(&self, edge_id: EdgeT) -> PyResult<EdgeTypeT> {
+        match self.graph.get_edge_type_id(edge_id) {
+            Ok(g) => Ok(g),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
     }
 
     #[text_signature = "(src, dst)"]
     /// Return random walks done on the graph using Rust.
-    /// 
+    ///
     /// Parameters
     /// ---------------------
     /// edge_id: int,
     ///     Numeric ID of the edge.
-    /// 
+    ///
     /// Returns
     /// ---------------------
     /// Return the id of the edge type of the edge.
-    fn get_edge_id(&self, src: NodeT, dst:NodeT)->EdgeT{
-        self.graph.get_edge_id(src, dst)
+    fn get_edge_id(&self, src: NodeT, dst: NodeT) -> PyResult<EdgeT> {
+        match self.graph.get_edge_id(src, dst) {
+            Ok(g) => Ok(g),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
     }
 
     #[text_signature = "(iterations, length, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
     /// Return random walks done on the graph using Rust.
-    /// 
+    ///
     /// Parameters
     /// ---------------------
     /// iterations,
@@ -179,34 +197,35 @@ impl EnsmallenGraph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
-    /// 
+    ///
     /// Returns
     /// ----------------------------
     /// List of list of walks containing the numeric IDs of nodes.
-    /// 
-    fn walk(&self,
+    ///
+    fn walk(
+        &self,
         iterations: usize,
         length: usize,
         min_length: usize,
         return_weight: ParamsT,
         explore_weight: ParamsT,
         change_node_type_weight: ParamsT,
-        change_edge_type_weight: ParamsT
+        change_edge_type_weight: ParamsT,
     ) -> PyResult<Vec<Vec<NodeT>>> {
         let w = self.graph.walk(
             iterations,
-            length, 
+            length,
             Some(min_length),
             Some(return_weight),
             Some(explore_weight),
             Some(change_node_type_weight),
-            Some(change_edge_type_weight), 
+            Some(change_edge_type_weight),
         );
-        
-        return match w {
+
+        match w {
             Ok(g) => Ok(g),
-            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e))
-        };
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
     }
 
     #[getter]
@@ -227,6 +246,199 @@ impl EnsmallenGraph {
     #[getter]
     fn reverse_worddictionary(&self) -> Vec<String> {
         self.graph.nodes_reverse_mapping().clone()
+    }
+    
+    #[text_signature = "(one, two)"]
+    /// Return the Jaccard Index for the two given nodes.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// one: int,
+    ///     First node ID to use to compute Jaccard Index.
+    /// two: int,
+    ///     Second node ID to use to compute Jaccard Index.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Jaccard Index for the two given nodes.
+    ///
+    fn jaccard_index(&self, one: NodeT, two: NodeT) -> f64{
+        self.graph.jaccard_index(one, two)
+    }
+    
+    #[text_signature = "(one, two)"]
+    /// Return the Adamic/Adar for the two given nodes.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// one: int,
+    ///     First node ID to use to compute Adamic/Adar.
+    /// two: int,
+    ///     Second node ID to use to compute Adamic/Adar.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Adamic/Adar for the two given nodes.
+    ///
+    fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> f64{
+        self.graph.adamic_adar_index(one, two)
+    }
+
+
+    #[text_signature = "(one, two)"]
+    /// Return the Resource Allocation Index for the two given nodes.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// one: int,
+    ///     First node ID to use to compute Resource Allocation Index.
+    /// two: int,
+    ///     Second node ID to use to compute Resource Allocation Index.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Resource Allocation Index for the two given nodes.
+    ///
+    fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> f64{
+        self.graph.resource_allocation_index(one, two)
+    }
+
+    #[text_signature = "(one, two)"]
+    /// Return the degrees product for the two given nodes.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// one: int,
+    ///     First node ID to use to compute degrees product.
+    /// two: int,
+    ///     Second node ID to use to compute degrees product.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// degrees product for the two given nodes.
+    ///
+    fn degrees_product(&self, one: NodeT, two: NodeT) -> usize{
+        self.graph.degrees_product(one, two)
+    }
+
+
+    #[text_signature = "(node)"]
+    /// Return the degree for the given node.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node: int,
+    ///     Node ID to use to compute degrees product.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// degrees product for the two given nodes.
+    ///
+    fn degree(&self, node: NodeT) -> NodeT{
+        self.graph.degree(node)
+    }
+
+    #[text_signature = "(src, dst)"]
+    /// Return boolean representing if given edge exists in graph.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// src: int,
+    ///     Node ID to use as source of given edge.
+    /// dst: int,
+    ///     Node ID to use as destination of given edge.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if given edge exists in graph.
+    ///
+    fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
+        self.graph.has_edge(src, dst)
+    }
+
+    
+    #[text_signature = "()"]
+    /// Return the number of NON-SINGLETONS nodes in the graph.
+    fn get_nodes_number(&self) -> usize {
+        self.graph.get_nodes_number()
+    }
+
+    #[text_signature = "()"]
+    /// Return the number of edges in the graph.
+    fn get_edges_number(&self) -> usize {
+        self.graph.get_edges_number()
+    }
+    
+    #[text_signature = "()"]
+    /// Return the number of edges types in the graph.
+    /// 
+    /// This method will include, if found necessary by a missing value,
+    /// also the default edge type in the count of total edge types.
+    /// 
+    fn get_edge_types_number(&self) -> usize {
+        self.graph.get_edge_types_number()
+    }
+    
+    #[text_signature = "()"]
+    /// Return the number of edges in the graph.
+    /// 
+    /// This method will include, if found necessary by a missing value,
+    /// also the default node type in the count of total node types.
+    /// 
+    fn get_node_types_number(&self) -> usize {
+        self.graph.get_node_types_number()
+    }
+
+    #[text_signature = "(node)"]
+    /// Return boolean representing if given node is a trap.
+    /// 
+    /// A trap node is a node with no outbounds edges.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// node: int,
+    ///     Node ID to search if it's a trap.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if given node is a trap.
+    ///
+    fn is_node_trap(&self, node: NodeT) -> bool{
+        self.graph.is_node_trap(node)
+    }
+
+    #[text_signature = "(edge)"]
+    /// Return boolean representing if given edge is a trap.
+    /// 
+    /// A trap edge is a edge with a destination node that is a trap node.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// node: int,
+    ///     Node ID to search if it's a trap.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if given edge is a trap.
+    ///
+    fn is_edge_trap(&self, edge: EdgeT) -> bool{
+        self.graph.is_edge_trap(edge)
+    }
+    
+    #[text_signature = "(node)"]
+    /// Return list of Node IDs of the neighbours of given node.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// node: int,
+    ///     Node ID to 
+    ///
+    /// Returns
+    /// ----------------------------
+    /// List of Node IDs of the neighbouring nodes.
+    ///
+    fn get_node_neighbours(&self, node:NodeT) -> Vec<NodeT>{
+        self.graph.get_node_neighbours(node)
     }
 
     

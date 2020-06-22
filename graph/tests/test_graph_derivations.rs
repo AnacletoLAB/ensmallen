@@ -1,7 +1,5 @@
 extern crate graph;
 use graph::graph::Graph;
-use std::fs::File;
-use linecount::count_lines;
 
 #[test]
 fn test_graph_clone() {
@@ -26,6 +24,6 @@ fn test_graph_clone() {
         ).unwrap();
         // it's not a great test but the getters are automatically derived
         // so there shouldn't be a lot of problems
-        graph.clone();
+        let _ = graph.clone();
     }
 }

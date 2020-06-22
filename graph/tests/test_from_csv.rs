@@ -520,10 +520,12 @@ fn test_graph_from_csv_with_edge_and_nodes_types() {
         assert_eq!(graph.get_edge_types_number(), 3);
         graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
         for one in 0..graph.get_nodes_number(){
-            graph.get_node_type_id(one);
+            graph.get_node_type_id(one).unwrap();
             for two in 0..graph.get_nodes_number(){
                 if graph.has_edge(one, two){
-                    graph.get_edge_type_id(graph.get_edge_id(one, two).unwrap());    
+                    graph.get_edge_type_id(
+                        graph.get_edge_id(one, two).unwrap()
+                    ).unwrap();    
                 } else {
                     assert!(graph.get_edge_id(one, two).is_err());
                 }

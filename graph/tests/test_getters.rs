@@ -1,7 +1,5 @@
 extern crate graph;
 use graph::graph::Graph;
-use std::fs::File;
-use linecount::count_lines;
 
 #[test]
 fn test_getters() {

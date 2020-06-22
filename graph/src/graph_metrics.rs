@@ -3,6 +3,7 @@ use super::types::*;
 use std::collections::HashSet;
 use rayon::prelude::*;
 
+/// Properties and measurements of the graph
 impl Graph {
     /// Returns product of degrees of given nodes.
     ///

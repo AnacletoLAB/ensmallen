@@ -24,7 +24,7 @@ fn test_naife_cumulative_sum(b: &mut Bencher) {
 fn test_scan_cumulative_sum(b: &mut Bencher) {
     let random_vec = gen_random_vec(NUMBER);
     b.iter(|| {
-        let cumulative_sum: Vec<f64> = random_vec
+        let _cumulative_sum: Vec<f64> = random_vec
         .iter()
         .scan(0f64, |acc, &x| {
             *acc = *acc + x;
