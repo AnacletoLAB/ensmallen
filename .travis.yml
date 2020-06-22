@@ -13,7 +13,7 @@ jobs:
     - os: linux
       dist: bionic
     - os: osx
-      osx_image: "xcode7.3"
+      osx_image: "xcode11.5"
 
 # Dependencies of kcov, used by coverage
 addons:
