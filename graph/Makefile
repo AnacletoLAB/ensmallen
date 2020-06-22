@@ -20,6 +20,8 @@ fuzz:
 
 fuzz_coverage:
 	cargo fuzz build
-	kcov --include-path .,.. ./fuzz/edges_cov ./fuzz/target/x86_64-unknown-linux-gnu/debug/only_edges ./fuzz/corpus/only_edges/* || true
-	kcov --include-path .,.. ./fuzz/nodes_cov ./fuzz/target/x86_64-unknown-linux-gnu/debug/with_nodes ./fuzz/corpus/with_nodes/* || true
+	mkdir -p ./fuzz/cov
+	kcov --include-path .,.. ./fuzz/cov/edges_cov ./fuzz/target/x86_64-unknown-linux-gnu/debug/only_edges ./fuzz/corpus/only_edges/* || true
+	kcov --include-path .,.. ./fuzz/cov/nodes_cov ./fuzz/target/x86_64-unknown-linux-gnu/debug/with_nodes ./fuzz/corpus/with_nodes/* || true
+	kcov --merge ./fuzz/cov/total_cov ./fuzz/cov/edges_cov ./fuzz/cov/nodes_cov
 	$(OPEN_COMMAND) ./fuzz/cov/index.html > /dev/null &
