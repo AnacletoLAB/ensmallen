@@ -12,7 +12,7 @@ wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh -O anac
 bash ./anaconda.sh -b
 echo "export PATH=\$PATH:$HOME/anaconda3/bin" >> $HOME/.bashrc
 $HOME/anaconda3/bin/pip install maturin
-$HOME/anaconda3/bin/pip install $CURRENT_FOLDER/requirements.txt
+$HOME/anaconda3/bin/pip install -r $CURRENT_FOLDER/requirements.txt
 
 ###########################################################
 # Setup Rust nightly
@@ -25,6 +25,7 @@ rm $HOME/rustup.sh
 
 # load for current shell
 source $HOME/.bashrc
+source $HOME/.cargo/env
 
 # Setup cargo-fuzz
 cargo install cargo-fuzz
