@@ -1,4 +1,6 @@
 target
 artifacts
 cov
+edges_cov
+nodes_cov
 corpus
