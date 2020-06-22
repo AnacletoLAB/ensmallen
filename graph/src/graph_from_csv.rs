@@ -46,7 +46,8 @@ impl Graph {
         let headers = get_headers(path, sep);
 
         // open the file
-        let file = File::open(path).expect(&format!("Cannot open the nodes file at {}", path));
+        let error_message = &format!("Cannot open the nodes file at {}", path);
+        let file = File::open(path).expect(error_message);
         let mut buf_reader = BufReader::new(file);
         // Skip header
         let mut line = String::new();
