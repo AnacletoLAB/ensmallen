@@ -46,6 +46,8 @@ script:
   - cargo build --verbose --all --manifest-path=graph/Cargo.toml
   - cargo test --verbose --all --manifest-path=graph/Cargo.toml
   # - cargo bench --verbose --all --manifest-path=graph/Cargo.toml
+  # Clearing up target directory
+  - rm -fdr target
   # Build the bindings
   - maturin build --release
   # Install the binding
