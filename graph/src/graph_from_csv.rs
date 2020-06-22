@@ -230,8 +230,6 @@ impl Graph {
             }
             
             node_types.push(*node_types_mapping.get(*value).unwrap());
-            
-
         };
         
         if nodes.len() != nodes_mapping.len() {
