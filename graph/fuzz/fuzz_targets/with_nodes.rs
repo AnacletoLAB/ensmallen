@@ -7,8 +7,6 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::fs::remove_file;
 
-use std::env::current_dir;
-
 mod utils;
 use utils::*;
 
@@ -50,8 +48,8 @@ fuzz_target!(|data: &[u8]| {
     );
 
     if graph.is_ok(){
-        graph.unwrap().walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
+        let _ = graph.unwrap().walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
     }
     
-    remove_file(&filename);
+    let _ = remove_file(&filename).unwrap();
 });

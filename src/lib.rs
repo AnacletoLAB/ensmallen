@@ -247,6 +247,51 @@ impl EnsmallenGraph {
     fn reverse_worddictionary(&self) -> Vec<String> {
         self.graph.nodes_reverse_mapping().clone()
     }
+
+    #[getter]
+    fn unique_edges(&self) -> HashMap<(NodeT, NodeT), EdgeT> {
+        self.graph.unique_edges().clone()
+    }
+
+    #[getter]
+    fn outbounds(&self) -> Vec<EdgeT> {
+        self.graph.outbounds().clone()
+    }
+
+    #[getter]
+    fn weights(&self) -> Option<Vec<WeightT>> {
+        self.graph.weights().clone()
+    }
+
+    #[getter]
+    fn node_types(&self) -> Option<Vec<NodeTypeT>> {
+        self.graph.node_types().clone()
+    }
+
+    #[getter]
+    fn node_types_mapping(&self) -> Option<HashMap<String, NodeTypeT>> {
+        self.graph.node_types_mapping().clone()
+    }
+
+    #[getter]
+    fn node_types_reverse_mapping(&self) -> Option<Vec<String>> {
+        self.graph.node_types_reverse_mapping().clone()
+    }
+
+    #[getter]
+    fn edge_types(&self) -> Option<Vec<EdgeTypeT>> {
+        self.graph.edge_types().clone()
+    }
+
+    #[getter]
+    fn edge_types_mapping(&self) -> Option<HashMap<String, EdgeTypeT>> {
+        self.graph.edge_types_mapping().clone()
+    }
+
+    #[getter]
+    fn edge_types_reverse_mapping(&self) -> Option<Vec<String>> {
+        self.graph.edge_types_reverse_mapping().clone()
+    }
     
     #[text_signature = "(one, two)"]
     /// Return the Jaccard Index for the two given nodes.

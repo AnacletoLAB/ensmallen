@@ -54,9 +54,6 @@ def test_change_node_type_weight_behaviour_hpo():
             node_changes.append(changes/len(walk))
         mean_changes_counts.append(np.mean(node_changes))
 
-    print(change_node_type_weights)
-    print(mean_changes_counts)
-
     correlation, p_value = pearsonr(
         change_node_type_weights, mean_changes_counts)
     print("HPO change_node_type_weight", correlation, p_value)

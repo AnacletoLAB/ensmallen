@@ -323,8 +323,8 @@ impl Graph {
             has_columns(
                 &*path,
                 &*_node_sep,
-                &[&nodes_column.clone().unwrap()],
-                &[&node_types_column],
+                &[&nodes_column.clone().unwrap(), &node_types_column.unwrap()],
+                &[],
             )?;
         }
 

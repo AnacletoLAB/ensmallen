@@ -38,7 +38,7 @@ impl Graph {
             &two_neighbors
         ).cloned().collect();
 
-        return intersections.len() as f64 / (one_neighbors.len() + two_neighbors.len()) as f64
+        intersections.len() as f64 / (one_neighbors.len() + two_neighbors.len()) as f64
     }
 
     /// Returns the Adamic/Adar Index for the given pair of nodes.
@@ -69,7 +69,7 @@ impl Graph {
             &two_neighbors
         ).cloned().collect();
 
-        return intersections.par_iter()
+        intersections.par_iter()
             .filter(
                 |node|
                 ! self.is_node_trap(**node)
@@ -109,7 +109,7 @@ impl Graph {
             &two_neighbors
         ).cloned().collect();
 
-        return intersections.par_iter()
+        intersections.par_iter()
             .filter(
                 |node|
                 ! self.is_node_trap(**node)
