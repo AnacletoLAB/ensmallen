@@ -1,14 +1,20 @@
+//! A graph representation optimized for executing random walks on huge graphs.
 use derive_getters::Getters;
 use log::info;
 use rayon::prelude::*;
 use std::collections::{HashMap};
 use super::types::*;
 use super::random::sample;
-use arbitrary::Arbitrary;
 
 
-// TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTESuse arbitrary::Arbitrary;
-#[derive(Arbitrary)]
+// TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
+/// A graph representation optimized for executing random walks on huge graphs.
+/// 
+/// This class should be initialized using the two constructors:
+/// `graph::Graph::new_directed` or `graph::Graph::new_undirected`
+/// 
+/// # Examples
+/// 
 #[derive(Debug, Clone, Getters)]
 pub struct Graph {
     pub sources: Vec<NodeT>,
@@ -50,22 +56,47 @@ impl Graph {
         outbounds
     }
 
-    pub fn get_node_type_id(&self, node_id:NodeT) -> Result<NodeTypeT, &str> {
+    pub fn get_node_type_id(&self, node_id:NodeT) -> Result<NodeTypeT, String> {
         if let Some(nt) = &self.node_types{
-            return Ok(nt[node_id]);
+            return if node_id <= nt.len() {
+                 Ok(nt[node_id])
+            } else {
+                Err(
+                    format!(
+                        "The node_index {} is too big for the node_types vector which has len {}",
+                        node_id, nt.len()
+                    )
+                )
+            }
         }
-        Err("Node types are not defined for current class.")
+        Err(String::from("Node types are not defined for current class."))
     }
 
-    pub fn get_edge_type_id(&self, edge_id:EdgeT) -> Result<EdgeTypeT, &str> {
+    pub fn get_edge_type_id(&self, edge_id:EdgeT) -> Result<EdgeTypeT, String> {
         if let Some(et) = &self.edge_types{
-            return Ok(et[edge_id]);
+            return if edge_id <= et.len() {
+                 Ok(et[edge_id])
+            } else {
+                Err(
+                    format!(
+                        "The edge_index {} is too big for the edge_types vector which has len {}",
+                        edge_id, et.len()
+                    )
+                )
+            }
         }
-        Err("Edge types are not defined for current class.")
+        Err(String::from("Edge types are not defined for current class."))
     }
 
-    pub fn get_edge_id(&self, src:NodeT, dst:NodeT) -> EdgeT {
-        *self.unique_edges.get(&(src, dst)).unwrap()
+    pub fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
+        self.unique_edges.contains_key(&(src, dst))
+    }
+
+    pub fn get_edge_id(&self, src:NodeT, dst:NodeT) -> Result<EdgeT, String> {
+        match self.unique_edges.get(&(src, dst)) {
+            Some(g) => Ok(*g),
+            None => Err(String::from("The edge does not exists"))
+        }
     }
 
     pub fn get_nodes_number(&self) -> usize {
@@ -101,14 +132,46 @@ impl Graph {
         let max_edge: EdgeT = self.outbounds[node];
         (min_edge, max_edge)
     }
-
-    fn is_node_trap(&self, node: NodeT) -> bool {
+    
+    /// Returns the number of outbound neighbours of given node.
+    ///
+    /// # Arguments
+    ///
+    /// * `node` - Integer ID of the node.
+    /// 
+    pub fn degree(&self, node: NodeT) -> NodeT {
         let (_min, _max) = self.get_min_max_edge(node);
-        _min == _max
+        _max - _min
     }
 
-    fn is_edge_trap(&self, edge: EdgeT) -> bool {
+    /// Returns boolean representing if given node is a trap.
+    ///
+    /// # Arguments
+    ///
+    /// * `node` - Integer ID of the node.
+    /// 
+    pub fn is_node_trap(&self, node: NodeT) -> bool {
+        self.degree(node) == 0
+    }
+    /// Returns boolean representing if given edge is a trap.
+    ///
+    /// # Arguments
+    ///
+    /// * `edge` - Integer ID of the edge.
+    /// 
+    pub fn is_edge_trap(&self, edge: EdgeT) -> bool {
         self.is_node_trap(self.destinations[edge])
+    }
+
+    /// Returns list of neigbours of given node.
+    /// 
+    /// # Arguments
+    ///
+    /// * `node` - Integer ID of the node.
+    /// 
+    pub fn get_node_neighbours(&self, node:NodeT)->Vec<NodeT>{
+        let (min_edge, max_edge) = self.get_min_max_edge(node);
+        self.destinations[min_edge..max_edge].to_vec()
     }
 
     fn get_node_transition(

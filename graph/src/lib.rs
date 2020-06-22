@@ -1,7 +1,8 @@
 pub mod graph;
 pub mod csv_utils;
-pub mod graph_from_csv;
-pub mod graph_constructors;
+mod graph_from_csv;
+mod graph_constructors;
+mod graph_metrics;
 pub mod types;
 pub mod random;
 pub use self::graph_constructors::validate;

@@ -30,12 +30,11 @@ fn test_graph_from_csv_edge_only() {
         if *directed{
             assert_eq!(lines, graph.get_edges_number());
         }
-        // TODO! Make more tests on the walks!
+        assert!(graph.get_node_type_id(0).is_err());
+
         let _walks = graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
     }
 }
-
-
 
 #[test]
 fn test_graph_from_csv_edge_types() {
@@ -384,9 +383,111 @@ fn test_graph_from_csv_with_edge_and_nodes() {
             assert_eq!(edge_lines, graph.get_edges_number());
         }
         assert_eq!(graph.get_edge_types_number(), 3);
-        // TODO! fix because there might be singletons that are ignored
-        //assert_eq!(graph.get_node_types_number(), 3);
         graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
+    };
+}
+
+#[test]
+fn test_graph_negative_edge_weights() {
+    let edge_path = "tests/data/negative_edge_weights.tsv";
+    for directed in &[true, false]{
+        let graph = Graph::from_csv(
+            edge_path,
+            "subject",
+            "object",
+            *directed,
+            Some("edge_label"),
+            Some("biolink:Association"),
+            Some("weight"),
+            Some(1.0),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None
+        );
+        assert!(graph.is_err());
+        println!("{:?}", graph);
+    };
+}
+
+#[test]
+fn test_graph_invalid_edge_weights() {
+    let edge_path = "tests/data/invalid_edge_weights.tsv";
+    for directed in &[true, false]{
+        let graph = Graph::from_csv(
+            edge_path,
+            "subject",
+            "object",
+            *directed,
+            Some("edge_label"),
+            Some("biolink:Association"),
+            Some("weight"),
+            Some(1.0),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None
+        );
+        assert!(graph.is_err());
+        println!("{:?}", graph);
+    };
+}
+
+#[test]
+fn test_graph_nan_edge_weights() {
+    let edge_path = "tests/data/nan_edge_weights.tsv";
+    for directed in &[true, false]{
+        let graph = Graph::from_csv(
+            edge_path,
+            "subject",
+            "object",
+            *directed,
+            Some("edge_label"),
+            Some("biolink:Association"),
+            Some("weight"),
+            Some(1.0),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None
+        );
+        assert!(graph.is_err());
+        println!("{:?}", graph);
+    };
+}
+
+#[test]
+fn test_graph_inf_edge_weights() {
+    let edge_path = "tests/data/infinite_edge_weights.tsv";
+    for directed in &[true, false]{
+        let graph :Result<Graph, String> = Graph::from_csv(
+            edge_path,
+            "subject",
+            "object",
+            *directed,
+            Some("edge_label"),
+            Some("biolink:Association"),
+            Some("weight"),
+            Some(1.0),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None
+        );
+        assert!(graph.is_err());
+        println!("{:?}", graph);
     };
 }
 
@@ -418,6 +519,17 @@ fn test_graph_from_csv_with_edge_and_nodes_types() {
         }
         assert_eq!(graph.get_edge_types_number(), 3);
         graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
+        for one in 0..graph.get_nodes_number(){
+            graph.get_node_type_id(one);
+            for two in 0..graph.get_nodes_number(){
+                if graph.has_edge(one, two){
+                    graph.get_edge_type_id(graph.get_edge_id(one, two).unwrap());    
+                } else {
+                    assert!(graph.get_edge_id(one, two).is_err());
+                }
+            }
+        }
+        assert!(graph.get_edge_type_id(100000000000).is_err());
     };
 }
 
@@ -447,7 +559,10 @@ fn test_graph_from_csv_het() {
         if *directed{
             assert_eq!(edge_lines, graph.get_edges_number());
         }
+        assert_eq!(4, graph.get_node_types_number());
         graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
+        assert!(graph.get_node_type_id(100000000000).is_err());
+        assert!(graph.get_edge_type_id(100000000000).is_err());
     };
 }
 

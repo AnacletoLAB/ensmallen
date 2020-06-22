@@ -7,11 +7,20 @@ else
 OPEN_COMMAND := "open"
 endif
 
+doc:
+	rm -rfd ./target/doc
+	cargo doc --no-deps
+
 coverage:
 	rm -rfd target
-	cargo build
-	cargo test
-	grcov ./target/debug/ -s . -t html --llvm --branch --ignore-not-existing -o ./target/debug/coverage/
+	# Use a subshell so that we don't modify the user environment-variables
+	( export CARGO_INCREMENTAL=0 ;\
+		export RUSTFLAGS="-Zprofile -Ccodegen-units=1 -Copt-level=0 -Clink-dead-code -Coverflow-checks=off -Zpanic_abort_tests -Cpanic=abort" ;\
+		export RUSTDOCFLAGS="-Cpanic=abort" ;\
+		cargo build ;\
+		cargo test ;\
+		grcov ./target/debug/ -s . -t html --llvm --branch --ignore-not-existing -o ./target/debug/coverage/ ;\
+	)
 	$(OPEN_COMMAND) ./target/debug/coverage/index.html > /dev/null &
 
 fuzz:

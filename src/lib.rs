@@ -2,6 +2,7 @@ use graph::{Graph, NodeT, ParamsT, WeightT, NodeTypeT, EdgeT, EdgeTypeT};
 use pyo3::prelude::*;
 use pyo3::exceptions;
 use pyo3::types::PyDict;
+use std::collections::HashMap;
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
@@ -212,4 +213,21 @@ impl EnsmallenGraph {
     fn sources(&self) -> Vec<NodeT> {
         self.graph.sources().clone()
     }
+
+    #[getter]
+    fn destinations(&self) -> Vec<NodeT> {
+        self.graph.destinations().clone()
+    }
+
+    #[getter]
+    fn worddictionary(&self) -> HashMap<String, NodeT> {
+        self.graph.nodes_mapping().clone()
+    }
+
+    #[getter]
+    fn reverse_worddictionary(&self) -> Vec<String> {
+        self.graph.nodes_reverse_mapping().clone()
+    }
+
+    
 }

@@ -172,11 +172,8 @@ impl Graph {
         // Skip header
         let mut line = String::new();
         buf_reader.read_line(&mut line).unwrap();
-        // Flag for when a new non-singleton node has been added
-        let mut new_node;
         // convert the csv to a dict of lists
         for (j, line) in buf_reader.lines() .enumerate() {
-            new_node = false;
             let parsed: HashMap<String, &str> = headers.iter().cloned()
                 .zip(
                     line.as_ref().unwrap()
@@ -186,51 +183,54 @@ impl Graph {
                 .collect();
 
             let node = parsed.get(nodes_column).unwrap();
-            let result = nodes_mapping.get(*node);
+            let maybe_node_id = nodes_mapping.get(*node);
             // if the node is not present in the mapping, then it's a
             // singleton. Therefore it can be ignored and is type doesn't
             // matter
-            if result.is_none(){
+            if maybe_node_id.is_none(){
                 continue;
             }
+            let node_id = maybe_node_id.unwrap();
+            
             // since the node is not a singleton, add it to the list.
-            nodes.push(*result.unwrap());
+            if unique_nodes_set.contains(node_id) {
+                return Err(
+                    format!(
+                        concat!(
+                        "\nFound duplicated line in nodes file!\n",
+                        "Specifically, the duplicated line is the number {j}.\n",
+                        "The node is {node}.\n",
+                        "The node type of the row is {node_type}.\n",
+                        "The path of the document was {path}.\n",
+                        "The complete line in question is:\n{line}\n"
+                        ),
+                        j=j,
+                        node=node_id,
+                        node_type=node_types[*node_id],
+                        path=path,
+                        line=line.unwrap()
+                    )
+                );
+            }
 
-            let value = parsed.get(node_types_column).unwrap();
-            let _value = if value.is_empty(){
-                default_node_type
-            } else {
-                value
-            };
+            nodes.push(*node_id);
+            unique_nodes_set.insert(*node_id);
+
+            // get and set default for the node type
+            let mut value = parsed.get(node_types_column).unwrap();
+            if value.is_empty(){
+                value = &default_node_type;
+            }
+
+            // update node_types_mapping with the new node type
             if ! node_types_mapping.contains_key(*value){
                 node_types_mapping.insert(String::from(*value), node_types_reverse_mapping.len() as NodeTypeT);
                 node_types_reverse_mapping.push(String::from(*value));
             }
+            
             node_types.push(*node_types_mapping.get(*value).unwrap());
             
-            if new_node && unique_nodes_set.contains(&nodes[nodes.len()-1]){
-                
-                return Err(
-                        format!(
-                            concat!(
-                            "\nFound duplicated line in nodes file!\n",
-                            "Specifically, the duplicated line is the number {j}.\n",
-                            "The node is {node}.\n",
-                            "The node type of the row is {node_type}.\n",
-                            "The path of the document was {path}.\n",
-                            "The complete line in question is:\n{line}\n"
-                            ),
-                            j=j,
-                            node=nodes[nodes.len()-1],
-                            node_type=node_types[nodes.len()-1],
-                            path=path,
-                            line=line.unwrap()
-                        )
-                    );
-            }
-            if new_node {
-                unique_nodes_set.insert(nodes[nodes.len()-1]);
-            }
+
         };
         
         if nodes.len() != nodes_mapping.len() {
@@ -242,16 +242,6 @@ impl Graph {
                     ),
                     nodes.len(), nodes_mapping.len()
                 )
-            )
-        }
-
-        if nodes.len() != node_types.len() {
-            panic!(
-                "Nodes {} and node types {} lengths mismatchs: nodes {:?} node types {:?}",
-                nodes.len(),
-                node_types.len(),
-                nodes,
-                node_types
             )
         }
 
