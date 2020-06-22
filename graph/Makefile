@@ -15,9 +15,11 @@ coverage:
 	$(OPEN_COMMAND) ./target/debug/coverage/index.html > /dev/null &
 
 fuzz:
-	cargo fuzz run only_edge_file --release
+	cargo fuzz run only_edges --release
+	cargo fuzz run with_nodes --release
 
 fuzz_coverage:
-	cargo fuzz build only_edge_file 
-	kcov --include-path .,.. ./fuzz/cov ./fuzz/target/x86_64-unknown-linux-gnu/debug/only_edge_file ./fuzz/corpus/only_edge_file/* || 1
+	cargo fuzz build
+	kcov --include-path .,.. ./fuzz/edges_cov ./fuzz/target/x86_64-unknown-linux-gnu/debug/only_edges ./fuzz/corpus/only_edges/* || true
+	kcov --include-path .,.. ./fuzz/nodes_cov ./fuzz/target/x86_64-unknown-linux-gnu/debug/with_nodes ./fuzz/corpus/with_nodes/* || true
 	$(OPEN_COMMAND) ./fuzz/cov/index.html > /dev/null &

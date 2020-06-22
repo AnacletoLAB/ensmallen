@@ -21,8 +21,8 @@ path = ".."
 members = ["."]
 
 [[bin]]
-name = "only_edge_file"
-path = "fuzz_targets/only_edge_file.rs"
+name = "only_edges"
+path = "fuzz_targets/only_edges.rs"
 test = false
 doc = false
 

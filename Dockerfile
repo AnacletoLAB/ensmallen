@@ -40,6 +40,22 @@ RUN /root/rustup.sh --default-host x86_64-unknown-linux-gnu --default-toolchain 
 RUN echo "source /root/.cargo/env" >> /root/.bashrc
 RUN rm /root/rustup.sh
 
+RUN source /root/.bashrc
+
+RUN pip install maturin
+
+###########################################################
+# Setup different python versions
+###########################################################
+ENV PYTHON_VERSIONS=3.8.3,3.7.7,3.6.10,3.5.9
+
+# Build all the versions
+RUN  for PYTHON_VERSION in $PYTHON_VERSIONS; do                                 \
+    wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz            \
+    tar -xf Python-${PYTHON_VERSION}tar.xz                                                 \
+    (cd Python-${PYTHON_VERSION}; ./configure --enable-optimizations; make -j$(nproc); make -j$(nproc) install) \
+    done;
+
 ###########################################################
 # Build directory
 ###########################################################

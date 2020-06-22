@@ -3,8 +3,11 @@ use std::{fs::File, io::prelude::*, io::BufReader};
 use rayon::prelude::*;
 
 pub fn check_consistent_lines(path: &str, sep: &str) -> Result<(), String>{
-    let file = File::open(path).expect("Cannot open file.");
-    let buf_reader = BufReader::new(file);
+    let file = File::open(path);
+    if file.is_err() {
+        return Err(format!("Cannot open file at {}", path));
+    }
+    let buf_reader = BufReader::new(file.unwrap());
     let mut expected_length: Option<usize> = None;
 
     for (counter, line) in buf_reader.lines().enumerate() {

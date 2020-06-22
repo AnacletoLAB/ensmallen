@@ -45,11 +45,16 @@ impl Graph {
         let headers = get_headers(path, sep);
 
         // open the file
-        let file = File::open(path).expect("Cannot open file.");
+        let file = File::open(path).expect(&format!("Cannot open the nodes file at {}", path));
         let mut buf_reader = BufReader::new(file);
         // Skip header
         let mut line = String::new();
-        buf_reader.read_line(&mut line).unwrap();
+        let header_line = buf_reader.read_line(&mut line);
+        if header_line.is_err(){
+            return Err(String::from(
+                "Cannot read the header of the node files"
+            ));
+        }
         // convert the csv to a dict of lists
         for (i, line) in buf_reader.lines().enumerate() {
             for (value, column) in line.as_ref().unwrap().trim_end_matches(|c| c == '\n').split(sep).zip(headers.iter()) {

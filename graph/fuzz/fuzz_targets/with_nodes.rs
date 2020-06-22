@@ -7,6 +7,8 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::fs::remove_file;
 
+use std::env::current_dir;
+
 mod utils;
 use utils::*;
 
@@ -26,13 +28,14 @@ fuzz_target!(|data: &[u8]| {
     // Write the fuzzer output to the file
     let mut file = File::create(&filename).unwrap();
     file.write_all(data).unwrap();
-
-    let edge_path = "tests/data/het_graph_edges.tsv";
+    
+    
+    let edge_path = "../tests/data/het_graph_edges.tsv";
     let graph = graph::Graph::from_csv(
         edge_path,
         "subject",
         "object",
-        true,
+        false,
         None,
         None,
         Some("weight"),
