@@ -30,7 +30,7 @@ fuzz_target!(|data: &[u8]| {
     file.write_all(data).unwrap();
     
     
-    let edge_path = "../tests/data/het_graph_edges.tsv";
+    let edge_path = "tests/data/het_graph_edges.tsv";
     let graph = graph::Graph::from_csv(
         edge_path,
         "subject",

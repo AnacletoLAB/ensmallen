@@ -24,4 +24,8 @@ fuzz_coverage:
 	kcov --include-path .,.. ./fuzz/cov/edges_cov ./fuzz/target/x86_64-unknown-linux-gnu/debug/only_edges ./fuzz/corpus/only_edges/* || true
 	kcov --include-path .,.. ./fuzz/cov/nodes_cov ./fuzz/target/x86_64-unknown-linux-gnu/debug/with_nodes ./fuzz/corpus/with_nodes/* || true
 	kcov --merge ./fuzz/cov/total_cov ./fuzz/cov/edges_cov ./fuzz/cov/nodes_cov
-	$(OPEN_COMMAND) ./fuzz/cov/index.html > /dev/null &
+	$(OPEN_COMMAND) ./fuzz/cov/total_cov/index.html > /dev/null &
+
+clean_corpus:
+	rm $$(find ./fuzz/corpus/only_edges -type f | grep -v .csv | grep -v .tsv | xargs)
+	rm $$(find ./fuzz/corpus/with_nodes -type f | grep -v .csv | grep -v .tsv | xargs)
