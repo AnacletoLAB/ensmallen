@@ -12,16 +12,19 @@ doc:
 	cargo doc --no-deps
 
 coverage:
-	rm -rfd target
+	#rm -rfd target
 	# Use a subshell so that we don't modify the user environment-variables
-	( export CARGO_INCREMENTAL=0 ;\
-		export RUSTFLAGS="-Zprofile -Ccodegen-units=1 -Copt-level=0 -Clink-dead-code -Coverflow-checks=off -Zpanic_abort_tests -Cpanic=abort" ;\
-		export RUSTDOCFLAGS="-Cpanic=abort" ;\
-		cargo build ;\
-		cargo test ;\
-		grcov ./target/debug/ -s . -t html --llvm --branch --ignore-not-existing -o ./target/debug/coverage/ ;\
-	)
-	$(OPEN_COMMAND) ./target/debug/coverage/index.html > /dev/null &
+	#cargo test --no-run
+
+	for TEST in $$(find ./target/debug/deps -executable -type f | grep test);\
+	do \
+		mkdir -p ./target/debug/cov/$$TEST ;\
+		kcov --exclude-pattern=/.rustup,/.cargo ./target/debug/cov/$$(basename $$TEST) --verify $$TEST ;\
+	done
+	
+	kcov --merge ./target/debug/cov/total $$(find ./target/debug/cov/ -type d -maxdepth 1 -mindepth 1) ;\
+	
+	$(OPEN_COMMAND) ./target/debug/cov/total/index.html > /dev/null &
 
 fuzz:
 	cargo fuzz run only_edges --release
