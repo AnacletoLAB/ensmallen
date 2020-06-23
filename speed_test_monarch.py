@@ -1,6 +1,6 @@
 from time import time
 from humanize import naturaldelta
-from ensmallen_graph import EnsmallenGraph # pylint: disable=no-name-in-module
+from ensmallen_graph import EnsmallenGraph  # pylint: disable=no-name-in-module
 import compress_json
 import json
 
@@ -13,6 +13,7 @@ graph = EnsmallenGraph(
     directed=True,
     edge_types_column="edge_label",
     default_edge_type='biolink:interacts_with',
+    validate_input_data=False
 )
 completed_graph = time() - start
 start_walk = time()

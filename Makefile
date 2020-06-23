@@ -1,7 +1,3 @@
-
-setup:
-	pip install -r requirements.txt
-
 build:
 	rm -fdr target
 	maturin build --release

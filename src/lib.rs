@@ -16,23 +16,46 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
 }
 
 #[pyclass]
-#[text_signature = "(edge_path, sources_column, destinations_column, directed, *, edge_types_column, weights_column, node_path, nodes_column, node_types_column, edge_sep, node_sep, validate_input_data)"]
+#[text_signature = "(edge_path, sources_column, destinations_column, directed, *, edge_types_column, default_edge_type, weights_column, default_weight, node_path, nodes_column, node_types_column, default_node_type, edge_sep, node_sep, validate_input_data)"]
 /// Build the graph from a csv (or tsv) in Rust.
 ///
 /// Parameters
 /// ---------------------
-/// edge_path,
-/// sources_column,
-/// destinations_column,
-/// directed,
-/// edge_types_column,
-/// weights_column,
-/// node_path,
-/// nodes_column,
-/// node_types_column,
-/// edge_sep,
-/// node_sep,
-/// validate_input_data
+/// edge_path:str,
+///     Path to CSV file from where to load the edge data.
+/// sources_column:str,
+///     Column name of the edge file where the source nodes are listed.
+/// destinations_column:str,
+///     Column name of the edge file where the destination nodes are listed.
+/// directed:bool,
+///     Boolean representing if given graph is directed or undirected.
+/// edge_types_column:str,
+///     Column name of the edge file where the edge types are listed.
+/// default_edge_type:str,
+///     The default edge type to use when an empty edge type is found in the
+///     provided edge file. It is REQUIRED when passing an edge types column.
+/// weights_column:str,
+///     Column name of the edge file where the edge weights are listed.
+/// default_weight:float,
+///     The default weight to use when an empty weight is found in the
+///     provided edge file. It is REQUIRED when passing a weights column.
+/// node_path:str,
+///     Path to CSV file from where to load the node data.
+/// nodes_column:str,
+///     Column name of the node file where the nodes names are listed.
+/// default_node_type:str,
+///     The default node type to use when an empty node type is found in the
+///     provided node file. It is REQUIRED when passing an node types column.
+/// node_types_column:str,
+///     Column name of the node file where the node types are listed.
+/// edge_sep:str,
+///     Separator to use for the edge files.
+/// node_sep:str,
+///     Separator to use for the node files.
+/// validate_input_data:bool,
+///     Wethever to validate or not the files. This should be disabled when
+///     you are SURE that the graph data are valid, otherwise the system will
+///     panic.
 ///
 struct EnsmallenGraph {
     graph: Graph,
@@ -484,7 +507,5 @@ impl EnsmallenGraph {
     ///
     fn get_node_neighbours(&self, node:NodeT) -> Vec<NodeT>{
         self.graph.get_node_neighbours(node)
-    }
-
-    
+    }    
 }

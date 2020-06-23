@@ -16,7 +16,8 @@ graph = EnsmallenGraph(
     nodes_column="id",
     node_types_column="category",
     default_edge_type='biolink:interacts_with',
-    default_node_type='biolink:NamedThing'
+    default_node_type='biolink:NamedThing',
+    validate_input_data=False
 )
 completed_graph = time() - start
 start_walk = time()
