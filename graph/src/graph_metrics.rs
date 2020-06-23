@@ -124,7 +124,7 @@ impl Graph {
     /// 
     /// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
     /// 
-    pub fn traps_mean_rate(&self)->f64{
+    pub fn traps_rate(&self)->f64{
         (0..self.get_nodes_number())
             .into_par_iter()
             .map(|node|
