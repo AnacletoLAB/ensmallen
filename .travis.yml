@@ -58,6 +58,6 @@ script:
 after_success:
   - curl -L https://github.com/SimonKagstrom/kcov/archive/master.tar.gz | tar xf
   - cd kcov-master && mkdir build && cd build && cmake .. && make &&  sudo make install && cd ../.. && rm -rf kcov-master
-  - cd ./graph && bash coverage.sh &&
+  - cd ./graph && bash coverage.sh
   - bash <(curl -s https://codecov.io/bash)
     
