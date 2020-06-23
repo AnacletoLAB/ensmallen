@@ -361,13 +361,11 @@ impl Graph {
         let number_of_results = iterations * self.get_nodes_number();
 
         if self.has_traps{
-            let average_length = self.mean_walks_length_estimator(0.9972)?;
             Ok((0..number_of_results)
                 .into_par_iter()
                 .map(|node| {
                     self.single_walk(
                         length,
-                        average_length,
                         node / iterations,
                         _return_weight,
                         _explore_weight,
@@ -400,14 +398,13 @@ impl Graph {
     fn single_walk(
         &self,
         length: usize,
-        average_length: usize,
         node: NodeT,
         return_weight: ParamsT,
         explore_weight: ParamsT,
         change_node_type_weight: ParamsT,
         change_edge_type_weight: ParamsT,
     ) -> Vec<NodeT> {
-        
+
         if self.is_node_trap(node) {
             return vec![node];
         }
@@ -418,7 +415,7 @@ impl Graph {
             return vec![node, dst];
         }
 
-        let mut walk: Vec<NodeT> = Vec::with_capacity(average_length);
+        let mut walk: Vec<NodeT> = Vec::with_capacity(length);
         walk.push(node);
         walk.push(dst);
 
