@@ -124,16 +124,19 @@ impl Graph {
     /// 
     /// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
     /// 
-    pub fn traps_rate(&self)->f64{
+    pub fn traps_mean_rate(&self)->f64{
         (0..self.get_nodes_number())
             .into_par_iter()
-            .filter(|node| ! self.is_node_trap(*node))
-            .map(|node| {
+            .map(|node|
+                if self.is_node_trap(node){
                 let neighbours = self.get_node_neighbours(node);
                 neighbours.iter()
                 .map(|n| self.is_node_trap(*n) as usize as f64)
                 .sum::<f64>() / neighbours.len() as f64
-            })
+                } else {
+                    1.0
+                }
+            )
             .sum::<f64>() / self.get_nodes_number() as f64
     }
 }
