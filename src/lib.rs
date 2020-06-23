@@ -185,6 +185,7 @@ impl EnsmallenGraph {
         }
     }
 
+    #[args(py_kwargs = "**")]
     #[text_signature = "(iterations, length, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
     /// Return random walks done on the graph using Rust.
     ///
@@ -229,20 +230,36 @@ impl EnsmallenGraph {
         &self,
         iterations: usize,
         length: usize,
-        min_length: usize,
-        return_weight: ParamsT,
-        explore_weight: ParamsT,
-        change_node_type_weight: ParamsT,
-        change_edge_type_weight: ParamsT,
+        py_kwargs: Option<&PyDict>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
+
+        if py_kwargs.is_none() {
+            let w = self.graph.walk(
+                iterations,
+                length,
+                None,
+                None,
+                None,
+                None,
+                None
+            );
+    
+            return match w {
+                Ok(g) => Ok(g),
+                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+            };
+        }
+
+        let kwargs = py_kwargs.unwrap();
+
         let w = self.graph.walk(
             iterations,
             length,
-            Some(min_length),
-            Some(return_weight),
-            Some(explore_weight),
-            Some(change_node_type_weight),
-            Some(change_edge_type_weight),
+            kwargs.get_item("min_length").map(|val| val.extract::<usize>().unwrap()),
+            kwargs.get_item("return_weight").map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs.get_item("explore_weight").map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs.get_item("return_weight").map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs.get_item("change_node_type_weight").map(|val| val.extract::<ParamsT>().unwrap()),
         );
 
         match w {
