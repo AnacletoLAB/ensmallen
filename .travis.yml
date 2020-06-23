@@ -67,10 +67,6 @@ after_success:
   sudo make install &&
   cd ../.. &&
   rm -rf kcov-master &&
-  for TEST in $$(find ./target/debug/deps -executable -type f | grep test);
-  do 
-    mkdir -p ./target/debug/cov/$$TEST ;
-    kcov --coveralls-id=$TRAVIS_JOB_ID --exclude-pattern=/.rustup,/.cargo ./target/debug/cov/$$(basename $$TEST) $$TEST ;
-  done &&
+  cd ./graph && bash coverage.sh &&
   bash <(curl -s https://codecov.io/bash)
     
