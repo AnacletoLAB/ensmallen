@@ -1,6 +1,6 @@
 from time import time
 from humanize import naturaldelta
-from ensmallen_graph import EnsmallenGraph # pylint: disable=no-name-in-module
+from ensmallen_graph import EnsmallenGraph  # pylint: disable=no-name-in-module
 import compress_json
 import json
 
