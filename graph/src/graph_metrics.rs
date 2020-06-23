@@ -128,7 +128,7 @@ impl Graph {
         (0..self.get_nodes_number())
             .into_par_iter()
             .map(|node|
-                if self.is_node_trap(node){
+                if ! self.is_node_trap(node){
                 let neighbours = self.get_node_neighbours(node);
                 neighbours.iter()
                 .map(|n| self.is_node_trap(*n) as usize as f64)
