@@ -25,6 +25,7 @@ addons:
       - libelf-dev
       - libdw-dev
       - binutils-dev
+      - gcc
       - cmake # also required for cargo-update
       - python3
       - python3-pip
