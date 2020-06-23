@@ -33,8 +33,17 @@ addons:
       - python3-setuptools
       
 before_script:
-  - sudo apt-get update
-  - sudo apt-get install -y kcov
+  - wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz
+  - tar xzf master.tar.gz
+  - cd kcov-master
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_INSTALL_PREFIX=${HOME}/kcov ..
+  - make
+  - make install
+  - cd ../..
+  - rm -rf kcov-master
+  - mkdir -p coverage
   - export PATH=$HOME/.cargo/bin:$PATH
   - source ~/.bashrc
   - source ~/.cargo/env
