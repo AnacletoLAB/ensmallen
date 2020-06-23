@@ -258,8 +258,8 @@ impl EnsmallenGraph {
             kwargs.get_item("min_length").map(|val| val.extract::<usize>().unwrap()),
             kwargs.get_item("return_weight").map(|val| val.extract::<ParamsT>().unwrap()),
             kwargs.get_item("explore_weight").map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs.get_item("return_weight").map(|val| val.extract::<ParamsT>().unwrap()),
             kwargs.get_item("change_node_type_weight").map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs.get_item("change_edge_type_weight").map(|val| val.extract::<ParamsT>().unwrap()),
         );
 
         match w {
