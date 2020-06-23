@@ -34,5 +34,6 @@ fn test_graph_metrics() {
                 graph.resource_allocation_index(one, two);
             }
         }
+        graph.traps_rate();
     };
 }

@@ -389,6 +389,15 @@ impl EnsmallenGraph {
         self.graph.degrees_product(one, two)
     }
 
+    #[text_signature = "()"]
+    /// Return the traps rate of the graph.
+    ///
+    /// This feature is EXPERIMENTAL and still required proving.
+    /// 
+    fn traps_rate(&self) -> f64{
+        self.graph.traps_rate()
+    }
+
 
     #[text_signature = "(node)"]
     /// Return the degree for the given node.

@@ -119,4 +119,20 @@ impl Graph {
             )
             .sum()
     }
+
+    /// Returns the traps rate of the graph.
+    /// 
+    /// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
+    /// 
+    pub fn traps_rate(&self)->f64{
+        (0..self.get_nodes_number())
+            .into_par_iter()
+            .map(|node| {
+                let neighbours = self.get_node_neighbours(node);
+                neighbours.iter()
+                .map(|n| self.is_node_trap(*n) as usize as f64)
+                .sum::<f64>() / neighbours.len() as f64
+            })
+            .sum::<f64>() / self.get_nodes_number() as f64
+    }
 }

@@ -42,7 +42,8 @@ response = {
     "building_graph_required_human_time": naturaldelta(completed_graph),
     "random_walk_time": total_walk_time,
     "random_walk_human_time": naturaldelta(total_walk_time),
-    "average_walks_length": average_walks_length
+    "average_walks_length": average_walks_length,
+    "traps_rate": graph.traps_rate()
 }
 
 print(json.dumps(response, indent=4))
