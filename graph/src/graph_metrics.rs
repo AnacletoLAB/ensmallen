@@ -127,6 +127,7 @@ impl Graph {
     pub fn traps_rate(&self)->f64{
         (0..self.get_nodes_number())
             .into_par_iter()
+            .filter(|node| ! self.is_node_trap(*node))
             .map(|node| {
                 let neighbours = self.get_node_neighbours(node);
                 neighbours.iter()
