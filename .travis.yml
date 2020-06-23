@@ -19,7 +19,6 @@ jobs:
 addons:
   apt:
     packages:
-      - kcov
       - libiberty-dev
       - zlib1g-dev
       - libcurl4-openssl-dev
@@ -54,13 +53,23 @@ script:
   - python3 -m pip install --user --upgrade ./target/wheels/*.whl
   # Run the python tests
   - python3 -m pytest -s ./pytests
-  # Get the coverage for the graph crate
+
+after_success:
   - |
-    for TEST in $$(find ./target/debug/deps -executable -type f | grep test);\
-    do \
-      mkdir -p ./target/debug/cov/$$TEST ;\
-      kcov --coveralls-id=$TRAVIS_JOB_ID --exclude-pattern=/.rustup,/.cargo ./target/debug/cov/$$(basename $$TEST) $$TEST ;\
-    done
-      
-  - bash <(curl -s https://codecov.io/bash)
+  wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz &&
+  tar xzf master.tar.gz &&
+  cd kcov-master &&
+  mkdir build &&
+  cd build &&
+  cmake .. &&
+  make &&
+  sudo make install &&
+  cd ../.. &&
+  rm -rf kcov-master &&
+  for TEST in $$(find ./target/debug/deps -executable -type f | grep test);
+  do 
+    mkdir -p ./target/debug/cov/$$TEST ;
+    kcov --coveralls-id=$TRAVIS_JOB_ID --exclude-pattern=/.rustup,/.cargo ./target/debug/cov/$$(basename $$TEST) $$TEST ;
+  done &&
+  bash <(curl -s https://codecov.io/bash)
     
