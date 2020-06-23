@@ -31,9 +31,10 @@ addons:
       - python3
       - python3-pip
       - python3-setuptools
-      - kcov
       
 before_script:
+  - sudo apt-get update
+  - sudo apt-get install -y kcov
   - export PATH=$HOME/.cargo/bin:$PATH
   - source ~/.bashrc
   - source ~/.cargo/env
