@@ -139,4 +139,19 @@ impl Graph {
             )
             .sum::<f64>() / self.get_nodes_number() as f64
     }
+
+    ///
+    /// 
+    pub fn mean_walks_length_estimator(&self, precision: f64) -> Result<usize, String> {
+        if precision < 0.0 || precision >= 1.0 {
+            return Err(format!("The precision parameter must be in [0, 1) but it's {}", precision));
+        }
+        let trap_rate = self.traps_rate();
+        // the cases where trap_rate is 0 and 1 SHOULD NOT BE POSSIBLE in this library
+        Ok(
+            (
+                (1.0 - precision).ln() / (1.0 - trap_rate).ln()
+            ).ceil() as usize
+        )
+    }
 }

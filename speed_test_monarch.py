@@ -31,7 +31,11 @@ walks = graph.walk(
 delta = time() - start
 total_walk_time = time() - start_walk
 
-average_walks_length = np.mean([
+mean_walks_length = np.mean([
+    len(walk) for walk in walks
+])
+
+median_walks_length = np.median([
     len(walk) for walk in walks
 ])
 
@@ -42,7 +46,8 @@ response = {
     "building_graph_required_human_time": naturaldelta(completed_graph),
     "random_walk_time": total_walk_time,
     "random_walk_human_time": naturaldelta(total_walk_time),
-    "average_walks_length": average_walks_length,
+    "mean_walks_length": mean_walks_length,
+    "median_walks_length": median_walks_length,
     "traps_rate": graph.traps_rate()
 }
 

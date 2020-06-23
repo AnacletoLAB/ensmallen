@@ -377,11 +377,13 @@ impl Graph {
                 .collect::<Vec<Vec<NodeT>>>()
             )
         } else {
+            let average_length = self.mean_walks_length_estimator(0.9972)?;
             Ok((0..number_of_results)
                 .into_par_iter()
                 .map(|node| {
                     self.single_walk_no_traps(
                         length,
+                        average_length,
                         node / iterations,
                         _return_weight,
                         _explore_weight,
@@ -434,13 +436,14 @@ impl Graph {
     fn single_walk_no_traps(
         &self,
         length: usize,
+        average_length: usize,
         node: NodeT,
         return_weight: ParamsT,
         explore_weight: ParamsT,
         change_node_type_weight: ParamsT,
         change_edge_type_weight: ParamsT,
     ) -> Vec<NodeT> {
-        let mut walk: Vec<NodeT> = Vec::with_capacity(length);
+        let mut walk: Vec<NodeT> = Vec::with_capacity(average_length);
         walk.push(node);
 
         let (dst, mut edge) = self.extract_node(node, change_node_type_weight);
