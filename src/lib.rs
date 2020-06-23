@@ -131,7 +131,7 @@ impl EnsmallenGraph {
         }
     }
 
-    #[text_signature = "(node_id)"]
+    #[text_signature = "($self, node_id)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -149,7 +149,7 @@ impl EnsmallenGraph {
         }
     }
 
-    #[text_signature = "(edge_id)"]
+    #[text_signature = "($self, edge_id)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -167,7 +167,7 @@ impl EnsmallenGraph {
         }
     }
 
-    #[text_signature = "(src, dst)"]
+    #[text_signature = "($self, src, dst)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -186,7 +186,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "(iterations, length, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
+    #[text_signature = "($self, iterations, length, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -333,7 +333,7 @@ impl EnsmallenGraph {
         self.graph.edge_types_reverse_mapping().clone()
     }
     
-    #[text_signature = "(one, two)"]
+    #[text_signature = "($self, one, two)"]
     /// Return the Jaccard Index for the two given nodes.
     ///
     /// Parameters
@@ -351,7 +351,7 @@ impl EnsmallenGraph {
         self.graph.jaccard_index(one, two)
     }
     
-    #[text_signature = "(one, two)"]
+    #[text_signature = "($self, one, two)"]
     /// Return the Adamic/Adar for the two given nodes.
     ///
     /// Parameters
@@ -370,7 +370,7 @@ impl EnsmallenGraph {
     }
 
 
-    #[text_signature = "(one, two)"]
+    #[text_signature = "($self, one, two)"]
     /// Return the Resource Allocation Index for the two given nodes.
     ///
     /// Parameters
@@ -388,7 +388,7 @@ impl EnsmallenGraph {
         self.graph.resource_allocation_index(one, two)
     }
 
-    #[text_signature = "(one, two)"]
+    #[text_signature = "($self, one, two)"]
     /// Return the degrees product for the two given nodes.
     ///
     /// Parameters
@@ -406,7 +406,7 @@ impl EnsmallenGraph {
         self.graph.degrees_product(one, two)
     }
 
-    #[text_signature = "()"]
+    #[text_signature = "(self)"]
     /// Return the traps rate of the graph.
     ///
     /// This feature is EXPERIMENTAL and still required proving.
@@ -416,7 +416,7 @@ impl EnsmallenGraph {
     }
 
 
-    #[text_signature = "(node)"]
+    #[text_signature = "($self, node)"]
     /// Return the degree for the given node.
     ///
     /// Parameters
@@ -432,7 +432,7 @@ impl EnsmallenGraph {
         self.graph.degree(node)
     }
 
-    #[text_signature = "(src, dst)"]
+    #[text_signature = "($self, src, dst)"]
     /// Return boolean representing if given edge exists in graph.
     ///
     /// Parameters
@@ -451,19 +451,19 @@ impl EnsmallenGraph {
     }
 
     
-    #[text_signature = "()"]
+    #[text_signature = "(self)"]
     /// Return the number of NON-SINGLETONS nodes in the graph.
     fn get_nodes_number(&self) -> usize {
         self.graph.get_nodes_number()
     }
 
-    #[text_signature = "()"]
+    #[text_signature = "(self)"]
     /// Return the number of edges in the graph.
     fn get_edges_number(&self) -> usize {
         self.graph.get_edges_number()
     }
     
-    #[text_signature = "()"]
+    #[text_signature = "(self)"]
     /// Return the number of edges types in the graph.
     /// 
     /// This method will include, if found necessary by a missing value,
@@ -473,7 +473,7 @@ impl EnsmallenGraph {
         self.graph.get_edge_types_number()
     }
     
-    #[text_signature = "()"]
+    #[text_signature = "(self)"]
     /// Return the number of edges in the graph.
     /// 
     /// This method will include, if found necessary by a missing value,
@@ -483,7 +483,7 @@ impl EnsmallenGraph {
         self.graph.get_node_types_number()
     }
 
-    #[text_signature = "(node)"]
+    #[text_signature = "($self, node)"]
     /// Return boolean representing if given node is a trap.
     /// 
     /// A trap node is a node with no outbounds edges.
@@ -501,7 +501,7 @@ impl EnsmallenGraph {
         self.graph.is_node_trap(node)
     }
 
-    #[text_signature = "(edge)"]
+    #[text_signature = "($self, edge)"]
     /// Return boolean representing if given edge is a trap.
     /// 
     /// A trap edge is a edge with a destination node that is a trap node.
@@ -519,7 +519,7 @@ impl EnsmallenGraph {
         self.graph.is_edge_trap(edge)
     }
     
-    #[text_signature = "(node)"]
+    #[text_signature = "($self, node)"]
     /// Return list of Node IDs of the neighbours of given node.
     /// 
     /// Parameters
