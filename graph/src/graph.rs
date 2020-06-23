@@ -29,7 +29,8 @@ pub struct Graph {
     pub node_types_reverse_mapping: Option<Vec<String>>,
     pub edge_types: Option<Vec<EdgeTypeT>>,
     pub edge_types_mapping: Option<HashMap<String, EdgeTypeT>>,
-    pub edge_types_reverse_mapping: Option<Vec<String>>
+    pub edge_types_reverse_mapping: Option<Vec<String>>,
+    pub has_traps: bool
 }
 
 /// Graph utility methods
@@ -359,8 +360,8 @@ impl Graph {
         info!("Starting random walk.");
         let number_of_results = iterations * self.get_nodes_number();
 
-        Ok(
-            (0..number_of_results)
+        if self.has_traps{
+            Ok((0..number_of_results)
                 .into_par_iter()
                 .map(|node| {
                     self.single_walk(
@@ -374,7 +375,24 @@ impl Graph {
                 })
                 .filter(|walk| walk.len() >= _min_length)
                 .collect::<Vec<Vec<NodeT>>>()
-        )
+            )
+        } else {
+            Ok((0..number_of_results)
+                .into_par_iter()
+                .map(|node| {
+                    self.single_walk_no_traps(
+                        length,
+                        node / iterations,
+                        _return_weight,
+                        _explore_weight,
+                        _change_node_type_weight,
+                        _change_edge_type_weight
+                    )
+                })
+                .filter(|walk| walk.len() >= _min_length)
+                .collect::<Vec<Vec<NodeT>>>()
+            )
+        }
     }
 
     fn single_walk(
@@ -400,6 +418,35 @@ impl Graph {
             if self.is_edge_trap(edge) {
                 break;
             }
+            let (dst, inner_edge) = self.extract_edge(
+                edge,
+                return_weight,
+                explore_weight,
+                change_node_type_weight,
+                change_edge_type_weight,
+            );
+            edge = inner_edge;
+            walk.push(dst);
+        }
+        walk
+    }
+
+    fn single_walk_no_traps(
+        &self,
+        length: usize,
+        node: NodeT,
+        return_weight: ParamsT,
+        explore_weight: ParamsT,
+        change_node_type_weight: ParamsT,
+        change_edge_type_weight: ParamsT,
+    ) -> Vec<NodeT> {
+        let mut walk: Vec<NodeT> = Vec::with_capacity(length);
+        walk.push(node);
+
+        let (dst, mut edge) = self.extract_node(node, change_node_type_weight);
+        walk.push(dst);
+
+        for _ in 2..length {
             let (dst, inner_edge) = self.extract_edge(
                 edge,
                 return_weight,

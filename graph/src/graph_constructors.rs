@@ -151,8 +151,7 @@ impl Graph {
 
         let outbounds = Graph::compute_outbounds(nodes_number, &sorted_sources);
 
-        Ok(
-            Graph {
+        let mut graph = Graph {
             nodes_mapping,
             nodes_reverse_mapping,
             unique_edges,
@@ -166,7 +165,16 @@ impl Graph {
             destinations: sorted_destinations,
             weights: sorted_weights,
             edge_types: sorted_edge_types,
-        })
+            has_traps: true
+        };
+        
+        // Here we are computing if the graph has any trap nodes.
+        // When a graph has no traps, we can use a faster random walk.
+        graph.has_traps = (0..graph.get_nodes_number())
+            .into_par_iter()
+            .any(|node| graph.is_node_trap(node));
+
+        Ok(graph)
     }
 
     pub fn new_undirected(
