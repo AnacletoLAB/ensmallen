@@ -507,7 +507,5 @@ impl EnsmallenGraph {
     ///
     fn get_node_neighbours(&self, node:NodeT) -> Vec<NodeT>{
         self.graph.get_node_neighbours(node)
-    }
-
-    
+    }    
 }
