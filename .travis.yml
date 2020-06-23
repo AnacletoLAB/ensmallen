@@ -30,9 +30,6 @@ addons:
       - python3
       - python3-pip
       - python3-setuptools
-
-before_install:
-  - curl -L https://github.com/SimonKagstrom/kcov/archive/v34.tar.gz | tar xf -
       
 before_script:
   - export PATH=$HOME/.cargo/bin:$PATH
