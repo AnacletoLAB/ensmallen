@@ -24,7 +24,7 @@ def single_speed_test(directory: str):
             node_types_column="category",
             default_edge_type='biolink:interacts_with',
             default_node_type='biolink:NamedThing',
-            validate_input_data=False
+            validate_input_data=True
         )
     except ValueError as e:
         print("\n", "="*200, "\n", e, "\n")
