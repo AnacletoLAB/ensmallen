@@ -77,4 +77,4 @@ def speed_test(root: str, iterations: int = 1) -> pd.DataFrame:
 
 
 with Notipy(task_name="Ensmallen Graph speed test"):
-    speed_test("../graphs").to_csv("speed_test_report.csv", index=False)
+    speed_test("../graph").to_csv("speed_test_report.csv", index=False)
