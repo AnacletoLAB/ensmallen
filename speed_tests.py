@@ -64,7 +64,7 @@ def single_speed_test(directory: str):
     }
 
 
-def speed_test(root: str, iterations: int = 3) -> pd.DataFrame:
+def speed_test(root: str, iterations: int = 1) -> pd.DataFrame:
     directories = [
         directory
         for directory in glob(f"{root}/*")
