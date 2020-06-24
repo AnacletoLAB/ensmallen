@@ -78,7 +78,7 @@ def speed_test(root: str, iterations: int = 1) -> pd.DataFrame:
     return pd.DataFrame([
         single_speed_test(directory)
         for directory in tqdm(directories, desc="Speed test")
-        for _ in trange(iterations, desc="Iterations")
+        for _ in trange(iterations, desc="Iterations", leave=False)
     ])
 
 

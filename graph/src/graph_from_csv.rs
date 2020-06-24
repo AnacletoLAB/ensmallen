@@ -113,7 +113,7 @@ impl Graph {
                         "\nFound duplicated line in edges file!\n",
                         "Specifically, the duplicated line is the number {i}.\n",
                         "The source node is {source} and destination node is {destination}.\n",
-                        "{edge_type_string}",
+                        "{edge_type_string}\n",
                         "The path of the document was {path}.\n",
                         "The complete line in question is:\n{line}\n"
                     ),
