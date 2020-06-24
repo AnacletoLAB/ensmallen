@@ -27,7 +27,7 @@ def single_speed_test(directory: str):
             validate_input_data=True
         )
     except ValueError as e:
-        print("\n", "="*200, "\n", e, "\n")
+        print("="*100, "\n", e)
         return {}
 
     completed_graph = time() - start

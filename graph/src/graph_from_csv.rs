@@ -237,7 +237,7 @@ impl Graph {
             return Err(
                 format!(
                     concat!(
-                        "The size of the given nodes_mapping {} does not match the number of nodes found {}.",
+                        "The size of the given nodes_mapping {} does not match the number of nodes found {}.\n",
                         "This might be due to a mismatch between the edge and node files."
                     ),
                     nodes.len(), nodes_mapping.len()
