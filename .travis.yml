@@ -31,7 +31,11 @@ addons:
       - python3
       - python3-pip
       - python3-setuptools
-      
+  homebrew:
+    packages:
+      - libelf
+    update: true
+
 before_script:
   - wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz
   - tar xzf master.tar.gz
@@ -72,4 +76,3 @@ after_success:
   #- cd kcov-master && mkdir build && cd build && cmake .. && make &&  sudo make install && cd ../.. && rm -rf kcov-master
   - cd ./graph && bash coverage.sh
   - bash <(curl -s https://codecov.io/bash)
-    
