@@ -3,7 +3,7 @@ from humanize import naturaldelta
 from ensmallen_graph import EnsmallenGraph  # pylint: disable=no-name-in-module
 import numpy as np
 import pandas as pd
-from tqdm import tqdm
+from tqdm import tqdm, trange
 import os
 from pympler import asizeof
 from collections import Counter
@@ -72,7 +72,7 @@ def speed_test(root: str, iterations: int = 1) -> pd.DataFrame:
     return pd.DataFrame([
         single_speed_test(directory)
         for directory in tqdm(directories, desc="Speed test")
-        for _ in tqdm(iterations, desc="Iterations")
+        for _ in trange(iterations, desc="Iterations")
     ])
 
 
