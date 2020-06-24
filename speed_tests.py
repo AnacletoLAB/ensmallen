@@ -3,7 +3,6 @@ from humanize import naturaldelta
 from ensmallen_graph import EnsmallenGraph  # pylint: disable=no-name-in-module
 import numpy as np
 import pandas as pd
-from glob import glob
 from tqdm import tqdm
 import os
 from pympler import asizeof
