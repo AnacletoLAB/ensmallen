@@ -54,6 +54,7 @@ def single_speed_test(directory: str):
     walks_memory_size = asizeof.asizeof(walks)
 
     return {
+        "directory": directory,
         "total_required_time": delta,
         "building_graph_required_time": completed_graph,
         "random_walk_time": total_walk_time,
@@ -64,7 +65,7 @@ def single_speed_test(directory: str):
         "walks_size": walks_memory_size,
         "nodes": graph.get_nodes_number(),
         "edges": graph.get_edges_number(),
-        **Counter(walks_lengths)
+        **dict(Counter(walks_lengths))
     }
 
 
