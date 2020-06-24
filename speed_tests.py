@@ -58,6 +58,8 @@ def single_speed_test(directory: str):
         "traps_rate": graph.traps_rate(),
         "graph_size": graph_memory_size,
         "walks_size": walks_memory_size,
+        "nodes": graph.get_nodes_number(),
+        "edges": graph.get_edges_number(),
         **Counter(walks_lengths)
     }
 
