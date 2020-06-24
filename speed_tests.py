@@ -12,19 +12,24 @@ from notipy_me import Notipy
 
 def single_speed_test(directory: str):
     start = time()
-    graph = EnsmallenGraph(
-        edge_path=f"{directory}/edges.tsv",
-        sources_column="subject",
-        destinations_column="object",
-        directed=True,
-        edge_types_column="edge_label",
-        node_path=f"{directory}/nodes.tsv",
-        nodes_column="id",
-        node_types_column="category",
-        default_edge_type='biolink:interacts_with',
-        default_node_type='biolink:NamedThing',
-        validate_input_data=False
-    )
+    try:
+        graph = EnsmallenGraph(
+            edge_path=f"{directory}/edges.tsv",
+            sources_column="subject",
+            destinations_column="object",
+            directed=True,
+            edge_types_column="edge_label",
+            node_path=f"{directory}/nodes.tsv",
+            nodes_column="id",
+            node_types_column="category",
+            default_edge_type='biolink:interacts_with',
+            default_node_type='biolink:NamedThing',
+            validate_input_data=False
+        )
+    except ValueError as e:
+        print("\n", "="*200, "\n", e, "\n")
+        return {}
+
     completed_graph = time() - start
     start_walk = time()
     walks = graph.walk(
@@ -68,7 +73,7 @@ def speed_test(root: str, iterations: int = 1) -> pd.DataFrame:
         f"{root}/{directory}"
         for directory in os.listdir(root)
         if os.path.isdir(f"{root}/{directory}")
-    ][:1]
+    ]
     return pd.DataFrame([
         single_speed_test(directory)
         for directory in tqdm(directories, desc="Speed test")
