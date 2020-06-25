@@ -288,8 +288,8 @@ impl Graph {
     }
 
     fn extract_node(&self, node: NodeT, change_node_type_weight: ParamsT) -> (NodeT, EdgeT) {
-        let (mut weights, dsts, min_edge, _) = self.get_node_transition(node, change_node_type_weight);
-        let index = sample(& mut weights);
+        let (weights, dsts, min_edge, _) = self.get_node_transition(node, change_node_type_weight);
+        let index = sample(&weights);
         (dsts[index], min_edge + index)
     }
 
@@ -301,14 +301,14 @@ impl Graph {
         change_node_type_weight: ParamsT,
         change_edge_type_weight: ParamsT,
     ) -> (NodeT, EdgeT) {
-        let (mut weights, dsts, min_edge, _) = self.get_edge_transition(
+        let (weights, dsts, min_edge, _) = self.get_edge_transition(
             edge,
             return_weight,
             explore_weight,
             change_node_type_weight,
             change_edge_type_weight,
         );
-        let index = sample(& mut weights);
+        let index = sample(&weights);
         (dsts[index], min_edge + index)
     }
 

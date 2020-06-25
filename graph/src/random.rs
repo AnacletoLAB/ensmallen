@@ -161,96 +161,6 @@ pub fn unrolled_cumulative_f64_sum(random_vec: &Vec<WeightT>) -> Vec<f64> {
     result
 }
 
-pub fn naife_cumulative_f64_sum(random_vec: &Vec<f64>) -> Vec<f64> {
-        let mut cumulative_sum: Vec<f64> = Vec::with_capacity(random_vec.len());
-        let mut total_weight = 0f64;
-        for w in random_vec {
-            total_weight += w;
-            cumulative_sum.push(total_weight.clone());
-        }
-        cumulative_sum
-}
-
-
-
-#[cfg(all(any(target_arch = "x86", target_arch = "x86_64"),
-target_feature = "sse"))]
-use core::arch::x86_64::{
-    // info can be found at https://software.intel.com/sites/landingpage/IntrinsicsGuide
-    __m128d,
-    // sum two vector of f64
-    _mm_add_pd,
-    // cast __m128di  to __m128d
-    // it's only for compilation, it does not gen instructions
-    _mm_castsi128_pd,
-    // cast __m128d to __m128di
-    // see _mm_castsi128_ps
-    _mm_castpd_si128,
-    // shift vector left and insert zeros
-    _mm_slli_si128,
-    // set vec to zero
-    _mm_setzero_pd,
-    // Memory -> Vec (MUST be 16-bytes aligned)
-    _mm_load_pd,
-    // Memory -> Vec but slower
-    _mm_loadu_pd,
-    // Vec -> Memory (MUST be 16-bytes aligned)
-    _mm_store_pd,
-    // Vec -> Memory but slower
-    _mm_storeu_pd,
-    // Shiffle the vecotr according to the mask given
-    _mm_shuffle_pd
-};
-
-#[cfg(all(any(target_arch = "x86", target_arch = "x86_64"),
-target_feature = "sse"))]
-#[inline(always)]
-fn scan_sse(mut x: __m128d) -> __m128d{
-    //
-    // pass:
-    //      f2, f1 +
-    //      f1,  0 =
-    //      f21, f1
-    // 
-    // -> Meh, 1 add + 1 shift instead of 1 add, not great
-    unsafe{
-        x = _mm_add_pd(x, _mm_castsi128_pd(_mm_slli_si128(_mm_castpd_si128(x), 8)));
-    }
-    x
-}
-
-#[cfg(all(any(target_arch = "x86", target_arch = "x86_64"),
-target_feature = "sse"))]
-pub fn sse_128_f64_cumulative_sum(random_vec: &Vec<f64>) -> Vec<f64> {
-let mut result = vec![0.0f64; random_vec.len()];
-    unsafe{
-        let mut offset: __m128d = _mm_setzero_pd();
-        for i in (0..random_vec.len()).step_by(2) {
-            // it should be __mm_load_ps but if the values are not aligned it
-            // raises a seg-fault so we use the slower _mm_loadu_ps until we figure
-            // out how to ensure the alignmenet of the vector
-            // loat the 4 values
-            let x: __m128d = _mm_loadu_pd(random_vec.as_ptr().wrapping_offset(i as isize));
-            // compute the local cumulative sum
-            let mut out: __m128d = scan_sse(x);
-            // add the local cumulative sum to the current offset
-            out = _mm_add_pd(out, offset);
-            // get the internal floats array of the result vec
-            let ptr: *mut f64= result.as_mut_ptr();
-            // store the value in the vector
-            _mm_storeu_pd(ptr.offset(i as isize), out);
-            // Update the current offset (aka the last value of out)
-            offset = _mm_shuffle_pd(out, out, 3); 
-
-        }
-    }
-    result
-}
-
-
-
-
-
 /// Given a vector of scores (non-zero positive values), convert it to a 
 /// probability distribution and extract a random indices accodringly.`
 ///
@@ -260,32 +170,22 @@ let mut result = vec![0.0f64; random_vec.len()];
 /// between 0 and the last value of the cumulative sum. 
 /// Finally, we find the index of the first value bigger than it by binary search.
 /// 
-/// Further optimization could be about using SSE4 / AVX2 / AVX512 instructions
-/// to calculate the cumulative sum in parallel as explained in this blog.
-/// https://github.com/joelangeway/CumulativeSum
-/// But this could be improved using the HADDPS instruction as specified in
-/// https://www.felixcloutier.com/x86/haddps
-/// Or in the (Volume 2A of intel's architecture)[https://software.intel.com/content/www/us/en/develop/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-2a-2b-2c-and-2d-instruction-set-reference-a-z.html]
-/// at page Vol. 2A 3-449.
-pub fn sample(weights:  & mut Vec<WeightT>) -> usize {
+/// 
+/// The AVX / SSE implementation for the cumulative sum are faster for large arrays
+/// But on small vectors the naife implementations is faster.
+pub fn sample(weights: &Vec<WeightT>) -> usize {
     if weights.len() == 1{
         return 0;
     }
 
-    // pad the vector with zeros so that its length is a multiple of 4
-    // so we can transform
-    for _ in 0..(4 - (weights.len() & 3)) & 3 {
-        weights.push(0.0);
+    // this method is generally slower than the sse version implemented in the benchmarks,
+    // but in our graph we often have slow
+    let mut cumulative_sum: Vec<f64> = Vec::with_capacity(weights.len());
+    let mut total_weight = 0f64;
+    for w in weights {
+        total_weight += w;
+        cumulative_sum.push(total_weight);
     }
-
-    #[cfg(all(any(target_arch = "x86", target_arch = "x86_64"),
-    target_feature = "sse"))]
-    let cumulative_sum: Vec<f64> = sse_128_f64_cumulative_sum(&weights);
-
-    #[cfg(not(all(any(target_arch = "x86", target_arch = "x86_64"),
-    target_feature = "sse")))]
-    let cumulative_sum: Vec<f64> = unrolled_cumulative_f64_sum(&weights);
-    
 
     let rnd: f64 = random_f64() * cumulative_sum[cumulative_sum.len() - 1];
 
