@@ -57,10 +57,18 @@ script:
   - rm -fdr target
   # Build the bindings
   - maturin build --release
-  # Install the binding
-  - python3 -m pip install --user --upgrade ./target/wheels/*.whl
-  # Run the python tests
-  - python3 -m pytest -s ./pytests
+  - |
+    if [ "$TRAVIS_OS_NAME" = "windows" ]; then
+      # Install the binding
+      python -m pip install --user --upgrade ./target/wheels/*.whl
+      # Run the python tests
+      python -m pytest -s ./pytests
+    else
+      # Install the binding
+      python3 -m pip install --user --upgrade ./target/wheels/*.whl
+      # Run the python tests
+      python3 -m pytest -s ./pytests
+    fi
 
 after_success:
   - |
