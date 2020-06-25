@@ -197,7 +197,7 @@ impl Graph {
     pub fn bidirectional_percentage(&self)->f64{
         self.unique_edges
             .par_keys()
-            .map(|((src, dst), _)| self.has_edge(dst, src) as usize)
+            .map(|(src, dst)| self.has_edge(*dst, *src) as usize)
             .sum::<usize>() as f64 / self.get_nodes_number() as f64
     }
 
