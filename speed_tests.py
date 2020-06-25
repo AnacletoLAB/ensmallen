@@ -43,7 +43,7 @@ def single_speed_test(directory: str):
         **graph.report()
     }
 
-    print(results)
+    print(json.dumps(results, indent=4))
 
     return results
 
