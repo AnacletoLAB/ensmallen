@@ -197,7 +197,7 @@ impl Graph {
     pub fn bidirectional_percentage(&self)->f64{
         self.unique_edges
             .par_keys()
-            .map(|((src, dst), _)| self.has_edge(dst, src) as usize)
+            .map(|(src, dst)| self.has_edge(*dst, *src) as usize)
             .sum::<usize>() as f64 / self.get_nodes_number() as f64
     }
 
@@ -232,7 +232,8 @@ impl Graph {
             self.get_edge_types_number().to_string(),
         );
         report.insert("traps_rate", self.traps_rate().to_string());
-        report.insert("selfloops_percentage", self.has_traps.to_string());
+        report.insert("selfloops_percentage", self.selfloops_percentage().to_string());
+        report.insert("bidirectional_percentage", self.bidirectional_percentage().to_string());
         report
     }
 }
