@@ -14,61 +14,61 @@ const NUMBER: u64 = 100000;
 
 use rand::distributions::WeightedIndex;
 
-#[bench]
-fn using_weighted_index_sample(b: &mut Bencher) {
-    let random_vec = gen_random_vec(NUMBER);
-    b.iter(|| {
-        WeightedIndex::new(&random_vec)
-            .unwrap()
-            .sample(&mut thread_rng())
-    });
-}
+// #[bench]
+// fn using_weighted_index_sample(b: &mut Bencher) {
+//     let random_vec = gen_random_f64_vec(NUMBER);
+//     b.iter(|| {
+//         WeightedIndex::new(&random_vec)
+//             .unwrap()
+//             .sample(&mut thread_rng())
+//     });
+// }
 
 
-#[bench]
-fn using_xorshift_and_scan(b: &mut Bencher) {
-    let random_vec = gen_random_vec(NUMBER);
-    b.iter(|| {
-        extract_with_scan(&random_vec, gen_xorshift_random_float())
-    })
-}
+// #[bench]
+// fn using_xorshift_and_scan(b: &mut Bencher) {
+//     let random_vec = gen_random_f64_vec(NUMBER);
+//     b.iter(|| {
+//         extract_with_scan(&random_vec, gen_xorshift_random_float())
+//     })
+// }
 
-#[bench]
-fn using_xorshiro256plus_and_scan(b: &mut Bencher) {
-    let random_vec = gen_random_vec(NUMBER);
-    b.iter(|| {
-        extract_with_scan(&random_vec, xorshiro256plus())
-    })
-}
+// #[bench]
+// fn using_xorshiro256plus_and_scan(b: &mut Bencher) {
+//     let random_vec = gen_random_f64_vec(NUMBER);
+//     b.iter(|| {
+//         extract_with_scan(&random_vec, xorshiro256plus())
+//     })
+// }
 
-#[bench]
-fn using_xorshiro256plus_mul_and_scan(b: &mut Bencher) {
-    let random_vec = gen_random_vec(NUMBER);
-    b.iter(|| {
-        extract_with_scan(&random_vec, xorshiro256plus_mul())
-    })
-}
+// #[bench]
+// fn using_xorshiro256plus_mul_and_scan(b: &mut Bencher) {
+//     let random_vec = gen_random_f64_vec(NUMBER);
+//     b.iter(|| {
+//         extract_with_scan(&random_vec, xorshiro256plus_mul())
+//     })
+// }
 
-#[bench]
-fn using_xorshift_and_while(b: &mut Bencher) {
-    let random_vec = gen_random_vec(NUMBER);
-    b.iter(|| {
-        extract_with_while(&random_vec, gen_xorshift_random_float())
-    })
-}
+// #[bench]
+// fn using_xorshift_and_while(b: &mut Bencher) {
+//     let random_vec = gen_random_f64_vec(NUMBER);
+//     b.iter(|| {
+//         extract_with_while(&random_vec, gen_xorshift_random_float())
+//     })
+// }
 
-#[bench]
-fn using_xorshiro256plus_and_while(b: &mut Bencher) {
-    let random_vec = gen_random_vec(NUMBER);
-    b.iter(|| {
-        extract_with_while(&random_vec, xorshiro256plus())
-    })
-}
+// #[bench]
+// fn using_xorshiro256plus_and_while(b: &mut Bencher) {
+//     let random_vec = gen_random_f64_vec(NUMBER);
+//     b.iter(|| {
+//         extract_with_while(&random_vec, xorshiro256plus())
+//     })
+// }
 
-#[bench]
-fn using_xorshiro256plus_mul_and_while(b: &mut Bencher) {
-    let random_vec = gen_random_vec(NUMBER);
-    b.iter(|| {
-        extract_with_while(&random_vec, xorshiro256plus_mul())
-    })
-}
+// #[bench]
+// fn using_xorshiro256plus_mul_and_while(b: &mut Bencher) {
+//     let random_vec = gen_random_f64_vec(NUMBER);
+//     b.iter(|| {
+//         extract_with_while(&random_vec, xorshiro256plus_mul())
+//     })
+// }
