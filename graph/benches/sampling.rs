@@ -22,9 +22,7 @@ pub fn extract_with_scan(weight: &Vec<f64>, rnd_val: f64) -> usize{
             }
         ){
             Ok(g) => g,
-            Err(g) => {
-                panic!("Sampling error, rnd: {}, index: {}, weights: {:?}", rnd, g, weight);
-            }
+            Err(g) => g
         }
 }
 
@@ -49,8 +47,6 @@ pub fn extract_with_while(weight: &Vec<f64>, rnd_val: f64) -> usize{
             }
         ) {
             Ok(g) => g,
-            Err(g) => {
-                panic!("Sampling error, rnd: {}, index: {}, weights: {:?}", rnd, g, weight);
-            }
+            Err(g) => g
         }
 }
