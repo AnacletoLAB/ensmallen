@@ -283,7 +283,9 @@ impl EnsmallenGraph {
 
     #[getter]
     fn nodes_mapping(&self) -> HashMap<String, NodeT> {
-        self.graph.nodes_mapping().clone()
+        self.graph.nodes_mapping().iter().map(
+            |(k, v)| (k.clone(), *v)
+        ).collect()
     }
 
     #[getter]
@@ -293,7 +295,9 @@ impl EnsmallenGraph {
 
     #[getter]
     fn unique_edges(&self) -> HashMap<(NodeT, NodeT), EdgeT> {
-        self.graph.unique_edges().clone()
+        self.graph.unique_edges().iter().map(
+            |(k, v)| (*k, *v)
+        ).collect()
     }
 
     #[getter]
@@ -313,7 +317,13 @@ impl EnsmallenGraph {
 
     #[getter]
     fn node_types_mapping(&self) -> Option<HashMap<String, NodeTypeT>> {
-        self.graph.node_types_mapping().clone()
+        match self.graph.node_types_mapping(){
+            None => None,
+            Some(g) => Some(g.iter().map(
+                    |(k, v)| (k.clone(), *v)
+                ).collect()
+            )
+        }
     }
 
     #[getter]
@@ -328,7 +338,13 @@ impl EnsmallenGraph {
 
     #[getter]
     fn edge_types_mapping(&self) -> Option<HashMap<String, EdgeTypeT>> {
-        self.graph.edge_types_mapping().clone()
+        match self.graph.edge_types_mapping() {
+            None => None,
+            Some(g) => Some(g.iter().map(
+                    |(k, v)| (k.clone(), *v)
+                ).collect()
+            )
+        }
     }
 
     #[getter]
@@ -567,6 +583,8 @@ impl EnsmallenGraph {
     /// * unique_edge_types_number: the number of different edge types in the graph.
     ///
     fn report(&self) -> HashMap<&str, String> {
-        self.graph.report()
+        self.graph.report().iter().map(
+            |(k, v)| (*k, v.clone())
+        ).collect()
     }
 }

@@ -1,7 +1,7 @@
 use super::*;
 use crate::csv_utils::{check_consistent_lines, get_headers, has_columns};
 use rayon::prelude::*;
-use std::collections::{HashMap, HashSet};
+use hashbrown::{HashMap, HashSet};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
 /// Construction of the graph from csv / tsv
@@ -217,12 +217,13 @@ impl Graph {
         buf_reader.read_line(&mut line).unwrap();
         // convert the csv to a dict of lists
         for (j, line) in buf_reader.lines().enumerate() {
+            let _line = line.unwrap();
+
             let parsed: HashMap<String, &str> = headers
                 .iter()
                 .cloned()
                 .zip(
-                    line.as_ref()
-                        .unwrap()
+                    _line
                         .trim_end_matches(|c| c == '\n')
                         .split(sep),
                 )
@@ -253,7 +254,7 @@ impl Graph {
                     node = node_id,
                     node_type = node_types[*node_id],
                     path = path,
-                    line = line.unwrap()
+                    line = _line
                 ));
             }
 
