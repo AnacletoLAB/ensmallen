@@ -279,12 +279,12 @@ impl EnsmallenGraph {
     }
 
     #[getter]
-    fn worddictionary(&self) -> HashMap<String, NodeT> {
+    fn nodes_mapping(&self) -> HashMap<String, NodeT> {
         self.graph.nodes_mapping().clone()
     }
 
     #[getter]
-    fn reverse_worddictionary(&self) -> Vec<String> {
+    fn nodes_reverse_mapping(&self) -> Vec<String> {
         self.graph.nodes_reverse_mapping().clone()
     }
 

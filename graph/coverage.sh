@@ -11,5 +11,3 @@ do
 done; 
 
 kcov --merge ./target/debug/cov/total $(find ./target/debug/cov/ -type d -maxdepth 1 -mindepth 1) 
-
-$(OPEN_COMMAND) ./target/debug/cov/total/index.html > /dev/null &
