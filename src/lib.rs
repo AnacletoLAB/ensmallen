@@ -93,7 +93,7 @@ impl EnsmallenGraph {
                 None,
                 None,
                 None,
-                false
+                None
             );
 
             return match graph {
