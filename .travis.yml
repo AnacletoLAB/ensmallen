@@ -1,4 +1,3 @@
-dist: xenial
 language: rust
 
 # pyo3 currently is only supported by the nightly version
@@ -12,7 +11,7 @@ cache: cargo
 jobs:
   include:
     - os: linux
-      dist: bionic
+      dist: xenial
     - os: osx
       osx_image: "xcode11.5"
 
@@ -34,8 +33,6 @@ addons:
 
 before_script:
   - export PATH=$HOME/.cargo/bin:$PATH
-  - source ~/.bashrc
-  - source ~/.cargo/env
   - cargo install cargo-update || echo "cargo-update already installed"
   - cargo install-update -a # update outdated cached binaries
   - python3 -m pip install maturin pytest coveralls
@@ -58,17 +55,10 @@ script:
 after_success:
   - |
     if [ "$TRAVIS_OS_NAME" = "linux" ]; then
-      wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz
-      tar xzf master.tar.gz
-      cd kcov-master
-      mkdir build
-      cd build
-      cmake -DCMAKE_INSTALL_PREFIX=${HOME}/kcov ..
-      make
-      make install
+      git clone https://github.com/SimonKagstrom/kcov.git
+      cd kcov
+      mkdir build; cd build; cmake ..; make -j4; sudo make install
       cd ../..
-      rm -rf kcov-master
-      mkdir -p coverage
       cd ./graph && bash coverage.sh
       bash <(curl -s https://codecov.io/bash)
     fi
