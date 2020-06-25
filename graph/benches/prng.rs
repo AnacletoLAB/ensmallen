@@ -9,7 +9,9 @@ pub fn gen_xorshift_random_float() -> f64 {
         seed ^= seed >> 7;
         seed ^= seed << 13;
     }
-   seed as f64 / u64::max_value() as f64
+    let v: u64 = (seed >> 11) | (1023 << 52);
+    let r: f64 = f64::from_le_bytes(v.to_le_bytes());
+    r - 1f64
 }
 
 #[inline(always)]

@@ -16,8 +16,8 @@ use cumulative_sum_sse_128_f32::*;
 mod cumulative_sum_sse_128_f64;
 use cumulative_sum_sse_128_f64::*;
 
-mod cumulative_sum_sse_256_f64;
-use cumulative_sum_sse_256_f64::*;
+mod cumulative_sum_avx_256_f64;
+use cumulative_sum_avx_256_f64::*;
 
 #[bench]
 fn test_naife_cumulative_f64_sum(b: &mut Bencher) {
@@ -147,13 +147,13 @@ fn test_sse_128_f64_cumulative_sum(b: &mut Bencher) {
 #[cfg(all(any(target_arch = "x86", target_arch = "x86_64"),
       target_feature = "sse"))]
 #[bench]
-fn ztest_sse_256_f64_cumulative_sum(b: &mut Bencher) {
+fn test_avx_256_f64_cumulative_sum(b: &mut Bencher) {
     let random_vec = gen_random_f64_vec(NUMBER);
 
-    let to_test = sse_256_f64_cumulative_sum(&random_vec);
+    let to_test = avx_256_f64_cumulative_sum(&random_vec);
     assert_eq!(to_test.len(), random_vec.len());
     
-    b.iter(|| sse_256_f64_cumulative_sum(&random_vec));
+    b.iter(|| avx_256_f64_cumulative_sum(&random_vec));
 
     let trusted = naife_cumulative_f64_sum(&random_vec);    
 
