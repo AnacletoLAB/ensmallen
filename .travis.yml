@@ -18,9 +18,7 @@ jobs:
       before_install:
         - choco install python --version 3.7.0
         - python -m pip install --upgrade pip
-        - alias python3=python
       env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
-
 
 # Dependencies of kcov, used by coverage
 addons:
@@ -42,9 +40,14 @@ before_script:
   - export PATH=$HOME/.cargo/bin:$PATH
   - cargo install cargo-update || echo "cargo-update already installed"
   - cargo install-update -a # update outdated cached binaries
-  - python3 -m pip install maturin pytest coveralls
-  - python3 -m pip install -r requirements.txt
-
+  - |
+    if [ "$TRAVIS_OS_NAME" = "windows" ]; then
+      python -m pip install maturin pytest coveralls
+      python -m pip install -r requirements.txt
+    else
+      python3 -m pip install maturin pytest coveralls
+      python3 -m pip install -r requirements.txt
+    fi
 # the main build
 script:
   # Build, test, bench the graph crate
