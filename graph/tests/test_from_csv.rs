@@ -31,7 +31,7 @@ fn test_graph_from_csv_edge_only() {
             assert_eq!(lines, graph.get_edges_number());
         }
         assert!(graph.get_node_type_id(0).is_err());
-
+        
         let _walks = graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
     }
 }
@@ -565,6 +565,7 @@ fn test_graph_from_csv_het() {
         graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
         assert!(graph.get_node_type_id(100000000000).is_err());
         assert!(graph.get_edge_type_id(100000000000).is_err());
+        let _ = graph.report();
     };
 }
 

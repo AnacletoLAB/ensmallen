@@ -232,18 +232,11 @@ impl EnsmallenGraph {
         length: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
-
         if py_kwargs.is_none() {
-            let w = self.graph.walk(
-                iterations,
-                length,
-                None,
-                None,
-                None,
-                None,
-                None
-            );
-    
+            let w = self
+                .graph
+                .walk(iterations, length, None, None, None, None, None);
+
             return match w {
                 Ok(g) => Ok(g),
                 Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
@@ -255,11 +248,21 @@ impl EnsmallenGraph {
         let w = self.graph.walk(
             iterations,
             length,
-            kwargs.get_item("min_length").map(|val| val.extract::<usize>().unwrap()),
-            kwargs.get_item("return_weight").map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs.get_item("explore_weight").map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs.get_item("change_node_type_weight").map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs.get_item("change_edge_type_weight").map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs
+                .get_item("min_length")
+                .map(|val| val.extract::<usize>().unwrap()),
+            kwargs
+                .get_item("return_weight")
+                .map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs
+                .get_item("explore_weight")
+                .map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs
+                .get_item("change_node_type_weight")
+                .map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs
+                .get_item("change_edge_type_weight")
+                .map(|val| val.extract::<ParamsT>().unwrap()),
         );
 
         match w {
@@ -332,7 +335,7 @@ impl EnsmallenGraph {
     fn edge_types_reverse_mapping(&self) -> Option<Vec<String>> {
         self.graph.edge_types_reverse_mapping().clone()
     }
-    
+
     #[text_signature = "($self, one, two)"]
     /// Return the Jaccard Index for the two given nodes.
     ///
@@ -347,10 +350,10 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Jaccard Index for the two given nodes.
     ///
-    fn jaccard_index(&self, one: NodeT, two: NodeT) -> f64{
+    fn jaccard_index(&self, one: NodeT, two: NodeT) -> f64 {
         self.graph.jaccard_index(one, two)
     }
-    
+
     #[text_signature = "($self, one, two)"]
     /// Return the Adamic/Adar for the two given nodes.
     ///
@@ -365,10 +368,9 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Adamic/Adar for the two given nodes.
     ///
-    fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> f64{
+    fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> f64 {
         self.graph.adamic_adar_index(one, two)
     }
-
 
     #[text_signature = "($self, one, two)"]
     /// Return the Resource Allocation Index for the two given nodes.
@@ -384,7 +386,7 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Resource Allocation Index for the two given nodes.
     ///
-    fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> f64{
+    fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> f64 {
         self.graph.resource_allocation_index(one, two)
     }
 
@@ -402,7 +404,7 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// degrees product for the two given nodes.
     ///
-    fn degrees_product(&self, one: NodeT, two: NodeT) -> usize{
+    fn degrees_product(&self, one: NodeT, two: NodeT) -> usize {
         self.graph.degrees_product(one, two)
     }
 
@@ -410,11 +412,10 @@ impl EnsmallenGraph {
     /// Return the traps rate of the graph.
     ///
     /// This feature is EXPERIMENTAL and still required proving.
-    /// 
-    fn traps_rate(&self) -> f64{
+    ///
+    fn traps_rate(&self) -> f64 {
         self.graph.traps_rate()
     }
-
 
     #[text_signature = "($self, node)"]
     /// Return the degree for the given node.
@@ -428,7 +429,7 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// degrees product for the two given nodes.
     ///
-    fn degree(&self, node: NodeT) -> NodeT{
+    fn degree(&self, node: NodeT) -> NodeT {
         self.graph.degree(node)
     }
 
@@ -450,7 +451,6 @@ impl EnsmallenGraph {
         self.graph.has_edge(src, dst)
     }
 
-    
     #[text_signature = "(self)"]
     /// Return the number of NON-SINGLETONS nodes in the graph.
     fn get_nodes_number(&self) -> usize {
@@ -462,32 +462,32 @@ impl EnsmallenGraph {
     fn get_edges_number(&self) -> usize {
         self.graph.get_edges_number()
     }
-    
+
     #[text_signature = "(self)"]
     /// Return the number of edges types in the graph.
-    /// 
+    ///
     /// This method will include, if found necessary by a missing value,
     /// also the default edge type in the count of total edge types.
-    /// 
+    ///
     fn get_edge_types_number(&self) -> usize {
         self.graph.get_edge_types_number()
     }
-    
+
     #[text_signature = "(self)"]
     /// Return the number of edges in the graph.
-    /// 
+    ///
     /// This method will include, if found necessary by a missing value,
     /// also the default node type in the count of total node types.
-    /// 
+    ///
     fn get_node_types_number(&self) -> usize {
         self.graph.get_node_types_number()
     }
 
     #[text_signature = "($self, node)"]
     /// Return boolean representing if given node is a trap.
-    /// 
+    ///
     /// A trap node is a node with no outbounds edges.
-    /// 
+    ///
     /// Parameters
     /// ---------------------
     /// node: int,
@@ -497,15 +497,15 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if given node is a trap.
     ///
-    fn is_node_trap(&self, node: NodeT) -> bool{
+    fn is_node_trap(&self, node: NodeT) -> bool {
         self.graph.is_node_trap(node)
     }
 
     #[text_signature = "($self, edge)"]
     /// Return boolean representing if given edge is a trap.
-    /// 
+    ///
     /// A trap edge is a edge with a destination node that is a trap node.
-    /// 
+    ///
     /// Parameters
     /// ---------------------
     /// node: int,
@@ -515,23 +515,58 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if given edge is a trap.
     ///
-    fn is_edge_trap(&self, edge: EdgeT) -> bool{
+    fn is_edge_trap(&self, edge: EdgeT) -> bool {
         self.graph.is_edge_trap(edge)
     }
-    
+
     #[text_signature = "($self, node)"]
     /// Return list of Node IDs of the neighbours of given node.
-    /// 
+    ///
     /// Parameters
     /// ---------------------
     /// node: int,
-    ///     Node ID to 
+    ///     Node ID to
     ///
     /// Returns
     /// ----------------------------
     /// List of Node IDs of the neighbouring nodes.
     ///
-    fn get_node_neighbours(&self, node:NodeT) -> Vec<NodeT>{
+    fn get_node_neighbours(&self, node: NodeT) -> Vec<NodeT> {
         self.graph.get_node_neighbours(node)
-    }    
+    }
+
+    #[text_signature = "($self)"]
+    /// Returns mean node degree of the graph.
+    pub fn degrees_mean(&self) -> f64 {
+        self.graph.degrees_mean()
+    }
+
+    #[text_signature = "($self)"]
+    /// Returns median node degree of the graph.
+    pub fn degrees_median(&self) -> NodeT {
+        self.graph.degrees_median()
+    }
+
+    #[text_signature = "($self)"]
+    /// Returns mode node degree of the graph.
+    pub fn degrees_mode(&self) -> NodeT {
+        self.graph.degrees_mode()
+    }
+
+    #[text_signature = "($self)"]
+    /// Returns report relative to the graph metrics.
+    ///
+    /// The report includes a few useful metrics like:
+    ///
+    /// * degrees_median: the median degree of the nodes.
+    /// * degrees_mean: the mean degree of the nodes.
+    /// * degrees_mode: the mode degree of the nodes.
+    /// * nodes_number: the number of nodes in the graph.
+    /// * edges_number: the number of edges in the graph.
+    /// * unique_node_types_number: the number of different node types in the graph.
+    /// * unique_edge_types_number: the number of different edge types in the graph.
+    ///
+    fn report(&self) -> HashMap<&str, String> {
+        self.graph.report()
+    }
 }

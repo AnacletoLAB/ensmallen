@@ -17,13 +17,6 @@ def single_speed_test(directory: str):
             sources_column="subject",
             destinations_column="object",
             directed=True,
-            edge_types_column="edge_label",
-            node_path=f"{directory}/nodes.tsv",
-            nodes_column="id",
-            node_types_column="category",
-            default_edge_type='biolink:interacts_with',
-            default_node_type='biolink:NamedThing',
-            validate_input_data=True
         )
     except ValueError as e:
         print("="*100, "\n", e)
@@ -31,15 +24,7 @@ def single_speed_test(directory: str):
 
     completed_graph = time() - start
     start_walk = time()
-    walks = graph.walk(
-        iterations=10,
-        length=80,
-        min_length=0,
-        return_weight=1,
-        explore_weight=1,
-        change_node_type_weight=1,
-        change_edge_type_weight=1
-    )
+    walks = graph.walk(10, 80)
     delta = time() - start
     total_walk_time = time() - start_walk
 
@@ -47,27 +32,15 @@ def single_speed_test(directory: str):
         len(walk) for walk in walks
     ]
 
-    degrees = [
-        graph.degree(node)
-        for node in range(graph.get_nodes_number())
-    ]
-
-    mean_walks_length = np.mean(walks_lengths)
-    median_walks_length = np.median(walks_lengths)
-
     return {
         "directory": directory,
         "total_required_time": delta,
         "building_graph_required_time": completed_graph,
         "random_walk_time": total_walk_time,
-        "mean_walks_length": mean_walks_length,
-        "median_walks_length": median_walks_length,
+        "mean_walks_length": np.mean(walks_lengths),
+        "median_walks_length": np.median(walks_lengths),
         "traps_rate": graph.traps_rate(),
-        "mean_outbound_edges": np.mean(degrees),
-        "median_outbound_edges": np.median(degrees),
-        "nodes": graph.get_nodes_number(),
-        "edges": graph.get_edges_number(),
-        **dict(Counter(walks_lengths))
+        **graph.report()
     }
 
 
