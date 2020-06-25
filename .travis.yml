@@ -11,7 +11,7 @@ cache: cargo
 jobs:
   include:
     - os: linux
-      dist: xenial
+      dist: bionic
     - os: osx
       osx_image: "xcode11.5"
 
