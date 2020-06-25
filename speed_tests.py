@@ -69,7 +69,7 @@ def single_speed_test(directory: str):
         "graph_size": graph_memory_size,
         "walks_size": walks_memory_size,
         "mean_outbound_edges": np.mean(degrees),
-        "median_outbound_edges": np.median(graph.degrees),
+        "median_outbound_edges": np.median(degrees),
         "nodes": graph.get_nodes_number(),
         "edges": graph.get_edges_number(),
         **dict(Counter(walks_lengths))
