@@ -3,6 +3,5 @@ compress_json
 humanize
 scipy
 tqdm
-pympler
 pandas
 notipy_me
