@@ -27,6 +27,7 @@ features = ["extension-module"]
 [dependencies]
 env_logger = "0.7.1"
 graph = { path = "graph" }
+hashbrown = {version = "0.8", features = ["rayon", "inline-more"] }
 
 [profile.release]
 opt-level = 3

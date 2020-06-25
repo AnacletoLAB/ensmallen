@@ -1,6 +1,6 @@
 use super::*;
 use log::info;
-use std::collections::{HashMap};
+use hashbrown::HashMap;
 use std::iter::FromIterator;
 use rayon::prelude::*;
 

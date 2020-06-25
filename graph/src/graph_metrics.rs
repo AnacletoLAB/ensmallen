@@ -1,7 +1,7 @@
 use super::types::*;
 use super::*;
 use rayon::prelude::*;
-use std::collections::{HashMap, HashSet};
+use hashbrown::{HashMap, HashSet};
 
 /// Properties and measurements of the graph
 impl Graph {

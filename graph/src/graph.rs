@@ -4,7 +4,7 @@ use super::types::*;
 use derive_getters::Getters;
 use log::info;
 use rayon::prelude::*;
-use std::collections::HashMap;
+use hashbrown::{HashMap};
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
 /// A graph representation optimized for executing random walks on huge graphs.
