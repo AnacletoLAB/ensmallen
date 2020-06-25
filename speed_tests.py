@@ -25,7 +25,7 @@ def single_speed_test(directory: str):
 
     completed_graph = time() - start
     start_walk = time()
-    walks = graph.walk(10, 80)
+    walks = graph.walk(1, 80)
     delta = time() - start
     total_walk_time = time() - start_walk
 
