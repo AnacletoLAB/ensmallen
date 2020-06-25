@@ -185,6 +185,22 @@ impl Graph {
             .expect("Cannot compute the mode of zero numbers")
     }
 
+    /// Returns percentage of self-loops.
+    pub fn selfloops_percentage(&self)->f64{
+        (0..self.get_nodes_number())
+            .into_par_iter()
+            .map(|node| self.has_edge(node, node) as usize)
+            .sum::<usize>() as f64 / self.get_nodes_number() as f64
+    }
+
+    /// Returns percentage of bidirectional edges.
+    pub fn bidirectional_percentage(&self)->f64{
+        self.unique_edges
+            .par_keys()
+            .map(|((src, dst), _)| self.has_edge(dst, src) as usize)
+            .sum::<usize>() as f64 / self.get_nodes_number() as f64
+    }
+
     /// Returns report relative to the graph metrics
     ///
     /// The report includes a few useful metrics like:
@@ -196,6 +212,9 @@ impl Graph {
     /// * edges_number: the number of edges in the graph.
     /// * unique_node_types_number: the number of different node types in the graph.
     /// * unique_edge_types_number: the number of different edge types in the graph.
+    /// * traps_rate: probability to end up in a trap when starting into any given node.
+    /// * selfloops_percentage: pecentage of edges that are selfloops.
+    /// * bidirectional_percentage: percentage of edges that are bidirectional.
     ///
     pub fn report(&self) -> HashMap<&str, String> {
         let mut report: HashMap<&str, String> = HashMap::new();
@@ -212,6 +231,8 @@ impl Graph {
             "unique_edge_types_number",
             self.get_edge_types_number().to_string(),
         );
+        report.insert("traps_rate", self.traps_rate().to_string());
+        report.insert("selfloops_percentage", self.has_traps.to_string());
         report
     }
 }
