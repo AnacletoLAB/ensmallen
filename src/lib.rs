@@ -93,6 +93,7 @@ impl EnsmallenGraph {
                 None,
                 None,
                 None,
+                false
             );
 
             return match graph {
@@ -123,6 +124,8 @@ impl EnsmallenGraph {
             kwargs
                 .get_item("validate_input_data")
                 .map(|val| val.extract::<bool>().unwrap()),
+            kwargs.get_item("ignore_duplicated_edges")
+                .map(|val| val.extract::<bool>().unwrap())
         );
 
         match graph {
