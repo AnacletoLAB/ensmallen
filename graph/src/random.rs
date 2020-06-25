@@ -173,24 +173,25 @@ pub fn unrolled_cumulative_f64_sum(random_vec: &Vec<WeightT>) -> Vec<f64> {
 /// 
 /// The AVX / SSE implementation for the cumulative sum are faster for large arrays
 /// But on small vectors the naife implementations is faster.
-pub fn sample(weights: &Vec<WeightT>) -> usize {
+pub fn sample(weights: & mut Vec<WeightT>) -> usize {
     if weights.len() == 1{
         return 0;
     }
 
+
     // this method is generally slower than the sse version implemented in the benchmarks,
     // but in our graph we often have slow
-    let mut cumulative_sum: Vec<f64> = Vec::with_capacity(weights.len());
     let mut total_weight = 0f64;
-    for w in weights {
-        total_weight += w;
-        cumulative_sum.push(total_weight);
+    for w in weights.iter_mut() {
+        total_weight += *w;
+        *w = total_weight;
     }
 
-    let rnd: f64 = random_f64() * cumulative_sum[cumulative_sum.len() - 1];
+    let rnd: f64 = random_f64() * total_weight;
+
 
     // Find the first item which has a weight *higher* than the chosen weight.
-    match cumulative_sum
+    match weights
         .binary_search_by(|w| {
             if *w <= rnd {
                 Ordering::Less

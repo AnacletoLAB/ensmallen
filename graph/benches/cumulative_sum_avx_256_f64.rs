@@ -58,7 +58,8 @@ fn scan_sse(mut x: __m256d) -> __m256d{
 
 #[cfg(all(any(target_arch = "x86", target_arch = "x86_64"),
 target_feature = "sse"))]
-pub fn sse_256_f64_cumulative_sum(random_vec: &Vec<f64>) -> Vec<f64> {
+pub fn avx_256_f64_cumulative_sum(random_vec: &Vec<f64>) -> Vec<f64> {
+    // TODO WIP to fix
     let mut result = vec![0.0f64; random_vec.len()];
         unsafe{
             let mut offset: __m256d = _mm256_setzero_pd();

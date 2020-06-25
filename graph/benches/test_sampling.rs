@@ -15,7 +15,7 @@ use utils::*;
 mod cumulative_sum_sse_128_f64;
 use cumulative_sum_sse_128_f64::*;
 
-const NUMBER: u64 = 100000;
+const NUMBER: u64 = 10;
 
 use rand::distributions::WeightedIndex;
 
