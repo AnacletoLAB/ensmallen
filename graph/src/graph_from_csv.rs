@@ -15,6 +15,7 @@ impl Graph {
         default_edge_type: &Option<&str>,
         weights_column: &Option<&str>,
         default_weight: &Option<WeightT>,
+        ignore_duplicated_edges: bool
     ) -> Result<
         (
             Vec<NodeT>,
@@ -138,7 +139,7 @@ impl Graph {
                     None
                 },
             );
-            if unique_edges_set.contains(&triple) {
+            if !ignore_duplicated_edges && unique_edges_set.contains(&triple) {
                 return Err(format!(
                     concat!(
                         "\nFound duplicated line in edges file!\n",
@@ -319,11 +320,13 @@ impl Graph {
         edge_sep: Option<&str>,
         node_sep: Option<&str>,
         validate_input_data: Option<bool>,
+        ignore_duplicated_edges: Option<bool>
     ) -> Result<Graph, String> {
         // If the separators were not provided we use by default tabs.
         let _edge_sep = edge_sep.unwrap_or_else(|| "\t");
         let _node_sep = node_sep.unwrap_or_else(|| "\t");
         let _validate_input_data = validate_input_data.unwrap_or_else(|| true);
+        let _ignore_duplicated_edges = ignore_duplicated_edges.unwrap_or_else(|| true);
 
         if _validate_input_data {
             // We validate the provided files, starting from the edges file.
@@ -387,6 +390,7 @@ impl Graph {
             &default_edge_type,
             &weights_column,
             &default_weight,
+            _ignore_duplicated_edges
         )?;
 
         let (node_types, node_types_mapping, node_types_reverse_mapping) =

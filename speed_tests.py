@@ -32,16 +32,19 @@ def single_speed_test(directory: str):
         len(walk) for walk in walks
     ]
 
-    return {
+    results = {
         "directory": directory,
         "total_required_time": delta,
         "building_graph_required_time": completed_graph,
         "random_walk_time": total_walk_time,
         "mean_walks_length": np.mean(walks_lengths),
         "median_walks_length": np.median(walks_lengths),
-        "traps_rate": graph.traps_rate(),
         **graph.report()
     }
+
+    print(results)
+
+    return results
 
 
 def speed_test(root: str, iterations: int = 1) -> pd.DataFrame:
