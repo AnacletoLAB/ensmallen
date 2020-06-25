@@ -22,6 +22,7 @@ fn test_graph_from_csv_edge_only() {
             None,
             None,
             None,
+            None,
         ).unwrap();
         graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
     };

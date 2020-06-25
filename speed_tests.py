@@ -17,6 +17,7 @@ def single_speed_test(directory: str):
             sources_column="subject",
             destinations_column="object",
             directed=True,
+            ignore_duplicated_edges=True
         )
     except ValueError as e:
         print("="*100, "\n", e)

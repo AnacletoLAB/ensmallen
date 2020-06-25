@@ -326,7 +326,7 @@ impl Graph {
         let _edge_sep = edge_sep.unwrap_or_else(|| "\t");
         let _node_sep = node_sep.unwrap_or_else(|| "\t");
         let _validate_input_data = validate_input_data.unwrap_or_else(|| true);
-        let _ignore_duplicated_edges = ignore_duplicated_edges.unwrap_or_else(|| true);
+        let _ignore_duplicated_edges = ignore_duplicated_edges.unwrap_or_else(|| false);
 
         if _validate_input_data {
             // We validate the provided files, starting from the edges file.

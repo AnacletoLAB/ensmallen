@@ -20,6 +20,7 @@ fn test_getters() {
             None,
             None,
             None,
+            None,
             None
         ).unwrap();
         // it's not a great test but the getters are automatically derived
