@@ -1,6 +1,60 @@
 use core::arch::x86_64::_rdtsc;
 
 
+#[cfg(all(
+    any(target_arch = "x86", target_arch = "x86_64"),
+    target_feature = "sse"
+))]
+use core::arch::x86_64::{
+    // info can be found at https://software.intel.com/sites/landingpage/IntrinsicsGuide
+    __m128,
+    // sum two vector of f32
+    _mm_add_ps,
+    // cast __m128 to __m128i
+    // see _mm_castsi128_ps
+    _mm_castps_si128,
+    // cast __m128i  to __m128
+    // it's only for compilation, it does not gen instructions
+    _mm_castsi128_ps,
+    // Memory -> Vec (MUST be 16-bytes aligned)
+    _mm_load_ps,
+    // Memory -> Vec but slower
+    _mm_loadu_ps,
+    // set vec to zero
+    _mm_setzero_ps,
+    // Shiffle the vecotr according to the mask given
+    _mm_shuffle_ps,
+    // shift vector left and insert zeros
+    _mm_slli_si128,
+    _mm_srli_si128,
+    // Vec -> Memory (MUST be 16-bytes aligned)
+    _mm_store_ps,
+    // Vec -> Memory but slower
+    _mm_storeu_ps,
+};
+
+static mut XOR_SHIFT_GLOBAL_SEED: [f32; 8] = [12341251.0, 12341251.0, 12341251.0, 12341251.0, 12341251.0, 12341251.0, 12341251.0, 12341251.0];
+
+#[cfg(all(
+    any(target_arch = "x86", target_arch = "x86_64"),
+    target_feature = "sse"
+))]
+#[inline(always)]
+pub fn sse_xorshift_random_float() {
+    let mut v = [0.0f32; 8];
+    unsafe {
+        let mut tmp = _mm_castps_si128(_mm_load_ps(XOR_SHIFT_GLOBAL_SEED.as_ptr()));
+        tmp = _mm_slli_si128(tmp, 17);
+        tmp = _mm_srli_si128(tmp, 7);
+        tmp = _mm_slli_si128(tmp, 13);
+        let y = _mm_castsi128_ps(_mm_slli_si128(tmp, 8));
+        _mm_store_ps(v.as_mut_ptr(), y);
+
+        XOR_SHIFT_GLOBAL_SEED = v;
+    }
+}
+
+
 #[inline(always)]
 pub fn gen_xorshift_random_float() -> f64 {
     let mut seed = unsafe{_rdtsc()};

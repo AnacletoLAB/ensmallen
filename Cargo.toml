@@ -30,3 +30,5 @@ graph = { path = "graph" }
 
 [profile.release]
 opt-level = 3
+codgen-units=1
+lto = "fat"
