@@ -48,6 +48,11 @@ def single_speed_test(directory: str):
         len(walk) for walk in walks
     ]
 
+    degrees = [
+        graph.degree(node)
+        for node in range(graph.get_nodes_number())
+    ]
+
     mean_walks_length = np.mean(walks_lengths)
     median_walks_length = np.median(walks_lengths)
     graph_memory_size = asizeof.asizeof(graph)
@@ -63,8 +68,8 @@ def single_speed_test(directory: str):
         "traps_rate": graph.traps_rate(),
         "graph_size": graph_memory_size,
         "walks_size": walks_memory_size,
-        "mean_outbound_edges": np.mean(graph.outbounds),
-        "median_outbound_edges": np.median(graph.outbounds),
+        "mean_outbound_edges": np.mean(degrees),
+        "median_outbound_edges": np.median(graph.degrees),
         "nodes": graph.get_nodes_number(),
         "edges": graph.get_edges_number(),
         **dict(Counter(walks_lengths))
