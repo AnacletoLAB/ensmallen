@@ -4,7 +4,6 @@ from ensmallen_graph import EnsmallenGraph  # pylint: disable=no-name-in-module
 import compress_json
 import json
 import numpy as np
-from pympler import asizeof
 
 start = time()
 graph = EnsmallenGraph(
@@ -37,24 +36,19 @@ median_walks_length = np.median([
     len(walk) for walk in walks
 ])
 
-graph_memory_size = asizeof.asizeof(graph)
-walks_memory_size = asizeof.asizeof(walks)
-
 degrees = [
     graph.degree(node)
     for node in range(graph.get_nodes_number())
 ]
 
 response = {
-    "directory": "monarch",
+    "directory": "cooccurrence",
     "total_required_time": delta,
     "building_graph_required_time": completed_graph,
     "random_walk_time": total_walk_time,
     "mean_walks_length": mean_walks_length,
     "median_walks_length": median_walks_length,
     "traps_rate": graph.traps_rate(),
-    "graph_size": graph_memory_size,
-    "walks_size": walks_memory_size,
     "mean_outbound_edges": np.mean(degrees),
     "median_outbound_edges": np.median(degrees),
     "nodes": graph.get_nodes_number(),

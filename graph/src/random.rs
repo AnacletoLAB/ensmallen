@@ -22,24 +22,23 @@ fn rotl(x: u64, k: u64) -> u64 {
     (x << k) | (x >> (64 - k))
 }
 
-
 #[inline(always)]
 /// Return a random u64.
-/// 
+///
 /// # Implementation details
 /// The implementations is based on xorshiro256+ which seems to be the fastest floating point generator.
 /// The reference implementation can be found [here](http://prng.di.unimi.it/xoshiro256plus.c).
 /// Xorshiro256+ generate a  random u64 so we need to convert it to f64.
-/// 
+///
 /// One important detail about xorshiro256+ is that it has low entropy in the lower 3 bits.
-/// 
+///
 /// One possible optimization might be to generate several random values in parallel exploiting
 /// AVX / SSE instructions and then use these values. An implemnetation could be found [here](http://prng.di.unimi.it/xoshiro256+-vect-speed.c)
-/// 
+///
 /// # Examples
 /// ```
 /// use graph::random::random_u64;
-/// 
+///
 /// let rnd: u64 = random_u64();
 /// println!("The random value is: {}", rnd);
 /// ```
@@ -64,26 +63,26 @@ pub fn random_u64() -> u64 {
 
 #[inline(always)]
 /// Return a random f64 between 0 and 1.
-/// 
+///
 /// # Implementation details
 /// We generate a pseudo-random number using xorshiro256+ and then we convert it to a float.`
-/// 
+///
 /// One important detail about xorshiro256+ is that it has low entropy in the lower bits.
-/// This is not a problem since we generate 64bits but we will only need 53. 
-/// 
+/// This is not a problem since we generate 64bits but we will only need 53.
+///
 /// There are two main methods to convert from u64 to f64 and they can be found [here](http://prng.di.unimi.it/)
-/// 
-/// 
+///
+///
 /// Basically we are setupping the exponent and mantissa of the float and then punning the value to a float
-/// 
+///
 /// The "simplest" is to multiply the value for the right exponent:alloc
 /// ```
 /// # use graph::random::random_u64;
 /// let result: f64 = (random_u64() >> 11) as f64 * 2.0f64.powf(-53.0);
 /// ```
-/// 
+///
 /// There is also a second way that exploit type punning:
-/// 
+///
 /// ```
 /// # use graph::random::random_u64;
 /// let v: u64 = (random_u64() >> 11) | (1023 << 52);
@@ -91,14 +90,14 @@ pub fn random_u64() -> u64 {
 /// let result: f64 = r - 1f64;
 /// ```
 /// the informations about the structure of a f64 was taken from [IEEE 754](https://standards.ieee.org/content/ieee-standards/en/standard/754-2019.html)
-/// 
+///
 /// First we shift the value in order to fit the high-entropy values in the mantissa of the float.
-/// 
+///
 /// Then we se the bits from 1 to 12 to 1023 so that we set the exponent to 1.
 /// (Since the computed exponent is e - 1022 where e is the value we set)
 ///
 /// Then we convert this u64 to a random f64 from 1 to 2.
-/// 
+///
 /// The type punning is made with:
 /// ```
 /// # let v: u64 = 100;
@@ -108,16 +107,16 @@ pub fn random_u64() -> u64 {
 /// ```C
 /// double r = *((double *)&v);
 /// ```
-/// 
+///
 /// The last step is to fix the range form 1 - 2, to 0 - 1.
-/// 
+///
 /// As Vigna [says](http://prng.di.unimi.it/), these two methods should have equivalent performances on modern hardware.
 /// But in our benchmarks we found the second (and more complicated) one to be slightly faster.
-/// 
+///
 /// # Examples
 /// ```
 /// use graph::random::random_f64;
-/// 
+///
 /// let frnd: f64 = random_f64();
 /// assert!(0.0 <= frnd && frnd <= 1.0);
 /// println!("The random value is: {}", frnd);
@@ -128,56 +127,22 @@ pub fn random_f64() -> f64 {
     r - 1f64
 }
 
-
-
-
-pub fn unrolled_cumulative_f64_sum(random_vec: &Vec<WeightT>) -> Vec<f64> {
-    let mut result = vec![0.0f64; random_vec.len()];
-    let mut offset = 0.0f64;
-
-    for i in (0..random_vec.len()).step_by(4){
-        let mut a = random_vec[i];
-        let mut b = random_vec[i+1];
-        let mut c = random_vec[i+2];
-        let mut d = random_vec[i+3];
-
-        d += c + b + a + offset;
-        c += b + a + offset;
-        b += a + offset;
-        a += offset;
-
-        result[i] = a;
-        result[i+1] = b;
-        result[i+2] = c;
-        result[i+3] = d;
-
-        offset = d;
-    }
-
-    for _ in 0..(random_vec.len() % 4){
-        result.pop();
-    }
-
-    result
-}
-
-/// Given a vector of scores (non-zero positive values), convert it to a 
+/// Given a vector of scores (non-zero positive values), convert it to a
 /// probability distribution and extract a random indices accodringly.`
 ///
 /// # Implementation details
 /// The implemented method is O(n) because the first operations is to calculate
 /// the cumulative sum of the weights, then we extract a random floating value
-/// between 0 and the last value of the cumulative sum. 
+/// between 0 and the last value of the cumulative sum.
 /// Finally, we find the index of the first value bigger than it by binary search.
-/// 
-/// 
+///
+///
 /// The AVX / SSE implementation for the cumulative sum are faster for large arrays
 /// But on small vectors the naife implementations is faster.
-pub fn sample(weights: & mut Vec<WeightT>) -> usize {
-    if weights.len() == 1{
+pub fn sample(weights: &mut Vec<WeightT>) -> usize {
+    if weights.len() == 1 {
         return 0;
     }
-
 
     // this method is generally slower than the sse version implemented in the benchmarks,
     // but in our graph we often have slow
@@ -189,21 +154,18 @@ pub fn sample(weights: & mut Vec<WeightT>) -> usize {
 
     let rnd: f64 = random_f64() * total_weight;
 
-
     // Find the first item which has a weight *higher* than the chosen weight.
-    match weights
-        .binary_search_by(|w| {
-            if *w <= rnd {
-                Ordering::Less
-            } else {
-                Ordering::Greater
-            }
-        })
-    {
+    match weights.binary_search_by(|w| {
+        if *w <= rnd {
+            Ordering::Less
+        } else {
+            Ordering::Greater
+        }
+    }) {
         // this could be an unwrap_err but there is a small chance that
         // the value could exactly match one of the cumulative sums
         // and therefore return Ok.
         Ok(g) => g,
-        Err(g) => g 
+        Err(g) => g,
     }
 }

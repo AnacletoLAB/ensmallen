@@ -5,7 +5,6 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm, trange
 import os
-from pympler import asizeof
 from collections import Counter
 from notipy_me import Notipy
 
@@ -55,8 +54,6 @@ def single_speed_test(directory: str):
 
     mean_walks_length = np.mean(walks_lengths)
     median_walks_length = np.median(walks_lengths)
-    graph_memory_size = asizeof.asizeof(graph)
-    walks_memory_size = asizeof.asizeof(walks)
 
     return {
         "directory": directory,
@@ -66,8 +63,6 @@ def single_speed_test(directory: str):
         "mean_walks_length": mean_walks_length,
         "median_walks_length": median_walks_length,
         "traps_rate": graph.traps_rate(),
-        "graph_size": graph_memory_size,
-        "walks_size": walks_memory_size,
         "mean_outbound_edges": np.mean(degrees),
         "median_outbound_edges": np.median(degrees),
         "nodes": graph.get_nodes_number(),
