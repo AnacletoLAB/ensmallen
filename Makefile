@@ -2,15 +2,10 @@ build:
 	rm -fdr target
 	maturin build --release
 
-build_for_linux:
-	# Fully statically compiled libray, the executable will be a lot bigger
-	# but it's totally portable and faster
-	RUSTFLAGS="-C target-feature=-crt-static" maturin build --release --no-sdist --target x86_64-unknown-linux-musl
-
 build_for_linux_native:
 	# Fully statically compiled libray, the executable will be a lot bigger
 	# but it's totally portable and faster
-	RUSTFLAGS="-C target-feature=-crt-static -C target-cpu=native" maturin build --release --no-sdist --target x86_64-unknown-linux-musl
+	RUSTFLAGS=" -C target-cpu=native" maturin build --release --no-sdist
 
 build_with_docker:
 	# Setup the docker container
