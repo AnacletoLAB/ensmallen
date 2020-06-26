@@ -190,7 +190,7 @@ impl Graph {
         (0..self.get_nodes_number())
             .into_par_iter()
             .map(|node| self.has_edge(node, node) as usize)
-            .sum::<usize>() as f64 / self.get_nodes_number() as f64
+            .sum::<usize>() as f64 / self.get_edges_number() as f64
     }
 
     /// Returns percentage of bidirectional edges.
