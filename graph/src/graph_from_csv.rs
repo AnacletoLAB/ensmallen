@@ -288,7 +288,7 @@ impl Graph {
                         "This might be due to a mismatch between the edge and node files.\n",
                         "The path of the file is {}"
                     ),
-                    nodes.len(), nodes_mapping.len(), path
+                    nodes_mapping.len(), nodes.len(), path
                 )
             );
         }
