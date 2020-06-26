@@ -198,7 +198,7 @@ impl Graph {
         self.unique_edges
             .par_keys()
             .map(|(src, dst)| self.has_edge(*dst, *src) as usize)
-            .sum::<usize>() as f64 / self.get_nodes_number() as f64
+            .sum::<usize>() as f64 / self.unique_edges.len() as f64
     }
 
     /// Returns report relative to the graph metrics
