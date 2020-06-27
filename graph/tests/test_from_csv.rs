@@ -34,6 +34,7 @@ fn test_graph_from_csv_edge_only() {
         assert!(graph.get_node_type_id(0).is_err());
         
         let _walks = graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
+        let _cooccurrence = graph.cooccurence_matrix(5, 10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
     }
 }
 

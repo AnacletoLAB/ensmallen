@@ -4,6 +4,7 @@ extern crate rand;
 use rand::Rng;  
 use rand::seq::SliceRandom;
 use rand::thread_rng;
+use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use hashbrown::{HashMap};
 
 fn gen_random_usize_vec(num: usize, max: usize) -> Vec<usize> {
@@ -100,12 +101,11 @@ impl Graph {
             labels = indices.iter().map(|i| labels[*i]).collect();
         }
 
-        return (
+        (
             words,
             contexts,
             labels
         )
-
     }
 
     pub fn cooccurence_matrix(
@@ -127,11 +127,16 @@ impl Graph {
             explore_weight,
             change_node_type_weight,
             change_edge_type_weight
-        );
+        ).unwrap();
         let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
+        let pb1 = ProgressBar::new(walks.len() as u64);
+        pb1.set_style(ProgressStyle::default_bar().template(
+            "Computing cooccurrence matrix {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+        ));
 
         // TODO: Add a TQDM-like loading bar.
-        for walk in walks.unwrap(){
+        for i in (0..walks.len()).progress_with(pb1){
+            let walk = &walks[i];
             let walk_length = walk.len();
             for (central_index, &central_word_id) in walk.iter().enumerate(){
                 for distance in 1..1+window_size{
@@ -153,11 +158,15 @@ impl Graph {
         let mut words: Vec<NodeT> = vec![0; elements];
         let mut contexts: Vec<NodeT> = vec![0; elements];
         let mut frequencies: Vec<f64> = vec![0.0; elements];
+        let pb2 = ProgressBar::new(walks.len() as u64);
+        pb2.set_style(ProgressStyle::default_bar().template(
+            "Converting cooccurrence matrix {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+        ));
 
         cooccurence_matrix
             .iter()
-            .enumerate()
-            .for_each(|(i, ((word, context), frequency))|{
+            .zip((0..cooccurence_matrix.len()).progress_with(pb2))
+            .for_each(|(((word, context), frequency), i)|{
             let (k, j) = (i*2, i*2+1);
             if *frequency > max_frequency{
                 max_frequency = *frequency;

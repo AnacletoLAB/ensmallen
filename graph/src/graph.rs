@@ -5,6 +5,7 @@ use derive_getters::Getters;
 use log::info;
 use rayon::prelude::*;
 use hashbrown::{HashMap};
+use indicatif::{ProgressBar, ParallelProgressIterator, ProgressStyle};
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
 /// A graph representation optimized for executing random walks on huge graphs.
@@ -362,6 +363,11 @@ impl Graph {
 
         info!("Starting random walk.");
         let number_of_results = iterations * self.get_nodes_number();
+        
+        let pb = ProgressBar::new(number_of_results as u64);
+        pb.set_style(ProgressStyle::default_bar().template(
+            "Computing random walks {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+        ));
 
         if self.has_traps {
             Ok((0..number_of_results)
@@ -376,6 +382,7 @@ impl Graph {
                         _change_edge_type_weight,
                     )
                 })
+                .progress_with(pb)
                 .filter(|walk| walk.len() >= _min_length)
                 .collect::<Vec<Vec<NodeT>>>())
         } else {
@@ -391,6 +398,7 @@ impl Graph {
                         _change_edge_type_weight,
                     )
                 })
+                .progress_with(pb)
                 .filter(|walk| walk.len() >= _min_length)
                 .collect::<Vec<Vec<NodeT>>>())
         }
