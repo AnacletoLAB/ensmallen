@@ -5,9 +5,34 @@ use rand::Rng;
 use rand::seq::SliceRandom;
 use rand::thread_rng;
 
-#[path = "./utils.rs"]
-mod utils;
-use utils::*;
+
+pub fn gen_random_usize_vec(num: usize, max: usize) -> Vec<usize> {
+    // TODO! substitute with xorshiro
+    let mut rng = rand::thread_rng();
+    let vals: Vec<usize> = (0..num).map(|_| rng.gen_range(0, max)).collect();
+    vals
+}
+
+#[macro_export]
+macro_rules! max {
+    ($a: expr, $b: expr) => {
+        if $a >= $b {
+            $a
+        } else {
+            $b
+        }
+    };
+}
+#[macro_export]
+macro_rules! min {
+    ($a: expr, $b: expr) => {
+        if $a < $b {
+            $a 
+        } else {
+            $b
+        }
+    };
+}
 
 pub fn naife_skipgram_preprocessing(
     walk: &Vec<usize>,
@@ -31,7 +56,11 @@ pub fn naife_skipgram_preprocessing(
     let mut contexts: Vec<usize> = Vec::with_capacity(vector_length);
     
     for (i, wi) in walk.iter().enumerate() {
-        let window_start = max!(0, i - window_size);
+        let window_start = if i > window_size {
+            i - window_size
+        } else {
+            0
+        };
         let window_end = min!(walk_len, i + window_size + 1); 
         let delta = window_end - window_start - 1;
 
@@ -44,7 +73,7 @@ pub fn naife_skipgram_preprocessing(
 
     // create negative data
     // In this implementation, negative samples ARE MANDATORY.
-    //
+    
     // TODO! This thing can create false negatives!!
     // The issue was already present in the original TensorFlow implementation.
     let num_negatives = (words.len() as f64 * negative_samples) as usize;

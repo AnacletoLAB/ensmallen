@@ -16,17 +16,17 @@ fn test_gen_xorshift_random_float(b: &mut Bencher) {
     });
 }
 
-#[bench]
-fn test_sse_xorshift_random_float(b: &mut Bencher) {
-    b.iter(|| {
-        for _ in 0..IERATIONS {
-            sse_xorshift_random_float();
-        }
-    });
+// #[bench]
+// fn test_sse_xorshift_random_float(b: &mut Bencher) {
+//     b.iter(|| {
+//         for _ in 0..IERATIONS {
+//             sse_xorshift_random_float();
+//         }
+//     });
 
-    println!("{:?}", sse_xorshift_random_float());
-    println!("{:?}", sse_xorshift_random_float());
-}
+//     println!("{:?}", sse_xorshift_random_float());
+//     println!("{:?}", sse_xorshift_random_float());
+// }
 
 #[bench]
 fn test_gen_xorshiro256plus_mul(b: &mut Bencher) {
@@ -42,6 +42,15 @@ fn test_gen_xorshiro256plus(b: &mut Bencher) {
     b.iter(|| {
         for _ in 0..IERATIONS {
             xorshiro256plus();
+        }
+    });
+}
+
+#[bench]
+fn test_gen_xorshiro256plus_no_mul(b: &mut Bencher) {
+    b.iter(|| {
+        for _ in 0..IERATIONS {
+            xorshiro256plus_no_mul();
         }
     });
 }

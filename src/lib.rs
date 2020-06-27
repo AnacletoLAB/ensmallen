@@ -3,6 +3,7 @@ use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::class::iter::PyIterProtocol;
 use pyo3::types::PyDict;
+use pyo3::wrap_pyfunction;
 use std::collections::HashMap;
 
 #[pymodule]
@@ -12,8 +13,24 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
     // Python objects to Rust values, and the Rust return value back into a Python object.
     // The `_py` argument represents that we're holding the GIL.
     m.add_class::<EnsmallenGraph>()?;
+    m.add_wrapped(wrap_pyfunction!(skipgram_preprocess))?;
     env_logger::init();
     Ok(())
+}
+
+#[pyfunction]
+fn skipgram_preprocess(
+    walk: Vec<NodeT>,
+    vocabulary_size: usize,
+    window_size: usize,
+    negative_samples: f64,
+    shuffle: bool
+) -> (
+    Vec<usize>,
+    Vec<usize>,
+    Vec<u8>  
+) {
+    graph::skipgram_preprocessing(&walk, vocabulary_size, window_size, negative_samples, shuffle)
 }
 
 #[pyclass]

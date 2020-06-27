@@ -33,7 +33,7 @@ fn using_weighted_index_sample(b: &mut Bencher) {
 fn using_scan(b: &mut Bencher) {
     let random_vec = gen_random_f64_vec(NUMBER);
     b.iter(|| {
-        extract_with_scan(&random_vec, xorshiro256plus())
+        extract_with_scan(&random_vec, xorshiro256plus_no_mul())
     })
 }
 
@@ -41,7 +41,7 @@ fn using_scan(b: &mut Bencher) {
 fn using_while(b: &mut Bencher) {
     let random_vec = gen_random_f64_vec(NUMBER);
     b.iter(|| {
-        extract_with_while(&random_vec, xorshiro256plus())
+        extract_with_while(&random_vec, xorshiro256plus_no_mul())
     })
 }
 
@@ -49,7 +49,7 @@ fn using_while(b: &mut Bencher) {
 fn using_sse(b: &mut Bencher) {
     let mut random_vec = gen_random_f64_vec(NUMBER);
     b.iter(|| {
-        extract_with_sse(& mut random_vec, xorshiro256plus())
+        extract_with_sse(& mut random_vec, xorshiro256plus_no_mul())
     })
 }
 
