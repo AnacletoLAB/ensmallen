@@ -23,6 +23,9 @@ fn test_sse_xorshift_random_float(b: &mut Bencher) {
             sse_xorshift_random_float();
         }
     });
+
+    println!("{:?}", sse_xorshift_random_float());
+    println!("{:?}", sse_xorshift_random_float());
 }
 
 #[bench]

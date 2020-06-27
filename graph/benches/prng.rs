@@ -31,26 +31,38 @@ use core::arch::x86_64::{
     _mm_store_ps,
     // Vec -> Memory but slower
     _mm_storeu_ps,
+    _mm_xor_si128,
 };
 
-static mut XOR_SHIFT_GLOBAL_SEED: [f32; 8] = [12341251.0, 12341251.0, 12341251.0, 12341251.0, 12341251.0, 12341251.0, 12341251.0, 12341251.0];
+static mut XOR_SHIFT_GLOBAL_SEED: [f32; 8] = [80085.0, 12341251.0, 12341251.0, 12341251.0, 12341251.0, 12341251.0, 12341251.0, 12341251.0];
 
 #[cfg(all(
     any(target_arch = "x86", target_arch = "x86_64"),
     target_feature = "sse"
 ))]
 #[inline(always)]
-pub fn sse_xorshift_random_float() {
-    let mut v = [0.0f32; 8];
+pub fn sse_xorshift_random_float() -> [f32; 8] {
     unsafe {
+        // load the seeds into a 128bit register
         let mut tmp = _mm_castps_si128(_mm_load_ps(XOR_SHIFT_GLOBAL_SEED.as_ptr()));
-        tmp = _mm_slli_si128(tmp, 17);
-        tmp = _mm_srli_si128(tmp, 7);
-        tmp = _mm_slli_si128(tmp, 13);
-        let y = _mm_castsi128_ps(_mm_slli_si128(tmp, 8));
-        _mm_store_ps(v.as_mut_ptr(), y);
 
-        XOR_SHIFT_GLOBAL_SEED = v;
+        // seed ^= seed << 17;
+        let mut shifted = _mm_slli_si128(tmp, 17);
+        tmp = _mm_xor_si128(tmp, shifted);
+
+        //seed ^= seed >> 7;
+        let mut shifted = _mm_srli_si128(tmp, 7);
+        tmp = _mm_xor_si128(tmp, shifted);
+
+        // seed ^= seed << 13;
+        let mut shifted = _mm_slli_si128(tmp, 13);
+        tmp = _mm_xor_si128(tmp, shifted);
+
+        // Store the result inside of v
+        _mm_store_ps(XOR_SHIFT_GLOBAL_SEED.as_mut_ptr(), _mm_castsi128_ps(tmp));
+        
+        // reutrn v
+        XOR_SHIFT_GLOBAL_SEED
     }
 }
 

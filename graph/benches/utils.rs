@@ -21,3 +21,11 @@ pub fn gen_random_f32_vec(num: u64) -> Vec<f32> {
     //println!("{:?}", weights);
     weights
 }
+
+pub fn gen_random_usize_vec(num: usize, max: usize) -> Vec<usize> {
+    // TODO! substitute with xorshiro
+    let mut rng = rand::thread_rng();
+    let vals: Vec<usize> = (0..num).map(|_| rng.gen_range(0, max)).collect();
+    vals
+}
+

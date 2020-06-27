@@ -1,6 +1,7 @@
 use graph::{EdgeT, EdgeTypeT, Graph, NodeT, NodeTypeT, ParamsT, WeightT};
 use pyo3::exceptions;
 use pyo3::prelude::*;
+use pyo3::class::iter::PyIterProtocol;
 use pyo3::types::PyDict;
 use std::collections::HashMap;
 
@@ -93,7 +94,7 @@ impl EnsmallenGraph {
                 None,
                 None,
                 None,
-                None
+                None,
             );
 
             return match graph {
@@ -124,8 +125,9 @@ impl EnsmallenGraph {
             kwargs
                 .get_item("validate_input_data")
                 .map(|val| val.extract::<bool>().unwrap()),
-            kwargs.get_item("ignore_duplicated_edges")
-                .map(|val| val.extract::<bool>().unwrap())
+            kwargs
+                .get_item("ignore_duplicated_edges")
+                .map(|val| val.extract::<bool>().unwrap()),
         );
 
         match graph {
@@ -274,6 +276,96 @@ impl EnsmallenGraph {
         }
     }
 
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, node, iterations, length, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
+    /// Return random walks done on the graph using Rust.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node,
+    ///     The node from where the walks will start.
+    /// iterations,
+    ///     How many walks to do from the given node.
+    /// length,
+    ///     Maximal length of the random walk.
+    ///     On graphs without traps, all walks have this length.
+    /// min_length: int = 0,,
+    ///     Minimal length of the random walk. Will filter out smaller
+    ///     random walks.
+    /// return_weight: float = 1.0,
+    ///     Weight on the probability of returning to node coming from
+    ///     Having this higher tends the walks to be
+    ///     more like a Breadth-First Search.
+    ///     Having this very high  (> 2) makes search very local.
+    ///     Equal to the inverse of p in the Node2Vec paper.
+    /// explore_weight: float = 1.0,
+    ///     Weight on the probability of visiting a neighbor node
+    ///     to the one we're coming from in the random walk
+    ///     Having this higher tends the walks to be
+    ///     more like a Depth-First Search.
+    ///     Having this very high makes search more outward.
+    ///     Having this very low makes search very local.
+    ///     Equal to the inverse of q in the Node2Vec paper.
+    /// change_node_type_weight: float = 1.0,
+    ///     Weight on the probability of visiting a neighbor node of a
+    ///     different type than the previous node. This only applies to
+    ///     colored graphs, otherwise it has no impact.
+    /// change_edge_type_weight: float = 1.0,
+    ///     Weight on the probability of visiting a neighbor edge of a
+    ///     different type than the previous edge. This only applies to
+    ///     multigraphs, otherwise it has no impact.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// List of list of walks containing the numeric IDs of nodes.
+    ///
+    fn walk_from_node(
+        &self,
+        node: NodeT,
+        iterations: usize,
+        length: usize,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<Vec<Vec<NodeT>>> {
+        if py_kwargs.is_none() {
+            let w = self
+                .graph
+                .walk_from_node(node, iterations, length, None, None, None, None, None);
+
+            return match w {
+                Ok(g) => Ok(g),
+                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+            };
+        }
+
+        let kwargs = py_kwargs.unwrap();
+
+        let w = self.graph.walk_from_node(
+            node,
+            iterations,
+            length,
+            kwargs
+                .get_item("min_length")
+                .map(|val| val.extract::<usize>().unwrap()),
+            kwargs
+                .get_item("return_weight")
+                .map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs
+                .get_item("explore_weight")
+                .map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs
+                .get_item("change_node_type_weight")
+                .map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs
+                .get_item("change_edge_type_weight")
+                .map(|val| val.extract::<ParamsT>().unwrap()),
+        );
+
+        match w {
+            Ok(g) => Ok(g),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
+
     #[getter]
     fn sources(&self) -> Vec<NodeT> {
         self.graph.sources().clone()
@@ -286,9 +378,11 @@ impl EnsmallenGraph {
 
     #[getter]
     fn nodes_mapping(&self) -> HashMap<String, NodeT> {
-        self.graph.nodes_mapping().iter().map(
-            |(k, v)| (k.clone(), *v)
-        ).collect()
+        self.graph
+            .nodes_mapping()
+            .iter()
+            .map(|(k, v)| (k.clone(), *v))
+            .collect()
     }
 
     #[getter]
@@ -298,9 +392,11 @@ impl EnsmallenGraph {
 
     #[getter]
     fn unique_edges(&self) -> HashMap<(NodeT, NodeT), EdgeT> {
-        self.graph.unique_edges().iter().map(
-            |(k, v)| (*k, *v)
-        ).collect()
+        self.graph
+            .unique_edges()
+            .iter()
+            .map(|(k, v)| (*k, *v))
+            .collect()
     }
 
     #[getter]
@@ -320,12 +416,9 @@ impl EnsmallenGraph {
 
     #[getter]
     fn node_types_mapping(&self) -> Option<HashMap<String, NodeTypeT>> {
-        match self.graph.node_types_mapping(){
+        match self.graph.node_types_mapping() {
             None => None,
-            Some(g) => Some(g.iter().map(
-                    |(k, v)| (k.clone(), *v)
-                ).collect()
-            )
+            Some(g) => Some(g.iter().map(|(k, v)| (k.clone(), *v)).collect()),
         }
     }
 
@@ -343,10 +436,7 @@ impl EnsmallenGraph {
     fn edge_types_mapping(&self) -> Option<HashMap<String, EdgeTypeT>> {
         match self.graph.edge_types_mapping() {
             None => None,
-            Some(g) => Some(g.iter().map(
-                    |(k, v)| (k.clone(), *v)
-                ).collect()
-            )
+            Some(g) => Some(g.iter().map(|(k, v)| (k.clone(), *v)).collect()),
         }
     }
 
@@ -586,8 +676,10 @@ impl EnsmallenGraph {
     /// * unique_edge_types_number: the number of different edge types in the graph.
     ///
     fn report(&self) -> HashMap<&str, String> {
-        self.graph.report().iter().map(
-            |(k, v)| (*k, v.clone())
-        ).collect()
+        self.graph
+            .report()
+            .iter()
+            .map(|(k, v)| (*k, v.clone()))
+            .collect()
     }
 }
