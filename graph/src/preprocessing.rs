@@ -139,7 +139,7 @@ impl Graph {
             length,
             None,
             Some(idx*batch_size),
-            Some((idx+1)*batch_size),
+            Some(min!(self.get_nodes_number(), (idx+1)*batch_size)),
             min_length,
             return_weight,
             explore_weight,

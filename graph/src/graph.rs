@@ -344,12 +344,15 @@ impl Graph {
                 "End node given, but no start node was specified.",
             ));
         }
-        let mut _start_node = 0;
-        let mut _end_node = end_node.unwrap_or_else(|| self.get_nodes_number());
-        if let Some(sn) = start_node {
-            _start_node = sn;
-            _end_node = _start_node + 1;
-        }
+        let (_start_node, _end_node) = if end_node.is_none() && start_node.is_some() {
+            let _start_node = start_node.unwrap();
+            (_start_node, _start_node+1)
+        } else if end_node.is_some() && start_node.is_some() {
+            (start_node.unwrap(), end_node.unwrap())
+        } else {
+            (0, self.get_nodes_number())
+        };
+        
         let _verbose = verbose.unwrap_or(true);
         let _return_weight = return_weight.unwrap_or(1.0);
         let _explore_weight = explore_weight.unwrap_or(1.0);
@@ -392,7 +395,7 @@ impl Graph {
             ProgressBar::hidden()
         };
 
-        let iterator = (0..number_of_results).into_par_iter();
+        let iterator = (0..number_of_results).into_par_iter().progress_with(pb);
 
         Ok(if self.has_traps {
             iterator
@@ -406,7 +409,6 @@ impl Graph {
                         _change_edge_type_weight,
                     )
                 })
-                .progress_with(pb)
                 .filter(|walk| walk.len() >= _min_length)
                 .collect::<Vec<Vec<NodeT>>>()
         } else {
@@ -421,7 +423,6 @@ impl Graph {
                         _change_edge_type_weight,
                     )
                 })
-                .progress_with(pb)
                 .filter(|walk| walk.len() >= _min_length)
                 .collect::<Vec<Vec<NodeT>>>()
         })
