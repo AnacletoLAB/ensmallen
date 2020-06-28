@@ -82,6 +82,8 @@ pub fn ax2_xorshiro_assembly(seed: & mut [u64; 20]) {
 }
 
 pub fn ax2_ss4_xorshiro_assembly(seed: & mut [u64; 80]) {
+    // for info about the scheduling of registers / operation
+    //I made https://docs.google.com/spreadsheets/d/1tOgA91OVw9GBKVIXVDeAsQKar3IMXAZXBn3aZwdeDug/edit?usp=sharing
     unsafe {
         asm!(
         concat!(

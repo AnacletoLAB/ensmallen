@@ -347,7 +347,7 @@ impl EnsmallenGraph {
         &self,
         length: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f64>>)> {
+    ) -> PyResult<(Py<PyArray1<f64>>, Py<PyArray1<f64>>, Py<PyArray1<f64>>)> {
         if py_kwargs.is_none() {
             let w = self
                 .graph
@@ -356,9 +356,9 @@ impl EnsmallenGraph {
             return match w {
                 Ok(g) => Ok(
                     (
-                        g.0.to_pyarray(gil.python()).to_owned(),
-                        g.1.to_pyarray(gil.python()).to_owned(),
-                        g.2.to_pyarray(gil.python()).to_owned()
+                        g.0.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
+                        g.1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
+                        g.2.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
                     )
                 ),
                 Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
@@ -399,9 +399,9 @@ impl EnsmallenGraph {
         match w {
             Ok(g) => Ok(
                 (
-                    g.0.to_pyarray(gil.python()).to_owned(),
-                    g.1.to_pyarray(gil.python()).to_owned(),
-                    g.2.to_pyarray(gil.python()).to_owned()
+                    g.0.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
+                    g.1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
+                    g.2.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
                 )
             ),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
@@ -466,7 +466,7 @@ impl EnsmallenGraph {
         batch_size:usize,
         length: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<((Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>), Py<PyArray1<u8>>)>{
+    ) -> PyResult<((Py<PyArray1<f64>>, Py<PyArray1<f64>>), Py<PyArray1<f64>>)>{
         if py_kwargs.is_none() {
             let w = self
                 .graph
@@ -476,10 +476,10 @@ impl EnsmallenGraph {
             return match w {
                 Ok(g) => Ok((
                     (
-                        (g.0).0.to_pyarray(gil.python()).to_owned(),
-                        (g.0).1.to_pyarray(gil.python()).to_owned()
+                        (g.0).0.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
+                        (g.0).1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
                     ),
-                    g.1.to_pyarray(gil.python()).to_owned()
+                    g.1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
                 )),
                 Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
             };
@@ -519,10 +519,10 @@ impl EnsmallenGraph {
         match w {
             Ok(g) => Ok((
                 (
-                    (g.0).0.to_pyarray(gil.python()).to_owned(),
-                    (g.0).1.to_pyarray(gil.python()).to_owned()
+                    (g.0).0.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
+                    (g.0).1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
                 ),
-                g.1.to_pyarray(gil.python()).to_owned()
+                g.1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
             )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
