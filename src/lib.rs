@@ -2,6 +2,7 @@ use graph::{EdgeT, EdgeTypeT, Graph, NodeT, NodeTypeT, ParamsT, WeightT};
 use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
+use numpy::{PyArray1, ToPyArray};
 use std::collections::HashMap;
 
 #[pymodule]
@@ -346,14 +347,20 @@ impl EnsmallenGraph {
         &self,
         length: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Vec<NodeT>, Vec<NodeT>, Vec<f64>)> {
+    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f64>>)> {
         if py_kwargs.is_none() {
             let w = self
                 .graph
                 .cooccurence_matrix(length, None, None, None, None, None, None, None, None);
-
+            let gil = pyo3::Python::acquire_gil();
             return match w {
-                Ok(g) => Ok(g),
+                Ok(g) => Ok(
+                    (
+                        g.0.to_pyarray(gil.python()).to_owned(),
+                        g.1.to_pyarray(gil.python()).to_owned(),
+                        g.2.to_pyarray(gil.python()).to_owned()
+                    )
+                ),
                 Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
             };
         }
@@ -387,9 +394,16 @@ impl EnsmallenGraph {
                 .get_item("verbose")
                 .map(|val| val.extract::<bool>().unwrap()),
         );
-
+        
+        let gil = pyo3::Python::acquire_gil();
         match w {
-            Ok(g) => Ok(g),
+            Ok(g) => Ok(
+                (
+                    g.0.to_pyarray(gil.python()).to_owned(),
+                    g.1.to_pyarray(gil.python()).to_owned(),
+                    g.2.to_pyarray(gil.python()).to_owned()
+                )
+            ),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
@@ -452,14 +466,21 @@ impl EnsmallenGraph {
         batch_size:usize,
         length: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<((Vec<NodeT>, Vec<NodeT>), Vec<u8>)> {
+    ) -> PyResult<((Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>), Py<PyArray1<u8>>)>{
         if py_kwargs.is_none() {
             let w = self
                 .graph
                 .skipgrams(idx, batch_size, length, None, None, None, None, None, None, None, None);
 
+            let gil = pyo3::Python::acquire_gil();
             return match w {
-                Ok(g) => Ok(g),
+                Ok(g) => Ok((
+                    (
+                        (g.0).0.to_pyarray(gil.python()).to_owned(),
+                        (g.0).1.to_pyarray(gil.python()).to_owned()
+                    ),
+                    g.1.to_pyarray(gil.python()).to_owned()
+                )),
                 Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
             };
         }
@@ -493,9 +514,16 @@ impl EnsmallenGraph {
                 .get_item("change_edge_type_weight")
                 .map(|val| val.extract::<ParamsT>().unwrap()),
         );
-
+        
+        let gil = pyo3::Python::acquire_gil();
         match w {
-            Ok(g) => Ok(g),
+            Ok(g) => Ok((
+                (
+                    (g.0).0.to_pyarray(gil.python()).to_owned(),
+                    (g.0).1.to_pyarray(gil.python()).to_owned()
+                ),
+                g.1.to_pyarray(gil.python()).to_owned()
+            )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }

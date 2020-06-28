@@ -117,6 +117,7 @@ fn skipgram(
     )
 }
 
+
 /// Preprocessing for ML algorithms on graph.
 impl Graph {
     
@@ -168,25 +169,48 @@ impl Graph {
         let mut words = vec![0; vector_length];
         let mut contexts = vec![0; vector_length];
         let mut labels = vec![1; vector_length];
+        {
+            let mut words_indices = Vec::new();
+            let mut remaining_words_array = words.as_mut_slice();
+            let mut contexts_indices = Vec::new();
+            let mut remaining_contexts_array = contexts.as_mut_slice();
+            let mut labels_indices = Vec::new();
+            let mut remaining_labels_array = labels.as_mut_slice();
+            for i in 0..cumsum.len() {
+                let start = if i==0{
+                    0
+                } else {
+                    cumsum[i-1]
+                };
+                let (words_left, words_right) = remaining_words_array.split_at_mut(cumsum[i] - start);
+                let (contexts_left, contexts_right) = remaining_contexts_array.split_at_mut(cumsum[i] - start);
+                let (labels_left, labels_right) = remaining_labels_array.split_at_mut(cumsum[i] - start);
+                words_indices.push(words_left);
+                contexts_indices.push(contexts_left);
+                labels_indices.push(labels_left);
+                remaining_words_array = words_right;
+                remaining_contexts_array = contexts_right;
+                remaining_labels_array = labels_right;
+            }
 
-        walks.iter().enumerate().for_each(|(i, walk)|{
-            let ((_words, _contexts), _labels) = skipgram(
-                walk,
-                self.get_nodes_number(),
-                window_size,
-                Some(_negative_samples),
-                shuffle
-            );
-            let start = if i==0{
-                0
-            } else {
-                cumsum[i-1]
-            };
-            words[start..cumsum[i]].copy_from_slice(&_words);
-            contexts[start..cumsum[i]].copy_from_slice(&_contexts);
-            labels[start..cumsum[i]].copy_from_slice(&_labels);
-        });
-
+            walks
+                .par_iter()
+                .zip(words_indices.par_iter_mut())
+                .zip(contexts_indices.par_iter_mut())
+                .zip(labels_indices.par_iter_mut())
+                .for_each(|(((walk, words_index), contexts_index), labels_index)|{
+                let ((_words, _contexts), _labels) = skipgram(
+                    walk,
+                    self.get_nodes_number(),
+                    window_size,
+                    Some(_negative_samples),
+                    shuffle
+                );
+                (*words_index).copy_from_slice(&_words);
+                (*contexts_index).copy_from_slice(&_contexts);
+                (*labels_index).copy_from_slice(&_labels);
+            });
+        }
         Ok(((words, contexts), labels))
     }
 
@@ -280,7 +304,7 @@ impl Graph {
             contexts[k] = *context;
             contexts[j] = contexts[k];
             frequencies[k] = *frequency;
-            frequencies[j] = frequencies[j];
+            frequencies[j] = frequencies[k];
         });
 
         frequencies.par_iter_mut().for_each(|frequency| {*frequency/=max_frequency});

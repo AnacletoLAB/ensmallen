@@ -11,3 +11,4 @@ def test_cooccurence_matrix():
         assert len(words) == len(contexts)
         assert len(words) == len(frequencies)
         assert (np.array(frequencies) <= 1).all()
+        assert (np.array(frequencies) > 0).all()
