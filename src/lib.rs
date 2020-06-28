@@ -452,7 +452,7 @@ impl EnsmallenGraph {
         batch_size:usize,
         length: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Vec<NodeT>, Vec<NodeT>, Vec<u8>)> {
+    ) -> PyResult<((Vec<NodeT>, Vec<NodeT>), Vec<u8>)> {
         if py_kwargs.is_none() {
             let w = self
                 .graph

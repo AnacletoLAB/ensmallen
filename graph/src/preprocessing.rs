@@ -48,8 +48,10 @@ fn skipgram(
     negative_samples: Option<f64>,
     shuffle: Option<bool>,
 ) -> (
-    Vec<usize>,
-    Vec<usize>,
+    (
+        Vec<usize>,
+        Vec<usize>
+    ),
     Vec<u8>   
 ){
     let _negative_samples = negative_samples.unwrap_or(1.0);
@@ -109,8 +111,8 @@ fn skipgram(
     }
 
     (
-        words,
-        contexts,
+        (words,
+        contexts),
         labels
     )
 }
@@ -132,7 +134,7 @@ impl Graph {
         explore_weight: Option<ParamsT>,
         change_node_type_weight: Option<ParamsT>,
         change_edge_type_weight: Option<ParamsT>
-    ) -> Result<(Vec<usize>,Vec<usize>,Vec<u8>), String>{
+    ) -> Result<((Vec<usize>,Vec<usize>),Vec<u8>), String>{
         let walks = self.walk(
             length,
             None,
@@ -168,7 +170,7 @@ impl Graph {
         let mut labels = vec![1; vector_length];
 
         walks.iter().enumerate().for_each(|(i, walk)|{
-            let (_words, _contexts, _labels) = skipgram(
+            let ((_words, _contexts), _labels) = skipgram(
                 walk,
                 self.get_nodes_number(),
                 window_size,
@@ -185,7 +187,7 @@ impl Graph {
             labels[start..cumsum[i]].copy_from_slice(&_labels);
         });
 
-        Ok((words, contexts, labels))
+        Ok(((words, contexts), labels))
     }
 
     // TODO docstring

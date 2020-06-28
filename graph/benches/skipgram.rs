@@ -1,5 +1,3 @@
-use rayon::prelude::*;
-
 extern crate rand;
 use rand::Rng;  
 use rand::seq::SliceRandom;

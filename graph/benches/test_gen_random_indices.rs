@@ -25,8 +25,7 @@ pub fn gen_usize_par_xorshiro(num: usize, max: usize) -> Vec<usize> {
 
 #[bench]
 fn test_gen_random_usize_vec(b: &mut Bencher) {
-    let random_vec = 
-    b.iter(|| {
+    let _ = b.iter(|| {
             gen_usize_xorshiro(NUMBER, NUMBER);
         }
     );
@@ -34,8 +33,7 @@ fn test_gen_random_usize_vec(b: &mut Bencher) {
 
 #[bench]
 fn test_gen_usize_xorshiro(b: &mut Bencher) {
-    let random_vec = 
-    b.iter(|| {
+    let _ = b.iter(|| {
             gen_usize_xorshiro(NUMBER, NUMBER);
         }
     );
@@ -43,8 +41,7 @@ fn test_gen_usize_xorshiro(b: &mut Bencher) {
 
 #[bench]
 fn test_gen_usize_par_xorshiro(b: &mut Bencher) {
-    let random_vec = 
-    b.iter(|| {
+    let _ = b.iter(|| {
             gen_usize_par_xorshiro(NUMBER, NUMBER);
         }
     );
