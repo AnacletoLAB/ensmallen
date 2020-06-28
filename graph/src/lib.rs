@@ -1,3 +1,5 @@
+#![feature(asm)]
+
 pub mod graph;
 pub mod csv_utils;
 mod graph_from_csv;
