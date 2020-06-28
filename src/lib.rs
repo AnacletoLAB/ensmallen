@@ -1,9 +1,7 @@
 use graph::{EdgeT, EdgeTypeT, Graph, NodeT, NodeTypeT, ParamsT, WeightT};
 use pyo3::exceptions;
 use pyo3::prelude::*;
-use pyo3::class::iter::PyIterProtocol;
 use pyo3::types::PyDict;
-use pyo3::wrap_pyfunction;
 use std::collections::HashMap;
 
 #[pymodule]
@@ -13,24 +11,8 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
     // Python objects to Rust values, and the Rust return value back into a Python object.
     // The `_py` argument represents that we're holding the GIL.
     m.add_class::<EnsmallenGraph>()?;
-    m.add_wrapped(wrap_pyfunction!(skipgram_preprocess))?;
     env_logger::init();
     Ok(())
-}
-
-#[pyfunction]
-fn skipgram_preprocess(
-    walk: Vec<NodeT>,
-    vocabulary_size: usize,
-    window_size: usize,
-    negative_samples: f64,
-    shuffle: bool
-) -> (
-    Vec<usize>,
-    Vec<usize>,
-    Vec<u8>  
-) {
-    graph::skipgram_preprocessing(&walk, vocabulary_size, window_size, negative_samples, shuffle)
 }
 
 #[pyclass]
@@ -208,17 +190,27 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, iterations, length, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
+    #[text_signature = "($self, length, *, iterations, start_node, end_node, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, verbose)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
     /// ---------------------
-    /// iterations,
-    ///     Number of cycles on the graphs to execute.
-    /// length,
+    /// length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
-    /// min_length: int = 0,,
+    /// iterations: int = 1,
+    ///     Number of cycles on the graphs to execute.
+    /// start_node: int = None,
+    ///     Node ID from where to start the random walk.
+    ///     If not provided, defaults to 0.
+    /// end_node: int = None,
+    ///     Node ID from where to end the random walk.
+    ///     If not provided, has two possible behaviours:
+    ///        - If start_node was provided, this is assumed to be
+    ///          a single node walk, and end_node = start_node +1
+    ///        - If start_node was not provided, this is assumed to be
+    ///          a full graph walk, and end_node = total nodes number.
+    /// min_length: int = 0,
     ///     Minimal length of the random walk. Will filter out smaller
     ///     random walks.
     /// return_weight: float = 1.0,
@@ -243,6 +235,8 @@ impl EnsmallenGraph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
+    /// verbose: int = True,
+    ///     Wethever to show or not the loading bar of the walks.
     ///
     /// Returns
     /// ----------------------------
@@ -250,14 +244,13 @@ impl EnsmallenGraph {
     ///
     fn walk(
         &self,
-        iterations: usize,
         length: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
         if py_kwargs.is_none() {
             let w = self
                 .graph
-                .walk(iterations, length, None, None, None, None, None);
+                .walk(length, None, None, None, None, None, None, None, None, None);
 
             return match w {
                 Ok(g) => Ok(g),
@@ -268,8 +261,16 @@ impl EnsmallenGraph {
         let kwargs = py_kwargs.unwrap();
 
         let w = self.graph.walk(
-            iterations,
             length,
+            kwargs
+                .get_item("iterations")
+                .map(|val| val.extract::<usize>().unwrap()),
+            kwargs
+                .get_item("start_node")
+                .map(|val| val.extract::<usize>().unwrap()),
+            kwargs
+                .get_item("end_node")
+                .map(|val| val.extract::<usize>().unwrap()),
             kwargs
                 .get_item("min_length")
                 .map(|val| val.extract::<usize>().unwrap()),
@@ -285,6 +286,9 @@ impl EnsmallenGraph {
             kwargs
                 .get_item("change_edge_type_weight")
                 .map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs
+                .get_item("verbose")
+                .map(|val| val.extract::<bool>().unwrap()),
         );
 
         match w {
@@ -294,19 +298,125 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, node, iterations, length, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
-    /// Return random walks done on the graph using Rust.
+    #[text_signature = "($self, length, *, window_size, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, verbose)"]
+    /// Return cooccurence matrix-based triples of words, contexts and frequencies.
     ///
     /// Parameters
     /// ---------------------
-    /// node,
-    ///     The node from where the walks will start.
-    /// iterations,
-    ///     How many walks to do from the given node.
-    /// length,
+    /// length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
-    /// min_length: int = 0,,
+    /// window_size: int = 4,
+    ///     Size of the window for local contexts.
+    /// iterations: int = 1,
+    ///     Number of cycles on the graphs to execute.
+    /// min_length: int = 0,
+    ///     Minimal length of the random walk. Will filter out smaller
+    ///     random walks.
+    /// return_weight: float = 1.0,
+    ///     Weight on the probability of returning to node coming from
+    ///     Having this higher tends the walks to be
+    ///     more like a Breadth-First Search.
+    ///     Having this very high  (> 2) makes search very local.
+    ///     Equal to the inverse of p in the Node2Vec paper.
+    /// explore_weight: float = 1.0,
+    ///     Weight on the probability of visiting a neighbor node
+    ///     to the one we're coming from in the random walk
+    ///     Having this higher tends the walks to be
+    ///     more like a Depth-First Search.
+    ///     Having this very high makes search more outward.
+    ///     Having this very low makes search very local.
+    ///     Equal to the inverse of q in the Node2Vec paper.
+    /// change_node_type_weight: float = 1.0,
+    ///     Weight on the probability of visiting a neighbor node of a
+    ///     different type than the previous node. This only applies to
+    ///     colored graphs, otherwise it has no impact.
+    /// change_edge_type_weight: float = 1.0,
+    ///     Weight on the probability of visiting a neighbor edge of a
+    ///     different type than the previous edge. This only applies to
+    ///     multigraphs, otherwise it has no impact.
+    /// verbose: int = True,
+    ///     Wethever to show or not the loading bar of the walks.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Triple with integer vectors of words and contexts and max-min normalized frequencies.
+    ///
+    fn cooccurence_matrix(
+        &self,
+        length: usize,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<(Vec<NodeT>, Vec<NodeT>, Vec<f64>)> {
+        if py_kwargs.is_none() {
+            let w = self
+                .graph
+                .cooccurence_matrix(length, None, None, None, None, None, None, None, None);
+
+            return match w {
+                Ok(g) => Ok(g),
+                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+            };
+        }
+
+        let kwargs = py_kwargs.unwrap();
+
+        let w = self.graph.cooccurence_matrix(
+            length,
+            kwargs
+                .get_item("window_size")
+                .map(|val| val.extract::<usize>().unwrap()),
+            kwargs
+                .get_item("iterations")
+                .map(|val| val.extract::<usize>().unwrap()),
+            kwargs
+                .get_item("min_length")
+                .map(|val| val.extract::<usize>().unwrap()),
+            kwargs
+                .get_item("return_weight")
+                .map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs
+                .get_item("explore_weight")
+                .map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs
+                .get_item("change_node_type_weight")
+                .map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs
+                .get_item("change_edge_type_weight")
+                .map(|val| val.extract::<ParamsT>().unwrap()),
+            kwargs
+                .get_item("verbose")
+                .map(|val| val.extract::<bool>().unwrap()),
+        );
+
+        match w {
+            Ok(g) => Ok(g),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, idx, batch_size, length, *, window_size, negative_samples, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
+    /// Return cooccurence matrix-based triples of words, contexts and frequencies.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// idx: int,
+    ///     Identifier of the batch to generate.
+    /// batch_size:
+    ///     Number of walks to include within this batch.
+    ///     Consider that the walks may be filtered by the given min_length.
+    ///     In some pathological cases, this might leed to an empty batch.
+    ///     These cases include graphs with particularly high number of traps.
+    ///     Consider using the method graph.report() to verify if this might
+    ///     apply to your use case.
+    /// length: int,
+    ///     Maximal length of the random walk.
+    ///     On graphs without traps, all walks have this length.
+    /// window_size: int = 4,
+    ///     Size of the window for local contexts.
+    /// negative_samples: float = 1.0,
+    ///     Factor of negative samples to use.
+    /// min_length: int = 0,
     ///     Minimal length of the random walk. Will filter out smaller
     ///     random walks.
     /// return_weight: float = 1.0,
@@ -334,19 +444,19 @@ impl EnsmallenGraph {
     ///
     /// Returns
     /// ----------------------------
-    /// List of list of walks containing the numeric IDs of nodes.
+    /// Triple with vector of integer with words, contexts and labels.
     ///
-    fn walk_from_node(
+    fn skipgrams(
         &self,
-        node: NodeT,
-        iterations: usize,
+        idx:usize,
+        batch_size:usize,
         length: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<Vec<Vec<NodeT>>> {
+    ) -> PyResult<((Vec<NodeT>, Vec<NodeT>), Vec<u8>)> {
         if py_kwargs.is_none() {
             let w = self
                 .graph
-                .walk_from_node(node, iterations, length, None, None, None, None, None);
+                .skipgrams(idx, batch_size, length, None, None, None, None, None, None, None, None);
 
             return match w {
                 Ok(g) => Ok(g),
@@ -356,10 +466,17 @@ impl EnsmallenGraph {
 
         let kwargs = py_kwargs.unwrap();
 
-        let w = self.graph.walk_from_node(
-            node,
-            iterations,
-            length,
+        let w = self.graph.skipgrams(
+            idx, batch_size, length,
+            kwargs
+                .get_item("window_size")
+                .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                .get_item("negative_samples")
+                .map(|val| val.extract::<f64>().unwrap()),
+                kwargs
+                .get_item("shuffle")
+                .map(|val| val.extract::<bool>().unwrap()),
             kwargs
                 .get_item("min_length")
                 .map(|val| val.extract::<usize>().unwrap()),

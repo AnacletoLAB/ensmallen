@@ -2,9 +2,10 @@
 use super::random::sample;
 use super::types::*;
 use derive_getters::Getters;
+use hashbrown::HashMap;
+use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use log::info;
 use rayon::prelude::*;
-use hashbrown::{HashMap};
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
 /// A graph representation optimized for executing random walks on huge graphs.
@@ -325,15 +326,31 @@ impl Graph {
 
     pub fn walk(
         &self,
-        iterations: usize,
         length: usize,
+        iterations: Option<usize>,
+        start_node: Option<usize>,
+        end_node: Option<usize>,
         min_length: Option<usize>,
         return_weight: Option<ParamsT>,
         explore_weight: Option<ParamsT>,
         change_node_type_weight: Option<ParamsT>,
         change_edge_type_weight: Option<ParamsT>,
+        verbose: Option<bool>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
         let _min_length = min_length.unwrap_or(0);
+        let _iterations = iterations.unwrap_or(1);
+        if end_node.is_some() && start_node.is_none() {
+            return Err(String::from(
+                "End node given, but no start node was specified.",
+            ));
+        }
+        let mut _start_node = 0;
+        let mut _end_node = end_node.unwrap_or_else(|| self.get_nodes_number());
+        if let Some(sn) = start_node {
+            _start_node = sn;
+            _end_node = _start_node + 1;
+        }
+        let _verbose = verbose.unwrap_or(true);
         let _return_weight = return_weight.unwrap_or(1.0);
         let _explore_weight = explore_weight.unwrap_or(1.0);
         let _change_node_type_weight = change_node_type_weight.unwrap_or(1.0);
@@ -361,39 +378,53 @@ impl Graph {
         }
 
         info!("Starting random walk.");
-        let number_of_results = iterations * self.get_nodes_number();
+        let delta = _end_node - _start_node;
+        let number_of_results = _iterations * delta;
 
-        if self.has_traps {
-            Ok((0..number_of_results)
-                .into_par_iter()
+        let pb = if _verbose {
+            let pb = ProgressBar::new(number_of_results as u64);
+            pb.set_draw_delta(number_of_results as u64 / 100);
+            pb.set_style(ProgressStyle::default_bar().template(
+                "Computing random walks {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+            ));
+            pb
+        } else {
+            ProgressBar::hidden()
+        };
+
+        let iterator = (0..number_of_results).into_par_iter();
+
+        Ok(if self.has_traps {
+            iterator
                 .map(|node| {
                     self.single_walk(
                         length,
-                        node / iterations,
+                        _start_node + node % delta,
                         _return_weight,
                         _explore_weight,
                         _change_node_type_weight,
                         _change_edge_type_weight,
                     )
                 })
+                .progress_with(pb)
                 .filter(|walk| walk.len() >= _min_length)
-                .collect::<Vec<Vec<NodeT>>>())
+                .collect::<Vec<Vec<NodeT>>>()
         } else {
-            Ok((0..number_of_results)
-                .into_par_iter()
+            iterator
                 .map(|node| {
                     self.single_walk_no_traps(
                         length,
-                        node / iterations,
+                        _start_node + node % delta,
                         _return_weight,
                         _explore_weight,
                         _change_node_type_weight,
                         _change_edge_type_weight,
                     )
                 })
+                .progress_with(pb)
                 .filter(|walk| walk.len() >= _min_length)
-                .collect::<Vec<Vec<NodeT>>>())
-        }
+                .collect::<Vec<Vec<NodeT>>>()
+        })
     }
 
     fn single_walk(
@@ -463,156 +494,5 @@ impl Graph {
             walk.push(dst);
         }
         walk
-    }
-
-    pub fn walk_from_node(
-        &self,
-        node: NodeT,
-        iterations: usize,
-        length: usize,
-        min_length: Option<usize>,
-        return_weight: Option<ParamsT>,
-        explore_weight: Option<ParamsT>,
-        change_node_type_weight: Option<ParamsT>,
-        change_edge_type_weight: Option<ParamsT>,
-    ) -> Result<Vec<Vec<NodeT>>, String> {
-        let _min_length = min_length.unwrap_or(0);
-        let _return_weight = return_weight.unwrap_or(1.0);
-        let _explore_weight = explore_weight.unwrap_or(1.0);
-        let _change_node_type_weight = change_node_type_weight.unwrap_or(1.0);
-        let _change_edge_type_weight = change_edge_type_weight.unwrap_or(1.0);
-
-        if _return_weight <= 0.0 {
-            return Err(String::from(
-                "Given 'return_weight' is not a strictly positive real number.",
-            ));
-        }
-        if _explore_weight <= 0.0 {
-            return Err(String::from(
-                "Given 'explore_weight' is not a strictly positive real number.",
-            ));
-        }
-        if _change_node_type_weight <= 0.0 {
-            return Err(String::from(
-                "Given 'change_node_type_weight' is not a strictly positive real number.",
-            ));
-        }
-        if _change_edge_type_weight <= 0.0 {
-            return Err(String::from(
-                "Given 'change_edge_type_weight' is not a strictly positive real number.",
-            ));
-        }
-
-        info!("Starting random walk for node {}.", node);
-
-
-        if self.has_traps {
-            Ok((0..iterations)
-                .into_par_iter()
-                .map(|_| {
-                    self.single_walk(
-                        length,
-                        node,
-                        _return_weight,
-                        _explore_weight,
-                        _change_node_type_weight,
-                        _change_edge_type_weight,
-                    )
-                })
-                .filter(|walk| walk.len() >= _min_length)
-                .collect::<Vec<Vec<NodeT>>>())
-        } else {
-            Ok((0..iterations)
-                .into_par_iter()
-                .map(|_| {
-                    self.single_walk_no_traps(
-                        length,
-                        node,
-                        _return_weight,
-                        _explore_weight,
-                        _change_node_type_weight,
-                        _change_edge_type_weight,
-                    )
-                })
-                .filter(|walk| walk.len() >= _min_length)
-                .collect::<Vec<Vec<NodeT>>>())
-        }
-    }
-
-
-    pub fn walk_batch(
-        &self,
-        start_node: NodeT,
-        end_node: NodeT,
-        length: usize,
-        min_length: Option<usize>,
-        return_weight: Option<ParamsT>,
-        explore_weight: Option<ParamsT>,
-        change_node_type_weight: Option<ParamsT>,
-        change_edge_type_weight: Option<ParamsT>,
-    ) -> Result<Vec<Vec<NodeT>>, String> {
-        let _min_length = min_length.unwrap_or(0);
-        let _return_weight = return_weight.unwrap_or(1.0);
-        let _explore_weight = explore_weight.unwrap_or(1.0);
-        let _change_node_type_weight = change_node_type_weight.unwrap_or(1.0);
-        let _change_edge_type_weight = change_edge_type_weight.unwrap_or(1.0);
-
-        if _return_weight <= 0.0 {
-            return Err(String::from(
-                "Given 'return_weight' is not a strictly positive real number.",
-            ));
-        }
-        if _explore_weight <= 0.0 {
-            return Err(String::from(
-                "Given 'explore_weight' is not a strictly positive real number.",
-            ));
-        }
-        if _change_node_type_weight <= 0.0 {
-            return Err(String::from(
-                "Given 'change_node_type_weight' is not a strictly positive real number.",
-            ));
-        }
-        if _change_edge_type_weight <= 0.0 {
-            return Err(String::from(
-                "Given 'change_edge_type_weight' is not a strictly positive real number.",
-            ));
-        }
-
-        info!(
-            "Starting random walk batch from {} to {}.",
-            start_node, end_node
-            );
-
-        if self.has_traps {
-            Ok((start_node..=end_node)
-                .into_par_iter()
-                .map(|node| {
-                    self.single_walk(
-                        length,
-                        node,
-                        _return_weight,
-                        _explore_weight,
-                        _change_node_type_weight,
-                        _change_edge_type_weight,
-                    )
-                })
-                .filter(|walk| walk.len() >= _min_length)
-                .collect::<Vec<Vec<NodeT>>>())
-        } else {
-            Ok((start_node..=end_node)
-                .into_par_iter()
-                .map(|node| {
-                    self.single_walk_no_traps(
-                        length,
-                        node,
-                        _return_weight,
-                        _explore_weight,
-                        _change_node_type_weight,
-                        _change_edge_type_weight,
-                    )
-                })
-                .filter(|walk| walk.len() >= _min_length)
-                .collect::<Vec<Vec<NodeT>>>())
-        }
     }
 }
