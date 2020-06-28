@@ -77,7 +77,7 @@ pub fn has_columns(
                     concat!(
                         "Provided file hasn't the required columns.\n",
                         "Specifically, the given column {column} was not found ",
-                        "within the available set of columns {columns:?}.",
+                        "within the available set of columns {columns:?}.\n",
                         "The given file is at path {path}.\n",
                     ),
                     column = column,
