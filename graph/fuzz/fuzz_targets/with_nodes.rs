@@ -45,10 +45,11 @@ fuzz_target!(|data: &[u8]| {
         None,
         None,
         None,
+        None
     );
 
     if graph.is_ok(){
-        let _ = graph.unwrap().walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
+        let _ = graph.unwrap().walk(10, Some(10), None, None, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false));
     }
     
     let _ = remove_file(&filename).unwrap();

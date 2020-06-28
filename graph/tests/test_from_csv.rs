@@ -32,9 +32,8 @@ fn test_graph_from_csv_edge_only() {
             assert_eq!(lines, graph.get_edges_number());
         }
         assert!(graph.get_node_type_id(0).is_err());
-        
-        let _walks = graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
-        let _cooccurrence = graph.cooccurence_matrix(5, 10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0));
+        let _cooccurrence = graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false));
+        let _skipgrams = graph.skipgrams(0, 128, 80, None, None, None, None, None, None, None, None);
     }
 }
 
@@ -66,7 +65,7 @@ fn test_graph_from_csv_edge_types() {
         }
         assert_eq!(graph.get_edge_types_number(), 3);
         assert_eq!(graph.get_node_types_number(), 0);
-        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
+        graph.walk(10, Some(10), None, None, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(true)).unwrap();
     }
 }
 
@@ -92,7 +91,7 @@ fn test_walk_wrong_return_weights_parameter() {
         None,
         None,
         None
-    ).unwrap().walk(10, 10, Some(0), Some(0.0), Some(2.0), Some(3.0), Some(4.0)).unwrap();
+    ).unwrap().walk(10, None, None, None, None, Some(0.0), Some(2.0), Some(3.0), Some(4.0), None).unwrap();
 }
 
 #[test]
@@ -117,7 +116,7 @@ fn test_walk_wrong_explore_weight_parameter() {
         None,
         None
     ).unwrap()
-    .walk(10, 10, Some(0), Some(1.0), Some(0.0), Some(3.0), Some(4.0)).unwrap();
+    .walk(10, None, None, None, None, Some(1.0), Some(0.0), Some(3.0), Some(4.0), None).unwrap();
 }
 
 #[test]
@@ -142,7 +141,7 @@ fn test_walk_wrong_change_node_type_weight_parameter() {
         None,
         None
     ).unwrap()
-    .walk(10, 10, Some(0), Some(1.0), Some(1.0), Some(0.0), Some(4.0)).unwrap();
+    .walk(10, None, None, None, None, Some(1.0), Some(1.0), Some(0.0), Some(4.0), None).unwrap();
 }
 
 #[test]
@@ -167,7 +166,7 @@ fn test_walk_wrong_change_edge_type_weight_parameter() {
         None,
         None
     ).unwrap()
-    .walk(10, 10, Some(0), Some(1.0), Some(1.0), Some(1.0), Some(0.0)).unwrap();
+    .walk(10, None, None, None, None, Some(1.0), Some(1.0), Some(1.0), Some(0.0), None).unwrap();
 }
 
 #[test]
@@ -422,7 +421,7 @@ fn test_graph_from_csv_with_edge_and_nodes() {
             assert_eq!(edge_lines, graph.get_edges_number());
         }
         assert_eq!(graph.get_edge_types_number(), 3);
-        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
+        graph.walk(10, Some(10), None, None, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false)).unwrap();
     };
 }
 
@@ -562,7 +561,7 @@ fn test_graph_from_csv_with_edge_and_nodes_types() {
             assert_eq!(edge_lines, graph.get_edges_number());
         }
         assert_eq!(graph.get_edge_types_number(), 3);
-        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
+        graph.walk(10, Some(10), None, None, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false)).unwrap();
         for one in 0..graph.get_nodes_number(){
             graph.get_node_type_id(one).unwrap();
             for two in 0..graph.get_nodes_number(){
@@ -607,7 +606,7 @@ fn test_graph_from_csv_het() {
             assert_eq!(edge_lines, graph.get_edges_number());
         }
         assert_eq!(4, graph.get_node_types_number());
-        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
+        graph.walk(10, Some(10), None, None, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false)).unwrap();
         assert!(graph.get_node_type_id(100000000000).is_err());
         assert!(graph.get_edge_type_id(100000000000).is_err());
         let _ = graph.report();

@@ -20,11 +20,14 @@ def test_return_weight_behaviour_hpo():
     return_weights = np.linspace(0.01, 10, num=50)
 
     for return_weight in tqdm(
-            return_weights, desc="Computing walks for different return_weight"):
+        return_weights,
+        desc="Computing walks for different return_weight",
+        leave=False
+    ):
         walks = graph.walk(
-            iterations=1,
             length=100,
             return_weight=return_weight,
+            verbose=False
         )
         mean_uniques_counts.append(np.mean([
             np.unique(walk).size
@@ -51,11 +54,14 @@ def test_return_weight_behaviour_pathway():
     return_weights = np.linspace(0.01, 10, num=50)
 
     for return_weight in tqdm(
-            return_weights, desc="Computing walks for different return_weight"):
+        return_weights,
+        desc="Computing walks for different return_weight",
+        leave=False
+    ):
         walks = graph.walk(
-            iterations=1,
             length=100,
             return_weight=return_weight,
+            verbose=False
         )
         mean_uniques_counts.append(np.mean([
             np.unique(walk).size
@@ -82,11 +88,14 @@ def test_explore_weight_behaviour_hpo():
     explore_weights = np.linspace(0.01, 10, num=50)
 
     for explore_weight in tqdm(
-            explore_weights, desc="Computing walks for different explore_weights"):
+        explore_weights,
+        desc="Computing walks for different explore_weights",
+        leave=False
+    ):
         walks = graph.walk(
-            iterations=1,
             length=100,
-            explore_weight=explore_weight
+            explore_weight=explore_weight,
+            verbose=False
         )
         mean_uniques_counts.append(np.mean([
             np.unique(walk).size
@@ -113,11 +122,14 @@ def test_explore_weight_behaviour_pathway():
     explore_weights = np.linspace(0.01, 10, num=50)
 
     for explore_weight in tqdm(
-            explore_weights, desc="Computing walks for different explore_weights"):
+        explore_weights,
+        desc="Computing walks for different explore_weights",
+        leave=False
+    ):
         walks = graph.walk(
-            iterations=1,
             length=100,
             explore_weight=explore_weight,
+            verbose=False
         )
         mean_uniques_counts.append(np.mean([
             np.unique(walk).size
@@ -145,12 +157,13 @@ def test_change_edge_type_weight_behaviour_hpo():
 
     for change_edge_type_weight in tqdm(
         change_edge_type_weights,
-        desc="Computing walks for different change_edge_type_weights"
+        desc="Computing walks for different change_edge_type_weights",
+        leave=False
     ):
         walks = graph.walk(
-            iterations=1,
             length=100,
-            change_edge_type_weight=change_edge_type_weight
+            change_edge_type_weight=change_edge_type_weight,
+            verbose=False
         )
         edge_changes = []
         for walk in walks:
@@ -170,3 +183,45 @@ def test_change_edge_type_weight_behaviour_hpo():
         change_edge_type_weights, mean_changes_counts)
     print("HPO change_edge_type_weight", correlation, p_value)
     assert p_value < 0.01 and correlation > 0.9
+
+def test_change_node_type_weight_behaviour_hpo():
+    """
+    The change_node_type_weight parameter increases the probability for a
+    switch between the node types during the walk.
+
+    Here we test for a strong statistically significant correlation between 
+    the number of switches happening in a walk with the change of the value
+    of the change_node_type_weight parameter.
+    """
+    graph = load_hpo()
+
+    mean_changes = []
+    change_node_type_weights = np.linspace(0.01, 10, num=50)
+
+    for change_node_type_weight in tqdm(
+        change_node_type_weights,
+        desc="Computing walks for different change_node_type_weights",
+        leave=False
+    ):
+        walks = graph.walk(
+            iterations=1,
+            length=100,
+            change_node_type_weight=change_node_type_weight,
+            verbose=False,
+        )
+        changes = []
+        for walk in walks:
+            type_changes = 0
+            previous_node_type = -1
+            for node_id in walk:
+                node_type_id = graph.get_node_type_id(node_id)
+                if previous_node_type != node_type_id:
+                    type_changes += 1
+                    previous_node_type = node_type_id
+            changes.append(type_changes/len(walk))
+        mean_changes.append(np.mean(changes))
+
+    correlation, p_value = pearsonr(
+        change_node_type_weights, mean_changes)
+    print("HPO change_node_type_weight", correlation, p_value)
+    assert p_value < 0.01 and correlation > 0.8

@@ -2,7 +2,7 @@ extern crate graph;
 use graph::graph::Graph;
 
 #[test]
-fn test_graph_from_csv_edge_only() {
+fn test_random_walk() {
     let edge_path = "tests/data/edge_file.tsv";
     let node_path = "tests/data/node_file.tsv";
     for directed in &[true, false]{
@@ -24,6 +24,6 @@ fn test_graph_from_csv_edge_only() {
             None,
             None,
         ).unwrap();
-        graph.walk(10, 10, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0)).unwrap();
+        graph.walk(10, None, None, None, Some(0),  Some(0.5), Some(2.0), Some(3.0), Some(4.0), None).unwrap();
     };
 }
