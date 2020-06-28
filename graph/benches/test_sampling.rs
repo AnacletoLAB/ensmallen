@@ -1,4 +1,4 @@
-#![feature(test)]
+#![feature(test, asm)]
 extern crate test;
 use test::Bencher;
 use rand::prelude::*;
