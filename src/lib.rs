@@ -542,13 +542,15 @@ impl EnsmallenGraph {
     }
 
     #[getter]
-    fn sources(&self) -> Vec<NodeT> {
-        self.graph.sources().clone()
+    fn sources(&self) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        self.graph.sources().clone().to_pyarray(gil.python()).to_owned()
     }
 
     #[getter]
-    fn destinations(&self) -> Vec<NodeT> {
-        self.graph.destinations().clone()
+    fn destinations(&self) ->  Py<PyArray1<NodeT>>  {
+        let gil = pyo3::Python::acquire_gil();
+        self.graph.destinations().clone().to_pyarray(gil.python()).to_owned()
     }
 
     #[getter]
