@@ -422,7 +422,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, length, *, window_size, negative_samples, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
+    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, negative_samples, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
     ///
     /// Parameters
@@ -439,6 +439,8 @@ impl EnsmallenGraph {
     /// length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
+    /// iterations: int = 1,
+    ///     Number of iterations for each node.
     /// window_size: int = 4,
     ///     Size of the window for local contexts.
     /// negative_samples: float = 1.0,
@@ -483,7 +485,7 @@ impl EnsmallenGraph {
         if py_kwargs.is_none() {
             let w = self
                 .graph
-                .skipgrams(idx, batch_size, length, None, None, None, None, None, None, None, None);
+                .skipgrams(idx, batch_size, length, None, None, None, None, None, None, None, None, None);
 
             let gil = pyo3::Python::acquire_gil();
             return match w {
@@ -503,12 +505,15 @@ impl EnsmallenGraph {
         let w = self.graph.skipgrams(
             idx, batch_size, length,
             kwargs
+                .get_item("iterations")
+                .map(|val| val.extract::<usize>().unwrap()),
+            kwargs
                 .get_item("window_size")
                 .map(|val| val.extract::<usize>().unwrap()),
-                kwargs
+            kwargs
                 .get_item("negative_samples")
                 .map(|val| val.extract::<f64>().unwrap()),
-                kwargs
+            kwargs
                 .get_item("shuffle")
                 .map(|val| val.extract::<bool>().unwrap()),
             kwargs
