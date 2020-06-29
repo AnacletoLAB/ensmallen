@@ -286,6 +286,7 @@ impl Graph {
                 format!(
                     concat!(
                         "The size of the given nodes_mapping {} does not match the number of nodes found {}.\n",
+                        "This means that there are more nodes used in the edges file than are described in the nodes file.\n",
                         "This might be due to a mismatch between the edge and node files.\n",
                         "The path of the file is {}"
                     ),
