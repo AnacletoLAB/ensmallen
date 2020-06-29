@@ -403,7 +403,7 @@ impl Graph {
                 .map(|node| {
                     self.single_walk(
                         length,
-                        _start_node + node % delta,
+                        _start_node + (node % delta),
                         _return_weight,
                         _explore_weight,
                         _change_node_type_weight,
@@ -417,7 +417,7 @@ impl Graph {
                 .map(|node| {
                     self.single_walk_no_traps(
                         length,
-                        _start_node + node % delta,
+                        _start_node + (node % delta),
                         _return_weight,
                         _explore_weight,
                         _change_node_type_weight,

@@ -128,6 +128,7 @@ impl Graph {
         idx: usize,
         batch_size: usize,
         length: usize,
+        iterations: Option<usize>,
         window_size: Option<usize>,
         negative_samples: Option<f64>,
         shuffle: Option<bool>,
@@ -139,7 +140,7 @@ impl Graph {
     ) -> Result<((Vec<usize>,Vec<usize>),Vec<u8>), String>{
         let walks = self.walk(
             length,
-            None,
+            iterations,
             Some(idx*batch_size),
             Some(min!(self.get_nodes_number(), (idx+1)*batch_size)),
             min_length,

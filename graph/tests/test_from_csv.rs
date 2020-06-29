@@ -34,7 +34,7 @@ fn test_graph_from_csv_edge_only() {
         }
         assert!(graph.get_node_type_id(0).is_err());
         let _cooccurrence = graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false));
-        let _skipgrams = graph.skipgrams(0, 128, 80, None, None, None, None, None, None, None, None);
+        let _skipgrams = graph.skipgrams(0, 128, 80, None, None, None, None, None, None, None, None, None);
     }
 }
 

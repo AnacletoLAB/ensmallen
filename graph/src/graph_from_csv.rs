@@ -267,21 +267,21 @@ impl Graph {
             unique_nodes_set.insert(*node_id);
 
             // get and set default for the node type
-            let mut value = parsed.get(node_types_column).unwrap();
-            if value.is_empty() {
-                value = &default_node_type;
+            let mut node_type = parsed.get(node_types_column).unwrap();
+            if node_type.is_empty() {
+                node_type = &default_node_type;
             }
 
             // update node_types_mapping with the new node type
-            if !node_types_mapping.contains_key(*value) {
+            if !node_types_mapping.contains_key(*node_type) {
                 node_types_mapping.insert(
-                    String::from(*value),
+                    String::from(*node_type),
                     node_types_reverse_mapping.len() as NodeTypeT,
                 );
-                node_types_reverse_mapping.push(String::from(*value));
+                node_types_reverse_mapping.push(String::from(*node_type));
             }
 
-            node_types.push(*node_types_mapping.get(*value).unwrap());
+            node_types.push(*node_types_mapping.get(*node_type).unwrap());
         }
 
         if nodes.len() != nodes_mapping.len() {
