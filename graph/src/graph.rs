@@ -344,11 +344,12 @@ impl Graph {
                 "End node given, but no start node was specified.",
             ));
         }
-        let (_start_node, _end_node) = if end_node.is_none() && start_node.is_some() {
-            let _start_node = start_node.unwrap();
-            (_start_node, _start_node+1)
-        } else if end_node.is_some() && start_node.is_some() {
-            (start_node.unwrap(), end_node.unwrap())
+        let (_start_node, _end_node) = if let Some(sn) = start_node {
+            if let Some(en) = end_node {
+                (sn, en)
+            } else {
+                (sn, sn+1)
+            } 
         } else {
             (0, self.get_nodes_number())
         };
