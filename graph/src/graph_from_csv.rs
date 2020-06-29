@@ -199,6 +199,7 @@ impl Graph {
         nodes_mapping: &HashMap<String, NodeT>,
         node_types_column: &str,
         default_node_type: &str,
+        ignore_duplicated_nodes: bool
     ) -> Result<(Vec<NodeTypeT>, HashMap<String, NodeTypeT>, Vec<String>), String> {
         let mut nodes: Vec<NodeT> = Vec::new();
 
@@ -242,6 +243,9 @@ impl Graph {
 
             // since the node is not a singleton, add it to the list.
             if unique_nodes_set.contains(node_id) {
+                if ignore_duplicated_nodes{
+                    continue;
+                }
                 return Err(format!(
                     concat!(
                         "\nFound duplicated line in nodes file!\n",
@@ -285,6 +289,7 @@ impl Graph {
                 format!(
                     concat!(
                         "The size of the given nodes_mapping {} does not match the number of nodes found {}.\n",
+                        "This means that there are more nodes used in the edges file than are described in the nodes file.\n",
                         "This might be due to a mismatch between the edge and node files.\n",
                         "The path of the file is {}"
                     ),
@@ -320,13 +325,15 @@ impl Graph {
         edge_sep: Option<&str>,
         node_sep: Option<&str>,
         validate_input_data: Option<bool>,
-        ignore_duplicated_edges: Option<bool>
+        ignore_duplicated_edges: Option<bool>,
+        ignore_duplicated_nodes: Option<bool>
     ) -> Result<Graph, String> {
         // If the separators were not provided we use by default tabs.
         let _edge_sep = edge_sep.unwrap_or_else(|| "\t");
         let _node_sep = node_sep.unwrap_or_else(|| "\t");
         let _validate_input_data = validate_input_data.unwrap_or_else(|| true);
         let _ignore_duplicated_edges = ignore_duplicated_edges.unwrap_or_else(|| false);
+        let _ignore_duplicated_nodes = ignore_duplicated_nodes.unwrap_or_else(|| false);
 
         if _validate_input_data {
             // We validate the provided files, starting from the edges file.
@@ -403,6 +410,7 @@ impl Graph {
                         &nodes_mapping,
                         &node_types_column.unwrap(),
                         &default_node_type.unwrap(),
+                        _ignore_duplicated_nodes
                     )?;
                 (
                     Some(node_types),

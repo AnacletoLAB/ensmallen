@@ -17,7 +17,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
 }
 
 #[pyclass]
-#[text_signature = "(edge_path, sources_column, destinations_column, directed, *, edge_types_column, default_edge_type, weights_column, default_weight, node_path, nodes_column, node_types_column, default_node_type, edge_sep, node_sep, validate_input_data)"]
+#[text_signature = "(edge_path, sources_column, destinations_column, directed, *, edge_types_column, default_edge_type, weights_column, default_weight, node_path, nodes_column, node_types_column, default_node_type, edge_sep, node_sep, validate_input_data, ignore_duplicated_edges, ignore_duplicated_nodes)"]
 /// Build the graph from a csv (or tsv) in Rust.
 ///
 /// Parameters
@@ -49,15 +49,24 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
 ///     provided node file. It is REQUIRED when passing an node types column.
 /// node_types_column:str,
 ///     Column name of the node file where the node types are listed.
-/// edge_sep:str,
+/// edge_sep:str="\t",
 ///     Separator to use for the edge files.
-/// node_sep:str,
+/// node_sep:str="\t",
 ///     Separator to use for the node files.
-/// validate_input_data:bool,
+/// validate_input_data:bool=True,
 ///     Wethever to validate or not the files. This should be disabled when
 ///     you are SURE that the graph data are valid, otherwise the system will
 ///     panic.
-///
+/// ignore_duplicated_edges:bool=False,
+///     Wethever to ignore duplicated edges or to raise an exception.
+///     The duplication includes the edge type, if provided, so for example
+///     an edge from A to B of type 1 is different from an edge A to B
+///     of type 2.
+///     The default behaviour is to raise an exception.
+/// ignore_duplicated_nodes:bool=False,
+///     Wethever to ignore duplicated nodes or to raise an exception.
+///     The default behaviour is to raise an exception.
+/// 
 struct EnsmallenGraph {
     graph: Graph,
 }
@@ -95,6 +104,7 @@ impl EnsmallenGraph {
                 None,
                 None,
                 None,
+                None
             );
 
             return match graph {
@@ -127,6 +137,9 @@ impl EnsmallenGraph {
                 .map(|val| val.extract::<bool>().unwrap()),
             kwargs
                 .get_item("ignore_duplicated_edges")
+                .map(|val| val.extract::<bool>().unwrap()),
+                kwargs
+                .get_item("ignore_duplicated_nodes")
                 .map(|val| val.extract::<bool>().unwrap()),
         );
 
