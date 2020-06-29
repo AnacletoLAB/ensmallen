@@ -23,6 +23,7 @@ fn test_random_walk() {
             None,
             None,
             None,
+            None,
         ).unwrap();
         graph.walk(10, None, None, None, Some(0),  Some(0.5), Some(2.0), Some(3.0), Some(4.0), None).unwrap();
     };

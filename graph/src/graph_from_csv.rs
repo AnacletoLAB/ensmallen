@@ -242,7 +242,10 @@ impl Graph {
             let node_id = maybe_node_id.unwrap();
 
             // since the node is not a singleton, add it to the list.
-            if !ignore_duplicated_nodes && unique_nodes_set.contains(node_id) {
+            if unique_nodes_set.contains(node_id) {
+                if ignore_duplicated_nodes{
+                    continue;
+                }
                 return Err(format!(
                     concat!(
                         "\nFound duplicated line in nodes file!\n",

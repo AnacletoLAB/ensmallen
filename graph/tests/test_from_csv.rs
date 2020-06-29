@@ -23,6 +23,7 @@ fn test_graph_from_csv_edge_only() {
             None,
             None,
             None,
+            None,
             None
         ).unwrap();
         assert_eq!(graph.get_edge_types_number(), 0);
@@ -48,6 +49,7 @@ fn test_graph_from_csv_edge_types() {
             *directed,
             Some("edge_label"),
             Some("biolink:Association"),
+            None,
             None,
             None,
             None,
@@ -90,6 +92,7 @@ fn test_walk_wrong_return_weights_parameter() {
         None,
         None,
         None,
+        None,
         None
     ).unwrap().walk(10, None, None, None, None, Some(0.0), Some(2.0), Some(3.0), Some(4.0), None).unwrap();
 }
@@ -105,6 +108,7 @@ fn test_walk_wrong_explore_weight_parameter() {
         true,
         Some("edge_label"),
         Some("biolink:Association"),
+        None,
         None,
         None,
         None,
@@ -139,6 +143,7 @@ fn test_walk_wrong_change_node_type_weight_parameter() {
         None,
         None,
         None,
+        None,
         None
     ).unwrap()
     .walk(10, None, None, None, None, Some(1.0), Some(1.0), Some(0.0), Some(4.0), None).unwrap();
@@ -155,6 +160,7 @@ fn test_walk_wrong_change_edge_type_weight_parameter() {
         true,
         Some("edge_label"),
         Some("biolink:Association"),
+        None,
         None,
         None,
         None,
@@ -189,6 +195,7 @@ fn test_graph_from_csv_weights_panic() {
         None,
         None,
         None,
+        None,
         None
     ).unwrap();
 }
@@ -205,6 +212,7 @@ fn test_graph_from_csv_duplicated_edges_panic() {
         Some("edge_label"),
         Some("biolink:Association"),
         Some("weight"),
+        None,
         None,
         None,
         None,
@@ -236,7 +244,8 @@ fn test_graph_from_csv_duplicated_edges_not_panic() {
         None,
         None,
         None,
-        Some(true)
+        Some(true),
+        None
     ).unwrap();
 }
 
@@ -251,6 +260,7 @@ fn test_graph_from_csv_duplicated_edges_without_label_panic() {
         true,
         None,
         Some("weight"),
+        None,
         None,
         None,
         None,
@@ -285,6 +295,7 @@ fn test_graph_from_csv_duplicated_nodes_panic() {
         None,
         None,
         None,
+        None,
         None
     ).unwrap();
 }
@@ -307,6 +318,7 @@ fn test_graph_from_csv_no_nodes_column_panic() {
         None,
         Some("category"),
         Some("biolink:NamedThing"),
+        None,
         None,
         None,
         None,
@@ -336,6 +348,7 @@ fn test_graph_from_csv_no_node_types_column_panic() {
         None,
         None,
         None,
+        None,
         None
     ).unwrap();
 }
@@ -358,6 +371,7 @@ fn test_graph_from_csv_no_default_node_types_panic() {
         Some(node_path),
         Some("id"),
         Some("category"),
+        None,
         None,
         None,
         None,
@@ -389,6 +403,7 @@ fn test_graph_from_csv_weird_edge_nodes() {
         None,
         None,
         None,
+        None,
         None
     ).unwrap();
 }
@@ -411,6 +426,7 @@ fn test_graph_from_csv_with_edge_and_nodes() {
             Some("id"),
             Some("category"),
             Some("biolink:NamedThing"),
+            None,
             None,
             None,
             None,
@@ -445,6 +461,7 @@ fn test_graph_negative_edge_weights() {
             None,
             None,
             None,
+            None,
             None
         );
         assert!(graph.is_err());
@@ -465,6 +482,7 @@ fn test_graph_invalid_edge_weights() {
             Some("biolink:Association"),
             Some("weight"),
             Some(1.0),
+            None,
             None,
             None,
             None,
@@ -499,6 +517,7 @@ fn test_graph_nan_edge_weights() {
             None,
             None,
             None,
+            None,
             None
         );
         assert!(graph.is_err());
@@ -519,6 +538,7 @@ fn test_graph_inf_edge_weights() {
             Some("biolink:Association"),
             Some("weight"),
             Some(1.0),
+            None,
             None,
             None,
             None,
@@ -551,6 +571,7 @@ fn test_graph_from_csv_with_edge_and_nodes_types() {
             Some("id"),
             Some("category"),
             Some("biolink:NamedThing"),
+            None,
             None,
             None,
             None,
@@ -596,6 +617,7 @@ fn test_graph_from_csv_het() {
             Some("id"),
             Some("category"),
             Some("biolink:NamedThing"),
+            None,
             None,
             None,
             None,
