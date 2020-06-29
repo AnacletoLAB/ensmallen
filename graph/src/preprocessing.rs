@@ -61,8 +61,9 @@ fn skipgram(
     let vector_length: usize = skipgram_vector_length(walk.len(), _window_size);
 
     // create the positive data
-    let mut words: Vec<NodeT> = Vec::with_capacity(vector_length*(1+_negative_samples as usize));
-    let mut contexts: Vec<NodeT> = Vec::with_capacity(vector_length*(1+_negative_samples as usize));
+    let total_length = (vector_length as f64 * (1.0 + _negative_samples)) as usize;
+    let mut words: Vec<NodeT> = Vec::with_capacity(total_length);
+    let mut contexts: Vec<NodeT> = Vec::with_capacity(total_length);
     
     for (i, wi) in walk.iter().enumerate() {
         let window_start = if i > _window_size {
@@ -85,7 +86,7 @@ fn skipgram(
     
     // TODO! This thing can create false negatives!!
     // The issue was already present in the original TensorFlow implementation.
-    let num_negatives = vector_length*(_negative_samples as usize);
+    let num_negatives = (vector_length as f64 *_negative_samples) as usize;
     let words_neg: Vec<NodeT> = gen_random_usize_vec(num_negatives, walk.len() - 1)
         .iter()
         .map(|i| walk[*i])
@@ -154,7 +155,7 @@ impl Graph {
         let _negative_samples = negative_samples.unwrap_or(1.0);
         
         for i in 0..walks.len(){
-            let new_value = skipgram_vector_length(walks[i].len(), _window_size) * (1 + _negative_samples as usize);
+            let new_value = (skipgram_vector_length(walks[i].len(), _window_size) as f64 * (1.0 + _negative_samples)) as usize;
             cumsum.push(
                 if i==0 {
                     new_value
