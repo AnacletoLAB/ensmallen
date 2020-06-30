@@ -13,38 +13,6 @@ pub fn validate(
     edge_types: &Option<Vec<EdgeTypeT>>,
     weights: &Option<Vec<WeightT>>
 ) -> Result<(), String> {
-    
-    let mut unique_edges: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::new();
-    for i in 0..sources.len(){
-        let src = sources[i];
-        let dst = destinations[i];
-        let edge_type = if let Some(et) = edge_types {
-            Some(et[i])
-        } else {
-            None
-        };
-        if unique_edges.contains(&(src, dst, edge_type)){
-            return Err(format!(
-                concat!(
-                    "Duplicated edge was found within given edges.\n",
-                    "The source node is {src}.\n",
-                    "The destination node is {dst}.\n",
-                    "{edge_type_message}\n",
-                    "This issue is relative to the graph building and not ",
-                    "the CSV reader, hence it can not be addressed by passing ",
-                    "the parameter ignore_duplicated_edges."
-                ),
-                src=src,
-                dst=dst,
-                edge_type_message=if let Some(et) = edge_type {
-                    format!("The edge type is {}", et)
-                } else {
-                    String::from("No edge type was detected.")
-                }
-            ));
-        }
-        unique_edges.insert((src, dst, edge_type));
-    }
 
     info!("Checking that the nodes mappings are of the same length.");
     if nodes_mapping.len() != nodes_reverse_mapping.len() {
@@ -115,6 +83,39 @@ pub fn validate(
                 et.len(), sources.len()
             ));
         }
+    }
+
+    info!("Checking for unique edges (including edge types).");
+    let mut unique_edges: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::new();
+    for i in 0..sources.len(){
+        let src = sources[i];
+        let dst = destinations[i];
+        let edge_type = if let Some(et) = edge_types {
+            Some(et[i])
+        } else {
+            None
+        };
+        if unique_edges.contains(&(src, dst, edge_type)){
+            return Err(format!(
+                concat!(
+                    "Duplicated edge was found within given edges.\n",
+                    "The source node is {src}.\n",
+                    "The destination node is {dst}.\n",
+                    "{edge_type_message}\n",
+                    "This issue is relative to the graph building and not ",
+                    "the CSV reader, hence it can not be addressed by passing ",
+                    "the parameter ignore_duplicated_edges."
+                ),
+                src=src,
+                dst=dst,
+                edge_type_message=if let Some(et) = edge_type {
+                    format!("The edge type is {}", et)
+                } else {
+                    String::from("No edge type was detected.")
+                }
+            ));
+        }
+        unique_edges.insert((src, dst, edge_type));
     }
 
     Ok(())

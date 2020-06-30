@@ -19,6 +19,41 @@ fn test_validation() {
     ).unwrap();
 }
 
+
+#[test]
+fn test_validation_edge_duplication() {
+    assert!(validate(
+        &vec![0, 1, 1], 
+        &vec![1, 2, 2], 
+        &(vec![
+            (String::from("a"), 0),
+            (String::from("b"), 1),
+            (String::from("c"), 2),
+        ].iter().cloned().collect::<HashMap<_, _>>()), 
+        &vec![String::from("a"), String::from("b"), String::from("c")],
+        &None, 
+        &None, 
+        &Some(vec![1.0, 1.0, 1.0])
+    ).is_err());
+}
+
+#[test]
+fn test_validation_edge_duplication_with_edges() {
+    assert!(validate(
+        &vec![0, 1, 1], 
+        &vec![1, 2, 2], 
+        &(vec![
+            (String::from("a"), 0),
+            (String::from("b"), 1),
+            (String::from("c"), 2),
+        ].iter().cloned().collect::<HashMap<_, _>>()), 
+        &vec![String::from("a"), String::from("b"), String::from("c")],
+        &None, 
+        &Some(vec![1,2,2]), 
+        &Some(vec![1.0, 1.0, 1.0])
+    ).is_err());
+}
+
 #[test]
 #[should_panic]
 fn test_validation_wrong_node_types_number() {

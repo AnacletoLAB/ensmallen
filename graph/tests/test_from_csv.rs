@@ -36,6 +36,7 @@ fn test_graph_from_csv_edge_only() {
         assert!(graph.get_node_type_id(0).is_err());
         let _cooccurrence = graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false));
         let _skipgrams = graph.skipgrams(0, 128, 80, None, None, None, None, None, None, None, None, None);
+        let _ = graph.walk(80, Some(1), Some(0), None, None, None, None, None, None, Some(false));
     }
 }
 
@@ -71,6 +72,70 @@ fn test_graph_from_csv_edge_types() {
         assert_eq!(graph.get_node_types_number(), 0);
         graph.walk(10, Some(10), None, None, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(true)).unwrap();
     }
+}
+
+#[test]
+fn test_graph_directed_forced_conversion_to_undirected() {
+    assert!(Graph::from_csv(
+        "tests/data/directed_with_bidirectionals.tsv",
+        "subject",
+        "object",
+        false,
+        Some("edge_label"),
+        Some("biolink:Association"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).is_err());
+    assert!(Graph::from_csv(
+        "tests/data/directed_with_bidirectionals.tsv",
+        "subject",
+        "object",
+        false,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).is_err());
+    assert!(Graph::from_csv(
+        "tests/data/directed_with_bidirectionals.tsv",
+        "subject",
+        "object",
+        false,
+        Some("edge_label"),
+        Some("biolink:Association"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        Some(true)
+    ).is_ok());
 }
 
 
