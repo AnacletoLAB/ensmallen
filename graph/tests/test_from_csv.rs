@@ -350,11 +350,10 @@ fn test_graph_from_csv_duplicated_edges_without_label_panic() {
 }
 
 #[test]
-#[should_panic]
 fn test_graph_from_csv_duplicated_nodes_panic() {
     let edge_path = "tests/data/edge_file.tsv";
     let node_path = "tests/data/duplicated_node.tsv";
-    Graph::from_csv(
+    assert!(Graph::from_csv(
         edge_path,
         "subject",
         "object",
@@ -372,6 +371,26 @@ fn test_graph_from_csv_duplicated_nodes_panic() {
         None,
         None,
         None,
+        None
+    ).is_err());
+    Graph::from_csv(
+        edge_path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        Some("biolink:Association"),
+        Some("weight"),
+        Some(1.0),
+        Some(node_path),
+        Some("id"),
+        Some("category"),
+        Some("biolink:NamedThing"),
+        None,
+        None,
+        None,
+        None,
+        Some(true),
         None
     ).unwrap();
 }
