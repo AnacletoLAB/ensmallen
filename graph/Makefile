@@ -11,12 +11,19 @@ doc:
 	rm -rfd ./target/doc
 	cargo doc --no-deps
 
+coverage_osx:
+	rm -rfd target
+	cargo build
+	cargo test
+	grcov ./target/debug/ -s . -t html --llvm --branch --ignore-not-existing -o ./target/debug/coverage/
+	$(OPEN_COMMAND) ./target/debug/coverage/index.html > /dev/null &
+
 coverage:
 	#rm -rfd target
 	# Use a subshell so that we don't modify the user environment-variables
 	#cargo test --no-run
 
-	for TEST in $$(find ./target/debug/deps -executable -type f | grep test);\
+	for TEST in $$(find ./target/debug/deps -perm +0111 -type f | grep test);\
 	do \
 		mkdir -p ./target/debug/cov/$$TEST ;\
 		kcov --exclude-pattern=/.rustup,/.cargo ./target/debug/cov/$$(basename $$TEST) --verify $$TEST ;\
