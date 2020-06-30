@@ -138,22 +138,6 @@ impl Graph {
             / self.get_nodes_number() as f64
     }
 
-    /// Returns the expected walk length of the graph.
-    ///
-    /// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
-    ///
-    pub fn mean_walks_length_estimator(&self, precision: f64) -> Result<usize, String> {
-        if precision < 0.0 || precision >= 1.0 {
-            return Err(format!(
-                "The precision parameter must be in [0, 1) but it's {}",
-                precision
-            ));
-        }
-        let trap_rate = self.traps_rate();
-        // the cases where trap_rate is 0 and 1 SHOULD NOT BE POSSIBLE in this library
-        Ok(((1.0 - precision).ln() / (1.0 - trap_rate).ln()).ceil() as usize)
-    }
-
     /// Returns mean node degree of the graph.
     pub fn degrees_mean(&self) -> f64 {
         (0..self.get_nodes_number())
@@ -182,7 +166,7 @@ impl Graph {
             .into_iter()
             .max_by_key(|&(_, count)| count)
             .map(|(val, _)| val)
-            .expect("Cannot compute the mode of zero numbers")
+            .unwrap()
     }
 
     /// Returns percentage of self-loops.

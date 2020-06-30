@@ -34,6 +34,7 @@ fn test_graph_from_csv_edge_only() {
             assert_eq!(lines, graph.get_edges_number());
         }
         assert!(graph.get_node_type_id(0).is_err());
+        let _cooccurrence = graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(true));
         let _cooccurrence = graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false));
         let _skipgrams = graph.skipgrams(0, 128, 80, None, None, None, None, None, None, None, None, None);
         let _ = graph.walk(80, Some(1), Some(0), None, None, None, None, None, None, Some(false));
@@ -68,7 +69,7 @@ fn test_graph_from_csv_edge_types() {
         if *directed{
             assert_eq!(lines, graph.get_edges_number());
         }
-        assert_eq!(graph.get_edge_types_number(), 3);
+        assert_eq!(graph.get_edge_types_number(), 2);
         assert_eq!(graph.get_node_types_number(), 0);
         graph.walk(10, Some(10), None, None, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(true)).unwrap();
     }
@@ -247,10 +248,9 @@ fn test_walk_wrong_change_edge_type_weight_parameter() {
 }
 
 #[test]
-#[should_panic]
-fn test_graph_from_csv_weights_panic() {
+fn test_graph_from_csv_zero_weights_error() {
     let path = "tests/data/zero_weights.tsv";
-    Graph::from_csv(
+    assert!(Graph::from_csv(
         path,
         "subject",
         "object",
@@ -269,14 +269,13 @@ fn test_graph_from_csv_weights_panic() {
         None,
         None,
         None
-    ).unwrap();
+    ).is_err());
 }
 
 #[test]
-#[should_panic]
-fn test_graph_from_csv_duplicated_edges_panic() {
+fn test_graph_from_csv_duplicated_edges() {
     let path = "tests/data/duplicated_edge.tsv";
-    Graph::from_csv(
+    assert!(Graph::from_csv(
         path,
         "subject",
         "object",
@@ -295,13 +294,28 @@ fn test_graph_from_csv_duplicated_edges_panic() {
         None,
         None,
         None
-    ).unwrap();
-}
-
-#[test]
-fn test_graph_from_csv_duplicated_edges_not_panic() {
-    let path = "tests/data/duplicated_edge.tsv";
-    Graph::from_csv(
+    ).is_err());
+    assert!(Graph::from_csv(
+        path,
+        "subject",
+        "object",
+        true,
+        None,
+        None,
+        Some("weight"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).is_err());
+    assert!(Graph::from_csv(
         path,
         "subject",
         "object",
@@ -320,37 +334,11 @@ fn test_graph_from_csv_duplicated_edges_not_panic() {
         Some(true),
         None,
         None
-    ).unwrap();
+    ).is_ok());
 }
 
 #[test]
-#[should_panic]
-fn test_graph_from_csv_duplicated_edges_without_label_panic() {
-    let path = "tests/data/duplicated_edge.tsv";
-    Graph::from_csv(
-        path,
-        "subject",
-        "object",
-        true,
-        None,
-        Some("weight"),
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None
-    ).unwrap();
-}
-
-#[test]
-fn test_graph_from_csv_duplicated_nodes_panic() {
+fn test_graph_from_csv_duplicated_nodes() {
     let edge_path = "tests/data/edge_file.tsv";
     let node_path = "tests/data/duplicated_node.tsv";
     assert!(Graph::from_csv(
@@ -396,11 +384,10 @@ fn test_graph_from_csv_duplicated_nodes_panic() {
 }
 
 #[test]
-#[should_panic]
 fn test_graph_from_csv_no_nodes_column_panic() {
     let edge_path = "tests/data/edge_file.tsv";
     let node_path = "tests/data/node_file.tsv";
-    Graph::from_csv(
+    assert!(Graph::from_csv(
         edge_path,
         "subject",
         "object",
@@ -419,42 +406,14 @@ fn test_graph_from_csv_no_nodes_column_panic() {
         None,
         None,
         None
-    ).unwrap();
+    ).is_err());
 }
 
 
 #[test]
-#[should_panic]
-fn test_graph_from_csv_no_node_types_column_panic() {
+fn test_graph_from_csv_no_node_types_column() {
     let edge_path = "tests/data/edge_file.tsv";
     let node_path = "tests/data/node_file.tsv";
-    Graph::from_csv(
-        edge_path,
-        "subject",
-        "object",
-        true,
-        Some("edge_label"),
-        Some("biolink:Association"),
-        Some("weight"),
-        Some(1.0),
-        Some(node_path),
-        Some("id"),
-        None,
-        Some("biolink:NamedThing"),
-        None,
-        None,
-        None,
-        None,
-        None,
-        None
-    ).unwrap();
-}
-
-
-#[test]
-fn test_graph_from_csv_no_default_node_types() {
-    let edge_path = "tests/data/edge_file.tsv";
-    let node_path = "tests/data/missing_node_types.tsv";
     assert!(Graph::from_csv(
         edge_path,
         "subject",
@@ -466,7 +425,52 @@ fn test_graph_from_csv_no_default_node_types() {
         Some(1.0),
         Some(node_path),
         Some("id"),
-        Some("category"),
+        None,
+        Some("biolink:NamedThing"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).is_err());
+}
+
+#[test]
+fn test_graph_from_csv_no_default_weight() {
+    let edge_path = "tests/data/edge_file_missing_weights.tsv";
+    assert!(Graph::from_csv(
+        edge_path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        Some("biolink:Association"),
+        Some("weight"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).is_err());
+    assert!(Graph::from_csv(
+        edge_path,
+        "subject",
+        "object",
+        true,
+        None,
+        None,
+        Some("weight"),
+        None,
+        None,
+        None,
+        None,
         None,
         None,
         None,
@@ -484,10 +488,102 @@ fn test_graph_from_csv_no_default_node_types() {
         Some("biolink:Association"),
         Some("weight"),
         Some(1.0),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).is_ok());
+}
+
+
+#[test]
+fn test_graph_from_csv_no_default_node_types() {
+    let edge_path = "tests/data/edge_file.tsv";
+    let node_path = "tests/data/missing_node_types.tsv";
+    assert!(Graph::from_csv(
+        edge_path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        None,
+        Some("weight"),
+        None,
+        Some(node_path),
+        Some("id"),
+        Some("category"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).is_err());
+    assert!(Graph::from_csv(
+        edge_path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        None,
+        Some("weight"),
+        Some(1.0),
         Some(node_path),
         Some("id"),
         Some("category"),
         Some("default_node_type"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).is_ok());
+}
+
+#[test]
+fn test_graph_from_csv_no_default_edge_types() {
+    let edge_path = "tests/data/edge_file_missing_edge_type.tsv";
+    assert!(Graph::from_csv(
+        edge_path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        None,
+        Some("weight"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).is_err());
+    assert!(Graph::from_csv(
+        edge_path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        Some("biolink:Association"),
+        Some("weight"),
+        Some(1.0),
+        None,
+        None,
+        None,
+        None,
         None,
         None,
         None,
@@ -555,7 +651,7 @@ fn test_graph_from_csv_with_edge_and_nodes() {
         if *directed{
             assert_eq!(edge_lines, graph.get_edges_number());
         }
-        assert_eq!(graph.get_edge_types_number(), 3);
+        assert_eq!(graph.get_edge_types_number(), 2);
         graph.walk(10, Some(10), None, None, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false)).unwrap();
     };
 }
@@ -593,7 +689,7 @@ fn test_graph_negative_edge_weights() {
 fn test_graph_invalid_edge_weights() {
     let edge_path = "tests/data/invalid_edge_weights.tsv";
     for directed in &[true, false]{
-        let graph = Graph::from_csv(
+        assert!(Graph::from_csv(
             edge_path,
             "subject",
             "object",
@@ -612,9 +708,27 @@ fn test_graph_invalid_edge_weights() {
             None,
             None,
             None
-        );
-        assert!(graph.is_err());
-        println!("{:?}", graph);
+        ).is_err());
+        assert!(Graph::from_csv(
+            edge_path,
+            "subject",
+            "object",
+            *directed,
+            None,
+            None,
+            Some("weight"),
+            Some(1.0),
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None
+        ).is_err());
     };
 }
 
@@ -705,7 +819,7 @@ fn test_graph_from_csv_with_edge_and_nodes_types() {
         if *directed{
             assert_eq!(edge_lines, graph.get_edges_number());
         }
-        assert_eq!(graph.get_edge_types_number(), 3);
+        assert_eq!(graph.get_edge_types_number(), 2);
         graph.walk(10, Some(10), None, None, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false)).unwrap();
         for one in 0..graph.get_nodes_number(){
             graph.get_node_type_id(one).unwrap();

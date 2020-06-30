@@ -5,7 +5,6 @@ use super::types::*;
 /// Implementation of algorithms relative to trees.
 impl Graph {
     pub fn spanning_tree(&self, seed:NodeT)-> (Vec<NodeT>, Vec<NodeT>) {
-        let mut n_of_nodes_covered: usize = 0;
         let nodes_number = self.get_nodes_number();
         let mut bitmap:Vec<bool> = vec![false; nodes_number];
         let mut sources:Vec<NodeT> = Vec::with_capacity(nodes_number);
@@ -21,10 +20,6 @@ impl Graph {
                     sources.push(_node);
                     destinations.push(dst);
                     bitmap[dst] = true;
-                    n_of_nodes_covered += 1;
-                    if n_of_nodes_covered == nodes_number {
-                        break;
-                    }
                 }
             }
         }
