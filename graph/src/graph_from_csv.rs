@@ -59,109 +59,166 @@ impl Graph {
         }
         // convert the csv to a dict of lists
         for (i, line) in buf_reader.lines().enumerate() {
-            for (value, column) in line
-                .as_ref()
-                .unwrap()
-                .trim_end_matches(|c| c == '\n')
-                .split(sep)
-                .zip(headers.iter())
-            {
-                if column == sources_column || column == destinations_column {
-                    if !nodes_mapping.contains_key(value) {
-                        nodes_mapping.insert(String::from(value), nodes_reverse_mapping.len());
-                        nodes_reverse_mapping.push(String::from(value));
-                    }
-                    if column == sources_column {
-                        sources.push(*nodes_mapping.get(value).unwrap());
+            let _line = line.unwrap();
+
+            let parsed: HashMap<String, &str> = headers
+                .iter()
+                .cloned()
+                .zip(
+                    _line
+                        .trim_end_matches(|c| c == '\n')
+                        .split(sep),
+                )
+                .collect();
+
+            let src_name = String::from(parsed[sources_column]);
+            let dst_name = String::from(parsed[destinations_column]);
+            let edge_type_name = if let Some(etc) = edge_types_column {
+                let etn = parsed[*etc];
+                Some(String::from(if etn.is_empty() {
+                    if let Some(det) = default_edge_type {
+                        *det
                     } else {
-                        destinations.push(*nodes_mapping.get(value).unwrap());
-                    }
-                    continue;
-                }
-
-                if let Some(etc) = edge_types_column {
-                    if column == etc {
-                        let _value = if value.is_empty() {
-                            default_edge_type.unwrap()
-                        } else {
-                            value
-                        };
-                        if !edge_types_mapping.contains_key(value) {
-                            edge_types_mapping.insert(
-                                String::from(value),
-                                edge_types_reverse_mapping.len() as NodeTypeT,
-                            );
-                            edge_types_reverse_mapping.push(String::from(value));
-                        }
-                        edge_types.push(*edge_types_mapping.get(value).unwrap());
-                        continue;
-                    }
-                }
-
-                if let Some(wc) = weights_column {
-                    if column == wc {
-                        weights.push(if value.is_empty() {
-                            default_weight.unwrap()
-                        } else {
-                            match value.parse::<WeightT>() {
-                                Ok(g) => Ok(g),
-                                Err(_) => Err(format!(
-                                    concat!(
-                                        "Cannot parse {weight} as float.\n",
-                                        "Specifically, the line is the number {i}.\n",
-                                        "The source node is {source} and destination node is {destination}.\n",
-                                        "{edge_type_string}\n",
-                                        "The path of the document was {path}.\n"
-                                    ),
-                                    weight=value,
-                                    i=i,
-                                    source=sources[i],
-                                    destination=destinations[i],
-                                    edge_type_string=(if edge_types_column.is_some() {
-                                        format!("The edge type of the row is {}.", edge_types[i])
-                                    } else {
-                                        String::from("No edge type was detected.")
-                                    }),
-                                    path=path
-                                )),
-                            }?
-                        });
-                        continue;
-                    }
-                }
-            }
-            let triple = (
-                sources[i],
-                destinations[i],
-                if edge_types_column.is_some() {
-                    Some(edge_types[i])
+                        return Err(format!(
+                            concat!(
+                                "Found empty edge type but no default edge ",
+                                "type to use was provided.",
+                                "Specifically, the line is the number {i}.\n",
+                                "The source node is {source} and destination node is {destination}.\n",
+                                "The path of the document was {path}.\n",
+                                "The complete line in question is:\n{line}\n"
+                            ),
+                            i=i,
+                            source=src_name,
+                            destination=dst_name,
+                            path=path,
+                            line=_line
+                        ))
+                    }   
                 } else {
-                    None
-                },
-            );
-            if !ignore_duplicated_edges && unique_edges_set.contains(&triple) {
-                return Err(format!(
-                    concat!(
-                        "\nFound duplicated line in edges file!\n",
-                        "Specifically, the duplicated line is the number {i}.\n",
-                        "The source node is {source} and destination node is {destination}.\n",
-                        "{edge_type_string}\n",
-                        "The path of the document was {path}.\n",
-                        "The complete line in question is:\n{line}\n"
-                    ),
-                    i = i,
-                    source = sources[i],
-                    destination = destinations[i],
-                    edge_type_string = (if edge_types_column.is_some() {
-                        format!("The edge type of the row is {}.", edge_types[i])
+                    etn
+                }))
+            } else {
+                None
+            };
+            
+            let weight:Option<WeightT> = if let Some(wc) = weights_column {
+                let w = parsed[*wc];
+                Some(if w.is_empty() {
+                    if let Some(dw) = default_weight {
+                        *dw
                     } else {
-                        String::from("No edge type was detected.")
-                    }),
-                    path = path,
-                    line = line.unwrap()
-                ));
+                        return Err(format!(
+                            concat!(
+                                "Found empty weight but no default weight ",
+                                "to use was provided.",
+                                "Specifically, the line is the number {i}.\n",
+                                "The source node is {source} and destination node is {destination}.\n",
+                                "{edge_type_string}\n",
+                                "The path of the document was {path}.\n",
+                                "The complete line in question is:\n{line}\n"
+                            ),
+                            i=i,
+                            source=src_name,
+                            destination=dst_name,
+                            edge_type_string=if let Some(etn) = edge_type_name {
+                                format!("The edge type of the row is {}.", etn)
+                            } else {
+                                String::from("No edge type was detected.")
+                            },
+                            path=path,
+                            line=_line
+                        ))
+                    }  
+                } else {
+                    let parsed_weight = w.parse::<WeightT>();
+                    if parsed_weight.is_err(){
+                        return Err(format!(
+                            concat!(
+                                "Cannot parse {weight} as float.\n",
+                                "Specifically, the line is the number {i}.\n",
+                                "The source node is {source} and destination node is {destination}.\n",
+                                "{edge_type_string}\n",
+                                "The path of the document was {path}.\n",
+                                "The complete line in question is:\n{line}\n"
+                            ),
+                            weight=w,
+                            i=i,
+                            source=src_name,
+                            destination=dst_name,
+                            edge_type_string=if let Some(etn) = edge_type_name {
+                                format!("The edge type of the row is {}.", etn)
+                            } else {
+                                String::from("No edge type was detected.")
+                            },
+                            path=path,
+                            line=_line
+                        ))
+                    }
+                    parsed_weight.unwrap()
+                })
+            } else {
+                None
+            };
+
+            let edge_type = if let Some(etn) = edge_type_name.clone() {
+                if !edge_types_mapping.contains_key(&etn) {
+                    edge_types_mapping.insert(
+                        etn.clone(),
+                        edge_types_reverse_mapping.len() as NodeTypeT,
+                    );
+                    edge_types_reverse_mapping.push(etn.clone());
+                }
+                Some(*edge_types_mapping.get(&etn).unwrap())
+            } else {
+                None
+            };
+
+            for node_name in [src_name.clone(), dst_name.clone()].iter(){
+                if !nodes_mapping.contains_key(node_name) { 
+                    nodes_mapping.insert(node_name.clone(), nodes_reverse_mapping.len());
+                    nodes_reverse_mapping.push(node_name.clone());
+                }
             }
-            unique_edges_set.insert(triple);
+
+            let src = *nodes_mapping.get(&src_name).unwrap();
+            let dst = *nodes_mapping.get(&dst_name).unwrap();
+
+            let triple = (src, dst, edge_type);
+            if unique_edges_set.contains(&triple) {
+                if !ignore_duplicated_edges {
+                    return Err(format!(
+                        concat!(
+                            "\nFound duplicated line in edges file!\n",
+                            "Specifically, the duplicated line is the number {i}.\n",
+                            "The source node is {source} and destination node is {destination}.\n",
+                            "{edge_type_string}\n",
+                            "The path of the document was {path}.\n",
+                            "The complete line in question is:\n{line}\n"
+                        ),
+                        i = i,
+                        source = src_name,
+                        destination = dst_name,
+                        edge_type_string = if let Some(etn) = edge_type_name {
+                            format!("The edge type of the row is {}.", etn)
+                        } else {
+                            String::from("No edge type was detected.")
+                        },
+                        path = path,
+                        line = _line
+                    ));
+                }
+            } else {
+                unique_edges_set.insert(triple);
+                sources.push(src);
+                destinations.push(dst);
+                if let Some(et) = edge_type{
+                    edge_types.push(et);
+                }
+                if let Some(w) = weight{
+                    weights.push(w);
+                }
+            }
         }
 
         Ok((
@@ -326,7 +383,8 @@ impl Graph {
         node_sep: Option<&str>,
         validate_input_data: Option<bool>,
         ignore_duplicated_edges: Option<bool>,
-        ignore_duplicated_nodes: Option<bool>
+        ignore_duplicated_nodes: Option<bool>,
+        force_conversion_to_undirected: Option<bool>
     ) -> Result<Graph, String> {
         // If the separators were not provided we use by default tabs.
         let _edge_sep = edge_sep.unwrap_or_else(|| "\t");
@@ -450,6 +508,7 @@ impl Graph {
                 edge_types_reverse_mapping,
                 weights,
                 Some(_validate_input_data),
+                force_conversion_to_undirected
             )
         }
     }

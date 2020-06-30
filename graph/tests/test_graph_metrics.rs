@@ -23,6 +23,7 @@ fn test_graph_metrics() {
             None,
             None,
             None,
+            None,
             None
         ).unwrap();
 

@@ -46,6 +46,7 @@ fuzz_target!(|data: &[u8]| {
         None,
         None,
         None,
+        None,
         None
     );
 

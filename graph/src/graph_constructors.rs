@@ -1,6 +1,6 @@
 use super::*;
 use log::info;
-use hashbrown::HashMap;
+use hashbrown::{HashMap, HashSet};
 use std::iter::FromIterator;
 use rayon::prelude::*;
 
@@ -14,6 +14,38 @@ pub fn validate(
     weights: &Option<Vec<WeightT>>
 ) -> Result<(), String> {
     
+    let mut unique_edges: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::new();
+    for i in 0..sources.len(){
+        let src = sources[i];
+        let dst = destinations[i];
+        let edge_type = if let Some(et) = edge_types {
+            Some(et[i])
+        } else {
+            None
+        };
+        if unique_edges.contains(&(src, dst, edge_type)){
+            return Err(format!(
+                concat!(
+                    "Duplicated edge was found within given edges.\n",
+                    "The source node is {src}.\n",
+                    "The destination node is {dst}.\n",
+                    "{edge_type_message}\n",
+                    "This issue is relative to the graph building and not ",
+                    "the CSV reader, hence it can not be addressed by passing ",
+                    "the parameter ignore_duplicated_edges."
+                ),
+                src=src,
+                dst=dst,
+                edge_type_message=if let Some(et) = edge_type {
+                    format!("The edge type is {}", et)
+                } else {
+                    String::from("No edge type was detected.")
+                }
+            ));
+        }
+        unique_edges.insert((src, dst, edge_type));
+    }
+
     info!("Checking that the nodes mappings are of the same length.");
     if nodes_mapping.len() != nodes_reverse_mapping.len() {
         return Err(format!("The size of the node_mapping ({}) does not match the size of the nodes_reverse_mapping ({}).",
@@ -94,14 +126,18 @@ impl Graph {
     pub fn new_directed(
         sources: Vec<NodeT>,
         destinations: Vec<NodeT>,
+
         nodes_mapping: HashMap<String, NodeT>,
         nodes_reverse_mapping: Vec<String>,
+
         node_types: Option<Vec<NodeTypeT>>,
         node_types_mapping: Option<HashMap<String, NodeTypeT>>,
         node_types_reverse_mapping: Option<Vec<String>>,
+
         edge_types: Option<Vec<EdgeTypeT>>,
         edge_types_mapping: Option<HashMap<String, EdgeTypeT>>,
         edge_types_reverse_mapping: Option<Vec<String>>,
+
         weights: Option<Vec<WeightT>>,
         validate_input_data: Option<bool>,
     ) -> Result<Graph, String> {
@@ -126,7 +162,7 @@ impl Graph {
                     destinations.iter().cloned()
                 ).enumerate().map(|(i, (src, dst))| ((src, dst), i))
             );
-            
+
         info!("Computing sorting of given edges based on sources.");
         let mut pairs: Vec<(usize, &NodeT)> = sources.par_iter().enumerate().collect();
         pairs.par_sort_unstable_by_key(|(_, &v)| v);
@@ -161,6 +197,7 @@ impl Graph {
             edge_types_mapping,
             edge_types_reverse_mapping,
             outbounds,
+            is_directed: true,
             sources: sorted_sources,
             destinations: sorted_destinations,
             weights: sorted_weights,
@@ -190,6 +227,7 @@ impl Graph {
         edge_types_reverse_mapping: Option<Vec<String>>,
         weights: Option<Vec<WeightT>>,
         validate_input_data: Option<bool>,
+        force_conversion_to_undirected: Option<bool>
     ) -> Result<Graph, String> {
 
         if validate_input_data.unwrap_or_else(|| true) {
@@ -204,60 +242,82 @@ impl Graph {
             )?;
         }
 
-        info!("Identifying self-loops present in given graph.");
-        let loops_mask: Vec<bool> = sources
-            .par_iter()
-            .zip(destinations.par_iter())
-            .map(|(a, b)| a == b)
-            .collect();
+        let _force_conversion_to_undirected = force_conversion_to_undirected.unwrap_or(false);
+        let mut full_sources: Vec<NodeT> = Vec::new();
+        let mut full_destinations: Vec<NodeT> = Vec::new();
+        let mut full_edge_types: Vec<NodeTypeT> = Vec::new();
+        let mut full_weights: Vec<WeightT> = Vec::new();
+        let mut unique_edges: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::new();
+        
+        for index in 0..sources.len(){
+            let src = sources[index];
+            let dst = destinations[index];
+            let edge_type = if let Some(et) = &edge_types {
+                Some(et[index])
+            } else {
+                None
+            };
+            if ! unique_edges.contains(&(src, dst, edge_type)){
+                full_sources.push(src);
+                full_destinations.push(dst);
+                if let Some(w) = &weights {
+                    full_weights.push(w[index]);
+                }
+                let edge_type = if let Some(et) = &edge_types {
+                    full_edge_types.push(et[index]);
+                    Some(et[index])
+                } else {
+                    None
+                };
+                
+                unique_edges.insert((src, dst, edge_type));
+                // If the two current nodes are not the same, hence this is
+                // not a self-loop, we also add the opposite direction.
+                if src != dst {
+                    full_sources.push(dst);
+                    full_destinations.push(src);
+                    if let Some(w) = &weights {
+                        full_weights.push(w[index]);
+                    }
+                    
+                    if let Some(et) = edge_type {
+                        full_edge_types.push(et);
+                    }   
 
-        info!("Building undirected graph sources.");
-        let mut full_sources: Vec<NodeT> = sources.clone();
-        full_sources.extend(
-            destinations
-                .par_iter()
-                .zip(loops_mask.par_iter())
-                .filter(|&(_, &mask)| !mask)
-                .map(|(value, _)| *value)
-                .collect::<Vec<NodeT>>(),
-        );
-
-        info!("Building undirected graph destinations.");
-        let mut full_destinations: Vec<NodeT> = destinations;
-        full_destinations.extend(
-            sources
-                .par_iter()
-                .zip(loops_mask.par_iter())
-                .filter(|&(_, &mask)| !mask)
-                .map(|(value, _)| *value)
-                .collect::<Vec<NodeT>>(),
-        );
-
-        let mut full_edge_types = edge_types;
-        if let Some(e) = &mut full_edge_types {
-            info!("Building undirected graph edge types.");
-            e.extend(
-                e.par_iter()
-                    .zip(loops_mask.par_iter())
-                    .filter(|&(_, &mask)| !mask)
-                    .map(|(value, _)| *value)
-                    .collect::<Vec<NodeTypeT>>(),
-            );
-        };
-
-        let mut full_weights = weights;
-        if let Some(w) = &mut full_weights {
-            info!("Building undirected graph weights.");
-            w.extend(
-                w.par_iter()
-                    .zip(loops_mask.par_iter())
-                    .filter(|&(_, &mask)| !mask)
-                    .map(|(value, _)| *value)
-                    .collect::<Vec<WeightT>>(),
-            );
-        };
-
-        Graph::new_directed(
+                    unique_edges.insert((dst, src, edge_type));
+                }
+            } else if ! _force_conversion_to_undirected {
+                return Err(format!(
+                    concat!(
+                        "Within given edges there are directed edges.\n",
+                        "The source node is {src}\n",
+                        "The destination node is {dst}\n",
+                        "{edge_type_message}\n",
+                        "This means you are forcibly converting a directed ",
+                        "graph into an undirected graph.\n",
+                        "You can enforce the conversion by passing the flag ",
+                        "force_conversion_to_undirected as true.\n",
+                        "The conversion will ignore edges that are",
+                        "directed between two nodes, have the same edge type ",
+                        "but different weights.\n",
+                        "For example, an edge from A to B of type 1 ",
+                        "with weight 10 would be inserted alongside ",
+                        "the simmetric counter part B to A of type 1 ",
+                        "but a following edge from B to A of type 1 ",
+                        "with weight 5 would be ignored."
+                    ),
+                    src=src,
+                    dst=dst,
+                    edge_type_message= if let Some(et) = edge_type {
+                        format!("The edge type is {}", et)
+                    } else {
+                        String::from("No edge type was provided for the edge.")
+                    }
+                ));
+            }
+        }
+        
+        let mut result = Graph::new_directed(
             full_sources,
             full_destinations,
             nodes_mapping,
@@ -265,11 +325,21 @@ impl Graph {
             node_types,
             node_types_mapping,
             node_types_reverse_mapping,
-            full_edge_types,
+            if edge_types.is_some() {
+                Some(full_edge_types)
+            } else {
+                None
+            },
             edge_types_mapping,
             edge_types_reverse_mapping,
-            full_weights,
+            if weights.is_some() {
+                Some(full_weights)
+            } else {
+                None
+            },
             Some(false),
-        )
+        )?;
+        result.is_directed = false;
+        Ok(result)
     }
 }

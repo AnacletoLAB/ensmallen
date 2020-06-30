@@ -17,6 +17,7 @@ use rayon::prelude::*;
 ///
 #[derive(Debug, Clone, Getters)]
 pub struct Graph {
+    pub is_directed: bool,
     pub sources: Vec<NodeT>,
     pub destinations: Vec<NodeT>,
     pub nodes_mapping: HashMap<String, NodeT>,
@@ -126,7 +127,7 @@ impl Graph {
         }
     }
 
-    fn get_min_max_edge(&self, node: NodeT) -> (EdgeT, EdgeT) {
+    pub fn get_min_max_edge(&self, node: NodeT) -> (EdgeT, EdgeT) {
         let min_edge: EdgeT = if node == 0 {
             0
         } else {
