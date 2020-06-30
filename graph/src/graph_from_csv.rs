@@ -64,11 +64,7 @@ impl Graph {
             let parsed: HashMap<String, &str> = headers
                 .iter()
                 .cloned()
-                .zip(
-                    _line
-                        .trim_end_matches(|c| c == '\n')
-                        .split(sep),
-                )
+                .zip(_line.split(sep))
                 .collect();
 
             let src_name = String::from(parsed[sources_column]);
@@ -255,7 +251,7 @@ impl Graph {
         nodes_column: &str,
         nodes_mapping: &HashMap<String, NodeT>,
         node_types_column: &str,
-        default_node_type: &str,
+        default_node_type: &Option<&str>,
         ignore_duplicated_nodes: bool
     ) -> Result<(Vec<NodeTypeT>, HashMap<String, NodeTypeT>, Vec<String>), String> {
         let mut nodes: Vec<NodeT> = Vec::new();
@@ -281,11 +277,7 @@ impl Graph {
             let parsed: HashMap<String, &str> = headers
                 .iter()
                 .cloned()
-                .zip(
-                    _line
-                        .trim_end_matches(|c| c == '\n')
-                        .split(sep),
-                )
+                .zip(_line.split(sep))
                 .collect();
 
             let node = parsed.get(nodes_column).unwrap();
@@ -326,7 +318,22 @@ impl Graph {
             // get and set default for the node type
             let mut node_type = parsed.get(node_types_column).unwrap();
             if node_type.is_empty() {
-                node_type = &default_node_type;
+                if let Some(dnt) = default_node_type {
+                    node_type = dnt;
+                } else {
+                    return Err(format!(
+                        concat!(
+                            "Found empty node type but no default node ",
+                            "type to use was provided.",
+                            "Specifically, the line is the number {j}.\n",
+                            "The path of the document was {path}.\n",
+                            "The complete line in question is:\n{line}\n"
+                        ),
+                        j=j,
+                        path=path,
+                        line=_line
+                    ))
+                }
             }
 
             // update node_types_mapping with the new node type
@@ -412,20 +419,12 @@ impl Graph {
                 // As for the previous file, first we check that the file has the
                 // same amount of separators in each line.
                 check_consistent_lines(&*path, &*_node_sep)?;
-                if nodes_column.is_none() {
-                    return Err(String::from(
-                        "If the node_path is passed, the nodes_column is required",
-                    ));
-                }
-                if node_types_column.is_none() {
-                    return Err(String::from(
-                        "If the node_path is passed, the node_types_column is required",
-                    ));
-                }
-                if default_node_type.is_none() {
-                    return Err(String::from(
-                        "If the node_path is passed, the default_node_type is required",
-                    ));
+                if nodes_column.is_none() || node_types_column.is_none(){
+                    return Err(String::from(concat!(
+                        "If the node_path is passed, ",
+                        "the nodes_column and node_types_column",
+                        " parameters are also required."
+                    )))
                 }
                 // Then we check if the given columns actually exists in the file.
                 has_columns(
@@ -467,7 +466,7 @@ impl Graph {
                         &nodes_column.unwrap(),
                         &nodes_mapping,
                         &node_types_column.unwrap(),
-                        &default_node_type.unwrap(),
+                        &default_node_type,
                         _ignore_duplicated_nodes
                     )?;
                 (

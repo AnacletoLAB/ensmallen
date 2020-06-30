@@ -433,11 +433,10 @@ fn test_graph_from_csv_no_node_types_column_panic() {
 
 
 #[test]
-#[should_panic]
-fn test_graph_from_csv_no_default_node_types_panic() {
+fn test_graph_from_csv_no_default_node_types() {
     let edge_path = "tests/data/edge_file.tsv";
-    let node_path = "tests/data/node_file.tsv";
-    Graph::from_csv(
+    let node_path = "tests/data/missing_node_types.tsv";
+    assert!(Graph::from_csv(
         edge_path,
         "subject",
         "object",
@@ -456,7 +455,27 @@ fn test_graph_from_csv_no_default_node_types_panic() {
         None,
         None,
         None
-    ).unwrap();
+    ).is_err());
+    assert!(Graph::from_csv(
+        edge_path,
+        "subject",
+        "object",
+        true,
+        Some("edge_label"),
+        Some("biolink:Association"),
+        Some("weight"),
+        Some(1.0),
+        Some(node_path),
+        Some("id"),
+        Some("category"),
+        Some("default_node_type"),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None
+    ).is_ok());
 }
 
 
