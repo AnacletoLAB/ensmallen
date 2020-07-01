@@ -34,12 +34,13 @@ fn test_graph_from_csv_edge_only() {
             assert_eq!(lines, graph.get_edges_number());
         }
         assert!(graph.get_node_type_id(0).is_err());
-        let _cooccurrence = graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(true));
-        let _cooccurrence = graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false));
-        let _skipgrams = graph.skipgrams(0, 128, 80, None, None, Some(7.0), None, None, None, None, None, None);
-        let _skipgrams = graph.skipgrams(0, 128, 80, None, None, Some(1.0), None, None, None, None, None, None);
-        let _skipgrams = graph.skipgrams(0, 128, 80, None, None, Some(0.5), None, None, None, None, None, None);
-        let _ = graph.walk(80, Some(1), Some(0), None, None, None, None, None, None, Some(false));
+        assert!(graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(true)).is_ok());
+        assert!(graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false)).is_ok());
+        assert!(graph.skipgrams(0, 128, 80, None, None, Some(7.0), None, None, None, None, None, None).is_ok());
+        assert!(graph.skipgrams(0, 128, 80, None, None, Some(1.0), None, None, None, None, None, None).is_ok());
+        assert!(graph.skipgrams(0, 128, 80, None, None, Some(0.5), None, None, None, None, None, None).is_ok());
+        assert!(graph.skipgrams(56567, 128, 80, None, None, Some(0.5), None, None, None, None, None, None).is_err());
+        assert!(graph.walk(80, Some(1), Some(0), None, None, None, None, None, None, Some(false)).is_ok());
     }
 }
 

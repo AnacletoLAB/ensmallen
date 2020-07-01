@@ -138,6 +138,19 @@ impl Graph {
         change_node_type_weight: Option<ParamsT>,
         change_edge_type_weight: Option<ParamsT>
     ) -> Result<((Vec<usize>,Vec<usize>),Vec<u8>), String>{
+
+        if idx*batch_size >= self.get_nodes_number(){
+            return Err(format!(
+                concat!(
+                    "The given walk index {idx} with batch size {batch_size} ",
+                    "is larger than the number of nodes {nodes} in the graph."
+                ),
+                idx=idx,
+                batch_size=batch_size,
+                nodes=self.get_nodes_number()
+            ));
+        }
+
         let walks = self.walk(
             length,
             iterations,
