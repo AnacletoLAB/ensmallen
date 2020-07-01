@@ -1028,4 +1028,27 @@ impl EnsmallenGraph {
             .map(|(k, v)| (*k, v.clone()))
             .collect()
     }
+
+    #[text_signature = "($self, seed, train_percentage)"]
+    /// Returns training and validation holdouts extracted from current graph.
+    /// 
+    /// The holdouts is generated in such a way that the training set remains
+    /// connected if the starting graph is connected by using a spanning tree.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// seed: int,
+    ///     The seed to use to generate the holdout.
+    /// train_percentage: float,
+    ///     The percentage to reserve for the training.
+    /// 
+    /// Returns
+    /// -----------------------------
+    /// Tuple containing training and validation graphs.
+    fn holdout(&self, seed:NodeT, train_percentage:f64) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        match self.graph.holdout(seed, train_percentage) {
+            Ok((g1, g2)) => Ok((EnsmallenGraph{graph:g1}, EnsmallenGraph{graph:g2})),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
 }

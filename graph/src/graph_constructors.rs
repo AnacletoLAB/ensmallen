@@ -3,6 +3,7 @@ use log::info;
 use std::collections::{HashMap, HashSet};
 use hashbrown::HashMap as HashBrownMap;
 use std::iter::FromIterator;
+use itertools::Itertools;
 use rayon::prelude::*;
 
 pub fn validate(
@@ -134,9 +135,10 @@ impl Graph {
             .cloned()
             .flatten()
             .cloned()
+            .unique()
             .collect();
         let nodes_mapping:HashMap<String, NodeT> = unique_nodes
-            .par_iter()
+            .iter()
             .cloned()
             .map(|node_id| (node_id.to_string(), node_id))
             .collect();
