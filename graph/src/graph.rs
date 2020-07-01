@@ -421,7 +421,10 @@ impl Graph {
             ProgressBar::hidden()
         };
 
-        let iterator = (0..number_of_results).into_par_iter().progress_with(pb);
+        let iterator = (0..number_of_results)
+            .into_par_iter()
+            .progress_with(pb)
+            .filter(|node| !self.is_node_trap(*node));
 
         Ok(if self.has_traps {
             iterator
@@ -463,10 +466,6 @@ impl Graph {
         change_node_type_weight: ParamsT,
         change_edge_type_weight: ParamsT,
     ) -> Vec<NodeT> {
-        if self.is_node_trap(node) {
-            return vec![node];
-        }
-
         let (dst, mut edge) = self.extract_node(node, change_node_type_weight);
 
         if self.is_node_trap(dst) {
