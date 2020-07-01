@@ -17,6 +17,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
 }
 
 #[pyclass]
+#[derive(Clone)]
 #[text_signature = "(sources, destinations, *, nodes_mapping, nodes_reverse_mapping, node_types, node_types_mapping, node_types_reverse_mapping, edge_types, edge_types_mapping, edge_types_reverse_mapping, weights, validate_input_data, force_conversion_to_undirected)"]
 /// Return new EnsmallenGraph.
 /// 
@@ -1049,6 +1050,47 @@ impl EnsmallenGraph {
         match self.graph.holdout(seed, train_percentage) {
             Ok((g1, g2)) => Ok((EnsmallenGraph{graph:g1}, EnsmallenGraph{graph:g2})),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, batch_size, negative_samples, graph_to_avoid, shuffle)"]
+    /// Returns training and validation holdouts extracted from current graph.
+    /// 
+    /// The holdouts is generated in such a way that the training set remains
+    /// connected if the starting graph is connected by using a spanning tree.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// seed: int,
+    ///     The seed to use to generate the holdout.
+    /// train_percentage: float,
+    ///     The percentage to reserve for the training.
+    /// 
+    /// Returns
+    /// -----------------------------
+    /// Tuple containing training and validation graphs.
+    fn link_prediction(&self, batch_size:u64, py_kwargs: Option<&PyDict>) -> (Vec<(NodeT, NodeT)>, Vec<u8>) {
+        if let Some(kwargs) = py_kwargs {
+            let graph = kwargs
+                .get_item("graph_to_avoid")
+                .map(|val| val.extract::<EnsmallenGraph>().unwrap().graph);
+            self.graph.link_prediction(
+                batch_size,
+                kwargs
+                    .get_item("negative_samples")
+                    .map(|val| val.extract::<f64>().unwrap()),
+                if let Some(g) = &graph {
+                    Some(g)
+                } else {
+                    None
+                },
+                kwargs
+                    .get_item("shuffle")
+                    .map(|val| val.extract::<bool>().unwrap())
+            )
+        } else {
+            self.graph.link_prediction(batch_size, None, None, None)
         }
     }
 }

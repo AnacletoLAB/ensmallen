@@ -106,16 +106,12 @@ fn skipgram(
         let mut indices: Vec<usize> = (0..words.len() as usize).collect();
         indices.shuffle(&mut thread_rng());
 
-        words = indices.iter().map(|i| words[*i]).collect();
-        contexts = indices.iter().map(|i| contexts[*i]).collect();
-        labels = indices.iter().map(|i| labels[*i]).collect();
+        words = indices.par_iter().map(|i| words[*i]).collect();
+        contexts = indices.par_iter().map(|i| contexts[*i]).collect();
+        labels = indices.par_iter().map(|i| labels[*i]).collect();
     }
 
-    (
-        (words,
-        contexts),
-        labels
-    )
+    ((words, contexts), labels)
 }
 
 
@@ -325,5 +321,70 @@ impl Graph {
         frequencies.par_iter_mut().for_each(|frequency| {*frequency/=max_frequency});
 
         Ok((words, contexts, frequencies))
+    }
+
+    pub fn link_prediction(
+        &self,
+        batch_size:u64,
+        negative_samples: Option<f64>,
+        graph_to_avoid: Option<&Graph>,
+        shuffle: Option<bool>
+    )->(Vec<(NodeT, NodeT)>, Vec<u8>){
+        let _negative_samples = negative_samples.unwrap_or(1.0);
+        let _shuffle = shuffle.unwrap_or(true);
+        let negatives_number:u64 = ((batch_size as f64 / (1.0 + _negative_samples)) * _negative_samples) as u64;
+        let positives_number:u64 = batch_size - negatives_number;
+
+        let edges_number = self.get_edges_number() as u64;
+        let positives:Vec<(NodeT, NodeT)> = (0..positives_number)
+            .into_par_iter()
+            .map(|_| {
+                let edge = (random_u64() % edges_number) as EdgeT;
+                let src = self.sources[edge];
+                let dst = self.destinations[edge];
+                (src, dst)
+            })
+            .filter(|(src, dst)| if let Some(g) = &graph_to_avoid{
+                !g.has_edge(*src, *dst)
+            } else {
+                true
+            })
+            .collect();
+
+        let negatives:Vec<(NodeT, NodeT)> = (0..negatives_number)
+            .into_par_iter()
+            .map(|_| (
+                self.sources[(random_u64() % edges_number) as EdgeT],
+                self.destinations[(random_u64() % edges_number) as EdgeT]
+                )
+            )
+            .filter(|(src, dst)| if let Some(g) = &graph_to_avoid{
+                !g.has_edge(*src, *dst)
+            } else {
+                true
+            })
+            .collect();
+        
+        let mut labels:Vec<u8> = [vec![1 as u8; positives.len()], vec![0 as u8; negatives.len()]]
+            .iter()
+            .flatten()
+            .cloned()
+            .collect();
+
+        let mut nodes:Vec<(NodeT, NodeT)> = [positives, negatives]
+            .iter()
+            .flatten()
+            .cloned()
+            .collect();
+        
+        if _shuffle {
+            let mut indices: Vec<usize> = (0..nodes.len() as usize).collect();
+            indices.shuffle(&mut thread_rng());
+
+            labels = indices.par_iter().map(|i| labels[*i]).collect();
+            nodes = indices.par_iter().map(|i| nodes[*i]).collect();
+        }
+
+        (nodes, labels)
     }
 }
