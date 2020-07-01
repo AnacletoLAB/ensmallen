@@ -95,7 +95,7 @@ fn skipgram(
         num_negatives,
         vocabulary_size - 1
     );
-    let labels_neg = vec![0; vector_length];
+    let labels_neg = vec![0; num_negatives];
 
     // merge positives and negatives labels
     words.extend(words_neg.iter());

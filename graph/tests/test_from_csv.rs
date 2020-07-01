@@ -36,7 +36,9 @@ fn test_graph_from_csv_edge_only() {
         assert!(graph.get_node_type_id(0).is_err());
         let _cooccurrence = graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(true));
         let _cooccurrence = graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false));
-        let _skipgrams = graph.skipgrams(0, 128, 80, None, None, None, None, None, None, None, None, None);
+        let _skipgrams = graph.skipgrams(0, 128, 80, None, None, Some(7.0), None, None, None, None, None, None);
+        let _skipgrams = graph.skipgrams(0, 128, 80, None, None, Some(1.0), None, None, None, None, None, None);
+        let _skipgrams = graph.skipgrams(0, 128, 80, None, None, Some(0.5), None, None, None, None, None, None);
         let _ = graph.walk(80, Some(1), Some(0), None, None, None, None, None, None, Some(false));
     }
 }
@@ -141,11 +143,9 @@ fn test_graph_directed_forced_conversion_to_undirected() {
 
 
 #[test]
-#[should_panic]
 fn test_walk_wrong_return_weights_parameter() {
-    let path = "tests/data/edge_file.tsv";
-    Graph::from_csv(
-        &path,
+    assert!(Graph::from_csv(
+        "tests/data/edge_file.tsv",
         "subject",
         "object",
         true,
@@ -163,15 +163,13 @@ fn test_walk_wrong_return_weights_parameter() {
         None,
         None,
         None
-    ).unwrap().walk(10, None, None, None, None, Some(0.0), Some(2.0), Some(3.0), Some(4.0), None).unwrap();
+    ).unwrap().walk(10, None, None, None, None, Some(0.0), Some(2.0), Some(3.0), Some(4.0), None).is_err());
 }
 
 #[test]
-#[should_panic]
 fn test_walk_wrong_explore_weight_parameter() {
-    let path = "tests/data/edge_file.tsv";
-    Graph::from_csv(
-        &path,
+    assert!(Graph::from_csv(
+        "tests/data/edge_file.tsv",
         "subject",
         "object",
         true,
@@ -190,7 +188,7 @@ fn test_walk_wrong_explore_weight_parameter() {
         None,
         None
     ).unwrap()
-    .walk(10, None, None, None, None, Some(1.0), Some(0.0), Some(3.0), Some(4.0), None).unwrap();
+    .walk(10, None, None, None, None, Some(1.0), Some(0.0), Some(3.0), Some(4.0), None).is_err());
 }
 
 #[test]

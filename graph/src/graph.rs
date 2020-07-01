@@ -424,6 +424,7 @@ impl Graph {
         let iterator = (0..number_of_results)
             .into_par_iter()
             .progress_with(pb)
+            .map(|index| _start_node + (index % delta))
             .filter(|node| !self.is_node_trap(*node));
 
         Ok(if self.has_traps {
@@ -431,7 +432,7 @@ impl Graph {
                 .map(|node| {
                     self.single_walk(
                         length,
-                        _start_node + (node % delta),
+                        node,
                         _return_weight,
                         _explore_weight,
                         _change_node_type_weight,
@@ -445,7 +446,7 @@ impl Graph {
                 .map(|node| {
                     self.single_walk_no_traps(
                         length,
-                        _start_node + (node % delta),
+                        node,
                         _return_weight,
                         _explore_weight,
                         _change_node_type_weight,
