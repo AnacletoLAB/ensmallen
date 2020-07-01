@@ -1,6 +1,5 @@
 extern crate graph;
 use graph::*;
-use rayon::prelude::*;
 use hashbrown::HashSet;
 
 #[test]
