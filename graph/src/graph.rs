@@ -424,11 +424,12 @@ impl Graph {
         let iterator = (0..number_of_results)
             .into_par_iter()
             .progress_with(pb)
-            .map(|index| _start_node + (index % delta))
-            .filter(|node| !self.is_node_trap(*node));
+            .map(|index| _start_node + (index % delta));
+            
 
         Ok(if self.has_traps {
             iterator
+                .filter(|node| !self.is_node_trap(*node))
                 .map(|node| {
                     self.single_walk(
                         length,
@@ -453,7 +454,6 @@ impl Graph {
                         _change_edge_type_weight,
                     )
                 })
-                .filter(|walk| walk.len() >= _min_length)
                 .collect::<Vec<Vec<NodeT>>>()
         })
     }
@@ -467,6 +467,7 @@ impl Graph {
         change_node_type_weight: ParamsT,
         change_edge_type_weight: ParamsT,
     ) -> Vec<NodeT> {
+        
         let (dst, mut edge) = self.extract_node(node, change_node_type_weight);
 
         if self.is_node_trap(dst) {

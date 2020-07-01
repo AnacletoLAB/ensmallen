@@ -154,7 +154,7 @@ impl Graph {
         degrees[self.get_nodes_number() / 2]
     }
 
-    /// Returns median node degree of the graph
+    /// Returns mode node degree of the graph
     pub fn degrees_mode(&self) -> NodeT {
         let mut occurrences: HashMap<NodeT, usize> = HashMap::new();
 
