@@ -1,0 +1,113 @@
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+
+running 4 tests
+test test_check_consistent_lines ... ok
+test test_has_columns ... ok
+test test_check_consistent_lines_should_panic ... ok
+test test_has_columns_should_panic ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+
+running 23 tests
+test test_graph_from_csv_no_node_types_column ... ok
+test test_graph_from_csv_no_nodes_column_panic ... ok
+test test_graph_from_csv_no_default_edge_types ... ok
+test test_graph_from_csv_no_default_weight ... ok
+test test_graph_from_csv_duplicated_edges ... ok
+test test_graph_from_csv_no_default_node_types ... ok
+test test_graph_from_csv_zero_weights_error ... ok
+test test_graph_directed_forced_conversion_to_undirected ... ok
+test test_graph_inf_edge_weights ... ok
+test test_graph_negative_edge_weights ... ok
+test test_graph_nan_edge_weights ... ok
+test test_graph_from_csv_duplicated_nodes ... ok
+test test_graph_invalid_edge_weights ... ok
+test test_graph_from_csv_with_edge_and_nodes ... ok
+test test_graph_from_csv_with_edge_and_nodes_types ... ok
+test test_graph_from_csv_weird_edge_nodes ... ok
+test test_walk_wrong_change_node_type_weight_parameter ... ok
+test test_walk_wrong_change_edge_type_weight_parameter ... ok
+test test_walk_wrong_explore_weight_parameter ... ok
+test test_walk_wrong_return_weights_parameter ... ok
+test test_graph_from_csv_edge_types ... ok
+test test_graph_from_csv_het ... ok
+test test_graph_from_csv_edge_only ... ok
+
+test result: ok. 23 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+
+running 1 test
+test test_getters ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+
+running 1 test
+test test_graph_clone ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+
+running 1 test
+test test_graph_metrics ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+
+running 1 test
+test test_holdout ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+
+running 1 test
+test test_random_float_validity ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+
+running 1 test
+test test_random_sample ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+
+running 1 test
+test test_spanning_tree ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+
+running 8 tests
+test test_validation_edge_duplication_with_edges ... ok
+test test_validation_edge_duplication ... ok
+test test_validation_wrong_edge_types_number ... ok
+test test_validation_wrong_weights_number ... ok
+test test_validation ... ok
+test test_validation_wrong_weights_zeros ... ok
+test test_validation_wrong_node_types_number ... ok
+test test_validation_wrong_edges_with_non_existant_nodes ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+
+running 1 test
+test test_random_walk ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+
+running 5 tests
+test src/random.rs - random::random_f64 (line 102) ... ok
+test src/random.rs - random::random_f64 (line 79) ... ok
+test src/random.rs - random::random_u64 (line 39) ... ok
+test src/random.rs - random::random_f64 (line 117) ... ok
+test src/random.rs - random::random_f64 (line 86) ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+

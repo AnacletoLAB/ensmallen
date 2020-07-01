@@ -1,6 +1,7 @@
 use super::*;
 use log::info;
-use hashbrown::{HashMap, HashSet};
+use std::collections::{HashMap, HashSet};
+use hashbrown::HashMap as HashBrownMap;
 use std::iter::FromIterator;
 use rayon::prelude::*;
 
@@ -124,12 +125,34 @@ pub fn validate(
 /// Graph Constructors
 impl Graph {
 
+    fn build_nodes_mapping(
+        sources:&[NodeT],
+        destinations:&[NodeT]
+    ) -> (HashMap<String, NodeT>, Vec<String>){
+        let unique_nodes:Vec<NodeT> = vec![sources, destinations]
+            .iter()
+            .cloned()
+            .flatten()
+            .cloned()
+            .collect();
+        let nodes_mapping:HashMap<String, NodeT> = unique_nodes
+            .par_iter()
+            .cloned()
+            .map(|node_id| (node_id.to_string(), node_id))
+            .collect();
+        let mut nodes_reverse_mapping:Vec<String> = vec![String::from(""); unique_nodes.len()];
+        for (node_name, position) in nodes_mapping.iter(){
+            nodes_reverse_mapping[*position] = node_name.clone();
+        }
+        (nodes_mapping, nodes_reverse_mapping)
+    }
+
     pub fn new_directed(
         sources: Vec<NodeT>,
         destinations: Vec<NodeT>,
 
-        nodes_mapping: HashMap<String, NodeT>,
-        nodes_reverse_mapping: Vec<String>,
+        nodes_mapping: Option<HashMap<String, NodeT>>,
+        nodes_reverse_mapping: Option<Vec<String>>,
 
         node_types: Option<Vec<NodeTypeT>>,
         node_types_mapping: Option<HashMap<String, NodeTypeT>>,
@@ -142,23 +165,30 @@ impl Graph {
         weights: Option<Vec<WeightT>>,
         validate_input_data: Option<bool>,
     ) -> Result<Graph, String> {
+
+        let (_nodes_mapping, _nodes_reverse_mapping) = if nodes_mapping.is_none() || nodes_reverse_mapping.is_none(){
+            Graph::build_nodes_mapping(&sources, &destinations)
+        } else {
+            (nodes_mapping.unwrap(), nodes_reverse_mapping.unwrap())
+        };
+
         if validate_input_data.unwrap_or_else(|| true) {
             validate(
                 &sources,
                 &destinations,
-                &nodes_mapping,
-                &nodes_reverse_mapping,
+                &_nodes_mapping,
+                &_nodes_reverse_mapping,
                 &node_types,
                 &edge_types,
                 &weights
             )?;
         }
 
-        let nodes_number = nodes_reverse_mapping.len();
+        let nodes_number = _nodes_reverse_mapping.len();
 
         info!("Computing unique edges.");
-        let unique_edges: HashMap<(NodeT, NodeT), EdgeT> =
-            HashMap::from_iter(
+        let unique_edges: HashBrownMap<(NodeT, NodeT), EdgeT> =
+            HashBrownMap::from_iter(
                 sources.iter().cloned().zip(
                     destinations.iter().cloned()
                 ).enumerate().map(|(i, (src, dst))| ((src, dst), i))
@@ -189,8 +219,6 @@ impl Graph {
         let outbounds = Graph::compute_outbounds(nodes_number, &sorted_sources);
 
         let mut graph = Graph {
-            nodes_mapping,
-            nodes_reverse_mapping,
             unique_edges,
             node_types,
             node_types_mapping,
@@ -198,6 +226,8 @@ impl Graph {
             edge_types_mapping,
             edge_types_reverse_mapping,
             outbounds,
+            nodes_mapping:_nodes_mapping,
+            nodes_reverse_mapping:_nodes_reverse_mapping,
             is_directed: true,
             sources: sorted_sources,
             destinations: sorted_destinations,
@@ -218,8 +248,8 @@ impl Graph {
     pub fn new_undirected(
         sources: Vec<NodeT>,
         destinations: Vec<NodeT>,
-        nodes_mapping: HashMap<String, NodeT>,
-        nodes_reverse_mapping: Vec<String>,
+        nodes_mapping: Option<HashMap<String, NodeT>>,
+        nodes_reverse_mapping: Option<Vec<String>>,
         node_types: Option<Vec<NodeTypeT>>,
         node_types_mapping: Option<HashMap<String, NodeTypeT>>,
         node_types_reverse_mapping: Option<Vec<String>>,
@@ -231,12 +261,18 @@ impl Graph {
         force_conversion_to_undirected: Option<bool>
     ) -> Result<Graph, String> {
 
+        let (_nodes_mapping, _nodes_reverse_mapping) = if nodes_mapping.is_none() || nodes_reverse_mapping.is_none(){
+            Graph::build_nodes_mapping(&sources, &destinations)
+        } else {
+            (nodes_mapping.unwrap(), nodes_reverse_mapping.unwrap())
+        };
+
         if validate_input_data.unwrap_or_else(|| true) {
             validate(
                 &sources,
                 &destinations,
-                &nodes_mapping,
-                &nodes_reverse_mapping,
+                &_nodes_mapping,
+                &_nodes_reverse_mapping,
                 &node_types,
                 &edge_types,
                 &weights
@@ -290,15 +326,15 @@ impl Graph {
             } else if ! _force_conversion_to_undirected {
                 return Err(format!(
                     concat!(
-                        "Within given edges there are directed edges.\n",
-                        "The source node is {src}\n",
-                        "The destination node is {dst}\n",
+                        "Within given edges there are birectional directed edges.\n",
+                        "The source node is {src_name} ({src})\n",
+                        "The destination node is {dst_name} ({dst})\n",
                         "{edge_type_message}\n",
                         "This means you are forcibly converting a directed ",
                         "graph into an undirected graph.\n",
                         "You can enforce the conversion by passing the flag ",
                         "force_conversion_to_undirected as true.\n",
-                        "The conversion will ignore edges that are",
+                        "The conversion will ignore edges that are ",
                         "directed between two nodes, have the same edge type ",
                         "but different weights.\n",
                         "For example, an edge from A to B of type 1 ",
@@ -307,7 +343,9 @@ impl Graph {
                         "but a following edge from B to A of type 1 ",
                         "with weight 5 would be ignored."
                     ),
+                    src_name=_nodes_reverse_mapping[src],
                     src=src,
+                    dst_name=_nodes_reverse_mapping[dst],
                     dst=dst,
                     edge_type_message= if let Some(et) = edge_type {
                         format!("The edge type is {}", et)
@@ -321,8 +359,8 @@ impl Graph {
         let mut result = Graph::new_directed(
             full_sources,
             full_destinations,
-            nodes_mapping,
-            nodes_reverse_mapping,
+            Some(_nodes_mapping),
+            Some(_nodes_reverse_mapping),
             node_types,
             node_types_mapping,
             node_types_reverse_mapping,

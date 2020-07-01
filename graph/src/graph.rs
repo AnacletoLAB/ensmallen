@@ -2,7 +2,8 @@
 use super::random::sample;
 use super::types::*;
 use derive_getters::Getters;
-use hashbrown::HashMap;
+use std::collections::HashMap;
+use hashbrown::HashMap as HashBrownMap;
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use log::info;
 use rayon::prelude::*;
@@ -22,7 +23,7 @@ pub struct Graph {
     pub destinations: Vec<NodeT>,
     pub nodes_mapping: HashMap<String, NodeT>,
     pub nodes_reverse_mapping: Vec<String>,
-    pub unique_edges: HashMap<(NodeT, NodeT), EdgeT>,
+    pub unique_edges: HashBrownMap<(NodeT, NodeT), EdgeT>,
     pub outbounds: Vec<EdgeT>,
     pub weights: Option<Vec<WeightT>>,
     pub node_types: Option<Vec<NodeTypeT>>,
@@ -92,14 +93,37 @@ impl Graph {
         ))
     }
 
+    /// Returns boolean representing if edge passing between given nodes exists.
+    /// 
+    /// # Arguments
+    /// 
+    /// * src: NodeT - The source node of the edge.
+    /// * dst: NodeT - The destination node of the edge.
+    /// 
     pub fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
         self.unique_edges.contains_key(&(src, dst))
     }
 
+    /// Returns edge id of the edge passing between given nodes.
+    /// 
+    /// # Arguments
+    /// 
+    /// * src: NodeT - The source node of the edge.
+    /// * dst: NodeT - The destination node of the edge.
+    /// 
     pub fn get_edge_id(&self, src: NodeT, dst: NodeT) -> Result<EdgeT, String> {
         match self.unique_edges.get(&(src, dst)) {
             Some(g) => Ok(*g),
-            None => Err(String::from("The edge does not exists")),
+            None => Err(format!(
+                concat!(
+                    "Required edge passing between {src_name} ({src}) ",
+                    "and {dst_name} ({dst}) does not exists in graph."
+                ),
+                src_name=self.nodes_reverse_mapping[src],
+                src=src,
+                dst_name=self.nodes_reverse_mapping[dst],
+                dst=dst
+            )),
         }
     }
 

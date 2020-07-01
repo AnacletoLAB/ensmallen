@@ -1,6 +1,6 @@
 extern crate graph;
 use graph::validate;
-use hashbrown::{HashMap};
+use std::collections::{HashMap};
 
 #[test]
 #[should_panic]

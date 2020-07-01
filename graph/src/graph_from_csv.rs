@@ -1,7 +1,7 @@
 use super::*;
 use crate::csv_utils::{check_consistent_lines, get_headers, has_columns};
 use rayon::prelude::*;
-use hashbrown::{HashMap, HashSet};
+use std::collections::{HashMap, HashSet};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
 /// Construction of the graph from csv / tsv
@@ -482,8 +482,8 @@ impl Graph {
             Graph::new_directed(
                 sources,
                 destinations,
-                nodes_mapping,
-                nodes_reverse_mapping,
+                Some(nodes_mapping),
+                Some(nodes_reverse_mapping),
                 node_types,
                 node_types_mapping,
                 node_types_reverse_mapping,
@@ -497,8 +497,8 @@ impl Graph {
             Graph::new_undirected(
                 sources,
                 destinations,
-                nodes_mapping,
-                nodes_reverse_mapping,
+                Some(nodes_mapping),
+                Some(nodes_reverse_mapping),
                 node_types,
                 node_types_mapping,
                 node_types_reverse_mapping,
