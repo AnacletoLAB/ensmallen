@@ -226,7 +226,7 @@ impl Graph {
             .zip(labels.par_iter())
             .map(
                 |((src, dst), label)|
-                (*label == 0) && self.has_edge(*src, *dst)
+                (*label == 1) || self.has_edge(*src, *dst)
             )
             .collect();
         words = false_negatives.par_iter()
