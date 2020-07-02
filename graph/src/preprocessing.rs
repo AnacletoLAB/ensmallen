@@ -353,7 +353,7 @@ impl Graph {
         negative_samples: Option<f64>,
         graph_to_avoid: Option<&Graph>,
         shuffle: Option<bool>
-    )->(Vec<NodeT>, Vec<NodeT>, Vec<u8>){
+    )->Result<(Vec<NodeT>, Vec<NodeT>, Vec<u8>), String>{
         let _negative_samples = negative_samples.unwrap_or(1.0);
         let _shuffle = shuffle.unwrap_or(true);
         let negatives_number:u64 = ((batch_size as f64 / (1.0 + _negative_samples)) * _negative_samples) as u64;
@@ -412,6 +412,6 @@ impl Graph {
         let sources:Vec<NodeT> = edges.par_iter().map(|(src, _)| *src).collect();
         let destinations:Vec<NodeT> = edges.par_iter().map(|(_, dst)| *dst).collect();
 
-        (sources, destinations, labels)
+        Ok((sources, destinations, labels))
     }
 }
