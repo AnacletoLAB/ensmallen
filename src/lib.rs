@@ -889,6 +889,19 @@ impl EnsmallenGraph {
         self.graph.degree(node)
     }
 
+    #[text_signature = "($self)"]
+    /// Return all the degrees of the nodes graph.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Numpy array with all teh degrees of the graph.
+    ///
+    fn degrees(&self) -> Py<PyArray1<EdgeT>> {
+        let degrees = self.graph.degrees();
+        let gil = pyo3::Python::acquire_gil();
+        degrees.to_pyarray(gil.python()).cast::<EdgeT>(false).unwrap().to_owned()
+    }
+
     #[text_signature = "($self, src, dst)"]
     /// Return boolean representing if given edge exists in graph.
     ///
