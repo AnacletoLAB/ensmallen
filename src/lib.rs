@@ -1085,19 +1085,23 @@ impl EnsmallenGraph {
     /// Tuple containing training and validation graphs.
     fn link_prediction(&self, batch_size:u64, py_kwargs: Option<&PyDict>) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<u8>>)> {
         let results = if let Some(kwargs) = py_kwargs {
-            let graph = kwargs
+            let ensmallen_graph = kwargs
                 .get_item("graph_to_avoid")
-                .map(|val| val.extract::<EnsmallenGraph>().unwrap().graph);
+                .map(|val| val.extract::<EnsmallenGraph>());
+            let graph = if let Some(eg) = &ensmallen_graph {
+                match eg {
+                    Ok(g) => Some(&g.graph),
+                    Err(_) => None
+                }
+            } else {
+                None
+            };
             self.graph.link_prediction(
                 batch_size,
                 kwargs
                     .get_item("negative_samples")
                     .map(|val| val.extract::<f64>().unwrap()),
-                if let Some(g) = &graph {
-                    Some(g)
-                } else {
-                    None
-                },
+                graph,
                 kwargs
                     .get_item("shuffle")
                     .map(|val| val.extract::<bool>().unwrap())
