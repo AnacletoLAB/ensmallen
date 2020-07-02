@@ -18,3 +18,25 @@ To install the latest (alpha) release, run the following:
 ```bash
 pip install ensmallen_graph
 ```
+
+## Example code:
+
+Graph should be in KGX TSV format described here:
+https://github.com/NCATS-Tangerine/kgx/blob/master/data-preparation.md
+
+```
+import ensmallen_graph
+
+graph = ensmallen_graph.EnsmallenGraph(
+    edge_path=f"nodes.tsv",
+    node_path=f"edges.tsv",
+    sources_column="subject",
+    destinations_column="object",
+    edge_types_column="edge_label",
+    default_node_type="biolink:NamedThing",
+    default_edge_type="biolink:interacts_with",
+    nodes_column='id',
+    node_types_column='category',
+    directed=False,
+)
+```
