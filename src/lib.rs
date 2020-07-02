@@ -1083,12 +1083,12 @@ impl EnsmallenGraph {
     /// Returns
     /// -----------------------------
     /// Tuple containing training and validation graphs.
-    fn link_prediction(&self, batch_size:u64, py_kwargs: Option<&PyDict>) -> (Vec<(NodeT, NodeT)>, Vec<u8>) {
+    fn link_prediction(&self, batch_size:u64, py_kwargs: Option<&PyDict>) -> (Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<u8>>) {
         if let Some(kwargs) = py_kwargs {
             let graph = kwargs
                 .get_item("graph_to_avoid")
                 .map(|val| val.extract::<EnsmallenGraph>().unwrap().graph);
-            self.graph.link_prediction(
+            let (sources, destinations, labels) = self.graph.link_prediction(
                 batch_size,
                 kwargs
                     .get_item("negative_samples")
@@ -1101,9 +1101,21 @@ impl EnsmallenGraph {
                 kwargs
                     .get_item("shuffle")
                     .map(|val| val.extract::<bool>().unwrap())
+            );
+            let gil = pyo3::Python::acquire_gil();
+            (
+                sources.to_pyarray(gil.python()).cast::<NodeT>(false).unwrap().to_owned(),
+                destinations.to_pyarray(gil.python()).cast::<NodeT>(false).unwrap().to_owned(),
+                labels.to_pyarray(gil.python()).cast::<u8>(false).unwrap().to_owned()
             )
         } else {
-            self.graph.link_prediction(batch_size, None, None, None)
+            let (sources, destinations, labels) = self.graph.link_prediction(batch_size, None, None, None);
+            let gil = pyo3::Python::acquire_gil();
+            (
+                sources.to_pyarray(gil.python()).cast::<NodeT>(false).unwrap().to_owned(),
+                destinations.to_pyarray(gil.python()).cast::<NodeT>(false).unwrap().to_owned(),
+                labels.to_pyarray(gil.python()).cast::<u8>(false).unwrap().to_owned()
+            )
         }
     }
 }

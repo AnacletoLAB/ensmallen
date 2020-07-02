@@ -353,7 +353,7 @@ impl Graph {
         negative_samples: Option<f64>,
         graph_to_avoid: Option<&Graph>,
         shuffle: Option<bool>
-    )->(Vec<(NodeT, NodeT)>, Vec<u8>){
+    )->(Vec<NodeT>, Vec<NodeT>, Vec<u8>){
         let _negative_samples = negative_samples.unwrap_or(1.0);
         let _shuffle = shuffle.unwrap_or(true);
         let negatives_number:u64 = ((batch_size as f64 / (1.0 + _negative_samples)) * _negative_samples) as u64;
@@ -395,20 +395,23 @@ impl Graph {
             .cloned()
             .collect();
 
-        let mut nodes:Vec<(NodeT, NodeT)> = [positives, negatives]
+        let mut edges:Vec<(NodeT, NodeT)> = [positives, negatives]
             .iter()
             .flatten()
             .cloned()
             .collect();
         
         if _shuffle {
-            let mut indices: Vec<usize> = (0..nodes.len() as usize).collect();
+            let mut indices: Vec<usize> = (0..edges.len() as usize).collect();
             indices.shuffle(&mut thread_rng());
 
             labels = indices.par_iter().map(|i| labels[*i]).collect();
-            nodes = indices.par_iter().map(|i| nodes[*i]).collect();
+            edges = indices.par_iter().map(|i| edges[*i]).collect();
         }
 
-        (nodes, labels)
+        let sources:Vec<NodeT> = edges.par_iter().map(|(src, _)| *src).collect();
+        let destinations:Vec<NodeT> = edges.par_iter().map(|(_, dst)| *dst).collect();
+
+        (sources, destinations, labels)
     }
 }
