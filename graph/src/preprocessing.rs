@@ -41,82 +41,82 @@ fn skipgram_vector_length(walk_length:usize, window_size:usize)->usize{
         .sum()
 }
 
-fn skipgram(
-    walk: &[usize],
-    vocabulary_size: usize,
-    window_size: Option<usize>,
-    negative_samples: Option<f64>,
-    shuffle: Option<bool>,
-) -> (
-    (
-        Vec<usize>,
-        Vec<usize>
-    ),
-    Vec<u8>   
-){
-    let _negative_samples = negative_samples.unwrap_or(1.0);
-    let _window_size = window_size.unwrap_or(4);
-    let _shuffle = shuffle.unwrap_or(true);
-
-    let vector_length: usize = skipgram_vector_length(walk.len(), _window_size);
-
-    // create the positive data
-    let total_length = (vector_length as f64 * (1.0 + _negative_samples)) as usize;
-    let mut words: Vec<NodeT> = Vec::with_capacity(total_length);
-    let mut contexts: Vec<NodeT> = Vec::with_capacity(total_length);
-    
-    for (i, wi) in walk.iter().enumerate() {
-        let window_start = if i > _window_size {
-            i - _window_size
-        } else {
-            0
-        };
-        let window_end = min!(walk.len(), i + _window_size + 1); 
-        let delta = window_end - window_start - 1;
-
-        words.extend_from_slice(&vec![*wi; delta][..]);
-        contexts.extend_from_slice(&walk[window_start..i]);
-        contexts.extend_from_slice(&walk[i + 1..window_end]);
-    }
-
-    let mut labels = vec![1; vector_length];
-
-    // create negative data
-    // In this implementation, negative samples ARE MANDATORY.
-    
-    // TODO! This thing can create false negatives!!
-    // The issue was already present in the original TensorFlow implementation.
-    let num_negatives = (vector_length as f64 *_negative_samples) as usize;
-    let words_neg: Vec<NodeT> = gen_random_usize_vec(num_negatives, walk.len() - 1)
-        .iter()
-        .map(|i| walk[*i])
-        .collect();
-    let contexts_neg: Vec<NodeT> = gen_random_usize_vec(
-        num_negatives,
-        vocabulary_size - 1
-    );
-    let labels_neg = vec![0; num_negatives];
-
-    // merge positives and negatives labels
-    words.extend(words_neg.iter());
-    contexts.extend(contexts_neg.iter());
-    labels.extend(labels_neg.iter());
-
-    if _shuffle {
-        let mut indices: Vec<usize> = (0..words.len() as usize).collect();
-        indices.shuffle(&mut thread_rng());
-
-        words = indices.par_iter().map(|i| words[*i]).collect();
-        contexts = indices.par_iter().map(|i| contexts[*i]).collect();
-        labels = indices.par_iter().map(|i| labels[*i]).collect();
-    }
-
-    ((words, contexts), labels)
-}
-
 
 /// Preprocessing for ML algorithms on graph.
 impl Graph {
+
+    fn skipgram(
+        &self,
+        walk: &[usize],
+        window_size: Option<usize>,
+        negative_samples: Option<f64>,
+        shuffle: Option<bool>,
+    ) -> (
+        (
+            Vec<usize>,
+            Vec<usize>
+        ),
+        Vec<u8>   
+    ){
+        let _negative_samples = negative_samples.unwrap_or(1.0);
+        let _window_size = window_size.unwrap_or(4);
+        let _shuffle = shuffle.unwrap_or(true);
+    
+        let vector_length: usize = skipgram_vector_length(walk.len(), _window_size);
+    
+        // create the positive data
+        let total_length = (vector_length as f64 * (1.0 + _negative_samples)) as usize;
+        let mut words: Vec<NodeT> = Vec::with_capacity(total_length);
+        let mut contexts: Vec<NodeT> = Vec::with_capacity(total_length);
+        
+        for (i, wi) in walk.iter().enumerate() {
+            let window_start = if i > _window_size {
+                i - _window_size
+            } else {
+                0
+            };
+            let window_end = min!(walk.len(), i + _window_size + 1); 
+            let delta = window_end - window_start - 1;
+    
+            words.extend_from_slice(&vec![*wi; delta][..]);
+            contexts.extend_from_slice(&walk[window_start..i]);
+            contexts.extend_from_slice(&walk[i + 1..window_end]);
+        }
+    
+        let mut labels = vec![1; vector_length];
+    
+        // create negative data
+        // In this implementation, negative samples ARE MANDATORY.
+        
+        // TODO! This thing can create false negatives!!
+        // The issue was already present in the original TensorFlow implementation.
+        let num_negatives = (vector_length as f64 *_negative_samples) as usize;
+        let words_neg: Vec<NodeT> = gen_random_usize_vec(num_negatives, walk.len())
+            .iter()
+            .map(|i| walk[*i])
+            .collect();
+        let contexts_neg: Vec<NodeT> = gen_random_usize_vec(
+            num_negatives,
+            self.get_nodes_number()
+        );
+        let labels_neg = vec![0; num_negatives];
+    
+        // merge positives and negatives labels
+        words.extend(words_neg.iter());
+        contexts.extend(contexts_neg.iter());
+        labels.extend(labels_neg.iter());
+    
+        if _shuffle {
+            let mut indices: Vec<usize> = (0..words.len() as usize).collect();
+            indices.shuffle(&mut thread_rng());
+    
+            words = indices.iter().map(|i| words[*i]).collect();
+            contexts = indices.iter().map(|i| contexts[*i]).collect();
+            labels = indices.iter().map(|i| labels[*i]).collect();
+        }
+    
+        ((words, contexts), labels)
+    }
     
     // TODO docstring
     pub fn skipgrams(
@@ -210,9 +210,8 @@ impl Graph {
                 .zip(contexts_indices.par_iter_mut())
                 .zip(labels_indices.par_iter_mut())
                 .for_each(|(((walk, words_index), contexts_index), labels_index)|{
-                let ((_words, _contexts), _labels) = skipgram(
+                let ((_words, _contexts), _labels) = self.skipgram(
                     walk,
-                    self.get_nodes_number(),
                     window_size,
                     Some(_negative_samples),
                     shuffle
@@ -222,6 +221,29 @@ impl Graph {
                 (*labels_index).copy_from_slice(&_labels);
             });
         }
+        let false_negatives:Vec<bool> = words.par_iter()
+            .zip(contexts.par_iter())
+            .zip(labels.par_iter())
+            .map(
+                |((src, dst), label)|
+                (*label == 0) && self.has_edge(*src, *dst)
+            )
+            .collect();
+        words = false_negatives.par_iter()
+            .zip(words.par_iter())
+            .filter(|(false_negative, _)| **false_negative)
+            .map(|(_, src)| *src)
+            .collect();
+        contexts = false_negatives.par_iter()
+            .zip(contexts.par_iter())
+            .filter(|(false_negative, _)| **false_negative)
+            .map(|(_, src)| *src)
+            .collect();
+        labels = false_negatives.par_iter()
+            .zip(labels.par_iter())
+            .filter(|(false_negative, _)| **false_negative)
+            .map(|(_, src)| *src)
+            .collect();
         Ok(((words, contexts), labels))
     }
 
@@ -242,6 +264,8 @@ impl Graph {
         let _verbose = verbose.unwrap_or(true);
         let _window_size = window_size.unwrap_or(4);
 
+        // TODO: if in Rust is possible to return a generator, we could
+        // iterate directly on the walks without storing them into an array.
         let walks = self.walk(
             length,
             iterations,
@@ -358,11 +382,11 @@ impl Graph {
                 self.destinations[(random_u64() % edges_number) as EdgeT]
                 )
             )
-            .filter(|(src, dst)| if let Some(g) = &graph_to_avoid{
-                !g.has_edge(*src, *dst)
+            .filter(|(src, dst)| ! (self.has_edge(*src, *dst) || if let Some(g) = &graph_to_avoid{
+                g.has_edge(*src, *dst)
             } else {
-                true
-            })
+                false
+            }))
             .collect();
         
         let mut labels:Vec<u8> = [vec![1 as u8; positives.len()], vec![0 as u8; negatives.len()]]
