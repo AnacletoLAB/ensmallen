@@ -95,8 +95,6 @@ impl Graph {
             .collect();
         let labels_neg = vec![0; num_negatives];
         
-        //println!("{}, {}, {}, {}, {}", num_negatives, gen_random_vec(num_negatives, seed).len(), words_neg.len(), contexts_neg.len(), labels_neg.len());
-
         // merge positives and negatives labels
         words.extend(words_neg.iter());
         contexts.extend(contexts_neg.iter());
@@ -345,6 +343,16 @@ impl Graph {
         Ok((words, contexts, frequencies))
     }
 
+    /// Returns triple with source nodes, destination nodes and labels for training model for link prediction.
+    /// 
+    /// # Arguments
+    /// 
+    /// * idx:u64 - The index of the batch to generate, behaves like a random seed,
+    /// * batch_size:usize - The maximal size of the batch to generate,
+    /// * negative_samples: Option<f64> - The component of netagetive samples to use,
+    /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    /// * shuffle: Option<bool> - Whetever to shuffle or not the batch.
+    /// 
     pub fn link_prediction(
         &self,
         idx:u64,
@@ -355,22 +363,22 @@ impl Graph {
     )->Result<(Vec<NodeT>, Vec<NodeT>, Vec<u8>), String>{
         let _negative_samples = negative_samples.unwrap_or(1.0);
         let _shuffle = shuffle.unwrap_or(true);
+        // The number of negatives is given by computing their fraction of batchsize
         let negatives_number:usize = ((batch_size as f64 / (1.0 + _negative_samples)) * _negative_samples) as usize;
+        // All the remaining values then are positives
         let positives_number:usize = batch_size - negatives_number;
 
         let edges_number = self.get_edges_number() as u64;
         let positives:Vec<(NodeT, NodeT)> = gen_random_vec(positives_number, idx)
             .into_par_iter()
-            .map(|random_value| {
-                let edge = (random_value % edges_number) as EdgeT;
-                let src = self.sources[edge];
-                let dst = self.destinations[edge];
-                (src, dst)
-            })
-            .filter(|(src, dst)| if let Some(g) = &graph_to_avoid{
-                !g.has_edge(*src, *dst)
-            } else {
-                true
+            .map(
+                |random_value| (random_value % edges_number) as EdgeT
+            )
+            .map(|edge| {
+                (
+                    self.sources[edge],
+                    self.destinations[edge]
+                )
             })
             .collect();
 
