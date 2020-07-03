@@ -25,6 +25,7 @@ permutation = "0.2.5"
 derive-getters = "0.1.0"
 indicatif = {version = "0.15.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
+vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 
 [build]
 rustflags = ["-C target-cpu=native", "-C target-feature=-crt-static"]

@@ -1,18 +1,10 @@
 use super::*;
 use rayon::prelude::*;
-extern crate rand;
-use rand::Rng;  
 use rand::seq::SliceRandom;
 use rand::thread_rng;
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use hashbrown::{HashMap};
-
-fn gen_random_usize_vec(num: usize, max: usize) -> Vec<usize> {
-    // TODO! substitute with xorshiro
-    let mut rng = rand::thread_rng();
-    let vals: Vec<usize> = (0..num).map(|_| rng.gen_range(0, max)).collect();
-    vals
-}
+use vec_rand::{gen_random_vec};
 
 #[macro_export]
 macro_rules! max {
@@ -51,6 +43,7 @@ impl Graph {
         window_size: Option<usize>,
         negative_samples: Option<f64>,
         shuffle: Option<bool>,
+        seed: u64
     ) -> (
         (
             Vec<usize>,
@@ -91,16 +84,19 @@ impl Graph {
         // TODO! This thing can create false negatives!!
         // The issue was already present in the original TensorFlow implementation.
         let num_negatives = (vector_length as f64 *_negative_samples) as usize;
-        let words_neg: Vec<NodeT> = gen_random_usize_vec(num_negatives, walk.len())
+        let nodes_number = self.get_nodes_number();
+        let words_neg: Vec<NodeT> = gen_random_vec(num_negatives, seed)
             .iter()
-            .map(|i| walk[*i])
+            .map(|i| walk[(*i as NodeT)%walk.len()])
             .collect();
-        let contexts_neg: Vec<NodeT> = gen_random_usize_vec(
-            num_negatives,
-            self.get_nodes_number()
-        );
+        let contexts_neg: Vec<NodeT> = gen_random_vec(num_negatives, seed/2)
+            .iter()
+            .map(|i| (*i as NodeT)%nodes_number)
+            .collect();
         let labels_neg = vec![0; num_negatives];
-    
+        
+        //println!("{}, {}, {}, {}, {}", num_negatives, gen_random_vec(num_negatives, seed).len(), words_neg.len(), contexts_neg.len(), labels_neg.len());
+
         // merge positives and negatives labels
         words.extend(words_neg.iter());
         contexts.extend(contexts_neg.iter());
@@ -209,12 +205,14 @@ impl Graph {
                 .zip(words_indices.par_iter_mut())
                 .zip(contexts_indices.par_iter_mut())
                 .zip(labels_indices.par_iter_mut())
-                .for_each(|(((walk, words_index), contexts_index), labels_index)|{
+                .enumerate()
+                .for_each(|(i, (((walk, words_index), contexts_index), labels_index))|{
                 let ((_words, _contexts), _labels) = self.skipgram(
                     walk,
                     window_size,
                     Some(_negative_samples),
-                    shuffle
+                    shuffle,
+                    (idx + i) as u64
                 );
                 (*words_index).copy_from_slice(&_words);
                 (*contexts_index).copy_from_slice(&_contexts);
@@ -349,21 +347,22 @@ impl Graph {
 
     pub fn link_prediction(
         &self,
-        batch_size:u64,
+        idx:u64,
+        batch_size:usize,
         negative_samples: Option<f64>,
         graph_to_avoid: Option<&Graph>,
         shuffle: Option<bool>
     )->Result<(Vec<NodeT>, Vec<NodeT>, Vec<u8>), String>{
         let _negative_samples = negative_samples.unwrap_or(1.0);
         let _shuffle = shuffle.unwrap_or(true);
-        let negatives_number:u64 = ((batch_size as f64 / (1.0 + _negative_samples)) * _negative_samples) as u64;
-        let positives_number:u64 = batch_size - negatives_number;
+        let negatives_number:usize = ((batch_size as f64 / (1.0 + _negative_samples)) * _negative_samples) as usize;
+        let positives_number:usize = batch_size - negatives_number;
 
         let edges_number = self.get_edges_number() as u64;
-        let positives:Vec<(NodeT, NodeT)> = (0..positives_number)
+        let positives:Vec<(NodeT, NodeT)> = gen_random_vec(positives_number, idx)
             .into_par_iter()
-            .map(|_| {
-                let edge = (random_u64() % edges_number) as EdgeT;
+            .map(|random_value| {
+                let edge = (random_value % edges_number) as EdgeT;
                 let src = self.sources[edge];
                 let dst = self.destinations[edge];
                 (src, dst)
@@ -375,11 +374,12 @@ impl Graph {
             })
             .collect();
 
-        let negatives:Vec<(NodeT, NodeT)> = (0..negatives_number)
+        let negatives:Vec<(NodeT, NodeT)> = gen_random_vec(negatives_number, idx/2)
             .into_par_iter()
-            .map(|_| (
-                self.sources[(random_u64() % edges_number) as EdgeT],
-                self.destinations[(random_u64() % edges_number) as EdgeT]
+            .zip(gen_random_vec(negatives_number, idx/3).into_par_iter())
+            .map(|(random_src, random_dst)| (
+                self.sources[(random_src % edges_number) as EdgeT],
+                self.destinations[(random_dst % edges_number) as EdgeT]
                 )
             )
             .filter(|(src, dst)| ! (self.has_edge(*src, *dst) || if let Some(g) = &graph_to_avoid{

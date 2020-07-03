@@ -35,11 +35,11 @@ fn test_holdout() {
                 assert!(validation.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false)).is_ok());
                 assert!(validation.skipgrams(0, 128, 80, None, None, None, None, None, None, None, None, None).is_ok());
                 assert!(validation.walk(80, Some(1), Some(0), None, None, None, None, None, None, Some(false)).is_ok());
-                assert!(train.link_prediction(128, None, None, None).is_ok());
-                assert!(train.link_prediction(128, None, Some(&validation), None).is_ok());
-                assert!(train.link_prediction(128, Some(2.0), Some(&validation), None).is_ok());
-                assert!(validation.link_prediction(128, Some(2.0), Some(&train), None).is_ok());
-                assert!(validation.link_prediction(128, Some(0.5), Some(&train), None).is_ok());
+                assert!(train.link_prediction(0, 128, None, None, None).is_ok());
+                assert!(train.link_prediction(1, 128, None, Some(&validation), None).is_ok());
+                assert!(train.link_prediction(2, 128, Some(2.0), Some(&validation), None).is_ok());
+                assert!(validation.link_prediction(3, 128, Some(2.0), Some(&train), None).is_ok());
+                assert!(validation.link_prediction(5, 128, Some(0.5), Some(&train), None).is_ok());
                 assert_eq!(train.get_nodes_number(), graph.get_nodes_number());
                 assert_eq!(validation.get_nodes_number(), graph.get_nodes_number());
                 assert!(graph.contains(&train));

@@ -1079,7 +1079,7 @@ impl EnsmallenGraph {
     /// Returns
     /// -----------------------------
     /// Tuple containing training and validation graphs.
-    fn link_prediction(&self, batch_size:u64, py_kwargs: Option<&PyDict>) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<u8>>)> {
+    fn link_prediction(&self, idx:u64, batch_size:usize, py_kwargs: Option<&PyDict>) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<u8>>)> {
         let results = if let Some(kwargs) = py_kwargs {
             let ensmallen_graph = kwargs
                 .get_item("graph_to_avoid")
@@ -1093,6 +1093,7 @@ impl EnsmallenGraph {
                 None
             };
             self.graph.link_prediction(
+                idx,
                 batch_size,
                 kwargs
                     .get_item("negative_samples")
@@ -1103,7 +1104,7 @@ impl EnsmallenGraph {
                     .map(|val| val.extract::<bool>().unwrap())
             )
         } else {
-            self.graph.link_prediction(batch_size, None, None, None)
+            self.graph.link_prediction(idx, batch_size, None, None, None)
         };
         let gil = pyo3::Python::acquire_gil();
         match results {
