@@ -151,7 +151,7 @@ impl Graph {
                 )?
             )
         } else {
-            let g1 = Graph::new_undirected(
+            (Graph::new_undirected(
                 train_sources,
                 train_destinations,
                 Some(self.nodes_mapping.clone()),
@@ -173,8 +173,8 @@ impl Graph {
                 },
                 Some(true),
                 None
-            ).unwrap();
-            let g2 = Graph::new_undirected(
+            )?,
+            Graph::new_undirected(
                 valid_sources,
                 valid_destinations,
                 Some(self.nodes_mapping.clone()),
@@ -196,8 +196,7 @@ impl Graph {
                 },
                 Some(true),
                 None
-            ).unwrap();
-            (g1, g2)
+            )?)
         })
     }
 }

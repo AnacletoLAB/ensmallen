@@ -104,6 +104,64 @@ impl Graph {
         self.unique_edges.contains_key(&(src, dst))
     }
 
+    /// Return true if given graph has any edge overlapping with current graph.
+    /// 
+    /// # Arguments
+    /// 
+    /// * graph: Graph - The graph to check against.
+    /// 
+    pub fn overlaps(&self, graph: &Graph) -> bool {
+        graph.sources
+            .par_iter()
+            .zip(graph.destinations.par_iter())
+            .any(|(src, dst)| {
+                let local_src_id:Option<&NodeT> = self.nodes_mapping.get(
+                    &graph.nodes_reverse_mapping[*src].clone()
+                );
+                let local_dst_id:Option<&NodeT> = self.nodes_mapping.get(
+                    &graph.nodes_reverse_mapping[*dst].clone()
+                );
+                if let Some(lsrc) = local_src_id {
+                    if let Some(ldst) = local_dst_id {
+                        self.has_edge(*lsrc, *ldst)
+                    } else {
+                        false
+                    }
+                } else {
+                    false
+                }
+            })
+    }
+
+    /// Return true if given graph edges are all contained within current graph.
+    /// 
+    /// # Arguments
+    /// 
+    /// * graph: Graph - The graph to check against.
+    /// 
+    pub fn contains(&self, graph: &Graph) -> bool {
+        graph.sources
+            .par_iter()
+            .zip(graph.destinations.par_iter())
+            .all(|(src, dst)| {
+                let local_src_id:Option<&NodeT> = self.nodes_mapping.get(
+                    &graph.nodes_reverse_mapping[*src].clone()
+                );
+                let local_dst_id:Option<&NodeT> = self.nodes_mapping.get(
+                    &graph.nodes_reverse_mapping[*dst].clone()
+                );
+                if let Some(lsrc) = local_src_id {
+                    if let Some(ldst) = local_dst_id {
+                        self.has_edge(*lsrc, *ldst)
+                    } else {
+                        false
+                    }
+                } else {
+                    false
+                }
+            })
+    }
+
     /// Returns edge id of the edge passing between given nodes.
     /// 
     /// # Arguments

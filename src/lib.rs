@@ -1036,11 +1036,7 @@ impl EnsmallenGraph {
     /// * unique_edge_types_number: the number of different edge types in the graph.
     ///
     fn report(&self) -> HashMap<&str, String> {
-        self.graph
-            .report()
-            .iter()
-            .map(|(k, v)| (*k, v.clone()))
-            .collect()
+        self.graph.report()
     }
 
     #[text_signature = "($self, seed, train_percentage)"]

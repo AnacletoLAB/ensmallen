@@ -2,6 +2,7 @@ use super::types::*;
 use super::*;
 use rayon::prelude::*;
 use hashbrown::{HashMap, HashSet};
+use std::collections::{HashMap as DefaultHashMap};
 
 /// Properties and measurements of the graph
 impl Graph {
@@ -185,6 +186,11 @@ impl Graph {
             .sum::<usize>() as f64 / self.unique_edges.len() as f64
     }
 
+    /// Return number of connected components in graph.
+    pub fn connected_components_number(&self)->NodeT{
+        self.get_nodes_number() - self.spanning_tree(0).len() +1 
+    }
+
     /// Returns report relative to the graph metrics
     ///
     /// The report includes a few useful metrics like:
@@ -200,8 +206,8 @@ impl Graph {
     /// * selfloops_percentage: pecentage of edges that are selfloops.
     /// * bidirectional_percentage: percentage of edges that are bidirectional.
     ///
-    pub fn report(&self) -> HashMap<&str, String> {
-        let mut report: HashMap<&str, String> = HashMap::new();
+    pub fn report(&self) -> DefaultHashMap<&str, String> {
+        let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
         report.insert("degrees_median", self.degrees_median().to_string());
         report.insert("degrees_mean", self.degrees_mean().to_string());
         report.insert("degrees_mode", self.degrees_mode().to_string());
@@ -216,8 +222,22 @@ impl Graph {
             self.get_edge_types_number().to_string(),
         );
         report.insert("traps_rate", self.traps_rate().to_string());
-        report.insert("selfloops_percentage", self.selfloops_percentage().to_string());
-        report.insert("bidirectional_percentage", self.bidirectional_percentage().to_string());
+        report.insert(
+            "selfloops_percentage",
+            self.selfloops_percentage().to_string()
+        );
+        report.insert(
+            "bidirectional_percentage",
+            self.bidirectional_percentage().to_string()
+        );
+        report.insert(
+            "connected_components_number",
+            self.connected_components_number().to_string()
+        );
+        report.insert(
+            "strongly_connected_components_number",
+            self.strongly_connected_components().len().to_string()
+        );
         report
     }
 }
