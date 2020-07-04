@@ -53,7 +53,7 @@ struct WalkArgs {
 #[derive(Arbitrary, Debug)]
 struct SkipgramsArgs {
     idx: u16,
-    batch_size: u16,
+    batch_size: u8,
     length: u8,
     iterations: Option<u8>,
     window_size: Option<u8>,
@@ -81,7 +81,7 @@ struct CooccurrenceArgs {
 #[derive(Arbitrary, Debug)]
 struct LinkPredictionArgs {
     idx: u16,
-    batch_size: u16,
+    batch_size: u8,
     negative_samples: Option<f64>,
     graph_to_avoid: Option<FromCsvAgs>,
     shuffle: Option<bool>
