@@ -33,6 +33,7 @@ fn test_graph_from_csv_edge_only() {
         if *directed{
             assert_eq!(lines, graph.get_edges_number());
         }
+        assert_eq!(graph, graph);
         assert!(graph.get_node_type_id(0).is_err());
         assert!(graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(true)).is_ok());
         assert!(graph.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false)).is_ok());

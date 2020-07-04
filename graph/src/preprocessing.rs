@@ -381,21 +381,25 @@ impl Graph {
                 )
             })
             .collect();
-
-        let negatives:Vec<(NodeT, NodeT)> = gen_random_vec(negatives_number, idx/2)
-            .into_par_iter()
-            .zip(gen_random_vec(negatives_number, idx/3).into_par_iter())
-            .map(|(random_src, random_dst)| (
-                self.sources[(random_src % edges_number) as EdgeT],
-                self.destinations[(random_dst % edges_number) as EdgeT]
+        
+        let negatives:Vec<(NodeT, NodeT)> = if negatives_number != 0 {
+            gen_random_vec(negatives_number, idx/2)
+                .into_par_iter()
+                .zip(gen_random_vec(negatives_number, idx/3).into_par_iter())
+                .map(|(random_src, random_dst)| (
+                    self.sources[(random_src % edges_number) as EdgeT],
+                    self.destinations[(random_dst % edges_number) as EdgeT]
+                    )
                 )
-            )
-            .filter(|(src, dst)| ! (self.has_edge(*src, *dst) || if let Some(g) = &graph_to_avoid{
-                g.has_edge(*src, *dst)
-            } else {
-                false
-            }))
-            .collect();
+                .filter(|(src, dst)| ! (self.has_edge(*src, *dst) || if let Some(g) = &graph_to_avoid{
+                    g.has_edge(*src, *dst)
+                } else {
+                    false
+                }))
+                .collect()
+        } else {
+            vec![]
+        };
         
         let mut labels:Vec<u8> = [vec![1 as u8; positives.len()], vec![0 as u8; negatives.len()]]
             .iter()

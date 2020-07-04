@@ -16,7 +16,7 @@ use rayon::prelude::*;
 ///
 /// # Examples
 ///
-#[derive(Debug, Clone, Getters)]
+#[derive(Debug, Clone, Getters, PartialEq)]
 pub struct Graph {
     pub is_directed: bool,
     pub sources: Vec<NodeT>,

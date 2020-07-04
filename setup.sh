@@ -3,7 +3,7 @@ CURRENT_FOLDER=$(dirname "$(python -c "import os,sys; print(os.path.realpath(sys
 
 # gcc, make, ecc
 sudo apt-get update -qyy
-sudo apt-get install build-essential htop kcov -qyy
+sudo apt-get install build-essential byobu htop kcov -qyy
 
 ###########################################################
 # Install anaconda to have an easily reporducible python environments

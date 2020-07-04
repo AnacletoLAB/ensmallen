@@ -2,7 +2,7 @@
 use libfuzzer_sys::fuzz_target;
 extern crate graph;
 
-use graph::WeightT;
+use graph::*;
 
 use std::path::Path;
 use std::fs::File;
@@ -16,7 +16,7 @@ use utils::*;
 use arbitrary::Arbitrary;
 
 #[derive(Arbitrary, Debug)]
-struct ToFuzz {
+struct FromCsvAgs {
     edges_content: String,
     nodes_content: Option<String>,
 
@@ -35,19 +35,88 @@ struct ToFuzz {
     validate_input_data: Option<bool>,
     ignore_duplicated_edges: Option<bool>,
     ignore_duplicated_nodes: Option<bool>,
-    force_conversion_to_undirected: Option<bool>
+    force_conversion_to_undirected: Option<bool>,
 }
 
-fuzz_target!(|data: ToFuzz| {
+#[derive(Arbitrary, Debug)]
+struct WalkArgs {
+    length: usize,
+    iterations: Option<usize>,
+    start_node: Option<usize>,
+    end_node: Option<usize>,
+    min_length: Option<usize>,
+    return_weight: Option<ParamsT>,
+    explore_weight: Option<ParamsT>,
+    change_node_type_weight: Option<ParamsT>,
+    change_edge_type_weight: Option<ParamsT>,
+    verbose: Option<bool>,
+}
+
+#[derive(Arbitrary, Debug)]
+struct SkipgramsArgs {
+    idx: usize,
+    batch_size: usize,
+    length: usize,
+    iterations: Option<usize>,
+    window_size: Option<usize>,
+    negative_samples: Option<f64>,
+    shuffle: Option<bool>,
+    min_length: Option<usize>,
+    return_weight: Option<ParamsT>,
+    explore_weight: Option<ParamsT>,
+    change_node_type_weight: Option<ParamsT>,
+    change_edge_type_weight: Option<ParamsT>
+}
+
+#[derive(Arbitrary, Debug)]
+struct CooccurrenceArgs {
+    length: usize,
+    window_size: Option<usize>,
+    iterations: Option<usize>,
+    min_length: Option<usize>,
+    return_weight: Option<ParamsT>,
+    explore_weight: Option<ParamsT>,
+    change_node_type_weight: Option<ParamsT>,
+    change_edge_type_weight: Option<ParamsT>,
+    verbose: Option<bool>
+}
+
+#[derive(Arbitrary, Debug)]
+struct LinkPredictionArgs {
+    idx: u64,
+    batch_size: usize,
+    negative_samples: Option<f64>,
+    graph_to_avoid: Option<FromCsvAgs>,
+    shuffle: Option<bool>
+}
+
+#[derive(Arbitrary, Debug)]
+struct HoldoutArgs {
+    seed: NodeT,
+    train_percentage: f64
+}
+
+#[derive(Arbitrary, Debug)]
+struct ToFuzz {
+    from_csv_args: FromCsvAgs,
+    walks_args: WalkArgs,
+    skipgrams_args: SkipgramsArgs,
+    cooccurence_args: CooccurrenceArgs,
+    link_prediction_args: LinkPredictionArgs,
+    holdout_args: HoldoutArgs
+}
+
+fn create_graph_from_args_struct(args: &FromCsvAgs) -> Result<Graph, String>{
+    
     // Create the edges file
     let edges_fname = Path::new("/tmp").join(random_string(64));
     let edges_filename = edges_fname.to_str().unwrap();
     let mut edges_file = File::create(&edges_filename).unwrap();
-    edges_file.write_all(&data.edges_content.as_bytes()).unwrap();
+    edges_file.write_all(&args.edges_content.as_bytes()).unwrap();
 
     let nodes_fname = Path::new("/tmp").join(random_string(64));
     let nodes_filename = nodes_fname.to_str().unwrap();
-    let node_file = if let Some(ns) = &data.nodes_content {
+    let node_file = if let Some(ns) = &args.nodes_content {
         let mut nodes_file = File::create(&nodes_filename).unwrap();
         nodes_file.write_all(ns.as_bytes()).unwrap();
         Some(nodes_filename)
@@ -55,49 +124,49 @@ fuzz_target!(|data: ToFuzz| {
         None
     };
 
-    let edge_types_column = if let Some(v) = &data.edge_types_column {
+    let edge_types_column = if let Some(v) = &args.edge_types_column {
         Some(v.as_str())
     } else {
         None
     };
 
-    let default_edge_type = if let Some(v) = &data.default_edge_type {
+    let default_edge_type = if let Some(v) = &args.default_edge_type {
         Some(v.as_str())
     } else {
         None
     };
 
-    let weights_column = if let Some(v) = &data.weights_column {
+    let weights_column = if let Some(v) = &args.weights_column {
         Some(v.as_str())
     } else {
         None
     };
 
-    let nodes_column = if let Some(v) = &data.nodes_column {
+    let nodes_column = if let Some(v) = &args.nodes_column {
         Some(v.as_str())
     } else {
         None
     };
     
-    let node_types_column = if let Some(v) = &data.node_types_column {
+    let node_types_column = if let Some(v) = &args.node_types_column {
         Some(v.as_str())
     } else {
         None
     };
 
-    let default_edge_type = if let Some(v) = &data.default_edge_type {
+    let default_node_type = if let Some(v) = &args.default_node_type {
         Some(v.as_str())
     } else {
         None
     };
 
-    let edge_sep = if let Some(v) = &data.edge_sep {
+    let edge_sep = if let Some(v) = &args.edge_sep {
         Some(v.as_str())
     } else {
         None
     };
 
-    let node_sep = if let Some(v) = &data.node_sep {
+    let node_sep = if let Some(v) = &args.node_sep {
         Some(v.as_str())
     } else {
         None
@@ -105,32 +174,104 @@ fuzz_target!(|data: ToFuzz| {
 
     let graph = graph::Graph::from_csv(
         &edges_filename,
-        &data.sources_column,
-        &data.destinations_column,
-        data.directed,
+        &args.sources_column,
+        &args.destinations_column,
+        args.directed,
         edge_types_column,
         default_edge_type,
         weights_column,
-        data.default_weight,
+        args.default_weight,
         node_file,
         nodes_column,
         node_types_column,
-        default_edge_type,
+        default_node_type,
         edge_sep,
         node_sep,
-        data.validate_input_data,
-        data.ignore_duplicated_edges,
-        data.ignore_duplicated_nodes,
-        data.force_conversion_to_undirected
+        args.validate_input_data,
+        args.ignore_duplicated_edges,
+        args.ignore_duplicated_nodes,
+        args.force_conversion_to_undirected
     );
-
-    if graph.is_ok(){
-        let _ = graph.unwrap().walk(10, Some(10), None, None, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false));
+    
+    //clean up
+    let _ = remove_file(&edges_filename).unwrap();
+    if args.nodes_content.is_some() {
+        let _ = remove_file(&nodes_filename);
     }
     
-    let _ = remove_file(&edges_filename).unwrap();
+    graph
+}
 
-    if let Some(ns) = &data.nodes_content {
-        let _ = remove_file(&ns);
+fuzz_target!(|data: ToFuzz| {
+
+    let graph = create_graph_from_args_struct(&data.from_csv_args);
+
+    if graph.is_ok(){
+        let unwrapped = graph.unwrap();
+        let _ = unwrapped.walk(
+            data.walks_args.length,
+            data.walks_args.iterations,
+            data.walks_args.start_node,
+            data.walks_args.end_node,
+            data.walks_args.min_length,
+            data.walks_args.return_weight,
+            data.walks_args.explore_weight,
+            data.walks_args.change_node_type_weight,
+            data.walks_args.change_edge_type_weight,
+            data.walks_args.verbose
+        );
+
+        let _ = unwrapped.skipgrams(
+            data.skipgrams_args.idx,
+            data.skipgrams_args.batch_size,
+            data.skipgrams_args.length,
+            data.skipgrams_args.iterations,
+            data.skipgrams_args.window_size,
+            data.skipgrams_args.negative_samples,
+            data.skipgrams_args.shuffle,
+            data.skipgrams_args.min_length,
+            data.skipgrams_args.return_weight,
+            data.skipgrams_args.explore_weight,
+            data.skipgrams_args.change_node_type_weight,
+            data.skipgrams_args.change_edge_type_weight,
+        );
+
+        let _ = unwrapped.cooccurence_matrix(
+            data.cooccurence_args.length,
+            data.cooccurence_args.window_size,
+            data.cooccurence_args.iterations,
+            data.cooccurence_args.min_length,
+            data.cooccurence_args.return_weight,
+            data.cooccurence_args.explore_weight,
+            data.cooccurence_args.change_node_type_weight,
+            data.cooccurence_args.change_edge_type_weight,
+            data.cooccurence_args.verbose,
+        );
+
+        let _ = unwrapped.holdout(
+            data.holdout_args.seed,
+            data.holdout_args.train_percentage
+        );
+
+        if data.link_prediction_args.graph_to_avoid.is_none() {
+            let _ = unwrapped.link_prediction(
+                data.link_prediction_args.idx,
+                data.link_prediction_args.batch_size,
+                data.link_prediction_args.negative_samples,
+                None,
+                data.link_prediction_args.shuffle,
+            );   
+        } else {
+
+            let graph_args_2 = data.link_prediction_args.graph_to_avoid.unwrap();
+            let _ = unwrapped.link_prediction(
+                data.link_prediction_args.idx,
+                data.link_prediction_args.batch_size,
+                data.link_prediction_args.negative_samples,
+                Some(&create_graph_from_args_struct(&graph_args_2).unwrap()),
+                data.link_prediction_args.shuffle,
+            );   
+        }
     }
+    
 });
