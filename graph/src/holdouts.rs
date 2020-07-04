@@ -124,8 +124,7 @@ impl Graph {
                         Some(train_weights)
                     } else {
                         None
-                    },
-                    Some(true)
+                    }
                 )?,
                 Graph::new_directed(
                     valid_sources,
@@ -146,8 +145,7 @@ impl Graph {
                         Some(valid_weights)
                     } else {
                         None
-                    },
-                    Some(true)
+                    }
                 )?
             )
         } else {
@@ -171,7 +169,6 @@ impl Graph {
                 } else {
                     None
                 },
-                Some(true),
                 None
             )?,
             Graph::new_undirected(
@@ -194,7 +191,6 @@ impl Graph {
                 } else {
                     None
                 },
-                Some(true),
                 None
             )?)
         })

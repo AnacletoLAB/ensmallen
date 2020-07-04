@@ -22,7 +22,6 @@ fn test_spanning_tree() {
             None,
             None,
             None,
-            None,
             None
         ).unwrap();
         for node in 0..graph.get_nodes_number(){

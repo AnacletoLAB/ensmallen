@@ -23,11 +23,10 @@ fn test_holdout() {
             None,
             None,
             None,
-            None,
             None
         ).unwrap();
-        for seed in vec![0, 67, 34567, 6786757].iter().progress(){
-            for percentange in vec![0.3, 0.5, 0.8, 0.9].iter(){
+        for seed in vec![0, 6786757].iter().progress(){
+            for percentange in vec![0.5, 0.9].iter(){
                 let (train, validation) = graph.holdout(*seed as usize, *percentange as f64).unwrap();
                 assert!(train.cooccurence_matrix(10, None, None, None, Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false)).is_ok());
                 assert!(train.skipgrams(0, 128, 80, None, None, None, None, None, None, None, None, None).is_ok());
@@ -50,5 +49,35 @@ fn test_holdout() {
                 assert!(!train.overlaps(&validation));
             }
         }
+    }
+}
+
+#[test]
+fn test_holdout_determinism() {
+    let path = "tests/data/ppi.tsv";
+    for directed in &[false, true]{
+        let graph = Graph::from_csv(
+            &path,
+            "subject",
+            "object",
+            *directed,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None
+        ).unwrap();
+        let (train1, test1) = graph.holdout(35, 0.8).unwrap();
+        let (train2, test2) = graph.holdout(35, 0.8).unwrap();
+        assert_eq!(train1, train2);
+        assert_eq!(test1, test2);
     }
 }

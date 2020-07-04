@@ -388,7 +388,6 @@ impl Graph {
         default_node_type: Option<&str>,
         edge_sep: Option<&str>,
         node_sep: Option<&str>,
-        validate_input_data: Option<bool>,
         ignore_duplicated_edges: Option<bool>,
         ignore_duplicated_nodes: Option<bool>,
         force_conversion_to_undirected: Option<bool>
@@ -396,44 +395,52 @@ impl Graph {
         // If the separators were not provided we use by default tabs.
         let _edge_sep = edge_sep.unwrap_or_else(|| "\t");
         let _node_sep = node_sep.unwrap_or_else(|| "\t");
-        let _validate_input_data = validate_input_data.unwrap_or_else(|| true);
         let _ignore_duplicated_edges = ignore_duplicated_edges.unwrap_or_else(|| false);
         let _ignore_duplicated_nodes = ignore_duplicated_nodes.unwrap_or_else(|| false);
+        
+        if _edge_sep.is_empty() {
+            return Err(String::from(
+                "The edge separator is empty"
+            ));
+        }
+        if _node_sep.is_empty() {
+            return Err(String::from(
+                "The node separator is empty"
+            ));
+        }
 
-        if _validate_input_data {
-            // We validate the provided files, starting from the edges file.
-            // Specifically, we start by checking if every line has the same amount
-            // of the given separator character.
-            check_consistent_lines(&*edge_path, &*_edge_sep)?;
-            // Then we check if the given columns actually exist in the given file
-            // header.
-            has_columns(
-                &*edge_path,
-                &*_edge_sep,
-                &[&sources_column, &destinations_column],
-                &[&edge_types_column, &weights_column],
-            )?;
+        // We validate the provided files, starting from the edges file.
+        // Specifically, we start by checking if every line has the same amount
+        // of the given separator character.
+        check_consistent_lines(&*edge_path, &*_edge_sep)?;
+        // Then we check if the given columns actually exist in the given file
+        // header.
+        has_columns(
+            &*edge_path,
+            &*_edge_sep,
+            &[&sources_column, &destinations_column],
+            &[&edge_types_column, &weights_column],
+        )?;
 
-            // If the nodes path was provided, we also validate it.
-            if let Some(path) = &node_path {
-                // As for the previous file, first we check that the file has the
-                // same amount of separators in each line.
-                check_consistent_lines(&*path, &*_node_sep)?;
-                if nodes_column.is_none() || node_types_column.is_none(){
-                    return Err(String::from(concat!(
-                        "If the node_path is passed, ",
-                        "the nodes_column and node_types_column",
-                        " parameters are also required."
-                    )))
-                }
-                // Then we check if the given columns actually exists in the file.
-                has_columns(
-                    &*path,
-                    &*_node_sep,
-                    &[&nodes_column.clone().unwrap(), &node_types_column.unwrap()],
-                    &[],
-                )?;
+        // If the nodes path was provided, we also validate it.
+        if let Some(path) = &node_path {
+            // As for the previous file, first we check that the file has the
+            // same amount of separators in each line.
+            check_consistent_lines(&*path, &*_node_sep)?;
+            if nodes_column.is_none() || node_types_column.is_none(){
+                return Err(String::from(concat!(
+                    "If the node_path is passed, ",
+                    "the nodes_column and node_types_column",
+                    " parameters are also required."
+                )))
             }
+            // Then we check if the given columns actually exists in the file.
+            has_columns(
+                &*path,
+                &*_node_sep,
+                &[&nodes_column.clone().unwrap(), &node_types_column.unwrap()],
+                &[],
+            )?;
         }
 
         let (
@@ -490,8 +497,7 @@ impl Graph {
                 edge_types,
                 edge_types_mapping,
                 edge_types_reverse_mapping,
-                weights,
-                Some(_validate_input_data),
+                weights
             )
         } else {
             Graph::new_undirected(
@@ -506,7 +512,6 @@ impl Graph {
                 edge_types_mapping,
                 edge_types_reverse_mapping,
                 weights,
-                Some(_validate_input_data),
                 force_conversion_to_undirected
             )
         }

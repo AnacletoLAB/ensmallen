@@ -3,7 +3,7 @@ CURRENT_FOLDER=$(dirname "$(python -c "import os,sys; print(os.path.realpath(sys
 
 # gcc, make, ecc
 sudo apt-get update -qyy
-sudo apt-get install build-essential htop kcov -qyy
+sudo apt-get install build-essential byobu htop -qyy
 
 ###########################################################
 # Install anaconda to have an easily reporducible python environments
@@ -26,6 +26,15 @@ rm $HOME/rustup.sh
 # load for current shell
 source $HOME/.bashrc
 source $HOME/.cargo/env
+
+# ASan/LibFuzzer
+export ASAN_OPTIONS=\
+detect_stack_use_after_scope=true:\
+detect_invalid_pointer_pairs=1:\
+strict_init_order=true:\
+check_initialization_order=true:\
+allocator_may_return_null=true:\
+${ASAN}
 
 # Setup cargo-fuzz
 cargo install cargo-fuzz

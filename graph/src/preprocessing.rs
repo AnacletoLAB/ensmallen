@@ -112,7 +112,9 @@ impl Graph {
         ((words, contexts), labels)
     }
     
-    // TODO docstring
+    /// Returns skipgram training batch for given index.
+    /// 
+    /// 
     pub fn skipgrams(
         &self,
         idx: usize,
@@ -129,7 +131,30 @@ impl Graph {
         change_edge_type_weight: Option<ParamsT>
     ) -> Result<((Vec<usize>,Vec<usize>),Vec<u8>), String>{
 
-        if idx*batch_size >= self.get_nodes_number(){
+        let opt_idx =  idx.checked_add(1);
+        if opt_idx.is_none() {
+            return Err(
+                format!(
+                    "The Index {} + 1 oveflow the u64.",
+                    idx
+                )
+            )
+        }
+
+        let opt_end_node = opt_idx.unwrap().checked_mul(batch_size);
+        if opt_end_node.is_none() {
+            return Err(
+                format!(
+                    "The Index+1 {} and batchsize {} when multiplied oveflow the u64.",
+                    idx+1, batch_size
+                )
+            )
+        }
+
+        let start_node = idx*batch_size;
+        let end_node = min!(self.get_nodes_number(), opt_end_node.unwrap());
+
+        if  start_node >= self.get_nodes_number(){
             return Err(format!(
                 concat!(
                     "The given walk index {idx} with batch size {batch_size} ",
@@ -144,8 +169,8 @@ impl Graph {
         let walks = self.walk(
             length,
             iterations,
-            Some(idx*batch_size),
-            Some(min!(self.get_nodes_number(), (idx+1)*batch_size)),
+            Some(start_node),
+            Some(end_node),
             min_length,
             return_weight,
             explore_weight,
@@ -153,6 +178,15 @@ impl Graph {
             change_edge_type_weight,
             Some(false)
         ).unwrap();
+
+        if walks.is_empty(){
+            return Err(String::from(concat!(
+                "An empty set of walks was generated.\n",
+                "Consider changing the minimum length parameter, ",
+                "increasing the batch size, the iterations and ",
+                "checking the number of trap nodes in the graph."
+            )));
+        }
 
         let mut cumsum:Vec<usize> = Vec::with_capacity(walks.len());
         let _window_size = window_size.unwrap_or(4);
@@ -381,21 +415,25 @@ impl Graph {
                 )
             })
             .collect();
-
-        let negatives:Vec<(NodeT, NodeT)> = gen_random_vec(negatives_number, idx/2)
-            .into_par_iter()
-            .zip(gen_random_vec(negatives_number, idx/3).into_par_iter())
-            .map(|(random_src, random_dst)| (
-                self.sources[(random_src % edges_number) as EdgeT],
-                self.destinations[(random_dst % edges_number) as EdgeT]
+        
+        let negatives:Vec<(NodeT, NodeT)> = if negatives_number != 0 {
+            gen_random_vec(negatives_number, idx/2)
+                .into_par_iter()
+                .zip(gen_random_vec(negatives_number, idx/3).into_par_iter())
+                .map(|(random_src, random_dst)| (
+                    self.sources[(random_src % edges_number) as EdgeT],
+                    self.destinations[(random_dst % edges_number) as EdgeT]
+                    )
                 )
-            )
-            .filter(|(src, dst)| ! (self.has_edge(*src, *dst) || if let Some(g) = &graph_to_avoid{
-                g.has_edge(*src, *dst)
-            } else {
-                false
-            }))
-            .collect();
+                .filter(|(src, dst)| ! (self.has_edge(*src, *dst) || if let Some(g) = &graph_to_avoid{
+                    g.has_edge(*src, *dst)
+                } else {
+                    false
+                }))
+                .collect()
+        } else {
+            vec![]
+        };
         
         let mut labels:Vec<u8> = [vec![1 as u8; positives.len()], vec![0 as u8; negatives.len()]]
             .iter()

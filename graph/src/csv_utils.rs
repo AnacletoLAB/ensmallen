@@ -36,7 +36,24 @@ pub fn check_consistent_lines(path: &str, sep: &str) -> Result<(), String>{
                     line = current_line
                 )
             )
-        };
+        }
+        if separators_number == 0 {
+            return Err(
+                format!(
+                    concat!(
+                        "Provided file has malformed lines. ",
+                        "The provided lines have no instances ",
+                        "of the given separator.\n",
+                        "The line is the number {counter}.\n",
+                        "The given file is at path {path}.\n",
+                        "The line in question is: '{line}'\n",
+                    ),
+                    counter = counter,
+                    path = path,
+                    line = current_line
+                )
+            )
+        }
     }
     Ok(())
 }
@@ -71,6 +88,9 @@ pub fn has_columns(
     let candidate_columns = get_headers(path, sep);
 
     for column in rendered_columns {
+        if column.is_empty(){
+            return Err(String::from("Given column name is an empty string."));
+        }
         if !candidate_columns.contains(&String::from(column)) {
             return Err(
                 format!(
