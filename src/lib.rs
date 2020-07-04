@@ -18,7 +18,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
 
 #[pyclass]
 #[derive(Clone)]
-#[text_signature = "(sources, destinations, *, nodes_mapping, nodes_reverse_mapping, node_types, node_types_mapping, node_types_reverse_mapping, edge_types, edge_types_mapping, edge_types_reverse_mapping, weights, validate_input_data, force_conversion_to_undirected)"]
+#[text_signature = "(sources, destinations, *, nodes_mapping, nodes_reverse_mapping, node_types, node_types_mapping, node_types_reverse_mapping, edge_types, edge_types_mapping, edge_types_reverse_mapping, weights, force_conversion_to_undirected)"]
 /// Return new EnsmallenGraph.
 /// 
 /// sources: List[int],
