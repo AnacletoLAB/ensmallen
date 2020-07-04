@@ -174,7 +174,7 @@ impl EnsmallenGraph {
 
     #[staticmethod]
     #[args(py_kwargs = "**")]
-    #[text_signature = "(edge_path, sources_column, destinations_column, directed, *, edge_types_column, default_edge_type, weights_column, default_weight, node_path, nodes_column, node_types_column, default_node_type, edge_sep, node_sep, validate_input_data, ignore_duplicated_edges, ignore_duplicated_nodes, force_conversion_to_undirected)"]
+    #[text_signature = "(edge_path, sources_column, destinations_column, directed, *, edge_types_column, default_edge_type, weights_column, default_weight, node_path, nodes_column, node_types_column, default_node_type, edge_sep, node_sep, ignore_duplicated_edges, ignore_duplicated_nodes, force_conversion_to_undirected)"]
     /// Build the graph from a csv (or tsv) in Rust.
     ///
     /// Parameters
