@@ -44,10 +44,10 @@ struct WalkArgs {
     start_node: Option<u16>,
     end_node: Option<u16>,
     min_length: Option<u8>,
-    return_weight: Option<ParamsT>,
-    explore_weight: Option<ParamsT>,
-    change_node_type_weight: Option<ParamsT>,
-    change_edge_type_weight: Option<ParamsT>,
+    return_weight: Option<f32>,
+    explore_weight: Option<f32>,
+    change_node_type_weight: Option<f32>,
+    change_edge_type_weight: Option<f32>,
     verbose: Option<bool>,
 }
 
@@ -58,13 +58,13 @@ struct SkipgramsArgs {
     length: u8,
     iterations: Option<u8>,
     window_size: Option<u8>,
-    negative_samples: Option<f64>,
+    negative_samples: Option<f32>,
     shuffle: Option<bool>,
     min_length: Option<u8>,
-    return_weight: Option<ParamsT>,
-    explore_weight: Option<ParamsT>,
-    change_node_type_weight: Option<ParamsT>,
-    change_edge_type_weight: Option<ParamsT>
+    return_weight: Option<f32>,
+    explore_weight: Option<f32>,
+    change_node_type_weight: Option<f32>,
+    change_edge_type_weight: Option<f32>
 }
 
 #[derive(Arbitrary, Debug)]
@@ -73,10 +73,10 @@ struct CooccurrenceArgs {
     window_size: Option<u8>,
     iterations: Option<u8>,
     min_length: Option<u8>,
-    return_weight: Option<ParamsT>,
-    explore_weight: Option<ParamsT>,
-    change_node_type_weight: Option<ParamsT>,
-    change_edge_type_weight: Option<ParamsT>,
+    return_weight: Option<f32>,
+    explore_weight: Option<f32>,
+    change_node_type_weight: Option<f32>,
+    change_edge_type_weight: Option<f32>,
     verbose: Option<bool>
 }
 
@@ -84,7 +84,7 @@ struct CooccurrenceArgs {
 struct LinkPredictionArgs {
     idx: u16,
     batch_size: u16,
-    negative_samples: Option<f64>,
+    negative_samples: Option<f32>,
     graph_to_avoid: Option<FromCsvAgs>,
     shuffle: Option<bool>
 }
@@ -92,7 +92,7 @@ struct LinkPredictionArgs {
 #[derive(Arbitrary, Debug)]
 struct HoldoutArgs {
     seed: NodeT,
-    train_percentage: f64
+    train_percentage: f32
 }
 
 #[derive(Arbitrary, Debug)]
@@ -179,7 +179,7 @@ fn create_graph_from_args_struct(args: &FromCsvAgs) -> Result<Graph, String>{
         edge_types_column,
         default_edge_type,
         weights_column,
-        args.default_weight,
+        args.default_weight.map(|e| e as f64),
         node_file,
         nodes_column,
         node_types_column,
@@ -212,10 +212,10 @@ fuzz_target!(|data: ToFuzz| {
             data.walks_args.start_node.map(|e| e as usize),
             data.walks_args.end_node.map(|e| e as usize),
             data.walks_args.min_length.map(|e| e as usize),
-            data.walks_args.return_weight,
-            data.walks_args.explore_weight,
-            data.walks_args.change_node_type_weight,
-            data.walks_args.change_edge_type_weight,
+            data.walks_args.return_weight.map(|e| e as f64),
+            data.walks_args.explore_weight.map(|e| e as f64),
+            data.walks_args.change_node_type_weight.map(|e| e as f64),
+            data.walks_args.change_edge_type_weight.map(|e| e as f64),
             data.walks_args.verbose
         );
 
@@ -225,13 +225,13 @@ fuzz_target!(|data: ToFuzz| {
             data.skipgrams_args.length as usize,
             data.skipgrams_args.iterations.map(|e| e as usize),
             data.skipgrams_args.window_size.map(|e| e as usize),
-            data.skipgrams_args.negative_samples,
+            data.skipgrams_args.negative_samples.map(|e| e as f64),
             data.skipgrams_args.shuffle,
             data.skipgrams_args.min_length.map(|e| e as usize),
-            data.skipgrams_args.return_weight,
-            data.skipgrams_args.explore_weight,
-            data.skipgrams_args.change_node_type_weight,
-            data.skipgrams_args.change_edge_type_weight,
+            data.skipgrams_args.return_weight.map(|e| e as f64),
+            data.skipgrams_args.explore_weight.map(|e| e as f64),
+            data.skipgrams_args.change_node_type_weight.map(|e| e as f64),
+            data.skipgrams_args.change_edge_type_weight.map(|e| e as f64),
         );
 
         let _ = unwrapped.cooccurence_matrix(
@@ -239,23 +239,23 @@ fuzz_target!(|data: ToFuzz| {
             data.cooccurence_args.window_size.map(|e| e as usize),
             data.cooccurence_args.iterations.map(|e| e as usize),
             data.cooccurence_args.min_length.map(|e| e as usize),
-            data.cooccurence_args.return_weight,
-            data.cooccurence_args.explore_weight,
-            data.cooccurence_args.change_node_type_weight,
-            data.cooccurence_args.change_edge_type_weight,
+            data.cooccurence_args.return_weight.map(|e| e as f64),
+            data.cooccurence_args.explore_weight.map(|e| e as f64),
+            data.cooccurence_args.change_node_type_weight.map(|e| e as f64),
+            data.cooccurence_args.change_edge_type_weight.map(|e| e as f64),
             data.cooccurence_args.verbose,
         );
 
         let _ = unwrapped.holdout(
             data.holdout_args.seed,
-            data.holdout_args.train_percentage
+            data.holdout_args.train_percentage as f64
         );
 
         if data.link_prediction_args.graph_to_avoid.is_none() {
             let _ = unwrapped.link_prediction(
                 data.link_prediction_args.idx as u64,
                 data.link_prediction_args.batch_size as usize,
-                data.link_prediction_args.negative_samples,
+                data.link_prediction_args.negative_samples.map(|e| e as f64),
                 None,
                 data.link_prediction_args.shuffle,
             );   
@@ -267,7 +267,7 @@ fuzz_target!(|data: ToFuzz| {
                 let _ = unwrapped.link_prediction(
                     data.link_prediction_args.idx as u64,
                     data.link_prediction_args.batch_size as usize,
-                    data.link_prediction_args.negative_samples,
+                    data.link_prediction_args.negative_samples.map(|e| e as f64),
                     Some(&graph2.unwrap()),
                     data.link_prediction_args.shuffle,
                 );   
