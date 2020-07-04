@@ -45,16 +45,16 @@ impl Graph {
         shuffle: Option<bool>,
         seed: u64
     ) -> (
-        (
-            Vec<usize>,
-            Vec<usize>
-        ),
-        Vec<u8>   
-    ){
+            (
+                Vec<usize>,
+                Vec<usize>
+            ),
+            Vec<u8>   
+        ){
         let _negative_samples = negative_samples.unwrap_or(1.0);
         let _window_size = window_size.unwrap_or(4);
         let _shuffle = shuffle.unwrap_or(true);
-    
+
         let vector_length: usize = skipgram_vector_length(walk.len(), _window_size);
     
         // create the positive data
@@ -78,27 +78,26 @@ impl Graph {
     
         let mut labels = vec![1; vector_length];
     
-        // create negative data
-        // In this implementation, negative samples ARE MANDATORY.
+        if _negative_samples > 0.0{
+            // TODO! This thing can create false negatives!!
+            // The issue was already present in the original TensorFlow implementation.
+            let num_negatives = (vector_length as f64 *_negative_samples) as usize;
+            let nodes_number = self.get_nodes_number();
+            let words_neg: Vec<NodeT> = gen_random_vec(num_negatives, seed)
+                .iter()
+                .map(|i| walk[(*i as NodeT)%walk.len()])
+                .collect();
+            let contexts_neg: Vec<NodeT> = gen_random_vec(num_negatives, seed/2)
+                .iter()
+                .map(|i| (*i as NodeT)%nodes_number)
+                .collect();
+            let labels_neg = vec![0; num_negatives];
         
-        // TODO! This thing can create false negatives!!
-        // The issue was already present in the original TensorFlow implementation.
-        let num_negatives = (vector_length as f64 *_negative_samples) as usize;
-        let nodes_number = self.get_nodes_number();
-        let words_neg: Vec<NodeT> = gen_random_vec(num_negatives, seed)
-            .iter()
-            .map(|i| walk[(*i as NodeT)%walk.len()])
-            .collect();
-        let contexts_neg: Vec<NodeT> = gen_random_vec(num_negatives, seed/2)
-            .iter()
-            .map(|i| (*i as NodeT)%nodes_number)
-            .collect();
-        let labels_neg = vec![0; num_negatives];
-        
-        // merge positives and negatives labels
-        words.extend(words_neg.iter());
-        contexts.extend(contexts_neg.iter());
-        labels.extend(labels_neg.iter());
+            // merge positives and negatives labels
+            words.extend(words_neg.iter());
+            contexts.extend(contexts_neg.iter());
+            labels.extend(labels_neg.iter());
+        }
     
         if _shuffle {
             let mut indices: Vec<usize> = (0..words.len() as usize).collect();
@@ -191,6 +190,12 @@ impl Graph {
         let mut cumsum:Vec<usize> = Vec::with_capacity(walks.len());
         let _window_size = window_size.unwrap_or(4);
         let _negative_samples = negative_samples.unwrap_or(1.0);
+
+        if _negative_samples < 0.0 {
+            return Err(
+                String::from("Negative sample must be a posive real value.")
+            )
+        }
         
         for i in 0..walks.len(){
             let new_value = (skipgram_vector_length(walks[i].len(), _window_size) as f64 * (1.0 + _negative_samples)) as usize;
@@ -401,6 +406,12 @@ impl Graph {
         let negatives_number:usize = ((batch_size as f64 / (1.0 + _negative_samples)) * _negative_samples) as usize;
         // All the remaining values then are positives
         let positives_number:usize = batch_size - negatives_number;
+
+        if _negative_samples < 0.0 {
+            return Err(
+                String::from("Negative sample must be a posive real value.")
+            )
+        }
 
         let edges_number = self.get_edges_number() as u64;
         let positives:Vec<(NodeT, NodeT)> = gen_random_vec(positives_number, idx)
