@@ -43,8 +43,6 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
 ///     Reverse mapping between numeric egde Type IDs and their name.
 /// weights: List[float] = None,
 ///     List of the weight for each edge.
-/// validate_input_data: bool = True,
-///     Wethever to validate or not the input data.
 /// force_conversion_to_undirected: bool = False,
 ///     Wethever to force the conversion from directed graph to undirected
 ///     when there are bidirectional directed edges in the given graph.
@@ -99,9 +97,6 @@ impl EnsmallenGraph {
                     ),
                     kwargs.get_item("weights").map(
                         |val| val.extract::<Vec<WeightT>>().unwrap()
-                    ),
-                    kwargs.get_item("validate_input_data").map(
-                        |val| val.extract::<bool>().unwrap()
                     )
                 )
             } else {
@@ -135,9 +130,6 @@ impl EnsmallenGraph {
                     kwargs.get_item("weights").map(
                         |val| val.extract::<Vec<WeightT>>().unwrap()
                     ),
-                    kwargs.get_item("validate_input_data").map(
-                        |val| val.extract::<bool>().unwrap()
-                    ),
                     kwargs.get_item("force_conversion_to_undirected").map(
                         |val| val.extract::<bool>().unwrap()
                     )
@@ -155,14 +147,12 @@ impl EnsmallenGraph {
                 None,
                 None,
                 None,
-                None,
                 None
             )
         } else {
             Graph::new_undirected(
                 sources,
                 destinations,
-                None,
                 None,
                 None,
                 None,
@@ -220,10 +210,6 @@ impl EnsmallenGraph {
     ///     Separator to use for the edge files.
     /// node_sep:str="\t",
     ///     Separator to use for the node files.
-    /// validate_input_data:bool=True,
-    ///     Wethever to validate or not the files. This should be disabled when
-    ///     you are SURE that the graph data are valid, otherwise the system will
-    ///     panic.
     /// ignore_duplicated_edges:bool=False,
     ///     Wethever to ignore duplicated edges or to raise an exception.
     ///     The duplication includes the edge type, if provided, so for example
@@ -265,7 +251,6 @@ impl EnsmallenGraph {
                 None,
                 None,
                 None,
-                None,
                 None
             );
 
@@ -294,9 +279,6 @@ impl EnsmallenGraph {
             kwargs.get_item("default_node_type").map(extract_value),
             kwargs.get_item("edge_sep").map(extract_value),
             kwargs.get_item("node_sep").map(extract_value),
-            kwargs
-                .get_item("validate_input_data")
-                .map(|val| val.extract::<bool>().unwrap()),
             kwargs
                 .get_item("ignore_duplicated_edges")
                 .map(|val| val.extract::<bool>().unwrap()),
