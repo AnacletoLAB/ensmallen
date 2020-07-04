@@ -39,11 +39,11 @@ struct FromCsvAgs {
 
 #[derive(Arbitrary, Debug)]
 struct WalkArgs {
-    length: u16,
-    iterations: Option<u16>,
+    length: u8,
+    iterations: Option<u8>,
     start_node: Option<u16>,
     end_node: Option<u16>,
-    min_length: Option<u16>,
+    min_length: Option<u8>,
     return_weight: Option<ParamsT>,
     explore_weight: Option<ParamsT>,
     change_node_type_weight: Option<ParamsT>,
@@ -55,12 +55,12 @@ struct WalkArgs {
 struct SkipgramsArgs {
     idx: u16,
     batch_size: u16,
-    length: u16,
-    iterations: Option<u16>,
-    window_size: Option<u16>,
+    length: u8,
+    iterations: Option<u8>,
+    window_size: Option<u8>,
     negative_samples: Option<f64>,
     shuffle: Option<bool>,
-    min_length: Option<u16>,
+    min_length: Option<u8>,
     return_weight: Option<ParamsT>,
     explore_weight: Option<ParamsT>,
     change_node_type_weight: Option<ParamsT>,
@@ -69,10 +69,10 @@ struct SkipgramsArgs {
 
 #[derive(Arbitrary, Debug)]
 struct CooccurrenceArgs {
-    length: u16,
-    window_size: Option<u16>,
-    iterations: Option<u16>,
-    min_length: Option<u16>,
+    length: u8,
+    window_size: Option<u8>,
+    iterations: Option<u8>,
+    min_length: Option<u8>,
     return_weight: Option<ParamsT>,
     explore_weight: Option<ParamsT>,
     change_node_type_weight: Option<ParamsT>,
