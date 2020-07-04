@@ -255,13 +255,15 @@ fuzz_target!(|data: ToFuzz| {
             data.holdout_args.train_percentage as f64
         );
 
-        if data.link_prediction_args.graph_to_avoid.is_none() {
-            let mut negative_samples = data.link_prediction_args.negative_samples.clone();
-            if let Some(ns) = &mut negative_samples{
-                if *ns > 100.0{
-                    *ns = 100.0;
-                }
+        let mut negative_samples = data.link_prediction_args.negative_samples.clone();
+        if let Some(ns) = &mut negative_samples{
+            if *ns > 100.0{
+                *ns = 100.0;
             }
+        }
+
+        if data.link_prediction_args.graph_to_avoid.is_none() {
+            
             let _ = unwrapped.link_prediction(
                 data.link_prediction_args.idx as u64,
                 data.link_prediction_args.batch_size as usize,
@@ -277,7 +279,7 @@ fuzz_target!(|data: ToFuzz| {
                 let _ = unwrapped.link_prediction(
                     data.link_prediction_args.idx as u64,
                     data.link_prediction_args.batch_size as usize,
-                    data.link_prediction_args.negative_samples.map(|e| e as f64),
+                    negative_samples,
                     Some(&graph2.unwrap()),
                     data.link_prediction_args.shuffle,
                 );   
