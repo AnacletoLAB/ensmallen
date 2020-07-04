@@ -436,6 +436,39 @@ impl Graph {
         } else {
             (0, self.get_nodes_number())
         };
+
+        if _start_node > _end_node {
+            return Err(format!(
+                concat!(
+                    "Given start node index ({})",
+                    "is greater than given end node index ({})."
+                ),
+                _start_node,
+                _end_node
+            ));
+        }
+
+        if _start_node >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "Given start node index ({})",
+                    "is greater than number of nodes in graph ({})."
+                ),
+                _start_node,
+                self.get_nodes_number()
+            ));
+        }
+
+        if _end_node >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "Given end node index ({})",
+                    "is greater than number of nodes in graph ({})."
+                ),
+                _end_node,
+                self.get_nodes_number()
+            ));
+        }
         
         let _verbose = verbose.unwrap_or(true);
         let _return_weight = return_weight.unwrap_or(1.0);
