@@ -23,7 +23,6 @@ fn test_holdout() {
             None,
             None,
             None,
-            None,
             None
         ).unwrap();
         for seed in vec![0, 6786757].iter().progress(){
@@ -62,7 +61,6 @@ fn test_holdout_determinism() {
             "subject",
             "object",
             *directed,
-            None,
             None,
             None,
             None,

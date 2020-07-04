@@ -32,7 +32,6 @@ struct FromCsvAgs {
     default_node_type: Option<String>,
     edge_sep: Option<String>,
     node_sep: Option<String>,
-    validate_input_data: Option<bool>,
     ignore_duplicated_edges: Option<bool>,
     ignore_duplicated_nodes: Option<bool>,
     force_conversion_to_undirected: Option<bool>,
@@ -187,7 +186,6 @@ fn create_graph_from_args_struct(args: &FromCsvAgs) -> Result<Graph, String>{
         default_node_type,
         edge_sep,
         node_sep,
-        args.validate_input_data,
         args.ignore_duplicated_edges,
         args.ignore_duplicated_nodes,
         args.force_conversion_to_undirected

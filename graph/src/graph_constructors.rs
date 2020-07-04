@@ -16,6 +16,11 @@ pub fn validate(
     weights: &Option<Vec<WeightT>>
 ) -> Result<(), String> {
 
+    info!("Checking that the graph is not empty.");
+    if sources.len() == 0{
+        return Err(String::from("The provided graph has no edges."));
+    }
+
     info!("Checking that the nodes mappings are of the same length.");
     if nodes_mapping.len() != nodes_reverse_mapping.len() {
         return Err(format!("The size of the node_mapping ({}) does not match the size of the nodes_reverse_mapping ({}).",
@@ -164,8 +169,7 @@ impl Graph {
         edge_types_mapping: Option<HashMap<String, EdgeTypeT>>,
         edge_types_reverse_mapping: Option<Vec<String>>,
 
-        weights: Option<Vec<WeightT>>,
-        validate_input_data: Option<bool>,
+        weights: Option<Vec<WeightT>>
     ) -> Result<Graph, String> {
 
         let (_nodes_mapping, _nodes_reverse_mapping) = if nodes_mapping.is_none() || nodes_reverse_mapping.is_none(){
@@ -174,17 +178,15 @@ impl Graph {
             (nodes_mapping.unwrap(), nodes_reverse_mapping.unwrap())
         };
 
-        if validate_input_data.unwrap_or_else(|| true) {
-            validate(
-                &sources,
-                &destinations,
-                &_nodes_mapping,
-                &_nodes_reverse_mapping,
-                &node_types,
-                &edge_types,
-                &weights
-            )?;
-        }
+        validate(
+            &sources,
+            &destinations,
+            &_nodes_mapping,
+            &_nodes_reverse_mapping,
+            &node_types,
+            &edge_types,
+            &weights
+        )?;
 
         let nodes_number = _nodes_reverse_mapping.len();
 
@@ -259,7 +261,6 @@ impl Graph {
         edge_types_mapping: Option<HashMap<String, EdgeTypeT>>,
         edge_types_reverse_mapping: Option<Vec<String>>,
         weights: Option<Vec<WeightT>>,
-        validate_input_data: Option<bool>,
         force_conversion_to_undirected: Option<bool>
     ) -> Result<Graph, String> {
 
@@ -269,17 +270,15 @@ impl Graph {
             (nodes_mapping.unwrap(), nodes_reverse_mapping.unwrap())
         };
 
-        if validate_input_data.unwrap_or_else(|| true) {
-            validate(
-                &sources,
-                &destinations,
-                &_nodes_mapping,
-                &_nodes_reverse_mapping,
-                &node_types,
-                &edge_types,
-                &weights
-            )?;
-        }
+        validate(
+            &sources,
+            &destinations,
+            &_nodes_mapping,
+            &_nodes_reverse_mapping,
+            &node_types,
+            &edge_types,
+            &weights
+        )?;
 
         let _force_conversion_to_undirected = force_conversion_to_undirected.unwrap_or(false);
         let mut full_sources: Vec<NodeT> = Vec::new();
@@ -377,8 +376,7 @@ impl Graph {
                 Some(full_weights)
             } else {
                 None
-            },
-            Some(false),
+            }
         )?;
         result.is_directed = false;
         Ok(result)
