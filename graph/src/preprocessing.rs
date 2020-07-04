@@ -177,7 +177,7 @@ impl Graph {
             change_node_type_weight,
             change_edge_type_weight,
             Some(false)
-        ).unwrap();
+        )?;
 
         if walks.is_empty(){
             return Err(String::from(concat!(
@@ -307,7 +307,7 @@ impl Graph {
             change_node_type_weight,
             change_edge_type_weight,
             Some(_verbose)
-        ).unwrap();
+        )?;
 
         let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
         let pb1 = if _verbose {
