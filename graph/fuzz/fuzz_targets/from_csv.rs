@@ -58,7 +58,7 @@ struct SkipgramsArgs {
     length: u8,
     iterations: Option<u8>,
     window_size: Option<u8>,
-    negative_samples: Option<f32>,
+    negative_samples: Option<f64>,
     shuffle: Option<bool>,
     min_length: Option<u8>,
     return_weight: Option<f32>,
@@ -84,7 +84,7 @@ struct CooccurrenceArgs {
 struct LinkPredictionArgs {
     idx: u16,
     batch_size: u16,
-    negative_samples: Option<f32>,
+    negative_samples: Option<f64>,
     graph_to_avoid: Option<FromCsvAgs>,
     shuffle: Option<bool>
 }
@@ -219,13 +219,19 @@ fuzz_target!(|data: ToFuzz| {
             data.walks_args.verbose
         );
 
+        let mut negative_samples = data.skipgrams_args.negative_samples.clone();
+        if let Some(ns) = &mut negative_samples{
+            if *ns > 100.0{
+                *ns = 100.0;
+            }
+        }
         let _ = unwrapped.skipgrams(
             data.skipgrams_args.idx as usize,
             data.skipgrams_args.batch_size as usize,
             data.skipgrams_args.length as usize,
             data.skipgrams_args.iterations.map(|e| e as usize),
             data.skipgrams_args.window_size.map(|e| e as usize),
-            data.skipgrams_args.negative_samples.map(|e| e as f64),
+            negative_samples,
             data.skipgrams_args.shuffle,
             data.skipgrams_args.min_length.map(|e| e as usize),
             data.skipgrams_args.return_weight.map(|e| e as f64),
@@ -252,10 +258,16 @@ fuzz_target!(|data: ToFuzz| {
         );
 
         if data.link_prediction_args.graph_to_avoid.is_none() {
+            let mut negative_samples = data.link_prediction_args.negative_samples.clone();
+            if let Some(ns) = &mut negative_samples{
+                if *ns > 100.0{
+                    *ns = 100.0;
+                }
+            }
             let _ = unwrapped.link_prediction(
                 data.link_prediction_args.idx as u64,
                 data.link_prediction_args.batch_size as usize,
-                data.link_prediction_args.negative_samples.map(|e| e as f64),
+                data.link_prediction_args.negative_samples,
                 None,
                 data.link_prediction_args.shuffle,
             );   
