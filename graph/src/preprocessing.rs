@@ -179,6 +179,15 @@ impl Graph {
             Some(false)
         ).unwrap();
 
+        if walks.is_empty(){
+            return Err(String::from(concat!(
+                "An empty set of walks was generated.\n",
+                "Consider changing the minimum length parameter, ",
+                "increasing the batch size, the iterations and ",
+                "checking the number of trap nodes in the graph."
+            )));
+        }
+
         let mut cumsum:Vec<usize> = Vec::with_capacity(walks.len());
         let _window_size = window_size.unwrap_or(4);
         let _negative_samples = negative_samples.unwrap_or(1.0);
