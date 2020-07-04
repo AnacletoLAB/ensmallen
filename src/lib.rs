@@ -3,7 +3,7 @@ use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use numpy::{PyArray1, ToPyArray};
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
@@ -1019,6 +1019,29 @@ impl EnsmallenGraph {
     ///
     fn report(&self) -> HashMap<&str, String> {
         self.graph.report()
+    }
+
+    #[text_signature = "($self, seed)"]
+    /// Returns set of (typed) edges that form a spanning tree.NodeT
+    /// 
+    /// The spanning tree is not minimal or maximal.
+    /// The provided seed is not the root of the tree, but is only needed
+    /// to identify a specific spanning tree.
+    /// This spanning tree algorithm can run also on graph with multiple
+    /// components.
+    /// 
+    /// Parameters
+    /// ------------------------
+    /// seed: int,
+    ///     The seed for the spanning tree.
+    /// 
+    fn spanning_tree(&self, seed:NodeT)->HashSet<(NodeT, NodeT, Option<NodeTypeT>)>{
+        let tree:HashSet<(NodeT, NodeT, Option<NodeTypeT>)> = self.graph
+            .spanning_tree(seed)
+            .iter()
+            .cloned()
+            .collect();
+        tree
     }
 
     #[text_signature = "($self, seed, train_percentage)"]

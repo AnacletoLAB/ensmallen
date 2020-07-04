@@ -26,7 +26,7 @@ impl Graph {
       
         let (_min, _max) = self.get_min_max_edge(src);
         // Consider successors of source node
-        for dst in (_min.._max).map(|node| self.destinations[node]){
+        for dst in (_min.._max).map(|edge| self.destinations[edge]){
             if !indexed_mask[dst]{
                 // Successor w has not yet been visited; recurse on it
                 self.strong_connection(
@@ -78,20 +78,19 @@ impl Graph {
         let mut components:Vec<Vec<NodeT>> = Vec::new();
         let mut common_index = 0;
         for src in 0..self.get_nodes_number(){
-            if indexed_mask[src]{
-                continue;
+            if !indexed_mask[src]{
+                self.strong_connection(
+                    src, 
+                    &mut indexed_mask, 
+                    &mut stacked_mask,
+                    &mut low_indices, 
+                    &mut indices, 
+                    &mut stack,
+                    &mut common_index,
+                    &mut components
+                );
             }
-            self.strong_connection(
-                src, 
-                &mut indexed_mask, 
-                &mut stacked_mask,
-                &mut low_indices, 
-                &mut indices, 
-                &mut stack,
-                &mut common_index,
-                &mut components
-            );
-        };
+        }
         components
     }
 }

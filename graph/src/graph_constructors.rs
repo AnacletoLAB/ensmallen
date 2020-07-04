@@ -134,7 +134,7 @@ impl Graph {
     fn build_nodes_mapping(
         sources:&[NodeT],
         destinations:&[NodeT]
-    ) -> (HashMap<String, NodeT>, Vec<String>){
+    ) -> (Vec<NodeT>, Vec<NodeT>, HashMap<String, NodeT>, Vec<String>){
         let unique_nodes:Vec<NodeT> = vec![sources, destinations]
             .iter()
             .cloned()
@@ -144,14 +144,20 @@ impl Graph {
             .collect();
         let nodes_mapping:HashMap<String, NodeT> = unique_nodes
             .iter()
-            .cloned()
-            .map(|node_id| (node_id.to_string(), node_id))
+            .enumerate()
+            .map(|(i, node_id)| (node_id.to_string(), i as NodeT))
             .collect();
         let mut nodes_reverse_mapping:Vec<String> = vec![String::from(""); unique_nodes.len()];
         for (node_name, position) in nodes_mapping.iter(){
             nodes_reverse_mapping[*position] = node_name.clone();
         }
-        (nodes_mapping, nodes_reverse_mapping)
+
+        (
+            sources.par_iter().map(|node| *nodes_mapping.get(&node.to_string()).unwrap()).collect(),
+            destinations.par_iter().map(|node| *nodes_mapping.get(&node.to_string()).unwrap()).collect(),
+            nodes_mapping,
+            nodes_reverse_mapping
+        )
     }
 
     pub fn new_directed(
@@ -172,15 +178,15 @@ impl Graph {
         weights: Option<Vec<WeightT>>
     ) -> Result<Graph, String> {
 
-        let (_nodes_mapping, _nodes_reverse_mapping) = if nodes_mapping.is_none() || nodes_reverse_mapping.is_none(){
+        let (_sources, _destinations, _nodes_mapping, _nodes_reverse_mapping) = if nodes_mapping.is_none() || nodes_reverse_mapping.is_none(){
             Graph::build_nodes_mapping(&sources, &destinations)
         } else {
-            (nodes_mapping.unwrap(), nodes_reverse_mapping.unwrap())
+            (sources, destinations, nodes_mapping.unwrap(), nodes_reverse_mapping.unwrap())
         };
 
         validate(
-            &sources,
-            &destinations,
+            &_sources,
+            &_destinations,
             &_nodes_mapping,
             &_nodes_reverse_mapping,
             &node_types,
@@ -193,22 +199,22 @@ impl Graph {
         info!("Computing unique edges.");
         let unique_edges: HashBrownMap<(NodeT, NodeT), EdgeT> =
             HashBrownMap::from_iter(
-                sources.iter().cloned().zip(
-                    destinations.iter().cloned()
+                _sources.iter().cloned().zip(
+                    _destinations.iter().cloned()
                 ).enumerate().map(|(i, (src, dst))| ((src, dst), i))
             );
 
         info!("Computing sorting of given edges based on sources.");
-        let mut pairs: Vec<(usize, &NodeT)> = sources.par_iter().enumerate().collect();
+        let mut pairs: Vec<(usize, &NodeT)> = _sources.par_iter().enumerate().collect();
         pairs.par_sort_unstable_by_key(|(_, &v)| v);
         let indices: Vec<&usize> = pairs.par_iter().map(|(i, _)| i).collect();
         
         info!("Sorting given sources.");
         let sorted_sources: Vec<NodeT> = indices.par_iter()
-            .map(|&&x| sources[x]).collect();
+            .map(|&&x| _sources[x]).collect();
         info!("Sorting given destinations.");
         let sorted_destinations: Vec<NodeT> = indices.par_iter()
-            .map(|&&x| destinations[x]).collect();
+            .map(|&&x| _destinations[x]).collect();
         info!("Sorting given weights.");
         let sorted_weights: Option<Vec<WeightT>> = weights.map(|w| 
             indices.par_iter()
@@ -264,15 +270,15 @@ impl Graph {
         force_conversion_to_undirected: Option<bool>
     ) -> Result<Graph, String> {
 
-        let (_nodes_mapping, _nodes_reverse_mapping) = if nodes_mapping.is_none() || nodes_reverse_mapping.is_none(){
+        let (_sources, _destinations, _nodes_mapping, _nodes_reverse_mapping) = if nodes_mapping.is_none() || nodes_reverse_mapping.is_none(){
             Graph::build_nodes_mapping(&sources, &destinations)
         } else {
-            (nodes_mapping.unwrap(), nodes_reverse_mapping.unwrap())
+            (sources, destinations, nodes_mapping.unwrap(), nodes_reverse_mapping.unwrap())
         };
 
         validate(
-            &sources,
-            &destinations,
+            &_sources,
+            &_destinations,
             &_nodes_mapping,
             &_nodes_reverse_mapping,
             &node_types,
@@ -287,9 +293,9 @@ impl Graph {
         let mut full_weights: Vec<WeightT> = Vec::new();
         let mut unique_edges: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::new();
         
-        for index in 0..sources.len(){
-            let src = sources[index];
-            let dst = destinations[index];
+        for index in 0.._sources.len(){
+            let src = _sources[index];
+            let dst = _destinations[index];
             let edge_type = if let Some(et) = &edge_types {
                 Some(et[index])
             } else {

@@ -186,9 +186,14 @@ impl Graph {
             .sum::<usize>() as f64 / self.unique_edges.len() as f64
     }
 
-    /// Return number of connected components in graph.
+    /// Returns number of connected components in graph.
     pub fn connected_components_number(&self)->NodeT{
-        self.get_nodes_number() - self.spanning_tree(0).len() +1 
+        self.get_nodes_number() - self.spanning_tree(0).len() 
+    }
+
+    /// Returns density of the graph.
+    pub fn density(&self)->f64{
+        self.get_edges_number() as f64 / (self.get_nodes_number().pow(2)) as f64
     }
 
     /// Returns report relative to the graph metrics
@@ -213,6 +218,7 @@ impl Graph {
         report.insert("degrees_mode", self.degrees_mode().to_string());
         report.insert("nodes_number", self.get_nodes_number().to_string());
         report.insert("edges_number", self.get_edges_number().to_string());
+        report.insert("density", self.density().to_string());
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),
