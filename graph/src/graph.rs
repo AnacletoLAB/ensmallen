@@ -459,7 +459,7 @@ impl Graph {
             ));
         }
 
-        if _end_node >= self.get_nodes_number() {
+        if _end_node > self.get_nodes_number() {
             return Err(format!(
                 concat!(
                     "Given end node index ({})",
