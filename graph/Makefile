@@ -34,8 +34,7 @@ coverage:
 	$(OPEN_COMMAND) ./target/debug/cov/total/index.html > /dev/null &
 
 fuzz:
-	cargo fuzz run only_edges --release
-	cargo fuzz run with_nodes --release
+	RUST_BACKTRACE=1 cargo fuzz run from_csv --release -- -seed=1337 -rss-limit-mb=0
 
 fuzz_coverage:
 	cargo fuzz build
