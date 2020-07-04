@@ -262,14 +262,16 @@ fuzz_target!(|data: ToFuzz| {
         } else {
 
             let graph_args_2 = data.link_prediction_args.graph_to_avoid.unwrap();
-            let _ = unwrapped.link_prediction(
-                data.link_prediction_args.idx as u64,
-                data.link_prediction_args.batch_size as usize,
-                data.link_prediction_args.negative_samples,
-                Some(&create_graph_from_args_struct(&graph_args_2).unwrap()),
-                data.link_prediction_args.shuffle,
-            );   
+            let graph2 = create_graph_from_args_struct(&graph_args_2);
+            if graph2.is_ok(){
+                let _ = unwrapped.link_prediction(
+                    data.link_prediction_args.idx as u64,
+                    data.link_prediction_args.batch_size as usize,
+                    data.link_prediction_args.negative_samples,
+                    Some(&graph2.unwrap()),
+                    data.link_prediction_args.shuffle,
+                );   
+            }
         }
     }
-    
 });
