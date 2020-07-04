@@ -33,6 +33,13 @@ impl Graph {
         seed:NodeT,
         train_percentage:f64
     )-> Result<(Graph, Graph), String>{
+
+        if train_percentage<=0.0 || train_percentage>1.0{
+            return Err(String::from(
+                "Given train percentage must be strictly between 0 and 1."
+            ))
+        }
+
         let tree:HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = self.spanning_tree(seed);
         let mut used_edges:HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::new();
         
