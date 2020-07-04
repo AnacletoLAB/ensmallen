@@ -44,7 +44,6 @@ fuzz_target!(|data: &[u8]| {
         None,
         None,
         None,
-        None,
         None
     );
 
@@ -67,7 +66,6 @@ fuzz_target!(|data: &[u8]| {
         Some("id"),
         Some("category"),
         Some("biolink:NamedThing"),
-        None,
         None,
         None,
         None,

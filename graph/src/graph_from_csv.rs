@@ -398,12 +398,12 @@ impl Graph {
         let _ignore_duplicated_edges = ignore_duplicated_edges.unwrap_or_else(|| false);
         let _ignore_duplicated_nodes = ignore_duplicated_nodes.unwrap_or_else(|| false);
         
-        if _edge_sep.len() == 0 {
+        if _edge_sep.is_empty() {
             return Err(String::from(
                 "The edge separator is empty"
             ));
         }
-        if _node_sep.len() == 0 {
+        if _node_sep.is_empty() {
             return Err(String::from(
                 "The node separator is empty"
             ));
