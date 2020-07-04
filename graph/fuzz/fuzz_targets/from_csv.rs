@@ -47,8 +47,7 @@ struct WalkArgs {
     return_weight: Option<f32>,
     explore_weight: Option<f32>,
     change_node_type_weight: Option<f32>,
-    change_edge_type_weight: Option<f32>,
-    verbose: Option<bool>,
+    change_edge_type_weight: Option<f32>
 }
 
 #[derive(Arbitrary, Debug)]
@@ -76,8 +75,7 @@ struct CooccurrenceArgs {
     return_weight: Option<f32>,
     explore_weight: Option<f32>,
     change_node_type_weight: Option<f32>,
-    change_edge_type_weight: Option<f32>,
-    verbose: Option<bool>
+    change_edge_type_weight: Option<f32>
 }
 
 #[derive(Arbitrary, Debug)]
@@ -216,7 +214,7 @@ fuzz_target!(|data: ToFuzz| {
             data.walks_args.explore_weight.map(|e| e as f64),
             data.walks_args.change_node_type_weight.map(|e| e as f64),
             data.walks_args.change_edge_type_weight.map(|e| e as f64),
-            data.walks_args.verbose
+            Some(false)
         );
 
         let mut negative_samples = data.skipgrams_args.negative_samples.clone();
@@ -249,7 +247,7 @@ fuzz_target!(|data: ToFuzz| {
             data.cooccurence_args.explore_weight.map(|e| e as f64),
             data.cooccurence_args.change_node_type_weight.map(|e| e as f64),
             data.cooccurence_args.change_edge_type_weight.map(|e| e as f64),
-            data.cooccurence_args.verbose,
+            Some(false)
         );
 
         let _ = unwrapped.holdout(
