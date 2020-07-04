@@ -191,7 +191,7 @@ impl Graph {
         let _window_size = window_size.unwrap_or(4);
         let _negative_samples = negative_samples.unwrap_or(1.0);
 
-        if _negative_samples < 0.0 {
+        if _negative_samples < 0.0 || !_negative_samples.is_finite(){
             return Err(
                 String::from("Negative sample must be a posive real value.")
             )
@@ -407,7 +407,7 @@ impl Graph {
         // All the remaining values then are positives
         let positives_number:usize = batch_size - negatives_number;
 
-        if _negative_samples < 0.0 {
+        if _negative_samples < 0.0 || !_negative_samples.is_finite(){
             return Err(
                 String::from("Negative sample must be a posive real value.")
             )

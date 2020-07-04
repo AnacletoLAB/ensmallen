@@ -476,22 +476,22 @@ impl Graph {
         let _change_node_type_weight = change_node_type_weight.unwrap_or(1.0);
         let _change_edge_type_weight = change_edge_type_weight.unwrap_or(1.0);
 
-        if _return_weight <= 0.0 {
+        if _return_weight <= 0.0 || !_return_weight.is_finite() {
             return Err(String::from(
                 "Given 'return_weight' is not a strictly positive real number.",
             ));
         }
-        if _explore_weight <= 0.0 {
+        if _explore_weight <= 0.0 || !_return_weight.is_finite(){
             return Err(String::from(
                 "Given 'explore_weight' is not a strictly positive real number.",
             ));
         }
-        if _change_node_type_weight <= 0.0 {
+        if _change_node_type_weight <= 0.0 || !_return_weight.is_finite(){
             return Err(String::from(
                 "Given 'change_node_type_weight' is not a strictly positive real number.",
             ));
         }
-        if _change_edge_type_weight <= 0.0 {
+        if _change_edge_type_weight <= 0.0 || !_return_weight.is_finite(){
             return Err(String::from(
                 "Given 'change_edge_type_weight' is not a strictly positive real number.",
             ));
