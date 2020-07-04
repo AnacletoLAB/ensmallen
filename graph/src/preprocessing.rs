@@ -112,7 +112,9 @@ impl Graph {
         ((words, contexts), labels)
     }
     
-    // TODO docstring
+    /// Returns skipgram training batch for given index.
+    /// 
+    /// 
     pub fn skipgrams(
         &self,
         idx: usize,
@@ -129,7 +131,30 @@ impl Graph {
         change_edge_type_weight: Option<ParamsT>
     ) -> Result<((Vec<usize>,Vec<usize>),Vec<u8>), String>{
 
-        if idx*batch_size >= self.get_nodes_number(){
+        let opt_idx =  idx.checked_add(1);
+        if opt_idx.is_none() {
+            return Err(
+                format!(
+                    "The Index {} + 1 oveflow the u64.",
+                    idx
+                )
+            )
+        }
+
+        let opt_end_node = opt_idx.unwrap().checked_mul(batch_size);
+        if opt_end_node.is_none() {
+            return Err(
+                format!(
+                    "The Index+1 {} and batchsize {} when multiplied oveflow the u64.",
+                    idx+1, batch_size
+                )
+            )
+        }
+
+        let start_node = idx*batch_size;
+        let end_node = min!(self.get_nodes_number(), opt_end_node.unwrap());
+
+        if  start_node >= self.get_nodes_number(){
             return Err(format!(
                 concat!(
                     "The given walk index {idx} with batch size {batch_size} ",
@@ -144,8 +169,8 @@ impl Graph {
         let walks = self.walk(
             length,
             iterations,
-            Some(idx*batch_size),
-            Some(min!(self.get_nodes_number(), (idx+1)*batch_size)),
+            Some(start_node),
+            Some(end_node),
             min_length,
             return_weight,
             explore_weight,

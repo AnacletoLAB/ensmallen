@@ -27,5 +27,14 @@ rm $HOME/rustup.sh
 source $HOME/.bashrc
 source $HOME/.cargo/env
 
+# ASan/LibFuzzer
+export ASAN_OPTIONS=\
+detect_stack_use_after_scope=true:\
+detect_invalid_pointer_pairs=1:\
+strict_init_order=true:\
+check_initialization_order=true:\
+allocator_may_return_null=true:\
+${ASAN}
+
 # Setup cargo-fuzz
 cargo install cargo-fuzz
