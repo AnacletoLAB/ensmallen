@@ -5,6 +5,7 @@ use rand::seq::SliceRandom;
 use rand::thread_rng;
 use rayon::prelude::*;
 use vec_rand::gen_random_vec;
+use vec_rand::xorshift::xorshift as rand_u64;
 
 #[macro_export]
 macro_rules! max {
@@ -79,7 +80,8 @@ impl Graph {
                 .iter()
                 .map(|i| walk[(*i as NodeT) % walk.len()])
                 .collect();
-            let contexts_neg: Vec<NodeT> = gen_random_vec(num_negatives, seed / 2)
+            let contexts_seed = rand_u64(seed);
+            let contexts_neg: Vec<NodeT> = gen_random_vec(num_negatives, contexts_seed)
                 .iter()
                 .map(|i| (*i as NodeT) % nodes_number)
                 .collect();
@@ -505,9 +507,11 @@ impl Graph {
             .collect();
 
         let negatives: Vec<(NodeT, NodeT)> = if negatives_number != 0 {
-            gen_random_vec(negatives_number, idx / 2)
+            let sources_seed = rand_u64(idx);
+            let destinations_seed = rand_u64(sources_seed);
+            gen_random_vec(negatives_number, sources_seed)
                 .into_par_iter()
-                .zip(gen_random_vec(negatives_number, idx / 3).into_par_iter())
+                .zip(gen_random_vec(negatives_number, destinations_seed).into_par_iter())
                 .map(|(random_src, random_dst)| {
                     (
                         self.sources[(random_src % edges_number) as EdgeT],
@@ -527,17 +531,12 @@ impl Graph {
             vec![]
         };
 
-        let mut labels: Vec<u8> = [
-            vec![1 as u8; positives.len()],
-            vec![0 as u8; negatives.len()],
-        ]
-        .iter()
-        .flatten()
-        .cloned()
-        .collect();
+        let mut labels: Vec<u8> = vec![1 as u8; positives.len()];
+        labels.extend(vec![0 as u8; negatives.len()]);
 
-        let mut edges: Vec<(NodeT, NodeT)> =
-            [positives, negatives].iter().flatten().cloned().collect();
+        let mut edges: Vec<(NodeT, NodeT)> = positives;
+        edges.extend(negatives);
+
         if _shuffle {
             let mut indices: Vec<usize> = (0..edges.len() as usize).collect();
             indices.shuffle(&mut thread_rng());
