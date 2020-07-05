@@ -1,6 +1,7 @@
 use super::types::*;
 use super::*;
 use rayon::prelude::*;
+use itertools::Itertools;
 use hashbrown::{HashMap, HashSet};
 use std::collections::{HashMap as DefaultHashMap};
 
@@ -191,6 +192,17 @@ impl Graph {
         self.get_nodes_number() - self.spanning_tree(0).len() 
     }
 
+    /// Returns number of singleton nodes within the graph.
+    pub fn singleton_nodes_number(&self)->NodeT{
+        self.get_nodes_number() - self.destinations
+            .iter()
+            .chain(
+                self.sources.iter()
+            )
+            .unique()
+            .count()
+    }
+
     /// Returns density of the graph.
     pub fn density(&self)->f64{
         self.get_edges_number() as f64 / (self.get_nodes_number().pow(2)) as f64
@@ -219,6 +231,7 @@ impl Graph {
         report.insert("nodes_number", self.get_nodes_number().to_string());
         report.insert("edges_number", self.get_edges_number().to_string());
         report.insert("density", self.density().to_string());
+        report.insert("singleton_nodes", self.singleton_nodes_number().to_string());
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),
