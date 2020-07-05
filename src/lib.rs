@@ -1102,8 +1102,8 @@ impl EnsmallenGraph {
     /// Returns
     /// -----------------------------
     /// Graph containing given amount of missing edges.
-    fn sample_negatives(&self, seed:EdgeT, negative_samples:EdgeT) -> PyResult<EnsmallenGraph> {
-        match self.graph.sample_negatives(seed, negative_samples) {
+    fn sample_negatives(&self, seed:EdgeT, negatives_number:EdgeT) -> PyResult<EnsmallenGraph> {
+        match self.graph.sample_negatives(seed, negatives_number) {
             Ok(g) => Ok(EnsmallenGraph{graph:g}),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
