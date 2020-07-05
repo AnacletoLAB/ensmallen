@@ -61,7 +61,7 @@ impl Graph {
         let mut sources: Vec<NodeT> = Vec::with_capacity(_negatives_number);
         let mut destinations: Vec<NodeT> = Vec::with_capacity(_negatives_number);
 
-        let mut new_seed = seed;
+        let mut new_seed = seed ^ 0xBAD5eedBAD5eed11;
 
         loop {
             new_seed = rand_u64(new_seed as u64) as usize;

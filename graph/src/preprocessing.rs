@@ -51,6 +51,7 @@ impl Graph {
         let _negative_samples = negative_samples.unwrap_or(1.0);
         let _window_size = window_size.unwrap_or(4);
         let _shuffle = shuffle.unwrap_or(true);
+        let _seed = seed ^ 0xBAD5eedBAD5eed11;
 
         let vector_length: usize = skipgram_vector_length(walk.len(), _window_size);
         // create the positive data
@@ -76,11 +77,11 @@ impl Graph {
             // The issue was already present in the original TensorFlow implementation.
             let num_negatives = (vector_length as f64 * _negative_samples) as usize;
             let nodes_number = self.get_nodes_number();
-            let words_neg: Vec<NodeT> = gen_random_vec(num_negatives, seed)
+            let words_neg: Vec<NodeT> = gen_random_vec(num_negatives, _seed)
                 .iter()
                 .map(|i| walk[(*i as NodeT) % walk.len()])
                 .collect();
-            let contexts_seed = rand_u64(seed);
+            let contexts_seed = rand_u64(_seed);
             let contexts_neg: Vec<NodeT> = gen_random_vec(num_negatives, contexts_seed)
                 .iter()
                 .map(|i| (*i as NodeT) % nodes_number)
@@ -489,6 +490,7 @@ impl Graph {
     ) -> Result<(Vec<NodeT>, Vec<NodeT>, Vec<u8>), String> {
         let _negative_samples = negative_samples.unwrap_or(1.0);
         let _shuffle = shuffle.unwrap_or(true);
+        let seed = idx ^ 0xBAD5eedBAD5eed11;
         // The number of negatives is given by computing their fraction of batchsize
         let negatives_number: usize =
             ((batch_size as f64 / (1.0 + _negative_samples)) * _negative_samples) as usize;
@@ -500,14 +502,14 @@ impl Graph {
         }
 
         let edges_number = self.get_edges_number() as u64;
-        let positives: Vec<(NodeT, NodeT)> = gen_random_vec(positives_number, idx)
+        let positives: Vec<(NodeT, NodeT)> = gen_random_vec(positives_number, seed)
             .into_par_iter()
             .map(|random_value| (random_value % edges_number) as EdgeT)
             .map(|edge| (self.sources[edge], self.destinations[edge]))
             .collect();
 
         let negatives: Vec<(NodeT, NodeT)> = if negatives_number != 0 {
-            let sources_seed = rand_u64(idx);
+            let sources_seed = rand_u64(seed);
             let destinations_seed = rand_u64(sources_seed);
             gen_random_vec(negatives_number, sources_seed)
                 .into_par_iter()
