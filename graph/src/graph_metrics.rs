@@ -232,6 +232,7 @@ impl Graph {
         report.insert("edges_number", self.get_edges_number().to_string());
         report.insert("density", self.density().to_string());
         report.insert("singleton_nodes", self.singleton_nodes_number().to_string());
+        report.insert("is_directed", self.is_directed.to_string());
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),

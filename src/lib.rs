@@ -1083,7 +1083,7 @@ impl EnsmallenGraph {
         }
     }
 
-    #[text_signature = "($self, seed, negatives_number)"]
+    #[text_signature = "($self, seed, negatives_number, allow_selfloops)"]
     /// Returns Graph with given amount of negative edges as positive edges.
     /// 
     /// The graph generated may be used as a testing negatives partition to be
@@ -1097,12 +1097,14 @@ impl EnsmallenGraph {
     ///     The seed to use to generate the holdout.
     /// negatives_number: int,
     ///     The number of negative edges to use.
+    /// allow_selfloops: bool,
+    ///     Wethever to allow creation of self-loops.
     /// 
     /// Returns
     /// -----------------------------
     /// Graph containing given amount of missing edges.
-    fn sample_negatives(&self, seed:EdgeT, negatives_number:EdgeT) -> PyResult<EnsmallenGraph> {
-        match self.graph.sample_negatives(seed, negatives_number) {
+    fn sample_negatives(&self, seed:EdgeT, negatives_number:EdgeT, allow_selfloops:bool) -> PyResult<EnsmallenGraph> {
+        match self.graph.sample_negatives(seed, negatives_number, allow_selfloops) {
             Ok(g) => Ok(EnsmallenGraph{graph:g}),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }

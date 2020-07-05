@@ -38,31 +38,43 @@ impl Graph {
     /// 
     /// # Arguments
     /// 
-    /// * seed:EdgeT - Seed to use to reproduce negative edge set.
-    /// * negatives_number:EdgeT - Number of negatives edges to include.
+    /// * seed: EdgeT - Seed to use to reproduce negative edge set.
+    /// * negatives_number: EdgeT - Number of negatives edges to include.
+    /// * allow_selfloops: EdgeT - Wethever to allow creation of selfloops or not.
     /// 
     pub fn sample_negatives(
         &self,
         seed:EdgeT,
-        negatives_number:EdgeT
+        negatives_number:EdgeT,
+        allow_selfloops:bool
     )->Result<Graph, String>{
 
-        let mut unique_edges:HashSet<(NodeT, NodeT)> = HashSet::with_capacity(negatives_number);
+        let _negatives_number = if !self.is_directed{
+            negatives_number/2
+        } else {
+            negatives_number
+        };
+
+        let mut unique_edges:HashSet<(NodeT, NodeT)> = HashSet::with_capacity(_negatives_number);
         
         // initialize the vectors for the result
-        let mut sources: Vec<NodeT> = Vec::with_capacity(negatives_number);
-        let mut destinations: Vec<NodeT> = Vec::with_capacity(negatives_number);
+        let mut sources: Vec<NodeT> = Vec::with_capacity(_negatives_number);
+        let mut destinations: Vec<NodeT> = Vec::with_capacity(_negatives_number);
 
         let mut new_seed = seed;
-        while unique_edges.len() != negatives_number{
+
+        loop {
             new_seed = rand_u64(new_seed as u64) as usize;
             let src:NodeT = self.sources[new_seed % self.get_edges_number()];
             new_seed = rand_u64(new_seed as u64) as usize;
             let dst:NodeT = self.destinations[new_seed % self.get_edges_number()];
-            if ! unique_edges.contains(&(src, dst)) && (self.is_directed || !unique_edges.contains(&(dst, src))){
+            if ! unique_edges.contains(&(src, dst)) && (self.is_directed || !unique_edges.contains(&(dst, src))) && (allow_selfloops || src != dst){
                 unique_edges.insert((src, dst));
                 sources.push(src);
                 destinations.push(dst);
+            }
+            if unique_edges.len() == _negatives_number {
+                break;
             }
         }
 
