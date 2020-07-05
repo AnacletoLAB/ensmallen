@@ -297,16 +297,14 @@ impl Graph {
             .zip(labels.par_iter())
             .map(|((src, dst), label)| {
                 // Keep the edge if:
-                // it's positive
-                (*label == 1) ||
-                // or its in the graph 
-                self.has_edge(*src, *dst) || 
+                // it's positive and its in the graph 
+                ((*label == 1) || self.has_edge(*src, *dst)) &&
                 // or it isn't in the graph to avoid
                 if let Some(gta) = &graph_to_avoid {
                     !gta.has_edge(*src, *dst)
                 }
                 else {
-                    false
+                    true
                 }
             })
             .collect();
