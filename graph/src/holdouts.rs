@@ -68,7 +68,11 @@ impl Graph {
             let src:NodeT = self.sources[new_seed % self.get_edges_number()];
             new_seed = rand_u64(new_seed as u64) as usize;
             let dst:NodeT = self.destinations[new_seed % self.get_edges_number()];
-            if ! unique_edges.contains(&(src, dst)) && (self.is_directed || !unique_edges.contains(&(dst, src))) && (allow_selfloops || src != dst){
+            if !unique_edges.contains(&(src, dst)) &&
+                (self.is_directed || !unique_edges.contains(&(dst, src))) && 
+                (allow_selfloops || src != dst) &&
+                !self.has_edge(src, dst)
+            {
                 unique_edges.insert((src, dst));
                 sources.push(src);
                 destinations.push(dst);

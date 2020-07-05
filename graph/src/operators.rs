@@ -16,8 +16,8 @@ impl Graph {
             return Err(
                 String::from(
                     concat!(
-                        "The two given graphs have overlapping edges,",
-                        "this is not supported since it's an undefined",
+                        "The two given graphs have overlapping edges, ",
+                        "this is not supported since it's an undefined ",
                         "behaviour."
                     )
                 )
