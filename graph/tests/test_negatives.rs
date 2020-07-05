@@ -23,5 +23,5 @@ fn test_negatives() {
         None,
         None
     ).unwrap();
-    graph.sample_negatives(42, 100).unwrap();
+    graph.sample_negatives(42, 10000).unwrap();
 }
