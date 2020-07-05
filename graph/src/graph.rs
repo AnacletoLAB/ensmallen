@@ -407,6 +407,37 @@ impl Graph {
         (dsts[index], min_edge + index)
     }
 
+    /// Returns vector of walks.
+    /// 
+    /// # Arguments
+    /// 
+    /// * length: usize - Length of the random walks.
+    /// * iterations: Option<usize> - Iterations on every node.
+    /// * start_node: Option<usize>,
+    ///     Start node
+    /// * end_node: Option<usize>,
+    ///     End node 
+    /// * min_length: Option<usize>,
+    ///     Minimum length of the walks.
+    ///     Walks which are smaller than the given minimum length will be
+    ///     filtered and ignored.
+    /// * return_weight: Option<ParamsT>,
+    ///     Weight for the probability of exploitation.
+    ///     This is the inverse of the p parameter.
+    ///     The default value is 1.0.
+    /// * explore_weight: Option<ParamsT>,
+    ///     Weight for the probability of exploration.
+    ///     This is the inverse of the q parameter.
+    ///     The default value is 1.0.
+    /// * change_node_type_weight: Option<ParamsT>,
+    ///     Weight for changing the node type at every step of the walk.
+    ///     The default value is 1.0.
+    /// * change_edge_type_weight: Option<ParamsT>,
+    ///     Weight for changing the edge type at every step of the walk.
+    ///     The default value is 1.0.
+    /// * verbose: Option<bool>,
+    ///     Wethever to show the loading bars.
+    /// 
     pub fn walk(
         &self,
         length: usize,

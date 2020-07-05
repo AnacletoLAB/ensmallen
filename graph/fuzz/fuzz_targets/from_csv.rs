@@ -236,6 +236,7 @@ fuzz_target!(|data: ToFuzz| {
             data.skipgrams_args.explore_weight.map(|e| e as f64),
             data.skipgrams_args.change_node_type_weight.map(|e| e as f64),
             data.skipgrams_args.change_edge_type_weight.map(|e| e as f64),
+            None
         );
 
         let _ = unwrapped.cooccurence_matrix(

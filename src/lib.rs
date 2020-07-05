@@ -530,10 +530,10 @@ impl EnsmallenGraph {
         let w = self.graph.cooccurence_matrix(
             length,
             kwargs
-                .get_item("window_size")
+                .get_item("iterations")
                 .map(|val| val.extract::<usize>().unwrap()),
             kwargs
-                .get_item("iterations")
+                .get_item("window_size")
                 .map(|val| val.extract::<usize>().unwrap()),
             kwargs
                 .get_item("min_length")
@@ -569,8 +569,8 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, negative_samples, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
-    /// Return cooccurence matrix-based triples of words, contexts and frequencies.
+    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, negative_samples, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, graph_to_avoid)"]
+    /// Return batch triple for training SkipGram model.
     ///
     /// Parameters
     /// ---------------------
@@ -617,6 +617,10 @@ impl EnsmallenGraph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
+    /// graph_to_avoid: EnsmallenGraph = None,
+    ///     The graph portion to be avoided. Can be usefull when using
+    ///     holdouts where a portion of the graph is completely hidden,
+    ///     and is not to be used neither for negatives nor positives.
     ///
     /// Returns
     /// ----------------------------
@@ -632,7 +636,7 @@ impl EnsmallenGraph {
         if py_kwargs.is_none() {
             let w = self
                 .graph
-                .skipgrams(idx, batch_size, length, None, None, None, None, None, None, None, None, None);
+                .skipgrams(idx, batch_size, length, None, None, None, None, None, None, None, None, None, None);
 
             let gil = pyo3::Python::acquire_gil();
             return match w {
@@ -648,6 +652,18 @@ impl EnsmallenGraph {
         }
 
         let kwargs = py_kwargs.unwrap();
+
+        let ensmallen_graph = kwargs
+            .get_item("graph_to_avoid")
+            .map(|val| val.extract::<EnsmallenGraph>());
+        let graph = if let Some(eg) = &ensmallen_graph {
+            match eg {
+                Ok(g) => Some(&g.graph),
+                Err(_) => None
+            }
+        } else {
+            None
+        };
 
         let w = self.graph.skipgrams(
             idx, batch_size, length,
@@ -678,6 +694,7 @@ impl EnsmallenGraph {
             kwargs
                 .get_item("change_edge_type_weight")
                 .map(|val| val.extract::<ParamsT>().unwrap()),
+            graph
         );
         
         let gil = pyo3::Python::acquire_gil();
@@ -1063,6 +1080,52 @@ impl EnsmallenGraph {
     fn holdout(&self, seed:NodeT, train_percentage:f64) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
         match self.graph.holdout(seed, train_percentage) {
             Ok((g1, g2)) => Ok((EnsmallenGraph{graph:g1}, EnsmallenGraph{graph:g2})),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
+
+    #[text_signature = "($self, seed, negatives_number)"]
+    /// Returns Graph with given amount of negative edges as positive edges.
+    /// 
+    /// The graph generated may be used as a testing negatives partition to be
+    /// fed into the argument "graph_to_avoid" of the link_prediction or the
+    /// skipgrams algorithm.
+    /// 
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// seed: int,
+    ///     The seed to use to generate the holdout.
+    /// negatives_number: int,
+    ///     The number of negative edges to use.
+    /// 
+    /// Returns
+    /// -----------------------------
+    /// Graph containing given amount of missing edges.
+    fn sample_negatives(&self, seed:EdgeT, negative_samples:EdgeT) -> PyResult<EnsmallenGraph> {
+        match self.graph.sample_negatives(seed, negative_samples) {
+            Ok(g) => Ok(EnsmallenGraph{graph:g}),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
+
+    #[text_signature = "($self, other)"]
+     /// Return sum for summing graphs objects.
+    /// 
+    /// The add is only defined for disjointed graph components.
+    /// The two graphs must have the same nodes, node types and edge types.
+    /// 
+    /// Parameters
+    /// ------------------------------------
+    /// other: Graph,
+    ///     Graph to be summed.
+    /// 
+    /// Returns
+    /// ------------------------------------
+    /// Graph resulting from composition of the two graphs.
+    fn __add__(&self, seed:EdgeT, negative_samples:EdgeT) -> PyResult<EnsmallenGraph> {
+        match self.graph.sample_negatives(seed, negative_samples) {
+            Ok(g) => Ok(EnsmallenGraph{graph:g}),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }

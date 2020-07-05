@@ -4,6 +4,7 @@ use hashbrown::{HashSet};
 use rand::SeedableRng;
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
+use vec_rand::xorshift::xorshift as rand_u64;
 
 /// Implementation of algorithms relative to trees.
 impl Graph {
@@ -28,6 +29,87 @@ impl Graph {
         }
     }
 
+    /// Returns Graph with given amount of negative edges as positive edges.
+    /// 
+    /// The graph generated may be used as a testing negatives partition to be
+    /// fed into the argument "graph_to_avoid" of the link_prediction or the
+    /// skipgrams algorithm.
+    /// 
+    /// 
+    /// # Arguments
+    /// 
+    /// * seed:EdgeT - Seed to use to reproduce negative edge set.
+    /// * negatives_number:EdgeT - Number of negatives edges to include.
+    /// 
+    pub fn sample_negatives(
+        &self,
+        seed:EdgeT,
+        negatives_number:EdgeT
+    )->Result<Graph, String>{
+
+        let mut unique_edges:HashSet<(NodeT, NodeT)> = HashSet::with_capacity(negatives_number);
+        
+        // initialize the vectors for the result
+        let mut sources: Vec<NodeT> = Vec::with_capacity(negatives_number);
+        let mut destinations: Vec<NodeT> = Vec::with_capacity(negatives_number);
+
+        while unique_edges.len() != negatives_number{
+            let src:NodeT = self.sources[rand_u64((seed + unique_edges.len()) as u64) as usize % self.get_edges_number()];
+            let dst:NodeT = self.destinations[rand_u64((seed/2 + unique_edges.len()) as u64) as usize % self.get_edges_number()];
+            if ! unique_edges.contains(&(src, dst)) && (self.is_directed || !unique_edges.contains(&(dst, src))){
+                unique_edges.insert((src, dst));
+                sources.push(src);
+                destinations.push(dst);
+            }
+        }
+
+        Ok(if self.is_directed {
+            Graph::new_directed(
+                sources,
+                destinations,
+                Some(self.nodes_mapping.clone()),
+                Some(self.nodes_reverse_mapping.clone()),
+                self.node_types.clone(),
+                self.node_types_mapping.clone(),
+                self.node_types_reverse_mapping.clone(),
+                None,
+                self.edge_types_mapping.clone(),
+                self.edge_types_reverse_mapping.clone(),
+                None
+            )?
+        } else {
+            Graph::new_undirected(
+                sources,
+                destinations,
+                Some(self.nodes_mapping.clone()),
+                Some(self.nodes_reverse_mapping.clone()),
+                self.node_types.clone(),
+                self.node_types_mapping.clone(),
+                self.node_types_reverse_mapping.clone(),
+                None,
+                self.edge_types_mapping.clone(),
+                self.edge_types_reverse_mapping.clone(),
+                None,
+                None
+            )?
+        })
+    }
+
+    /// Returns holdout for training ML algorithms on the graph structure.
+    /// 
+    /// The holdouts returned are a tuple of graphs. The first one, which
+    /// is the training graph, is garanteed to have the same number of 
+    /// graph components as the initial graph. The second graph is the graph
+    /// meant for testing or validation of the algorithm, and has no garantee
+    /// to be connected. It will have at most (1-train_percentage) edges,
+    /// as the bound of connectivity which is required for the training graph
+    /// may lead to more edges being left into the training partition.
+    /// 
+    /// # Arguments
+    /// 
+    /// * seed:NodeT - The seed to use for the holdout,
+    /// * train_percentage:f64 - Percentage target to reserve for training
+    /// 
     pub fn holdout(
         &self,
         seed:NodeT,
