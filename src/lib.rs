@@ -2,6 +2,7 @@ use graph::{EdgeT, EdgeTypeT, Graph, NodeT, NodeTypeT, ParamsT, WeightT};
 use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
+use pyo3::class::number::PyNumberProtocol;
 use numpy::{PyArray1, ToPyArray};
 use std::collections::{HashMap, HashSet};
 
@@ -16,6 +17,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
     Ok(())
 }
 
+
 #[pyclass]
 #[derive(Clone)]
 #[text_signature = "(sources, destinations, *, nodes_mapping, nodes_reverse_mapping, node_types, node_types_mapping, node_types_reverse_mapping, edge_types, edge_types_mapping, edge_types_reverse_mapping, weights, force_conversion_to_undirected)"]
@@ -26,10 +28,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
 /// destinations: List[int],
 ///     The list of destination nodes.
 /// nodes_mapping: Dict[str, int] = None,
-///     The dictionary with mapping between the node name and its node ID.
-/// nodes_reverse_mapping: List[str] = None,
-///     The reverse mapping between numeric node ID and node name.
-/// node_types: List[int] = None,
+///     The dictionary with mappEnsmallenGraph,
 ///     List of the node types, must be as long as the nodes mapping.
 /// node_types_mapping: Dict[str, int] = None,
 ///     Mapping between the node types names and their IDs.
@@ -1109,27 +1108,6 @@ impl EnsmallenGraph {
         }
     }
 
-    #[text_signature = "($self, other)"]
-     /// Return sum for summing graphs objects.
-    /// 
-    /// The add is only defined for disjointed graph components.
-    /// The two graphs must have the same nodes, node types and edge types.
-    /// 
-    /// Parameters
-    /// ------------------------------------
-    /// other: Graph,
-    ///     Graph to be summed.
-    /// 
-    /// Returns
-    /// ------------------------------------
-    /// Graph resulting from composition of the two graphs.
-    fn __add__(&self, seed:EdgeT, negative_samples:EdgeT) -> PyResult<EnsmallenGraph> {
-        match self.graph.sample_negatives(seed, negative_samples) {
-            Ok(g) => Ok(EnsmallenGraph{graph:g}),
-            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-        }
-    }
-
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, batch_size, negative_samples, graph_to_avoid, shuffle)"]
     /// Returns training and validation holdouts extracted from current graph.
@@ -1183,5 +1161,15 @@ impl EnsmallenGraph {
             )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
-    }
+    }   
+}
+
+#[pyproto]
+impl PyNumberProtocol for EnsmallenGraph{
+   fn __add__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
+       match lhs.graph.sum(&rhs.graph) {
+           Ok(g) => Ok(EnsmallenGraph{graph:g}),
+           Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+       }
+   }
 }
