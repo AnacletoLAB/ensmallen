@@ -3,7 +3,7 @@ use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use pyo3::class::number::PyNumberProtocol;
-use numpy::{PyArray, PyArray1, PyArray2, ToPyArray};
+use numpy::{PyArray, PyArray1, PyArray2};
 use std::collections::{HashMap, HashSet};
 
 #[pymodule]
@@ -719,7 +719,6 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Tuple with vector of integer with contexts and words.
-    ///
     fn cbow(
         &self,
         idx:usize,
@@ -773,13 +772,13 @@ impl EnsmallenGraph {
     #[getter]
     fn sources(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
-        self.graph.sources().clone().to_pyarray(gil.python()).to_owned()
+        PyArray::from_vec(gil.python(), self.graph.sources.clone()).to_owned()
     }
 
     #[getter]
     fn destinations(&self) ->  Py<PyArray1<NodeT>>  {
         let gil = pyo3::Python::acquire_gil();
-        self.graph.destinations().clone().to_pyarray(gil.python()).to_owned()
+        PyArray::from_vec(gil.python(), self.graph.destinations.clone()).to_owned()
     }
 
     #[getter]
@@ -958,7 +957,7 @@ impl EnsmallenGraph {
     fn degrees(&self) -> Py<PyArray1<EdgeT>> {
         let degrees = self.graph.degrees();
         let gil = pyo3::Python::acquire_gil();
-        degrees.to_pyarray(gil.python()).cast::<EdgeT>(false).unwrap().to_owned()
+        PyArray::from_vec(gil.python(), degrees).cast::<EdgeT>(false).unwrap().to_owned()
     }
 
     #[text_signature = "($self, src, dst)"]
@@ -1218,9 +1217,9 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         match results {
             Ok((sources, destinations, labels)) => Ok((
-                sources.to_pyarray(gil.python()).cast::<NodeT>(false).unwrap().to_owned(),
-                destinations.to_pyarray(gil.python()).cast::<NodeT>(false).unwrap().to_owned(),
-                labels.to_pyarray(gil.python()).cast::<u8>(false).unwrap().to_owned()
+                PyArray::from_vec(gil.python(), sources).cast::<NodeT>(false).unwrap().to_owned(),
+                PyArray::from_vec(gil.python(), destinations).cast::<NodeT>(false).unwrap().to_owned(),
+                PyArray::from_vec(gil.python(), labels).cast::<u8>(false).unwrap().to_owned()
             )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
