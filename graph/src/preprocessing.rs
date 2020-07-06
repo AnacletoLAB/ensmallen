@@ -652,7 +652,6 @@ impl Graph {
     /// * batch_size:usize - The maximal size of the batch to generate,
     /// * negative_samples: Option<f64> - The component of netagetive samples to use,
     /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
-    /// * shuffle: Option<bool> - Whetever to shuffle or not the batch.
     ///
     pub fn link_prediction(
         &self,
@@ -660,10 +659,8 @@ impl Graph {
         batch_size: usize,
         negative_samples: Option<f64>,
         graph_to_avoid: Option<&Graph>,
-        shuffle: Option<bool>,
     ) -> Result<(Vec<NodeT>, Vec<NodeT>, Vec<u8>), String> {
         let _negative_samples = negative_samples.unwrap_or(1.0);
-        let _shuffle = shuffle.unwrap_or(true);
         let seed = idx ^ 0xBAD5eedBAD5eed11;
         // The number of negatives is given by computing their fraction of batchsize
         let negatives_number: usize =
@@ -712,14 +709,6 @@ impl Graph {
 
         let mut edges: Vec<(NodeT, NodeT)> = positives;
         edges.extend(negatives);
-
-        if _shuffle {
-            let mut indices: Vec<usize> = (0..edges.len() as usize).collect();
-            indices.shuffle(&mut thread_rng());
-
-            labels = indices.par_iter().map(|i| labels[*i]).collect();
-            edges = indices.par_iter().map(|i| edges[*i]).collect();
-        }
 
         let sources: Vec<NodeT> = edges.par_iter().map(|(src, _)| *src).collect();
         let destinations: Vec<NodeT> = edges.par_iter().map(|(_, dst)| *dst).collect();

@@ -703,7 +703,12 @@ impl EnsmallenGraph {
     ///     Having this higher tends the walks to be
     ///     more like a Breadth-First Search.
     ///     Having this very high  (> 2) makes search very local.
-    ///     Equal to the inverse of VecSearch.
+    ///     Equal to the inverse of p in the Node2Vec paper.
+    /// explore_weight: float = 1.0,
+    ///     Weight on the probability of visiting a neighbor node
+    ///     to the one we're coming from in the random walk
+    ///     Having this higher tends the walks to be
+    ///     more like a Depth-First Search.
     ///     Having this very high makes search more outward.
     ///     Having this very low makes search very local.
     ///     Equal to the inverse of q in the Node2Vec paper.
@@ -1171,22 +1176,28 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, batch_size, negative_samples, graph_to_avoid, shuffle)"]
-    /// Returns training and validation holdouts extracted from current graph.
+    #[text_signature = "($self, idx, batch_size, negative_samples, graph_to_avoid)"]
+    /// Returns 
     /// 
-    /// The holdouts is generated in such a way that the training set remains
-    /// connected if the starting graph is connected by using a spanning tree.
     ///
     /// Parameters
     /// -----------------------------
-    /// seed: int,
-    ///     The seed to use to generate the holdout.
-    /// train_percentage: float,
-    ///     The percentage to reserve for the training.
+    /// idx:int,
+    ///     Index corresponding to batch to be rendered.
+    /// batch_size: int = 2**10,
+    ///     The batch size to use.
+    /// negative_samples: float = 1.0,
+    ///     Factor of negatives to use in every batch.
+    ///     For example, with a batch size of 128 and negative_samples equal
+    ///     to 1.0, there will be 64 positives and 64 negatives.
+    /// graph_to_avoid: EnsmallenGraph = None,
+    ///     Graph to avoid when generating the links.
+    ///     This can be the validation component of the graph, for example.
     /// 
     /// Returns
     /// -----------------------------
     /// Tuple containing training and validation graphs.
+    /// 
     fn link_prediction(&self, idx:u64, batch_size:usize, py_kwargs: Option<&PyDict>) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<u8>>)> {
         let results = if let Some(kwargs) = py_kwargs {
             let ensmallen_graph = kwargs
@@ -1206,13 +1217,10 @@ impl EnsmallenGraph {
                 kwargs
                     .get_item("negative_samples")
                     .map(|val| val.extract::<f64>().unwrap()),
-                graph,
-                kwargs
-                    .get_item("shuffle")
-                    .map(|val| val.extract::<bool>().unwrap())
+                graph
             )
         } else {
-            self.graph.link_prediction(idx, batch_size, None, None, None)
+            self.graph.link_prediction(idx, batch_size, None, None)
         };
         let gil = pyo3::Python::acquire_gil();
         match results {

@@ -98,8 +98,7 @@ struct LinkPredictionArgs {
     idx: u16,
     batch_size: u8,
     negative_samples: Option<f64>,
-    graph_to_avoid: Option<FromCsvAgs>,
-    shuffle: Option<bool>
+    graph_to_avoid: Option<FromCsvAgs>
 }
 
 #[derive(Arbitrary, Debug)]
@@ -300,7 +299,6 @@ fuzz_target!(|data: ToFuzz| {
                 data.link_prediction_args.batch_size as usize,
                 data.link_prediction_args.negative_samples,
                 None,
-                data.link_prediction_args.shuffle,
             );   
         } else {
 
@@ -312,7 +310,6 @@ fuzz_target!(|data: ToFuzz| {
                     data.link_prediction_args.batch_size as usize,
                     negative_samples,
                     Some(&graph2.unwrap()),
-                    data.link_prediction_args.shuffle,
                 );   
             }
         }
