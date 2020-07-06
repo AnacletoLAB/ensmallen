@@ -36,6 +36,10 @@ coverage:
 fuzz:
 	RUST_BACKTRACE=1 cargo fuzz run from_csv --release -- -rss_limit_mb=0 -seed=1337
 
+test:
+	rm -fdr target
+	cargo test
+
 fuzz_coverage:
 	cargo fuzz build
 	mkdir -p ./fuzz/cov

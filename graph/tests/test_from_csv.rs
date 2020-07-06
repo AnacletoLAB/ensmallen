@@ -41,6 +41,7 @@ fn test_graph_from_csv_edge_only() {
         assert!(graph.skipgrams(0, 128, 80, None, None, Some(0.5), None, None, None, None, None, None, None).is_ok());
         assert!(graph.skipgrams(56567, 128, 80, None, None, Some(0.5), None, None, None, None, None, None, None).is_err());
         assert!(graph.walk(80, Some(1), Some(0), None, None, None, None, None, None, Some(false)).is_ok());
+        assert!(graph.cbow(0, 128, 80, None, None, None, None, None, None, None, None).is_ok());
     }
 }
 

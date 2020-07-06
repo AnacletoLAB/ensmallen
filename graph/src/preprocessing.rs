@@ -101,6 +101,7 @@ impl Graph {
         }
         ((words, contexts), labels)
     }
+
     /// Return training batches for SkipGram model.
     ///
     /// The batch is composed of a tuple as the following:
@@ -332,6 +333,179 @@ impl Graph {
             .collect();
 
         Ok(((words, contexts), labels))
+    }
+
+    /// Return training batches for CBOW model.
+    ///
+    /// The batch is composed of a tuple as the following:
+    ///
+    /// - (Contexts indices, central nodes indices): the tuple of nodes
+    /// 
+    /// This does not provide any output value as the model uses NCE loss
+    /// and basically the central nodes that are fed as inputs work as the
+    /// outputs value.
+    ///
+    /// # Arguments
+    ///
+    /// * idx: usize - Index of the batch
+    /// * batch_size - Batch size, number of nodes to include in this iteration.
+    /// * length: usize - Length of the random walks.
+    /// * iterations: Option<usize> - Iterations on every node.
+    /// * window_size: Option<usize> - Window size to consider for the sequences.
+    /// * shuffle: Option<bool>,
+    ///     Wethever to shuffle the vectors on return.
+    /// * min_length: Option<usize>,
+    ///     Minimum length of the walks.
+    ///     Walks which are smaller than the given minimum length will be
+    ///     filtered and ignored.
+    /// * return_weight: Option<ParamsT>,
+    ///     Weight for the probability of exploitation.
+    ///     This is the inverse of the p parameter.
+    ///     The default value is 1.0.
+    /// * explore_weight: Option<ParamsT>,
+    ///     Weight for the probability of exploration.
+    ///     This is the inverse of the q parameter.
+    ///     The default value is 1.0.
+    /// * change_node_type_weight: Option<ParamsT>,
+    ///     Weight for changing the node type at every step of the walk.
+    ///     The default value is 1.0.
+    /// * change_edge_type_weight: Option<ParamsT>,
+    ///     Weight for changing the edge type at every step of the walk.
+    ///     The default value is 1.0.
+    ///
+    pub fn cbow(
+        &self,
+        idx: usize,
+        batch_size: usize,
+        length: usize,
+        iterations: Option<usize>,
+        window_size: Option<usize>,
+        shuffle: Option<bool>,
+        min_length: Option<usize>,
+        return_weight: Option<ParamsT>,
+        explore_weight: Option<ParamsT>,
+        change_node_type_weight: Option<ParamsT>,
+        change_edge_type_weight: Option<ParamsT>
+    ) -> Result<(Vec<Vec<usize>>, Vec<usize>), String> {
+        // check parameters validity
+        let opt_idx = idx.checked_add(1);
+        if opt_idx.is_none() {
+            return Err(format!("The Index {} + 1 oveflow the u64.", idx));
+        }
+
+        let opt_end_node = opt_idx.unwrap().checked_mul(batch_size);
+        if opt_end_node.is_none() {
+            return Err(format!(
+                "The Index+1 {} and batchsize {} when multiplied oveflow the u64.",
+                idx + 1,
+                batch_size
+            ));
+        }
+
+        let start_node = idx * batch_size;
+        let end_node = min!(self.get_nodes_number(), opt_end_node.unwrap());
+
+        if start_node >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "The given walk index {idx} with batch size {batch_size} ",
+                    "is larger than the number of nodes {nodes} in the graph."
+                ),
+                idx = idx,
+                batch_size = batch_size,
+                nodes = self.get_nodes_number()
+            ));
+        }
+
+        // do the walks and check the result
+        let walks = self.walk(
+            length,
+            iterations,
+            Some(start_node),
+            Some(end_node),
+            min_length,
+            return_weight,
+            explore_weight,
+            change_node_type_weight,
+            change_edge_type_weight,
+            Some(false),
+        )?;
+
+        if walks.is_empty() {
+            return Err(String::from(concat!(
+                "An empty set of walks was generated.\n",
+                "Consider changing the minimum length parameter, ",
+                "increasing the batch size, the iterations and ",
+                "checking the number of trap nodes in the graph."
+            )));
+        }
+
+        let _window_size = window_size.unwrap_or(4);
+        let _shuffle:bool = shuffle.unwrap_or(true);
+        let context_length = _window_size*2;
+
+        let mut walks_centers:Vec<Vec<NodeT>> = walks.par_iter().map(
+            |walk|
+            vec![0; walk.len()]
+        ).collect();
+        let mut walks_filters:Vec<Vec<bool>> = walks.par_iter().map(
+            |walk|
+            vec![false; walk.len()]
+        ).collect();
+        let mut contexts:Vec<Vec<NodeT>> = walks
+            .par_iter()
+            .zip(walks_centers.par_iter_mut())
+            .zip(walks_filters.par_iter_mut())
+            .map(
+                |((walk, centers), filters)|
+                walk.iter().enumerate().zip(centers.iter_mut()).map(
+                    |((i, word), center)| {
+                        let start = if i<=_window_size{
+                            0
+                        } else {
+                            i - _window_size
+                        };
+                        let end = min!(walk.len(), i + _window_size);
+                        *center = *word;        
+                        let context:Vec<NodeT> = walk[start..end].to_vec();
+                        context
+                    }
+                ).zip(filters.iter_mut()).filter_map(
+                    |(context, filter)| if context.len() == context_length{
+                        *filter = true;
+                        Some(context)
+                    } else {
+                        *filter = false;
+                        None
+                    }
+                ).collect::<Vec<Vec<NodeT>>>()
+        ).flatten().collect();
+
+        let filters:Vec<bool> = walks_filters
+            .iter().flatten().cloned().collect();
+
+        let mut centers:Vec<NodeT> = walks_centers
+            .iter().flatten().cloned()
+            .zip(filters.iter())
+            .filter_map(
+                |(center, filter)|
+                if *filter {
+                    Some(center)
+                } else {
+                    None
+                }
+            )
+            .collect();
+
+        if _shuffle {
+            let mut indices: Vec<usize> = (0..centers.len() as usize).collect();
+            indices.shuffle(&mut thread_rng());
+
+            contexts = indices.par_iter().map(|i| contexts[*i].clone()).collect();
+            centers = indices.par_iter().map(|i| centers[*i]).collect();
+        }
+
+        Ok((contexts, centers))
     }
 
     /// Return triple with CSR representation of cooccurrence matrix.

@@ -79,6 +79,21 @@ struct CooccurrenceArgs {
 }
 
 #[derive(Arbitrary, Debug)]
+struct CbowArgs {
+    idx: usize,
+    batch_size: usize,
+    length: usize,
+    iterations: Option<usize>,
+    window_size: Option<usize>,
+    shuffle: Option<bool>,
+    min_length: Option<usize>,
+    return_weight: Option<ParamsT>,
+    explore_weight: Option<ParamsT>,
+    change_node_type_weight: Option<ParamsT>,
+    change_edge_type_weight: Option<ParamsT>
+}
+
+#[derive(Arbitrary, Debug)]
 struct LinkPredictionArgs {
     idx: u16,
     batch_size: u8,
@@ -99,6 +114,7 @@ struct ToFuzz {
     walks_args: WalkArgs,
     skipgrams_args: SkipgramsArgs,
     cooccurence_args: CooccurrenceArgs,
+    cbow_args:  CbowArgs,
     link_prediction_args: LinkPredictionArgs,
     holdout_args: HoldoutArgs
 }
@@ -249,6 +265,20 @@ fuzz_target!(|data: ToFuzz| {
             data.cooccurence_args.change_node_type_weight.map(|e| e as f64),
             data.cooccurence_args.change_edge_type_weight.map(|e| e as f64),
             Some(false)
+        );
+
+        let _ = unwrapped.cbow(
+            data.cbow_args.idx as usize,
+            data.cbow_args.batch_size as usize,
+            data.cbow_args.length as usize,
+            data.cbow_args.iterations.map(|e| e as usize),
+            data.cbow_args.window_size.map(|e| e as usize),
+            data.cbow_args.shuffle,
+            data.cbow_args.min_length.map(|e| e as usize),
+            data.cbow_args.return_weight.map(|e| e as f64),
+            data.cbow_args.explore_weight.map(|e| e as f64),
+            data.cbow_args.change_node_type_weight.map(|e| e as f64),
+            data.cbow_args.change_edge_type_weight.map(|e| e as f64)
         );
 
         let _ = unwrapped.holdout(
