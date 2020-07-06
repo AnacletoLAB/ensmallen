@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 # 32 bit
@@ -11,7 +11,7 @@ RUN apt-get update -qyy && apt-get install -qyy apt-utils build-essential softwa
 ###########################################################
 RUN  apt-get update -qyy && apt-get install -qyy \
     nano \
-    neovim \
+    vim \
     tmux \
     git \
     wget \
@@ -40,21 +40,28 @@ RUN /root/rustup.sh --default-host x86_64-unknown-linux-gnu --default-toolchain 
 RUN echo "source /root/.cargo/env" >> /root/.bashrc
 RUN rm /root/rustup.sh
 
-RUN source /root/.bashrc
-
-RUN pip install maturin
-
 ###########################################################
 # Setup different python versions
 ###########################################################
-ENV PYTHON_VERSIONS=3.8.3,3.7.7,3.6.10,3.5.9
 
-# Build all the versions
-RUN  for PYTHON_VERSION in $PYTHON_VERSIONS; do                                 \
-    wget https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz            \
-    tar -xf Python-${PYTHON_VERSION}tar.xz                                                 \
-    (cd Python-${PYTHON_VERSION}; ./configure --enable-optimizations; make -j$(nproc); make -j$(nproc) install) \
-    done;
+RUN  apt-get update -qyy && apt-get install -qyy zlib1g-dev
+
+RUN wget https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tar.xz
+RUN tar -xf Python-3.8.3.tar.xz
+RUN (cd Python-3.8.3; ./configure --enable-optimizations; make -j$(nproc); make -j$(nproc) install)
+
+RUN wget https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tar.xz
+RUN tar -xf Python-3.7.7.tar.xz
+RUN (cd Python-3.7.7; ./configure --enable-optimizations; make -j$(nproc); make -j$(nproc) install)
+
+RUN wget https://www.python.org/ftp/python/3.6.10/Python-3.6.10.tar.xz
+RUN tar -xf Python-3.6.10.tar.xz
+RUN (cd Python-3.6.10; ./configure --enable-optimizations; make -j$(nproc); make -j$(nproc) install)
+
+RUN wget https://www.python.org/ftp/python/3.5.9/Python-3.5.9.tar.xz
+RUN tar -xf Python-3.5.9.tar.xz
+RUN (cd Python-3.5.9; ./configure --enable-optimizations; make -j$(nproc); make -j$(nproc) install)
+
 
 ###########################################################
 # Build directory
