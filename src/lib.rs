@@ -3,7 +3,7 @@ use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use pyo3::class::number::PyNumberProtocol;
-use numpy::{PyArray1, PyArray2, ToPyArray};
+use numpy::{PyArray, PyArray1, PyArray2, ToPyArray};
 use std::collections::{HashMap, HashSet};
 
 #[pymodule]
@@ -232,8 +232,36 @@ impl EnsmallenGraph {
         directed: bool,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Self> {
-        if py_kwargs.is_none() {
-            let graph = Graph::from_csv(
+        let graph = if let Some(kwargs) = &py_kwargs{
+            Graph::from_csv(
+                edge_path,
+                sources_column,
+                destinations_column,
+                directed,
+                kwargs.get_item("edge_types_column").map(extract_value),
+                kwargs.get_item("default_edge_type").map(extract_value),
+                kwargs.get_item("weights_column").map(extract_value),
+                kwargs
+                    .get_item("default_weight")
+                    .map(|val| val.extract::<WeightT>().unwrap()),
+                kwargs.get_item("node_path").map(extract_value),
+                kwargs.get_item("nodes_column").map(extract_value),
+                kwargs.get_item("node_types_column").map(extract_value),
+                kwargs.get_item("default_node_type").map(extract_value),
+                kwargs.get_item("edge_sep").map(extract_value),
+                kwargs.get_item("node_sep").map(extract_value),
+                kwargs
+                    .get_item("ignore_duplicated_edges")
+                    .map(|val| val.extract::<bool>().unwrap()),
+                kwargs
+                    .get_item("ignore_duplicated_nodes")
+                    .map(|val| val.extract::<bool>().unwrap()),
+                kwargs
+                    .get_item("force_conversion_to_undirected")
+                    .map(|val| val.extract::<bool>().unwrap()),
+            )
+        } else {
+            Graph::from_csv(
                 edge_path,
                 sources_column,
                 destinations_column,
@@ -251,43 +279,8 @@ impl EnsmallenGraph {
                 None,
                 None,
                 None
-            );
-
-            return match graph {
-                Ok(g) => Ok(EnsmallenGraph { graph: g }),
-                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-            };
-        }
-
-        let kwargs = py_kwargs.unwrap();
-
-        let graph = Graph::from_csv(
-            edge_path,
-            sources_column,
-            destinations_column,
-            directed,
-            kwargs.get_item("edge_types_column").map(extract_value),
-            kwargs.get_item("default_edge_type").map(extract_value),
-            kwargs.get_item("weights_column").map(extract_value),
-            kwargs
-                .get_item("default_weight")
-                .map(|val| val.extract::<WeightT>().unwrap()),
-            kwargs.get_item("node_path").map(extract_value),
-            kwargs.get_item("nodes_column").map(extract_value),
-            kwargs.get_item("node_types_column").map(extract_value),
-            kwargs.get_item("default_node_type").map(extract_value),
-            kwargs.get_item("edge_sep").map(extract_value),
-            kwargs.get_item("node_sep").map(extract_value),
-            kwargs
-                .get_item("ignore_duplicated_edges")
-                .map(|val| val.extract::<bool>().unwrap()),
-            kwargs
-                .get_item("ignore_duplicated_nodes")
-                .map(|val| val.extract::<bool>().unwrap()),
-            kwargs
-                .get_item("force_conversion_to_undirected")
-                .map(|val| val.extract::<bool>().unwrap()),
-        );
+            )
+        };
 
         match graph {
             Ok(g) => Ok(EnsmallenGraph { graph: g }),
@@ -407,52 +400,44 @@ impl EnsmallenGraph {
         length: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
-        if py_kwargs.is_none() {
-            let w = self
-                .graph
-                .walk(length, None, None, None, None, None, None, None, None, None);
+        let walks = if let Some(kwargs) = &py_kwargs {
+            self.graph.walk(
+                length,
+                kwargs
+                    .get_item("iterations")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("start_node")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("end_node")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("min_length")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("return_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("explore_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("change_node_type_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("change_edge_type_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("verbose")
+                    .map(|val| val.extract::<bool>().unwrap()),
+            )
+        } else {
+            self.graph
+            .walk(length, None, None, None, None, None, None, None, None, None)
+        };
 
-            return match w {
-                Ok(g) => Ok(g),
-                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-            };
-        }
-
-        let kwargs = py_kwargs.unwrap();
-
-        let w = self.graph.walk(
-            length,
-            kwargs
-                .get_item("iterations")
-                .map(|val| val.extract::<usize>().unwrap()),
-            kwargs
-                .get_item("start_node")
-                .map(|val| val.extract::<usize>().unwrap()),
-            kwargs
-                .get_item("end_node")
-                .map(|val| val.extract::<usize>().unwrap()),
-            kwargs
-                .get_item("min_length")
-                .map(|val| val.extract::<usize>().unwrap()),
-            kwargs
-                .get_item("return_weight")
-                .map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs
-                .get_item("explore_weight")
-                .map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs
-                .get_item("change_node_type_weight")
-                .map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs
-                .get_item("change_edge_type_weight")
-                .map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs
-                .get_item("verbose")
-                .map(|val| val.extract::<bool>().unwrap()),
-        );
-
-        match w {
-            Ok(g) => Ok(g),
+        match walks {
+            Ok(w) => Ok(w),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
@@ -507,60 +492,46 @@ impl EnsmallenGraph {
         length: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray1<f64>>, Py<PyArray1<f64>>, Py<PyArray1<f64>>)> {
-        if py_kwargs.is_none() {
-            let w = self
-                .graph
-                .cooccurence_matrix(length, None, None, None, None, None, None, None, None);
-            let gil = pyo3::Python::acquire_gil();
-            return match w {
-                Ok(g) => Ok(
-                    (
-                        g.0.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
-                        g.1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
-                        g.2.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
-                    )
-                ),
-                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-            };
-        }
-
-        let kwargs = py_kwargs.unwrap();
-
-        let w = self.graph.cooccurence_matrix(
-            length,
-            kwargs
-                .get_item("iterations")
-                .map(|val| val.extract::<usize>().unwrap()),
-            kwargs
-                .get_item("window_size")
-                .map(|val| val.extract::<usize>().unwrap()),
-            kwargs
-                .get_item("min_length")
-                .map(|val| val.extract::<usize>().unwrap()),
-            kwargs
-                .get_item("return_weight")
-                .map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs
-                .get_item("explore_weight")
-                .map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs
-                .get_item("change_node_type_weight")
-                .map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs
-                .get_item("change_edge_type_weight")
-                .map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs
-                .get_item("verbose")
-                .map(|val| val.extract::<bool>().unwrap()),
-        );
+        let csr = if let Some(kwargs) = &py_kwargs {
+            self.graph.cooccurence_matrix(
+                length,
+                kwargs
+                    .get_item("iterations")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("window_size")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("min_length")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("return_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("explore_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("change_node_type_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("change_edge_type_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("verbose")
+                    .map(|val| val.extract::<bool>().unwrap()),
+            )
+        } else {
+            self.graph
+                .cooccurence_matrix(length, None, None, None, None, None, None, None, None)
+        };
         
         let gil = pyo3::Python::acquire_gil();
-        match w {
-            Ok(g) => Ok(
+        match csr {
+            Ok(csr) => Ok(
                 (
-                    g.0.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
-                    g.1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
-                    g.2.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
+                    PyArray::from_vec(gil.python(), csr.0).cast::<f64>(false).unwrap().to_owned(),
+                    PyArray::from_vec(gil.python(), csr.1).cast::<f64>(false).unwrap().to_owned(),
+                    PyArray::from_vec(gil.python(), csr.2).cast::<f64>(false).unwrap().to_owned()
                 )
             ),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
@@ -685,10 +656,10 @@ impl EnsmallenGraph {
         match batch {
             Ok(batch) => Ok((
                 (
-                    (batch.0).0.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
-                    (batch.0).1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
+                    PyArray::from_vec(gil.python(), (batch.0).0).cast::<f64>(false).unwrap().to_owned(),
+                    PyArray::from_vec(gil.python(), (batch.0).1).cast::<f64>(false).unwrap().to_owned()
                 ),
-                batch.1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
+                PyArray::from_vec(gil.python(), batch.1).cast::<f64>(false).unwrap().to_owned()
             )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
@@ -792,8 +763,8 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         match batch {
             Ok(batch) => Ok((
-                batch.0.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
-                batch.1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
+                PyArray::from_vec2(gil.python(), &batch.0).unwrap().cast::<f64>(false).unwrap().to_owned(),
+                PyArray::from_vec(gil.python(), batch.1).cast::<f64>(false).unwrap().to_owned()
             )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
