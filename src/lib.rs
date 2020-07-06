@@ -3,7 +3,7 @@ use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use pyo3::class::number::PyNumberProtocol;
-use numpy::{PyArray1, ToPyArray};
+use numpy::{PyArray1, PyArray2, ToPyArray};
 use std::collections::{HashMap, HashSet};
 
 #[pymodule]
@@ -632,78 +632,168 @@ impl EnsmallenGraph {
         length: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<((Py<PyArray1<f64>>, Py<PyArray1<f64>>), Py<PyArray1<f64>>)>{
-        if py_kwargs.is_none() {
-            let w = self
-                .graph
-                .skipgrams(idx, batch_size, length, None, None, None, None, None, None, None, None, None, None);
-
-            let gil = pyo3::Python::acquire_gil();
-            return match w {
-                Ok(g) => Ok((
-                    (
-                        (g.0).0.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
-                        (g.0).1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
-                    ),
-                    g.1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
-                )),
-                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        let batch = if let Some(kwargs) = &py_kwargs {
+            let ensmallen_graph = kwargs
+                .get_item("graph_to_avoid")
+                .map(|val| val.extract::<EnsmallenGraph>());
+            let graph = if let Some(eg) = &ensmallen_graph {
+                match eg {
+                    Ok(g) => Some(&g.graph),
+                    Err(_) => None
+                }
+            } else {
+                None
             };
-        }
 
-        let kwargs = py_kwargs.unwrap();
-
-        let ensmallen_graph = kwargs
-            .get_item("graph_to_avoid")
-            .map(|val| val.extract::<EnsmallenGraph>());
-        let graph = if let Some(eg) = &ensmallen_graph {
-            match eg {
-                Ok(g) => Some(&g.graph),
-                Err(_) => None
-            }
+            self.graph.skipgrams(
+                idx, batch_size, length,
+                kwargs
+                    .get_item("iterations")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("window_size")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("negative_samples")
+                    .map(|val| val.extract::<f64>().unwrap()),
+                kwargs
+                    .get_item("shuffle")
+                    .map(|val| val.extract::<bool>().unwrap()),
+                kwargs
+                    .get_item("min_length")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("return_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("explore_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("change_node_type_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("change_edge_type_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                graph
+            )
         } else {
-            None
+            self.graph
+                .skipgrams(idx, batch_size, length, None, None, None, None, None, None, None, None, None, None)
         };
 
-        let w = self.graph.skipgrams(
-            idx, batch_size, length,
-            kwargs
-                .get_item("iterations")
-                .map(|val| val.extract::<usize>().unwrap()),
-            kwargs
-                .get_item("window_size")
-                .map(|val| val.extract::<usize>().unwrap()),
-            kwargs
-                .get_item("negative_samples")
-                .map(|val| val.extract::<f64>().unwrap()),
-            kwargs
-                .get_item("shuffle")
-                .map(|val| val.extract::<bool>().unwrap()),
-            kwargs
-                .get_item("min_length")
-                .map(|val| val.extract::<usize>().unwrap()),
-            kwargs
-                .get_item("return_weight")
-                .map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs
-                .get_item("explore_weight")
-                .map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs
-                .get_item("change_node_type_weight")
-                .map(|val| val.extract::<ParamsT>().unwrap()),
-            kwargs
-                .get_item("change_edge_type_weight")
-                .map(|val| val.extract::<ParamsT>().unwrap()),
-            graph
-        );
+        let gil = pyo3::Python::acquire_gil();
+        match batch {
+            Ok(batch) => Ok((
+                (
+                    (batch.0).0.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
+                    (batch.0).1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
+                ),
+                batch.1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
+            )),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
+    /// Return training batches for CBOW model.
+    ///
+    /// The batch is composed of a tuple as the following:
+    ///
+    /// - (Contexts indices, central nodes indices): the tuple of nodes
+    /// 
+    /// This does not provide any output value as the model uses NCE loss
+    /// and basically the central nodes that are fed as inputs work as the
+    /// outputs value.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// idx: int,
+    ///     Identifier of the batch to generate.
+    /// batch_size:
+    ///     Number of walks to include within this batch.
+    ///     Consider that the walks may be filtered by the given min_length.
+    ///     In some pathological cases, this might leed to an empty batch.
+    ///     These cases include graphs with particularly high number of traps.
+    ///     Consider using the method graph.report() to verify if this might
+    ///     apply to your use case.
+    /// length: int,
+    ///     Maximal length of the random walk.
+    ///     On graphs without traps, all walks have this length.
+    /// iterations: int = 1,
+    ///     Number of iterations for each node.
+    /// window_size: int = 4,
+    ///     Size of the window for local contexts.
+    /// min_length: int = 0,
+    ///     Minimal length of the random walk. Will filter out smaller
+    ///     random walks.
+    /// return_weight: float = 1.0,
+    ///     Weight on the probability of returning to node coming from
+    ///     Having this higher tends the walks to be
+    ///     more like a Breadth-First Search.
+    ///     Having this very high  (> 2) makes search very local.
+    ///     Equal to the inverse of VecSearch.
+    ///     Having this very high makes search more outward.
+    ///     Having this very low makes search very local.
+    ///     Equal to the inverse of q in the Node2Vec paper.
+    /// change_node_type_weight: float = 1.0,
+    ///     Weight on the probability of visiting a neighbor node of a
+    ///     different type than the previous node. This only applies to
+    ///     colored graphs, otherwise it has no impact.
+    /// change_edge_type_weight: float = 1.0,
+    ///     Weight on the probability of visiting a neighbor edge of a
+    ///     different type than the previous edge. This only applies to
+    ///     multigraphs, otherwise it has no impact.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Tuple with vector of integer with contexts and words.
+    ///
+    fn cbow(
+        &self,
+        idx:usize,
+        batch_size:usize,
+        length: usize,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<(Py<PyArray2<f64>>, Py<PyArray1<f64>>)>{
+        let batch = if let Some(kwargs) = &py_kwargs {
+            self.graph.cbow(
+                idx, batch_size, length,
+                kwargs
+                    .get_item("iterations")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("window_size")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("shuffle")
+                    .map(|val| val.extract::<bool>().unwrap()),
+                kwargs
+                    .get_item("min_length")
+                    .map(|val| val.extract::<usize>().unwrap()),
+                kwargs
+                    .get_item("return_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("explore_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("change_node_type_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
+                kwargs
+                    .get_item("change_edge_type_weight")
+                    .map(|val| val.extract::<ParamsT>().unwrap())
+            )
+        } else {
+            self.graph
+                .cbow(idx, batch_size, length, None, None, None, None, None, None, None, None)
+        };
         
         let gil = pyo3::Python::acquire_gil();
-        match w {
-            Ok(g) => Ok((
-                (
-                    (g.0).0.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
-                    (g.0).1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
-                ),
-                g.1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
+        match batch {
+            Ok(batch) => Ok((
+                batch.0.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned(),
+                batch.1.to_pyarray(gil.python()).cast::<f64>(false).unwrap().to_owned()
             )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
