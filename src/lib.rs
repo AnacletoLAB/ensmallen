@@ -342,6 +342,60 @@ impl EnsmallenGraph {
         }
     }
 
+    #[text_signature = "($self)"]
+    /// Return the count of how many time an edge type appears.
+    fn get_edge_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
+        match self.graph.get_edge_type_counts() {
+            Ok(g) => Ok(g),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
+
+    #[text_signature = "($self)"]
+    /// Return the count of how many time an node type appears.
+    fn get_node_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
+        match self.graph.get_node_type_counts() {
+            Ok(g) => Ok(g),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
+
+    #[text_signature = "($self, k)"]
+    /// Return vectors with the nodes and node types within the top k most common.
+    /// 
+    /// Parameters
+    /// --------------------------
+    /// k: int,
+    ///     Number of common node types to return.
+    /// 
+    /// Returns
+    /// --------------------------
+    /// Tuple with node IDs and node types within k most common node types.
+    fn get_top_k_nodes_by_node_type(&self, k: usize) -> PyResult<(Vec<NodeT>, Vec<NodeTypeT>)> {
+        match self.graph.get_top_k_nodes_by_node_type(k) {
+            Ok(g) => Ok(g),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
+    
+    #[text_signature = "($self)"]
+    /// Return vectors with the edges and edge types within the top k most common.
+    ///
+    /// Parameters
+    /// --------------------------
+    /// k: int,
+    ///     Number of common edge types to return.
+    /// 
+    /// Returns
+    /// --------------------------
+    /// Tuple with edge IDs and edge types within k most common edge types.
+    fn get_top_k_edges_by_edge_type(&self, k: usize) -> PyResult<(Vec<NodeT>, Vec<NodeTypeT>)> {
+        match self.graph.get_top_k_edges_by_edge_type(k) {
+            Ok(g) => Ok(g),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
+
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, length, *, iterations, start_node, end_node, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, verbose)"]
     /// Return random walks done on the graph using Rust.

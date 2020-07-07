@@ -22,6 +22,7 @@ hashbrown = {version = "0.8", features = ["rayon", "inline-more"] }
 rand = {version="0.7", features = ["small_rng"] }
 itertools = "0.9.0"
 permutation = "0.2.5"
+counter = "0.5.2"
 derive-getters = "0.1.0"
 indicatif = {version = "0.15.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }

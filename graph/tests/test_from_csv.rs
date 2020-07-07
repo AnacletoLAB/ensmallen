@@ -42,6 +42,10 @@ fn test_graph_from_csv_edge_only() {
         assert!(graph.skipgrams(56567, 128, 80, None, None, Some(0.5), None, None, None, None, None, None, None).is_err());
         assert!(graph.walk(80, Some(1), Some(0), None, None, None, None, None, None, Some(false)).is_ok());
         assert!(graph.cbow(0, 128, 80, None, None, None, None, None, None, None, None).is_ok());
+        assert!(graph.get_top_k_nodes_by_node_type(10).is_err());
+        assert!(graph.get_top_k_edges_by_edge_type(10).is_err());
+        assert!(graph.get_node_type_counts().is_err());
+        assert!(graph.get_edge_type_counts().is_err());
     }
 }
 
@@ -628,6 +632,10 @@ fn test_graph_from_csv_with_edge_and_nodes() {
         }
         assert_eq!(graph.get_edge_types_number(), 2);
         graph.walk(10, Some(10), None, None, Some(0), Some(0.5), Some(2.0), Some(3.0), Some(4.0), Some(false)).unwrap();
+        assert!(graph.get_top_k_nodes_by_node_type(10).is_ok());
+        assert!(graph.get_top_k_edges_by_edge_type(10).is_ok());
+        assert!(graph.get_node_type_counts().is_ok());
+        assert!(graph.get_edge_type_counts().is_ok());
     };
 }
 
