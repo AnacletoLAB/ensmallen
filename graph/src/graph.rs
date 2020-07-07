@@ -3,9 +3,11 @@ use super::random::sample;
 use super::types::*;
 use derive_getters::Getters;
 use std::collections::HashMap;
-use hashbrown::HashMap as HashBrownMap;
+use hashbrown::{HashMap as HashBrownMap, HashSet as HashBrownSet};
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use log::info;
+use itertools::Itertools;
+use counter::Counter;
 use rayon::prelude::*;
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
@@ -81,6 +83,110 @@ impl Graph {
         Err(String::from(
             "Edge types are not defined for current class.",
         ))
+    }
+
+    /// Returns edge type counts.
+    pub fn get_edge_type_counts(&self)->Result<HashMap<EdgeTypeT, usize>, String>{
+        if let Some(et) = &self.edge_types {
+            Ok(Counter::init(et.clone()).into_map())
+        } else {
+            Err(String::from(
+                "Edge types are not defined for current class.",
+            ))
+        }
+    }
+
+    /// Returns node type counts.
+    pub fn get_node_type_counts(&self)->Result<HashMap<NodeTypeT, usize>, String>{
+        if let Some(nt) = &self.node_types {
+            Ok(Counter::init(nt.clone()).into_map())
+        } else {
+            Err(String::from(
+                "Node types are not defined for current class.",
+            ))
+        }
+    }
+
+    /// Returns top k most common nodes and node types by node type frequency.
+    ///
+    /// # Arguments
+    /// 
+    /// * k:usize - Number of common node types to return.
+    /// 
+    pub fn get_top_k_nodes_by_node_type(&self, k:usize)->Result<(Vec<NodeT>, Vec<NodeTypeT>), String>{
+        if let Some(nt) = &self.node_types {
+            let counts = self.get_node_type_counts()?;
+            let top_k: HashBrownSet<_> = counts.iter().sorted_by(
+                |(_, v1), (_, v2)| 
+                    Ord::cmp(&v1, &v2)
+                ).take(k).map(
+                    |(k1, _)| k1
+                ).collect();
+            let filtered:Vec<bool> = nt.into_par_iter().map(
+                |node_type|
+                top_k.contains(&node_type)
+            )
+            .collect();
+            Ok((
+                (0..self.get_nodes_number())
+                    .zip(filtered.iter())
+                    .filter_map(
+                        |(node, filter)| if *filter {Some(node)} else {None}
+                    )
+                    .collect(),
+                nt.iter()
+                    .zip(filtered.iter())
+                    .filter_map(
+                        |(nt, filter)| if *filter {Some(*nt)} else {None}
+                    )
+                    .collect()
+            ))
+        } else {
+            Err(String::from(
+                "Node types are not defined for current class.",
+            ))
+        }
+    }
+
+    /// Returns top k most common edges and edge types by edge type frequency.
+    ///
+    /// # Arguments
+    /// 
+    /// * k:usize - Number of common node types to return.
+    /// 
+    pub fn get_top_k_edges_by_edge_type(&self, k:usize)->Result<(Vec<EdgeT>, Vec<EdgeTypeT>), String>{
+        if let Some(nt) = &self.edge_types {
+            let counts = self.get_edge_type_counts()?;
+            let top_k: HashBrownSet<_> = counts.iter().sorted_by(
+                |(_, v1), (_, v2)| 
+                    Ord::cmp(&v1, &v2)
+                ).take(k).map(
+                    |(k1, _)| k1
+                ).collect();
+            let filtered:Vec<bool> = nt.into_par_iter().map(
+                |edge_type|
+                top_k.contains(&edge_type)
+            )
+            .collect();
+            Ok((
+                (0..self.get_edges_number())
+                    .zip(filtered.iter())
+                    .filter_map(
+                        |(edge, filter)| if *filter {Some(edge)} else {None}
+                    )
+                    .collect(),
+                nt.iter()
+                    .zip(filtered.iter())
+                    .filter_map(
+                        |(nt, filter)| if *filter {Some(*nt)} else {None}
+                    )
+                    .collect()
+            ))
+        } else {
+            Err(String::from(
+                "Edge types are not defined for current class.",
+            ))
+        }
     }
 
     /// Returns boolean representing if edge passing between given nodes exists.
