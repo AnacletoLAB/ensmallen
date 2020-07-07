@@ -1,4 +1,4 @@
-
+.PHONY: all test clean
 UNAME := $(shell uname)
 
 ifeq ($(UNAME), Linux)
@@ -39,6 +39,9 @@ fuzz:
 test:
 	rm -fdr target
 	cargo test
+
+honggfuzz:
+	(cd honggfuzz; cargo hfuzz run honggfuzz) 
 
 fuzz_coverage:
 	cargo fuzz build

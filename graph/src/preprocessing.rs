@@ -721,7 +721,7 @@ impl Graph {
                         }
                         // If it's a self loop and the flag is set
                         || !(
-                            _avoid_self_loops && src == dst
+                            _avoid_self_loops && src != dst
                         )
                     )
                 })
