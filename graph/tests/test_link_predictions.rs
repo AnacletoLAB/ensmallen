@@ -26,15 +26,22 @@ fn test_link_predictions() {
     ).unwrap();
     graph.walk(10, None, None, None, Some(0),  Some(0.5), Some(2.0), Some(3.0), Some(4.0), None).unwrap();
 
-    let (edges, labels) = graph.link_prediction(
-        0,
-        1000,
-        Some(1.0),
-        None,
-        Some(true)
-    ).unwrap();   
-    println!("{:?}", labels);
-    println!("{}", labels.iter().position(|&r| r == 1u8).unwrap());
-    println!("{}", labels.iter().position(|&r| r == 0u8).unwrap());
- 
+    for i in 0..20 {
+        let (edges, labels) = graph.link_prediction(
+            i,
+            100000,
+            Some(1000.0),
+            None,
+            Some(true)
+        ).unwrap();   
+        println!("{}", labels.iter().position(|&r| r == 1u8).unwrap());
+        println!("{}", labels.iter().position(|&r| r == 0u8).unwrap());
+
+        assert!(
+            edges.iter().all(
+                |edge|
+                    edge[0] != edge[1]
+            )
+        )
+    }
 }
