@@ -37,28 +37,12 @@ pub struct Graph {
 
 /// Graph utility methods
 impl Graph {
-    pub fn compute_outbounds(nodes_number: NodeT, sources: &[NodeT]) -> Vec<EdgeT> {
-        info!("Computing outbound edges ranges from each node.");
-        let mut last_src: NodeT = 0;
-        // Instead of fixing the last values after the loop, we set directly
-        // all values to the length of the sources, which is the sum of all
-        // possible neighbors.
-        let mut outbounds: Vec<EdgeT> = vec![sources.len(); nodes_number];
-
-        for (i, src) in sources.iter().enumerate() {
-            if last_src != *src {
-                // Assigning to range instead of single value, so that traps
-                // have as delta between previous and next node zero.
-                for o in &mut outbounds[last_src..*src] {
-                    *o = i;
-                }
-                last_src = *src;
-            }
-        }
-
-        outbounds
-    }
-
+    /// Returns node type of given node.
+    /// 
+    /// # Arguments
+    /// 
+    /// * node_id: NodeT - node whose node type is to be returned.
+    /// 
     pub fn get_node_type_id(&self, node_id: NodeT) -> Result<NodeTypeT, String> {
         if let Some(nt) = &self.node_types {
             return if node_id <= nt.len() {
@@ -76,6 +60,12 @@ impl Graph {
         ))
     }
 
+    /// Returns edge type of given edge.
+    /// 
+    /// # Arguments
+    /// 
+    /// * edge_id: EdgeT - edge whose edge type is to be returned.
+    /// 
     pub fn get_edge_type_id(&self, edge_id: EdgeT) -> Result<EdgeTypeT, String> {
         if let Some(et) = &self.edge_types {
             return if edge_id <= et.len() {
@@ -185,14 +175,17 @@ impl Graph {
         }
     }
 
+    /// Returns number of nodes in the graph.
     pub fn get_nodes_number(&self) -> usize {
         self.nodes_reverse_mapping.len()
     }
 
+    /// Returns number of edges in the graph.
     pub fn get_edges_number(&self) -> usize {
         self.sources.len()
     }
 
+    /// Returns number of edge types in the graph.
     pub fn get_edge_types_number(&self) -> usize {
         if let Some(etm) = &self.edge_types_mapping {
             etm.keys().len()
@@ -201,6 +194,7 @@ impl Graph {
         }
     }
 
+    /// Returns number of node types in the graph.
     pub fn get_node_types_number(&self) -> usize {
         if let Some(etm) = &self.node_types_mapping {
             etm.keys().len()
@@ -209,6 +203,12 @@ impl Graph {
         }
     }
 
+    /// Return range of outbound edges IDs for given Node.
+    /// 
+    /// # Arguments
+    /// 
+    /// * node: NodeT - Node for which we need to compute the outbounds range.
+    /// 
     pub fn get_min_max_edge(&self, node: NodeT) -> (EdgeT, EdgeT) {
         let min_edge: EdgeT = if node == 0 {
             0
@@ -268,6 +268,13 @@ impl Graph {
         self.destinations[min_edge..max_edge].to_vec()
     }
 
+    /// Return the node transition weights and the related node and edges.
+    /// 
+    /// # Arguments
+    /// 
+    /// * node: NodeT, the previous node from which to compute the transitions.
+    /// * change_node_type_weight: ParamsT, weight for changing node type.
+    /// 
     fn get_node_transition(
         &self,
         node: NodeT,
@@ -307,6 +314,21 @@ impl Graph {
         (transition, destinations, min_edge, max_edge)
     }
 
+    /// Return the edge transition weights and the related node and edges.
+    /// 
+    /// # Arguments
+    /// 
+    /// * edge: EdgeT, the previous edge from which to compute the transitions.
+    /// * return_weight: ParamsT,
+    ///     Weight for the probability of exploitation.
+    ///     This is the inverse of the p parameter.
+    /// * explore_weight: ParamsT,
+    ///     Weight for the probability of exploration.
+    ///     This is the inverse of the q parameter.
+    /// * change_node_type_weight: ParamsT,
+    ///     Weight for changing the node type at every step of the walk.
+    /// * change_edge_type_weight: ParamsT,
+    ///     Weight for changing the edge type at every step of the walk.
     fn get_edge_transition(
         &self,
         edge: EdgeT,
@@ -381,6 +403,12 @@ impl Graph {
         (transition, destinations, min_edge, max_edge)
     }
 
+    /// Return new sampled node with the transition edge used.
+    /// 
+    /// # Arguments
+    /// 
+    /// * node: NodeT, the previous node from which to compute the transitions.
+    /// * change_node_type_weight: ParamsT, weight for changing node type.
     fn extract_node(&self, node: NodeT, change_node_type_weight: ParamsT) -> (NodeT, EdgeT) {
         let (mut weights, dsts, min_edge, _) =
             self.get_node_transition(node, change_node_type_weight);
@@ -388,6 +416,21 @@ impl Graph {
         (dsts[index], min_edge + index)
     }
 
+    /// Return new random edge with given weights.
+    /// 
+    /// # Arguments
+    /// 
+    /// * edge: EdgeT, the previous edge from which to compute the transitions.
+    /// * return_weight: ParamsT,
+    ///     Weight for the probability of exploitation.
+    ///     This is the inverse of the p parameter.
+    /// * explore_weight: ParamsT,
+    ///     Weight for the probability of exploration.
+    ///     This is the inverse of the q parameter.
+    /// * change_node_type_weight: ParamsT,
+    ///     Weight for changing the node type at every step of the walk.
+    /// * change_edge_type_weight: ParamsT,
+    ///     Weight for changing the edge type at every step of the walk.
     fn extract_edge(
         &self,
         edge: EdgeT,
@@ -580,6 +623,23 @@ impl Graph {
         })
     }
 
+    /// Returns single walk from given node
+    /// 
+    /// # Arguments
+    /// 
+    /// * length: usize - Length of the random walks.
+    /// * node: NodeT - Node from where to start the random walks.
+    /// * return_weight: ParamsT,
+    ///     Weight for the probability of exploitation.
+    ///     This is the inverse of the p parameter.
+    /// * explore_weight: ParamsT,
+    ///     Weight for the probability of exploration.
+    ///     This is the inverse of the q parameter.
+    /// * change_node_type_weight: ParamsT,
+    ///     Weight for changing the node type at every step of the walk.
+    /// * change_edge_type_weight: ParamsT,
+    ///     Weight for changing the edge type at every step of the walk.
+    /// 
     fn single_walk(
         &self,
         length: usize,
@@ -617,6 +677,25 @@ impl Graph {
         walk
     }
 
+    /// Returns single walk from given node.
+    /// 
+    /// This method assumes that there are no traps in the graph.
+    /// 
+    /// # Arguments
+    /// 
+    /// * length: usize - Length of the random walks.
+    /// * node: NodeT - Node from where to start the random walks.
+    /// * return_weight: ParamsT,
+    ///     Weight for the probability of exploitation.
+    ///     This is the inverse of the p parameter.
+    /// * explore_weight: ParamsT,
+    ///     Weight for the probability of exploration.
+    ///     This is the inverse of the q parameter.
+    /// * change_node_type_weight: ParamsT,
+    ///     Weight for changing the node type at every step of the walk.
+    /// * change_edge_type_weight: ParamsT,
+    ///     Weight for changing the edge type at every step of the walk.
+    /// 
     fn single_walk_no_traps(
         &self,
         length: usize,

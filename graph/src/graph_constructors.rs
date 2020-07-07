@@ -17,7 +17,7 @@ pub fn validate(
 ) -> Result<(), String> {
 
     info!("Checking that the graph is not empty.");
-    if sources.len() == 0{
+    if sources.is_empty(){
         return Err(String::from("The provided graph has no edges."));
     }
 
@@ -158,6 +158,35 @@ impl Graph {
             nodes_mapping,
             nodes_reverse_mapping
         )
+    }
+
+    /// Returns outbounds edges ranges for graph.
+    /// 
+    /// # Arguments
+    /// 
+    /// * nodes_number: NodeT - Number of nodes in the graph.
+    /// * sources: &[NodeT] - source nodes in the graph.
+    /// 
+    pub fn compute_outbounds(nodes_number: NodeT, sources: &[NodeT]) -> Vec<EdgeT> {
+        info!("Computing outbound edges ranges from each node.");
+        let mut last_src: NodeT = 0;
+        // Instead of fixing the last values after the loop, we set directly
+        // all values to the length of the sources, which is the sum of all
+        // possible neighbors.
+        let mut outbounds: Vec<EdgeT> = vec![sources.len(); nodes_number];
+
+        for (i, src) in sources.iter().enumerate() {
+            if last_src != *src {
+                // Assigning to range instead of single value, so that traps
+                // have as delta between previous and next node zero.
+                for o in &mut outbounds[last_src..*src] {
+                    *o = i;
+                }
+                last_src = *src;
+            }
+        }
+
+        outbounds
     }
 
     pub fn new_directed(

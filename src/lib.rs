@@ -289,7 +289,7 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "($self, node_id)"]
-    /// Return random walks done on the graph using Rust.
+    /// Return the id of the node type of the node.
     ///
     /// Parameters
     /// ---------------------
@@ -298,7 +298,7 @@ impl EnsmallenGraph {
     ///
     /// Returns
     /// ---------------------
-    /// Return the id of the node type of the node.
+    /// Id of the node type of the node.
     fn get_node_type_id(&self, node_id: NodeT) -> PyResult<NodeTypeT> {
         match self.graph.get_node_type_id(node_id) {
             Ok(g) => Ok(g),
@@ -307,7 +307,7 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "($self, edge_id)"]
-    /// Return random walks done on the graph using Rust.
+    /// Return the id of the edge type of the edge.
     ///
     /// Parameters
     /// ---------------------
@@ -316,7 +316,7 @@ impl EnsmallenGraph {
     ///
     /// Returns
     /// ---------------------
-    /// Return the id of the edge type of the edge.
+    /// Id of the edge type of the edge.
     fn get_edge_type_id(&self, edge_id: EdgeT) -> PyResult<EdgeTypeT> {
         match self.graph.get_edge_type_id(edge_id) {
             Ok(g) => Ok(g),

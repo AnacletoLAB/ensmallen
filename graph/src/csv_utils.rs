@@ -2,6 +2,13 @@ use std::{fs::File, io::prelude::*, io::BufReader};
 
 use rayon::prelude::*;
 
+/// Check that given file has a consistent number of the given separator.
+/// 
+/// # Arguments
+/// 
+/// * path: &str - The path of the file.
+/// * sep: &str - The separator to use.
+/// 
 pub fn check_consistent_lines(path: &str, sep: &str) -> Result<(), String>{
     let file = File::open(path);
     if file.is_err() {
@@ -58,6 +65,12 @@ pub fn check_consistent_lines(path: &str, sep: &str) -> Result<(), String>{
     Ok(())
 }
 
+/// Returns the headers from given file with given separator.
+/// 
+/// # Arguments
+/// 
+/// * path: &str - Path from where to load the headers.
+/// * sep: &str - Separator to use to separate the columns.
 pub fn get_headers(path: &str, sep: &str) -> Vec<String> {
     let file = File::open(path).expect("Cannot open file.");
     let mut buf_reader = BufReader::new(file);
@@ -68,6 +81,13 @@ pub fn get_headers(path: &str, sep: &str) -> Vec<String> {
     line.trim().split(sep).map(String::from).collect()
 }
 
+/// Rasterize optional columns list.
+/// 
+/// # Arguments
+/// 
+/// * columns: &[&'a str] - The non-optional columns.
+/// * optional_columns: &[&Option<&'a str>] - The optional columns.
+/// 
 fn render_columns<'a>(columns: &[&'a str], optional_columns: &[&Option<&'a str>]) -> Vec<&'a str> {
     let mut rendered_columns: Vec<&str> = optional_columns
         .par_iter()
@@ -78,6 +98,15 @@ fn render_columns<'a>(columns: &[&'a str], optional_columns: &[&Option<&'a str>]
     rendered_columns
 }
 
+/// Check if provided file has given columns.
+/// 
+/// # Arguments
+/// 
+/// * path: &str, path to file to check.
+/// * sep: &str, separator to use for the columns.
+/// * columns: &[&str], non optional columns.
+/// * optional_columns: &[&Option<&str>], optional columns.
+/// 
 pub fn has_columns(
     path: &str,
     sep: &str,
