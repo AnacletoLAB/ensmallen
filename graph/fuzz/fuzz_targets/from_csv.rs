@@ -312,6 +312,7 @@ fuzz_target!(|data: ToFuzz| {
                     data.link_prediction_args.batch_size as usize,
                     negative_samples,
                     Some(&graph2.unwrap()),
+                    None
                 );   
             }
         }
