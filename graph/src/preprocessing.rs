@@ -51,7 +51,7 @@ impl Graph {
         let _negative_samples = negative_samples.unwrap_or(1.0);
         let _window_size = window_size.unwrap_or(4);
         let _shuffle = shuffle.unwrap_or(true);
-        let _seed = seed ^ 0xBAD5eedBAD5eed11;
+        let _seed = seed ^ SEED_XOR as u64;
 
         let vector_length: usize = skipgram_vector_length(walk.len(), _window_size);
         // create the positive data
@@ -663,7 +663,7 @@ impl Graph {
     ) -> Result<(Vec<Vec<NodeT>>, Vec<u8>), String> {
         // xor the seed with a constant so that we have a good amount of 0s and 1s in the number
         // even with low values (this is needed becasue the seed 0 make xorshift return always 0)
-        let seed = idx ^ 0xBAD5eedBAD5eed11;
+        let seed = idx ^ SEED_XOR as u64;
         // extract options
         let _negative_samples = negative_samples.unwrap_or(1.0);
         let _avoid_self_loops = avoid_self_loops.unwrap_or(false);

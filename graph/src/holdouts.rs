@@ -1,3 +1,4 @@
+use super::SEED_XOR;
 use super::Graph;
 use super::types::*;
 use hashbrown::{HashSet};
@@ -61,7 +62,7 @@ impl Graph {
         let mut sources: Vec<NodeT> = Vec::with_capacity(_negatives_number);
         let mut destinations: Vec<NodeT> = Vec::with_capacity(_negatives_number);
 
-        let mut new_seed = seed ^ 0xBAD5eedBAD5eed11;
+        let mut new_seed = seed ^ SEED_XOR;
 
         loop {
             new_seed = rand_u64(new_seed as u64) as usize;
@@ -145,7 +146,7 @@ impl Graph {
         let mut used_edges:HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::new();
         
         // generate and shuffle the indices of the edges
-        let mut rng = SmallRng::seed_from_u64((seed ^ 0xBAD5eedBAD5eed11) as u64);
+        let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
         let mut edge_indices: Vec<NodeT> = (0..self.get_edges_number()).collect();
         edge_indices.shuffle(&mut rng);
 

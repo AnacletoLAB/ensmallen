@@ -1,5 +1,7 @@
 #![feature(asm)]
 
+const SEED_XOR: usize = 0xbad5eedbad5eed11;
+
 pub mod graph;
 pub mod csv_utils;
 mod graph_from_csv;
