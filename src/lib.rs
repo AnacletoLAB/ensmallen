@@ -957,7 +957,7 @@ impl EnsmallenGraph {
     ///
     /// Returns
     /// ----------------------------
-    /// Numpy array with all teh degrees of the graph.
+    /// Numpy array with all the degrees of the graph.
     ///
     fn degrees(&self) -> Py<PyArray1<EdgeT>> {
         let degrees = self.graph.degrees();
@@ -981,6 +981,34 @@ impl EnsmallenGraph {
     ///
     fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
         self.graph.has_edge(src, dst)
+    }
+
+    /// Return true if given graph has any edge overlapping with current graph.
+    /// 
+    /// Parameters
+    /// ----------------------------
+    /// graph: EnsmallenGraph,
+    ///     The graph to check against.
+    /// 
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if any overlapping edge was found.
+    pub fn overlaps(&self, graph: &EnsmallenGraph) -> bool {
+        self.graph.overlaps(&graph.graph)
+    }
+
+    /// Return true if given graph edges are all contained within current graph.
+    /// 
+    /// Parameters
+    /// ----------------------------
+    /// graph: EnsmallenGraph,
+    ///     The graph to check against.
+    /// 
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if graph contains completely the othe graph.
+    pub fn contains(&self, graph: &EnsmallenGraph) -> bool {
+        self.graph.contains(&graph.graph)
     }
 
     #[text_signature = "(self)"]
@@ -1231,7 +1259,7 @@ impl EnsmallenGraph {
             )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
-    }   
+    }
 }
 
 #[pyproto]
