@@ -1,0 +1,23 @@
+[package]
+name = "honggfuzz"
+version = "0.1.0"
+authors = ["Tommaso Fontana <tommaso.fontana.96@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+honggfuzz = "0.5"
+rand = "0.7.3"
+arbitrary = { version = "0.4.5", features = ["derive"] }
+
+[dependencies.graph]
+path = ".."
+
+[profile.release]
+opt-level = 3
+codgen-units=1
+lto = "fat"
+overflow-checks = false     # Disable integer overflow checks.
+debug = false             # Include debug info.
+debug-assertions = false  # Enables debug assertions.
