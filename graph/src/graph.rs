@@ -1,5 +1,4 @@
 //! A graph representation optimized for executing random walks on huge graphs.
-use super::random::sample;
 use super::types::*;
 use derive_getters::Getters;
 use std::collections::HashMap;
@@ -9,6 +8,7 @@ use log::info;
 use itertools::Itertools;
 use counter::Counter;
 use rayon::prelude::*;
+use vec_rand::sample;
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
 /// A graph representation optimized for executing random walks on huge graphs.
