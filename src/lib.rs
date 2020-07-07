@@ -1270,7 +1270,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, negative_samples, graph_to_avoid)"]
+    #[text_signature = "($self, idx, batch_size, negative_samples, graph_to_avoid, avoid_self_loops)"]
     /// Returns 
     /// 
     ///
