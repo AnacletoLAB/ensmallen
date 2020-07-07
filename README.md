@@ -11,9 +11,9 @@ Since some software handling coverages sometime get slightly different results, 
 
 ## How to install this
 This project is currently work in progress, and is to be considered for all
-intents and porposes an alpha version.
+intents and porposes an **alpha** version.
 
-To install the latest (alpha) release, run the following:
+To install the **latest (alpha) release**, run the following:
 
 ```bash
 pip install ensmallen_graph
