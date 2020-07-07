@@ -1,6 +1,7 @@
 use super::*;
 use crate::csv_utils::{check_consistent_lines, get_headers, has_columns};
 use rayon::prelude::*;
+use log::info;
 use std::collections::{HashMap, HashSet};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
@@ -412,9 +413,11 @@ impl Graph {
         // We validate the provided files, starting from the edges file.
         // Specifically, we start by checking if every line has the same amount
         // of the given separator character.
+        info!("Checking that the edge file has consistent number of given separator in each line.");
         check_consistent_lines(&*edge_path, &*_edge_sep)?;
         // Then we check if the given columns actually exist in the given file
         // header.
+        info!("Checking that the edge file has necessary provided columns.");
         has_columns(
             &*edge_path,
             &*_edge_sep,
@@ -426,6 +429,7 @@ impl Graph {
         if let Some(path) = &node_path {
             // As for the previous file, first we check that the file has the
             // same amount of separators in each line.
+            info!("Checking that the node file has consistent number of given separator in each line.");
             check_consistent_lines(&*path, &*_node_sep)?;
             if nodes_column.is_none() || node_types_column.is_none(){
                 return Err(String::from(concat!(
@@ -435,6 +439,7 @@ impl Graph {
                 )))
             }
             // Then we check if the given columns actually exists in the file.
+            info!("Checking that the node file has necessary provided columns.");
             has_columns(
                 &*path,
                 &*_node_sep,
@@ -443,6 +448,7 @@ impl Graph {
             )?;
         }
 
+        info!("Starting to load the edges file.");
         let (
             sources,
             destinations,
@@ -466,6 +472,7 @@ impl Graph {
 
         let (node_types, node_types_mapping, node_types_reverse_mapping) =
             if let Some(path) = &node_path {
+                info!("Starting to load the nodes file.");
                 let (node_types, node_types_mapping, node_types_reverse_mapping) =
                     Graph::read_nodes_csv(
                         &path,
