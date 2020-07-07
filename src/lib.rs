@@ -371,9 +371,15 @@ impl EnsmallenGraph {
     /// Returns
     /// --------------------------
     /// Tuple with node IDs and node types within k most common node types.
-    fn get_top_k_nodes_by_node_type(&self, k: usize) -> PyResult<(Vec<NodeT>, Vec<NodeTypeT>)> {
+    fn get_top_k_nodes_by_node_type(&self, k: usize) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeTypeT>>)> {
         match self.graph.get_top_k_nodes_by_node_type(k) {
-            Ok(g) => Ok(g),
+            Ok((nodes, node_types)) => {
+                let gil = pyo3::Python::acquire_gil();
+                Ok((
+                    PyArray::from_vec(gil.python(), nodes).to_owned(), 
+                    PyArray::from_vec(gil.python(), node_types).to_owned(), 
+                ))
+            },
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
@@ -389,9 +395,15 @@ impl EnsmallenGraph {
     /// Returns
     /// --------------------------
     /// Tuple with edge IDs and edge types within k most common edge types.
-    fn get_top_k_edges_by_edge_type(&self, k: usize) -> PyResult<(Vec<NodeT>, Vec<NodeTypeT>)> {
+    fn get_top_k_edges_by_edge_type(&self, k: usize) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeTypeT>>)> {
         match self.graph.get_top_k_edges_by_edge_type(k) {
-            Ok(g) => Ok(g),
+            Ok((edges, edge_types)) => {
+                let gil = pyo3::Python::acquire_gil();
+                Ok((
+                    PyArray::from_vec(gil.python(), edges).to_owned(), 
+                    PyArray::from_vec(gil.python(), edge_types).to_owned(), 
+                ))
+            },
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
