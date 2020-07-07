@@ -1221,16 +1221,19 @@ impl EnsmallenGraph {
     /// graph_to_avoid: EnsmallenGraph = None,
     ///     Graph to avoid when generating the links.
     ///     This can be the validation component of the graph, for example.
+    /// avoid_self_loops: bool = False,
+    ///     If the result should be filtered of self loops.
     /// 
     /// Returns
     /// -----------------------------
     /// Tuple containing training and validation graphs.
     /// 
-    fn link_prediction(&self, idx:u64, batch_size:usize, py_kwargs: Option<&PyDict>) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<u8>>)> {
+    fn link_prediction(&self, idx:u64, batch_size:usize, py_kwargs: Option<&PyDict>) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<u8>>)> {
         let results = if let Some(kwargs) = py_kwargs {
             let ensmallen_graph = kwargs
                 .get_item("graph_to_avoid")
                 .map(|val| val.extract::<EnsmallenGraph>());
+                
             let graph = if let Some(eg) = &ensmallen_graph {
                 match eg {
                     Ok(g) => Some(&g.graph),
@@ -1239,22 +1242,26 @@ impl EnsmallenGraph {
             } else {
                 None
             };
+
             self.graph.link_prediction(
                 idx,
                 batch_size,
                 kwargs
                     .get_item("negative_samples")
                     .map(|val| val.extract::<f64>().unwrap()),
-                graph
+                graph,
+                kwargs
+                    .get_item("avoid_self_loops")
+                    .map(|val| val.extract::<bool>().unwrap())
             )
         } else {
-            self.graph.link_prediction(idx, batch_size, None, None)
+            self.graph.link_prediction(idx, batch_size, None, None, None)
         };
+
         let gil = pyo3::Python::acquire_gil();
         match results {
-            Ok((sources, destinations, labels)) => Ok((
-                PyArray::from_vec(gil.python(), sources).cast::<NodeT>(false).unwrap().to_owned(),
-                PyArray::from_vec(gil.python(), destinations).cast::<NodeT>(false).unwrap().to_owned(),
+            Ok((edges, labels)) => Ok((
+                PyArray::from_vec2(gil.python(), &edges).unwrap().cast::<NodeT>(false).unwrap().to_owned(),
                 PyArray::from_vec(gil.python(), labels).cast::<u8>(false).unwrap().to_owned()
             )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),

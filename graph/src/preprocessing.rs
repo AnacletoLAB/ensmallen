@@ -659,9 +659,14 @@ impl Graph {
         batch_size: usize,
         negative_samples: Option<f64>,
         graph_to_avoid: Option<&Graph>,
-    ) -> Result<(Vec<NodeT>, Vec<NodeT>, Vec<u8>), String> {
-        let _negative_samples = negative_samples.unwrap_or(1.0);
+        avoid_self_loops: Option<bool>
+    ) -> Result<(Vec<Vec<NodeT>>, Vec<u8>), String> {
+        // xor the seed with a constant so that we have a good amount of 0s and 1s in the number
+        // even with low values (this is needed becasue the seed 0 make xorshift return always 0)
         let seed = idx ^ 0xBAD5eedBAD5eed11;
+        // extract options
+        let _negative_samples = negative_samples.unwrap_or(1.0);
+        let _avoid_self_loops = avoid_self_loops.unwrap_or(false);
         // The number of negatives is given by computing their fraction of batchsize
         let negatives_number: usize =
             ((batch_size as f64 / (1.0 + _negative_samples)) * _negative_samples) as usize;
@@ -673,46 +678,63 @@ impl Graph {
         }
 
         let edges_number = self.get_edges_number() as u64;
-        let positives: Vec<(NodeT, NodeT)> = gen_random_vec(positives_number, seed)
+        // generate a random vec of u64s and use them as indices 
+        let positives: Vec<Vec<NodeT>> = gen_random_vec(positives_number, seed)
             .into_par_iter()
+            // to extract the random edges
             .map(|random_value| (random_value % edges_number) as EdgeT)
-            .map(|edge| (self.sources[edge], self.destinations[edge]))
+            .map(|edge| vec![self.sources[edge], self.destinations[edge]])
+            // filter away the self_loops if the flag is set
+            .filter(|edge| !_avoid_self_loops || edge[0]!= edge[1])
             .collect();
 
-        let negatives: Vec<(NodeT, NodeT)> = if negatives_number != 0 {
+        // generate the negatives
+        let negatives: Vec<Vec<NodeT>> = if negatives_number == 0 {
+            // if the number of negatives is 0 then just return an empty array
+            vec![]
+        } else {
+            // generate two seeds for reproducibility porpouses
             let sources_seed = rand_u64(seed);
             let destinations_seed = rand_u64(sources_seed);
+            // generate the random edge-sources
             gen_random_vec(negatives_number, sources_seed)
                 .into_par_iter()
+                // generate the random edge-destinations
                 .zip(gen_random_vec(negatives_number, destinations_seed).into_par_iter())
+                // convert them to plain (src, dst)
                 .map(|(random_src, random_dst)| {
                     (
                         self.sources[(random_src % edges_number) as EdgeT],
                         self.destinations[(random_dst % edges_number) as EdgeT],
                     )
                 })
+                // filter away the negatives that are:
                 .filter(|(src, dst)| {
-                    !(self.has_edge(*src, *dst)
+                    !(
+                        // false negatives or
+                        self.has_edge(*src, *dst)
+                        // are in the graph to avoid
                         || if let Some(g) = &graph_to_avoid {
                             g.has_edge(*src, *dst)
                         } else {
                             false
-                        })
+                        }
+                        // If it's a self loop and the flag is set
+                        || !(
+                            _avoid_self_loops && src == dst
+                        )
+                    )
                 })
+                .map(|(src, dst)| vec![src, dst])
                 .collect()
-        } else {
-            vec![]
         };
-
+        // create the corresponing labels
         let mut labels: Vec<u8> = vec![1 as u8; positives.len()];
         labels.extend(vec![0 as u8; negatives.len()]);
-
-        let mut edges: Vec<(NodeT, NodeT)> = positives;
+        // concat the two vectors of edges
+        let mut edges: Vec<Vec<NodeT>> = positives;
         edges.extend(negatives);
-
-        let sources: Vec<NodeT> = edges.par_iter().map(|(src, _)| *src).collect();
-        let destinations: Vec<NodeT> = edges.par_iter().map(|(_, dst)| *dst).collect();
-
-        Ok((sources, destinations, labels))
+        
+        Ok((edges, labels))
     }
 }
