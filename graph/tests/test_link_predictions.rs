@@ -33,7 +33,7 @@ fn test_link_predictions() {
         None,
         Some(true)
     ).unwrap();   
-
+    println!("{:?}", labels);
     println!("{}", labels.iter().position(|&r| r == 1u8).unwrap());
     println!("{}", labels.iter().position(|&r| r == 0u8).unwrap());
  
