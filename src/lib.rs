@@ -1264,10 +1264,10 @@ impl EnsmallenGraph {
 
 #[pyproto]
 impl PyNumberProtocol for EnsmallenGraph{
-   fn __add__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
-       match lhs.graph.sum(&rhs.graph) {
-           Ok(g) => Ok(EnsmallenGraph{graph:g}),
-           Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-       }
-   }
+    fn __add__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
+        match lhs.graph.sum(&rhs.graph) {
+            Ok(g) => Ok(EnsmallenGraph{graph:g}),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
 }
