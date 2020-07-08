@@ -15,3 +15,6 @@ build_with_docker:
 
 install:
 	pip install --upgrade --user ./target/*.whl
+
+test:
+	pytest -s ./pytests
