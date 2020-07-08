@@ -1,9 +1,11 @@
 use graph::{EdgeT, EdgeTypeT, Graph, NodeT, NodeTypeT, ParamsT, WeightT};
+use numpy::{PyArray, PyArray1, PyArray2};
+use pyo3::class::basic::CompareOp;
+use pyo3::class::basic::PyObjectProtocol;
+use pyo3::class::number::PyNumberProtocol;
 use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
-use pyo3::class::number::PyNumberProtocol;
-use numpy::{PyArray, PyArray1, PyArray2};
 use std::collections::{HashMap, HashSet};
 
 #[pymodule]
@@ -17,12 +19,11 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
     Ok(())
 }
 
-
 #[pyclass]
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 #[text_signature = "(sources, destinations, *, nodes_mapping, nodes_reverse_mapping, node_types, node_types_mapping, node_types_reverse_mapping, edge_types, edge_types_mapping, edge_types_reverse_mapping, weights, force_conversion_to_undirected)"]
 /// Return new EnsmallenGraph.
-/// 
+///
 /// sources: List[int],
 ///     The list of source nodes.
 /// destinations: List[int],
@@ -45,7 +46,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
 /// force_conversion_to_undirected: bool = False,
 ///     Wethever to force the conversion from directed graph to undirected
 ///     when there are bidirectional directed edges in the given graph.
-/// 
+///
 struct EnsmallenGraph {
     graph: Graph,
 }
@@ -56,7 +57,6 @@ fn extract_value(val: &PyAny) -> &str {
 
 #[pymethods]
 impl EnsmallenGraph {
-
     #[new]
     #[args(py_kwargs = "**")]
     fn new(
@@ -64,74 +64,74 @@ impl EnsmallenGraph {
         destinations: Vec<NodeT>,
         directed: bool,
         py_kwargs: Option<&PyDict>,
-    )->PyResult<Self>{
+    ) -> PyResult<Self> {
         let graph = if let Some(kwargs) = py_kwargs {
             if directed {
                 Graph::new_directed(
                     sources,
                     destinations,
-                    kwargs.get_item("node_types").map(
-                        |val| val.extract::<HashMap<String, NodeT>>().unwrap()
-                    ),
-                    kwargs.get_item("node_types_mapping").map(
-                        |val| val.extract::<Vec<String>>().unwrap()
-                    ),
-                    kwargs.get_item("node_types").map(
-                        |val| val.extract::<Vec<NodeTypeT>>().unwrap()
-                    ),
-                    kwargs.get_item("node_types_mapping").map(
-                        |val| val.extract::<HashMap<String, NodeTypeT>>().unwrap()
-                    ),
-                    kwargs.get_item("node_types_reverse_mapping").map(
-                        |val| val.extract::<Vec<String>>().unwrap()
-                    ),
-                    kwargs.get_item("edge_types").map(
-                        |val| val.extract::<Vec<EdgeTypeT>>().unwrap()
-                    ),
-                    kwargs.get_item("edge_types_mapping").map(
-                        |val| val.extract::<HashMap<String, EdgeTypeT>>().unwrap()
-                    ),
-                    kwargs.get_item("edge_types_reverse_mapping").map(
-                        |val| val.extract::<Vec<String>>().unwrap()
-                    ),
-                    kwargs.get_item("weights").map(
-                        |val| val.extract::<Vec<WeightT>>().unwrap()
-                    )
+                    kwargs
+                        .get_item("node_types")
+                        .map(|val| val.extract::<HashMap<String, NodeT>>().unwrap()),
+                    kwargs
+                        .get_item("node_types_mapping")
+                        .map(|val| val.extract::<Vec<String>>().unwrap()),
+                    kwargs
+                        .get_item("node_types")
+                        .map(|val| val.extract::<Vec<NodeTypeT>>().unwrap()),
+                    kwargs
+                        .get_item("node_types_mapping")
+                        .map(|val| val.extract::<HashMap<String, NodeTypeT>>().unwrap()),
+                    kwargs
+                        .get_item("node_types_reverse_mapping")
+                        .map(|val| val.extract::<Vec<String>>().unwrap()),
+                    kwargs
+                        .get_item("edge_types")
+                        .map(|val| val.extract::<Vec<EdgeTypeT>>().unwrap()),
+                    kwargs
+                        .get_item("edge_types_mapping")
+                        .map(|val| val.extract::<HashMap<String, EdgeTypeT>>().unwrap()),
+                    kwargs
+                        .get_item("edge_types_reverse_mapping")
+                        .map(|val| val.extract::<Vec<String>>().unwrap()),
+                    kwargs
+                        .get_item("weights")
+                        .map(|val| val.extract::<Vec<WeightT>>().unwrap()),
                 )
             } else {
                 Graph::new_undirected(
                     sources,
                     destinations,
-                    kwargs.get_item("node_types").map(
-                        |val| val.extract::<HashMap<String, NodeT>>().unwrap()
-                    ),
-                    kwargs.get_item("node_types_mapping").map(
-                        |val| val.extract::<Vec<String>>().unwrap()
-                    ),
-                    kwargs.get_item("node_types").map(
-                        |val| val.extract::<Vec<NodeTypeT>>().unwrap()
-                    ),
-                    kwargs.get_item("node_types_mapping").map(
-                        |val| val.extract::<HashMap<String, NodeTypeT>>().unwrap()
-                    ),
-                    kwargs.get_item("node_types_reverse_mapping").map(
-                        |val| val.extract::<Vec<String>>().unwrap()
-                    ),
-                    kwargs.get_item("edge_types").map(
-                        |val| val.extract::<Vec<EdgeTypeT>>().unwrap()
-                    ),
-                    kwargs.get_item("edge_types_mapping").map(
-                        |val| val.extract::<HashMap<String, EdgeTypeT>>().unwrap()
-                    ),
-                    kwargs.get_item("edge_types_reverse_mapping").map(
-                        |val| val.extract::<Vec<String>>().unwrap()
-                    ),
-                    kwargs.get_item("weights").map(
-                        |val| val.extract::<Vec<WeightT>>().unwrap()
-                    ),
-                    kwargs.get_item("force_conversion_to_undirected").map(
-                        |val| val.extract::<bool>().unwrap()
-                    )
+                    kwargs
+                        .get_item("node_types")
+                        .map(|val| val.extract::<HashMap<String, NodeT>>().unwrap()),
+                    kwargs
+                        .get_item("node_types_mapping")
+                        .map(|val| val.extract::<Vec<String>>().unwrap()),
+                    kwargs
+                        .get_item("node_types")
+                        .map(|val| val.extract::<Vec<NodeTypeT>>().unwrap()),
+                    kwargs
+                        .get_item("node_types_mapping")
+                        .map(|val| val.extract::<HashMap<String, NodeTypeT>>().unwrap()),
+                    kwargs
+                        .get_item("node_types_reverse_mapping")
+                        .map(|val| val.extract::<Vec<String>>().unwrap()),
+                    kwargs
+                        .get_item("edge_types")
+                        .map(|val| val.extract::<Vec<EdgeTypeT>>().unwrap()),
+                    kwargs
+                        .get_item("edge_types_mapping")
+                        .map(|val| val.extract::<HashMap<String, EdgeTypeT>>().unwrap()),
+                    kwargs
+                        .get_item("edge_types_reverse_mapping")
+                        .map(|val| val.extract::<Vec<String>>().unwrap()),
+                    kwargs
+                        .get_item("weights")
+                        .map(|val| val.extract::<Vec<WeightT>>().unwrap()),
+                    kwargs
+                        .get_item("force_conversion_to_undirected")
+                        .map(|val| val.extract::<bool>().unwrap()),
                 )
             }
         } else if directed {
@@ -146,7 +146,7 @@ impl EnsmallenGraph {
                 None,
                 None,
                 None,
-                None
+                None,
             )
         } else {
             Graph::new_undirected(
@@ -161,10 +161,10 @@ impl EnsmallenGraph {
                 None,
                 None,
                 None,
-                None
+                None,
             )
         };
-            
+
         match graph {
             Ok(g) => Ok(EnsmallenGraph { graph: g }),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
@@ -232,7 +232,7 @@ impl EnsmallenGraph {
         directed: bool,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Self> {
-        let graph = if let Some(kwargs) = &py_kwargs{
+        let graph = if let Some(kwargs) = &py_kwargs {
             Graph::from_csv(
                 edge_path,
                 sources_column,
@@ -278,7 +278,7 @@ impl EnsmallenGraph {
                 None,
                 None,
                 None,
-                None
+                None,
             )
         };
 
@@ -362,28 +362,31 @@ impl EnsmallenGraph {
 
     #[text_signature = "($self, k)"]
     /// Return vectors with the nodes and node types within the top k most common.
-    /// 
+    ///
     /// Parameters
     /// --------------------------
     /// k: int,
     ///     Number of common node types to return.
-    /// 
+    ///
     /// Returns
     /// --------------------------
     /// Tuple with node IDs and node types within k most common node types.
-    fn get_top_k_nodes_by_node_type(&self, k: usize) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeTypeT>>)> {
+    fn get_top_k_nodes_by_node_type(
+        &self,
+        k: usize,
+    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeTypeT>>)> {
         match self.graph.get_top_k_nodes_by_node_type(k) {
             Ok((nodes, node_types)) => {
                 let gil = pyo3::Python::acquire_gil();
                 Ok((
-                    PyArray::from_vec(gil.python(), nodes).to_owned(), 
-                    PyArray::from_vec(gil.python(), node_types).to_owned(), 
+                    PyArray::from_vec(gil.python(), nodes).to_owned(),
+                    PyArray::from_vec(gil.python(), node_types).to_owned(),
                 ))
-            },
+            }
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
-    
+
     #[text_signature = "($self)"]
     /// Return vectors with the edges and edge types within the top k most common.
     ///
@@ -391,19 +394,22 @@ impl EnsmallenGraph {
     /// --------------------------
     /// k: int,
     ///     Number of common edge types to return.
-    /// 
+    ///
     /// Returns
     /// --------------------------
     /// Tuple with edge IDs and edge types within k most common edge types.
-    fn get_top_k_edges_by_edge_type(&self, k: usize) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeTypeT>>)> {
+    fn get_top_k_edges_by_edge_type(
+        &self,
+        k: usize,
+    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeTypeT>>)> {
         match self.graph.get_top_k_edges_by_edge_type(k) {
             Ok((edges, edge_types)) => {
                 let gil = pyo3::Python::acquire_gil();
                 Ok((
-                    PyArray::from_vec(gil.python(), edges).to_owned(), 
-                    PyArray::from_vec(gil.python(), edge_types).to_owned(), 
+                    PyArray::from_vec(gil.python(), edges).to_owned(),
+                    PyArray::from_vec(gil.python(), edge_types).to_owned(),
                 ))
-            },
+            }
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
@@ -461,11 +467,7 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// List of list of walks containing the numeric IDs of nodes.
     ///
-    fn walk(
-        &self,
-        length: usize,
-        py_kwargs: Option<&PyDict>,
-    ) -> PyResult<Vec<Vec<NodeT>>> {
+    fn walk(&self, length: usize, py_kwargs: Option<&PyDict>) -> PyResult<Vec<Vec<NodeT>>> {
         let walks = if let Some(kwargs) = &py_kwargs {
             self.graph.walk(
                 length,
@@ -499,7 +501,7 @@ impl EnsmallenGraph {
             )
         } else {
             self.graph
-            .walk(length, None, None, None, None, None, None, None, None, None)
+                .walk(length, None, None, None, None, None, None, None, None, None)
         };
 
         match walks {
@@ -590,16 +592,23 @@ impl EnsmallenGraph {
             self.graph
                 .cooccurence_matrix(length, None, None, None, None, None, None, None, None)
         };
-        
+
         let gil = pyo3::Python::acquire_gil();
         match csr {
-            Ok(csr) => Ok(
-                (
-                    PyArray::from_vec(gil.python(), csr.0).cast::<f64>(false).unwrap().to_owned(),
-                    PyArray::from_vec(gil.python(), csr.1).cast::<f64>(false).unwrap().to_owned(),
-                    PyArray::from_vec(gil.python(), csr.2).cast::<f64>(false).unwrap().to_owned()
-                )
-            ),
+            Ok(csr) => Ok((
+                PyArray::from_vec(gil.python(), csr.0)
+                    .cast::<f64>(false)
+                    .unwrap()
+                    .to_owned(),
+                PyArray::from_vec(gil.python(), csr.1)
+                    .cast::<f64>(false)
+                    .unwrap()
+                    .to_owned(),
+                PyArray::from_vec(gil.python(), csr.2)
+                    .cast::<f64>(false)
+                    .unwrap()
+                    .to_owned(),
+            )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
@@ -664,11 +673,11 @@ impl EnsmallenGraph {
     ///
     fn skipgrams(
         &self,
-        idx:usize,
-        batch_size:usize,
+        idx: usize,
+        batch_size: usize,
         length: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<((Py<PyArray1<f64>>, Py<PyArray1<f64>>), Py<PyArray1<f64>>)>{
+    ) -> PyResult<((Py<PyArray1<f64>>, Py<PyArray1<f64>>), Py<PyArray1<f64>>)> {
         let batch = if let Some(kwargs) = &py_kwargs {
             let ensmallen_graph = kwargs
                 .get_item("graph_to_avoid")
@@ -676,14 +685,16 @@ impl EnsmallenGraph {
             let graph = if let Some(eg) = &ensmallen_graph {
                 match eg {
                     Ok(g) => Some(&g.graph),
-                    Err(_) => None
+                    Err(_) => None,
                 }
             } else {
                 None
             };
 
             self.graph.skipgrams(
-                idx, batch_size, length,
+                idx,
+                batch_size,
+                length,
                 kwargs
                     .get_item("iterations")
                     .map(|val| val.extract::<usize>().unwrap()),
@@ -711,21 +722,31 @@ impl EnsmallenGraph {
                 kwargs
                     .get_item("change_edge_type_weight")
                     .map(|val| val.extract::<ParamsT>().unwrap()),
-                graph
+                graph,
             )
         } else {
-            self.graph
-                .skipgrams(idx, batch_size, length, None, None, None, None, None, None, None, None, None, None)
+            self.graph.skipgrams(
+                idx, batch_size, length, None, None, None, None, None, None, None, None, None, None,
+            )
         };
 
         let gil = pyo3::Python::acquire_gil();
         match batch {
             Ok(batch) => Ok((
                 (
-                    PyArray::from_vec(gil.python(), (batch.0).0).cast::<f64>(false).unwrap().to_owned(),
-                    PyArray::from_vec(gil.python(), (batch.0).1).cast::<f64>(false).unwrap().to_owned()
+                    PyArray::from_vec(gil.python(), (batch.0).0)
+                        .cast::<f64>(false)
+                        .unwrap()
+                        .to_owned(),
+                    PyArray::from_vec(gil.python(), (batch.0).1)
+                        .cast::<f64>(false)
+                        .unwrap()
+                        .to_owned(),
                 ),
-                PyArray::from_vec(gil.python(), batch.1).cast::<f64>(false).unwrap().to_owned()
+                PyArray::from_vec(gil.python(), batch.1)
+                    .cast::<f64>(false)
+                    .unwrap()
+                    .to_owned(),
             )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
@@ -738,11 +759,11 @@ impl EnsmallenGraph {
     /// The batch is composed of a tuple as the following:
     ///
     /// - (Contexts indices, central nodes indices): the tuple of nodes
-    /// 
+    ///
     /// This does not provide any output value as the model uses NCE loss
     /// and basically the central nodes that are fed as inputs work as the
     /// outputs value.
-    /// 
+    ///
     /// Parameters
     /// ---------------------
     /// idx: int,
@@ -792,14 +813,16 @@ impl EnsmallenGraph {
     /// Tuple with vector of integer with contexts and words.
     fn cbow(
         &self,
-        idx:usize,
-        batch_size:usize,
+        idx: usize,
+        batch_size: usize,
         length: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray2<f64>>, Py<PyArray1<f64>>)>{
+    ) -> PyResult<(Py<PyArray2<f64>>, Py<PyArray1<f64>>)> {
         let batch = if let Some(kwargs) = &py_kwargs {
             self.graph.cbow(
-                idx, batch_size, length,
+                idx,
+                batch_size,
+                length,
                 kwargs
                     .get_item("iterations")
                     .map(|val| val.extract::<usize>().unwrap()),
@@ -823,18 +846,26 @@ impl EnsmallenGraph {
                     .map(|val| val.extract::<ParamsT>().unwrap()),
                 kwargs
                     .get_item("change_edge_type_weight")
-                    .map(|val| val.extract::<ParamsT>().unwrap())
+                    .map(|val| val.extract::<ParamsT>().unwrap()),
             )
         } else {
-            self.graph
-                .cbow(idx, batch_size, length, None, None, None, None, None, None, None, None)
+            self.graph.cbow(
+                idx, batch_size, length, None, None, None, None, None, None, None, None,
+            )
         };
-        
+
         let gil = pyo3::Python::acquire_gil();
         match batch {
             Ok(batch) => Ok((
-                PyArray::from_vec2(gil.python(), &batch.0).unwrap().cast::<f64>(false).unwrap().to_owned(),
-                PyArray::from_vec(gil.python(), batch.1).cast::<f64>(false).unwrap().to_owned()
+                PyArray::from_vec2(gil.python(), &batch.0)
+                    .unwrap()
+                    .cast::<f64>(false)
+                    .unwrap()
+                    .to_owned(),
+                PyArray::from_vec(gil.python(), batch.1)
+                    .cast::<f64>(false)
+                    .unwrap()
+                    .to_owned(),
             )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
@@ -847,7 +878,7 @@ impl EnsmallenGraph {
     }
 
     #[getter]
-    fn destinations(&self) ->  Py<PyArray1<NodeT>>  {
+    fn destinations(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
         PyArray::from_vec(gil.python(), self.graph.destinations.clone()).to_owned()
     }
@@ -1028,7 +1059,10 @@ impl EnsmallenGraph {
     fn degrees(&self) -> Py<PyArray1<EdgeT>> {
         let degrees = self.graph.degrees();
         let gil = pyo3::Python::acquire_gil();
-        PyArray::from_vec(gil.python(), degrees).cast::<EdgeT>(false).unwrap().to_owned()
+        PyArray::from_vec(gil.python(), degrees)
+            .cast::<EdgeT>(false)
+            .unwrap()
+            .to_owned()
     }
 
     #[text_signature = "($self, src, dst)"]
@@ -1050,12 +1084,12 @@ impl EnsmallenGraph {
     }
 
     /// Return true if given graph has any edge overlapping with current graph.
-    /// 
+    ///
     /// Parameters
     /// ----------------------------
     /// graph: EnsmallenGraph,
     ///     The graph to check against.
-    /// 
+    ///
     /// Returns
     /// ----------------------------
     /// Boolean representing if any overlapping edge was found.
@@ -1064,12 +1098,12 @@ impl EnsmallenGraph {
     }
 
     /// Return true if given graph edges are all contained within current graph.
-    /// 
+    ///
     /// Parameters
     /// ----------------------------
     /// graph: EnsmallenGraph,
     ///     The graph to check against.
-    /// 
+    ///
     /// Returns
     /// ----------------------------
     /// Boolean representing if graph contains completely the othe graph.
@@ -1198,30 +1232,27 @@ impl EnsmallenGraph {
 
     #[text_signature = "($self, seed)"]
     /// Returns set of (typed) edges that form a spanning tree.NodeT
-    /// 
+    ///
     /// The spanning tree is not minimal or maximal.
     /// The provided seed is not the root of the tree, but is only needed
     /// to identify a specific spanning tree.
     /// This spanning tree algorithm can run also on graph with multiple
     /// components.
-    /// 
+    ///
     /// Parameters
     /// ------------------------
     /// seed: int,
     ///     The seed for the spanning tree.
-    /// 
-    fn spanning_tree(&self, seed:NodeT)->HashSet<(NodeT, NodeT, Option<NodeTypeT>)>{
-        let tree:HashSet<(NodeT, NodeT, Option<NodeTypeT>)> = self.graph
-            .spanning_tree(seed)
-            .iter()
-            .cloned()
-            .collect();
+    ///
+    fn spanning_tree(&self, seed: NodeT) -> HashSet<(NodeT, NodeT, Option<NodeTypeT>)> {
+        let tree: HashSet<(NodeT, NodeT, Option<NodeTypeT>)> =
+            self.graph.spanning_tree(seed).iter().cloned().collect();
         tree
     }
 
     #[text_signature = "($self, seed, train_percentage)"]
     /// Returns training and validation holdouts extracted from current graph.
-    /// 
+    ///
     /// The holdouts is generated in such a way that the training set remains
     /// connected if the starting graph is connected by using a spanning tree.
     ///
@@ -1231,20 +1262,24 @@ impl EnsmallenGraph {
     ///     The seed to use to generate the holdout.
     /// train_percentage: float,
     ///     The percentage to reserve for the training.
-    /// 
+    ///
     /// Returns
     /// -----------------------------
     /// Tuple containing training and validation graphs.
-    fn connected_holdout(&self, seed:NodeT, train_percentage:f64) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+    fn connected_holdout(
+        &self,
+        seed: NodeT,
+        train_percentage: f64,
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
         match self.graph.connected_holdout(seed, train_percentage) {
-            Ok((g1, g2)) => Ok((EnsmallenGraph{graph:g1}, EnsmallenGraph{graph:g2})),
+            Ok((g1, g2)) => Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 })),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
 
     #[text_signature = "($self, seed, train_percentage)"]
     /// Returns training and validation holdouts extracted from current graph.
-    /// 
+    ///
     /// The holdouts edges are randomly sampled and have no garanties that any
     /// particular graph structure is maintained.
     ///
@@ -1254,24 +1289,28 @@ impl EnsmallenGraph {
     ///     The seed to use to generate the holdout.
     /// train_percentage: float,
     ///     The percentage to reserve for the training.
-    /// 
+    ///
     /// Returns
     /// -----------------------------
     /// Tuple containing training and validation graphs.
-    fn random_holdout(&self, seed:NodeT, train_percentage:f64) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+    fn random_holdout(
+        &self,
+        seed: NodeT,
+        train_percentage: f64,
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
         match self.graph.random_holdout(seed, train_percentage) {
-            Ok((g1, g2)) => Ok((EnsmallenGraph{graph:g1}, EnsmallenGraph{graph:g2})),
+            Ok((g1, g2)) => Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 })),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
 
     #[text_signature = "($self, seed, negatives_number, allow_selfloops)"]
     /// Returns Graph with given amount of negative edges as positive edges.
-    /// 
+    ///
     /// The graph generated may be used as a testing negatives partition to be
     /// fed into the argument "graph_to_avoid" of the link_prediction or the
     /// skipgrams algorithm.
-    /// 
+    ///
     ///
     /// Parameters
     /// -----------------------------
@@ -1281,21 +1320,29 @@ impl EnsmallenGraph {
     ///     The number of negative edges to use.
     /// allow_selfloops: bool,
     ///     Wethever to allow creation of self-loops.
-    /// 
+    ///
     /// Returns
     /// -----------------------------
     /// Graph containing given amount of missing edges.
-    fn sample_negatives(&self, seed:EdgeT, negatives_number:EdgeT, allow_selfloops:bool) -> PyResult<EnsmallenGraph> {
-        match self.graph.sample_negatives(seed, negatives_number, allow_selfloops) {
-            Ok(g) => Ok(EnsmallenGraph{graph:g}),
+    fn sample_negatives(
+        &self,
+        seed: EdgeT,
+        negatives_number: EdgeT,
+        allow_selfloops: bool,
+    ) -> PyResult<EnsmallenGraph> {
+        match self
+            .graph
+            .sample_negatives(seed, negatives_number, allow_selfloops)
+        {
+            Ok(g) => Ok(EnsmallenGraph { graph: g }),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
 
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, idx, batch_size, negative_samples, graph_to_avoid, avoid_self_loops)"]
-    /// Returns 
-    /// 
+    /// Returns
+    ///
     ///
     /// Parameters
     /// -----------------------------
@@ -1312,21 +1359,26 @@ impl EnsmallenGraph {
     ///     This can be the validation component of the graph, for example.
     /// avoid_self_loops: bool = False,
     ///     If the result should be filtered of self loops.
-    /// 
+    ///
     /// Returns
     /// -----------------------------
     /// Tuple containing training and validation graphs.
-    /// 
-    fn link_prediction(&self, idx:u64, batch_size:usize, py_kwargs: Option<&PyDict>) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<u8>>)> {
+    ///
+    fn link_prediction(
+        &self,
+        idx: u64,
+        batch_size: usize,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<u8>>)> {
         let results = if let Some(kwargs) = py_kwargs {
             let ensmallen_graph = kwargs
                 .get_item("graph_to_avoid")
                 .map(|val| val.extract::<EnsmallenGraph>());
-                
+
             let graph = if let Some(eg) = &ensmallen_graph {
                 match eg {
                     Ok(g) => Some(&g.graph),
-                    Err(_) => None
+                    Err(_) => None,
                 }
             } else {
                 None
@@ -1341,17 +1393,25 @@ impl EnsmallenGraph {
                 graph,
                 kwargs
                     .get_item("avoid_self_loops")
-                    .map(|val| val.extract::<bool>().unwrap())
+                    .map(|val| val.extract::<bool>().unwrap()),
             )
         } else {
-            self.graph.link_prediction(idx, batch_size, None, None, None)
+            self.graph
+                .link_prediction(idx, batch_size, None, None, None)
         };
 
         let gil = pyo3::Python::acquire_gil();
         match results {
             Ok((edges, labels)) => Ok((
-                PyArray::from_vec2(gil.python(), &edges).unwrap().cast::<NodeT>(false).unwrap().to_owned(),
-                PyArray::from_vec(gil.python(), labels).cast::<u8>(false).unwrap().to_owned()
+                PyArray::from_vec2(gil.python(), &edges)
+                    .unwrap()
+                    .cast::<NodeT>(false)
+                    .unwrap()
+                    .to_owned(),
+                PyArray::from_vec(gil.python(), labels)
+                    .cast::<u8>(false)
+                    .unwrap()
+                    .to_owned(),
             )),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
@@ -1359,11 +1419,25 @@ impl EnsmallenGraph {
 }
 
 #[pyproto]
-impl PyNumberProtocol for EnsmallenGraph{
+impl PyNumberProtocol for EnsmallenGraph {
     fn __add__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
         match lhs.graph.sum(&rhs.graph) {
-            Ok(g) => Ok(EnsmallenGraph{graph:g}),
+            Ok(g) => Ok(EnsmallenGraph { graph: g }),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
+    }
+}
+
+#[pyproto]
+impl PyObjectProtocol for EnsmallenGraph {
+    fn __richcmp__(&self, other: EnsmallenGraph, op: CompareOp) -> PyResult<bool> {
+        Ok(match op {
+            CompareOp::Lt => other.graph.contains(&self.graph) && &other != self,
+            CompareOp::Le => other.graph.contains(&self.graph),
+            CompareOp::Eq => &other == self,
+            CompareOp::Ne => &other != self,
+            CompareOp::Gt => self.graph.contains(&other.graph) && &other != self,
+            CompareOp::Ge => self.graph.contains(&other.graph),
+        })
     }
 }
