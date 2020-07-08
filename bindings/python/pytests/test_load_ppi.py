@@ -1,8 +1,13 @@
 from ensmallen_graph import EnsmallenGraph  # pylint: disable=no-name-in-module
+import os
+
+ROOT_DIR = os.path.abspath(
+    os.path.dirname(__file__)
+)
 
 def test_load_ppi():
     EnsmallenGraph.from_csv(
-        edge_path="./pytests/data/ppi/edges.tsv",
+        edge_path=os.path.join(ROOT_DIR, "data/ppi/edges.tsv"),
         sources_column="subject",
         destinations_column="object",
         directed=False,
