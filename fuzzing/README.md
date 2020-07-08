@@ -5,7 +5,7 @@ More over, 2 fuzzers are already setted up, `honggfuzz` and `libFuzzer`.
 They both share the corpus.
 
 # libfuzzer
-Libfuzzer it's the LLVMs fuzzer (https://llvm.org/docs/LibFuzzer.html).
+[Libfuzzer](https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md) it's the LLVMs fuzzer (https://llvm.org/docs/LibFuzzer.html).
 LibFuzzer is in-process, coverage-guided, evolutionary fuzzing engine.
 
 LibFuzzer is linked with the library under test, and feeds fuzzed inputs to the library via a specific fuzzing entrypoint (aka “target function”); the fuzzer then tracks which areas of the code are reached, and generates mutations on the corpus of input data in order to maximize the code coverage. The code coverage information for libFuzzer is provided by LLVM’s SanitizerCoverage instrumentation.
@@ -24,6 +24,8 @@ cargo fuzz run from_csv
 # honggfuzz
 
 ### Install honggfuzz:
+[Honggfuzz](https://honggfuzz.dev/) it's mantained by google (https://github.com/google/honggfuzz).
+
 ```bash
 cargo install honggfuzz
 ```
