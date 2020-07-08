@@ -315,7 +315,7 @@ impl Graph {
     /// 
     /// * node: NodeT - Node for which we need to compute the outbounds range.
     /// 
-    pub fn get_min_max_edge(&self, node: NodeT) -> (EdgeT, EdgeT) {
+    pub(crate) fn get_min_max_edge(&self, node: NodeT) -> (EdgeT, EdgeT) {
         let min_edge: EdgeT = if node == 0 {
             0
         } else {
@@ -327,6 +327,7 @@ impl Graph {
 
     /// Returns the number of outbound neighbours of given node.
     ///
+    /// 
     /// # Arguments
     ///
     /// * `node` - Integer ID of the node.
@@ -348,7 +349,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node` - Integer ID of the node.
+    /// * `node` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
     pub fn is_node_trap(&self, node: NodeT) -> bool {
         self.degree(node) == 0
@@ -357,7 +358,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `edge` - Integer ID of the edge.
+    /// * `edge` - Integer ID of the edge, if this is bigger that the number of edges it will panic.
     ///
     pub fn is_edge_trap(&self, edge: EdgeT) -> bool {
         self.is_node_trap(self.destinations[edge])
@@ -367,7 +368,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `node` - Integer ID of the node.
+    /// * `node` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
     pub fn get_node_neighbours(&self, node: NodeT) -> Vec<NodeT> {
         let (min_edge, max_edge) = self.get_min_max_edge(node);
@@ -378,7 +379,7 @@ impl Graph {
     /// 
     /// # Arguments
     /// 
-    /// * node: NodeT, the previous node from which to compute the transitions.
+    /// * node: NodeT, the previous node from which to compute the transitions, if this is bigger that the number of nodes it will panic.
     /// * change_node_type_weight: ParamsT, weight for changing node type.
     /// 
     fn get_node_transition(

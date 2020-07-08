@@ -16,5 +16,6 @@ fn main() {
         // Here, this slice will contain a "random" quantity of "random" data.
         fuzz!(|data: ToFuzz| {
             harness(data);
+        });
     }
 }

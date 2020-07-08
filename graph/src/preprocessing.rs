@@ -666,6 +666,11 @@ impl Graph {
         let seed = idx ^ SEED_XOR as u64;
         // extract options
         let _negative_samples = negative_samples.unwrap_or(1.0);
+        
+        if _negative_samples < 0.0 || !_negative_samples.is_finite() {
+            return Err(String::from("Negative sample must be a posive real value."));
+        }
+
         let _avoid_self_loops = avoid_self_loops.unwrap_or(false);
         // The number of negatives is given by computing their fraction of batchsize
         let negatives_number: usize =
@@ -673,9 +678,6 @@ impl Graph {
         // All the remaining values then are positives
         let positives_number: usize = batch_size - negatives_number;
 
-        if _negative_samples < 0.0 || !_negative_samples.is_finite() {
-            return Err(String::from("Negative sample must be a posive real value."));
-        }
 
         let edges_number = self.get_edges_number() as u64;
         // generate a random vec of u64s and use them as indices 
