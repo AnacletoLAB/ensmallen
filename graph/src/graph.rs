@@ -600,6 +600,12 @@ impl Graph {
         change_edge_type_weight: Option<ParamsT>,
         verbose: Option<bool>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
+        if length == 0  {
+            return Err(String::from(
+                "The provvided lenght for the walk is zero!"
+            ))
+        }
+
         let _min_length = min_length.unwrap_or(0);
         let _iterations = iterations.unwrap_or(1);
         if end_node.is_some() && start_node.is_none() {

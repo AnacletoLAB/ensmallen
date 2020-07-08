@@ -15,8 +15,11 @@ impl Graph {
         let mut covered_nodes:Vec<bool> = vec![false; self.get_nodes_number()];
         let mut tree:HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::with_capacity(edges_number);
         
-        for node in seed..self.get_nodes_number()+seed{
-            let src = node % self.get_nodes_number();
+        let n = self.get_nodes_number();
+        for node in 0..n{
+            // this is just (node + seed) % n but computed this way
+            // we minimize the possibility of overflowing
+            let src = ((node % n) + (seed % n)) % n; 
             
             if !covered_nodes[src]{
                 let mut stack: Vec<NodeT> = vec![src];
