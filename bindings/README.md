@@ -12,4 +12,4 @@ To install the **latest (alpha) release**, run the following:
 pip install ensmallen_graph
 ```
 
-See (this page)[https://github.com/LucaCappelletti94/ensmallen_graph/blob/master/bindings/python/README.md] to compile the bindings yourself.
+See [this page](https://github.com/LucaCappelletti94/ensmallen_graph/blob/master/bindings/python/README.md) to compile the bindings yourself.
