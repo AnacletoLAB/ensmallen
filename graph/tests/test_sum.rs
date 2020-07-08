@@ -22,7 +22,7 @@ fn test_sum() {
         None,
         None
     ).unwrap();
-    let (train, validation) = graph.holdout(42, 0.7).unwrap();
+    let (train, validation) = graph.connected_holdout(42, 0.7).unwrap();
     let recomposed = train.sum(&validation).unwrap();
     assert!(recomposed.contains(&graph));
     assert!(graph.contains(&recomposed));
