@@ -18,3 +18,22 @@ To install the **latest (alpha) release**, run the following:
 ```bash
 pip install ensmallen_graph
 ```
+
+## Fuzzing Guide
+The module expose an harness that supports the `arbitrary` crate so it's really easy to fuzz.
+
+More over, 2 fuzzers are already setted up, `honggfuzz` and `libFuzzer`.
+
+To run honggfuzz:
+```bash
+cd graph/honggfuzz
+cargo hfuzz run honggfuzz
+```
+
+To run libfuzzer
+```bash
+cd graph
+cargo fuzz run from_csv
+```
+
+They both share the corpus.
