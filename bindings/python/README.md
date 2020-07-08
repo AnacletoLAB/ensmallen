@@ -47,3 +47,11 @@ This means that the linux package were built on a system with a really new Libc 
 This can be solved by compiling your own bindings.
 In order to be compatible with as many systems as possible, we suggest to build them on 
 Ubuntu 16.04 .
+
+# Exploiting Avx
+The library vec_rand which is used in the crate can take advantage in using Avx instructions/
+
+To compile the bindings with Avx Instructions you can run :
+```bash
+RUSTFLAGS=" -C target-cpu=native" maturin build --release --no-sdist
+```
