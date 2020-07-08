@@ -1,5 +1,5 @@
 # EnsmallenGraph
-[![Build Status on Travis](https://travis-ci.org/LucaCappelletti94/ensmallen_graph.svg?branch=master)](https://travis-ci.org/github/LucaCappelletti94/ensmallen_graph)
+[![Build Status on Travis](https://travis-ci.org/LucaCappelletti94/ensmallen_graph.svg?branch=master)](https://travis-ci.org/github/LucaCappelletti94/ensmallen_graph) ![](https://img.shields.io/badge/rust-nightly-orange) ![](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7%20%7C%203.8-blue) ![](https://img.shields.io/badge/platform-linux--64%20%7C%20osx--64%20%7C%20win--64-lightgrey) ![](https://img.shields.io/badge/license-MIT-green)
 
 Rust library to run node2vec-like weighted random walks on very big graphs.
 Based on our benchmarks, our walk is ~600 times faster than Python's [Networkx](https://networkx.github.io/).
