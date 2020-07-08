@@ -41,3 +41,9 @@ tar -xf Python-${PYTHON_VERSION}.tar.xz
 (cd Python-${PYTHON_VERSION}; ./configure --enable-optimizations; make -j$(nproc); make -j$(nproc) install)
 ```
 Where `${PYTHON_VERSION}` is the choosen version, such as `3.8.3` or `3.6.10`.
+
+## Solving the GLIBC__2.29__ not found error
+This means that the linux package were built on a system with a really new Libc version.
+This can be solved by compiling your own bindings.
+In order to be compatible with as many systems as possible, we suggest to build them on 
+Ubuntu 16.04 .
