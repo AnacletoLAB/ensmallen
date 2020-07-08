@@ -24,7 +24,14 @@ fn test_holdout() {
             None,
             None
         ).unwrap();
-        let (train, validation) = graph.holdout(42, 0.7).unwrap();
+        let (train, validation) = graph.connected_holdout(42, 0.7).unwrap();
+        assert!(graph.contains(&train));
+        assert!(graph.contains(&validation));
+        assert!(train.overlaps(&graph));
+        assert!(validation.overlaps(&graph));
+        assert!(!validation.overlaps(&train));
+        assert!(!train.overlaps(&validation));
+        let (train, validation) = graph.random_holdout(42, 0.7).unwrap();
         assert!(graph.contains(&train));
         assert!(graph.contains(&validation));
         assert!(train.overlaps(&graph));
@@ -57,8 +64,12 @@ fn test_holdout_determinism() {
             None,
             None
         ).unwrap();
-        let (train1, test1) = graph.holdout(35, 0.8).unwrap();
-        let (train2, test2) = graph.holdout(35, 0.8).unwrap();
+        let (train1, test1) = graph.connected_holdout(35, 0.8).unwrap();
+        let (train2, test2) = graph.connected_holdout(35, 0.8).unwrap();
+        assert_eq!(train1, train2);
+        assert_eq!(test1, test2);
+        let (train1, test1) = graph.random_holdout(35, 0.8).unwrap();
+        let (train2, test2) = graph.random_holdout(35, 0.8).unwrap();
         assert_eq!(train1, train2);
         assert_eq!(test1, test2);
     }
