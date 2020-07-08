@@ -34,6 +34,13 @@ On ubuntu it also needs the following packages (even though they are usually alr
 sudo apt install build-essential binutils-dev libunwind-dev libblocksruntime-dev liblzma-dev
 ```
 
+### Compile and install honggfuzz:
+To build and install honggfuzz without cargo just run:
+```bash
+git clone https://github.com/google/honggfuzz
+(cd honggfuzz; make -j$(nproc); sudo make -j$(nproc) install)
+```
+
 ### Run honggfuzz:
 ```bash
 cd fuzzing/honggfuzz
@@ -66,4 +73,14 @@ So if we want to maximze the number of instructions covered we could run:
 cd fuzzing/honggfuzz
 cargo hfuzz build
 honggfuzz --linux_perf_instr -P -i ./hfuzz_workspace/honggfuzz/input -- ./hfuzz_target/honggfuzz
+```
+
+Therefore the tipical command looks like:
+```bash
+honggfuzz --linux_perf_branch -n $(nproc) -t 30 -P -i ./hfuzz_workspace/honggfuzz/input -- ./hfuzz_target/honggfuzz
+```
+
+In the same way we can pass additional arguments to the cargo version with:
+```bash
+HFUZZ_RUN_ARGS="-n $(nproc) -t 30" cargo hfuzz run honggfuzz
 ```
