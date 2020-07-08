@@ -43,16 +43,18 @@ before_script:
   - |
     if [ "$TRAVIS_OS_NAME" = "windows" ]; then
       python -m pip install maturin pytest coveralls
-      python -m pip install -r requirements.txt
+      python -m pip install -r ./bindings/python/requirements.txt
     else
       python3 -m pip install maturin pytest coveralls
-      python3 -m pip install -r requirements.txt
+      python3 -m pip install -r ./bindings/python/requirements.txt
     fi
 # the main build
 script:
   # Build, test, bench the graph crate
   - cargo build --verbose --all --manifest-path=graph/Cargo.toml
   - cargo test --verbose --all --manifest-path=graph/Cargo.toml
+  # move to the folder with the python bindings
+  - cd ./bindings/python
   # Clearing up target directory
   - rm -fdr target
   # Build the bindings

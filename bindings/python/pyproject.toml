@@ -1,6 +1,3 @@
 [build-system]
 requires = ["maturin"]
 build-backend = "maturin"
-
-[tool.maturin]
-sdist-include = ["graph/*", "graph/src/*"]

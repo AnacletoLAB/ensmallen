@@ -8,11 +8,9 @@ edition = "2018"
 
 [dependencies]
 honggfuzz = "0.5"
-rand = "0.7.3"
-arbitrary = { version = "0.4.5", features = ["derive"] }
 
-[dependencies.graph]
-path = ".."
+[dependencies.graph_harness]
+path = "../graph_harness"
 
 [profile.release]
 opt-level = 3

@@ -22,7 +22,3 @@ pub use self::holdouts::*;
 pub use self::tarjan::*;
 pub use self::operators::*;
 pub use preprocessing::*;
-
-
-// fuzzing stuff
-pub mod fuzzing_harness;
