@@ -10,7 +10,7 @@ Since some software handling coverages sometime get slightly different results, 
 [![Coverage Status](https://coveralls.io/repos/github/LucaCappelletti94/ensmallen_graph/badge.svg?branch=master)](https://coveralls.io/github/LucaCappelletti94/ensmallen_graph)
 [![codecov](https://codecov.io/gh/LucaCappelletti94/ensmallen_graph/branch/master/graph/badge.svg)](https://codecov.io/gh/LucaCappelletti94/ensmallen_graph)
 
-## How to install this
+## How to install the Python bindings
 This project is currently work in progress, and is to be considered for all
 intents and porposes an **alpha** version.
 
@@ -19,3 +19,5 @@ To install the **latest (alpha) release**, run the following:
 ```bash
 pip install ensmallen_graph
 ```
+
+See [this page](https://github.com/LucaCappelletti94/ensmallen_graph/blob/master/bindings/python/README.md) to compile the bindings yourself.
