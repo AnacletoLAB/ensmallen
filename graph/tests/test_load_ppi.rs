@@ -6,7 +6,7 @@ fn test_load_ppi() {
     let edge_path = "tests/data/ppi.tsv";
     let node_path = "tests/data/ppi_nodes.tsv";
     for directed in &[true, false]{
-        let graph = Graph::from_csv(
+        let _ = Graph::from_csv(
             edge_path,
             "subject",
             "object",
