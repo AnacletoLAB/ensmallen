@@ -316,7 +316,12 @@ pub fn harness(data: ToFuzz) {
             data.cbow_args.change_edge_type_weight.map(|e| e as f64)
         );
 
-        let _ = unwrapped.holdout(
+        let _ = unwrapped.connected_holdout(
+            data.holdout_args.seed,
+            data.holdout_args.train_percentage as f64
+        );
+
+        let _ = unwrapped.random_holdout(
             data.holdout_args.seed,
             data.holdout_args.train_percentage as f64
         );

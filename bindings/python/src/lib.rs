@@ -1235,8 +1235,31 @@ impl EnsmallenGraph {
     /// Returns
     /// -----------------------------
     /// Tuple containing training and validation graphs.
-    fn holdout(&self, seed:NodeT, train_percentage:f64) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
-        match self.graph.holdout(seed, train_percentage) {
+    fn connected_holdout(&self, seed:NodeT, train_percentage:f64) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        match self.graph.connected_holdout(seed, train_percentage) {
+            Ok((g1, g2)) => Ok((EnsmallenGraph{graph:g1}, EnsmallenGraph{graph:g2})),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
+
+    #[text_signature = "($self, seed, train_percentage)"]
+    /// Returns training and validation holdouts extracted from current graph.
+    /// 
+    /// The holdouts edges are randomly sampled and have no garanties that any
+    /// particular graph structure is maintained.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// seed: int,
+    ///     The seed to use to generate the holdout.
+    /// train_percentage: float,
+    ///     The percentage to reserve for the training.
+    /// 
+    /// Returns
+    /// -----------------------------
+    /// Tuple containing training and validation graphs.
+    fn random_holdout(&self, seed:NodeT, train_percentage:f64) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        match self.graph.random_holdout(seed, train_percentage) {
             Ok((g1, g2)) => Ok((EnsmallenGraph{graph:g1}, EnsmallenGraph{graph:g2})),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
