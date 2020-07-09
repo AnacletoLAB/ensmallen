@@ -2,7 +2,7 @@ use super::Graph;
 use super::types::*;
 use hashbrown::HashSet;
 
-/// Implementation of algorithms relative to trees.
+/// # Implementation of algorithms relative to trees.
 impl Graph {
     
     /// Returns set of edges composing a spanning tree.

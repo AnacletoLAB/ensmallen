@@ -5,7 +5,7 @@ use log::info;
 use std::collections::{HashMap, HashSet};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
-/// Construction of the graph from csv / tsv
+/// # Construction of the graph from csv / tsv
 impl Graph {
     fn read_edges_csv(
         path: &str,

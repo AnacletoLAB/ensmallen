@@ -38,7 +38,7 @@ fn binary_skipgram_vector_length(walk_length: usize, window_size: usize) -> usiz
         .sum()
 }
 
-/// Preprocessing for ML algorithms on graph.
+/// # Preprocessing for ML algorithms on graph.
 impl Graph {
     fn binary_skipgram(
         &self,

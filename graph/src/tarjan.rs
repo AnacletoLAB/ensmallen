@@ -1,7 +1,7 @@
 use super::Graph;
 use super::types::*;use std::cmp::min;
 
-/// Implementation of Tarjan algorithm
+/// # Tarjan algorithm
 impl Graph {
     /// Returns list of nodes of the various strongly connected components.
     /// 

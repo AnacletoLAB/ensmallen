@@ -128,7 +128,7 @@ pub fn validate(
     Ok(())
 }
 
-/// Graph Constructors
+/// # Graph Constructors
 impl Graph {
 
     fn build_nodes_mapping(
