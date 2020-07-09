@@ -1,5 +1,3 @@
-#![feature(asm)]
-
 const SEED_XOR: usize = 0xbad5eedbad5eed11;
 
 pub mod csv_utils;
