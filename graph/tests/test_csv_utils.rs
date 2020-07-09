@@ -18,59 +18,37 @@ fn test_has_columns() {
     has_columns(
         "tests/data/edge_file.tsv",
         "\t",
-        &[
-            "subject",
-            "object",
-            "relation",
-            "edge_label",
-        ],
+        &["subject", "object", "relation", "edge_label"],
         &[],
-    ).unwrap();
+    )
+    .unwrap();
     has_columns(
         "tests/data/edge_file.tsv",
         "\t",
-        &[
-            "subject",
-            "object",
-            "relation",
-            "edge_label",
-        ],
+        &["subject", "object", "relation", "edge_label"],
         &[&None],
-    ).unwrap();
+    )
+    .unwrap();
     has_columns(
         "tests/data/edge_file.tsv",
         "\t",
         &["subject", "object"],
         &[&Some("relation"), &Some("edge_label")],
-    ).unwrap();
-    has_columns(
-        "tests/data/edge_file.tsv",
-        "\t",
-        &["subject"],
-        &[],
-    ).unwrap();
+    )
+    .unwrap();
+    has_columns("tests/data/edge_file.tsv", "\t", &["subject"], &[]).unwrap();
     has_columns(
         "tests/data/node_file.tsv",
         "\t",
-        &[
-            "id",
-            "name",
-            "category",
-            "description",
-            "alias",
-        ],
+        &["id", "name", "category", "description", "alias"],
         &[],
-    ).unwrap();
+    )
+    .unwrap();
     has_columns("tests/data/node_file.tsv", "\t", &["id"], &[]).unwrap();
 }
 
 #[test]
 #[should_panic]
 fn test_has_columns_should_panic() {
-    has_columns(
-        "tests/data/should_panic.csv",
-        ",",
-        &["a", "b", "c"],
-        &[],
-    ).unwrap();
+    has_columns("tests/data/should_panic.csv", ",", &["a", "b", "c"], &[]).unwrap();
 }

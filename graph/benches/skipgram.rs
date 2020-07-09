@@ -1,8 +1,7 @@
 extern crate rand;
-use rand::Rng;  
 use rand::seq::SliceRandom;
 use rand::thread_rng;
-
+use rand::Rng;
 
 pub fn gen_random_usize_vec(num: usize, max: usize) -> Vec<usize> {
     // TODO! substitute with xorshiro
@@ -25,7 +24,7 @@ macro_rules! max {
 macro_rules! min {
     ($a: expr, $b: expr) => {
         if $a < $b {
-            $a 
+            $a
         } else {
             $b
         }
@@ -38,11 +37,7 @@ pub fn naife_skipgram_preprocessing(
     window_size: usize,
     negative_samples: f64,
     shuffle: bool,
-) -> (
-    Vec<usize>,
-    Vec<usize>,
-    Vec<u8>   
-){
+) -> (Vec<usize>, Vec<usize>, Vec<u8>) {
     let walk_len = walk.len();
     let vector_length: usize = (0..walk_len)
         .into_iter()
@@ -52,14 +47,10 @@ pub fn naife_skipgram_preprocessing(
     // create the positive data
     let mut words: Vec<usize> = Vec::with_capacity(vector_length);
     let mut contexts: Vec<usize> = Vec::with_capacity(vector_length);
-    
+
     for (i, wi) in walk.iter().enumerate() {
-        let window_start = if i > window_size {
-            i - window_size
-        } else {
-            0
-        };
-        let window_end = min!(walk_len, i + window_size + 1); 
+        let window_start = if i > window_size { i - window_size } else { 0 };
+        let window_end = min!(walk_len, i + window_size + 1);
         let delta = window_end - window_start - 1;
 
         words.extend_from_slice(&vec![*wi; delta][..]);
@@ -71,7 +62,7 @@ pub fn naife_skipgram_preprocessing(
 
     // create negative data
     // In this implementation, negative samples ARE MANDATORY.
-    
+
     // TODO! This thing can create false negatives!!
     // The issue was already present in the original TensorFlow implementation.
     let num_negatives = (words.len() as f64 * negative_samples) as usize;
@@ -96,10 +87,5 @@ pub fn naife_skipgram_preprocessing(
         labels = indices.iter().map(|i| labels[*i]).collect();
     }
 
-    return (
-        words,
-        contexts,
-        labels
-    )
-
+    return (words, contexts, labels);
 }

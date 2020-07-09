@@ -1,13 +1,13 @@
 //! A graph representation optimized for executing random walks on huge graphs.
 use super::types::*;
+use counter::Counter;
 use derive_getters::Getters;
-use std::collections::HashMap;
 use hashbrown::{HashMap as HashBrownMap, HashSet as HashBrownSet};
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
-use log::info;
 use itertools::Itertools;
-use counter::Counter;
+use log::info;
 use rayon::prelude::*;
+use std::collections::HashMap;
 use vec_rand::sample;
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
@@ -40,11 +40,11 @@ pub struct Graph {
 /// # Graph utility methods
 impl Graph {
     /// Returns node type of given node.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * node_id: NodeT - node whose node type is to be returned.
-    /// 
+    ///
     pub fn get_node_type_id(&self, node_id: NodeT) -> Result<NodeTypeT, String> {
         if let Some(nt) = &self.node_types {
             return if node_id <= nt.len() {
@@ -63,11 +63,11 @@ impl Graph {
     }
 
     /// Returns edge type of given edge.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * edge_id: EdgeT - edge whose edge type is to be returned.
-    /// 
+    ///
     pub fn get_edge_type_id(&self, edge_id: EdgeT) -> Result<EdgeTypeT, String> {
         if let Some(et) = &self.edge_types {
             return if edge_id <= et.len() {
@@ -86,7 +86,7 @@ impl Graph {
     }
 
     /// Returns edge type counts.
-    pub fn get_edge_type_counts(&self)->Result<HashMap<EdgeTypeT, usize>, String>{
+    pub fn get_edge_type_counts(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
         if let Some(et) = &self.edge_types {
             Ok(Counter::init(et.clone()).into_map())
         } else {
@@ -97,7 +97,7 @@ impl Graph {
     }
 
     /// Returns node type counts.
-    pub fn get_node_type_counts(&self)->Result<HashMap<NodeTypeT, usize>, String>{
+    pub fn get_node_type_counts(&self) -> Result<HashMap<NodeTypeT, usize>, String> {
         if let Some(nt) = &self.node_types {
             Ok(Counter::init(nt.clone()).into_map())
         } else {
@@ -110,36 +110,34 @@ impl Graph {
     /// Returns top k most common nodes and node types by node type frequency.
     ///
     /// # Arguments
-    /// 
+    ///
     /// * k:usize - Number of common node types to return.
-    /// 
-    pub fn get_top_k_nodes_by_node_type(&self, k:usize)->Result<(Vec<NodeT>, Vec<NodeTypeT>), String>{
+    ///
+    pub fn get_top_k_nodes_by_node_type(
+        &self,
+        k: usize,
+    ) -> Result<(Vec<NodeT>, Vec<NodeTypeT>), String> {
         if let Some(nt) = &self.node_types {
             let counts = self.get_node_type_counts()?;
-            let top_k: HashBrownSet<_> = counts.iter().sorted_by(
-                |(_, v1), (_, v2)| 
-                    Ord::cmp(&v1, &v2)
-                ).take(k).map(
-                    |(k1, _)| k1
-                ).collect();
-            let filtered:Vec<bool> = nt.into_par_iter().map(
-                |node_type|
-                top_k.contains(&node_type)
-            )
-            .collect();
+            let top_k: HashBrownSet<_> = counts
+                .iter()
+                .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v1, &v2))
+                .take(k)
+                .map(|(k1, _)| k1)
+                .collect();
+            let filtered: Vec<bool> = nt
+                .into_par_iter()
+                .map(|node_type| top_k.contains(&node_type))
+                .collect();
             Ok((
                 (0..self.get_nodes_number())
                     .zip(filtered.iter())
-                    .filter_map(
-                        |(node, filter)| if *filter {Some(node)} else {None}
-                    )
+                    .filter_map(|(node, filter)| if *filter { Some(node) } else { None })
                     .collect(),
                 nt.iter()
                     .zip(filtered.iter())
-                    .filter_map(
-                        |(nt, filter)| if *filter {Some(*nt)} else {None}
-                    )
-                    .collect()
+                    .filter_map(|(nt, filter)| if *filter { Some(*nt) } else { None })
+                    .collect(),
             ))
         } else {
             Err(String::from(
@@ -151,36 +149,34 @@ impl Graph {
     /// Returns top k most common edges and edge types by edge type frequency.
     ///
     /// # Arguments
-    /// 
+    ///
     /// * k:usize - Number of common node types to return.
-    /// 
-    pub fn get_top_k_edges_by_edge_type(&self, k:usize)->Result<(Vec<EdgeT>, Vec<EdgeTypeT>), String>{
+    ///
+    pub fn get_top_k_edges_by_edge_type(
+        &self,
+        k: usize,
+    ) -> Result<(Vec<EdgeT>, Vec<EdgeTypeT>), String> {
         if let Some(nt) = &self.edge_types {
             let counts = self.get_edge_type_counts()?;
-            let top_k: HashBrownSet<_> = counts.iter().sorted_by(
-                |(_, v1), (_, v2)| 
-                    Ord::cmp(&v1, &v2)
-                ).take(k).map(
-                    |(k1, _)| k1
-                ).collect();
-            let filtered:Vec<bool> = nt.into_par_iter().map(
-                |edge_type|
-                top_k.contains(&edge_type)
-            )
-            .collect();
+            let top_k: HashBrownSet<_> = counts
+                .iter()
+                .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v1, &v2))
+                .take(k)
+                .map(|(k1, _)| k1)
+                .collect();
+            let filtered: Vec<bool> = nt
+                .into_par_iter()
+                .map(|edge_type| top_k.contains(&edge_type))
+                .collect();
             Ok((
                 (0..self.get_edges_number())
                     .zip(filtered.iter())
-                    .filter_map(
-                        |(edge, filter)| if *filter {Some(edge)} else {None}
-                    )
+                    .filter_map(|(edge, filter)| if *filter { Some(edge) } else { None })
                     .collect(),
                 nt.iter()
                     .zip(filtered.iter())
-                    .filter_map(
-                        |(nt, filter)| if *filter {Some(*nt)} else {None}
-                    )
-                    .collect()
+                    .filter_map(|(nt, filter)| if *filter { Some(*nt) } else { None })
+                    .collect(),
             ))
         } else {
             Err(String::from(
@@ -190,33 +186,34 @@ impl Graph {
     }
 
     /// Returns boolean representing if edge passing between given nodes exists.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * src: NodeT - The source node of the edge.
     /// * dst: NodeT - The destination node of the edge.
-    /// 
+    ///
     pub fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
         self.unique_edges.contains_key(&(src, dst))
     }
 
     /// Return true if given graph has any edge overlapping with current graph.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * graph: Graph - The graph to check against.
-    /// 
+    ///
     pub fn overlaps(&self, graph: &Graph) -> bool {
-        graph.sources
+        graph
+            .sources
             .par_iter()
             .zip(graph.destinations.par_iter())
             .any(|(src, dst)| {
-                let local_src_id:Option<&NodeT> = self.nodes_mapping.get(
-                    &graph.nodes_reverse_mapping[*src].clone()
-                );
-                let local_dst_id:Option<&NodeT> = self.nodes_mapping.get(
-                    &graph.nodes_reverse_mapping[*dst].clone()
-                );
+                let local_src_id: Option<&NodeT> = self
+                    .nodes_mapping
+                    .get(&graph.nodes_reverse_mapping[*src].clone());
+                let local_dst_id: Option<&NodeT> = self
+                    .nodes_mapping
+                    .get(&graph.nodes_reverse_mapping[*dst].clone());
                 if let Some(lsrc) = local_src_id {
                     if let Some(ldst) = local_dst_id {
                         self.has_edge(*lsrc, *ldst)
@@ -230,22 +227,23 @@ impl Graph {
     }
 
     /// Return true if given graph edges are all contained within current graph.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * graph: Graph - The graph to check against.
-    /// 
+    ///
     pub fn contains(&self, graph: &Graph) -> bool {
-        graph.sources
+        graph
+            .sources
             .par_iter()
             .zip(graph.destinations.par_iter())
             .all(|(src, dst)| {
-                let local_src_id:Option<&NodeT> = self.nodes_mapping.get(
-                    &graph.nodes_reverse_mapping[*src].clone()
-                );
-                let local_dst_id:Option<&NodeT> = self.nodes_mapping.get(
-                    &graph.nodes_reverse_mapping[*dst].clone()
-                );
+                let local_src_id: Option<&NodeT> = self
+                    .nodes_mapping
+                    .get(&graph.nodes_reverse_mapping[*src].clone());
+                let local_dst_id: Option<&NodeT> = self
+                    .nodes_mapping
+                    .get(&graph.nodes_reverse_mapping[*dst].clone());
                 if let Some(lsrc) = local_src_id {
                     if let Some(ldst) = local_dst_id {
                         self.has_edge(*lsrc, *ldst)
@@ -259,12 +257,12 @@ impl Graph {
     }
 
     /// Returns edge id of the edge passing between given nodes.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * src: NodeT - The source node of the edge.
     /// * dst: NodeT - The destination node of the edge.
-    /// 
+    ///
     pub fn get_edge_id(&self, src: NodeT, dst: NodeT) -> Result<EdgeT, String> {
         match self.unique_edges.get(&(src, dst)) {
             Some(g) => Ok(*g),
@@ -273,10 +271,10 @@ impl Graph {
                     "Required edge passing between {src_name} ({src}) ",
                     "and {dst_name} ({dst}) does not exists in graph."
                 ),
-                src_name=self.nodes_reverse_mapping[src],
-                src=src,
-                dst_name=self.nodes_reverse_mapping[dst],
-                dst=dst
+                src_name = self.nodes_reverse_mapping[src],
+                src = src,
+                dst_name = self.nodes_reverse_mapping[dst],
+                dst = dst
             )),
         }
     }
@@ -310,11 +308,11 @@ impl Graph {
     }
 
     /// Return range of outbound edges IDs for given Node.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * node: NodeT - Node for which we need to compute the outbounds range.
-    /// 
+    ///
     pub(crate) fn get_min_max_edge(&self, node: NodeT) -> (EdgeT, EdgeT) {
         let min_edge: EdgeT = if node == 0 {
             0
@@ -327,7 +325,7 @@ impl Graph {
 
     /// Returns the number of outbound neighbours of given node.
     ///
-    /// 
+    ///
     /// # Arguments
     ///
     /// * `node` - Integer ID of the node.
@@ -376,12 +374,12 @@ impl Graph {
     }
 
     /// Return the node transition weights and the related node and edges.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * node: NodeT, the previous node from which to compute the transitions, if this is bigger that the number of nodes it will panic.
     /// * change_node_type_weight: ParamsT, weight for changing node type.
-    /// 
+    ///
     fn get_node_transition(
         &self,
         node: NodeT,
@@ -422,9 +420,9 @@ impl Graph {
     }
 
     /// Return the edge transition weights and the related node and edges.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * edge: EdgeT, the previous edge from which to compute the transitions.
     /// * return_weight: ParamsT,
     ///     Weight for the probability of exploitation.
@@ -511,9 +509,9 @@ impl Graph {
     }
 
     /// Return new sampled node with the transition edge used.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * node: NodeT, the previous node from which to compute the transitions.
     /// * change_node_type_weight: ParamsT, weight for changing node type.
     fn extract_node(&self, node: NodeT, change_node_type_weight: ParamsT) -> (NodeT, EdgeT) {
@@ -524,9 +522,9 @@ impl Graph {
     }
 
     /// Return new random edge with given weights.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * edge: EdgeT, the previous edge from which to compute the transitions.
     /// * return_weight: ParamsT,
     ///     Weight for the probability of exploitation.
@@ -558,15 +556,15 @@ impl Graph {
     }
 
     /// Returns vector of walks.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * length: usize - Length of the random walks.
     /// * iterations: Option<usize> - Iterations on every node.
     /// * start_node: Option<usize>,
     ///     Start node
     /// * end_node: Option<usize>,
-    ///     End node 
+    ///     End node
     /// * min_length: Option<usize>,
     ///     Minimum length of the walks.
     ///     Walks which are smaller than the given minimum length will be
@@ -587,7 +585,7 @@ impl Graph {
     ///     The default value is 1.0.
     /// * verbose: Option<bool>,
     ///     Wethever to show the loading bars.
-    /// 
+    ///
     pub fn walk(
         &self,
         length: usize,
@@ -601,10 +599,8 @@ impl Graph {
         change_edge_type_weight: Option<ParamsT>,
         verbose: Option<bool>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
-        if length == 0  {
-            return Err(String::from(
-                "The provvided lenght for the walk is zero!"
-            ))
+        if length == 0 {
+            return Err(String::from("The provvided lenght for the walk is zero!"));
         }
 
         let _min_length = min_length.unwrap_or(0);
@@ -618,8 +614,8 @@ impl Graph {
             if let Some(en) = end_node {
                 (sn, en)
             } else {
-                (sn, sn+1)
-            } 
+                (sn, sn + 1)
+            }
         } else {
             (0, self.get_nodes_number())
         };
@@ -630,8 +626,7 @@ impl Graph {
                     "Given start node index ({})",
                     "is greater than given end node index ({})."
                 ),
-                _start_node,
-                _end_node
+                _start_node, _end_node
             ));
         }
 
@@ -656,7 +651,7 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        
+
         let _verbose = verbose.unwrap_or(true);
         let _return_weight = return_weight.unwrap_or(1.0);
         let _explore_weight = explore_weight.unwrap_or(1.0);
@@ -668,17 +663,17 @@ impl Graph {
                 "Given 'return_weight' is not a strictly positive real number.",
             ));
         }
-        if _explore_weight <= 0.0 || !_return_weight.is_finite(){
+        if _explore_weight <= 0.0 || !_return_weight.is_finite() {
             return Err(String::from(
                 "Given 'explore_weight' is not a strictly positive real number.",
             ));
         }
-        if _change_node_type_weight <= 0.0 || !_return_weight.is_finite(){
+        if _change_node_type_weight <= 0.0 || !_return_weight.is_finite() {
             return Err(String::from(
                 "Given 'change_node_type_weight' is not a strictly positive real number.",
             ));
         }
-        if _change_edge_type_weight <= 0.0 || !_return_weight.is_finite(){
+        if _change_edge_type_weight <= 0.0 || !_return_weight.is_finite() {
             return Err(String::from(
                 "Given 'change_edge_type_weight' is not a strictly positive real number.",
             ));
@@ -703,7 +698,6 @@ impl Graph {
             .into_par_iter()
             .progress_with(pb)
             .map(|index| _start_node + (index % delta));
-            
 
         Ok(if self.has_traps {
             iterator
@@ -737,9 +731,9 @@ impl Graph {
     }
 
     /// Returns single walk from given node
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * length: usize - Length of the random walks.
     /// * node: NodeT - Node from where to start the random walks.
     /// * return_weight: ParamsT,
@@ -752,7 +746,7 @@ impl Graph {
     ///     Weight for changing the node type at every step of the walk.
     /// * change_edge_type_weight: ParamsT,
     ///     Weight for changing the edge type at every step of the walk.
-    /// 
+    ///
     fn single_walk(
         &self,
         length: usize,
@@ -762,7 +756,6 @@ impl Graph {
         change_node_type_weight: ParamsT,
         change_edge_type_weight: ParamsT,
     ) -> Vec<NodeT> {
-        
         let (dst, mut edge) = self.extract_node(node, change_node_type_weight);
 
         if self.is_node_trap(dst) {
@@ -791,11 +784,11 @@ impl Graph {
     }
 
     /// Returns single walk from given node.
-    /// 
+    ///
     /// This method assumes that there are no traps in the graph.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * length: usize - Length of the random walks.
     /// * node: NodeT - Node from where to start the random walks.
     /// * return_weight: ParamsT,
@@ -808,7 +801,7 @@ impl Graph {
     ///     Weight for changing the node type at every step of the walk.
     /// * change_edge_type_weight: ParamsT,
     ///     Weight for changing the edge type at every step of the walk.
-    /// 
+    ///
     fn single_walk_no_traps(
         &self,
         length: usize,

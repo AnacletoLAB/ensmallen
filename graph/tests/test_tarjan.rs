@@ -20,8 +20,9 @@ fn test_tarjan() {
         None,
         None,
         None,
-        None
-    ).unwrap();
+        None,
+    )
+    .unwrap();
     assert_eq!(
         graph.connected_components_number(),
         graph.strongly_connected_components().len()

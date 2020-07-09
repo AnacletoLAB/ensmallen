@@ -5,7 +5,7 @@ use graph::graph::Graph;
 fn test_graph_metrics() {
     let edge_path = "tests/data/het_graph_edges.tsv";
     let node_path = "tests/data/het_graph_nodes.tsv";
-    for directed in &[true, false]{
+    for directed in &[true, false] {
         let graph = Graph::from_csv(
             edge_path,
             "subject",
@@ -23,13 +23,14 @@ fn test_graph_metrics() {
             None,
             None,
             None,
-            None
-        ).unwrap();
+            None,
+        )
+        .unwrap();
 
         format!("{:?}", graph);
-        
-        for one in 0..graph.get_nodes_number(){
-            for two in 0..graph.get_nodes_number(){
+
+        for one in 0..graph.get_nodes_number() {
+            for two in 0..graph.get_nodes_number() {
                 graph.degrees_product(one, two);
                 graph.jaccard_index(one, two);
                 graph.adamic_adar_index(one, two);
@@ -37,5 +38,5 @@ fn test_graph_metrics() {
             }
         }
         graph.traps_rate();
-    };
+    }
 }
