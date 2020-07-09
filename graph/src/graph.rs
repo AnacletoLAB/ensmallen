@@ -20,24 +20,24 @@ use vec_rand::sample;
 ///
 #[derive(Debug, Clone, Getters, PartialEq)]
 pub struct Graph {
-    pub is_directed: bool,
-    pub sources: Vec<NodeT>,
-    pub destinations: Vec<NodeT>,
-    pub nodes_mapping: HashMap<String, NodeT>,
-    pub nodes_reverse_mapping: Vec<String>,
-    pub unique_edges: HashBrownMap<(NodeT, NodeT), EdgeT>,
-    pub outbounds: Vec<EdgeT>,
-    pub weights: Option<Vec<WeightT>>,
-    pub node_types: Option<Vec<NodeTypeT>>,
-    pub node_types_mapping: Option<HashMap<String, NodeTypeT>>,
-    pub node_types_reverse_mapping: Option<Vec<String>>,
-    pub edge_types: Option<Vec<EdgeTypeT>>,
-    pub edge_types_mapping: Option<HashMap<String, EdgeTypeT>>,
-    pub edge_types_reverse_mapping: Option<Vec<String>>,
-    pub has_traps: bool,
+    pub(crate) is_directed: bool,
+    pub(crate) sources: Vec<NodeT>,
+    pub(crate) destinations: Vec<NodeT>,
+    pub(crate) nodes_mapping: HashMap<String, NodeT>,
+    pub(crate) nodes_reverse_mapping: Vec<String>,
+    pub(crate) unique_edges: HashBrownMap<(NodeT, NodeT), EdgeT>,
+    pub(crate) outbounds: Vec<EdgeT>,
+    pub(crate) weights: Option<Vec<WeightT>>,
+    pub(crate) node_types: Option<Vec<NodeTypeT>>,
+    pub(crate) node_types_mapping: Option<HashMap<String, NodeTypeT>>,
+    pub(crate) node_types_reverse_mapping: Option<Vec<String>>,
+    pub(crate) edge_types: Option<Vec<EdgeTypeT>>,
+    pub(crate) edge_types_mapping: Option<HashMap<String, EdgeTypeT>>,
+    pub(crate) edge_types_reverse_mapping: Option<Vec<String>>,
+    pub(crate) has_traps: bool,
 }
 
-/// Graph utility methods
+/// # Graph utility methods
 impl Graph {
     /// Returns node type of given node.
     /// 

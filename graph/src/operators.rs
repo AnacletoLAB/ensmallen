@@ -1,6 +1,6 @@
 use super::Graph;
 
-
+/// # Operators
 impl Graph {
     /// Return sum for summing graphs objects.
     /// 

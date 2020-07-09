@@ -5,7 +5,7 @@ use itertools::Itertools;
 use hashbrown::{HashMap, HashSet};
 use std::collections::{HashMap as DefaultHashMap};
 
-/// Properties and measurements of the graph
+/// # Properties and measurements of the graph
 impl Graph {
     /// Returns product of degrees of given nodes.
     ///

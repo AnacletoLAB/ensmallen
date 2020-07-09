@@ -7,7 +7,7 @@ use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use vec_rand::xorshift::xorshift as rand_u64;
 
-/// Implementation of algorithms relative to trees.
+/// # Holdouts.
 impl Graph {
 
     fn copy_from_index(

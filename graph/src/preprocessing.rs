@@ -38,7 +38,7 @@ fn skipgram_vector_length(walk_length: usize, window_size: usize) -> usize {
         .sum()
 }
 
-/// Preprocessing for ML algorithms on graph.
+/// # Preprocessing for ML algorithms on graph.
 impl Graph {
     fn skipgram(
         &self,
