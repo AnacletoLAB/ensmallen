@@ -6,7 +6,7 @@ use std::iter::FromIterator;
 use itertools::Itertools;
 use rayon::prelude::*;
 
-pub(crate) fn validate(
+pub fn validate(
     sources: &[NodeT],
     destinations: &[NodeT],
     nodes_mapping: &HashMap<String, NodeT>,
