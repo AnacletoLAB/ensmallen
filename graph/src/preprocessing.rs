@@ -28,7 +28,7 @@ macro_rules! min {
     };
 }
 
-fn skipgram_vector_length(walk_length: usize, window_size: usize) -> usize {
+fn binary_skipgram_vector_length(walk_length: usize, window_size: usize) -> usize {
     (0..walk_length)
         .map(|i| {
             min!(walk_length, i + window_size + 1)
@@ -40,7 +40,7 @@ fn skipgram_vector_length(walk_length: usize, window_size: usize) -> usize {
 
 /// Preprocessing for ML algorithms on graph.
 impl Graph {
-    fn skipgram(
+    fn binary_skipgram(
         &self,
         walk: &[usize],
         window_size: Option<usize>,
@@ -53,7 +53,7 @@ impl Graph {
         let _shuffle = shuffle.unwrap_or(true);
         let _seed = seed ^ SEED_XOR as u64;
 
-        let vector_length: usize = skipgram_vector_length(walk.len(), _window_size);
+        let vector_length: usize = binary_skipgram_vector_length(walk.len(), _window_size);
         // create the positive data
         let total_length = (vector_length as f64 * (1.0 + _negative_samples)) as usize;
         let mut words: Vec<NodeT> = Vec::with_capacity(total_length);
@@ -102,7 +102,7 @@ impl Graph {
         ((words, contexts), labels)
     }
 
-    /// Return training batches for SkipGram model.
+    /// Return training batches for BinarySkipGram model.
     ///
     /// The batch is composed of a tuple as the following:
     ///
@@ -156,7 +156,7 @@ impl Graph {
     /// Thererefore, **when we generate negatives, we just check that the edges is not present
     /// in the original graph**, this is just an approxiamation we do to make the problem
     /// tractable.
-    pub fn skipgrams(
+    pub fn binary_skipgrams(
         &self,
         idx: usize,
         batch_size: usize,
@@ -235,7 +235,7 @@ impl Graph {
         }
 
         for i in 0..walks.len() {
-            let new_value = (skipgram_vector_length(walks[i].len(), _window_size) as f64
+            let new_value = (binary_skipgram_vector_length(walks[i].len(), _window_size) as f64
                 * (1.0 + _negative_samples)) as usize;
             cumsum.push(if i == 0 {
                 new_value
@@ -280,7 +280,7 @@ impl Graph {
                 .enumerate()
                 .for_each(
                     |(i, (((walk, words_index), contexts_index), labels_index))| {
-                        let ((_words, _contexts), _labels) = self.skipgram(
+                        let ((_words, _contexts), _labels) = self.binary_skipgram(
                             walk,
                             window_size,
                             Some(_negative_samples),
@@ -335,7 +335,7 @@ impl Graph {
         Ok(((words, contexts), labels))
     }
 
-    /// Return training batches for CBOW model.
+    /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
     ///
@@ -373,7 +373,7 @@ impl Graph {
     ///     Weight for changing the edge type at every step of the walk.
     ///     The default value is 1.0.
     ///
-    pub fn cbow(
+    pub fn node2vec(
         &self,
         idx: usize,
         batch_size: usize,

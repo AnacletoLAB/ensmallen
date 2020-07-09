@@ -87,7 +87,7 @@ pub struct CooccurrenceArgs {
 }
 
 #[derive(Arbitrary, Debug)]
-pub struct CbowArgs {
+pub struct Node2VecArgs {
     idx: usize,
     batch_size: u8,
     length: u8,
@@ -128,7 +128,7 @@ pub struct ToFuzz {
     walks_args: WalkArgs,
     skipgrams_args: SkipgramsArgs,
     cooccurence_args: CooccurrenceArgs,
-    cbow_args:  CbowArgs,
+    node2vec_args:  Node2VecArgs,
     link_prediction_args: LinkPredictionArgs,
     holdout_args: HoldoutArgs,
     metrics:Metrics,
@@ -268,7 +268,7 @@ pub fn harness(data: ToFuzz) {
             Some(false)
         );
 
-        let mut negative_samples = data.skipgrams_args.negative_samples.clone();
+        let mut negative_samples = data.skipgrams_args.negative_samples;
         if let Some(ns) = &mut negative_samples{
             if *ns > 100.0{
                 *ns = 100.0;
@@ -302,18 +302,18 @@ pub fn harness(data: ToFuzz) {
             Some(false)
         );
 
-        let _ = unwrapped.cbow(
-            data.cbow_args.idx as usize,
-            data.cbow_args.batch_size as usize,
-            data.cbow_args.length as usize,
-            data.cbow_args.iterations.map(|e| e as usize),
-            data.cbow_args.window_size.map(|e| e as usize),
-            data.cbow_args.shuffle,
-            data.cbow_args.min_length.map(|e| e as usize),
-            data.cbow_args.return_weight.map(|e| e as f64),
-            data.cbow_args.explore_weight.map(|e| e as f64),
-            data.cbow_args.change_node_type_weight.map(|e| e as f64),
-            data.cbow_args.change_edge_type_weight.map(|e| e as f64)
+        let _ = unwrapped.node2vec(
+            data.node2vec_args.idx as usize,
+            data.node2vec_args.batch_size as usize,
+            data.node2vec_args.length as usize,
+            data.node2vec_args.iterations.map(|e| e as usize),
+            data.node2vec_args.window_size.map(|e| e as usize),
+            data.node2vec_args.shuffle,
+            data.node2vec_args.min_length.map(|e| e as usize),
+            data.node2vec_args.return_weight.map(|e| e as f64),
+            data.node2vec_args.explore_weight.map(|e| e as f64),
+            data.node2vec_args.change_node_type_weight.map(|e| e as f64),
+            data.node2vec_args.change_edge_type_weight.map(|e| e as f64)
         );
 
         let _ = unwrapped.connected_holdout(
@@ -326,7 +326,7 @@ pub fn harness(data: ToFuzz) {
             data.holdout_args.train_percentage as f64
         );
 
-        let mut negative_samples = data.link_prediction_args.negative_samples.clone();
+        let mut negative_samples = data.link_prediction_args.negative_samples;
         if let Some(ns) = &mut negative_samples{
             if *ns > 100.0{
                 *ns = 100.0;
@@ -345,16 +345,16 @@ pub fn harness(data: ToFuzz) {
         } else {
 
             let graph_args_2 = data.link_prediction_args.graph_to_avoid.unwrap();
-            let graph2 = create_graph_from_args_struct(&graph_args_2);
-            if graph2.is_ok(){
-                let _ = unwrapped.link_prediction(
+            let _ = match create_graph_from_args_struct(&graph_args_2){
+                Ok(g) => Some(unwrapped.link_prediction(
                     data.link_prediction_args.idx as u64,
                     data.link_prediction_args.batch_size as usize,
                     negative_samples,
-                    Some(&graph2.unwrap()),
+                    Some(&g),
                     None
-                );   
-            }
+                )),
+                Err(_) => None
+            };
         }
     }
 }

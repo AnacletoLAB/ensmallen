@@ -615,7 +615,7 @@ impl EnsmallenGraph {
 
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, negative_samples, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, graph_to_avoid)"]
-    /// Return batch triple for training SkipGram model.
+    /// Return batch triple for training BinarySkipGram model.
     ///
     /// Parameters
     /// ---------------------
@@ -671,7 +671,7 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Triple with vector of integer with words, contexts and labels.
     ///
-    fn skipgrams(
+    fn binary_skipgrams(
         &self,
         idx: usize,
         batch_size: usize,
@@ -691,7 +691,7 @@ impl EnsmallenGraph {
                 None
             };
 
-            self.graph.skipgrams(
+            self.graph.binary_skipgrams(
                 idx,
                 batch_size,
                 length,
@@ -725,7 +725,7 @@ impl EnsmallenGraph {
                 graph,
             )
         } else {
-            self.graph.skipgrams(
+            self.graph.binary_skipgrams(
                 idx, batch_size, length, None, None, None, None, None, None, None, None, None, None,
             )
         };
@@ -754,7 +754,7 @@ impl EnsmallenGraph {
 
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
-    /// Return training batches for CBOW model.
+    /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
     ///
@@ -811,7 +811,7 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Tuple with vector of integer with contexts and words.
-    fn cbow(
+    fn node2vec(
         &self,
         idx: usize,
         batch_size: usize,
@@ -819,7 +819,7 @@ impl EnsmallenGraph {
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray2<f64>>, Py<PyArray1<f64>>)> {
         let batch = if let Some(kwargs) = &py_kwargs {
-            self.graph.cbow(
+            self.graph.node2vec(
                 idx,
                 batch_size,
                 length,
@@ -849,7 +849,7 @@ impl EnsmallenGraph {
                     .map(|val| val.extract::<ParamsT>().unwrap()),
             )
         } else {
-            self.graph.cbow(
+            self.graph.node2vec(
                 idx, batch_size, length, None, None, None, None, None, None, None, None,
             )
         };
@@ -1309,7 +1309,7 @@ impl EnsmallenGraph {
     ///
     /// The graph generated may be used as a testing negatives partition to be
     /// fed into the argument "graph_to_avoid" of the link_prediction or the
-    /// skipgrams algorithm.
+    /// binary_skipgrams algorithm.
     ///
     ///
     /// Parameters
