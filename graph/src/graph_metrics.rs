@@ -1,9 +1,9 @@
 use super::types::*;
 use super::*;
-use rayon::prelude::*;
-use itertools::Itertools;
 use hashbrown::{HashMap, HashSet};
-use std::collections::{HashMap as DefaultHashMap};
+use itertools::Itertools;
+use rayon::prelude::*;
+use std::collections::HashMap as DefaultHashMap;
 
 /// # Properties and measurements of the graph
 impl Graph {
@@ -172,39 +172,41 @@ impl Graph {
     }
 
     /// Returns percentage of self-loops.
-    pub fn selfloops_percentage(&self)->f64{
+    pub fn selfloops_percentage(&self) -> f64 {
         (0..self.get_nodes_number())
             .into_par_iter()
             .map(|node| self.has_edge(node, node) as usize)
-            .sum::<usize>() as f64 / self.get_edges_number() as f64
+            .sum::<usize>() as f64
+            / self.get_edges_number() as f64
     }
 
     /// Returns percentage of bidirectional edges.
-    pub fn bidirectional_percentage(&self)->f64{
+    pub fn bidirectional_percentage(&self) -> f64 {
         self.unique_edges
             .par_keys()
             .map(|(src, dst)| self.has_edge(*dst, *src) as usize)
-            .sum::<usize>() as f64 / self.unique_edges.len() as f64
+            .sum::<usize>() as f64
+            / self.unique_edges.len() as f64
     }
 
     /// Returns number of connected components in graph.
-    pub fn connected_components_number(&self)->NodeT{
-        self.get_nodes_number() - self.spanning_tree(0).len() 
+    pub fn connected_components_number(&self) -> NodeT {
+        self.get_nodes_number() - self.spanning_tree(0).len()
     }
 
     /// Returns number of singleton nodes within the graph.
-    pub fn singleton_nodes_number(&self)->NodeT{
-        self.get_nodes_number() - self.destinations
-            .iter()
-            .chain(
-                self.sources.iter()
-            )
-            .unique()
-            .count()
+    pub fn singleton_nodes_number(&self) -> NodeT {
+        self.get_nodes_number()
+            - self
+                .destinations
+                .iter()
+                .chain(self.sources.iter())
+                .unique()
+                .count()
     }
 
     /// Returns density of the graph.
-    pub fn density(&self)->f64{
+    pub fn density(&self) -> f64 {
         self.get_edges_number() as f64 / (self.get_nodes_number().pow(2)) as f64
     }
 
@@ -244,19 +246,19 @@ impl Graph {
         report.insert("traps_rate", self.traps_rate().to_string());
         report.insert(
             "selfloops_percentage",
-            self.selfloops_percentage().to_string()
+            self.selfloops_percentage().to_string(),
         );
         report.insert(
             "bidirectional_percentage",
-            self.bidirectional_percentage().to_string()
+            self.bidirectional_percentage().to_string(),
         );
         report.insert(
             "connected_components_number",
-            self.connected_components_number().to_string()
+            self.connected_components_number().to_string(),
         );
         report.insert(
             "strongly_connected_components_number",
-            self.strongly_connected_components().len().to_string()
+            self.strongly_connected_components().len().to_string(),
         );
         report
     }

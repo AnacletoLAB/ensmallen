@@ -1,7 +1,7 @@
 use super::*;
 use crate::csv_utils::{check_consistent_lines, get_headers, has_columns};
-use rayon::prelude::*;
 use log::info;
+use rayon::prelude::*;
 use std::collections::{HashMap, HashSet};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
@@ -16,7 +16,7 @@ impl Graph {
         default_edge_type: &Option<&str>,
         weights_column: &Option<&str>,
         default_weight: &Option<WeightT>,
-        ignore_duplicated_edges: bool
+        ignore_duplicated_edges: bool,
     ) -> Result<
         (
             Vec<NodeT>,
@@ -62,11 +62,8 @@ impl Graph {
         for (i, line) in buf_reader.lines().enumerate() {
             let _line = line.unwrap();
 
-            let parsed: HashMap<String, &str> = headers
-                .iter()
-                .cloned()
-                .zip(_line.split(sep))
-                .collect();
+            let parsed: HashMap<String, &str> =
+                headers.iter().cloned().zip(_line.split(sep)).collect();
 
             let src_name = String::from(parsed[sources_column]);
             let dst_name = String::from(parsed[destinations_column]);
@@ -90,16 +87,16 @@ impl Graph {
                             destination=dst_name,
                             path=path,
                             line=_line
-                        ))
-                    }   
+                        ));
+                    }
                 } else {
                     etn
                 }))
             } else {
                 None
             };
-            
-            let weight:Option<WeightT> = if let Some(wc) = weights_column {
+
+            let weight: Option<WeightT> = if let Some(wc) = weights_column {
                 let w = parsed[*wc];
                 Some(if w.is_empty() {
                     if let Some(dw) = default_weight {
@@ -125,11 +122,11 @@ impl Graph {
                             },
                             path=path,
                             line=_line
-                        ))
-                    }  
+                        ));
+                    }
                 } else {
                     let parsed_weight = w.parse::<WeightT>();
-                    if parsed_weight.is_err(){
+                    if parsed_weight.is_err() {
                         return Err(format!(
                             concat!(
                                 "Cannot parse {weight} as float.\n",
@@ -150,7 +147,7 @@ impl Graph {
                             },
                             path=path,
                             line=_line
-                        ))
+                        ));
                     }
                     parsed_weight.unwrap()
                 })
@@ -160,10 +157,8 @@ impl Graph {
 
             let edge_type = if let Some(etn) = edge_type_name.clone() {
                 if !edge_types_mapping.contains_key(&etn) {
-                    edge_types_mapping.insert(
-                        etn.clone(),
-                        edge_types_reverse_mapping.len() as NodeTypeT,
-                    );
+                    edge_types_mapping
+                        .insert(etn.clone(), edge_types_reverse_mapping.len() as NodeTypeT);
                     edge_types_reverse_mapping.push(etn.clone());
                 }
                 Some(*edge_types_mapping.get(&etn).unwrap())
@@ -171,8 +166,8 @@ impl Graph {
                 None
             };
 
-            for node_name in [src_name.clone(), dst_name.clone()].iter(){
-                if !nodes_mapping.contains_key(node_name) { 
+            for node_name in [src_name.clone(), dst_name.clone()].iter() {
+                if !nodes_mapping.contains_key(node_name) {
                     nodes_mapping.insert(node_name.clone(), nodes_reverse_mapping.len());
                     nodes_reverse_mapping.push(node_name.clone());
                 }
@@ -209,10 +204,10 @@ impl Graph {
                 unique_edges_set.insert(triple);
                 sources.push(src);
                 destinations.push(dst);
-                if let Some(et) = edge_type{
+                if let Some(et) = edge_type {
                     edge_types.push(et);
                 }
-                if let Some(w) = weight{
+                if let Some(w) = weight {
                     weights.push(w);
                 }
             }
@@ -253,7 +248,7 @@ impl Graph {
         nodes_mapping: &HashMap<String, NodeT>,
         node_types_column: &str,
         default_node_type: &Option<&str>,
-        ignore_duplicated_nodes: bool
+        ignore_duplicated_nodes: bool,
     ) -> Result<(Vec<NodeTypeT>, HashMap<String, NodeTypeT>, Vec<String>), String> {
         let mut nodes: Vec<NodeT> = Vec::new();
 
@@ -275,11 +270,8 @@ impl Graph {
         for (j, line) in buf_reader.lines().enumerate() {
             let _line = line.unwrap();
 
-            let parsed: HashMap<String, &str> = headers
-                .iter()
-                .cloned()
-                .zip(_line.split(sep))
-                .collect();
+            let parsed: HashMap<String, &str> =
+                headers.iter().cloned().zip(_line.split(sep)).collect();
 
             let node = parsed.get(nodes_column).unwrap();
             let maybe_node_id = nodes_mapping.get(*node);
@@ -293,7 +285,7 @@ impl Graph {
 
             // since the node is not a singleton, add it to the list.
             if unique_nodes_set.contains(node_id) {
-                if ignore_duplicated_nodes{
+                if ignore_duplicated_nodes {
                     continue;
                 }
                 return Err(format!(
@@ -330,10 +322,10 @@ impl Graph {
                             "The path of the document was {path}.\n",
                             "The complete line in question is:\n{line}\n"
                         ),
-                        j=j,
-                        path=path,
-                        line=_line
-                    ))
+                        j = j,
+                        path = path,
+                        line = _line
+                    ));
                 }
             }
 
@@ -391,23 +383,19 @@ impl Graph {
         node_sep: Option<&str>,
         ignore_duplicated_edges: Option<bool>,
         ignore_duplicated_nodes: Option<bool>,
-        force_conversion_to_undirected: Option<bool>
+        force_conversion_to_undirected: Option<bool>,
     ) -> Result<Graph, String> {
         // If the separators were not provided we use by default tabs.
         let _edge_sep = edge_sep.unwrap_or_else(|| "\t");
         let _node_sep = node_sep.unwrap_or_else(|| "\t");
         let _ignore_duplicated_edges = ignore_duplicated_edges.unwrap_or_else(|| false);
         let _ignore_duplicated_nodes = ignore_duplicated_nodes.unwrap_or_else(|| false);
-        
+
         if _edge_sep.is_empty() {
-            return Err(String::from(
-                "The edge separator is empty"
-            ));
+            return Err(String::from("The edge separator is empty"));
         }
         if _node_sep.is_empty() {
-            return Err(String::from(
-                "The node separator is empty"
-            ));
+            return Err(String::from("The node separator is empty"));
         }
 
         // We validate the provided files, starting from the edges file.
@@ -431,12 +419,12 @@ impl Graph {
             // same amount of separators in each line.
             info!("Checking that the node file has consistent number of given separator in each line.");
             check_consistent_lines(&*path, &*_node_sep)?;
-            if nodes_column.is_none() || node_types_column.is_none(){
+            if nodes_column.is_none() || node_types_column.is_none() {
                 return Err(String::from(concat!(
                     "If the node_path is passed, ",
                     "the nodes_column and node_types_column",
                     " parameters are also required."
-                )))
+                )));
             }
             // Then we check if the given columns actually exists in the file.
             info!("Checking that the node file has necessary provided columns.");
@@ -467,7 +455,7 @@ impl Graph {
             &default_edge_type,
             &weights_column,
             &default_weight,
-            _ignore_duplicated_edges
+            _ignore_duplicated_edges,
         )?;
 
         let (node_types, node_types_mapping, node_types_reverse_mapping) =
@@ -481,7 +469,7 @@ impl Graph {
                         &nodes_mapping,
                         &node_types_column.unwrap(),
                         &default_node_type,
-                        _ignore_duplicated_nodes
+                        _ignore_duplicated_nodes,
                     )?;
                 (
                     Some(node_types),
@@ -504,7 +492,7 @@ impl Graph {
                 edge_types,
                 edge_types_mapping,
                 edge_types_reverse_mapping,
-                weights
+                weights,
             )
         } else {
             Graph::new_undirected(
@@ -519,7 +507,7 @@ impl Graph {
                 edge_types_mapping,
                 edge_types_reverse_mapping,
                 weights,
-                force_conversion_to_undirected
+                force_conversion_to_undirected,
             )
         }
     }

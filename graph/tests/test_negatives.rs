@@ -1,7 +1,6 @@
 extern crate graph;
 use graph::graph::Graph;
 
-
 #[test]
 fn test_negatives() {
     let graph = Graph::from_csv(
@@ -21,8 +20,9 @@ fn test_negatives() {
         None,
         None,
         None,
-        None
-    ).unwrap();
+        None,
+    )
+    .unwrap();
     let negatives = graph.sample_negatives(42, 10000, false).unwrap();
     let negatives2 = graph.sample_negatives(42, 10000, false).unwrap();
     assert_eq!(negatives.get_edges_number(), 10000);

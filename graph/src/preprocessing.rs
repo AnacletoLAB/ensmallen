@@ -143,16 +143,16 @@ impl Graph {
     ///     The default value is 1.0.
     /// * graph_to_avoid: Option<&Graph>,
     ///     Graph to optionally avoid while generating.
-    /// 
+    ///
     /// # Implementation Details
-    /// In order to correctly compute the positives and negatives, we would need to make a 
-    /// k-th order transitive closure (which is equivalent to raising to the k-th the 
+    /// In order to correctly compute the positives and negatives, we would need to make a
+    /// k-th order transitive closure (which is equivalent to raising to the k-th the
     /// adiacency matrix of the graph). This could result in multipying by k the number of
     /// edges in the graph. This k is the window size, therefore, this would greately increase
-    /// the memory needed to correctly compute the associated graph. Or alternitivelty 
+    /// the memory needed to correctly compute the associated graph. Or alternitivelty
     /// we would need check the neighbors of each node in the walk, which will greately slow
     /// the computation.
-    /// 
+    ///
     /// Thererefore, **when we generate negatives, we just check that the edges is not present
     /// in the original graph**, this is just an approxiamation we do to make the problem
     /// tractable.
@@ -301,7 +301,7 @@ impl Graph {
             .zip(labels.par_iter())
             .map(|((src, dst), label)| {
                 // Keep the edge if:
-                // it's positive and its in the graph 
+                // it's positive and its in the graph
                 ((*label == 1) || self.has_edge(*src, *dst)) &&
                 // or it isn't in the graph to avoid
                 if let Some(gta) = &graph_to_avoid {
@@ -312,7 +312,7 @@ impl Graph {
                 }
             })
             .collect();
-            
+
         words = false_negatives
             .par_iter()
             .zip(words.par_iter())
@@ -340,7 +340,7 @@ impl Graph {
     /// The batch is composed of a tuple as the following:
     ///
     /// - (Contexts indices, central nodes indices): the tuple of nodes
-    /// 
+    ///
     /// This does not provide any output value as the model uses NCE loss
     /// and basically the central nodes that are fed as inputs work as the
     /// outputs value.
@@ -385,7 +385,7 @@ impl Graph {
         return_weight: Option<ParamsT>,
         explore_weight: Option<ParamsT>,
         change_node_type_weight: Option<ParamsT>,
-        change_edge_type_weight: Option<ParamsT>
+        change_edge_type_weight: Option<ParamsT>,
     ) -> Result<(Vec<Vec<usize>>, Vec<usize>), String> {
         // check parameters validity
         let opt_idx = idx.checked_add(1);
@@ -441,60 +441,57 @@ impl Graph {
         }
 
         let _window_size = window_size.unwrap_or(4);
-        let _shuffle:bool = shuffle.unwrap_or(true);
-        let context_length = _window_size*2;
+        let _shuffle: bool = shuffle.unwrap_or(true);
+        let context_length = _window_size * 2;
 
-        let mut walks_centers:Vec<Vec<NodeT>> = walks.par_iter().map(
-            |walk|
-            vec![0; walk.len()]
-        ).collect();
-        let mut walks_filters:Vec<Vec<bool>> = walks.par_iter().map(
-            |walk|
-            vec![false; walk.len()]
-        ).collect();
-        let mut contexts:Vec<Vec<NodeT>> = walks
+        let mut walks_centers: Vec<Vec<NodeT>> =
+            walks.par_iter().map(|walk| vec![0; walk.len()]).collect();
+        let mut walks_filters: Vec<Vec<bool>> = walks
+            .par_iter()
+            .map(|walk| vec![false; walk.len()])
+            .collect();
+        let mut contexts: Vec<Vec<NodeT>> = walks
             .par_iter()
             .zip(walks_centers.par_iter_mut())
             .zip(walks_filters.par_iter_mut())
-            .map(
-                |((walk, centers), filters)|
-                walk.iter().enumerate().zip(centers.iter_mut()).map(
-                    |((i, word), center)| {
-                        let start = if i<=_window_size{
+            .map(|((walk, centers), filters)| {
+                walk.iter()
+                    .enumerate()
+                    .zip(centers.iter_mut())
+                    .map(|((i, word), center)| {
+                        let start = if i <= _window_size {
                             0
                         } else {
                             i - _window_size
                         };
                         let end = min!(walk.len(), i + _window_size);
-                        *center = *word;        
-                        let context:Vec<NodeT> = walk[start..end].to_vec();
+                        *center = *word;
+                        let context: Vec<NodeT> = walk[start..end].to_vec();
                         context
-                    }
-                ).zip(filters.iter_mut()).filter_map(
-                    |(context, filter)| if context.len() == context_length{
-                        *filter = true;
-                        Some(context)
-                    } else {
-                        *filter = false;
-                        None
-                    }
-                ).collect::<Vec<Vec<NodeT>>>()
-        ).flatten().collect();
+                    })
+                    .zip(filters.iter_mut())
+                    .filter_map(|(context, filter)| {
+                        if context.len() == context_length {
+                            *filter = true;
+                            Some(context)
+                        } else {
+                            *filter = false;
+                            None
+                        }
+                    })
+                    .collect::<Vec<Vec<NodeT>>>()
+            })
+            .flatten()
+            .collect();
 
-        let filters:Vec<bool> = walks_filters
-            .iter().flatten().cloned().collect();
+        let filters: Vec<bool> = walks_filters.iter().flatten().cloned().collect();
 
-        let mut centers:Vec<NodeT> = walks_centers
-            .iter().flatten().cloned()
+        let mut centers: Vec<NodeT> = walks_centers
+            .iter()
+            .flatten()
+            .cloned()
             .zip(filters.iter())
-            .filter_map(
-                |(center, filter)|
-                if *filter {
-                    Some(center)
-                } else {
-                    None
-                }
-            )
+            .filter_map(|(center, filter)| if *filter { Some(center) } else { None })
             .collect();
 
         if _shuffle {
@@ -659,14 +656,14 @@ impl Graph {
         batch_size: usize,
         negative_samples: Option<f64>,
         graph_to_avoid: Option<&Graph>,
-        avoid_self_loops: Option<bool>
+        avoid_self_loops: Option<bool>,
     ) -> Result<(Vec<Vec<NodeT>>, Vec<u8>), String> {
         // xor the seed with a constant so that we have a good amount of 0s and 1s in the number
         // even with low values (this is needed becasue the seed 0 make xorshift return always 0)
         let seed = idx ^ SEED_XOR as u64;
         // extract options
         let _negative_samples = negative_samples.unwrap_or(1.0);
-        
+
         if _negative_samples < 0.0 || !_negative_samples.is_finite() {
             return Err(String::from("Negative sample must be a posive real value."));
         }
@@ -678,16 +675,15 @@ impl Graph {
         // All the remaining values then are positives
         let positives_number: usize = batch_size - negatives_number;
 
-
         let edges_number = self.get_edges_number() as u64;
-        // generate a random vec of u64s and use them as indices 
+        // generate a random vec of u64s and use them as indices
         let positives: Vec<Vec<NodeT>> = gen_random_vec(positives_number, seed)
             .into_par_iter()
             // to extract the random edges
             .map(|random_value| (random_value % edges_number) as EdgeT)
             .map(|edge| vec![self.sources[edge], self.destinations[edge]])
             // filter away the self_loops if the flag is set
-            .filter(|edge| !_avoid_self_loops || edge[0]!= edge[1])
+            .filter(|edge| !_avoid_self_loops || edge[0] != edge[1])
             .collect();
 
         // generate the negatives
@@ -736,7 +732,7 @@ impl Graph {
         // concat the two vectors of edges
         let mut edges: Vec<Vec<NodeT>> = positives;
         edges.extend(negatives);
-        
+
         Ok((edges, labels))
     }
 }

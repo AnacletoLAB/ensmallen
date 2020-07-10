@@ -28,4 +28,3 @@ pub fn gen_random_usize_vec(num: usize, max: usize) -> Vec<usize> {
     let vals: Vec<usize> = (0..num).map(|_| rng.gen_range(0, max)).collect();
     vals
 }
-
