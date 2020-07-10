@@ -9,6 +9,7 @@ To install the **latest (alpha) release**, run the following:
 ```bash
 pip install ensmallen_graph
 ```
+The pre-compiled wheels needs glibc >= 2.12.
 
 ## Compile the bindings
 The project uses PyO3 and maturin.
@@ -46,7 +47,7 @@ Where `${PYTHON_VERSION}` is the choosen version, such as `3.8.3` or `3.6.10`.
 This means that the linux package were built on a system with a really new Libc version.
 This can be solved by compiling your own bindings.
 In order to be compatible with as many systems as possible, we suggest to build them on 
-Ubuntu 16.04 .
+Ubuntu 16.04 or Centos6.9.
 
 # Exploiting Avx
 The library vec_rand which is used in the crate can take advantage in using Avx instructions/

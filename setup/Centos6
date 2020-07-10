@@ -1,0 +1,47 @@
+FROM centos:centos6.9
+
+RUN yum install -y wget gcc git zlib-devel
+
+###########################################################
+# Install anaconda to have an easily reporducible python environments
+###########################################################
+RUN wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh -O anaconda.sh
+RUN bash ./anaconda.sh -b
+RUN echo "export PATH=\$PATH:/root/anaconda3/bin" >> /root/.bashrc
+RUN /root/anaconda3/bin/pip install maturin twine
+
+###########################################################
+# Setup Rust nightly
+###########################################################
+RUN wget https://sh.rustup.rs -O /root/rustup.sh
+RUN chmod +x /root/rustup.sh
+RUN /root/rustup.sh --default-host x86_64-unknown-linux-gnu --default-toolchain nightly --profile default -y
+RUN echo "source /root/.cargo/env" >> /root/.bashrc
+RUN rm /root/rustup.sh
+
+###########################################################
+# Setup different python versions
+###########################################################
+
+RUN wget https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tgz
+RUN tar -xvf Python-3.8.3.tgz
+RUN (cd Python-3.8.3; ./configure --enable-optimizations; make -j$(nproc); make -j$(nproc) install)
+
+RUN wget https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tgz
+RUN tar -xvf Python-3.7.7.tgz
+RUN (cd Python-3.7.7; ./configure --enable-optimizations; make -j$(nproc); make -j$(nproc) install)
+
+RUN wget https://www.python.org/ftp/python/3.6.10/Python-3.6.10.tgz
+RUN tar -xvf Python-3.6.10.tgz
+RUN (cd Python-3.6.10; ./configure --enable-optimizations; make -j$(nproc); make -j$(nproc) install)
+
+RUN wget https://www.python.org/ftp/python/3.5.9/Python-3.5.9.tgz
+RUN tar -xvf Python-3.5.9.tgz
+RUN (cd Python-3.5.9; ./configure --enable-optimizations; make -j$(nproc); make -j$(nproc) install)
+
+
+###########################################################
+# Build directory
+###########################################################
+RUN mkdir -p /build
+WORKDIR /build
