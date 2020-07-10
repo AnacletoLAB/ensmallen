@@ -56,3 +56,13 @@ To compile the bindings with Avx Instructions you can run :
 ```bash
 RUSTFLAGS=" -C target-cpu=native" maturin build --release --no-sdist
 ```
+
+# Compiling the bindings for Linux to push them to Pipy
+In order to make the wheels usable by any linux system we must follow the [`manylinux1` standard](https://www.python.org/dev/peps/pep-0513/#the-manylinux1-policy).
+
+This can be done by building the bindings inside a centos5 docker with:
+```bash
+sudo docker run --rm -v $(pwd):/io konstin2/maturin build --release
+```
+
+A tutorial on how the internals of Python's Cffi can be found [here](https://blog.schuetze.link/2018/07/21/a-dive-into-packaging-native-python-extensions.html)

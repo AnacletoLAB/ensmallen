@@ -48,6 +48,12 @@ impl Graph {
         negatives_number: EdgeT,
         allow_selfloops: bool,
     ) -> Result<Graph, String> {
+        if negatives_number == 0 {
+            return Err(String::from(
+                "The number of negatives cannot be zero."
+            ));
+        }
+
         let _negatives_number = if !self.is_directed {
             negatives_number / 2
         } else {
