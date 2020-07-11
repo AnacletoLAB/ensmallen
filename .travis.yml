@@ -51,7 +51,7 @@ before_script:
 # the main build
 script:
   # Build, test, bench the graph crate
-  - cargo update --verbose --all --manifest-path=graph/Cargo.toml
+  - cargo update --verbose --manifest-path=graph/Cargo.toml
   - cargo build --verbose --all --manifest-path=graph/Cargo.toml
   - cargo test --verbose --all --manifest-path=graph/Cargo.toml
   # move to the folder with the python bindings
