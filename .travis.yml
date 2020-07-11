@@ -51,6 +51,7 @@ before_script:
 # the main build
 script:
   # Build, test, bench the graph crate
+  - cargo update --verbose --all --manifest-path=graph/Cargo.toml
   - cargo build --verbose --all --manifest-path=graph/Cargo.toml
   - cargo test --verbose --all --manifest-path=graph/Cargo.toml
   # move to the folder with the python bindings
@@ -58,6 +59,7 @@ script:
   # Clearing up target directory
   - rm -fdr target
   # Build the bindings
+  - cargo update
   - maturin build --release
   - |
     if [ "$TRAVIS_OS_NAME" = "windows" ]; then
