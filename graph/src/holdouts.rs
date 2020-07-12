@@ -508,12 +508,10 @@ impl Graph {
         let mut components = self.strongly_connected_components();
 
         if components.len() == self.get_nodes_number() {
-            return Err(String::from(
-                concat!(
-                    "Current graph has only singleton components that ",
-                    "are composed of a single node."
-                )
-            ));
+            return Err(String::from(concat!(
+                "Current graph has only singleton components that ",
+                "are composed of a single node."
+            )));
         }
 
         // Creating the random number generator
@@ -533,7 +531,7 @@ impl Graph {
 
         // We iterate on the components
         for component in components {
-            let mut sorted_component:Vec<NodeT> = component.iter().cloned().collect();
+            let mut sorted_component: Vec<NodeT> = component.iter().cloned().collect();
             sorted_component.sort();
             // Extract all the edges that form the current components.
             // Then, in the undirected case we don't want to insert the edge two times.

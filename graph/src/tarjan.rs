@@ -1,7 +1,7 @@
 use super::types::*;
 use super::Graph;
-use std::collections::HashSet;
 use std::cmp::min;
+use std::collections::HashSet;
 
 /// # Tarjan algorithm
 impl Graph {

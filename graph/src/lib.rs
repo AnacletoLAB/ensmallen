@@ -10,8 +10,8 @@ mod operators;
 mod preprocessing;
 mod tarjan;
 mod trees;
-mod walks_parameters;
 pub mod types;
+mod walks_parameters;
 
 pub use self::graph::Graph;
 pub use self::graph_constructors::validate;

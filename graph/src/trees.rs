@@ -28,12 +28,12 @@ impl Graph {
                     let (_min, _max) = self.get_min_max_edge(node_to_explore);
                     for neighbour in _min.._max {
                         let dst = self.destinations[neighbour];
-                        // If the destination node is not already covered and it 
+                        // If the destination node is not already covered and it
                         // does not match with the source node, hence the edge
                         // that is currently considered would be a self-loop
                         // we proceed to push the destination node and mark the
                         // nodes as covered.
-                        if !covered_nodes[dst] && src != dst{
+                        if !covered_nodes[dst] && src != dst {
                             tree.insert((
                                 node_to_explore,
                                 dst,

@@ -12,7 +12,7 @@ pub struct WalkWeights {
 pub struct SingleWalkParameters {
     pub(crate) length: usize,
     pub(crate) weights: WalkWeights,
-    pub(crate) nodes_mapping: Option<HashMap<NodeT, NodeT>>,
+    pub(crate) dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
 }
 
 pub struct WalksParameters {
@@ -41,7 +41,7 @@ impl WalkWeights {
     /// # Arguments
     ///
     /// * weight_name: &str - name of the weight, used for building the exception.
-    /// * weight: WeightT - Value of the weight.
+    /// * weight: Option<WeightT> - Value of the weight.
     ///
     fn validate_weight(weight_name: &str, weight: WeightT) -> Result<WeightT, String> {
         if weight <= 0.0 || !weight.is_finite() {
@@ -61,10 +61,15 @@ impl WalkWeights {
     ///
     /// # Arguments
     ///
-    /// * return_weight: WeightT - weight for the exploitation factor.
+    /// * return_weight: Option<WeightT> - weight for the exploitation factor.
     ///
-    pub fn set_return_weight(mut self, return_weight: WeightT) -> Result<WalkWeights, String> {
-        self.return_weight = WalkWeights::validate_weight("return_weight", return_weight)?;
+    pub fn set_return_weight(
+        mut self,
+        return_weight: Option<WeightT>,
+    ) -> Result<WalkWeights, String> {
+        if let Some(rw) = return_weight {
+            self.return_weight = WalkWeights::validate_weight("return_weight", rw)?;
+        }
         Ok(self)
     }
 
@@ -72,10 +77,15 @@ impl WalkWeights {
     ///
     /// # Arguments
     ///
-    /// * explore_weight: WeightT - weight for the exploration factor.
+    /// * explore_weight: Option<WeightT> - weight for the exploration factor.
     ///
-    pub fn set_explore_weight(mut self, explore_weight: WeightT) -> Result<WalkWeights, String> {
-        self.explore_weight = WalkWeights::validate_weight("explore_weight", explore_weight)?;
+    pub fn set_explore_weight(
+        mut self,
+        explore_weight: Option<WeightT>,
+    ) -> Result<WalkWeights, String> {
+        if let Some(ew) = explore_weight {
+            self.explore_weight = WalkWeights::validate_weight("explore_weight", ew)?;
+        }
         Ok(self)
     }
 
@@ -83,14 +93,16 @@ impl WalkWeights {
     ///
     /// # Arguments
     ///
-    /// * change_node_type_weight: WeightT - weight for the exploration of different node types.
+    /// * change_node_type_weight: Option<WeightT> - weight for the exploration of different node types.
     ///
     pub fn set_change_node_type_weight(
         mut self,
-        change_node_type_weight: WeightT,
+        change_node_type_weight: Option<WeightT>,
     ) -> Result<WalkWeights, String> {
-        self.change_node_type_weight =
-            WalkWeights::validate_weight("change_node_type_weight", change_node_type_weight)?;
+        if let Some(cntw) = change_node_type_weight {
+            self.change_node_type_weight =
+                WalkWeights::validate_weight("change_node_type_weight", cntw)?;
+        }
         Ok(self)
     }
 
@@ -98,14 +110,16 @@ impl WalkWeights {
     ///
     /// # Arguments
     ///
-    /// * change_edge_type_weight: WeightT - weight for the exploration of different node types.
+    /// * change_edge_type_weight: Option<WeightT> - weight for the exploration of different node types.
     ///
     pub fn set_change_edge_type_weight(
         mut self,
-        change_edge_type_weight: WeightT,
+        change_edge_type_weight: Option<WeightT>,
     ) -> Result<WalkWeights, String> {
-        self.change_edge_type_weight =
-            WalkWeights::validate_weight("change_edge_type_weight", change_edge_type_weight)?;
+        if let Some(cetw) = change_edge_type_weight {
+            self.change_edge_type_weight =
+                WalkWeights::validate_weight("change_edge_type_weight", cetw)?;
+        }
         Ok(self)
     }
 }
@@ -118,24 +132,24 @@ impl SingleWalkParameters {
         Ok(SingleWalkParameters {
             length,
             weights,
-            nodes_mapping: None,
+            dense_nodes_mapping: None,
         })
     }
 
-    /// Set the nodes_mapping.
+    /// Set the dense_nodes_mapping.
     ///
     /// The nodes mapping primary porpose is to map a sparse set of nodes into
     /// a smaller dense set of nodes.
     ///
     /// # Arguments
     ///
-    /// * nodes_mapping: HashMap<NodeT, NodeT> - mapping for the mapping the nodes of the walks.
+    /// * dense_nodes_mapping: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
     ///
-    pub fn set_nodes_mapping(
+    pub fn set_dense_nodes_mapping(
         mut self,
-        nodes_mapping: HashMap<NodeT, NodeT>,
+        dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
     ) -> SingleWalkParameters {
-        self.nodes_mapping = Some(nodes_mapping);
+        self.dense_nodes_mapping = dense_nodes_mapping;
         self
     }
 }
@@ -166,14 +180,52 @@ impl WalksParameters {
         })
     }
 
+    /// Set the iterations.
+    ///
+    /// # Arguments
+    ///
+    /// * iterations: Option<usize> - Wethever to show the loading bar or not.
+    ///
+    pub fn set_iterations(mut self, iterations: Option<usize>) -> Result<WalksParameters, String> {
+        if let Some(it) = iterations {
+            if it == 0 {
+                return Err(String::from(
+                    "Iterations parameter must be a strictly positive integer.",
+                ));
+            }
+            self.iterations = it;
+        }
+        Ok(self)
+    }
+
+    /// Set the min_length.
+    ///
+    /// # Arguments
+    ///
+    /// * min_length: Option<usize> - Wethever to show the loading bar or not.
+    ///
+    pub fn set_min_length(mut self, min_length: Option<usize>) -> Result<WalksParameters, String> {
+        if let Some(ml) = min_length {
+            if ml == 0 {
+                return Err(String::from(
+                    "min_length parameter must be a strictly positive integer.",
+                ));
+            }
+            self.min_length = ml;
+        }
+        Ok(self)
+    }
+
     /// Set the verbose.
     ///
     /// # Arguments
     ///
-    /// * verbose: bool - Wethever to show the loading bar or not.
+    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
     ///
-    pub fn set_verbose(mut self, verbose: bool) -> WalksParameters {
-        self.verbose = verbose;
+    pub fn set_verbose(mut self, verbose: Option<bool>) -> WalksParameters {
+        if let Some(v) = verbose {
+            self.verbose = v;
+        }
         self
     }
 

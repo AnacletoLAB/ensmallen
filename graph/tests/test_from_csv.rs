@@ -28,13 +28,13 @@ fn test_graph_from_csv_edge_only() {
         let wrong_walk_parameters1 = WalksParameters::new(
             SingleWalkParameters::new(10, WalkWeights::default()).unwrap(),
             0,
-            graph.get_not_trap_nodes_number()*2,
+            graph.get_not_trap_nodes_number() * 2,
         )
         .unwrap();
         let wrong_walk_parameters2 = WalksParameters::new(
             SingleWalkParameters::new(10, WalkWeights::default()).unwrap(),
-            graph.get_not_trap_nodes_number()*2,
-            graph.get_not_trap_nodes_number()*4,
+            graph.get_not_trap_nodes_number() * 2,
+            graph.get_not_trap_nodes_number() * 4,
         )
         .unwrap();
         assert!(wrong_walk_parameters1.validate(&graph).is_err());
@@ -98,13 +98,13 @@ fn test_graph_from_csv_edge_types() {
             SingleWalkParameters::new(
                 10,
                 WalkWeights::default()
-                    .set_return_weight(2.0)
+                    .set_return_weight(Some(2.0))
                     .unwrap()
-                    .set_explore_weight(2.0)
+                    .set_explore_weight(Some(2.0))
                     .unwrap()
-                    .set_change_node_type_weight(2.0)
+                    .set_change_node_type_weight(Some(2.0))
                     .unwrap()
-                    .set_change_edge_type_weight(2.0)
+                    .set_change_edge_type_weight(Some(2.0))
                     .unwrap(),
             )
             .unwrap(),

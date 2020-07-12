@@ -25,7 +25,9 @@ fn test_holdout() {
         assert!(!validation.overlaps(&train));
         assert!(!train.overlaps(&validation));
         let negative_edges_number = 1000;
-        let negatives = graph.sample_negatives(42, negative_edges_number, false).unwrap();
+        let negatives = graph
+            .sample_negatives(42, negative_edges_number, false)
+            .unwrap();
         assert_eq!(negatives.get_edges_number(), negative_edges_number);
     }
 }

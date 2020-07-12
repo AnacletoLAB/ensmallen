@@ -265,7 +265,7 @@ impl Graph {
 
         let outbounds = Graph::compute_outbounds(nodes_number, &sorted_sources);
 
-        let not_trap_nodes:Vec<NodeT> = sorted_sources.iter().cloned().unique().collect();
+        let not_trap_nodes: Vec<NodeT> = sorted_sources.iter().cloned().unique().collect();
 
         let mut graph = Graph {
             unique_edges,

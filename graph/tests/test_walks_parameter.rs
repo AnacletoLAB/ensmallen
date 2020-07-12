@@ -18,5 +18,9 @@ fn test_walks_parameter_verbose() {
         50,
     )
     .unwrap()
-    .set_verbose(false);
+    .set_iterations(Some(10))
+    .unwrap()
+    .set_min_length(Some(10))
+    .unwrap()
+    .set_verbose(Some(false));
 }
