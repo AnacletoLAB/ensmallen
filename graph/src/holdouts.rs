@@ -49,9 +49,7 @@ impl Graph {
         allow_selfloops: bool,
     ) -> Result<Graph, String> {
         if negatives_number == 0 {
-            return Err(String::from(
-                "The number of negatives cannot be zero."
-            ));
+            return Err(String::from("The number of negatives cannot be zero."));
         }
 
         let _negatives_number = if !self.is_directed {
@@ -493,6 +491,128 @@ impl Graph {
                     None,
                 )?,
             )
+        })
+    }
+
+    /// Returns random set of connected edges of the graph.
+    ///
+    /// This method creates subsets of the graph choosing a random set of
+    /// connected components and adds edges until it reaches the provided
+    /// edges number. The given seed is used to randomly sample the components
+    /// and to start the edge sampling in each component.
+    ///
+    /// The obtained graphs, changing the seed, **may overlap** one another.
+    /// This is a desired feature from these types of holdouts, as they should
+    /// be used to run partial graph embeddings in graphs that are so big
+    /// in terms of number of nodes that are not possible to fit into the
+    /// memory of GPUs.
+    ///
+    /// # Arguments
+    ///
+    /// * seed: usize - Random seed to use.
+    /// * edges_number: usize - Number of edges to extract.
+    pub fn components_holdout(&self, seed: usize, edges_number: usize) -> Result<Graph, String> {
+        // First we retrieve all the connected components of the graph.
+        let mut components = self.strongly_connected_components();
+
+        // Creating the random number generator
+        let mut rnd = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
+
+        // Shuffling the components using the given seed.
+        components.shuffle(&mut rnd);
+
+        // Get the vector of edge IDs and shuffle it.
+        let mut edge_ids: Vec<EdgeT> = (0..self.get_edges_number()).collect();
+        edge_ids.shuffle(&mut rnd);
+
+        // Initializing the vector for creating the new graph.
+        let mut sources: Vec<NodeT> = Vec::with_capacity(edges_number);
+        let mut destinations: Vec<NodeT> = Vec::with_capacity(edges_number);
+        let mut weights: Vec<WeightT> = Vec::with_capacity(edges_number);
+        let mut edge_types: Vec<EdgeTypeT> = Vec::with_capacity(edges_number);
+
+        // We iterate on the components
+        for component in components {
+            // And through all the edge IDs, since we do not know which edges
+            // are part of the component as these components are made out of 
+            // set of nodes.
+            for edge_id in edge_ids.iter().cloned() {
+                // We retrieve the sources and destinations corresponding to
+                // the edge IDs.
+                let src = self.sources[edge_id];
+                let dst = self.destinations[edge_id];
+                
+                // We check if the given edge is part of the current component.
+                if component.contains(&src) && component.contains(&dst) {
+                    // If so, we add the relative data to the proper vectors.
+                    sources.push(src);
+                    destinations.push(dst);
+                    if let Some(w) = &self.weights {
+                        weights.push(w[edge_id]);
+                    }
+                    if let Some(et) = &self.edge_types {
+                        edge_types.push(et[edge_id]);
+                    }
+                }
+
+                // If we have collected the required number of edges, we can
+                // stop the process.
+                if sources.len() == edges_number {
+                    break;
+                }
+            }
+            // Similarly, we do the same check as done inside.
+            if sources.len() == edges_number {
+                break;
+            }
+        }
+
+        // Finally we create the graph.
+        Ok(if self.is_directed {
+            Graph::new_directed(
+                sources,
+                destinations,
+                Some(self.nodes_mapping.clone()),
+                Some(self.nodes_reverse_mapping.clone()),
+                self.node_types.clone(),
+                self.node_types_mapping.clone(),
+                self.node_types_reverse_mapping.clone(),
+                if self.edge_types.is_some() {
+                    Some(edge_types)
+                } else {
+                    None
+                },
+                self.edge_types_mapping.clone(),
+                self.edge_types_reverse_mapping.clone(),
+                if self.weights.is_some() {
+                    Some(weights)
+                } else {
+                    None
+                },
+            )?
+        } else {
+            Graph::new_undirected(
+                sources,
+                destinations,
+                Some(self.nodes_mapping.clone()),
+                Some(self.nodes_reverse_mapping.clone()),
+                self.node_types.clone(),
+                self.node_types_mapping.clone(),
+                self.node_types_reverse_mapping.clone(),
+                if self.edge_types.is_some() {
+                    Some(edge_types)
+                } else {
+                    None
+                },
+                self.edge_types_mapping.clone(),
+                self.edge_types_reverse_mapping.clone(),
+                if self.weights.is_some() {
+                    Some(weights)
+                } else {
+                    None
+                },
+                None,
+            )?
         })
     }
 }

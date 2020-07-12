@@ -1,5 +1,6 @@
 use super::types::*;
 use super::Graph;
+use std::collections::HashSet;
 use std::cmp::min;
 
 /// # Tarjan algorithm
@@ -8,13 +9,13 @@ impl Graph {
     ///
     /// This is an implementation of Tarjan algorithm.
     ///
-    pub fn strongly_connected_components(&self) -> Vec<Vec<NodeT>> {
+    pub fn strongly_connected_components(&self) -> Vec<HashSet<NodeT>> {
         let mut indexed_mask: Vec<bool> = vec![false; self.get_nodes_number()];
         let mut stacked_mask: Vec<bool> = vec![false; self.get_nodes_number()];
         let mut low_indices: Vec<NodeT> = vec![0; self.get_nodes_number()];
         let mut indices: Vec<NodeT> = vec![0; self.get_nodes_number()];
         let mut components_stack: Vec<NodeT> = Vec::new();
-        let mut components: Vec<Vec<NodeT>> = Vec::new();
+        let mut components: Vec<HashSet<NodeT>> = Vec::new();
         let mut common_index = 0;
         let mut recurse: bool;
         for node in 0..self.get_nodes_number() {
@@ -59,11 +60,11 @@ impl Graph {
                     // If source is a root node, pop the stack and generate an SCC
                     if low_indices[src] == indices[src] {
                         // start a new strongly connected component
-                        let mut new_component: Vec<NodeT> = Vec::new();
+                        let mut new_component: HashSet<NodeT> = HashSet::new();
                         loop {
                             let dst = components_stack.pop().unwrap();
                             stacked_mask[dst] = false;
-                            new_component.push(dst);
+                            new_component.insert(dst);
                             if dst == src {
                                 break;
                             }
