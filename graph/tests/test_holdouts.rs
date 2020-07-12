@@ -24,6 +24,9 @@ fn test_holdout() {
         assert!(validation.overlaps(&graph));
         assert!(!validation.overlaps(&train));
         assert!(!train.overlaps(&validation));
+        let negative_edges_number = 1000;
+        let negatives = graph.sample_negatives(42, negative_edges_number, false).unwrap();
+        assert_eq!(negatives.get_edges_number(), negative_edges_number);
     }
 }
 
@@ -44,5 +47,18 @@ fn test_holdout_determinism() {
         let (train2, test2) = graph.random_holdout(35, 0.8).unwrap();
         assert_eq!(train1, train2);
         assert_eq!(test1, test2);
+        assert!(train1.sum(&test1).unwrap().contains(&graph));
+        if *directed {
+            // Testing error of singleton components
+            assert!(graph.components_holdout(35, 10).is_err());
+            assert!(graph
+                .components_holdout(35, graph.get_edges_number() * 2)
+                .is_err());
+        } else {
+            // Test determinism
+            let graph1 = graph.components_holdout(35, 1000).unwrap();
+            let graph2 = graph.components_holdout(35, 1000).unwrap();
+            assert_eq!(graph1, graph2);
+        }
     }
 }

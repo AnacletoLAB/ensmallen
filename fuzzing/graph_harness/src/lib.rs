@@ -232,7 +232,6 @@ fn create_graph_from_args_struct(args: &FromCsvAgs) -> Result<Graph, String>{
 }
 
 pub fn harness(data: ToFuzz) {
-    //println!("{:?}", data);
     let graph = create_graph_from_args_struct(&data.from_csv_args);
 
     if graph.is_ok(){

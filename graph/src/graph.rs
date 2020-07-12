@@ -1,5 +1,6 @@
 //! A graph representation optimized for executing random walks on huge graphs.
 use super::types::*;
+use super::walks_parameters::*;
 use counter::Counter;
 use derive_getters::Getters;
 use hashbrown::{HashMap as HashBrownMap, HashSet as HashBrownSet};
@@ -285,6 +286,11 @@ impl Graph {
         self.nodes_reverse_mapping.len()
     }
 
+    /// Returns number of not node nodes in the graph.
+    pub fn get_not_trap_nodes_number(&self) -> usize {
+        self.not_trap_nodes.len()
+    }
+
     /// Returns number of edges in the graph.
     pub fn get_edges_number(&self) -> usize {
         self.sources.len()
@@ -424,38 +430,26 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * edge: EdgeT, the previous edge from which to compute the transitions.
-    /// * return_weight: ParamsT,
-    ///     Weight for the probability of exploitation.
-    ///     This is the inverse of the p parameter.
-    /// * explore_weight: ParamsT,
-    ///     Weight for the probability of exploration.
-    ///     This is the inverse of the q parameter.
-    /// * change_node_type_weight: ParamsT,
-    ///     Weight for changing the node type at every step of the walk.
-    /// * change_edge_type_weight: ParamsT,
-    ///     Weight for changing the edge type at every step of the walk.
+    /// * edge: EdgeT - the previous edge from which to compute the transitions.
+    /// * weights: WalkWeights - Weights to use for the weighted walk.
     fn get_edge_transition(
         &self,
         edge: EdgeT,
-        return_weight: ParamsT,
-        explore_weight: ParamsT,
-        change_node_type_weight: ParamsT,
-        change_edge_type_weight: ParamsT,
+        walk_weights: &WalkWeights,
     ) -> (Vec<WeightT>, Vec<NodeT>, EdgeT, EdgeT) {
         // Get the source and destination for current edge.
         let (src, dst) = (self.sources[edge], self.destinations[edge]);
 
         // Compute the transition weights relative to the node weights.
         let (mut transition, destinations, min_edge, max_edge) =
-            self.get_node_transition(dst, change_node_type_weight);
+            self.get_node_transition(dst, walk_weights.change_node_type_weight);
 
         //############################################################
         //# Handling of the change edge type parameter               #
         //############################################################
 
         // If the edge types were given:
-        if (change_edge_type_weight - 1.0).abs() > f64::EPSILON {
+        if (walk_weights.change_edge_type_weight - 1.0).abs() > f64::EPSILON {
             if let Some(et) = &self.edge_types {
                 //# If the neighbour edge type matches the previous
                 //# edge type (we are not changing the edge type)
@@ -465,7 +459,9 @@ impl Graph {
                     .iter_mut()
                     .zip(et[min_edge..max_edge].iter())
                     .filter(|(_, &neigh_type)| this_type == neigh_type)
-                    .for_each(|(transition_value, _)| *transition_value /= change_edge_type_weight);
+                    .for_each(|(transition_value, _)| {
+                        *transition_value /= walk_weights.change_edge_type_weight
+                    });
             }
         }
 
@@ -485,25 +481,25 @@ impl Graph {
         // it has some impact, we procced and increase by the given weight
         // the probability of transitions that go back a previously visited
         // node.
-        if (return_weight - 1.0).abs() > f64::EPSILON {
+        if (walk_weights.return_weight - 1.0).abs() > f64::EPSILON {
             transition
                 .iter_mut()
                 .zip(destinations.iter())
                 .filter(|&(_, ndst)| src == *ndst || dst == *ndst)
-                .for_each(|(transition_value, _)| *transition_value *= return_weight);
+                .for_each(|(transition_value, _)| *transition_value *= walk_weights.return_weight);
         }
         //############################################################
         //# Handling of the Q parameter: the exploration coefficient #
         //############################################################
 
-        if (explore_weight - 1.0).abs() > f64::EPSILON {
+        if (walk_weights.explore_weight - 1.0).abs() > f64::EPSILON {
             transition
                 .iter_mut()
                 .zip(destinations.iter())
                 .filter(|&(_, ndst)| {
                     (src != *ndst || dst == *ndst) && !self.unique_edges.contains_key(&(*ndst, src))
                 })
-                .for_each(|(transition_value, _)| *transition_value *= explore_weight);
+                .for_each(|(transition_value, _)| *transition_value *= walk_weights.explore_weight);
         }
 
         (transition, destinations, min_edge, max_edge)
@@ -527,31 +523,9 @@ impl Graph {
     /// # Arguments
     ///
     /// * edge: EdgeT, the previous edge from which to compute the transitions.
-    /// * return_weight: ParamsT,
-    ///     Weight for the probability of exploitation.
-    ///     This is the inverse of the p parameter.
-    /// * explore_weight: ParamsT,
-    ///     Weight for the probability of exploration.
-    ///     This is the inverse of the q parameter.
-    /// * change_node_type_weight: ParamsT,
-    ///     Weight for changing the node type at every step of the walk.
-    /// * change_edge_type_weight: ParamsT,
-    ///     Weight for changing the edge type at every step of the walk.
-    fn extract_edge(
-        &self,
-        edge: EdgeT,
-        return_weight: ParamsT,
-        explore_weight: ParamsT,
-        change_node_type_weight: ParamsT,
-        change_edge_type_weight: ParamsT,
-    ) -> (NodeT, EdgeT) {
-        let (mut weights, dsts, min_edge, _) = self.get_edge_transition(
-            edge,
-            return_weight,
-            explore_weight,
-            change_node_type_weight,
-            change_edge_type_weight,
-        );
+    /// * walk_weights: WalkWeights, the weights for the weighted random walks.
+    fn extract_edge(&self, edge: EdgeT, walk_weights: &WalkWeights) -> (NodeT, EdgeT) {
+        let (mut weights, dsts, min_edge, _) = self.get_edge_transition(edge, walk_weights);
         let index = sample(&mut weights);
         (dsts[index], min_edge + index)
     }
@@ -560,133 +534,16 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * length: usize - Length of the random walks.
-    /// * iterations: Option<usize> - Iterations on every node.
-    /// * start_node: Option<usize>,
-    ///     Start node
-    /// * end_node: Option<usize>,
-    ///     End node
-    /// * min_length: Option<usize>,
-    ///     Minimum length of the walks.
-    ///     Walks which are smaller than the given minimum length will be
-    ///     filtered and ignored.
-    /// * return_weight: Option<ParamsT>,
-    ///     Weight for the probability of exploitation.
-    ///     This is the inverse of the p parameter.
-    ///     The default value is 1.0.
-    /// * explore_weight: Option<ParamsT>,
-    ///     Weight for the probability of exploration.
-    ///     This is the inverse of the q parameter.
-    ///     The default value is 1.0.
-    /// * change_node_type_weight: Option<ParamsT>,
-    ///     Weight for changing the node type at every step of the walk.
-    ///     The default value is 1.0.
-    /// * change_edge_type_weight: Option<ParamsT>,
-    ///     Weight for changing the edge type at every step of the walk.
-    ///     The default value is 1.0.
-    /// * verbose: Option<bool>,
-    ///     Wethever to show the loading bars.
+    /// * parameters: WalksParameters - the weighted walks parameters.
     ///
-    pub fn walk(
-        &self,
-        length: usize,
-        iterations: Option<usize>,
-        start_node: Option<usize>,
-        end_node: Option<usize>,
-        min_length: Option<usize>,
-        return_weight: Option<ParamsT>,
-        explore_weight: Option<ParamsT>,
-        change_node_type_weight: Option<ParamsT>,
-        change_edge_type_weight: Option<ParamsT>,
-        verbose: Option<bool>,
-    ) -> Result<Vec<Vec<NodeT>>, String> {
-        if length == 0 {
-            return Err(String::from("The provvided lenght for the walk is zero!"));
-        }
-
-        let _min_length = min_length.unwrap_or(0);
-        let _iterations = iterations.unwrap_or(1);
-        if end_node.is_some() && start_node.is_none() {
-            return Err(String::from(
-                "End node given, but no start node was specified.",
-            ));
-        }
-        let (_start_node, _end_node) = if let Some(sn) = start_node {
-            if let Some(en) = end_node {
-                (sn, en)
-            } else {
-                (sn, sn + 1)
-            }
-        } else {
-            (0, self.not_trap_nodes.len())
-        };
-
-        if _start_node > _end_node {
-            return Err(format!(
-                concat!(
-                    "Given start node index ({})",
-                    "is greater than given end node index ({})."
-                ),
-                _start_node, _end_node
-            ));
-        }
-
-        if _start_node >= self.not_trap_nodes.len() {
-            return Err(format!(
-                concat!(
-                    "Given start node index ({})",
-                    "is greater than number of not trap nodes in graph ({})."
-                ),
-                _start_node,
-                self.not_trap_nodes.len()
-            ));
-        }
-
-        if _end_node > self.not_trap_nodes.len() {
-            return Err(format!(
-                concat!(
-                    "Given end node index ({})",
-                    "is greater than number of not trap nodes in graph ({})."
-                ),
-                _end_node,
-                self.not_trap_nodes.len()
-            ));
-        }
-
-        let _verbose = verbose.unwrap_or(true);
-        let _return_weight = return_weight.unwrap_or(1.0);
-        let _explore_weight = explore_weight.unwrap_or(1.0);
-        let _change_node_type_weight = change_node_type_weight.unwrap_or(1.0);
-        let _change_edge_type_weight = change_edge_type_weight.unwrap_or(1.0);
-
-        if _return_weight <= 0.0 || !_return_weight.is_finite() {
-            return Err(String::from(
-                "Given 'return_weight' is not a strictly positive real number.",
-            ));
-        }
-        if _explore_weight <= 0.0 || !_return_weight.is_finite() {
-            return Err(String::from(
-                "Given 'explore_weight' is not a strictly positive real number.",
-            ));
-        }
-        if _change_node_type_weight <= 0.0 || !_return_weight.is_finite() {
-            return Err(String::from(
-                "Given 'change_node_type_weight' is not a strictly positive real number.",
-            ));
-        }
-        if _change_edge_type_weight <= 0.0 || !_return_weight.is_finite() {
-            return Err(String::from(
-                "Given 'change_edge_type_weight' is not a strictly positive real number.",
-            ));
-        }
+    pub fn walk(&self, parameters: &WalksParameters) -> Result<Vec<Vec<NodeT>>, String> {
+        // Validate if given parameters are compatible with current graph.
+        parameters.validate(&self)?;
 
         info!("Starting random walk.");
-        let delta = _end_node - _start_node;
-        let number_of_results = _iterations * delta;
-
-        let pb = if _verbose {
-            let pb = ProgressBar::new(number_of_results as u64);
-            pb.set_draw_delta(number_of_results as u64 / 100);
+        let pb = if parameters.verbose {
+            let pb = ProgressBar::new(parameters.total_iterations() as u64);
+            pb.set_draw_delta(parameters.total_iterations() as u64 / 100);
             pb.set_style(ProgressStyle::default_bar().template(
                 "Computing random walks {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
             ));
@@ -695,37 +552,19 @@ impl Graph {
             ProgressBar::hidden()
         };
 
-        let iterator = (0..number_of_results)
+        let iterator = (0..parameters.total_iterations())
             .into_par_iter()
             .progress_with(pb)
-            .map(|index| self.not_trap_nodes[_start_node + (index % delta)]);
+            .map(|index| self.not_trap_nodes[parameters.mode_index(index)]);
 
         Ok(if self.has_traps {
             iterator
-                .map(|node| {
-                    self.single_walk(
-                        length,
-                        node,
-                        _return_weight,
-                        _explore_weight,
-                        _change_node_type_weight,
-                        _change_edge_type_weight,
-                    )
-                })
-                .filter(|walk| walk.len() >= _min_length)
+                .map(|node| self.single_walk(node, &parameters.single_walk_parameters))
+                .filter(|walk| walk.len() >= parameters.min_length)
                 .collect::<Vec<Vec<NodeT>>>()
         } else {
             iterator
-                .map(|node| {
-                    self.single_walk_no_traps(
-                        length,
-                        node,
-                        _return_weight,
-                        _explore_weight,
-                        _change_node_type_weight,
-                        _change_edge_type_weight,
-                    )
-                })
+                .map(|node| self.single_walk_no_traps(node, &parameters.single_walk_parameters))
                 .collect::<Vec<Vec<NodeT>>>()
         })
     }
@@ -734,49 +573,25 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * length: usize - Length of the random walks.
     /// * node: NodeT - Node from where to start the random walks.
-    /// * return_weight: ParamsT,
-    ///     Weight for the probability of exploitation.
-    ///     This is the inverse of the p parameter.
-    /// * explore_weight: ParamsT,
-    ///     Weight for the probability of exploration.
-    ///     This is the inverse of the q parameter.
-    /// * change_node_type_weight: ParamsT,
-    ///     Weight for changing the node type at every step of the walk.
-    /// * change_edge_type_weight: ParamsT,
-    ///     Weight for changing the edge type at every step of the walk.
+    /// * parameters: SingleWalkParameters - Parameters for the single walk.
     ///
-    fn single_walk(
-        &self,
-        length: usize,
-        node: NodeT,
-        return_weight: ParamsT,
-        explore_weight: ParamsT,
-        change_node_type_weight: ParamsT,
-        change_edge_type_weight: ParamsT,
-    ) -> Vec<NodeT> {
-        let (dst, mut edge) = self.extract_node(node, change_node_type_weight);
+    fn single_walk(&self, node: NodeT, parameters: &SingleWalkParameters) -> Vec<NodeT> {
+        let (dst, mut edge) = self.extract_node(node, parameters.weights.change_node_type_weight);
 
         if self.is_node_trap(dst) {
             return vec![node, dst];
         }
 
-        let mut walk: Vec<NodeT> = Vec::with_capacity(length);
+        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length);
         walk.push(node);
         walk.push(dst);
 
-        for _ in 2..length {
+        for _ in 2..parameters.length {
             if self.is_edge_trap(edge) {
                 break;
             }
-            let (dst, inner_edge) = self.extract_edge(
-                edge,
-                return_weight,
-                explore_weight,
-                change_node_type_weight,
-                change_edge_type_weight,
-            );
+            let (dst, inner_edge) = self.extract_edge(edge, &parameters.weights);
             edge = inner_edge;
             walk.push(dst);
         }
@@ -789,42 +604,18 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * length: usize - Length of the random walks.
     /// * node: NodeT - Node from where to start the random walks.
-    /// * return_weight: ParamsT,
-    ///     Weight for the probability of exploitation.
-    ///     This is the inverse of the p parameter.
-    /// * explore_weight: ParamsT,
-    ///     Weight for the probability of exploration.
-    ///     This is the inverse of the q parameter.
-    /// * change_node_type_weight: ParamsT,
-    ///     Weight for changing the node type at every step of the walk.
-    /// * change_edge_type_weight: ParamsT,
-    ///     Weight for changing the edge type at every step of the walk.
+    /// * parameters: SingleWalkParameters - Parameters for the single walk.
     ///
-    fn single_walk_no_traps(
-        &self,
-        length: usize,
-        node: NodeT,
-        return_weight: ParamsT,
-        explore_weight: ParamsT,
-        change_node_type_weight: ParamsT,
-        change_edge_type_weight: ParamsT,
-    ) -> Vec<NodeT> {
-        let mut walk: Vec<NodeT> = Vec::with_capacity(length);
+    fn single_walk_no_traps(&self, node: NodeT, parameters: &SingleWalkParameters) -> Vec<NodeT> {
+        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length);
         walk.push(node);
 
-        let (dst, mut edge) = self.extract_node(node, change_node_type_weight);
+        let (dst, mut edge) = self.extract_node(node, parameters.weights.change_node_type_weight);
         walk.push(dst);
 
-        for _ in 2..length {
-            let (dst, inner_edge) = self.extract_edge(
-                edge,
-                return_weight,
-                explore_weight,
-                change_node_type_weight,
-                change_edge_type_weight,
-            );
+        for _ in 2..parameters.length {
+            let (dst, inner_edge) = self.extract_edge(edge, &parameters.weights);
             edge = inner_edge;
             walk.push(dst);
         }

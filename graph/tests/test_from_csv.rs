@@ -1,5 +1,6 @@
 extern crate graph;
 use graph::graph::Graph;
+use graph::{SingleWalkParameters, WalkWeights, WalksParameters};
 use linecount::count_lines;
 use std::fs::File;
 
@@ -18,119 +19,50 @@ fn test_graph_from_csv_edge_only() {
         if *directed {
             assert_eq!(lines, graph.get_edges_number());
         }
+        let walk_parameters = WalksParameters::new(
+            SingleWalkParameters::new(10, WalkWeights::default()).unwrap(),
+            0,
+            graph.get_not_trap_nodes_number(),
+        )
+        .unwrap();
+        let wrong_walk_parameters1 = WalksParameters::new(
+            SingleWalkParameters::new(10, WalkWeights::default()).unwrap(),
+            0,
+            graph.get_not_trap_nodes_number()*2,
+        )
+        .unwrap();
+        let wrong_walk_parameters2 = WalksParameters::new(
+            SingleWalkParameters::new(10, WalkWeights::default()).unwrap(),
+            graph.get_not_trap_nodes_number()*2,
+            graph.get_not_trap_nodes_number()*4,
+        )
+        .unwrap();
+        assert!(wrong_walk_parameters1.validate(&graph).is_err());
+        assert!(wrong_walk_parameters2.validate(&graph).is_err());
         assert_eq!(graph, graph);
+        assert!(graph.sum(&graph).is_err());
         assert!(graph.get_node_type_id(0).is_err());
         assert!(graph
-            .cooccurence_matrix(
-                10,
-                None,
-                None,
+            .cooccurence_matrix(&walk_parameters, None, Some(true))
+            .is_ok());
+        assert!(graph
+            .cooccurence_matrix(&walk_parameters, None, None)
+            .is_ok());
+        assert!(graph
+            .binary_skipgrams(0, &walk_parameters, None, Some(7.0), Some(true))
+            .is_ok());
+        assert!(graph
+            .binary_skipgrams(
+                67676676676676,
+                &walk_parameters,
                 None,
                 Some(0.5),
-                Some(2.0),
-                Some(3.0),
-                Some(4.0),
                 Some(true)
             )
             .is_ok());
-        assert!(graph
-            .cooccurence_matrix(
-                10,
-                None,
-                None,
-                None,
-                Some(0.5),
-                Some(2.0),
-                Some(3.0),
-                Some(4.0),
-                Some(false)
-            )
-            .is_ok());
-        assert!(graph
-            .binary_skipgrams(
-                0,
-                128,
-                80,
-                None,
-                None,
-                Some(7.0),
-                None,
-                None,
-                None,
-                None,
-                None,
-                None,
-                None
-            )
-            .is_ok());
-        assert!(graph
-            .binary_skipgrams(
-                0,
-                128,
-                80,
-                None,
-                None,
-                Some(1.0),
-                None,
-                None,
-                None,
-                None,
-                None,
-                None,
-                None
-            )
-            .is_ok());
-        assert!(graph
-            .binary_skipgrams(
-                0,
-                128,
-                80,
-                None,
-                None,
-                Some(0.5),
-                None,
-                None,
-                None,
-                None,
-                None,
-                None,
-                None
-            )
-            .is_ok());
-        assert!(graph
-            .binary_skipgrams(
-                56567,
-                128,
-                80,
-                None,
-                None,
-                Some(0.5),
-                None,
-                None,
-                None,
-                None,
-                None,
-                None,
-                None
-            )
-            .is_err());
-        assert!(graph
-            .walk(
-                80,
-                Some(1),
-                Some(0),
-                None,
-                None,
-                None,
-                None,
-                None,
-                None,
-                Some(false)
-            )
-            .is_ok());
-        assert!(graph
-            .node2vec(0, 128, 80, None, None, None, None, None, None, None, None)
-            .is_ok());
+        assert!(graph.walk(&walk_parameters).is_ok());
+        assert!(graph.node2vec(&walk_parameters, None, Some(true)).is_ok());
+        assert!(graph.node2vec(&walk_parameters, None, None).is_ok());
         assert!(graph.get_top_k_nodes_by_node_type(10).is_err());
         assert!(graph.get_top_k_edges_by_edge_type(10).is_err());
         assert!(graph.get_node_type_counts().is_err());
@@ -162,26 +94,31 @@ fn test_graph_from_csv_edge_types() {
             None,
         )
         .unwrap();
+        let walk_parameters = WalksParameters::new(
+            SingleWalkParameters::new(
+                10,
+                WalkWeights::default()
+                    .set_return_weight(2.0)
+                    .unwrap()
+                    .set_explore_weight(2.0)
+                    .unwrap()
+                    .set_change_node_type_weight(2.0)
+                    .unwrap()
+                    .set_change_edge_type_weight(2.0)
+                    .unwrap(),
+            )
+            .unwrap(),
+            0,
+            graph.get_not_trap_nodes_number(),
+        )
+        .unwrap();
         let lines: usize = count_lines(File::open(path).unwrap()).unwrap();
         if *directed {
             assert_eq!(lines, graph.get_edges_number());
         }
         assert_eq!(graph.get_edge_types_number(), 2);
         assert_eq!(graph.get_node_types_number(), 0);
-        graph
-            .walk(
-                10,
-                Some(10),
-                None,
-                None,
-                Some(0),
-                Some(0.5),
-                Some(2.0),
-                Some(3.0),
-                Some(4.0),
-                Some(true),
-            )
-            .unwrap();
+        assert!(graph.walk(&walk_parameters).is_ok());
     }
 }
 
@@ -247,158 +184,6 @@ fn test_graph_directed_forced_conversion_to_undirected() {
         Some(true)
     )
     .is_ok());
-}
-
-#[test]
-fn test_walk_wrong_return_weights_parameter() {
-    assert!(Graph::from_csv(
-        "tests/data/edge_file.tsv",
-        "subject",
-        "object",
-        true,
-        Some("edge_label"),
-        Some("biolink:Association"),
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None
-    )
-    .unwrap()
-    .walk(
-        10,
-        None,
-        None,
-        None,
-        None,
-        Some(0.0),
-        Some(2.0),
-        Some(3.0),
-        Some(4.0),
-        None
-    )
-    .is_err());
-}
-
-#[test]
-fn test_walk_wrong_explore_weight_parameter() {
-    assert!(Graph::from_csv(
-        "tests/data/edge_file.tsv",
-        "subject",
-        "object",
-        true,
-        Some("edge_label"),
-        Some("biolink:Association"),
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None
-    )
-    .unwrap()
-    .walk(
-        10,
-        None,
-        None,
-        None,
-        None,
-        Some(1.0),
-        Some(0.0),
-        Some(3.0),
-        Some(4.0),
-        None
-    )
-    .is_err());
-}
-
-#[test]
-#[should_panic]
-fn test_walk_wrong_change_node_type_weight_parameter() {
-    let path = "tests/data/edge_file.tsv";
-    Graph::from_csv(
-        &path,
-        "subject",
-        "object",
-        true,
-        Some("edge_label"),
-        Some("biolink:Association"),
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-    )
-    .unwrap()
-    .walk(
-        10,
-        None,
-        None,
-        None,
-        None,
-        Some(1.0),
-        Some(1.0),
-        Some(0.0),
-        Some(4.0),
-        None,
-    )
-    .unwrap();
-}
-
-#[test]
-#[should_panic]
-fn test_walk_wrong_change_edge_type_weight_parameter() {
-    let path = "tests/data/edge_file.tsv";
-    Graph::from_csv(
-        &path,
-        "subject",
-        "object",
-        true,
-        Some("edge_label"),
-        Some("biolink:Association"),
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-    )
-    .unwrap()
-    .walk(
-        10,
-        None,
-        None,
-        None,
-        None,
-        Some(1.0),
-        Some(1.0),
-        Some(1.0),
-        Some(0.0),
-        None,
-    )
-    .unwrap();
 }
 
 #[test]
@@ -802,20 +587,13 @@ fn test_graph_from_csv_with_edge_and_nodes() {
             assert_eq!(edge_lines, graph.get_edges_number());
         }
         assert_eq!(graph.get_edge_types_number(), 2);
-        graph
-            .walk(
-                10,
-                Some(10),
-                None,
-                None,
-                Some(0),
-                Some(0.5),
-                Some(2.0),
-                Some(3.0),
-                Some(4.0),
-                Some(false),
-            )
-            .unwrap();
+        let walk_parameters = WalksParameters::new(
+            SingleWalkParameters::new(10, WalkWeights::default()).unwrap(),
+            0,
+            graph.get_not_trap_nodes_number(),
+        )
+        .unwrap();
+        graph.walk(&walk_parameters).unwrap();
         assert!(graph.get_top_k_nodes_by_node_type(10).is_ok());
         assert!(graph.get_top_k_edges_by_edge_type(10).is_ok());
         assert!(graph.get_node_type_counts().is_ok());
@@ -847,7 +625,6 @@ fn test_graph_negative_edge_weights() {
             None,
         );
         assert!(graph.is_err());
-        println!("{:?}", graph);
     }
 }
 
@@ -922,7 +699,6 @@ fn test_graph_nan_edge_weights() {
             None,
         );
         assert!(graph.is_err());
-        println!("{:?}", graph);
     }
 }
 
@@ -950,7 +726,6 @@ fn test_graph_inf_edge_weights() {
             None,
         );
         assert!(graph.is_err());
-        println!("{:?}", graph);
     }
 }
 
@@ -984,20 +759,13 @@ fn test_graph_from_csv_with_edge_and_nodes_types() {
             assert_eq!(edge_lines, graph.get_edges_number());
         }
         assert_eq!(graph.get_edge_types_number(), 2);
-        graph
-            .walk(
-                10,
-                Some(10),
-                None,
-                None,
-                Some(0),
-                Some(0.5),
-                Some(2.0),
-                Some(3.0),
-                Some(4.0),
-                Some(false),
-            )
-            .unwrap();
+        let walk_parameters = WalksParameters::new(
+            SingleWalkParameters::new(10, WalkWeights::default()).unwrap(),
+            0,
+            graph.get_not_trap_nodes_number(),
+        )
+        .unwrap();
+        graph.walk(&walk_parameters).unwrap();
         for one in 0..graph.get_nodes_number() {
             graph.get_node_type_id(one).unwrap();
             for two in 0..graph.get_nodes_number() {
@@ -1044,22 +812,22 @@ fn test_graph_from_csv_het() {
             assert_eq!(edge_lines, graph.get_edges_number());
         }
         assert_eq!(4, graph.get_node_types_number());
-        graph
-            .walk(
-                10,
-                Some(10),
-                None,
-                None,
-                Some(0),
-                Some(0.5),
-                Some(2.0),
-                Some(3.0),
-                Some(4.0),
-                Some(false),
-            )
-            .unwrap();
+        let walk_parameters = WalksParameters::new(
+            SingleWalkParameters::new(10, WalkWeights::default()).unwrap(),
+            0,
+            graph.get_not_trap_nodes_number(),
+        )
+        .unwrap();
+        graph.walk(&walk_parameters).unwrap();
         assert!(graph.get_node_type_id(100000000000).is_err());
         assert!(graph.get_edge_type_id(100000000000).is_err());
+        if *directed {
+            assert!(graph.connected_holdout(42, 0.7).is_err());
+        } else {
+            let (train, validation) = graph.connected_holdout(42, 0.7).unwrap();
+            assert!(train.sum(&validation).unwrap().contains(&graph));
+            assert!(graph.components_holdout(35, 5).is_ok());
+        }
         let _ = graph.report();
     }
 }

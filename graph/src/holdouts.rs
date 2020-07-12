@@ -54,7 +54,7 @@ impl Graph {
 
         let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
         // We get the vector of edges and shuffle them using the provided seed.
-        let mut edges:Vec<EdgeT> = (0..self.get_edges_number()).collect();
+        let mut edges: Vec<EdgeT> = (0..self.get_edges_number()).collect();
         edges.shuffle(&mut rng);
 
         // initialize the vectors for the result
@@ -62,21 +62,21 @@ impl Graph {
         let mut destinations: Vec<NodeT> = Vec::with_capacity(negatives_number);
 
         // Initializing the edges counter
-        let mut edges_counter:EdgeT = 0;
+        let mut edges_counter: EdgeT = 0;
 
-        for edge_id in edges{
+        for edge_id in edges {
             let src: NodeT = self.sources[edge_id];
             let dst: NodeT = self.destinations[edge_id];
             // If the edge is not a self-loop or the user allows self-loops and
             // the graph is directed or the edges are inserted in a way to avoid
             // inserting bidirectional edges, avoiding to execute the check
-            // of edge types so to insert them twice if the edge types are 
+            // of edge types so to insert them twice if the edge types are
             // different.
             if (allow_selfloops || src != dst) && (self.is_directed || src <= dst) {
                 sources.push(src);
                 destinations.push(dst);
                 edges_counter += 1;
-                if ! self.is_directed && src != dst {
+                if !self.is_directed && src != dst {
                     edges_counter += 1;
                 }
             }
@@ -84,7 +84,7 @@ impl Graph {
                 break;
             }
         }
-            
+
         Ok(if self.is_directed {
             Graph::new_directed(
                 sources,
@@ -144,7 +144,7 @@ impl Graph {
         }
 
         let tree: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = self.spanning_tree(seed);
-        
+
         // generate and shuffle the indices of the edges
         let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
         let mut edge_indices: Vec<NodeT> = (0..self.get_edges_number()).collect();
@@ -176,11 +176,9 @@ impl Graph {
             // If the spanning tree does not include the current edge
             // and, if we are in an undirected graph, does not include neither
             // the graph in the opposite direction:
-            if !tree.contains(&(src, dst, edge_type))
-            {
+            if !tree.contains(&(src, dst, edge_type)) {
                 // We stop adding edges when we have reached the minimum amount.
-                if valid_edges_number_total < valid_edges_number
-                    && (self.is_directed || src <= dst)
+                if valid_edges_number_total < valid_edges_number && (self.is_directed || src <= dst)
                 {
                     // add the edge
                     self.copy_from_index(
@@ -191,7 +189,7 @@ impl Graph {
                         &mut valid_edge_types,
                     );
                     valid_edges_number_total += 1;
-                    if !self.is_directed && src!=dst{
+                    if !self.is_directed && src != dst {
                         valid_edges_number_total += 1;
                     }
                     continue;
@@ -353,9 +351,7 @@ impl Graph {
             let dst = self.destinations[*edge];
 
             // We stop adding edges when we have reached the minimum amount.
-            if valid_edges_number_total < valid_edges_number
-                && (self.is_directed || src <= dst)
-            {
+            if valid_edges_number_total < valid_edges_number && (self.is_directed || src <= dst) {
                 // add the edge
                 self.copy_from_index(
                     *edge,
@@ -498,8 +494,27 @@ impl Graph {
     /// * seed: usize - Random seed to use.
     /// * edges_number: usize - Number of edges to extract.
     pub fn components_holdout(&self, seed: usize, edges_number: usize) -> Result<Graph, String> {
+        if edges_number > self.get_edges_number() {
+            return Err(format!(
+                concat!(
+                    "Required number of edges ({}) is more than available ",
+                    "number of edges ({}) in current graph."
+                ),
+                edges_number,
+                self.get_edges_number()
+            ));
+        }
         // First we retrieve all the connected components of the graph.
         let mut components = self.strongly_connected_components();
+
+        if components.len() == self.get_nodes_number() {
+            return Err(String::from(
+                concat!(
+                    "Current graph has only singleton components that ",
+                    "are composed of a single node."
+                )
+            ));
+        }
 
         // Creating the random number generator
         let mut rnd = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
@@ -514,38 +529,46 @@ impl Graph {
         let mut edge_types: Vec<EdgeTypeT> = Vec::with_capacity(edges_number);
 
         // Initializing the edge counter
-        let mut edges_counter:EdgeT = 0;
-        
+        let mut edges_counter: EdgeT = 0;
+
         // We iterate on the components
         for component in components {
+            let mut sorted_component:Vec<NodeT> = component.iter().cloned().collect();
+            sorted_component.sort();
             // Extract all the edges that form the current components.
             // Then, in the undirected case we don't want to insert the edge two times.
             // To solve this in a clean way, we observe that we have only 3 cases:
             // src == dst if the edge is a self-loop.
             // src > dst and src < dst, since the graph is undirected we don't care
             // about which of the two we use. Therefore, we can arbitrarly choose that
-            // we want only edges where src <= dst and we will never add the same 
+            // we want only edges where src <= dst and we will never add the same
             // undirected edge twice. Moreover, this also works when we have two
             // nodes with two undirected edges between them with different types
             // because we don't need to check for duplicates.
-            let mut edges:Vec<EdgeT> = component.par_iter().map(
-                |src| {
+            let mut edges: Vec<EdgeT> = sorted_component
+                .par_iter()
+                .map(|src| {
                     let (min, max) = self.get_min_max_edge(*src);
-                    (min..max).filter(|edge_id| {
-                        let dst = self.destinations[*edge_id];
-                        component.contains(src) && component.contains(&dst) && (self.is_directed || *src <= dst)
-                    }).collect::<Vec<EdgeT>>()
-                }
-            ).flatten().collect();
+                    (min..max)
+                        .filter(|edge_id| {
+                            let dst = self.destinations[*edge_id];
+                            component.contains(src)
+                                && component.contains(&dst)
+                                && (self.is_directed || *src <= dst)
+                        })
+                        .collect::<Vec<EdgeT>>()
+                })
+                .flatten()
+                .collect();
 
             // Shuffle only if needed, because if we have to add all edges from
             // the component anyway it's useless shuffeling them.
             if sources.len() + edges.len() > edges_number {
                 edges.shuffle(&mut rnd);
             }
-            
+
             // And through all the edge IDs, since we do not know which edges
-            // are part of the component as these components are made out of 
+            // are part of the component as these components are made out of
             // set of nodes.
             for edge_id in edges {
                 // We retrieve the sources and destinations corresponding to
@@ -567,7 +590,7 @@ impl Graph {
 
                 // If we are building an undirected graph and this is not
                 // a self loop, the edge counts twice.
-                if !self.is_directed && src != dst{
+                if !self.is_directed && src != dst {
                     edges_counter += 1;
                 }
 
@@ -627,7 +650,7 @@ impl Graph {
                 } else {
                     None
                 },
-                None
+                None,
             )?
         })
     }
