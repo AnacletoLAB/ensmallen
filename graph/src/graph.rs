@@ -330,6 +330,16 @@ impl Graph {
         (min_edge, max_edge)
     }
 
+    /// Return mapping from instance not trap nodes to dense nodes.
+    pub fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
+        self.not_trap_nodes
+            .iter()
+            .cloned()
+            .enumerate()
+            .map(|(i, node)| (node, i))
+            .collect()
+    }
+
     /// Returns the number of outbound neighbours of given node.
     ///
     ///

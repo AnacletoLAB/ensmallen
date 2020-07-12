@@ -1,5 +1,4 @@
 use std::{fs::File, io::prelude::*, io::BufReader};
-
 use rayon::prelude::*;
 
 /// Check that given file has a consistent number of the given separator.
