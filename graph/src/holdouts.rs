@@ -5,7 +5,6 @@ use hashbrown::HashSet;
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
-use vec_rand::xorshift::xorshift as rand_u64;
 use rayon::prelude::*;
 
 /// # Holdouts.
@@ -53,39 +52,39 @@ impl Graph {
             return Err(String::from("The number of negatives cannot be zero."));
         }
 
-        let _negatives_number = if !self.is_directed {
-            negatives_number / 2
-        } else {
-            negatives_number
-        };
-
-        let mut unique_edges: HashSet<(NodeT, NodeT)> = HashSet::with_capacity(_negatives_number);
+        let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
+        // We get the vector of edges and shuffle them using the provided seed.
+        let mut edges:Vec<EdgeT> = (0..self.get_edges_number()).collect();
+        edges.shuffle(&mut rng);
 
         // initialize the vectors for the result
-        let mut sources: Vec<NodeT> = Vec::with_capacity(_negatives_number);
-        let mut destinations: Vec<NodeT> = Vec::with_capacity(_negatives_number);
+        let mut sources: Vec<NodeT> = Vec::with_capacity(negatives_number);
+        let mut destinations: Vec<NodeT> = Vec::with_capacity(negatives_number);
 
-        let mut new_seed = seed ^ SEED_XOR;
+        // Initializing the edges counter
+        let mut edges_counter:EdgeT = 0;
 
-        loop {
-            new_seed = rand_u64(new_seed as u64) as usize;
-            let src: NodeT = self.sources[new_seed % self.get_edges_number()];
-            new_seed = rand_u64(new_seed as u64) as usize;
-            let dst: NodeT = self.destinations[new_seed % self.get_edges_number()];
-            if !unique_edges.contains(&(src, dst))
-                && (self.is_directed || !unique_edges.contains(&(dst, src)))
-                && (allow_selfloops || src != dst)
-                && !self.has_edge(src, dst)
-            {
-                unique_edges.insert((src, dst));
+        for edge_id in edges{
+            let src: NodeT = self.sources[edge_id];
+            let dst: NodeT = self.destinations[edge_id];
+            // If the edge is not a self-loop or the user allows self-loops and
+            // the graph is directed or the edges are inserted in a way to avoid
+            // inserting bidirectional edges, avoiding to execute the check
+            // of edge types so to insert them twice if the edge types are 
+            // different.
+            if (allow_selfloops || src != dst) && (self.is_directed || src <= dst) {
                 sources.push(src);
                 destinations.push(dst);
+                edges_counter += 1;
+                if ! self.is_directed && src != dst {
+                    edges_counter += 1;
+                }
             }
-            if unique_edges.len() == _negatives_number {
+            if edges_counter == negatives_number {
                 break;
             }
         }
-
+            
         Ok(if self.is_directed {
             Graph::new_directed(
                 sources,
@@ -145,8 +144,7 @@ impl Graph {
         }
 
         let tree: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = self.spanning_tree(seed);
-        let mut used_edges: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::new();
-
+        
         // generate and shuffle the indices of the edges
         let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
         let mut edge_indices: Vec<NodeT> = (0..self.get_edges_number()).collect();
@@ -178,12 +176,11 @@ impl Graph {
             // If the spanning tree does not include the current edge
             // and, if we are in an undirected graph, does not include neither
             // the graph in the opposite direction:
-            if !(tree.contains(&(src, dst, edge_type))
-                || !self.is_directed && tree.contains(&(dst, src, edge_type)))
+            if !tree.contains(&(src, dst, edge_type))
             {
                 // We stop adding edges when we have reached the minimum amount.
                 if valid_edges_number_total < valid_edges_number
-                    && (self.is_directed || !used_edges.contains(&(dst, src, edge_type)))
+                    && (self.is_directed || src <= dst)
                 {
                     // add the edge
                     self.copy_from_index(
@@ -193,9 +190,8 @@ impl Graph {
                         &mut valid_weights,
                         &mut valid_edge_types,
                     );
-                    used_edges.insert((src, dst, edge_type));
                     valid_edges_number_total += 1;
-                    if !self.is_directed {
+                    if !self.is_directed && src!=dst{
                         valid_edges_number_total += 1;
                     }
                     continue;
@@ -205,9 +201,7 @@ impl Graph {
             //
             // When the graph is directed we need to check that the edge
             // in the opposite direction was not already inserted.
-            if self.is_directed || !used_edges.contains(&(dst, src, edge_type)) {
-                used_edges.insert((src, dst, edge_type));
-                //println!("Training {}, {}", self.nodes_reverse_mapping[src], self.nodes_reverse_mapping[dst]);
+            if self.is_directed || src <= dst {
                 self.copy_from_index(
                     *edge,
                     &mut train_sources,
@@ -334,8 +328,6 @@ impl Graph {
             ));
         }
 
-        let mut used_edges: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::new();
-
         // generate and shuffle the indices of the edges
         let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
         let mut edge_indices: Vec<NodeT> = (0..self.get_edges_number()).collect();
@@ -359,14 +351,10 @@ impl Graph {
         for edge in edge_indices.iter() {
             let src = self.sources[*edge];
             let dst = self.destinations[*edge];
-            let edge_type = if let Some(et) = &self.edge_types {
-                Some(et[*edge])
-            } else {
-                None
-            };
+
             // We stop adding edges when we have reached the minimum amount.
             if valid_edges_number_total < valid_edges_number
-                && (self.is_directed || !used_edges.contains(&(dst, src, edge_type)))
+                && (self.is_directed || src <= dst)
             {
                 // add the edge
                 self.copy_from_index(
@@ -376,7 +364,6 @@ impl Graph {
                     &mut valid_weights,
                     &mut valid_edge_types,
                 );
-                used_edges.insert((src, dst, edge_type));
                 valid_edges_number_total += 1;
                 if !self.is_directed {
                     valid_edges_number_total += 1;
@@ -387,9 +374,7 @@ impl Graph {
             //
             // When the graph is directed we need to check that the edge
             // in the opposite direction was not already inserted.
-            if self.is_directed || !used_edges.contains(&(dst, src, edge_type)) {
-                used_edges.insert((src, dst, edge_type));
-                //println!("Training {}, {}", self.nodes_reverse_mapping[src], self.nodes_reverse_mapping[dst]);
+            if self.is_directed || src <= dst {
                 self.copy_from_index(
                     *edge,
                     &mut train_sources,
