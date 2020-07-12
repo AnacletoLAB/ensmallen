@@ -188,19 +188,7 @@ impl Graph {
         }
 
         let start_node = idx * batch_size;
-        let end_node = min!(self.get_nodes_number(), opt_end_node.unwrap());
-
-        if start_node >= self.get_nodes_number() {
-            return Err(format!(
-                concat!(
-                    "The given walk index {idx} with batch size {batch_size} ",
-                    "is larger than the number of nodes {nodes} in the graph."
-                ),
-                idx = idx,
-                batch_size = batch_size,
-                nodes = self.get_nodes_number()
-            ));
-        }
+        let end_node = min!(self.not_trap_nodes.len(), opt_end_node.unwrap());
 
         // do the walks and check the result
         let walks = self.walk(
@@ -403,19 +391,7 @@ impl Graph {
         }
 
         let start_node = idx * batch_size;
-        let end_node = min!(self.get_nodes_number(), opt_end_node.unwrap());
-
-        if start_node >= self.get_nodes_number() {
-            return Err(format!(
-                concat!(
-                    "The given walk index {idx} with batch size {batch_size} ",
-                    "is larger than the number of nodes {nodes} in the graph."
-                ),
-                idx = idx,
-                batch_size = batch_size,
-                nodes = self.get_nodes_number()
-            ));
-        }
+        let end_node = min!(self.not_trap_nodes.len(), opt_end_node.unwrap());
 
         // do the walks and check the result
         let walks = self.walk(

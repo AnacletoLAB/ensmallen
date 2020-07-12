@@ -21,6 +21,7 @@ use vec_rand::sample;
 #[derive(Debug, Clone, Getters, PartialEq)]
 pub struct Graph {
     pub(crate) is_directed: bool,
+    pub(crate) not_trap_nodes: Vec<NodeT>,
     pub(crate) sources: Vec<NodeT>,
     pub(crate) destinations: Vec<NodeT>,
     pub(crate) nodes_mapping: HashMap<String, NodeT>,
@@ -617,7 +618,7 @@ impl Graph {
                 (sn, sn + 1)
             }
         } else {
-            (0, self.get_nodes_number())
+            (0, self.not_trap_nodes.len())
         };
 
         if _start_node > _end_node {
@@ -630,25 +631,25 @@ impl Graph {
             ));
         }
 
-        if _start_node >= self.get_nodes_number() {
+        if _start_node >= self.not_trap_nodes.len() {
             return Err(format!(
                 concat!(
                     "Given start node index ({})",
-                    "is greater than number of nodes in graph ({})."
+                    "is greater than number of not trap nodes in graph ({})."
                 ),
                 _start_node,
-                self.get_nodes_number()
+                self.not_trap_nodes.len()
             ));
         }
 
-        if _end_node > self.get_nodes_number() {
+        if _end_node > self.not_trap_nodes.len() {
             return Err(format!(
                 concat!(
                     "Given end node index ({})",
-                    "is greater than number of nodes in graph ({})."
+                    "is greater than number of not trap nodes in graph ({})."
                 ),
                 _end_node,
-                self.get_nodes_number()
+                self.not_trap_nodes.len()
             ));
         }
 
@@ -697,11 +698,10 @@ impl Graph {
         let iterator = (0..number_of_results)
             .into_par_iter()
             .progress_with(pb)
-            .map(|index| _start_node + (index % delta));
+            .map(|index| self.not_trap_nodes[_start_node + (index % delta)]);
 
         Ok(if self.has_traps {
             iterator
-                .filter(|node| !self.is_node_trap(*node))
                 .map(|node| {
                     self.single_walk(
                         length,
