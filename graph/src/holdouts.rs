@@ -6,6 +6,7 @@ use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
 use vec_rand::xorshift::xorshift as rand_u64;
+use rayon::prelude::*;
 
 /// # Holdouts.
 impl Graph {
@@ -521,48 +522,78 @@ impl Graph {
         // Shuffling the components using the given seed.
         components.shuffle(&mut rnd);
 
-        // Get the vector of edge IDs and shuffle it.
-        let mut edge_ids: Vec<EdgeT> = (0..self.get_edges_number()).collect();
-        edge_ids.shuffle(&mut rnd);
-
         // Initializing the vector for creating the new graph.
         let mut sources: Vec<NodeT> = Vec::with_capacity(edges_number);
         let mut destinations: Vec<NodeT> = Vec::with_capacity(edges_number);
         let mut weights: Vec<WeightT> = Vec::with_capacity(edges_number);
         let mut edge_types: Vec<EdgeTypeT> = Vec::with_capacity(edges_number);
 
+        // Initializing the edge counter
+        let mut edges_counter:EdgeT = 0;
+        
         // We iterate on the components
         for component in components {
+            // Extract all the edges that form the current components.
+            // Then, in the undirected case we don't want to insert the edge two times.
+            // To solve this in a clean way, we observe that we have only 3 cases:
+            // src == dst if the edge is a self-loop.
+            // src > dst and src < dst, since the graph is undirected we don't care
+            // about which of the two we use. Therefore, we can arbitrarly choose that
+            // we want only edges where src <= dst and we will never add the same 
+            // undirected edge twice. Moreover, this also works when we have two
+            // nodes with two undirected edges between them with different types
+            // because we don't need to check for duplicates.
+            let mut edges:Vec<EdgeT> = component.par_iter().map(
+                |src| {
+                    let (min, max) = self.get_min_max_edge(*src);
+                    (min..max).filter(|edge_id| {
+                        let dst = self.destinations[*edge_id];
+                        component.contains(src) && component.contains(&dst) && (self.is_directed || *src <= dst)
+                    }).collect::<Vec<EdgeT>>()
+                }
+            ).flatten().collect();
+
+            // Shuffle only if needed, because if we have to add all edges from
+            // the component anyway it's useless shuffeling them.
+            if sources.len() + edges.len() > edges_number {
+                edges.shuffle(&mut rnd);
+            }
+            
             // And through all the edge IDs, since we do not know which edges
             // are part of the component as these components are made out of 
             // set of nodes.
-            for edge_id in edge_ids.iter().cloned() {
+            for edge_id in edges {
                 // We retrieve the sources and destinations corresponding to
                 // the edge IDs.
                 let src = self.sources[edge_id];
                 let dst = self.destinations[edge_id];
-                
-                // We check if the given edge is part of the current component.
-                if component.contains(&src) && component.contains(&dst) {
-                    // If so, we add the relative data to the proper vectors.
-                    sources.push(src);
-                    destinations.push(dst);
-                    if let Some(w) = &self.weights {
-                        weights.push(w[edge_id]);
-                    }
-                    if let Some(et) = &self.edge_types {
-                        edge_types.push(et[edge_id]);
-                    }
+
+                sources.push(src);
+                destinations.push(dst);
+                if let Some(w) = &self.weights {
+                    weights.push(w[edge_id]);
+                }
+                if let Some(et) = &self.edge_types {
+                    edge_types.push(et[edge_id]);
+                }
+
+                // We increase the edge counter.
+                edges_counter += 1;
+
+                // If we are building an undirected graph and this is not
+                // a self loop, the edge counts twice.
+                if !self.is_directed && src != dst{
+                    edges_counter += 1;
                 }
 
                 // If we have collected the required number of edges, we can
                 // stop the process.
-                if sources.len() == edges_number {
+                if edges_counter == edges_number {
                     break;
                 }
             }
             // Similarly, we do the same check as done inside.
-            if sources.len() == edges_number {
+            if edges_counter == edges_number {
                 break;
             }
         }
@@ -611,7 +642,7 @@ impl Graph {
                 } else {
                     None
                 },
-                None,
+                None
             )?
         })
     }
