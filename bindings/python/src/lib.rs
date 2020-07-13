@@ -503,6 +503,19 @@ impl EnsmallenGraph {
         }
     }
 
+    /// Return start node and end node for given batch.
+    fn get_batch_range(&self, idx: usize, batch_size: usize) -> (usize, usize) {
+        let (start_node, end_node) = (idx * batch_size, (idx + 1) * batch_size);
+        (
+            start_node,
+            if end_node > self.get_not_trap_nodes_number() {
+                self.get_not_trap_nodes_number()
+            } else {
+                end_node
+            },
+        )
+    }
+
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, length, *, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, verbose)"]
     /// Return random walks done on the graph using Rust.
@@ -724,7 +737,8 @@ impl EnsmallenGraph {
         length: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<((Py<PyArray1<f64>>, Py<PyArray1<f64>>), Py<PyArray1<f64>>)> {
-        match build_walk_parameters(length, idx * batch_size, (idx + 1) * batch_size, py_kwargs) {
+        let (start_node, end_node) = self.get_batch_range(idx, batch_size);
+        match build_walk_parameters(length, start_node, end_node, py_kwargs) {
             Ok(wp) => {
                 let batch = if let Some(kwargs) = &py_kwargs {
                     self.graph.binary_skipgrams(
@@ -841,7 +855,8 @@ impl EnsmallenGraph {
         length: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray2<f64>>, Py<PyArray1<f64>>)> {
-        match build_walk_parameters(length, idx * batch_size, (idx + 1) * batch_size, py_kwargs) {
+        let (start_node, end_node) = self.get_batch_range(idx, batch_size);
+        match build_walk_parameters(length, start_node, end_node, py_kwargs) {
             Ok(wp) => {
                 let batch = if let Some(kwargs) = &py_kwargs {
                     self.graph.node2vec(
@@ -1313,11 +1328,7 @@ impl EnsmallenGraph {
     /// Returns
     /// -----------------------------
     /// Partial graph.
-    fn components_holdout(
-        &self,
-        seed: NodeT,
-        edges_number: usize,
-    ) -> PyResult<EnsmallenGraph> {
+    fn components_holdout(&self, seed: NodeT, edges_number: usize) -> PyResult<EnsmallenGraph> {
         match self.graph.components_holdout(seed, edges_number) {
             Ok(g) => Ok(EnsmallenGraph { graph: g }),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
