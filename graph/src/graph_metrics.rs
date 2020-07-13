@@ -171,8 +171,8 @@ impl Graph {
             .unwrap()
     }
 
-    /// Returns percentage of self-loops.
-    pub fn selfloops_percentage(&self) -> f64 {
+    /// Returns rate of self-loops.
+    pub fn selfloops_rate(&self) -> f64 {
         (0..self.get_nodes_number())
             .into_par_iter()
             .map(|node| self.has_edge(node, node) as usize)
@@ -180,8 +180,8 @@ impl Graph {
             / self.get_edges_number() as f64
     }
 
-    /// Returns percentage of bidirectional edges.
-    pub fn bidirectional_percentage(&self) -> f64 {
+    /// Returns rate of bidirectional edges.
+    pub fn bidirectional_rate(&self) -> f64 {
         self.unique_edges
             .par_keys()
             .map(|(src, dst)| self.has_edge(*dst, *src) as usize)
@@ -222,8 +222,8 @@ impl Graph {
     /// * unique_node_types_number: the number of different node types in the graph.
     /// * unique_edge_types_number: the number of different edge types in the graph.
     /// * traps_rate: probability to end up in a trap when starting into any given node.
-    /// * selfloops_percentage: pecentage of edges that are selfloops.
-    /// * bidirectional_percentage: percentage of edges that are bidirectional.
+    /// * selfloops_rate: pecentage of edges that are selfloops.
+    /// * bidirectional_rate: rate of edges that are bidirectional.
     ///
     pub fn report(&self) -> DefaultHashMap<&str, String> {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
@@ -245,12 +245,12 @@ impl Graph {
         );
         report.insert("traps_rate", self.traps_rate().to_string());
         report.insert(
-            "selfloops_percentage",
-            self.selfloops_percentage().to_string(),
+            "selfloops_rate",
+            self.selfloops_rate().to_string(),
         );
         report.insert(
-            "bidirectional_percentage",
-            self.bidirectional_percentage().to_string(),
+            "bidirectional_rate",
+            self.bidirectional_rate().to_string(),
         );
         report.insert(
             "connected_components_number",

@@ -332,9 +332,10 @@ impl Graph {
 
     /// Return mapping from instance not trap nodes to dense nodes.
     pub fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
-        self.not_trap_nodes
-            .iter()
+        self.sources.iter()
+            .chain(self.destinations.iter())
             .cloned()
+            .unique()
             .enumerate()
             .map(|(i, node)| (node, i))
             .collect()
@@ -567,7 +568,7 @@ impl Graph {
             .progress_with(pb)
             .map(|index| self.not_trap_nodes[parameters.mode_index(index)]);
 
-        Ok(if self.has_traps {
+        let mut walks = if self.has_traps {
             iterator
                 .map(|node| self.single_walk(node, &parameters.single_walk_parameters))
                 .filter(|walk| walk.len() >= parameters.min_length)
@@ -576,7 +577,20 @@ impl Graph {
             iterator
                 .map(|node| self.single_walk_no_traps(node, &parameters.single_walk_parameters))
                 .collect::<Vec<Vec<NodeT>>>()
-        })
+        };
+
+        if let Some(dense_nodes_mapping) = &parameters.dense_nodes_mapping{
+            walks.par_iter_mut().for_each(
+                |walk|
+                        walk.iter_mut()
+                            .for_each(
+                                |node|
+                                *node = *dense_nodes_mapping.get(node).unwrap()
+                            )
+            )
+        }
+
+        Ok(walks)
     }
 
     /// Returns single walk from given node

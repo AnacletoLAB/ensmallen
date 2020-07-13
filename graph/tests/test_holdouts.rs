@@ -17,6 +17,8 @@ fn test_holdout() {
         assert!(validation.overlaps(&graph));
         assert!(!validation.overlaps(&train));
         assert!(!train.overlaps(&validation));
+        assert!(graph.connected_holdout(42, -1.0).is_err());
+        assert!(graph.connected_holdout(42, 2.0).is_err());
         let (train, validation) = graph.random_holdout(42, 0.7).unwrap();
         assert!(graph.contains(&train));
         assert!(graph.contains(&validation));
@@ -24,11 +26,15 @@ fn test_holdout() {
         assert!(validation.overlaps(&graph));
         assert!(!validation.overlaps(&train));
         assert!(!train.overlaps(&validation));
+        assert!(graph.random_holdout(42, -1.0).is_err());
+        assert!(graph.random_holdout(42, 2.0).is_err());
         let negative_edges_number = 1000;
         let negatives = graph
             .sample_negatives(42, negative_edges_number, false)
             .unwrap();
         assert_eq!(negatives.get_edges_number(), negative_edges_number);
+        assert!(negatives.sum(&validation).is_err());
+        assert!(graph.sample_negatives(42, 0, false).is_err());
     }
 }
 

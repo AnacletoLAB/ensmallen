@@ -1,5 +1,6 @@
 use super::graph::*;
 use super::types::*;
+use rayon::prelude::*;
 use std::collections::HashMap;
 
 pub struct WalkWeights {
@@ -12,7 +13,6 @@ pub struct WalkWeights {
 pub struct SingleWalkParameters {
     pub(crate) length: usize,
     pub(crate) weights: WalkWeights,
-    pub(crate) dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
 }
 
 pub struct WalksParameters {
@@ -22,6 +22,7 @@ pub struct WalksParameters {
     pub(crate) verbose: bool,
     pub(crate) start_node: NodeT,
     pub(crate) end_node: NodeT,
+    pub(crate) dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
 }
 
 impl Default for WalkWeights {
@@ -129,28 +130,7 @@ impl SingleWalkParameters {
         if length == 0 {
             return Err(String::from("The provided lenght for the walk is zero!"));
         }
-        Ok(SingleWalkParameters {
-            length,
-            weights,
-            dense_nodes_mapping: None,
-        })
-    }
-
-    /// Set the dense_nodes_mapping.
-    ///
-    /// The nodes mapping primary porpose is to map a sparse set of nodes into
-    /// a smaller dense set of nodes.
-    ///
-    /// # Arguments
-    ///
-    /// * dense_nodes_mapping: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
-    ///
-    pub fn set_dense_nodes_mapping(
-        mut self,
-        dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
-    ) -> SingleWalkParameters {
-        self.dense_nodes_mapping = dense_nodes_mapping;
-        self
+        Ok(SingleWalkParameters { length, weights })
     }
 }
 
@@ -177,6 +157,7 @@ impl WalksParameters {
             iterations: 1,
             min_length: 1,
             verbose: false,
+            dense_nodes_mapping: None,
         })
     }
 
@@ -229,6 +210,23 @@ impl WalksParameters {
         self
     }
 
+    /// Set the dense_nodes_mapping.
+    ///
+    /// The nodes mapping primary porpose is to map a sparse set of nodes into
+    /// a smaller dense set of nodes.
+    ///
+    /// # Arguments
+    ///
+    /// * dense_nodes_mapping: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
+    ///
+    pub fn set_dense_nodes_mapping(
+        mut self,
+        dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
+    ) -> WalksParameters {
+        self.dense_nodes_mapping = dense_nodes_mapping;
+        self
+    }
+
     /// Validate for graph.
     ///
     /// Check if walks parameters are compatible with given graph.
@@ -258,6 +256,19 @@ impl WalksParameters {
                 self.end_node,
                 graph.not_trap_nodes.len()
             ));
+        }
+
+        if let Some(dense_nodes_mapping) = &self.dense_nodes_mapping {
+            if !(&graph
+                .not_trap_nodes)
+                .into_par_iter()
+                .all(|node| dense_nodes_mapping.contains_key(&node))
+            {
+                return Err(String::from(concat!(
+                    "Given nodes mapping does not contain ",
+                    "one or more not trap nodes that may be extracted from walk."
+                )));
+            }
         }
 
         Ok(())

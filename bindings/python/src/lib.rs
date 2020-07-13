@@ -101,16 +101,10 @@ fn build_single_walk_parameters(
     length: usize,
     kwargs: Option<&PyDict>,
 ) -> Result<SingleWalkParameters, String> {
-    Ok(
-        SingleWalkParameters::new(length, build_walk_weights(kwargs)?)?.set_dense_nodes_mapping(
-            if let Some(kw) = kwargs {
-                kw.get_item("dense_nodes_mapping")
-                    .map(|val| val.extract::<HashMap<NodeT, NodeT>>().unwrap())
-            } else {
-                None
-            },
-        ),
-    )
+    Ok(SingleWalkParameters::new(
+        length,
+        build_walk_weights(kwargs)?,
+    )?)
 }
 
 /// Build WalksParameters object from provided kwargs
@@ -141,7 +135,13 @@ fn build_walk_parameters(
             .map(|val| val.extract::<usize>().unwrap())
     } else {
         None
-    })?)
+    })?
+    .set_dense_nodes_mapping(if let Some(kw) = kwargs {
+        kw.get_item("dense_nodes_mapping")
+            .map(|val| val.extract::<HashMap<NodeT, NodeT>>().unwrap())
+    } else {
+        None
+    }))
 }
 
 #[pymethods]
@@ -504,7 +504,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, iterations, start_node, end_node, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, verbose)"]
+    #[text_signature = "($self, length, *, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, verbose)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -514,16 +514,6 @@ impl EnsmallenGraph {
     ///     On graphs without traps, all walks have this length.
     /// iterations: int = 1,
     ///     Number of cycles on the graphs to execute.
-    /// start_node: int = None,
-    ///     Node ID from where to start the random walk.
-    ///     If not provided, defaults to 0.
-    /// end_node: int = None,
-    ///     Node ID from where to end the random walk.
-    ///     If not provided, has two possible behaviours:
-    ///        - If start_node was provided, this is assumed to be
-    ///          a single node walk, and end_node = start_node +1
-    ///        - If start_node was not provided, this is assumed to be
-    ///          a full graph walk, and end_node = total nodes number.
     /// min_length: int = 0,
     ///     Minimal length of the random walk. Will filter out smaller
     ///     random walks.
@@ -549,6 +539,12 @@ impl EnsmallenGraph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
+    /// dense_nodes_mapping: Dict[int, int],
+    ///     Mapping to use for converting sparse walk space into a dense space.
+    ///     This object can be created using the method available from graph
+    ///     called `get_dense_nodes_mapping` that returns a mapping from
+    ///     the non trap nodes (those from where a walk could start) and
+    ///     maps these nodes into a dense range of values.
     /// verbose: int = True,
     ///     Wethever to show or not the loading bar of the walks.
     ///
@@ -567,7 +563,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, window_size, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, verbose)"]
+    #[text_signature = "($self, length, *, window_size, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, verbose)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
     ///
     /// Parameters
@@ -604,6 +600,12 @@ impl EnsmallenGraph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
+    /// dense_nodes_mapping: Dict[int, int],
+    ///     Mapping to use for converting sparse walk space into a dense space.
+    ///     This object can be created using the method available from graph
+    ///     called `get_dense_nodes_mapping` that returns a mapping from
+    ///     the non trap nodes (those from where a walk could start) and
+    ///     maps these nodes into a dense range of values.
     /// verbose: int = True,
     ///     Wethever to show or not the loading bar of the walks.
     ///
@@ -656,7 +658,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, negative_samples, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, graph_to_avoid)"]
+    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, negative_samples, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping)"]
     /// Return batch triple for training BinarySkipGram model.
     ///
     /// Parameters
@@ -704,10 +706,12 @@ impl EnsmallenGraph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
-    /// graph_to_avoid: EnsmallenGraph = None,
-    ///     The graph portion to be avoided. Can be usefull when using
-    ///     holdouts where a portion of the graph is completely hidden,
-    ///     and is not to be used neither for negatives nor positives.
+    /// dense_nodes_mapping: Dict[int, int],
+    ///     Mapping to use for converting sparse walk space into a dense space.
+    ///     This object can be created using the method available from graph
+    ///     called `get_dense_nodes_mapping` that returns a mapping from
+    ///     the non trap nodes (those from where a walk could start) and
+    ///     maps these nodes into a dense range of values.
     ///
     /// Returns
     /// ----------------------------
@@ -766,7 +770,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight)"]
+    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping)"]
     /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
@@ -820,6 +824,12 @@ impl EnsmallenGraph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
+    /// dense_nodes_mapping: Dict[int, int],
+    ///     Mapping to use for converting sparse walk space into a dense space.
+    ///     This object can be created using the method available from graph
+    ///     called `get_dense_nodes_mapping` that returns a mapping from
+    ///     the non trap nodes (those from where a walk could start) and
+    ///     maps these nodes into a dense range of values.
     ///
     /// Returns
     /// ----------------------------
@@ -1059,6 +1069,17 @@ impl EnsmallenGraph {
             .cast::<EdgeT>(false)
             .unwrap()
             .to_owned()
+    }
+
+    #[text_signature = "($self)"]
+    /// Return mapping from instance not trap nodes to dense range of nodes.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Dict with mapping from not trap nodes to dense range of nodes.
+    ///
+    fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
+        self.graph.get_dense_nodes_mapping()
     }
 
     #[text_signature = "($self, src, dst)"]

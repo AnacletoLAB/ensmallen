@@ -1,7 +1,9 @@
 extern crate graph;
 use graph::graph::Graph;
+use graph::types::*;
 use graph::{SingleWalkParameters, WalkWeights, WalksParameters};
 use linecount::count_lines;
+use std::collections::HashMap;
 use std::fs::File;
 
 #[test]
@@ -24,7 +26,8 @@ fn test_graph_from_csv_edge_only() {
             0,
             graph.get_not_trap_nodes_number(),
         )
-        .unwrap();
+        .unwrap()
+        .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()));
         let wrong_walk_parameters1 = WalksParameters::new(
             SingleWalkParameters::new(10, WalkWeights::default()).unwrap(),
             0,
@@ -37,8 +40,17 @@ fn test_graph_from_csv_edge_only() {
             graph.get_not_trap_nodes_number() * 4,
         )
         .unwrap();
+        let nodes_map: HashMap<NodeT, NodeT> = HashMap::new();
+        let wrong_walk_parameters3 = WalksParameters::new(
+            SingleWalkParameters::new(10, WalkWeights::default()).unwrap(),
+            0,
+            graph.get_not_trap_nodes_number(),
+        )
+        .unwrap()
+        .set_dense_nodes_mapping(Some(nodes_map));
         assert!(wrong_walk_parameters1.validate(&graph).is_err());
         assert!(wrong_walk_parameters2.validate(&graph).is_err());
+        assert!(wrong_walk_parameters3.validate(&graph).is_err());
         assert_eq!(graph, graph);
         assert!(graph.sum(&graph).is_err());
         assert!(graph.get_node_type_id(0).is_err());
@@ -51,6 +63,9 @@ fn test_graph_from_csv_edge_only() {
         assert!(graph
             .binary_skipgrams(0, &walk_parameters, None, Some(7.0), Some(true))
             .is_ok());
+        assert!(graph
+            .binary_skipgrams(0, &walk_parameters, None, Some(-7.0), Some(true))
+            .is_err());
         assert!(graph
             .binary_skipgrams(
                 67676676676676,
@@ -765,6 +780,17 @@ fn test_graph_from_csv_with_edge_and_nodes_types() {
             graph.get_not_trap_nodes_number(),
         )
         .unwrap();
+        if *directed {
+            assert!(graph.connected_holdout(42, 0.7).is_err());
+        } else {
+            let (train, validation) = graph.connected_holdout(42, 0.7).unwrap();
+            assert!(train.sum(&validation).unwrap().contains(&graph));
+            assert!(graph.components_holdout(35, 5).is_ok());
+            let (train, validation) = graph.random_holdout(42, 0.7).unwrap();
+            assert!(train.sum(&validation).unwrap().contains(&graph));
+            let negatives = graph.sample_negatives(42, 10000, false).unwrap();
+            assert!(negatives.sum(&validation).is_err());
+        }
         graph.walk(&walk_parameters).unwrap();
         for one in 0..graph.get_nodes_number() {
             graph.get_node_type_id(one).unwrap();
@@ -825,6 +851,8 @@ fn test_graph_from_csv_het() {
             assert!(graph.connected_holdout(42, 0.7).is_err());
         } else {
             let (train, validation) = graph.connected_holdout(42, 0.7).unwrap();
+            assert!(train.sum(&validation).unwrap().contains(&graph));
+            let (train, validation) = graph.random_holdout(42, 0.7).unwrap();
             assert!(train.sum(&validation).unwrap().contains(&graph));
             assert!(graph.components_holdout(35, 5).is_ok());
         }

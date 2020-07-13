@@ -273,6 +273,7 @@ pub fn harness(data: ToFuzz) {
                 *ns = 100.0;
             }
         }
+
         let _ = unwrapped.skipgrams(
             data.skipgrams_args.idx as usize,
             data.skipgrams_args.batch_size as usize,
