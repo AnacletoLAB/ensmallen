@@ -143,7 +143,7 @@ impl WalksParameters {
         if start_node > end_node {
             return Err(format!(
                 concat!(
-                    "Given start node index ({})",
+                    "Given start node index ({}) ",
                     "is greater than given end node index ({})."
                 ),
                 start_node, end_node

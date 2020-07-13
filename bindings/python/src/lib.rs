@@ -1129,9 +1129,15 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "(self)"]
-    /// Return the number of NON-SINGLETONS nodes in the graph.
+    /// Return the number of nodes in the graph.
     fn get_nodes_number(&self) -> usize {
         self.graph.get_nodes_number()
+    }
+
+    #[text_signature = "(self)"]
+    /// Return the number of non trap nodes in the graph.
+    fn get_not_trap_nodes_number(&self) -> usize {
+        self.graph.get_not_trap_nodes_number()
     }
 
     #[text_signature = "(self)"]
