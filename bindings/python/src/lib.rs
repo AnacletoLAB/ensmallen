@@ -1294,6 +1294,30 @@ impl EnsmallenGraph {
         }
     }
 
+    #[text_signature = "($self, seed, edges_number)"]
+    /// Returns partial graph based on connected components.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// seed: int,
+    ///     The seed to use to generate the partial graph.
+    /// edges_number: int,
+    ///     The number of edges to insert in the partial graph.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Partial graph.
+    fn components_holdout(
+        &self,
+        seed: NodeT,
+        edges_number: usize,
+    ) -> PyResult<EnsmallenGraph> {
+        match self.graph.components_holdout(seed, edges_number) {
+            Ok(g) => Ok(EnsmallenGraph { graph: g }),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
+    }
+
     #[text_signature = "($self, seed, train_percentage)"]
     /// Returns training and validation holdouts extracted from current graph.
     ///
