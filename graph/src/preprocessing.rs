@@ -737,7 +737,7 @@ impl Graph {
         indices.shuffle(&mut thread_rng());
 
         labels = indices.par_iter().map(|i| labels[*i].clone()).collect();
-        edges = indices.par_iter().map(|i| edges[*i]).collect();
+        edges = indices.par_iter().map(|i| edges[*i].clone()).collect();
 
         Ok((edges, labels))
     }
