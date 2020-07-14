@@ -733,6 +733,12 @@ impl Graph {
         let mut edges: Vec<Vec<NodeT>> = positives;
         edges.extend(negatives);
 
+        let mut indices: Vec<usize> = (0..labels.len() as usize).collect();
+        indices.shuffle(&mut thread_rng());
+
+        labels = indices.par_iter().map(|i| labels[*i].clone()).collect();
+        edges = indices.par_iter().map(|i| edges[*i]).collect();
+
         Ok((edges, labels))
     }
 }
