@@ -2,7 +2,8 @@ use super::*;
 use hashbrown::HashMap;
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use rand::seq::SliceRandom;
-use rand::thread_rng;
+use rand::rngs::{StdRng};
+use rand::{SeedableRng};
 use rayon::prelude::*;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift as rand_u64;
@@ -94,7 +95,8 @@ impl Graph {
         }
         if _shuffle {
             let mut indices: Vec<usize> = (0..words.len() as usize).collect();
-            indices.shuffle(&mut thread_rng());
+            let mut rng: StdRng = SeedableRng::seed_from_u64(seed);
+            indices.shuffle(&mut rng);
             words = indices.iter().map(|i| words[*i]).collect();
             contexts = indices.iter().map(|i| contexts[*i]).collect();
             labels = indices.iter().map(|i| labels[*i]).collect();
@@ -496,8 +498,9 @@ impl Graph {
 
         if _shuffle {
             let mut indices: Vec<usize> = (0..centers.len() as usize).collect();
-            indices.shuffle(&mut thread_rng());
-
+            let mut rng: StdRng = SeedableRng::seed_from_u64(idx as u64);
+            indices.shuffle(&mut rng);
+            
             contexts = indices.par_iter().map(|i| contexts[*i].clone()).collect();
             centers = indices.par_iter().map(|i| centers[*i]).collect();
         }
@@ -734,7 +737,8 @@ impl Graph {
         edges.extend(negatives);
 
         let mut indices: Vec<usize> = (0..labels.len() as usize).collect();
-        indices.shuffle(&mut thread_rng());
+        let mut rng: StdRng = SeedableRng::seed_from_u64(seed);
+        indices.shuffle(&mut rng);
 
         labels = indices.par_iter().map(|i| labels[*i].clone()).collect();
         edges = indices.par_iter().map(|i| edges[*i].clone()).collect();
