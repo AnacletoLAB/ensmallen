@@ -6,6 +6,7 @@ use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
 use rayon::prelude::*;
+use vec_rand::xorshift::xorshift;
 
 /// # Holdouts.
 impl Graph {
@@ -44,7 +45,7 @@ impl Graph {
     ///
     pub fn sample_negatives(
         &self,
-        seed: EdgeT,
+        mut seed: EdgeT,
         negatives_number: EdgeT,
         allow_selfloops: bool,
     ) -> Result<Graph, String> {
@@ -52,29 +53,54 @@ impl Graph {
             return Err(String::from("The number of negatives cannot be zero."));
         }
 
-        let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
-        // We get the vector of edges and shuffle them using the provided seed.
-        let mut edges: Vec<EdgeT> = (0..self.get_edges_number()).collect();
-        edges.shuffle(&mut rng);
+        let total_negative_edges = self.get_nodes_number().pow(2)
+            - self.get_edges_number()
+            - if allow_selfloops {
+                0
+            } else {
+                self.get_nodes_number() - self.selfloops_number()
+            };
+
+        if negatives_number > total_negative_edges {
+            return Err(format!(
+                concat!(
+                    "The requested negatives number {} is more than the ",
+                    "number of negative edges that exist in the graph ({})."
+                ),
+                negatives_number,
+                total_negative_edges
+            ));
+        }
+
+        seed ^= SEED_XOR;
 
         // initialize the vectors for the result
         let mut sources: Vec<NodeT> = Vec::with_capacity(negatives_number);
         let mut destinations: Vec<NodeT> = Vec::with_capacity(negatives_number);
+        let mut unique_edges: HashSet<(NodeT, NodeT)> = HashSet::with_capacity(negatives_number);
 
         // Initializing the edges counter
         let mut edges_counter: EdgeT = 0;
+        let edges_number = self.sources.len();
 
-        for edge_id in edges {
-            let src: NodeT = self.sources[edge_id];
-            let dst: NodeT = self.destinations[edge_id];
+        loop {
+            seed = xorshift(seed as u64) as usize;
+            let src: NodeT = self.sources[seed % edges_number];
+            seed = xorshift(seed as u64) as usize;
+            let dst: NodeT = self.destinations[seed % edges_number];
             // If the edge is not a self-loop or the user allows self-loops and
             // the graph is directed or the edges are inserted in a way to avoid
             // inserting bidirectional edges, avoiding to execute the check
             // of edge types so to insert them twice if the edge types are
             // different.
-            if (allow_selfloops || src != dst) && (self.is_directed || src <= dst) {
+            if (allow_selfloops || src != dst)
+                && (self.is_directed || src <= dst)
+                && !self.has_edge(src, dst)
+                && !unique_edges.contains(&(src, dst))
+            {
                 sources.push(src);
                 destinations.push(dst);
+                unique_edges.insert((src, dst));
                 edges_counter += 1;
                 if !self.is_directed && src != dst {
                     edges_counter += 1;
@@ -130,7 +156,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * seed:NodeT - The seed to use for the holdout,
-    /// * train_percentage:f64 - Percentage target to reserve for training
+    /// * train_percentage:f64 - Percentage target to reserve for training.
     ///
     pub fn connected_holdout(
         &self,
@@ -139,21 +165,40 @@ impl Graph {
     ) -> Result<(Graph, Graph), String> {
         if train_percentage <= 0.0 || train_percentage >= 1.0 {
             return Err(String::from(
-                "Given train percentage must be strictly between 0 and 1.",
+                "Train percentage must be strictly between 0 and 1.",
             ));
         }
 
         let tree: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = self.spanning_tree(seed);
+        let edge_factor = if self.is_directed { 1 } else { 2 };
+        let valid_edges_number =
+            (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
+        let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as usize;
+        let mut valid_edges_number_total = 0;
+
+        if tree.len() * edge_factor > train_edges_number {
+            return Err(format!(
+                concat!(
+                    "The spanning tree of the graph contains {} edges ",
+                    "that is more than the required training edges number {}.\n",
+                    "This makes impossible to create a validation set using ",
+                    "{} edges.\nIf possible, you should increase the ",
+                    "train_percentage parameter which is currently equal to ",
+                    "{}.\nThe spanning tree, by itself, is requiring at least ",
+                    "a train percentage of {}."
+                ),
+                tree.len() * edge_factor,
+                train_edges_number,
+                valid_edges_number,
+                train_percentage,
+                (tree.len() * edge_factor) as f64 / train_edges_number as f64
+            ));
+        }
 
         // generate and shuffle the indices of the edges
         let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
         let mut edge_indices: Vec<NodeT> = (0..self.get_edges_number()).collect();
         edge_indices.shuffle(&mut rng);
-
-        let valid_edges_number =
-            (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
-        let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as usize;
-        let mut valid_edges_number_total = 0;
 
         let mut valid_sources: Vec<NodeT> = Vec::with_capacity(valid_edges_number);
         let mut valid_destinations: Vec<NodeT> = Vec::with_capacity(valid_edges_number);

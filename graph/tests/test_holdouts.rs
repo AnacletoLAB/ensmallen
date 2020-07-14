@@ -33,8 +33,8 @@ fn test_holdout() {
             .sample_negatives(42, negative_edges_number, false)
             .unwrap();
         assert_eq!(negatives.get_edges_number(), negative_edges_number);
-        assert!(negatives.sum(&validation).is_err());
         assert!(graph.sample_negatives(42, 0, false).is_err());
+        assert!(graph.sample_negatives(42, 1000000000000000000, false).is_err());
     }
 }
 

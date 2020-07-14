@@ -780,17 +780,7 @@ fn test_graph_from_csv_with_edge_and_nodes_types() {
             graph.get_not_trap_nodes_number(),
         )
         .unwrap();
-        if *directed {
-            assert!(graph.connected_holdout(42, 0.7).is_err());
-        } else {
-            let (train, validation) = graph.connected_holdout(42, 0.7).unwrap();
-            assert!(train.sum(&validation).unwrap().contains(&graph));
-            assert!(graph.components_holdout(35, 5).is_ok());
-            let (train, validation) = graph.random_holdout(42, 0.7).unwrap();
-            assert!(train.sum(&validation).unwrap().contains(&graph));
-            let negatives = graph.sample_negatives(42, 10000, false).unwrap();
-            assert!(negatives.sum(&validation).is_err());
-        }
+        assert!(graph.connected_holdout(42, 0.7).is_err());
         graph.walk(&walk_parameters).unwrap();
         for one in 0..graph.get_nodes_number() {
             graph.get_node_type_id(one).unwrap();
@@ -847,15 +837,7 @@ fn test_graph_from_csv_het() {
         graph.walk(&walk_parameters).unwrap();
         assert!(graph.get_node_type_id(100000000000).is_err());
         assert!(graph.get_edge_type_id(100000000000).is_err());
-        if *directed {
-            assert!(graph.connected_holdout(42, 0.7).is_err());
-        } else {
-            let (train, validation) = graph.connected_holdout(42, 0.7).unwrap();
-            assert!(train.sum(&validation).unwrap().contains(&graph));
-            let (train, validation) = graph.random_holdout(42, 0.7).unwrap();
-            assert!(train.sum(&validation).unwrap().contains(&graph));
-            assert!(graph.components_holdout(35, 5).is_ok());
-        }
+        assert!(graph.connected_holdout(42, 0.7).is_err());
         let _ = graph.report();
     }
 }
