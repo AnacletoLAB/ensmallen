@@ -115,6 +115,7 @@ impl Graph {
             sources,
             destinations,
             None,
+            None,
             None
         )?;
         assert_eq!(result.get_edges_number(), negatives_number);
@@ -246,7 +247,8 @@ impl Graph {
                     Some(train_weights)
                 } else {
                     None
-                }
+                },
+                None
             )?,
             self.setup_graph(
                 valid_sources,
@@ -261,7 +263,8 @@ impl Graph {
                     Some(valid_weights)
                 } else {
                     None
-                }
+                },
+                None
             )?,
         ))
     }
@@ -357,7 +360,8 @@ impl Graph {
                     Some(train_weights)
                 } else {
                     None
-                }
+                },
+                None
             )?,
             self.setup_graph(
                 valid_sources,
@@ -372,7 +376,8 @@ impl Graph {
                     Some(valid_weights)
                 } else {
                     None
-                }
+                },
+                None
             )?,
         ))
     }
@@ -518,7 +523,8 @@ impl Graph {
                 Some(weights)
             } else {
                 None
-            }
+            },
+            None
         )
     }
 }

@@ -101,7 +101,8 @@ impl Graph {
             sources,
             destinations,
             edge_types,
-            weights
+            weights,
+            Some(true)
         )
     }
 }

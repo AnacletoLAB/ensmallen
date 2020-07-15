@@ -7,27 +7,6 @@ use rayon::prelude::*;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift as rand_u64;
 
-#[macro_export]
-macro_rules! max {
-    ($a: expr, $b: expr) => {
-        if $a >= $b {
-            $a
-        } else {
-            $b
-        }
-    };
-}
-#[macro_export]
-macro_rules! min {
-    ($a: expr, $b: expr) => {
-        if $a < $b {
-            $a
-        } else {
-            $b
-        }
-    };
-}
-
 fn binary_skipgram_vector_length(walk_length: usize, window_size: usize) -> usize {
     (0..walk_length)
         .map(|i| {

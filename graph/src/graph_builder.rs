@@ -78,6 +78,7 @@ impl Graph {
         destinations: Vec<NodeT>,
         edge_types: Option<Vec<EdgeTypeT>>,
         weights: Option<Vec<WeightT>>,
+        force: Option<bool>
     ) -> Result<Graph, String> {
         let mut result = Graph::builder(
             sources,
@@ -128,7 +129,7 @@ impl Graph {
             }
         }
 
-        result.build(None)
+        result.build(force)
     }
 
     pub fn builder(sources: Vec<NodeT>, destinations: Vec<NodeT>,  is_directed: bool) -> Graph {
