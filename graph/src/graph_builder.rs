@@ -254,8 +254,8 @@ impl Graph {
                     // If the two current nodes are not the same, hence this is
                     // not a self-loop, we also add the opposite direction.
                     if src != dst {
-                        self.sources.push(dst);
-                        self.destinations.push(src);
+                        full_sources.push(dst);
+                        full_destinations.push(src);
                         if let Some(w) = &self.weights {
                             full_weights.push(w[index]);
                         }

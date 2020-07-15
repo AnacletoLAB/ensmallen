@@ -34,7 +34,6 @@ fn test_holdout() {
         let negatives = graph
             .sample_negatives(42, negative_edges_number, false)
             .unwrap();
-        println!("{:?}", negatives.report());
         assert_eq!(negatives.get_edges_number(), negative_edges_number);
         assert!(graph.sample_negatives(42, 0, false).is_err());
         assert!(graph.sample_negatives(42, 1000000000000000000, false).is_err());
@@ -52,7 +51,6 @@ fn test_holdout_determinism() {
             *directed, 
             None
         ).unwrap().build().unwrap();
-        println!("{:?}", graph.report());
         let (train1, test1) = graph.connected_holdout(35, 0.8).unwrap();
         let (train2, test2) = graph.connected_holdout(35, 0.8).unwrap();
         assert_eq!(train1, train2);

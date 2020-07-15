@@ -111,12 +111,14 @@ impl Graph {
             }
         }
 
-        self.setup_graph(
+        let result = self.setup_graph(
             sources,
             destinations,
             None,
             None
-        )
+        )?;
+        assert_eq!(result.get_edges_number(), negatives_number);
+        Ok(result)
     }
 
     /// Returns holdout for training ML algorithms on the graph structure.
