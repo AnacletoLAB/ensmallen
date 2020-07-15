@@ -1,6 +1,5 @@
 extern crate graph;
 use graph::*;
-use graph::types::*;
 use graph::{SingleWalkParameters, WalkWeights, WalksParameters};
 use linecount::count_lines;
 use std::collections::HashMap;

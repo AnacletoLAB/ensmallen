@@ -4,8 +4,8 @@ use graph::{SingleWalkParameters, WalkWeights, WalksParameters};
 
 #[test]
 fn test_partial_walks_ppi() {
-    let edge_path = "tests/data/ppi.tsv";
-    let node_path = "tests/data/ppi_nodes.tsv";
+    let edge_path = "tests/data/ppi/edges.tsv";
+    let node_path = "tests/data/ppi/nodes.tsv";
     let graph = FromCsvBuilder::new(
         edge_path,
         "subject", 

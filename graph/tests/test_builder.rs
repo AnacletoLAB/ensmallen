@@ -1,5 +1,4 @@
 extern crate graph;
-use std::collections::HashMap;
 use graph::*;
 
 #[test]

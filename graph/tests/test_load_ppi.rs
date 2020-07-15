@@ -3,8 +3,8 @@ use graph::*;
 
 #[test]
 fn test_load_ppi() {
-    let edge_path = "tests/data/ppi.tsv";
-    let node_path = "tests/data/ppi_nodes.tsv";
+    let edge_path = "tests/data/ppi/edges.tsv";
+    let node_path = "tests/data/ppi/nodes.tsv";
     for directed in &[true, false] {
         let _graph = FromCsvBuilder::new(
             edge_path,

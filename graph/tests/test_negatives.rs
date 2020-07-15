@@ -4,7 +4,7 @@ use graph::*;
 #[test]
 fn test_negatives() {
     let graph = FromCsvBuilder::new(
-        "tests/data/ppi.tsv",
+        "tests/data/ppi/edges.tsv",
         "subject", 
         "object", 
         false, 
