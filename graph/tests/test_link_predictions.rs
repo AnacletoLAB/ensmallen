@@ -1,28 +1,15 @@
 extern crate graph;
-use graph::graph::Graph;
+use graph::*;
 
 #[test]
 fn test_link_predictions() {
-    let graph = Graph::from_csv(
+    let graph = FromCsvBuilder::new(
         "tests/data/ppi/edges.tsv",
-        "subject",
-        "object",
-        false,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-    )
-    .unwrap();
+        "subject", 
+        "object", 
+        false, 
+        None
+    ).unwrap().build().unwrap();
 
     assert!(graph
         .link_prediction(0, 100000, Some(-1.0), None, Some(true))

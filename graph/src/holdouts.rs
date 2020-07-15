@@ -111,36 +111,12 @@ impl Graph {
             }
         }
 
-        Ok(if self.is_directed {
-            Graph::new_directed(
-                sources,
-                destinations,
-                Some(self.nodes_mapping.clone()),
-                Some(self.nodes_reverse_mapping.clone()),
-                self.node_types.clone(),
-                self.node_types_mapping.clone(),
-                self.node_types_reverse_mapping.clone(),
-                None,
-                self.edge_types_mapping.clone(),
-                self.edge_types_reverse_mapping.clone(),
-                None,
-            )?
-        } else {
-            Graph::new_undirected(
-                sources,
-                destinations,
-                Some(self.nodes_mapping.clone()),
-                Some(self.nodes_reverse_mapping.clone()),
-                self.node_types.clone(),
-                self.node_types_mapping.clone(),
-                self.node_types_reverse_mapping.clone(),
-                None,
-                self.edge_types_mapping.clone(),
-                self.edge_types_reverse_mapping.clone(),
-                None,
-                None,
-            )?
-        })
+        self.setup_graph(
+            sources,
+            destinations,
+            None,
+            None
+        )
     }
 
     /// Returns holdout for training ML algorithms on the graph structure.
@@ -255,100 +231,39 @@ impl Graph {
             }
         }
 
-        Ok(if self.is_directed {
-            (
-                Graph::new_directed(
-                    train_sources,
-                    train_destinations,
-                    Some(self.nodes_mapping.clone()),
-                    Some(self.nodes_reverse_mapping.clone()),
-                    self.node_types.clone(),
-                    self.node_types_mapping.clone(),
-                    self.node_types_reverse_mapping.clone(),
-                    if self.edge_types.is_some() {
-                        Some(train_edge_types)
-                    } else {
-                        None
-                    },
-                    self.edge_types_mapping.clone(),
-                    self.edge_types_reverse_mapping.clone(),
-                    if self.weights.is_some() {
-                        Some(train_weights)
-                    } else {
-                        None
-                    },
-                )?,
-                Graph::new_directed(
-                    valid_sources,
-                    valid_destinations,
-                    Some(self.nodes_mapping.clone()),
-                    Some(self.nodes_reverse_mapping.clone()),
-                    self.node_types.clone(),
-                    self.node_types_mapping.clone(),
-                    self.node_types_reverse_mapping.clone(),
-                    if self.edge_types.is_some() {
-                        Some(valid_edge_types)
-                    } else {
-                        None
-                    },
-                    self.edge_types_mapping.clone(),
-                    self.edge_types_reverse_mapping.clone(),
-                    if self.weights.is_some() {
-                        Some(valid_weights)
-                    } else {
-                        None
-                    },
-                )?,
-            )
-        } else {
-            (
-                Graph::new_undirected(
-                    train_sources,
-                    train_destinations,
-                    Some(self.nodes_mapping.clone()),
-                    Some(self.nodes_reverse_mapping.clone()),
-                    self.node_types.clone(),
-                    self.node_types_mapping.clone(),
-                    self.node_types_reverse_mapping.clone(),
-                    if self.edge_types.is_some() {
-                        Some(train_edge_types)
-                    } else {
-                        None
-                    },
-                    self.edge_types_mapping.clone(),
-                    self.edge_types_reverse_mapping.clone(),
-                    if self.weights.is_some() {
-                        Some(train_weights)
-                    } else {
-                        None
-                    },
-                    None,
-                )?,
-                Graph::new_undirected(
-                    valid_sources,
-                    valid_destinations,
-                    Some(self.nodes_mapping.clone()),
-                    Some(self.nodes_reverse_mapping.clone()),
-                    self.node_types.clone(),
-                    self.node_types_mapping.clone(),
-                    self.node_types_reverse_mapping.clone(),
-                    if self.edge_types.is_some() {
-                        Some(valid_edge_types)
-                    } else {
-                        None
-                    },
-                    self.edge_types_mapping.clone(),
-                    self.edge_types_reverse_mapping.clone(),
-                    if self.weights.is_some() {
-                        Some(valid_weights)
-                    } else {
-                        None
-                    },
-                    None,
-                )?,
-            )
-        })
+        Ok((
+            self.setup_graph(
+                train_sources,
+                train_destinations,
+                if self.edge_types.is_some() {
+                    Some(train_edge_types)
+                } else {
+                    None
+                },
+                if self.weights.is_some() {
+                    Some(train_weights)
+                } else {
+                    None
+                }
+            )?,
+            self.setup_graph(
+                valid_sources,
+                valid_destinations,
+                if self.edge_types.is_some() {
+                    Some(valid_edge_types)
+                } else {
+                    None
+                },
+                
+                if self.weights.is_some() {
+                    Some(valid_weights)
+                } else {
+                    None
+                }
+            )?,
+        ))
     }
+
     /// Returns random holdout for training ML algorithms on the graph edges.
     ///
     /// The holdouts returned are a tuple of graphs. In neither holdouts the
@@ -426,99 +341,38 @@ impl Graph {
             }
         }
 
-        Ok(if self.is_directed {
-            (
-                Graph::new_directed(
-                    train_sources,
-                    train_destinations,
-                    Some(self.nodes_mapping.clone()),
-                    Some(self.nodes_reverse_mapping.clone()),
-                    self.node_types.clone(),
-                    self.node_types_mapping.clone(),
-                    self.node_types_reverse_mapping.clone(),
-                    if self.edge_types.is_some() {
-                        Some(train_edge_types)
-                    } else {
-                        None
-                    },
-                    self.edge_types_mapping.clone(),
-                    self.edge_types_reverse_mapping.clone(),
-                    if self.weights.is_some() {
-                        Some(train_weights)
-                    } else {
-                        None
-                    },
-                )?,
-                Graph::new_directed(
-                    valid_sources,
-                    valid_destinations,
-                    Some(self.nodes_mapping.clone()),
-                    Some(self.nodes_reverse_mapping.clone()),
-                    self.node_types.clone(),
-                    self.node_types_mapping.clone(),
-                    self.node_types_reverse_mapping.clone(),
-                    if self.edge_types.is_some() {
-                        Some(valid_edge_types)
-                    } else {
-                        None
-                    },
-                    self.edge_types_mapping.clone(),
-                    self.edge_types_reverse_mapping.clone(),
-                    if self.weights.is_some() {
-                        Some(valid_weights)
-                    } else {
-                        None
-                    },
-                )?,
-            )
-        } else {
-            (
-                Graph::new_undirected(
-                    train_sources,
-                    train_destinations,
-                    Some(self.nodes_mapping.clone()),
-                    Some(self.nodes_reverse_mapping.clone()),
-                    self.node_types.clone(),
-                    self.node_types_mapping.clone(),
-                    self.node_types_reverse_mapping.clone(),
-                    if self.edge_types.is_some() {
-                        Some(train_edge_types)
-                    } else {
-                        None
-                    },
-                    self.edge_types_mapping.clone(),
-                    self.edge_types_reverse_mapping.clone(),
-                    if self.weights.is_some() {
-                        Some(train_weights)
-                    } else {
-                        None
-                    },
-                    None,
-                )?,
-                Graph::new_undirected(
-                    valid_sources,
-                    valid_destinations,
-                    Some(self.nodes_mapping.clone()),
-                    Some(self.nodes_reverse_mapping.clone()),
-                    self.node_types.clone(),
-                    self.node_types_mapping.clone(),
-                    self.node_types_reverse_mapping.clone(),
-                    if self.edge_types.is_some() {
-                        Some(valid_edge_types)
-                    } else {
-                        None
-                    },
-                    self.edge_types_mapping.clone(),
-                    self.edge_types_reverse_mapping.clone(),
-                    if self.weights.is_some() {
-                        Some(valid_weights)
-                    } else {
-                        None
-                    },
-                    None,
-                )?,
-            )
-        })
+        Ok((
+            self.setup_graph(
+                train_sources,
+                train_destinations,
+                if self.edge_types.is_some() {
+                    Some(train_edge_types)
+                } else {
+                    None
+                },
+                
+                if self.weights.is_some() {
+                    Some(train_weights)
+                } else {
+                    None
+                }
+            )?,
+            self.setup_graph(
+                valid_sources,
+                valid_destinations,
+                if self.edge_types.is_some() {
+                    Some(valid_edge_types)
+                } else {
+                    None
+                },
+                
+                if self.weights.is_some() {
+                    Some(valid_weights)
+                } else {
+                    None
+                }
+            )?,
+        ))
     }
 
     /// Returns random set of connected edges of the graph.
@@ -649,52 +503,20 @@ impl Graph {
             }
         }
 
-        // Finally we create the graph.
-        Ok(if self.is_directed {
-            Graph::new_directed(
-                sources,
-                destinations,
-                Some(self.nodes_mapping.clone()),
-                Some(self.nodes_reverse_mapping.clone()),
-                self.node_types.clone(),
-                self.node_types_mapping.clone(),
-                self.node_types_reverse_mapping.clone(),
-                if self.edge_types.is_some() {
-                    Some(edge_types)
-                } else {
-                    None
-                },
-                self.edge_types_mapping.clone(),
-                self.edge_types_reverse_mapping.clone(),
-                if self.weights.is_some() {
-                    Some(weights)
-                } else {
-                    None
-                },
-            )?
-        } else {
-            Graph::new_undirected(
-                sources,
-                destinations,
-                Some(self.nodes_mapping.clone()),
-                Some(self.nodes_reverse_mapping.clone()),
-                self.node_types.clone(),
-                self.node_types_mapping.clone(),
-                self.node_types_reverse_mapping.clone(),
-                if self.edge_types.is_some() {
-                    Some(edge_types)
-                } else {
-                    None
-                },
-                self.edge_types_mapping.clone(),
-                self.edge_types_reverse_mapping.clone(),
-                if self.weights.is_some() {
-                    Some(weights)
-                } else {
-                    None
-                },
-                None,
-            )?
-        })
+        self.setup_graph(
+            sources,
+            destinations,
+            if self.edge_types.is_some() {
+                Some(edge_types)
+            } else {
+                None
+            },
+            
+            if self.weights.is_some() {
+                Some(weights)
+            } else {
+                None
+            }
+        )
     }
 }
