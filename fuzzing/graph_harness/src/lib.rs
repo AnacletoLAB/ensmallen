@@ -261,12 +261,12 @@ pub fn harness(data: ToFuzz){
     graph.adamic_adar_index(one, two);
     graph.resource_allocation_index(one, two);
 
-    match convert_walk_parameters(data.walks_args) {
+    let _ = match convert_walk_parameters(data.walks_args) {
         Err(_) => {},
         Ok(param) => {
             graph.walk(&param);
         }
-    }
+    };
 
     let mut negative_samples = data.skipgrams_args.negative_samples;
     if let Some(ns) = &mut negative_samples{
@@ -275,7 +275,7 @@ pub fn harness(data: ToFuzz){
         }
     }
 
-    match convert_walk_parameters(data.skipgrams_args.walk_parameters) {
+    let _ = match convert_walk_parameters(data.skipgrams_args.walk_parameters) {
         Err(_) => {},
         Ok(param) => {
             graph.binary_skipgrams(
@@ -286,9 +286,9 @@ pub fn harness(data: ToFuzz){
             data.skipgrams_args.shuffle
         );
         }
-    }
+    };
 
-    match convert_walk_parameters(data.cooccurence_args.walks_parameters) {
+    let _ = match convert_walk_parameters(data.cooccurence_args.walks_parameters) {
         Err(_) => {},
         Ok(param) => {
             graph.cooccurence_matrix(
@@ -297,9 +297,9 @@ pub fn harness(data: ToFuzz){
             data.cooccurence_args.verbose,
         );
         }
-    }
+    };
 
-    match convert_walk_parameters(data.node2vec_args.walk_parameters) {
+    let _ = match convert_walk_parameters(data.node2vec_args.walk_parameters) {
         Err(_) => {},
         Ok(param) => {
             graph.node2vec(
@@ -308,7 +308,7 @@ pub fn harness(data: ToFuzz){
             data.node2vec_args.shuffle
         );
         }
-    }
+    };
 
     let _ = graph.connected_holdout(
         data.holdout_args.seed,
