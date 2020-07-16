@@ -134,9 +134,9 @@ impl Graph {
 
     pub fn builder(sources: Vec<NodeT>, destinations: Vec<NodeT>,  is_directed: bool) -> Graph {
         Graph {
-            sources: sources,
-            destinations: destinations,
-            is_directed: is_directed,
+            sources,
+            destinations,
+            is_directed,
             is_builded: false,
             has_traps: true,
             unique_edges: HashBrownMap::new(),

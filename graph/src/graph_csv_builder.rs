@@ -48,12 +48,12 @@ impl FromCsvBuilder {
 
         Ok(
             FromCsvBuilder {
+                directed,
                 nodes_args: None,
                 edge_path: edge_path.to_string(),
 
                 sources_column: sources_column.to_string(),
                 destinations_column: destinations_column.to_string(),
-                directed: directed,
                 edge_sep: _edge_sep,
 
                 edge_types_column: None,

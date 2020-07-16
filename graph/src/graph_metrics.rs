@@ -14,8 +14,19 @@ impl Graph {
     /// * `one` - Integer ID of the first node.
     /// * `two` - Integer ID of the second node.
     ///
-    pub fn degrees_product(&self, one: NodeT, two: NodeT) -> usize {
-        self.degree(one) as usize * self.degree(two) as usize
+    pub fn degrees_product(&self, one: NodeT, two: NodeT) -> Result<usize, String> {
+        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "One or more of the given nodes indices ({}, {}) are ",
+                    "biggen than the number of nodes present in the graph ({})."
+                ),
+                one,
+                two,
+                self.get_nodes_number()
+            ));
+        }
+        Ok(self.degree(one) as usize * self.degree(two) as usize)
     }
 
     /// Returns the Jaccard index for the two given nodes.
@@ -29,9 +40,21 @@ impl Graph {
     /// [D. Liben-Nowell, J. Kleinberg.
     /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
     ///
-    pub fn jaccard_index(&self, one: NodeT, two: NodeT) -> f64 {
+    pub fn jaccard_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
+        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "One or more of the given nodes indices ({}, {}) are ",
+                    "biggen than the number of nodes present in the graph ({})."
+                ),
+                one,
+                two,
+                self.get_nodes_number()
+            ));
+        }
+
         if self.is_node_trap(one) || self.is_node_trap(two) {
-            return 0.0f64;
+            return Ok(0.0f64);
         }
 
         let one_neighbors: HashSet<NodeT> = self.get_node_neighbours(one).iter().cloned().collect();
@@ -41,7 +64,7 @@ impl Graph {
             .cloned()
             .collect();
 
-        intersections.len() as f64 / (one_neighbors.len() + two_neighbors.len()) as f64
+        Ok(intersections.len() as f64 / (one_neighbors.len() + two_neighbors.len()) as f64)
     }
 
     /// Returns the Adamic/Adar Index for the given pair of nodes.
@@ -61,9 +84,21 @@ impl Graph {
     /// [D. Liben-Nowell, J. Kleinberg.
     /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
     ///
-    pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> f64 {
+    pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
+        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "One or more of the given nodes indices ({}, {}) are ",
+                    "biggen than the number of nodes present in the graph ({})."
+                ),
+                one,
+                two,
+                self.get_nodes_number()
+            ));
+        }
+        
         if self.is_node_trap(one) || self.is_node_trap(two) {
-            return 0.0f64;
+            return Ok(0.0f64);
         }
 
         let one_neighbors: HashSet<NodeT> = self.get_node_neighbours(one).iter().cloned().collect();
@@ -73,11 +108,11 @@ impl Graph {
             .cloned()
             .collect();
 
-        intersections
+        Ok(intersections
             .par_iter()
             .filter(|node| !self.is_node_trap(**node))
             .map(|node| 1.0 / (self.degree(*node) as f64).ln())
-            .sum()
+            .sum())
     }
 
     /// Returns the Resource Allocation Index for the given pair of nodes.
@@ -98,9 +133,21 @@ impl Graph {
     /// must support all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
-    pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> f64 {
+    pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
+        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "One or more of the given nodes indices ({}, {}) are ",
+                    "biggen than the number of nodes present in the graph ({})."
+                ),
+                one,
+                two,
+                self.get_nodes_number()
+            ));
+        }
+
         if self.is_node_trap(one) || self.is_node_trap(two) {
-            return 0.0f64;
+            return Ok(0.0f64);
         }
 
         let one_neighbors: HashSet<NodeT> = self.get_node_neighbours(one).iter().cloned().collect();
@@ -110,11 +157,11 @@ impl Graph {
             .cloned()
             .collect();
 
-        intersections
+        Ok(intersections
             .par_iter()
             .filter(|node| !self.is_node_trap(**node))
             .map(|node| 1.0 / self.degree(*node) as f64)
-            .sum()
+            .sum())
     }
 
     /// Returns the traps rate of the graph.
