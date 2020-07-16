@@ -177,7 +177,7 @@ impl FromCsvBuilder {
         let node_buf_reader = BufReader::new(file);
         let mut lines = node_buf_reader.lines();
         // read the first line 
-        let header_line: String = lines.next().ok_or("The given nodes file or string has no lines!").unwrap().unwrap();
+        let header_line: String = lines.next().ok_or("The given nodes file or string has no lines!")?.unwrap();
         let columns: Vec<&str> = header_line.split(&args.node_sep).collect();
         let number_of_separators = columns.len();
 
@@ -336,7 +336,7 @@ impl FromCsvBuilder {
         let mut unique_edges_set: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::new();
 
         // read the first line 
-        let header_line = lines.next().ok_or("The given edges file or string has no lines!").unwrap().unwrap();
+        let header_line = lines.next().ok_or("The given edges file or string has no lines!")?.unwrap();
         let columns: Vec<&str> = header_line.split(&self.edge_sep).collect();
         let number_of_separators = columns.len();
 

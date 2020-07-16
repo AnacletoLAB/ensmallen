@@ -11,7 +11,8 @@ fn test_holdout() {
             "object", 
             *directed, 
             None
-        ).unwrap().build().unwrap();
+        ).unwrap()
+        .build().unwrap();
         let (train, validation) = graph.connected_holdout(42, 0.7).unwrap();
         assert!(graph.contains(&train));
         assert!(graph.contains(&validation));
