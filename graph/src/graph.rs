@@ -20,6 +20,7 @@ use vec_rand::sample;
 ///
 #[derive(Debug, Clone, Getters, PartialEq)]
 pub struct Graph {
+    pub(crate) is_builded: bool,
     pub(crate) is_directed: bool,
     pub(crate) not_trap_nodes: Vec<NodeT>,
     pub(crate) sources: Vec<NodeT>,
