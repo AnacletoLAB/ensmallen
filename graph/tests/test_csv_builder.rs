@@ -882,6 +882,7 @@ fn test_graph_from_csv_with_edge_and_nodes_types() {
             }
         }
         assert!(graph.get_edge_type_id(100000000000).is_err());
+        let _ = graph.random_holdout(42, 0.7);
     }
 }
 
@@ -924,6 +925,5 @@ fn test_graph_from_csv_het() {
         assert!(graph.get_edge_type_id(100000000000).is_err());
         assert!(graph.connected_holdout(42, 0.7).is_err());
         let _ = graph.report();
-        let _ = graph.random_holdout(42, 0.7);
     }
 }
