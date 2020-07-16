@@ -63,7 +63,7 @@ pub(crate) fn get_nodes_ids_and_map(
         if node_types.is_some() {
             (
                 // TODO find how to reduce duplication, what is better a function or a macro in this case?
-                *nodes_mapping.get(src_name.clone()).ok_or(format!(concat!(
+                *nodes_mapping.get(src_name).ok_or(format!(concat!(
                     "The node {node_name} is not present in the provided nodes file.\n",
                     "The complete line is in question is the {line_index} and its content is:\n{line}\n"
                 ),
@@ -71,7 +71,7 @@ pub(crate) fn get_nodes_ids_and_map(
                     line=line,
                     line_index=line_index
                 ))?,
-                *nodes_mapping.get(dst_name.clone()).ok_or(format!(concat!(
+                *nodes_mapping.get(dst_name).ok_or(format!(concat!(
                     "The node {node_name} is not present in the provided nodes file.\n",
                     "The complete line is in question is the {line_index} and its content is:\n{line}\n"
                 ),
@@ -84,7 +84,7 @@ pub(crate) fn get_nodes_ids_and_map(
             // update the mappings
             (
                 // TODO find how to reduce duplication, what is better a function or a macro in this case?
-                match nodes_mapping.get(src_name.clone()) {
+                match nodes_mapping.get(src_name) {
                     Some(g) => *g,
                     None => {
                         let new_id = nodes_reverse_mapping.len();
@@ -93,7 +93,7 @@ pub(crate) fn get_nodes_ids_and_map(
                         new_id
                     }
                 },
-                match nodes_mapping.get(dst_name.clone()) {
+                match nodes_mapping.get(dst_name) {
                     Some(g) => *g,
                     None => {
                         let new_id = nodes_reverse_mapping.len();
