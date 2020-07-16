@@ -1,17 +1,21 @@
 extern crate graph;
 use graph::*;
+use graph::{
+    WalksParameters,
+    WalkWeights,
+    SingleWalkParameters
+};
 use std::path::Path;
 use std::fs::File;
 use std::io::prelude::*;
 use std::fs::remove_file;
 use std::collections::HashMap;
-
 use arbitrary::Arbitrary;
 
 use rand::Rng;
 const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
                         abcdefghijklmnopqrstuvwxyz\
-                        0123456789)(*&^%$#@!~";
+                        0123456789()*&^%$#@!~";
     
 pub fn random_string(len: usize) -> String{    
     let mut rng = rand::thread_rng();
@@ -28,7 +32,7 @@ pub fn random_string(len: usize) -> String{
 #[derive(Arbitrary, Debug)]
 pub struct ToFuzz {
     from_csv_args: FromCsvArgs,
-    walks_args: WalksParameters,
+    walks_args: _WalksParameters,
     skipgrams_args: SkipgramsArgs,
     cooccurence_args: CooccurrenceArgs,
     node2vec_args:  Node2VecArgs,
@@ -38,20 +42,28 @@ pub struct ToFuzz {
 }
 
 #[derive(Arbitrary, Debug)]
-pub struct SingleWalkParameters {
+pub struct _SingleWalkParameters {
     pub(crate) length: u16,
-    pub(crate) weights: graph::WalkWeights,
+    pub(crate) weights: _WalkWeights,
 }
 
 #[derive(Arbitrary, Debug)]
-pub struct WalksParameters {
-    pub(crate) single_walk_parameters: SingleWalkParameters,
+pub struct _WalksParameters {
+    pub(crate) single_walk_parameters: _SingleWalkParameters,
     pub(crate) iterations: u16,
     pub(crate) min_length: u16,
     pub(crate) verbose: bool,
     pub(crate) start_node: NodeT,
     pub(crate) end_node: NodeT,
     pub(crate) dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
+}
+
+#[derive(Arbitrary, Debug)]
+pub struct _WalkWeights {
+    pub(crate) return_weight: ParamsT,
+    pub(crate) explore_weight: ParamsT,
+    pub(crate) change_node_type_weight: ParamsT,
+    pub(crate) change_edge_type_weight: ParamsT,
 }
 
 #[derive(Arbitrary, Debug)]
@@ -90,7 +102,7 @@ pub struct FromCsvArgsNodes {
 #[derive(Arbitrary, Debug)]
 pub struct SkipgramsArgs {
     seed: usize,
-    walk_parameters: WalksParameters,
+    walk_parameters: _WalksParameters,
     window_size: Option<usize>,
     negative_samples: Option<f64>,
     shuffle: Option<bool>
@@ -98,14 +110,14 @@ pub struct SkipgramsArgs {
 
 #[derive(Arbitrary, Debug)]
 pub struct CooccurrenceArgs {
-    walks_parameters: WalksParameters,
+    walks_parameters: _WalksParameters,
     window_size: Option<usize>,
     verbose: Option<bool>,
 }
 
 #[derive(Arbitrary, Debug)]
 pub struct Node2VecArgs {
-    walk_parameters: WalksParameters,
+    walk_parameters: _WalksParameters,
     window_size: Option<usize>,
     shuffle: Option<bool>,
 }
@@ -131,6 +143,28 @@ pub struct Metrics {
     two: NodeT
 }
 
+fn convert_walk_parameters(args: _WalksParameters) -> Result<WalksParameters, String> {
+    let walk_parameters = WalksParameters::new(
+        SingleWalkParameters::new(
+            args.single_walk_parameters.length as usize, 
+            WalkWeights::default().set_change_edge_type_weight(
+                Some(args.single_walk_parameters.weights.change_edge_type_weight)
+            )?.set_change_node_type_weight(
+                Some(args.single_walk_parameters.weights.change_node_type_weight)
+            )?.set_explore_weight(
+                Some(args.single_walk_parameters.weights.explore_weight)
+            )?.set_return_weight(
+                Some(args.single_walk_parameters.weights.return_weight)
+            )?
+        )?,
+        args.start_node,
+        args.end_node,
+    )?.set_iterations(Some(args.iterations as usize))?
+    .set_min_length(Some(args.min_length as usize))?
+    .set_verbose(Some(args.verbose))
+    .set_dense_nodes_mapping(args.dense_nodes_mapping);
+    Ok(walk_parameters)
+}
 
 fn create_graph_from_args_struct(args: &FromCsvArgs) -> Result<Graph, String>{
     
@@ -203,142 +237,118 @@ fn create_graph_from_args_struct(args: &FromCsvArgs) -> Result<Graph, String>{
     graph
 }
 
-pub fn harness(data: ToFuzz) {
-    let graph = create_graph_from_args_struct(&data.from_csv_args);
-    
-    if graph.is_ok(){
-        let unwrapped = graph.unwrap();
+pub fn harness(data: ToFuzz){
+    let maybe_graph = create_graph_from_args_struct(&data.from_csv_args);
 
-        // test metrics
-        unwrapped.report();
-        // to enable once we fix the get_min_max_edge which doesn't check
-        // if the nod is inbound and is_edge_trap similarly
-        // all these metrics panic if the value is out of bound
-        // this is known and was not fixed because the get_min_max_edge function
-        // is used in the walk and the checking and error propagation  would slow down
-        // the walk
-        let one = (data.metrics.one % unwrapped.get_nodes_number()) % unwrapped.get_edges_number();
-        let two = (data.metrics.two % unwrapped.get_nodes_number()) % unwrapped.get_edges_number();
-        unwrapped.degree(one);
-        unwrapped.degree(two);
-        unwrapped.degrees_product(one, two);
-        unwrapped.jaccard_index(one, two);
-        unwrapped.adamic_adar_index(one, two);
-        unwrapped.resource_allocation_index(one, two);
+    if maybe_graph.is_err() {
+        return;
+    }
+    let graph = maybe_graph.unwrap();
+    // test metrics
+    graph.report();
+    // to enable once we fix the get_min_max_edge which doesn't check
+    // if the nod is inbound and is_edge_trap similarly
+    // all these metrics panic if the value is out of bound
+    // this is known and was not fixed because the get_min_max_edge function
+    // is used in the walk and the checking and error propagation  would slow down
+    // the walk
+    let one = (data.metrics.one % graph.get_nodes_number()) % graph.get_edges_number();
+    let two = (data.metrics.two % graph.get_nodes_number()) % graph.get_edges_number();
+    graph.degree(one);
+    graph.degree(two);
+    graph.degrees_product(one, two);
+    graph.jaccard_index(one, two);
+    graph.adamic_adar_index(one, two);
+    graph.resource_allocation_index(one, two);
 
-
-        unwrapped.walk(&graph::WalksParameters{
-            single_walk_parameters: graph::SingleWalkParameters{
-                length: data.walks_args.single_walk_parameters.length as usize,
-                weights: data.walks_args.single_walk_parameters.weights
-            },
-            iterations: data.walks_args.iterations as usize,
-            min_length: data.walks_args.min_length as usize,
-            verbose: data.walks_args.verbose,
-            start_node: data.walks_args.start_node,
-            end_node: data.walks_args.end_node,
-            dense_nodes_mapping: data.walks_args.dense_nodes_mapping,
-        }).unwrap();
-
-        let mut negative_samples = data.skipgrams_args.negative_samples;
-        if let Some(ns) = &mut negative_samples{
-            if *ns > 100.0{
-                *ns = 100.0;
-            }
+    match convert_walk_parameters(data.walks_args) {
+        Err(_) => {},
+        Ok(param) => {
+            graph.walk(&param);
         }
+    }
 
-        let _ = unwrapped.binary_skipgrams(
+    let mut negative_samples = data.skipgrams_args.negative_samples;
+    if let Some(ns) = &mut negative_samples{
+        if *ns > 100.0{
+            *ns = 100.0;
+        }
+    }
+
+    match convert_walk_parameters(data.skipgrams_args.walk_parameters) {
+        Err(_) => {},
+        Ok(param) => {
+            graph.binary_skipgrams(
             data.skipgrams_args.seed,
-            &graph::WalksParameters{
-                single_walk_parameters: graph::SingleWalkParameters{
-                    length: data.skipgrams_args.walk_parameters.single_walk_parameters.length as usize,
-                    weights: data.skipgrams_args.walk_parameters.single_walk_parameters.weights
-                },
-                iterations: data.skipgrams_args.walk_parameters.iterations as usize,
-                min_length: data.skipgrams_args.walk_parameters.min_length as usize,
-                verbose: data.skipgrams_args.walk_parameters.verbose,
-                start_node: data.skipgrams_args.walk_parameters.start_node,
-                end_node: data.skipgrams_args.walk_parameters.end_node,
-                dense_nodes_mapping: data.skipgrams_args.walk_parameters.dense_nodes_mapping,
-            },
+            &param,
             data.skipgrams_args.window_size,
             negative_samples,
             data.skipgrams_args.shuffle
         );
+        }
+    }
 
-        let _ = unwrapped.cooccurence_matrix(
-            &graph::WalksParameters{
-                single_walk_parameters: graph::SingleWalkParameters{
-                    length: data.cooccurence_args.walks_parameters.single_walk_parameters.length as usize,
-                    weights: data.cooccurence_args.walks_parameters.single_walk_parameters.weights
-                },
-                iterations: data.cooccurence_args.walks_parameters.iterations as usize,
-                min_length: data.cooccurence_args.walks_parameters.min_length as usize,
-                verbose: data.cooccurence_args.walks_parameters.verbose,
-                start_node: data.cooccurence_args.walks_parameters.start_node,
-                end_node: data.cooccurence_args.walks_parameters.end_node,
-                dense_nodes_mapping: data.cooccurence_args.walks_parameters.dense_nodes_mapping,
-            },
+    match convert_walk_parameters(data.cooccurence_args.walks_parameters) {
+        Err(_) => {},
+        Ok(param) => {
+            graph.cooccurence_matrix(
+            &param,
             data.cooccurence_args.window_size,
             data.cooccurence_args.verbose,
         );
+        }
+    }
 
-        let _ = unwrapped.node2vec(
-            &graph::WalksParameters{
-                single_walk_parameters: graph::SingleWalkParameters{
-                    length: data.node2vec_args.walk_parameters.single_walk_parameters.length as usize,
-                    weights: data.node2vec_args.walk_parameters.single_walk_parameters.weights
-                },
-                iterations: data.node2vec_args.walk_parameters.iterations as usize,
-                min_length: data.node2vec_args.walk_parameters.min_length as usize,
-                verbose: data.node2vec_args.walk_parameters.verbose,
-                start_node: data.node2vec_args.walk_parameters.start_node,
-                end_node: data.node2vec_args.walk_parameters.end_node,
-                dense_nodes_mapping: data.node2vec_args.walk_parameters.dense_nodes_mapping,
-            },
+    match convert_walk_parameters(data.node2vec_args.walk_parameters) {
+        Err(_) => {},
+        Ok(param) => {
+            graph.node2vec(
+            &param,
             data.node2vec_args.window_size,
             data.node2vec_args.shuffle
         );
-
-        let _ = unwrapped.connected_holdout(
-            data.holdout_args.seed,
-            data.holdout_args.train_percentage as f64
-        );
-
-        let _ = unwrapped.random_holdout(
-            data.holdout_args.seed,
-            data.holdout_args.train_percentage as f64
-        );
-
-        let mut negative_samples = data.link_prediction_args.negative_samples;
-        if let Some(ns) = &mut negative_samples{
-            if *ns > 100.0{
-                *ns = 100.0;
-            }
         }
+    }
 
-        if data.link_prediction_args.graph_to_avoid.is_none() {
-            
-            let _ = unwrapped.link_prediction(
+    let _ = graph.connected_holdout(
+        data.holdout_args.seed,
+        data.holdout_args.train_percentage as f64
+    );
+
+    let _ = graph.random_holdout(
+        data.holdout_args.seed,
+        data.holdout_args.train_percentage as f64
+    );
+
+    let mut negative_samples = data.link_prediction_args.negative_samples;
+    if let Some(ns) = &mut negative_samples{
+        if *ns > 100.0{
+            *ns = 100.0;
+        }
+    }
+
+    if data.link_prediction_args.graph_to_avoid.is_none() {
+        
+        let _ = graph.link_prediction(
+            data.link_prediction_args.idx as u64,
+            data.link_prediction_args.batch_size as usize,
+            data.link_prediction_args.negative_samples,
+            None,
+            data.link_prediction_args.avoid_self_loops
+        );   
+    } else {
+
+        let graph_args_2 = data.link_prediction_args.graph_to_avoid.unwrap();
+        let _ = match create_graph_from_args_struct(&graph_args_2){
+            Ok(g) => Some(graph.link_prediction(
                 data.link_prediction_args.idx as u64,
                 data.link_prediction_args.batch_size as usize,
-                data.link_prediction_args.negative_samples,
-                None,
-                data.link_prediction_args.avoid_self_loops
-            );   
-        } else {
+                negative_samples,
+                Some(&g),
+                None
+            )),
+            Err(_) => None
+        };
 
-            let graph_args_2 = data.link_prediction_args.graph_to_avoid.unwrap();
-            let _ = match create_graph_from_args_struct(&graph_args_2){
-                Ok(g) => Some(unwrapped.link_prediction(
-                    data.link_prediction_args.idx as u64,
-                    data.link_prediction_args.batch_size as usize,
-                    negative_samples,
-                    Some(&g),
-                    None
-                )),
-                Err(_) => None
-            };
-        }
     }
 }

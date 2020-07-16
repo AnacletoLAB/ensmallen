@@ -1,10 +1,8 @@
 use super::graph::*;
 use super::types::*;
 use rayon::prelude::*;
-use arbitrary::Arbitrary;
 use std::collections::HashMap;
 
-#[derive(Arbitrary, Debug)]
 pub struct WalkWeights {
     pub(crate) return_weight: ParamsT,
     pub(crate) explore_weight: ParamsT,
