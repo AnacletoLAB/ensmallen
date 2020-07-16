@@ -6,25 +6,25 @@ use std::collections::HashMap;
 
 #[derive(Arbitrary, Debug)]
 pub struct WalkWeights {
-    pub return_weight: ParamsT,
-    pub explore_weight: ParamsT,
-    pub change_node_type_weight: ParamsT,
-    pub change_edge_type_weight: ParamsT,
+    pub(crate) return_weight: ParamsT,
+    pub(crate) explore_weight: ParamsT,
+    pub(crate) change_node_type_weight: ParamsT,
+    pub(crate) change_edge_type_weight: ParamsT,
 }
 
 pub struct SingleWalkParameters {
-    pub length: usize,
-    pub weights: WalkWeights,
+    pub(crate) length: usize,
+    pub(crate) weights: WalkWeights,
 }
 
 pub struct WalksParameters {
-    pub single_walk_parameters: SingleWalkParameters,
-    pub iterations: usize,
-    pub min_length: usize,
-    pub verbose: bool,
-    pub start_node: NodeT,
-    pub end_node: NodeT,
-    pub dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
+    pub(crate) single_walk_parameters: SingleWalkParameters,
+    pub(crate) iterations: usize,
+    pub(crate) min_length: usize,
+    pub(crate) verbose: bool,
+    pub(crate) start_node: NodeT,
+    pub(crate) end_node: NodeT,
+    pub(crate) dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
 }
 
 impl Default for WalkWeights {
