@@ -1,16 +1,16 @@
 use super::*;
-use std::collections::{HashMap, HashSet};
 use log::info;
+use std::collections::{HashMap, HashSet};
 
 #[inline(always)]
 /// Check that the current parsed line is consistent with the rest of the file
 /// Meaning that it must have the same number of fields and that it's not empty.
 pub(crate) fn check_line_consistency(
-    parsed: &HashMap<String, String>, 
-    number_of_separators: usize, 
-    line: &str, 
-    line_index: usize
-) -> Result<(), String>{
+    parsed: &HashMap<String, String>,
+    number_of_separators: usize,
+    line: &str,
+    line_index: usize,
+) -> Result<(), String> {
     if parsed.len() != number_of_separators {
         return Err(format!(
             concat!(
@@ -23,12 +23,12 @@ pub(crate) fn check_line_consistency(
                 "The line in question is: '{line}'\n",
             ),
             expected_length = number_of_separators,
-            separators_number =  parsed.len(),
+            separators_number = parsed.len(),
             counter = line_index,
             line = line
         ));
     }
-    if parsed.len() == 0 {
+    if parsed.is_empty() {
         return Err(format!(
             concat!(
                 "Provided edges file has malformed lines. ",
@@ -53,13 +53,14 @@ pub(crate) fn check_line_consistency(
 pub(crate) fn get_nodes_ids_and_map(
     node_types: &Option<Vec<NodeTypeT>>,
     nodes_mapping: &mut HashMap<String, NodeT>,
-    nodes_reverse_mapping: &mut Vec<String>, 
-    src_name: &str, 
+    nodes_reverse_mapping: &mut Vec<String>,
+    src_name: &str,
     dst_name: &str,
-    line: &str, 
-    line_index: usize
-) -> Result<(usize,usize), String> {
-    Ok(// if the node file was provided
+    line: &str,
+    line_index: usize,
+) -> Result<(usize, usize), String> {
+    Ok(
+        // if the node file was provided
         if node_types.is_some() {
             (
                 // TODO find how to reduce duplication, what is better a function or a macro in this case?
@@ -80,7 +81,8 @@ pub(crate) fn get_nodes_ids_and_map(
                     line_index=line_index
                 ))?
             )
-        } else { // if no node file was provided we must create the mappings
+        } else {
+            // if no node file was provided we must create the mappings
             // update the mappings
             (
                 // TODO find how to reduce duplication, what is better a function or a macro in this case?
@@ -101,19 +103,18 @@ pub(crate) fn get_nodes_ids_and_map(
                         nodes_reverse_mapping.push(dst_name.to_string());
                         new_id
                     }
-                }
+                },
             )
-        }
+        },
     )
 }
 
-
 pub(crate) fn parse_weight(
-    parsed: &HashMap<String, String>, 
+    parsed: &HashMap<String, String>,
     weights_column: &Option<String>,
     default_weight: &Option<WeightT>,
     line: &str,
-    line_index: usize
+    line_index: usize,
 ) -> Result<Option<WeightT>, String> {
     match weights_column {
         // if no colums is passed, ignore the weights
@@ -122,48 +123,44 @@ pub(crate) fn parse_weight(
             let weight_str = &parsed[w_column];
             // if the column is present but the field is empty return default if present.
             if weight_str.is_empty() {
-                return match default_weight {
+                match default_weight {
                     Some(dw) => Ok(Some(*dw)),
-                    None => {
-                        Err(format!(
-                            concat!(
-                                "Found empty weight but no default weight to use was provided.",
-                                "Specifically, the line is the number {line_index}.\n",
-                                "The complete line in question is:\n{line}\n"
-                            ),
-                            line=line,
-                            line_index=line_index
-                        ))
-                    }
+                    None => Err(format!(
+                        concat!(
+                            "Found empty weight but no default weight to use was provided.",
+                            "Specifically, the line is the number {line_index}.\n",
+                            "The complete line in question is:\n{line}\n"
+                        ),
+                        line = line,
+                        line_index = line_index
+                    )),
                 }
-            }
-            // else, parse the string
-            return match weight_str.parse::<WeightT>() {
-                Ok(g) => Ok(Some(g)),
-                Err(_) => {
-                    Err(format!(
+            } else {
+                // else, parse the string
+                match weight_str.parse::<WeightT>() {
+                    Ok(g) => Ok(Some(g)),
+                    Err(_) => Err(format!(
                         concat!(
                             "Cannot parse {weight} as float.\n",
                             "Specifically, the line is the number {line_index}.\n",
                             "The complete line in question is:\n{line}\n"
                         ),
-                        weight=weight_str,
-                        line_index=line_index,
-                        line=line
-                    ))
+                        weight = weight_str,
+                        line_index = line_index,
+                        line = line
+                    )),
                 }
             }
         }
-
     }
 }
 
 pub(crate) fn parse_edge_type_name(
-    parsed: &HashMap<String, String>, 
+    parsed: &HashMap<String, String>,
     edge_types_column: &Option<String>,
     default_edge_type: &Option<String>,
     line: &str,
-    line_index: usize
+    line_index: usize,
 ) -> Result<Option<String>, String> {
     match edge_types_column {
         None => Ok(None),
@@ -173,24 +170,21 @@ pub(crate) fn parse_edge_type_name(
             if edge_type.is_empty() {
                 return match default_edge_type {
                     Some(et) => Ok(Some(et.to_string())),
-                    None => {
-                        Err(format!(
-                            concat!(
-                                "Found empty edge type but no default edge type to use was provided.",
-                                "Specifically, the line is the number {line_index}.\n",
-                                "The complete line in question is:\n{line}\n"
-                            ),
-                            line=line,
-                            line_index=line_index
-                        ))
-                    }
+                    None => Err(format!(
+                        concat!(
+                            "Found empty edge type but no default edge type to use was provided.",
+                            "Specifically, the line is the number {line_index}.\n",
+                            "The complete line in question is:\n{line}\n"
+                        ),
+                        line = line,
+                        line_index = line_index
+                    )),
                 };
             }
             Ok(Some(edge_type.clone()))
         }
     }
 }
-
 
 pub fn validate(
     sources: &[NodeT],
