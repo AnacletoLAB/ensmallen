@@ -1036,8 +1036,11 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Jaccard Index for the two given nodes.
     ///
-    fn jaccard_index(&self, one: NodeT, two: NodeT) -> f64 {
-        self.graph.jaccard_index(one, two)
+    fn jaccard_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
+        match self.graph.jaccard_index(one, two) {
+            Ok(result) => Ok(result),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
     }
 
     #[text_signature = "($self, one, two)"]
@@ -1054,8 +1057,11 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Adamic/Adar for the two given nodes.
     ///
-    fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> f64 {
-        self.graph.adamic_adar_index(one, two)
+    fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
+        match self.graph.adamic_adar_index(one, two) {
+            Ok(result) => Ok(result),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
     }
 
     #[text_signature = "($self, one, two)"]
@@ -1072,8 +1078,11 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Resource Allocation Index for the two given nodes.
     ///
-    fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> f64 {
-        self.graph.resource_allocation_index(one, two)
+    fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
+        match self.graph.resource_allocation_index(one, two) {
+            Ok(result) => Ok(result),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
     }
 
     #[text_signature = "($self, one, two)"]
@@ -1090,8 +1099,11 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// degrees product for the two given nodes.
     ///
-    fn degrees_product(&self, one: NodeT, two: NodeT) -> usize {
-        self.graph.degrees_product(one, two)
+    fn degrees_product(&self, one: NodeT, two: NodeT) -> PyResult<usize> {
+        match self.graph.degrees_product(one, two) {
+            Ok(result) => Ok(result),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }
     }
 
     #[text_signature = "(self)"]
