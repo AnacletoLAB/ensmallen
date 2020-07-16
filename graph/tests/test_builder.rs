@@ -14,13 +14,12 @@ fn test_builder() {
             vec![0, 0, 1, 1, 1, 0],
             [("PP".to_string(), 0), ("GG".to_string(), 1)].iter().cloned().collect(),
             vec!["PP".to_string(), "GG".to_string()]
-        ).add_node_mapping(
+        ).add_nodes(
             [("A".to_string(), 0), ("B".to_string(), 1), ("C".to_string(), 2), ("D".to_string(), 3)].iter().cloned().collect(),
-            vec!["A".to_string(), "B".to_string(), "C".to_string(), "D".to_string()]
-        ).add_node_types(
-            vec![0, 0, 1, 1],
-            [("Protein".to_string(), 0), ("Gene".to_string(), 1)].iter().cloned().collect(),
-            vec!["Protein".to_string(), "Gene".to_string()]
+            vec!["A".to_string(), "B".to_string(), "C".to_string(), "D".to_string()],
+            Some(vec![0, 0, 1, 1]),
+            Some([("Protein".to_string(), 0), ("Gene".to_string(), 1)].iter().cloned().collect()),
+            Some(vec!["Protein".to_string(), "Gene".to_string()])
         ).build(None).unwrap();
 
         let walk_parameters = WalksParameters::new(

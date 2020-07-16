@@ -485,9 +485,12 @@ impl FromCsvBuilder {
             sources,
             destinations,
             self.directed,
-        ).add_node_mapping(
+        ).add_nodes(
             nodes_mapping,
-            nodes_reverse_mapping
+            nodes_reverse_mapping,
+            node_types,
+            node_types_mapping,
+            node_types_reverse_mapping
         );
 
         if self.weights_column.is_some() {
@@ -501,14 +504,6 @@ impl FromCsvBuilder {
                 edge_types_reverse_mapping
             );
         }
-
-        if self.nodes_args.is_some() {
-            graph = graph.add_node_types(
-                node_types.unwrap(),
-                node_types_mapping.unwrap(),
-                node_types_reverse_mapping.unwrap()
-            );
-        } 
 
         graph.build(Some(self.force_conversion_to_undirected))
     }

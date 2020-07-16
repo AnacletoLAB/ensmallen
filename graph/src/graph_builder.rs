@@ -84,27 +84,13 @@ impl Graph {
             sources,
             destinations, 
             self.is_directed,
-        ).add_node_mapping(
+        ).add_nodes(
             self.nodes_mapping.clone(),
-            self.nodes_reverse_mapping.clone()
+            self.nodes_reverse_mapping.clone(),
+            self.node_types.clone(),
+            self.node_types_mapping.clone(),
+            self.node_types_reverse_mapping.clone()
         );
-
-        if self.node_types.is_some() {
-            // TODO! this is horrible but I don't know a clean way
-            // to extract the content of an option without destroing it like the
-            // unwrap does
-            if let Some(node_types) = &self.node_types {
-                if let Some(node_types_mapping) = &self.node_types_mapping {
-                    if let Some(node_types_reverse_mapping) = &self.node_types_reverse_mapping {
-                        result = result.add_node_types(
-                            node_types.clone(),
-                            node_types_mapping.clone(),
-                            node_types_reverse_mapping.clone()
-                        );
-                    }
-                }
-            }
-        }
 
         if self.edge_types.is_some() {
             // TODO! this is horrible but I don't know a clean way
@@ -113,7 +99,7 @@ impl Graph {
             if let Some(_edge_types) = &edge_types {
                 if let Some(edge_types_mapping) = &self.edge_types_mapping {
                     if let Some(edge_types_reverse_mapping) = &self.edge_types_reverse_mapping {
-                        result = result.add_node_types(
+                        result = result.add_edge_types(
                             _edge_types.clone(),
                             edge_types_mapping.clone(),
                             edge_types_reverse_mapping.clone()
@@ -154,26 +140,19 @@ impl Graph {
         }
     }
 
-    pub fn add_node_mapping(
+    pub fn add_nodes(
         mut self,
         nodes_mapping: HashMap<String, NodeT>,
         nodes_reverse_mapping: Vec<String>,
+        node_types: Option<Vec<NodeTypeT>>,
+        node_types_mapping: Option<HashMap<String, NodeTypeT>>,
+        node_types_reverse_mapping: Option<Vec<String>>,
     ) -> Graph {
         self.nodes_mapping = nodes_mapping;
         self.nodes_reverse_mapping = nodes_reverse_mapping;
-        self.is_builded = false;
-        self
-    }
-
-    pub fn add_node_types(
-        mut self,
-        node_types: Vec<NodeTypeT>,
-        node_types_mapping: HashMap<String, NodeTypeT>,
-        node_types_reverse_mapping: Vec<String>,
-    ) -> Graph {
-        self.node_types = Some(node_types);
-        self.node_types_mapping = Some(node_types_mapping);
-        self.node_types_reverse_mapping = Some(node_types_reverse_mapping);
+        self.node_types = node_types;
+        self.node_types_mapping = node_types_mapping;
+        self.node_types_reverse_mapping = node_types_reverse_mapping;
         self.is_builded = false;
         self
     }
@@ -204,6 +183,7 @@ impl Graph {
         if self.is_builded {
             return Ok(self);
         }
+
         if self.nodes_mapping.is_empty() || self.nodes_reverse_mapping.is_empty() {
             let (_sources, _destinations, _nodes_mapping, _nodes_reverse_mapping) = build_nodes_mapping(&self.sources, &self.destinations);
             self.sources = _sources;
