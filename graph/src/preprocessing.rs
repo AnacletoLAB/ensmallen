@@ -235,7 +235,7 @@ impl Graph {
         }
         let _window_size = window_size.unwrap_or(4);
         let _shuffle: bool = shuffle.unwrap_or(true);
-        let context_length = _window_size * 2;
+        let context_length = _window_size.checked_mul(2).ok_or("The given window size is too big, using this would result in an overflowing of a u64.")?;
 
         let mut walks_centers: Vec<Vec<NodeT>> =
             walks.par_iter().map(|walk| vec![0; walk.len()]).collect();
