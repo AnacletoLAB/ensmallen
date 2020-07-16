@@ -8,27 +8,6 @@ use rayon::prelude::*;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift as rand_u64;
 
-#[macro_export]
-macro_rules! max {
-    ($a: expr, $b: expr) => {
-        if $a >= $b {
-            $a
-        } else {
-            $b
-        }
-    };
-}
-#[macro_export]
-macro_rules! min {
-    ($a: expr, $b: expr) => {
-        if $a < $b {
-            $a
-        } else {
-            $b
-        }
-    };
-}
-
 fn binary_skipgram_vector_length(walk_length: usize, window_size: usize) -> usize {
     (0..walk_length)
         .map(|i| {
@@ -114,37 +93,14 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * idx: usize - Index of the batch
-    /// * batch_size - Batch size, number of nodes to include in this iteration.
-    /// * length: usize - Length of the random walks.
-    /// * iterations: Option<usize> - Iterations on every node.
+    /// * seed: usize - The seed for partial reproducibility.
+    /// * walk_parameters: &WalksParameters - the weighted walks parameters.
     /// * window_size: Option<usize> - Window size to consider for the sequences.
     /// * negative_samples: Option<f64>,
     ///     Factor of negative samples to use.
     ///     This is the factor for the number of non-context nodes to return
     ///     as negatives in any given batch.
     /// * shuffle: Option<bool>,
-    ///     Wethever to shuffle the vectors on return.
-    /// * min_length: Option<usize>,
-    ///     Minimum length of the walks.
-    ///     Walks which are smaller than the given minimum length will be
-    ///     filtered and ignored.
-    /// * return_weight: Option<ParamsT>,
-    ///     Weight for the probability of exploitation.
-    ///     This is the inverse of the p parameter.
-    ///     The default value is 1.0.
-    /// * explore_weight: Option<ParamsT>,
-    ///     Weight for the probability of exploration.
-    ///     This is the inverse of the q parameter.
-    ///     The default value is 1.0.
-    /// * change_node_type_weight: Option<ParamsT>,
-    ///     Weight for changing the node type at every step of the walk.
-    ///     The default value is 1.0.
-    /// * change_edge_type_weight: Option<ParamsT>,
-    ///     Weight for changing the edge type at every step of the walk.
-    ///     The default value is 1.0.
-    /// * graph_to_avoid: Option<&Graph>,
-    ///     Graph to optionally avoid while generating.
     ///
     /// # Implementation Details
     /// In order to correctly compute the positives and negatives, we would need to make a
@@ -160,71 +116,20 @@ impl Graph {
     /// tractable.
     pub fn binary_skipgrams(
         &self,
-        idx: usize,
-        batch_size: usize,
-        length: usize,
-        iterations: Option<usize>,
+        seed: usize,
+        walk_parameters: &WalksParameters,
         window_size: Option<usize>,
         negative_samples: Option<f64>,
         shuffle: Option<bool>,
-        min_length: Option<usize>,
-        return_weight: Option<ParamsT>,
-        explore_weight: Option<ParamsT>,
-        change_node_type_weight: Option<ParamsT>,
-        change_edge_type_weight: Option<ParamsT>,
-        graph_to_avoid: Option<&Graph>,
     ) -> Result<((Vec<usize>, Vec<usize>), Vec<u8>), String> {
-        // check parameters validity
-        let opt_idx = idx.checked_add(1);
-        if opt_idx.is_none() {
-            return Err(format!("The Index {} + 1 oveflow the u64.", idx));
-        }
-
-        let opt_end_node = opt_idx.unwrap().checked_mul(batch_size);
-        if opt_end_node.is_none() {
-            return Err(format!(
-                "The Index+1 {} and batchsize {} when multiplied oveflow the u64.",
-                idx + 1,
-                batch_size
-            ));
-        }
-
-        let start_node = idx * batch_size;
-        let end_node = min!(self.get_nodes_number(), opt_end_node.unwrap());
-
-        if start_node >= self.get_nodes_number() {
-            return Err(format!(
-                concat!(
-                    "The given walk index {idx} with batch size {batch_size} ",
-                    "is larger than the number of nodes {nodes} in the graph."
-                ),
-                idx = idx,
-                batch_size = batch_size,
-                nodes = self.get_nodes_number()
-            ));
-        }
-
-        // do the walks and check the result
-        let walks = self.walk(
-            length,
-            iterations,
-            Some(start_node),
-            Some(end_node),
-            min_length,
-            return_weight,
-            explore_weight,
-            change_node_type_weight,
-            change_edge_type_weight,
-            Some(false),
-        )?;
+        // Compute the walks
+        let walks = self.walk(walk_parameters)?;
 
         if walks.is_empty() {
-            return Err(String::from(concat!(
-                "An empty set of walks was generated.\n",
-                "Consider changing the minimum length parameter, ",
-                "increasing the batch size, the iterations and ",
-                "checking the number of trap nodes in the graph."
-            )));
+            return Err(concat!(
+                "In the current graph, with the given parameters, no walk could ",
+                "be performed which is above the given min-length"
+            ).to_string());
         }
         // Setup the cumulative sum (this compute the index for the windows of each node,
         // this is only done to be able to parallelize)
@@ -287,7 +192,7 @@ impl Graph {
                             window_size,
                             Some(_negative_samples),
                             shuffle,
-                            (idx + i) as u64,
+                            (seed + i) as u64,
                         );
                         (*words_index).copy_from_slice(&_words);
                         (*contexts_index).copy_from_slice(&_contexts);
@@ -295,44 +200,6 @@ impl Graph {
                     },
                 );
         }
-
-        // remove false negatives & edges that are inside of graph to avoid
-        let false_negatives: Vec<bool> = words
-            .par_iter()
-            .zip(contexts.par_iter())
-            .zip(labels.par_iter())
-            .map(|((src, dst), label)| {
-                // Keep the edge if:
-                // it's positive and its in the graph
-                ((*label == 1) || self.has_edge(*src, *dst)) &&
-                // or it isn't in the graph to avoid
-                if let Some(gta) = &graph_to_avoid {
-                    !gta.has_edge(*src, *dst)
-                }
-                else {
-                    true
-                }
-            })
-            .collect();
-
-        words = false_negatives
-            .par_iter()
-            .zip(words.par_iter())
-            .filter(|(false_negative, _)| **false_negative)
-            .map(|(_, src)| *src)
-            .collect();
-        contexts = false_negatives
-            .par_iter()
-            .zip(contexts.par_iter())
-            .filter(|(false_negative, _)| **false_negative)
-            .map(|(_, src)| *src)
-            .collect();
-        labels = false_negatives
-            .par_iter()
-            .zip(labels.par_iter())
-            .filter(|(false_negative, _)| **false_negative)
-            .map(|(_, src)| *src)
-            .collect();
 
         Ok(((words, contexts), labels))
     }
@@ -349,102 +216,28 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * idx: usize - Index of the batch
-    /// * batch_size - Batch size, number of nodes to include in this iteration.
-    /// * length: usize - Length of the random walks.
-    /// * iterations: Option<usize> - Iterations on every node.
+    /// * walk_parameters: &WalksParameters - the weighted walks parameters.
     /// * window_size: Option<usize> - Window size to consider for the sequences.
-    /// * shuffle: Option<bool>,
-    ///     Wethever to shuffle the vectors on return.
-    /// * min_length: Option<usize>,
-    ///     Minimum length of the walks.
-    ///     Walks which are smaller than the given minimum length will be
-    ///     filtered and ignored.
-    /// * return_weight: Option<ParamsT>,
-    ///     Weight for the probability of exploitation.
-    ///     This is the inverse of the p parameter.
-    ///     The default value is 1.0.
-    /// * explore_weight: Option<ParamsT>,
-    ///     Weight for the probability of exploration.
-    ///     This is the inverse of the q parameter.
-    ///     The default value is 1.0.
-    /// * change_node_type_weight: Option<ParamsT>,
-    ///     Weight for changing the node type at every step of the walk.
-    ///     The default value is 1.0.
-    /// * change_edge_type_weight: Option<ParamsT>,
-    ///     Weight for changing the edge type at every step of the walk.
-    ///     The default value is 1.0.
+    /// * shuffle: Option<bool> - Wethever to shuffle the vectors on return.
     ///
     pub fn node2vec(
         &self,
-        idx: usize,
-        batch_size: usize,
-        length: usize,
-        iterations: Option<usize>,
+        walk_parameters: &WalksParameters,
         window_size: Option<usize>,
         shuffle: Option<bool>,
-        min_length: Option<usize>,
-        return_weight: Option<ParamsT>,
-        explore_weight: Option<ParamsT>,
-        change_node_type_weight: Option<ParamsT>,
-        change_edge_type_weight: Option<ParamsT>,
     ) -> Result<(Vec<Vec<usize>>, Vec<usize>), String> {
-        // check parameters validity
-        let opt_idx = idx.checked_add(1);
-        if opt_idx.is_none() {
-            return Err(format!("The Index {} + 1 oveflow the u64.", idx));
-        }
-
-        let opt_end_node = opt_idx.unwrap().checked_mul(batch_size);
-        if opt_end_node.is_none() {
-            return Err(format!(
-                "The Index+1 {} and batchsize {} when multiplied oveflow the u64.",
-                idx + 1,
-                batch_size
-            ));
-        }
-
-        let start_node = idx * batch_size;
-        let end_node = min!(self.get_nodes_number(), opt_end_node.unwrap());
-
-        if start_node >= self.get_nodes_number() {
-            return Err(format!(
-                concat!(
-                    "The given walk index {idx} with batch size {batch_size} ",
-                    "is larger than the number of nodes {nodes} in the graph."
-                ),
-                idx = idx,
-                batch_size = batch_size,
-                nodes = self.get_nodes_number()
-            ));
-        }
-
         // do the walks and check the result
-        let walks = self.walk(
-            length,
-            iterations,
-            Some(start_node),
-            Some(end_node),
-            min_length,
-            return_weight,
-            explore_weight,
-            change_node_type_weight,
-            change_edge_type_weight,
-            Some(false),
-        )?;
+        let walks = self.walk(walk_parameters)?;
 
         if walks.is_empty() {
-            return Err(String::from(concat!(
-                "An empty set of walks was generated.\n",
-                "Consider changing the minimum length parameter, ",
-                "increasing the batch size, the iterations and ",
-                "checking the number of trap nodes in the graph."
-            )));
+            return Err(concat!(
+                "In the current graph, with the given parameters, no walk could ",
+                "be performed which is above the given min-length"
+            ).to_string());
         }
-
         let _window_size = window_size.unwrap_or(4);
         let _shuffle: bool = shuffle.unwrap_or(true);
-        let context_length = _window_size * 2;
+        let context_length = _window_size.checked_mul(2).ok_or("The given window size is too big, using this would result in an overflowing of a u64.")?;
 
         let mut walks_centers: Vec<Vec<NodeT>> =
             walks.par_iter().map(|walk| vec![0; walk.len()]).collect();
@@ -515,61 +308,29 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * length: usize - Length of the random walks.
-    /// * iterations: Option<usize> - Iterations on every node.
+    /// * parameters: &WalksParameters - the walks parameters.
     /// * window_size: Option<usize> - Window size to consider for the sequences.
-    /// * min_length: Option<usize>,
-    ///     Minimum length of the walks.
-    ///     Walks which are smaller than the given minimum length will be
-    ///     filtered and ignored.
-    /// * return_weight: Option<ParamsT>,
-    ///     Weight for the probability of exploitation.
-    ///     This is the inverse of the p parameter.
-    ///     The default value is 1.0.
-    /// * explore_weight: Option<ParamsT>,
-    ///     Weight for the probability of exploration.
-    ///     This is the inverse of the q parameter.
-    ///     The default value is 1.0.
-    /// * change_node_type_weight: Option<ParamsT>,
-    ///     Weight for changing the node type at every step of the walk.
-    ///     The default value is 1.0.
-    /// * change_edge_type_weight: Option<ParamsT>,
-    ///     Weight for changing the edge type at every step of the walk.
-    ///     The default value is 1.0.
     /// * verbose: Option<bool>,
     ///     Wethever to show the progress bars.
     ///     The default behaviour is false.
     ///     
     pub fn cooccurence_matrix(
         &self,
-        length: usize,
-        iterations: Option<usize>,
+        walks_parameters: &WalksParameters,
         window_size: Option<usize>,
-        min_length: Option<usize>,
-        return_weight: Option<ParamsT>,
-        explore_weight: Option<ParamsT>,
-        change_node_type_weight: Option<ParamsT>,
-        change_edge_type_weight: Option<ParamsT>,
         verbose: Option<bool>,
     ) -> Result<(Vec<NodeT>, Vec<NodeT>, Vec<f64>), String> {
         let _verbose = verbose.unwrap_or(false);
         let _window_size = window_size.unwrap_or(4);
 
-        // TODO: if in Rust is possible to return a generator, we could
-        // iterate directly on the walks without storing them into an array.
-        let walks = self.walk(
-            length,
-            iterations,
-            None,
-            None,
-            min_length,
-            return_weight,
-            explore_weight,
-            change_node_type_weight,
-            change_edge_type_weight,
-            Some(_verbose),
-        )?;
+        let walks = self.walk(walks_parameters)?;
 
+        if walks.is_empty() {
+            return Err(concat!(
+                "In the current graph, with the given parameters, no walk could ",
+                "be performed which is above the given min-length"
+            ).to_string());
+        }
         let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
         let pb1 = if _verbose {
             let pb1 = ProgressBar::new(walks.len() as u64);

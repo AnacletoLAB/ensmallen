@@ -2,6 +2,27 @@ use super::types::*;
 use super::Graph;
 use hashbrown::HashSet;
 
+#[macro_export]
+macro_rules! max {
+    ($a: expr, $b: expr) => {
+        if $a >= $b {
+            $a
+        } else {
+            $b
+        }
+    };
+}
+#[macro_export]
+macro_rules! min {
+    ($a: expr, $b: expr) => {
+        if $a < $b {
+            $a
+        } else {
+            $b
+        }
+    };
+}
+
 /// # Implementation of algorithms relative to trees.
 impl Graph {
     /// Returns set of edges composing a spanning tree.
@@ -28,16 +49,28 @@ impl Graph {
                     let (_min, _max) = self.get_min_max_edge(node_to_explore);
                     for neighbour in _min.._max {
                         let dst = self.destinations[neighbour];
-                        if !covered_nodes[dst] {
-                            tree.insert((
-                                node_to_explore,
-                                dst,
-                                if let Some(et) = &self.edge_types {
-                                    Some(et[neighbour])
-                                } else {
-                                    None
-                                },
-                            ));
+                        // If the destination node is not already covered and it
+                        // does not match with the source node, hence the edge
+                        // that is currently considered would be a self-loop
+                        // we proceed to push the destination node and mark the
+                        // nodes as covered.
+                        if !covered_nodes[dst] && src != dst {
+                            let edge_type = if let Some(et) = &self.edge_types {
+                                Some(et[neighbour])
+                            } else {
+                                None
+                            };
+                            let first = if self.is_directed {
+                                node_to_explore
+                            } else {
+                                min!(node_to_explore, dst)
+                            };
+                            let second = if self.is_directed {
+                                dst
+                            } else {
+                                max!(node_to_explore, dst)
+                            };
+                            tree.insert((first, second,edge_type));
                             covered_nodes[src] = true;
                             covered_nodes[dst] = true;
                             stack.push(dst);

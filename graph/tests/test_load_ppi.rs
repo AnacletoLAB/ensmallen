@@ -1,30 +1,26 @@
 extern crate graph;
-use graph::graph::Graph;
+use graph::*;
 
 #[test]
 fn test_load_ppi() {
-    let edge_path = "tests/data/ppi.tsv";
-    let node_path = "tests/data/ppi_nodes.tsv";
+    let edge_path = "tests/data/ppi/edges.tsv";
+    let node_path = "tests/data/ppi/nodes.tsv";
     for directed in &[true, false] {
-        let _ = Graph::from_csv(
+        let _graph = FromCsvBuilder::new(
             edge_path,
-            "subject",
-            "object",
-            *directed,
-            None,
-            None,
-            Some("weight"),
-            Some(1.0),
-            Some(node_path),
-            Some("id"),
-            Some("category"),
-            Some("biolink:NamedThing"),
-            None,
-            None,
-            None,
-            None,
-            None,
-        )
-        .unwrap();
+            "subject", 
+            "object", 
+            *directed, 
+            None
+        ).unwrap()
+        .set_weights("weight", Some(1.0))
+        .load_nodes_csv(
+            node_path, 
+            "id", 
+            "category",
+            Some("biolink:NamedThing"), 
+            None, 
+            None
+        ).unwrap().build().unwrap();
     }
 }

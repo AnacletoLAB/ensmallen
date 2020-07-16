@@ -1,5 +1,11 @@
 fuzz:
-	cargo fuzz run from_csv
+	(\
+	cd graph_harness;\
+	cargo fuzz run from_csv; \
+	)
 
 hfuzz:
-	cargo hfuzz run honggfuzz
+	(\
+	cd honggfuzz;\
+	cargo hfuzz run honggfuzz; \
+	)

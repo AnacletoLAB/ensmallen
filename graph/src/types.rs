@@ -1,4 +1,4 @@
-//! Types used to represent edges, nodes and their types.
+// Types used to represent edges, nodes and their types.
 pub type NodeT = usize;
 pub type EdgeT = usize;
 pub type WeightT = f64;

@@ -14,8 +14,19 @@ impl Graph {
     /// * `one` - Integer ID of the first node.
     /// * `two` - Integer ID of the second node.
     ///
-    pub fn degrees_product(&self, one: NodeT, two: NodeT) -> usize {
-        self.degree(one) as usize * self.degree(two) as usize
+    pub fn degrees_product(&self, one: NodeT, two: NodeT) -> Result<usize, String> {
+        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "One or more of the given nodes indices ({}, {}) are ",
+                    "biggen than the number of nodes present in the graph ({})."
+                ),
+                one,
+                two,
+                self.get_nodes_number()
+            ));
+        }
+        Ok(self.degree(one) as usize * self.degree(two) as usize)
     }
 
     /// Returns the Jaccard index for the two given nodes.
@@ -29,9 +40,21 @@ impl Graph {
     /// [D. Liben-Nowell, J. Kleinberg.
     /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
     ///
-    pub fn jaccard_index(&self, one: NodeT, two: NodeT) -> f64 {
+    pub fn jaccard_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
+        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "One or more of the given nodes indices ({}, {}) are ",
+                    "biggen than the number of nodes present in the graph ({})."
+                ),
+                one,
+                two,
+                self.get_nodes_number()
+            ));
+        }
+
         if self.is_node_trap(one) || self.is_node_trap(two) {
-            return 0.0f64;
+            return Ok(0.0f64);
         }
 
         let one_neighbors: HashSet<NodeT> = self.get_node_neighbours(one).iter().cloned().collect();
@@ -41,7 +64,7 @@ impl Graph {
             .cloned()
             .collect();
 
-        intersections.len() as f64 / (one_neighbors.len() + two_neighbors.len()) as f64
+        Ok(intersections.len() as f64 / (one_neighbors.len() + two_neighbors.len()) as f64)
     }
 
     /// Returns the Adamic/Adar Index for the given pair of nodes.
@@ -61,9 +84,21 @@ impl Graph {
     /// [D. Liben-Nowell, J. Kleinberg.
     /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
     ///
-    pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> f64 {
+    pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
+        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "One or more of the given nodes indices ({}, {}) are ",
+                    "biggen than the number of nodes present in the graph ({})."
+                ),
+                one,
+                two,
+                self.get_nodes_number()
+            ));
+        }
+        
         if self.is_node_trap(one) || self.is_node_trap(two) {
-            return 0.0f64;
+            return Ok(0.0f64);
         }
 
         let one_neighbors: HashSet<NodeT> = self.get_node_neighbours(one).iter().cloned().collect();
@@ -73,11 +108,11 @@ impl Graph {
             .cloned()
             .collect();
 
-        intersections
+        Ok(intersections
             .par_iter()
             .filter(|node| !self.is_node_trap(**node))
             .map(|node| 1.0 / (self.degree(*node) as f64).ln())
-            .sum()
+            .sum())
     }
 
     /// Returns the Resource Allocation Index for the given pair of nodes.
@@ -98,9 +133,21 @@ impl Graph {
     /// must support all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
-    pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> f64 {
+    pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
+        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "One or more of the given nodes indices ({}, {}) are ",
+                    "biggen than the number of nodes present in the graph ({})."
+                ),
+                one,
+                two,
+                self.get_nodes_number()
+            ));
+        }
+
         if self.is_node_trap(one) || self.is_node_trap(two) {
-            return 0.0f64;
+            return Ok(0.0f64);
         }
 
         let one_neighbors: HashSet<NodeT> = self.get_node_neighbours(one).iter().cloned().collect();
@@ -110,11 +157,11 @@ impl Graph {
             .cloned()
             .collect();
 
-        intersections
+        Ok(intersections
             .par_iter()
             .filter(|node| !self.is_node_trap(**node))
             .map(|node| 1.0 / self.degree(*node) as f64)
-            .sum()
+            .sum())
     }
 
     /// Returns the traps rate of the graph.
@@ -171,17 +218,21 @@ impl Graph {
             .unwrap()
     }
 
-    /// Returns percentage of self-loops.
-    pub fn selfloops_percentage(&self) -> f64 {
+    /// Returns number of self-loops.
+    pub fn selfloops_number(&self) -> usize {
         (0..self.get_nodes_number())
             .into_par_iter()
             .map(|node| self.has_edge(node, node) as usize)
-            .sum::<usize>() as f64
-            / self.get_edges_number() as f64
+            .sum::<usize>()
     }
 
-    /// Returns percentage of bidirectional edges.
-    pub fn bidirectional_percentage(&self) -> f64 {
+    /// Returns rate of self-loops.
+    pub fn selfloops_rate(&self) -> f64 {
+        self.selfloops_number() as f64 / self.get_edges_number() as f64
+    }
+
+    /// Returns rate of bidirectional edges.
+    pub fn bidirectional_rate(&self) -> f64 {
         self.unique_edges
             .par_keys()
             .map(|(src, dst)| self.has_edge(*dst, *src) as usize)
@@ -222,8 +273,8 @@ impl Graph {
     /// * unique_node_types_number: the number of different node types in the graph.
     /// * unique_edge_types_number: the number of different edge types in the graph.
     /// * traps_rate: probability to end up in a trap when starting into any given node.
-    /// * selfloops_percentage: pecentage of edges that are selfloops.
-    /// * bidirectional_percentage: percentage of edges that are bidirectional.
+    /// * selfloops_rate: pecentage of edges that are selfloops.
+    /// * bidirectional_rate: rate of edges that are bidirectional.
     ///
     pub fn report(&self) -> DefaultHashMap<&str, String> {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
@@ -244,14 +295,8 @@ impl Graph {
             self.get_edge_types_number().to_string(),
         );
         report.insert("traps_rate", self.traps_rate().to_string());
-        report.insert(
-            "selfloops_percentage",
-            self.selfloops_percentage().to_string(),
-        );
-        report.insert(
-            "bidirectional_percentage",
-            self.bidirectional_percentage().to_string(),
-        );
+        report.insert("selfloops_rate", self.selfloops_rate().to_string());
+        report.insert("bidirectional_rate", self.bidirectional_rate().to_string());
         report.insert(
             "connected_components_number",
             self.connected_components_number().to_string(),

@@ -8,9 +8,10 @@ fn test_check_consistent_lines() {
 }
 
 #[test]
-#[should_panic]
 fn test_check_consistent_lines_should_panic() {
-    check_consistent_lines("tests/data/should_panic.csv", ",").unwrap();
+    assert!(
+        check_consistent_lines("tests/data/should_panic.csv", ",").is_err()
+    );
 }
 
 #[test]
@@ -48,7 +49,6 @@ fn test_has_columns() {
 }
 
 #[test]
-#[should_panic]
 fn test_has_columns_should_panic() {
-    has_columns("tests/data/should_panic.csv", ",", &["a", "b", "c"], &[]).unwrap();
+    assert!(has_columns("tests/data/should_panic.csv", ",", &["a", "b", "c"], &[]).is_err());
 }

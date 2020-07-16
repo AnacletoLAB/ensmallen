@@ -97,35 +97,12 @@ impl Graph {
             None
         };
 
-        Ok(if self.is_directed {
-            Graph::new_directed(
-                sources,
-                destinations,
-                Some(self.nodes_mapping.clone()),
-                Some(self.nodes_reverse_mapping.clone()),
-                self.node_types.clone(),
-                self.node_types_mapping.clone(),
-                self.node_types_reverse_mapping.clone(),
-                edge_types,
-                self.edge_types_mapping.clone(),
-                self.edge_types_reverse_mapping.clone(),
-                weights,
-            )?
-        } else {
-            Graph::new_undirected(
-                sources,
-                destinations,
-                Some(self.nodes_mapping.clone()),
-                Some(self.nodes_reverse_mapping.clone()),
-                self.node_types.clone(),
-                self.node_types_mapping.clone(),
-                self.node_types_reverse_mapping.clone(),
-                edge_types,
-                self.edge_types_mapping.clone(),
-                self.edge_types_reverse_mapping.clone(),
-                weights,
-                Some(true),
-            )?
-        })
+        self.setup_graph(
+            sources,
+            destinations,
+            edge_types,
+            weights,
+            Some(true)
+        )
     }
 }
