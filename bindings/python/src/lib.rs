@@ -1,6 +1,7 @@
 use graph::{
-    EdgeT, EdgeTypeT, FromCsvBuilder, Graph, NodeT, NodeTypeT, ParamsT, SingleWalkParameters,
-    WalkWeights, WalksParameters, WeightT,
+    binary_skipgrams as rust_binary_skipgrams, cooccurence_matrix as rust_cooccurence_matrix,
+    node2vec as rust_node2vec, EdgeT, EdgeTypeT, FromCsvBuilder, Graph, NodeT, NodeTypeT, ParamsT,
+    SingleWalkParameters, WalkWeights, WalksParameters, WeightT,
 };
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::class::basic::CompareOp;
@@ -9,17 +10,159 @@ use pyo3::class::number::PyNumberProtocol;
 use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
+use pyo3::{wrap_pyfunction, wrap_pymodule};
 use std::collections::{HashMap, HashSet};
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
-    // PyO3 aware function. All of our Python interfaces could be declared in a separate module.
-    // Note that the `#[pyfn()]` annotation automatically converts the arguments from
-    // Python objects to Rust values, and the Rust return value back into a Python object.
-    // The `_py` argument represents that we're holding the GIL.
     m.add_class::<EnsmallenGraph>()?;
+    m.add_wrapped(wrap_pymodule!(preprocessing))?;
     env_logger::init();
     Ok(())
+}
+
+#[pymodule]
+fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
+    m.add_wrapped(wrap_pyfunction!(binary_skipgrams))?;
+    m.add_wrapped(wrap_pyfunction!(node2vec))?;
+    m.add_wrapped(wrap_pyfunction!(cooccurence_matrix))?;
+    Ok(())
+}
+
+#[pyfunction(py_kwargs = "**")]
+#[text_signature = "(seed, sequences, vocabulary_size, *, window_size, negative_samples, shuffle)"]
+/// Returns skipgram batches for a given integers sequences.
+///
+/// Arguments
+/// --------------
+/// seed: int,
+///     The seed to use for reproducibility.
+/// sequences: List[List[int]],
+///     Sequences of values to be converted.
+/// vocabulary_size: usize,
+///     Number of distrinct terms present in vocabulary.
+/// window_size: int = 4,
+///     Size of the window. By default is 4.
+/// negative_samples: float = 1.0,
+///     Factor of the negative samples to extract.
+/// shuffle: bool = True,
+///     Wethever to shuffle or not the words and contexts.
+///
+fn binary_skipgrams(
+    seed: usize,
+    sequences: Vec<Vec<usize>>,
+    vocabulary_size: usize,
+    py_kwargs: Option<&PyDict>,
+) -> PyResult<((Vec<usize>, Vec<usize>), Vec<u8>)> {
+    match if let Some(kwargs) = &py_kwargs {
+        rust_binary_skipgrams(
+            sequences,
+            vocabulary_size,
+            kwargs
+                .get_item("window_size")
+                .map(|val| val.extract::<usize>().unwrap()),
+            kwargs
+                .get_item("negative_samples")
+                .map(|val| val.extract::<f64>().unwrap()),
+            kwargs
+                .get_item("shuffle")
+                .map(|val| val.extract::<bool>().unwrap()),
+            seed,
+        )
+    } else {
+        rust_binary_skipgrams(sequences, vocabulary_size, None, None, None, seed)
+    } {
+        Ok(batch) => Ok(batch),
+        Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+    }
+}
+
+#[pyfunction(py_kwargs = "**")]
+#[text_signature = "(seed, sequences, *, window_size, shuffle)"]
+/// Return training batches for Node2Vec models.
+///
+/// The batch is composed of a tuple as the following:
+///
+/// - (Contexts indices, central nodes indices): the tuple of nodes
+///
+/// This does not provide any output value as the model uses NCE loss
+/// and basically the central nodes that are fed as inputs work as the
+/// outputs value.
+///
+/// Arguments
+/// ---------
+///
+/// sequences: List[List[int]],
+///     the sequence of sequences of integers to preprocess.
+/// window_size: int,
+///     Window size to consider for the sequences.
+/// shuffle: bool,
+///     Wethever to shuffle the vectors on return.
+/// seed: int,
+///     The seed for reproducibility.
+///
+fn node2vec(
+    seed: usize,
+    sequences: Vec<Vec<usize>>,
+    py_kwargs: Option<&PyDict>,
+) -> PyResult<(Vec<Vec<usize>>, Vec<usize>)> {
+    match if let Some(kwargs) = &py_kwargs {
+        rust_node2vec(
+            sequences,
+            kwargs
+                .get_item("window_size")
+                .map(|val| val.extract::<usize>().unwrap()),
+            kwargs
+                .get_item("shuffle")
+                .map(|val| val.extract::<bool>().unwrap()),
+            seed,
+        )
+    } else {
+        rust_node2vec(sequences, None, None, seed)
+    } {
+        Ok(batch) => Ok(batch),
+        Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+    }
+}
+
+#[pyfunction(py_kwargs = "**")]
+#[text_signature = "(sequences, *, window_size, verbose)"]
+/// Return triple with CSR representation of cooccurrence matrix.
+///
+/// The first vector has the sources, the second vector the destinations
+/// and the third one contains the min-max normalized frequencies.
+///
+/// Arguments
+/// ---------
+///
+/// sequences: List[List[int]],
+///     the sequence of sequences of integers to preprocess.
+/// window_size: int = 4,
+///     Window size to consider for the sequences.
+/// verbose: bool = False,
+///     Wethever to show the progress bars.
+///     The default behaviour is false.
+///     
+fn cooccurence_matrix(
+    sequences: Vec<Vec<usize>>,
+    py_kwargs: Option<&PyDict>,
+) -> PyResult<(Vec<usize>, Vec<usize>, Vec<f64>)> {
+    match if let Some(kwargs) = &py_kwargs {
+        rust_cooccurence_matrix(
+            sequences,
+            kwargs
+                .get_item("window_size")
+                .map(|val| val.extract::<usize>().unwrap()),
+            kwargs
+                .get_item("verbose")
+                .map(|val| val.extract::<bool>().unwrap()),
+        )
+    } else {
+        rust_cooccurence_matrix(sequences, None, None)
+    } {
+        Ok(csr) => Ok(csr),
+        Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+    }
 }
 
 #[pyclass]
@@ -190,7 +333,7 @@ impl EnsmallenGraph {
         if let Some(nm) = nodes_mapping {
             if let Some(nrm) = nodes_reverse_mapping {
                 graph = graph.add_nodes(
-                    nm, 
+                    nm,
                     nrm,
                     kwargs
                         .get_item("node_types")
@@ -200,7 +343,7 @@ impl EnsmallenGraph {
                         .map(|val| val.extract::<HashMap<String, NodeTypeT>>().unwrap()),
                     kwargs
                         .get_item("node_types_reverse_mapping")
-                        .map(|val| val.extract::<Vec<String>>().unwrap())
+                        .map(|val| val.extract::<Vec<String>>().unwrap()),
                 );
             }
         }
@@ -897,9 +1040,10 @@ impl EnsmallenGraph {
                         kwargs
                             .get_item("shuffle")
                             .map(|val| val.extract::<bool>().unwrap()),
+                        idx,
                     )
                 } else {
-                    self.graph.node2vec(&wp, None, None)
+                    self.graph.node2vec(&wp, None, None, idx)
                 };
 
                 let gil = pyo3::Python::acquire_gil();

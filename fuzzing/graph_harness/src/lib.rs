@@ -120,6 +120,7 @@ pub struct Node2VecArgs {
     walk_parameters: _WalksParameters,
     window_size: Option<usize>,
     shuffle: Option<bool>,
+    seed: usize
 }
 
 #[derive(Arbitrary, Debug)]
@@ -305,7 +306,8 @@ pub fn harness(data: ToFuzz){
             graph.node2vec(
             &param,
             data.node2vec_args.window_size,
-            data.node2vec_args.shuffle
+            data.node2vec_args.shuffle,
+            data.node2vec_args.seed
         );
         }
     };

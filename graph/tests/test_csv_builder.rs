@@ -78,8 +78,8 @@ fn test_csv_builder_only_edges() {
             )
             .is_ok());
         assert!(graph.walk(&walk_parameters).is_ok());
-        assert!(graph.node2vec(&walk_parameters, None, Some(true)).is_ok());
-        assert!(graph.node2vec(&walk_parameters, None, None).is_ok());
+        assert!(graph.node2vec(&walk_parameters, None, Some(true), 56).is_ok());
+        assert!(graph.node2vec(&walk_parameters, None, None, 45).is_ok());
         assert!(graph.get_top_k_nodes_by_node_type(10).is_err());
         assert!(graph.get_top_k_edges_by_edge_type(10).is_err());
         assert!(graph.get_node_type_counts().is_err());
@@ -925,5 +925,7 @@ fn test_graph_from_csv_het() {
         assert!(graph.get_edge_type_id(100000000000).is_err());
         assert!(graph.connected_holdout(42, 0.7).is_err());
         let _ = graph.report();
+        let (train, test) = graph.random_holdout(4, 0.5).unwrap();
+        assert!(train.sum(&test).is_ok());
     }
 }
