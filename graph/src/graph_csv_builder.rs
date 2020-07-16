@@ -13,6 +13,7 @@ struct NodesArguments {
     ignore_duplicated_nodes: bool,
 }
 
+
 pub struct FromCsvBuilder {
     edge_path: String,
 
@@ -178,6 +179,26 @@ impl FromCsvBuilder {
         let columns: Vec<&str> = header_line.split(&args.node_sep).collect();
         let number_of_separators = columns.len();
 
+        if !columns.contains(&&args.node_types_column[..]) {
+            return Err(format!(concat!(
+                    "The column for the node types {} was not found.\n",
+                    "From the header the parser found the columns {:?}\n"
+                ),
+                args.node_types_column,
+                columns
+            ));
+        }
+
+        if !columns.contains(&&args.nodes_column[..]) {
+            return Err(format!(concat!(
+                    "The column for the node names {} was not found.\n",
+                    "From the header the parser found the columns {:?}\n"
+                ),
+                args.nodes_column,
+                columns
+            ));
+        }
+
         // initialize the variables
         let mut nodes: Vec<NodeT> = Vec::new();
         let mut nodes_mapping: HashMap<String, NodeT> = HashMap::new();
@@ -313,6 +334,50 @@ impl FromCsvBuilder {
         let header_line = lines.next().ok_or("The given edges file or string has no lines!").unwrap().unwrap();
         let columns: Vec<&str> = header_line.split(&self.edge_sep).collect();
         let number_of_separators = columns.len();
+
+        if !columns.contains(&&self.sources_column[..]) {
+            return Err(format!(concat!(
+                    "The column for the sources names {} was not found.\n",
+                    "From the header the parser found the columns {:?}\n"
+                ),
+                self.sources_column,
+                columns
+            ));
+        }
+
+        if !columns.contains(&&self.destinations_column[..]) {
+            return Err(format!(concat!(
+                    "The column for the destinations names {} was not found.\n",
+                    "From the header the parser found the columns {:?}\n"
+                ),
+                self.destinations_column,
+                columns
+            ));
+        }
+        
+        if let Some(etc) = &self.edge_types_column {
+            if !columns.contains(&&etc[..]) {
+                return Err(format!(concat!(
+                        "The column for the edge types {} was not found.\n",
+                        "From the header the parser found the columns {:?}\n"
+                    ),
+                    etc,
+                    columns
+                ));
+            }
+        }
+
+        if let Some(wc) = &self.weights_column {
+            if !columns.contains(&&wc[..]) {
+                return Err(format!(concat!(
+                        "The column for the weights {} was not found.\n",
+                        "From the header the parser found the columns {:?}\n"
+                    ),
+                    wc,
+                    columns
+                ));
+            }
+        }
 
         // parse each line and update the results
         for (line_index, _line) in lines.enumerate() {
