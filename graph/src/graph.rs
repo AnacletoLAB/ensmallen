@@ -1,6 +1,5 @@
 //! A graph representation optimized for executing random walks on huge graphs.
-use super::types::*;
-use super::walks_parameters::*;
+use super::*;
 use counter::Counter;
 use derive_getters::Getters;
 use hashbrown::{HashMap as HashBrownMap, HashSet as HashBrownSet};

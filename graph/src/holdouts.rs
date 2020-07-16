@@ -521,131 +521,76 @@ impl Graph {
         })
     }
 
-    /// Returns random set of connected edges of the graph.
+    /// Returns subgraph with given number of nodes.
     ///
-    /// This method creates subsets of the graph choosing a random set of
-    /// connected components and adds edges until it reaches the provided
-    /// edges number. The given seed is used to randomly sample the components
-    /// and to start the edge sampling in each component.
-    ///
-    /// The obtained graphs, changing the seed, **may overlap** one another.
-    /// This is a desired feature from these types of holdouts, as they should
-    /// be used to run partial graph embeddings in graphs that are so big
-    /// in terms of number of nodes that are not possible to fit into the
-    /// memory of GPUs.
+    /// This method creates a subset of the graph starting from a random node
+    /// sampled using given seed and includes all neighbouring nodes until
+    /// the required number of nodes is reached. All the edges connecting any
+    /// of the selected nodes are then inserted into this graph.
     ///
     /// # Arguments
     ///
     /// * seed: usize - Random seed to use.
-    /// * edges_number: usize - Number of edges to extract.
-    pub fn components_holdout(&self, seed: usize, edges_number: usize) -> Result<Graph, String> {
-        if edges_number > self.get_edges_number() {
+    /// * nodes_number: usize - Number of nodes to extract.
+    pub fn random_subgraph(&self, seed: usize, nodes_number: usize) -> Result<Graph, String> {
+        if nodes_number <= 1 {
+            return Err(String::from("Required nodes number must be more than 1."));
+        }
+        if nodes_number > self.get_nodes_number() {
             return Err(format!(
                 concat!(
-                    "Required number of edges ({}) is more than available ",
-                    "number of edges ({}) in current graph."
+                    "Required number of nodes ({}) is more than available ",
+                    "number of nodes ({}) in current graph."
                 ),
-                edges_number,
-                self.get_edges_number()
+                nodes_number,
+                self.get_nodes_number()
             ));
-        }
-        // First we retrieve all the connected components of the graph.
-        let mut components = self.strongly_connected_components();
-
-        if components.len() == self.get_nodes_number() {
-            return Err(String::from(concat!(
-                "Current graph has only singleton components that ",
-                "are composed of a single node."
-            )));
         }
 
         // Creating the random number generator
         let mut rnd = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
 
+        // Nodes indices
+        let mut nodes:Vec<NodeT> = (0..self.get_nodes_number()).collect();
+
         // Shuffling the components using the given seed.
-        components.shuffle(&mut rnd);
+        nodes.shuffle(&mut rnd);
 
         // Initializing the vector for creating the new graph.
-        let mut sources: Vec<NodeT> = Vec::with_capacity(edges_number);
-        let mut destinations: Vec<NodeT> = Vec::with_capacity(edges_number);
-        let mut weights: Vec<WeightT> = Vec::with_capacity(edges_number);
-        let mut edge_types: Vec<EdgeTypeT> = Vec::with_capacity(edges_number);
+        let mut sources: Vec<NodeT> = Vec::new();
+        let mut destinations: Vec<NodeT> = Vec::new();
+        let mut weights: Vec<WeightT> = Vec::new();
+        let mut edge_types: Vec<EdgeTypeT> = Vec::new();
 
-        // Initializing the edge counter
-        let mut edges_counter: EdgeT = 0;
+        // Initializing stack and set of nodes
+        let mut unique_nodes:HashSet<NodeT> = HashSet::with_capacity(nodes_number);
+        let mut stack:Vec<NodeT> = Vec::new();
 
         // We iterate on the components
-        for component in components {
-            let mut sorted_component: Vec<NodeT> = component.iter().cloned().collect();
-            sorted_component.sort();
-            // Extract all the edges that form the current components.
-            // Then, in the undirected case we don't want to insert the edge two times.
-            // To solve this in a clean way, we observe that we have only 3 cases:
-            // src == dst if the edge is a self-loop.
-            // src > dst and src < dst, since the graph is undirected we don't care
-            // about which of the two we use. Therefore, we can arbitrarly choose that
-            // we want only edges where src <= dst and we will never add the same
-            // undirected edge twice. Moreover, this also works when we have two
-            // nodes with two undirected edges between them with different types
-            // because we don't need to check for duplicates.
-            let mut edges: Vec<EdgeT> = sorted_component
-                .par_iter()
-                .map(|src| {
-                    let (min, max) = self.get_min_max_edge(*src);
-                    (min..max)
-                        .filter(|edge_id| {
-                            let dst = self.destinations[*edge_id];
-                            component.contains(src)
-                                && component.contains(&dst)
-                                && (self.is_directed || *src <= dst)
-                        })
-                        .collect::<Vec<EdgeT>>()
-                })
-                .flatten()
-                .collect();
-
-            // Shuffle only if needed, because if we have to add all edges from
-            // the component anyway it's useless shuffeling them.
-            if sources.len() + edges.len() > edges_number {
-                edges.shuffle(&mut rnd);
+        for node in nodes {
+            if self.is_node_trap(node){
+                continue;
             }
-
-            // And through all the edge IDs, since we do not know which edges
-            // are part of the component as these components are made out of
-            // set of nodes.
-            for edge_id in edges {
-                // We retrieve the sources and destinations corresponding to
-                // the edge IDs.
-                let src = self.sources[edge_id];
-                let dst = self.destinations[edge_id];
-
-                sources.push(src);
-                destinations.push(dst);
-                if let Some(w) = &self.weights {
-                    weights.push(w[edge_id]);
+            stack.push(node);
+            unique_nodes.insert(node);
+            while ! stack.is_empty(){
+                let src = stack.pop().unwrap();
+                let (min_edge, max_edge) = self.get_min_max_edge(src);
+                for edge_id in min_edge..max_edge{
+                    let dst:NodeT = self.destinations[edge_id];
+                    if !unique_nodes.contains(&dst){
+                        stack.push(dst);
+                        unique_nodes.insert(dst);
+                        sources.push(src);
+                        destinations.push(dst);
+                        if let Some(w) = &self.weights{
+                            weights.push(w[edge_id]);
+                        }
+                        if let Some(et) = &self.edge_types{
+                            edge_types.push(et[edge_id]);
+                        }
+                    }
                 }
-                if let Some(et) = &self.edge_types {
-                    edge_types.push(et[edge_id]);
-                }
-
-                // We increase the edge counter.
-                edges_counter += 1;
-
-                // If we are building an undirected graph and this is not
-                // a self loop, the edge counts twice.
-                if !self.is_directed && src != dst {
-                    edges_counter += 1;
-                }
-
-                // If we have collected the required number of edges, we can
-                // stop the process.
-                if edges_counter == edges_number {
-                    break;
-                }
-            }
-            // Similarly, we do the same check as done inside.
-            if edges_counter == edges_number {
-                break;
             }
         }
 
