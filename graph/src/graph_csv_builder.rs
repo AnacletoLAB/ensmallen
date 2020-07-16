@@ -170,8 +170,10 @@ impl FromCsvBuilder {
     {
         let args = self.nodes_args.as_ref().ok_or("Cannot parse nodes iterator without it's arugments, This exception should not be possible.")?;
         // open the file
-        let error_message = &format!("Cannot open the nodes file at {}", &args.node_path);
-        let file = File::open(&args.node_path).expect(error_message);
+        let file = match File::open(&args.node_path) {
+            Ok(g) => Ok(g),
+            Err(_) => Err(format!("Cannot open the nodes file at {}", &args.node_path))
+        }?;
         let node_buf_reader = BufReader::new(file);
         let mut lines = node_buf_reader.lines();
         // read the first line 
@@ -314,8 +316,11 @@ impl FromCsvBuilder {
             )
         };
         // read the file
-        let error_message = &format!("Cannot open the edge file at {}", &self.edge_path);
-        let file = File::open(&self.edge_path).expect(error_message);
+        let file = match File::open(&self.edge_path) {
+            Ok(g) => Ok(g),
+            Err(_) => Err(format!("Cannot open the edge file at {}", &self.edge_path))
+        }?;
+
         let edge_buf_reader = BufReader::new(file);
         let mut lines = edge_buf_reader.lines();
         // vector where we save the edges
