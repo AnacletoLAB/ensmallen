@@ -3,9 +3,8 @@ use graph::validate;
 use std::collections::HashMap;
 
 #[test]
-#[should_panic]
 fn test_validation() {
-    validate(
+    assert!(validate(
         &[0, 1, 2],
         &[1, 2, 3],
         &(vec![(String::from("a"), 0), (String::from("b"), 1)]
@@ -17,7 +16,7 @@ fn test_validation() {
         &None,
         &Some(vec![1.0, 1.0, 1.0]),
     )
-    .unwrap();
+    .is_err());
 }
 
 #[test]
@@ -63,9 +62,8 @@ fn test_validation_edge_duplication_with_edges() {
 }
 
 #[test]
-#[should_panic]
 fn test_validation_wrong_node_types_number() {
-    validate(
+    assert!(validate(
         &[0, 1, 2],
         &[1, 2, 3],
         &(vec![
@@ -81,13 +79,12 @@ fn test_validation_wrong_node_types_number() {
         &None,
         &Some(vec![1.0, 1.0, 1.0]),
     )
-    .unwrap();
+    .is_err());
 }
 
 #[test]
-#[should_panic]
 fn test_validation_wrong_edge_types_number() {
-    validate(
+    assert!(validate(
         &[0, 1, 2],
         &[1, 2, 3],
         &(vec![
@@ -103,13 +100,12 @@ fn test_validation_wrong_edge_types_number() {
         &Some(vec![8, 6]),
         &Some(vec![1.0, 1.0, 1.0]),
     )
-    .unwrap();
+    .is_err());
 }
 
 #[test]
-#[should_panic]
 fn test_validation_wrong_weights_number() {
-    validate(
+    assert!(validate(
         &[0, 1, 2],
         &[1, 2, 3],
         &(vec![
@@ -125,13 +121,12 @@ fn test_validation_wrong_weights_number() {
         &None,
         &Some(vec![1.0, 1.0]),
     )
-    .unwrap();
+    .is_err());
 }
 
 #[test]
-#[should_panic]
 fn test_validation_wrong_weights_zeros() {
-    validate(
+    assert!(validate(
         &[0, 1, 2],
         &[1, 2, 3],
         &(vec![
@@ -147,13 +142,12 @@ fn test_validation_wrong_weights_zeros() {
         &None,
         &Some(vec![1.0, 1.0, 0.0]),
     )
-    .unwrap();
+    .is_err());
 }
 
 #[test]
-#[should_panic]
 fn test_validation_wrong_edges_with_non_existant_nodes() {
-    validate(
+    assert!(validate(
         &[0, 1, 999],
         &[1, 2, 3],
         &(vec![
@@ -169,5 +163,5 @@ fn test_validation_wrong_edges_with_non_existant_nodes() {
         &None,
         &Some(vec![1.0, 1.0, 1.0]),
     )
-    .unwrap();
+    .is_err());
 }
