@@ -17,6 +17,7 @@ macro_rules! max {
         }
     };
 }
+
 #[macro_export]
 macro_rules! min {
     ($a: expr, $b: expr) => {
