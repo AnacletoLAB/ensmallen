@@ -189,7 +189,19 @@ impl EnsmallenGraph {
         }
         if let Some(nm) = nodes_mapping {
             if let Some(nrm) = nodes_reverse_mapping {
-                graph = graph.add_node_mapping(nm, nrm)
+                graph = graph.add_nodes(
+                    nm, 
+                    nrm,
+                    kwargs
+                        .get_item("node_types")
+                        .map(|val| val.extract::<Vec<NodeTypeT>>().unwrap()),
+                    kwargs
+                        .get_item("node_types_mapping")
+                        .map(|val| val.extract::<HashMap<String, NodeTypeT>>().unwrap()),
+                    kwargs
+                        .get_item("node_types_reverse_mapping")
+                        .map(|val| val.extract::<Vec<String>>().unwrap())
+                );
             }
         }
 
@@ -220,37 +232,6 @@ impl EnsmallenGraph {
             if let Some(etm) = edge_types_mapping {
                 if let Some(etrm) = edge_types_reverse_mapping {
                     graph = graph.add_edge_types(et, etm, etrm);
-                }
-            }
-        }
-
-        let node_types = kwargs
-            .get_item("node_types")
-            .map(|val| val.extract::<Vec<NodeTypeT>>().unwrap());
-        let node_types_mapping = kwargs
-            .get_item("node_types_mapping")
-            .map(|val| val.extract::<HashMap<String, NodeTypeT>>().unwrap());
-        let node_types_reverse_mapping = kwargs
-            .get_item("node_types_reverse_mapping")
-            .map(|val| val.extract::<Vec<String>>().unwrap());
-        // check passage consistency
-        if !((node_types.is_some()
-            && node_types_mapping.is_some()
-            && node_types_reverse_mapping.is_some())
-            || (node_types.is_none()
-                && node_types_mapping.is_none()
-                && node_types_reverse_mapping.is_none()))
-        {
-            return Err(PyErr::new::<exceptions::ValueError, _>(concat!(
-                "You must either pass all node_types, node_types_mapping, and node_types_reverse_mapping \n",
-                "Or none of them."
-            )));
-        }
-
-        if let Some(nt) = node_types {
-            if let Some(ntm) = node_types_mapping {
-                if let Some(ntrm) = node_types_reverse_mapping {
-                    graph = graph.add_node_types(nt, ntm, ntrm);
                 }
             }
         }
