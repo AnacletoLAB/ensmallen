@@ -1,6 +1,6 @@
 use graph::{
-    EdgeT, EdgeTypeT, Graph, NodeT, NodeTypeT, ParamsT, SingleWalkParameters, WalkWeights,
-    WalksParameters, WeightT, FromCsvBuilder
+    EdgeT, EdgeTypeT, FromCsvBuilder, Graph, NodeT, NodeTypeT, ParamsT, SingleWalkParameters,
+    WalkWeights, WalksParameters, WeightT,
 };
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::class::basic::CompareOp;
@@ -154,15 +154,11 @@ impl EnsmallenGraph {
         directed: bool,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Self> {
-        let mut graph = Graph::builder(
-            sources,
-            destinations,
-            directed
-        );
+        let mut graph = Graph::builder(sources, destinations, directed);
 
         if py_kwargs.is_none() {
             return match graph.build(None) {
-                Ok(g) => Ok(EnsmallenGraph{graph: g}),
+                Ok(g) => Ok(EnsmallenGraph { graph: g }),
                 Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
             };
         }
@@ -172,10 +168,10 @@ impl EnsmallenGraph {
             .get_item("weights")
             .map(|val| val.extract::<Vec<WeightT>>().unwrap());
 
-        if weights.is_some() {
-            graph = graph.add_weights(weights.unwrap());
+        if let Some(w) = weights {
+            graph = graph.add_weights(w);
         }
-        
+
         let nodes_mapping = kwargs
             .get_item("nodes_mapping")
             .map(|val| val.extract::<HashMap<String, NodeT>>().unwrap());
@@ -183,23 +179,19 @@ impl EnsmallenGraph {
             .get_item("nodes_reverse_mapping")
             .map(|val| val.extract::<Vec<String>>().unwrap());
         // check passage consistency
-        if !(
-            (nodes_mapping.is_some() && nodes_reverse_mapping.is_some())
-            ||
-            (nodes_mapping.is_none() && nodes_reverse_mapping.is_none())
-        ){
+        if !((nodes_mapping.is_some() && nodes_reverse_mapping.is_some())
+            || (nodes_mapping.is_none() && nodes_reverse_mapping.is_none()))
+        {
             return Err(PyErr::new::<exceptions::ValueError, _>(concat!(
                 "You must either pass both nodes_mapping, and nodes_reverse_mapping \n",
                 "Or none of them."
             )));
         }
-        if nodes_mapping.is_some() {
-            graph = graph.add_node_mapping(
-                nodes_mapping.unwrap(),
-                nodes_reverse_mapping.unwrap()
-            )
+        if let Some(nm) = nodes_mapping {
+            if let Some(nrm) = nodes_reverse_mapping {
+                graph = graph.add_node_mapping(nm, nrm)
+            }
         }
-
 
         let edge_types = kwargs
             .get_item("edge_types")
@@ -211,24 +203,27 @@ impl EnsmallenGraph {
             .get_item("edge_types_reverse_mapping")
             .map(|val| val.extract::<Vec<String>>().unwrap());
         // check passage consistency
-        if !(
-            (edge_types.is_some() && edge_types_mapping.is_some() && edge_types_reverse_mapping.is_some())
-            ||
-            (edge_types.is_none() && edge_types_mapping.is_none() && edge_types_reverse_mapping.is_none())
-        ){
+        if !((edge_types.is_some()
+            && edge_types_mapping.is_some()
+            && edge_types_reverse_mapping.is_some())
+            || (edge_types.is_none()
+                && edge_types_mapping.is_none()
+                && edge_types_reverse_mapping.is_none()))
+        {
             return Err(PyErr::new::<exceptions::ValueError, _>(concat!(
                 "You must either pass all edge_types, edge_types_mapping, and edge_types_reverse_mapping \n",
                 "Or none of them."
             )));
         }
-        if edge_types.is_some() {
-            graph = graph.add_edge_types(
-                edge_types.unwrap(),
-                edge_types_mapping.unwrap(),
-                edge_types_reverse_mapping.unwrap()
-            )
+
+        if let Some(et) = edge_types {
+            if let Some(etm) = edge_types_mapping {
+                if let Some(etrm) = edge_types_reverse_mapping {
+                    graph = graph.add_edge_types(et, etm, etrm);
+                }
+            }
         }
-        
+
         let node_types = kwargs
             .get_item("node_types")
             .map(|val| val.extract::<Vec<NodeTypeT>>().unwrap());
@@ -239,30 +234,33 @@ impl EnsmallenGraph {
             .get_item("node_types_reverse_mapping")
             .map(|val| val.extract::<Vec<String>>().unwrap());
         // check passage consistency
-        if !(
-            (node_types.is_some() && node_types_mapping.is_some() && node_types_reverse_mapping.is_some())
-            ||
-            (node_types.is_none() && node_types_mapping.is_none() && node_types_reverse_mapping.is_none())
-        ){
+        if !((node_types.is_some()
+            && node_types_mapping.is_some()
+            && node_types_reverse_mapping.is_some())
+            || (node_types.is_none()
+                && node_types_mapping.is_none()
+                && node_types_reverse_mapping.is_none()))
+        {
             return Err(PyErr::new::<exceptions::ValueError, _>(concat!(
                 "You must either pass all node_types, node_types_mapping, and node_types_reverse_mapping \n",
                 "Or none of them."
             )));
         }
-        if node_types.is_some() {
-            graph = graph.add_node_types(
-                node_types.unwrap(),
-                node_types_mapping.unwrap(),
-                node_types_reverse_mapping.unwrap()
-            )
+
+        if let Some(nt) = node_types {
+            if let Some(ntm) = node_types_mapping {
+                if let Some(ntrm) = node_types_reverse_mapping {
+                    graph = graph.add_node_types(nt, ntm, ntrm);
+                }
+            }
         }
 
         match graph.build(
             kwargs
                 .get_item("force_conversion_to_undirected")
                 .map(|val| val.extract::<bool>().unwrap()),
-            ) {
-            Ok(g) => Ok(EnsmallenGraph{ graph: g}),
+        ) {
+            Ok(g) => Ok(EnsmallenGraph { graph: g }),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
@@ -340,48 +338,45 @@ impl EnsmallenGraph {
                 Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
             }?;
             return match result.build() {
-                Ok(g) => Ok(EnsmallenGraph{graph: g}),
+                Ok(g) => Ok(EnsmallenGraph { graph: g }),
                 Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-            }
+            };
         }
         let kwargs = py_kwargs.unwrap();
 
         let mut result = match FromCsvBuilder::new(
-                edge_path,
-                sources_column,
-                destinations_column,
-                directed,
-                kwargs.get_item("edge_sep").map(extract_value),
-            ) {
-                Ok(g) => Ok(g),
-                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-            }?;
-        
+            edge_path,
+            sources_column,
+            destinations_column,
+            directed,
+            kwargs.get_item("edge_sep").map(extract_value),
+        ) {
+            Ok(g) => Ok(g),
+            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+        }?;
+
         let weights_column = kwargs.get_item("weights_column").map(extract_value);
-        if weights_column.is_some() {
+        if let Some(wc) = weights_column {
             result = result.set_weights(
-                weights_column.unwrap(),
+                wc,
                 kwargs
                     .get_item("default_weight")
-                    .map(|val| val.extract::<WeightT>().unwrap())
+                    .map(|val| val.extract::<WeightT>().unwrap()),
             );
         }
 
-        
         let node_path = kwargs.get_item("node_path").map(extract_value);
         let nodes_column = kwargs.get_item("nodes_column").map(extract_value);
         let node_types_column = kwargs.get_item("node_types_column").map(extract_value);
         let default_node_type = kwargs.get_item("default_node_type").map(extract_value);
         let node_sep = kwargs.get_item("node_sep").map(extract_value);
         let ignore_duplicated_nodes = kwargs
-                .get_item("ignore_duplicated_nodes")
-                        .map(|val| val.extract::<bool>().unwrap());
+            .get_item("ignore_duplicated_nodes")
+            .map(|val| val.extract::<bool>().unwrap());
         // check passage consistency
-        if !(
-            (node_path.is_some() && nodes_column.is_some() && node_types_column.is_some())
-            ||
-            (node_path.is_none() && nodes_column.is_none() && node_types_column.is_none())
-        ){
+        if !((node_path.is_some() && nodes_column.is_some() && node_types_column.is_some())
+            || (node_path.is_none() && nodes_column.is_none() && node_types_column.is_none()))
+        {
             return Err(PyErr::new::<exceptions::ValueError, _>(concat!(
                 "You must either pass all node_types, nodes_column, and node_types_column \n",
                 "Or none of them."
@@ -396,39 +391,37 @@ impl EnsmallenGraph {
                 node_sep,
                 ignore_duplicated_nodes,
             ) {
-                    Ok(g) => Ok(g),
-                    Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
+                Ok(g) => Ok(g),
+                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
             }?;
         }
-        
+
         let edge_types_column = kwargs.get_item("edge_types_column").map(extract_value);
-        if edge_types_column.is_some() {
-            result = result.set_edge_types(
-                edge_types_column.unwrap(),
-                kwargs.get_item("default_edge_type").map(extract_value)
-            );
+        if let Some(etc) = edge_types_column {
+            result =
+                result.set_edge_types(etc, kwargs.get_item("default_edge_type").map(extract_value));
         }
-        
+
         let ignore_duplicated_edges = kwargs
-                .get_item("ignore_duplicated_edges")
-                .map(|val| val.extract::<bool>().unwrap());
-        if ignore_duplicated_edges.is_some(){
-            if ignore_duplicated_edges.unwrap() {
+            .get_item("ignore_duplicated_edges")
+            .map(|val| val.extract::<bool>().unwrap());
+        if let Some(ide) = ignore_duplicated_edges {
+            if ide {
                 result = result.set_ignore_duplicated_edges();
             }
         }
 
         let force_conversion_to_undirected = kwargs
-                .get_item("force_conversion_to_undirected")
-                .map(|val| val.extract::<bool>().unwrap());
-        if force_conversion_to_undirected.is_some(){
-            if force_conversion_to_undirected.unwrap() {
+            .get_item("force_conversion_to_undirected")
+            .map(|val| val.extract::<bool>().unwrap());
+        if let Some(fctu) = force_conversion_to_undirected {
+            if fctu {
                 result = result.set_force_conversion_to_undirected();
             }
         }
-        
+
         match result.build() {
-            Ok(g) => Ok(EnsmallenGraph{graph: g}),
+            Ok(g) => Ok(EnsmallenGraph { graph: g }),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
@@ -1371,21 +1364,26 @@ impl EnsmallenGraph {
         }
     }
 
-    #[text_signature = "($self, seed, edges_number)"]
-    /// Returns partial graph based on connected components.
+    #[text_signature = "($self, seed, nodes_number)"]
+    /// Returns partial subgraph.
+    ///
+    /// This method creates a subset of the graph starting from a random node
+    /// sampled using given seed and includes all neighbouring nodes until
+    /// the required number of nodes is reached. All the edges connecting any
+    /// of the selected nodes are then inserted into this graph.
     ///
     /// Parameters
     /// -----------------------------
     /// seed: int,
     ///     The seed to use to generate the partial graph.
-    /// edges_number: int,
+    /// nodes_number: int,
     ///     The number of edges to insert in the partial graph.
     ///
     /// Returns
     /// -----------------------------
     /// Partial graph.
-    fn components_holdout(&self, seed: NodeT, edges_number: usize) -> PyResult<EnsmallenGraph> {
-        match self.graph.components_holdout(seed, edges_number) {
+    fn random_subgraph(&self, seed: NodeT, nodes_number: NodeT) -> PyResult<EnsmallenGraph> {
+        match self.graph.random_subgraph(seed, nodes_number) {
             Ok(g) => Ok(EnsmallenGraph { graph: g }),
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
