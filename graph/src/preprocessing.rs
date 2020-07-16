@@ -122,6 +122,13 @@ impl Graph {
     ) -> Result<((Vec<usize>, Vec<usize>), Vec<u8>), String> {
         // Compute the walks
         let walks = self.walk(walk_parameters)?;
+
+        if walks.is_empty() {
+            return Err(concat!(
+                "In the current graph, with the given parameters, no walk could ",
+                "be performed which is above the given min-length"
+            ).to_string());
+        }
         // Setup the cumulative sum (this compute the index for the windows of each node,
         // this is only done to be able to parallelize)
         let mut cumsum: Vec<usize> = Vec::with_capacity(walks.len());
@@ -220,6 +227,12 @@ impl Graph {
         // do the walks and check the result
         let walks = self.walk(walk_parameters)?;
 
+        if walks.is_empty() {
+            return Err(concat!(
+                "In the current graph, with the given parameters, no walk could ",
+                "be performed which is above the given min-length"
+            ).to_string());
+        }
         let _window_size = window_size.unwrap_or(4);
         let _shuffle: bool = shuffle.unwrap_or(true);
         let context_length = _window_size * 2;
@@ -309,6 +322,12 @@ impl Graph {
 
         let walks = self.walk(walks_parameters)?;
 
+        if walks.is_empty() {
+            return Err(concat!(
+                "In the current graph, with the given parameters, no walk could ",
+                "be performed which is above the given min-length"
+            ).to_string());
+        }
         let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
         let pb1 = if _verbose {
             let pb1 = ProgressBar::new(walks.len() as u64);

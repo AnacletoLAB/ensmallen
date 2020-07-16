@@ -247,6 +247,14 @@ impl WalksParameters {
             ));
         }
 
+        if self.min_length >= self.single_walk_parameters.length {
+            return Err(format!(
+                "The given min-walk-length {} is bigger or equal to the given walk length {}",
+                self.min_length,
+                self.single_walk_parameters.length
+            ))
+        }
+
         if self.end_node > graph.not_trap_nodes.len() {
             return Err(format!(
                 concat!(
