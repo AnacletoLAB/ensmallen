@@ -23,7 +23,7 @@ fn test_partial_walks_ppi() {
         None
     ).unwrap()
     .build().unwrap()
-    .components_holdout(0, 10000).unwrap();
+    .random_subgraph(0, 10000).unwrap();
     let walk_parameters = WalksParameters::new(
         SingleWalkParameters::new(100, WalkWeights::default()).unwrap(),
         0,
