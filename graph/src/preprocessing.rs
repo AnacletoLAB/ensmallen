@@ -740,7 +740,7 @@ impl Graph {
         let mut rng: StdRng = SeedableRng::seed_from_u64(seed);
         indices.shuffle(&mut rng);
 
-        labels = indices.par_iter().map(|i| labels[*i].clone()).collect();
+        labels = indices.par_iter().map(|i| labels[*i]).collect();
         edges = indices.par_iter().map(|i| edges[*i].clone()).collect();
 
         Ok((edges, labels))
