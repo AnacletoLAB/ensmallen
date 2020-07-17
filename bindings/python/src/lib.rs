@@ -1,6 +1,6 @@
 use graph::{
     binary_skipgrams as rust_binary_skipgrams, cooccurence_matrix as rust_cooccurence_matrix,
-    node2vec as rust_node2vec, EdgeT, EdgeTypeT, FromCsvBuilder, Graph, NodeT, NodeTypeT, ParamsT,
+    word2vec as rust_word2vec, EdgeT, EdgeTypeT, FromCsvBuilder, Graph, NodeT, NodeTypeT, ParamsT,
     SingleWalkParameters, WalkWeights, WalksParameters, WeightT,
 };
 use numpy::{PyArray, PyArray1, PyArray2};
@@ -24,7 +24,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
 #[pymodule]
 fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(binary_skipgrams))?;
-    m.add_wrapped(wrap_pyfunction!(node2vec))?;
+    m.add_wrapped(wrap_pyfunction!(word2vec))?;
     m.add_wrapped(wrap_pyfunction!(cooccurence_matrix))?;
     Ok(())
 }
@@ -79,7 +79,7 @@ fn binary_skipgrams(
 
 #[pyfunction(py_kwargs = "**")]
 #[text_signature = "(seed, sequences, *, window_size, shuffle)"]
-/// Return training batches for Node2Vec models.
+/// Return training batches for Word2Vec models.
 ///
 /// The batch is composed of a tuple as the following:
 ///
@@ -101,13 +101,13 @@ fn binary_skipgrams(
 /// seed: int,
 ///     The seed for reproducibility.
 ///
-fn node2vec(
+fn word2vec(
     seed: usize,
     sequences: Vec<Vec<usize>>,
     py_kwargs: Option<&PyDict>,
 ) -> PyResult<(Vec<Vec<usize>>, Vec<usize>)> {
     match if let Some(kwargs) = &py_kwargs {
-        rust_node2vec(
+        rust_word2vec(
             sequences,
             kwargs
                 .get_item("window_size")
@@ -118,7 +118,7 @@ fn node2vec(
             seed,
         )
     } else {
-        rust_node2vec(sequences, None, None, seed)
+        rust_word2vec(sequences, None, None, seed)
     } {
         Ok(batch) => Ok(batch),
         Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),

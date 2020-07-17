@@ -191,7 +191,7 @@ pub fn binary_skipgrams(
     Ok(((words, contexts), labels))
 }
 
-/// Return training batches for Node2Vec models.
+/// Return training batches for Word2Vec models.
 ///
 /// The batch is composed of a tuple as the following:
 ///
@@ -208,7 +208,7 @@ pub fn binary_skipgrams(
 /// * shuffle: Option<bool> - Wethever to shuffle the vectors on return.
 /// * seed: usize - The seed for reproducibility.
 ///
-pub fn node2vec(
+pub fn word2vec(
     sequences: Vec<Vec<usize>>,
     window_size: Option<usize>,
     shuffle: Option<bool>,
@@ -477,7 +477,7 @@ impl Graph {
             .to_string());
         }
 
-        node2vec(walks, window_size, shuffle, seed)
+        word2vec(walks, window_size, shuffle, seed)
     }
 
     /// Return triple with CSR representation of cooccurrence matrix.
