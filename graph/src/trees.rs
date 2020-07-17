@@ -70,7 +70,7 @@ impl Graph {
                             } else {
                                 max!(node_to_explore, dst)
                             };
-                            tree.insert((first, second,edge_type));
+                            tree.insert((first, second, edge_type));
                             covered_nodes[src] = true;
                             covered_nodes[dst] = true;
                             stack.push(dst);

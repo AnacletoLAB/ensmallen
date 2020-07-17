@@ -5,18 +5,14 @@ use linecount::count_lines;
 use std::collections::HashMap;
 use std::fs::File;
 
-
 #[test]
 fn test_csv_builder_only_edges() {
     let path = "tests/data/edge_file.tsv";
     for directed in &[true, false] {
-        let graph = FromCsvBuilder::new(
-            path, 
-            "subject", 
-            "object", 
-            *directed, 
-            None
-        ).unwrap().build().unwrap();
+        let graph = FromCsvBuilder::new(path, "subject", "object", *directed, None)
+            .unwrap()
+            .build()
+            .unwrap();
         assert_eq!(graph.get_edge_types_number(), 0);
         assert_eq!(graph.get_node_types_number(), 0);
         let lines: usize = count_lines(File::open(path).unwrap()).unwrap();
@@ -78,7 +74,9 @@ fn test_csv_builder_only_edges() {
             )
             .is_ok());
         assert!(graph.walk(&walk_parameters).is_ok());
-        assert!(graph.node2vec(&walk_parameters, None, Some(true), 56).is_ok());
+        assert!(graph
+            .node2vec(&walk_parameters, None, Some(true), 56)
+            .is_ok());
         assert!(graph.node2vec(&walk_parameters, None, None, 45).is_ok());
         assert!(graph.get_top_k_nodes_by_node_type(10).is_err());
         assert!(graph.get_top_k_edges_by_edge_type(10).is_err());
@@ -91,18 +89,12 @@ fn test_csv_builder_only_edges() {
 fn test_csv_builder_only_edges_with_edge_types() {
     let path = "tests/data/edge_file.tsv";
     for directed in &[true, false] {
-        let graph = FromCsvBuilder::new(
-            path, 
-            "subject", 
-            "object", 
-            *directed, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .build().unwrap();
-        
+        let graph = FromCsvBuilder::new(path, "subject", "object", *directed, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"))
+            .build()
+            .unwrap();
+
         let walk_parameters = WalksParameters::new(
             SingleWalkParameters::new(
                 10,
@@ -131,158 +123,109 @@ fn test_csv_builder_only_edges_with_edge_types() {
     }
 }
 
-
 #[test]
 fn test_csv_builder_forced_conversion_to_undirected() {
-    assert!(
-        FromCsvBuilder::new(
-            "tests/data/directed_with_bidirectionals.tsv",
-            "subject", 
-            "object", 
-            false, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .build().is_err()
-    );
-    assert!(
-        FromCsvBuilder::new(
-            "tests/data/directed_with_bidirectionals.tsv",
-            "subject", 
-            "object", 
-            false, 
-            None
-        ).unwrap()
-        .build().is_err()
-    );
+    assert!(FromCsvBuilder::new(
+        "tests/data/directed_with_bidirectionals.tsv",
+        "subject",
+        "object",
+        false,
+        None
+    )
+    .unwrap()
+    .set_edge_types("edge_label", Some("biolink:Association"),)
+    .build()
+    .is_err());
+    assert!(FromCsvBuilder::new(
+        "tests/data/directed_with_bidirectionals.tsv",
+        "subject",
+        "object",
+        false,
+        None
+    )
+    .unwrap()
+    .build()
+    .is_err());
 
-    assert!(
-        FromCsvBuilder::new(
-            "tests/data/directed_with_bidirectionals.tsv",
-            "subject", 
-            "object", 
-            false, 
-            None
-        ).unwrap()
-        .set_force_conversion_to_undirected()
-        .build().is_ok()
-    );
+    assert!(FromCsvBuilder::new(
+        "tests/data/directed_with_bidirectionals.tsv",
+        "subject",
+        "object",
+        false,
+        None
+    )
+    .unwrap()
+    .set_force_conversion_to_undirected()
+    .build()
+    .is_ok());
 }
 
 #[test]
 fn test_csv_builder_zero_weights_error() {
-        assert!(
-        FromCsvBuilder::new(
-            "tests/data/zero_weights.tsv",
-            "subject", 
-            "object", 
-            false, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            None
-        )
-        .build().is_err()
-    );
+    assert!(FromCsvBuilder::new(
+        "tests/data/zero_weights.tsv",
+        "subject",
+        "object",
+        false,
+        None
+    )
+    .unwrap()
+    .set_edge_types("edge_label", Some("biolink:Association"),)
+    .set_weights("weight", None)
+    .build()
+    .is_err());
 }
-
 
 #[test]
 fn test_csv_builder_duplicated_edges() {
     let path = "tests/data/duplicated_edge.tsv";
-    assert!(
-        FromCsvBuilder::new(
-            path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            None
-        )
-        .build().is_err()
-    );
-    assert!(
-        FromCsvBuilder::new(
-            path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap()
-        .set_weights(
-            "weight",
-            None
-        )
-        .build().is_err()
-    );
-    assert!(
-        FromCsvBuilder::new(
-            path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            None
-        )
+    assert!(FromCsvBuilder::new(path, "subject", "object", true, None)
+        .unwrap()
+        .set_edge_types("edge_label", Some("biolink:Association"),)
+        .set_weights("weight", None)
+        .build()
+        .is_err());
+    assert!(FromCsvBuilder::new(path, "subject", "object", true, None)
+        .unwrap()
+        .set_weights("weight", None)
+        .build()
+        .is_err());
+    assert!(FromCsvBuilder::new(path, "subject", "object", true, None)
+        .unwrap()
+        .set_edge_types("edge_label", Some("biolink:Association"),)
+        .set_weights("weight", None)
         .set_ignore_duplicated_edges()
-        .build().is_ok()
-    );
+        .build()
+        .is_ok());
 }
-
 
 #[test]
 fn test_csv_builder_two_node_files() {
     let edge_path = "tests/data/edge_file.tsv";
     let node_path = "tests/data/duplicated_node.tsv";
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            Some(1.0)
-        )
-        .load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            None, 
-            Some(false)
-        ).unwrap()
-        .load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            None, 
-            Some(false)
-        ).is_err()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(
+                node_path,
+                "id",
+                "category",
+                Some("biolink:NamedThing"),
+                None,
+                Some(false)
+            )
+            .unwrap()
+            .load_nodes_csv(
+                node_path,
+                "id",
+                "category",
+                Some("biolink:NamedThing"),
+                None,
+                Some(false)
+            )
+            .is_err()
     );
 }
 
@@ -291,54 +234,38 @@ fn test_csv_builder_duplicated_nodes() {
     let edge_path = "tests/data/edge_file.tsv";
     let node_path = "tests/data/duplicated_node.tsv";
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            Some(1.0)
-        )
-        .load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            None, 
-            Some(false)
-        ).unwrap()
-        .build().is_err()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(
+                node_path,
+                "id",
+                "category",
+                Some("biolink:NamedThing"),
+                None,
+                Some(false)
+            )
+            .unwrap()
+            .build()
+            .is_err()
     );
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            Some(1.0)
-        )
-        .load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            None, 
-            Some(true)
-        ).unwrap()
-        .build().is_ok()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(
+                node_path,
+                "id",
+                "category",
+                Some("biolink:NamedThing"),
+                None,
+                Some(true)
+            )
+            .unwrap()
+            .build()
+            .is_ok()
     );
 }
 
@@ -346,179 +273,88 @@ fn test_csv_builder_duplicated_nodes() {
 fn test_csv_builder_no_column_panic() {
     let edge_path = "tests/data/edge_file.tsv";
     let node_path = "tests/data/node_file.tsv";
+    assert!(FromCsvBuilder::new(edge_path, "subject", "object", true, Some("")).is_err());
+    assert!(FromCsvBuilder::new(edge_path, "subject", "object", true, Some("\t")).is_ok());
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            Some("")
-        ).is_err()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(
+                node_path,
+                "id",
+                "category",
+                Some("biolink:NamedThing"),
+                Some(""),
+                None
+            )
+            .is_err()
     );
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            Some("\t")
-        ).is_ok()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(node_path, "id", "", Some("biolink:NamedThing"), None, None)
+            .is_err()
     );
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            Some(1.0)
-        )
-        .load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            Some(""), 
-            None
-        ).is_err()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(
+                node_path,
+                "",
+                "category",
+                Some("biolink:NamedThing"),
+                None,
+                None
+            )
+            .is_err()
     );
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            Some(1.0)
-        )
-        .load_nodes_csv(
-            node_path,
-            "id", 
-            "", 
-            Some("biolink:NamedThing"), 
-            None, 
-            None
-        ).is_err()
-    );
-    assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            Some(1.0)
-        )
-        .load_nodes_csv(
-            node_path,
-            "", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            None, 
-            None
-        ).is_err()
-    );
-    assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            Some(1.0)
-        )
-        .load_nodes_csv(
-            node_path,
-            "id", 
-            "", 
-            Some("biolink:NamedThing"), 
-            None, 
-            None
-        ).is_err()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(node_path, "id", "", Some("biolink:NamedThing"), None, None)
+            .is_err()
     );
 }
-
 
 #[test]
 fn test_csv_builder_no_default_weight() {
     let edge_path = "tests/data/edge_file_missing_weights.tsv";
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            None,
-        ).build().is_err()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", None,)
+            .build()
+            .is_err()
     );
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("default_type"),
-        ).build().is_ok()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("default_type"),)
+            .build()
+            .is_ok()
     );
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("default_type"),
-        ).set_weights(
-            "weight",
-            None
-        ).build().is_err()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("default_type"),)
+            .set_weights("weight", None)
+            .build()
+            .is_err()
     );
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("default_type"),
-        ).set_weights(
-            "weight",
-            Some(1.0)
-        ).build().is_ok()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("default_type"),)
+            .set_weights("weight", Some(1.0))
+            .build()
+            .is_ok()
     );
 }
 
@@ -527,52 +363,31 @@ fn test_csv_builder_default_node_types() {
     let edge_path = "tests/data/edge_file.tsv";
     let node_path = "tests/data/missing_node_types.tsv";
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            Some(1.0)
-        )
-        .load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            None, 
-            None, 
-            None
-        ).unwrap().build().is_err()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(node_path, "id", "category", None, None, None)
+            .unwrap()
+            .build()
+            .is_err()
     );
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            Some(1.0)
-        )
-        .load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            None, 
-            None
-        ).unwrap().build().is_ok()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(
+                node_path,
+                "id",
+                "category",
+                Some("biolink:NamedThing"),
+                None,
+                None
+            )
+            .unwrap()
+            .build()
+            .is_ok()
     );
 }
 
@@ -581,28 +396,21 @@ fn test_graph_from_csv_weird_edge_nodes() {
     let edge_path = "tests/data/edge_file_with_weird_nodes.tsv";
     let node_path = "tests/data/node_file.tsv";
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            Some(1.0)
-        )
-        .load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            None, 
-            None
-        ).unwrap().build().is_err()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(
+                node_path,
+                "id",
+                "category",
+                Some("biolink:NamedThing"),
+                None,
+                None
+            )
+            .unwrap()
+            .build()
+            .is_err()
     );
 }
 
@@ -611,28 +419,21 @@ fn test_graph_from_csv_with_edge_and_nodes() {
     let edge_path = "tests/data/edge_file.tsv";
     let node_path = "tests/data/node_file.tsv";
     for directed in &[true, false] {
-        let graph = FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            *directed, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        )
-        .set_weights(
-            "weight",
-            Some(1.0)
-        )
-        .load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            None, 
-            None
-        ).unwrap().build().unwrap();
+        let graph = FromCsvBuilder::new(edge_path, "subject", "object", *directed, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"))
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(
+                node_path,
+                "id",
+                "category",
+                Some("biolink:NamedThing"),
+                None,
+                None,
+            )
+            .unwrap()
+            .build()
+            .unwrap();
 
         let edge_lines: usize = count_lines(File::open(edge_path).unwrap()).unwrap();
         if *directed {
@@ -658,20 +459,12 @@ fn test_graph_negative_edge_weights() {
     let edge_path = "tests/data/negative_edge_weights.tsv";
     for directed in &[true, false] {
         assert!(
-            FromCsvBuilder::new(
-                edge_path,
-                "subject", 
-                "object", 
-                *directed, 
-                None
-            ).unwrap().set_edge_types(
-                "edge_label",
-                Some("biolink:Association"),
-            )
-            .set_weights(
-                "weight",
-                Some(1.0)
-            ).build().is_err()
+            FromCsvBuilder::new(edge_path, "subject", "object", *directed, None)
+                .unwrap()
+                .set_edge_types("edge_label", Some("biolink:Association"),)
+                .set_weights("weight", Some(1.0))
+                .build()
+                .is_err()
         );
     }
 }
@@ -681,33 +474,19 @@ fn test_graph_invalid_edge_weights() {
     let edge_path = "tests/data/invalid_edge_weights.tsv";
     for directed in &[true, false] {
         assert!(
-            FromCsvBuilder::new(
-                edge_path,
-                "subject", 
-                "object", 
-                *directed, 
-                None
-            ).unwrap().set_edge_types(
-                "edge_label",
-                Some("biolink:Association"),
-            )
-            .set_weights(
-                "weight",
-                Some(1.0)
-            ).build().is_err()
+            FromCsvBuilder::new(edge_path, "subject", "object", *directed, None)
+                .unwrap()
+                .set_edge_types("edge_label", Some("biolink:Association"),)
+                .set_weights("weight", Some(1.0))
+                .build()
+                .is_err()
         );
         assert!(
-            FromCsvBuilder::new(
-                edge_path,
-                "subject", 
-                "object", 
-                *directed, 
-                None
-            ).unwrap()
-            .set_weights(
-                "weight",
-                Some(1.0)
-            ).build().is_err()
+            FromCsvBuilder::new(edge_path, "subject", "object", *directed, None)
+                .unwrap()
+                .set_weights("weight", Some(1.0))
+                .build()
+                .is_err()
         );
     }
 }
@@ -717,20 +496,12 @@ fn test_graph_nan_edge_weights() {
     let edge_path = "tests/data/nan_edge_weights.tsv";
     for directed in &[true, false] {
         assert!(
-            FromCsvBuilder::new(
-                edge_path,
-                "subject", 
-                "object", 
-                *directed, 
-                None
-            ).unwrap().set_edge_types(
-                "edge_label",
-                Some("biolink:Association"),
-            )
-            .set_weights(
-                "weight",
-                Some(1.0)
-            ).build().is_err()
+            FromCsvBuilder::new(edge_path, "subject", "object", *directed, None)
+                .unwrap()
+                .set_edge_types("edge_label", Some("biolink:Association"),)
+                .set_weights("weight", Some(1.0))
+                .build()
+                .is_err()
         );
     }
 }
@@ -740,20 +511,12 @@ fn test_graph_inf_edge_weights() {
     let edge_path = "tests/data/nan_edge_weights.tsv";
     for directed in &[true, false] {
         assert!(
-            FromCsvBuilder::new(
-                edge_path,
-                "subject", 
-                "object", 
-                *directed, 
-                None
-            ).unwrap().set_edge_types(
-                "edge_label",
-                Some("biolink:Association"),
-            )
-            .set_weights(
-                "weight",
-                Some(1.0)
-            ).build().is_err()
+            FromCsvBuilder::new(edge_path, "subject", "object", *directed, None)
+                .unwrap()
+                .set_edge_types("edge_label", Some("biolink:Association"),)
+                .set_weights("weight", Some(1.0))
+                .build()
+                .is_err()
         );
     }
 }
@@ -763,70 +526,44 @@ fn test_graph_from_csv_empty_node_sep() {
     let edge_path = "tests/data/edge_file.tsv";
     let node_path = "tests/data/node_file.tsv";
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        ).set_weights(
-            "weight",
-            Some(1.0)
-        ).load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            Some(""), 
-            None
-        ).is_err()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(
+                node_path,
+                "id",
+                "category",
+                Some("biolink:NamedThing"),
+                Some(""),
+                None
+            )
+            .is_err()
     );
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        ).set_weights(
-            "weight",
-            Some(1.0)
-        ).load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            Some("\t"), 
-            None
-        ).unwrap().build().is_ok()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(
+                node_path,
+                "id",
+                "category",
+                Some("biolink:NamedThing"),
+                Some("\t"),
+                None
+            )
+            .unwrap()
+            .build()
+            .is_ok()
     );
     assert!(
-        FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            true, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        ).set_weights(
-            "weight",
-            Some(1.0)
-        ).load_nodes_csv(
-            node_path,
-            "id", 
-            "", 
-            Some("biolink:NamedThing"), 
-            None, 
-            None
-        ).is_err()
+        FromCsvBuilder::new(edge_path, "subject", "object", true, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"),)
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(node_path, "id", "", Some("biolink:NamedThing"), None, None)
+            .is_err()
     );
 }
 
@@ -835,26 +572,21 @@ fn test_graph_from_csv_with_edge_and_nodes_types() {
     let edge_path = "tests/data/edge_file.tsv";
     let node_path = "tests/data/node_file.tsv";
     for directed in &[true, false] {
-        let graph = FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            *directed, 
-            None
-        ).unwrap().set_edge_types(
-            "edge_label",
-            Some("biolink:Association"),
-        ).set_weights(
-            "weight",
-            Some(1.0)
-        ).load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            None, 
-            None
-        ).unwrap().build().unwrap();
+        let graph = FromCsvBuilder::new(edge_path, "subject", "object", *directed, None)
+            .unwrap()
+            .set_edge_types("edge_label", Some("biolink:Association"))
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(
+                node_path,
+                "id",
+                "category",
+                Some("biolink:NamedThing"),
+                None,
+                None,
+            )
+            .unwrap()
+            .build()
+            .unwrap();
 
         let edge_lines: usize = count_lines(File::open(edge_path).unwrap()).unwrap();
         if *directed {
@@ -891,24 +623,20 @@ fn test_graph_from_csv_het() {
     let edge_path = "tests/data/het_graph_edges.tsv";
     let node_path = "tests/data/het_graph_nodes.tsv";
     for directed in &[true, false] {
-        let graph = FromCsvBuilder::new(
-            edge_path,
-            "subject", 
-            "object", 
-            *directed, 
-            None
-        ).unwrap()
-        .set_weights(
-            "weight",
-            Some(1.0)
-        ).load_nodes_csv(
-            node_path,
-            "id", 
-            "category", 
-            Some("biolink:NamedThing"), 
-            None, 
-            None
-        ).unwrap().build().unwrap();
+        let graph = FromCsvBuilder::new(edge_path, "subject", "object", *directed, None)
+            .unwrap()
+            .set_weights("weight", Some(1.0))
+            .load_nodes_csv(
+                node_path,
+                "id",
+                "category",
+                Some("biolink:NamedThing"),
+                None,
+                None,
+            )
+            .unwrap()
+            .build()
+            .unwrap();
         let edge_lines: usize = count_lines(File::open(edge_path).unwrap()).unwrap();
         if *directed {
             assert_eq!(edge_lines, graph.get_edges_number());

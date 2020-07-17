@@ -332,7 +332,8 @@ impl Graph {
 
     /// Return mapping from instance not trap nodes to dense nodes.
     pub fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
-        self.sources.iter()
+        self.sources
+            .iter()
             .chain(self.destinations.iter())
             .cloned()
             .unique()
@@ -579,15 +580,11 @@ impl Graph {
                 .collect::<Vec<Vec<NodeT>>>()
         };
 
-        if let Some(dense_nodes_mapping) = &parameters.dense_nodes_mapping{
-            walks.par_iter_mut().for_each(
-                |walk|
-                        walk.iter_mut()
-                            .for_each(
-                                |node|
-                                *node = *dense_nodes_mapping.get(node).unwrap()
-                            )
-            )
+        if let Some(dense_nodes_mapping) = &parameters.dense_nodes_mapping {
+            walks.par_iter_mut().for_each(|walk| {
+                walk.iter_mut()
+                    .for_each(|node| *node = *dense_nodes_mapping.get(node).unwrap())
+            })
         }
 
         Ok(walks)

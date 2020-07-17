@@ -71,25 +71,21 @@ pub(crate) fn build_nodes_mapping(
 }
 
 /// # Graph Constructors
-impl Graph { 
+impl Graph {
     pub(crate) fn setup_graph(
         &self,
         sources: Vec<NodeT>,
         destinations: Vec<NodeT>,
         edge_types: Option<Vec<EdgeTypeT>>,
         weights: Option<Vec<WeightT>>,
-        force: Option<bool>
+        force: Option<bool>,
     ) -> Result<Graph, String> {
-        let mut result = Graph::builder(
-            sources,
-            destinations, 
-            self.is_directed,
-        ).add_nodes(
+        let mut result = Graph::builder(sources, destinations, self.is_directed).add_nodes(
             self.nodes_mapping.clone(),
             self.nodes_reverse_mapping.clone(),
             self.node_types.clone(),
             self.node_types_mapping.clone(),
-            self.node_types_reverse_mapping.clone()
+            self.node_types_reverse_mapping.clone(),
         );
 
         if self.edge_types.is_some() {
@@ -102,7 +98,7 @@ impl Graph {
                         result = result.add_edge_types(
                             _edge_types.clone(),
                             edge_types_mapping.clone(),
-                            edge_types_reverse_mapping.clone()
+                            edge_types_reverse_mapping.clone(),
                         );
                     }
                 }
@@ -110,7 +106,7 @@ impl Graph {
         }
 
         if self.weights.is_some() {
-            if let Some(_weights) = &weights{
+            if let Some(_weights) = &weights {
                 result = result.add_weights(_weights.clone());
             }
         }
@@ -118,7 +114,7 @@ impl Graph {
         result.build(force)
     }
 
-    pub fn builder(sources: Vec<NodeT>, destinations: Vec<NodeT>,  is_directed: bool) -> Graph {
+    pub fn builder(sources: Vec<NodeT>, destinations: Vec<NodeT>, is_directed: bool) -> Graph {
         Graph {
             sources,
             destinations,
@@ -170,10 +166,7 @@ impl Graph {
         self
     }
 
-    pub fn add_weights(
-        mut self,
-        weights: Vec<WeightT>
-    ) -> Graph {
+    pub fn add_weights(mut self, weights: Vec<WeightT>) -> Graph {
         self.weights = Some(weights);
         self.is_builded = false;
         self
@@ -185,12 +178,13 @@ impl Graph {
         }
 
         if self.nodes_mapping.is_empty() || self.nodes_reverse_mapping.is_empty() {
-            let (_sources, _destinations, _nodes_mapping, _nodes_reverse_mapping) = build_nodes_mapping(&self.sources, &self.destinations);
+            let (_sources, _destinations, _nodes_mapping, _nodes_reverse_mapping) =
+                build_nodes_mapping(&self.sources, &self.destinations);
             self.sources = _sources;
             self.destinations = _destinations;
             self.nodes_mapping = _nodes_mapping;
             self.nodes_reverse_mapping = _nodes_reverse_mapping;
-        } 
+        }
 
         validate(
             &self.sources,
@@ -202,7 +196,7 @@ impl Graph {
             &self.weights,
         )?;
 
-        if ! self.is_directed {
+        if !self.is_directed {
             let _force_conversion_to_undirected = force_conversion_to_undirected.unwrap_or(false);
             let mut full_sources: Vec<NodeT> = Vec::new();
             let mut full_destinations: Vec<NodeT> = Vec::new();
@@ -281,18 +275,16 @@ impl Graph {
             }
             self.sources = full_sources;
             self.destinations = full_destinations;
-            self.edge_types = 
-                if !full_edge_types.is_empty() {
-                    Some(full_edge_types)
-                } else {
-                    None
-                };
-            self.weights = 
-                if !full_weights.is_empty() {
-                    Some(full_weights)
-                } else {
-                    None
-                }; 
+            self.edge_types = if !full_edge_types.is_empty() {
+                Some(full_edge_types)
+            } else {
+                None
+            };
+            self.weights = if !full_weights.is_empty() {
+                Some(full_weights)
+            } else {
+                None
+            };
         }
 
         let nodes_number = self.nodes_reverse_mapping.len();
@@ -315,18 +307,24 @@ impl Graph {
         info!("Sorting given sources.");
         self.sources = indices.par_iter().map(|&x| self.sources[x]).collect();
         info!("Sorting given destinations.");
-        self.destinations = 
-            indices.par_iter().map(|&x| self.destinations[x]).collect();
+        self.destinations = indices.par_iter().map(|&x| self.destinations[x]).collect();
         info!("Sorting given weights.");
-        self.weights =
-            self.weights.map(|w| indices.par_iter().map(|&x| w[x]).collect());
+        self.weights = self
+            .weights
+            .map(|w| indices.par_iter().map(|&x| w[x]).collect());
         info!("Sorting given edge types.");
-        self.edge_types =
-            self.edge_types.map(|et| indices.par_iter().map(|&x| et[x]).collect());
+        self.edge_types = self
+            .edge_types
+            .map(|et| indices.par_iter().map(|&x| et[x]).collect());
 
         self.outbounds = compute_outbounds(nodes_number, &self.sources);
 
-        self.not_trap_nodes = self.sources.iter().cloned().unique().collect::<Vec<NodeT>>();
+        self.not_trap_nodes = self
+            .sources
+            .iter()
+            .cloned()
+            .unique()
+            .collect::<Vec<NodeT>>();
 
         // Here we are computing if the graph has any trap nodes.
         // When a graph has no traps, we can use a faster random walk.
@@ -337,5 +335,4 @@ impl Graph {
         self.is_builded = true;
         Ok(self)
     }
-
 }

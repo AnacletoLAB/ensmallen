@@ -3,13 +3,10 @@ use graph::*;
 
 #[test]
 fn test_link_predictions() {
-    let graph = FromCsvBuilder::new(
-        "tests/data/ppi/edges.tsv",
-        "subject", 
-        "object", 
-        false, 
-        None
-    ).unwrap().build().unwrap();
+    let graph = FromCsvBuilder::new("tests/data/ppi/edges.tsv", "subject", "object", false, None)
+        .unwrap()
+        .build()
+        .unwrap();
 
     assert!(graph
         .link_prediction(0, 100000, Some(-1.0), None, Some(true))
@@ -23,7 +20,7 @@ fn test_link_predictions() {
 
     for t in [true, false].iter() {
         for i in 0..20 {
-            for graph_to_avoid in [None, Some(&valid)].iter(){
+            for graph_to_avoid in [None, Some(&valid)].iter() {
                 let (edges, labels) = train
                     .link_prediction(i, 100000, Some(1000.0), *graph_to_avoid, Some(*t))
                     .unwrap();

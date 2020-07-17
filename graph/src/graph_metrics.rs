@@ -96,7 +96,7 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        
+
         if self.is_node_trap(one) || self.is_node_trap(two) {
             return Ok(0.0f64);
         }
