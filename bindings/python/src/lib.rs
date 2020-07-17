@@ -53,7 +53,7 @@ fn binary_skipgrams(
     sequences: Vec<Vec<usize>>,
     vocabulary_size: usize,
     py_kwargs: Option<&PyDict>,
-) -> PyResult<((Vec<usize>, Vec<usize>), Vec<u8>)> {
+) -> PyResult<((Py<PyArray1<f64>>, Py<PyArray1<f64>>), Py<PyArray1<f64>>)> {
     match if let Some(kwargs) = &py_kwargs {
         rust_binary_skipgrams(
             sequences,
@@ -72,7 +72,25 @@ fn binary_skipgrams(
     } else {
         rust_binary_skipgrams(sequences, vocabulary_size, None, None, None, seed)
     } {
-        Ok(batch) => Ok(batch),
+        Ok(batch) => {
+            let gil = pyo3::Python::acquire_gil();
+            Ok((
+                (
+                    PyArray::from_vec(gil.python(), (batch.0).0)
+                        .cast::<f64>(false)
+                        .unwrap()
+                        .to_owned(),
+                    PyArray::from_vec(gil.python(), (batch.0).1)
+                        .cast::<f64>(false)
+                        .unwrap()
+                        .to_owned(),
+                ),
+                PyArray::from_vec(gil.python(), batch.1)
+                    .cast::<f64>(false)
+                    .unwrap()
+                    .to_owned(),
+            ))
+        }
         Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
     }
 }
@@ -105,7 +123,7 @@ fn word2vec(
     seed: usize,
     sequences: Vec<Vec<usize>>,
     py_kwargs: Option<&PyDict>,
-) -> PyResult<(Vec<Vec<usize>>, Vec<usize>)> {
+) -> PyResult<(Py<PyArray2<f64>>, Py<PyArray1<f64>>)> {
     match if let Some(kwargs) = &py_kwargs {
         rust_word2vec(
             sequences,
@@ -120,7 +138,20 @@ fn word2vec(
     } else {
         rust_word2vec(sequences, None, None, seed)
     } {
-        Ok(batch) => Ok(batch),
+        Ok(batch) => {
+            let gil = pyo3::Python::acquire_gil();
+            Ok((
+                PyArray::from_vec2(gil.python(), &batch.0)
+                    .unwrap()
+                    .cast::<f64>(false)
+                    .unwrap()
+                    .to_owned(),
+                PyArray::from_vec(gil.python(), batch.1)
+                    .cast::<f64>(false)
+                    .unwrap()
+                    .to_owned(),
+            ))
+        }
         Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
     }
 }
@@ -146,7 +177,7 @@ fn word2vec(
 fn cooccurence_matrix(
     sequences: Vec<Vec<usize>>,
     py_kwargs: Option<&PyDict>,
-) -> PyResult<(Vec<usize>, Vec<usize>, Vec<f64>)> {
+) -> PyResult<(Py<PyArray1<f64>>, Py<PyArray1<f64>>, Py<PyArray1<f64>>)> {
     match if let Some(kwargs) = &py_kwargs {
         rust_cooccurence_matrix(
             sequences,
@@ -160,7 +191,23 @@ fn cooccurence_matrix(
     } else {
         rust_cooccurence_matrix(sequences, None, None)
     } {
-        Ok(csr) => Ok(csr),
+        Ok(csr) => {
+            let gil = pyo3::Python::acquire_gil();
+            Ok((
+                PyArray::from_vec(gil.python(), csr.0)
+                    .cast::<f64>(false)
+                    .unwrap()
+                    .to_owned(),
+                PyArray::from_vec(gil.python(), csr.1)
+                    .cast::<f64>(false)
+                    .unwrap()
+                    .to_owned(),
+                PyArray::from_vec(gil.python(), csr.2)
+                    .cast::<f64>(false)
+                    .unwrap()
+                    .to_owned(),
+            ))
+        }
         Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
     }
 }
@@ -1046,19 +1093,21 @@ impl EnsmallenGraph {
                     self.graph.node2vec(&wp, None, None, idx)
                 };
 
-                let gil = pyo3::Python::acquire_gil();
                 match batch {
-                    Ok(batch) => Ok((
-                        PyArray::from_vec2(gil.python(), &batch.0)
-                            .unwrap()
-                            .cast::<f64>(false)
-                            .unwrap()
-                            .to_owned(),
-                        PyArray::from_vec(gil.python(), batch.1)
-                            .cast::<f64>(false)
-                            .unwrap()
-                            .to_owned(),
-                    )),
+                    Ok(batch) => {
+                        let gil = pyo3::Python::acquire_gil();
+                        Ok((
+                            PyArray::from_vec2(gil.python(), &batch.0)
+                                .unwrap()
+                                .cast::<f64>(false)
+                                .unwrap()
+                                .to_owned(),
+                            PyArray::from_vec(gil.python(), batch.1)
+                                .cast::<f64>(false)
+                                .unwrap()
+                                .to_owned(),
+                        ))
+                    }
                     Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
                 }
             }
