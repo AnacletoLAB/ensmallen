@@ -597,6 +597,80 @@ impl EnsmallenGraph {
         }
     }
 
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, nodes_path, separator, nodes_column, node_types_column)"]
+    /// Save the nodes to a loadable csv / tsv.
+    /// In this method we use csv and tsv interchangably.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// nodes_path: str,
+    ///     Where to save the nodes csv.
+    /// separator: str = "\t",
+    ///     The separator to use for the csv or tsv file.
+    /// nodes_column: str = "id",
+    ///     The name of the column with the names of the nodes.
+    /// node_types_column: str = "category",
+    ///     The name of the column with the types of the nodes.
+    ///
+    fn to_nodes_csv(&self, 
+        nodes_path: String,
+        py_kwargs: Option<&PyDict>
+    ) -> PyResult<()> {
+        match if let Some(kwargs) = &py_kwargs{
+            self.graph.to_nodes_csv(&nodes_path, 
+                kwargs.get_item("separator").map(extract_value), 
+                kwargs.get_item("nodes_column").map(extract_value), 
+                kwargs.get_item("node_types_column").map(extract_value), 
+            )
+        } else {
+            self.graph.to_nodes_csv(&nodes_path, None, None, None)
+        } {
+            Ok(g) => Ok(g),
+            Err(_) => Err(PyErr::new::<exceptions::ValueError, _>("Generic file error, check that the given path is valid.")),
+        }
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, edges_path, separator, sources_column, destinations_column, edge_types_column, weights_column)"]
+    /// Save the edges to a loadable csv / tsv.
+    /// In this method we use csv and tsv interchangably.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// edges_path: str,
+    ///     Where to save the nodes csv.
+    /// separator: str = "\t",
+    ///     The separator to use for the csv or tsv file.
+    /// sources_column: str = "subject",
+    ///     The name of the column with the names of the sources nodes.
+    /// destinations_column: str = "object",
+    ///     The name of the column with the names of the destinations nodes.
+    /// edge_types_column: str = "edge_label",
+    ///     The name of the column with the types of the edges.
+    /// weights_column: str = "weight"
+    ///     The name of the column with the weight of the edges.
+    ///
+    fn to_edges_csv(&self, 
+        edges_path: String,
+        py_kwargs: Option<&PyDict>
+    ) -> PyResult<()> {
+        match if let Some(kwargs) = &py_kwargs{
+            self.graph.to_edges_csv(&edges_path, 
+                kwargs.get_item("separator").map(extract_value), 
+                kwargs.get_item("sources_column").map(extract_value), 
+                kwargs.get_item("destinations_column").map(extract_value), 
+                kwargs.get_item("edge_types_column").map(extract_value), 
+                kwargs.get_item("weights_column").map(extract_value), 
+            )
+        } else {
+            self.graph.to_edges_csv(&edges_path, None, None, None, None, None)
+        } {
+            Ok(g) => Ok(g),
+            Err(_) => Err(PyErr::new::<exceptions::ValueError, _>("Generic file error, check that the given path is valid.")),
+        }
+    }
+
     #[text_signature = "($self, node_id)"]
     /// Return the id of the node type of the node.
     ///

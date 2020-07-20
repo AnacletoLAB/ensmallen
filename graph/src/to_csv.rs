@@ -5,6 +5,21 @@ use std::io::prelude::*;
 
 /// # Holdouts.
 impl Graph {
+    /// TODO update to rust standard
+    /// Save the nodes to a loadable csv / tsv.
+    /// In this method we use csv and tsv interchangably.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// nodes_path: str,
+    ///     Where to save the nodes csv.
+    /// separator: str = "\t",
+    ///     The separator to use for the csv or tsv file.
+    /// nodes_column: str = "id",
+    ///     The name of the column with the names of the nodes.
+    /// node_types_column: str = "category",
+    ///     The name of the column with the types of the nodes.
+    ///
     pub fn to_nodes_csv(
         &self,
         nodes_path: &str,
@@ -49,7 +64,25 @@ impl Graph {
 
         file.sync_all()
     }
-
+    /// TODO update to rust standard
+    /// Save the edges to a loadable csv / tsv.
+    /// In this method we use csv and tsv interchangably.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// edges_path: str,
+    ///     Where to save the nodes csv.
+    /// separator: str = "\t",
+    ///     The separator to use for the csv or tsv file.
+    /// sources_column: str = "subject",
+    ///     The name of the column with the names of the sources nodes.
+    /// destinations_column: str = "object",
+    ///     The name of the column with the names of the destinations nodes.
+    /// edge_types_column: str = "edge_label",
+    ///     The name of the column with the types of the edges.
+    /// weights_column: str = "weight"
+    ///     The name of the column with the weight of the edges.
+    ///
     pub fn to_edges_csv(
         &self,
         edges_path: &str,
