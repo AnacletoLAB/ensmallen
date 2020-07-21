@@ -26,7 +26,7 @@ fn test_to_edges_csv() {
             .build()
             .unwrap();
 
-        let edges_path = format!("/tmp/{}", random_string(64));
+        let edges_path = format!("tests/data/{}", random_string(64));
         graph.to_edges_csv(&edges_path, Some("\t"), Some("subject"), Some("object"), None, None).unwrap();
 
         let graph2 = FromCsvBuilder::new(&edges_path, "subject", "object", *directed, None)
@@ -69,8 +69,8 @@ fn test_to_nodess_csv() {
             ).unwrap()
             .build().unwrap();
 
-        let edges_path = format!("/tmp/{}", random_string(64));
-        let nodes_path = format!("/tmp/{}", random_string(64));
+        let edges_path = format!("tests/data/{}", random_string(64));
+        let nodes_path = format!("tests/data/{}", random_string(64));
         graph.to_edges_csv(&edges_path, Some("\t"), Some("subject"), Some("object"), Some("edge_label"), Some("weight")).unwrap();
         graph.to_nodes_csv(&nodes_path, Some("\t"), Some("id"), Some("category")).unwrap();
 
