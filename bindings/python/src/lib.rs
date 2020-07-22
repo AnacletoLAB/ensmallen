@@ -48,20 +48,11 @@ macro_rules! extract_value {
     };
 }
 
-macro_rules! maybe_extract_value {
-    ($kwargs: ident, $key: literal, $_type: ty) => {
-        match $kwargs {
-            None => None,
-            Some(kw) => extract_value!(kw, $key, $_type)
-        }
-    };
-}
-
 macro_rules! to_nparray_1d {
     ($gil: expr, $value: expr, $_type: ty) => {
         python_exception!(
                 PyArray::from_vec($gil.python(), $value).cast::<$_type>(false),
-            format!("The given array cannot be casted to {}", stringify!($_type))
+            format!("The given array cannot be casted to {}.", stringify!($_type))
         )?.to_owned()
     };
 }
@@ -71,13 +62,32 @@ macro_rules! to_nparray_2d {
         python_exception!(
             python_exception!(
                 PyArray::from_vec2($gil.python(), &$value),
-                "The given value cannot be casted to a 2d numpy array"
+                "The given value cannot be casted to a 2d numpy array."
             )?.cast::<$_type>(false),
-            format!("The given 2d array cannot be casted to {}", stringify!($_type))
+            format!("The given 2d array cannot be casted to {}.", stringify!($_type))
         )?.to_owned()
     };
 }
 
+fn validate_kwargs(kwargs: &PyDict, columns: &[&str]) -> PyResult<()>{
+    let mut keys: HashSet<&str> = kwargs.keys().iter().map(
+        |v| v.extract::<&str>().unwrap()
+    ).collect();
+    let columns: HashSet<&str> = columns.iter().cloned().collect();
+    to_python_exception!(if keys.is_subset(&columns) {
+        return Ok(());
+    } else {
+        for k in &columns {
+            keys.remove(k);
+        }
+        Err(
+            format!(
+                "The following arguments are not valid keyword arguments for this function. \n{:?}\n the available ones are: \n{:?}",
+                keys, columns
+            )
+        )
+    })
+}
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
@@ -121,6 +131,7 @@ fn binary_skipgrams(
     py_kwargs: Option<&PyDict>,
 ) -> PyResult<((Py<PyArray1<f64>>, Py<PyArray1<f64>>), Py<PyArray1<f64>>)> {
     let batch = to_python_exception!(if let Some(kwargs) = &py_kwargs {
+        validate_kwargs(kwargs, &["window_size", "negative_samples", "shuffle"])?;
         rust_binary_skipgrams(
             sequences,
             vocabulary_size,
@@ -173,6 +184,7 @@ fn word2vec(
     py_kwargs: Option<&PyDict>,
 ) -> PyResult<(Py<PyArray2<f64>>, Py<PyArray1<f64>>)> {
     match if let Some(kwargs) = &py_kwargs {
+        validate_kwargs(kwargs, &["window_size", "shuffle"])?;
         rust_word2vec(
             sequences,
             extract_value!(kwargs, "window_size", usize),
@@ -216,6 +228,7 @@ fn cooccurence_matrix(
     py_kwargs: Option<&PyDict>,
 ) -> PyResult<(Py<PyArray1<f64>>, Py<PyArray1<f64>>, Py<PyArray1<f64>>)> {
     match if let Some(kwargs) = &py_kwargs {
+        validate_kwargs(kwargs, &["window_size", "verbose"])?;
         rust_cooccurence_matrix(
             sequences,
             extract_value!(kwargs, "window_size", usize),
@@ -272,13 +285,24 @@ struct EnsmallenGraph {
 ///
 /// # Arguments
 ///
-/// * kwargs: Option<&PyDict> - The kwargs provided by the user.
-fn build_walk_weights(kwargs: Option<&PyDict>) -> PyResult<WalkWeights> {
+/// * py_kwargs: Option<&PyDict> - The kwargs provided by the user.
+fn build_walk_weights(py_kwargs: Option<&PyDict>) -> PyResult<WalkWeights> {
     let mut weights = WalkWeights::default();
-    weights = to_python_exception!(weights.set_return_weight(maybe_extract_value!(kwargs, "return_weight", ParamsT)))?;
-    weights = to_python_exception!(weights.set_explore_weight(maybe_extract_value!(kwargs, "explore_weight", ParamsT)))?;
-    weights = to_python_exception!(weights.set_change_edge_type_weight(maybe_extract_value!(kwargs, "change_edge_type_weight", ParamsT)))?;
-    weights = to_python_exception!(weights.set_change_node_type_weight(maybe_extract_value!(kwargs, "change_node_type_weight", ParamsT)))?;
+    if let Some(kwargs) = &py_kwargs {
+        validate_kwargs(kwargs,&["return_weight", "explore_weight", "change_edge_type_weight", "change_node_type_weight"])?;
+        weights = to_python_exception!(
+            weights.set_return_weight(extract_value!(kwargs, "return_weight", ParamsT))
+        )?;
+        weights = to_python_exception!(
+            weights.set_explore_weight(extract_value!(kwargs, "explore_weight", ParamsT))
+        )?;
+        weights = to_python_exception!(
+            weights.set_change_edge_type_weight(extract_value!(kwargs, "change_edge_type_weight", ParamsT))
+        )?;
+        weights = to_python_exception!(
+            weights.set_change_node_type_weight(extract_value!(kwargs, "change_node_type_weight", ParamsT))
+        )?;
+    }
     Ok(weights)
 }
 
@@ -287,14 +311,14 @@ fn build_walk_weights(kwargs: Option<&PyDict>) -> PyResult<WalkWeights> {
 /// # Arguments
 ///
 /// * length: usize - the length of the walks.
-/// * kwargs: &PyDict - The kwargs provided by the user.
+/// * py_kwargs: Option<&PyDict> - The kwargs provided by the user.
 fn build_single_walk_parameters(
     length: usize,
-    kwargs: Option<&PyDict>,
+    py_kwargs: Option<&PyDict>,
 ) ->  PyResult<SingleWalkParameters> {
     to_python_exception!(SingleWalkParameters::new(
         length,
-        build_walk_weights(kwargs)?,
+        build_walk_weights(py_kwargs)?,
     ))
 }
 
@@ -303,21 +327,24 @@ fn build_single_walk_parameters(
 /// # Arguments
 ///
 /// * length: usize - the length of the walks.
-/// * kwargs: &PyDict - The kwargs provided by the user.
+/// * py_kwargs: Option<&PyDict> - The kwargs provided by the user.
 fn build_walk_parameters(
     length: usize,
     start_node: NodeT,
     end_node: NodeT,
-    kwargs: Option<&PyDict>,
+    py_kwargs: Option<&PyDict>,
 ) -> PyResult<WalksParameters> {
     let mut weights = to_python_exception!(WalksParameters::new(
-        build_single_walk_parameters(length, kwargs)?,
+        build_single_walk_parameters(length, py_kwargs)?,
         start_node,
         end_node,
     ))?;
-    weights = to_python_exception!(weights.set_iterations(maybe_extract_value!(kwargs, "iterations", usize)))?;
-    weights = to_python_exception!(weights.set_min_length(maybe_extract_value!(kwargs, "min_length", usize)))?;
-    weights = weights.set_dense_nodes_mapping(maybe_extract_value!(kwargs, "dense_nodes_mapping", HashMap<NodeT, NodeT>));
+    if let Some(kwargs) = &py_kwargs {
+        validate_kwargs(kwargs,&["iterations", "min_length", "dense_nodes_mapping"])?;
+        weights = to_python_exception!(weights.set_iterations(extract_value!(kwargs, "iterations", usize)))?;
+        weights = to_python_exception!(weights.set_min_length(extract_value!(kwargs, "min_length", usize)))?;
+        weights = weights.set_dense_nodes_mapping(extract_value!(kwargs, "dense_nodes_mapping", HashMap<NodeT, NodeT>));
+    }
     Ok(weights)
 }
 
@@ -340,6 +367,12 @@ impl EnsmallenGraph {
             };
         }
         let kwargs = py_kwargs.unwrap();
+        validate_kwargs(kwargs, &[
+            "weights", "nodes_mapping", "nodes_reverse_mapping",
+            "node_types", "node_types_mapping", "node_types_reverse_mapping",
+            "edge_types", "edge_types_mapping", "edge_types_reverse_mapping",
+            "force_conversion_to_undirected"
+            ])?;
 
         let weights = extract_value!(kwargs, "weights", Vec<WeightT>);
 
@@ -484,6 +517,13 @@ impl EnsmallenGraph {
             };
         }
         let kwargs = py_kwargs.unwrap();
+        validate_kwargs(kwargs, &[
+            "edge_sep", "weights_column", "default_weight",
+            "node_path", "nodes_column", "node_types_column",
+            "default_node_type", "node_sep", "ignore_duplicated_nodes",
+            "edge_types_column", "default_edge_type", "ignore_duplicated_edges",
+            "force_conversion_to_undirected"
+            ])?;
 
         let mut result = match FromCsvBuilder::new(
             edge_path,
@@ -578,6 +618,7 @@ impl EnsmallenGraph {
         py_kwargs: Option<&PyDict>
     ) -> PyResult<()> {
         match if let Some(kwargs) = &py_kwargs{
+            validate_kwargs(kwargs, &["separator", "nodes_column", "node_types_column"])?;
             self.graph.to_nodes_csv(&nodes_path, 
                 extract_value!(kwargs, "separator", &str),
                 extract_value!(kwargs, "nodes_column", &str),
@@ -616,6 +657,10 @@ impl EnsmallenGraph {
         py_kwargs: Option<&PyDict>
     ) -> PyResult<()> {
         python_exception!(if let Some(kwargs) = &py_kwargs{
+                validate_kwargs(kwargs, &[
+                    "separator", "sources_column", "destinations_column",
+                    "edge_types_column", "weights_column"
+                    ])?;
                 self.graph.to_edges_csv(&edges_path, 
                     extract_value!(kwargs, "separator", &str),
                     extract_value!(kwargs, "sources_column", &str),
@@ -871,6 +916,7 @@ impl EnsmallenGraph {
         match build_walk_parameters(length, 0, self.graph.get_not_trap_nodes_number(), py_kwargs) {
             Ok(wp) => {
                 let csr = if let Some(kwargs) = &py_kwargs {
+                    validate_kwargs(kwargs, &["window_size", "verbose"])?;
                     self.graph.cooccurence_matrix(
                         &wp,
                         extract_value!(kwargs, "window_size", usize),
@@ -965,6 +1011,7 @@ impl EnsmallenGraph {
         match build_walk_parameters(length, start_node, end_node, py_kwargs) {
             Ok(wp) => {
                 let batch = if let Some(kwargs) = &py_kwargs {
+                    validate_kwargs(kwargs, &["window_size", "negative_samples", "shuffle"])?;
                     self.graph.binary_skipgrams(
                         idx,
                         &wp,
@@ -1068,6 +1115,7 @@ impl EnsmallenGraph {
         match build_walk_parameters(length, start_node, end_node, py_kwargs) {
             Ok(wp) => {
                 let batch = if let Some(kwargs) = &py_kwargs {
+                    validate_kwargs(kwargs, &["window_size", "shuffle"])?;
                     self.graph.node2vec(
                         &wp,
                         extract_value!(kwargs, "window_size", usize),
@@ -1632,6 +1680,9 @@ impl EnsmallenGraph {
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<u8>>)> {
         let results = if let Some(kwargs) = py_kwargs {
+            validate_kwargs(kwargs, &[
+                "graph_to_avoid", "negative_samples", "avoid_self_loops"
+                ])?;
             let egraph = extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph);
             self.graph.link_prediction(
                 idx,
