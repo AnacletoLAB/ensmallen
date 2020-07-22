@@ -38,13 +38,18 @@ macro_rules! extract_value {
         match $kwargs.get_item($key){
             None => None,
             Some(v) => {
-                Some(python_exception!(
-                    v.extract::<$_type>(), 
-                    format!(
-                        "The value passed for {} cannot be casted from {} to {}.",
-                        $key, v.get_type().name(), stringify!($_type)
-                    )
-                )?)
+                if v.get_type().name() == "NoneType"{
+                    None
+                } else {
+                    let extracted = v.extract::<$_type>();
+                    Some(python_exception!(
+                        extracted, 
+                        format!(
+                            "The value passed for {} cannot be casted from {} to {}.",
+                            $key, v.get_type().name(), stringify!($_type)
+                        )
+                    )?)
+                }
             }
         }
     };
@@ -367,7 +372,7 @@ fn build_walk_parameters(
             }
         weights = to_python_exception!(weights.set_iterations(extract_value!(kwargs, "iterations", usize)))?;
         weights = to_python_exception!(weights.set_min_length(extract_value!(kwargs, "min_length", usize)))?;
-        weights = weights.set_dense_nodes_mapping(extract_value!(kwargs, "dense_nodes_mapping", Option<HashMap<NodeT, NodeT>>));
+        weights = weights.set_dense_nodes_mapping(extract_value!(kwargs, "dense_nodes_mapping", HashMap<NodeT, NodeT>));
     }
     Ok(weights)
 }
@@ -937,10 +942,16 @@ impl EnsmallenGraph {
         length: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray1<f64>>, Py<PyArray1<f64>>, Py<PyArray1<f64>>)> {
-        match build_walk_parameters(length, 0, self.graph.get_not_trap_nodes_number(), py_kwargs, true) {
+        if let Some(kwargs) = &py_kwargs {
+            validate_kwargs(kwargs, &["window_size", "verbose",
+                "iterations", "min_length", "dense_nodes_mapping", 
+                "return_weight", "explore_weight", "change_edge_type_weight", 
+                "change_node_type_weight", "verbose"
+            ])?;
+        }
+        match build_walk_parameters(length, 0, self.graph.get_not_trap_nodes_number(), py_kwargs, false) {
             Ok(wp) => {
                 let csr = if let Some(kwargs) = &py_kwargs {
-                    validate_kwargs(kwargs, &["window_size", "verbose"])?;
                     self.graph.cooccurence_matrix(
                         &wp,
                         extract_value!(kwargs, "window_size", usize),
@@ -1032,10 +1043,16 @@ impl EnsmallenGraph {
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<((Py<PyArray1<f64>>, Py<PyArray1<f64>>), Py<PyArray1<f64>>)> {
         let (start_node, end_node) = self.get_batch_range(idx, batch_size);
-        match build_walk_parameters(length, start_node, end_node, py_kwargs, true) {
+        if let Some(kwargs) = &py_kwargs {
+            validate_kwargs(kwargs, &["window_size", "shuffle", "negative_samples",
+                "iterations", "min_length", "dense_nodes_mapping", 
+                "return_weight", "explore_weight", "change_edge_type_weight", 
+                "change_node_type_weight", "verbose"
+            ])?;
+        }
+        match build_walk_parameters(length, start_node, end_node, py_kwargs, false) {
             Ok(wp) => {
                 let batch = if let Some(kwargs) = &py_kwargs {
-                    validate_kwargs(kwargs, &["window_size", "negative_samples", "shuffle"])?;
                     self.graph.binary_skipgrams(
                         idx,
                         &wp,
