@@ -289,7 +289,6 @@ struct EnsmallenGraph {
 fn build_walk_weights(py_kwargs: Option<&PyDict>) -> PyResult<WalkWeights> {
     let mut weights = WalkWeights::default();
     if let Some(kwargs) = &py_kwargs {
-        validate_kwargs(kwargs,&["return_weight", "explore_weight", "change_edge_type_weight", "change_node_type_weight"])?;
         weights = to_python_exception!(
             weights.set_return_weight(extract_value!(kwargs, "return_weight", ParamsT))
         )?;
@@ -340,7 +339,11 @@ fn build_walk_parameters(
         end_node,
     ))?;
     if let Some(kwargs) = &py_kwargs {
-        validate_kwargs(kwargs,&["iterations", "min_length", "dense_nodes_mapping"])?;
+        validate_kwargs(kwargs,&[
+            "iterations", "min_length", "dense_nodes_mapping", 
+            "return_weight", "explore_weight", "change_edge_type_weight", 
+            "change_node_type_weight", "verbose"
+            ])?;
         weights = to_python_exception!(weights.set_iterations(extract_value!(kwargs, "iterations", usize)))?;
         weights = to_python_exception!(weights.set_min_length(extract_value!(kwargs, "min_length", usize)))?;
         weights = weights.set_dense_nodes_mapping(extract_value!(kwargs, "dense_nodes_mapping", HashMap<NodeT, NodeT>));
@@ -522,7 +525,7 @@ impl EnsmallenGraph {
             "node_path", "nodes_column", "node_types_column",
             "default_node_type", "node_sep", "ignore_duplicated_nodes",
             "edge_types_column", "default_edge_type", "ignore_duplicated_edges",
-            "force_conversion_to_undirected"
+            "force_conversion_to_undirected", "validate_input_data", 
             ])?;
 
         let mut result = match FromCsvBuilder::new(
