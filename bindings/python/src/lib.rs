@@ -1,3 +1,5 @@
+extern crate edit_distance;
+use edit_distance::edit_distance;
 use graph::{
     binary_skipgrams as rust_binary_skipgrams, cooccurence_matrix as rust_cooccurence_matrix,
     word2vec as rust_word2vec, EdgeT, EdgeTypeT, FromCsvBuilder, Graph, NodeT, NodeTypeT, ParamsT,
@@ -80,12 +82,28 @@ fn validate_kwargs(kwargs: &PyDict, columns: &[&str]) -> PyResult<()>{
         for k in &columns {
             keys.remove(k);
         }
-        Err(
-            format!(
+        let mut err_msg = String::new();
+        for k in &keys {
+            let (distance, column) = columns.iter().map(
+                |col|
+                    (edit_distance(k, col), col)
+            ).min_by_key(|x| x.0).unwrap();
+
+            if distance <= 2 {
+                err_msg = format!(
+                        "The passed argument {} is not a valid one.\n Did you mean {} ?\nThe available ones are: \n{:?}",
+                        k, column, columns
+                    );
+                break
+            }
+        }
+        if err_msg.is_empty() {
+            err_msg = format!(
                 "The following arguments are not valid keyword arguments for this function. \n{:?}\n the available ones are: \n{:?}",
                 keys, columns
-            )
-        )
+            );
+        }
+        Err(err_msg)
     })
 }
 

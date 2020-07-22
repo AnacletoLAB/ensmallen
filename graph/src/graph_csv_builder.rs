@@ -33,6 +33,7 @@ pub struct FromCsvBuilder {
 }
 
 impl FromCsvBuilder {
+
     pub fn new(
         edge_path: &str,
         sources_column: &str,
