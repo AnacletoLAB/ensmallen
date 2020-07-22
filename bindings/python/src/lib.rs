@@ -350,6 +350,7 @@ fn build_walk_parameters(
     start_node: NodeT,
     end_node: NodeT,
     py_kwargs: Option<&PyDict>,
+    validate: bool
 ) -> PyResult<WalksParameters> {
     let mut weights = to_python_exception!(WalksParameters::new(
         build_single_walk_parameters(length, py_kwargs)?,
@@ -357,11 +358,13 @@ fn build_walk_parameters(
         end_node,
     ))?;
     if let Some(kwargs) = &py_kwargs {
-        validate_kwargs(kwargs,&[
-            "iterations", "min_length", "dense_nodes_mapping", 
-            "return_weight", "explore_weight", "change_edge_type_weight", 
-            "change_node_type_weight", "verbose"
-            ])?;
+        if validate {
+            validate_kwargs(kwargs,&[
+                "iterations", "min_length", "dense_nodes_mapping", 
+                "return_weight", "explore_weight", "change_edge_type_weight", 
+                "change_node_type_weight", "verbose"
+                ])?;
+            }
         weights = to_python_exception!(weights.set_iterations(extract_value!(kwargs, "iterations", usize)))?;
         weights = to_python_exception!(weights.set_min_length(extract_value!(kwargs, "min_length", usize)))?;
         weights = weights.set_dense_nodes_mapping(extract_value!(kwargs, "dense_nodes_mapping", HashMap<NodeT, NodeT>));
@@ -869,7 +872,7 @@ impl EnsmallenGraph {
     /// List of list of walks containing the numeric IDs of nodes.
     ///
     fn walk(&self, length: usize, py_kwargs: Option<&PyDict>) -> PyResult<Vec<Vec<NodeT>>> {
-        match build_walk_parameters(length, 0, self.graph.get_not_trap_nodes_number(), py_kwargs) {
+        match build_walk_parameters(length, 0, self.graph.get_not_trap_nodes_number(), py_kwargs, true) {
             Ok(walk_parameters) => match self.graph.walk(&walk_parameters) {
                 Ok(w) => Ok(w),
                 Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
@@ -934,7 +937,7 @@ impl EnsmallenGraph {
         length: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray1<f64>>, Py<PyArray1<f64>>, Py<PyArray1<f64>>)> {
-        match build_walk_parameters(length, 0, self.graph.get_not_trap_nodes_number(), py_kwargs) {
+        match build_walk_parameters(length, 0, self.graph.get_not_trap_nodes_number(), py_kwargs, true) {
             Ok(wp) => {
                 let csr = if let Some(kwargs) = &py_kwargs {
                     validate_kwargs(kwargs, &["window_size", "verbose"])?;
@@ -1029,7 +1032,7 @@ impl EnsmallenGraph {
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<((Py<PyArray1<f64>>, Py<PyArray1<f64>>), Py<PyArray1<f64>>)> {
         let (start_node, end_node) = self.get_batch_range(idx, batch_size);
-        match build_walk_parameters(length, start_node, end_node, py_kwargs) {
+        match build_walk_parameters(length, start_node, end_node, py_kwargs, true) {
             Ok(wp) => {
                 let batch = if let Some(kwargs) = &py_kwargs {
                     validate_kwargs(kwargs, &["window_size", "negative_samples", "shuffle"])?;
@@ -1132,15 +1135,17 @@ impl EnsmallenGraph {
         length: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(Py<PyArray2<f64>>, Py<PyArray1<f64>>)> {
+        if let Some(kwargs) = &py_kwargs {
+            validate_kwargs(kwargs, &["window_size", "shuffle", 
+            "iterations", "min_length", "dense_nodes_mapping", 
+            "return_weight", "explore_weight", "change_edge_type_weight", 
+            "change_node_type_weight", "verbose"
+        ])?;
+        }
         let (start_node, end_node) = self.get_batch_range(idx, batch_size);
-        match build_walk_parameters(length, start_node, end_node, py_kwargs) {
+        match build_walk_parameters(length, start_node, end_node, py_kwargs, false) {
             Ok(wp) => {
                 let batch = if let Some(kwargs) = &py_kwargs {
-                    validate_kwargs(kwargs, &["window_size", "shuffle", 
-                        "iterations", "min_length", "dense_nodes_mapping", 
-                        "return_weight", "explore_weight", "change_edge_type_weight", 
-                        "change_node_type_weight", "verbose"
-                    ])?;
                     self.graph.node2vec(
                         &wp,
                         extract_value!(kwargs, "window_size", usize),
