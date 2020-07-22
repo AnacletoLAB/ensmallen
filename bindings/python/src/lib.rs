@@ -1136,7 +1136,11 @@ impl EnsmallenGraph {
         match build_walk_parameters(length, start_node, end_node, py_kwargs) {
             Ok(wp) => {
                 let batch = if let Some(kwargs) = &py_kwargs {
-                    validate_kwargs(kwargs, &["window_size", "shuffle"])?;
+                    validate_kwargs(kwargs, &["window_size", "shuffle", 
+                        "iterations", "min_length", "dense_nodes_mapping", 
+                        "return_weight", "explore_weight", "change_edge_type_weight", 
+                        "change_node_type_weight", "verbose"
+                    ])?;
                     self.graph.node2vec(
                         &wp,
                         extract_value!(kwargs, "window_size", usize),
