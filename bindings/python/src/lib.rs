@@ -367,7 +367,7 @@ fn build_walk_parameters(
             }
         weights = to_python_exception!(weights.set_iterations(extract_value!(kwargs, "iterations", usize)))?;
         weights = to_python_exception!(weights.set_min_length(extract_value!(kwargs, "min_length", usize)))?;
-        weights = weights.set_dense_nodes_mapping(extract_value!(kwargs, "dense_nodes_mapping", HashMap<NodeT, NodeT>));
+        weights = weights.set_dense_nodes_mapping(extract_value!(kwargs, "dense_nodes_mapping", Option<HashMap<NodeT, NodeT>>));
     }
     Ok(weights)
 }
