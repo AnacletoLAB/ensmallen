@@ -3,13 +3,10 @@ use graph::*;
 
 #[test]
 fn test_negatives() {
-    let graph = FromCsvBuilder::new(
-        "tests/data/ppi/edges.tsv",
-        "subject", 
-        "object", 
-        false, 
-        None
-    ).unwrap().build().unwrap();
+    let graph = FromCsvBuilder::new("tests/data/ppi/edges.tsv", "subject", "object", false, None)
+        .unwrap()
+        .build()
+        .unwrap();
     let negatives = graph.sample_negatives(42, 10000, false).unwrap();
     let negatives2 = graph.sample_negatives(42, 10000, false).unwrap();
     assert!(!negatives.overlaps(&graph));

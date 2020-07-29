@@ -66,8 +66,7 @@ impl Graph {
                     "The requested negatives number {} is more than the ",
                     "number of negative edges that exist in the graph ({})."
                 ),
-                negatives_number,
-                total_negative_edges
+                negatives_number, total_negative_edges
             ));
         }
 
@@ -110,13 +109,7 @@ impl Graph {
             }
         }
 
-        let result = self.setup_graph(
-            sources,
-            destinations,
-            None,
-            None,
-            None
-        )?;
+        let result = self.setup_graph(sources, destinations, None, None, None)?;
         assert_eq!(result.get_edges_number(), negatives_number);
         Ok(result)
     }
@@ -247,7 +240,7 @@ impl Graph {
                 } else {
                     None
                 },
-                None
+                None,
             )?,
             self.setup_graph(
                 valid_sources,
@@ -257,13 +250,12 @@ impl Graph {
                 } else {
                     None
                 },
-                
                 if self.weights.is_some() {
                     Some(valid_weights)
                 } else {
                     None
                 },
-                None
+                None,
             )?,
         ))
     }
@@ -354,13 +346,12 @@ impl Graph {
                 } else {
                     None
                 },
-                
                 if self.weights.is_some() {
                     Some(train_weights)
                 } else {
                     None
                 },
-                None
+                None,
             )?,
             self.setup_graph(
                 valid_sources,
@@ -370,13 +361,12 @@ impl Graph {
                 } else {
                     None
                 },
-                
                 if self.weights.is_some() {
                     Some(valid_weights)
                 } else {
                     None
                 },
-                None
+                None,
             )?,
         ))
     }
@@ -411,7 +401,7 @@ impl Graph {
         let mut rnd = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
 
         // Nodes indices
-        let mut nodes:Vec<NodeT> = (0..self.get_nodes_number()).collect();
+        let mut nodes: Vec<NodeT> = (0..self.get_nodes_number()).collect();
 
         // Shuffling the components using the given seed.
         nodes.shuffle(&mut rnd);
@@ -423,30 +413,30 @@ impl Graph {
         let mut edge_types: Vec<EdgeTypeT> = Vec::new();
 
         // Initializing stack and set of nodes
-        let mut unique_nodes:HashSet<NodeT> = HashSet::with_capacity(nodes_number);
-        let mut stack:Vec<NodeT> = Vec::new();
+        let mut unique_nodes: HashSet<NodeT> = HashSet::with_capacity(nodes_number);
+        let mut stack: Vec<NodeT> = Vec::new();
 
         // We iterate on the components
         for node in nodes {
-            if self.is_node_trap(node){
+            if self.is_node_trap(node) {
                 continue;
             }
             stack.push(node);
             unique_nodes.insert(node);
-            while ! stack.is_empty(){
+            while !stack.is_empty() {
                 let src = stack.pop().unwrap();
                 let (min_edge, max_edge) = self.get_min_max_edge(src);
-                for edge_id in min_edge..max_edge{
-                    let dst:NodeT = self.destinations[edge_id];
-                    if !unique_nodes.contains(&dst){
+                for edge_id in min_edge..max_edge {
+                    let dst: NodeT = self.destinations[edge_id];
+                    if !unique_nodes.contains(&dst) {
                         stack.push(dst);
                         unique_nodes.insert(dst);
                         sources.push(src);
                         destinations.push(dst);
-                        if let Some(w) = &self.weights{
+                        if let Some(w) = &self.weights {
                             weights.push(w[edge_id]);
                         }
-                        if let Some(et) = &self.edge_types{
+                        if let Some(et) = &self.edge_types {
                             edge_types.push(et[edge_id]);
                         }
                     }
@@ -462,13 +452,12 @@ impl Graph {
             } else {
                 None
             },
-            
             if self.weights.is_some() {
                 Some(weights)
             } else {
                 None
             },
-            None
+            None,
         )
     }
 }

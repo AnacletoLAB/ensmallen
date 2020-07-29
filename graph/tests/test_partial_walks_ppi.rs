@@ -6,24 +6,22 @@ use graph::{SingleWalkParameters, WalkWeights, WalksParameters};
 fn test_partial_walks_ppi() {
     let edge_path = "tests/data/ppi/edges.tsv";
     let node_path = "tests/data/ppi/nodes.tsv";
-    let graph = FromCsvBuilder::new(
-        edge_path,
-        "subject", 
-        "object", 
-        false, 
-        None
-    ).unwrap()
-    .set_weights("weight", Some(1.0))
-    .load_nodes_csv(
-        node_path, 
-        "id", 
-        "category",
-        Some("biolink:NamedThing"), 
-        None, 
-        None
-    ).unwrap()
-    .build().unwrap()
-    .random_subgraph(0, 10000).unwrap();
+    let graph = FromCsvBuilder::new(edge_path, "subject", "object", false, None)
+        .unwrap()
+        .set_weights("weight", Some(1.0))
+        .load_nodes_csv(
+            node_path,
+            "id",
+            "category",
+            Some("biolink:NamedThing"),
+            None,
+            None,
+        )
+        .unwrap()
+        .build()
+        .unwrap()
+        .random_subgraph(0, 10000)
+        .unwrap();
     let walk_parameters = WalksParameters::new(
         SingleWalkParameters::new(100, WalkWeights::default()).unwrap(),
         0,

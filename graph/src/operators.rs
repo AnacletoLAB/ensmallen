@@ -97,12 +97,6 @@ impl Graph {
             None
         };
 
-        self.setup_graph(
-            sources,
-            destinations,
-            edge_types,
-            weights,
-            Some(true)
-        )
+        self.setup_graph(sources, destinations, edge_types, weights, Some(true))
     }
 }

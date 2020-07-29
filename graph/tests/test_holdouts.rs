@@ -5,14 +5,10 @@ use graph::*;
 fn test_holdout() {
     let path = "tests/data/ppi/edges.tsv";
     for directed in &[false, true] {
-        let graph = FromCsvBuilder::new(
-            path,
-            "subject", 
-            "object", 
-            *directed, 
-            None
-        ).unwrap()
-        .build().unwrap();
+        let graph = FromCsvBuilder::new(path, "subject", "object", *directed, None)
+            .unwrap()
+            .build()
+            .unwrap();
         let (train, validation) = graph.connected_holdout(42, 0.7).unwrap();
         assert!(graph.contains(&train));
         assert!(graph.contains(&validation));
@@ -37,7 +33,9 @@ fn test_holdout() {
             .unwrap();
         assert_eq!(negatives.get_edges_number(), negative_edges_number);
         assert!(graph.sample_negatives(42, 0, false).is_err());
-        assert!(graph.sample_negatives(42, 1000000000000000000, false).is_err());
+        assert!(graph
+            .sample_negatives(42, 1000000000000000000, false)
+            .is_err());
     }
 }
 
@@ -45,13 +43,10 @@ fn test_holdout() {
 fn test_holdout_determinism() {
     let path = "tests/data/ppi/edges.tsv";
     for directed in &[false, true] {
-        let graph = FromCsvBuilder::new(
-            path,
-            "subject", 
-            "object", 
-            *directed, 
-            None
-        ).unwrap().build().unwrap();
+        let graph = FromCsvBuilder::new(path, "subject", "object", *directed, None)
+            .unwrap()
+            .build()
+            .unwrap();
         let (train1, test1) = graph.connected_holdout(35, 0.8).unwrap();
         let (train2, test2) = graph.connected_holdout(35, 0.8).unwrap();
         assert_eq!(train1, train2);

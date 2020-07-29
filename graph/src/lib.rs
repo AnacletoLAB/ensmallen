@@ -13,6 +13,7 @@ mod tarjan;
 mod trees;
 pub mod types;
 mod walks_parameters;
+mod to_csv;
 
 pub use self::graph::Graph;
 pub use self::graph_builder::*;

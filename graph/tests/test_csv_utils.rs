@@ -9,9 +9,7 @@ fn test_check_consistent_lines() {
 
 #[test]
 fn test_check_consistent_lines_should_panic() {
-    assert!(
-        check_consistent_lines("tests/data/should_panic.csv", ",").is_err()
-    );
+    assert!(check_consistent_lines("tests/data/should_panic.csv", ",").is_err());
 }
 
 #[test]

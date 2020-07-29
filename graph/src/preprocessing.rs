@@ -1,13 +1,20 @@
 use super::*;
 use hashbrown::HashMap;
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
+use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
-use rand::rngs::{StdRng};
-use rand::{SeedableRng};
+use rand::SeedableRng;
 use rayon::prelude::*;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift as rand_u64;
 
+/// Returns length of binary skipgram vector.
+///
+/// # Arguments
+///
+/// * walk_length: usize - Length of the walks.
+/// * window_size: usize - Size of the context windows.
+///
 fn binary_skipgram_vector_length(walk_length: usize, window_size: usize) -> usize {
     (0..walk_length)
         .map(|i| {
@@ -18,71 +25,363 @@ fn binary_skipgram_vector_length(walk_length: usize, window_size: usize) -> usiz
         .sum()
 }
 
-/// # Preprocessing for ML algorithms on graph.
-impl Graph {
-    fn binary_skipgram(
-        &self,
-        walk: &[usize],
-        window_size: Option<usize>,
-        negative_samples: Option<f64>,
-        shuffle: Option<bool>,
-        seed: u64,
-    ) -> ((Vec<usize>, Vec<usize>), Vec<u8>) {
-        let _negative_samples = negative_samples.unwrap_or(1.0);
-        let _window_size = window_size.unwrap_or(4);
-        let _shuffle = shuffle.unwrap_or(true);
-        let _seed = seed ^ SEED_XOR as u64;
+/// Returns skipgram batch for a given integers sequence.
+///
+/// # Arguments
+///
+/// * sequence: &[usize] - Sequence of integer values to be converted.
+/// * vocabulary_size: usize - Number of distrinct terms present in vocabulary.
+/// * window_size: Option<usize> - Size of the window. By default is 4.
+/// * negative_samples: Option<f64> - Factor of the negative samples to extract.
+/// * shuffle: Option<bool> - Wethever to shuffle or not the words and contexts.
+/// * seed: u64 - The seed to use for reproducibility.
+///
+fn binary_skipgram(
+    sequence: &[usize],
+    vocabulary_size: usize,
+    window_size: Option<usize>,
+    negative_samples: Option<f64>,
+    shuffle: Option<bool>,
+    seed: u64,
+) -> ((Vec<usize>, Vec<usize>), Vec<u8>) {
+    let _negative_samples = negative_samples.unwrap_or(1.0);
+    let _window_size = window_size.unwrap_or(4);
+    let _shuffle = shuffle.unwrap_or(true);
+    let _seed = seed ^ SEED_XOR as u64;
 
-        let vector_length: usize = binary_skipgram_vector_length(walk.len(), _window_size);
-        // create the positive data
-        let total_length = (vector_length as f64 * (1.0 + _negative_samples)) as usize;
-        let mut words: Vec<NodeT> = Vec::with_capacity(total_length);
-        let mut contexts: Vec<NodeT> = Vec::with_capacity(total_length);
-        for (i, wi) in walk.iter().enumerate() {
-            let window_start = if i > _window_size {
-                i - _window_size
-            } else {
-                0
-            };
-            let window_end = min!(walk.len(), i + _window_size + 1);
-            let delta = window_end - window_start - 1;
-            words.extend_from_slice(&vec![*wi; delta][..]);
-            contexts.extend_from_slice(&walk[window_start..i]);
-            contexts.extend_from_slice(&walk[i + 1..window_end]);
-        }
-        let mut labels = vec![1; vector_length];
+    let vector_length: usize = binary_skipgram_vector_length(sequence.len(), _window_size);
+    // create the positive data
+    let total_length = (vector_length as f64 * (1.0 + _negative_samples)) as usize;
+    let mut words: Vec<NodeT> = Vec::with_capacity(total_length);
+    let mut contexts: Vec<NodeT> = Vec::with_capacity(total_length);
+    for (i, wi) in sequence.iter().enumerate() {
+        let window_start = if i > _window_size {
+            i - _window_size
+        } else {
+            0
+        };
+        let window_end = min!(sequence.len(), i + _window_size + 1);
+        let delta = window_end - window_start - 1;
+        words.extend_from_slice(&vec![*wi; delta][..]);
+        contexts.extend_from_slice(&sequence[window_start..i]);
+        contexts.extend_from_slice(&sequence[i + 1..window_end]);
+    }
+    let mut labels = vec![1; vector_length];
 
-        if _negative_samples > 0.0 {
-            // TODO! This thing can create false negatives!!
-            // The issue was already present in the original TensorFlow implementation.
-            let num_negatives = (vector_length as f64 * _negative_samples) as usize;
-            let nodes_number = self.get_nodes_number();
-            let words_neg: Vec<NodeT> = gen_random_vec(num_negatives, _seed)
-                .iter()
-                .map(|i| walk[(*i as NodeT) % walk.len()])
-                .collect();
-            let contexts_seed = rand_u64(_seed);
-            let contexts_neg: Vec<NodeT> = gen_random_vec(num_negatives, contexts_seed)
-                .iter()
-                .map(|i| (*i as NodeT) % nodes_number)
-                .collect();
-            let labels_neg = vec![0; num_negatives];
-            // merge positives and negatives labels
-            words.extend(words_neg.iter());
-            contexts.extend(contexts_neg.iter());
-            labels.extend(labels_neg.iter());
-        }
-        if _shuffle {
-            let mut indices: Vec<usize> = (0..words.len() as usize).collect();
-            let mut rng: StdRng = SeedableRng::seed_from_u64(seed);
-            indices.shuffle(&mut rng);
-            words = indices.iter().map(|i| words[*i]).collect();
-            contexts = indices.iter().map(|i| contexts[*i]).collect();
-            labels = indices.iter().map(|i| labels[*i]).collect();
-        }
-        ((words, contexts), labels)
+    if _negative_samples > 0.0 {
+        // TODO! This thing can create false negatives!!
+        // The issue was already present in the original TensorFlow implementation.
+        let num_negatives = (vector_length as f64 * _negative_samples) as usize;
+        let words_neg: Vec<NodeT> = gen_random_vec(num_negatives, _seed)
+            .iter()
+            .map(|i| sequence[(*i as NodeT) % sequence.len()])
+            .collect();
+        let contexts_seed = rand_u64(_seed);
+        let contexts_neg: Vec<NodeT> = gen_random_vec(num_negatives, contexts_seed)
+            .iter()
+            .map(|i| (*i as NodeT) % vocabulary_size)
+            .collect();
+        let labels_neg = vec![0; num_negatives];
+        // merge positives and negatives labels
+        words.extend(words_neg.iter());
+        contexts.extend(contexts_neg.iter());
+        labels.extend(labels_neg.iter());
     }
 
+    if _shuffle {
+        let mut indices: Vec<usize> = (0..words.len() as usize).collect();
+        let mut rng: StdRng = SeedableRng::seed_from_u64(seed);
+        indices.shuffle(&mut rng);
+        words = indices.iter().map(|i| words[*i]).collect();
+        contexts = indices.iter().map(|i| contexts[*i]).collect();
+        labels = indices.iter().map(|i| labels[*i]).collect();
+    }
+    ((words, contexts), labels)
+}
+
+/// Returns skipgram batches for a given integers sequences.
+///
+/// # Arguments
+///
+/// * sequence: Vec<Vec<usize>> - Sequences of values to be converted.
+/// * vocabulary_size: usize - Number of distrinct terms present in vocabulary.
+/// * window_size: Option<usize> - Size of the window. By default is 4.
+/// * negative_samples: Option<f64> - Factor of the negative samples to extract.
+/// * shuffle: Option<bool> - Wethever to shuffle or not the words and contexts.
+/// * seed: u64 - The seed to use for reproducibility.
+///
+pub fn binary_skipgrams(
+    sequences: Vec<Vec<usize>>,
+    vocabulary_size: usize,
+    window_size: Option<usize>,
+    negative_samples: Option<f64>,
+    shuffle: Option<bool>,
+    seed: usize,
+) -> Result<((Vec<usize>, Vec<usize>), Vec<u8>), String> {
+    // Setup the cumulative sum (this compute the index for the windows of each node,
+    // this is only done to be able to parallelize)
+    let mut cumsum: Vec<usize> = Vec::with_capacity(sequences.len());
+    let _window_size = window_size.unwrap_or(4);
+    let _negative_samples = negative_samples.unwrap_or(1.0);
+
+    if _negative_samples < 0.0 || !_negative_samples.is_finite() {
+        return Err(String::from("Negative sample must be a posive real value."));
+    }
+
+    for i in 0..sequences.len() {
+        let new_value = (binary_skipgram_vector_length(sequences[i].len(), _window_size) as f64
+            * (1.0 + _negative_samples)) as usize;
+        cumsum.push(if i == 0 {
+            new_value
+        } else {
+            cumsum[i - 1] + new_value
+        });
+    }
+
+    let vector_length = cumsum[cumsum.len() - 1];
+    // setup the result vectors
+    let mut words = vec![0; vector_length];
+    let mut contexts = vec![0; vector_length];
+    let mut labels = vec![1; vector_length];
+    {
+        let mut words_indices = Vec::new();
+        let mut remaining_words_array = words.as_mut_slice();
+        let mut contexts_indices = Vec::new();
+        let mut remaining_contexts_array = contexts.as_mut_slice();
+        let mut labels_indices = Vec::new();
+        let mut remaining_labels_array = labels.as_mut_slice();
+        for i in 0..cumsum.len() {
+            let start = if i == 0 { 0 } else { cumsum[i - 1] };
+            let (words_left, words_right) = remaining_words_array.split_at_mut(cumsum[i] - start);
+            let (contexts_left, contexts_right) =
+                remaining_contexts_array.split_at_mut(cumsum[i] - start);
+            let (labels_left, labels_right) =
+                remaining_labels_array.split_at_mut(cumsum[i] - start);
+            words_indices.push(words_left);
+            contexts_indices.push(contexts_left);
+            labels_indices.push(labels_left);
+            remaining_words_array = words_right;
+            remaining_contexts_array = contexts_right;
+            remaining_labels_array = labels_right;
+        }
+
+        sequences
+            .par_iter()
+            .zip(words_indices.par_iter_mut())
+            .zip(contexts_indices.par_iter_mut())
+            .zip(labels_indices.par_iter_mut())
+            .enumerate()
+            .for_each(
+                |(i, (((sequences, words_index), contexts_index), labels_index))| {
+                    let ((_words, _contexts), _labels) = binary_skipgram(
+                        sequences,
+                        vocabulary_size,
+                        window_size,
+                        Some(_negative_samples),
+                        shuffle,
+                        (seed + i) as u64,
+                    );
+                    (*words_index).copy_from_slice(&_words);
+                    (*contexts_index).copy_from_slice(&_contexts);
+                    (*labels_index).copy_from_slice(&_labels);
+                },
+            );
+    }
+
+    Ok(((words, contexts), labels))
+}
+
+/// Return training batches for Word2Vec models.
+///
+/// The batch is composed of a tuple as the following:
+///
+/// - (Contexts indices, central nodes indices): the tuple of nodes
+///
+/// This does not provide any output value as the model uses NCE loss
+/// and basically the central nodes that are fed as inputs work as the
+/// outputs value.
+///
+/// # Arguments
+///
+/// * sequences: Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
+/// * window_size: Option<usize> - Window size to consider for the sequences.
+/// * shuffle: Option<bool> - Wethever to shuffle the vectors on return.
+/// * seed: usize - The seed for reproducibility.
+///
+pub fn word2vec(
+    sequences: Vec<Vec<usize>>,
+    window_size: Option<usize>,
+    shuffle: Option<bool>,
+    seed: usize,
+) -> Result<(Vec<Vec<usize>>, Vec<usize>), String> {
+    let _window_size = window_size.unwrap_or(4);
+    let _shuffle: bool = shuffle.unwrap_or(true);
+    let context_length = _window_size.checked_mul(2).ok_or(
+        "The given window size is too big, using this would result in an overflowing of a u64.",
+    )?;
+
+    let mut sequences_centers: Vec<Vec<usize>> = sequences
+        .par_iter()
+        .map(|sequence| vec![0; sequence.len()])
+        .collect();
+    let mut sequences_filters: Vec<Vec<bool>> = sequences
+        .par_iter()
+        .map(|sequence| vec![false; sequence.len()])
+        .collect();
+    let mut contexts: Vec<Vec<usize>> = sequences
+        .par_iter()
+        .zip(sequences_centers.par_iter_mut())
+        .zip(sequences_filters.par_iter_mut())
+        .map(|((sequence, centers), filters)| {
+            sequence
+                .iter()
+                .enumerate()
+                .zip(centers.iter_mut())
+                .map(|((i, word), center)| {
+                    let start = if i <= _window_size {
+                        0
+                    } else {
+                        i - _window_size
+                    };
+                    let end = min!(sequence.len(), i + _window_size);
+                    *center = *word;
+                    let context: Vec<usize> = sequence[start..end].to_vec();
+                    context
+                })
+                .zip(filters.iter_mut())
+                .filter_map(|(context, filter)| {
+                    if context.len() == context_length {
+                        *filter = true;
+                        Some(context)
+                    } else {
+                        *filter = false;
+                        None
+                    }
+                })
+                .collect::<Vec<Vec<usize>>>()
+        })
+        .flatten()
+        .collect();
+
+    let filters: Vec<bool> = sequences_filters.iter().flatten().cloned().collect();
+
+    let mut centers: Vec<usize> = sequences_centers
+        .iter()
+        .flatten()
+        .cloned()
+        .zip(filters.iter())
+        .filter_map(|(center, filter)| if *filter { Some(center) } else { None })
+        .collect();
+
+    if _shuffle {
+        let mut indices: Vec<usize> = (0..centers.len() as usize).collect();
+        let mut rng: StdRng = SeedableRng::seed_from_u64(seed as u64);
+        indices.shuffle(&mut rng);
+
+        contexts = indices.par_iter().map(|i| contexts[*i].clone()).collect();
+        centers = indices.par_iter().map(|i| centers[*i]).collect();
+    }
+
+    Ok((contexts, centers))
+}
+
+/// Return triple with CSR representation of cooccurrence matrix.
+///
+/// The first vector has the sources, the second vector the destinations
+/// and the third one contains the min-max normalized frequencies.
+///
+/// # Arguments
+///
+/// * sequences:Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
+/// * window_size: Option<usize> - Window size to consider for the sequences.
+/// * verbose: Option<bool>,
+///     Wethever to show the progress bars.
+///     The default behaviour is false.
+///     
+pub fn cooccurence_matrix(
+    sequences: Vec<Vec<usize>>,
+    window_size: Option<usize>,
+    verbose: Option<bool>,
+) -> Result<(Vec<NodeT>, Vec<NodeT>, Vec<f64>), String> {
+    let _verbose = verbose.unwrap_or(false);
+    let _window_size = window_size.unwrap_or(4);
+
+    let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
+    let pb1 = if _verbose {
+        let pb1 = ProgressBar::new(sequences.len() as u64);
+        pb1.set_style(ProgressStyle::default_bar().template(
+            "Computing cooccurrence mapping {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+        ));
+        pb1.set_draw_delta(sequences.len() as u64 / 100);
+        pb1
+    } else {
+        ProgressBar::hidden()
+    };
+
+    for i in (0..sequences.len()).progress_with(pb1) {
+        let walk = &sequences[i];
+        let walk_length = walk.len();
+        for (central_index, &central_word_id) in walk.iter().enumerate() {
+            for distance in 1..1 + _window_size {
+                if central_index + distance >= walk_length {
+                    break;
+                }
+                let context_id = walk[central_index + distance];
+                if central_word_id < context_id {
+                    *cooccurence_matrix
+                        .entry((central_word_id, context_id))
+                        .or_insert(0.0) += 1.0 / distance as f64;
+                } else {
+                    *cooccurence_matrix
+                        .entry((context_id, central_word_id))
+                        .or_insert(0.0) += 1.0 / distance as f64;
+                }
+            }
+        }
+    }
+
+    let elements = cooccurence_matrix.len() * 2;
+    let mut max_frequency = 0.0;
+    let mut words: Vec<NodeT> = vec![0; elements];
+    let mut contexts: Vec<NodeT> = vec![0; elements];
+    let mut frequencies: Vec<f64> = vec![0.0; elements];
+    let pb2 = if _verbose {
+        let pb2 = ProgressBar::new(cooccurence_matrix.len() as u64);
+        pb2.set_style(ProgressStyle::default_bar().template(
+            "Converting mapping into CSR matrix {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+        ));
+        pb2.set_draw_delta(cooccurence_matrix.len() as u64 / 100);
+        pb2
+    } else {
+        ProgressBar::hidden()
+    };
+
+    cooccurence_matrix
+        .iter()
+        .progress_with(pb2)
+        .enumerate()
+        .for_each(|(i, ((word, context), frequency))| {
+            let (k, j) = (i * 2, i * 2 + 1);
+            if *frequency > max_frequency {
+                max_frequency = *frequency;
+            }
+            words[k] = *word;
+            words[j] = words[k];
+            contexts[k] = *context;
+            contexts[j] = contexts[k];
+            frequencies[k] = *frequency;
+            frequencies[j] = frequencies[k];
+        });
+
+    frequencies
+        .par_iter_mut()
+        .for_each(|frequency| *frequency /= max_frequency);
+
+    Ok((words, contexts, frequencies))
+}
+
+/// # Preprocessing for ML algorithms on graph.
+impl Graph {
     /// Return training batches for BinarySkipGram model.
     ///
     /// The batch is composed of a tuple as the following:
@@ -129,79 +428,18 @@ impl Graph {
             return Err(concat!(
                 "In the current graph, with the given parameters, no walk could ",
                 "be performed which is above the given min-length"
-            ).to_string());
-        }
-        // Setup the cumulative sum (this compute the index for the windows of each node,
-        // this is only done to be able to parallelize)
-        let mut cumsum: Vec<usize> = Vec::with_capacity(walks.len());
-        let _window_size = window_size.unwrap_or(4);
-        let _negative_samples = negative_samples.unwrap_or(1.0);
-
-        if _negative_samples < 0.0 || !_negative_samples.is_finite() {
-            return Err(String::from("Negative sample must be a posive real value."));
+            )
+            .to_string());
         }
 
-        for i in 0..walks.len() {
-            let new_value = (binary_skipgram_vector_length(walks[i].len(), _window_size) as f64
-                * (1.0 + _negative_samples)) as usize;
-            cumsum.push(if i == 0 {
-                new_value
-            } else {
-                cumsum[i - 1] + new_value
-            });
-        }
-
-        let vector_length = cumsum[cumsum.len() - 1];
-        // setup the result vectors
-        let mut words = vec![0; vector_length];
-        let mut contexts = vec![0; vector_length];
-        let mut labels = vec![1; vector_length];
-        {
-            let mut words_indices = Vec::new();
-            let mut remaining_words_array = words.as_mut_slice();
-            let mut contexts_indices = Vec::new();
-            let mut remaining_contexts_array = contexts.as_mut_slice();
-            let mut labels_indices = Vec::new();
-            let mut remaining_labels_array = labels.as_mut_slice();
-            for i in 0..cumsum.len() {
-                let start = if i == 0 { 0 } else { cumsum[i - 1] };
-                let (words_left, words_right) =
-                    remaining_words_array.split_at_mut(cumsum[i] - start);
-                let (contexts_left, contexts_right) =
-                    remaining_contexts_array.split_at_mut(cumsum[i] - start);
-                let (labels_left, labels_right) =
-                    remaining_labels_array.split_at_mut(cumsum[i] - start);
-                words_indices.push(words_left);
-                contexts_indices.push(contexts_left);
-                labels_indices.push(labels_left);
-                remaining_words_array = words_right;
-                remaining_contexts_array = contexts_right;
-                remaining_labels_array = labels_right;
-            }
-
-            walks
-                .par_iter()
-                .zip(words_indices.par_iter_mut())
-                .zip(contexts_indices.par_iter_mut())
-                .zip(labels_indices.par_iter_mut())
-                .enumerate()
-                .for_each(
-                    |(i, (((walk, words_index), contexts_index), labels_index))| {
-                        let ((_words, _contexts), _labels) = self.binary_skipgram(
-                            walk,
-                            window_size,
-                            Some(_negative_samples),
-                            shuffle,
-                            (seed + i) as u64,
-                        );
-                        (*words_index).copy_from_slice(&_words);
-                        (*contexts_index).copy_from_slice(&_contexts);
-                        (*labels_index).copy_from_slice(&_labels);
-                    },
-                );
-        }
-
-        Ok(((words, contexts), labels))
+        binary_skipgrams(
+            walks,
+            self.get_nodes_number(),
+            window_size,
+            negative_samples,
+            shuffle,
+            seed,
+        )
     }
 
     /// Return training batches for Node2Vec models.
@@ -219,12 +457,14 @@ impl Graph {
     /// * walk_parameters: &WalksParameters - the weighted walks parameters.
     /// * window_size: Option<usize> - Window size to consider for the sequences.
     /// * shuffle: Option<bool> - Wethever to shuffle the vectors on return.
+    /// * idx: usize - The seed for reproducibility.
     ///
     pub fn node2vec(
         &self,
         walk_parameters: &WalksParameters,
         window_size: Option<usize>,
         shuffle: Option<bool>,
+        seed: usize,
     ) -> Result<(Vec<Vec<usize>>, Vec<usize>), String> {
         // do the walks and check the result
         let walks = self.walk(walk_parameters)?;
@@ -233,72 +473,11 @@ impl Graph {
             return Err(concat!(
                 "In the current graph, with the given parameters, no walk could ",
                 "be performed which is above the given min-length"
-            ).to_string());
-        }
-        let _window_size = window_size.unwrap_or(4);
-        let _shuffle: bool = shuffle.unwrap_or(true);
-        let context_length = _window_size.checked_mul(2).ok_or("The given window size is too big, using this would result in an overflowing of a u64.")?;
-
-        let mut walks_centers: Vec<Vec<NodeT>> =
-            walks.par_iter().map(|walk| vec![0; walk.len()]).collect();
-        let mut walks_filters: Vec<Vec<bool>> = walks
-            .par_iter()
-            .map(|walk| vec![false; walk.len()])
-            .collect();
-        let mut contexts: Vec<Vec<NodeT>> = walks
-            .par_iter()
-            .zip(walks_centers.par_iter_mut())
-            .zip(walks_filters.par_iter_mut())
-            .map(|((walk, centers), filters)| {
-                walk.iter()
-                    .enumerate()
-                    .zip(centers.iter_mut())
-                    .map(|((i, word), center)| {
-                        let start = if i <= _window_size {
-                            0
-                        } else {
-                            i - _window_size
-                        };
-                        let end = min!(walk.len(), i + _window_size);
-                        *center = *word;
-                        let context: Vec<NodeT> = walk[start..end].to_vec();
-                        context
-                    })
-                    .zip(filters.iter_mut())
-                    .filter_map(|(context, filter)| {
-                        if context.len() == context_length {
-                            *filter = true;
-                            Some(context)
-                        } else {
-                            *filter = false;
-                            None
-                        }
-                    })
-                    .collect::<Vec<Vec<NodeT>>>()
-            })
-            .flatten()
-            .collect();
-
-        let filters: Vec<bool> = walks_filters.iter().flatten().cloned().collect();
-
-        let mut centers: Vec<NodeT> = walks_centers
-            .iter()
-            .flatten()
-            .cloned()
-            .zip(filters.iter())
-            .filter_map(|(center, filter)| if *filter { Some(center) } else { None })
-            .collect();
-
-        if _shuffle {
-            let mut indices: Vec<usize> = (0..centers.len() as usize).collect();
-            let mut rng: StdRng = SeedableRng::seed_from_u64(idx as u64);
-            indices.shuffle(&mut rng);
-            
-            contexts = indices.par_iter().map(|i| contexts[*i].clone()).collect();
-            centers = indices.par_iter().map(|i| centers[*i]).collect();
+            )
+            .to_string());
         }
 
-        Ok((contexts, centers))
+        word2vec(walks, window_size, shuffle, seed)
     }
 
     /// Return triple with CSR representation of cooccurrence matrix.
@@ -320,89 +499,17 @@ impl Graph {
         window_size: Option<usize>,
         verbose: Option<bool>,
     ) -> Result<(Vec<NodeT>, Vec<NodeT>, Vec<f64>), String> {
-        let _verbose = verbose.unwrap_or(false);
-        let _window_size = window_size.unwrap_or(4);
-
         let walks = self.walk(walks_parameters)?;
 
         if walks.is_empty() {
             return Err(concat!(
                 "In the current graph, with the given parameters, no walk could ",
                 "be performed which is above the given min-length"
-            ).to_string());
-        }
-        let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
-        let pb1 = if _verbose {
-            let pb1 = ProgressBar::new(walks.len() as u64);
-            pb1.set_style(ProgressStyle::default_bar().template(
-                "Computing cooccurrence mapping {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb1.set_draw_delta(walks.len() as u64 / 100);
-            pb1
-        } else {
-            ProgressBar::hidden()
-        };
-
-        for i in (0..walks.len()).progress_with(pb1) {
-            let walk = &walks[i];
-            let walk_length = walk.len();
-            for (central_index, &central_word_id) in walk.iter().enumerate() {
-                for distance in 1..1 + _window_size {
-                    if central_index + distance >= walk_length {
-                        break;
-                    }
-                    let context_id = walk[central_index + distance];
-                    if central_word_id < context_id {
-                        *cooccurence_matrix
-                            .entry((central_word_id, context_id))
-                            .or_insert(0.0) += 1.0 / distance as f64;
-                    } else {
-                        *cooccurence_matrix
-                            .entry((context_id, central_word_id))
-                            .or_insert(0.0) += 1.0 / distance as f64;
-                    }
-                }
-            }
+            )
+            .to_string());
         }
 
-        let elements = cooccurence_matrix.len() * 2;
-        let mut max_frequency = 0.0;
-        let mut words: Vec<NodeT> = vec![0; elements];
-        let mut contexts: Vec<NodeT> = vec![0; elements];
-        let mut frequencies: Vec<f64> = vec![0.0; elements];
-        let pb2 = if _verbose {
-            let pb2 = ProgressBar::new(cooccurence_matrix.len() as u64);
-            pb2.set_style(ProgressStyle::default_bar().template(
-                "Converting mapping into CSR matrix {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb2.set_draw_delta(cooccurence_matrix.len() as u64 / 100);
-            pb2
-        } else {
-            ProgressBar::hidden()
-        };
-
-        cooccurence_matrix
-            .iter()
-            .progress_with(pb2)
-            .enumerate()
-            .for_each(|(i, ((word, context), frequency))| {
-                let (k, j) = (i * 2, i * 2 + 1);
-                if *frequency > max_frequency {
-                    max_frequency = *frequency;
-                }
-                words[k] = *word;
-                words[j] = words[k];
-                contexts[k] = *context;
-                contexts[j] = contexts[k];
-                frequencies[k] = *frequency;
-                frequencies[j] = frequencies[k];
-            });
-
-        frequencies
-            .par_iter_mut()
-            .for_each(|frequency| *frequency /= max_frequency);
-
-        Ok((words, contexts, frequencies))
+        cooccurence_matrix(walks, window_size, verbose)
     }
 
     /// Returns triple with source nodes, destination nodes and labels for training model for link prediction.

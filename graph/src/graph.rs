@@ -123,7 +123,7 @@ impl Graph {
             let counts = self.get_node_type_counts()?;
             let top_k: HashBrownSet<_> = counts
                 .iter()
-                .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v1, &v2))
+                .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v2, &v1))
                 .take(k)
                 .map(|(k1, _)| k1)
                 .collect();
@@ -162,7 +162,7 @@ impl Graph {
             let counts = self.get_edge_type_counts()?;
             let top_k: HashBrownSet<_> = counts
                 .iter()
-                .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v1, &v2))
+                .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v2, &v1))
                 .take(k)
                 .map(|(k1, _)| k1)
                 .collect();
@@ -332,7 +332,8 @@ impl Graph {
 
     /// Return mapping from instance not trap nodes to dense nodes.
     pub fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
-        self.sources.iter()
+        self.sources
+            .iter()
             .chain(self.destinations.iter())
             .cloned()
             .unique()
@@ -579,15 +580,11 @@ impl Graph {
                 .collect::<Vec<Vec<NodeT>>>()
         };
 
-        if let Some(dense_nodes_mapping) = &parameters.dense_nodes_mapping{
-            walks.par_iter_mut().for_each(
-                |walk|
-                        walk.iter_mut()
-                            .for_each(
-                                |node|
-                                *node = *dense_nodes_mapping.get(node).unwrap()
-                            )
-            )
+        if let Some(dense_nodes_mapping) = &parameters.dense_nodes_mapping {
+            walks.par_iter_mut().for_each(|walk| {
+                walk.iter_mut()
+                    .for_each(|node| *node = *dense_nodes_mapping.get(node).unwrap())
+            })
         }
 
         Ok(walks)

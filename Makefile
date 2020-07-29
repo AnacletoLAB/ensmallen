@@ -9,4 +9,4 @@ python_manylinux1:
 	${MANYLINUX} make python
 
 build_manylinux1:
-	sudo docker build -t manylinux1 -f ./setup/Manylinux1 ./setup
+	sudo docker build -t manylinux1 -f ./setup/DockerFileManylinux1 ./setup
