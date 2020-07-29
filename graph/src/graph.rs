@@ -123,7 +123,7 @@ impl Graph {
             let counts = self.get_node_type_counts()?;
             let top_k: HashBrownSet<_> = counts
                 .iter()
-                .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v1, &v2))
+                .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v2, &v1))
                 .take(k)
                 .map(|(k1, _)| k1)
                 .collect();
@@ -162,7 +162,7 @@ impl Graph {
             let counts = self.get_edge_type_counts()?;
             let top_k: HashBrownSet<_> = counts
                 .iter()
-                .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v1, &v2))
+                .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v2, &v1))
                 .take(k)
                 .map(|(k1, _)| k1)
                 .collect();
