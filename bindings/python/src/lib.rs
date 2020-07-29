@@ -646,19 +646,18 @@ impl EnsmallenGraph {
         nodes_path: String,
         py_kwargs: Option<&PyDict>
     ) -> PyResult<()> {
-        match if let Some(kwargs) = &py_kwargs{
-            validate_kwargs(kwargs, &["separator", "nodes_column", "node_types_column"])?;
-            self.graph.to_nodes_csv(&nodes_path, 
-                extract_value!(kwargs, "separator", &str),
-                extract_value!(kwargs, "nodes_column", &str),
-                extract_value!(kwargs, "node_types_column", &str),
-            )
-        } else {
-            self.graph.to_nodes_csv(&nodes_path, None, None, None)
-        } {
-            Ok(g) => Ok(g),
-            Err(_) => Err(PyErr::new::<exceptions::ValueError, _>("Generic file error, check that the given path is valid.")),
-        }
+        python_exception!(
+            if let Some(kwargs) = &py_kwargs{
+                validate_kwargs(kwargs, &["separator", "nodes_column", "node_types_column"])?;
+                self.graph.to_nodes_csv(&nodes_path, 
+                    extract_value!(kwargs, "separator", &str),
+                    extract_value!(kwargs, "nodes_column", &str),
+                    extract_value!(kwargs, "node_types_column", &str),
+                )
+            } else {
+                self.graph.to_nodes_csv(&nodes_path, None, None, None)
+            }, "Generic file error, check that the given path is valid."
+        )
     }
 
     #[args(py_kwargs = "**")]
@@ -1224,18 +1223,31 @@ impl EnsmallenGraph {
     }
 
     #[getter]
-    fn outbounds(&self) -> Vec<EdgeT> {
-        self.graph.outbounds().clone()
+    fn outbounds(&self) -> PyResult<Py<PyArray1<EdgeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_nparray_1d!(gil, self.graph.outbounds().clone(), EdgeT))
     }
 
     #[getter]
-    fn weights(&self) -> Option<Vec<WeightT>> {
-        self.graph.weights().clone()
+    fn weights(&self) -> PyResult<Option<Py<PyArray1<WeightT>>>> {
+        Ok(match self.graph.weights().clone(){
+            Some(w) => {
+                let gil = pyo3::Python::acquire_gil();
+                Some(to_nparray_1d!(gil, w, WeightT))
+            },
+            None => None
+        })
     }
 
     #[getter]
-    fn node_types(&self) -> Option<Vec<NodeTypeT>> {
-        self.graph.node_types().clone()
+    fn node_types(&self) -> PyResult<Option<Py<PyArray1<NodeTypeT>>>> {
+        Ok(match self.graph.node_types().clone(){
+            Some(w) => {
+                let gil = pyo3::Python::acquire_gil();
+                Some(to_nparray_1d!(gil, w, NodeTypeT))
+            },
+            None => None
+        })
     }
 
     #[getter]
@@ -1252,8 +1264,14 @@ impl EnsmallenGraph {
     }
 
     #[getter]
-    fn edge_types(&self) -> Option<Vec<EdgeTypeT>> {
-        self.graph.edge_types().clone()
+    fn edge_types(&self) -> PyResult<Option<Py<PyArray1<EdgeTypeT>>>> {
+        Ok(match self.graph.edge_types().clone(){
+            Some(w) => {
+                let gil = pyo3::Python::acquire_gil();
+                Some(to_nparray_1d!(gil, w, EdgeTypeT))
+            },
+            None => None
+        })
     }
 
     #[getter]
