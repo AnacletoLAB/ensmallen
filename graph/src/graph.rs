@@ -60,7 +60,7 @@ impl Graph {
             };
         }
         Err(String::from(
-            "Node types are not defined for current class.",
+            "Node types are not defined for current graph instance.",
         ))
     }
 
@@ -83,7 +83,7 @@ impl Graph {
             };
         }
         Err(String::from(
-            "Edge types are not defined for current class.",
+            "Edge types are not defined for current graph instance.",
         ))
     }
 
@@ -93,7 +93,7 @@ impl Graph {
             Ok(Counter::init(et.clone()).into_map())
         } else {
             Err(String::from(
-                "Edge types are not defined for current class.",
+                "Edge types are not defined for current graph instance.",
             ))
         }
     }
@@ -104,7 +104,7 @@ impl Graph {
             Ok(Counter::init(nt.clone()).into_map())
         } else {
             Err(String::from(
-                "Node types are not defined for current class.",
+                "Node types are not defined for current graph instance.",
             ))
         }
     }
@@ -143,7 +143,7 @@ impl Graph {
             ))
         } else {
             Err(String::from(
-                "Node types are not defined for current class.",
+                "Node types are not defined for current graph instance.",
             ))
         }
     }
@@ -182,7 +182,7 @@ impl Graph {
             ))
         } else {
             Err(String::from(
-                "Edge types are not defined for current class.",
+                "Edge types are not defined for current graph instance.",
             ))
         }
     }
