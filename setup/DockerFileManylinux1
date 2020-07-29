@@ -6,11 +6,14 @@ ENV PATH /opt/python/cp35-cp35m/bin/:/opt/python/cp36-cp36m/bin/:/opt/python/cp3
 # Otherwise `cargo new` errors
 ENV USER root
 
-RUN curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly -y \
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y \
     && python3 -m pip install --no-cache-dir cffi \
     && mkdir /io
 
 ADD . /maturin/
+
+# Install the required rust version
+RUN rustup default nightly-2020-06-01
 
 RUN cargo install maturin
 
