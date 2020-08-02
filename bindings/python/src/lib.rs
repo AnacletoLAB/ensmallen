@@ -1774,6 +1774,110 @@ impl EnsmallenGraph {
             Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
         }
     }
+
+    #[text_signature = "($self, size, seed)"]
+    /// Returns random nodes from the graph.
+    ///
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// size:int,
+    ///     How many nodes to extract.
+    /// seed: int,
+    ///     The batch size to use.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Numpy array of shape (size,) which contains random nodes extracted from the graph.
+    /// It may contains duplicated nodes. 
+    ///
+    fn extract_random_nodes(&self, size: usize, seed: u64) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_nparray_1d!(gil, self.graph.extract_random_nodes(size, seed), NodeT))
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, size, seed, chunk_size)"]
+    /// Returns random nodes from the graph.
+    ///
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// size:int,
+    ///     How many nodes to extract.
+    /// seed: int,
+    ///     The batch size to use.
+    /// chunk_size: int = size / 8,
+    ///     The process is divided into several chunks, this is the size of the chunk to use.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Numpy array of shape (size,) which contains random nodes extracted from the graph.
+    /// It may contains duplicated nodes. 
+    ///
+    fn extract_random_nodes_par(&self, size: usize, seed: u64, py_kwargs: Option<&PyDict>) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_nparray_1d!(gil, 
+            if let Some(kwargs) = &py_kwargs {
+                validate_kwargs(kwargs, &["chunk_size"])?;
+                self.graph.extract_random_nodes_par(size, seed, extract_value!(kwargs, "chunk_size", usize))
+            } else {
+                self.graph.extract_random_nodes_par(size, seed, None)
+            }
+        , NodeT))
+    }
+
+    #[text_signature = "($self, size, seed)"]
+    /// Returns random edges from the graph.
+    ///
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// size:int,
+    ///     How many edges to extract.
+    /// seed: int,
+    ///     The batch size to use.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Numpy array of shape (size,) which contains random edges extracted from the graph.
+    /// It may contains duplicated edges. 
+    ///
+    fn extract_random_edges(&self, size: usize, seed: u64) -> PyResult<Py<PyArray2<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_nparray_2d!(gil, self.graph.extract_random_edges(size, seed), NodeT))
+    }
+
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, size, seed, chunk_size)"]
+    /// Returns random edges from the graph.
+    ///
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// size:int,
+    ///     How many edges to extract.
+    /// seed: int,
+    ///     The batch size to use.
+    /// chunk_size: int = size / 8,
+    ///     The process is divided into several chunks, this is the size of the chunk to use.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Numpy array of shape (size,) which contains random edges extracted from the graph.
+    /// It may contains duplicated edges. 
+    ///
+    fn extract_random_edges_par(&self, size: usize, seed: u64, py_kwargs: Option<&PyDict>) -> PyResult<Py<PyArray2<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_nparray_2d!(gil, 
+            if let Some(kwargs) = &py_kwargs {
+                validate_kwargs(kwargs, &["chunk_size"])?;
+                self.graph.extract_random_edges_par(size, seed, extract_value!(kwargs, "chunk_size", usize))
+            } else {
+                self.graph.extract_random_edges_par(size, seed, None)
+            }
+        , NodeT))
+    }
 }
 
 #[pyproto]

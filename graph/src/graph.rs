@@ -441,11 +441,11 @@ impl Graph {
     ///
     /// * `size` - How many edges to extract.
     /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
-    pub fn extract_random_edges(&self, size: usize, seed: u64) -> Vec<(NodeT, NodeT)> {
+    pub fn extract_random_edges(&self, size: usize, seed: u64) -> Vec<Vec<NodeT>> {
         return gen_random_vec(size, seed).iter().map(
             |idx| {
                 let i: NodeT = *idx as NodeT % self.get_edges_number();
-                (self.sources[i], self.destinations[i])
+                vec![self.sources[i], self.destinations[i]]
             }
         ).collect()
     }
@@ -456,7 +456,7 @@ impl Graph {
     ///
     /// * `size` - How many edges to extract.
     /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
-    pub fn extract_random_edges_par(&self, size: usize, seed: u64, chunk_size: Option<usize>) -> Vec<(NodeT, NodeT)> {
+    pub fn extract_random_edges_par(&self, size: usize, seed: u64, chunk_size: Option<usize>) -> Vec<Vec<NodeT>> {
         let _chunk_size = chunk_size.unwrap_or(size / 8);
         if _chunk_size <= 1 {
             return self.extract_random_edges(size, seed);
@@ -466,15 +466,18 @@ impl Graph {
                 gen_random_vec(_chunk_size, seed ^ (i * 1337)).par_iter().map(
                     |idx| {
                         let i: NodeT = *idx as NodeT % self.get_edges_number();
-                        (self.sources[i], self.destinations[i])
+                        vec![self.sources[i], self.destinations[i]]
                     }
-                ).collect::<Vec<(NodeT, NodeT)>>()
+                ).collect::<Vec<Vec<NodeT>>>()
             })
             .flatten()
-            .collect::<Vec<(NodeT, NodeT)>>();
+            .collect::<Vec<Vec<NodeT>>>();
         let diff = size - result.len();
         if diff != 0 {
-            result.extend(self.extract_random_edges(diff, seed ^ 1337).iter());
+            let diffs = self.extract_random_edges(diff, seed ^ 1337);
+            for x in diffs {
+                result.push(x);
+            }
         }
         result
     }
