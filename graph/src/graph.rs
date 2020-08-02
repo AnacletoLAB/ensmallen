@@ -8,7 +8,10 @@ use itertools::Itertools;
 use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap;
-use vec_rand::sample;
+use vec_rand::{
+    sample,
+    gen_random_vec
+};
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
 /// A graph representation optimized for executing random walks on huge graphs.
@@ -390,6 +393,90 @@ impl Graph {
     pub fn get_node_neighbours(&self, node: NodeT) -> Vec<NodeT> {
         let (min_edge, max_edge) = self.get_min_max_edge(node);
         self.destinations[min_edge..max_edge].to_vec()
+    }
+
+    /// Extract random nodes from the graph
+    /// 
+    /// # Arguments
+    ///
+    /// * `size` - How many nodes to extract.
+    /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
+    ///
+    pub fn extract_random_nodes(&self, size: usize, seed: u64) -> Vec<NodeT> {
+        return gen_random_vec(size, seed).iter().map(
+            |idx| *idx as NodeT % self.get_nodes_number()
+        ).collect()
+    }
+
+    /// Extract random nodes from the graph in parallel using multiple threads
+    /// 
+    /// # Arguments
+    ///
+    /// * `size` - How many nodes to extract.
+    /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
+    ///
+    pub fn extract_random_nodes_par(&self, size: usize, seed: u64, chunk_size: Option<usize>) -> Vec<NodeT> {
+        let _chunk_size = chunk_size.unwrap_or(size / 8);
+        if _chunk_size <= 1 {
+            return self.extract_random_nodes(size, seed);
+        }
+        let mut result = (0..(size / _chunk_size) as u64).into_par_iter()
+            .map(|i| {
+                gen_random_vec(_chunk_size, seed ^ (i * 1337)).par_iter().map(
+                    |idx| *idx as NodeT % self.get_nodes_number()
+                ).collect::<Vec<NodeT>>()
+            })
+            .flatten()
+            .collect::<Vec<NodeT>>();
+        let diff = size - result.len();
+        if diff != 0 {
+            result.extend(self.extract_random_nodes(diff, seed ^ 1337).iter());
+        }
+        result
+    }
+
+    /// Extract random edges from the graph
+    /// 
+    /// # Arguments
+    ///
+    /// * `size` - How many edges to extract.
+    /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
+    pub fn extract_random_edges(&self, size: usize, seed: u64) -> Vec<(NodeT, NodeT)> {
+        return gen_random_vec(size, seed).iter().map(
+            |idx| {
+                let i: NodeT = *idx as NodeT % self.get_edges_number();
+                (self.sources[i], self.destinations[i])
+            }
+        ).collect()
+    }
+
+    /// Extract random edges from the graph in parallel using multiple threads
+    /// 
+    /// # Arguments
+    ///
+    /// * `size` - How many edges to extract.
+    /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
+    pub fn extract_random_edges_par(&self, size: usize, seed: u64, chunk_size: Option<usize>) -> Vec<(NodeT, NodeT)> {
+        let _chunk_size = chunk_size.unwrap_or(size / 8);
+        if _chunk_size <= 1 {
+            return self.extract_random_edges(size, seed);
+        }
+        let mut result = (0..(size / _chunk_size) as u64).into_par_iter()
+            .map(|i| {
+                gen_random_vec(_chunk_size, seed ^ (i * 1337)).par_iter().map(
+                    |idx| {
+                        let i: NodeT = *idx as NodeT % self.get_edges_number();
+                        (self.sources[i], self.destinations[i])
+                    }
+                ).collect::<Vec<(NodeT, NodeT)>>()
+            })
+            .flatten()
+            .collect::<Vec<(NodeT, NodeT)>>();
+        let diff = size - result.len();
+        if diff != 0 {
+            result.extend(self.extract_random_edges(diff, seed ^ 1337).iter());
+        }
+        result
     }
 
     /// Return the node transition weights and the related node and edges.
