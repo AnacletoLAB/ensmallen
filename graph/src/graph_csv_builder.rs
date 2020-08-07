@@ -332,6 +332,7 @@ impl FromCsvBuilder {
             .unwrap();
         let columns: Vec<&str> = header_line.split(&self.edge_sep).collect();
         let number_of_separators = columns.len();
+        // cast headers columns to number to parse them in the same way of positional one
 
         if !columns.contains(&&self.sources_column[..]) {
             return Err(format!(

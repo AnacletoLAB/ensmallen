@@ -627,7 +627,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, nodes_path, separator, nodes_column, node_types_column)"]
+    #[text_signature = "($self, nodes_path, separator, nodes_column, node_types_column, header)"]
     /// Save the nodes to a loadable csv / tsv.
     /// In this method we use csv and tsv interchangably.
     ///
@@ -641,27 +641,30 @@ impl EnsmallenGraph {
     ///     The name of the column with the names of the nodes.
     /// node_types_column: str = "category",
     ///     The name of the column with the types of the nodes.
-    ///
+    /// header: bool = True,
+    ///     If false, the csv will have no header
+    /// 
     fn to_nodes_csv(&self, 
         nodes_path: String,
         py_kwargs: Option<&PyDict>
     ) -> PyResult<()> {
         python_exception!(
             if let Some(kwargs) = &py_kwargs{
-                validate_kwargs(kwargs, &["separator", "nodes_column", "node_types_column"])?;
+                validate_kwargs(kwargs, &["separator", "nodes_column", "node_types_column", "header"])?;
                 self.graph.to_nodes_csv(&nodes_path, 
                     extract_value!(kwargs, "separator", &str),
                     extract_value!(kwargs, "nodes_column", &str),
                     extract_value!(kwargs, "node_types_column", &str),
+                    extract_value!(kwargs, "header", bool),
                 )
             } else {
-                self.graph.to_nodes_csv(&nodes_path, None, None, None)
+                self.graph.to_nodes_csv(&nodes_path, None, None, None, None)
             }, "Generic file error, check that the given path is valid."
         )
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, edges_path, separator, sources_column, destinations_column, edge_types_column, weights_column)"]
+    #[text_signature = "($self, edges_path, separator, sources_column, destinations_column, edge_types_column, weights_column, header)"]
     /// Save the edges to a loadable csv / tsv.
     /// In this method we use csv and tsv interchangably.
     ///
@@ -679,7 +682,8 @@ impl EnsmallenGraph {
     ///     The name of the column with the types of the edges.
     /// weights_column: str = "weight"
     ///     The name of the column with the weight of the edges.
-    ///
+    /// header: bool = True,
+    ///     If false, the csv will have no header
     fn to_edges_csv(&self, 
         edges_path: String,
         py_kwargs: Option<&PyDict>
@@ -687,7 +691,7 @@ impl EnsmallenGraph {
         python_exception!(if let Some(kwargs) = &py_kwargs{
                 validate_kwargs(kwargs, &[
                     "separator", "sources_column", "destinations_column",
-                    "edge_types_column", "weights_column"
+                    "edge_types_column", "weights_column", "header"
                     ])?;
                 self.graph.to_edges_csv(&edges_path, 
                     extract_value!(kwargs, "separator", &str),
@@ -695,9 +699,10 @@ impl EnsmallenGraph {
                     extract_value!(kwargs, "destinations_column", &str),
                     extract_value!(kwargs, "edge_types_column", &str),
                     extract_value!(kwargs, "weights_column", &str),
+                    extract_value!(kwargs, "header", bool),
                 )
             } else {
-                self.graph.to_edges_csv(&edges_path, None, None, None, None, None)
+                self.graph.to_edges_csv(&edges_path, None, None, None, None, None, None)
             }, "Generic file error, check that the given path is valid."
         )  
     }
