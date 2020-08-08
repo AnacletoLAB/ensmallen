@@ -203,6 +203,16 @@ impl Graph {
         degrees[self.get_nodes_number() / 2]
     }
 
+    /// Returns maximum node degree of the graph
+    pub fn degrees_max(&self) -> NodeT {
+        *self.degrees().iter().max().unwrap()
+    }
+
+    /// Returns minimum node degree of the graph
+    pub fn degrees_min(&self) -> NodeT {
+        *self.degrees().iter().min().unwrap()
+    }
+
     /// Returns mode node degree of the graph
     pub fn degrees_mode(&self) -> NodeT {
         let mut occurrences: HashMap<NodeT, usize> = HashMap::new();
@@ -268,6 +278,8 @@ impl Graph {
     /// * degrees_median: the median degree of the nodes.
     /// * degrees_mean: the mean degree of the nodes.
     /// * degrees_mode: the mode degree of the nodes.
+    /// * degrees_max: the max degree of the nodes.
+    /// * degrees_min: the min degree of the nodes.
     /// * nodes_number: the number of nodes in the graph.
     /// * edges_number: the number of edges in the graph.
     /// * unique_node_types_number: the number of different node types in the graph.
@@ -281,6 +293,8 @@ impl Graph {
         report.insert("degrees_median", self.degrees_median().to_string());
         report.insert("degrees_mean", self.degrees_mean().to_string());
         report.insert("degrees_mode", self.degrees_mode().to_string());
+        report.insert("degrees_min", self.degrees_min().to_string());
+        report.insert("degrees_max", self.degrees_max().to_string());
         report.insert("nodes_number", self.get_nodes_number().to_string());
         report.insert("edges_number", self.get_edges_number().to_string());
         report.insert("density", self.density().to_string());
