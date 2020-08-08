@@ -357,7 +357,7 @@ fn build_walk_parameters(
     py_kwargs: Option<&PyDict>,
     validate: bool
 ) -> PyResult<WalksParameters> {
-    let mut weights = to_python_exception!(WalksParameters::new(
+    let mut walks_parameters = to_python_exception!(WalksParameters::new(
         build_single_walk_parameters(length, py_kwargs)?,
         start_node,
         end_node,
@@ -370,11 +370,12 @@ fn build_walk_parameters(
                 "change_node_type_weight", "verbose"
                 ])?;
             }
-        weights = to_python_exception!(weights.set_iterations(extract_value!(kwargs, "iterations", usize)))?;
-        weights = to_python_exception!(weights.set_min_length(extract_value!(kwargs, "min_length", usize)))?;
-        weights = weights.set_dense_nodes_mapping(extract_value!(kwargs, "dense_nodes_mapping", HashMap<NodeT, NodeT>));
+        walks_parameters = to_python_exception!(walks_parameters.set_iterations(extract_value!(kwargs, "iterations", usize)))?;
+        walks_parameters = walks_parameters.set_verbose(extract_value!(kwargs, "verbose", bool));
+        walks_parameters = to_python_exception!(walks_parameters.set_min_length(extract_value!(kwargs, "min_length", usize)))?;
+        walks_parameters = walks_parameters.set_dense_nodes_mapping(extract_value!(kwargs, "dense_nodes_mapping", HashMap<NodeT, NodeT>));
     }
-    Ok(weights)
+    Ok(walks_parameters)
 }
 
 #[pymethods]
