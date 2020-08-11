@@ -69,7 +69,7 @@ def test_return_weight_behaviour_pathway():
         ]))
 
     correlation, p_value = pearsonr(return_weights, mean_uniques_counts)
-    print("HPO return weight", correlation, p_value)
+    print("Pathway return weight", correlation, p_value)
     assert p_value < 0.01 and correlation < -0.9
 
 

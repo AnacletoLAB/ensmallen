@@ -134,7 +134,7 @@ impl WalkWeights {
             self.explore_weight
         ];
         weights.iter().all(
-            |weight| (weight - 1.0).abs() < f64::EPSILON
+            |weight| (weight - 1.0).abs() <= f64::EPSILON
         )
     }
 }
