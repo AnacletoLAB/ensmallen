@@ -8,10 +8,7 @@ use itertools::Itertools;
 use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap;
-use vec_rand::{
-    sample,
-    gen_random_vec
-};
+use vec_rand::{gen_random_vec, sample, sample_uniform};
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
 /// A graph representation optimized for executing random walks on huge graphs.
@@ -396,35 +393,43 @@ impl Graph {
     }
 
     /// Extract random nodes from the graph
-    /// 
+    ///
     /// # Arguments
     ///
     /// * `size` - How many nodes to extract.
     /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
     ///
     pub fn extract_random_nodes(&self, size: usize, seed: u64) -> Vec<NodeT> {
-        gen_random_vec(size, seed).iter().map(
-            |idx| *idx as NodeT % self.get_nodes_number()
-        ).collect()
+        gen_random_vec(size, seed)
+            .iter()
+            .map(|idx| *idx as NodeT % self.get_nodes_number())
+            .collect()
     }
 
     /// Extract random nodes from the graph in parallel using multiple threads
-    /// 
+    ///
     /// # Arguments
     ///
     /// * `size` - How many nodes to extract.
     /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
     ///
-    pub fn extract_random_nodes_par(&self, size: usize, seed: u64, chunk_size: Option<usize>) -> Vec<NodeT> {
+    pub fn extract_random_nodes_par(
+        &self,
+        size: usize,
+        seed: u64,
+        chunk_size: Option<usize>,
+    ) -> Vec<NodeT> {
         let _chunk_size = chunk_size.unwrap_or(size / 8);
         if _chunk_size <= 1 {
             return self.extract_random_nodes(size, seed);
         }
-        let mut result = (0..(size / _chunk_size) as u64).into_par_iter()
+        let mut result = (0..(size / _chunk_size) as u64)
+            .into_par_iter()
             .map(|i| {
-                gen_random_vec(_chunk_size, seed ^ (i * 1337)).par_iter().map(
-                    |idx| *idx as NodeT % self.get_nodes_number()
-                ).collect::<Vec<NodeT>>()
+                gen_random_vec(_chunk_size, seed ^ (i * 1337))
+                    .par_iter()
+                    .map(|idx| *idx as NodeT % self.get_nodes_number())
+                    .collect::<Vec<NodeT>>()
             })
             .flatten()
             .collect::<Vec<NodeT>>();
@@ -436,39 +441,47 @@ impl Graph {
     }
 
     /// Extract random edges from the graph
-    /// 
+    ///
     /// # Arguments
     ///
     /// * `size` - How many edges to extract.
     /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
     pub fn extract_random_edges(&self, size: usize, seed: u64) -> Vec<Vec<NodeT>> {
-        gen_random_vec(size, seed).iter().map(
-            |idx| {
+        gen_random_vec(size, seed)
+            .iter()
+            .map(|idx| {
                 let i: NodeT = *idx as NodeT % self.get_edges_number();
                 vec![self.sources[i], self.destinations[i]]
-            }
-        ).collect()
+            })
+            .collect()
     }
 
     /// Extract random edges from the graph in parallel using multiple threads
-    /// 
+    ///
     /// # Arguments
     ///
     /// * `size` - How many edges to extract.
     /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
-    pub fn extract_random_edges_par(&self, size: usize, seed: u64, chunk_size: Option<usize>) -> Vec<Vec<NodeT>> {
+    pub fn extract_random_edges_par(
+        &self,
+        size: usize,
+        seed: u64,
+        chunk_size: Option<usize>,
+    ) -> Vec<Vec<NodeT>> {
         let _chunk_size = chunk_size.unwrap_or(size / 8);
         if _chunk_size <= 1 {
             return self.extract_random_edges(size, seed);
         }
-        let mut result = (0..(size / _chunk_size) as u64).into_par_iter()
+        let mut result = (0..(size / _chunk_size) as u64)
+            .into_par_iter()
             .map(|i| {
-                gen_random_vec(_chunk_size, seed ^ (i * 1337)).par_iter().map(
-                    |idx| {
+                gen_random_vec(_chunk_size, seed ^ (i * 1337))
+                    .par_iter()
+                    .map(|idx| {
                         let i: NodeT = *idx as NodeT % self.get_edges_number();
                         vec![self.sources[i], self.destinations[i]]
-                    }
-                ).collect::<Vec<Vec<NodeT>>>()
+                    })
+                    .collect::<Vec<Vec<NodeT>>>()
             })
             .flatten()
             .collect::<Vec<Vec<NodeT>>>();
@@ -612,8 +625,26 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT, the previous node from which to compute the transitions.
+    /// * seed: usize, the seed to use for extracting the node.
+    ///
+    pub fn extract_uniform_node(&self, node: NodeT, seed: usize) -> NodeT {
+        let (min_edge, max_edge) = self.get_min_max_edge(node);
+        self.destinations[min_edge + sample_uniform((max_edge - min_edge) as u64, seed as u64)]
+    }
+
+    /// Return new sampled node with the transition edge used.
+    ///
+    /// # Arguments
+    ///
+    /// * node: NodeT, the previous node from which to compute the transitions.
+    /// * seed: usize, the seed to use for extracting the node.
     /// * change_node_type_weight: ParamsT, weight for changing node type.
-    pub fn extract_node(&self, node: NodeT, change_node_type_weight: ParamsT) -> (NodeT, EdgeT) {
+    pub fn extract_node(
+        &self,
+        node: NodeT,
+        seed: usize,
+        change_node_type_weight: ParamsT,
+    ) -> (NodeT, EdgeT) {
         let (mut weights, dsts, min_edge, _) =
             self.get_node_transition(node, change_node_type_weight);
         let index = sample(&mut weights);
@@ -625,8 +656,14 @@ impl Graph {
     /// # Arguments
     ///
     /// * edge: EdgeT, the previous edge from which to compute the transitions.
+    /// * seed: usize, the seed to use for extracting the node.
     /// * walk_weights: WalkWeights, the weights for the weighted random walks.
-    pub fn extract_edge(&self, edge: EdgeT, walk_weights: &WalkWeights) -> (NodeT, EdgeT) {
+    pub fn extract_edge(
+        &self,
+        edge: EdgeT,
+        seed: usize,
+        walk_weights: &WalkWeights,
+    ) -> (NodeT, EdgeT) {
         let (mut weights, dsts, min_edge, _) = self.get_edge_transition(edge, walk_weights);
         let index = sample(&mut weights);
         (dsts[index], min_edge + index)
@@ -657,16 +694,39 @@ impl Graph {
         let iterator = (0..parameters.total_iterations())
             .into_par_iter()
             .progress_with(pb)
-            .map(|index| self.not_trap_nodes[parameters.mode_index(index)]);
+            .map(|index| {
+                (
+                    parameters.seed + index,
+                    self.not_trap_nodes[parameters.mode_index(index)],
+                )
+            });
 
         let mut walks = if self.has_traps {
+            if self.weights.is_none() && parameters.is_first_order_walk() {
+                iterator
+                    .map(|(seed, node)| {
+                        self.uniform_walk(node, seed, &parameters.single_walk_parameters)
+                    })
+                    .collect::<Vec<Vec<NodeT>>>()
+            } else {
+                iterator
+                    .map(|(seed, node)| {
+                        self.single_walk(node, seed, &parameters.single_walk_parameters)
+                    })
+                    .filter(|walk| walk.len() >= parameters.min_length)
+                    .collect::<Vec<Vec<NodeT>>>()
+            }
+        } else if self.weights.is_none() && parameters.is_first_order_walk() {
             iterator
-                .map(|node| self.single_walk(node, &parameters.single_walk_parameters))
-                .filter(|walk| walk.len() >= parameters.min_length)
+                .map(|(seed, node)| {
+                    self.uniform_walk_no_traps(node, seed, &parameters.single_walk_parameters)
+                })
                 .collect::<Vec<Vec<NodeT>>>()
         } else {
             iterator
-                .map(|node| self.single_walk_no_traps(node, &parameters.single_walk_parameters))
+                .map(|(seed, node)| {
+                    self.single_walk_no_traps(node, seed, &parameters.single_walk_parameters)
+                })
                 .collect::<Vec<Vec<NodeT>>>()
         };
 
@@ -685,10 +745,17 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT - Node from where to start the random walks.
+    /// * seed: usize, the seed to use for extracting the nodes and edges.
     /// * parameters: SingleWalkParameters - Parameters for the single walk.
     ///
-    pub fn single_walk(&self, node: NodeT, parameters: &SingleWalkParameters) -> Vec<NodeT> {
-        let (dst, mut edge) = self.extract_node(node, parameters.weights.change_node_type_weight);
+    pub fn single_walk(
+        &self,
+        node: NodeT,
+        seed: usize,
+        parameters: &SingleWalkParameters,
+    ) -> Vec<NodeT> {
+        let (dst, mut edge) =
+            self.extract_node(node, seed, parameters.weights.change_node_type_weight);
 
         if self.is_node_trap(dst) {
             return vec![node, dst];
@@ -698,11 +765,11 @@ impl Graph {
         walk.push(node);
         walk.push(dst);
 
-        for _ in 2..parameters.length {
+        for iteration in 2..parameters.length {
             if self.is_edge_trap(edge) {
                 break;
             }
-            let (dst, inner_edge) = self.extract_edge(edge, &parameters.weights);
+            let (dst, inner_edge) = self.extract_edge(edge, iteration + seed, &parameters.weights);
             edge = inner_edge;
             walk.push(dst);
         }
@@ -716,18 +783,91 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT - Node from where to start the random walks.
+    /// * seed: usize, the seed to use for extracting the nodes and edges.
     /// * parameters: SingleWalkParameters - Parameters for the single walk.
     ///
-    pub fn single_walk_no_traps(&self, node: NodeT, parameters: &SingleWalkParameters) -> Vec<NodeT> {
+    pub fn single_walk_no_traps(
+        &self,
+        node: NodeT,
+        seed: usize,
+        parameters: &SingleWalkParameters,
+    ) -> Vec<NodeT> {
         let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length);
         walk.push(node);
 
-        let (dst, mut edge) = self.extract_node(node, parameters.weights.change_node_type_weight);
+        let (dst, mut edge) =
+            self.extract_node(node, seed, parameters.weights.change_node_type_weight);
         walk.push(dst);
 
-        for _ in 2..parameters.length {
-            let (dst, inner_edge) = self.extract_edge(edge, &parameters.weights);
+        for iteration in 2..parameters.length {
+            let (dst, inner_edge) = self.extract_edge(edge, seed + iteration, &parameters.weights);
             edge = inner_edge;
+            walk.push(dst);
+        }
+        walk
+    }
+
+    /// Returns single walk from given node executed uniformely.
+    ///
+    /// This walk executes uniformely a walk of first order. This method
+    /// works in context of uniform graphs (all weights are None) and the
+    /// weights of the node2vec are all equal to 1.
+    ///
+    /// # Arguments
+    ///
+    /// * node: NodeT - Node from where to start the random walks.
+    /// * seed: usize, the seed to use for extracting the nodes and edges.
+    /// * parameters: SingleWalkParameters - Parameters for the single walk.
+    ///
+    fn uniform_walk(
+        &self,
+        node: NodeT,
+        seed: usize,
+        parameters: &SingleWalkParameters,
+    ) -> Vec<NodeT> {
+        let dst = self.extract_uniform_node(node, seed);
+
+        if self.is_node_trap(dst) {
+            return vec![node, dst];
+        }
+
+        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length);
+        walk.push(node);
+        walk.push(dst);
+
+        for iteration in 2..parameters.length {
+            if self.is_node_trap(dst) {
+                break;
+            }
+            let dst = self.extract_uniform_node(dst, seed + iteration);
+            walk.push(dst);
+        }
+        walk
+    }
+
+    /// Returns single walk from given node.
+    ///
+    /// This method assumes that there are no traps in the graph.
+    ///
+    /// # Arguments
+    ///
+    /// * node: NodeT - Node from where to start the random walks.
+    /// * seed: usize, the seed to use for extracting the nodes and edges.
+    /// * parameters: SingleWalkParameters - Parameters for the single walk.
+    ///
+    fn uniform_walk_no_traps(
+        &self,
+        node: NodeT,
+        seed: usize,
+        parameters: &SingleWalkParameters,
+    ) -> Vec<NodeT> {
+        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length);
+        let dst = self.extract_uniform_node(node, seed);
+        walk.push(node);
+        walk.push(dst);
+
+        for iteration in 2..parameters.length {
+            let dst = self.extract_uniform_node(dst, seed + iteration);
             walk.push(dst);
         }
         walk

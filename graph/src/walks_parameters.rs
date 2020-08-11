@@ -22,6 +22,7 @@ pub struct WalksParameters {
     pub(crate) verbose: bool,
     pub(crate) start_node: NodeT,
     pub(crate) end_node: NodeT,
+    pub(crate) seed: NodeT,
     pub(crate) dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
 }
 
@@ -123,6 +124,19 @@ impl WalkWeights {
         }
         Ok(self)
     }
+
+    /// Return boolean value representing if walk is of first order.
+    pub fn is_first_order_walk(&self) -> bool {
+        let weights = vec![
+            self.change_node_type_weight,
+            self.change_edge_type_weight,
+            self.return_weight,
+            self.explore_weight
+        ];
+        weights.iter().all(
+            |weight| (weight - 1.0).abs() > f64::EPSILON
+        )
+    }
 }
 
 impl SingleWalkParameters {
@@ -131,6 +145,11 @@ impl SingleWalkParameters {
             return Err(String::from("The provided lenght for the walk is zero!"));
         }
         Ok(SingleWalkParameters { length, weights })
+    }
+
+    /// Return boolean value representing if walk is of first order.
+    pub fn is_first_order_walk(&self) -> bool {
+        self.weights.is_first_order_walk()
     }
 }
 
@@ -156,6 +175,7 @@ impl WalksParameters {
             single_walk_parameters,
             iterations: 1,
             min_length: 1,
+            seed: 42,
             verbose: false,
             dense_nodes_mapping: None,
         })
@@ -206,6 +226,19 @@ impl WalksParameters {
     pub fn set_verbose(mut self, verbose: Option<bool>) -> WalksParameters {
         if let Some(v) = verbose {
             self.verbose = v;
+        }
+        self
+    }
+
+    /// Set the seed.
+    ///
+    /// # Arguments
+    ///
+    /// * seed: Option<usize> - Seed for reproducible random walks.
+    ///
+    pub fn set_seed(mut self, seed: Option<usize>) -> WalksParameters {
+        if let Some(s) = seed {
+            self.seed = s;
         }
         self
     }
@@ -293,5 +326,10 @@ impl WalksParameters {
     /// Return given index with mode applied using given parameters.
     pub fn mode_index(&self, index: usize) -> NodeT {
         self.start_node + (index % self.delta())
+    }
+
+    /// Return boolean value representing if walk is of first order.
+    pub fn is_first_order_walk(&self) -> bool {
+        self.single_walk_parameters.is_first_order_walk()
     }
 }
