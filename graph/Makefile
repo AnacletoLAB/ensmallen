@@ -7,6 +7,14 @@ else
 OPEN_COMMAND := "open"
 endif
 
+pgo:
+    (\
+    export RUSTFLAGS="-Cprofile-generate=/tmp/pgo-data";\
+    cargo build --release;\
+    ./target/release/twitter;\
+    export RUSTFLAGS="-Cprofile-use=/tmp/pgo-data/merged.profdata";\
+    cargo build --release;\
+    )
 
 coverage_osx:
 	(\

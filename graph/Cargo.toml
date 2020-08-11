@@ -12,6 +12,10 @@ edition = "2018"
 [lib]
 name = "graph"
 
+[[bin]]
+name = "twitter"
+path = "src/twitter.rs"
+
 [dev-dependencies]
 linecount= "0.1.0"
 

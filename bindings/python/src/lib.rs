@@ -367,11 +367,12 @@ fn build_walk_parameters(
             validate_kwargs(kwargs,&[
                 "iterations", "min_length", "dense_nodes_mapping", 
                 "return_weight", "explore_weight", "change_edge_type_weight", 
-                "change_node_type_weight", "verbose"
+                "change_node_type_weight", "verbose", "seed"
                 ])?;
             }
         walks_parameters = to_python_exception!(walks_parameters.set_iterations(extract_value!(kwargs, "iterations", usize)))?;
         walks_parameters = walks_parameters.set_verbose(extract_value!(kwargs, "verbose", bool));
+        walks_parameters = walks_parameters.set_seed(extract_value!(kwargs, "seed", usize));
         walks_parameters = to_python_exception!(walks_parameters.set_min_length(extract_value!(kwargs, "min_length", usize)))?;
         walks_parameters = walks_parameters.set_dense_nodes_mapping(extract_value!(kwargs, "dense_nodes_mapping", HashMap<NodeT, NodeT>));
     }
