@@ -403,7 +403,7 @@ impl Graph {
     /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
     ///
     pub fn extract_random_nodes(&self, size: usize, seed: u64) -> Vec<NodeT> {
-        return gen_random_vec(size, seed).iter().map(
+        gen_random_vec(size, seed).iter().map(
             |idx| *idx as NodeT % self.get_nodes_number()
         ).collect()
     }
@@ -442,7 +442,7 @@ impl Graph {
     /// * `size` - How many edges to extract.
     /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
     pub fn extract_random_edges(&self, size: usize, seed: u64) -> Vec<Vec<NodeT>> {
-        return gen_random_vec(size, seed).iter().map(
+        gen_random_vec(size, seed).iter().map(
             |idx| {
                 let i: NodeT = *idx as NodeT % self.get_edges_number();
                 vec![self.sources[i], self.destinations[i]]
@@ -493,7 +493,7 @@ impl Graph {
         &self,
         node: NodeT,
         change_node_type_weight: ParamsT,
-    ) -> (Vec<WeightT>, Vec<NodeT>, EdgeT, EdgeT) {
+    ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
         // Retrieve edge boundaries.
         let (min_edge, max_edge) = self.get_min_max_edge(node);
         // If weights are given
@@ -503,7 +503,7 @@ impl Graph {
             vec![1.0; max_edge - min_edge]
         };
 
-        let destinations: Vec<NodeT> = self.destinations[min_edge..max_edge].to_vec();
+        let destinations: &[NodeT] = &self.destinations[min_edge..max_edge];
 
         //############################################################
         //# Handling of the change node type parameter               #
@@ -538,7 +538,7 @@ impl Graph {
         &self,
         edge: EdgeT,
         walk_weights: &WalkWeights,
-    ) -> (Vec<WeightT>, Vec<NodeT>, EdgeT, EdgeT) {
+    ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
         // Get the source and destination for current edge.
         let (src, dst) = (self.sources[edge], self.destinations[edge]);
 
