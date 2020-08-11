@@ -613,7 +613,7 @@ impl Graph {
     ///
     /// * node: NodeT, the previous node from which to compute the transitions.
     /// * change_node_type_weight: ParamsT, weight for changing node type.
-    fn extract_node(&self, node: NodeT, change_node_type_weight: ParamsT) -> (NodeT, EdgeT) {
+    pub fn extract_node(&self, node: NodeT, change_node_type_weight: ParamsT) -> (NodeT, EdgeT) {
         let (mut weights, dsts, min_edge, _) =
             self.get_node_transition(node, change_node_type_weight);
         let index = sample(&mut weights);
@@ -626,7 +626,7 @@ impl Graph {
     ///
     /// * edge: EdgeT, the previous edge from which to compute the transitions.
     /// * walk_weights: WalkWeights, the weights for the weighted random walks.
-    fn extract_edge(&self, edge: EdgeT, walk_weights: &WalkWeights) -> (NodeT, EdgeT) {
+    pub fn extract_edge(&self, edge: EdgeT, walk_weights: &WalkWeights) -> (NodeT, EdgeT) {
         let (mut weights, dsts, min_edge, _) = self.get_edge_transition(edge, walk_weights);
         let index = sample(&mut weights);
         (dsts[index], min_edge + index)
@@ -687,7 +687,7 @@ impl Graph {
     /// * node: NodeT - Node from where to start the random walks.
     /// * parameters: SingleWalkParameters - Parameters for the single walk.
     ///
-    fn single_walk(&self, node: NodeT, parameters: &SingleWalkParameters) -> Vec<NodeT> {
+    pub fn single_walk(&self, node: NodeT, parameters: &SingleWalkParameters) -> Vec<NodeT> {
         let (dst, mut edge) = self.extract_node(node, parameters.weights.change_node_type_weight);
 
         if self.is_node_trap(dst) {
@@ -718,7 +718,7 @@ impl Graph {
     /// * node: NodeT - Node from where to start the random walks.
     /// * parameters: SingleWalkParameters - Parameters for the single walk.
     ///
-    fn single_walk_no_traps(&self, node: NodeT, parameters: &SingleWalkParameters) -> Vec<NodeT> {
+    pub fn single_walk_no_traps(&self, node: NodeT, parameters: &SingleWalkParameters) -> Vec<NodeT> {
         let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length);
         walk.push(node);
 
