@@ -647,7 +647,7 @@ impl Graph {
     ) -> (NodeT, EdgeT) {
         let (mut weights, dsts, min_edge, _) =
             self.get_node_transition(node, change_node_type_weight);
-        let index = sample(&mut weights);
+        let index = sample(&mut weights, seed as u64);
         (dsts[index], min_edge + index)
     }
 
@@ -665,7 +665,7 @@ impl Graph {
         walk_weights: &WalkWeights,
     ) -> (NodeT, EdgeT) {
         let (mut weights, dsts, min_edge, _) = self.get_edge_transition(edge, walk_weights);
-        let index = sample(&mut weights);
+        let index = sample(&mut weights, seed as u64);
         (dsts[index], min_edge + index)
     }
 
