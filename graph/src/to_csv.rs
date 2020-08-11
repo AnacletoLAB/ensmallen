@@ -164,7 +164,7 @@ impl Graph {
             }
             if let Some(w) = &self.weights {
                 line.push_str(_sep);
-            line.push_str(&format!("{:.6}", w[id]));
+                line.push_str(&format!("{:.6}", w[id]));
             }
 
             line.push('\n');
