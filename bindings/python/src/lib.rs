@@ -834,7 +834,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, verbose)"]
+    #[text_signature = "($self, length, *, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, seed, verbose)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -875,6 +875,8 @@ impl EnsmallenGraph {
     ///     called `get_dense_nodes_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
+    /// seed: int,
+    ///     Seed to use to reproduce the walks.
     /// verbose: int = True,
     ///     Wethever to show or not the loading bar of the walks.
     ///
@@ -893,7 +895,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, window_size, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, verbose)"]
+    #[text_signature = "($self, length, *, window_size, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, seed, verbose)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
     ///
     /// Parameters
@@ -936,6 +938,8 @@ impl EnsmallenGraph {
     ///     called `get_dense_nodes_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
+    /// seed: int,
+    ///     Seed to use to reproduce the walks.
     /// verbose: int = True,
     ///     Wethever to show or not the loading bar of the walks.
     ///
@@ -952,7 +956,7 @@ impl EnsmallenGraph {
             validate_kwargs(kwargs, &["window_size", "verbose",
                 "iterations", "min_length", "dense_nodes_mapping", 
                 "return_weight", "explore_weight", "change_edge_type_weight", 
-                "change_node_type_weight", "verbose"
+                "change_node_type_weight", "seed", "verbose"
             ])?;
         }
         match build_walk_parameters(length, 0, self.graph.get_not_trap_nodes_number(), py_kwargs, false) {
@@ -982,7 +986,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, negative_samples, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping)"]
+    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, negative_samples, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, seed)"]
     /// Return batch triple for training BinarySkipGram model.
     ///
     /// Parameters
@@ -1036,6 +1040,8 @@ impl EnsmallenGraph {
     ///     called `get_dense_nodes_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
+    /// seed: int,
+    ///     Seed to use to reproduce the walks.
     ///
     /// Returns
     /// ----------------------------
@@ -1053,7 +1059,7 @@ impl EnsmallenGraph {
             validate_kwargs(kwargs, &["window_size", "shuffle", "negative_samples",
                 "iterations", "min_length", "dense_nodes_mapping", 
                 "return_weight", "explore_weight", "change_edge_type_weight", 
-                "change_node_type_weight", "verbose"
+                "change_node_type_weight", "seed"
             ])?;
         }
         match build_walk_parameters(length, start_node, end_node, py_kwargs, false) {
@@ -1087,7 +1093,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping)"]
+    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, seed)"]
     /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
@@ -1147,7 +1153,9 @@ impl EnsmallenGraph {
     ///     called `get_dense_nodes_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
-    ///
+    /// seed: int,
+    ///     Seed to use to reproduce the walks.
+    /// 
     /// Returns
     /// ----------------------------
     /// Tuple with vector of integer with contexts and words.
@@ -1162,7 +1170,7 @@ impl EnsmallenGraph {
             validate_kwargs(kwargs, &["window_size", "shuffle", 
             "iterations", "min_length", "dense_nodes_mapping", 
             "return_weight", "explore_weight", "change_edge_type_weight", 
-            "change_node_type_weight", "verbose"
+            "change_node_type_weight", "seed"
         ])?;
         }
         let (start_node, end_node) = self.get_batch_range(idx, batch_size);
