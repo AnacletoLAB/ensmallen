@@ -703,12 +703,14 @@ impl Graph {
 
         let mut walks = if self.has_traps {
             if self.weights.is_none() && parameters.is_first_order_walk() {
+                info!("Using trap-aware uniform first order random walk algorithm.");
                 iterator
                     .map(|(seed, node)| {
                         self.uniform_walk(node, seed, &parameters.single_walk_parameters)
                     })
                     .collect::<Vec<Vec<NodeT>>>()
             } else {
+                info!("Using trap-aware second order random walk algorithm.");
                 iterator
                     .map(|(seed, node)| {
                         self.single_walk(node, seed, &parameters.single_walk_parameters)
@@ -717,12 +719,14 @@ impl Graph {
                     .collect::<Vec<Vec<NodeT>>>()
             }
         } else if self.weights.is_none() && parameters.is_first_order_walk() {
+            info!("Using uniform first order random walk algorithm.");
             iterator
                 .map(|(seed, node)| {
                     self.uniform_walk_no_traps(node, seed, &parameters.single_walk_parameters)
                 })
                 .collect::<Vec<Vec<NodeT>>>()
         } else {
+            info!("Using second order random walk algorithm.");
             iterator
                 .map(|(seed, node)| {
                     self.single_walk_no_traps(node, seed, &parameters.single_walk_parameters)
