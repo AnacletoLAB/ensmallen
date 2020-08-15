@@ -5,21 +5,19 @@ use std::io::prelude::*;
 
 /// # Holdouts.
 impl Graph {
-    /// TODO update to rust standard
     /// Save the nodes to a loadable csv / tsv.
-    /// In this method we use csv and tsv interchangably.
     ///
-    /// Parameters
-    /// ---------------------
-    /// nodes_path: str,
+    /// # Arguments
+    ///
+    /// * nodes_path: str,
     ///     Where to save the nodes csv.
-    /// separator: str = "\t",
+    /// * separator: str = "\t",
     ///     The separator to use for the csv or tsv file.
-    /// nodes_column: str = "id",
+    /// * nodes_column: str = "id",
     ///     The name of the column with the names of the nodes.
-    /// node_types_column: str = "category",
+    /// * node_types_column: str = "category",
     ///     The name of the column with the types of the nodes.
-    /// header: bool = True,
+    /// * header: bool = True,
     ///     If false, the csv will have no header
     pub fn to_nodes_csv(
         &self,
@@ -69,25 +67,24 @@ impl Graph {
 
         file.sync_all()
     }
-    /// TODO update to rust standard
+
     /// Save the edges to a loadable csv / tsv.
-    /// In this method we use csv and tsv interchangably.
     ///
-    /// Parameters
-    /// ---------------------
-    /// edges_path: str,
+    /// # Arguments
+    /// 
+    /// * edges_path: str,
     ///     Where to save the nodes csv.
-    /// separator: str = "\t",
+    /// * separator: str = "\t",
     ///     The separator to use for the csv or tsv file.
-    /// sources_column: str = "subject",
+    /// * sources_column: str = "subject",
     ///     The name of the column with the names of the sources nodes.
-    /// destinations_column: str = "object",
+    /// * destinations_column: str = "object",
     ///     The name of the column with the names of the destinations nodes.
-    /// edge_types_column: str = "edge_label",
+    /// * edge_types_column: str = "edge_label",
     ///     The name of the column with the types of the edges.
-    /// weights_column: str = "weight",
+    /// * weights_column: str = "weight",
     ///     The name of the column with the weight of the edges.
-    /// header: bool = True,
+    /// * header: bool = True,
     ///     If false, the csv will have no header
     pub fn to_edges_csv(
         &self,
