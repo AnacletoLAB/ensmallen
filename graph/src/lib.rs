@@ -13,6 +13,7 @@ mod tarjan;
 mod trees;
 pub mod types;
 mod walks_parameters;
+mod csv_file_parameters;
 mod to_csv;
 
 pub use self::graph::Graph;
@@ -25,4 +26,5 @@ pub use self::tarjan::*;
 pub use self::trees::*;
 pub use self::types::*;
 pub use self::walks_parameters::*;
+pub use self::csv_file_parameters::*;
 pub use preprocessing::*;
