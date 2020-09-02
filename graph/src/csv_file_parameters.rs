@@ -131,7 +131,7 @@ impl NodeFileParameters {
             consider_node_types: true,
             nodes_column: "id".to_string(),
             nodes_column_number: 0,
-            node_types_column: "node_type".to_string(),
+            node_types_column: "category".to_string(),
             default_node_type: None,
             node_types_column_number: 1
         }
@@ -224,6 +224,8 @@ impl NodeFileParameters {
         self.default_node_type = default_node_type;
         self
     }
+
+    
 }
 
 impl EdgeFileParameters {
