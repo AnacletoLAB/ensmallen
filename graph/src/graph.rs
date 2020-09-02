@@ -210,13 +210,13 @@ impl Graph {
             .sources
             .par_iter()
             .zip(graph.destinations.par_iter())
-            .any(|(src, dst)| {
+            .any(|(rsrc, rdst)| {
                 let local_src_id: Option<&NodeT> = self
                     .nodes_mapping
-                    .get(&graph.nodes_reverse_mapping[*src].clone());
+                    .get(&graph.nodes_reverse_mapping[*rsrc].clone());
                 let local_dst_id: Option<&NodeT> = self
                     .nodes_mapping
-                    .get(&graph.nodes_reverse_mapping[*dst].clone());
+                    .get(&graph.nodes_reverse_mapping[*rdst].clone());
                 let mut result = false;
                 if let Some(lsrc) = local_src_id {
                     if let Some(ldst) = local_dst_id {
@@ -225,7 +225,7 @@ impl Graph {
                             if let Some(redge_types) = &graph.edge_types{
                                 if let Some(ledge_types) = &self.edge_types{
                                     let local_edge_id = self.get_edge_id(*lsrc, *ldst).unwrap();
-                                    let remote_edge_id = graph.get_edge_id(*lsrc, *ldst).unwrap();
+                                    let remote_edge_id = graph.get_edge_id(*rsrc, *rdst).unwrap();
                                     result = redge_types[remote_edge_id] == ledge_types[local_edge_id];
                                 }
                             }
