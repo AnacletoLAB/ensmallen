@@ -198,7 +198,8 @@ impl Graph {
         self.unique_edges.contains_key(&(src, dst))
     }
 
-    /// Return true if given graph has any edge overlapping with current graph.
+    /// Return true if given graph has any edge overlapping with current graph
+    /// of the same type.
     ///
     /// # Arguments
     ///
@@ -216,15 +217,22 @@ impl Graph {
                 let local_dst_id: Option<&NodeT> = self
                     .nodes_mapping
                     .get(&graph.nodes_reverse_mapping[*dst].clone());
+                let mut result = false;
                 if let Some(lsrc) = local_src_id {
                     if let Some(ldst) = local_dst_id {
-                        self.has_edge(*lsrc, *ldst)
-                    } else {
-                        false
+                        if self.has_edge(*lsrc, *ldst) {
+                            result = true;
+                            if let Some(redge_types) = &graph.edge_types{
+                                if let Some(ledge_types) = &self.edge_types{
+                                    let local_edge_id = self.get_edge_id(*lsrc, *ldst).unwrap();
+                                    let remote_edge_id = graph.get_edge_id(*lsrc, *ldst).unwrap();
+                                    result = redge_types[remote_edge_id] == ledge_types[local_edge_id];
+                                }
+                            }
+                        }
                     }
-                } else {
-                    false
                 }
+                result
             })
     }
 
