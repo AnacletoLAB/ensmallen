@@ -12,7 +12,7 @@ impl Graph {
     /// * other: Graph - Graph to be summed.
     ///
     pub fn sum(&self, other: &Graph) -> Result<Graph, String> {
-        if self.overlaps(&other) {
+        if self.overlaps(&other)? {
             return Err(String::from(concat!(
                 "The two given graphs have overlapping edges, ",
                 "this is not supported since it's an undefined ",
