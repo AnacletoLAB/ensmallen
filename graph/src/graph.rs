@@ -198,34 +198,83 @@ impl Graph {
         self.unique_edges.contains_key(&(src, dst))
     }
 
+    /// Private method that check if a triple (src, dst, edge_type) is present in another graph.
+    /// This is used in overlaps and contains and it must be a method because we need to convert
+    /// from the indexing of one graph to the other.
+    /// 
+    /// # Arguments
+    /// * graph: &Graph - The graph that will contains or not the triple
+    /// * src: NodeT - The source of the edge
+    /// * dst: NodeT - The destination of the edge
+    /// * et: Option<EdgeTypeT> - The optional edge type of the edge.
+    /// 
+    fn check_edge_overlap(&self, graph: &Graph, src: NodeT, dst: NodeT, et: Option<EdgeTypeT>) -> bool {
+        // translate the src and dest from the local indexing to the other one.
+        let local_src_id: Option<&NodeT> = self
+            .nodes_mapping
+            .get(&graph.nodes_reverse_mapping[src].clone());
+        let local_dst_id: Option<&NodeT> = self
+            .nodes_mapping
+            .get(&graph.nodes_reverse_mapping[dst].clone());
+        // unpack all if the nodes are presents
+        if let Some(lsrc) = local_src_id {
+            if let Some(ldst) = local_dst_id {
+                // check if a edge exists between lsrc and ldst
+                // the edge type will be checked later if needed
+                if self.has_edge(*lsrc, *ldst) {
+                    if let Some(ets) = &self.edge_types {
+                        // if there are edge types, get the id of **the first edge with
+                        // matching src and dst** and then do a linear scan to check if
+                        // it exists an edgee from src to dst with the correct edge_type
+                        let mut id = self.get_edge_id(*lsrc, *ldst).unwrap();
+                        while
+                            self.sources[id] == *lsrc
+                            &&
+                            self.destinations[id] == *ldst
+                         {
+                            if Some(ets[id]) == et {
+                                return true;
+                            }
+                            id += 1;
+                        }
+                    } else {
+                        // both graphs have no edge types so we already know that
+                        // the edge exists
+                        return true;
+                    }
+                }
+            }
+        }
+        // if any of the node do not exists in the other graph
+        // there cannot be the edge so quickly return.
+        false
+    }
+
     /// Return true if given graph has any edge overlapping with current graph.
     ///
     /// # Arguments
     ///
     /// * graph: Graph - The graph to check against.
     ///
-    pub fn overlaps(&self, graph: &Graph) -> bool {
-        graph
-            .sources
-            .par_iter()
-            .zip(graph.destinations.par_iter())
-            .any(|(src, dst)| {
-                let local_src_id: Option<&NodeT> = self
-                    .nodes_mapping
-                    .get(&graph.nodes_reverse_mapping[*src].clone());
-                let local_dst_id: Option<&NodeT> = self
-                    .nodes_mapping
-                    .get(&graph.nodes_reverse_mapping[*dst].clone());
-                if let Some(lsrc) = local_src_id {
-                    if let Some(ldst) = local_dst_id {
-                        self.has_edge(*lsrc, *ldst)
-                    } else {
-                        false
-                    }
-                } else {
-                    false
-                }
-            })
+    pub fn overlaps(&self, graph: &Graph) -> Result<bool, String> {
+        if self.edge_types.is_some() ^ graph.edge_types.is_some() {
+            return Err("One of the graph has edge types while the other has not. This is an undefined behaviour.".to_string());
+        }
+
+        Ok(
+            graph
+                .sources
+                .par_iter()
+                .zip(graph.destinations.par_iter())
+                .enumerate()
+                .map(|(edge_id, (src, dst))| {
+                    (&graph, src, dst, match &self.edge_types {
+                        Some(et) => {Some(et[edge_id])},
+                        None => None
+                    })
+                })
+                .any(|(graph, src, dst, et)| {self.check_edge_overlap(graph, *src, *dst, et)})
+        )
     }
 
     /// Return true if given graph edges are all contained within current graph.
@@ -234,28 +283,25 @@ impl Graph {
     ///
     /// * graph: Graph - The graph to check against.
     ///
-    pub fn contains(&self, graph: &Graph) -> bool {
-        graph
-            .sources
-            .par_iter()
-            .zip(graph.destinations.par_iter())
-            .all(|(src, dst)| {
-                let local_src_id: Option<&NodeT> = self
-                    .nodes_mapping
-                    .get(&graph.nodes_reverse_mapping[*src].clone());
-                let local_dst_id: Option<&NodeT> = self
-                    .nodes_mapping
-                    .get(&graph.nodes_reverse_mapping[*dst].clone());
-                if let Some(lsrc) = local_src_id {
-                    if let Some(ldst) = local_dst_id {
-                        self.has_edge(*lsrc, *ldst)
-                    } else {
-                        false
-                    }
-                } else {
-                    false
-                }
-            })
+    pub fn contains(&self, graph: &Graph) -> Result<bool, String> {
+        if self.edge_types.is_some() ^ graph.edge_types.is_some() {
+            return Err("One of the graph has edge types while the other has not. This is an undefined behaviour.".to_string());
+        }
+
+        Ok(
+            graph
+                .sources
+                .par_iter()
+                .zip(graph.destinations.par_iter())
+                .enumerate()
+                .map(|(edge_id, (src, dst))| {
+                    (&graph, src, dst, match &self.edge_types {
+                        Some(et) => {Some(et[edge_id])},
+                        None => None
+                    })
+                })
+                .all(|(graph, src, dst, et)| {self.check_edge_overlap(graph, *src, *dst, et)})
+        )
     }
 
     /// Returns edge id of the edge passing between given nodes.

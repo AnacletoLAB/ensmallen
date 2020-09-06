@@ -1,5 +1,6 @@
 build:
 	rm -fdr target
+	cargo update
 	maturin build --release
 
 install:
