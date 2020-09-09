@@ -2,12 +2,11 @@
 use super::*;
 use counter::Counter;
 use derive_getters::Getters;
-use hashbrown::{HashMap as HashBrownMap, HashSet as HashBrownSet};
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use itertools::Itertools;
 use log::info;
 use rayon::prelude::*;
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use vec_rand::{gen_random_vec, sample, sample_uniform};
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
@@ -27,7 +26,7 @@ pub struct Graph {
     pub(crate) destinations: Vec<NodeT>,
     pub(crate) nodes_mapping: HashMap<String, NodeT>,
     pub(crate) nodes_reverse_mapping: Vec<String>,
-    pub(crate) unique_edges: HashBrownMap<(NodeT, NodeT), EdgeT>,
+    pub(crate) unique_edges: HashMap<(NodeT, NodeT), EdgeMetadata>,
     pub(crate) outbounds: Vec<EdgeT>,
     pub(crate) weights: Option<Vec<WeightT>>,
     pub(crate) node_types: Option<Vec<NodeTypeT>>,
@@ -121,7 +120,7 @@ impl Graph {
     ) -> Result<(Vec<NodeT>, Vec<NodeTypeT>), String> {
         if let Some(nt) = &self.node_types {
             let counts = self.get_node_type_counts()?;
-            let top_k: HashBrownSet<_> = counts
+            let top_k: HashSet<_> = counts
                 .iter()
                 .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v2, &v1))
                 .take(k)
@@ -160,7 +159,7 @@ impl Graph {
     ) -> Result<(Vec<EdgeT>, Vec<EdgeTypeT>), String> {
         if let Some(nt) = &self.edge_types {
             let counts = self.get_edge_type_counts()?;
-            let top_k: HashBrownSet<_> = counts
+            let top_k: HashSet<_> = counts
                 .iter()
                 .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v2, &v1))
                 .take(k)

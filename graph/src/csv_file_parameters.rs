@@ -1,24 +1,7 @@
-pub struct CSVFileParameters {
-    pub(crate) path: String,
-    pub(crate) verbose: bool,
-    pub(crate) separator: String,
-    pub(crate) header: bool,
-    pub(crate) rows_to_skip: usize,
-    pub(crate) ignore_duplicates: bool,
-}
 
-pub struct NodeFileParameters {
-    pub(crate) parameters: CSVFileParameters,
-    pub(crate) nodes_column: String,
-    pub(crate) node_types_column: String,
-    pub(crate) default_node_type: Option<String>,
-    pub(crate) nodes_column_number: usize,
-    pub(crate) node_types_column_number: usize,
-    pub(crate) consider_node_types: bool,
-}
 
-pub struct EdgeFileParameters {
-    pub(crate) parameters: CSVFileParameters,
+pub struct EdgeFileReader {
+    pub(crate) parameters: CSVFileReader,
     pub(crate) sources_column: String,
     pub(crate) destinations_column: String,
     pub(crate) edge_types_column: String,
@@ -29,94 +12,20 @@ pub struct EdgeFileParameters {
     pub(crate) destinations_column_number: usize,
     pub(crate) edge_types_column_number: usize,
     pub(crate) weights_column_number: usize,
-    pub(crate) consider_weights: bool,
-    pub(crate) consider_edge_types: bool,
-    pub(crate) ignore_self_loops: bool,
 }
 
-impl CSVFileParameters {
-    /// Return new CSVFileParameters object.
-    ///
-    /// # Arguments
-    ///
-    /// * path: String - Path where to store/load the file.
-    ///
-    pub fn new(path: String) -> CSVFileParameters {
-        CSVFileParameters {
-            path,
-            verbose: true,
-            separator: "\t".to_string(),
-            header: true,
-            rows_to_skip: 0,
-            ignore_duplicates: true
-        }
-    }
-
-    /// Set the verbose.
-    ///
-    /// # Arguments
-    ///
-    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
-    ///
-    pub fn set_verbose(mut self, verbose: Option<bool>) -> CSVFileParameters {
-        if let Some(v) = verbose {
-            self.verbose = v;
-        }
-        self
-    }
-
-    /// Set the ignore_duplicates.
-    ///
-    /// # Arguments
-    ///
-    /// * ignore_duplicates: Option<bool> - Wethever to ignore detected duplicates or raise exception.
-    ///
-    pub fn set_ignore_duplicates(mut self, ignore_duplicates: Option<bool>) -> CSVFileParameters {
-        if let Some(v) = ignore_duplicates {
-            self.ignore_duplicates = v;
-        }
-        self
-    }
-
-    /// Set the separator.
-    ///
-    /// # Arguments
-    ///
-    /// * separator: Option<String> - The separator to use for the file.
-    ///
-    pub fn set_separator(mut self, separator: Option<String>) -> CSVFileParameters {
-        if let Some(v) = separator {
-            self.separator = v;
-        }
-        self
-    }
-
-    /// Set the header.
-    ///
-    /// # Arguments
-    ///
-    /// * header: Option<String> - Wethever to expect an header or not.
-    ///
-    pub fn set_header(mut self, header: Option<bool>) -> CSVFileParameters {
-        if let Some(v) = header {
-            self.header = v;
-        }
-        self
-    }
-
-    /// Set number of rows to be skipped when starting to read file.
-    ///
-    /// # Arguments
-    ///
-    /// * rows_to_skip: Option<bool> - Wethever to show the loading bar or not.
-    ///
-    pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> CSVFileParameters {
-        if let Some(v) = rows_to_skip {
-            self.rows_to_skip = v;
-        }
-        self
-    }
+pub struct EdgeFileWriter {
+    pub(crate) parameters: CSVFileReader,
+    pub(crate) sources_column: String,
+    pub(crate) destinations_column: String,
+    pub(crate) edge_types_column: String,
+    pub(crate) weights_column: String,
+    pub(crate) sources_column_number: usize,
+    pub(crate) destinations_column_number: usize,
+    pub(crate) edge_types_column_number: usize,
+    pub(crate) weights_column_number: usize,
 }
+
 
 impl NodeFileParameters {
     /// Return new NodeFileParameters object.

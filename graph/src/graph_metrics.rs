@@ -244,7 +244,7 @@ impl Graph {
     /// Returns rate of bidirectional edges.
     pub fn bidirectional_rate(&self) -> f64 {
         self.unique_edges
-            .par_keys()
+            .keys()
             .map(|(src, dst)| self.has_edge(*dst, *src) as usize)
             .sum::<usize>() as f64
             / self.unique_edges.len() as f64
