@@ -1,6 +1,4 @@
 use super::*;
-use hashbrown::HashMap as HashBrownMap;
-use itertools::Itertools;
 use log::info;
 use rayon::prelude::*;
 use std::collections::{HashMap, HashSet};
@@ -121,7 +119,7 @@ impl Graph {
             is_directed,
             is_builded: false,
             has_traps: true,
-            unique_edges: HashBrownMap::new(),
+            unique_edges: HashMap::new(),
             not_trap_nodes: Vec::new(),
             outbounds: Vec::new(),
             nodes_mapping: HashMap::new(),
@@ -290,7 +288,7 @@ impl Graph {
         let nodes_number = self.nodes_reverse_mapping.len();
 
         info!("Computing unique edges.");
-        self.unique_edges = HashBrownMap::from_iter(
+        self.unique_edges = HashMap::from_iter(
             self.sources
                 .iter()
                 .cloned()

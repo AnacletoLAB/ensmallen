@@ -107,51 +107,36 @@ impl NodeFileWriter {
             self.nodes_column,
             self.nodes_column_number
         )];
-        let number_of_columns = 1 + if node_types.is_some() {
-            header.push((self.node_types_column, self.node_types_column_number));
-            max!(self.nodes_column_number, self.node_types_column_number)
-        } else {
-            self.nodes_column_number
-        };
 
-        match node_types {
-            Some(nts)=> {
-                if let Some(ntrm) = node_types_reverse_mapping {
-                    self.parameters.write_lines(
-                        nodes_reverse_mapping.len() as u64,
-                        compose_lines(number_of_columns, header),
-                        
-                        nodes_reverse_mapping.iter()
-                        .zip(
-                            nts.iter().map(
-                                |node_type| ntrm[*node_type as usize]
-                            )
-                        ).map(
-                            |(node_name, node_type)| 
-                            compose_lines(
-                                number_of_columns,
-                                vec![
-                                    (*node_name, self.nodes_column_number),
-                                    (node_type, self.node_types_column_number)
-                                ]
-                            )
-                        )
-                    )
-                } else {
-                    unreachable!()
+        if node_types.is_some() {
+            header.push((self.node_types_column, self.node_types_column_number));
+        }
+
+        let number_of_columns = 1 + header.iter().map(|(_, i)| i ).max().unwrap();
+
+        self.parameters.write_lines(
+            nodes_reverse_mapping.len() as u64,
+            compose_lines(number_of_columns, header),
+            
+            (0..nodes_reverse_mapping.len()).into_iter()
+            .map(
+                |index| {
+                    let mut line = vec![(
+                        nodes_reverse_mapping[index],
+                        self.nodes_column_number
+                    )];
+
+                    if let Some(nt) = node_types {
+                        if let Some(ntrm) = node_types_reverse_mapping {
+                            line.push((
+                                ntrm[nt[index] as usize], 
+                                self.node_types_column_number
+                            ));
+                        }
+                    }
+                    compose_lines(number_of_columns, line)
                 }
-            },
-            None => self.parameters.write_lines(
-                    nodes_reverse_mapping.len() as u64,
-                    compose_lines(number_of_columns, header),
-                    nodes_reverse_mapping.iter().map(
-                        |node_name| 
-                        compose_lines(
-                            number_of_columns,
-                            vec![(*node_name, self.nodes_column_number)]
-                        )
-                    )
-                )
-            }
+            )
+        )
     }
 }

@@ -20,6 +20,8 @@ mod node_file_writer;
 pub use self::node_file_writer::NodeFileWriter;
 mod edge_file_reader;
 pub use self::edge_file_reader::EdgeFileReader;
+mod edge_file_writer;
+pub use self::edge_file_writer::EdgeFileWriter;
 
 pub mod types;
 pub mod graph;
