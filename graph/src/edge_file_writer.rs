@@ -13,7 +13,7 @@ pub struct EdgeFileWriter {
     pub(crate) edge_types_column: String,
     pub(crate) edge_types_column_number: usize,
     pub(crate) weights_column: String,
-    pub(crate) weights_column_number: usize
+    pub(crate) weights_column_number: usize,
 }
 
 impl EdgeFileWriter {
@@ -166,6 +166,7 @@ impl EdgeFileWriter {
         edge_type_reverse_mapping: &Option<Vec<String>>,
         edge_types: &Option<Vec<EdgeTypeT>>,
         weights: &Option<Vec<WeightT>>,
+        directed: bool
     ) -> Result<(), String> {
         // build the header
         let mut header = vec![
@@ -186,14 +187,26 @@ impl EdgeFileWriter {
         self.parameters.write_lines(
             sources.len() as u64,
             compose_lines(number_of_columns, header),
-            (0..sources.len()).into_iter().map(|index| {
+            (0..sources.len()).into_iter().map(
+                |index|
+                (
+                    index,
+                    sources[index],
+                    destinations[index]
+                )
+            // filter away duplicated edges if the graph
+            // is undirected
+            ).filter(
+                |(index, src, dst)|
+                directed || src <= dst
+            ).map(|(index, src, dst)| {
                 let mut line = vec![
                     (
-                        nodes_reverse_mapping[sources[index]],
+                        nodes_reverse_mapping[src],
                         self.sources_column_number,
                     ),
                     (
-                        nodes_reverse_mapping[destinations[index]],
+                        nodes_reverse_mapping[dst],
                         self.destinations_column_number,
                     ),
                 ];

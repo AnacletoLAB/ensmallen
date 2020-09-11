@@ -129,7 +129,7 @@ impl CSVFileReader {
                 Err(_) => Err("Something went wrong reading the line from the file".to_string()),
             }
         } else {
-            Err("The given file or string has no lines!".to_string())
+            Err("The given file has no lines!".to_string())
         }
     }
 
@@ -232,7 +232,7 @@ impl CSVFileReader {
                 Ok(column_number)
             }
             None => Err(format!(
-                "The column {} is not present in the header\n{:?}",
+                "The column '{}' is not present in the header\n{:?}",
                 column_name, header
             )),
         }

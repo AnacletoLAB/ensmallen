@@ -1,13 +1,8 @@
+#![feature(map_first_last)]
 const SEED_XOR: usize = 0xbad5eedbad5eed11;
 
-pub mod csv_utils;
-mod graph_csv_builder;
-mod graph_csv_helpers;
-mod csv_file_parameters;
-mod to_csv;
-pub use self::graph_csv_builder::*;
-pub use self::graph_csv_helpers::validate;
-pub use self::csv_file_parameters::*;
+mod vocabulary;
+pub(crate) use self::vocabulary::Vocabolary;
 
 mod csv_file_writer;
 pub use self::csv_file_writer::CSVFileWriter;
@@ -22,10 +17,11 @@ mod edge_file_reader;
 pub use self::edge_file_reader::EdgeFileReader;
 mod edge_file_writer;
 pub use self::edge_file_writer::EdgeFileWriter;
+mod graph_constructors;
+
 
 pub mod types;
 pub mod graph;
-mod graph_builder;
 mod graph_metrics;
 mod holdouts;
 mod operators;
@@ -35,7 +31,6 @@ mod trees;
 mod walks_parameters;
 
 pub use self::graph::Graph;
-pub use self::graph_builder::*;
 pub use self::holdouts::*;
 pub use self::operators::*;
 pub use self::tarjan::*;

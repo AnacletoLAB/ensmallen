@@ -1,435 +1,355 @@
 use super::*;
-use hashbrown::HashMap as HashBrownMap;
-use itertools::Itertools;
-use log::info;
-use rayon::prelude::*;
-use std::collections::{HashMap, HashSet};
-use std::iter::FromIterator;
+use std::collections::{BTreeMap, HashMap, HashSet};
 
-pub fn validate(
-    sources: &[NodeT],
-    destinations: &[NodeT],
-    nodes_mapping: &HashMap<String, NodeT>,
-    nodes_reverse_mapping: &[String],
-    node_types: &Option<Vec<NodeTypeT>>,
-    edge_types: &Option<Vec<EdgeTypeT>>,
-    weights: &Option<Vec<WeightT>>,
-) -> Result<(), String> {
-    info!("Checking that the graph is not empty.");
-    if sources.is_empty() {
-        return Err(String::from("The provided graph has no edges."));
-    }
+macro_rules! optionify {
+    ($val:expr) => {
+        if $val.is_empty() {
+            None
+        } else {
+            Some($val)
+        }
+    };
+}
 
-    info!("Checking that the nodes mappings are of the same length.");
-    if nodes_mapping.len() != nodes_reverse_mapping.len() {
-        return Err(format!("The size of the node_mapping ({}) does not match the size of the nodes_reverse_mapping ({}).",
-            nodes_mapping.len(), nodes_reverse_mapping.len()
-        ));
-    }
+/// Read node file and returns graph builder data structures.
+///
+/// Specifically, the returned objects are:
+/// * nodes_mapping: an hashmap from the node name to the node id.
+/// * node_reverse_mapping: vector of node names.
+/// * node_types_mapping: an hashmap from node types names to the node type ids.
+/// * node_types_reverse_mapping: vector of the node types names.
+/// * node_types: vector of the numeric node types ids.
+pub(crate) fn parse_nodes(
+    nodes_iter: impl Iterator<Item = Result<(String, Option<String>), String>>,
+    ignore_duplicated_nodes: bool,
+) -> Result<
+    (
+        HashMap<String, NodeT>,
+        Vec<String>,
+        Option<Vec<NodeTypeT>>,
+        Option<HashMap<String, NodeTypeT>>,
+        Option<Vec<String>>,
+    ),
+    String,
+> {
+    let mut nodes_mapping: HashMap<String, NodeT> = HashMap::new();
+    let mut nodes_reverse_mapping: Vec<String> = Vec::new();
+    let mut node_types: Vec<NodeTypeT> = Vec::new();
+    let mut node_types_mapping: HashMap<String, NodeTypeT> = HashMap::new();
+    let mut node_types_reverse_mapping: Vec<String> = Vec::new();
 
-    if let Some(nt) = &node_types {
-        info!("Checking that nodes and node types are of the same length.");
-        if nt.len() != nodes_reverse_mapping.len() {
+    for values in nodes_iter {
+        let (node_name, node_type) = values?;
+        // if the node is already mapped => duplicated line
+        if nodes_mapping.contains_key(&node_name) {
+            if ignore_duplicated_nodes {
+                continue;
+            }
             return Err(format!(
-                "The number of given nodes ({}) does not match the number of node_types ({}).",
-                nt.len(),
-                nodes_reverse_mapping.len()
+                concat!(
+                    "\nFound duplicated nodes!\n",
+                    "The node is {node_name}.\n",
+                    "The node type of the row is {node_type:?}.\n",
+                    "The library does not currently support multiple node types for a single node."
+                ),
+                node_name = node_name,
+                node_type = node_type
             ));
         }
-    }
+        nodes_mapping.insert(node_name, nodes_mapping.len());
 
-    if let Some(nt) = &node_types {
-        info!("Checking if every node used by the edges exists.");
-        for node in sources.iter().chain(destinations.iter()) {
-            if *node >= nt.len() {
-                return Err(format!(
-                    "A node provided with the edges ('{}') does not exists within given nodes.",
-                    node
-                ));
+        if let Some(ndt) = node_type {
+            if !node_types_mapping.contains_key(&ndt) {
+                node_types_mapping.insert(ndt, node_types_reverse_mapping.len() as NodeTypeT);
+                node_types_reverse_mapping.push(ndt);
             }
+
+            node_types.push(*node_types_mapping.get(&ndt).unwrap());
         }
     }
 
-    if let Some(w) = weights {
-        info!("Checking for length between weights and given edges.");
-        if w.len() != sources.len() {
-            return Err(format!(
-                "Length of given weights ({}) does not match length of given edges ({}).",
-                w.len(),
-                sources.len()
-            ));
-        }
-        info!("Checking for non-zero weights.");
-        for weight in w.iter() {
-            if *weight == 0.0 {
-                return Err(format!(
-                    "One of the provided weights '{}' is either 0 or within float error to zero.",
-                    weight
-                ));
-            }
-            if *weight < 0.0 {
-                return Err(format!(
-                    "One of the provided weights '{}' is negative.",
-                    weight
-                ));
-            }
-            if weight.is_nan() {
-                return Err(String::from("One of the provided weights is NaN."));
-            }
-            if weight.is_infinite() {
-                return Err(String::from("One of the provided weights is infinite."));
-            }
-        }
-    }
+    Ok((
+        nodes_mapping,
+        nodes_reverse_mapping,
+        optionify!(node_types),
+        optionify!(node_types_mapping),
+        optionify!(node_types_reverse_mapping),
+    ))
+}
 
-    if let Some(et) = edge_types {
-        info!("Checking for length between edge types and given edges.");
-        if et.len() != sources.len() {
-            return Err(format!(
-                "The len of edge types ({}) is different than the len of given edges ({}).  ",
-                et.len(),
-                sources.len()
-            ));
-        }
-    }
+/// Read node file and returns graph builder data structures.
+///
+pub(crate) fn parse_edges(
+    nodes_mapping: &mut HashMap<String, NodeT>,
+    nodes_reverse_mapping: &mut Vec<String>,
+    directed: bool,
+    edges_iterator: impl Iterator<
+        Item = Result<(String, String, Option<String>, Option<WeightT>), String>,
+    >,
+    skip_self_loops: bool,
+    ignore_duplicated_edges: bool,
+) -> Result<
+    (
+        Vec<NodeT>,
+        Vec<NodeT>,
+        Vec<EdgeT>,
+        Vec<NodeT>,
+        HashMap<(NodeT, NodeT), EdgeMetadata>,
+        Option<HashMap<String, EdgeTypeT>>,
+        Option<Vec<String>>,
+        Option<Vec<EdgeTypeT>>,
+        Option<Vec<WeightT>>,
+    ),
+    String,
+> {
+    // save if the node file was loaded or not
+    let empty_nodes_mapping: bool = nodes_mapping.is_empty();
+    // edges mappings
+    let mut edge_types_mapping: HashMap<String, NodeTypeT> = HashMap::new();
+    let mut edge_types_reverse_mapping: Vec<String> = Vec::new();
+    // helper structure
+    let mut unique_edges_tree: BTreeMap<(NodeT, NodeT), ConstructorEdgeMetadata> = BTreeMap::new();
 
-    info!("Checking for unique edges (including edge types).");
-    let mut unique_edges: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::new();
-    for i in 0..sources.len() {
-        let src = sources[i];
-        let dst = destinations[i];
-        let edge_type = if let Some(et) = edge_types {
-            Some(et[i])
+    for values in edges_iterator {
+        let (source_node_name, destination_node_name, edge_type, edge_weight) = values?;
+        // Check if we need to skip self-loops
+        if skip_self_loops && source_node_name == destination_node_name {
+            // If current edge is a self-loop and we need to skip them we skip.
+            continue;
+        }
+        // Handle missing node IDs when no node file was provided
+        for node_name in &[source_node_name, destination_node_name] {
+            if !nodes_mapping.contains_key(node_name) {
+                if empty_nodes_mapping {
+                    nodes_mapping.insert(node_name.clone(), nodes_mapping.len());
+                } else {
+                    return Err(format!(
+                        concat!(
+                            "In the edge file was found the node {} ",
+                            "which is not present in the given node file."
+                        ),
+                        node_name
+                    ));
+                }
+            }
+        }
+        // Retrieve the node IDs
+        let source_node_id = nodes_mapping.get(&source_node_name).unwrap();
+        let destinations_node_id = nodes_mapping.get(&destination_node_name).unwrap();
+        // Retrieve the edge type id if it was given.
+        let edge_types_id = if let Some(et) = edge_type {
+            if !edge_types_mapping.contains_key(&et) {
+                edge_types_mapping.insert(et, edge_types_reverse_mapping.len() as NodeTypeT);
+                edge_types_reverse_mapping.push(et);
+            }
+            edge_types_mapping.get(&et)
         } else {
             None
         };
-        if unique_edges.contains(&(src, dst, edge_type)) {
-            return Err(format!(
-                concat!(
-                    "Duplicated edge was found within given edges.\n",
-                    "The source node is {src}.\n",
-                    "The destination node is {dst}.\n",
-                    "{edge_type_message}\n",
-                    "This issue is relative to the graph building and not ",
-                    "the CSV reader, hence it can not be addressed by passing ",
-                    "the parameter ignore_duplicated_edges."
-                ),
-                src = src,
-                dst = dst,
-                edge_type_message = if let Some(et) = edge_type {
-                    format!("The edge type is {}", et)
-                } else {
-                    String::from("No edge type was detected.")
+
+        // Get the metadata of the edge and if it's not present, add it
+        let mut edge_metadata = unique_edges_tree
+            .entry((*source_node_id, *destinations_node_id))
+            .or_insert_with(|| ConstructorEdgeMetadata {
+                edge_types: Vec::new(),
+                weights: Vec::new(),
+            });
+
+        // if the node is already mapped => duplicated line
+        if let Some(eti) = edge_types_id {
+            if edge_metadata.edge_types.contains(eti) {
+                if ignore_duplicated_edges {
+                    continue;
                 }
-            ));
+                return Err(format!(
+                    concat!(
+                        "\nFound duplicated edges!\n",
+                        "The source node is {source} and the destination node is {destination}.\n",
+                        "The edge type of the row is {edge_type:?}.",
+                    ),
+                    source = source_node_name,
+                    destination = destination_node_name,
+                    edge_type = edge_type,
+                ));
+            }
+            // add the edge type in the metadata
+            edge_metadata.edge_types.push(*eti);
         }
-        unique_edges.insert((src, dst, edge_type));
+        // add the weight is present
+        if let Some(w) = edge_weight {
+            edge_metadata.weights.push(w);
+        }
+
+        // If the graph is undirected, add the inverse edge
+        //
+        if !directed {
+            let mut edge_metadata = unique_edges_tree
+                .entry((*destinations_node_id, *source_node_id))
+                .or_insert_with(|| ConstructorEdgeMetadata {
+                    edge_types: Vec::new(),
+                    weights: Vec::new(),
+                });
+
+            if let Some(et) = edge_types_id {
+                edge_metadata.edge_types.push(*et);
+            }
+            if let Some(w) = edge_weight {
+                edge_metadata.weights.push(w);
+            }
+        }
     }
 
-    Ok(())
+    // structures to fill for the graph
+    let mut outbounds: Vec<EdgeT> = Vec::new();
+    let mut sources: Vec<NodeT> = Vec::new();
+    let mut not_trap_nodes: Vec<NodeT> = Vec::new();
+    let mut destinations: Vec<NodeT> = Vec::new();
+    let mut edge_types: Vec<NodeTypeT> = Vec::new();
+    let mut weights: Vec<WeightT> = Vec::new();
+    let mut unique_edges: HashMap<(NodeT, NodeT), EdgeMetadata> = HashMap::new();
+
+    // now that the tree is built
+    // we can iter on the edge in order (no further sorting required)
+    // during the iteration we pop the minimum value each time
+    let mut last_src = 0;
+    let mut i = 0;
+    while !unique_edges_tree.is_empty() {
+        // we gradually destroy the tree while we fill the other structures
+        // in this way we reduce the memory peak
+        // the unwrap is guaranteed to succeed because we check if the tree is empty
+        let ((src, dst), metadata) = unique_edges_tree.pop_first().unwrap();
+
+        // fill the outbounds vector
+        // this is a vector that have the offset of the last
+        // edge of each src
+        if last_src != src {
+            // Assigning to range instead of single value, so that traps
+            // have as delta between previous and next node zero.
+            for o in &mut outbounds[last_src..src] {
+                *o = i;
+            }
+            not_trap_nodes.push(last_src as NodeT);
+            last_src = src;
+        }
+
+        // initalize the hashmap
+        unique_edges.insert(
+            (src, dst),
+            EdgeMetadata {
+                edge_id: sources.len(),
+                edge_types: metadata
+                    .edge_types
+                    .into_iter()
+                    .collect::<HashSet<EdgeTypeT>>(),
+            },
+        );
+
+        // initialize the vectors
+        if metadata.edge_types.is_empty() {
+            // if there are no edge types
+            // its not a multigraph and therefore we have
+            // only one edge with optionally a weight.
+            sources.push(src);
+            destinations.push(dst);
+            if !metadata.weights.is_empty() {
+                weights.push(metadata.weights[0]);
+            }
+        } else {
+            // else we are in a multigraph and we must initialize
+            // all the edges
+            for edt in metadata.edge_types {
+                sources.push(src);
+                destinations.push(dst);
+                edge_types.push(edt);
+            }
+            // If there are some weights, they should
+            // be equal in number to the edge_types
+            for w in metadata.weights {
+                weights.push(w);
+            }
+        }
+        i += 1;
+    }
+
+    Ok((
+        sources,
+        destinations,
+        outbounds,
+        not_trap_nodes,
+        unique_edges,
+        optionify!(edge_types_mapping),
+        optionify!(edge_types_reverse_mapping),
+        optionify!(edge_types),
+        optionify!(weights),
+    ))
 }
 
 /// # Graph Constructors
 impl Graph {
-    fn build_nodes_mapping(
-        sources: &[NodeT],
-        destinations: &[NodeT],
-    ) -> (Vec<NodeT>, Vec<NodeT>, HashMap<String, NodeT>, Vec<String>) {
-        let unique_nodes: Vec<NodeT> = vec![sources, destinations]
-            .iter()
-            .cloned()
-            .flatten()
-            .cloned()
-            .unique()
-            .collect();
-        let nodes_mapping: HashMap<String, NodeT> = unique_nodes
-            .iter()
-            .enumerate()
-            .map(|(i, node_id)| (node_id.to_string(), i as NodeT))
-            .collect();
-        let mut nodes_reverse_mapping: Vec<String> = vec![String::from(""); unique_nodes.len()];
-        for (node_name, position) in nodes_mapping.iter() {
-            nodes_reverse_mapping[*position] = node_name.clone();
-        }
-
-        (
-            sources
-                .par_iter()
-                .map(|node| *nodes_mapping.get(&node.to_string()).unwrap())
-                .collect(),
-            destinations
-                .par_iter()
-                .map(|node| *nodes_mapping.get(&node.to_string()).unwrap())
-                .collect(),
-            nodes_mapping,
-            nodes_reverse_mapping,
-        )
-    }
-
-    /// Returns outbounds edges ranges for graph.
-    ///
-    /// # Arguments
-    ///
-    /// * nodes_number: NodeT - Number of nodes in the graph.
-    /// * sources: &[NodeT] - source nodes in the graph.
-    ///
-    pub fn compute_outbounds(nodes_number: NodeT, sources: &[NodeT]) -> Vec<EdgeT> {
-        info!("Computing outbound edges ranges from each node.");
-        let mut last_src: NodeT = 0;
-        // Instead of fixing the last values after the loop, we set directly
-        // all values to the length of the sources, which is the sum of all
-        // possible neighbors.
-        let mut outbounds: Vec<EdgeT> = vec![sources.len(); nodes_number];
-
-        for (i, src) in sources.iter().enumerate() {
-            if last_src != *src {
-                // Assigning to range instead of single value, so that traps
-                // have as delta between previous and next node zero.
-                for o in &mut outbounds[last_src..*src] {
-                    *o = i;
-                }
-                last_src = *src;
-            }
-        }
-
-        outbounds
-    }
-
-    pub fn new_directed(
-        sources: Vec<NodeT>,
-        destinations: Vec<NodeT>,
-
-        nodes_mapping: Option<HashMap<String, NodeT>>,
-        nodes_reverse_mapping: Option<Vec<String>>,
-
-        node_types: Option<Vec<NodeTypeT>>,
-        node_types_mapping: Option<HashMap<String, NodeTypeT>>,
-        node_types_reverse_mapping: Option<Vec<String>>,
-
-        edge_types: Option<Vec<EdgeTypeT>>,
-        edge_types_mapping: Option<HashMap<String, EdgeTypeT>>,
-        edge_types_reverse_mapping: Option<Vec<String>>,
-
-        weights: Option<Vec<WeightT>>,
+    pub fn new(
+        edges_iterator: impl Iterator<
+            Item = Result<(String, String, Option<String>, Option<WeightT>), String>,
+        >,
+        nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
+        directed: bool,
+        ignore_duplicated_nodes: bool,
+        ignore_duplicated_edges: bool,
+        skip_self_loops: bool,
     ) -> Result<Graph, String> {
-        let (_sources, _destinations, _nodes_mapping, _nodes_reverse_mapping) =
-            if nodes_mapping.is_none() || nodes_reverse_mapping.is_none() {
-                Graph::build_nodes_mapping(&sources, &destinations)
-            } else {
-                (
-                    sources,
-                    destinations,
-                    nodes_mapping.unwrap(),
-                    nodes_reverse_mapping.unwrap(),
-                )
-            };
-
-        validate(
-            &_sources,
-            &_destinations,
-            &_nodes_mapping,
-            &_nodes_reverse_mapping,
-            &node_types,
-            &edge_types,
-            &weights,
-        )?;
-
-        let nodes_number = _nodes_reverse_mapping.len();
-
-        info!("Computing unique edges.");
-        let unique_edges: HashBrownMap<(NodeT, NodeT), EdgeT> = HashBrownMap::from_iter(
-            _sources
-                .iter()
-                .cloned()
-                .zip(_destinations.iter().cloned())
-                .enumerate()
-                .map(|(i, (src, dst))| ((src, dst), i)),
-        );
-
-        info!("Computing sorting of given edges based on sources.");
-        let mut pairs: Vec<(usize, &NodeT)> = _sources.par_iter().enumerate().collect();
-        pairs.par_sort_unstable_by_key(|(_, &v)| v);
-        let indices: Vec<&usize> = pairs.par_iter().map(|(i, _)| i).collect();
-
-        info!("Sorting given sources.");
-        let sorted_sources: Vec<NodeT> = indices.par_iter().map(|&&x| _sources[x]).collect();
-        info!("Sorting given destinations.");
-        let sorted_destinations: Vec<NodeT> =
-            indices.par_iter().map(|&&x| _destinations[x]).collect();
-        info!("Sorting given weights.");
-        let sorted_weights: Option<Vec<WeightT>> =
-            weights.map(|w| indices.par_iter().map(|&&x| w[x]).collect());
-        info!("Sorting given edge types.");
-        let sorted_edge_types: Option<Vec<EdgeTypeT>> =
-            edge_types.map(|et| indices.par_iter().map(|&&x| et[x]).collect());
-
-        let outbounds = Graph::compute_outbounds(nodes_number, &sorted_sources);
-
-        let not_trap_nodes: Vec<NodeT> = sorted_sources.iter().cloned().unique().collect();
-
-        let mut graph = Graph {
-            unique_edges,
-            not_trap_nodes,
+        let (
+            mut nodes_mapping,
+            mut nodes_reverse_mapping,
             node_types,
             node_types_mapping,
             node_types_reverse_mapping,
-            edge_types_mapping,
-            edge_types_reverse_mapping,
-            outbounds,
-            nodes_mapping: _nodes_mapping,
-            nodes_reverse_mapping: _nodes_reverse_mapping,
-            is_directed: true,
-            sources: sorted_sources,
-            destinations: sorted_destinations,
-            weights: sorted_weights,
-            edge_types: sorted_edge_types,
-            has_traps: true,
+        ) = if let Some(ni) = nodes_iterator {
+            parse_nodes(ni, ignore_duplicated_nodes)?
+        } else {
+            (
+                HashMap::new(),
+                Vec::new(),
+                Some(Vec::new()),
+                Some(HashMap::new()),
+                Some(Vec::new()),
+            )
         };
 
-        // Here we are computing if the graph has any trap nodes.
-        // When a graph has no traps, we can use a faster random walk.
-        graph.has_traps = (0..graph.get_nodes_number())
-            .into_par_iter()
-            .any(|node| graph.is_node_trap(node));
-
-        Ok(graph)
-    }
-
-    pub fn new_undirected(
-        sources: Vec<NodeT>,
-        destinations: Vec<NodeT>,
-        nodes_mapping: Option<HashMap<String, NodeT>>,
-        nodes_reverse_mapping: Option<Vec<String>>,
-        node_types: Option<Vec<NodeTypeT>>,
-        node_types_mapping: Option<HashMap<String, NodeTypeT>>,
-        node_types_reverse_mapping: Option<Vec<String>>,
-        edge_types: Option<Vec<EdgeTypeT>>,
-        edge_types_mapping: Option<HashMap<String, EdgeTypeT>>,
-        edge_types_reverse_mapping: Option<Vec<String>>,
-        weights: Option<Vec<WeightT>>,
-        force_conversion_to_undirected: Option<bool>,
-    ) -> Result<Graph, String> {
-        let (_sources, _destinations, _nodes_mapping, _nodes_reverse_mapping) =
-            if nodes_mapping.is_none() || nodes_reverse_mapping.is_none() {
-                Graph::build_nodes_mapping(&sources, &destinations)
-            } else {
-                (
-                    sources,
-                    destinations,
-                    nodes_mapping.unwrap(),
-                    nodes_reverse_mapping.unwrap(),
-                )
-            };
-
-        validate(
-            &_sources,
-            &_destinations,
-            &_nodes_mapping,
-            &_nodes_reverse_mapping,
-            &node_types,
-            &edge_types,
-            &weights,
+        let (
+            sources,
+            destinations,
+            outbounds,
+            not_trap_nodes,
+            unique_edges,
+            edge_types_mapping,
+            edge_types_reverse_mapping,
+            edge_types,
+            weights,
+        ) = parse_edges(
+            &mut nodes_mapping,
+            &mut nodes_reverse_mapping,
+            directed,
+            edges_iterator,
+            skip_self_loops,
+            ignore_duplicated_edges,
         )?;
 
-        let _force_conversion_to_undirected = force_conversion_to_undirected.unwrap_or(false);
-        let mut full_sources: Vec<NodeT> = Vec::new();
-        let mut full_destinations: Vec<NodeT> = Vec::new();
-        let mut full_edge_types: Vec<NodeTypeT> = Vec::new();
-        let mut full_weights: Vec<WeightT> = Vec::new();
-        let mut unique_edges: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = HashSet::new();
-
-        for index in 0.._sources.len() {
-            let src = _sources[index];
-            let dst = _destinations[index];
-            let edge_type = if let Some(et) = &edge_types {
-                Some(et[index])
-            } else {
-                None
-            };
-            if !unique_edges.contains(&(src, dst, edge_type)) {
-                full_sources.push(src);
-                full_destinations.push(dst);
-                if let Some(w) = &weights {
-                    full_weights.push(w[index]);
-                }
-                let edge_type = if let Some(et) = &edge_types {
-                    full_edge_types.push(et[index]);
-                    Some(et[index])
-                } else {
-                    None
-                };
-
-                unique_edges.insert((src, dst, edge_type));
-                // If the two current nodes are not the same, hence this is
-                // not a self-loop, we also add the opposite direction.
-                if src != dst {
-                    full_sources.push(dst);
-                    full_destinations.push(src);
-                    if let Some(w) = &weights {
-                        full_weights.push(w[index]);
-                    }
-
-                    if let Some(et) = edge_type {
-                        full_edge_types.push(et);
-                    }
-
-                    unique_edges.insert((dst, src, edge_type));
-                }
-            } else if !_force_conversion_to_undirected {
-                return Err(format!(
-                    concat!(
-                        "Within given edges there are birectional directed edges.\n",
-                        "The source node is {src_name} ({src})\n",
-                        "The destination node is {dst_name} ({dst})\n",
-                        "{edge_type_message}\n",
-                        "This means you are forcibly converting a directed ",
-                        "graph into an undirected graph.\n",
-                        "You can enforce the conversion by passing the flag ",
-                        "force_conversion_to_undirected as true.\n",
-                        "The conversion will ignore edges that are ",
-                        "directed between two nodes, have the same edge type ",
-                        "but different weights.\n",
-                        "For example, an edge from A to B of type 1 ",
-                        "with weight 10 would be inserted alongside ",
-                        "the simmetric counter part B to A of type 1 ",
-                        "but a following edge from B to A of type 1 ",
-                        "with weight 5 would be ignored."
-                    ),
-                    src_name = _nodes_reverse_mapping[src],
-                    src = src,
-                    dst_name = _nodes_reverse_mapping[dst],
-                    dst = dst,
-                    edge_type_message = if let Some(et) = edge_type {
-                        format!("The edge type is {}", et)
-                    } else {
-                        String::from("No edge type was provided for the edge.")
-                    }
-                ));
-            }
-        }
-
-        let mut result = Graph::new_directed(
-            full_sources,
-            full_destinations,
-            Some(_nodes_mapping),
-            Some(_nodes_reverse_mapping),
+        Ok(Graph {
+            not_trap_nodes,
+            sources,
+            destinations,
+            nodes_mapping,
+            nodes_reverse_mapping,
+            unique_edges,
+            outbounds,
+            weights,
             node_types,
             node_types_mapping,
             node_types_reverse_mapping,
-            if edge_types.is_some() {
-                Some(full_edge_types)
-            } else {
-                None
-            },
+            edge_types,
             edge_types_mapping,
             edge_types_reverse_mapping,
-            if weights.is_some() {
-                Some(full_weights)
-            } else {
-                None
-            },
-        )?;
-        result.is_directed = false;
-        Ok(result)
+            is_directed: directed,
+            has_traps: not_trap_nodes.len() != outbounds.len(),
+        })
     }
 }

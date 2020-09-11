@@ -11,4 +11,9 @@ pub type EdgeTypeT = u16;
 pub(crate) struct EdgeMetadata {
     pub(crate) edge_id: EdgeT,
     pub(crate) edge_types: HashSet<EdgeTypeT>,
-}
+} 
+
+pub(crate) struct ConstructorEdgeMetadata {
+    pub(crate) edge_types: Vec<EdgeTypeT>,
+    pub(crate) weights: Vec<WeightT>,
+} 

@@ -19,7 +19,6 @@ use vec_rand::{gen_random_vec, sample, sample_uniform};
 ///
 #[derive(Debug, Clone, Getters, PartialEq)]
 pub struct Graph {
-    pub(crate) is_builded: bool,
     pub(crate) is_directed: bool,
     pub(crate) not_trap_nodes: Vec<NodeT>,
     pub(crate) sources: Vec<NodeT>,
@@ -312,7 +311,7 @@ impl Graph {
     ///
     pub fn get_edge_id(&self, src: NodeT, dst: NodeT) -> Result<EdgeT, String> {
         match self.unique_edges.get(&(src, dst)) {
-            Some(g) => Ok(*g),
+            Some(g) => Ok(g.edge_id),
             None => Err(format!(
                 concat!(
                     "Required edge passing between {src_name} ({src}) ",

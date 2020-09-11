@@ -6,10 +6,10 @@ fn parse_edge_weight(weight: Option<String>) -> Result<Option<WeightT>, String> 
     match weight {
         None => Ok(None),
         Some(w) => match w.parse::<WeightT>() {
-            Ok(val) => match val.is_finite() {
+            Ok(val) => match val.is_finite() && val > 0.0 {
                 true => Ok(Some(val)),
                 false => Err(format!(
-                    "The value {} parsed as a weight as {} is either infinite or NaN.",
+                    "The value {} parsed as a weight as {} is either infinite or NaN or Zero.",
                     w, val
                 )),
             },
@@ -258,127 +258,5 @@ impl EdgeFileReader {
                 Ok(vals) => self.parse_edge_line(vals),
                 Err(e) => Err(e),
             }))
-    }
-
-    /// Read node file and returns graph builder data structures.
-    ///
-    /// Specifically, the returned objects are:
-    /// * nodes_mapping: an hashmap from the node name to the node id.
-    /// * node_reverse_mapping: vector of node names.
-    /// * node_types_mapping: an hashmap from node types names to the node type ids.
-    /// * edge_type_reverse_mapping: vector of the node types names.
-    /// * node_types: vector of the numeric node types ids.
-    pub(crate) fn read_edge_file(
-        &self,
-        nodes_mapping: &mut HashMap<String, NodeT>,
-        nodes_reverse_mapping: &mut Vec<String>,
-    ) -> Result<(
-        Vec<NodeT>,
-        Vec<NodeT>,
-        HashMap<(NodeT, NodeT), EdgeMetadata>,
-        HashMap<String, EdgeTypeT>,
-        Vec<String>,
-        Vec<EdgeTypeT>,
-        Vec<WeightT>
-    ), String> {
-
-        let empty_nodes_mapping : bool = nodes_mapping.is_empty();
-        let mut sources: Vec<NodeT> = Vec::new();
-        let mut destinations: Vec<NodeT> = Vec::new();
-        let mut edge_type_mapping: HashMap<String, NodeTypeT> = HashMap::new();
-        let mut edge_type_reverse_mapping: Vec<String> = Vec::new();
-        let mut edge_types: Vec<NodeTypeT> = Vec::new();
-        let mut weights: Vec<WeightT> = Vec::new();
-        let mut unique_edges: HashMap<(NodeT, NodeT), EdgeMetadata> = HashMap::new();
-        for values in self.read_lines()? {
-            let (source_node_name, destination_node_name, edge_type, edge_weight) = values?;
-            // Check if we need to skip self-loops
-            if self.skip_self_loops && source_node_name == destination_node_name {
-                // If current edge is a self-loop and we need to skip them we skip.
-                continue;
-            }
-            // Handle missing node IDs when no node file was provided
-            for node_name in &[source_node_name, destination_node_name]{
-                if !nodes_mapping.contains_key(node_name){
-                    if empty_nodes_mapping {
-                        nodes_mapping.insert(node_name.clone(), nodes_mapping.len());
-                    } else {
-                        return Err(
-                            format!(
-                                concat!(
-                                    "In the edge file was found the node {} ",
-                                    "which is not present in the given node file." 
-                                ),
-                                node_name
-                            )
-                        )
-                    }
-                }
-            }
-            // Retrieve the node IDs
-            let source_node_id = nodes_mapping.get(&source_node_name).unwrap();
-            let destinations_node_id = nodes_mapping.get(&destination_node_name).unwrap();
-            // Retrieve the edge type id if it was given.
-            let edge_type_id = if let Some(et) = edge_type {
-                if !edge_type_mapping.contains_key(&et) {
-                    edge_type_mapping.insert(et, edge_type_reverse_mapping.len() as NodeTypeT);
-                    edge_type_reverse_mapping.push(et);
-                }
-                edge_type_mapping.get(&et)
-            } else {
-                None
-            };
-
-            // Get the metadata of the edge and if it's not present, add it
-            let edge_metadata = unique_edges.entry(
-                (*source_node_id, *destinations_node_id)
-            ).or_insert_with(|| EdgeMetadata{
-                edge_id: unique_edges.len(),
-                edge_types: HashSet::new()
-            });
-            
-            // if the node is already mapped => duplicated line
-            if let Some(eti) = edge_type_id{
-                if edge_metadata.edge_types.contains(eti) {
-                    if self.ignore_duplicated_edges {
-                        continue;
-                    } 
-                    return Err(format!(
-                        concat!(
-                            "\nFound duplicated edges!\n",
-                            "The source node is {source} and the destination node is {destination}.\n",
-                            "The edge type of the row is {edge_type:?}.\n",
-                            "The path of the document was {path}."
-                        ),
-                        source=source_node_name,
-                        destination=destination_node_name,
-                        edge_type=edge_type,
-                        path=self.parameters.path
-                    ));  
-                }  
-                // add the edge type in the metadata
-                edge_metadata.edge_types.insert(*eti);
-            }
-            // update the vectors 
-            sources.push(*source_node_id);
-            destinations.push(*destinations_node_id);
-                            
-            if let Some(et) = edge_type_id {
-                edge_types.push(*et);
-            }
-            if let Some(w) = edge_weight {
-                weights.push(w);
-            }
-        }
-
-        Ok((
-            sources,
-            destinations,
-            unique_edges,
-            edge_type_mapping,
-            edge_type_reverse_mapping,
-            edge_types,
-            weights
-        ))
     }
 }
