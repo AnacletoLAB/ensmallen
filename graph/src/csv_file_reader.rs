@@ -189,7 +189,7 @@ impl CSVFileReader {
             })
             .enumerate()
             // skip empty lines
-            .filter(|(i, line)| match line {
+            .filter(|(_, line)| match line {
                 Ok(l) => {
                     l != "" 
                 },

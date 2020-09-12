@@ -1,6 +1,5 @@
 #[warn(unused_macros)]
 use super::*;
-use std::collections::{HashMap, HashSet};
 
 fn parse_edge_weight(weight: Option<String>) -> Result<Option<WeightT>, String> {
     match weight {
@@ -184,7 +183,7 @@ impl EdgeFileReader {
         let edge_type: Option<String> = match self.edge_types_column_number {
             None => Ok(None),
             Some(idx) => {
-                let mut curr = vals[idx].to_owned();
+                let curr = vals[idx].to_owned();
                 if !curr.is_empty() {
                     Ok(Some(curr))
                 } else if let Some(def) = &self.default_edge_type {
@@ -209,7 +208,7 @@ impl EdgeFileReader {
         let edge_weight = match self.weights_column_number {
             None => Ok(None),
             Some(idx) => {
-                let mut curr = vals[idx].to_owned();
+                let curr = vals[idx].to_owned();
                 if !curr.is_empty() {
                     match parse_edge_weight(Some(curr)) {
                         Ok(v) => Ok(v),

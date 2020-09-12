@@ -161,7 +161,7 @@ pub(crate) fn parse_edges(
 }
 
 pub(crate) fn build_graph(
-    unique_edges_tree: GraphDictionary,
+    unique_edges_tree: &mut GraphDictionary,
     nodes: Vocabulary<NodeT>,
     node_types: Option<VocabularyVec<NodeTypeT>>,
     edge_types: Option<Vocabulary<EdgeTypeT>>,
@@ -213,7 +213,7 @@ pub(crate) fn build_graph(
         );
 
         // Reverse the metadata of the edge into the graph vectors
-        match metadata {
+        match &metadata {
             Some(m) => {
                 m.into_iter().for_each(|(weight, edge_type)| {
                     sources.push(src);
@@ -235,6 +235,8 @@ pub(crate) fn build_graph(
         i += 1;
     }
 
+    let has_traps = not_trap_nodes.len() != outbounds.len();
+
     Graph {
         not_trap_nodes,
         sources,
@@ -243,8 +245,8 @@ pub(crate) fn build_graph(
         unique_edges,
         outbounds,
         node_types,
+        has_traps,
         is_directed: directed,
-        has_traps: not_trap_nodes.len() != outbounds.len(),
         weights: optionify!(weights),
         edge_types: match edge_types {
             Some(et) => Some(VocabularyVec::<EdgeTypeT> {
@@ -274,7 +276,7 @@ impl Graph {
             (Vocabulary::new(), None)
         };
 
-        let (unique_edges_tree, edge_types_vocabulary) = parse_edges(
+        let (mut unique_edges_tree, edge_types_vocabulary) = parse_edges(
             &mut nodes,
             directed,
             edges_iterator,
@@ -283,7 +285,7 @@ impl Graph {
         )?;
 
         Ok(build_graph(
-            unique_edges_tree,
+            &mut unique_edges_tree,
             nodes,
             node_types,
             edge_types_vocabulary,

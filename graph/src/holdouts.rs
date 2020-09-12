@@ -99,7 +99,7 @@ impl Graph {
         }
 
         Ok(build_graph(
-            unique_edges_tree,
+            &mut unique_edges_tree,
             self.nodes.clone(),
             self.node_types.clone(),
             if let Some(et) = &self.edge_types {
@@ -129,7 +129,7 @@ impl Graph {
             (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
         let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as usize;
 
-        if let Some(dm) = deny_map {
+        if let Some(dm) = &deny_map {
             if dm.len() * edge_factor > train_edges_number {
                 return Err(format!(
                     concat!(
@@ -170,6 +170,9 @@ impl Graph {
                 ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
             if let Some(md) = &mut metadata {
                 md.set(
+                    // TODO TODO TODO
+                    // THIS THING DOES NOT CONSIDER include_all_edge_types CURRENTLY!!!
+                    // TODO TODO TODO
                     self.get_link_weights(src, dst),
                     self.get_link_edge_types(src, dst),
                 );
@@ -177,37 +180,36 @@ impl Graph {
             // If the spanning tree does not include the current edge
             // and, if we are in an undirected graph, does not include neither
             // the graph in the opposite direction:
-            if deny_map.is_none()
-                || !deny_map
-                    .map(|dm| dm.contains(&(src, dst, edge_type)))
-                    .unwrap()
-            {
-                // We stop adding edges when we have reached the minimum amount.
-                if valid.len() < valid_edges_number && (self.is_directed || src <= dst) {
-                    valid.insert((src, dst), metadata.clone());
-                    // If the current edge is not a self loop and the graph
-                    // is not directed, we add the simmetrical graph
-                    if !self.is_directed && src != dst {
-                        valid.insert((dst, src), metadata);
-                    }
-                    continue;
+            let is_for_validation = if let Some(dm) = &deny_map{
+                !dm.contains(&(src, dst, edge_type))
+            } else {
+                true
+            };
+            // We stop adding edges when we have reached the minimum amount.
+            if is_for_validation && valid.len() < valid_edges_number && (self.is_directed || src <= dst) {
+                valid.insert((src, dst), metadata.clone());
+                // If the current edge is not a self loop and the graph
+                // is not directed, we add the simmetrical graph
+                if !self.is_directed && src != dst {
+                    valid.insert((dst, src), metadata);
                 }
-            }
-            // Otherwise we add the edges to the training set.
-            //
-            // When the graph is directed we need to check that the edge
-            // in the opposite direction was not already inserted.
-            train.insert((src, dst), metadata.clone());
-            // If the current edge is not a self loop and the graph
-            // is not directed, we add the simmetrical graph
-            if !self.is_directed && src != dst {
-                train.insert((dst, src), metadata);
+            } else {
+                // Otherwise we add the edges to the training set.
+                //
+                // When the graph is directed we need to check that the edge
+                // in the opposite direction was not already inserted.
+                train.insert((src, dst), metadata.clone());
+                // If the current edge is not a self loop and the graph
+                // is not directed, we add the simmetrical graph
+                if !self.is_directed && src != dst {
+                    train.insert((dst, src), metadata);
+                }
             }
         }
 
         Ok((
             build_graph(
-                train,
+                &mut train,
                 self.nodes.clone(),
                 self.node_types.clone(),
                 if let Some(et) = &self.edge_types {
@@ -218,7 +220,7 @@ impl Graph {
                 self.is_directed,
             ),
             build_graph(
-                valid,
+                & mut valid,
                 self.nodes.clone(),
                 self.node_types.clone(),
                 if let Some(et) = &self.edge_types {
@@ -357,7 +359,7 @@ impl Graph {
         }
 
         Ok(build_graph(
-            graph_data,
+            &mut graph_data,
             self.nodes.clone(),
             self.node_types.clone(),
             if let Some(et) = &self.edge_types {

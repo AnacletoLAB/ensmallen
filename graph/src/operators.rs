@@ -91,7 +91,7 @@ impl Graph {
             });
 
         Ok(build_graph(
-            unique_edges_tree,
+            &mut unique_edges_tree,
             self.nodes.clone(),
             self.node_types.clone(),
             if let Some(et) = &self.edge_types {
