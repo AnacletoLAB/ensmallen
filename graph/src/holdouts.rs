@@ -1,9 +1,8 @@
 use super::*;
-use hashbrown::HashSet;
-use std::collections::BTreeMap;
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
+use std::collections::{BTreeMap, HashSet};
 use vec_rand::xorshift::xorshift;
 
 /// # Holdouts.
@@ -93,7 +92,7 @@ impl Graph {
                 && !unique_edges_tree.contains_key(&(src, dst))
             {
                 unique_edges_tree.insert((src, dst), None);
-                if !self.is_directed{
+                if !self.is_directed {
                     unique_edges_tree.insert((dst, src), None);
                 }
             }
@@ -108,7 +107,127 @@ impl Graph {
             } else {
                 None
             },
-            self.is_directed
+            self.is_directed,
+        ))
+    }
+
+    fn holdout(
+        &self,
+        seed: NodeT,
+        train_percentage: f64,
+        include_all_edge_types: bool,
+        deny_map: Option<HashSet<(NodeT, NodeT, Option<EdgeTypeT>)>>,
+    ) -> Result<(Graph, Graph), String> {
+        if train_percentage <= 0.0 || train_percentage >= 1.0 {
+            return Err(String::from(
+                "Train percentage must be strictly between 0 and 1.",
+            ));
+        }
+
+        let edge_factor = if self.is_directed { 1 } else { 2 };
+        let valid_edges_number =
+            (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
+        let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as usize;
+
+        if let Some(dm) = deny_map {
+            if dm.len() * edge_factor > train_edges_number {
+                return Err(format!(
+                    concat!(
+                        "The given deny map of the graph contains {} edges ",
+                        "that is more than the required training edges number {}.\n",
+                        "This makes impossible to create a validation set using ",
+                        "{} edges.\nIf possible, you should increase the ",
+                        "train_percentage parameter which is currently equal to ",
+                        "{}.\nThe deny map, by itself, is requiring at least ",
+                        "a train percentage of {}."
+                    ),
+                    dm.len() * edge_factor,
+                    train_edges_number,
+                    valid_edges_number,
+                    train_percentage,
+                    (dm.len() * edge_factor) as f64 / train_edges_number as f64
+                ));
+            }
+        }
+
+        // generate and shuffle the indices of the edges
+        let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
+        let mut edge_indices: Vec<NodeT> = (0..self.get_edges_number()).collect();
+        edge_indices.shuffle(&mut rng);
+
+        let train: GraphDictionary = GraphDictionary::new();
+        let valid: GraphDictionary = GraphDictionary::new();
+
+        for edge in edge_indices.iter() {
+            let src = self.sources[*edge];
+            let dst = self.destinations[*edge];
+            let edge_type = if let Some(et) = &self.edge_types {
+                Some(et.ids[*edge])
+            } else {
+                None
+            };
+            let mut metadata =
+                ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
+            if let Some(md) = metadata {
+                md.set(
+                    self.get_link_weights(src, dst),
+                    self.get_link_edge_types(src, dst),
+                );
+            }
+            // If the spanning tree does not include the current edge
+            // and, if we are in an undirected graph, does not include neither
+            // the graph in the opposite direction:
+            if deny_map.is_none()
+                || !deny_map
+                    .map(|dm| dm.contains(&(src, dst, edge_type)))
+                    .unwrap()
+            {
+                // We stop adding edges when we have reached the minimum amount.
+                if valid.len() < valid_edges_number && (self.is_directed || src <= dst) {
+                    valid.insert((src, dst), metadata);
+                    // If the current edge is not a self loop and the graph
+                    // is not directed, we add the simmetrical graph
+                    if !self.is_directed && src != dst {
+                        valid.insert((dst, src), metadata.clone());
+                    }
+                    continue;
+                }
+            }
+            // Otherwise we add the edges to the training set.
+            //
+            // When the graph is directed we need to check that the edge
+            // in the opposite direction was not already inserted.
+            train.insert((src, dst), metadata);
+            // If the current edge is not a self loop and the graph
+            // is not directed, we add the simmetrical graph
+            if !self.is_directed && src != dst {
+                train.insert((dst, src), metadata.clone());
+            }
+        }
+
+        Ok((
+            build_graph(
+                train,
+                self.nodes,
+                self.node_types,
+                if let Some(et) = &self.edge_types {
+                    Some(et.vocabulary)
+                } else {
+                    None
+                },
+                self.is_directed,
+            ),
+            build_graph(
+                valid,
+                self.nodes,
+                self.node_types,
+                if let Some(et) = &self.edge_types {
+                    Some(et.vocabulary)
+                } else {
+                    None
+                },
+                self.is_directed,
+            ),
         ))
     }
 
@@ -124,138 +243,22 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * seed:NodeT - The seed to use for the holdout,
-    /// * train_percentage:f64 - Percentage target to reserve for training.
+    /// * `seed`:NodeT - The seed to use for the holdout,
+    /// * `train_percentage`:f64 - Percentage target to reserve for training.
+    /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
     ///
     pub fn connected_holdout(
         &self,
         seed: NodeT,
         train_percentage: f64,
+        include_all_edge_types: bool,
     ) -> Result<(Graph, Graph), String> {
-        if train_percentage <= 0.0 || train_percentage >= 1.0 {
-            return Err(String::from(
-                "Train percentage must be strictly between 0 and 1.",
-            ));
-        }
-
-        let tree: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = self.spanning_tree(seed);
-        let edge_factor = if self.is_directed { 1 } else { 2 };
-        let valid_edges_number =
-            (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
-        let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as usize;
-        let mut valid_edges_number_total = 0;
-
-        if tree.len() * edge_factor > train_edges_number {
-            return Err(format!(
-                concat!(
-                    "The spanning tree of the graph contains {} edges ",
-                    "that is more than the required training edges number {}.\n",
-                    "This makes impossible to create a validation set using ",
-                    "{} edges.\nIf possible, you should increase the ",
-                    "train_percentage parameter which is currently equal to ",
-                    "{}.\nThe spanning tree, by itself, is requiring at least ",
-                    "a train percentage of {}."
-                ),
-                tree.len() * edge_factor,
-                train_edges_number,
-                valid_edges_number,
-                train_percentage,
-                (tree.len() * edge_factor) as f64 / train_edges_number as f64
-            ));
-        }
-
-        // generate and shuffle the indices of the edges
-        let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
-        let mut edge_indices: Vec<NodeT> = (0..self.get_edges_number()).collect();
-        edge_indices.shuffle(&mut rng);
-
-        let mut valid_sources: Vec<NodeT> = Vec::with_capacity(valid_edges_number);
-        let mut valid_destinations: Vec<NodeT> = Vec::with_capacity(valid_edges_number);
-        let mut valid_weights: Vec<WeightT> = Vec::with_capacity(valid_edges_number);
-        let mut valid_edge_types: Vec<EdgeTypeT> = Vec::with_capacity(valid_edges_number);
-
-        let mut train_sources: Vec<NodeT> = Vec::with_capacity(train_edges_number);
-        let mut train_destinations: Vec<NodeT> = Vec::with_capacity(train_edges_number);
-        let mut train_weights: Vec<WeightT> = Vec::with_capacity(train_edges_number);
-        let mut train_edge_types: Vec<EdgeTypeT> = Vec::with_capacity(train_edges_number);
-
-        for edge in edge_indices.iter() {
-            let src = self.sources[*edge];
-            let dst = self.destinations[*edge];
-            let edge_type = if let Some(et) = &self.edge_types {
-                Some(et.ids[*edge])
-            } else {
-                None
-            };
-            // If the spanning tree does not include the current edge
-            // and, if we are in an undirected graph, does not include neither
-            // the graph in the opposite direction:
-            if !tree.contains(&(src, dst, edge_type)) {
-                // We stop adding edges when we have reached the minimum amount.
-                if valid_edges_number_total < valid_edges_number && (self.is_directed || src <= dst)
-                {
-                    // add the edge
-                    self.copy_from_index(
-                        *edge,
-                        &mut valid_sources,
-                        &mut valid_destinations,
-                        &mut valid_weights,
-                        &mut valid_edge_types,
-                    );
-                    valid_edges_number_total += 1;
-                    if !self.is_directed && src != dst {
-                        valid_edges_number_total += 1;
-                    }
-                    continue;
-                }
-            }
-            // Otherwise we add the edges to the training set.
-            //
-            // When the graph is directed we need to check that the edge
-            // in the opposite direction was not already inserted.
-            if self.is_directed || src <= dst {
-                self.copy_from_index(
-                    *edge,
-                    &mut train_sources,
-                    &mut train_destinations,
-                    &mut train_weights,
-                    &mut train_edge_types,
-                );
-            }
-        }
-
-        Ok((
-            self.setup_graph(
-                train_sources,
-                train_destinations,
-                if self.edge_types.is_some() {
-                    Some(train_edge_types)
-                } else {
-                    None
-                },
-                if self.weights.is_some() {
-                    Some(train_weights)
-                } else {
-                    None
-                },
-                None,
-            )?,
-            self.setup_graph(
-                valid_sources,
-                valid_destinations,
-                if self.edge_types.is_some() {
-                    Some(valid_edge_types)
-                } else {
-                    None
-                },
-                if self.weights.is_some() {
-                    Some(valid_weights)
-                } else {
-                    None
-                },
-                None,
-            )?,
-        ))
+        self.holdout(
+            seed,
+            train_percentage,
+            include_all_edge_types,
+            Some(self.spanning_tree(seed, include_all_edge_types)),
+        )
     }
 
     /// Returns random holdout for training ML algorithms on the graph edges.
@@ -268,105 +271,15 @@ impl Graph {
     ///
     /// * seed:NodeT - The seed to use for the holdout,
     /// * train_percentage:f64 - Percentage target to reserve for training
+    /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
     ///
     pub fn random_holdout(
         &self,
         seed: NodeT,
         train_percentage: f64,
+        include_all_edge_types: bool,
     ) -> Result<(Graph, Graph), String> {
-        if train_percentage <= 0.0 || train_percentage >= 1.0 {
-            return Err(String::from(
-                "Given train percentage must be strictly between 0 and 1.",
-            ));
-        }
-
-        // generate and shuffle the indices of the edges
-        let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
-        let mut edge_indices: Vec<NodeT> = (0..self.get_edges_number()).collect();
-        edge_indices.shuffle(&mut rng);
-
-        let valid_edges_number =
-            (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
-        let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as usize;
-        let mut valid_edges_number_total = 0;
-
-        let mut valid_sources: Vec<NodeT> = Vec::with_capacity(valid_edges_number);
-        let mut valid_destinations: Vec<NodeT> = Vec::with_capacity(valid_edges_number);
-        let mut valid_weights: Vec<WeightT> = Vec::with_capacity(valid_edges_number);
-        let mut valid_edge_types: Vec<EdgeTypeT> = Vec::with_capacity(valid_edges_number);
-
-        let mut train_sources: Vec<NodeT> = Vec::with_capacity(train_edges_number);
-        let mut train_destinations: Vec<NodeT> = Vec::with_capacity(train_edges_number);
-        let mut train_weights: Vec<WeightT> = Vec::with_capacity(train_edges_number);
-        let mut train_edge_types: Vec<EdgeTypeT> = Vec::with_capacity(train_edges_number);
-
-        for edge in edge_indices.iter() {
-            let src = self.sources[*edge];
-            let dst = self.destinations[*edge];
-
-            // We stop adding edges when we have reached the minimum amount.
-            if valid_edges_number_total < valid_edges_number && (self.is_directed || src <= dst) {
-                // add the edge
-                self.copy_from_index(
-                    *edge,
-                    &mut valid_sources,
-                    &mut valid_destinations,
-                    &mut valid_weights,
-                    &mut valid_edge_types,
-                );
-                valid_edges_number_total += 1;
-                if !self.is_directed {
-                    valid_edges_number_total += 1;
-                }
-                continue;
-            }
-            // Otherwise we add the edges to the training set.
-            //
-            // When the graph is directed we need to check that the edge
-            // in the opposite direction was not already inserted.
-            if self.is_directed || src <= dst {
-                self.copy_from_index(
-                    *edge,
-                    &mut train_sources,
-                    &mut train_destinations,
-                    &mut train_weights,
-                    &mut train_edge_types,
-                );
-            }
-        }
-
-        Ok((
-            self.setup_graph(
-                train_sources,
-                train_destinations,
-                if self.edge_types.is_some() {
-                    Some(train_edge_types)
-                } else {
-                    None
-                },
-                if self.weights.is_some() {
-                    Some(train_weights)
-                } else {
-                    None
-                },
-                None,
-            )?,
-            self.setup_graph(
-                valid_sources,
-                valid_destinations,
-                if self.edge_types.is_some() {
-                    Some(valid_edge_types)
-                } else {
-                    None
-                },
-                if self.weights.is_some() {
-                    Some(valid_weights)
-                } else {
-                    None
-                },
-                None,
-            )?,
-        ))
+        self.holdout(seed, train_percentage, include_all_edge_types, None)
     }
 
     /// Returns subgraph with given number of nodes.
@@ -405,10 +318,7 @@ impl Graph {
         nodes.shuffle(&mut rnd);
 
         // Initializing the vector for creating the new graph.
-        let mut sources: Vec<NodeT> = Vec::new();
-        let mut destinations: Vec<NodeT> = Vec::new();
-        let mut weights: Vec<WeightT> = Vec::new();
-        let mut edge_types: Vec<EdgeTypeT> = Vec::new();
+        let mut graph_data: GraphDictionary = GraphDictionary::new();
 
         // Initializing stack and set of nodes
         let mut unique_nodes: HashSet<NodeT> = HashSet::with_capacity(nodes_number);
@@ -429,33 +339,33 @@ impl Graph {
                     if !unique_nodes.contains(&dst) {
                         stack.push(dst);
                         unique_nodes.insert(dst);
-                        sources.push(src);
-                        destinations.push(dst);
-                        if let Some(w) = &self.weights {
-                            weights.push(w[edge_id]);
+                        let mut metadata =
+                            ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
+                        if let Some(md) = metadata {
+                            md.set(
+                                self.get_link_weights(src, dst),
+                                self.get_link_edge_types(src, dst),
+                            );
                         }
-                        if let Some(et) = &self.edge_types {
-                            edge_types.push(et.ids[edge_id]);
+                        graph_data.insert((src, dst), metadata);
+                        if !self.is_directed && src != dst {
+                            graph_data.insert((dst, src), metadata.clone());
                         }
                     }
                 }
             }
         }
 
-        self.setup_graph(
-            sources,
-            destinations,
-            if self.edge_types.is_some() {
-                Some(edge_types)
+        Ok(build_graph(
+            graph_data,
+            self.nodes,
+            self.node_types,
+            if let Some(et) = &self.edge_types {
+                Some(et.vocabulary)
             } else {
                 None
             },
-            if self.weights.is_some() {
-                Some(weights)
-            } else {
-                None
-            },
-            None,
-        )
+            self.is_directed,
+        ))
     }
 }

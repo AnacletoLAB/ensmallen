@@ -251,8 +251,8 @@ impl Graph {
     }
 
     /// Returns number of connected components in graph.
-    pub fn connected_components_number(&self) -> NodeT {
-        self.get_nodes_number() - self.spanning_tree(0).len()
+    pub fn connected_components_number(&self, include_all_edge_types: bool) -> NodeT {
+        self.get_nodes_number() - self.spanning_tree(0, include_all_edge_types).len()
     }
 
     /// Returns number of singleton nodes within the graph.

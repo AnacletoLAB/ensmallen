@@ -17,7 +17,7 @@ fn test_spanning_tree() {
         .unwrap();
         for node in 0..graph.get_nodes_number() {
             // compute the spanning tree
-            let edges: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = graph.spanning_tree(node);
+            let edges: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> = graph.spanning_tree(node, true);
 
             // check that the destinations are uniques
             let destinations: HashSet<graph::NodeT> =

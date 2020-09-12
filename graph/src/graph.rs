@@ -123,7 +123,8 @@ impl Graph {
                 .take(k)
                 .map(|(k1, _)| k1)
                 .collect();
-            let filtered: Vec<bool> = nt.ids
+            let filtered: Vec<bool> = nt
+                .ids
                 .into_par_iter()
                 .map(|node_type| top_k.contains(&node_type))
                 .collect();
@@ -132,7 +133,8 @@ impl Graph {
                     .zip(filtered.iter())
                     .filter_map(|(node, filter)| if *filter { Some(node) } else { None })
                     .collect(),
-                nt.ids.iter()
+                nt.ids
+                    .iter()
                     .zip(filtered.iter())
                     .filter_map(|(nt, filter)| if *filter { Some(*nt) } else { None })
                     .collect(),
@@ -162,7 +164,8 @@ impl Graph {
                 .take(k)
                 .map(|(k1, _)| k1)
                 .collect();
-            let filtered: Vec<bool> = nt.ids
+            let filtered: Vec<bool> = nt
+                .ids
                 .into_par_iter()
                 .map(|edge_type| top_k.contains(&edge_type))
                 .collect();
@@ -171,7 +174,8 @@ impl Graph {
                     .zip(filtered.iter())
                     .filter_map(|(edge, filter)| if *filter { Some(edge) } else { None })
                     .collect(),
-                nt.ids.iter()
+                nt.ids
+                    .iter()
                     .zip(filtered.iter())
                     .filter_map(|(nt, filter)| if *filter { Some(*nt) } else { None })
                     .collect(),
@@ -197,21 +201,23 @@ impl Graph {
     /// Private method that check if a triple (src, dst, edge_type) is present in another graph.
     /// This is used in overlaps and contains and it must be a method because we need to convert
     /// from the indexing of one graph to the other.
-    /// 
+    ///
     /// # Arguments
     /// * graph: &Graph - The graph that will contains or not the triple
     /// * src: NodeT - The source of the edge
     /// * dst: NodeT - The destination of the edge
     /// * et: Option<EdgeTypeT> - The optional edge type of the edge.
-    /// 
-    fn check_edge_overlap(&self, graph: &Graph, src: NodeT, dst: NodeT, et: Option<EdgeTypeT>) -> bool {
+    ///
+    fn check_edge_overlap(
+        &self,
+        graph: &Graph,
+        src: NodeT,
+        dst: NodeT,
+        et: Option<EdgeTypeT>,
+    ) -> bool {
         // translate the src and dest from the local indexing to the other one.
-        let local_src_id: Option<&NodeT> = self
-            .nodes
-            .get(&graph.nodes.translate(src));
-        let local_dst_id: Option<&NodeT> = self
-            .nodes
-            .get(&graph.nodes.translate(dst));
+        let local_src_id: Option<&NodeT> = self.nodes.get(&graph.nodes.translate(src));
+        let local_dst_id: Option<&NodeT> = self.nodes.get(&graph.nodes.translate(dst));
         // unpack all if the nodes are presents
         if let Some(lsrc) = local_src_id {
             if let Some(ldst) = local_dst_id {
@@ -223,11 +229,7 @@ impl Graph {
                         // matching src and dst** and then do a linear scan to check if
                         // it exists an edgee from src to dst with the correct edge_type
                         let mut id = self.get_edge_id(*lsrc, *ldst).unwrap();
-                        while
-                            self.sources[id] == *lsrc
-                            &&
-                            self.destinations[id] == *ldst
-                         {
+                        while self.sources[id] == *lsrc && self.destinations[id] == *ldst {
                             if Some(ets.ids[id]) == et {
                                 return true;
                             }
@@ -257,20 +259,23 @@ impl Graph {
             return Err("One of the graph has edge types while the other has not. This is an undefined behaviour.".to_string());
         }
 
-        Ok(
-            graph
-                .sources
-                .par_iter()
-                .zip(graph.destinations.par_iter())
-                .enumerate()
-                .map(|(edge_id, (src, dst))| {
-                    (&graph, src, dst, match &self.edge_types {
-                        Some(et) => {Some(et.ids[edge_id])},
-                        None => None
-                    })
-                })
-                .any(|(graph, src, dst, et)| {self.check_edge_overlap(graph, *src, *dst, et)})
-        )
+        Ok(graph
+            .sources
+            .par_iter()
+            .zip(graph.destinations.par_iter())
+            .enumerate()
+            .map(|(edge_id, (src, dst))| {
+                (
+                    &graph,
+                    src,
+                    dst,
+                    match &self.edge_types {
+                        Some(et) => Some(et.ids[edge_id]),
+                        None => None,
+                    },
+                )
+            })
+            .any(|(graph, src, dst, et)| self.check_edge_overlap(graph, *src, *dst, et)))
     }
 
     /// Return true if given graph edges are all contained within current graph.
@@ -284,20 +289,23 @@ impl Graph {
             return Err("One of the graph has edge types while the other has not. This is an undefined behaviour.".to_string());
         }
 
-        Ok(
-            graph
-                .sources
-                .par_iter()
-                .zip(graph.destinations.par_iter())
-                .enumerate()
-                .map(|(edge_id, (src, dst))| {
-                    (&graph, src, dst, match &self.edge_types {
-                        Some(et) => {Some(et.ids[edge_id])},
-                        None => None
-                    })
-                })
-                .all(|(graph, src, dst, et)| {self.check_edge_overlap(graph, *src, *dst, et)})
-        )
+        Ok(graph
+            .sources
+            .par_iter()
+            .zip(graph.destinations.par_iter())
+            .enumerate()
+            .map(|(edge_id, (src, dst))| {
+                (
+                    &graph,
+                    src,
+                    dst,
+                    match &self.edge_types {
+                        Some(et) => Some(et.ids[edge_id]),
+                        None => None,
+                    },
+                )
+            })
+            .all(|(graph, src, dst, et)| self.check_edge_overlap(graph, *src, *dst, et)))
     }
 
     /// Returns edge id of the edge passing between given nodes.
@@ -402,6 +410,82 @@ impl Graph {
             .into_par_iter()
             .map(|node| self.degree(node))
             .collect()
+    }
+
+    /// Returns boolean representing if graph has weights.
+    pub fn has_weights(&self) -> bool {
+        self.weights.is_some()
+    }
+
+    /// Returns boolean representing if graph has edge types.
+    pub fn has_edge_types(&self) -> bool {
+        self.edge_types.is_some()
+    }
+
+    /// Returns boolean representing if graph has node types.
+    pub fn has_node_types(&self) -> bool {
+        self.node_types.is_some()
+    }
+
+    // Return a vector with the ids of all the edges that start from src
+    // and ends at dst. This is meaningful on multigraphs.
+    /// A link is composed by all the edges that starts from src and ends at dst.
+    ///
+    /// # Arguments
+    ///
+    /// * `src`: NodeT - Integer ID of the source node.
+    /// * `dst`: NodeT - Integer ID of the destination node.
+    ///
+    pub fn get_link_ids(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeT>> {
+        match self.unique_edges.get(&(src, dst)) {
+            Some(metadata) => {
+                let edge_id = metadata.edge_id;
+                let number_of_types = match metadata.edge_types {
+                    Some(et) => et.len(),
+                    None => 1,
+                };
+                Some((edge_id..edge_id + number_of_types).into_iter().collect())
+            }
+            None => None,
+        }
+    }
+
+    /// Returns edge_types associated to the given edge.
+    /// A link is composed by all the edges that starts from src and ends at dst.
+    ///
+    /// # Arguments
+    ///
+    /// * `src`: NodeT - Integer ID of the source node.
+    /// * `dst`: NodeT - Integer ID of the destination node.
+    ///
+    pub fn get_link_edge_types(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeTypeT>> {
+        if let Some(ets) = self.edge_types {
+            match self.get_link_ids(src, dst) {
+                Some(ids) => Some(ids.iter().map(|i| ets.ids[*i]).collect()),
+                None => None,
+            }
+        } else {
+            None
+        }
+    }
+
+    /// Returns weights associated to the given link.
+    /// A link is composed by all the edges that starts from src and ends at dst.
+    /// 
+    /// # Arguments
+    ///
+    /// * `src`: NodeT - Integer ID of the source node.
+    /// * `dst`: NodeT - Integer ID of the destination node.
+    ///
+    pub fn get_link_weights(&self, src: NodeT, dst: NodeT) -> Option<Vec<WeightT>> {
+        if let Some(w) = self.weights {
+            match self.get_link_ids(src, dst) {
+                Some(ids) => Some(ids.iter().map(|i| w[*i]).collect()),
+                None => None,
+            }
+        } else {
+            None
+        }
     }
 
     /// Returns boolean representing if given node is a trap.

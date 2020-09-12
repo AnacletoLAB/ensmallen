@@ -16,6 +16,7 @@ pub(crate) struct EdgeMetadata {
     pub(crate) edge_types: Option<HashSet<EdgeTypeT>>,
 }
 
+#[derive(Clone)]
 pub(crate) struct ConstructorEdgeMetadata {
     edge_types: Option<Vec<EdgeTypeT>>,
     weights: Option<Vec<WeightT>>,
@@ -26,20 +27,14 @@ impl ConstructorEdgeMetadata {
         if !(has_edge_types && has_weights) {
             None
         } else {
-            Some(
-                ConstructorEdgeMetadata {
-                    edge_types: if has_edge_types {
-                        Some(Vec::new())
-                    } else {
-                        None
-                    },
-                    weights: if has_weights {
-                        Some(Vec::new())
-                    } else {
-                        None
-                    },
-                }
-            )
+            Some(ConstructorEdgeMetadata {
+                edge_types: if has_edge_types {
+                    Some(Vec::new())
+                } else {
+                    None
+                },
+                weights: if has_weights { Some(Vec::new()) } else { None },
+            })
         }
     }
 
@@ -56,24 +51,31 @@ impl ConstructorEdgeMetadata {
         }
     }
 
+    pub(crate) fn set(
+        &mut self,
+        weights: Option<Vec<WeightT>>,
+        edge_types: Option<Vec<EdgeTypeT>>,
+    ) {
+        self.weights = weights;
+        self.edge_types = edge_types;
+    }
+
     pub(crate) fn contains_edge_type(&self, edge_type: Option<EdgeTypeT>) -> bool {
         if edge_type.is_none() && self.edge_types.is_none() {
             return true;
         }
         if let Some(et) = edge_type {
             if let Some(ets) = self.edge_types {
-                return ets.contains(&et)   
+                return ets.contains(&et);
             }
         }
         false
     }
 
     pub(crate) fn to_edge_types_set(&self) -> Option<HashSet<EdgeTypeT>> {
-        self.edge_types.map(|et| {
-            et.into_iter().collect::<HashSet<EdgeTypeT>>()
-        })
+        self.edge_types
+            .map(|et| et.into_iter().collect::<HashSet<EdgeTypeT>>())
     }
-
 }
 
 impl Iterator for ConstructorEdgeMetadata {
@@ -95,14 +97,13 @@ impl Iterator for ConstructorEdgeMetadata {
             None
         };
 
-        if weight.is_none() && edge_type.is_none(){
+        if weight.is_none() && edge_type.is_none() {
             None
         } else {
             Some((weight, edge_type))
         }
     }
 }
-
 
 pub(crate) trait ToFromUsize {
     fn from_usize(v: usize) -> Self;
