@@ -75,7 +75,7 @@ impl Graph {
         seed ^= SEED_XOR;
 
         // initialize the vectors for the result
-        let mut unique_edges_tree: BTreeMap<(NodeT, NodeT), ConstructorEdgeMetadata> = BTreeMap::new();
+        let mut unique_edges_tree: GraphDictionary = BTreeMap::new();
 
         // randomly extract negative edges until we have the choosen number
         while unique_edges_tree.len() == negatives_number {
@@ -92,9 +92,9 @@ impl Graph {
                 && !self.has_edge(src, dst)
                 && !unique_edges_tree.contains_key(&(src, dst))
             {
-                unique_edges_tree.insert((src, dst), ConstructorEdgeMetadata::new());
+                unique_edges_tree.insert((src, dst), None);
                 if !self.is_directed{
-                    unique_edges_tree.insert((dst, src), ConstructorEdgeMetadata::new());
+                    unique_edges_tree.insert((dst, src), None);
                 }
             }
         }

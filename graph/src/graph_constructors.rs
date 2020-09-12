@@ -1,5 +1,5 @@
 use super::*;
-use std::collections::{BTreeMap, HashMap, HashSet};
+use std::collections::{BTreeMap, HashMap};
 
 macro_rules! optionify {
     ($val:expr) => {
@@ -63,19 +63,13 @@ pub(crate) fn parse_edges(
     >,
     skip_self_loops: bool,
     ignore_duplicated_edges: bool,
-) -> Result<
-    (
-        BTreeMap<(NodeT, NodeT), ConstructorEdgeMetadata>,
-        Option<Vocabulary<EdgeTypeT>>,
-    ),
-    String,
-> {
+) -> Result<(GraphDictionary, Option<Vocabulary<EdgeTypeT>>), String> {
     // save if the node file was loaded or not
     let empty_nodes_mapping: bool = nodes.is_empty();
     // edges mappings
     let mut edge_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::new();
     // helper structure
-    let mut unique_edges_tree: BTreeMap<(NodeT, NodeT), ConstructorEdgeMetadata> = BTreeMap::new();
+    let mut unique_edges_tree: GraphDictionary = BTreeMap::new();
 
     for values in edges_iterator {
         let (source_node_name, destination_node_name, edge_type, edge_weight) = values?;
@@ -113,45 +107,52 @@ pub(crate) fn parse_edges(
         // Get the metadata of the edge and if it's not present, add it
         let mut edge_metadata = unique_edges_tree
             .entry((*source_node_id, *destinations_node_id))
-            .or_insert_with(ConstructorEdgeMetadata::new);
+            .or_insert_with(|| {
+                ConstructorEdgeMetadata::new(edge_weight.is_some(), edge_type.is_some())
+            });
 
-        // if the node is already mapped => duplicated line
-        if let Some(eti) = edge_types_id {
-            if edge_metadata.edge_types.contains(&eti) {
-                if ignore_duplicated_edges {
-                    continue;
+        let mut edge_metadata = match unique_edges_tree
+            .get_mut(&(*source_node_id, *destinations_node_id))
+        {
+            Some(em) => {
+                let edge_is_duplicated = match em {
+                    Some(e) => e.contains_edge_type(edge_types_id),
+                    None => true,
+                };
+                if edge_is_duplicated {
+                    if ignore_duplicated_edges {
+                        continue;
+                    }
+                    return Err(format!(
+                        concat!(
+                            "\nFound duplicated edges!\n",
+                            "The source node is {source} and the destination node is {destination}.\n",
+                            "The edge type of the row is {edge_type:?}.",
+                        ),
+                        source = source_node_name,
+                        destination = destination_node_name,
+                        edge_type = edge_type,
+                    ));
                 }
-                return Err(format!(
-                    concat!(
-                        "\nFound duplicated edges!\n",
-                        "The source node is {source} and the destination node is {destination}.\n",
-                        "The edge type of the row is {edge_type:?}.",
-                    ),
-                    source = source_node_name,
-                    destination = destination_node_name,
-                    edge_type = edge_type,
-                ));
+                em
             }
-            // add the edge type in the metadata
-            edge_metadata.edge_types.push(eti);
-        }
-        // add the weight is present
-        if let Some(w) = edge_weight {
-            edge_metadata.weights.push(w);
+            None => &mut ConstructorEdgeMetadata::new(edge_weight.is_some(), edge_type.is_some()),
+        };
+
+        if let Some(em) = edge_metadata {
+            em.add(edge_weight, edge_types_id);
         }
 
         // If the graph is undirected, add the inverse edge
-        //
         if !directed {
-            let mut edge_metadata = unique_edges_tree
+            let mut reverse_edge_metadata = unique_edges_tree
                 .entry((*destinations_node_id, *source_node_id))
-                .or_insert_with(ConstructorEdgeMetadata::new);
+                .or_insert_with(|| {
+                    ConstructorEdgeMetadata::new(edge_weight.is_some(), edge_type.is_some())
+                });
 
-            if let Some(et) = edge_types_id {
-                edge_metadata.edge_types.push(et);
-            }
-            if let Some(w) = edge_weight {
-                edge_metadata.weights.push(w);
+            if let Some(rem) = reverse_edge_metadata {
+                rem.add(edge_weight, edge_types_id);
             }
         }
     }
@@ -160,7 +161,7 @@ pub(crate) fn parse_edges(
 }
 
 pub(crate) fn build_graph(
-    unique_edges_tree: BTreeMap<(NodeT, NodeT), ConstructorEdgeMetadata>,
+    unique_edges_tree: GraphDictionary,
     nodes: Vocabulary<NodeT>,
     node_types: Option<VocabularyVec<NodeTypeT>>,
     edge_types: Option<Vocabulary<EdgeTypeT>>,
@@ -204,37 +205,33 @@ pub(crate) fn build_graph(
             (src, dst),
             EdgeMetadata {
                 edge_id: sources.len(),
-                edge_types: metadata
-                    .edge_types
-                    .into_iter()
-                    .collect::<HashSet<EdgeTypeT>>(),
+                edge_types: match metadata {
+                    Some(m) => m.to_edge_types_set(),
+                    None => None,
+                },
             },
         );
 
-        // initialize the vectors
-        if metadata.edge_types.is_empty() {
-            // if there are no edge types
-            // its not a multigraph and therefore we have
-            // only one edge with optionally a weight.
-            sources.push(src);
-            destinations.push(dst);
-            if !metadata.weights.is_empty() {
-                weights.push(metadata.weights[0]);
-            }
-        } else {
-            // else we are in a multigraph and we must initialize
-            // all the edges
-            for edt in metadata.edge_types {
+        // Reverse the metadata of the edge into the graph vectors
+        match metadata {
+            Some(m) => {
+                m.into_iter().for_each(|(weight, edge_type)| {
+                    sources.push(src);
+                    destinations.push(dst);
+                    if let Some(w) = weight {
+                        weights.push(w);
+                    }
+                    if let Some(et) = edge_type {
+                        edge_types_vector.push(et)
+                    }
+                });
+            },
+            None => {
                 sources.push(src);
                 destinations.push(dst);
-                edge_types_vector.push(edt)
-            }
-            // If there are some weights, they should
-            // be equal in number to the edge_types
-            for w in metadata.weights {
-                weights.push(w);
             }
         }
+
         i += 1;
     }
 
@@ -250,12 +247,12 @@ pub(crate) fn build_graph(
         has_traps: not_trap_nodes.len() != outbounds.len(),
         weights: optionify!(weights),
         edge_types: match edge_types {
-            Some(et) => Some(VocabularyVec::<EdgeTypeT>{
-                vocabulary:et,
-                ids:edge_types_vector
+            Some(et) => Some(VocabularyVec::<EdgeTypeT> {
+                vocabulary: et,
+                ids: edge_types_vector,
             }),
-            None => None
-        }
+            None => None,
+        },
     }
 }
 
