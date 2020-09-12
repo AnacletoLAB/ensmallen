@@ -1,30 +1,44 @@
 use super::*;
+use derive_getters::Getters;
 
-pub(crate) struct VocabolaryVec<IndexT: ToFromUsize> {
+#[derive(Debug, Clone, Getters, PartialEq)]
+pub(crate) struct VocabularyVec<IndexT: ToFromUsize> {
     pub(crate) ids: Vec<IndexT>,
-    pub(crate) vocabolary: Vocabolary<IndexT>
+    pub(crate) vocabulary: Vocabulary<IndexT>,
 }
 
-impl<IndexT: ToFromUsize> VocabolaryVec<IndexT> {
-    pub fn new() -> VocabolaryVec<IndexT> {
-        VocabolaryVec {
+impl<IndexT: ToFromUsize> VocabularyVec<IndexT> {
+    pub fn new() -> VocabularyVec<IndexT> {
+        VocabularyVec {
             ids: Vec::new(),
-            vocabolary: Vocabolary::new(),
+            vocabulary: Vocabulary::new(),
         }
     }
 
-    pub fn add(&mut self, value: String) -> IndexT {
-        self.vocabolary.add(value);
+    pub fn insert(&mut self, value: String) -> IndexT {
+        self.vocabulary.insert(value);
         let id = *self.get(&value).unwrap();
         self.ids.push(id);
         id
     }
 
+    pub fn is_empty(&self) -> bool {
+        self.vocabulary.is_empty()
+    }
+
     pub fn translate(&self, id: IndexT) -> String {
-        self.vocabolary.translate(id)
+        self.vocabulary.translate(id)
     }
 
     pub fn get(&self, value: &str) -> Option<&IndexT> {
-        self.vocabolary.get(value)
+        self.vocabulary.get(value)
+    }
+
+    pub fn contains_key(&self, value: &str) -> bool {
+        self.vocabulary.contains_key(value)
+    }
+
+    pub fn len(&self) -> usize {
+        self.vocabulary.len()
     }
 }

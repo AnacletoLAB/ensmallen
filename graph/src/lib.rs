@@ -2,9 +2,9 @@
 const SEED_XOR: usize = 0xbad5eedbad5eed11;
 
 mod vocabulary;
-pub(crate) use self::vocabulary::Vocabolary;
+pub(crate) use self::vocabulary::Vocabulary;
 mod vocabulary_vec;
-pub(crate) use self::vocabulary_vec::VocabolaryVec;
+pub(crate) use self::vocabulary_vec::VocabularyVec;
 
 mod csv_file_writer;
 pub use self::csv_file_writer::CSVFileWriter;
@@ -19,8 +19,9 @@ mod edge_file_reader;
 pub use self::edge_file_reader::EdgeFileReader;
 mod edge_file_writer;
 pub use self::edge_file_writer::EdgeFileWriter;
-mod graph_constructors;
 
+mod graph_constructors;
+pub(crate) use self::graph_constructors::build_graph;
 
 pub mod types;
 pub mod graph;

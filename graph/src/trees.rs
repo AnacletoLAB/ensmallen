@@ -56,7 +56,7 @@ impl Graph {
                         // nodes as covered.
                         if !covered_nodes[dst] && src != dst {
                             let edge_type = if let Some(et) = &self.edge_types {
-                                Some(et[neighbour])
+                                Some(et.ids[neighbour])
                             } else {
                                 None
                             };

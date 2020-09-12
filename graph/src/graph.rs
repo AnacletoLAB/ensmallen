@@ -19,22 +19,20 @@ use vec_rand::{gen_random_vec, sample, sample_uniform};
 ///
 #[derive(Debug, Clone, Getters, PartialEq)]
 pub struct Graph {
+    // properties
+    pub(crate) has_traps: bool,
     pub(crate) is_directed: bool,
-    pub(crate) not_trap_nodes: Vec<NodeT>,
+    // graph structs
     pub(crate) sources: Vec<NodeT>,
     pub(crate) destinations: Vec<NodeT>,
-    pub(crate) nodes_mapping: HashMap<String, NodeT>,
-    pub(crate) nodes_reverse_mapping: Vec<String>,
-    pub(crate) unique_edges: HashMap<(NodeT, NodeT), EdgeMetadata>,
-    pub(crate) outbounds: Vec<EdgeT>,
+    pub(crate) nodes: Vocabulary<NodeT>,
     pub(crate) weights: Option<Vec<WeightT>>,
-    pub(crate) node_types: Option<Vec<NodeTypeT>>,
-    pub(crate) node_types_mapping: Option<HashMap<String, NodeTypeT>>,
-    pub(crate) node_types_reverse_mapping: Option<Vec<String>>,
-    pub(crate) edge_types: Option<Vec<EdgeTypeT>>,
-    pub(crate) edge_types_mapping: Option<HashMap<String, EdgeTypeT>>,
-    pub(crate) edge_types_reverse_mapping: Option<Vec<String>>,
-    pub(crate) has_traps: bool,
+    pub(crate) node_types: Option<VocabularyVec<NodeTypeT>>,
+    pub(crate) edge_types: Option<VocabularyVec<EdgeTypeT>>,
+    // helper structs
+    pub(crate) outbounds: Vec<EdgeT>,
+    pub(crate) unique_edges: HashMap<(NodeT, NodeT), EdgeMetadata>,
+    pub(crate) not_trap_nodes: Vec<NodeT>,
 }
 
 /// # Graph utility methods
@@ -47,13 +45,13 @@ impl Graph {
     ///
     pub fn get_node_type_id(&self, node_id: NodeT) -> Result<NodeTypeT, String> {
         if let Some(nt) = &self.node_types {
-            return if node_id <= nt.len() {
-                Ok(nt[node_id])
+            return if node_id <= nt.ids.len() {
+                Ok(nt.ids[node_id])
             } else {
                 Err(format!(
                     "The node_index {} is too big for the node_types vector which has len {}",
                     node_id,
-                    nt.len()
+                    nt.ids.len()
                 ))
             };
         }
@@ -70,13 +68,13 @@ impl Graph {
     ///
     pub fn get_edge_type_id(&self, edge_id: EdgeT) -> Result<EdgeTypeT, String> {
         if let Some(et) = &self.edge_types {
-            return if edge_id <= et.len() {
-                Ok(et[edge_id])
+            return if edge_id <= et.ids.len() {
+                Ok(et.ids[edge_id])
             } else {
                 Err(format!(
                     "The edge_index {} is too big for the edge_types vector which has len {}",
                     edge_id,
-                    et.len()
+                    et.ids.len()
                 ))
             };
         }
@@ -88,7 +86,7 @@ impl Graph {
     /// Returns edge type counts.
     pub fn get_edge_type_counts(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
         if let Some(et) = &self.edge_types {
-            Ok(Counter::init(et.clone()).into_map())
+            Ok(Counter::init(et.ids).into_map())
         } else {
             Err(String::from(
                 "Edge types are not defined for current graph instance.",
@@ -99,7 +97,7 @@ impl Graph {
     /// Returns node type counts.
     pub fn get_node_type_counts(&self) -> Result<HashMap<NodeTypeT, usize>, String> {
         if let Some(nt) = &self.node_types {
-            Ok(Counter::init(nt.clone()).into_map())
+            Ok(Counter::init(nt.ids).into_map())
         } else {
             Err(String::from(
                 "Node types are not defined for current graph instance.",
@@ -125,7 +123,7 @@ impl Graph {
                 .take(k)
                 .map(|(k1, _)| k1)
                 .collect();
-            let filtered: Vec<bool> = nt
+            let filtered: Vec<bool> = nt.ids
                 .into_par_iter()
                 .map(|node_type| top_k.contains(&node_type))
                 .collect();
@@ -134,7 +132,7 @@ impl Graph {
                     .zip(filtered.iter())
                     .filter_map(|(node, filter)| if *filter { Some(node) } else { None })
                     .collect(),
-                nt.iter()
+                nt.ids.iter()
                     .zip(filtered.iter())
                     .filter_map(|(nt, filter)| if *filter { Some(*nt) } else { None })
                     .collect(),
@@ -164,7 +162,7 @@ impl Graph {
                 .take(k)
                 .map(|(k1, _)| k1)
                 .collect();
-            let filtered: Vec<bool> = nt
+            let filtered: Vec<bool> = nt.ids
                 .into_par_iter()
                 .map(|edge_type| top_k.contains(&edge_type))
                 .collect();
@@ -173,7 +171,7 @@ impl Graph {
                     .zip(filtered.iter())
                     .filter_map(|(edge, filter)| if *filter { Some(edge) } else { None })
                     .collect(),
-                nt.iter()
+                nt.ids.iter()
                     .zip(filtered.iter())
                     .filter_map(|(nt, filter)| if *filter { Some(*nt) } else { None })
                     .collect(),
@@ -209,11 +207,11 @@ impl Graph {
     fn check_edge_overlap(&self, graph: &Graph, src: NodeT, dst: NodeT, et: Option<EdgeTypeT>) -> bool {
         // translate the src and dest from the local indexing to the other one.
         let local_src_id: Option<&NodeT> = self
-            .nodes_mapping
-            .get(&graph.nodes_reverse_mapping[src].clone());
+            .nodes
+            .get(&graph.nodes.translate(src));
         let local_dst_id: Option<&NodeT> = self
-            .nodes_mapping
-            .get(&graph.nodes_reverse_mapping[dst].clone());
+            .nodes
+            .get(&graph.nodes.translate(dst));
         // unpack all if the nodes are presents
         if let Some(lsrc) = local_src_id {
             if let Some(ldst) = local_dst_id {
@@ -230,7 +228,7 @@ impl Graph {
                             &&
                             self.destinations[id] == *ldst
                          {
-                            if Some(ets[id]) == et {
+                            if Some(ets.ids[id]) == et {
                                 return true;
                             }
                             id += 1;
@@ -267,7 +265,7 @@ impl Graph {
                 .enumerate()
                 .map(|(edge_id, (src, dst))| {
                     (&graph, src, dst, match &self.edge_types {
-                        Some(et) => {Some(et[edge_id])},
+                        Some(et) => {Some(et.ids[edge_id])},
                         None => None
                     })
                 })
@@ -294,7 +292,7 @@ impl Graph {
                 .enumerate()
                 .map(|(edge_id, (src, dst))| {
                     (&graph, src, dst, match &self.edge_types {
-                        Some(et) => {Some(et[edge_id])},
+                        Some(et) => {Some(et.ids[edge_id])},
                         None => None
                     })
                 })
@@ -317,9 +315,9 @@ impl Graph {
                     "Required edge passing between {src_name} ({src}) ",
                     "and {dst_name} ({dst}) does not exists in graph."
                 ),
-                src_name = self.nodes_reverse_mapping[src],
+                src_name = self.nodes.translate(src),
                 src = src,
-                dst_name = self.nodes_reverse_mapping[dst],
+                dst_name = self.nodes.translate(dst),
                 dst = dst
             )),
         }
@@ -327,7 +325,7 @@ impl Graph {
 
     /// Returns number of nodes in the graph.
     pub fn get_nodes_number(&self) -> usize {
-        self.nodes_reverse_mapping.len()
+        self.nodes.len()
     }
 
     /// Returns number of not node nodes in the graph.
@@ -342,8 +340,8 @@ impl Graph {
 
     /// Returns number of edge types in the graph.
     pub fn get_edge_types_number(&self) -> usize {
-        if let Some(etm) = &self.edge_types_mapping {
-            etm.keys().len()
+        if let Some(etm) = &self.edge_types {
+            etm.len()
         } else {
             0
         }
@@ -351,8 +349,8 @@ impl Graph {
 
     /// Returns number of node types in the graph.
     pub fn get_node_types_number(&self) -> usize {
-        if let Some(etm) = &self.node_types_mapping {
-            etm.keys().len()
+        if let Some(etm) = &self.node_types {
+            etm.len()
         } else {
             0
         }
@@ -572,11 +570,11 @@ impl Graph {
                 // if the destination node type matches the neighbour
                 // destination node type (we are not changing the node type)
                 // we weigth using the provided change_node_type_weight weight.
-                let this_type: NodeTypeT = nt[node];
+                let this_type: NodeTypeT = nt.ids[node];
 
                 transition
                     .iter_mut()
-                    .zip(destinations.iter().map(|dst| nt[*dst]))
+                    .zip(destinations.iter().map(|dst| nt.ids[*dst]))
                     .filter(|(_, neigh_type)| this_type == *neigh_type)
                     .for_each(|(transition_value, _)| *transition_value /= change_node_type_weight);
                 // credo non serva collect perche' modifichiamo i valori direttamente
@@ -613,10 +611,10 @@ impl Graph {
                 //# If the neighbour edge type matches the previous
                 //# edge type (we are not changing the edge type)
                 //# we weigth using the provided change_edge_type_weight weight.
-                let this_type: EdgeTypeT = et[edge];
+                let this_type: EdgeTypeT = et.ids[edge];
                 transition
                     .iter_mut()
-                    .zip(et[min_edge..max_edge].iter())
+                    .zip(et.ids[min_edge..max_edge].iter())
                     .filter(|(_, &neigh_type)| this_type == neigh_type)
                     .for_each(|(transition_value, _)| {
                         *transition_value /= walk_weights.change_edge_type_weight

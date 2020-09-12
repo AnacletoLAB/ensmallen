@@ -1,7 +1,6 @@
-use super::types::*;
-use super::Graph;
-use super::SEED_XOR;
+use super::*;
 use hashbrown::HashSet;
+use std::collections::BTreeMap;
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
@@ -25,7 +24,7 @@ impl Graph {
             weights.push(w[index]);
         }
         if let Some(et) = &self.edge_types {
-            edge_types.push(et[index]);
+            edge_types.push(et.ids[index]);
         }
     }
 
@@ -70,48 +69,47 @@ impl Graph {
             ));
         }
 
+        // xorshift breaks if the seed is zero
+        // so we initialize xor it with a constat
+        // to mitigate this problem
         seed ^= SEED_XOR;
 
         // initialize the vectors for the result
-        let mut sources: Vec<NodeT> = Vec::with_capacity(negatives_number);
-        let mut destinations: Vec<NodeT> = Vec::with_capacity(negatives_number);
-        let mut unique_edges: HashSet<(NodeT, NodeT)> = HashSet::with_capacity(negatives_number);
+        let mut unique_edges_tree: BTreeMap<(NodeT, NodeT), ConstructorEdgeMetadata> = BTreeMap::new();
 
-        // Initializing the edges counter
-        let mut edges_counter: EdgeT = 0;
-        let edges_number = self.sources.len();
-
-        loop {
+        // randomly extract negative edges until we have the choosen number
+        while unique_edges_tree.len() == negatives_number {
             seed = xorshift(seed as u64) as usize;
-            let src: NodeT = self.sources[seed % edges_number];
+            let src: NodeT = self.sources[seed % self.sources.len()];
             seed = xorshift(seed as u64) as usize;
-            let dst: NodeT = self.destinations[seed % edges_number];
+            let dst: NodeT = self.destinations[seed % self.sources.len()];
             // If the edge is not a self-loop or the user allows self-loops and
             // the graph is directed or the edges are inserted in a way to avoid
             // inserting bidirectional edges, avoiding to execute the check
             // of edge types so to insert them twice if the edge types are
             // different.
             if (allow_selfloops || src != dst)
-                && (self.is_directed || src <= dst)
                 && !self.has_edge(src, dst)
-                && !unique_edges.contains(&(src, dst))
+                && !unique_edges_tree.contains_key(&(src, dst))
             {
-                sources.push(src);
-                destinations.push(dst);
-                unique_edges.insert((src, dst));
-                edges_counter += 1;
-                if !self.is_directed && src != dst {
-                    edges_counter += 1;
+                unique_edges_tree.insert((src, dst), ConstructorEdgeMetadata::new());
+                if !self.is_directed{
+                    unique_edges_tree.insert((dst, src), ConstructorEdgeMetadata::new());
                 }
-            }
-            if edges_counter == negatives_number {
-                break;
             }
         }
 
-        let result = self.setup_graph(sources, destinations, None, None, None)?;
-        assert_eq!(result.get_edges_number(), negatives_number);
-        Ok(result)
+        Ok(build_graph(
+            unique_edges_tree,
+            self.nodes,
+            self.node_types,
+            if let Some(et) = &self.edge_types {
+                Some(et.vocabulary)
+            } else {
+                None
+            },
+            self.is_directed
+        ))
     }
 
     /// Returns holdout for training ML algorithms on the graph structure.
@@ -185,7 +183,7 @@ impl Graph {
             let src = self.sources[*edge];
             let dst = self.destinations[*edge];
             let edge_type = if let Some(et) = &self.edge_types {
-                Some(et[*edge])
+                Some(et.ids[*edge])
             } else {
                 None
             };
@@ -437,7 +435,7 @@ impl Graph {
                             weights.push(w[edge_id]);
                         }
                         if let Some(et) = &self.edge_types {
-                            edge_types.push(et[edge_id]);
+                            edge_types.push(et.ids[edge_id]);
                         }
                     }
                 }

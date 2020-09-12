@@ -22,26 +22,14 @@ macro_rules! optionify {
 pub(crate) fn parse_nodes(
     nodes_iter: impl Iterator<Item = Result<(String, Option<String>), String>>,
     ignore_duplicated_nodes: bool,
-) -> Result<
-    (
-        HashMap<String, NodeT>,
-        Vec<String>,
-        Option<Vec<NodeTypeT>>,
-        Option<HashMap<String, NodeTypeT>>,
-        Option<Vec<String>>,
-    ),
-    String,
-> {
-    let mut nodes_mapping: HashMap<String, NodeT> = HashMap::new();
-    let mut nodes_reverse_mapping: Vec<String> = Vec::new();
-    let mut node_types: Vec<NodeTypeT> = Vec::new();
-    let mut node_types_mapping: HashMap<String, NodeTypeT> = HashMap::new();
-    let mut node_types_reverse_mapping: Vec<String> = Vec::new();
+) -> Result<(Vocabulary<NodeT>, Option<VocabularyVec<NodeTypeT>>), String> {
+    let mut nodes: Vocabulary<NodeT> = Vocabulary::new();
+    let mut node_types: VocabularyVec<NodeTypeT> = VocabularyVec::new();
 
     for values in nodes_iter {
         let (node_name, node_type) = values?;
         // if the node is already mapped => duplicated line
-        if nodes_mapping.contains_key(&node_name) {
+        if nodes.contains_key(&node_name) {
             if ignore_duplicated_nodes {
                 continue;
             }
@@ -56,32 +44,19 @@ pub(crate) fn parse_nodes(
                 node_type = node_type
             ));
         }
-        nodes_mapping.insert(node_name, nodes_mapping.len());
-
+        nodes.insert(node_name);
         if let Some(ndt) = node_type {
-            if !node_types_mapping.contains_key(&ndt) {
-                node_types_mapping.insert(ndt, node_types_reverse_mapping.len() as NodeTypeT);
-                node_types_reverse_mapping.push(ndt);
-            }
-
-            node_types.push(*node_types_mapping.get(&ndt).unwrap());
+            node_types.insert(ndt);
         }
     }
 
-    Ok((
-        nodes_mapping,
-        nodes_reverse_mapping,
-        optionify!(node_types),
-        optionify!(node_types_mapping),
-        optionify!(node_types_reverse_mapping),
-    ))
+    Ok((nodes, optionify!(node_types)))
 }
 
-/// Read node file and returns graph builder data structures.
+/// Read edge file and returns graph builder data structures.
 ///
 pub(crate) fn parse_edges(
-    nodes_mapping: &mut HashMap<String, NodeT>,
-    nodes_reverse_mapping: &mut Vec<String>,
+    nodes: &mut Vocabulary<NodeT>,
     directed: bool,
     edges_iterator: impl Iterator<
         Item = Result<(String, String, Option<String>, Option<WeightT>), String>,
@@ -90,23 +65,15 @@ pub(crate) fn parse_edges(
     ignore_duplicated_edges: bool,
 ) -> Result<
     (
-        Vec<NodeT>,
-        Vec<NodeT>,
-        Vec<EdgeT>,
-        Vec<NodeT>,
-        HashMap<(NodeT, NodeT), EdgeMetadata>,
-        Option<HashMap<String, EdgeTypeT>>,
-        Option<Vec<String>>,
-        Option<Vec<EdgeTypeT>>,
-        Option<Vec<WeightT>>,
+        BTreeMap<(NodeT, NodeT), ConstructorEdgeMetadata>,
+        Option<Vocabulary<EdgeTypeT>>,
     ),
     String,
 > {
     // save if the node file was loaded or not
-    let empty_nodes_mapping: bool = nodes_mapping.is_empty();
+    let empty_nodes_mapping: bool = nodes.is_empty();
     // edges mappings
-    let mut edge_types_mapping: HashMap<String, NodeTypeT> = HashMap::new();
-    let mut edge_types_reverse_mapping: Vec<String> = Vec::new();
+    let mut edge_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::new();
     // helper structure
     let mut unique_edges_tree: BTreeMap<(NodeT, NodeT), ConstructorEdgeMetadata> = BTreeMap::new();
 
@@ -119,9 +86,9 @@ pub(crate) fn parse_edges(
         }
         // Handle missing node IDs when no node file was provided
         for node_name in &[source_node_name, destination_node_name] {
-            if !nodes_mapping.contains_key(node_name) {
+            if !nodes.contains_key(node_name) {
                 if empty_nodes_mapping {
-                    nodes_mapping.insert(node_name.clone(), nodes_mapping.len());
+                    nodes.insert(node_name.clone());
                 } else {
                     return Err(format!(
                         concat!(
@@ -134,15 +101,11 @@ pub(crate) fn parse_edges(
             }
         }
         // Retrieve the node IDs
-        let source_node_id = nodes_mapping.get(&source_node_name).unwrap();
-        let destinations_node_id = nodes_mapping.get(&destination_node_name).unwrap();
+        let source_node_id = nodes.get(&source_node_name).unwrap();
+        let destinations_node_id = nodes.get(&destination_node_name).unwrap();
         // Retrieve the edge type id if it was given.
         let edge_types_id = if let Some(et) = edge_type {
-            if !edge_types_mapping.contains_key(&et) {
-                edge_types_mapping.insert(et, edge_types_reverse_mapping.len() as NodeTypeT);
-                edge_types_reverse_mapping.push(et);
-            }
-            edge_types_mapping.get(&et)
+            Some(edge_types_vocabulary.insert(et))
         } else {
             None
         };
@@ -150,14 +113,11 @@ pub(crate) fn parse_edges(
         // Get the metadata of the edge and if it's not present, add it
         let mut edge_metadata = unique_edges_tree
             .entry((*source_node_id, *destinations_node_id))
-            .or_insert_with(|| ConstructorEdgeMetadata {
-                edge_types: Vec::new(),
-                weights: Vec::new(),
-            });
+            .or_insert_with(ConstructorEdgeMetadata::new);
 
         // if the node is already mapped => duplicated line
         if let Some(eti) = edge_types_id {
-            if edge_metadata.edge_types.contains(eti) {
+            if edge_metadata.edge_types.contains(&eti) {
                 if ignore_duplicated_edges {
                     continue;
                 }
@@ -173,7 +133,7 @@ pub(crate) fn parse_edges(
                 ));
             }
             // add the edge type in the metadata
-            edge_metadata.edge_types.push(*eti);
+            edge_metadata.edge_types.push(eti);
         }
         // add the weight is present
         if let Some(w) = edge_weight {
@@ -185,13 +145,10 @@ pub(crate) fn parse_edges(
         if !directed {
             let mut edge_metadata = unique_edges_tree
                 .entry((*destinations_node_id, *source_node_id))
-                .or_insert_with(|| ConstructorEdgeMetadata {
-                    edge_types: Vec::new(),
-                    weights: Vec::new(),
-                });
+                .or_insert_with(ConstructorEdgeMetadata::new);
 
             if let Some(et) = edge_types_id {
-                edge_metadata.edge_types.push(*et);
+                edge_metadata.edge_types.push(et);
             }
             if let Some(w) = edge_weight {
                 edge_metadata.weights.push(w);
@@ -199,14 +156,24 @@ pub(crate) fn parse_edges(
         }
     }
 
+    Ok((unique_edges_tree, optionify!(edge_types_vocabulary)))
+}
+
+pub(crate) fn build_graph(
+    unique_edges_tree: BTreeMap<(NodeT, NodeT), ConstructorEdgeMetadata>,
+    nodes: Vocabulary<NodeT>,
+    node_types: Option<VocabularyVec<NodeTypeT>>,
+    edge_types: Option<Vocabulary<EdgeTypeT>>,
+    directed: bool,
+) -> Graph {
     // structures to fill for the graph
     let mut outbounds: Vec<EdgeT> = Vec::new();
     let mut sources: Vec<NodeT> = Vec::new();
     let mut not_trap_nodes: Vec<NodeT> = Vec::new();
     let mut destinations: Vec<NodeT> = Vec::new();
-    let mut edge_types: Vec<NodeTypeT> = Vec::new();
     let mut weights: Vec<WeightT> = Vec::new();
     let mut unique_edges: HashMap<(NodeT, NodeT), EdgeMetadata> = HashMap::new();
+    let mut edge_types_vector: Vec<NodeTypeT> = Vec::new();
 
     // now that the tree is built
     // we can iter on the edge in order (no further sorting required)
@@ -260,7 +227,7 @@ pub(crate) fn parse_edges(
             for edt in metadata.edge_types {
                 sources.push(src);
                 destinations.push(dst);
-                edge_types.push(edt);
+                edge_types_vector.push(edt)
             }
             // If there are some weights, they should
             // be equal in number to the edge_types
@@ -271,17 +238,25 @@ pub(crate) fn parse_edges(
         i += 1;
     }
 
-    Ok((
+    Graph {
+        not_trap_nodes,
         sources,
         destinations,
-        outbounds,
-        not_trap_nodes,
+        nodes,
         unique_edges,
-        optionify!(edge_types_mapping),
-        optionify!(edge_types_reverse_mapping),
-        optionify!(edge_types),
-        optionify!(weights),
-    ))
+        outbounds,
+        node_types,
+        is_directed: directed,
+        has_traps: not_trap_nodes.len() != outbounds.len(),
+        weights: optionify!(weights),
+        edge_types: match edge_types {
+            Some(et) => Some(VocabularyVec::<EdgeTypeT>{
+                vocabulary:et,
+                ids:edge_types_vector
+            }),
+            None => None
+        }
+    }
 }
 
 /// # Graph Constructors
@@ -296,60 +271,26 @@ impl Graph {
         ignore_duplicated_edges: bool,
         skip_self_loops: bool,
     ) -> Result<Graph, String> {
-        let (
-            mut nodes_mapping,
-            mut nodes_reverse_mapping,
-            node_types,
-            node_types_mapping,
-            node_types_reverse_mapping,
-        ) = if let Some(ni) = nodes_iterator {
+        let (mut nodes, node_types) = if let Some(ni) = nodes_iterator {
             parse_nodes(ni, ignore_duplicated_nodes)?
         } else {
-            (
-                HashMap::new(),
-                Vec::new(),
-                Some(Vec::new()),
-                Some(HashMap::new()),
-                Some(Vec::new()),
-            )
+            (Vocabulary::new(), None)
         };
 
-        let (
-            sources,
-            destinations,
-            outbounds,
-            not_trap_nodes,
-            unique_edges,
-            edge_types_mapping,
-            edge_types_reverse_mapping,
-            edge_types,
-            weights,
-        ) = parse_edges(
-            &mut nodes_mapping,
-            &mut nodes_reverse_mapping,
+        let (unique_edges_tree, edge_types_vocabulary) = parse_edges(
+            &mut nodes,
             directed,
             edges_iterator,
             skip_self_loops,
             ignore_duplicated_edges,
         )?;
 
-        Ok(Graph {
-            not_trap_nodes,
-            sources,
-            destinations,
-            nodes_mapping,
-            nodes_reverse_mapping,
-            unique_edges,
-            outbounds,
-            weights,
+        Ok(build_graph(
+            unique_edges_tree,
+            nodes,
             node_types,
-            node_types_mapping,
-            node_types_reverse_mapping,
-            edge_types,
-            edge_types_mapping,
-            edge_types_reverse_mapping,
-            is_directed: directed,
-            has_traps: not_trap_nodes.len() != outbounds.len(),
-        })
+            edge_types_vocabulary,
+            directed,
+        ))
     }
 }
