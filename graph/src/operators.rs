@@ -1,4 +1,4 @@
-use super::Graph;
+use super::*;
 
 /// # Operators
 impl Graph {
@@ -12,6 +12,37 @@ impl Graph {
     /// * other: Graph - Graph to be summed.
     ///
     pub fn sum(&self, other: &Graph) -> Result<Graph, String> {
+        if self.is_directed != other.is_directed {
+            return Err(String::from(concat!(
+                "The graphs must either be both directed or undirected."
+            )));
+        }
+
+        if self.has_weights() != other.has_weights() {
+            return Err(String::from(concat!(
+                "Both graphs need to have weights or neither can."
+            )));
+        }
+
+        if self.has_edge_types() != other.has_edge_types() {
+            return Err(String::from(concat!(
+                "Both graphs need to have edge types or neither can."
+            )));
+        }
+
+        if self.has_node_types() != other.has_node_types() {
+            return Err(String::from(concat!(
+                "Both graphs need to have node types or neither can."
+            )));
+        }
+
+        if self.nodes != other.nodes {
+            return Err(String::from(concat!(
+                "The two given graphs do not have ",
+                "the same nodes mapping."
+            )));
+        }
+
         if self.overlaps(&other)? {
             return Err(String::from(concat!(
                 "The two given graphs have overlapping edges, ",
@@ -20,28 +51,9 @@ impl Graph {
             )));
         }
 
-        if !other.nodes_mapping.iter().all(|(node_name, node_id)| {
-            if let Some(nid) = self.nodes_mapping.get(node_name) {
-                *nid == *node_id
-            } else {
-                false
-            }
-        }) {
-            return Err(String::from(concat!(
-                "The two given graphs do not have ",
-                "the same nodes mapping."
-            )));
-        }
-
-        if let Some(sntm) = &self.node_types_mapping {
-            if let Some(ontm) = &other.node_types_mapping {
-                if !ontm.iter().all(|(node_type_name, node_type_id)| {
-                    if let Some(ntid) = sntm.get(node_type_name) {
-                        *ntid == *node_type_id
-                    } else {
-                        false
-                    }
-                }) {
+        if let Some(sntm) = &self.node_types {
+            if let Some(ontm) = &other.node_types {
+                if sntm.vocabulary != ontm.vocabulary {
                     return Err(String::from(concat!(
                         "The two given graphs do not have ",
                         "the same node types mapping."
@@ -50,15 +62,9 @@ impl Graph {
             }
         }
 
-        if let Some(setm) = &self.edge_types_mapping {
-            if let Some(oetm) = &other.edge_types_mapping {
-                if !oetm.iter().all(|(edge_type_name, edge_type_id)| {
-                    if let Some(etid) = setm.get(edge_type_name) {
-                        *etid == *edge_type_id
-                    } else {
-                        false
-                    }
-                }) {
+        if let Some(setm) = &self.edge_types {
+            if let Some(oetm) = &other.edge_types {
+                if setm.vocabulary != oetm.vocabulary {
                     return Err(String::from(concat!(
                         "The two given graphs do not have ",
                         "the same edge types mapping."
@@ -67,36 +73,33 @@ impl Graph {
             }
         }
 
-        let mut sources = self.sources.clone();
-        sources.extend(other.sources.clone());
+        let mut unique_edges_tree = GraphDictionary::new();
 
-        let mut destinations = self.destinations.clone();
-        destinations.extend(other.destinations.clone());
+        self.unique_edges
+            .keys()
+            .chain(other.unique_edges.keys())
+            .for_each(|(src, dst)| {
+                let mut metadata =
+                    ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
+                if let Some(md) = &mut metadata {
+                    md.set(
+                        self.get_link_weights(*src, *dst),
+                        self.get_link_edge_types(*src, *dst),
+                    );
+                }
+                unique_edges_tree.insert((*src, *dst), metadata);
+            });
 
-        let weights = if let Some(sw) = &self.weights {
-            if let Some(ow) = &other.weights {
-                let mut w = sw.clone();
-                w.extend(ow.clone());
-                Some(w)
+        Ok(build_graph(
+            unique_edges_tree,
+            self.nodes.clone(),
+            self.node_types.clone(),
+            if let Some(et) = &self.edge_types {
+                Some(et.vocabulary.clone())
             } else {
                 None
-            }
-        } else {
-            None
-        };
-
-        let edge_types = if let Some(set) = &self.edge_types {
-            if let Some(oet) = &other.edge_types {
-                let mut et = set.clone();
-                et.extend(oet.clone());
-                Some(et)
-            } else {
-                None
-            }
-        } else {
-            None
-        };
-
-        self.setup_graph(sources, destinations, edge_types, weights, Some(true))
+            },
+            self.is_directed,
+        ))
     }
 }

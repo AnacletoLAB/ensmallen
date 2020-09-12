@@ -7,7 +7,7 @@ pub(crate) struct VocabularyVec<IndexT: ToFromUsize> {
     pub(crate) vocabulary: Vocabulary<IndexT>,
 }
 
-impl<IndexT: ToFromUsize> VocabularyVec<IndexT> {
+impl<IndexT: ToFromUsize + Clone + Copy> VocabularyVec<IndexT> {
     pub fn new() -> VocabularyVec<IndexT> {
         VocabularyVec {
             ids: Vec::new(),
@@ -16,7 +16,7 @@ impl<IndexT: ToFromUsize> VocabularyVec<IndexT> {
     }
 
     pub fn insert(&mut self, value: String) -> IndexT {
-        self.vocabulary.insert(value);
+        self.vocabulary.insert(value.clone());
         let id = *self.get(&value).unwrap();
         self.ids.push(id);
         id
@@ -26,7 +26,7 @@ impl<IndexT: ToFromUsize> VocabularyVec<IndexT> {
         self.vocabulary.is_empty()
     }
 
-    pub fn translate(&self, id: IndexT) -> String {
+    pub fn translate(&self, id: IndexT) -> &str {
         self.vocabulary.translate(id)
     }
 

@@ -86,7 +86,7 @@ impl Graph {
     /// Returns edge type counts.
     pub fn get_edge_type_counts(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
         if let Some(et) = &self.edge_types {
-            Ok(Counter::init(et.ids).into_map())
+            Ok(Counter::init(et.ids.clone()).into_map())
         } else {
             Err(String::from(
                 "Edge types are not defined for current graph instance.",
@@ -97,7 +97,7 @@ impl Graph {
     /// Returns node type counts.
     pub fn get_node_type_counts(&self) -> Result<HashMap<NodeTypeT, usize>, String> {
         if let Some(nt) = &self.node_types {
-            Ok(Counter::init(nt.ids).into_map())
+            Ok(Counter::init(nt.ids.clone()).into_map())
         } else {
             Err(String::from(
                 "Node types are not defined for current graph instance.",
@@ -124,7 +124,7 @@ impl Graph {
                 .map(|(k1, _)| k1)
                 .collect();
             let filtered: Vec<bool> = nt
-                .ids
+                .ids.clone()
                 .into_par_iter()
                 .map(|node_type| top_k.contains(&node_type))
                 .collect();
@@ -165,7 +165,7 @@ impl Graph {
                 .map(|(k1, _)| k1)
                 .collect();
             let filtered: Vec<bool> = nt
-                .ids
+                .ids.clone()
                 .into_par_iter()
                 .map(|edge_type| top_k.contains(&edge_type))
                 .collect();
@@ -440,7 +440,7 @@ impl Graph {
         match self.unique_edges.get(&(src, dst)) {
             Some(metadata) => {
                 let edge_id = metadata.edge_id;
-                let number_of_types = match metadata.edge_types {
+                let number_of_types = match &metadata.edge_types {
                     Some(et) => et.len(),
                     None => 1,
                 };
@@ -459,7 +459,7 @@ impl Graph {
     /// * `dst`: NodeT - Integer ID of the destination node.
     ///
     pub fn get_link_edge_types(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeTypeT>> {
-        if let Some(ets) = self.edge_types {
+        if let Some(ets) = &self.edge_types {
             match self.get_link_ids(src, dst) {
                 Some(ids) => Some(ids.iter().map(|i| ets.ids[*i]).collect()),
                 None => None,
@@ -478,7 +478,7 @@ impl Graph {
     /// * `dst`: NodeT - Integer ID of the destination node.
     ///
     pub fn get_link_weights(&self, src: NodeT, dst: NodeT) -> Option<Vec<WeightT>> {
-        if let Some(w) = self.weights {
+        if let Some(w) = &self.weights {
             match self.get_link_ids(src, dst) {
                 Some(ids) => Some(ids.iter().map(|i| w[*i]).collect()),
                 None => None,

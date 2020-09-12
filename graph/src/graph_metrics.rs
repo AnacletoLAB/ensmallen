@@ -313,7 +313,7 @@ impl Graph {
         report.insert("bidirectional_rate", self.bidirectional_rate().to_string());
         report.insert(
             "connected_components_number",
-            self.connected_components_number().to_string(),
+            self.connected_components_number(false).to_string(),
         );
         report.insert(
             "strongly_connected_components_number",

@@ -8,7 +8,7 @@ pub(crate) struct Vocabulary<IndexT: ToFromUsize> {
     pub(crate) reverse_map: Vec<String>,
 }
 
-impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
+impl<IndexT: ToFromUsize + Clone + Copy> Vocabulary<IndexT> {
     pub fn new() -> Vocabulary<IndexT> {
         Vocabulary {
             map: HashMap::new(),
@@ -18,8 +18,8 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
 
     pub fn insert(&mut self, value: String) -> IndexT {
         if !self.map.contains_key(&value) {
-            self.map.insert(value, IndexT::from_usize(self.map.len()));
-            self.reverse_map.push(value);
+            self.map.insert(value.clone(), IndexT::from_usize(self.map.len()));
+            self.reverse_map.push(value.clone());
         }
         *self.get(&value).unwrap()
     }
@@ -28,8 +28,8 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         self.map.is_empty()
     }
 
-    pub fn translate(&self, id: IndexT) -> String {
-        self.reverse_map[IndexT::to_usize(id)]
+    pub fn translate(&self, id: IndexT) -> &str {
+        &self.reverse_map[IndexT::to_usize(id)]
     }
 
     pub fn get(&self, value: &str) -> Option<&IndexT> {

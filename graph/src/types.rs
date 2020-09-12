@@ -40,12 +40,12 @@ impl ConstructorEdgeMetadata {
 
     pub(crate) fn add(&mut self, weight: Option<WeightT>, edge_type: Option<EdgeTypeT>) {
         if let Some(w) = weight {
-            if let Some(ws) = self.weights {
+            if let Some(ws) = &mut self.weights {
                 ws.push(w);
             }
         }
         if let Some(et) = edge_type {
-            if let Some(ets) = self.edge_types {
+            if let Some(ets) = &mut self.edge_types {
                 ets.push(et)
             }
         }
@@ -65,7 +65,7 @@ impl ConstructorEdgeMetadata {
             return true;
         }
         if let Some(et) = edge_type {
-            if let Some(ets) = self.edge_types {
+            if let Some(ets) = &self.edge_types {
                 return ets.contains(&et);
             }
         }
@@ -73,7 +73,7 @@ impl ConstructorEdgeMetadata {
     }
 
     pub(crate) fn to_edge_types_set(&self) -> Option<HashSet<EdgeTypeT>> {
-        self.edge_types
+        self.edge_types.clone()
             .map(|et| et.into_iter().collect::<HashSet<EdgeTypeT>>())
     }
 }
@@ -85,13 +85,13 @@ impl Iterator for ConstructorEdgeMetadata {
         // either weights or edge types MUST be some.`
 
         // if there are no edge types but there are weights, then we have only one weight for the edge.
-        let edge_type = if let Some(ets) = self.edge_types {
+        let edge_type = if let Some(ets) = &mut self.edge_types {
             ets.pop()
         } else {
             None
         };
 
-        let weight = if let Some(ws) = self.weights {
+        let weight = if let Some(ws) = &mut self.weights {
             ws.pop()
         } else {
             None

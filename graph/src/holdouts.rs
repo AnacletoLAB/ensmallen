@@ -100,10 +100,10 @@ impl Graph {
 
         Ok(build_graph(
             unique_edges_tree,
-            self.nodes,
-            self.node_types,
+            self.nodes.clone(),
+            self.node_types.clone(),
             if let Some(et) = &self.edge_types {
-                Some(et.vocabulary)
+                Some(et.vocabulary.clone())
             } else {
                 None
             },
@@ -155,8 +155,8 @@ impl Graph {
         let mut edge_indices: Vec<NodeT> = (0..self.get_edges_number()).collect();
         edge_indices.shuffle(&mut rng);
 
-        let train: GraphDictionary = GraphDictionary::new();
-        let valid: GraphDictionary = GraphDictionary::new();
+        let mut train: GraphDictionary = GraphDictionary::new();
+        let mut valid: GraphDictionary = GraphDictionary::new();
 
         for edge in edge_indices.iter() {
             let src = self.sources[*edge];
@@ -168,7 +168,7 @@ impl Graph {
             };
             let mut metadata =
                 ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
-            if let Some(md) = metadata {
+            if let Some(md) = &mut metadata {
                 md.set(
                     self.get_link_weights(src, dst),
                     self.get_link_edge_types(src, dst),
@@ -184,11 +184,11 @@ impl Graph {
             {
                 // We stop adding edges when we have reached the minimum amount.
                 if valid.len() < valid_edges_number && (self.is_directed || src <= dst) {
-                    valid.insert((src, dst), metadata);
+                    valid.insert((src, dst), metadata.clone());
                     // If the current edge is not a self loop and the graph
                     // is not directed, we add the simmetrical graph
                     if !self.is_directed && src != dst {
-                        valid.insert((dst, src), metadata.clone());
+                        valid.insert((dst, src), metadata);
                     }
                     continue;
                 }
@@ -197,21 +197,21 @@ impl Graph {
             //
             // When the graph is directed we need to check that the edge
             // in the opposite direction was not already inserted.
-            train.insert((src, dst), metadata);
+            train.insert((src, dst), metadata.clone());
             // If the current edge is not a self loop and the graph
             // is not directed, we add the simmetrical graph
             if !self.is_directed && src != dst {
-                train.insert((dst, src), metadata.clone());
+                train.insert((dst, src), metadata);
             }
         }
 
         Ok((
             build_graph(
                 train,
-                self.nodes,
-                self.node_types,
+                self.nodes.clone(),
+                self.node_types.clone(),
                 if let Some(et) = &self.edge_types {
-                    Some(et.vocabulary)
+                    Some(et.vocabulary.clone())
                 } else {
                     None
                 },
@@ -219,10 +219,10 @@ impl Graph {
             ),
             build_graph(
                 valid,
-                self.nodes,
-                self.node_types,
+                self.nodes.clone(),
+                self.node_types.clone(),
                 if let Some(et) = &self.edge_types {
-                    Some(et.vocabulary)
+                    Some(et.vocabulary.clone())
                 } else {
                     None
                 },
@@ -341,15 +341,15 @@ impl Graph {
                         unique_nodes.insert(dst);
                         let mut metadata =
                             ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
-                        if let Some(md) = metadata {
+                        if let Some(md) = &mut metadata {
                             md.set(
                                 self.get_link_weights(src, dst),
                                 self.get_link_edge_types(src, dst),
                             );
                         }
-                        graph_data.insert((src, dst), metadata);
+                        graph_data.insert((src, dst), metadata.clone());
                         if !self.is_directed && src != dst {
-                            graph_data.insert((dst, src), metadata.clone());
+                            graph_data.insert((dst, src), metadata);
                         }
                     }
                 }
@@ -358,10 +358,10 @@ impl Graph {
 
         Ok(build_graph(
             graph_data,
-            self.nodes,
-            self.node_types,
+            self.nodes.clone(),
+            self.node_types.clone(),
             if let Some(et) = &self.edge_types {
-                Some(et.vocabulary)
+                Some(et.vocabulary.clone())
             } else {
                 None
             },
