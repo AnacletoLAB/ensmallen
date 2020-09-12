@@ -3,6 +3,8 @@ const SEED_XOR: usize = 0xbad5eedbad5eed11;
 
 mod vocabulary;
 pub(crate) use self::vocabulary::Vocabolary;
+mod vocabulary_vec;
+pub(crate) use self::vocabulary_vec::VocabolaryVec;
 
 mod csv_file_writer;
 pub use self::csv_file_writer::CSVFileWriter;

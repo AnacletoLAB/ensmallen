@@ -1,38 +1,33 @@
+use super::types::*;
+use std::collections::HashMap;
 
 
-
-
-pub(crate) struct Vocabolary<KeyT, IndexT>  {
-    pub(crate) ids: Vec<IndexT>,
-    pub(crate) map: HashMap<KeyT, IndexT>,
-    pub(crate) reverse_map: Vec<KeyT>
+pub(crate) struct Vocabolary<IndexT: ToFromUsize> {
+    pub(crate) map: HashMap<String, IndexT>,
+    pub(crate) reverse_map: Vec<String>,
 }
 
-impl Vocabolary<KeyT, IndexT> {
-
-    pub fn new() -> Vocabolary {
-        Vocabolary{
-            ids: Vec::new(),
+impl<IndexT: ToFromUsize> Vocabolary<IndexT> {
+    pub fn new() -> Vocabolary<IndexT> {
+        Vocabolary {
             map: HashMap::new(),
             reverse_map: Vec::new(),
         }
     }
 
-    pub fn add(&mut self, value: KeyT) -> IndexT {
-        if !self.map.contains(value) {
-            self.map.insert(value, map.len());
-            reverse_map.push(value);
+    pub fn add(&mut self, value: String) -> IndexT {
+        if !self.map.contains_key(&value) {
+            self.map.insert(value, IndexT::from_usize(self.map.len()));
+            self.reverse_map.push(value);
         }
-        let id = self.get_id(value);
-        ids.push(id);
-        id
+        *self.get(&value).unwrap()
     }
 
-    pub fn translate(&self, id: IndexT) -> KeyT {
-        self.reverse_map[id]
+    pub fn translate(&self, id: IndexT) -> String {
+        self.reverse_map[IndexT::to_usize(id)]
     }
 
-    pub fn get_id(&self, value: KeyT) -> Option<IndexT> {
+    pub fn get(&self, value: &str) -> Option<&IndexT> {
         self.map.get(value)
     }
 }
