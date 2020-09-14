@@ -444,7 +444,7 @@ impl Graph {
                     Some(et) => et.len(),
                     None => 1,
                 };
-                Some((edge_id..edge_id + number_of_types).into_iter().collect())
+                Some((edge_id..edge_id + number_of_types).collect())
             }
             None => None,
         }
