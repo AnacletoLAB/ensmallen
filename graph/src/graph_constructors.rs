@@ -216,7 +216,7 @@ pub(crate) fn build_graph(
         // Reverse the metadata of the edge into the graph vectors
         match metadata {
             Some(m) => {
-                m.into_iter().for_each(|(weight, edge_type)| {
+                m.for_each(|(weight, edge_type)| {
                     sources.push(src);
                     destinations.push(dst);
                     if let Some(w) = weight {

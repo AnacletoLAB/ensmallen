@@ -20,6 +20,7 @@ mod edge_file_reader;
 pub use self::edge_file_reader::EdgeFileReader;
 mod edge_file_writer;
 pub use self::edge_file_writer::EdgeFileWriter;
+mod from_csv;
 
 mod graph_constructors;
 pub(crate) use self::graph_constructors::build_graph;

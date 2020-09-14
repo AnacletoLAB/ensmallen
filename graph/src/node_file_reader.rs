@@ -117,8 +117,7 @@ impl NodeFileReader {
     
     /// Convert the vectorsof elements for each line othe csv to a tuple
     /// that is (node_name, node_type)
-    /// This is a private method and only serves as an utility for read_node_file.
-    fn read_lines(
+    pub fn read_lines(
         &self,
     ) -> Result<impl Iterator<Item = Result<(String, Option<String>), String>> + '_, String> {
         Ok(self.parameters.read_lines()?.map(move |values| match values {
