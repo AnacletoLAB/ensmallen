@@ -81,7 +81,7 @@ impl Graph {
                             let edge_types = if include_all_edge_types {
                                 match &self.unique_edges.get(&(src, dst)).unwrap().edge_types {
                                     Some(ets) => {
-                                        ets.clone().into_iter().map(|et| Some(et)).collect()
+                                        ets.iter().map(|et| Some(*et)).collect()
                                     },
                                     None => vec![None]
                                 }
