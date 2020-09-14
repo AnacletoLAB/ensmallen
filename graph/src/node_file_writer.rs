@@ -98,13 +98,12 @@ impl NodeFileWriter {
     ///  
     pub(crate) fn write_node_file(
         &self,
-        nodes: &Vocabulary<NodeT>,
-        node_types: &Option<VocabularyVec<NodeTypeT>>,
+        graph: &Graph,
     ) -> Result<(), String> {
         // build the header
         let mut header = vec![(self.nodes_column.clone(), self.nodes_column_number)];
 
-        if node_types.is_some() {
+        if graph.has_node_types() {
             header.push((
                 self.node_types_column.clone(),
                 self.node_types_column_number,
@@ -114,12 +113,12 @@ impl NodeFileWriter {
         let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
 
         self.parameters.write_lines(
-            nodes.len() as u64,
+            graph.get_nodes_number() as u64,
             compose_lines(number_of_columns, header),
-            (0..nodes.len()).into_iter().map(|index| {
-                let mut line = vec![(nodes.translate(index).to_string(), self.nodes_column_number)];
+            (0..graph.get_nodes_number()).map(|index| {
+                let mut line = vec![(graph.nodes.translate(index).to_string(), self.nodes_column_number)];
 
-                if let Some(nt) = node_types {
+                if let Some(nt) = &graph.node_types {
                     line.push((
                         nt.translate(nt.ids[index]).to_string(),
                         self.node_types_column_number,

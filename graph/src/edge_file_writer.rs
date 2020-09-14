@@ -1,5 +1,4 @@
 use super::*;
-use std::borrow::Cow;
 
 /// Structure that saves the parameters specific to writing and reading a nodes csv file.
 ///
@@ -158,15 +157,7 @@ impl EdgeFileWriter {
 
     /// Write edge file.
     ///  
-    pub(crate) fn write_edge_file<'a>(
-        &self,
-        sources: &Vec<NodeT>,
-        destinations: &Vec<NodeT>,
-        nodes: &'a Vocabulary<NodeT>,
-        edge_types: &'a Option<VocabularyVec<EdgeTypeT>>,
-        weights: &Option<Vec<WeightT>>,
-        directed: bool,
-    ) -> Result<(), String> {
+    pub(crate) fn write_edge_file<'a>(&self, graph: &Graph) -> Result<(), String> {
         // build the header
         let mut header = vec![
             (self.sources_column.clone(), self.sources_column_number),
@@ -176,40 +167,48 @@ impl EdgeFileWriter {
             ),
         ];
 
-        if edge_types.is_some() {
+        if graph.has_edge_types() {
             header.push((
                 self.edge_types_column.clone(),
                 self.edge_types_column_number,
             ));
         }
 
-        if weights.is_some() {
+        if graph.has_weights() {
             header.push((self.weights_column.clone(), self.weights_column_number));
         }
 
         let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
 
         self.parameters.write_lines(
-            sources.len() as u64,
+            graph.get_edges_number() as u64,
             compose_lines(number_of_columns, header),
-            (0..sources.len())
-                .into_iter()
+            (0..graph.get_edges_number())
                 .map(
-                    |index| (index, sources[index], destinations[index]), // filter away duplicated edges if the graph
-                                                                          // is undirected
+                    |index| (index, graph.sources[index], graph.destinations[index]), // filter away duplicated edges if the graph
+                                                                                      // is undirected
                 )
-                .filter(|(_, src, dst)| directed || src <= dst)
+                .filter(|(_, src, dst)| graph.is_directed || src <= dst)
                 .map(|(index, src, dst)| {
                     let mut line = vec![
-                        (nodes.translate(src).to_string(), self.sources_column_number),
-                        (nodes.translate(dst).to_string(), self.destinations_column_number),
+                        (
+                            graph.nodes.translate(src).to_string(),
+                            self.sources_column_number,
+                        ),
+                        (
+                            graph.nodes.translate(dst).to_string(),
+                            self.destinations_column_number,
+                        ),
                     ];
 
-                    if let Some(ets) = edge_types {
-                        line.push((ets.translate(ets.ids[index]).to_string(), self.edge_types_column_number));
+                    if let Some(ets) = &graph.edge_types {
+                        line.push((
+                            ets.translate(ets.ids[index]).to_string(),
+                            self.edge_types_column_number,
+                        ));
                     }
 
-                    if let Some(w) = weights {
+                    if let Some(w) = &graph.weights {
                         line.push((w[index].to_string(), self.weights_column_number));
                     }
 

@@ -20,5 +20,5 @@ impl Graph {
             ignore_duplicated_edges,
             skip_self_loops,
         )
-    }
+    }    
 }
