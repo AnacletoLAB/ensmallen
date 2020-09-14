@@ -1,20 +1,13 @@
 use super::*;
 use derive_getters::Getters;
 
-#[derive(Debug, Clone, Getters, PartialEq)]
+#[derive(Debug, Clone, Getters, PartialEq, Default)]
 pub struct VocabularyVec<IndexT: ToFromUsize> {
     pub ids: Vec<IndexT>,
     pub vocabulary: Vocabulary<IndexT>,
 }
 
 impl<IndexT: ToFromUsize + Clone + Copy> VocabularyVec<IndexT> {
-    pub fn new() -> VocabularyVec<IndexT> {
-        VocabularyVec {
-            ids: Vec::new(),
-            vocabulary: Vocabulary::new(),
-        }
-    }
-
     pub fn insert(&mut self, value: String) -> IndexT {
         self.vocabulary.insert(value.clone());
         let id = *self.get(&value).unwrap();

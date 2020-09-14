@@ -2,20 +2,13 @@ use super::types::*;
 use derive_getters::Getters;
 use std::collections::HashMap;
 
-#[derive(Debug, Clone, Getters, PartialEq)]
+#[derive(Debug, Clone, Getters, PartialEq, Default)]
 pub struct Vocabulary<IndexT: ToFromUsize> {
     pub map: HashMap<String, IndexT>,
     pub reverse_map: Vec<String>,
 }
 
 impl<IndexT: ToFromUsize + Clone + Copy> Vocabulary<IndexT> {
-    pub fn new() -> Vocabulary<IndexT> {
-        Vocabulary {
-            map: HashMap::new(),
-            reverse_map: Vec::new(),
-        }
-    }
-
     pub fn insert(&mut self, value: String) -> IndexT {
         if !self.map.contains_key(&value) {
             self.map.insert(value.clone(), IndexT::from_usize(self.map.len()));

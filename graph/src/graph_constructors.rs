@@ -23,8 +23,8 @@ pub(crate) fn parse_nodes(
     nodes_iter: impl Iterator<Item = Result<(String, Option<String>), String>>,
     ignore_duplicated_nodes: bool,
 ) -> Result<(Vocabulary<NodeT>, Option<VocabularyVec<NodeTypeT>>), String> {
-    let mut nodes: Vocabulary<NodeT> = Vocabulary::new();
-    let mut node_types: VocabularyVec<NodeTypeT> = VocabularyVec::new();
+    let mut nodes: Vocabulary<NodeT> = Vocabulary::default();
+    let mut node_types: VocabularyVec<NodeTypeT> = VocabularyVec::default();
 
     for values in nodes_iter {
         let (node_name, node_type) = values?;
@@ -67,7 +67,7 @@ pub(crate) fn parse_edges(
     // save if the node file was loaded or not
     let empty_nodes_mapping: bool = nodes.is_empty();
     // edges mappings
-    let mut edge_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::new();
+    let mut edge_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::default();
     // helper structure
     let mut unique_edges_tree: GraphDictionary = BTreeMap::new();
 
@@ -274,7 +274,7 @@ impl Graph {
         let (mut nodes, node_types) = if let Some(ni) = nodes_iterator {
             parse_nodes(ni, ignore_duplicated_nodes)?
         } else {
-            (Vocabulary::new(), None)
+            (Vocabulary::default(), None)
         };
 
         let (mut unique_edges_tree, edge_types_vocabulary) = parse_edges(
