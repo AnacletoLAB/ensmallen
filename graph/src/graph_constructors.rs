@@ -79,10 +79,10 @@ pub(crate) fn parse_edges(
             continue;
         }
         // Handle missing node IDs when no node file was provided
-        for node_name in &[source_node_name, destination_node_name] {
+        for node_name in &[&source_node_name, &destination_node_name] {
             if !nodes.contains_key(node_name) {
                 if empty_nodes_mapping {
-                    nodes.insert(node_name.clone());
+                    nodes.insert(node_name.to_string());
                 } else {
                     return Err(format!(
                         concat!(
@@ -98,21 +98,16 @@ pub(crate) fn parse_edges(
         let source_node_id = nodes.get(&source_node_name).unwrap();
         let destinations_node_id = nodes.get(&destination_node_name).unwrap();
         // Retrieve the edge type id if it was given.
-        let edge_types_id = if let Some(et) = edge_type {
-            Some(edge_types_vocabulary.insert(et))
+        let edge_types_id = if let Some(et) = &edge_type {
+            Some(edge_types_vocabulary.insert(et.to_string()))
         } else {
             None
         };
 
         // Get the metadata of the edge and if it's not present, add it
-        let mut edge_metadata = unique_edges_tree
-            .entry((*source_node_id, *destinations_node_id))
-            .or_insert_with(|| {
-                ConstructorEdgeMetadata::new(edge_weight.is_some(), edge_type.is_some())
-            });
-
-        let mut edge_metadata = match unique_edges_tree
-            .get_mut(&(*source_node_id, *destinations_node_id))
+        let key = (*source_node_id, *destinations_node_id);
+        let edge_metadata = match unique_edges_tree
+            .get_mut(&key)
         {
             Some(em) => {
                 let edge_is_duplicated = match em {
@@ -135,8 +130,14 @@ pub(crate) fn parse_edges(
                     ));
                 }
                 em
+            },
+            None => {
+                unique_edges_tree.insert(key, ConstructorEdgeMetadata::new(
+                    edge_weight.is_some(), 
+                    edge_type.is_some()
+                ));
+                unique_edges_tree.get_mut(&key).unwrap()
             }
-            None => &mut ConstructorEdgeMetadata::new(edge_weight.is_some(), edge_type.is_some()),
         };
 
         if let Some(em) = edge_metadata {
@@ -145,7 +146,7 @@ pub(crate) fn parse_edges(
 
         // If the graph is undirected, add the inverse edge
         if !directed {
-            let mut reverse_edge_metadata = unique_edges_tree
+            let reverse_edge_metadata = unique_edges_tree
                 .entry((*destinations_node_id, *source_node_id))
                 .or_insert_with(|| {
                     ConstructorEdgeMetadata::new(edge_weight.is_some(), edge_type.is_some())
@@ -205,7 +206,7 @@ pub(crate) fn build_graph(
             (src, dst),
             EdgeMetadata {
                 edge_id: sources.len(),
-                edge_types: match metadata {
+                edge_types: match &metadata {
                     Some(m) => m.to_edge_types_set(),
                     None => None,
                 },
@@ -213,7 +214,7 @@ pub(crate) fn build_graph(
         );
 
         // Reverse the metadata of the edge into the graph vectors
-        match &metadata {
+        match metadata {
             Some(m) => {
                 m.into_iter().for_each(|(weight, edge_type)| {
                     sources.push(src);

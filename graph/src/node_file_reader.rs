@@ -1,5 +1,4 @@
 use super::*;
-use std::collections::{HashMap};
 
 /// Structure that saves the parameters specific to writing and reading a nodes csv file.
 ///

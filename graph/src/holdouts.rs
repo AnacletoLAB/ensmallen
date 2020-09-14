@@ -116,7 +116,7 @@ impl Graph {
         seed: NodeT,
         train_percentage: f64,
         include_all_edge_types: bool,
-        deny_map: Option<HashSet<(NodeT, NodeT, Option<EdgeTypeT>)>>,
+        user_condition: impl Fn(NodeT, NodeT, Option<EdgeTypeT>) -> bool,
     ) -> Result<(Graph, Graph), String> {
         if train_percentage <= 0.0 || train_percentage >= 1.0 {
             return Err(String::from(
@@ -124,31 +124,8 @@ impl Graph {
             ));
         }
 
-        let edge_factor = if self.is_directed { 1 } else { 2 };
         let valid_edges_number =
             (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
-        let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as usize;
-
-        if let Some(dm) = &deny_map {
-            if dm.len() * edge_factor > train_edges_number {
-                return Err(format!(
-                    concat!(
-                        "The given deny map of the graph contains {} edges ",
-                        "that is more than the required training edges number {}.\n",
-                        "This makes impossible to create a validation set using ",
-                        "{} edges.\nIf possible, you should increase the ",
-                        "train_percentage parameter which is currently equal to ",
-                        "{}.\nThe deny map, by itself, is requiring at least ",
-                        "a train percentage of {}."
-                    ),
-                    dm.len() * edge_factor,
-                    train_edges_number,
-                    valid_edges_number,
-                    train_percentage,
-                    (dm.len() * edge_factor) as f64 / train_edges_number as f64
-                ));
-            }
-        }
 
         // generate and shuffle the indices of the edges
         let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
@@ -177,16 +154,11 @@ impl Graph {
                     self.get_link_edge_types(src, dst),
                 );
             }
-            // If the spanning tree does not include the current edge
-            // and, if we are in an undirected graph, does not include neither
-            // the graph in the opposite direction:
-            let is_for_validation = if let Some(dm) = &deny_map{
-                !dm.contains(&(src, dst, edge_type))
-            } else {
-                true
-            };
             // We stop adding edges when we have reached the minimum amount.
-            if is_for_validation && valid.len() < valid_edges_number && (self.is_directed || src <= dst) {
+            if user_condition(src, dst, edge_type)
+                && valid.len() < valid_edges_number
+                && (self.is_directed || src <= dst)
+            {
                 valid.insert((src, dst), metadata.clone());
                 // If the current edge is not a self loop and the graph
                 // is not directed, we add the simmetrical graph
@@ -220,7 +192,7 @@ impl Graph {
                 self.is_directed,
             ),
             build_graph(
-                & mut valid,
+                &mut valid,
                 self.nodes.clone(),
                 self.node_types.clone(),
                 if let Some(et) = &self.edge_types {
@@ -255,11 +227,43 @@ impl Graph {
         train_percentage: f64,
         include_all_edge_types: bool,
     ) -> Result<(Graph, Graph), String> {
+        if train_percentage <= 0.0 || train_percentage >= 1.0 {
+            return Err(String::from(
+                "Train percentage must be strictly between 0 and 1.",
+            ));
+        }
+        let tree = self.spanning_tree(seed, include_all_edge_types);
+
+        let edge_factor = if self.is_directed { 1 } else { 2 };
+        let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as usize;
+        let valid_edges_number =
+            (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
+
+        if tree.len() * edge_factor > train_edges_number {
+            return Err(format!(
+                concat!(
+                    "The given spanning tree of the graph contains {} edges ",
+                    "that is more than the required training edges number {}.\n",
+                    "This makes impossible to create a validation set using ",
+                    "{} edges.\nIf possible, you should increase the ",
+                    "train_percentage parameter which is currently equal to ",
+                    "{}.\nThe deny map, by itself, is requiring at least ",
+                    "a train percentage of {}."
+                ),
+                tree.len() * edge_factor,
+                train_edges_number,
+                valid_edges_number,
+                train_percentage,
+                (tree.len() * edge_factor) as f64 / train_edges_number as f64
+            ));
+        }
+        
+
         self.holdout(
             seed,
             train_percentage,
             include_all_edge_types,
-            Some(self.spanning_tree(seed, include_all_edge_types)),
+            |src, dst, edge_type| tree.contains(&(src, dst, edge_type)),
         )
     }
 
@@ -281,7 +285,9 @@ impl Graph {
         train_percentage: f64,
         include_all_edge_types: bool,
     ) -> Result<(Graph, Graph), String> {
-        self.holdout(seed, train_percentage, include_all_edge_types, None)
+        self.holdout(seed, train_percentage, include_all_edge_types, |_, _, _| {
+            true
+        })
     }
 
     /// Returns subgraph with given number of nodes.
