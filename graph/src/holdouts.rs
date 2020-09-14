@@ -7,26 +7,6 @@ use vec_rand::xorshift::xorshift;
 
 /// # Holdouts.
 impl Graph {
-    fn copy_from_index(
-        &self,
-        index: EdgeT,
-        sources: &mut Vec<NodeT>,
-        destinations: &mut Vec<NodeT>,
-        weights: &mut Vec<WeightT>,
-        edge_types: &mut Vec<EdgeTypeT>,
-    ) {
-        let src = self.sources[index];
-        let dst = self.destinations[index];
-        sources.push(src);
-        destinations.push(dst);
-        if let Some(w) = &self.weights {
-            weights.push(w[index]);
-        }
-        if let Some(et) = &self.edge_types {
-            edge_types.push(et.ids[index]);
-        }
-    }
-
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
     /// The graph generated may be used as a testing negatives partition to be
