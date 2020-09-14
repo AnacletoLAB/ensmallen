@@ -137,8 +137,7 @@ impl CSVFileReader {
     pub(crate) fn get_elements_per_line(&self) -> Result<usize, String> {
         let first_line = BufReader::new(File::open(&self.path).unwrap())
             .lines()
-            .skip(self.rows_to_skip)
-            .next();
+            .nth(self.rows_to_skip);
         match first_line {
             Some(fl) => {
                 match fl {
