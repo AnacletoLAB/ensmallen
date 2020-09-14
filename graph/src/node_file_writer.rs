@@ -95,7 +95,6 @@ impl NodeFileWriter {
     }
 
     /// Read node file and returns graph builder data structures.
-    ///  
     pub(crate) fn write_node_file(
         &self,
         graph: &Graph,

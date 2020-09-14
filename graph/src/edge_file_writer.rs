@@ -157,6 +157,9 @@ impl EdgeFileWriter {
 
     /// Write edge file.
     ///  
+    /// # Arguments
+    ///
+    /// * `graph`: &Graph - the graph to write out.
     pub(crate) fn write_edge_file<'a>(&self, graph: &Graph) -> Result<(), String> {
         // build the header
         let mut header = vec![

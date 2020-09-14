@@ -55,6 +55,13 @@ pub(crate) fn parse_nodes(
 
 /// Read edge file and returns graph builder data structures.
 ///
+/// # Arguments
+///
+/// * `nodes`: &mut Vocabulary<NodeT> - Vocabulary of the nodes of the graph.
+/// * `directed`: bool - Wethever to load the graph as directed or not.
+/// * `edges_iterator`: impl Iterator<Item = Result<(String, String, Option<String>, Option<WeightT>), String>> - Iterator from where to load the edges data.
+/// * `skip_self_loops`: bool - Wethever to skip self-loops while parsing the iterator.
+/// * `ignore_duplicated_edges`: bool - Wethever to ignore duplicated edges.
 pub(crate) fn parse_edges(
     nodes: &mut Vocabulary<NodeT>,
     directed: bool,
@@ -106,9 +113,7 @@ pub(crate) fn parse_edges(
 
         // Get the metadata of the edge and if it's not present, add it
         let key = (*source_node_id, *destinations_node_id);
-        let edge_metadata = match unique_edges_tree
-            .get_mut(&key)
-        {
+        let edge_metadata = match unique_edges_tree.get_mut(&key) {
             Some(em) => {
                 let edge_is_duplicated = match em {
                     Some(e) => e.contains_edge_type(edge_types_id),
@@ -130,12 +135,12 @@ pub(crate) fn parse_edges(
                     ));
                 }
                 em
-            },
+            }
             None => {
-                unique_edges_tree.insert(key, ConstructorEdgeMetadata::new(
-                    edge_weight.is_some(), 
-                    edge_type.is_some()
-                ));
+                unique_edges_tree.insert(
+                    key,
+                    ConstructorEdgeMetadata::new(edge_weight.is_some(), edge_type.is_some()),
+                );
                 unique_edges_tree.get_mut(&key).unwrap()
             }
         };
@@ -226,7 +231,7 @@ pub(crate) fn build_graph(
                         edge_types_vector.push(et)
                     }
                 });
-            },
+            }
             None => {
                 sources.push(src);
                 destinations.push(dst);

@@ -85,7 +85,7 @@ impl CSVFileReader {
     ///
     /// # Arguments
     ///
-    /// * header: Option<String> - Wethever to expect an header or not.
+    /// * header: Option<bool> - Wethever to expect an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> CSVFileReader {
         if let Some(v) = header {
@@ -154,6 +154,7 @@ impl CSVFileReader {
         }
     }
 
+    /// Return iterator that read a CSV file rows.
     pub(crate) fn read_lines(&self) -> Result<impl Iterator<Item = Result<Vec<String>, String>> + '_, String> {
         let pb = if self.verbose {
             let rows_number =
@@ -223,6 +224,12 @@ impl CSVFileReader {
             }))
     }
 
+    /// Return number of the given column in header.
+    /// 
+    /// # Arguments
+    /// 
+    /// * column_name: String - Column to get the number of.
+    /// 
     pub(crate) fn get_column_number(&self, column_name: String) -> Result<usize, String> {
         let header = self.get_header()?;
 

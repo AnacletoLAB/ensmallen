@@ -240,8 +240,7 @@ impl EdgeFileReader {
         ))
     }
 
-    /// Convert the vectorsof elements for each line othe csv to a tuple
-    /// that is (node_name, node_type)
+    /// Return iterator of rows of the edge file.
     pub fn read_lines(
         &self,
     ) -> Result<

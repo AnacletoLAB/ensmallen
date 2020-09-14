@@ -62,7 +62,7 @@ impl CSVFileWriter {
     ///
     /// # Arguments
     ///
-    /// * header: Option<String> - Wethever to expect an header or not.
+    /// * header: Option<bool> - Wethever to write out an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> CSVFileWriter {
         if let Some(v) = header {
@@ -71,6 +71,13 @@ impl CSVFileWriter {
         self
     }
 
+    /// Write given rows iterator to file.
+    ///
+    /// # Arguments
+    ///
+    /// * `lines_number`: u64 - Number of lines to expect to write out.
+    /// * `header`: Vec<String> - The header to write out, if so required.
+    /// * `values`: impl Iterator<Item = Vec<String>> - Iterator of rows to write out.
     pub(crate) fn write_lines(
         &self,
         lines_number: u64,
@@ -116,11 +123,18 @@ impl CSVFileWriter {
             }?;
         }
 
+        // TODO! Handle failure of sync all.
         file.sync_all();
         Ok(())
     }
 }
 
+/// Return formatted vector of rows.
+///
+/// # Arguments
+///
+/// * `number_of_columns`: usize - Total number of columns to renderize.
+/// * `pairs`: Vec<(String, usize)> - Vector of tuples of column names and their position.
 pub(crate) fn compose_lines(number_of_columns: usize, pairs: Vec<(String, usize)>) -> Vec<String> {
     let mut values = vec!["".to_string(); number_of_columns];
     for (name, pos) in pairs {

@@ -10,12 +10,16 @@ pub type NodeTypeT = u16;
 pub type EdgeTypeT = u16;
 pub(crate) type GraphDictionary = BTreeMap<(NodeT, NodeT), Option<ConstructorEdgeMetadata>>;
 
+/// Metadata of the edges of the graphs used for every graph.
 #[derive(Debug, Clone, Getters, PartialEq)]
 pub struct EdgeMetadata {
     pub edge_id: EdgeT,
     pub edge_types: Option<HashSet<EdgeTypeT>>,
 }
 
+/// Metadata of the edges used to describe both homogeneous and heterogeneous graphs and multi-graphs.
+/// 
+/// It used during the construction process of the graphs, while another smaller one is used for the actual structure.
 #[derive(Clone)]
 pub(crate) struct ConstructorEdgeMetadata {
     edge_types: Option<Vec<EdgeTypeT>>,
@@ -23,6 +27,15 @@ pub(crate) struct ConstructorEdgeMetadata {
 }
 
 impl ConstructorEdgeMetadata {
+    
+    /// Return built ConstructorEdgeMetadata object.
+    /// 
+    /// When no meta-data is expected to be necessary, a None is returned instead.
+    /// 
+    /// # Arguments
+    /// 
+    /// * `has_weights`: bool - Wethever the graph has weights.
+    /// * `has_edge_types`: bool - Wethever the graph has edge types.
     pub(crate) fn new(has_weights: bool, has_edge_types: bool) -> Option<ConstructorEdgeMetadata> {
         if !(has_edge_types && has_weights) {
             None
@@ -38,6 +51,12 @@ impl ConstructorEdgeMetadata {
         }
     }
 
+    /// Add given metadata (when they are not None).
+    ///
+    /// # Arguments
+    /// 
+    /// * `weight`: Option<WeightT> - Weight to be added.
+    /// * `edge_type`: Option<EdgeTypeT> - Edge type to be added
     pub(crate) fn add(&mut self, weight: Option<WeightT>, edge_type: Option<EdgeTypeT>) {
         if let Some(w) = weight {
             if let Some(ws) = &mut self.weights {
@@ -51,6 +70,12 @@ impl ConstructorEdgeMetadata {
         }
     }
 
+    /// Set metadata.
+    /// 
+    /// # Arguments
+    /// 
+    /// * `weights`: Option<WeightT> - Weights to be set.
+    /// * `edge_types`: Option<EdgeTypeT> - Edge types to be set
     pub(crate) fn set(
         &mut self,
         weights: Option<Vec<WeightT>>,
@@ -60,6 +85,10 @@ impl ConstructorEdgeMetadata {
         self.edge_types = edge_types;
     }
 
+    /// Return boolean representing if given edge type is present.
+    /// 
+    /// # Arguments
+    /// * `edge_type`: Option<EdgeTypeT> - The edge type to check for.
     pub(crate) fn contains_edge_type(&self, edge_type: Option<EdgeTypeT>) -> bool {
         if edge_type.is_none() && self.edge_types.is_none() {
             return true;
@@ -72,6 +101,7 @@ impl ConstructorEdgeMetadata {
         false
     }
 
+    /// Returns vector of edge types as HashSet.
     pub(crate) fn to_edge_types_set(&self) -> Option<HashSet<EdgeTypeT>> {
         self.edge_types.clone()
             .map(|et| et.into_iter().collect::<HashSet<EdgeTypeT>>())
@@ -81,6 +111,7 @@ impl ConstructorEdgeMetadata {
 impl Iterator for ConstructorEdgeMetadata {
     type Item = (Option<WeightT>, Option<EdgeTypeT>);
 
+    /// Returns new value when depopulating meta-data during building process.
     fn next(&mut self) -> Option<Self::Item> {
         // either weights or edge types MUST be some.`
 
