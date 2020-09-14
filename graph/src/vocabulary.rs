@@ -3,9 +3,9 @@ use derive_getters::Getters;
 use std::collections::HashMap;
 
 #[derive(Debug, Clone, Getters, PartialEq)]
-pub(crate) struct Vocabulary<IndexT: ToFromUsize> {
-    pub(crate) map: HashMap<String, IndexT>,
-    pub(crate) reverse_map: Vec<String>,
+pub struct Vocabulary<IndexT: ToFromUsize> {
+    pub map: HashMap<String, IndexT>,
+    pub reverse_map: Vec<String>,
 }
 
 impl<IndexT: ToFromUsize + Clone + Copy> Vocabulary<IndexT> {

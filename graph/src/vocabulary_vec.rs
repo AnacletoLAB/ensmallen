@@ -2,9 +2,9 @@ use super::*;
 use derive_getters::Getters;
 
 #[derive(Debug, Clone, Getters, PartialEq)]
-pub(crate) struct VocabularyVec<IndexT: ToFromUsize> {
-    pub(crate) ids: Vec<IndexT>,
-    pub(crate) vocabulary: Vocabulary<IndexT>,
+pub struct VocabularyVec<IndexT: ToFromUsize> {
+    pub ids: Vec<IndexT>,
+    pub vocabulary: Vocabulary<IndexT>,
 }
 
 impl<IndexT: ToFromUsize + Clone + Copy> VocabularyVec<IndexT> {

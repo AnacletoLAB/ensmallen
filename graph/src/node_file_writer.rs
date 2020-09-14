@@ -98,45 +98,35 @@ impl NodeFileWriter {
     ///  
     pub(crate) fn write_node_file(
         &self,
-        nodes_reverse_mapping:&Vec<String>,
-        node_types:&Option<Vec<NodeTypeT>>,
-        node_types_reverse_mapping:&Option<Vec<String>>
+        nodes: &Vocabulary<NodeT>,
+        node_types: &Option<VocabularyVec<NodeTypeT>>,
     ) -> Result<(), String> {
         // build the header
-        let mut header = vec![(
-            self.nodes_column,
-            self.nodes_column_number
-        )];
+        let mut header = vec![(self.nodes_column.clone(), self.nodes_column_number)];
 
         if node_types.is_some() {
-            header.push((self.node_types_column, self.node_types_column_number));
+            header.push((
+                self.node_types_column.clone(),
+                self.node_types_column_number,
+            ));
         }
 
-        let number_of_columns = 1 + header.iter().map(|(_, i)| i ).max().unwrap();
+        let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
 
         self.parameters.write_lines(
-            nodes_reverse_mapping.len() as u64,
+            nodes.len() as u64,
             compose_lines(number_of_columns, header),
-            
-            (0..nodes_reverse_mapping.len()).into_iter()
-            .map(
-                |index| {
-                    let mut line = vec![(
-                        nodes_reverse_mapping[index],
-                        self.nodes_column_number
-                    )];
+            (0..nodes.len()).into_iter().map(|index| {
+                let mut line = vec![(nodes.translate(index).to_string(), self.nodes_column_number)];
 
-                    if let Some(nt) = node_types {
-                        if let Some(ntrm) = node_types_reverse_mapping {
-                            line.push((
-                                ntrm[nt[index] as usize], 
-                                self.node_types_column_number
-                            ));
-                        }
-                    }
-                    compose_lines(number_of_columns, line)
+                if let Some(nt) = node_types {
+                    line.push((
+                        nt.translate(nt.ids[index]).to_string(),
+                        self.node_types_column_number,
+                    ));
                 }
-            )
+                compose_lines(number_of_columns, line)
+            }),
         )
     }
 }

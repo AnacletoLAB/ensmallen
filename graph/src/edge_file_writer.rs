@@ -1,5 +1,5 @@
-#[warn(unused_macros)]
 use super::*;
+use std::borrow::Cow;
 
 /// Structure that saves the parameters specific to writing and reading a nodes csv file.
 ///
@@ -33,7 +33,7 @@ impl EdgeFileWriter {
             edge_types_column: "label".to_string(),
             edge_types_column_number: 2,
             weights_column: "weight".to_string(),
-            weights_column_number: 3
+            weights_column_number: 3,
         }
     }
 
@@ -158,28 +158,33 @@ impl EdgeFileWriter {
 
     /// Write edge file.
     ///  
-    pub(crate) fn write_edge_file(
+    pub(crate) fn write_edge_file<'a>(
         &self,
         sources: &Vec<NodeT>,
         destinations: &Vec<NodeT>,
-        nodes_reverse_mapping: &Vec<String>,
-        edge_type_reverse_mapping: &Option<Vec<String>>,
-        edge_types: &Option<Vec<EdgeTypeT>>,
+        nodes: &'a Vocabulary<NodeT>,
+        edge_types: &'a Option<VocabularyVec<EdgeTypeT>>,
         weights: &Option<Vec<WeightT>>,
-        directed: bool
+        directed: bool,
     ) -> Result<(), String> {
         // build the header
         let mut header = vec![
-            (self.sources_column, self.sources_column_number),
-            (self.destinations_column, self.destinations_column_number),
+            (self.sources_column.clone(), self.sources_column_number),
+            (
+                self.destinations_column.clone(),
+                self.destinations_column_number,
+            ),
         ];
 
         if edge_types.is_some() {
-            header.push((self.edge_types_column, self.edge_types_column_number));
+            header.push((
+                self.edge_types_column.clone(),
+                self.edge_types_column_number,
+            ));
         }
 
         if weights.is_some() {
-            header.push((self.weights_column, self.weights_column_number));
+            header.push((self.weights_column.clone(), self.weights_column_number));
         }
 
         let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
@@ -187,45 +192,29 @@ impl EdgeFileWriter {
         self.parameters.write_lines(
             sources.len() as u64,
             compose_lines(number_of_columns, header),
-            (0..sources.len()).into_iter().map(
-                |index|
-                (
-                    index,
-                    sources[index],
-                    destinations[index]
+            (0..sources.len())
+                .into_iter()
+                .map(
+                    |index| (index, sources[index], destinations[index]), // filter away duplicated edges if the graph
+                                                                          // is undirected
                 )
-            // filter away duplicated edges if the graph
-            // is undirected
-            ).filter(
-                |(index, src, dst)|
-                directed || src <= dst
-            ).map(|(index, src, dst)| {
-                let mut line = vec![
-                    (
-                        nodes_reverse_mapping[src],
-                        self.sources_column_number,
-                    ),
-                    (
-                        nodes_reverse_mapping[dst],
-                        self.destinations_column_number,
-                    ),
-                ];
+                .filter(|(_, src, dst)| directed || src <= dst)
+                .map(|(index, src, dst)| {
+                    let mut line = vec![
+                        (nodes.translate(src).to_string(), self.sources_column_number),
+                        (nodes.translate(dst).to_string(), self.destinations_column_number),
+                    ];
 
-                if let Some(ets) = edge_types {
-                    if let Some(etrm) = edge_type_reverse_mapping {
-                        line.push((etrm[ets[index] as usize], self.edge_types_column_number));
+                    if let Some(ets) = edge_types {
+                        line.push((ets.translate(ets.ids[index]).to_string(), self.edge_types_column_number));
                     }
-                }
 
-                if let Some(w) = weights {
-                    line.push((
-                        w[index].to_string(),
-                        self.weights_column_number,
-                    ));
-                }
+                    if let Some(w) = weights {
+                        line.push((w[index].to_string(), self.weights_column_number));
+                    }
 
-                compose_lines(number_of_columns, line)
-            }),
+                    compose_lines(number_of_columns, line)
+                }),
         )
     }
 }

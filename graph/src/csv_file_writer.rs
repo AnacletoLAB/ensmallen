@@ -88,7 +88,7 @@ impl CSVFileWriter {
             ProgressBar::hidden()
         };
 
-        let mut file = match File::create(self.path) {
+        let mut file = match File::create(self.path.clone()) {
             Ok(f) => Ok(f),
             Err(_) => Err(format!("Cannot open in writing the file {}", self.path)),
         }?;

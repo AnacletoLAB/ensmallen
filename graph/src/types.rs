@@ -8,12 +8,12 @@ pub type WeightT = f64;
 pub type ParamsT = f64;
 pub type NodeTypeT = u16;
 pub type EdgeTypeT = u16;
-pub type GraphDictionary = BTreeMap<(NodeT, NodeT), Option<ConstructorEdgeMetadata>>;
+pub(crate) type GraphDictionary = BTreeMap<(NodeT, NodeT), Option<ConstructorEdgeMetadata>>;
 
 #[derive(Debug, Clone, Getters, PartialEq)]
-pub(crate) struct EdgeMetadata {
-    pub(crate) edge_id: EdgeT,
-    pub(crate) edge_types: Option<HashSet<EdgeTypeT>>,
+pub struct EdgeMetadata {
+    pub edge_id: EdgeT,
+    pub edge_types: Option<HashSet<EdgeTypeT>>,
 }
 
 #[derive(Clone)]
@@ -105,7 +105,7 @@ impl Iterator for ConstructorEdgeMetadata {
     }
 }
 
-pub(crate) trait ToFromUsize {
+pub trait ToFromUsize {
     fn from_usize(v: usize) -> Self;
     fn to_usize(v: Self) -> usize;
 }

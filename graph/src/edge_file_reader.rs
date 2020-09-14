@@ -1,4 +1,3 @@
-#[warn(unused_macros)]
 use super::*;
 
 fn parse_edge_weight(weight: Option<String>) -> Result<Option<WeightT>, String> {

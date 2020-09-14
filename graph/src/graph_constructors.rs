@@ -120,7 +120,7 @@ pub(crate) fn parse_edges(
                     }
                     return Err(format!(
                         concat!(
-                            "\nFound duplicated edges!\n",
+                            "Found duplicated edges!\n",
                             "The source node is {source} and the destination node is {destination}.\n",
                             "The edge type of the row is {edge_type:?}.",
                         ),
