@@ -1,7 +1,9 @@
 use super::*;
+use std::ops;
 
 /// # Operators
-impl Graph {
+impl<'a, 'b> ops::Add<&'b Graph> for &'a Graph {
+    type Output = Result<Graph, String>;
     /// Return sum for summing graphs objects.
     ///
     /// The add is only defined for disjointed graph components.
@@ -11,7 +13,7 @@ impl Graph {
     ///
     /// * other: Graph - Graph to be summed.
     ///
-    pub fn sum(&self, other: &Graph) -> Result<Graph, String> {
+    fn add(self, other: &'b Graph) -> Result<Graph, String> {
         if self.is_directed != other.is_directed {
             return Err(String::from(concat!(
                 "The graphs must either be both directed or undirected."

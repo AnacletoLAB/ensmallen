@@ -57,6 +57,7 @@ fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
     assert!(!test.overlaps(&train).unwrap());
     assert!(graph.contains(&train).unwrap());
     assert!(graph.contains(&test).unwrap());
+    assert!((train + test).unwrap().contains(&graph).unwrap());
 }
 
 #[cfg(test)]
@@ -67,4 +68,12 @@ pub(crate) fn default_test_suite(graph: &Graph) {
     default_holdout_test_suite(graph, &train, &test);
     let (train, test) = graph.connected_holdout(4, 0.6, true).unwrap();
     default_holdout_test_suite(graph, &train, &test);
+    let negatives = graph
+        .sample_negatives(
+            4, 
+            graph.get_edges_number(),
+             true
+        ).unwrap();
+    assert!(!graph.overlaps(&negatives).unwrap());
+    assert!(!negatives.overlaps(&graph).unwrap());
 }
