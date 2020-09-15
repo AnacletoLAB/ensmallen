@@ -1,4 +1,5 @@
 use super::*;
+use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
@@ -16,15 +17,17 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * seed: EdgeT - Seed to use to reproduce negative edge set.
-    /// * negatives_number: EdgeT - Number of negatives edges to include.
-    /// * allow_selfloops: EdgeT - Wethever to allow creation of selfloops or not.
+    /// * `seed`: EdgeT - Seed to use to reproduce negative edge set.
+    /// * `negatives_number`: EdgeT - Number of negatives edges to include.
+    /// * `allow_selfloops`: bool - Wethever to allow creation of selfloops or not.
+    /// * `verbose`: bool - Wether to show the loading bar.
     ///
     pub fn sample_negatives(
         &self,
         mut seed: EdgeT,
         negatives_number: EdgeT,
         allow_selfloops: bool,
+        verbose: bool,
     ) -> Result<Graph, String> {
         if negatives_number == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
@@ -47,6 +50,17 @@ impl Graph {
                 negatives_number, total_negative_edges
             ));
         }
+
+        let pb = if verbose {
+            let pb = ProgressBar::new(negatives_number as u64);
+            pb.set_draw_delta(negatives_number as u64 / 100);
+            pb.set_style(ProgressStyle::default_bar().template(
+                "Computing negative edges {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+            ));
+            pb
+        } else {
+            ProgressBar::hidden()
+        };
 
         // xorshift breaks if the seed is zero
         // so we initialize xor it with a constat
@@ -72,12 +86,14 @@ impl Graph {
                 && !unique_edges_tree.contains_key(&(src, dst))
             {
                 unique_edges_tree.insert((src, dst), None);
+                pb.inc(1);
                 if !self.is_directed {
                     unique_edges_tree.insert((dst, src), None);
+                    pb.inc(1);
                 }
             }
         }
-
+        pb.finish();
         Ok(build_graph(
             &mut unique_edges_tree,
             self.nodes.clone(),
@@ -97,6 +113,7 @@ impl Graph {
         train_percentage: f64,
         include_all_edge_types: bool,
         user_condition: impl Fn(NodeT, NodeT, Option<EdgeTypeT>) -> bool,
+        verbose: bool,
     ) -> Result<(Graph, Graph), String> {
         if train_percentage <= 0.0 || train_percentage >= 1.0 {
             return Err(String::from(
@@ -107,6 +124,17 @@ impl Graph {
         let valid_edges_number =
             (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
 
+        let pb = if verbose {
+            let pb = ProgressBar::new(self.get_edges_number() as u64);
+            pb.set_draw_delta(self.get_edges_number() as u64 / 100);
+            pb.set_style(ProgressStyle::default_bar().template(
+                "Generating holdout {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+            ));
+            pb
+        } else {
+            ProgressBar::hidden()
+        };
+
         // generate and shuffle the indices of the edges
         let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
         let mut edge_indices: Vec<NodeT> = (0..self.get_edges_number()).collect();
@@ -115,7 +143,7 @@ impl Graph {
         let mut train: GraphDictionary = GraphDictionary::new();
         let mut valid: GraphDictionary = GraphDictionary::new();
 
-        for edge in edge_indices.iter() {
+        for edge in edge_indices.iter().progress_with(pb) {
             let src = self.sources[*edge];
             let dst = self.destinations[*edge];
 
@@ -214,6 +242,7 @@ impl Graph {
         seed: NodeT,
         train_percentage: f64,
         include_all_edge_types: bool,
+        verbose: bool,
     ) -> Result<(Graph, Graph), String> {
         if train_percentage <= 0.0 || train_percentage >= 1.0 {
             return Err(String::from(
@@ -251,6 +280,7 @@ impl Graph {
             train_percentage,
             include_all_edge_types,
             |src, dst, edge_type| tree.contains(&(src, dst, edge_type)),
+            verbose,
         )
     }
 
@@ -271,10 +301,15 @@ impl Graph {
         seed: NodeT,
         train_percentage: f64,
         include_all_edge_types: bool,
+        verbose: bool,
     ) -> Result<(Graph, Graph), String> {
-        self.holdout(seed, train_percentage, include_all_edge_types, |_, _, _| {
-            true
-        })
+        self.holdout(
+            seed,
+            train_percentage,
+            include_all_edge_types,
+            |_, _, _| true,
+            verbose,
+        )
     }
 
     /// Returns subgraph with given number of nodes.
@@ -288,7 +323,12 @@ impl Graph {
     ///
     /// * seed: usize - Random seed to use.
     /// * nodes_number: usize - Number of nodes to extract.
-    pub fn random_subgraph(&self, seed: usize, nodes_number: usize) -> Result<Graph, String> {
+    pub fn random_subgraph(
+        &self,
+        seed: usize,
+        nodes_number: usize,
+        verbose: bool,
+    ) -> Result<Graph, String> {
         if nodes_number <= 1 {
             return Err(String::from("Required nodes number must be more than 1."));
         }
@@ -302,6 +342,17 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
+
+        let pb = if verbose {
+            let pb = ProgressBar::new(self.get_edges_number() as u64);
+            pb.set_draw_delta(self.get_edges_number() as u64 / 100);
+            pb.set_style(ProgressStyle::default_bar().template(
+                "Generating subgraph {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+            ));
+            pb
+        } else {
+            ProgressBar::hidden()
+        };
 
         // Creating the random number generator
         let mut rnd = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
@@ -320,12 +371,12 @@ impl Graph {
         let mut stack: Vec<NodeT> = Vec::new();
 
         // We iterate on the components
-        for node in nodes {
-            if self.is_node_trap(node) {
+        for node in nodes.iter().progress_with(pb) {
+            if self.is_node_trap(*node) {
                 continue;
             }
-            stack.push(node);
-            unique_nodes.insert(node);
+            stack.push(*node);
+            unique_nodes.insert(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
                 let (min_edge, max_edge) = self.get_min_max_edge(src);

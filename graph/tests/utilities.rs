@@ -2,7 +2,7 @@ extern crate graph;
 use graph::*;
 
 #[cfg(test)]
-pub(crate) fn load_ppi(load_nodes: bool) -> Result<Graph, String> {
+pub(crate) fn load_ppi(load_nodes: bool, directed: bool) -> Result<Graph, String> {
     let edges_csv_reader =
         CSVFileReader::new("tests/data/expected_to_pass/ppi/edges.tsv".to_string())?
             .set_verbose(Some(false));
@@ -22,7 +22,7 @@ pub(crate) fn load_ppi(load_nodes: bool) -> Result<Graph, String> {
         .set_destinations_column(Some("object".to_string()))?
         .set_weights_column(Some("weight".to_string()))?;
 
-    Graph::from_csv(edges_reader, nodes_reader, false, false, false, false)
+    Graph::from_csv(edges_reader, nodes_reader, directed, false, false, false)
 }
 
 #[cfg(test)]
@@ -64,16 +64,17 @@ fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
 pub(crate) fn default_test_suite(graph: &Graph) {
     graph.walk(&first_order_walker(&graph)).unwrap();
     graph.walk(&second_order_walker(&graph)).unwrap();
-    let (train, test) = graph.random_holdout(4, 0.6, true).unwrap();
+    let (train, test) = graph.random_holdout(4, 0.6, true, true).unwrap();
     default_holdout_test_suite(graph, &train, &test);
-    let (train, test) = graph.connected_holdout(4, 0.6, true).unwrap();
+    let (train, test) = graph.connected_holdout(4, 0.6, true, true).unwrap();
     default_holdout_test_suite(graph, &train, &test);
     let negatives = graph
-        .sample_negatives(
-            4, 
-            graph.get_edges_number(),
-             true
-        ).unwrap();
+        .sample_negatives(4, graph.get_edges_number(), true, true)
+        .unwrap();
     assert!(!graph.overlaps(&negatives).unwrap());
     assert!(!negatives.overlaps(&graph).unwrap());
+    let subgraph = graph
+        .random_subgraph(6, graph.get_nodes_number() / 10, true)
+        .unwrap();
+    assert!(subgraph.overlaps(&graph).unwrap());
 }
