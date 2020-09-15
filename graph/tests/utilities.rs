@@ -4,10 +4,10 @@ use graph::*;
 #[cfg(test)]
 pub(crate) fn load_ppi(load_nodes: bool, directed: bool) -> Result<Graph, String> {
     let edges_csv_reader =
-        CSVFileReader::new("tests/data/expected_to_pass/ppi/edges.tsv".to_string())?
+        CSVFileReader::new("tests/data/ppi/edges.tsv".to_string())?
             .set_verbose(Some(false));
     let nodes_csv_reader =
-        CSVFileReader::new("tests/data/expected_to_pass/ppi/nodes.tsv".to_string())?
+        CSVFileReader::new("tests/data/ppi/nodes.tsv".to_string())?
             .set_verbose(Some(false));
     let nodes_reader = if load_nodes {
         Some(
