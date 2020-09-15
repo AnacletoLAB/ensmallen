@@ -118,27 +118,35 @@ impl Graph {
         for edge in edge_indices.iter() {
             let src = self.sources[*edge];
             let dst = self.destinations[*edge];
+
+            if !self.is_directed && src > dst {
+                continue;
+            }
+
             let edge_type = if let Some(et) = &self.edge_types {
                 Some(et.ids[*edge])
+            } else {
+                None
+            };
+            let weight = if let Some(w) = &self.weights {
+                Some(w[*edge])
             } else {
                 None
             };
             let mut metadata =
                 ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
             if let Some(md) = &mut metadata {
-                md.set(
-                    // TODO TODO TODO
-                    // THIS THING DOES NOT CONSIDER include_all_edge_types CURRENTLY!!!
-                    // TODO TODO TODO
-                    self.get_link_weights(src, dst),
-                    self.get_link_edge_types(src, dst),
-                );
+                if include_all_edge_types {
+                    md.set(
+                        self.get_link_weights(src, dst),
+                        self.get_link_edge_types(src, dst),
+                    );
+                } else {
+                    md.add(weight, edge_type);
+                }
             }
             // We stop adding edges when we have reached the minimum amount.
-            if user_condition(src, dst, edge_type)
-                && valid.len() < valid_edges_number
-                && (self.is_directed || src <= dst)
-            {
+            if user_condition(src, dst, edge_type) && valid.len() < valid_edges_number {
                 valid.insert((src, dst), metadata.clone());
                 // If the current edge is not a self loop and the graph
                 // is not directed, we add the simmetrical graph
@@ -237,7 +245,6 @@ impl Graph {
                 (tree.len() * edge_factor) as f64 / train_edges_number as f64
             ));
         }
-        
 
         self.holdout(
             seed,

@@ -222,25 +222,13 @@ impl Graph {
         if let Some(lsrc) = local_src_id {
             if let Some(ldst) = local_dst_id {
                 // check if a edge exists between lsrc and ldst
-                // the edge type will be checked later if needed
-                if self.has_edge(*lsrc, *ldst) {
-                    if let Some(ets) = &self.edge_types {
-                        // if there are edge types, get the id of **the first edge with
-                        // matching src and dst** and then do a linear scan to check if
-                        // it exists an edgee from src to dst with the correct edge_type
-                        let mut id = self.get_edge_id(*lsrc, *ldst).unwrap();
-                        while self.sources[id] == *lsrc && self.destinations[id] == *ldst {
-                            if Some(ets.ids[id]) == et {
-                                return true;
-                            }
-                            id += 1;
-                        }
-                    } else {
-                        // both graphs have no edge types so we already know that
-                        // the edge exists
-                        return true;
-                    }
-                }
+                return match self.unique_edges.get(&(*lsrc, *ldst)) {
+                    Some(metadata) => match &metadata.edge_types {
+                        Some(ets) => ets.contains(&et.unwrap()),
+                        None => true
+                    },
+                    None => false
+                };
             }
         }
         // if any of the node do not exists in the other graph
@@ -255,7 +243,7 @@ impl Graph {
     /// * graph: Graph - The graph to check against.
     ///
     pub fn overlaps(&self, graph: &Graph) -> Result<bool, String> {
-        if self.edge_types.is_some() ^ graph.edge_types.is_some() {
+        if self.has_edge_types() ^ graph.has_edge_types() {
             return Err("One of the graph has edge types while the other has not. This is an undefined behaviour.".to_string());
         }
 
@@ -269,7 +257,7 @@ impl Graph {
                     &graph,
                     src,
                     dst,
-                    match &self.edge_types {
+                    match &graph.edge_types {
                         Some(et) => Some(et.ids[edge_id]),
                         None => None,
                     },
