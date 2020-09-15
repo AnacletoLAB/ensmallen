@@ -174,7 +174,8 @@ pub(crate) fn build_graph(
     directed: bool,
 ) -> Graph {
     // structures to fill for the graph
-    let mut outbounds: Vec<EdgeT> = Vec::new();
+    // outbounds is initialized as vector of values unique edges and with length equal to the number of nodes.
+    let mut outbounds: Vec<EdgeT> = vec![unique_edges_tree.len(); nodes.len()];
     let mut sources: Vec<NodeT> = Vec::new();
     let mut not_trap_nodes: Vec<NodeT> = Vec::new();
     let mut destinations: Vec<NodeT> = Vec::new();
@@ -185,6 +186,7 @@ pub(crate) fn build_graph(
     // now that the tree is built
     // we can iter on the edge in order (no further sorting required)
     // during the iteration we pop the minimum value each time
+    let mut first = true;
     let mut last_src = 0;
     let mut i = 0;
     while !unique_edges_tree.is_empty() {
@@ -202,7 +204,10 @@ pub(crate) fn build_graph(
             for o in &mut outbounds[last_src..src] {
                 *o = i;
             }
-            not_trap_nodes.push(last_src as NodeT);
+            if !first{
+                not_trap_nodes.push(last_src as NodeT);
+            }
+            first = false;
             last_src = src;
         }
 
@@ -241,6 +246,7 @@ pub(crate) fn build_graph(
         i += 1;
     }
 
+    not_trap_nodes.push(last_src);
     let has_traps = not_trap_nodes.len() != outbounds.len();
 
     Graph {

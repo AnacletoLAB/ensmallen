@@ -123,9 +123,12 @@ impl CSVFileWriter {
             }?;
         }
 
-        // TODO! Handle failure of sync all.
-        file.sync_all();
-        Ok(())
+        match file.sync_all() {
+            Ok(_) => Ok(()),
+            Err(_) => Err(
+                "Unable to close file. There might have been an I/O error.".to_string()
+            )
+        }
     }
 }
 

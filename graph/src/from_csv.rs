@@ -11,7 +11,7 @@ impl Graph {
     /// * `ignore_duplicated_nodes`: bool - Wethever to ignore duplicated nodes while reading.
     /// * `ignore_duplicated_edges`: bool - Wethever to ignore duplicated edges while reading.
     /// * `skip_self_loops`: bool - Wethever to skip self-loops while reading the edge file.
-    pub fn read_csv(
+    pub fn from_csv(
         edge_file_reader: EdgeFileReader,
         node_file_reader: Option<NodeFileReader>,
         directed: bool,

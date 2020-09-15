@@ -7,22 +7,22 @@ use super::*;
 /// * nodes_column_number: usize - The rank of the column with the nodes names. This parameter is mutually exclusive with nodes_column.
 /// * node_types_column_number: Option<usize> - The rank of the column with the nodes types. This parameter is mutually exclusive with node_types_column.
 /// * default_node_type: Option<String> - The node type to use if a node has node type or its node type is "".
-pub struct NodeFileReader {
-    pub(crate) parameters: CSVFileReader,
+pub struct NodeFileReader<'a> {
+    pub(crate) parameters: &'a CSVFileReader,
     pub(crate) default_node_type: Option<String>,
     pub(crate) nodes_column_number: usize,
     pub(crate) node_types_column_number: Option<usize>,
     pub(crate) ignore_duplicated_nodes: bool,
 }
 
-impl NodeFileReader {
+impl<'a> NodeFileReader<'a> {
     /// Return new NodeFileReader object.
     ///
     /// # Arguments
     ///
     /// * parameters: CSVFileParameters - Path where to store/load the file.
     ///
-    pub fn new(parameters: CSVFileReader) -> NodeFileReader {
+    pub fn new(parameters: &'a CSVFileReader) -> NodeFileReader<'a> {
         NodeFileReader {
             parameters,
             nodes_column_number: 0,
@@ -41,7 +41,7 @@ impl NodeFileReader {
     pub fn set_nodes_column(
         mut self,
         nodes_column: Option<String>,
-    ) -> Result<NodeFileReader, String> {
+    ) -> Result<NodeFileReader<'a>, String> {
         if let Some(column) = nodes_column {
             self.nodes_column_number = self.parameters.get_column_number(column)?;
         }
@@ -57,7 +57,7 @@ impl NodeFileReader {
     pub fn set_node_types_column(
         mut self,
         nodes_type_column: Option<String>,
-    ) -> Result<NodeFileReader, String> {
+    ) -> Result<NodeFileReader<'a>, String> {
         if let Some(column) = nodes_type_column {
             self.node_types_column_number = Some(self.parameters.get_column_number(column)?);
         }
@@ -70,7 +70,7 @@ impl NodeFileReader {
     ///
     /// * nodes_column_number: Option<usize> - The nodes column_number to use for the file.
     ///
-    pub fn set_nodes_column_number(mut self, nodes_column_number: Option<usize>) -> NodeFileReader {
+    pub fn set_nodes_column_number(mut self, nodes_column_number: Option<usize>) -> NodeFileReader<'a> {
         if let Some(column) = nodes_column_number {
             self.nodes_column_number = column;
         }
@@ -86,7 +86,7 @@ impl NodeFileReader {
     pub fn set_node_types_column_number(
         mut self,
         node_types_column_number: Option<usize>,
-    ) -> NodeFileReader {
+    ) -> NodeFileReader<'a> {
         self.node_types_column_number = node_types_column_number;
         self
     }
@@ -97,7 +97,7 @@ impl NodeFileReader {
     ///
     /// * default_node_type: Option<String> - The node type to use when node type is missing.
     ///
-    pub fn set_default_node_type(mut self, default_node_type: Option<String>) -> NodeFileReader {
+    pub fn set_default_node_type(mut self, default_node_type: Option<String>) -> NodeFileReader<'a> {
         self.default_node_type = default_node_type;
         self
     }
@@ -111,7 +111,7 @@ impl NodeFileReader {
     pub fn set_ignore_duplicated_nodes(
         mut self,
         ignore_duplicated_nodes: Option<bool>,
-    ) -> NodeFileReader {
+    ) -> NodeFileReader<'a> {
         if let Some(i) = ignore_duplicated_nodes {
             self.ignore_duplicated_nodes = i;
         }

@@ -203,7 +203,7 @@ impl CSVFileReader {
                         .split(&self.separator)
                         .map(|s| s.to_string())
                         .collect::<Vec<String>>();
-                        if line_components.len() != number_of_elements_per_line {
+                        if line_components.len() -1 != number_of_elements_per_line {
                             return Err(format!(
                                 concat!(
                                     "Found line {i} with different number",

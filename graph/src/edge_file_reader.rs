@@ -19,8 +19,8 @@ fn parse_edge_weight(weight: Option<String>) -> Result<Option<WeightT>, String> 
 /// Structure that saves the parameters specific to writing and reading a nodes csv file.
 ///
 /// # Attributes
-pub struct EdgeFileReader {
-    pub(crate) parameters: CSVFileReader,
+pub struct  EdgeFileReader<'a> {
+    pub(crate) parameters: &'a CSVFileReader,
     pub(crate) sources_column_number: usize,
     pub(crate) destinations_column_number: usize,
     pub(crate) edge_types_column_number: Option<usize>,
@@ -31,14 +31,14 @@ pub struct EdgeFileReader {
     pub(crate) ignore_duplicated_edges: bool,
 }
 
-impl EdgeFileReader {
+impl<'a> EdgeFileReader<'a> {
     /// Return new EdgeFileReader object.
     ///
     /// # Arguments
     ///
     /// * parameters: CSVFileParameters - Path where to store/load the file.
     ///
-    pub fn new(parameters: CSVFileReader) -> EdgeFileReader {
+    pub fn new(parameters: &'a CSVFileReader) -> EdgeFileReader<'a> {
         EdgeFileReader {
             parameters,
             sources_column_number: 0,
@@ -61,7 +61,7 @@ impl EdgeFileReader {
     pub fn set_sources_column(
         mut self,
         sources_column: Option<String>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader<'a>, String> {
         if let Some(column) = sources_column {
             self.sources_column_number = self.parameters.get_column_number(column)?;
         }
@@ -77,7 +77,7 @@ impl EdgeFileReader {
     pub fn set_destinations_column(
         mut self,
         destinations_column: Option<String>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader<'a>, String> {
         if let Some(column) = destinations_column {
             self.destinations_column_number = self.parameters.get_column_number(column)?;
         }
@@ -93,7 +93,7 @@ impl EdgeFileReader {
     pub fn set_edge_types_column(
         mut self,
         edge_type_column: Option<String>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader<'a>, String> {
         if let Some(column) = edge_type_column {
             self.edge_types_column_number = Some(self.parameters.get_column_number(column)?);
         }
@@ -109,7 +109,7 @@ impl EdgeFileReader {
     pub fn set_weights_column(
         mut self,
         weights_column: Option<String>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader<'a>, String> {
         if let Some(column) = weights_column {
             self.weights_column_number = Some(self.parameters.get_column_number(column)?);
         }
@@ -122,7 +122,7 @@ impl EdgeFileReader {
     ///
     /// * default_weight: Option<WeightT> - The default_weight to use when default_weight is missing.
     ///
-    pub fn set_default_weight(mut self, default_weight: Option<WeightT>) -> EdgeFileReader {
+    pub fn set_default_weight(mut self, default_weight: Option<WeightT>) -> EdgeFileReader<'a> {
         self.default_weight = default_weight;
         self
     }
@@ -133,7 +133,7 @@ impl EdgeFileReader {
     ///
     /// * default_edge_type: Option<String> - The edge type to use when edge type is missing.
     ///
-    pub fn set_default_edge_type(mut self, default_edge_type: Option<String>) -> EdgeFileReader {
+    pub fn set_default_edge_type(mut self, default_edge_type: Option<String>) -> EdgeFileReader<'a> {
         self.default_edge_type = default_edge_type;
         self
     }
@@ -147,7 +147,7 @@ impl EdgeFileReader {
     pub fn set_ignore_duplicated_edges(
         mut self,
         ignore_duplicated_edges: Option<bool>,
-    ) -> EdgeFileReader {
+    ) -> EdgeFileReader<'a> {
         if let Some(i) = ignore_duplicated_edges {
             self.ignore_duplicated_edges = i;
         }
@@ -160,7 +160,7 @@ impl EdgeFileReader {
     ///
     /// * skip_self_loops: Option<bool> - if the reader should ignore or not duplicated edges.
     ///
-    pub fn set_skip_self_loops(mut self, skip_self_loops: Option<bool>) -> EdgeFileReader {
+    pub fn set_skip_self_loops(mut self, skip_self_loops: Option<bool>) -> EdgeFileReader<'a> {
         if let Some(i) = skip_self_loops {
             self.skip_self_loops = i;
         }
