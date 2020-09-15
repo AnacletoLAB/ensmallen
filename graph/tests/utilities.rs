@@ -64,17 +64,17 @@ fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
 pub(crate) fn default_test_suite(graph: &Graph) {
     graph.walk(&first_order_walker(&graph)).unwrap();
     graph.walk(&second_order_walker(&graph)).unwrap();
-    let (train, test) = graph.random_holdout(4, 0.6, true, true).unwrap();
+    let (train, test) = graph.random_holdout(4, 0.6, true, false).unwrap();
     default_holdout_test_suite(graph, &train, &test);
-    let (train, test) = graph.connected_holdout(4, 0.6, true, true).unwrap();
+    let (train, test) = graph.connected_holdout(4, 0.6, true, false).unwrap();
     default_holdout_test_suite(graph, &train, &test);
     let negatives = graph
-        .sample_negatives(4, graph.get_edges_number(), true, true)
+        .sample_negatives(4, graph.get_edges_number(), true, false)
         .unwrap();
     assert!(!graph.overlaps(&negatives).unwrap());
     assert!(!negatives.overlaps(&graph).unwrap());
     let subgraph = graph
-        .random_subgraph(6, graph.get_nodes_number() / 10, true)
+        .random_subgraph(6, graph.get_nodes_number() / 10, false)
         .unwrap();
     assert!(subgraph.overlaps(&graph).unwrap());
 }
