@@ -188,8 +188,11 @@ pub(crate) fn default_test_suite(graph: &Graph, verbose: bool) {
     // Testing the top Ks
     if graph.has_node_types(){
         graph.get_top_k_nodes_by_node_type(10).unwrap();
+        graph.get_node_type_id(0).unwrap();
     }
     if graph.has_edge_types(){
         graph.get_top_k_edges_by_edge_type(10).unwrap();
+        graph.get_edge_type_id(0).unwrap();
     }
+
 }
