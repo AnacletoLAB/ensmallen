@@ -10,9 +10,14 @@ fn test_ppi() {
             for load_edge_types in bools {
                 for load_weights in bools {
                     for directed in bools {
-                        println!("load_nodes: {}, load_edge_types: {}, load_weights: {}, directed: {}, verbose: {}", load_nodes, load_edge_types, load_weights, directed, verbose);
-                        let ppi = load_ppi(*load_nodes, *load_edge_types, *load_weights, *directed, *verbose)
-                            .unwrap();
+                        let ppi = load_ppi(
+                            *load_nodes,
+                            *load_edge_types,
+                            *load_weights,
+                            *directed,
+                            *verbose,
+                        )
+                        .unwrap();
                         assert_eq!(*ppi.is_directed(), *directed);
                         assert_eq!(ppi.has_node_types(), *load_nodes);
                         assert_eq!(ppi.has_edge_types(), *load_edge_types);

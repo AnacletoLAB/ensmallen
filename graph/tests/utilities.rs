@@ -142,6 +142,8 @@ pub(crate) fn default_test_suite(graph: &Graph, verbose: bool) {
     let nodes_writer = NodeFileWriter::new(
         CSVFileWriter::new("tmp_node_file.tsv".to_string()).set_verbose(Some(verbose)),
     )
+    .set_node_types_column_number(Some(4))
+    .set_nodes_column_number(Some(6))
     .set_node_types_column(Some("node_types".to_string()))
     .set_nodes_column(Some("node_column".to_string()));
     nodes_writer.dump(&graph).unwrap();
