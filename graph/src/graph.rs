@@ -285,28 +285,6 @@ impl Graph {
             .all(|(src, dst, et)| self.check_edge_overlap(*src, *dst, et)))
     }
 
-    /// Returns edge id of the edge passing between given nodes.
-    ///
-    /// # Arguments
-    ///
-    /// * src: NodeT - The source node of the edge.
-    /// * dst: NodeT - The destination node of the edge.
-    ///
-    pub fn get_edge_id(&self, src: NodeT, dst: NodeT) -> Result<EdgeT, String> {
-        match self.unique_edges.get(&(src, dst)) {
-            Some(g) => Ok(g.edge_id),
-            None => Err(format!(
-                concat!(
-                    "Required edge passing between {src_name} ({src}) ",
-                    "and {dst_name} ({dst}) does not exists in graph."
-                ),
-                src_name = self.nodes.translate(src),
-                src = src,
-                dst_name = self.nodes.translate(dst),
-                dst = dst
-            )),
-        }
-    }
 
     /// Returns number of nodes in the graph.
     pub fn get_nodes_number(&self) -> usize {
@@ -493,109 +471,6 @@ impl Graph {
     pub fn get_node_neighbours(&self, node: NodeT) -> Vec<NodeT> {
         let (min_edge, max_edge) = self.get_min_max_edge(node);
         self.destinations[min_edge..max_edge].to_vec()
-    }
-
-    /// Extract random nodes from the graph
-    ///
-    /// # Arguments
-    ///
-    /// * `size` - How many nodes to extract.
-    /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
-    ///
-    pub fn extract_random_nodes(&self, size: usize, seed: u64) -> Vec<NodeT> {
-        gen_random_vec(size, seed)
-            .iter()
-            .map(|idx| *idx as NodeT % self.get_nodes_number())
-            .collect()
-    }
-
-    /// Extract random nodes from the graph in parallel using multiple threads
-    ///
-    /// # Arguments
-    ///
-    /// * `size` - How many nodes to extract.
-    /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
-    ///
-    pub fn extract_random_nodes_par(
-        &self,
-        size: usize,
-        seed: u64,
-        chunk_size: Option<usize>,
-    ) -> Vec<NodeT> {
-        let _chunk_size = chunk_size.unwrap_or(size / 8);
-        if _chunk_size <= 1 {
-            return self.extract_random_nodes(size, seed);
-        }
-        let mut result = (0..(size / _chunk_size) as u64)
-            .into_par_iter()
-            .map(|i| {
-                gen_random_vec(_chunk_size, seed ^ (i * 1337))
-                    .par_iter()
-                    .map(|idx| *idx as NodeT % self.get_nodes_number())
-                    .collect::<Vec<NodeT>>()
-            })
-            .flatten()
-            .collect::<Vec<NodeT>>();
-        let diff = size - result.len();
-        if diff != 0 {
-            result.extend(self.extract_random_nodes(diff, seed ^ 1337).iter());
-        }
-        result
-    }
-
-    /// Extract random edges from the graph
-    ///
-    /// # Arguments
-    ///
-    /// * `size` - How many edges to extract.
-    /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
-    pub fn extract_random_edges(&self, size: usize, seed: u64) -> Vec<Vec<NodeT>> {
-        gen_random_vec(size, seed)
-            .iter()
-            .map(|idx| {
-                let i: NodeT = *idx as NodeT % self.get_edges_number();
-                vec![self.sources[i], self.destinations[i]]
-            })
-            .collect()
-    }
-
-    /// Extract random edges from the graph in parallel using multiple threads
-    ///
-    /// # Arguments
-    ///
-    /// * `size` - How many edges to extract.
-    /// * `seed` - Seed to use for the PRNG for reproducibility porpouses
-    pub fn extract_random_edges_par(
-        &self,
-        size: usize,
-        seed: u64,
-        chunk_size: Option<usize>,
-    ) -> Vec<Vec<NodeT>> {
-        let _chunk_size = chunk_size.unwrap_or(size / 8);
-        if _chunk_size <= 1 {
-            return self.extract_random_edges(size, seed);
-        }
-        let mut result = (0..(size / _chunk_size) as u64)
-            .into_par_iter()
-            .map(|i| {
-                gen_random_vec(_chunk_size, seed ^ (i * 1337))
-                    .par_iter()
-                    .map(|idx| {
-                        let i: NodeT = *idx as NodeT % self.get_edges_number();
-                        vec![self.sources[i], self.destinations[i]]
-                    })
-                    .collect::<Vec<Vec<NodeT>>>()
-            })
-            .flatten()
-            .collect::<Vec<Vec<NodeT>>>();
-        let diff = size - result.len();
-        if diff != 0 {
-            let diffs = self.extract_random_edges(diff, seed ^ 1337);
-            for x in diffs {
-                result.push(x);
-            }
-        }
-        result
     }
 
     /// Return the node transition weights and the related node and edges.

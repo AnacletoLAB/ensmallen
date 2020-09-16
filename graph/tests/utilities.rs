@@ -57,7 +57,7 @@ pub(crate) fn first_order_walker(graph: &Graph) -> WalksParameters {
     WalksParameters::new(
         SingleWalkParameters::new(50, WalkWeights::default()).unwrap(),
         0,
-        graph.not_trap_nodes().len(),
+        graph.get_not_trap_nodes_number(),
     )
     .unwrap()
     .set_iterations(Some(1))
@@ -66,7 +66,7 @@ pub(crate) fn first_order_walker(graph: &Graph) -> WalksParameters {
     .unwrap()
     .set_verbose(Some(false))
     .set_seed(Some(43))
-    .set_dense_nodes_mapping(None)
+    .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
 }
 
 #[cfg(test)]
@@ -86,7 +86,7 @@ pub(crate) fn second_order_walker(graph: &Graph) -> WalksParameters {
         )
         .unwrap(),
         0,
-        graph.not_trap_nodes().len(),
+        graph.get_not_trap_nodes_number(),
     )
     .unwrap()
     .set_iterations(Some(1))
@@ -175,12 +175,19 @@ pub(crate) fn default_test_suite(graph: &Graph, verbose: bool) {
     // Compute metrics of the graph
     graph.report();
     // Compute degrees metrics
-    for src in 0..10{
-        for dst in 0..10{
+    for src in 0..10 {
+        for dst in 0..10 {
             graph.degrees_product(src, dst).unwrap();
             graph.jaccard_index(src, dst).unwrap();
             graph.adamic_adar_index(src, dst).unwrap();
             graph.resource_allocation_index(src, dst).unwrap();
         }
+    }
+    // Testing the top Ks
+    if graph.has_node_types(){
+        graph.get_top_k_nodes_by_node_type(10).unwrap();
+    }
+    if graph.has_edge_types(){
+        graph.get_top_k_edges_by_edge_type(10).unwrap();
     }
 }
