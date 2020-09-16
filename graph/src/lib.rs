@@ -22,12 +22,12 @@ mod edge_file_writer;
 pub use self::edge_file_writer::EdgeFileWriter;
 mod from_csv;
 
-mod graph_constructors;
-pub(crate) use self::graph_constructors::build_graph;
+mod constructors;
+pub(crate) use self::constructors::build_graph;
 
 pub mod types;
 pub mod graph;
-mod graph_metrics;
+mod metrics;
 mod holdouts;
 mod operators;
 mod preprocessing;
