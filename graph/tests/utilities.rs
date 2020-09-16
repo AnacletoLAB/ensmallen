@@ -195,4 +195,10 @@ pub(crate) fn default_test_suite(graph: &Graph, verbose: bool) {
         graph.get_edge_type_id(0).unwrap();
     }
 
+    // Evaluate get_node_type_counts
+    assert_eq!(graph.get_node_type_counts().is_ok(), graph.has_node_types());
+
+    // Evaluate get_edge_type_counts
+    assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
+
 }
