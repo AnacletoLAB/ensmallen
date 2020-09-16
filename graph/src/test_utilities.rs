@@ -1,9 +1,8 @@
-extern crate graph;
-use graph::*;
+use super::*;
 use std::fs;
 
-#[cfg(test)]
-pub(crate) fn load_ppi(
+
+pub fn load_ppi(
     load_nodes: bool,
     load_edge_types: bool,
     load_weights: bool,
@@ -52,8 +51,8 @@ pub(crate) fn load_ppi(
     Graph::from_csv(edges_reader, nodes_reader, directed)
 }
 
-#[cfg(test)]
-pub(crate) fn first_order_walker(graph: &Graph) -> WalksParameters {
+
+pub fn first_order_walker(graph: &Graph) -> WalksParameters {
     WalksParameters::new(
         SingleWalkParameters::new(50, WalkWeights::default()).unwrap(),
         0,
@@ -69,8 +68,8 @@ pub(crate) fn first_order_walker(graph: &Graph) -> WalksParameters {
     .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
 }
 
-#[cfg(test)]
-pub(crate) fn second_order_walker(graph: &Graph) -> WalksParameters {
+
+pub fn second_order_walker(graph: &Graph) -> WalksParameters {
     WalksParameters::new(
         SingleWalkParameters::new(
             50,
@@ -97,8 +96,8 @@ pub(crate) fn second_order_walker(graph: &Graph) -> WalksParameters {
     .set_seed(Some(43))
 }
 
-#[cfg(test)]
-fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
+
+pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
     assert!(!train.overlaps(&test).unwrap());
     assert!(!test.overlaps(&train).unwrap());
     assert!(graph.contains(&train).unwrap());
@@ -107,8 +106,8 @@ fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
     assert!(summed.contains(&graph).unwrap());
 }
 
-#[cfg(test)]
-pub(crate) fn default_test_suite(graph: &Graph, verbose: bool) {
+
+pub fn default_test_suite(graph: &Graph, verbose: bool) {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph);
     graph.walk(&walker).unwrap();

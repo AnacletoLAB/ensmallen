@@ -1,5 +1,4 @@
-mod utilities;
-use utilities::*;
+use graph::test_utilities::*;
 
 #[test]
 /// Test that everything runs properly in the PPI graph.

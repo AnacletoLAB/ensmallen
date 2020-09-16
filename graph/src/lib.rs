@@ -35,6 +35,8 @@ mod tarjan;
 mod trees;
 mod walks_parameters;
 
+pub mod test_utilities;
+
 pub use self::graph::Graph;
 pub use self::holdouts::*;
 pub use self::operators::*;
