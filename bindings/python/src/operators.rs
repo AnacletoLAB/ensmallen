@@ -8,8 +8,37 @@ impl PyNumberProtocol for EnsmallenGraph {
     }
 }
 
+
 impl EnsmallenGraph {
-    // separate the method from the __richcmp__ so that we can caputre and convert all the exceptions
+    /// Return true if given graph has any edge overlapping with current graph.
+    ///
+    /// Parameters
+    /// ----------------------------
+    /// graph: EnsmallenGraph,
+    ///     The graph to check against.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if any overlapping edge was found.
+    pub fn overlaps(&self, graph: &EnsmallenGraph) -> PyResult<bool> {
+        to_python_exception!(self.graph.overlaps(&graph.graph))
+    }
+
+    /// Return true if given graph edges are all contained within current graph.
+    ///
+    /// Parameters
+    /// ----------------------------
+    /// graph: EnsmallenGraph,
+    ///     The graph to check against.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if graph contains completely the othe graph.
+    pub fn contains(&self, graph: &EnsmallenGraph) -> PyResult<bool> {
+        to_python_exception!(self.graph.contains(&graph.graph))
+    }
+
+    // separate the method from the __richcmp__ so that we can capture and convert all the exceptions
     // in an uniform way
     pub(crate) fn compare_graphs(
         &self,
