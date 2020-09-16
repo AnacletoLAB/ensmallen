@@ -1,4 +1,3 @@
-use derive_getters::Getters;
 use std::collections::{BTreeMap, HashSet};
 
 // Types used to represent edges, nodes and their types.
@@ -11,14 +10,14 @@ pub type EdgeTypeT = u16;
 pub(crate) type GraphDictionary = BTreeMap<(NodeT, NodeT), Option<ConstructorEdgeMetadata>>;
 
 /// Metadata of the edges of the graphs used for every graph.
-#[derive(Debug, Clone, Getters, PartialEq)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct EdgeMetadata {
     pub edge_id: EdgeT,
     pub edge_types: Option<HashSet<EdgeTypeT>>,
 }
 
 /// Metadata of the edges used to describe both homogeneous and heterogeneous graphs and multi-graphs.
-/// 
+///
 /// It used during the construction process of the graphs, while another smaller one is used for the actual structure.
 #[derive(Clone)]
 pub(crate) struct ConstructorEdgeMetadata {
@@ -27,19 +26,16 @@ pub(crate) struct ConstructorEdgeMetadata {
 }
 
 impl ConstructorEdgeMetadata {
-    
     /// Return built ConstructorEdgeMetadata object.
-    /// 
+    ///
     /// When no meta-data is expected to be necessary, a None is returned instead.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * `has_weights`: bool - Wethever the graph has weights.
     /// * `has_edge_types`: bool - Wethever the graph has edge types.
     pub(crate) fn new(has_weights: bool, has_edge_types: bool) -> Option<ConstructorEdgeMetadata> {
-        if !(has_edge_types && has_weights) {
-            None
-        } else {
+        if has_edge_types || has_weights {
             Some(ConstructorEdgeMetadata {
                 edge_types: if has_edge_types {
                     Some(Vec::new())
@@ -48,13 +44,15 @@ impl ConstructorEdgeMetadata {
                 },
                 weights: if has_weights { Some(Vec::new()) } else { None },
             })
+        } else {
+            None
         }
     }
 
     /// Add given metadata (when they are not None).
     ///
     /// # Arguments
-    /// 
+    ///
     /// * `weight`: Option<WeightT> - Weight to be added.
     /// * `edge_type`: Option<EdgeTypeT> - Edge type to be added
     pub(crate) fn add(&mut self, weight: Option<WeightT>, edge_type: Option<EdgeTypeT>) {
@@ -70,10 +68,33 @@ impl ConstructorEdgeMetadata {
         }
     }
 
-    /// Set metadata.
-    /// 
+    /// Extend given metadata (when they are not None).
+    ///
     /// # Arguments
-    /// 
+    ///
+    /// * `weight`: Option<WeightT> - Weight to be appended.
+    /// * `edge_type`: Option<EdgeTypeT> - Edge type to be appended
+    pub(crate) fn extend(
+        &mut self,
+        weights: Option<Vec<WeightT>>,
+        edge_types: Option<Vec<EdgeTypeT>>,
+    ) {
+        if let Some(ws) = weights {
+            if let Some(sws) = &mut self.weights {
+                sws.extend(ws);
+            }
+        }
+        if let Some(ets) = edge_types {
+            if let Some(sets) = &mut self.edge_types {
+                sets.extend(ets)
+            }
+        }
+    }
+
+    /// Set metadata.
+    ///
+    /// # Arguments
+    ///
     /// * `weights`: Option<WeightT> - Weights to be set.
     /// * `edge_types`: Option<EdgeTypeT> - Edge types to be set
     pub(crate) fn set(
@@ -86,7 +107,7 @@ impl ConstructorEdgeMetadata {
     }
 
     /// Return boolean representing if given edge type is present.
-    /// 
+    ///
     /// # Arguments
     /// * `edge_type`: Option<EdgeTypeT> - The edge type to check for.
     pub(crate) fn contains_edge_type(&self, edge_type: Option<EdgeTypeT>) -> bool {
@@ -103,8 +124,20 @@ impl ConstructorEdgeMetadata {
 
     /// Returns vector of edge types as HashSet.
     pub(crate) fn to_edge_types_set(&self) -> Option<HashSet<EdgeTypeT>> {
-        self.edge_types.clone()
+        self.edge_types
+            .clone()
             .map(|et| et.into_iter().collect::<HashSet<EdgeTypeT>>())
+    }
+
+    /// Return length of the vocabulary.
+    pub fn len(&self) -> usize {
+        if let Some(sws) = &self.weights {
+            return sws.len();
+        }
+        if let Some(sets) = &self.edge_types {
+            return sets.len()
+        }
+        unreachable!("Either the weights or the edge types are certainly set.");
     }
 }
 

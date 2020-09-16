@@ -71,7 +71,7 @@ impl Graph {
         let mut unique_edges_tree: GraphDictionary = BTreeMap::new();
 
         // randomly extract negative edges until we have the choosen number
-        while unique_edges_tree.len() == negatives_number {
+        while unique_edges_tree.len() <= negatives_number {
             seed = xorshift(seed as u64) as usize;
             let src: NodeT = self.sources[seed % self.sources.len()];
             seed = xorshift(seed as u64) as usize;
@@ -105,6 +105,44 @@ impl Graph {
             },
             self.is_directed,
         ))
+    }
+
+    fn extend_tree(
+        &self,
+        tree: &mut GraphDictionary,
+        src: NodeT,
+        dst: NodeT,
+        edge_type: Option<EdgeTypeT>,
+        weight: Option<WeightT>,
+        include_all_edge_types: bool,
+    ) {
+        let metadata = if let Some(md) = tree.get(&(src, dst)) {
+            let mut metadata = md.to_owned();
+            if let Some(md) = &mut metadata {
+                md.add(weight, edge_type);
+            }
+            metadata
+        } else {
+            let mut metadata =
+                ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
+            if let Some(md) = &mut metadata {
+                if include_all_edge_types {
+                    md.set(
+                        self.get_link_weights(src, dst),
+                        self.get_link_edge_types(src, dst),
+                    );
+                } else {
+                    md.add(weight, edge_type);
+                }
+            }
+            metadata
+        };
+        tree.insert((src, dst), metadata.clone());
+        // If the current edge is not a self loop and the graph
+        // is not directed, we add the simmetrical graph
+        if !self.is_directed && src != dst {
+            tree.insert((dst, src), metadata);
+        }
     }
 
     fn holdout(
@@ -156,42 +194,41 @@ impl Graph {
             } else {
                 None
             };
+
+            // Check if the edge with the considered edge type as already been added.
+            if [&train, &valid]
+                .iter()
+                .any(|tree| match tree.get(&(src, dst)) {
+                    Some(metadata) => {
+                        if let Some(md) = metadata {
+                            md.contains_edge_type(edge_type)
+                        } else {
+                            unreachable!(
+                                "This is not reacheable as it would imply duplicated edges."
+                            );
+                        }
+                    }
+                    None => false,
+                })
+            {
+                // The edge that is currently being considered as already
+                // been added in the current heterogenous multi-graph
+                // by the use of the parameter `include_all_edge_types`
+                continue;
+            }
+
             let weight = if let Some(w) = &self.weights {
                 Some(w[*edge])
             } else {
                 None
             };
-            let mut metadata =
-                ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
-            if let Some(md) = &mut metadata {
-                if include_all_edge_types {
-                    md.set(
-                        self.get_link_weights(src, dst),
-                        self.get_link_edge_types(src, dst),
-                    );
-                } else {
-                    md.add(weight, edge_type);
-                }
-            }
+
             // We stop adding edges when we have reached the minimum amount.
             if user_condition(src, dst, edge_type) && valid.len() < valid_edges_number {
-                valid.insert((src, dst), metadata.clone());
-                // If the current edge is not a self loop and the graph
-                // is not directed, we add the simmetrical graph
-                if !self.is_directed && src != dst {
-                    valid.insert((dst, src), metadata);
-                }
+                self.extend_tree(&mut valid, src, dst, edge_type, weight, include_all_edge_types);
             } else {
                 // Otherwise we add the edges to the training set.
-                //
-                // When the graph is directed we need to check that the edge
-                // in the opposite direction was not already inserted.
-                train.insert((src, dst), metadata.clone());
-                // If the current edge is not a self loop and the graph
-                // is not directed, we add the simmetrical graph
-                if !self.is_directed && src != dst {
-                    train.insert((dst, src), metadata);
-                }
+                self.extend_tree(&mut train, src, dst, edge_type, weight, include_all_edge_types);
             }
         }
 

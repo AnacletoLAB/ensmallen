@@ -81,12 +81,19 @@ impl<'a, 'b> ops::Add<&'b Graph> for &'a Graph {
             .keys()
             .chain(other.unique_edges.keys())
             .for_each(|(src, dst)| {
+                if unique_edges_tree.contains_key(&(*src, *dst)) {
+                    return;
+                }
                 let mut metadata =
                     ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
                 if let Some(md) = &mut metadata {
-                    md.set(
+                    md.extend(
                         self.get_link_weights(*src, *dst),
                         self.get_link_edge_types(*src, *dst),
+                    );
+                    md.extend(
+                        other.get_link_weights(*src, *dst),
+                        other.get_link_edge_types(*src, *dst),
                     );
                 }
                 unique_edges_tree.insert((*src, *dst), metadata);

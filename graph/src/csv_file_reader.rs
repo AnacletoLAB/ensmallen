@@ -174,17 +174,9 @@ impl CSVFileReader {
             .lines()
             .skip(self.rows_to_skip + self.header as usize)
             .progress_with(pb)
-            // unwrap the line and remove tralings new line chars
+            // unwrap the line
             .map(|line| match line {
-                Ok(mut l) => {      
-                    if l.ends_with('\n') {
-                        l.pop();
-                        if l.ends_with('\r') {
-                            l.pop();
-                        }
-                    }
-                    Ok(l)
-                },
+                Ok(l) => Ok(l),
                 Err(_) => Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string())
             })
             .enumerate()

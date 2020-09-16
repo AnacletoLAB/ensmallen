@@ -3,38 +3,24 @@ use utilities::*;
 
 #[test]
 /// Test that everything runs properly in the PPI graph.
-fn test_ppi_with_nodes_file_directed() {
-    let ppi = load_ppi(true, true).unwrap();
-    assert_eq!(*ppi.is_directed(), true);
-    assert_eq!(ppi.get_edges_number(), 294374);
-    assert_eq!(ppi.get_nodes_number(), 37163);
-    default_test_suite(&ppi);
-}
-
-#[test]
-fn test_ppi_without_nodes_file_directed() {
-    let ppi = load_ppi(false, true).unwrap();
-    assert_eq!(*ppi.is_directed(), true);
-    assert_eq!(ppi.get_edges_number(), 294374);
-    assert_eq!(ppi.get_nodes_number(), 17185);
-    default_test_suite(&ppi);
-}
-
-#[test]
-/// Test that everything runs properly in the PPI graph.
-fn test_ppi_with_nodes_file_undirected() {
-    let ppi = load_ppi(true, false).unwrap();
-    assert_eq!(*ppi.is_directed(), false);
-    assert_eq!(ppi.get_edges_number(), 588748);
-    assert_eq!(ppi.get_nodes_number(), 37163);
-    default_test_suite(&ppi);
-}
-
-#[test]
-fn test_ppi_without_nodes_file_undirected() {
-    let ppi = load_ppi(false, false).unwrap();
-    assert_eq!(*ppi.is_directed(), false);
-    assert_eq!(ppi.get_edges_number(), 588748);
-    assert_eq!(ppi.get_nodes_number(), 17185);
-    default_test_suite(&ppi);
+fn test_ppi() {
+    let bools = &[true, false];
+    for verbose in bools {
+        for load_nodes in bools {
+            for load_edge_types in bools {
+                for load_weights in bools {
+                    for directed in bools {
+                        println!("load_nodes: {}, load_edge_types: {}, load_weights: {}, directed: {}, verbose: {}", load_nodes, load_edge_types, load_weights, directed, verbose);
+                        let ppi = load_ppi(*load_nodes, *load_edge_types, *load_weights, *directed, *verbose)
+                            .unwrap();
+                        assert_eq!(*ppi.is_directed(), *directed);
+                        assert_eq!(ppi.has_node_types(), *load_nodes);
+                        assert_eq!(ppi.has_edge_types(), *load_edge_types);
+                        assert_eq!(ppi.has_weights(), *load_weights);
+                        default_test_suite(&ppi, *verbose);
+                    }
+                }
+            }
+        }
+    }
 }

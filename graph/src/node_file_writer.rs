@@ -42,11 +42,11 @@ impl NodeFileWriter {
     pub fn set_nodes_column(
         mut self,
         nodes_column: Option<String>,
-    ) -> Result<NodeFileWriter, String> {
-        if let Some(v) = nodes_column {
-            self.nodes_column = v;
+    ) -> NodeFileWriter {
+        if let Some(column) = nodes_column {
+            self.nodes_column = column;
         }
-        Ok(self)
+        self
     }
 
     /// Set the column of the nodes.
@@ -58,11 +58,11 @@ impl NodeFileWriter {
     pub fn set_node_types_column(
         mut self,
         nodes_type_column: Option<String>,
-    ) -> Result<NodeFileWriter, String> {
-        if let Some(v) = nodes_type_column {
-            self.node_types_column = v;
+    ) -> NodeFileWriter {
+        if let Some(column) = nodes_type_column {
+            self.node_types_column = column;
         }
-        Ok(self)
+        self
     }
 
     /// Set the column_number of the nodes.
@@ -72,8 +72,8 @@ impl NodeFileWriter {
     /// * nodes_column_number: Option<usize> - The nodes column_number to use for the file.
     ///
     pub fn set_nodes_column_number(mut self, nodes_column_number: Option<usize>) -> NodeFileWriter {
-        if let Some(v) = nodes_column_number {
-            self.nodes_column_number = v;
+        if let Some(column) = nodes_column_number {
+            self.nodes_column_number = column;
         }
         self
     }
@@ -94,8 +94,12 @@ impl NodeFileWriter {
         self
     }
 
-    /// Read node file and returns graph builder data structures.
-    pub(crate) fn write_node_file(
+    /// Write nodes to file.
+    /// 
+    /// # Arguments
+    /// 
+    /// * `graph`: &Graph, reference to graph to use.
+    pub fn dump(
         &self,
         graph: &Graph,
     ) -> Result<(), String> {

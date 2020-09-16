@@ -2,9 +2,9 @@ use super::*;
 
 impl Graph {
     /// Return graph renderized from given files.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * `edge_file_reader`: EdgeFileReader - Reader of the edge file.
     /// * `node_file_reader`: Option<NodeFileReader> - Reader of the node file.
     /// * `directed`: bool - Wethever the graph is to be read as directed or undirected.
@@ -15,9 +15,6 @@ impl Graph {
         edge_file_reader: EdgeFileReader,
         node_file_reader: Option<NodeFileReader>,
         directed: bool,
-        ignore_duplicated_nodes: bool,
-        ignore_duplicated_edges: bool,
-        skip_self_loops: bool,
     ) -> Result<Graph, String> {
         Graph::new(
             edge_file_reader.read_lines()?,
@@ -26,9 +23,12 @@ impl Graph {
                 None => None,
             },
             directed,
-            ignore_duplicated_nodes,
-            ignore_duplicated_edges,
-            skip_self_loops,
+            match &node_file_reader {
+                Some(nfr) => nfr.ignore_duplicated_nodes,
+                None => false,
+            },
+            edge_file_reader.ignore_duplicated_edges,
+            edge_file_reader.skip_self_loops,
         )
     }
 }

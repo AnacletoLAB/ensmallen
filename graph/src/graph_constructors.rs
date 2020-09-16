@@ -175,7 +175,7 @@ pub(crate) fn build_graph(
 ) -> Graph {
     // structures to fill for the graph
     // outbounds is initialized as vector of values unique edges and with length equal to the number of nodes.
-    let mut outbounds: Vec<EdgeT> = vec![unique_edges_tree.len(); nodes.len()];
+    let mut outbounds: Vec<EdgeT> = vec![0; nodes.len()];
     let mut sources: Vec<NodeT> = Vec::new();
     let mut not_trap_nodes: Vec<NodeT> = Vec::new();
     let mut destinations: Vec<NodeT> = Vec::new();
@@ -226,6 +226,7 @@ pub(crate) fn build_graph(
         // Reverse the metadata of the edge into the graph vectors
         match metadata {
             Some(m) => {
+                i += m.len();
                 m.for_each(|(weight, edge_type)| {
                     sources.push(src);
                     destinations.push(dst);
@@ -236,16 +237,17 @@ pub(crate) fn build_graph(
                         edge_types_vector.push(et)
                     }
                 });
-            }
+            },
             None => {
                 sources.push(src);
                 destinations.push(dst);
+                i += 1;
             }
         }
-
-        i += 1;
     }
-
+    for o in &mut outbounds[last_src..] {
+        *o = i;
+    }
     not_trap_nodes.push(last_src);
     let has_traps = not_trap_nodes.len() != outbounds.len();
 
