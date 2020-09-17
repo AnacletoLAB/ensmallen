@@ -1,0 +1,783 @@
+error[E0433]: failed to resolve: there are too many leading `super` keywords
+ --> graph.rs:2:5
+  |
+2 | use super::*;
+  |     ^^^^^ there are too many leading `super` keywords
+
+error[E0432]: unresolved import `counter`
+ --> graph.rs:3:5
+  |
+3 | use counter::Counter;
+  |     ^^^^^^^ maybe a missing crate `counter`?
+
+error[E0432]: unresolved import `derive_getters`
+ --> graph.rs:4:5
+  |
+4 | use derive_getters::Getters;
+  |     ^^^^^^^^^^^^^^ maybe a missing crate `derive_getters`?
+
+error[E0432]: unresolved import `indicatif`
+ --> graph.rs:5:5
+  |
+5 | use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
+  |     ^^^^^^^^^ maybe a missing crate `indicatif`?
+
+error[E0432]: unresolved import `itertools`
+ --> graph.rs:6:5
+  |
+6 | use itertools::Itertools;
+  |     ^^^^^^^^^ maybe a missing crate `itertools`?
+
+error[E0433]: failed to resolve: maybe a missing crate `rayon`?
+ --> graph.rs:8:5
+  |
+8 | use rayon::prelude::*;
+  |     ^^^^^ maybe a missing crate `rayon`?
+
+error[E0432]: unresolved imports `log`, `rayon::prelude::*`
+ --> graph.rs:7:5
+  |
+7 | use log::info;
+  |     ^^^ maybe a missing crate `log`?
+8 | use rayon::prelude::*;
+  |     ^^^^^^^^^^^^^^^^^
+
+error[E0432]: unresolved import `vec_rand`
+  --> graph.rs:10:5
+   |
+10 | use vec_rand::{gen_random_vec, sample, sample_uniform};
+   |     ^^^^^^^^ maybe a missing crate `vec_rand`?
+
+error: cannot determine resolution for the derive macro `Getters`
+  --> graph.rs:20:24
+   |
+20 | #[derive(Debug, Clone, Getters, PartialEq)]
+   |                        ^^^^^^^
+   |
+   = note: import resolution is stuck, try simplifying macro imports
+
+error: cannot determine resolution for the macro `info`
+   --> graph.rs:808:9
+    |
+808 |         info!("Starting random walk.");
+    |         ^^^^
+    |
+    = note: import resolution is stuck, try simplifying macro imports
+
+error: cannot determine resolution for the macro `info`
+   --> graph.rs:832:17
+    |
+832 |                 info!("Using trap-aware uniform first order random walk algorithm.");
+    |                 ^^^^
+    |
+    = note: import resolution is stuck, try simplifying macro imports
+
+error: cannot determine resolution for the macro `info`
+   --> graph.rs:839:17
+    |
+839 |                 info!("Using trap-aware second order random walk algorithm.");
+    |                 ^^^^
+    |
+    = note: import resolution is stuck, try simplifying macro imports
+
+error: cannot determine resolution for the macro `info`
+   --> graph.rs:848:13
+    |
+848 |             info!("Using uniform first order random walk algorithm.");
+    |             ^^^^
+    |
+    = note: import resolution is stuck, try simplifying macro imports
+
+error: cannot determine resolution for the macro `info`
+   --> graph.rs:855:13
+    |
+855 |             info!("Using second order random walk algorithm.");
+    |             ^^^^
+    |
+    = note: import resolution is stuck, try simplifying macro imports
+
+error[E0412]: cannot find type `NodeT` in this scope
+  --> graph.rs:26:29
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<NodeT>`
+...
+26 |     pub(crate) sources: Vec<NodeT>,
+   |                             ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+  --> graph.rs:27:34
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<NodeT>`
+...
+27 |     pub(crate) destinations: Vec<NodeT>,
+   |                                  ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Vocabulary` in this scope
+  --> graph.rs:28:23
+   |
+28 |     pub(crate) nodes: Vocabulary<NodeT>,
+   |                       ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+  --> graph.rs:28:34
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<NodeT>`
+...
+28 |     pub(crate) nodes: Vocabulary<NodeT>,
+   |                                  ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `WeightT` in this scope
+  --> graph.rs:29:36
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<WeightT>`
+...
+29 |     pub(crate) weights: Option<Vec<WeightT>>,
+   |                                    ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `VocabularyVec` in this scope
+  --> graph.rs:30:35
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<VocabularyVec>`
+...
+30 |     pub(crate) node_types: Option<VocabularyVec<NodeTypeT>>,
+   |                                   ^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeTypeT` in this scope
+  --> graph.rs:30:49
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<NodeTypeT>`
+...
+30 |     pub(crate) node_types: Option<VocabularyVec<NodeTypeT>>,
+   |                                                 ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `VocabularyVec` in this scope
+  --> graph.rs:31:35
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<VocabularyVec>`
+...
+31 |     pub(crate) edge_types: Option<VocabularyVec<EdgeTypeT>>,
+   |                                   ^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeTypeT` in this scope
+  --> graph.rs:31:49
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<EdgeTypeT>`
+...
+31 |     pub(crate) edge_types: Option<VocabularyVec<EdgeTypeT>>,
+   |                                                 ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+  --> graph.rs:33:31
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<EdgeT>`
+...
+33 |     pub(crate) outbounds: Vec<EdgeT>,
+   |                               ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+  --> graph.rs:34:39
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<NodeT>`
+...
+34 |     pub(crate) unique_edges: HashMap<(NodeT, NodeT), EdgeMetadata>,
+   |                                       ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+  --> graph.rs:34:46
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<NodeT>`
+...
+34 |     pub(crate) unique_edges: HashMap<(NodeT, NodeT), EdgeMetadata>,
+   |                                              ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeMetadata` in this scope
+  --> graph.rs:34:54
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<EdgeMetadata>`
+...
+34 |     pub(crate) unique_edges: HashMap<(NodeT, NodeT), EdgeMetadata>,
+   |                                                      ^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+  --> graph.rs:35:36
+   |
+21 | pub struct Graph {
+   |                 - help: you might be missing a type parameter: `<NodeT>`
+...
+35 |     pub(crate) not_trap_nodes: Vec<NodeT>,
+   |                                    ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+  --> graph.rs:46:45
+   |
+46 |     pub fn get_node_type_id(&self, node_id: NodeT) -> Result<NodeTypeT, String> {
+   |                                             ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeTypeT` in this scope
+  --> graph.rs:46:62
+   |
+39 | impl Graph {
+   |     - help: you might be missing a type parameter: `<NodeTypeT>`
+...
+46 |     pub fn get_node_type_id(&self, node_id: NodeT) -> Result<NodeTypeT, String> {
+   |                                                              ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+  --> graph.rs:69:45
+   |
+69 |     pub fn get_edge_type_id(&self, edge_id: EdgeT) -> Result<EdgeTypeT, String> {
+   |                                             ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeTypeT` in this scope
+  --> graph.rs:69:62
+   |
+39 | impl Graph {
+   |     - help: you might be missing a type parameter: `<EdgeTypeT>`
+...
+69 |     pub fn get_edge_type_id(&self, edge_id: EdgeT) -> Result<EdgeTypeT, String> {
+   |                                                              ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeTypeT` in this scope
+  --> graph.rs:87:58
+   |
+39 | impl Graph {
+   |     - help: you might be missing a type parameter: `<EdgeTypeT>`
+...
+87 |     pub fn get_edge_type_counts(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
+   |                                                          ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeTypeT` in this scope
+  --> graph.rs:98:58
+   |
+39 | impl Graph {
+   |     - help: you might be missing a type parameter: `<NodeTypeT>`
+...
+98 |     pub fn get_node_type_counts(&self) -> Result<HashMap<NodeTypeT, usize>, String> {
+   |                                                          ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:117:22
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+117 |     ) -> Result<(Vec<NodeT>, Vec<NodeTypeT>), String> {
+    |                      ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeTypeT` in this scope
+   --> graph.rs:117:34
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeTypeT>`
+...
+117 |     ) -> Result<(Vec<NodeT>, Vec<NodeTypeT>), String> {
+    |                                  ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:158:22
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<EdgeT>`
+...
+158 |     ) -> Result<(Vec<EdgeT>, Vec<EdgeTypeT>), String> {
+    |                      ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeTypeT` in this scope
+   --> graph.rs:158:34
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<EdgeTypeT>`
+...
+158 |     ) -> Result<(Vec<EdgeT>, Vec<EdgeTypeT>), String> {
+    |                                  ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:197:33
+    |
+197 |     pub fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
+    |                                 ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:197:45
+    |
+197 |     pub fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
+    |                                             ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:214:14
+    |
+214 |         src: NodeT,
+    |              ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:215:14
+    |
+215 |         dst: NodeT,
+    |              ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeTypeT` in this scope
+   --> graph.rs:216:20
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<EdgeTypeT>`
+...
+216 |         et: Option<EdgeTypeT>,
+    |                    ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:318:36
+    |
+318 |     pub fn get_edge_id(&self, src: NodeT, dst: NodeT) -> Result<EdgeT, String> {
+    |                                    ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:318:48
+    |
+318 |     pub fn get_edge_id(&self, src: NodeT, dst: NodeT) -> Result<EdgeT, String> {
+    |                                                ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:318:65
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<EdgeT>`
+...
+318 |     pub fn get_edge_id(&self, src: NodeT, dst: NodeT) -> Result<EdgeT, String> {
+    |                                                                 ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:373:49
+    |
+373 |     pub(crate) fn get_min_max_edge(&self, node: NodeT) -> (EdgeT, EdgeT) {
+    |                                                 ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:373:60
+    |
+373 |     pub(crate) fn get_min_max_edge(&self, node: NodeT) -> (EdgeT, EdgeT) {
+    |                                                            ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:373:67
+    |
+373 |     pub(crate) fn get_min_max_edge(&self, node: NodeT) -> (EdgeT, EdgeT) {
+    |                                                                   ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:384:54
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+384 |     pub fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
+    |                                                      ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:384:61
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+384 |     pub fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
+    |                                                             ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:402:32
+    |
+402 |     pub fn degree(&self, node: NodeT) -> NodeT {
+    |                                ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:402:42
+    |
+402 |     pub fn degree(&self, node: NodeT) -> NodeT {
+    |                                          ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:408:34
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+408 |     pub fn degrees(&self) -> Vec<NodeT> {
+    |                                  ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:439:37
+    |
+439 |     pub fn get_link_ids(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeT>> {
+    |                                     ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:439:49
+    |
+439 |     pub fn get_link_ids(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeT>> {
+    |                                                 ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:439:70
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<EdgeT>`
+...
+439 |     pub fn get_link_ids(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeT>> {
+    |                                                                      ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:461:44
+    |
+461 |     pub fn get_link_edge_types(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeTypeT>> {
+    |                                            ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:461:56
+    |
+461 |     pub fn get_link_edge_types(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeTypeT>> {
+    |                                                        ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeTypeT` in this scope
+   --> graph.rs:461:77
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<EdgeTypeT>`
+...
+461 |     pub fn get_link_edge_types(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeTypeT>> {
+    |                                                                             ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:480:41
+    |
+480 |     pub fn get_link_weights(&self, src: NodeT, dst: NodeT) -> Option<Vec<WeightT>> {
+    |                                         ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:480:53
+    |
+480 |     pub fn get_link_weights(&self, src: NodeT, dst: NodeT) -> Option<Vec<WeightT>> {
+    |                                                     ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `WeightT` in this scope
+   --> graph.rs:480:74
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<WeightT>`
+...
+480 |     pub fn get_link_weights(&self, src: NodeT, dst: NodeT) -> Option<Vec<WeightT>> {
+    |                                                                          ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:497:38
+    |
+497 |     pub fn is_node_trap(&self, node: NodeT) -> bool {
+    |                                      ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:506:38
+    |
+506 |     pub fn is_edge_trap(&self, edge: EdgeT) -> bool {
+    |                                      ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:516:45
+    |
+516 |     pub fn get_node_neighbours(&self, node: NodeT) -> Vec<NodeT> {
+    |                                             ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:516:59
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+516 |     pub fn get_node_neighbours(&self, node: NodeT) -> Vec<NodeT> {
+    |                                                           ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:528:71
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+528 |     pub fn extract_random_nodes(&self, size: usize, seed: u64) -> Vec<NodeT> {
+    |                                                                       ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:547:14
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+547 |     ) -> Vec<NodeT> {
+    |              ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:575:75
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+575 |     pub fn extract_random_edges(&self, size: usize, seed: u64) -> Vec<Vec<NodeT>> {
+    |                                                                           ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:596:18
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+596 |     ) -> Vec<Vec<NodeT>> {
+    |                  ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:633:15
+    |
+633 |         node: NodeT,
+    |               ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `ParamsT` in this scope
+   --> graph.rs:634:34
+    |
+634 |         change_node_type_weight: ParamsT,
+    |                                  ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `WeightT` in this scope
+   --> graph.rs:635:15
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<WeightT>`
+...
+635 |     ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
+    |               ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:635:27
+    |
+635 |     ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
+    |                           ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:635:35
+    |
+635 |     ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
+    |                                   ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:635:42
+    |
+635 |     ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
+    |                                          ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:678:15
+    |
+678 |         edge: EdgeT,
+    |               ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `WalkWeights` in this scope
+   --> graph.rs:679:24
+    |
+679 |         walk_weights: &WalkWeights,
+    |                        ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `WeightT` in this scope
+   --> graph.rs:680:15
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<WeightT>`
+...
+680 |     ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
+    |               ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:680:27
+    |
+680 |     ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
+    |                           ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:680:35
+    |
+680 |     ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
+    |                                   ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:680:42
+    |
+680 |     ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
+    |                                          ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:756:46
+    |
+756 |     pub fn extract_uniform_node(&self, node: NodeT, seed: usize) -> NodeT {
+    |                                              ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:756:69
+    |
+756 |     pub fn extract_uniform_node(&self, node: NodeT, seed: usize) -> NodeT {
+    |                                                                     ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:770:15
+    |
+770 |         node: NodeT,
+    |               ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `ParamsT` in this scope
+   --> graph.rs:772:34
+    |
+772 |         change_node_type_weight: ParamsT,
+    |                                  ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:773:11
+    |
+773 |     ) -> (NodeT, EdgeT) {
+    |           ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:773:18
+    |
+773 |     ) -> (NodeT, EdgeT) {
+    |                  ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:789:15
+    |
+789 |         edge: EdgeT,
+    |               ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `WalkWeights` in this scope
+   --> graph.rs:791:24
+    |
+791 |         walk_weights: &WalkWeights,
+    |                        ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:792:11
+    |
+792 |     ) -> (NodeT, EdgeT) {
+    |           ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `EdgeT` in this scope
+   --> graph.rs:792:18
+    |
+792 |     ) -> (NodeT, EdgeT) {
+    |                  ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `WalksParameters` in this scope
+   --> graph.rs:804:37
+    |
+804 |     pub fn walk(&self, parameters: &WalksParameters) -> Result<Vec<Vec<NodeT>>, String> {
+    |                                     ^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:804:72
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+804 |     pub fn walk(&self, parameters: &WalksParameters) -> Result<Vec<Vec<NodeT>>, String> {
+    |                                                                        ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:883:15
+    |
+883 |         node: NodeT,
+    |               ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `SingleWalkParameters` in this scope
+   --> graph.rs:885:22
+    |
+885 |         parameters: &SingleWalkParameters,
+    |                      ^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:886:14
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+886 |     ) -> Vec<NodeT> {
+    |              ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:921:15
+    |
+921 |         node: NodeT,
+    |               ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `SingleWalkParameters` in this scope
+   --> graph.rs:923:22
+    |
+923 |         parameters: &SingleWalkParameters,
+    |                      ^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:924:14
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+924 |     ) -> Vec<NodeT> {
+    |              ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:954:15
+    |
+954 |         node: NodeT,
+    |               ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `SingleWalkParameters` in this scope
+   --> graph.rs:956:22
+    |
+956 |         parameters: &SingleWalkParameters,
+    |                      ^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:957:14
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+957 |     ) -> Vec<NodeT> {
+    |              ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:990:15
+    |
+990 |         node: NodeT,
+    |               ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `SingleWalkParameters` in this scope
+   --> graph.rs:992:22
+    |
+992 |         parameters: &SingleWalkParameters,
+    |                      ^^^^^^^^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NodeT` in this scope
+   --> graph.rs:993:14
+    |
+39  | impl Graph {
+    |     - help: you might be missing a type parameter: `<NodeT>`
+...
+993 |     ) -> Vec<NodeT> {
+    |              ^^^^^ not found in this scope
+
+error: aborting due to 107 previous errors
+
+Some errors have detailed explanations: E0412, E0432, E0433.
+For more information about an error, try `rustc --explain E0412`.
