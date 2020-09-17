@@ -190,13 +190,18 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
 
         assert!(graph.get_node_type_id( graph.get_nodes_number() + 1 ).is_err());
     }
+    else {
+        assert!(graph.get_top_k_nodes_by_node_type(2).is_err());
+    }
     if graph.has_edge_types() {
         graph.get_top_k_edges_by_edge_type(10).unwrap();
         graph.get_edge_type_id(0).unwrap();
 
         assert!(graph.get_edge_type_id( graph.get_edges_number() + 1 ).is_err());
     }
-
+    else {
+        assert!(graph.get_top_k_edges_by_edge_type(2).is_err());
+    }
     // Evaluate get_node_type_id
     assert_eq!(graph.get_node_type_id(0).is_ok(), graph.has_node_types());
 
