@@ -16,11 +16,11 @@ fn parse_edge_weight(weight: Option<String>) -> Result<Option<WeightT>, String> 
     }
 }
 
-/// Structure that saves the parameters specific to writing and reading a nodes csv file.
+/// Structure that saves the reader specific to writing and reading a nodes csv file.
 ///
 /// # Attributes
-pub struct  EdgeFileReader<'a> {
-    pub(crate) parameters: &'a CSVFileReader,
+pub struct EdgeFileReader {
+    pub(crate) reader: CSVFileReader,
     pub(crate) sources_column_number: usize,
     pub(crate) destinations_column_number: usize,
     pub(crate) edge_types_column_number: Option<usize>,
@@ -31,16 +31,16 @@ pub struct  EdgeFileReader<'a> {
     pub(crate) ignore_duplicated_edges: bool,
 }
 
-impl<'a> EdgeFileReader<'a> {
+impl EdgeFileReader {
     /// Return new EdgeFileReader object.
     ///
     /// # Arguments
     ///
-    /// * parameters: CSVFileParameters - Path where to store/load the file.
+    /// * reader: CSVFilereader - Path where to store/load the file.
     ///
-    pub fn new(parameters: &'a CSVFileReader) -> EdgeFileReader<'a> {
-        EdgeFileReader {
-            parameters,
+    pub fn new(path: String) -> Result<EdgeFileReader, String> {
+        Ok(EdgeFileReader {
+            reader: CSVFileReader::new(path)?,
             sources_column_number: 0,
             destinations_column_number: 1,
             edge_types_column_number: None,
@@ -49,7 +49,7 @@ impl<'a> EdgeFileReader<'a> {
             default_weight: None,
             skip_self_loops: false,
             ignore_duplicated_edges: false,
-        }
+        })
     }
 
     /// Set the column of the source nodes.
@@ -61,9 +61,9 @@ impl<'a> EdgeFileReader<'a> {
     pub fn set_sources_column(
         mut self,
         sources_column: Option<String>,
-    ) -> Result<EdgeFileReader<'a>, String> {
+    ) -> Result<EdgeFileReader, String> {
         if let Some(column) = sources_column {
-            self.sources_column_number = self.parameters.get_column_number(column)?;
+            self.sources_column_number = self.reader.get_column_number(column)?;
         }
         Ok(self)
     }
@@ -77,9 +77,9 @@ impl<'a> EdgeFileReader<'a> {
     pub fn set_destinations_column(
         mut self,
         destinations_column: Option<String>,
-    ) -> Result<EdgeFileReader<'a>, String> {
+    ) -> Result<EdgeFileReader, String> {
         if let Some(column) = destinations_column {
-            self.destinations_column_number = self.parameters.get_column_number(column)?;
+            self.destinations_column_number = self.reader.get_column_number(column)?;
         }
         Ok(self)
     }
@@ -93,9 +93,9 @@ impl<'a> EdgeFileReader<'a> {
     pub fn set_edge_types_column(
         mut self,
         edge_type_column: Option<String>,
-    ) -> Result<EdgeFileReader<'a>, String> {
+    ) -> Result<EdgeFileReader, String> {
         if let Some(column) = edge_type_column {
-            self.edge_types_column_number = Some(self.parameters.get_column_number(column)?);
+            self.edge_types_column_number = Some(self.reader.get_column_number(column)?);
         }
         Ok(self)
     }
@@ -109,9 +109,9 @@ impl<'a> EdgeFileReader<'a> {
     pub fn set_weights_column(
         mut self,
         weights_column: Option<String>,
-    ) -> Result<EdgeFileReader<'a>, String> {
+    ) -> Result<EdgeFileReader, String> {
         if let Some(column) = weights_column {
-            self.weights_column_number = Some(self.parameters.get_column_number(column)?);
+            self.weights_column_number = Some(self.reader.get_column_number(column)?);
         }
         Ok(self)
     }
@@ -122,7 +122,7 @@ impl<'a> EdgeFileReader<'a> {
     ///
     /// * default_weight: Option<WeightT> - The default_weight to use when default_weight is missing.
     ///
-    pub fn set_default_weight(mut self, default_weight: Option<WeightT>) -> EdgeFileReader<'a> {
+    pub fn set_default_weight(mut self, default_weight: Option<WeightT>) -> EdgeFileReader {
         self.default_weight = default_weight;
         self
     }
@@ -133,7 +133,7 @@ impl<'a> EdgeFileReader<'a> {
     ///
     /// * default_edge_type: Option<String> - The edge type to use when edge type is missing.
     ///
-    pub fn set_default_edge_type(mut self, default_edge_type: Option<String>) -> EdgeFileReader<'a> {
+    pub fn set_default_edge_type(mut self, default_edge_type: Option<String>) -> EdgeFileReader {
         self.default_edge_type = default_edge_type;
         self
     }
@@ -147,7 +147,7 @@ impl<'a> EdgeFileReader<'a> {
     pub fn set_ignore_duplicated_edges(
         mut self,
         ignore_duplicated_edges: Option<bool>,
-    ) -> EdgeFileReader<'a> {
+    ) -> EdgeFileReader {
         if let Some(i) = ignore_duplicated_edges {
             self.ignore_duplicated_edges = i;
         }
@@ -160,9 +160,74 @@ impl<'a> EdgeFileReader<'a> {
     ///
     /// * skip_self_loops: Option<bool> - if the reader should ignore or not duplicated edges.
     ///
-    pub fn set_skip_self_loops(mut self, skip_self_loops: Option<bool>) -> EdgeFileReader<'a> {
+    pub fn set_skip_self_loops(mut self, skip_self_loops: Option<bool>) -> EdgeFileReader {
         if let Some(i) = skip_self_loops {
             self.skip_self_loops = i;
+        }
+        self
+    }
+
+    /// Set the verbose.
+    ///
+    /// # Arguments
+    ///
+    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
+    ///
+    pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileReader {
+        if let Some(v) = verbose {
+            self.reader.verbose = v;
+        }
+        self
+    }
+
+    /// Set the ignore_duplicates.
+    ///
+    /// # Arguments
+    ///
+    /// * ignore_duplicates: Option<bool> - Wethever to ignore detected duplicates or raise exception.
+    ///
+    pub fn set_ignore_duplicates(mut self, ignore_duplicates: Option<bool>) -> EdgeFileReader {
+        if let Some(v) = ignore_duplicates {
+            self.reader.ignore_duplicates = v;
+        }
+        self
+    }
+
+    /// Set the separator.
+    ///
+    /// # Arguments
+    ///
+    /// * separator: Option<String> - The separator to use for the file.
+    ///
+    pub fn set_separator(mut self, separator: Option<String>) -> EdgeFileReader {
+        if let Some(v) = separator {
+            self.reader.separator = v;
+        }
+        self
+    }
+
+    /// Set the header.
+    ///
+    /// # Arguments
+    ///
+    /// * header: Option<bool> - Wethever to expect an header or not.
+    ///
+    pub fn set_header(mut self, header: Option<bool>) -> EdgeFileReader {
+        if let Some(v) = header {
+            self.reader.header = v;
+        }
+        self
+    }
+
+    /// Set number of rows to be skipped when starting to read file.
+    ///
+    /// # Arguments
+    ///
+    /// * rows_to_skip: Option<bool> - Wethever to show the loading bar or not.
+    ///
+    pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> EdgeFileReader {
+        if let Some(v) = rows_to_skip {
+            self.reader.rows_to_skip = v;
         }
         self
     }
@@ -198,7 +263,7 @@ impl<'a> EdgeFileReader<'a> {
                         ),
                         source_node_name = source_node_name,
                         destination_node_name = destination_node_name,
-                        path = self.parameters.path
+                        path = self.reader.path
                     ))
                 }
             }
@@ -218,7 +283,7 @@ impl<'a> EdgeFileReader<'a> {
                 } else {
                     Err(format!(
                         concat!(
-                            "Found empty weight but no default wright ",
+                            "Found empty weight but no default weight ",
                             "to use was provided.",
                             "The source node name is {source_node_name}.\n",
                             "The destination node name is {destination_node_name}.\n",
@@ -226,7 +291,7 @@ impl<'a> EdgeFileReader<'a> {
                         ),
                         source_node_name = source_node_name,
                         destination_node_name = destination_node_name,
-                        path = self.parameters.path
+                        path = self.reader.path
                     ))
                 }
             }
@@ -248,7 +313,7 @@ impl<'a> EdgeFileReader<'a> {
         String,
     > {
         Ok(self
-            .parameters
+            .reader
             .read_lines()?
             .map(move |values| match values {
                 Ok(vals) => self.parse_edge_line(vals),

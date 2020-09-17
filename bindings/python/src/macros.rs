@@ -1,3 +1,4 @@
+use std::collections::{HashMap};
 
 macro_rules! python_exception {
     ($value: expr, $msg: expr) => {
@@ -17,6 +18,17 @@ macro_rules! to_python_exception {
     };
 }
 
+#[macro_export]
+macro_rules! normalize_kwargs {
+    ($kwargs: expr) => {
+        match $kwargs {
+            Some(v) => v,
+            None => HashMap::new()
+        }
+    };
+}
+
+#[macro_export]
 macro_rules! extract_value {
     ($kwargs: ident, $key: literal, $_type: ty) => {
         match $kwargs.get_item($key) {

@@ -9,17 +9,10 @@ pub fn load_ppi(
     directed: bool,
     verbose: bool,
 ) -> Result<Graph, String> {
-    let edges_csv_reader = CSVFileReader::new("tests/data/ppi/edges.tsv".to_string())?
-        .set_verbose(Some(verbose))
-        .set_ignore_duplicates(Some(true))
-        .set_separator(Some("\t".to_string()))
-        .set_header(Some(true))
-        .set_rows_to_skip(Some(0));
-    let nodes_csv_reader =
-        CSVFileReader::new("tests/data/ppi/nodes.tsv".to_string())?.set_verbose(Some(false));
     let nodes_reader = if load_nodes {
         Some(
-            NodeFileReader::new(&nodes_csv_reader)
+            NodeFileReader::new("tests/data/ppi/nodes.tsv".to_string())?
+                .set_verbose(Some(false))
                 .set_node_types_column_number(Some(56))
                 .set_nodes_column_number(Some(56))
                 .set_node_types_column(Some("category".to_string()))?
@@ -30,7 +23,12 @@ pub fn load_ppi(
     } else {
         None
     };
-    let edges_reader = EdgeFileReader::new(&edges_csv_reader)
+    let edges_reader = EdgeFileReader::new("tests/data/ppi/edges.tsv".to_string())?
+        .set_verbose(Some(verbose))
+        .set_ignore_duplicates(Some(true))
+        .set_separator(Some("\t".to_string()))
+        .set_header(Some(true))
+        .set_rows_to_skip(Some(0))
         .set_sources_column(Some("subject".to_string()))?
         .set_destinations_column(Some("object".to_string()))?
         .set_weights_column(if load_weights {
