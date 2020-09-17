@@ -5,7 +5,7 @@ use pyo3::wrap_pymodule;
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_class::<EnsmallenGraph>()?;
-    m.add_wrapped(wrap_pymodule!(preprocessing))?;
+    //m.add_wrapped(wrap_pymodule!(preprocessing))?;
     env_logger::init();
     Ok(())
 }
@@ -39,5 +39,5 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
 ///     when there are bidirectional directed edges in the given graph.
 ///
 pub(crate) struct EnsmallenGraph {
-    graph: Graph,
+    pub(crate) graph: Graph,
 }

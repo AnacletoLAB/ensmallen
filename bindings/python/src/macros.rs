@@ -17,10 +17,10 @@ macro_rules! pyex {
 
 #[macro_export]
 macro_rules! normalize_kwargs {
-    ($kwargs: expr) => {
+    ($kwargs: expr, $py: expr) => {
         match $kwargs {
             Some(v) => v,
-            None => PyDict::new(pyo3::Python::acquire_gil().python()),
+            None => PyDict::new($py),
         }
     };
 }
