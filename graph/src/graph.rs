@@ -7,7 +7,7 @@ use itertools::Itertools;
 use log::info;
 use rayon::prelude::*;
 use std::collections::{HashMap, HashSet};
-use vec_rand::{gen_random_vec, sample, sample_uniform};
+use vec_rand::{sample, sample_uniform};
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
 /// A graph representation optimized for executing random walks on huge graphs.

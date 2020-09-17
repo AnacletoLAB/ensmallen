@@ -24,10 +24,10 @@ impl Graph {
             },
             directed,
             match &node_file_reader {
-                Some(nfr) => nfr.ignore_duplicated_nodes,
+                Some(nfr) => nfr.reader.ignore_duplicates,
                 None => false,
             },
-            edge_file_reader.ignore_duplicated_edges,
+            edge_file_reader.reader.ignore_duplicates,
             edge_file_reader.skip_self_loops,
         )
     }

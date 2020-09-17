@@ -1,7 +1,6 @@
 use super::*;
 use std::fs;
 
-
 pub fn load_ppi(
     load_nodes: bool,
     load_edge_types: bool,
@@ -18,7 +17,7 @@ pub fn load_ppi(
                 .set_node_types_column(Some("category".to_string()))?
                 .set_default_node_type(Some("default".to_string()))
                 .set_nodes_column(Some("id".to_string()))?
-                .set_ignore_duplicated_nodes(Some(true)),
+                .set_ignore_duplicates(Some(true)),
         )
     } else {
         None
@@ -29,13 +28,17 @@ pub fn load_ppi(
         .set_separator(Some("\t".to_string()))
         .set_header(Some(true))
         .set_rows_to_skip(Some(0))
+        .set_sources_column_number(Some(56))
         .set_sources_column(Some("subject".to_string()))?
+        .set_destinations_column_number(Some(56))
         .set_destinations_column(Some("object".to_string()))?
+        .set_weights_column_number(if load_weights { Some(34) } else { None })
         .set_weights_column(if load_weights {
             Some("weight".to_string())
         } else {
             None
         })?
+        .set_edge_types_column_number(if load_edge_types { Some(45) } else { None })
         .set_edge_types_column(if load_edge_types {
             Some("edge_label".to_string())
         } else {
@@ -43,12 +46,10 @@ pub fn load_ppi(
         })?
         .set_default_edge_type(Some("Kebab".to_string()))
         .set_default_weight(Some(5.0))
-        .set_ignore_duplicated_edges(Some(true))
         .set_skip_self_loops(Some(false));
 
     Graph::from_csv(edges_reader, nodes_reader, directed)
 }
-
 
 pub fn first_order_walker(graph: &Graph) -> WalksParameters {
     WalksParameters::new(
@@ -65,7 +66,6 @@ pub fn first_order_walker(graph: &Graph) -> WalksParameters {
     .set_seed(Some(43))
     .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
 }
-
 
 pub fn second_order_walker(graph: &Graph) -> WalksParameters {
     WalksParameters::new(
@@ -94,7 +94,6 @@ pub fn second_order_walker(graph: &Graph) -> WalksParameters {
     .set_seed(Some(43))
 }
 
-
 pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
     assert!(!train.overlaps(&test).unwrap());
     assert!(!test.overlaps(&train).unwrap());
@@ -103,7 +102,6 @@ pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
     let summed = (train + test).unwrap();
     assert!(summed.contains(&graph).unwrap());
 }
-
 
 pub fn default_test_suite(graph: &Graph, verbose: bool) {
     // Testing principal random walk algorithms
@@ -183,11 +181,11 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
         }
     }
     // Testing the top Ks
-    if graph.has_node_types(){
+    if graph.has_node_types() {
         graph.get_top_k_nodes_by_node_type(10).unwrap();
         graph.get_node_type_id(0).unwrap();
     }
-    if graph.has_edge_types(){
+    if graph.has_edge_types() {
         graph.get_top_k_edges_by_edge_type(10).unwrap();
         graph.get_edge_type_id(0).unwrap();
     }
@@ -197,5 +195,4 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
 
     // Evaluate get_edge_type_counts
     assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
-
 }

@@ -28,7 +28,6 @@ pub struct EdgeFileReader {
     pub(crate) weights_column_number: Option<usize>,
     pub(crate) default_weight: Option<WeightT>,
     pub(crate) skip_self_loops: bool,
-    pub(crate) ignore_duplicated_edges: bool,
 }
 
 impl EdgeFileReader {
@@ -48,7 +47,6 @@ impl EdgeFileReader {
             weights_column_number: None,
             default_weight: None,
             skip_self_loops: false,
-            ignore_duplicated_edges: false,
         })
     }
 
@@ -68,6 +66,19 @@ impl EdgeFileReader {
         Ok(self)
     }
 
+    /// Set the column_number of the nodes.
+    ///
+    /// # Arguments
+    ///
+    /// * sources_column_number: Option<usize> - The sources column number to use for the file.
+    ///
+    pub fn set_sources_column_number(mut self, sources_column_number: Option<usize>) -> EdgeFileReader {
+        if let Some(column) = sources_column_number {
+            self.sources_column_number = column;
+        }
+        self
+    }
+
     /// Set the column of the nodes.
     ///
     /// # Arguments
@@ -82,6 +93,19 @@ impl EdgeFileReader {
             self.destinations_column_number = self.reader.get_column_number(column)?;
         }
         Ok(self)
+    }
+
+    /// Set the column_number of the nodes.
+    ///
+    /// # Arguments
+    ///
+    /// * destinations_column_number: Option<usize> - The destinations column number to use for the file.
+    ///
+    pub fn set_destinations_column_number(mut self, destinations_column_number: Option<usize>) -> EdgeFileReader {
+        if let Some(column) = destinations_column_number {
+            self.destinations_column_number = column;
+        }
+        self
     }
 
     /// Set the column of the nodes.
@@ -100,6 +124,17 @@ impl EdgeFileReader {
         Ok(self)
     }
 
+    /// Set the column_number of the nodes.
+    ///
+    /// # Arguments
+    ///
+    /// * edge_types_column_number: Option<usize> - The edge_types column number to use for the file.
+    ///
+    pub fn set_edge_types_column_number(mut self, edge_types_column_number: Option<usize>) -> EdgeFileReader {
+        self.edge_types_column_number = edge_types_column_number;
+        self
+    }
+
     /// Set the column of the nodes.
     ///
     /// # Arguments
@@ -114,6 +149,17 @@ impl EdgeFileReader {
             self.weights_column_number = Some(self.reader.get_column_number(column)?);
         }
         Ok(self)
+    }
+
+    /// Set the column_number of the nodes.
+    ///
+    /// # Arguments
+    ///
+    /// * weights_column_number: Option<usize> - The weights column number to use for the file.
+    ///
+    pub fn set_weights_column_number(mut self, weights_column_number: Option<usize>) -> EdgeFileReader {
+        self.weights_column_number = weights_column_number;
+        self
     }
 
     /// Set the default default_weight.
@@ -135,22 +181,6 @@ impl EdgeFileReader {
     ///
     pub fn set_default_edge_type(mut self, default_edge_type: Option<String>) -> EdgeFileReader {
         self.default_edge_type = default_edge_type;
-        self
-    }
-
-    /// Set if the reader should ignore or not duplicated edges.
-    ///
-    /// # Arguments
-    ///
-    /// * ignore_duplicated_edges: Option<bool> - if the reader should ignore or not duplicated edges.
-    ///
-    pub fn set_ignore_duplicated_edges(
-        mut self,
-        ignore_duplicated_edges: Option<bool>,
-    ) -> EdgeFileReader {
-        if let Some(i) = ignore_duplicated_edges {
-            self.ignore_duplicated_edges = i;
-        }
         self
     }
 

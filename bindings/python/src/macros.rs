@@ -1,15 +1,12 @@
-use std::collections::{HashMap};
+extern crate edit_distance;
+use edit_distance::edit_distance;
+use pyo3::exceptions;
+use pyo3::prelude::*;
+use pyo3::types::PyDict;
+use std::collections::HashSet;
 
-macro_rules! python_exception {
-    ($value: expr, $msg: expr) => {
-        match $value {
-            Ok(v) => Ok(v),
-            Err(_) => Err(PyErr::new::<exceptions::ValueError, _>($msg)),
-        }
-    };
-}
-
-macro_rules! to_python_exception {
+#[macro_export]
+macro_rules! pyex {
     ($value: expr) => {
         match $value {
             Ok(v) => Ok(v),
@@ -23,7 +20,7 @@ macro_rules! normalize_kwargs {
     ($kwargs: expr) => {
         match $kwargs {
             Some(v) => v,
-            None => HashMap::new()
+            None => PyDict::new(pyo3::Python::acquire_gil().python()),
         }
     };
 }
@@ -33,26 +30,26 @@ macro_rules! extract_value {
     ($kwargs: ident, $key: literal, $_type: ty) => {
         match $kwargs.get_item($key) {
             None => None,
-            Some(v) => {
-                if v.get_type().name() == "NoneType" {
+            Some(value) => {
+                if value.get_type().name() == "NoneType" {
                     None
                 } else {
-                    let extracted = v.extract::<$_type>();
-                    Some(python_exception!(
-                        extracted,
-                        format!(
+                    Some(match value.extract::<$_type>() {
+                        Ok(v) => Ok(v),
+                        Err(v) => Err(PyErr::new::<exceptions::ValueError, _>(format!(
                             "The value passed for {} cannot be casted from {} to {}.",
                             $key,
-                            v.get_type().name(),
+                            value.get_type().name(),
                             stringify!($_type)
-                        )
-                    )?)
+                        )))
+                    }?)
                 }
             }
         }
     };
 }
 
+#[macro_export]
 macro_rules! to_nparray_1d {
     ($gil: expr, $value: expr, $_type: ty) => {
         python_exception!(
@@ -66,6 +63,7 @@ macro_rules! to_nparray_1d {
     };
 }
 
+#[macro_export]
 macro_rules! to_nparray_2d {
     ($gil: expr, $value: expr, $_type: ty) => {
         python_exception!(
@@ -90,7 +88,7 @@ fn validate_kwargs(kwargs: &PyDict, columns: &[&str]) -> PyResult<()> {
         .map(|v| v.extract::<&str>().unwrap())
         .collect();
     let columns: HashSet<&str> = columns.iter().cloned().collect();
-    to_python_exception!(if keys.is_subset(&columns) {
+    pyex!(if keys.is_subset(&columns) {
         return Ok(());
     } else {
         for k in &columns {

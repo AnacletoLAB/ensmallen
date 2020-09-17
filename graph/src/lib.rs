@@ -8,8 +8,8 @@ mod vocabulary_vec;
 pub(crate) use self::vocabulary_vec::VocabularyVec;
 
 mod csv_file_writer;
-pub use self::csv_file_writer::CSVFileWriter;
 pub(crate) use self::csv_file_writer::compose_lines;
+pub use self::csv_file_writer::CSVFileWriter;
 mod csv_file_reader;
 pub use self::csv_file_reader::CSVFileReader;
 mod node_file_reader;
@@ -25,14 +25,14 @@ mod from_csv;
 mod constructors;
 pub(crate) use self::constructors::build_graph;
 
-pub mod types;
 pub mod graph;
-mod metrics;
 mod holdouts;
+mod metrics;
 mod operators;
 mod preprocessing;
 mod tarjan;
 mod trees;
+pub mod types;
 mod walks_parameters;
 
 pub mod test_utilities;

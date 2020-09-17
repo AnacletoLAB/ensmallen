@@ -1,12 +1,11 @@
 use super::*;
-use graph::{CSVFileReader, EdgeFileReader, NodeFileReader, Graph};
+use graph::{EdgeFileReader, Graph, NodeFileReader, WeightT};
 use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 
 #[pymethods]
 impl EnsmallenGraph {
-
     #[staticmethod]
     #[args(py_kwargs = "**")]
     #[text_signature = "(edge_path, sources_column, destinations_column, directed, *, edge_types_column, default_edge_type, weights_column, default_weight, node_path, nodes_column, node_types_column, default_node_type, edge_sep, node_sep, ignore_duplicated_edges, ignore_duplicated_nodes, force_conversion_to_undirected)"]
@@ -55,75 +54,54 @@ impl EnsmallenGraph {
     ///     Wethever to ignore duplicated nodes or to raise an exception.
     ///     The default behaviour is to raise an exception.
     ///
-    fn from_csv(
-        edge_path: &str,
-        directed: bool,
-        py_kwargs: Option<&PyDict>,
-    ) -> PyResult<Self> {
+    fn from_csv(edge_path: String, directed: bool, py_kwargs: Option<&PyDict>) -> PyResult<EnsmallenGraph> {
         let kwargs = normalize_kwargs!(py_kwargs);
-        validate_kwargs(
-            kwargs,
-            &[
-                "edge_sep",
-                "weights_column",
-                "default_weight",
-                "node_path",
-                "nodes_column",
-                "node_types_column",
-                "default_node_type",
-                "node_sep",
-                "ignore_duplicated_nodes",
-                "edge_types_column",
-                "default_edge_type",
-                "ignore_duplicated_edges",
-                "force_conversion_to_undirected",
-                "validate_input_data",
-            ],
-        )?;
 
-        let edges = EdgeFileReader::new(edge_path)
-            .set_sources_column(extract_value!(kwargs, "sources_column", &str));
+        let edges: EdgeFileReader =
+            pyex!(pyex!(pyex!(pyex!(pyex!(EdgeFileReader::new(edge_path))?
+                .set_sources_column_number(extract_value!(kwargs, "sources_column_number", usize))
+                .set_sources_column(extract_value!(kwargs, "sources_column", String)))?
+            .set_destinations_column_number(extract_value!(
+                kwargs,
+                "destinations_column_number",
+                usize
+            ))
+            .set_destinations_column(extract_value!(kwargs, "destinations_column", String)))?
+            .set_edge_types_column_number(extract_value!(kwargs, "edge_types_column_number", usize))
+            .set_edge_types_column(extract_value!(kwargs, "edge_types_column", String)))?
+            .set_default_edge_type(extract_value!(kwargs, "default_edge_type", String))
+            .set_weights_column_number(extract_value!(kwargs, "weights_column_number", usize))
+            .set_weights_column(extract_value!(kwargs, "weights_column", String)))?
+            .set_default_weight(extract_value!(kwargs, "default_weight", WeightT))
+            .set_skip_self_loops(extract_value!(kwargs, "skip_self_loops", bool))
+            .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_edges", bool))
+            .set_header(extract_value!(kwargs, "header", bool))
+            .set_rows_to_skip(extract_value!(kwargs, "rows_to_skip", usize))
+            .set_separator(extract_value!(kwargs, "separator", String));
 
-        let weights_column = extract_value!(kwargs, "weights_column", &str);
-        if let Some(wc) = weights_column {
-            result = result.set_weights(wc, extract_value!(kwargs, "default_weight", WeightT));
-        }
-        let node_path = extract_value!(kwargs, "node_path", &str);
-        let nodes_column = extract_value!(kwargs, "nodes_column", &str);
-        let node_types_column = extract_value!(kwargs, "node_types_column", &str);
-        let default_node_type = extract_value!(kwargs, "default_node_type", &str);
-        let node_sep = extract_value!(kwargs, "node_sep", &str);
-        let ignore_duplicated_nodes = extract_value!(kwargs, "ignore_duplicated_nodes", bool);
+        let nodes: Option<NodeFileReader> = match kwargs.get_item("node_path") {
+            Some(_) => Some(
+                pyex!(pyex!(pyex!(NodeFileReader::new(
+                    extract_value!(kwargs, "node_path", String).unwrap()
+                ))?
+                .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize))
+                .set_nodes_column(extract_value!(kwargs, "nodes_column", String)))?
+                .set_node_types_column_number(extract_value!(
+                    kwargs,
+                    "node_types_column_number",
+                    usize
+                ))
+                .set_node_types_column(extract_value!(kwargs, "node_types_column", String)))?
+                .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_nodes", bool))
+                .set_header(extract_value!(kwargs, "header", bool))
+                .set_rows_to_skip(extract_value!(kwargs, "rows_to_skip", usize))
+                .set_verbose(extract_value!(kwargs, "verbose", bool)),
+            ),
+            None => None,
+        };
 
-        if node_path.is_some() {
-            result = match result.load_nodes_csv(
-                node_path.unwrap(),
-                nodes_column.unwrap(),
-                node_types_column.unwrap(),
-                default_node_type,
-                node_sep,
-                ignore_duplicated_nodes,
-            ) {
-                Ok(g) => Ok(g),
-                Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-            }?;
-        }
-
-        let edge_types_column = extract_value!(kwargs, "edge_types_column", &str);
-        if let Some(etc) = edge_types_column {
-            result = result.set_edge_types(etc, extract_value!(kwargs, "default_edge_type", &str));
-        }
-
-        let ignore_duplicated_edges = extract_value!(kwargs, "ignore_duplicated_edges", bool);
-        if let Some(ide) = ignore_duplicated_edges {
-            if ide {
-                result = result.set_ignore_duplicated_edges();
-            }
-        }
-
-        match result.build() {
-            Ok(g) => Ok(EnsmallenGraph { graph: g }),
-            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-        }
+        Ok(EnsmallenGraph {
+            graph: pyex!(Graph::from_csv(edges, nodes, directed))?
+        })
     }
 }

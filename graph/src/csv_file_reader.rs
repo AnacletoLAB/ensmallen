@@ -106,6 +106,7 @@ impl CSVFileReader {
         }
         self
     }
+    
     /// Read the whole file and return how many rows it has.
     pub(crate) fn count_rows(&self) -> usize {
         BufReader::new(File::open(&self.path).unwrap())
