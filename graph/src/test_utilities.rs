@@ -97,6 +97,22 @@ pub fn second_order_walker(graph: &Graph) -> WalksParameters {
     .set_seed(Some(43))
 }
 
+pub fn verbsose_walker(graph: &Graph) -> WalksParameters {
+    WalksParameters::new(
+        SingleWalkParameters::new(50, WalkWeights::default()).unwrap(),
+        0,
+        graph.get_not_trap_nodes_number(),
+    )
+    .unwrap()
+    .set_iterations(Some(1))
+    .unwrap()
+    .set_min_length(Some(1))
+    .unwrap()
+    .set_verbose(Some(true))
+    .set_seed(Some(43))
+    .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
+}
+
 pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
     assert!(!train.overlaps(&test).unwrap());
     assert!(!test.overlaps(&train).unwrap());
@@ -111,6 +127,9 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
     let walker = first_order_walker(&graph);
     graph.walk(&walker).unwrap();
     graph.walk(&second_order_walker(&graph)).unwrap();
+
+    let verbose_walker = verbsose_walker(&graph);
+    graph.walk(&verbose_walker).unwrap();
     // Testing main holdout mechanisms
     for include_all_edge_types in &[true, false] {
         let (train, test) = graph
