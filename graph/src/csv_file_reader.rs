@@ -1,4 +1,4 @@
-use indicatif::{ProgressIterator, ProgressBar, ProgressStyle};
+use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
 /// Structure that saves the common parameters for reading csv files.
@@ -16,7 +16,7 @@ pub struct CSVFileReader {
     pub(crate) separator: String,
     pub(crate) header: bool,
     pub(crate) rows_to_skip: usize,
-    pub(crate) ignore_duplicates: bool
+    pub(crate) ignore_duplicates: bool,
 }
 
 /// # Builder methods
@@ -36,77 +36,12 @@ impl CSVFileReader {
                 separator: "\t".to_string(),
                 header: true,
                 rows_to_skip: 0,
-                ignore_duplicates: true
+                ignore_duplicates: true,
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
         }
     }
 
-    /// Set the verbose.
-    ///
-    /// # Arguments
-    ///
-    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
-    ///
-    pub fn set_verbose(mut self, verbose: Option<bool>) -> CSVFileReader {
-        if let Some(v) = verbose {
-            self.verbose = v;
-        }
-        self
-    }
-
-    /// Set the ignore_duplicates.
-    ///
-    /// # Arguments
-    ///
-    /// * ignore_duplicates: Option<bool> - Wethever to ignore detected duplicates or raise exception.
-    ///
-    pub fn set_ignore_duplicates(mut self, ignore_duplicates: Option<bool>) -> CSVFileReader {
-        if let Some(v) = ignore_duplicates {
-            self.ignore_duplicates = v;
-        }
-        self
-    }
-
-    /// Set the separator.
-    ///
-    /// # Arguments
-    ///
-    /// * separator: Option<String> - The separator to use for the file.
-    ///
-    pub fn set_separator(mut self, separator: Option<String>) -> CSVFileReader {
-        if let Some(v) = separator {
-            self.separator = v;
-        }
-        self
-    }
-
-    /// Set the header.
-    ///
-    /// # Arguments
-    ///
-    /// * header: Option<bool> - Wethever to expect an header or not.
-    ///
-    pub fn set_header(mut self, header: Option<bool>) -> CSVFileReader {
-        if let Some(v) = header {
-            self.header = v;
-        }
-        self
-    }
-
-    /// Set number of rows to be skipped when starting to read file.
-    ///
-    /// # Arguments
-    ///
-    /// * rows_to_skip: Option<bool> - Wethever to show the loading bar or not.
-    ///
-    pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> CSVFileReader {
-        if let Some(v) = rows_to_skip {
-            self.rows_to_skip = v;
-        }
-        self
-    }
-    
     /// Read the whole file and return how many rows it has.
     pub(crate) fn count_rows(&self) -> usize {
         BufReader::new(File::open(&self.path).unwrap())
@@ -156,7 +91,9 @@ impl CSVFileReader {
     }
 
     /// Return iterator that read a CSV file rows.
-    pub(crate) fn read_lines(&self) -> Result<impl Iterator<Item = Result<Vec<String>, String>> + '_, String> {
+    pub(crate) fn read_lines(
+        &self,
+    ) -> Result<impl Iterator<Item = Result<Vec<String>, String>> + '_, String> {
         let pb = if self.verbose {
             let rows_number =
                 self.count_rows() as u64 - self.rows_to_skip as u64 - self.header as u64;
@@ -218,18 +155,16 @@ impl CSVFileReader {
     }
 
     /// Return number of the given column in header.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * column_name: String - Column to get the number of.
-    /// 
+    ///
     pub(crate) fn get_column_number(&self, column_name: String) -> Result<usize, String> {
         let header = self.get_header()?;
 
         match header.iter().position(|x| *x == column_name) {
-            Some(column_number) => {
-                Ok(column_number)
-            }
+            Some(column_number) => Ok(column_number),
             None => Err(format!(
                 "The column '{}' is not present in the header\n{:?}",
                 column_name, header

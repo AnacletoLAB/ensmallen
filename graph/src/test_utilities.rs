@@ -17,7 +17,10 @@ pub fn load_ppi(
                 .set_node_types_column(Some("category".to_string()))?
                 .set_default_node_type(Some("default".to_string()))
                 .set_nodes_column(Some("id".to_string()))?
-                .set_ignore_duplicates(Some(true)),
+                .set_ignore_duplicates(Some(true))
+                .set_separator(Some("\t".to_string()))
+                .set_header(Some(true))
+                .set_rows_to_skip(Some(0)),
         )
     } else {
         None
