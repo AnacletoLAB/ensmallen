@@ -34,6 +34,7 @@ mod tarjan;
 mod trees;
 pub mod types;
 mod walks_parameters;
+mod walks;
 
 pub mod test_utilities;
 
@@ -44,4 +45,5 @@ pub use self::tarjan::*;
 pub use self::trees::*;
 pub use self::types::*;
 pub use self::walks_parameters::*;
+pub use self::walks::*;
 pub use preprocessing::*;
