@@ -8,7 +8,7 @@ use std::collections::HashMap;
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, explore_weight, return_weight, change_edge_type_weight, change_node_type_weight, seed, verbose, iterations, min_length, dense_nodes_mapping)"]
+    #[text_signature = "($self, length, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, seed, verbose, iterations, dense_nodes_mapping)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
