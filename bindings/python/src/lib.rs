@@ -6,7 +6,7 @@ mod utilities;
 pub(crate) use crate::utilities::*;
 //mod getters;
 //pub(crate) use crate::getters::*;
-//mod metrics;
+mod metrics;
 //pub(crate) use crate::metrics::*;
 //mod node_file_writer;
 //pub(crate) use crate::node_file_writer::*;

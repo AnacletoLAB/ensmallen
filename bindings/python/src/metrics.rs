@@ -1,3 +1,10 @@
+use super::*;
+use graph::{EdgeT, NodeT};
+use numpy::{PyArray, PyArray1};
+use pyo3::prelude::*;
+use std::collections::HashMap;
+
+#[pymethods]
 impl EnsmallenGraph {
     #[text_signature = "($self)"]
     /// Returns mean node degree of the graph.
@@ -83,7 +90,7 @@ impl EnsmallenGraph {
     /// Jaccard Index for the two given nodes.
     ///
     fn jaccard_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
-        to_python_exception!(self.graph.jaccard_index(one, two))
+        pyex!(self.graph.jaccard_index(one, two))
     }
 
     #[text_signature = "($self, one, two)"]
@@ -101,7 +108,7 @@ impl EnsmallenGraph {
     /// Adamic/Adar for the two given nodes.
     ///
     fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
-        to_python_exception!(self.graph.adamic_adar_index(one, two))
+        pyex!(self.graph.adamic_adar_index(one, two))
     }
 
     #[text_signature = "($self, one, two)"]
@@ -119,7 +126,7 @@ impl EnsmallenGraph {
     /// Resource Allocation Index for the two given nodes.
     ///
     fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> PyResult<f64> {
-        to_python_exception!(self.graph.resource_allocation_index(one, two))
+        pyex!(self.graph.resource_allocation_index(one, two))
     }
 
     #[text_signature = "($self, one, two)"]
@@ -137,7 +144,7 @@ impl EnsmallenGraph {
     /// degrees product for the two given nodes.
     ///
     fn degrees_product(&self, one: NodeT, two: NodeT) -> PyResult<usize> {
-        to_python_exception!(self.graph.degrees_product(one, two))
+        pyex!(self.graph.degrees_product(one, two))
     }
 
     #[text_signature = "(self)"]
