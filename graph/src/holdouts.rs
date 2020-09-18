@@ -273,6 +273,7 @@ impl Graph {
     /// * `seed`:NodeT - The seed to use for the holdout,
     /// * `train_percentage`:f64 - Percentage target to reserve for training.
     /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
+    /// * `verbose`: bool - Wethever to show the loading bar.
     ///
     pub fn connected_holdout(
         &self,
@@ -332,6 +333,7 @@ impl Graph {
     /// * seed:NodeT - The seed to use for the holdout,
     /// * train_percentage:f64 - Percentage target to reserve for training
     /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
+    /// * `verbose`: bool - Wethever to show the loading bar.
     ///
     pub fn random_holdout(
         &self,
@@ -360,6 +362,8 @@ impl Graph {
     ///
     /// * seed: usize - Random seed to use.
     /// * nodes_number: usize - Number of nodes to extract.
+    /// * `verbose`: bool - Wethever to show the loading bar.
+    /// 
     pub fn random_subgraph(
         &self,
         seed: usize,
