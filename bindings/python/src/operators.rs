@@ -1,14 +1,20 @@
+use super::*;
+use pyo3::class::basic::CompareOp;
+use pyo3::class::number::PyNumberProtocol;
+use pyo3::class::PyObjectProtocol;
+use pyo3::exceptions;
+use pyo3::prelude::*;
+
 #[pyproto]
 impl PyNumberProtocol for EnsmallenGraph {
     fn __add__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
-        match lhs.graph.sum(&rhs.graph) {
-            Ok(g) => Ok(EnsmallenGraph { graph: g }),
-            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-        }
+        Ok(EnsmallenGraph {
+            graph: pyex!(&lhs.graph + &rhs.graph)?,
+        })
     }
 }
 
-
+#[pymethods]
 impl EnsmallenGraph {
     /// Return true if given graph has any edge overlapping with current graph.
     ///
@@ -21,7 +27,7 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if any overlapping edge was found.
     pub fn overlaps(&self, graph: &EnsmallenGraph) -> PyResult<bool> {
-        to_python_exception!(self.graph.overlaps(&graph.graph))
+        pyex!(self.graph.overlaps(&graph.graph))
     }
 
     /// Return true if given graph edges are all contained within current graph.
@@ -35,9 +41,10 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if graph contains completely the othe graph.
     pub fn contains(&self, graph: &EnsmallenGraph) -> PyResult<bool> {
-        to_python_exception!(self.graph.contains(&graph.graph))
+        pyex!(self.graph.contains(&graph.graph))
     }
-
+}
+impl EnsmallenGraph {
     // separate the method from the __richcmp__ so that we can capture and convert all the exceptions
     // in an uniform way
     pub(crate) fn compare_graphs(
@@ -59,6 +66,6 @@ impl EnsmallenGraph {
 #[pyproto]
 impl PyObjectProtocol for EnsmallenGraph {
     fn __richcmp__(&self, other: EnsmallenGraph, op: CompareOp) -> PyResult<bool> {
-        to_python_exception!(self.compare_graphs(other, op))
+        pyex!(self.compare_graphs(other, op))
     }
 }
