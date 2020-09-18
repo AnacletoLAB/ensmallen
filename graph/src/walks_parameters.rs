@@ -59,72 +59,6 @@ impl WalkWeights {
         }
     }
 
-    /// Set the return weight.
-    ///
-    /// # Arguments
-    ///
-    /// * return_weight: Option<WeightT> - weight for the exploitation factor.
-    ///
-    pub fn set_return_weight(
-        mut self,
-        return_weight: Option<WeightT>,
-    ) -> Result<WalkWeights, String> {
-        if let Some(rw) = return_weight {
-            self.return_weight = WalkWeights::validate_weight("return_weight", rw)?;
-        }
-        Ok(self)
-    }
-
-    /// Set the explore weight.
-    ///
-    /// # Arguments
-    ///
-    /// * explore_weight: Option<WeightT> - weight for the exploration factor.
-    ///
-    pub fn set_explore_weight(
-        mut self,
-        explore_weight: Option<WeightT>,
-    ) -> Result<WalkWeights, String> {
-        if let Some(ew) = explore_weight {
-            self.explore_weight = WalkWeights::validate_weight("explore_weight", ew)?;
-        }
-        Ok(self)
-    }
-
-    /// Set the change_node_type weight.
-    ///
-    /// # Arguments
-    ///
-    /// * change_node_type_weight: Option<WeightT> - weight for the exploration of different node types.
-    ///
-    pub fn set_change_node_type_weight(
-        mut self,
-        change_node_type_weight: Option<WeightT>,
-    ) -> Result<WalkWeights, String> {
-        if let Some(cntw) = change_node_type_weight {
-            self.change_node_type_weight =
-                WalkWeights::validate_weight("change_node_type_weight", cntw)?;
-        }
-        Ok(self)
-    }
-
-    /// Set the change_edge_type weight.
-    ///
-    /// # Arguments
-    ///
-    /// * change_edge_type_weight: Option<WeightT> - weight for the exploration of different node types.
-    ///
-    pub fn set_change_edge_type_weight(
-        mut self,
-        change_edge_type_weight: Option<WeightT>,
-    ) -> Result<WalkWeights, String> {
-        if let Some(cetw) = change_edge_type_weight {
-            self.change_edge_type_weight =
-                WalkWeights::validate_weight("change_edge_type_weight", cetw)?;
-        }
-        Ok(self)
-    }
-
     /// Return boolean value representing if walk is of first order.
     pub fn is_first_order_walk(&self) -> bool {
         let weights = vec![
@@ -155,7 +89,7 @@ impl SingleWalkParameters {
 
 impl WalksParameters {
     pub fn new(
-        single_walk_parameters: SingleWalkParameters,
+        length: usize,
         start_node: NodeT,
         end_node: NodeT,
     ) -> Result<WalksParameters, String> {
@@ -172,7 +106,10 @@ impl WalksParameters {
         Ok(WalksParameters {
             start_node,
             end_node,
-            single_walk_parameters,
+            single_walk_parameters: SingleWalkParameters::new(
+                length,
+                WalkWeights::default()
+            )?,
             iterations: 1,
             min_length: 1,
             seed: 42,
@@ -258,6 +195,73 @@ impl WalksParameters {
     ) -> WalksParameters {
         self.dense_nodes_mapping = dense_nodes_mapping;
         self
+    }
+
+
+    /// Set the return weight.
+    ///
+    /// # Arguments
+    ///
+    /// * return_weight: Option<WeightT> - weight for the exploitation factor.
+    ///
+    pub fn set_return_weight(
+        mut self,
+        return_weight: Option<WeightT>,
+    ) -> Result<WalksParameters, String> {
+        if let Some(rw) = return_weight {
+            self.single_walk_parameters.weights.return_weight = WalkWeights::validate_weight("return_weight", rw)?;
+        }
+        Ok(self)
+    }
+
+    /// Set the explore weight.
+    ///
+    /// # Arguments
+    ///
+    /// * explore_weight: Option<WeightT> - weight for the exploration factor.
+    ///
+    pub fn set_explore_weight(
+        mut self,
+        explore_weight: Option<WeightT>,
+    ) -> Result<WalksParameters, String> {
+        if let Some(ew) = explore_weight {
+            self.single_walk_parameters.weights.explore_weight = WalkWeights::validate_weight("explore_weight", ew)?;
+        }
+        Ok(self)
+    }
+
+    /// Set the change_node_type weight.
+    ///
+    /// # Arguments
+    ///
+    /// * change_node_type_weight: Option<WeightT> - weight for the exploration of different node types.
+    ///
+    pub fn set_change_node_type_weight(
+        mut self,
+        change_node_type_weight: Option<WeightT>,
+    ) -> Result<WalksParameters, String> {
+        if let Some(cntw) = change_node_type_weight {
+            self.single_walk_parameters.weights.change_node_type_weight =
+                WalkWeights::validate_weight("change_node_type_weight", cntw)?;
+        }
+        Ok(self)
+    }
+
+    /// Set the change_edge_type weight.
+    ///
+    /// # Arguments
+    ///
+    /// * change_edge_type_weight: Option<WeightT> - weight for the exploration of different node types.
+    ///
+    pub fn set_change_edge_type_weight(
+        mut self,
+        change_edge_type_weight: Option<WeightT>,
+    ) -> Result<WalksParameters, String> {
+        if let Some(cetw) = change_edge_type_weight {
+            self.single_walk_parameters.weights.change_edge_type_weight =
+                WalkWeights::validate_weight("change_edge_type_weight", cetw)?;
+        }
+        Ok(self)
     }
 
     /// Validate for graph.

@@ -57,7 +57,6 @@ fn build_walk_parameters(
     start_node: NodeT,
     end_node: NodeT,
     py_kwargs: Option<&PyDict>,
-    validate: bool,
 ) -> PyResult<WalksParameters> {
     let mut walks_parameters = to_python_exception!(WalksParameters::new(
         build_single_walk_parameters(length, py_kwargs)?,
@@ -145,7 +144,7 @@ impl EnsmallenGraph {
     ///     maps these nodes into a dense range of values.
     /// seed: int,
     ///     Seed to use to reproduce the walks.
-    /// verbose: int = True,
+    /// verbose: int = False,
     ///     Wethever to show or not the loading bar of the walks.
     ///
     /// Returns

@@ -54,9 +54,9 @@ pub fn load_ppi(
     Graph::from_csv(edges_reader, nodes_reader, directed)
 }
 
-pub fn first_order_walker(graph: &Graph) -> WalksParameters {
+pub fn first_order_walker(graph: &Graph, verbose: bool) -> WalksParameters {
     WalksParameters::new(
-        SingleWalkParameters::new(50, WalkWeights::default()).unwrap(),
+        50,
         0,
         graph.get_not_trap_nodes_number(),
     )
@@ -65,52 +65,24 @@ pub fn first_order_walker(graph: &Graph) -> WalksParameters {
     .unwrap()
     .set_min_length(Some(1))
     .unwrap()
-    .set_verbose(Some(false))
+    .set_verbose(Some(verbose))
     .set_seed(Some(43))
     .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
 }
 
-pub fn second_order_walker(graph: &Graph) -> WalksParameters {
-    WalksParameters::new(
-        SingleWalkParameters::new(
-            50,
-            WalkWeights::default()
-                .set_explore_weight(Some(2.0))
-                .unwrap()
-                .set_return_weight(Some(2.0))
-                .unwrap()
-                .set_change_node_type_weight(Some(2.0))
-                .unwrap()
-                .set_change_edge_type_weight(Some(2.0))
-                .unwrap(),
-        )
-        .unwrap(),
-        0,
-        graph.get_not_trap_nodes_number(),
-    )
-    .unwrap()
-    .set_iterations(Some(1))
-    .unwrap()
-    .set_min_length(Some(1))
-    .unwrap()
-    .set_verbose(Some(false))
-    .set_seed(Some(43))
-}
-
-pub fn verbsose_walker(graph: &Graph) -> WalksParameters {
-    WalksParameters::new(
-        SingleWalkParameters::new(50, WalkWeights::default()).unwrap(),
-        0,
-        graph.get_not_trap_nodes_number(),
-    )
-    .unwrap()
-    .set_iterations(Some(1))
-    .unwrap()
-    .set_min_length(Some(1))
-    .unwrap()
-    .set_verbose(Some(true))
-    .set_seed(Some(43))
-    .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
+pub fn second_order_walker(graph: &Graph, verbose: bool) -> WalksParameters {
+    WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())
+        .unwrap()
+        .set_iterations(Some(1))
+        .unwrap()
+        .set_min_length(Some(1))
+        .unwrap()
+        .set_verbose(Some(verbose))
+        .set_return_weight(Some(2.0)).unwrap()
+        .set_explore_weight(Some(2.0)).unwrap()
+        .set_change_edge_type_weight(Some(2.0)).unwrap()
+        .set_change_node_type_weight(Some(2.0)).unwrap()
+        .set_seed(Some(43))
 }
 
 pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
@@ -124,12 +96,10 @@ pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
 
 pub fn default_test_suite(graph: &Graph, verbose: bool) {
     // Testing principal random walk algorithms
-    let walker = first_order_walker(&graph);
+    let walker = first_order_walker(&graph, verbose);
     graph.walk(&walker).unwrap();
-    graph.walk(&second_order_walker(&graph)).unwrap();
+    graph.walk(&second_order_walker(&graph, verbose)).unwrap();
 
-    let verbose_walker = verbsose_walker(&graph);
-    graph.walk(&verbose_walker).unwrap();
     // Testing main holdout mechanisms
     for include_all_edge_types in &[true, false] {
         let (train, test) = graph
@@ -207,18 +177,20 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
         graph.get_top_k_nodes_by_node_type(10).unwrap();
         graph.get_node_type_id(0).unwrap();
 
-        assert!(graph.get_node_type_id( graph.get_nodes_number() + 1 ).is_err());
-    }
-    else {
+        assert!(graph
+            .get_node_type_id(graph.get_nodes_number() + 1)
+            .is_err());
+    } else {
         assert!(graph.get_top_k_nodes_by_node_type(2).is_err());
     }
     if graph.has_edge_types() {
         graph.get_top_k_edges_by_edge_type(10).unwrap();
         graph.get_edge_type_id(0).unwrap();
 
-        assert!(graph.get_edge_type_id( graph.get_edges_number() + 1 ).is_err());
-    }
-    else {
+        assert!(graph
+            .get_edge_type_id(graph.get_edges_number() + 1)
+            .is_err());
+    } else {
         assert!(graph.get_top_k_edges_by_edge_type(2).is_err());
     }
     // Evaluate get_node_type_id
