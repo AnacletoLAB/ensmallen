@@ -62,7 +62,17 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        validate_kwargs(kwargs, &[])?;
+        validate_kwargs(kwargs, &[
+            "min_length",
+            "return_weight",
+            "explore_weight",
+            "change_edge_type_weight",
+            "change_node_type_weight",
+            "seed",
+            "verbose",
+            "iterations",
+            "dense_nodes_mapping"
+        ])?;
 
         let parameters = pyex!(pyex!(pyex!(pyex!(pyex!(pyex!(pyex!(
             WalksParameters::new(length, 0, self.graph.get_not_trap_nodes_number())
