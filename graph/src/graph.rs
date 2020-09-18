@@ -92,7 +92,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * edge_id: EdgeT - edge whose edge type is to be returned.
+    /// * None
+    /// 
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
     /// for (edge_type_id, count) in graph.get_edge_type_counts().unwrap().iter() {
@@ -110,6 +111,17 @@ impl Graph {
     }
 
     /// Returns node type counts.
+    ///
+    /// # Arguments
+    ///
+    /// * None
+    /// 
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
+    /// for (node_type_id, count) in graph.get_node_type_counts().unwrap().iter() {
+    ///     println!("node type id {}: count: {}", node_type_id, count);
+    /// }
+    /// ```    /// 
     pub fn get_node_type_counts(&self) -> Result<HashMap<NodeTypeT, usize>, String> {
         if let Some(nt) = &self.node_types {
             Ok(Counter::init(nt.ids.clone()).into_map())
