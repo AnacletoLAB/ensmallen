@@ -121,7 +121,7 @@ impl Graph {
     /// for (node_type_id, count) in graph.get_node_type_counts().unwrap().iter() {
     ///     println!("node type id {}: count: {}", node_type_id, count);
     /// }
-    /// ```    /// 
+    /// ```
     pub fn get_node_type_counts(&self) -> Result<HashMap<NodeTypeT, usize>, String> {
         if let Some(nt) = &self.node_types {
             Ok(Counter::init(nt.ids.clone()).into_map())
