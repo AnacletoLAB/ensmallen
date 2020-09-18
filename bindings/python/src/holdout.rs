@@ -3,7 +3,6 @@ use graph::{EdgeT, NodeT};
 use pyo3::exceptions;
 use pyo3::prelude::*;
 
-
 #[pymethods]
 impl EnsmallenGraph {
     #[text_signature = "($self, seed, train_percentage)"]
@@ -23,7 +22,7 @@ impl EnsmallenGraph {
     ///     This is only relevant in multi-graphs.
     /// verbose: bool,
     ///     Wethever to show the loading bar.
-    /// 
+    ///
     /// Raises
     /// -----------------------------
     /// TODO: Add the docstring for the raised exceptions.
@@ -67,6 +66,7 @@ impl EnsmallenGraph {
     /// Raises
     /// -----------------------------
     /// TODO: Add the docstring for the raised exceptions.
+    ///
     /// Returns
     /// -----------------------------
     /// Partial graph.
@@ -76,8 +76,9 @@ impl EnsmallenGraph {
         nodes_number: NodeT,
         verbose: bool,
     ) -> PyResult<EnsmallenGraph> {
-        let g = pyex!(self.graph.random_subgraph(seed, nodes_number, verbose))?;
-        Ok(EnsmallenGraph { graph: g })
+        Ok(EnsmallenGraph {
+            graph: pyex!(self.graph.random_subgraph(seed, nodes_number, verbose))?,
+        })
     }
 
     #[text_signature = "($self, seed, train_percentage)"]
@@ -96,7 +97,7 @@ impl EnsmallenGraph {
     /// Raises
     /// -----------------------------
     /// TODO: Add the docstring for the raised exceptions.
-    /// 
+    ///
     /// Returns
     /// -----------------------------
     /// Tuple containing training and validation graphs.
@@ -138,10 +139,10 @@ impl EnsmallenGraph {
     /// Raises
     /// -----------------------------
     /// TODO: Add the docstring for the raised exceptions.
-    /// 
+    ///
     /// Returns
     /// -----------------------------
-    /// Graph containing given amount of missing edges.
+    /// Graph containing given amount of edges missing in the original graph.
     fn sample_negatives(
         &self,
         seed: EdgeT,
@@ -149,10 +150,13 @@ impl EnsmallenGraph {
         allow_selfloops: bool,
         verbose: bool,
     ) -> PyResult<EnsmallenGraph> {
-        let g =
-            pyex!(self
-                .graph
-                .sample_negatives(seed, negatives_number, allow_selfloops, verbose))?;
-        Ok(EnsmallenGraph { graph: g })
+        Ok(EnsmallenGraph {
+            graph: pyex!(self.graph.sample_negatives(
+                seed,
+                negatives_number,
+                allow_selfloops,
+                verbose
+            ))?,
+        })
     }
 }
