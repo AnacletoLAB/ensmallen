@@ -40,6 +40,8 @@ impl Graph {
     /// # Arguments
     ///
     /// * node_id: NodeT - node whose node type is to be returned.
+    ///
+    /// # Examples
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
     /// println!("The node type id of node {} is {}", 0, graph.get_node_type_id(0).unwrap());
@@ -67,6 +69,8 @@ impl Graph {
     /// # Arguments
     ///
     /// * edge_id: EdgeT - edge whose edge type is to be returned.
+    /// 
+    /// # Examples
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
     /// println!("The edge type id of edge {} is {}", 0, graph.get_edge_type_id(0).unwrap());
@@ -92,8 +96,9 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * None
+    /// None
     /// 
+    /// # Examples
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
     /// for (edge_type_id, count) in graph.get_edge_type_counts().unwrap().iter() {
@@ -114,7 +119,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * None
+    /// None
     /// 
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
