@@ -1,7 +1,7 @@
 extern crate edit_distance;
 use edit_distance::edit_distance;
-use pyo3::exceptions;
 use pyo3::prelude::*;
+use pyo3::exceptions;
 use pyo3::types::PyDict;
 use std::collections::HashSet;
 
@@ -36,7 +36,7 @@ macro_rules! extract_value {
                 } else {
                     Some(match value.extract::<$_type>() {
                         Ok(v) => Ok(v),
-                        Err(v) => Err(PyErr::new::<exceptions::ValueError, _>(format!(
+                        Err(_) => Err(PyErr::new::<exceptions::ValueError, _>(format!(
                             "The value passed for {} cannot be casted from {} to {}.",
                             $key,
                             value.get_type().name(),
@@ -81,7 +81,7 @@ macro_rules! to_nparray_2d {
     };
 }
 
-fn validate_kwargs(kwargs: &PyDict, columns: &[&str]) -> PyResult<()> {
+pub fn validate_kwargs(kwargs: &PyDict, columns: &[&str]) -> PyResult<()> {
     let mut keys: HashSet<&str> = kwargs
         .keys()
         .iter()

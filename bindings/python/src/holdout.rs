@@ -1,3 +1,9 @@
+use super::*;
+use graph::{EdgeT, NodeT};
+use pyo3::exceptions;
+use pyo3::prelude::*;
+
+
 #[pymethods]
 impl EnsmallenGraph {
     #[text_signature = "($self, seed, train_percentage)"]
@@ -12,6 +18,11 @@ impl EnsmallenGraph {
     ///     The seed to use to generate the holdout.
     /// train_percentage: float,
     ///     The percentage to reserve for the training.
+    /// include_all_edge_types: bool,
+    ///     Wethever to include all the edges between two nodes.
+    ///     This is only relevant in multi-graphs.
+    /// verbose: bool,
+    ///     Wethever to show the loading bar.
     ///
     /// Returns
     /// -----------------------------
@@ -20,11 +31,16 @@ impl EnsmallenGraph {
         &self,
         seed: NodeT,
         train_percentage: f64,
+        include_all_edge_types: bool,
+        verbose: bool,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
-        match self.graph.connected_holdout(seed, train_percentage) {
-            Ok((g1, g2)) => Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 })),
-            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-        }
+        let (g1, g2) = pyex!(self.graph.connected_holdout(
+            seed,
+            train_percentage,
+            include_all_edge_types,
+            verbose
+        ))?;
+        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
     #[text_signature = "($self, seed, nodes_number)"]
@@ -41,15 +57,20 @@ impl EnsmallenGraph {
     ///     The seed to use to generate the partial graph.
     /// nodes_number: int,
     ///     The number of edges to insert in the partial graph.
+    /// verbose: bool,
+    ///     Wethever to show the loading bar.
     ///
     /// Returns
     /// -----------------------------
     /// Partial graph.
-    fn random_subgraph(&self, seed: NodeT, nodes_number: NodeT) -> PyResult<EnsmallenGraph> {
-        match self.graph.random_subgraph(seed, nodes_number) {
-            Ok(g) => Ok(EnsmallenGraph { graph: g }),
-            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-        }
+    fn random_subgraph(
+        &self,
+        seed: NodeT,
+        nodes_number: NodeT,
+        verbose: bool,
+    ) -> PyResult<EnsmallenGraph> {
+        let g = pyex!(self.graph.random_subgraph(seed, nodes_number, verbose))?;
+        Ok(EnsmallenGraph { graph: g })
     }
 
     #[text_signature = "($self, seed, train_percentage)"]
@@ -72,11 +93,16 @@ impl EnsmallenGraph {
         &self,
         seed: NodeT,
         train_percentage: f64,
+        include_all_edge_types: bool,
+        verbose: bool,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
-        match self.graph.random_holdout(seed, train_percentage) {
-            Ok((g1, g2)) => Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 })),
-            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-        }
+        let (g1, g2) = pyex!(self.graph.random_holdout(
+            seed,
+            train_percentage,
+            include_all_edge_types,
+            verbose
+        ))?;
+        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
     #[text_signature = "($self, seed, negatives_number, allow_selfloops)"]
@@ -95,6 +121,8 @@ impl EnsmallenGraph {
     ///     The number of negative edges to use.
     /// allow_selfloops: bool,
     ///     Wethever to allow creation of self-loops.
+    /// verbose: bool,
+    ///     Wethever to show the loading bar.
     ///
     /// Returns
     /// -----------------------------
@@ -104,13 +132,12 @@ impl EnsmallenGraph {
         seed: EdgeT,
         negatives_number: EdgeT,
         allow_selfloops: bool,
+        verbose: bool,
     ) -> PyResult<EnsmallenGraph> {
-        match self
-            .graph
-            .sample_negatives(seed, negatives_number, allow_selfloops)
-        {
-            Ok(g) => Ok(EnsmallenGraph { graph: g }),
-            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-        }
+        let g =
+            pyex!(self
+                .graph
+                .sample_negatives(seed, negatives_number, allow_selfloops, verbose))?;
+        Ok(EnsmallenGraph { graph: g })
     }
 }

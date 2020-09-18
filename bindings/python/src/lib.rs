@@ -1,6 +1,7 @@
 mod macros;
-//mod holdout;
-//pub(crate) use crate::holdout::*;
+pub(crate) use crate::macros::*;
+mod holdout;
+pub(crate) use crate::holdout::*;
 mod from_csv;
 pub(crate) use crate::from_csv::*;
 //mod getters;
