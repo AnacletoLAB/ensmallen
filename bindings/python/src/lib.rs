@@ -1,9 +1,7 @@
 mod macros;
 pub(crate) use crate::macros::*;
 mod holdout;
-pub(crate) use crate::holdout::*;
 mod from_csv;
-pub(crate) use crate::from_csv::*;
 //mod getters;
 //pub(crate) use crate::getters::*;
 //mod metrics;
@@ -20,7 +18,6 @@ pub(crate) use crate::from_csv::*;
 //pub(crate) use crate::tree::*;
 //mod utilities;
 //pub(crate) use crate::utilities::*;
-//mod walks;
-//pub(crate) use crate::walks::*;
+mod walks;
 mod types;
 pub(crate) use crate::types::EnsmallenGraph;

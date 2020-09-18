@@ -5,7 +5,7 @@ use pyo3::prelude::*;
 
 #[pymethods]
 impl EnsmallenGraph {
-    #[text_signature = "($self, seed, train_percentage)"]
+    #[text_signature = "($self, seed, train_percentage, include_all_edge_types, verbose)"]
     /// Returns training and validation holdouts extracted from current graph.
     ///
     /// The holdouts is generated in such a way that the training set remains
@@ -46,7 +46,7 @@ impl EnsmallenGraph {
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
-    #[text_signature = "($self, seed, nodes_number)"]
+    #[text_signature = "($self, seed, nodes_number, verbose)"]
     /// Returns partial subgraph.
     ///
     /// This method creates a subset of the graph starting from a random node
@@ -81,7 +81,7 @@ impl EnsmallenGraph {
         })
     }
 
-    #[text_signature = "($self, seed, train_percentage)"]
+    #[text_signature = "($self, seed, train_percentage, include_all_edge_types, verbose)"]
     /// Returns training and validation holdouts extracted from current graph.
     ///
     /// The holdouts edges are randomly sampled and have no garanties that any
@@ -93,6 +93,11 @@ impl EnsmallenGraph {
     ///     The seed to use to generate the holdout.
     /// train_percentage: float,
     ///     The percentage to reserve for the training.
+    /// include_all_edge_types: bool,
+    ///     Wethever to include all the edges between two nodes.
+    ///     This is only relevant in multi-graphs.
+    /// verbose: bool,
+    ///     Wethever to show the loading bar.
     ///
     /// Raises
     /// -----------------------------
@@ -117,7 +122,7 @@ impl EnsmallenGraph {
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
-    #[text_signature = "($self, seed, negatives_number, allow_selfloops)"]
+    #[text_signature = "($self, seed, negatives_number, allow_selfloops, verbose)"]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
     /// The graph generated may be used as a testing negatives partition to be

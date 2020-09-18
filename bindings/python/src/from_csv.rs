@@ -8,11 +8,15 @@ use pyo3::types::PyDict;
 impl EnsmallenGraph {
     #[staticmethod]
     #[args(py_kwargs = "**")]
-    #[text_signature = "(edge_path, sources_column, destinations_column, directed, *, edge_types_column, default_edge_type, weights_column, default_weight, node_path, nodes_column, node_types_column, default_node_type, edge_sep, node_sep, ignore_duplicated_edges, ignore_duplicated_nodes, force_conversion_to_undirected)"]
+    #[text_signature = "(edge_path, directed, *, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_self_loops, ignore_duplicated_edges, egde_header, edge_rows_to_skip, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_separator, verbose)"]
     /// Return graph loaded from given edge file and optionally node file.
     /// 
     /// Parameters
     /// -------------------------------
+    /// edge_path: String,
+    ///     The path from where load the edge file.
+    /// directed: bool,
+    ///     Wethever to load the graph as directed or undirected.
     /// sources_column_number: int = 0,
     ///     The column number of the sources of the edges.
     ///     This value is overwritten by the source column value if one is provided.
