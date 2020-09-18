@@ -1,3 +1,9 @@
+use super::*;
+use graph::{NodeT, NodeTypeT};
+use pyo3::prelude::*;
+use std::collections::HashSet;
+
+#[pymethods]
 impl EnsmallenGraph {
     #[text_signature = "($self, seed)"]
     /// Returns set of (typed) edges that form a spanning tree.NodeT
