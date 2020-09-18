@@ -1,9 +1,19 @@
 extern crate edit_distance;
 use edit_distance::edit_distance;
-use pyo3::prelude::*;
 use pyo3::exceptions;
+use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use std::collections::HashSet;
+
+#[macro_export]
+macro_rules! python_exception {
+    ($value: expr, $msg: expr) => {
+        match $value {
+            Ok(v) => Ok(v),
+            Err(_) => Err(PyErr::new::<exceptions::ValueError, _>($msg)),
+        }
+    };
+}
 
 #[macro_export]
 macro_rules! pyex {
@@ -41,7 +51,7 @@ macro_rules! extract_value {
                             $key,
                             value.get_type().name(),
                             stringify!($_type)
-                        )))
+                        ))),
                     }?)
                 }
             }
@@ -81,13 +91,33 @@ macro_rules! to_nparray_2d {
     };
 }
 
-pub fn validate_kwargs(kwargs: &PyDict, columns: &[&str]) -> PyResult<()> {
-    let mut keys: HashSet<&str> = kwargs
+pub fn build_walk_parameters_list(parameters: &[&str]) -> Vec<String> {
+    let default = vec![
+        "min_length",
+        "return_weight",
+        "explore_weight",
+        "change_edge_type_weight",
+        "change_node_type_weight",
+        "seed",
+        "verbose",
+        "iterations",
+        "dense_nodes_mapping",
+    ];
+    default
+        .iter()
+        .chain(parameters.iter())
+        .map(|x| x.to_string())
+        .collect()
+}
+
+/// Validate given kwargs.
+pub fn validate_kwargs(kwargs: &PyDict, columns: Vec<String>) -> PyResult<()> {
+    let mut keys: HashSet<String> = kwargs
         .keys()
         .iter()
-        .map(|v| v.extract::<&str>().unwrap())
+        .map(|v| v.extract::<String>().unwrap())
         .collect();
-    let columns: HashSet<&str> = columns.iter().cloned().collect();
+    let columns: HashSet<String> = columns.iter().cloned().collect();
     pyex!(if keys.is_subset(&columns) {
         return Ok(());
     } else {

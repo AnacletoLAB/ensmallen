@@ -113,7 +113,7 @@ impl EnsmallenGraph {
 
         validate_kwargs(
             kwargs,
-            &[
+            [
                 "sources_column_number",
                 "sources_column",
                 "destinations_column_number",
@@ -139,7 +139,7 @@ impl EnsmallenGraph {
                 "node_rows_to_skip",
                 "node_separator",
                 "verbose"
-            ]
+            ].iter().map(|x| x.to_string()).collect()
         )?;
 
         let edges: EdgeFileReader =

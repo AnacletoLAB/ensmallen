@@ -1,9 +1,8 @@
 use super::*;
-use graph::{NodeT, WalksParameters, WeightT};
+use graph::NodeT;
 use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
-use std::collections::HashMap;
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -53,7 +52,11 @@ impl EnsmallenGraph {
     ///     called `get_dense_nodes_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
-    /// 
+    ///
+    /// Raises
+    /// ----------------------------
+    /// TODO: Update raises
+    ///
     /// Returns
     /// ----------------------------
     /// List of list of walks containing the numeric IDs of nodes.
@@ -62,41 +65,14 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        validate_kwargs(kwargs, &[
-            "min_length",
-            "return_weight",
-            "explore_weight",
-            "change_edge_type_weight",
-            "change_node_type_weight",
-            "seed",
-            "verbose",
-            "iterations",
-            "dense_nodes_mapping"
-        ])?;
+        validate_kwargs(kwargs, build_walk_parameters_list(&[]))?;
 
-        let parameters = pyex!(pyex!(pyex!(pyex!(pyex!(pyex!(pyex!(
-            WalksParameters::new(length, 0, self.graph.get_not_trap_nodes_number())
-        )?
-        .set_change_edge_type_weight(extract_value!(
-            kwargs,
-            "change_edge_type_weight",
-            WeightT
-        )))?
-        .set_change_node_type_weight(extract_value!(
-            kwargs,
-            "change_node_type_weight",
-            WeightT
-        )))?
-        .set_explore_weight(extract_value!(kwargs, "explore_weight", WeightT)))?
-        .set_return_weight(extract_value!(kwargs, "return_weight", WeightT)))?
-        .set_seed(extract_value!(kwargs, "seed", usize))
-        .set_verbose(extract_value!(kwargs, "verbose", bool))
-        .set_iterations(extract_value!(kwargs, "iterations", usize)))?
-        .set_min_length(extract_value!(kwargs, "min_length", usize)))?
-        .set_dense_nodes_mapping(
-            extract_value!(kwargs, "dense_nodes_mapping", HashMap<NodeT, NodeT>),
-        );
-
+        let parameters = pyex!(self.build_walk_parameters(
+            length,
+            0,
+            self.graph.get_not_trap_nodes_number(),
+            kwargs
+        ))?;
         pyex!(self.graph.walk(&parameters))
     }
 }
