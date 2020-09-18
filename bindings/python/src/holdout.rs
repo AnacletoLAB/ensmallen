@@ -23,6 +23,10 @@ impl EnsmallenGraph {
     ///     This is only relevant in multi-graphs.
     /// verbose: bool,
     ///     Wethever to show the loading bar.
+    /// 
+    /// Raises
+    /// -----------------------------
+    /// TODO: Add the docstring for the raised exceptions.
     ///
     /// Returns
     /// -----------------------------
@@ -60,6 +64,9 @@ impl EnsmallenGraph {
     /// verbose: bool,
     ///     Wethever to show the loading bar.
     ///
+    /// Raises
+    /// -----------------------------
+    /// TODO: Add the docstring for the raised exceptions.
     /// Returns
     /// -----------------------------
     /// Partial graph.
@@ -86,6 +93,10 @@ impl EnsmallenGraph {
     /// train_percentage: float,
     ///     The percentage to reserve for the training.
     ///
+    /// Raises
+    /// -----------------------------
+    /// TODO: Add the docstring for the raised exceptions.
+    /// 
     /// Returns
     /// -----------------------------
     /// Tuple containing training and validation graphs.
@@ -124,6 +135,10 @@ impl EnsmallenGraph {
     /// verbose: bool,
     ///     Wethever to show the loading bar.
     ///
+    /// Raises
+    /// -----------------------------
+    /// TODO: Add the docstring for the raised exceptions.
+    /// 
     /// Returns
     /// -----------------------------
     /// Graph containing given amount of missing edges.
