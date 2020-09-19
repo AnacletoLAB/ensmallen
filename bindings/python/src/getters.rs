@@ -1,3 +1,11 @@
+use super::*;
+use graph::{EdgeT, NodeT, WeightT, NodeTypeT, EdgeTypeT};
+use numpy::{PyArray, PyArray1};
+use pyo3::exceptions;
+use pyo3::prelude::*;
+use std::collections::HashMap;
+
+#[pymethods]
 impl EnsmallenGraph {
     #[text_signature = "(self)"]
     /// Return the number of nodes in the graph.
@@ -136,25 +144,12 @@ impl EnsmallenGraph {
 
     #[getter]
     fn nodes_mapping(&self) -> HashMap<String, NodeT> {
-        self.graph
-            .nodes_mapping()
-            .iter()
-            .map(|(k, v)| (k.clone(), *v))
-            .collect()
+        self.graph.nodes().map.clone()
     }
 
     #[getter]
     fn nodes_reverse_mapping(&self) -> Vec<String> {
-        self.graph.nodes_reverse_mapping().clone()
-    }
-
-    #[getter]
-    fn unique_edges(&self) -> HashMap<(NodeT, NodeT), EdgeT> {
-        self.graph
-            .unique_edges()
-            .iter()
-            .map(|(k, v)| (*k, *v))
-            .collect()
+        self.graph.nodes().reverse_map.clone()
     }
 
     #[getter]
@@ -177,9 +172,9 @@ impl EnsmallenGraph {
     #[getter]
     fn node_types(&self) -> PyResult<Option<Py<PyArray1<NodeTypeT>>>> {
         Ok(match self.graph.node_types().clone() {
-            Some(w) => {
+            Some(nts) => {
                 let gil = pyo3::Python::acquire_gil();
-                Some(to_nparray_1d!(gil, w, NodeTypeT))
+                Some(to_nparray_1d!(gil, nts.ids, NodeTypeT))
             }
             None => None,
         })
@@ -187,23 +182,26 @@ impl EnsmallenGraph {
 
     #[getter]
     fn node_types_mapping(&self) -> Option<HashMap<String, NodeTypeT>> {
-        match self.graph.node_types_mapping() {
+        match self.graph.node_types().clone() {
             None => None,
-            Some(g) => Some(g.iter().map(|(k, v)| (k.clone(), *v)).collect()),
+            Some(nts) => Some(nts.vocabulary.map),
         }
     }
 
     #[getter]
     fn node_types_reverse_mapping(&self) -> Option<Vec<String>> {
-        self.graph.node_types_reverse_mapping().clone()
+        match self.graph.node_types().clone() {
+            None => None,
+            Some(nts) => Some(nts.vocabulary.reverse_map),
+        }
     }
 
     #[getter]
     fn edge_types(&self) -> PyResult<Option<Py<PyArray1<EdgeTypeT>>>> {
         Ok(match self.graph.edge_types().clone() {
-            Some(w) => {
+            Some(ets) => {
                 let gil = pyo3::Python::acquire_gil();
-                Some(to_nparray_1d!(gil, w, EdgeTypeT))
+                Some(to_nparray_1d!(gil, ets.ids, EdgeTypeT))
             }
             None => None,
         })
@@ -211,15 +209,18 @@ impl EnsmallenGraph {
 
     #[getter]
     fn edge_types_mapping(&self) -> Option<HashMap<String, EdgeTypeT>> {
-        match self.graph.edge_types_mapping() {
+        match self.graph.edge_types().clone() {
             None => None,
-            Some(g) => Some(g.iter().map(|(k, v)| (k.clone(), *v)).collect()),
+            Some(ets) => Some(ets.vocabulary.map),
         }
     }
 
     #[getter]
     fn edge_types_reverse_mapping(&self) -> Option<Vec<String>> {
-        self.graph.edge_types_reverse_mapping().clone()
+        match self.graph.edge_types().clone() {
+            None => None,
+            Some(ets) => Some(ets.vocabulary.reverse_map),
+        }
     }
 
     #[text_signature = "($self, node_id)"]
@@ -234,7 +235,7 @@ impl EnsmallenGraph {
     /// ---------------------
     /// Id of the node type of the node.
     fn get_node_type_id(&self, node_id: NodeT) -> PyResult<NodeTypeT> {
-        to_python_exception!(self.graph.get_node_type_id(node_id))
+        pyex!(self.graph.get_node_type_id(node_id))
     }
 
     #[text_signature = "($self, edge_id)"]
@@ -249,34 +250,19 @@ impl EnsmallenGraph {
     /// ---------------------
     /// Id of the edge type of the edge.
     fn get_edge_type_id(&self, edge_id: EdgeT) -> PyResult<EdgeTypeT> {
-        to_python_exception!(self.graph.get_edge_type_id(edge_id))
-    }
-
-    #[text_signature = "($self, src, dst)"]
-    /// Return random walks done on the graph using Rust.
-    ///
-    /// Parameters
-    /// ---------------------
-    /// edge_id: int,
-    ///     Numeric ID of the edge.
-    ///
-    /// Returns
-    /// ---------------------
-    /// Return the id of the edge type of the edge.
-    fn get_edge_id(&self, src: NodeT, dst: NodeT) -> PyResult<EdgeT> {
-        to_python_exception!(self.graph.get_edge_id(src, dst))
+        pyex!(self.graph.get_edge_type_id(edge_id))
     }
 
     #[text_signature = "($self)"]
     /// Return the count of how many time an edge type appears.
     fn get_edge_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
-        to_python_exception!(self.graph.get_edge_type_counts())
+        pyex!(self.graph.get_edge_type_counts())
     }
 
     #[text_signature = "($self)"]
     /// Return the count of how many time an node type appears.
     fn get_node_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
-        to_python_exception!(self.graph.get_node_type_counts())
+        pyex!(self.graph.get_node_type_counts())
     }
 
     #[text_signature = "($self, k)"]
@@ -294,16 +280,12 @@ impl EnsmallenGraph {
         &self,
         k: usize,
     ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeTypeT>>)> {
-        match self.graph.get_top_k_nodes_by_node_type(k) {
-            Ok((nodes, node_types)) => {
-                let gil = pyo3::Python::acquire_gil();
-                Ok((
-                    to_nparray_1d!(gil, nodes, NodeT),
-                    to_nparray_1d!(gil, node_types, NodeTypeT),
-                ))
-            }
-            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-        }
+        let (nodes, node_types) = pyex!(self.graph.get_top_k_nodes_by_node_type(k))?;
+        let gil = pyo3::Python::acquire_gil();
+        Ok((
+            to_nparray_1d!(gil, nodes, NodeT),
+            to_nparray_1d!(gil, node_types, NodeTypeT),
+        ))
     }
 
     #[text_signature = "($self)"]
@@ -321,15 +303,11 @@ impl EnsmallenGraph {
         &self,
         k: usize,
     ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeTypeT>>)> {
-        match self.graph.get_top_k_edges_by_edge_type(k) {
-            Ok((edges, edge_types)) => {
-                let gil = pyo3::Python::acquire_gil();
-                Ok((
-                    to_nparray_1d!(gil, edges, EdgeT),
-                    to_nparray_1d!(gil, edge_types, EdgeTypeT),
-                ))
-            }
-            Err(e) => Err(PyErr::new::<exceptions::ValueError, _>(e)),
-        }
+        let (edges, edge_types) = pyex!(self.graph.get_top_k_edges_by_edge_type(k))?;
+        let gil = pyo3::Python::acquire_gil();
+        Ok((
+            to_nparray_1d!(gil, edges, EdgeT),
+            to_nparray_1d!(gil, edge_types, EdgeTypeT),
+        ))
     }
 }
