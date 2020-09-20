@@ -92,6 +92,9 @@ pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
     assert!(graph.contains(&test).unwrap());
     let summed = (train + test).unwrap();
     assert!(summed.contains(&graph).unwrap());
+    let subtracted = (graph - test).unwrap();
+    assert!(subtracted.contains(&train).unwrap());
+    assert!(!subtracted.overlaps(&test).unwrap());
 }
 
 pub fn default_test_suite(graph: &Graph, verbose: bool) {

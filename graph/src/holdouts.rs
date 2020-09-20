@@ -107,7 +107,7 @@ impl Graph {
         ))
     }
 
-    fn extend_tree(
+    pub(crate) fn extend_tree(
         &self,
         tree: &mut GraphDictionary,
         src: NodeT,
@@ -225,10 +225,24 @@ impl Graph {
 
             // We stop adding edges when we have reached the minimum amount.
             if user_condition(src, dst, edge_type) && valid.len() < valid_edges_number {
-                self.extend_tree(&mut valid, src, dst, edge_type, weight, include_all_edge_types);
+                self.extend_tree(
+                    &mut valid,
+                    src,
+                    dst,
+                    edge_type,
+                    weight,
+                    include_all_edge_types,
+                );
             } else {
                 // Otherwise we add the edges to the training set.
-                self.extend_tree(&mut train, src, dst, edge_type, weight, include_all_edge_types);
+                self.extend_tree(
+                    &mut train,
+                    src,
+                    dst,
+                    edge_type,
+                    weight,
+                    include_all_edge_types,
+                );
             }
         }
 
@@ -363,7 +377,7 @@ impl Graph {
     /// * seed: usize - Random seed to use.
     /// * nodes_number: usize - Number of nodes to extract.
     /// * `verbose`: bool - Wethever to show the loading bar.
-    /// 
+    ///
     pub fn random_subgraph(
         &self,
         seed: usize,
@@ -454,5 +468,86 @@ impl Graph {
             },
             self.is_directed,
         ))
+    }
+
+    /// Returns subgraph with given set of edge types.
+    ///
+    /// This method creates a subset of the graph by keeping also the edges
+    /// of the given edge types.
+    ///
+    /// # Arguments
+    ///
+    /// * edge_types: Vec<String> - Vector of edge types to keep in the graph.
+    /// * `verbose`: bool - Wethever to show the loading bar.
+    ///
+    pub fn edge_types_subgraph(
+        &self,
+        edge_types: Vec<String>,
+        verbose: bool,
+    ) -> Result<Graph, String> {
+        if edge_types.is_empty() {
+            return Err(String::from(
+                "Required edge types must be a non-empty list.",
+            ));
+        }
+
+        match &self.edge_types {
+            None => Err(String::from("Current graph does not have edge types.")),
+            Some(ets) => {
+                let edge_type_ids = edge_types
+                    .iter()
+                    .map(|edge_type| match ets.get(edge_type) {
+                        None => Err(format!(
+                            "The edge type {} does not exist in current graph.",
+                            edge_type
+                        )),
+                        Some(et) => Ok(*et),
+                    })
+                    .collect::<Result<HashSet<EdgeTypeT>, String>>()?;
+
+                let pb = if verbose {
+                    let pb = ProgressBar::new(self.get_edges_number() as u64);
+                    pb.set_draw_delta(self.get_edges_number() as u64 / 100);
+                    pb.set_style(ProgressStyle::default_bar().template(
+                        "Generating subgraph {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+                    ));
+                    pb
+                } else {
+                    ProgressBar::hidden()
+                };
+
+                // Initializing the vector for creating the new graph.
+                let mut graph_data: GraphDictionary = GraphDictionary::new();
+
+                (0..self.get_edges_number())
+                    .progress_with(pb)
+                    .map(|edge| {
+                        let src = self.sources[edge];
+                        let dst = self.destinations[edge];
+
+                        let edge_type = ets.ids[edge];
+
+                        let weight = if let Some(w) = &self.weights {
+                            Some(w[edge])
+                        } else {
+                            None
+                        };
+
+                        (src, dst, edge_type, weight)
+                    })
+                    .filter(|(_, _, edge_type, _)| edge_type_ids.contains(edge_type))
+                    .for_each(|(src, dst, edge_type, weight)| {
+                        self.extend_tree(&mut graph_data, src, dst, Some(edge_type), weight, false)
+                    });
+
+                Ok(build_graph(
+                    &mut graph_data,
+                    self.nodes.clone(),
+                    self.node_types.clone(),
+                    Some(ets.vocabulary.clone()),
+                    self.is_directed,
+                ))
+            }
+        }
     }
 }
