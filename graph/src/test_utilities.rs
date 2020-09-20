@@ -124,6 +124,10 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     // Testing edge-type based subgraph
     let edge_type_subgraph = graph.edge_types_subgraph(vec!["red".to_string()], verbose);
     assert_eq!(edge_type_subgraph.is_ok(), graph.has_edge_types());
+    let wrong_edge_type_subgraph = graph.edge_types_subgraph(vec![], verbose);
+    assert!(wrong_edge_type_subgraph.is_err());
+    let wrong_edge_type_subgraph = graph.edge_types_subgraph(vec!["missing".to_string()], verbose);
+    assert!(wrong_edge_type_subgraph.is_err());
     
     // Testing writing out graph to file
     let nodes_writer = NodeFileWriter::new("tmp_node_file.tsv".to_string())
