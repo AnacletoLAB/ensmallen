@@ -18,3 +18,5 @@ update:
 	(cd fuzzing/graph_harness/fuzz; cargo update)
 	(cd fuzzing/honggfuzz/from_csv; cargo update)
 	(cd fuzzing/honggfuzz/from_vec; cargo update)
+	(cd fuzzing/afl/from_csv; cargo update)
+	(cd fuzzing/afl/from_vec; cargo update)

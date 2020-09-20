@@ -1,10 +1,10 @@
-fuzz_from_csv:
+libfuzz_from_csv:
 	(\
 	cd graph_harness;\
 	cargo fuzz run from_csv ../corpus/from_csv; \
 	)
 
-fuzz_from_vec:
+libfuzz_from_vec:
 	(\
 	cd graph_harness;\
 	cargo fuzz run from_vec ../corpus/from_vec; \
@@ -20,4 +20,16 @@ hfuzz_from_vec:
 	(\
 	cd honggfuzz/from_vec;\
 	cargo hfuzz run from_vec; \
+	)
+
+afl_from_csv:
+	(\
+	cd afl/from_csv;\
+	cargo run --release; \
+	)
+
+afl_from_vec:
+	(\
+	cd afl/from_vec;\
+	cargo run --release; \
 	)
