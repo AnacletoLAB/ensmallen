@@ -7,7 +7,7 @@ impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
     #[text_signature = "(edge_path, directed, *, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_self_loops, ignore_duplicated_edges, egde_header, edge_rows_to_skip, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_separator, verbose)"]
     /// Return graph loaded from given edge file and optionally node file.
-    /// 
+    ///
     /// Parameters
     /// -------------------------------
     /// edge_path: String,
@@ -95,16 +95,20 @@ impl EnsmallenGraph {
     ///      The expected separator for the node file.
     /// verbose: bool = True,
     ///     Wethever to load the files verbosely, showing a loading bar.
-    /// 
+    ///
     /// Raises
     /// ------------------------
     /// ValueError,
     ///     TODO: Update the list of raised exceptions.
-    /// 
+    ///
     /// Returns
     /// ------------------------
     /// The loaded graph.
-    fn from_csv(edge_path: String, directed: bool, py_kwargs: Option<&PyDict>) -> PyResult<EnsmallenGraph> {
+    fn from_csv(
+        edge_path: String,
+        directed: bool,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<EnsmallenGraph> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
@@ -135,45 +139,49 @@ impl EnsmallenGraph {
                 "node_header",
                 "node_rows_to_skip",
                 "node_separator",
-                "verbose"
-            ].iter().map(|x| x.to_string()).collect()
+                "verbose",
+            ]
+            .iter()
+            .map(|x| x.to_string())
+            .collect(),
         )?;
 
-        let edges: EdgeFileReader =
-            pyex!(pyex!(pyex!(pyex!(pyex!(EdgeFileReader::new(edge_path))?
-                .set_sources_column_number(extract_value!(kwargs, "sources_column_number", usize))
-                .set_sources_column(extract_value!(kwargs, "sources_column", String)))?
-            .set_destinations_column_number(extract_value!(
-                kwargs,
-                "destinations_column_number",
-                usize
-            ))
-            .set_destinations_column(extract_value!(kwargs, "destinations_column", String)))?
-            .set_edge_types_column_number(extract_value!(kwargs, "edge_types_column_number", usize))
-            .set_edge_types_column(extract_value!(kwargs, "edge_types_column", String)))?
-            .set_default_edge_type(extract_value!(kwargs, "default_edge_type", String))
-            .set_weights_column_number(extract_value!(kwargs, "weights_column_number", usize))
-            .set_weights_column(extract_value!(kwargs, "weights_column", String)))?
-            .set_default_weight(extract_value!(kwargs, "default_weight", WeightT))
-            .set_skip_self_loops(extract_value!(kwargs, "skip_self_loops", bool))
-            .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_edges", bool))
-            .set_header(extract_value!(kwargs, "egde_header", bool))
-            .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize))
-            .set_verbose(extract_value!(kwargs, "verbose", bool))
-            .set_separator(extract_value!(kwargs, "edge_separator", String));
+        let edges: EdgeFileReader = pyex!(pyex!(pyex!(pyex!(pyex!(pyex!(pyex!(pyex!(pyex!(
+            EdgeFileReader::new(edge_path)
+        )?
+        .set_sources_column_number(extract_value!(
+            kwargs,
+            "sources_column_number",
+            usize
+        )))?
+        .set_sources_column(extract_value!(kwargs, "sources_column", String)))?
+        .set_destinations_column_number(extract_value!(kwargs, "destinations_column_number", usize)))?
+        .set_destinations_column(extract_value!(kwargs, "destinations_column", String)))?
+        .set_edge_types_column_number(extract_value!(kwargs, "edge_types_column_number", usize)))?
+        .set_edge_types_column(extract_value!(kwargs, "edge_types_column", String)))?
+        .set_default_edge_type(extract_value!(kwargs, "default_edge_type", String))
+        .set_weights_column_number(extract_value!(kwargs, "weights_column_number", usize)))?
+        .set_weights_column(extract_value!(kwargs, "weights_column", String)))?
+        .set_default_weight(extract_value!(kwargs, "default_weight", WeightT))
+        .set_skip_self_loops(extract_value!(kwargs, "skip_self_loops", bool))
+        .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_edges", bool))
+        .set_header(extract_value!(kwargs, "egde_header", bool))
+        .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize))
+        .set_verbose(extract_value!(kwargs, "verbose", bool))
+        .set_separator(extract_value!(kwargs, "edge_separator", String));
 
         let nodes: Option<NodeFileReader> = match kwargs.get_item("node_path") {
             Some(_) => Some(
-                pyex!(pyex!(pyex!(NodeFileReader::new(
+                pyex!(pyex!(pyex!(pyex!(pyex!(NodeFileReader::new(
                     extract_value!(kwargs, "node_path", String).unwrap()
                 ))?
-                .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize))
+                .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize)))?
                 .set_nodes_column(extract_value!(kwargs, "nodes_column", String)))?
                 .set_node_types_column_number(extract_value!(
                     kwargs,
                     "node_types_column_number",
                     usize
-                ))
+                )))?
                 .set_node_types_column(extract_value!(kwargs, "node_types_column", String)))?
                 .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_nodes", bool))
                 .set_header(extract_value!(kwargs, "node_header", bool))
@@ -185,7 +193,7 @@ impl EnsmallenGraph {
         };
 
         Ok(EnsmallenGraph {
-            graph: pyex!(Graph::from_csv(edges, nodes, directed))?
+            graph: pyex!(Graph::from_csv(edges, nodes, directed))?,
         })
     }
 }
