@@ -55,19 +55,15 @@ pub fn load_ppi(
 }
 
 pub fn first_order_walker(graph: &Graph, verbose: bool) -> WalksParameters {
-    WalksParameters::new(
-        50,
-        0,
-        graph.get_not_trap_nodes_number(),
-    )
-    .unwrap()
-    .set_iterations(Some(1))
-    .unwrap()
-    .set_min_length(Some(1))
-    .unwrap()
-    .set_verbose(Some(verbose))
-    .set_seed(Some(43))
-    .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
+    WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())
+        .unwrap()
+        .set_iterations(Some(1))
+        .unwrap()
+        .set_min_length(Some(1))
+        .unwrap()
+        .set_verbose(Some(verbose))
+        .set_seed(Some(43))
+        .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
 }
 
 pub fn second_order_walker(graph: &Graph, verbose: bool) -> WalksParameters {
@@ -78,10 +74,14 @@ pub fn second_order_walker(graph: &Graph, verbose: bool) -> WalksParameters {
         .set_min_length(Some(1))
         .unwrap()
         .set_verbose(Some(verbose))
-        .set_return_weight(Some(2.0)).unwrap()
-        .set_explore_weight(Some(2.0)).unwrap()
-        .set_change_edge_type_weight(Some(2.0)).unwrap()
-        .set_change_node_type_weight(Some(2.0)).unwrap()
+        .set_return_weight(Some(2.0))
+        .unwrap()
+        .set_explore_weight(Some(2.0))
+        .unwrap()
+        .set_change_edge_type_weight(Some(2.0))
+        .unwrap()
+        .set_change_node_type_weight(Some(2.0))
+        .unwrap()
         .set_seed(Some(43))
 }
 
@@ -126,29 +126,26 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
         .unwrap();
     assert!(subgraph.overlaps(&graph).unwrap());
     // Testing writing out graph to file
-    let nodes_writer = NodeFileWriter::new(
-        CSVFileWriter::new("tmp_node_file.tsv".to_string()).set_verbose(Some(verbose)),
-    )
-    .set_node_types_column_number(Some(4))
-    .set_nodes_column_number(Some(6))
-    .set_node_types_column(Some("node_types".to_string()))
-    .set_nodes_column(Some("node_column".to_string()));
+    let nodes_writer = NodeFileWriter::new("tmp_node_file.tsv".to_string())
+        .set_verbose(Some(verbose))
+        .set_node_types_column_number(Some(4))
+        .set_nodes_column_number(Some(6))
+        .set_node_types_column(Some("node_types".to_string()))
+        .set_nodes_column(Some("node_column".to_string()));
     nodes_writer.dump(&graph).unwrap();
     fs::remove_file("tmp_node_file.tsv").unwrap();
-    let edges_writer = EdgeFileWriter::new(
-        CSVFileWriter::new("tmp_edge_file.tsv".to_string())
-            .set_verbose(Some(verbose))
-            .set_separator(Some("\t".to_string()))
-            .set_header(Some(true)),
-    )
-    .set_edge_types_column(Some("edge_types".to_string()))
-    .set_destinations_column_number(Some(3))
-    .set_weights_column(Some("weight".to_string()))
-    .set_weights_column_number(Some(2))
-    .set_sources_column(Some("The land of sushi".to_string()))
-    .set_sources_column_number(Some(0))
-    .set_destinations_column(Some("The land of pizza".to_string()))
-    .set_destinations_column_number(Some(1));
+    let edges_writer = EdgeFileWriter::new("tmp_edge_file.tsv".to_string())
+        .set_verbose(Some(verbose))
+        .set_separator(Some("\t".to_string()))
+        .set_header(Some(true))
+        .set_edge_types_column(Some("edge_types".to_string()))
+        .set_destinations_column_number(Some(3))
+        .set_weights_column(Some("weight".to_string()))
+        .set_weights_column_number(Some(2))
+        .set_sources_column(Some("The land of sushi".to_string()))
+        .set_sources_column_number(Some(0))
+        .set_destinations_column(Some("The land of pizza".to_string()))
+        .set_destinations_column_number(Some(1));
     edges_writer.dump(&graph).unwrap();
     fs::remove_file("tmp_edge_file.tsv").unwrap();
     // Testing SkipGram / CBOW / GloVe preprocessing

@@ -1,15 +1,15 @@
 use super::*;
 
-/// Structure that saves the parameters specific to writing and reading a nodes csv file.
+/// Structure that saves the writer specific to writing and reading a nodes csv file.
 ///
 /// # Attributes
-/// * parameters: CSVFile - The common parameters for readin and writing a csv.
+/// * writer: CSVFileWriter - The common writer for readin and writing a csv.
 /// * nodes_column: String - The name of the nodes names column. This parameter is mutually exclusive with nodes_column_number.
 /// * nodes_column_number: usize - The rank of the column with the nodes names. This parameter is mutually exclusive with nodes_column.
 /// * node_types_column: String - The name of the nodes type column. This parameter is mutually exclusive with node_types_column_number.
 /// * node_types_column_number: usize - The rank of the column with the nodes types. This parameter is mutually exclusive with node_types_column.
 pub struct NodeFileWriter {
-    pub(crate) parameters: CSVFileWriter,
+    pub(crate) writer: CSVFileWriter,
     pub(crate) nodes_column: String,
     pub(crate) node_types_column: String,
     pub(crate) nodes_column_number: usize,
@@ -21,11 +21,11 @@ impl NodeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * parameters: CSVFileParameters - Path where to store/load the file.
+    /// * path: String - Path where to store/load the file.
     ///
-    pub fn new(parameters: CSVFileWriter) -> NodeFileWriter {
+    pub fn new(path: String) -> NodeFileWriter {
         NodeFileWriter {
-            parameters,
+            writer: CSVFileWriter::new(path),
             nodes_column: "id".to_string(),
             nodes_column_number: 0,
             node_types_column: "category".to_string(),
@@ -94,6 +94,45 @@ impl NodeFileWriter {
         self
     }
 
+    /// Set the verbose.
+    ///
+    /// # Arguments
+    ///
+    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
+    ///
+    pub fn set_verbose(mut self, verbose: Option<bool>) -> NodeFileWriter {
+        if let Some(v) = verbose {
+            self.writer.verbose = v;
+        }
+        self
+    }
+
+    /// Set the separator.
+    ///
+    /// # Arguments
+    ///
+    /// * separator: Option<String> - The separator to use for the file.
+    ///
+    pub fn set_separator(mut self, separator: Option<String>) -> NodeFileWriter {
+        if let Some(v) = separator {
+            self.writer.separator = v;
+        }
+        self
+    }
+
+    /// Set the header.
+    ///
+    /// # Arguments
+    ///
+    /// * header: Option<bool> - Wethever to write out an header or not.
+    ///
+    pub fn set_header(mut self, header: Option<bool>) -> NodeFileWriter {
+        if let Some(v) = header {
+            self.writer.header = v;
+        }
+        self
+    }
+
     /// Write nodes to file.
     /// 
     /// # Arguments
@@ -115,7 +154,7 @@ impl NodeFileWriter {
 
         let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
 
-        self.parameters.write_lines(
+        self.writer.write_lines(
             graph.get_nodes_number() as u64,
             compose_lines(number_of_columns, header),
             (0..graph.get_nodes_number()).map(|index| {

@@ -1,10 +1,10 @@
 use super::*;
 
-/// Structure that saves the parameters specific to writing and reading a nodes csv file.
+/// Structure that saves the reader specific to writing and reading a nodes csv file.
 ///
 /// # Attributes
 pub struct EdgeFileWriter {
-    pub(crate) parameters: CSVFileWriter,
+    pub(crate) writer: CSVFileWriter,
     pub(crate) sources_column: String,
     pub(crate) sources_column_number: usize,
     pub(crate) destinations_column: String,
@@ -20,11 +20,11 @@ impl EdgeFileWriter {
     ///
     /// # Arguments
     ///
-    /// * parameters: CSVFileParameters - Path where to store/load the file.
+    /// * path: String - Path where to store/load the file.
     ///
-    pub fn new(parameters: CSVFileWriter) -> EdgeFileWriter {
+    pub fn new(path: String) -> EdgeFileWriter {
         EdgeFileWriter {
-            parameters,
+            writer: CSVFileWriter::new(path),
             sources_column: "subject".to_string(),
             sources_column_number: 0,
             destinations_column: "object".to_string(),
@@ -155,6 +155,45 @@ impl EdgeFileWriter {
         self
     }
 
+    /// Set the verbose.
+    ///
+    /// # Arguments
+    ///
+    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
+    ///
+    pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileWriter {
+        if let Some(v) = verbose {
+            self.writer.verbose = v;
+        }
+        self
+    }
+
+    /// Set the separator.
+    ///
+    /// # Arguments
+    ///
+    /// * separator: Option<String> - The separator to use for the file.
+    ///
+    pub fn set_separator(mut self, separator: Option<String>) -> EdgeFileWriter {
+        if let Some(v) = separator {
+            self.writer.separator = v;
+        }
+        self
+    }
+
+    /// Set the header.
+    ///
+    /// # Arguments
+    ///
+    /// * header: Option<bool> - Wethever to write out an header or not.
+    ///
+    pub fn set_header(mut self, header: Option<bool>) -> EdgeFileWriter {
+        if let Some(v) = header {
+            self.writer.header = v;
+        }
+        self
+    }
+
     /// Write edge file.
     ///  
     /// # Arguments
@@ -183,7 +222,7 @@ impl EdgeFileWriter {
 
         let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
 
-        self.parameters.write_lines(
+        self.writer.write_lines(
             graph.get_edges_number() as u64,
             compose_lines(number_of_columns, header),
             (0..graph.get_edges_number())

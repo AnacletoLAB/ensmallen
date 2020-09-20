@@ -32,45 +32,6 @@ impl CSVFileWriter {
         }
     }
 
-    /// Set the verbose.
-    ///
-    /// # Arguments
-    ///
-    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
-    ///
-    pub fn set_verbose(mut self, verbose: Option<bool>) -> CSVFileWriter {
-        if let Some(v) = verbose {
-            self.verbose = v;
-        }
-        self
-    }
-
-    /// Set the separator.
-    ///
-    /// # Arguments
-    ///
-    /// * separator: Option<String> - The separator to use for the file.
-    ///
-    pub fn set_separator(mut self, separator: Option<String>) -> CSVFileWriter {
-        if let Some(v) = separator {
-            self.separator = v;
-        }
-        self
-    }
-
-    /// Set the header.
-    ///
-    /// # Arguments
-    ///
-    /// * header: Option<bool> - Wethever to write out an header or not.
-    ///
-    pub fn set_header(mut self, header: Option<bool>) -> CSVFileWriter {
-        if let Some(v) = header {
-            self.header = v;
-        }
-        self
-    }
-
     /// Write given rows iterator to file.
     ///
     /// # Arguments
