@@ -41,6 +41,12 @@ impl Graph {
     ///
     /// * node_id: NodeT - node whose node type is to be returned.
     ///
+    /// # Examples
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
+    /// println!("The node type id of node {} is {}", 0, graph.get_node_type_id(0).unwrap());
+    /// ```
+    ///
     pub fn get_node_type_id(&self, node_id: NodeT) -> Result<NodeTypeT, String> {
         if let Some(nt) = &self.node_types {
             return if node_id <= nt.ids.len() {
@@ -63,7 +69,12 @@ impl Graph {
     /// # Arguments
     ///
     /// * edge_id: EdgeT - edge whose edge type is to be returned.
-    ///
+    /// 
+    /// # Examples
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
+    /// println!("The edge type id of edge {} is {}", 0, graph.get_edge_type_id(0).unwrap());
+    /// ```
     pub fn get_edge_type_id(&self, edge_id: EdgeT) -> Result<EdgeTypeT, String> {
         if let Some(et) = &self.edge_types {
             return if edge_id <= et.ids.len() {
@@ -82,6 +93,18 @@ impl Graph {
     }
 
     /// Returns edge type counts.
+    ///
+    /// # Arguments
+    ///
+    /// None
+    /// 
+    /// # Examples
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
+    /// for (edge_type_id, count) in graph.get_edge_type_counts().unwrap().iter() {
+    ///     println!("edge type id {}: count: {}", edge_type_id, count);
+    /// }
+    /// ```
     pub fn get_edge_type_counts(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
         if let Some(et) = &self.edge_types {
             Ok(Counter::init(et.ids.clone()).into_map())
@@ -93,6 +116,17 @@ impl Graph {
     }
 
     /// Returns node type counts.
+    ///
+    /// # Arguments
+    ///
+    /// None
+    /// 
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
+    /// for (node_type_id, count) in graph.get_node_type_counts().unwrap().iter() {
+    ///     println!("node type id {}: count: {}", node_type_id, count);
+    /// }
+    /// ```
     pub fn get_node_type_counts(&self) -> Result<HashMap<NodeTypeT, usize>, String> {
         if let Some(nt) = &self.node_types {
             Ok(Counter::init(nt.ids.clone()).into_map())
