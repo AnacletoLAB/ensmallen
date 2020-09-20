@@ -1,6 +1,5 @@
 use super::*;
 use graph::{EdgeTypeT, NodeT};
-use pyo3::prelude::*;
 use std::collections::HashSet;
 
 #[pymethods]

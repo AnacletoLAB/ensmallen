@@ -4,7 +4,7 @@ use counter::Counter;
 use derive_getters::Getters;
 use itertools::Itertools;
 use rayon::prelude::*;
-use std::collections::{HashMap, HashSet};
+use std::collections::{HashMap};
 
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
@@ -20,6 +20,7 @@ pub struct Graph {
     // properties
     pub(crate) has_traps: bool,
     pub(crate) is_directed: bool,
+    pub(crate) singletons_number: NodeT,
     // graph structs
     pub(crate) sources: Vec<NodeT>,
     pub(crate) destinations: Vec<NodeT>,
@@ -133,90 +134,6 @@ impl Graph {
         } else {
             Err(String::from(
                 "Node types are not defined for current graph instance.",
-            ))
-        }
-    }
-
-    /// Returns top k most common nodes and node types by node type frequency.
-    ///
-    /// # Arguments
-    ///
-    /// * k:usize - Number of common node types to return.
-    ///
-    pub fn get_top_k_nodes_by_node_type(
-        &self,
-        k: usize,
-    ) -> Result<(Vec<NodeT>, Vec<NodeTypeT>), String> {
-        if let Some(nt) = &self.node_types {
-            let counts = self.get_node_type_counts()?;
-            let top_k: HashSet<_> = counts
-                .iter()
-                .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v2, &v1))
-                .take(k)
-                .map(|(k1, _)| k1)
-                .collect();
-            let filtered: Vec<bool> = nt
-                .ids
-                .clone()
-                .into_par_iter()
-                .map(|node_type| top_k.contains(&node_type))
-                .collect();
-            Ok((
-                (0..self.get_nodes_number())
-                    .zip(filtered.iter())
-                    .filter_map(|(node, filter)| if *filter { Some(node) } else { None })
-                    .collect(),
-                nt.ids
-                    .iter()
-                    .zip(filtered.iter())
-                    .filter_map(|(nt, filter)| if *filter { Some(*nt) } else { None })
-                    .collect(),
-            ))
-        } else {
-            Err(String::from(
-                "Node types are not defined for current graph instance.",
-            ))
-        }
-    }
-
-    /// Returns top k most common edges and edge types by edge type frequency.
-    ///
-    /// # Arguments
-    ///
-    /// * k:usize - Number of common node types to return.
-    ///
-    pub fn get_top_k_edges_by_edge_type(
-        &self,
-        k: usize,
-    ) -> Result<(Vec<EdgeT>, Vec<EdgeTypeT>), String> {
-        if let Some(nt) = &self.edge_types {
-            let counts = self.get_edge_type_counts()?;
-            let top_k: HashSet<_> = counts
-                .iter()
-                .sorted_by(|(_, v1), (_, v2)| Ord::cmp(&v2, &v1))
-                .take(k)
-                .map(|(k1, _)| k1)
-                .collect();
-            let filtered: Vec<bool> = nt
-                .ids
-                .clone()
-                .into_par_iter()
-                .map(|edge_type| top_k.contains(&edge_type))
-                .collect();
-            Ok((
-                (0..self.get_edges_number())
-                    .zip(filtered.iter())
-                    .filter_map(|(edge, filter)| if *filter { Some(edge) } else { None })
-                    .collect(),
-                nt.ids
-                    .iter()
-                    .zip(filtered.iter())
-                    .filter_map(|(nt, filter)| if *filter { Some(*nt) } else { None })
-                    .collect(),
-            ))
-        } else {
-            Err(String::from(
-                "Edge types are not defined for current graph instance.",
             ))
         }
     }

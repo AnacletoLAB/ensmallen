@@ -1,9 +1,8 @@
 use super::*;
-use vec_rand::{sample, sample_uniform};
+use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use log::info;
 use rayon::prelude::*;
-use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
-
+use vec_rand::{sample, sample_uniform};
 
 impl Graph {
     /// Return the node transition weights and the related node and edges.
@@ -341,7 +340,7 @@ impl Graph {
         seed: usize,
         parameters: &SingleWalkParameters,
     ) -> Vec<NodeT> {
-        let dst = self.extract_uniform_node(node, seed);
+        let mut dst = self.extract_uniform_node(node, seed);
 
         if self.is_node_trap(dst) {
             return vec![node, dst];
@@ -355,7 +354,7 @@ impl Graph {
             if self.is_node_trap(dst) {
                 break;
             }
-            let dst = self.extract_uniform_node(dst, seed + iteration);
+            dst = self.extract_uniform_node(dst, seed + iteration);
             walk.push(dst);
         }
         walk
@@ -383,8 +382,7 @@ impl Graph {
         walk.push(dst);
 
         for iteration in 2..parameters.length {
-            let dst = self.extract_uniform_node(dst, seed + iteration);
-            walk.push(dst);
+            walk.push(self.extract_uniform_node(dst, seed + iteration));
         }
         walk
     }

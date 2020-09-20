@@ -1,7 +1,5 @@
 use super::*;
 use graph::{EdgeT, NodeT};
-use pyo3::exceptions;
-use pyo3::prelude::*;
 
 #[pymethods]
 impl EnsmallenGraph {

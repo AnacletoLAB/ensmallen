@@ -1,8 +1,6 @@
 use super::*;
 use graph::{EdgeT, NodeT};
 use numpy::{PyArray, PyArray1};
-use pyo3::prelude::*;
-use pyo3::exceptions;
 use std::collections::HashMap;
 
 #[pymethods]

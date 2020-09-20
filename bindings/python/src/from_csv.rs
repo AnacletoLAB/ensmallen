@@ -1,8 +1,5 @@
 use super::*;
 use graph::{EdgeFileReader, Graph, NodeFileReader, WeightT};
-use pyo3::prelude::*;
-use pyo3::exceptions;
-use pyo3::types::PyDict;
 
 #[pymethods]
 impl EnsmallenGraph {
