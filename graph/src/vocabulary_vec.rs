@@ -52,6 +52,11 @@ impl<IndexT: ToFromUsize + Clone + Copy> VocabularyVec<IndexT> {
         self.vocabulary.contains_key(key)
     }
 
+    /// Return vector of keys of the map.
+    pub fn keys(&self) -> Vec<String> {
+        self.vocabulary.keys()
+    }
+
     /// Return length of the vocabulary.    
     pub fn len(&self) -> usize {
         self.vocabulary.len()

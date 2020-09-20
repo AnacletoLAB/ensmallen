@@ -45,6 +45,11 @@ impl<IndexT: ToFromUsize + Clone + Copy> Vocabulary<IndexT> {
         self.map.get(key)
     }
 
+    /// Return vector of keys of the map.
+    pub fn keys(&self) -> Vec<String> {
+        self.map.keys().cloned().collect()
+    }
+
     /// Return boolean representing if given key is present.
     ///
     /// # Arguments

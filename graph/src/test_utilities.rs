@@ -121,6 +121,10 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         .random_subgraph(6, graph.get_nodes_number() / 10, verbose)
         ?;
     assert!(subgraph.overlaps(&graph)?);
+    // Testing edge-type based subgraph
+    let edge_type_subgraph = graph.edge_types_subgraph(vec!["red".to_string()], verbose);
+    assert_eq!(edge_type_subgraph.is_ok(), graph.has_edge_types());
+    
     // Testing writing out graph to file
     let nodes_writer = NodeFileWriter::new("tmp_node_file.tsv".to_string())
         .set_verbose(Some(verbose))

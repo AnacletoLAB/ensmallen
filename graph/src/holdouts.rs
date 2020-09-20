@@ -498,8 +498,9 @@ impl Graph {
                     .iter()
                     .map(|edge_type| match ets.get(edge_type) {
                         None => Err(format!(
-                            "The edge type {} does not exist in current graph.",
-                            edge_type
+                            "The edge type {} does not exist in current graph. The available edge types are {}.",
+                            edge_type,
+                            ets.keys().join(", ")
                         )),
                         Some(et) => Ok(*et),
                     })
