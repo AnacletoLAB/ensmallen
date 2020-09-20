@@ -84,6 +84,9 @@ pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) ->
     assert!(graph.contains(&test)?);
     let summed = (train + test)?;
     assert!(summed.contains(&graph)?);
+    let subtracted = (graph - test)?;
+    assert!(subtracted.contains(&train)?);
+    assert!(!subtracted.overlaps(&test)?);
     Ok(())
 }
 

@@ -158,7 +158,7 @@ impl Graph {
     /// * dst: NodeT - The destination of the edge
     /// * et: Option<EdgeTypeT> - The optional edge type of the edge.
     ///
-    fn check_edge_overlap(&self, src: NodeT, dst: NodeT, et: Option<EdgeTypeT>) -> bool {
+    pub(crate) fn check_edge_overlap(&self, src: NodeT, dst: NodeT, et: Option<EdgeTypeT>) -> bool {
         match self.unique_edges.get(&(src, dst)) {
             Some(metadata) => match &metadata.edge_types {
                 Some(ets) => ets.contains(&et.unwrap()),

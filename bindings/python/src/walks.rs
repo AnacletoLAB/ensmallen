@@ -43,7 +43,7 @@ impl EnsmallenGraph {
     ///     Wethever to show or not the loading bar of the walks.
     /// iterations: int = 1,
     ///     Number of cycles on the graphs to execute.
-    /// dense_nodes_mapping: Dict[str, int] = None,
+    /// dense_nodes_mapping: Dict[int, int] = None,
     ///     Mapping to use for converting sparse walk space into a dense space.
     ///     This object can be created using the method available from graph
     ///     called `get_dense_nodes_mapping` that returns a mapping from
