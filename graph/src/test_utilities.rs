@@ -128,6 +128,8 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
     // Testing writing out graph to file
     let nodes_writer = NodeFileWriter::new("tmp_node_file.tsv".to_string())
         .set_verbose(Some(verbose))
+        .set_separator(Some("\t".to_string()))
+        .set_header(Some(true))
         .set_node_types_column_number(Some(4))
         .set_nodes_column_number(Some(6))
         .set_node_types_column(Some("node_types".to_string()))
@@ -150,9 +152,6 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
     fs::remove_file("tmp_edge_file.tsv").unwrap();
     // Testing SkipGram / CBOW / GloVe preprocessing
     graph
-        .binary_skipgrams(56, &walker, Some(3), Some(2.0), Some(true))
-        .unwrap();
-    graph
         .cooccurence_matrix(&walker, Some(3), Some(verbose))
         .unwrap();
     graph.node2vec(&walker, Some(3), Some(true), 56).unwrap();
@@ -171,24 +170,18 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
     }
     // Testing the top Ks
     if graph.has_node_types() {
-        graph.get_top_k_nodes_by_node_type(10).unwrap();
         graph.get_node_type_id(0).unwrap();
 
         assert!(graph
             .get_node_type_id(graph.get_nodes_number() + 1)
             .is_err());
-    } else {
-        assert!(graph.get_top_k_nodes_by_node_type(2).is_err());
     }
     if graph.has_edge_types() {
-        graph.get_top_k_edges_by_edge_type(10).unwrap();
         graph.get_edge_type_id(0).unwrap();
 
         assert!(graph
             .get_edge_type_id(graph.get_edges_number() + 1)
             .is_err());
-    } else {
-        assert!(graph.get_top_k_edges_by_edge_type(2).is_err());
     }
     // Evaluate get_node_type_id
     assert_eq!(graph.get_node_type_id(0).is_ok(), graph.has_node_types());

@@ -3,7 +3,6 @@ use pyo3::class::basic::CompareOp;
 use pyo3::class::number::PyNumberProtocol;
 use pyo3::class::PyObjectProtocol;
 use pyo3::exceptions;
-use pyo3::prelude::*;
 
 #[pyproto]
 impl PyNumberProtocol for EnsmallenGraph {

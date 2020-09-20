@@ -1,17 +1,13 @@
-use graph::Graph;
+use graph::{Graph, NodeT};
+use numpy::{PyArray1, PyArray2};
 use pyo3::prelude::*;
-use pyo3::wrap_pymodule;
-
-#[pymodule]
-fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_class::<EnsmallenGraph>()?;
-    //m.add_wrapped(wrap_pymodule!(preprocessing))?;
-    env_logger::init();
-    Ok(())
-}
 
 #[pyclass]
 #[derive(Clone, PartialEq)]
 pub(crate) struct EnsmallenGraph {
     pub(crate) graph: Graph,
 }
+
+pub type PyContexts = Py<PyArray2<NodeT>>;
+pub type PyWords = Py<PyArray1<NodeT>>;
+pub type PyFrequencies = Py<PyArray1<f64>>;

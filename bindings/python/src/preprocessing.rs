@@ -1,9 +1,13 @@
 use super::*;
 use graph::{cooccurence_matrix as rust_cooccurence_matrix, word2vec as rust_word2vec, NodeT};
-use numpy::{PyArray, PyArray1, PyArray2};
-use pyo3::exceptions;
-use pyo3::prelude::*;
-use pyo3::types::PyDict;
+use numpy::{PyArray, PyArray1};
+
+#[pymodule]
+fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
+    m.add_wrapped(wrap_pyfunction!(word2vec))?;
+    m.add_wrapped(wrap_pyfunction!(cooccurence_matrix))?;
+    Ok(())
+}
 
 #[pyfunction(py_kwargs = "**")]
 #[text_signature = "(seed, sequences, *, window_size, shuffle)"]
@@ -33,10 +37,16 @@ fn word2vec(
     seed: usize,
     sequences: Vec<Vec<usize>>,
     py_kwargs: Option<&PyDict>,
-) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<NodeT>>)> {
+) -> PyResult<(PyContexts, PyWords)> {
     let gil = pyo3::Python::acquire_gil();
     let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-    validate_kwargs(kwargs, ["window_size", "shuffle"].iter().map(|x| x.to_string()).collect())?;
+    validate_kwargs(
+        kwargs,
+        ["window_size", "shuffle"]
+            .iter()
+            .map(|x| x.to_string())
+            .collect(),
+    )?;
     let (contexts, words) = pyex!(rust_word2vec(
         sequences,
         extract_value!(kwargs, "window_size", usize),
@@ -70,10 +80,16 @@ fn word2vec(
 fn cooccurence_matrix(
     sequences: Vec<Vec<usize>>,
     py_kwargs: Option<&PyDict>,
-) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f64>>)> {
+) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
     let gil = pyo3::Python::acquire_gil();
     let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-    validate_kwargs(kwargs, ["window_size", "verbose"].iter().map(|x| x.to_string()).collect())?;
+    validate_kwargs(
+        kwargs,
+        ["window_size", "verbose"]
+            .iter()
+            .map(|x| x.to_string())
+            .collect(),
+    )?;
     let (words, contexts, frequencies) = pyex!(rust_cooccurence_matrix(
         sequences,
         extract_value!(kwargs, "window_size", usize),
@@ -146,7 +162,7 @@ impl EnsmallenGraph {
         &self,
         length: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeT>>, Py<PyArray1<f64>>)> {
+    ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
@@ -248,7 +264,7 @@ impl EnsmallenGraph {
         batch_size: usize,
         length: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<NodeT>>)> {
+    ) -> PyResult<(PyContexts, PyWords)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
@@ -304,7 +320,7 @@ impl EnsmallenGraph {
         idx: u64,
         batch_size: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(Py<PyArray2<NodeT>>, Py<PyArray1<u8>>)> {
+    ) -> PyResult<(PyContexts, Py<PyArray1<u8>>)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
@@ -316,14 +332,14 @@ impl EnsmallenGraph {
                 .collect(),
         )?;
         let graph_to_avoid = extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph);
-        
+
         let (edges, labels) = pyex!(self.graph.link_prediction(
             idx,
             batch_size,
             extract_value!(kwargs, "negative_samples", f64),
             match &graph_to_avoid {
                 Some(g) => Some(&g.graph),
-                None => None
+                None => None,
             },
             extract_value!(kwargs, "avoid_self_loops", bool),
         ))?;

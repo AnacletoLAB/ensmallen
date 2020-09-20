@@ -7,6 +7,10 @@ pub type WeightT = f64;
 pub type ParamsT = f64;
 pub type NodeTypeT = u16;
 pub type EdgeTypeT = u16;
+pub type Contexts = Vec<Vec<NodeT>>;
+pub type Words = Vec<NodeT>;
+pub type Frequencies = Vec<f64>;
+
 pub(crate) type GraphDictionary = BTreeMap<(NodeT, NodeT), Option<ConstructorEdgeMetadata>>;
 
 /// Metadata of the edges of the graphs used for every graph.

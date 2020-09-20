@@ -1,5 +1,6 @@
 use super::*;
 use std::collections::{BTreeMap, HashMap};
+use itertools::Itertools;
 
 macro_rules! optionify {
     ($val:expr) => {
@@ -204,7 +205,7 @@ pub(crate) fn build_graph(
             for o in &mut outbounds[last_src..src] {
                 *o = i;
             }
-            if !first{
+            if !first {
                 not_trap_nodes.push(last_src as NodeT);
             }
             first = false;
@@ -237,7 +238,7 @@ pub(crate) fn build_graph(
                         edge_types_vector.push(et)
                     }
                 });
-            },
+            }
             None => {
                 sources.push(src);
                 destinations.push(dst);
@@ -248,8 +249,15 @@ pub(crate) fn build_graph(
     for o in &mut outbounds[last_src..] {
         *o = i;
     }
+
+    let singletons_number = outbounds.len() - destinations
+            .iter()
+            .chain(sources.iter())
+            .unique()
+            .count();
+
     not_trap_nodes.push(last_src);
-    let has_traps = not_trap_nodes.len() != outbounds.len();
+    let has_traps = not_trap_nodes.len() != outbounds.len() - singletons_number;
 
     Graph {
         not_trap_nodes,
@@ -260,6 +268,7 @@ pub(crate) fn build_graph(
         outbounds,
         node_types,
         has_traps,
+        singletons_number,
         is_directed: directed,
         weights: optionify!(weights),
         edge_types: match edge_types {

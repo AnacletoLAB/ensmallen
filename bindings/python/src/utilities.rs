@@ -1,8 +1,5 @@
 use super::*;
 use graph::{NodeT, WalksParameters, WeightT};
-use pyo3::exceptions;
-use pyo3::prelude::*;
-use pyo3::types::PyDict;
 use std::collections::HashMap;
 
 impl EnsmallenGraph {

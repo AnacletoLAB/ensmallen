@@ -8,189 +8,6 @@ use rayon::prelude::*;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift as rand_u64;
 
-/// Returns length of binary skipgram vector.
-///
-/// # Arguments
-///
-/// * walk_length: usize - Length of the walks.
-/// * window_size: usize - Size of the context windows.
-///
-fn binary_skipgram_vector_length(walk_length: usize, window_size: usize) -> usize {
-    (0..walk_length)
-        .map(|i| {
-            min!(walk_length, i + window_size + 1)
-                - if i > window_size { i - window_size } else { 0 }
-                - 1
-        })
-        .sum()
-}
-
-/// Returns skipgram batch for a given integers sequence.
-///
-/// # Arguments
-///
-/// * sequence: &[usize] - Sequence of integer values to be converted.
-/// * vocabulary_size: usize - Number of distrinct terms present in vocabulary.
-/// * window_size: Option<usize> - Size of the window. By default is 4.
-/// * negative_samples: Option<f64> - Factor of the negative samples to extract.
-/// * shuffle: Option<bool> - Wethever to shuffle or not the words and contexts.
-/// * seed: u64 - The seed to use for reproducibility.
-///
-fn binary_skipgram(
-    sequence: &[usize],
-    vocabulary_size: usize,
-    window_size: Option<usize>,
-    negative_samples: Option<f64>,
-    shuffle: Option<bool>,
-    seed: u64,
-) -> ((Vec<usize>, Vec<usize>), Vec<u8>) {
-    let _negative_samples = negative_samples.unwrap_or(1.0);
-    let _window_size = window_size.unwrap_or(4);
-    let _shuffle = shuffle.unwrap_or(true);
-    let _seed = seed ^ SEED_XOR as u64;
-
-    let vector_length: usize = binary_skipgram_vector_length(sequence.len(), _window_size);
-    // create the positive data
-    let total_length = (vector_length as f64 * (1.0 + _negative_samples)) as usize;
-    let mut words: Vec<NodeT> = Vec::with_capacity(total_length);
-    let mut contexts: Vec<NodeT> = Vec::with_capacity(total_length);
-    for (i, wi) in sequence.iter().enumerate() {
-        let window_start = if i > _window_size {
-            i - _window_size
-        } else {
-            0
-        };
-        let window_end = min!(sequence.len(), i + _window_size + 1);
-        let delta = window_end - window_start - 1;
-        words.extend_from_slice(&vec![*wi; delta][..]);
-        contexts.extend_from_slice(&sequence[window_start..i]);
-        contexts.extend_from_slice(&sequence[i + 1..window_end]);
-    }
-    let mut labels = vec![1; vector_length];
-
-    if _negative_samples > 0.0 {
-        // TODO! This thing can create false negatives!!
-        // The issue was already present in the original TensorFlow implementation.
-        let num_negatives = (vector_length as f64 * _negative_samples) as usize;
-        let words_neg: Vec<NodeT> = gen_random_vec(num_negatives, _seed)
-            .iter()
-            .map(|i| sequence[(*i as NodeT) % sequence.len()])
-            .collect();
-        let contexts_seed = rand_u64(_seed);
-        let contexts_neg: Vec<NodeT> = gen_random_vec(num_negatives, contexts_seed)
-            .iter()
-            .map(|i| (*i as NodeT) % vocabulary_size)
-            .collect();
-        let labels_neg = vec![0; num_negatives];
-        // merge positives and negatives labels
-        words.extend(words_neg.iter());
-        contexts.extend(contexts_neg.iter());
-        labels.extend(labels_neg.iter());
-    }
-
-    if _shuffle {
-        let mut indices: Vec<usize> = (0..words.len() as usize).collect();
-        let mut rng: StdRng = SeedableRng::seed_from_u64(seed);
-        indices.shuffle(&mut rng);
-        words = indices.iter().map(|i| words[*i]).collect();
-        contexts = indices.iter().map(|i| contexts[*i]).collect();
-        labels = indices.iter().map(|i| labels[*i]).collect();
-    }
-    ((words, contexts), labels)
-}
-
-/// Returns skipgram batches for a given integers sequences.
-///
-/// # Arguments
-///
-/// * sequence: Vec<Vec<usize>> - Sequences of values to be converted.
-/// * vocabulary_size: usize - Number of distrinct terms present in vocabulary.
-/// * window_size: Option<usize> - Size of the window. By default is 4.
-/// * negative_samples: Option<f64> - Factor of the negative samples to extract.
-/// * shuffle: Option<bool> - Wethever to shuffle or not the words and contexts.
-/// * seed: u64 - The seed to use for reproducibility.
-///
-pub fn binary_skipgrams(
-    sequences: Vec<Vec<usize>>,
-    vocabulary_size: usize,
-    window_size: Option<usize>,
-    negative_samples: Option<f64>,
-    shuffle: Option<bool>,
-    seed: usize,
-) -> Result<((Vec<usize>, Vec<usize>), Vec<u8>), String> {
-    // Setup the cumulative sum (this compute the index for the windows of each node,
-    // this is only done to be able to parallelize)
-    let mut cumsum: Vec<usize> = Vec::with_capacity(sequences.len());
-    let _window_size = window_size.unwrap_or(4);
-    let _negative_samples = negative_samples.unwrap_or(1.0);
-
-    if _negative_samples < 0.0 || !_negative_samples.is_finite() {
-        return Err(String::from("Negative sample must be a posive real value."));
-    }
-
-    for i in 0..sequences.len() {
-        let new_value = (binary_skipgram_vector_length(sequences[i].len(), _window_size) as f64
-            * (1.0 + _negative_samples)) as usize;
-        cumsum.push(if i == 0 {
-            new_value
-        } else {
-            cumsum[i - 1] + new_value
-        });
-    }
-
-    let vector_length = cumsum[cumsum.len() - 1];
-    // setup the result vectors
-    let mut words = vec![0; vector_length];
-    let mut contexts = vec![0; vector_length];
-    let mut labels = vec![1; vector_length];
-    {
-        let mut words_indices = Vec::new();
-        let mut remaining_words_array = words.as_mut_slice();
-        let mut contexts_indices = Vec::new();
-        let mut remaining_contexts_array = contexts.as_mut_slice();
-        let mut labels_indices = Vec::new();
-        let mut remaining_labels_array = labels.as_mut_slice();
-        for i in 0..cumsum.len() {
-            let start = if i == 0 { 0 } else { cumsum[i - 1] };
-            let (words_left, words_right) = remaining_words_array.split_at_mut(cumsum[i] - start);
-            let (contexts_left, contexts_right) =
-                remaining_contexts_array.split_at_mut(cumsum[i] - start);
-            let (labels_left, labels_right) =
-                remaining_labels_array.split_at_mut(cumsum[i] - start);
-            words_indices.push(words_left);
-            contexts_indices.push(contexts_left);
-            labels_indices.push(labels_left);
-            remaining_words_array = words_right;
-            remaining_contexts_array = contexts_right;
-            remaining_labels_array = labels_right;
-        }
-
-        sequences
-            .par_iter()
-            .zip(words_indices.par_iter_mut())
-            .zip(contexts_indices.par_iter_mut())
-            .zip(labels_indices.par_iter_mut())
-            .enumerate()
-            .for_each(
-                |(i, (((sequences, words_index), contexts_index), labels_index))| {
-                    let ((_words, _contexts), _labels) = binary_skipgram(
-                        sequences,
-                        vocabulary_size,
-                        window_size,
-                        Some(_negative_samples),
-                        shuffle,
-                        (seed + i) as u64,
-                    );
-                    (*words_index).copy_from_slice(&_words);
-                    (*contexts_index).copy_from_slice(&_contexts);
-                    (*labels_index).copy_from_slice(&_labels);
-                },
-            );
-    }
-
-    Ok(((words, contexts), labels))
-}
-
 /// Return training batches for Word2Vec models.
 ///
 /// The batch is composed of a tuple as the following:
@@ -302,7 +119,7 @@ pub fn cooccurence_matrix(
     sequences: Vec<Vec<usize>>,
     window_size: Option<usize>,
     verbose: Option<bool>,
-) -> Result<(Vec<NodeT>, Vec<NodeT>, Vec<f64>), String> {
+) -> Result<(Words, Words, Frequencies), String> {
     let _verbose = verbose.unwrap_or(false);
     let _window_size = window_size.unwrap_or(4);
 
@@ -382,66 +199,6 @@ pub fn cooccurence_matrix(
 
 /// # Preprocessing for ML algorithms on graph.
 impl Graph {
-    /// Return training batches for BinarySkipGram model.
-    ///
-    /// The batch is composed of a tuple as the following:
-    ///
-    /// - (Central node, contextual node): the tuple of nodes
-    /// - Label: boolean label representing if given nodes are actually in the
-    ///     local context or are randomly sampled.
-    ///
-    /// # Arguments
-    ///
-    /// * seed: usize - The seed for partial reproducibility.
-    /// * walk_parameters: &WalksParameters - the weighted walks parameters.
-    /// * window_size: Option<usize> - Window size to consider for the sequences.
-    /// * negative_samples: Option<f64>,
-    ///     Factor of negative samples to use.
-    ///     This is the factor for the number of non-context nodes to return
-    ///     as negatives in any given batch.
-    /// * shuffle: Option<bool>,
-    ///
-    /// # Implementation Details
-    /// In order to correctly compute the positives and negatives, we would need to make a
-    /// k-th order transitive closure (which is equivalent to raising to the k-th the
-    /// adiacency matrix of the graph). This could result in multipying by k the number of
-    /// edges in the graph. This k is the window size, therefore, this would greately increase
-    /// the memory needed to correctly compute the associated graph. Or alternitivelty
-    /// we would need check the neighbors of each node in the walk, which will greately slow
-    /// the computation.
-    ///
-    /// Thererefore, **when we generate negatives, we just check that the edges is not present
-    /// in the original graph**, this is just an approxiamation we do to make the problem
-    /// tractable.
-    pub fn binary_skipgrams(
-        &self,
-        seed: usize,
-        walk_parameters: &WalksParameters,
-        window_size: Option<usize>,
-        negative_samples: Option<f64>,
-        shuffle: Option<bool>,
-    ) -> Result<((Vec<usize>, Vec<usize>), Vec<u8>), String> {
-        // Compute the walks
-        let walks = self.walk(walk_parameters)?;
-
-        if walks.is_empty() {
-            return Err(concat!(
-                "In the current graph, with the given parameters, no walk could ",
-                "be performed which is above the given min-length"
-            )
-            .to_string());
-        }
-
-        binary_skipgrams(
-            walks,
-            self.get_nodes_number(),
-            window_size,
-            negative_samples,
-            shuffle,
-            seed,
-        )
-    }
-
     /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
@@ -465,7 +222,7 @@ impl Graph {
         window_size: Option<usize>,
         shuffle: Option<bool>,
         seed: usize,
-    ) -> Result<(Vec<Vec<usize>>, Vec<usize>), String> {
+    ) -> Result<(Contexts, Words), String> {
         // do the walks and check the result
         let walks = self.walk(walk_parameters)?;
 
@@ -498,7 +255,7 @@ impl Graph {
         walks_parameters: &WalksParameters,
         window_size: Option<usize>,
         verbose: Option<bool>,
-    ) -> Result<(Vec<NodeT>, Vec<NodeT>, Vec<f64>), String> {
+    ) -> Result<(Words, Words, Frequencies), String> {
         let walks = self.walk(walks_parameters)?;
 
         if walks.is_empty() {
@@ -528,7 +285,7 @@ impl Graph {
         negative_samples: Option<f64>,
         graph_to_avoid: Option<&Graph>,
         avoid_self_loops: Option<bool>,
-    ) -> Result<(Vec<Vec<NodeT>>, Vec<u8>), String> {
+    ) -> Result<(Contexts, Vec<u8>), String> {
         // xor the seed with a constant so that we have a good amount of 0s and 1s in the number
         // even with low values (this is needed becasue the seed 0 make xorshift return always 0)
         let seed = idx ^ SEED_XOR as u64;

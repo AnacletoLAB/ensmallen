@@ -1,7 +1,6 @@
 use super::types::*;
 use super::*;
 use hashbrown::{HashMap, HashSet};
-use itertools::Itertools;
 use rayon::prelude::*;
 use std::collections::HashMap as DefaultHashMap;
 
@@ -261,13 +260,7 @@ impl Graph {
 
     /// Returns number of singleton nodes within the graph.
     pub fn singleton_nodes_number(&self) -> NodeT {
-        self.get_nodes_number()
-            - self
-                .destinations
-                .iter()
-                .chain(self.sources.iter())
-                .unique()
-                .count()
+        self.singletons_number
     }
 
     /// Returns density of the graph.

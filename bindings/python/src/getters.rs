@@ -1,8 +1,6 @@
 use super::*;
 use graph::{EdgeT, NodeT, WeightT, NodeTypeT, EdgeTypeT};
 use numpy::{PyArray, PyArray1};
-use pyo3::exceptions;
-use pyo3::prelude::*;
 use std::collections::HashMap;
 
 #[pymethods]
@@ -263,51 +261,5 @@ impl EnsmallenGraph {
     /// Return the count of how many time an node type appears.
     fn get_node_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
         pyex!(self.graph.get_node_type_counts())
-    }
-
-    #[text_signature = "($self, k)"]
-    /// Return vectors with the nodes and node types within the top k most common.
-    ///
-    /// Parameters
-    /// --------------------------
-    /// k: int,
-    ///     Number of common node types to return.
-    ///
-    /// Returns
-    /// --------------------------
-    /// Tuple with node IDs and node types within k most common node types.
-    fn get_top_k_nodes_by_node_type(
-        &self,
-        k: usize,
-    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeTypeT>>)> {
-        let (nodes, node_types) = pyex!(self.graph.get_top_k_nodes_by_node_type(k))?;
-        let gil = pyo3::Python::acquire_gil();
-        Ok((
-            to_nparray_1d!(gil, nodes, NodeT),
-            to_nparray_1d!(gil, node_types, NodeTypeT),
-        ))
-    }
-
-    #[text_signature = "($self)"]
-    /// Return vectors with the edges and ed ge types within the top k most common.
-    ///
-    /// Parameters
-    /// --------------------------
-    /// k: int,
-    ///     Number of common edge types to return.
-    ///
-    /// Returns
-    /// --------------------------
-    /// Tuple with edge IDs and edge types within k most common edge types.
-    fn get_top_k_edges_by_edge_type(
-        &self,
-        k: usize,
-    ) -> PyResult<(Py<PyArray1<NodeT>>, Py<PyArray1<NodeTypeT>>)> {
-        let (edges, edge_types) = pyex!(self.graph.get_top_k_edges_by_edge_type(k))?;
-        let gil = pyo3::Python::acquire_gil();
-        Ok((
-            to_nparray_1d!(gil, edges, EdgeT),
-            to_nparray_1d!(gil, edge_types, EdgeTypeT),
-        ))
     }
 }
