@@ -9,6 +9,9 @@ edition = "2018"
 [dependencies]
 afl = "0.8.0"                  # Fuzzing Rust code with american-fuzzy-lop
 
+[dependencies.graph_harness]
+path = "../../graph_harness"
+
 [profile.release]
 opt-level = 3
 codgen-units=1

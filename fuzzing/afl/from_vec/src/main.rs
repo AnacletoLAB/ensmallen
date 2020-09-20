@@ -1,11 +1,13 @@
 
 #[macro_use]
 extern crate afl;
-extern crate mycrate; //the crate we want to fuzz
+extern crate graph_harness;
+use graph_harness::*;
+
 
 fn main() {
-    fuzz!(|data: &[u8]| {
-	mycrate::myfunction(&data); //call the function you want to fuzz with the input from afl
+    fuzz!(|data: FromVecHarnessParams| {
+	    from_vec_harness(data);
     });
 
 }

@@ -20,18 +20,6 @@ path = ".."
 members = ["."]
 
 [[bin]]
-name = "only_edges"
-path = "fuzz_targets/only_edges.rs"
-test = false
-doc = false
-
-[[bin]]
-name = "with_nodes"
-path = "fuzz_targets/with_nodes.rs"
-test = false
-doc = false
-
-[[bin]]
 name = "from_csv"
 path = "fuzz_targets/from_csv.rs"
 test = false
