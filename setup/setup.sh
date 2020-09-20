@@ -38,3 +38,4 @@ ${ASAN}
 
 # Setup cargo-fuzz
 cargo install cargo-fuzz
+cargo install honggfuzz
