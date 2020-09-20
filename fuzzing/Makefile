@@ -1,13 +1,13 @@
 fuzz_from_csv:
 	(\
 	cd graph_harness;\
-	cargo fuzz run from_csv; \
+	cargo fuzz run from_csv ../corpus/from_csv; \
 	)
 
 fuzz_form_vec:
 	(\
 	cd graph_harness;\
-	cargo fuzz run from_vec; \
+	cargo fuzz run from_vec ../corpus/from_vec; \
 	)
 
 hfuzz_from_csv:
