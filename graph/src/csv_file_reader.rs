@@ -95,8 +95,20 @@ impl CSVFileReader {
         &self,
     ) -> Result<impl Iterator<Item = Result<Vec<String>, String>> + '_, String> {
         let pb = if self.verbose {
-            let rows_number =
-                self.count_rows() as u64 - self.rows_to_skip as u64 - self.header as u64;
+            let number_of_rows = self.count_rows() as u64;
+            let rows_to_skip = self.rows_to_skip as u64 + self.header as u64;
+            if number_of_rows < rows_to_skip {
+                return Err(format!(
+                    concat!(
+                        "The given file has {} lines but it was asked to skip",
+                        "{} rows. This is not possible."
+                    ),
+                    number_of_rows,
+                    rows_to_skip
+                ));
+            }
+
+            let rows_number = number_of_rows - rows_to_skip;
             let pb = ProgressBar::new(rows_number);
             pb.set_draw_delta(rows_number / 100);
             pb.set_style(ProgressStyle::default_bar().template(

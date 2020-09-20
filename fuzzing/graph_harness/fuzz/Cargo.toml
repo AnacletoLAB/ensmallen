@@ -36,3 +36,9 @@ name = "from_csv"
 path = "fuzz_targets/from_csv.rs"
 test = false
 doc = false
+
+[[bin]]
+name = "from_vec"
+path = "fuzz_targets/from_vec.rs"
+test = false
+doc = false

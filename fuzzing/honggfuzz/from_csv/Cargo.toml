@@ -1,5 +1,5 @@
 [package]
-name = "honggfuzz"
+name = "from_vec"
 version = "0.1.0"
 authors = ["Tommaso Fontana <tommaso.fontana.96@gmail.com>"]
 edition = "2018"
@@ -10,7 +10,7 @@ edition = "2018"
 honggfuzz = "0.5"
 
 [dependencies.graph_harness]
-path = "../graph_harness"
+path = "../../graph_harness"
 
 [profile.release]
 opt-level = 3
