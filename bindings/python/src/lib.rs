@@ -7,7 +7,7 @@ pub(crate) use crate::utilities::*;
 mod getters;
 mod metrics;
 mod node_file_writer;
-//mod edge_file_writer;
+mod edge_file_writer;
 mod operators;
 mod preprocessing;
 mod tree;
