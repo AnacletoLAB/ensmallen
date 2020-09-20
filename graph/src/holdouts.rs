@@ -32,7 +32,6 @@ impl Graph {
         if negatives_number == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
         }
-
         let total_negative_edges = self.get_nodes_number().pow(2)
             - self.get_edges_number()
             - if allow_selfloops {

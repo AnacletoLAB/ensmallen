@@ -151,7 +151,7 @@ pub(crate) fn parse_edges(
         }
 
         // If the graph is undirected, add the inverse edge
-        if !directed {
+        if !directed && source_node_id != destinations_node_id {
             let reverse_edge_metadata = unique_edges_tree
                 .entry((*destinations_node_id, *source_node_id))
                 .or_insert_with(|| {
