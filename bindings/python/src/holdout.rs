@@ -162,4 +162,31 @@ impl EnsmallenGraph {
             ))?,
         })
     }
+
+    #[text_signature = "($self, edge_types, verbose)"]
+    /// Returns Graph with only the required edge types.
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// edge_types: List[str],
+    ///     Edge types to include in the graph.
+    /// verbose: bool,
+    ///     Wethever to show the loading bar.
+    ///
+    /// Raises
+    /// -----------------------------
+    /// TODO: Add the docstring for the raised exceptions.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Graph containing given amount of edges missing in the original graph.
+    fn edge_types_subgraph(
+        &self,
+        edge_types: Vec<String>,
+        verbose: bool,
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pyex!(self.graph.edge_types_subgraph(edge_types, verbose))?,
+        })
+    }
 }
