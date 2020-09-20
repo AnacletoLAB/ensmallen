@@ -1,8 +1,29 @@
 # Fuzzing Guide
 The module expose an harness that supports the `arbitrary` crate so it's really easy to fuzz.
 
-More over, 2 fuzzers are already setted up, `honggfuzz` and `libFuzzer`.
-They both share the corpus.
+More over, 3 fuzzers are already setted up, `afl`,`honggfuzz`, and `libFuzzer`.
+
+# AFL
+[American Fuzzy Lop](https://github.com/google/AFL) Is the most famous fuzzer.
+
+### Install AFL
+```bash
+cargo install afl
+```
+
+This may require `llvm` and `clang`. 
+
+On Ubuntu run:
+```bash
+sudo apt-get install llvm clang
+```
+On Arch run:
+```bash
+sudo pacman -S llvm clang
+```
+
+### Run AFL
+
 
 # libfuzzer
 [Libfuzzer](https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md) it's the LLVMs fuzzer (https://llvm.org/docs/LibFuzzer.html).
