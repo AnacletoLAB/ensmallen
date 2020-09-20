@@ -33,23 +33,13 @@ impl Graph {
             return Err(String::from("The number of negatives cannot be zero."));
         }
 
-        let negative_edges = self.get_nodes_number().pow(2)
-            - self.get_edges_number();
-            
-        let maybe_total_negative_edges = negative_edges.checked_sub(
-            if allow_selfloops {
+        let total_negative_edges = self.get_nodes_number().pow(2)
+            - self.get_edges_number()
+            - if allow_selfloops {
                 0
             } else {
                 self.get_nodes_number() - self.selfloops_number()
-            }
-        );
-
-        let total_negative_edges = match maybe_total_negative_edges {
-            None => Err(
-                "In the current graph there are no possible negatives."
-            ),
-            Some(v) => Ok(v)
-        }?;
+            };
 
         if negatives_number > total_negative_edges {
             return Err(format!(
