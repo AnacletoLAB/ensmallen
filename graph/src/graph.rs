@@ -249,6 +249,11 @@ impl Graph {
         self.sources.len()
     }
 
+    /// Returns the number of edges (ignoring the edge type)
+    pub fn get_unique_edges_number(&self) -> usize {
+        self.unique_edges.len()
+    }
+
     /// Returns number of edge types in the graph.
     pub fn get_edge_types_number(&self) -> usize {
         if let Some(etm) = &self.edge_types {

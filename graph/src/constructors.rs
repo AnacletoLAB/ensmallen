@@ -27,8 +27,27 @@ pub(crate) fn parse_nodes(
     let mut nodes: Vocabulary<NodeT> = Vocabulary::default();
     let mut node_types: VocabularyVec<NodeTypeT> = VocabularyVec::default();
 
+    let mut has_type = None;
+
     for values in nodes_iter {
         let (node_name, node_type) = values?;
+
+        // clean way to save if the first edge has edge type and weights
+        has_type = has_type.or(Some(node_type.is_some()));
+
+        // check consistency
+        if let Some(ht) = &has_type {
+            if node_type.is_some() != *ht {
+                return Err(format!(
+                    concat!(
+                        "The node {} {:?} has node type incosistent with all the nodes before.\n",
+                        "Either all nodes have node types or none have it."
+                    ),
+                    node_name, node_type
+                ))
+            }
+        }
+
         // if the node is already mapped => duplicated line
         if nodes.contains_key(&node_name) {
             if ignore_duplicated_nodes {
@@ -79,6 +98,9 @@ pub(crate) fn parse_edges(
     // helper structure
     let mut unique_edges_tree: GraphDictionary = BTreeMap::new();
 
+    let mut has_edges = None;
+    let mut has_weights = None;
+    
     for values in edges_iterator {
         let (source_node_name, destination_node_name, edge_type, edge_weight) = values?;
         // Check if we need to skip self-loops
@@ -86,6 +108,44 @@ pub(crate) fn parse_edges(
             // If current edge is a self-loop and we need to skip them we skip.
             continue;
         }
+        // check that the values of the weights are reasonable (IF PRESENT)
+        if let Some(val) = &edge_weight {
+            match val.is_finite() && *val > 0.0 {
+                true => Ok(()),
+                false => Err(format!(
+                    "The weight {} is either infinite or NaN or Zero.",
+                    val
+                ))
+            }?
+        }
+        // clean way to save if the first edge has edge type and weights
+        has_edges = has_edges.or(Some(edge_type.is_some()));
+        has_weights = has_weights.or(Some(edge_weight.is_some()));
+
+        // check consistency
+        if let Some(he) = &has_edges {
+            if edge_type.is_some() != *he {
+                return Err(format!(
+                    concat!(
+                        "The edge {} {} {:?} {:?} has edge type incosistent with all the edges before.\n",
+                        "Either all edges have edge types or none have it."
+                    ),
+                    source_node_name, destination_node_name, edge_type, edge_weight
+                ))
+            }
+        }
+        if let Some(hw) = &has_weights {
+            if edge_weight.is_some() != *hw {
+                return Err(format!(
+                    concat!(
+                        "The edge {} {} {:?} {:?} has weight incosistent with all the edges before.\n",
+                        "Either all edges have weights or none have it."
+                    ),
+                    source_node_name, destination_node_name, edge_type, edge_weight
+                ))
+            }
+        }
+
         // Handle missing node IDs when no node file was provided
         for node_name in &[&source_node_name, &destination_node_name] {
             if !nodes.contains_key(node_name) {

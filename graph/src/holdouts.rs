@@ -32,8 +32,10 @@ impl Graph {
         if negatives_number == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
         }
+        // here we use unique edges number because on a multigraph the negative
+        // edges cannot have an edge type.
         let total_negative_edges = self.get_nodes_number().pow(2)
-            - self.get_edges_number()
+            - self.get_unique_edges_number()
             - if allow_selfloops {
                 0
             } else {

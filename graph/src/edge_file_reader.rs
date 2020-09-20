@@ -4,13 +4,7 @@ fn parse_edge_weight(weight: Option<String>) -> Result<Option<WeightT>, String> 
     match weight {
         None => Ok(None),
         Some(w) => match w.parse::<WeightT>() {
-            Ok(val) => match val.is_finite() && val > 0.0 {
-                true => Ok(Some(val)),
-                false => Err(format!(
-                    "The value {} parsed as a weight as {} is either infinite or NaN or Zero.",
-                    w, val
-                )),
-            },
+            Ok(val) => Ok(Some(val)),
             Err(_) => Err(format!("Cannot parse weight {} as a float.", w)),
         },
     }
