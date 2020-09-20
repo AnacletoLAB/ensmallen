@@ -52,11 +52,22 @@ impl NodeFileReader {
     ///
     /// * nodes_column_number: Option<usize> - The nodes column_number to use for the file.
     ///
-    pub fn set_nodes_column_number(mut self, nodes_column_number: Option<usize>) -> NodeFileReader {
+    pub fn set_nodes_column_number(mut self, nodes_column_number: Option<usize>) -> Result<NodeFileReader, String> {
         if let Some(column) = nodes_column_number {
+            let expected_number_of_lines = self.reader.get_elements_per_line()?;
+            if column >= expected_number_of_lines {
+                return Err(format!(
+                    concat!(
+                        "The nodes column number passed was {} but",
+                        "the first parsable line has {} values."
+                    ),
+                    column,
+                    expected_number_of_lines
+                ));
+            }
             self.nodes_column_number = column;
         }
-        self
+        Ok(self)
     }
 
     /// Set the column of the nodes.
@@ -84,9 +95,22 @@ impl NodeFileReader {
     pub fn set_node_types_column_number(
         mut self,
         node_types_column_number: Option<usize>,
-    ) -> NodeFileReader {
+    ) -> Result<NodeFileReader, String> {
+        if let Some(etcn) = &node_types_column_number {
+            let expected_number_of_lines = self.reader.get_elements_per_line()?;
+            if *etcn >= expected_number_of_lines {
+                return Err(format!(
+                    concat!(
+                        "The nodes types column number passed was {} but",
+                        "the first parsable line has {} values."
+                    ),
+                    etcn,
+                    expected_number_of_lines
+                ));
+            }
+        }
         self.node_types_column_number = node_types_column_number;
-        self
+        Ok(self)
     }
 
     /// Set the default node type.

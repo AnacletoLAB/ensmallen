@@ -96,7 +96,14 @@ impl CSVFileReader {
     ) -> Result<impl Iterator<Item = Result<Vec<String>, String>> + '_, String> {
         let pb = if self.verbose {
             let number_of_rows = self.count_rows() as u64;
-            let rows_to_skip = self.rows_to_skip as u64 + self.header as u64;
+            let rows_to_skip = match (self.rows_to_skip as u64).checked_add(self.header as u64) {
+                Some(v) => Ok(v),
+                None => Err(concat!(
+                    "This overflow was caused because rows to skip = 2**64 - 1",
+                    "and header is setted to true which causes to skip one extra line.",
+                    "Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad."
+                ))
+            }?;
             if number_of_rows < rows_to_skip {
                 return Err(format!(
                     concat!(
