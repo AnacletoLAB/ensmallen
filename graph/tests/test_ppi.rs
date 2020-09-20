@@ -21,7 +21,7 @@ fn test_ppi() {
                         assert_eq!(ppi.has_node_types(), *load_nodes);
                         assert_eq!(ppi.has_edge_types(), *load_edge_types);
                         assert_eq!(ppi.has_weights(), *load_weights);
-                        default_test_suite(&ppi, *verbose);
+                        assert!(default_test_suite(&ppi, *verbose).is_ok());
                     }
                 }
             }

@@ -54,65 +54,58 @@ pub fn load_ppi(
     Graph::from_csv(edges_reader, nodes_reader, directed)
 }
 
-pub fn first_order_walker(graph: &Graph, verbose: bool) -> WalksParameters {
-    WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())
-        .unwrap()
-        .set_iterations(Some(1))
-        .unwrap()
-        .set_min_length(Some(1))
-        .unwrap()
+pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
+    Ok(WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())?
+        .set_iterations(Some(1))?
+        .set_min_length(Some(1))?
         .set_verbose(Some(verbose))
         .set_seed(Some(43))
         .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
+    )
 }
 
-pub fn second_order_walker(graph: &Graph, verbose: bool) -> WalksParameters {
-    WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())
-        .unwrap()
-        .set_iterations(Some(1))
-        .unwrap()
-        .set_min_length(Some(1))
-        .unwrap()
+pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
+    Ok(WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())?
+        .set_iterations(Some(1))?
+        .set_min_length(Some(1))?
         .set_verbose(Some(verbose))
-        .set_return_weight(Some(2.0))
-        .unwrap()
-        .set_explore_weight(Some(2.0))
-        .unwrap()
-        .set_change_edge_type_weight(Some(2.0))
-        .unwrap()
-        .set_change_node_type_weight(Some(2.0))
-        .unwrap()
+        .set_return_weight(Some(2.0))?
+        .set_explore_weight(Some(2.0))?
+        .set_change_edge_type_weight(Some(2.0))?
+        .set_change_node_type_weight(Some(2.0))?
         .set_seed(Some(43))
+    )
 }
 
-pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) {
-    assert!(!train.overlaps(&test).unwrap());
-    assert!(!test.overlaps(&train).unwrap());
-    assert!(graph.contains(&train).unwrap());
-    assert!(graph.contains(&test).unwrap());
-    let summed = (train + test).unwrap();
-    assert!(summed.contains(&graph).unwrap());
-    let subtracted = (graph - test).unwrap();
-    assert!(subtracted.contains(&train).unwrap());
-    assert!(!subtracted.overlaps(&test).unwrap());
+pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) -> Result<(), String> {
+    assert!(!train.overlaps(&test)?);
+    assert!(!test.overlaps(&train)?);
+    assert!(graph.contains(&train)?);
+    assert!(graph.contains(&test)?);
+    let summed = (train + test)?;
+    assert!(summed.contains(&graph)?);
+    let subtracted = (graph - test)?;
+    assert!(subtracted.contains(&train)?);
+    assert!(!subtracted.overlaps(&test)?);
+    Ok(())
 }
 
-pub fn default_test_suite(graph: &Graph, verbose: bool) {
+pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     // Testing principal random walk algorithms
-    let walker = first_order_walker(&graph, verbose);
-    graph.walk(&walker).unwrap();
-    graph.walk(&second_order_walker(&graph, verbose)).unwrap();
+    let walker = first_order_walker(&graph, verbose)?;
+    graph.walk(&walker)?;
+    graph.walk(&second_order_walker(&graph, verbose)?)?;
 
     // Testing main holdout mechanisms
     for include_all_edge_types in &[true, false] {
         let (train, test) = graph
             .random_holdout(4, 0.6, *include_all_edge_types, verbose)
-            .unwrap();
-        default_holdout_test_suite(graph, &train, &test);
+            ?;
+        default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) = graph
             .connected_holdout(4, 0.6, *include_all_edge_types, verbose)
-            .unwrap();
-        default_holdout_test_suite(graph, &train, &test);
+            ?;
+        default_holdout_test_suite(graph, &train, &test)?;
         assert!(train != test);
     }
     // Testing cloning
@@ -120,14 +113,14 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
     // Testing negative edges generation
     let negatives = graph
         .sample_negatives(4, graph.get_edges_number(), true, verbose)
-        .unwrap();
-    assert!(!graph.overlaps(&negatives).unwrap());
-    assert!(!negatives.overlaps(&graph).unwrap());
+        ?;
+    assert!(!graph.overlaps(&negatives)?);
+    assert!(!negatives.overlaps(&graph)?);
     // Testing subgraph generation
     let subgraph = graph
         .random_subgraph(6, graph.get_nodes_number() / 10, verbose)
-        .unwrap();
-    assert!(subgraph.overlaps(&graph).unwrap());
+        ?;
+    assert!(subgraph.overlaps(&graph)?);
     // Testing writing out graph to file
     let nodes_writer = NodeFileWriter::new("tmp_node_file.tsv".to_string())
         .set_verbose(Some(verbose))
@@ -137,7 +130,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
         .set_nodes_column_number(Some(6))
         .set_node_types_column(Some("node_types".to_string()))
         .set_nodes_column(Some("node_column".to_string()));
-    nodes_writer.dump(&graph).unwrap();
+    nodes_writer.dump(&graph)?;
     fs::remove_file("tmp_node_file.tsv").unwrap();
     let edges_writer = EdgeFileWriter::new("tmp_edge_file.tsv".to_string())
         .set_verbose(Some(verbose))
@@ -151,36 +144,36 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
         .set_sources_column_number(Some(0))
         .set_destinations_column(Some("The land of pizza".to_string()))
         .set_destinations_column_number(Some(1));
-    edges_writer.dump(&graph).unwrap();
+    edges_writer.dump(&graph)?;
     fs::remove_file("tmp_edge_file.tsv").unwrap();
     // Testing SkipGram / CBOW / GloVe preprocessing
     graph
         .cooccurence_matrix(&walker, Some(3), Some(verbose))
-        .unwrap();
-    graph.node2vec(&walker, Some(3), Some(true), 56).unwrap();
+        ?;
+    graph.node2vec(&walker, Some(3), Some(true), 56)?;
     // Testing link prediction pre-processing
-    graph.link_prediction(0, 16, Some(1.0), None, None).unwrap();
+    graph.link_prediction(0, 16, Some(1.0), None, None)?;
     // Compute metrics of the graph
     graph.report();
     // Compute degrees metrics
     for src in 0..10 {
         for dst in 0..10 {
-            graph.degrees_product(src, dst).unwrap();
-            graph.jaccard_index(src, dst).unwrap();
-            graph.adamic_adar_index(src, dst).unwrap();
-            graph.resource_allocation_index(src, dst).unwrap();
+            graph.degrees_product(src, dst)?;
+            graph.jaccard_index(src, dst)?;
+            graph.adamic_adar_index(src, dst)?;
+            graph.resource_allocation_index(src, dst)?;
         }
     }
     // Testing the top Ks
     if graph.has_node_types() {
-        graph.get_node_type_id(0).unwrap();
+        graph.get_node_type_id(0)?;
 
         assert!(graph
             .get_node_type_id(graph.get_nodes_number() + 1)
             .is_err());
     }
     if graph.has_edge_types() {
-        graph.get_edge_type_id(0).unwrap();
+        graph.get_edge_type_id(0)?;
 
         assert!(graph
             .get_edge_type_id(graph.get_edges_number() + 1)
@@ -197,4 +190,6 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) {
 
     // Evaluate get_edge_type_counts
     assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
+
+    Ok(())
 }
