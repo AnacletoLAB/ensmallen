@@ -74,13 +74,13 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
         .set_separator(data.edge_reader.reader.separator)
         .set_header(data.edge_reader.reader.header)
         .set_rows_to_skip(data.edge_reader.reader.rows_to_skip)
-        .set_sources_column_number(data.edge_reader.sources_column_number)
+        .set_sources_column_number(data.edge_reader.sources_column_number)?
         .set_sources_column(data.edge_reader.sources_column)?
-        .set_destinations_column_number(data.edge_reader.destinations_column_number)
+        .set_destinations_column_number(data.edge_reader.destinations_column_number)?
         .set_destinations_column(data.edge_reader.destinations_column)?
-        .set_weights_column_number(data.edge_reader.weights_column_number)
+        .set_weights_column_number(data.edge_reader.weights_column_number)?
         .set_weights_column(data.edge_reader.weights_column)?
-        .set_edge_types_column_number(data.edge_reader.edge_types_column_number)
+        .set_edge_types_column_number(data.edge_reader.edge_types_column_number)?
         .set_edge_types_column(data.edge_reader.edge_types_column)?
         .set_default_edge_type(data.edge_reader.default_edge_type)
         .set_default_weight(data.edge_reader.default_weight)
@@ -98,8 +98,8 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
             Some(
                 NodeFileReader::new(nodes_path.to_string())?
                     .set_verbose(nr.reader.verbose)
-                    .set_node_types_column_number(nr.node_types_column_number)
-                    .set_nodes_column_number(nr.node_types_column_number)
+                    .set_node_types_column_number(nr.node_types_column_number)?
+                    .set_nodes_column_number(nr.node_types_column_number)?
                     .set_node_types_column(nr.node_types_column)?
                     .set_default_node_type(nr.default_node_type)
                     .set_nodes_column(nr.nodes_column)?

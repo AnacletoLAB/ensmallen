@@ -4,7 +4,7 @@ fuzz_from_csv:
 	cargo fuzz run from_csv ../corpus/from_csv; \
 	)
 
-fuzz_form_vec:
+fuzz_from_vec:
 	(\
 	cd graph_harness;\
 	cargo fuzz run from_vec ../corpus/from_vec; \
