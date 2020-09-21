@@ -402,14 +402,14 @@ impl Graph {
         if nodes_number <= 1 {
             return Err(String::from("Required nodes number must be more than 1."));
         }
-        if nodes_number > self.get_nodes_number() {
+        if nodes_number > self.get_nodes_number() - self.singleton_nodes_number(){
             return Err(format!(
                 concat!(
                     "Required number of nodes ({}) is more than available ",
-                    "number of nodes ({}) in current graph."
+                    "number of nodes ({}) that have edges in current graph."
                 ),
                 nodes_number,
-                self.get_nodes_number()
+                self.get_nodes_number() - self.singleton_nodes_number()
             ));
         }
 
@@ -441,7 +441,8 @@ impl Graph {
         let mut stack: Vec<NodeT> = Vec::new();
 
         // We iterate on the components
-        for node in nodes.iter().progress_with(pb) {
+        'outer : for node in nodes.iter().progress_with(pb) {
+            // If the current node is a trap there is no need to continue with the current loop.
             if self.is_node_trap(*node) {
                 continue;
             }
@@ -452,21 +453,14 @@ impl Graph {
                 let (min_edge, max_edge) = self.get_min_max_edge(src);
                 for edge_id in min_edge..max_edge {
                     let dst: NodeT = self.destinations[edge_id];
-                    if !unique_nodes.contains(&dst) {
+                    if !unique_nodes.contains(&dst) && src != dst {
                         stack.push(dst);
                         unique_nodes.insert(dst);
-                        let mut metadata =
-                            ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
-                        if let Some(md) = &mut metadata {
-                            md.set(
-                                self.get_link_weights(src, dst),
-                                self.get_link_edge_types(src, dst),
-                            );
-                        }
-                        graph_data.insert((src, dst), metadata.clone());
-                        if !self.is_directed && src != dst {
-                            graph_data.insert((dst, src), metadata);
-                        }
+                    }
+                    self.extend_tree(&mut graph_data, src, dst, None, None, true);
+                    // If we reach the desired number of unique nodes we can stop the iteration.
+                    if unique_nodes.len() >= nodes_number{
+                        break 'outer;
                     }
                 }
             }

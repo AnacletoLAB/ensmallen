@@ -55,29 +55,35 @@ pub fn load_ppi(
 }
 
 pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
-    Ok(WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())?
-        .set_iterations(Some(1))?
-        .set_min_length(Some(1))?
-        .set_verbose(Some(verbose))
-        .set_seed(Some(43))
-        .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
+    Ok(
+        WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())?
+            .set_iterations(Some(1))?
+            .set_min_length(Some(1))?
+            .set_verbose(Some(verbose))
+            .set_seed(Some(43))
+            .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping())),
     )
 }
 
 pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
-    Ok(WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())?
-        .set_iterations(Some(1))?
-        .set_min_length(Some(1))?
-        .set_verbose(Some(verbose))
-        .set_return_weight(Some(2.0))?
-        .set_explore_weight(Some(2.0))?
-        .set_change_edge_type_weight(Some(2.0))?
-        .set_change_node_type_weight(Some(2.0))?
-        .set_seed(Some(43))
+    Ok(
+        WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())?
+            .set_iterations(Some(1))?
+            .set_min_length(Some(1))?
+            .set_verbose(Some(verbose))
+            .set_return_weight(Some(2.0))?
+            .set_explore_weight(Some(2.0))?
+            .set_change_edge_type_weight(Some(2.0))?
+            .set_change_node_type_weight(Some(2.0))?
+            .set_seed(Some(43)),
     )
 }
 
-pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) -> Result<(), String> {
+pub fn default_holdout_test_suite(
+    graph: &Graph,
+    train: &Graph,
+    test: &Graph,
+) -> Result<(), String> {
     assert!(!train.overlaps(&test)?);
     assert!(!test.overlaps(&train)?);
     assert!(graph.contains(&train)?);
@@ -98,29 +104,26 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
 
     // Testing main holdout mechanisms
     for include_all_edge_types in &[true, false] {
-        let (train, test) = graph
-            .random_holdout(4, 0.6, *include_all_edge_types, verbose)
-            ?;
+        let (train, test) = graph.random_holdout(4, 0.6, *include_all_edge_types, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
-        let (train, test) = graph
-            .connected_holdout(4, 0.6, *include_all_edge_types, verbose)
-            ?;
+        let (train, test) = graph.connected_holdout(4, 0.6, *include_all_edge_types, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
         assert!(train != test);
     }
     // Testing cloning
     let _ = graph.clone();
     // Testing negative edges generation
-    let negatives = graph
-        .sample_negatives(4, graph.get_edges_number(), true, verbose)
-        ?;
+    let negatives = graph.sample_negatives(4, graph.get_edges_number(), true, verbose)?;
     assert!(!graph.overlaps(&negatives)?);
     assert!(!negatives.overlaps(&graph)?);
     // Testing subgraph generation
-    let subgraph = graph
-        .random_subgraph(6, graph.get_nodes_number() / 10, verbose)
-        ?;
+    let expected_nodes = (graph.get_nodes_number() - graph.singleton_nodes_number()) / 10;
+    let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
+    assert_eq!(
+        subgraph.get_nodes_number() - subgraph.singleton_nodes_number(),
+        expected_nodes
+    );
     // Testing edge-type based subgraph
     let edge_type_subgraph = graph.edge_types_subgraph(vec!["red".to_string()], verbose);
     assert_eq!(edge_type_subgraph.is_ok(), graph.has_edge_types());
@@ -128,7 +131,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     assert!(wrong_edge_type_subgraph.is_err());
     let wrong_edge_type_subgraph = graph.edge_types_subgraph(vec!["missing".to_string()], verbose);
     assert!(wrong_edge_type_subgraph.is_err());
-    
+
     // Testing writing out graph to file
     let nodes_writer = NodeFileWriter::new("tmp_node_file.tsv".to_string())
         .set_verbose(Some(verbose))
@@ -155,9 +158,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     edges_writer.dump(&graph)?;
     fs::remove_file("tmp_edge_file.tsv").unwrap();
     // Testing SkipGram / CBOW / GloVe preprocessing
-    graph
-        .cooccurence_matrix(&walker, Some(3), Some(verbose))
-        ?;
+    graph.cooccurence_matrix(&walker, Some(3), Some(verbose))?;
     graph.node2vec(&walker, Some(3), Some(true), 56)?;
     // Testing link prediction pre-processing
     graph.link_prediction(0, 16, Some(1.0), None, None)?;
