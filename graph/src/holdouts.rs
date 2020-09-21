@@ -42,10 +42,19 @@ impl Graph {
         // Here we use unique edges number because on a multigraph the negative
         // edges cannot have an edge type.
         let nodes_number = self.get_nodes_number();
-        let edges_divisor = if self.is_directed { 1 } else { 2 };
-        let self_loops_number = if allow_selfloops { nodes_number } else { self.selfloops_number() };
-        let total_negative_edges =
-            nodes_number * (nodes_number - 1) / edges_divisor + self_loops_number - self.get_unique_edges_number();
+        let selfloops_in_graph = self.selfloops_number();
+        let self_loops_number = if allow_selfloops {
+            nodes_number
+        } else {
+            selfloops_in_graph
+        };
+        let total_negative_edges = if self.is_directed {
+            nodes_number * (nodes_number - 1) + self_loops_number - self.get_unique_edges_number()
+        } else {
+            nodes_number * (nodes_number - 1) / 2 + self_loops_number
+                - (self.get_unique_edges_number() - selfloops_in_graph) / 2
+                - selfloops_in_graph
+        };
 
         if negatives_number > total_negative_edges {
             return Err(format!(
