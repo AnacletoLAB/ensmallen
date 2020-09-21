@@ -19,7 +19,6 @@ linecount= "0.1.0"
 log = "0.4.8"
 env_logger = "0.7.1"
 rayon = "1.1"
-hashbrown = {version = "0.8", features = ["rayon", "inline-more"] }
 rand = {version="0.7", features = ["small_rng"] }
 itertools = "0.9.0"
 permutation = "0.2.5"
