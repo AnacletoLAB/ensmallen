@@ -79,9 +79,9 @@ impl Graph {
         // randomly extract negative edges until we have the choosen number
         while unique_edges_tree.len() <= negatives_number {
             seed = xorshift(seed as u64) as usize;
-            let src: NodeT = self.sources[seed % self.sources.len()];
+            let src: NodeT = seed % nodes_number;
             seed = xorshift(seed as u64) as usize;
-            let dst: NodeT = self.destinations[seed % self.sources.len()];
+            let dst: NodeT = seed % nodes_number;
             // If the edge is not a self-loop or the user allows self-loops and
             // the graph is directed or the edges are inserted in a way to avoid
             // inserting bidirectional edges, avoiding to execute the check
