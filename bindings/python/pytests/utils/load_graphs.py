@@ -12,8 +12,7 @@ def load_hpo():
         nodes_column="id",
         node_types_column="category",
         default_edge_type='biolink:interacts_with',
-        default_node_type='biolink:NamedThing',
-        validate_input_data=False
+        default_node_type='biolink:NamedThing'
     )
 
 
