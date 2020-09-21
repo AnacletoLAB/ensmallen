@@ -78,7 +78,7 @@ impl CSVFileReader {
             Some(fl) => {
                 match fl {
                     Ok(f) => {
-                        Ok(f.matches(&self.separator).count())
+                        Ok(f.matches(&self.separator).count() + 1)
                     },
                     Err(_) => Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string())
                 }
@@ -152,17 +152,19 @@ impl CSVFileReader {
                         .split(&self.separator)
                         .map(|s| s.to_string())
                         .collect::<Vec<String>>();
-                        if line_components.len() -1 != number_of_elements_per_line {
+                        if line_components.len() != number_of_elements_per_line {
                             return Err(format!(
                                 concat!(
                                     "Found line {i} with different number",
                                     " ({found}) of separator from the expected",
                                     " one {expected}.\n",
-                                    "Specifically, the line is: {line}"
+                                    "Specifically, the line is: {line}\n",
+                                    "And the line components is {line_components:?}"
                                 ),
                                 i=i,
                                 found=line_components.len(),
                                 expected=number_of_elements_per_line,
+                                line_components=line_components,
                                 line=l
                             ));
                         }

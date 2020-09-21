@@ -19,3 +19,6 @@ coverage:
 	grcov ./target/debug/ -s . -t html --llvm --branch --ignore-not-existing -o ./target/debug/coverage/;\
 	$(OPEN_COMMAND) ./target/debug/coverage/index.html > /dev/null & \
 	)
+
+test:
+	cargo test -- --test-threads=1
