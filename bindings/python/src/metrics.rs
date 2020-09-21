@@ -160,4 +160,16 @@ impl EnsmallenGraph {
     fn traps_rate(&self) -> f64 {
         self.graph.traps_rate()
     }
+    
+    #[text_signature = "(self)"]
+    /// Returns the ratio of edges that have multiple types.
+    fn get_multigraph_edges_ratio(&self) -> f64 {
+        self.graph.get_multigraph_edges_ratio()
+    }
+
+    #[text_signature = "(self)"]
+    /// Returns the number of edges that have multiple types.
+    fn get_multigraph_edges_number(&self) -> usize {
+        self.graph.get_multigraph_edges_number()
+    }
 }

@@ -268,6 +268,22 @@ impl Graph {
         self.get_edges_number() as f64 / (self.get_nodes_number().pow(2)) as f64
     }
 
+    /// Returns the number of edges that have multiple types.
+    pub fn get_multigraph_edges_number(&self) -> usize {
+        self.unique_edges.values().filter(|data| {
+            if let Some(edt) = &data.edge_types {
+                edt.len() > 1
+            } else {
+                false
+            }
+        }).count()
+    }
+
+    /// Returns the ratio of edges that have multiple types.
+    pub fn get_multigraph_edges_ratio(&self) -> f64 {
+        self.get_multigraph_edges_number() as f64 /  self.get_edges_number() as f64
+    }
+
     /// Returns report relative to the graph metrics
     ///
     /// The report includes a few useful metrics like:
@@ -298,6 +314,8 @@ impl Graph {
         report.insert("singleton_nodes", self.singleton_nodes_number().to_string());
         report.insert("is_directed", self.is_directed.to_string());
         report.insert("is_multigraph", self.is_multigraph().to_string());
+        report.insert("multigraph_edges_number", self.get_multigraph_edges_number().to_string());
+        report.insert("multigraph_edges_ratio", self.get_multigraph_edges_ratio().to_string());
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),
