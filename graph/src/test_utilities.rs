@@ -1,5 +1,26 @@
 use super::*;
 use std::fs;
+use rand::Rng;
+use std::path::Path;
+
+const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
+                        abcdefghijklmnopqrstuvwxyz\
+                        0123456789()*&^%$#@!~";
+    
+pub fn random_string(len: usize) -> String{    
+    let mut rng = rand::thread_rng();
+    
+    (0..len)
+        .map(|_| {
+            let idx = rng.gen_range(0, CHARSET.len());
+            CHARSET[idx] as char
+        })
+        .collect()
+}
+
+pub fn random_path() -> String {
+    Path::new("/tmp").join(random_string(64)).to_str().unwrap().to_string()
+}
 
 pub fn load_ppi(
     load_nodes: bool,
@@ -136,7 +157,8 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     assert!(wrong_edge_type_subgraph.is_err());
 
     // Testing writing out graph to file
-    let nodes_writer = NodeFileWriter::new("tmp_node_file.tsv".to_string())
+    let node_file = random_path();
+    let nodes_writer = NodeFileWriter::new(node_file.clone())
         .set_verbose(Some(verbose))
         .set_separator(Some("\t".to_string()))
         .set_header(Some(true))
@@ -145,8 +167,10 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         .set_node_types_column(Some("node_types".to_string()))
         .set_nodes_column(Some("node_column".to_string()));
     nodes_writer.dump(&graph)?;
-    fs::remove_file("tmp_node_file.tsv").unwrap();
-    let edges_writer = EdgeFileWriter::new("tmp_edge_file.tsv".to_string())
+    fs::remove_file(node_file).unwrap();
+
+    let edges_file = random_path();
+    let edges_writer = EdgeFileWriter::new(edges_file.clone())
         .set_verbose(Some(verbose))
         .set_separator(Some("\t".to_string()))
         .set_header(Some(true))
@@ -159,7 +183,8 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         .set_destinations_column(Some("The land of pizza".to_string()))
         .set_destinations_column_number(Some(1));
     edges_writer.dump(&graph)?;
-    fs::remove_file("tmp_edge_file.tsv").unwrap();
+    fs::remove_file(edges_file).unwrap();
+    
     // Testing SkipGram / CBOW / GloVe preprocessing
     graph.cooccurence_matrix(&walker, Some(3), Some(verbose))?;
     graph.node2vec(&walker, Some(3), Some(true), 56)?;
