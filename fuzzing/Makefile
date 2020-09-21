@@ -1,13 +1,13 @@
 libfuzz_from_csv:
 	(\
 	cd graph_harness;\
-	cargo fuzz run from_csv -- -timeout=60; \
+	cargo fuzz run from_csv -- -timeout=10; \
 	)
 
 libfuzz_from_vec:
 	(\
 	cd graph_harness;\
-	cargo fuzz run from_vec -- -timeout=60; \
+	cargo fuzz run from_vec -- -timeout=10; \
 	)
 
 hfuzz_from_csv:

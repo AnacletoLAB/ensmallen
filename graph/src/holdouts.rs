@@ -442,32 +442,25 @@ impl Graph {
 
         // We iterate on the components
         for node in nodes.iter().progress_with(pb) {
+            // If we reach the desired number of unique nodes we can stop the iteration.
+            if unique_nodes.len() >= nodes_number{
+                break;
+            }
+            // If the current node is a trap there is no need to continue with the current loop.
             if self.is_node_trap(*node) {
                 continue;
             }
             stack.push(*node);
-            unique_nodes.insert(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
                 let (min_edge, max_edge) = self.get_min_max_edge(src);
                 for edge_id in min_edge..max_edge {
                     let dst: NodeT = self.destinations[edge_id];
-                    if !unique_nodes.contains(&dst) {
+                    if !unique_nodes.contains(&dst) && src != dst {
                         stack.push(dst);
                         unique_nodes.insert(dst);
-                        let mut metadata =
-                            ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
-                        if let Some(md) = &mut metadata {
-                            md.set(
-                                self.get_link_weights(src, dst),
-                                self.get_link_edge_types(src, dst),
-                            );
-                        }
-                        graph_data.insert((src, dst), metadata.clone());
-                        if !self.is_directed && src != dst {
-                            graph_data.insert((dst, src), metadata);
-                        }
                     }
+                    self.extend_tree(&mut graph_data, src, dst, None, None, true);
                 }
             }
         }
