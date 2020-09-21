@@ -10,6 +10,12 @@ impl EnsmallenGraph {
     pub fn degrees_mean(&self) -> f64 {
         self.graph.degrees_mean()
     }
+    
+    #[text_signature = "($self)"]
+    /// Returns number of self-loops.
+    pub fn selfloops_number(&self) -> usize {
+        self.graph.selfloops_number()
+    }
 
     #[text_signature = "($self)"]
     /// Returns median node degree of the graph.
