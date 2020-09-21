@@ -102,3 +102,17 @@ fn test_regression7() {
     let g = Graph::from_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
+
+#[test]
+/// Some issue is causing the walk to mis-behave when the graph is composite of two self loops of different types on the same node.
+fn test_regression8() {
+    let edges_reader = EdgeFileReader::new("tests/data/regression/8.tsv".to_string()).unwrap()
+        .set_separator(Some(",".to_string()))
+        .set_verbose(Some(false))
+        .set_ignore_duplicates(Some(true))
+        .set_edge_types_column_number(Some(2)).unwrap()
+        .set_weights_column_number(Some(3)).unwrap()
+        .set_header(Some(false));
+    let g = Graph::from_csv(edges_reader, None, false).unwrap();
+    let _ = graph::test_utilities::default_test_suite(&g, false);
+}
