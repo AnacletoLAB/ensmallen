@@ -13,13 +13,13 @@ libfuzz_from_vec:
 hfuzz_from_csv:
 	(\
 	cd honggfuzz/from_csv;\
-	cargo hfuzz run from_csv; \
+	HFUZZ_RUN_ARGS="-t 10 -v --exit_upon_crash" RUSTFLAGS="-Z sanitizer=address" cargo hfuzz run from_csv; \
 	)
 
 hfuzz_from_vec:
 	(\
 	cd honggfuzz/from_vec;\
-	cargo hfuzz run from_vec; \
+	HFUZZ_RUN_ARGS="-t 10 -v --exit_upon_crash" RUSTFLAGS="-Z sanitizer=address" cargo hfuzz run from_vec; \
 	)
 
 afl_from_csv:
