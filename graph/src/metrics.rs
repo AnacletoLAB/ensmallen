@@ -297,6 +297,7 @@ impl Graph {
         report.insert("density", self.density().to_string());
         report.insert("singleton_nodes", self.singleton_nodes_number().to_string());
         report.insert("is_directed", self.is_directed.to_string());
+        report.insert("is_multigraph", self.is_multigraph().to_string());
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),

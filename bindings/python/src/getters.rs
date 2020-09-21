@@ -270,4 +270,12 @@ impl EnsmallenGraph {
         self.graph.has_selfloops()
     }
 
+    #[text_signature = "(self)"]
+    /// Returns a boolean representing if the graph contains a pair of nodes
+    /// which have edges of multiple types.
+    fn is_multigraph(&self) -> bool {
+        self.graph.is_multigraph()
+    }
+    
+
 }

@@ -157,6 +157,18 @@ impl Graph {
             .any(|(src, dst)| src == dst)
     }
 
+    /// Returns a boolean representing if the graph contains a pair of nodes
+    /// which have edges of multiple types.
+    pub fn is_multigraph(&self) -> bool {
+        self.unique_edges.values().any(|data| {
+            if let Some(edt) = &data.edge_types {
+                edt.len() > 1
+            } else {
+                false
+            }
+        })
+    }
+
     /// Private method that check if a triple (src, dst, edge_type) is present in another graph.
     /// This is used in overlaps and contains and it must be a method because we need to convert
     /// from the indexing of one graph to the other.
