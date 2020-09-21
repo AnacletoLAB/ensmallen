@@ -268,6 +268,17 @@ impl Graph {
         self.get_edges_number() as f64 / (self.get_nodes_number().pow(2)) as f64
     }
 
+    /// Returns the mean number of types for each edge.
+    pub fn get_mean_number_of_types_for_edge(&self) -> usize {
+        self.unique_edges.values().map(|data| {
+            if let Some(edt) = &data.edge_types {
+                edt.len()
+            } else {
+                0
+            }
+        }).sum::<usize>() / self.get_edges_number()
+    }
+
     /// Returns the number of edges that have multiple types.
     pub fn get_multigraph_edges_number(&self) -> usize {
         self.unique_edges.values().filter(|data| {
@@ -316,6 +327,7 @@ impl Graph {
         report.insert("is_multigraph", self.is_multigraph().to_string());
         report.insert("multigraph_edges_number", self.get_multigraph_edges_number().to_string());
         report.insert("multigraph_edges_ratio", self.get_multigraph_edges_ratio().to_string());
+        report.insert("mean_number_of_types_for_edge", self.get_mean_number_of_types_for_edge().to_string());
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),
