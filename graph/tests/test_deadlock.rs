@@ -1,9 +1,9 @@
 extern crate graph;
-use graph::*;
-use graph::test_utilities::*;
-
 #[test]
-fn test_deadloop1() {
+// this test used to deadlock the sample negatives
+// becasue we computed wrongly the total number of negative edges
+// in undirected graphs.
+fn test_deadlock1() {
 
     let edges = vec![
         Ok(("node1".to_string(), "node1".to_string(), None, None)),
@@ -27,7 +27,10 @@ fn test_deadloop1() {
 }
 
 #[test]
-fn test_deadloop2() {
+// this test used to deadlock the sample negatives
+// becasue we erroneously extracted the nodes from the 
+// present srcs and dsts instead of random nodes.
+fn test_deadlock2() {
 
     let edges = vec![
         Ok(("node1".to_string(), "node2".to_string(), None, None)),
