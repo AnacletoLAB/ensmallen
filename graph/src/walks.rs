@@ -377,12 +377,13 @@ impl Graph {
         parameters: &SingleWalkParameters,
     ) -> Vec<NodeT> {
         let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length);
-        let dst = self.extract_uniform_node(node, seed);
+        let mut dst = self.extract_uniform_node(node, seed);
         walk.push(node);
         walk.push(dst);
 
         for iteration in 2..parameters.length {
-            walk.push(self.extract_uniform_node(dst, seed + iteration));
+            dst = self.extract_uniform_node(dst, seed + iteration);
+            walk.push(dst);
         }
         walk
     }
