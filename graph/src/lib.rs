@@ -47,4 +47,5 @@ pub use self::trees::*;
 pub use self::types::*;
 pub use self::walks_parameters::*;
 pub use self::walks::*;
+pub use setters::set_num_threads;
 pub use preprocessing::*;

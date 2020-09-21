@@ -1,6 +1,6 @@
 use super::*;
-use std::collections::{BTreeMap, HashMap};
 use itertools::Itertools;
+use std::collections::{BTreeMap, HashMap};
 
 macro_rules! optionify {
     ($val:expr) => {
@@ -33,7 +33,7 @@ pub(crate) fn parse_nodes(
         let (node_name, node_type) = values?;
 
         // clean way to save if the first edge has edge type and weights
-        has_type = has_type.or(Some(node_type.is_some()));
+        has_type = has_type.or_else(|| Some(node_type.is_some()));
 
         // check consistency
         if let Some(ht) = &has_type {
@@ -44,7 +44,7 @@ pub(crate) fn parse_nodes(
                         "Either all nodes have node types or none have it."
                     ),
                     node_name, node_type
-                ))
+                ));
             }
         }
 
@@ -100,7 +100,7 @@ pub(crate) fn parse_edges(
 
     let mut has_edges = None;
     let mut has_weights = None;
-    
+
     for values in edges_iterator {
         let (source_node_name, destination_node_name, edge_type, edge_weight) = values?;
         // Check if we need to skip self-loops
@@ -115,12 +115,12 @@ pub(crate) fn parse_edges(
                 false => Err(format!(
                     "The weight {} is either infinite or NaN or Zero.",
                     val
-                ))
+                )),
             }?
         }
         // clean way to save if the first edge has edge type and weights
-        has_edges = has_edges.or(Some(edge_type.is_some()));
-        has_weights = has_weights.or(Some(edge_weight.is_some()));
+        has_edges = has_edges.or_else(|| Some(edge_type.is_some()));
+        has_weights = has_weights.or_else(|| Some(edge_weight.is_some()));
 
         // check consistency
         if let Some(he) = &has_edges {
@@ -131,7 +131,7 @@ pub(crate) fn parse_edges(
                         "Either all edges have edge types or none have it."
                     ),
                     source_node_name, destination_node_name, edge_type, edge_weight
-                ))
+                ));
             }
         }
         if let Some(hw) = &has_weights {
@@ -142,7 +142,7 @@ pub(crate) fn parse_edges(
                         "Either all edges have weights or none have it."
                     ),
                     source_node_name, destination_node_name, edge_type, edge_weight
-                ))
+                ));
             }
         }
 
@@ -310,11 +310,8 @@ pub(crate) fn build_graph(
         *o = i;
     }
 
-    let singletons_number = outbounds.len() - destinations
-            .iter()
-            .chain(sources.iter())
-            .unique()
-            .count();
+    let singletons_number =
+        outbounds.len() - destinations.iter().chain(sources.iter()).unique().count();
 
     not_trap_nodes.push(last_src);
     let has_traps = not_trap_nodes.len() != outbounds.len() - singletons_number;
