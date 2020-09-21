@@ -121,6 +121,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     let expected_nodes = (graph.get_nodes_number() - graph.singleton_nodes_number()) / 10;
     let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
+    println!("{}, {}", subgraph.get_nodes_number() - subgraph.singleton_nodes_number(), expected_nodes + 1);
     assert!(subgraph.get_nodes_number() - subgraph.singleton_nodes_number() <= expected_nodes + 1);
     // Testing edge-type based subgraph
     let edge_type_subgraph = graph.edge_types_subgraph(vec!["red".to_string()], verbose);
