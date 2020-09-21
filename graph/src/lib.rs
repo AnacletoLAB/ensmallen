@@ -35,6 +35,7 @@ mod trees;
 pub mod types;
 mod walks_parameters;
 mod walks;
+mod setters;
 
 pub mod test_utilities;
 

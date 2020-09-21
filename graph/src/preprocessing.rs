@@ -1,5 +1,5 @@
 use super::*;
-use hashbrown::HashMap;
+use std::collections::HashMap;
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;

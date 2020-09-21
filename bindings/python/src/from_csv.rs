@@ -5,7 +5,7 @@ use graph::{EdgeFileReader, Graph, NodeFileReader, WeightT};
 impl EnsmallenGraph {
     #[staticmethod]
     #[args(py_kwargs = "**")]
-    #[text_signature = "(edge_path, directed, *, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_self_loops, ignore_duplicated_edges, egde_header, edge_rows_to_skip, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_separator, verbose)"]
+    #[text_signature = "(edge_path, directed, *, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_self_loops, ignore_duplicated_edges, egde_header, edge_rows_to_skip, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, default_node_type, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_separator, verbose)"]
     /// Return graph loaded from given edge file and optionally node file.
     ///
     /// Parameters
@@ -82,6 +82,9 @@ impl EnsmallenGraph {
     ///     to set the node_header parameter to false.
     /// node_types_column: str = None,
     ///     Name of the column to be loaded as node types.
+    /// default_node_type: str = None,
+    ///     String representing the default node type to use when the node type
+    ///     in the provided column is empty. 
     /// ignore_duplicated_nodes: bool = True,
     ///     Wethever to skip duplicated nodes while loading the node file.
     ///     When NOT ignoring the duplicated nodes, an exception with information
@@ -135,6 +138,7 @@ impl EnsmallenGraph {
                 "nodes_column",
                 "node_types_column_number",
                 "node_types_column",
+                "default_node_type",
                 "ignore_duplicated_nodes",
                 "node_header",
                 "node_rows_to_skip",
@@ -183,6 +187,7 @@ impl EnsmallenGraph {
                     usize
                 )))?
                 .set_node_types_column(extract_value!(kwargs, "node_types_column", String)))?
+                .set_default_node_type(extract_value!(kwargs, "default_node_type", String))
                 .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_nodes", bool))
                 .set_header(extract_value!(kwargs, "node_header", bool))
                 .set_rows_to_skip(extract_value!(kwargs, "node_rows_to_skip", usize))

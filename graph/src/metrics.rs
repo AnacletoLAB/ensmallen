@@ -1,6 +1,6 @@
 use super::types::*;
 use super::*;
-use hashbrown::{HashMap, HashSet};
+use std::collections::{HashMap, HashSet};
 use rayon::prelude::*;
 use std::collections::HashMap as DefaultHashMap;
 
