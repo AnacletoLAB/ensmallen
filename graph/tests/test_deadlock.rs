@@ -3,7 +3,7 @@ use graph::*;
 use graph::test_utilities::*;
 
 #[test]
-fn test_deadloop1() {
+fn test_deadlock1() {
 
     let edges = vec![
         Ok(("node1".to_string(), "node1".to_string(), None, None)),
@@ -27,7 +27,7 @@ fn test_deadloop1() {
 }
 
 #[test]
-fn test_deadloop2() {
+fn test_deadlock2() {
 
     let edges = vec![
         Ok(("node1".to_string(), "node2".to_string(), None, None)),
