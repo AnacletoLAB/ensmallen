@@ -44,7 +44,7 @@ impl Graph {
     ///
     /// # Examples
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The node type id of node {} is {}", 0, graph.get_node_type_id(0).unwrap());
     /// ```
     ///
@@ -73,7 +73,7 @@ impl Graph {
     /// 
     /// # Examples
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The edge type id of edge {} is {}", 0, graph.get_edge_type_id(0).unwrap());
     /// ```
     pub fn get_edge_type_id(&self, edge_id: EdgeT) -> Result<EdgeTypeT, String> {
@@ -101,7 +101,7 @@ impl Graph {
     /// 
     /// # Examples
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// for (edge_type_id, count) in graph.get_edge_type_counts().unwrap().iter() {
     ///     println!("edge type id {}: count: {}", edge_type_id, count);
     /// }
@@ -123,7 +123,7 @@ impl Graph {
     /// None
     /// 
     /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false).unwrap();
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// for (node_type_id, count) in graph.get_node_type_counts().unwrap().iter() {
     ///     println!("node type id {}: count: {}", node_type_id, count);
     /// }

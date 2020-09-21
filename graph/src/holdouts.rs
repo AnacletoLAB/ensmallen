@@ -386,11 +386,13 @@ impl Graph {
     /// sampled using given seed and includes all neighbouring nodes until
     /// the required number of nodes is reached. All the edges connecting any
     /// of the selected nodes are then inserted into this graph.
+    /// 
+    /// 
     ///
     /// # Arguments
     ///
-    /// * seed: usize - Random seed to use.
-    /// * nodes_number: usize - Number of nodes to extract.
+    /// * `seed`: usize - Random seed to use.
+    /// * `nodes_number`: usize - Number of nodes to extract.
     /// * `verbose`: bool - Wethever to show the loading bar.
     ///
     pub fn random_subgraph(
@@ -447,14 +449,14 @@ impl Graph {
                 continue;
             }
             stack.push(*node);
-            unique_nodes.insert(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
                 let (min_edge, max_edge) = self.get_min_max_edge(src);
                 for edge_id in min_edge..max_edge {
                     let dst: NodeT = self.destinations[edge_id];
-                    if !unique_nodes.contains(&dst) && src != dst {
+                    if !unique_nodes.contains(&dst) && src != dst{
                         stack.push(dst);
+                        unique_nodes.insert(*node);
                         unique_nodes.insert(dst);
                     }
                     self.extend_tree(&mut graph_data, src, dst, None, None, true);
