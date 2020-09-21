@@ -77,7 +77,7 @@ impl Graph {
         let mut unique_edges_tree: GraphDictionary = BTreeMap::new();
 
         // randomly extract negative edges until we have the choosen number
-        while unique_edges_tree.len() <= negatives_number {
+        while unique_edges_tree.len() < negatives_number {
             seed = xorshift(seed as u64) as usize;
             let src: NodeT = seed % nodes_number;
             seed = xorshift(seed as u64) as usize;
