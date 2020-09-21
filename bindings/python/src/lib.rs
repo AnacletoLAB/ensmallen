@@ -11,6 +11,7 @@ mod setters;
 mod holdout;
 mod metrics;
 mod node_file_writer;
+mod tarjan;
 mod operators;
 mod preprocessing;
 mod utilities;

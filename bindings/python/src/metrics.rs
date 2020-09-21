@@ -10,7 +10,7 @@ impl EnsmallenGraph {
     pub fn degrees_mean(&self) -> f64 {
         self.graph.degrees_mean()
     }
-    
+
     #[text_signature = "($self)"]
     /// Returns number of self-loops.
     pub fn selfloops_number(&self) -> usize {
@@ -160,7 +160,7 @@ impl EnsmallenGraph {
     fn traps_rate(&self) -> f64 {
         self.graph.traps_rate()
     }
-    
+
     #[text_signature = "(self)"]
     /// Returns the ratio of edges that have multiple types.
     fn get_multigraph_edges_ratio(&self) -> f64 {
@@ -178,5 +178,4 @@ impl EnsmallenGraph {
     fn get_mean_number_of_types_for_edge(&self) -> usize {
         self.graph.get_mean_number_of_types_for_edge()
     }
-
 }
