@@ -32,15 +32,20 @@ impl Graph {
         if negatives_number == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
         }
-        // here we use unique edges number because on a multigraph the negative
+        // In a complete directed graph allowing selfloops with N nodes there are N^2
+        // edges. In a complete directed graph without selfloops there are N*(N-1) edges.
+        // We can rewrite the first formula as (N*(N-1)) + N.
+        //
+        // In a complete undirected graph allowing selfloops with N nodes there are
+        // (N*(N-1))/2 + N edges.
+
+        // Here we use unique edges number because on a multigraph the negative
         // edges cannot have an edge type.
-        let total_negative_edges = self.get_nodes_number().pow(2)
-            - self.get_unique_edges_number()
-            - if allow_selfloops {
-                0
-            } else {
-                self.get_nodes_number() - self.selfloops_number()
-            };
+        let nodes_number = self.get_nodes_number();
+        let edges_divisor = if self.is_directed { 1 } else { 2 };
+        let self_loops_number = if allow_selfloops { nodes_number } else { self.selfloops_number() };
+        let total_negative_edges =
+            nodes_number * (nodes_number - 1) / edges_divisor + self_loops_number - self.get_unique_edges_number();
 
         if negatives_number > total_negative_edges {
             return Err(format!(
