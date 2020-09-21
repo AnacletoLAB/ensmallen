@@ -1,4 +1,4 @@
-TIMEOUT := "10"
+TIMEOUT := 10
 CORPUS_FOLDER := corpus
 
 
