@@ -100,7 +100,7 @@ fn test_deadlock4() {
         } else {
             None
         },
-        true,
+        false,
         false,
         false,
         false
