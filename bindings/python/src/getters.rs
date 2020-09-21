@@ -262,4 +262,12 @@ impl EnsmallenGraph {
     fn get_node_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
         pyex!(self.graph.get_node_type_counts())
     }
+
+    #[text_signature = "(self)"]
+    /// Returns a boolean representing if the graph contains an edge that has
+    /// source == destination.
+    fn has_selfloops(&self) -> bool {
+        self.graph.has_selfloops()
+    }
+
 }

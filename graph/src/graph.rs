@@ -149,6 +149,14 @@ impl Graph {
         self.unique_edges.contains_key(&(src, dst))
     }
 
+    /// Returns a boolean representing if the graph contains an edge that has
+    /// source == destination.
+    pub fn has_selfloops(&self) -> bool {
+        self.sources.iter()
+            .zip(self.destinations.iter())
+            .any(|(src, dst)| src == dst)
+    }
+
     /// Private method that check if a triple (src, dst, edge_type) is present in another graph.
     /// This is used in overlaps and contains and it must be a method because we need to convert
     /// from the indexing of one graph to the other.

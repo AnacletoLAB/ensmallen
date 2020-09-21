@@ -356,7 +356,7 @@ impl EdgeFileReader {
                     Err(format!(
                         concat!(
                             "Found empty weight but no default weight ",
-                            "to use was provided.",
+                            "to use was provided. ",
                             "The source node name is {source_node_name}.\n",
                             "The destination node name is {destination_node_name}.\n",
                             "The path of the document was {path}.\n"

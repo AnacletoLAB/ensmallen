@@ -205,7 +205,7 @@ impl NodeFileReader {
                             return Err(format!(
                                 concat!(
                                     "Found empty node type but no default node ",
-                                    "type to use was provided.",
+                                    "type to use was provided. ",
                                     "The node name is {node_name}.\n",
                                     "The path of the document was {path}.\n"
                                 ),
