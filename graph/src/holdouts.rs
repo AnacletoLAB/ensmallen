@@ -402,14 +402,14 @@ impl Graph {
         if nodes_number <= 1 {
             return Err(String::from("Required nodes number must be more than 1."));
         }
-        if nodes_number > self.get_nodes_number() {
+        if nodes_number > self.get_nodes_number() - self.singleton_nodes_number(){
             return Err(format!(
                 concat!(
                     "Required number of nodes ({}) is more than available ",
-                    "number of nodes ({}) in current graph."
+                    "number of nodes ({}) that have edges in current graph."
                 ),
                 nodes_number,
-                self.get_nodes_number()
+                self.get_nodes_number() - self.singleton_nodes_number()
             ));
         }
 
@@ -441,16 +441,13 @@ impl Graph {
         let mut stack: Vec<NodeT> = Vec::new();
 
         // We iterate on the components
-        for node in nodes.iter().progress_with(pb) {
-            // If we reach the desired number of unique nodes we can stop the iteration.
-            if unique_nodes.len() >= nodes_number{
-                break;
-            }
+        'outer : for node in nodes.iter().progress_with(pb) {
             // If the current node is a trap there is no need to continue with the current loop.
             if self.is_node_trap(*node) {
                 continue;
             }
             stack.push(*node);
+            unique_nodes.insert(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
                 let (min_edge, max_edge) = self.get_min_max_edge(src);
@@ -461,6 +458,10 @@ impl Graph {
                         unique_nodes.insert(dst);
                     }
                     self.extend_tree(&mut graph_data, src, dst, None, None, true);
+                    // If we reach the desired number of unique nodes we can stop the iteration.
+                    if unique_nodes.len() >= nodes_number{
+                        break 'outer;
+                    }
                 }
             }
         }
