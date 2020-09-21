@@ -3,6 +3,14 @@ use std::fs;
 use rand::Rng;
 use std::path::Path;
 
+// where to save the test files
+#[cfg(target_os = "macos")]
+static DEFAULT_PATH: &str = "/tmp/";
+#[cfg(target_os = "linux")]
+static DEFAULT_PATH: &str = "/tmp/";
+#[cfg(target_os = "windows")]
+static DEFAULT_PATH: &str = "";
+
 const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
                         abcdefghijklmnopqrstuvwxyz\
                         0123456789()*&^%$#@!~";
@@ -19,7 +27,7 @@ pub fn random_string(len: usize) -> String{
 }
 
 pub fn random_path() -> String {
-    Path::new("/tmp").join(random_string(64)).to_str().unwrap().to_string()
+    Path::new(DEFAULT_PATH).join(random_string(64)).to_str().unwrap().to_string()
 }
 
 pub fn load_ppi(
@@ -184,7 +192,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         .set_destinations_column_number(Some(1));
     edges_writer.dump(&graph)?;
     fs::remove_file(edges_file).unwrap();
-    
+
     // Testing SkipGram / CBOW / GloVe preprocessing
     graph.cooccurence_matrix(&walker, Some(3), Some(verbose))?;
     graph.node2vec(&walker, Some(3), Some(true), 56)?;

@@ -12,6 +12,3 @@ pub use from_vec::{
     from_vec_harness,
     FromVecHarnessParams
 };
-
-mod utils;
-use utils::*;
