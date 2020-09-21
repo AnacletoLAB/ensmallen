@@ -89,7 +89,9 @@ fn test_regression6() {
 }
 
 #[test]
-/// TBD
+/// "red" hardcoded in the default test suite
+/// this is not really a problem but since we already wrote it
+/// we will keep it because it's an extra test for free. 
 fn test_regression7() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/7.tsv".to_string()).unwrap()
         .set_separator(Some(",".to_string()))
