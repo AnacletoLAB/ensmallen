@@ -245,5 +245,10 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     // Evaluate get_edge_type_counts
     assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
 
+    // test drops
+    assert_eq!(graph.drop_edge_types().is_ok(), graph.has_edge_types());
+    assert_eq!(graph.drop_node_types().is_ok(), graph.has_node_types());
+    assert_eq!(graph.drop_weights().is_ok(), graph.has_weights());
+
     Ok(())
 }
