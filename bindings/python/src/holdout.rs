@@ -88,8 +88,6 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// -----------------------------
-    /// seed: int,
-    ///     The seed to use to generate the holdout.
     /// train_percentage: float,
     ///     The percentage to reserve for the training.
     /// seed: int = 42,
