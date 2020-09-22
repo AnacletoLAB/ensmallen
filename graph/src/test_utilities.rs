@@ -251,6 +251,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         assert_eq!(without_edges.is_ok(), graph.has_edge_types());
         if without_edges.is_ok() {
             let without_edges = without_edges.unwrap();
+            assert_eq!(without_edges.has_edge_types(), false);
             assert_eq!(without_edges.has_weights(), graph.has_weights());
             assert_eq!(without_edges.has_node_types(), graph.has_node_types());
             assert_eq!(without_edges.has_selfloops(), graph.has_selfloops());
@@ -263,6 +264,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         assert_eq!(without_nodes.is_ok(), graph.has_node_types());
         if without_nodes.is_ok() {
             let without_nodes = without_nodes.unwrap();
+            assert_eq!(without_nodes.has_node_types(), false);
             assert_eq!(without_nodes.has_edge_types(), graph.has_edge_types());
             assert_eq!(without_nodes.has_weights(), graph.has_weights());
             assert_eq!(without_nodes.has_selfloops(), graph.has_selfloops());
@@ -276,6 +278,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         assert_eq!(without_weights.is_ok(), graph.has_weights());
         if without_weights.is_ok() {
             let without_weights = without_weights.unwrap();
+            assert_eq!(without_weights.has_weights(), false);
             assert_eq!(without_weights.has_node_types(), graph.has_node_types());
             assert_eq!(without_weights.has_edge_types(), graph.has_edge_types());
             assert_eq!(without_weights.has_selfloops(), graph.has_selfloops());
