@@ -14,6 +14,9 @@ impl Graph {
 
         self.unique_edges.iter().for_each(
             |((src, dst), data)| {
+                if !self.is_directed && src > dst {
+                    return;
+                }
                 let weight = if let Some(w) = &self.weights {
                     if let Some(edt) = &data.edge_types{
                         Some(w[data.edge_id..data.edge_id+edt.len()].iter().sum())
@@ -39,5 +42,26 @@ impl Graph {
             },
             self.is_directed,
         ))
+    }
+
+    /// Returns a **NEW** Graph that have no weights.
+    pub fn drop_weights(&self) -> Result<Graph, String> {
+        if self.weights.is_none() {
+            return Err("Cannot drop weights from a graph without weights".to_string());
+        }
+
+        let mut new = self.clone();
+        new.weights = None;
+        Ok(new)
+    }
+
+    /// Returns a **NEW** Graph that have no nodes types.
+    pub fn drop_node_types(&self) -> Result<Graph, String> {
+        if self.node_types.is_none() {
+            return Err("Cannot drop node types from a graph without node types".to_string());
+        }
+        let mut new = self.clone();
+        new.node_types = None;
+        Ok(new)
     }
 }
