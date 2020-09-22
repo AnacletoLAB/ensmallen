@@ -2,18 +2,17 @@ use super::*;
 use std::ops;
 
 /// # Operators
-impl<'a, 'b> ops::Add<&'b Graph> for &'a Graph {
+impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
     type Output = Result<Graph, String>;
-    /// Return sum for summing graphs objects.
+    /// Return graph composed of the two graphs.
     ///
-    /// The add is only defined for disjointed graph components.
     /// The two graphs must have the same nodes, node types and edge types.
     ///
     /// # Arguments
     ///
     /// * other: Graph - Graph to be summed.
     ///
-    fn add(self, other: &'b Graph) -> Result<Graph, String> {
+    fn bitor(self, other: &'b Graph) -> Result<Graph, String> {
         if self.is_directed != other.is_directed {
             return Err(String::from(concat!(
                 "The graphs must either be both directed or undirected."
@@ -45,14 +44,6 @@ impl<'a, 'b> ops::Add<&'b Graph> for &'a Graph {
             )));
         }
 
-        if self.overlaps(&other)? {
-            return Err(String::from(concat!(
-                "The two given graphs have overlapping edges, ",
-                "this is not supported since it's an undefined ",
-                "behaviour."
-            )));
-        }
-
         if let Some(sntm) = &self.node_types {
             if let Some(ontm) = &other.node_types {
                 if sntm.vocabulary != ontm.vocabulary {
@@ -77,26 +68,40 @@ impl<'a, 'b> ops::Add<&'b Graph> for &'a Graph {
 
         let mut unique_edges_tree = GraphDictionary::new();
 
-        self.unique_edges
-            .keys()
-            .chain(other.unique_edges.keys())
-            .for_each(|(src, dst)| {
-                if unique_edges_tree.contains_key(&(*src, *dst)) {
-                    return;
-                }
-                let mut metadata =
-                    ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
-                if let Some(md) = &mut metadata {
-                    md.extend(
-                        self.get_link_weights(*src, *dst),
-                        self.get_link_edge_types(*src, *dst),
-                    );
-                    md.extend(
-                        other.get_link_weights(*src, *dst),
-                        other.get_link_edge_types(*src, *dst),
-                    );
-                }
-                unique_edges_tree.insert((*src, *dst), metadata);
+        [(self, None), (other, Some(self))]
+            .iter()
+            .for_each(|(one, two)| {
+                (0..one.get_edges_number())
+                    .map(|edge| {
+                        let src = one.sources[edge];
+                        let dst = one.destinations[edge];
+
+                        let edge_type = if let Some(et) = &one.edge_types {
+                            Some(et.ids[edge])
+                        } else {
+                            None
+                        };
+
+                        let weight = if let Some(w) = &one.weights {
+                            Some(w[edge])
+                        } else {
+                            None
+                        };
+
+                        (src, dst, edge_type, weight)
+                    })
+                    .filter(|(src, dst, edge_type, _)| {
+                        // If the secondary graph is given (this is the second iteration)
+                        // we filter out the edges that were previously added to avoid
+                        // introducing duplicates.
+                        if let Some(t) = two {
+                            return !t.check_edge_overlap(*src, *dst, *edge_type);
+                        }
+                        true
+                    })
+                    .for_each(|(src, dst, edge_type, weight)| {
+                        one.extend_tree(&mut unique_edges_tree, src, dst, edge_type, weight, false)
+                    })
             });
 
         Ok(build_graph(
@@ -118,7 +123,6 @@ impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
     type Output = Result<Graph, String>;
     /// Return subtraction for graphs objects.
     ///
-    /// The subtraction is only defined for disjointed graph components.
     /// The two graphs must have the same nodes, node types and edge types.
     ///
     /// # Arguments
@@ -200,9 +204,7 @@ impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
 
                 (src, dst, edge_type, weight)
             })
-            .filter(|(src, dst, edge_type, _)| {
-                !other.check_edge_overlap(*src, *dst, *edge_type)
-            })
+            .filter(|(src, dst, edge_type, _)| !other.check_edge_overlap(*src, *dst, *edge_type))
             .for_each(|(src, dst, edge_type, weight)| {
                 self.extend_tree(&mut unique_edges_tree, src, dst, edge_type, weight, false)
             });
@@ -221,13 +223,11 @@ impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
     }
 }
 
-
 /// # Operators
 impl<'a, 'b> ops::BitAnd<&'b Graph> for &'a Graph {
     type Output = Result<Graph, String>;
-    /// Return subtraction for graphs objects.
+    /// Return graph obtained from the intersection of the two graph.
     ///
-    /// The subtraction is only defined for disjointed graph components.
     /// The two graphs must have the same nodes, node types and edge types.
     ///
     /// # Arguments
@@ -315,9 +315,7 @@ impl<'a, 'b> ops::BitAnd<&'b Graph> for &'a Graph {
 
                 (src, dst, edge_type, weight)
             })
-            .filter(|(src, dst, edge_type, _)| {
-                big.check_edge_overlap(*src, *dst, *edge_type)
-            })
+            .filter(|(src, dst, edge_type, _)| big.check_edge_overlap(*src, *dst, *edge_type))
             .for_each(|(src, dst, edge_type, weight)| {
                 small.extend_tree(&mut unique_edges_tree, src, dst, edge_type, weight, false)
             });
