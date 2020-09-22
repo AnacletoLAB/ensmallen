@@ -269,14 +269,14 @@ impl Graph {
     }
 
     /// Returns the mean number of types for each edge.
-    pub fn get_mean_number_of_types_for_edge(&self) -> usize {
+    pub fn get_mean_number_of_types_for_edge(&self) -> f64 {
         self.unique_edges.values().map(|data| {
             if let Some(edt) = &data.edge_types {
                 edt.len()
             } else {
                 0
             }
-        }).sum::<usize>() / self.get_edges_number()
+        }).sum::<usize>() as f64 / self.get_edges_number() as f64
     }
 
     /// Returns the number of edges that have multiple types.
