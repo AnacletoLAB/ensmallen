@@ -8,7 +8,7 @@ use pyo3::class::PyObjectProtocol;
 impl PyNumberProtocol for EnsmallenGraph {
     fn __add__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pyex!(&lhs.graph + &rhs.graph)?,
+            graph: pyex!(&lhs.graph | &rhs.graph)?,
         })
     }
 
@@ -19,6 +19,12 @@ impl PyNumberProtocol for EnsmallenGraph {
     }
 
     fn __and__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pyex!(&lhs.graph & &rhs.graph)?,
+        })
+    }
+
+    fn __xor__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pyex!(&lhs.graph & &rhs.graph)?,
         })

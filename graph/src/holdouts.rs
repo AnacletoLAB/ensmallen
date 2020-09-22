@@ -3,7 +3,7 @@ use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
-use std::collections::{BTreeMap, HashSet};
+use std::collections::HashSet;
 use vec_rand::xorshift::xorshift;
 
 /// # Holdouts.
@@ -202,24 +202,10 @@ impl Graph {
 
             // We stop adding edges when we have reached the minimum amount.
             if user_condition(src, dst, edge_type) && valid.len() < valid_edges_number {
-                valid.extend(
-                    &self,
-                    src,
-                    dst,
-                    edge_type,
-                    weight,
-                    include_all_edge_types,
-                );
+                valid.extend(&self, src, dst, edge_type, weight, include_all_edge_types);
             } else {
                 // Otherwise we add the edges to the training set.
-                train.extend(
-                    &self,
-                    src,
-                    dst,
-                    edge_type,
-                    weight,
-                    include_all_edge_types,
-                );
+                train.extend(&self, src, dst, edge_type, weight, include_all_edge_types);
             }
         }
 
