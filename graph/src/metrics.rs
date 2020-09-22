@@ -232,7 +232,7 @@ impl Graph {
     }
 
     /// Returns number of self-loops.
-    pub fn selfloops_number(&self) -> usize {
+    pub fn get_selfloops_number(&self) -> usize {
         (0..self.get_nodes_number())
             .into_par_iter()
             .map(|node| self.has_edge(node, node) as usize)
@@ -240,8 +240,8 @@ impl Graph {
     }
 
     /// Returns rate of self-loops.
-    pub fn selfloops_rate(&self) -> f64 {
-        self.selfloops_number() as f64 / self.get_edges_number() as f64
+    pub fn get_selfloops_rate(&self) -> f64 {
+        self.get_selfloops_number() as f64 / self.get_edges_number() as f64
     }
 
     /// Returns rate of bidirectional edges.
@@ -337,7 +337,8 @@ impl Graph {
             self.get_edge_types_number().to_string(),
         );
         report.insert("traps_rate", self.traps_rate().to_string());
-        report.insert("selfloops_rate", self.selfloops_rate().to_string());
+        report.insert("selfloops_rate", self.get_selfloops_rate().to_string());
+        report.insert("selfloops_number", self.get_selfloops_number().to_string());
         report.insert("bidirectional_rate", self.bidirectional_rate().to_string());
         report.insert(
             "connected_components_number",

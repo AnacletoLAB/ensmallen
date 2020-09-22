@@ -42,7 +42,7 @@ impl Graph {
         // Here we use unique edges number because on a multigraph the negative
         // edges cannot have an edge type.
         let nodes_number = self.get_nodes_number();
-        let selfloops_in_graph = self.selfloops_number();
+        let selfloops_in_graph = self.get_selfloops_number();
         let self_loops_number = if allow_selfloops {
             nodes_number
         } else {
