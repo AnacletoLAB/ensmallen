@@ -141,7 +141,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         let (train, test) =
             graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
-        let (train, test) = graph.connected_holdout(4, 0.6, *include_all_edge_types, verbose)?;
+        let (train, test) = graph.connected_holdout(4, 0.8, *include_all_edge_types, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
         assert!(train != test);
     }

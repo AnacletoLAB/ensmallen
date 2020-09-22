@@ -261,6 +261,35 @@ impl Graph {
             }
         }
 
+        if valid.len() != valid_edges_number
+            && (self.is_directed || valid.len() != valid_edges_number + 1)
+        {
+            let actual_valid_edges_number = valid.len();
+            let valid_percentage = 1.0 - train_percentage;
+            let actual_train_percentage = train.len() as f64 / self.get_edges_number() as f64;
+            let actual_valid_percentage =
+                actual_valid_edges_number as f64 / self.get_edges_number() as f64;
+            return Err(format!(
+                concat!(
+                    "With the given configuration for the holdout, it is not possible to ",
+                    "generate a validation set composed of {valid_edges_number} edges from the current graph.\n",
+                    "The validation set can be composed of at most {actual_valid_edges_number} edges.\n",
+                    "The acual train/valid split percentages, with the current configuration,",
+                    "would not be {train_percentage}/{valid_percentage} but {actual_train_percentage}/{actual_valid_percentage}.\n",
+                    "If you really want to do this, you can pass the argument:\n",
+                    "train_percentage: {actual_train_percentage}\n",
+                    "Before proceeding, consider what is your experimental setup goal and ",
+                    "the possible bias and validation problems that this choice might cause."
+                ),
+                valid_edges_number=valid_edges_number,
+                actual_valid_edges_number=actual_valid_edges_number,
+                train_percentage=train_percentage,
+                valid_percentage=valid_percentage,
+                actual_train_percentage=actual_train_percentage,
+                actual_valid_percentage=actual_valid_percentage
+            ));
+        }
+
         Ok((
             build_graph(
                 &mut train,
@@ -393,7 +422,7 @@ impl Graph {
             include_all_edge_types,
             |src, dst, edge_type| {
                 // If a list of edge types was provided and the edge type
-                // of the current edge is not within the provided list, 
+                // of the current edge is not within the provided list,
                 // we skip the current edge.
                 if let Some(etis) = &edge_type_ids {
                     if let Some(et) = &edge_type {
