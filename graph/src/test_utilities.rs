@@ -246,9 +246,44 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
 
     // test drops
-    assert_eq!(graph.drop_edge_types().is_ok(), graph.has_edge_types());
-    assert_eq!(graph.drop_node_types().is_ok(), graph.has_node_types());
-    assert_eq!(graph.drop_weights().is_ok(), graph.has_weights());
+    {
+        let without_edges = graph.drop_edge_types();
+        assert_eq!(without_edges.is_ok(), graph.has_edge_types());
+        if without_edges.is_ok() {
+            let without_edges = without_edges.unwrap();
+            assert_eq!(without_edges.has_weights(), graph.has_weights());
+            assert_eq!(without_edges.has_node_types(), graph.has_node_types());
+            assert_eq!(without_edges.has_selfloops(), graph.has_selfloops());
+            assert_eq!(without_edges.has_traps, graph.has_traps);
+            assert_eq!(without_edges.get_nodes_number(), graph.get_nodes_number());
+        }
+    }
+    {
+        let without_nodes = graph.drop_node_types();
+        assert_eq!(without_nodes.is_ok(), graph.has_node_types());
+        if without_nodes.is_ok() {
+            let without_nodes = without_nodes.unwrap();
+            assert_eq!(without_nodes.has_edge_types(), graph.has_edge_types());
+            assert_eq!(without_nodes.has_weights(), graph.has_weights());
+            assert_eq!(without_nodes.has_selfloops(), graph.has_selfloops());
+            assert_eq!(without_nodes.has_traps, graph.has_traps);
+            assert_eq!(without_nodes.get_nodes_number(), graph.get_nodes_number());
+            assert_eq!(without_nodes.get_edges_number(), graph.get_edges_number());
+        }
+    }
+    {
+        let without_weights = graph.drop_weights();    
+        assert_eq!(without_weights.is_ok(), graph.has_weights());
+        if without_weights.is_ok() {
+            let without_weights = without_weights.unwrap();
+            assert_eq!(without_weights.has_node_types(), graph.has_node_types());
+            assert_eq!(without_weights.has_edge_types(), graph.has_edge_types());
+            assert_eq!(without_weights.has_selfloops(), graph.has_selfloops());
+            assert_eq!(without_weights.has_traps, graph.has_traps);
+            assert_eq!(without_weights.get_nodes_number(), graph.get_nodes_number());
+            assert_eq!(without_weights.get_edges_number(), graph.get_edges_number());
+        }
+    }
 
     Ok(())
 }
