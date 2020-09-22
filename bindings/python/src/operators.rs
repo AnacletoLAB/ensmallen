@@ -17,6 +17,12 @@ impl PyNumberProtocol for EnsmallenGraph {
             graph: pyex!(&lhs.graph - &rhs.graph)?,
         })
     }
+
+    fn __and__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pyex!(&lhs.graph & &rhs.graph)?,
+        })
+    }
 }
 
 #[pymethods]
