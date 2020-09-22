@@ -1,6 +1,6 @@
 use super::*;
-use std::fs;
 use rand::Rng;
+use std::fs;
 use std::path::Path;
 
 // where to save the test files
@@ -14,10 +14,10 @@ static DEFAULT_PATH: &str = "";
 const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
                         abcdefghijklmnopqrstuvwxyz\
                         0123456789()*&^%$#@!~";
-    
-pub fn random_string(len: usize) -> String{    
+
+pub fn random_string(len: usize) -> String {
     let mut rng = rand::thread_rng();
-    
+
     (0..len)
         .map(|_| {
             let idx = rng.gen_range(0, CHARSET.len());
@@ -27,7 +27,11 @@ pub fn random_string(len: usize) -> String{
 }
 
 pub fn random_path() -> String {
-    Path::new(DEFAULT_PATH).join(random_string(64)).to_str().unwrap().to_string()
+    Path::new(DEFAULT_PATH)
+        .join(random_string(64))
+        .to_str()
+        .unwrap()
+        .to_string()
 }
 
 pub fn load_ppi(
@@ -36,7 +40,7 @@ pub fn load_ppi(
     load_weights: bool,
     directed: bool,
     verbose: bool,
-    skip_self_loops: bool
+    skip_self_loops: bool,
 ) -> Result<Graph, String> {
     let nodes_reader = if load_nodes {
         Some(
@@ -134,7 +138,8 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
 
     // Testing main holdout mechanisms
     for include_all_edge_types in &[true, false] {
-        let (train, test) = graph.random_holdout(4, 0.6, *include_all_edge_types, verbose)?;
+        let (train, test) =
+            graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) = graph.connected_holdout(4, 0.6, *include_all_edge_types, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;

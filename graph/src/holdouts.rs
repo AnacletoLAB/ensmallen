@@ -359,9 +359,11 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * seed:NodeT - The seed to use for the holdout,
-    /// * train_percentage:f64 - Percentage target to reserve for training
+    /// * `seed`: NodeT - The seed to use for the holdout,
+    /// * `train_percentage`: f64 - Percentage target to reserve for training
     /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
+    /// * `edge_types`: Option<Vec<String>> - The edges to include in validation set.
+    /// * `min_number_overlaps`: Option<usize> - The minimum number of overlaps to include the edge into the validation set.
     /// * `verbose`: bool - Wethever to show the loading bar.
     ///
     pub fn random_holdout(
@@ -369,13 +371,56 @@ impl Graph {
         seed: NodeT,
         train_percentage: f64,
         include_all_edge_types: bool,
+        edge_types: Option<Vec<String>>,
+        min_number_overlaps: Option<usize>,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
+        let edge_type_ids = if let Some(ets) = edge_types {
+            Some(
+                self.translate_edge_types(ets)?
+                    .into_iter()
+                    .collect::<HashSet<EdgeTypeT>>(),
+            )
+        } else {
+            None
+        };
+        if min_number_overlaps.is_some() && !self.is_multigraph() {
+            return Err("Current graph is not a multigraph!".to_string());
+        }
         self.holdout(
             seed,
             train_percentage,
             include_all_edge_types,
-            |_, _, _| true,
+            |src, dst, edge_type| {
+                // If a list of edge types was provided and the edge type
+                // of the current edge is not within the provided list, 
+                // we skip the current edge.
+                if let Some(etis) = &edge_type_ids {
+                    if let Some(et) = &edge_type {
+                        if !etis.contains(et) {
+                            return false;
+                        }
+                    }
+                }
+                // If a minimum number of overlaps was provided and the current
+                // edge has not the required minimum amount of overlaps.
+                if let Some(mno) = min_number_overlaps {
+                    if self
+                        .unique_edges
+                        .get(&(src, dst))
+                        .unwrap()
+                        .edge_types
+                        .as_ref()
+                        .unwrap()
+                        .len()
+                        < mno
+                    {
+                        return false;
+                    }
+                }
+                // Otherwise we accept the provided edge for the validation set
+                true
+            },
             verbose,
         )
     }
@@ -460,7 +505,7 @@ impl Graph {
 
                     unique_nodes.insert(*node);
                     unique_nodes.insert(dst);
-                    
+
                     self.extend_tree(&mut graph_data, src, dst, None, None, true);
                     // If we reach the desired number of unique nodes we can stop the iteration.
                     if unique_nodes.len() >= nodes_number {
@@ -504,64 +549,53 @@ impl Graph {
             ));
         }
 
-        match &self.edge_types {
-            None => Err(String::from("Current graph does not have edge types.")),
-            Some(ets) => {
-                let edge_type_ids = edge_types
-                    .iter()
-                    .map(|edge_type| match ets.get(edge_type) {
-                        None => Err(format!(
-                            "The edge type {} does not exist in current graph. The available edge types are {}.",
-                            edge_type,
-                            ets.keys().join(", ")
-                        )),
-                        Some(et) => Ok(*et),
-                    })
-                    .collect::<Result<HashSet<EdgeTypeT>, String>>()?;
+        let edge_type_ids = self.translate_edge_types(edge_types)?;
 
-                let pb = if verbose {
-                    let pb = ProgressBar::new(self.get_edges_number() as u64);
-                    pb.set_draw_delta(self.get_edges_number() as u64 / 100);
-                    pb.set_style(ProgressStyle::default_bar().template(
-                        "Generating subgraph {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-                    ));
-                    pb
+        let pb = if verbose {
+            let pb = ProgressBar::new(self.get_edges_number() as u64);
+            pb.set_draw_delta(self.get_edges_number() as u64 / 100);
+            pb.set_style(ProgressStyle::default_bar().template(
+                "Generating subgraph {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+            ));
+            pb
+        } else {
+            ProgressBar::hidden()
+        };
+
+        // Initializing the vector for creating the new graph.
+        let mut graph_data: GraphDictionary = GraphDictionary::new();
+
+        (0..self.get_edges_number())
+            .progress_with(pb)
+            .map(|edge| {
+                let src = self.sources[edge];
+                let dst = self.destinations[edge];
+
+                let edge_type = self.get_edge_type_id(edge).unwrap();
+
+                let weight = if let Some(w) = &self.weights {
+                    Some(w[edge])
                 } else {
-                    ProgressBar::hidden()
+                    None
                 };
 
-                // Initializing the vector for creating the new graph.
-                let mut graph_data: GraphDictionary = GraphDictionary::new();
+                (src, dst, edge_type, weight)
+            })
+            .filter(|(_, _, edge_type, _)| edge_type_ids.contains(edge_type))
+            .for_each(|(src, dst, edge_type, weight)| {
+                self.extend_tree(&mut graph_data, src, dst, Some(edge_type), weight, false)
+            });
 
-                (0..self.get_edges_number())
-                    .progress_with(pb)
-                    .map(|edge| {
-                        let src = self.sources[edge];
-                        let dst = self.destinations[edge];
-
-                        let edge_type = ets.ids[edge];
-
-                        let weight = if let Some(w) = &self.weights {
-                            Some(w[edge])
-                        } else {
-                            None
-                        };
-
-                        (src, dst, edge_type, weight)
-                    })
-                    .filter(|(_, _, edge_type, _)| edge_type_ids.contains(edge_type))
-                    .for_each(|(src, dst, edge_type, weight)| {
-                        self.extend_tree(&mut graph_data, src, dst, Some(edge_type), weight, false)
-                    });
-
-                Ok(build_graph(
-                    &mut graph_data,
-                    self.nodes.clone(),
-                    self.node_types.clone(),
-                    Some(ets.vocabulary.clone()),
-                    self.is_directed,
-                ))
-            }
-        }
+        Ok(build_graph(
+            &mut graph_data,
+            self.nodes.clone(),
+            self.node_types.clone(),
+            if let Some(et) = &self.edge_types {
+                Some(et.vocabulary.clone())
+            } else {
+                None
+            },
+            self.is_directed,
+        ))
     }
 }

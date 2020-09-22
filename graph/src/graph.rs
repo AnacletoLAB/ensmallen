@@ -4,8 +4,7 @@ use counter::Counter;
 use derive_getters::Getters;
 use itertools::Itertools;
 use rayon::prelude::*;
-use std::collections::{HashMap};
-
+use std::collections::HashMap;
 
 // TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
 /// A graph representation optimized for executing random walks on huge graphs.
@@ -70,7 +69,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * edge_id: EdgeT - edge whose edge type is to be returned.
-    /// 
+    ///
     /// # Examples
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -98,7 +97,7 @@ impl Graph {
     /// # Arguments
     ///
     /// None
-    /// 
+    ///
     /// # Examples
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -116,12 +115,36 @@ impl Graph {
         }
     }
 
+    /// Return translated edge types from string to internal edge ID.
+    ///
+    /// # Arguments
+    ///
+    /// * `edge_types`: Vec<String> - Vector of egde types to be converted.
+    pub fn translate_edge_types(&self, edge_types: Vec<String>) -> Result<Vec<EdgeTypeT>, String> {
+        Ok(match &self.edge_types {
+            None => Err(String::from("Current graph does not have edge types.")),
+            Some(ets) => {
+                Ok(edge_types
+                .iter()
+                .map(|edge_type| match ets.get(edge_type) {
+                    None => Err(format!(
+                        "The edge type {} does not exist in current graph. The available edge types are {}.",
+                        edge_type,
+                        ets.keys().join(", ")
+                    )),
+                    Some(et) => Ok(*et),
+                })
+                .collect::<Result<Vec<EdgeTypeT>, String>>()?)
+            }
+        }?)
+    }
+
     /// Returns node type counts.
     ///
     /// # Arguments
     ///
     /// None
-    /// 
+    ///
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// for (node_type_id, count) in graph.get_node_type_counts().unwrap().iter() {
@@ -152,7 +175,8 @@ impl Graph {
     /// Returns a boolean representing if the graph contains an edge that has
     /// source == destination.
     pub fn has_selfloops(&self) -> bool {
-        self.sources.iter()
+        self.sources
+            .iter()
             .zip(self.destinations.iter())
             .any(|(src, dst)| src == dst)
     }

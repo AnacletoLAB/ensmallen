@@ -79,6 +79,7 @@ impl EnsmallenGraph {
         })
     }
 
+    #[args(py_kwargs = "**")]
     #[text_signature = "($self, seed, train_percentage, include_all_edge_types, verbose)"]
     /// Returns training and validation holdouts extracted from current graph.
     ///
@@ -91,15 +92,32 @@ impl EnsmallenGraph {
     ///     The seed to use to generate the holdout.
     /// train_percentage: float,
     ///     The percentage to reserve for the training.
-    /// include_all_edge_types: bool,
+    /// include_all_edge_types: bool = True,
     ///     Wethever to include all the edges between two nodes.
     ///     This is only relevant in multi-graphs.
-    /// verbose: bool,
+    /// edge_types: List[String] = None,
+    ///     The edge types to be included in the validation.
+    ///     If None (default value) is passed, any edge type can be in the validation set.
+    ///     If a non None value is passed, the graph MUST be an heterogeneous graph
+    ///     with multiple edge types, otherwise an exception will be raised.
+    /// min_number_overlaps: int = None,
+    ///     The minimum number of overlapping edges for an egde to be put into the validation set.
+    ///     If the value passed is None (default value) any egde can be put into the validation set.
+    ///     If a non None value is passed, the graph MUST be a multi-graph, otherwise an exception will be raised.
+    /// verbose: bool = True,
     ///     Wethever to show the loading bar.
     ///
     /// Raises
     /// -----------------------------
-    /// TODO: Add the docstring for the raised exceptions.
+    /// ValueError,
+    ///     If the given train percentage is invalid, for example less or equal to 0
+    ///     or greater than one.
+    /// ValueError,
+    ///     If egde types are required but graph is not heterogeneous.
+    /// ValueError,
+    ///     If given edge types do not exist.
+    /// ValueError,
+    ///     If min number overlaps is given but graph is not a multigraph.
     ///
     /// Returns
     /// -----------------------------
@@ -108,14 +126,25 @@ impl EnsmallenGraph {
         &self,
         seed: NodeT,
         train_percentage: f64,
-        include_all_edge_types: bool,
-        verbose: bool,
+        py_kwargs: Option<&PyDict>
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        let py = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, py.python());
+
+        validate_kwargs(kwargs, build_walk_parameters_list(&[
+            "include_all_edge_types",
+            "edge_types",
+            "min_number_overlaps",
+            "verbose"
+        ]))?;
+
         let (g1, g2) = pyex!(self.graph.random_holdout(
             seed,
             train_percentage,
-            include_all_edge_types,
-            verbose
+            extract_value!(kwargs, "include_all_edge_types", bool).or_else(|| Some(true)).unwrap(),
+            extract_value!(kwargs, "edge_types", Vec<String>),
+            extract_value!(kwargs, "min_number_overlaps", usize),
+            extract_value!(kwargs, "verbose", bool).or_else(|| Some(true)).unwrap()
         ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
