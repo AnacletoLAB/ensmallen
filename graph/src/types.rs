@@ -1,6 +1,6 @@
 use super::*;
-use std::collections::{BTreeMap, HashSet};
 use std::collections::btree_map::Entry;
+use std::collections::{BTreeMap, HashSet};
 
 // Types used to represent edges, nodes and their types.
 pub type NodeT = usize;
@@ -14,47 +14,61 @@ pub type Words = Vec<NodeT>;
 pub type Frequencies = Vec<f64>;
 
 /// Custom BTreeMap with some helper methods
-pub(crate) struct GraphDictionary{
-    tree: BTreeMap<(NodeT, NodeT), Option<ConstructorEdgeMetadata>>
+pub(crate) struct GraphDictionary {
+    tree: BTreeMap<(NodeT, NodeT), Option<ConstructorEdgeMetadata>>,
 }
 
 impl GraphDictionary {
     pub(crate) fn new() -> GraphDictionary {
-        GraphDictionary{tree: BTreeMap::new()}
+        GraphDictionary {
+            tree: BTreeMap::new(),
+        }
     }
 
-    pub(crate) fn len(&self) -> usize{
+    pub(crate) fn len(&self) -> usize {
         self.tree.len()
     }
 
-    pub(crate) fn get(&self, key: &(NodeT, NodeT)) -> Option<&Option<ConstructorEdgeMetadata>>{
+    pub(crate) fn get(&self, key: &(NodeT, NodeT)) -> Option<&Option<ConstructorEdgeMetadata>> {
         self.tree.get(key)
     }
 
-    pub(crate) fn contains_key(&self, key: &(NodeT, NodeT)) -> bool{
+    pub(crate) fn contains_key(&self, key: &(NodeT, NodeT)) -> bool {
         self.tree.contains_key(key)
     }
 
-    pub(crate) fn insert(&mut self, key: (NodeT, NodeT), value: Option<ConstructorEdgeMetadata>) -> Option<Option<ConstructorEdgeMetadata>> {
+    pub(crate) fn insert(
+        &mut self,
+        key: (NodeT, NodeT),
+        value: Option<ConstructorEdgeMetadata>,
+    ) -> Option<Option<ConstructorEdgeMetadata>> {
         self.tree.insert(key, value)
     }
 
-    pub(crate) fn is_empty(&self) -> bool{
+    pub(crate) fn is_empty(&self) -> bool {
         self.tree.is_empty()
     }
 
-    pub(crate) fn pop_first(&mut self) -> Option<((NodeT, NodeT), Option<ConstructorEdgeMetadata>)> {
+    pub(crate) fn pop_first(
+        &mut self,
+    ) -> Option<((NodeT, NodeT), Option<ConstructorEdgeMetadata>)> {
         self.tree.pop_first()
     }
 
-    pub(crate) fn entry(&mut self, key: (NodeT, NodeT)) -> Entry<(NodeT, NodeT), Option<ConstructorEdgeMetadata>> {
+    pub(crate) fn entry(
+        &mut self,
+        key: (NodeT, NodeT),
+    ) -> Entry<(NodeT, NodeT), Option<ConstructorEdgeMetadata>> {
         self.tree.entry(key)
     }
-    
-    pub(crate) fn get_mut(&mut self, key: &(NodeT, NodeT)) -> Option<&mut Option<ConstructorEdgeMetadata>> {
+
+    pub(crate) fn get_mut(
+        &mut self,
+        key: &(NodeT, NodeT),
+    ) -> Option<&mut Option<ConstructorEdgeMetadata>> {
         self.tree.get_mut(key)
     }
-    
+
     pub(crate) fn extend(
         &mut self,
         graph: &Graph,
@@ -71,8 +85,7 @@ impl GraphDictionary {
             }
             metadata
         } else {
-            let mut metadata =
-                ConstructorEdgeMetadata::new(weight.is_some(), edge_type.is_some());
+            let mut metadata = ConstructorEdgeMetadata::new(weight.is_some(), edge_type.is_some());
             if let Some(md) = &mut metadata {
                 if include_all_edge_types {
                     md.set(
@@ -93,7 +106,6 @@ impl GraphDictionary {
         }
     }
 }
-
 
 /// Metadata of the edges of the graphs used for every graph.
 #[derive(Debug, Clone, PartialEq)]
@@ -198,7 +210,7 @@ impl ConstructorEdgeMetadata {
             return sws.len();
         }
         if let Some(sets) = &self.edge_types {
-            return sets.len()
+            return sets.len();
         }
         unreachable!("Either the weights or the edge types are certainly set.");
     }
