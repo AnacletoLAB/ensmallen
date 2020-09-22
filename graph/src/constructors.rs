@@ -1,6 +1,6 @@
 use super::*;
 use itertools::Itertools;
-use std::collections::{BTreeMap, HashMap};
+use std::collections::HashMap;
 
 macro_rules! optionify {
     ($val:expr) => {
