@@ -277,5 +277,21 @@ impl EnsmallenGraph {
         self.graph.is_multigraph()
     }
     
+    #[text_signature = "(self)"]
+    /// Returns true if the graph has weights.
+    fn has_weights(&self) -> bool {
+        self.graph.has_weights()
+    }
 
+    #[text_signature = "(self)"]
+    /// Returns true if the graph has node types.
+    fn has_node_types(&self) -> bool {
+        self.graph.has_node_types()
+    }
+
+    #[text_signature = "(self)"]
+    /// Returns true if the graph has edge types.
+    fn has_edge_types(&self) -> bool {
+        self.graph.has_edge_types()
+    }
 }

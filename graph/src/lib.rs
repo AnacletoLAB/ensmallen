@@ -25,18 +25,19 @@ mod from_csv;
 mod constructors;
 pub(crate) use self::constructors::build_graph;
 
+mod drop;
+mod getters;
 pub mod graph;
 mod holdouts;
 mod metrics;
 mod operators;
 mod preprocessing;
+mod setters;
 mod tarjan;
 mod trees;
 pub mod types;
-mod walks_parameters;
 mod walks;
-mod setters;
-mod drop;
+mod walks_parameters;
 
 pub mod test_utilities;
 
@@ -46,7 +47,7 @@ pub use self::operators::*;
 pub use self::tarjan::*;
 pub use self::trees::*;
 pub use self::types::*;
-pub use self::walks_parameters::*;
 pub use self::walks::*;
-pub use setters::set_num_threads;
+pub use self::walks_parameters::*;
 pub use preprocessing::*;
+pub use setters::set_num_threads;

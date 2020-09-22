@@ -364,21 +364,6 @@ impl Graph {
             .collect()
     }
 
-    /// Returns boolean representing if graph has weights.
-    pub fn has_weights(&self) -> bool {
-        self.weights.is_some()
-    }
-
-    /// Returns boolean representing if graph has edge types.
-    pub fn has_edge_types(&self) -> bool {
-        self.edge_types.is_some()
-    }
-
-    /// Returns boolean representing if graph has node types.
-    pub fn has_node_types(&self) -> bool {
-        self.node_types.is_some()
-    }
-
     // Return a vector with the ids of all the edges that start from src
     // and ends at dst. This is meaningful on multigraphs.
     /// A link is composed by all the edges that starts from src and ends at dst.
