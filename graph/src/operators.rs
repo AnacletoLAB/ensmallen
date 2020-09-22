@@ -36,6 +36,10 @@ fn generic_operator(
                 (src, dst, edge_type, weight)
             })
             .filter(|(src, dst, edge_type, _)| {
+                // We avoid to insert duplicates.
+                if !one.is_directed && src > dst {
+                    return false;
+                }
                 // If the secondary graph is given
                 // we filter out the edges that were previously added to avoid
                 // introducing duplicates.
