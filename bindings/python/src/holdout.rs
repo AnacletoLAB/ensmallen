@@ -80,7 +80,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, seed, train_percentage, include_all_edge_types, verbose)"]
+    #[text_signature = "($self, train_percentage, **, seed, include_all_edge_types, edge_types, min_number_overlaps, verbose)"]
     /// Returns training and validation holdouts extracted from current graph.
     ///
     /// The holdouts edges are randomly sampled and have no garanties that any
@@ -92,6 +92,8 @@ impl EnsmallenGraph {
     ///     The seed to use to generate the holdout.
     /// train_percentage: float,
     ///     The percentage to reserve for the training.
+    /// seed: int = 42,
+    ///     The seed to make the holdout reproducible.
     /// include_all_edge_types: bool = True,
     ///     Wethever to include all the edges between two nodes.
     ///     This is only relevant in multi-graphs.
@@ -124,7 +126,6 @@ impl EnsmallenGraph {
     /// Tuple containing training and validation graphs.
     fn random_holdout(
         &self,
-        seed: NodeT,
         train_percentage: f64,
         py_kwargs: Option<&PyDict>
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
@@ -132,6 +133,7 @@ impl EnsmallenGraph {
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
         validate_kwargs(kwargs, build_walk_parameters_list(&[
+            "seed",
             "include_all_edge_types",
             "edge_types",
             "min_number_overlaps",
@@ -139,7 +141,7 @@ impl EnsmallenGraph {
         ]))?;
 
         let (g1, g2) = pyex!(self.graph.random_holdout(
-            seed,
+            extract_value!(kwargs, "seed", usize).or_else(|| Some(42)).unwrap(),
             train_percentage,
             extract_value!(kwargs, "include_all_edge_types", bool).or_else(|| Some(true)).unwrap(),
             extract_value!(kwargs, "edge_types", Vec<String>),
