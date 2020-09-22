@@ -4,7 +4,7 @@ use graph::{EdgeT, NodeT};
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, train_percentage, **, seed, include_all_edge_types, verbose)"]
+    #[text_signature = "($self, train_percentage, *, seed, include_all_edge_types, verbose)"]
     /// Returns training and validation holdouts extracted from current graph.
     ///
     /// The holdouts is generated in such a way that the training set remains
@@ -58,7 +58,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, nodes_number, **, seed, verbose)"]
+    #[text_signature = "($self, nodes_number, *, seed, verbose)"]
     /// Returns partial subgraph.
     ///
     /// This method creates a subset of the graph starting from a random node
@@ -106,7 +106,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, train_percentage, **, seed, include_all_edge_types, edge_types, min_number_overlaps, verbose)"]
+    #[text_signature = "($self, train_percentage, *, seed, include_all_edge_types, edge_types, min_number_overlaps, verbose)"]
     /// Returns training and validation holdouts extracted from current graph.
     ///
     /// The holdouts edges are randomly sampled and have no garanties that any
@@ -185,7 +185,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, negatives_number, **, seed, allow_selfloops, verbose)"]
+    #[text_signature = "($self, negatives_number, *, seed, allow_selfloops, verbose)"]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
     /// The graph generated may be used as a testing negatives partition to be
@@ -244,7 +244,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, edge_types, **, verbose)"]
+    #[text_signature = "($self, edge_types, *, verbose)"]
     /// Returns Graph with only the required edge types.
     ///
     /// Parameters
