@@ -127,6 +127,10 @@ pub fn default_holdout_test_suite(
     let subtracted = (graph - test)?;
     assert!(subtracted.contains(&train)?);
     assert!(!subtracted.overlaps(&test)?);
+    let xorred = (graph ^ test)?;
+    assert!(xorred.contains(&train)?);
+    assert!(!xorred.overlaps(&test)?);
+    assert!((graph & test)?.contains(&test)?);
     Ok(())
 }
 
