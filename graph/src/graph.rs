@@ -1,8 +1,8 @@
 //! A graph representation optimized for executing random walks on huge graphs.
 use super::*;
 use counter::Counter;
-use derive_getters::Getters;
 use itertools::Itertools;
+use derive_getters::Getters;
 use rayon::prelude::*;
 use std::collections::HashMap;
 
