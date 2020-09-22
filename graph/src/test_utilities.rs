@@ -122,7 +122,7 @@ pub fn default_holdout_test_suite(
     assert!(!test.overlaps(&train)?);
     assert!(graph.contains(&train)?);
     assert!(graph.contains(&test)?);
-    let summed = (train + test)?;
+    let summed = (train | test)?;
     assert!(summed.contains(&graph)?);
     let subtracted = (graph - test)?;
     assert!(subtracted.contains(&train)?);

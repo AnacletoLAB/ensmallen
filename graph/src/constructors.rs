@@ -96,7 +96,7 @@ pub(crate) fn parse_edges(
     // edges mappings
     let mut edge_types_vocabulary: Vocabulary<NodeTypeT> = Vocabulary::default();
     // helper structure
-    let mut unique_edges_tree: GraphDictionary = BTreeMap::new();
+    let mut unique_edges_tree: GraphDictionary = GraphDictionary::new();
 
     let mut has_edges = None;
     let mut has_weights = None;

@@ -1,5 +1,6 @@
 use super::*;
 use std::collections::{BTreeMap, HashSet};
+use std::collections::btree_map::Entry;
 
 // Types used to represent edges, nodes and their types.
 pub type NodeT = usize;
@@ -34,7 +35,7 @@ impl GraphDictionary {
         self.tree.contains_key(key)
     }
 
-    pub(crate) fn insert(&self, key: (NodeT, NodeT), value: Option<ConstructorEdgeMetadata>) -> Option<Option<ConstructorEdgeMetadata>> {
+    pub(crate) fn insert(&mut self, key: (NodeT, NodeT), value: Option<ConstructorEdgeMetadata>) -> Option<Option<ConstructorEdgeMetadata>> {
         self.tree.insert(key, value)
     }
 
@@ -46,11 +47,14 @@ impl GraphDictionary {
         self.tree.pop_first()
     }
 
-    pub(crate) fn entry(&mut self, key: &(NodeT, NodeT)) -> () {
+    pub(crate) fn entry(&mut self, key: (NodeT, NodeT)) -> Entry<(NodeT, NodeT), Option<ConstructorEdgeMetadata>> {
         self.tree.entry(key)
     }
     
-
+    pub(crate) fn get_mut(&mut self, key: &(NodeT, NodeT)) -> Option<&mut Option<ConstructorEdgeMetadata>> {
+        self.tree.get_mut(key)
+    }
+    
     pub(crate) fn extend(
         &mut self,
         graph: &Graph,
@@ -68,7 +72,7 @@ impl GraphDictionary {
             metadata
         } else {
             let mut metadata =
-                ConstructorEdgeMetadata::new(weight.is_none(), edge_type.is_none());
+                ConstructorEdgeMetadata::new(weight.is_some(), edge_type.is_some());
             if let Some(md) = &mut metadata {
                 if include_all_edge_types {
                     md.set(
@@ -146,29 +150,6 @@ impl ConstructorEdgeMetadata {
         if let Some(et) = edge_type {
             if let Some(ets) = &mut self.edge_types {
                 ets.push(et)
-            }
-        }
-    }
-
-    /// Extend given metadata (when they are not None).
-    ///
-    /// # Arguments
-    ///
-    /// * `weight`: Option<WeightT> - Weight to be appended.
-    /// * `edge_type`: Option<EdgeTypeT> - Edge type to be appended
-    pub(crate) fn extend(
-        &mut self,
-        weights: Option<Vec<WeightT>>,
-        edge_types: Option<Vec<EdgeTypeT>>,
-    ) {
-        if let Some(ws) = weights {
-            if let Some(sws) = &mut self.weights {
-                sws.extend(ws);
-            }
-        }
-        if let Some(ets) = edge_types {
-            if let Some(sets) = &mut self.edge_types {
-                sets.extend(ets)
             }
         }
     }
