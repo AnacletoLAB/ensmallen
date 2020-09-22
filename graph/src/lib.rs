@@ -36,6 +36,7 @@ pub mod types;
 mod walks_parameters;
 mod walks;
 mod setters;
+mod drop;
 
 pub mod test_utilities;
 

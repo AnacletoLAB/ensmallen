@@ -204,7 +204,7 @@ impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
                 !other.check_edge_overlap(*src, *dst, *edge_type)
             })
             .for_each(|(src, dst, edge_type, weight)| {
-                self.extend_tree(&mut unique_edges_tree, src, dst, edge_type, weight, false)
+                unique_edges_tree.extend(&self, src, dst, edge_type, weight, false)
             });
 
         Ok(build_graph(
@@ -319,7 +319,7 @@ impl<'a, 'b> ops::BitAnd<&'b Graph> for &'a Graph {
                 big.check_edge_overlap(*src, *dst, *edge_type)
             })
             .for_each(|(src, dst, edge_type, weight)| {
-                small.extend_tree(&mut unique_edges_tree, src, dst, edge_type, weight, false)
+                unique_edges_tree.extend(&small, src, dst, edge_type, weight, false)
             });
 
         Ok(build_graph(

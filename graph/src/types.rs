@@ -1,3 +1,4 @@
+use super::*;
 use std::collections::{BTreeMap, HashSet};
 
 // Types used to represent edges, nodes and their types.
@@ -11,7 +12,84 @@ pub type Contexts = Vec<Vec<NodeT>>;
 pub type Words = Vec<NodeT>;
 pub type Frequencies = Vec<f64>;
 
-pub(crate) type GraphDictionary = BTreeMap<(NodeT, NodeT), Option<ConstructorEdgeMetadata>>;
+/// Custom BTreeMap with some helper methods
+pub(crate) struct GraphDictionary{
+    tree: BTreeMap<(NodeT, NodeT), Option<ConstructorEdgeMetadata>>
+}
+
+impl GraphDictionary {
+    pub(crate) fn new() -> GraphDictionary {
+        GraphDictionary{tree: BTreeMap::new()}
+    }
+
+    pub(crate) fn len(&self) -> usize{
+        self.tree.len()
+    }
+
+    pub(crate) fn get(&self, key: &(NodeT, NodeT)) -> Option<&Option<ConstructorEdgeMetadata>>{
+        self.tree.get(key)
+    }
+
+    pub(crate) fn contains_key(&self, key: &(NodeT, NodeT)) -> bool{
+        self.tree.contains_key(key)
+    }
+
+    pub(crate) fn insert(&self, key: (NodeT, NodeT), value: Option<ConstructorEdgeMetadata>) -> Option<Option<ConstructorEdgeMetadata>> {
+        self.tree.insert(key, value)
+    }
+
+    pub(crate) fn is_empty(&self) -> bool{
+        self.tree.is_empty()
+    }
+
+    pub(crate) fn pop_first(&mut self) -> Option<((NodeT, NodeT), Option<ConstructorEdgeMetadata>)> {
+        self.tree.pop_first()
+    }
+
+    pub(crate) fn entry(&mut self, key: &(NodeT, NodeT)) -> () {
+        self.tree.entry(key)
+    }
+    
+
+    pub(crate) fn extend(
+        &mut self,
+        graph: &Graph,
+        src: NodeT,
+        dst: NodeT,
+        edge_type: Option<EdgeTypeT>,
+        weight: Option<WeightT>,
+        include_all_edge_types: bool,
+    ) {
+        let metadata = if let Some(md) = self.tree.get(&(src, dst)) {
+            let mut metadata = md.to_owned();
+            if let Some(md) = &mut metadata {
+                md.add(weight, edge_type);
+            }
+            metadata
+        } else {
+            let mut metadata =
+                ConstructorEdgeMetadata::new(weight.is_none(), edge_type.is_none());
+            if let Some(md) = &mut metadata {
+                if include_all_edge_types {
+                    md.set(
+                        graph.get_link_weights(src, dst),
+                        graph.get_link_edge_types(src, dst),
+                    );
+                } else {
+                    md.add(weight, edge_type);
+                }
+            }
+            metadata
+        };
+        self.tree.insert((src, dst), metadata.clone());
+        // If the current edge is not a self loop and the graph
+        // is not directed, we add the simmetrical graph
+        if !graph.is_directed && src != dst {
+            self.tree.insert((dst, src), metadata);
+        }
+    }
+}
+
 
 /// Metadata of the edges of the graphs used for every graph.
 #[derive(Debug, Clone, PartialEq)]

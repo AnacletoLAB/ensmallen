@@ -83,7 +83,7 @@ impl Graph {
         seed ^= SEED_XOR;
 
         // initialize the vectors for the result
-        let mut unique_edges_tree: GraphDictionary = BTreeMap::new();
+        let mut unique_edges_tree: GraphDictionary = GraphDictionary::new();
 
         // randomly extract negative edges until we have the choosen number
         while unique_edges_tree.len() < negatives_number {
@@ -120,44 +120,6 @@ impl Graph {
             },
             self.is_directed,
         ))
-    }
-
-    pub(crate) fn extend_tree(
-        &self,
-        tree: &mut GraphDictionary,
-        src: NodeT,
-        dst: NodeT,
-        edge_type: Option<EdgeTypeT>,
-        weight: Option<WeightT>,
-        include_all_edge_types: bool,
-    ) {
-        let metadata = if let Some(md) = tree.get(&(src, dst)) {
-            let mut metadata = md.to_owned();
-            if let Some(md) = &mut metadata {
-                md.add(weight, edge_type);
-            }
-            metadata
-        } else {
-            let mut metadata =
-                ConstructorEdgeMetadata::new(self.has_weights(), self.has_edge_types());
-            if let Some(md) = &mut metadata {
-                if include_all_edge_types {
-                    md.set(
-                        self.get_link_weights(src, dst),
-                        self.get_link_edge_types(src, dst),
-                    );
-                } else {
-                    md.add(weight, edge_type);
-                }
-            }
-            metadata
-        };
-        tree.insert((src, dst), metadata.clone());
-        // If the current edge is not a self loop and the graph
-        // is not directed, we add the simmetrical graph
-        if !self.is_directed && src != dst {
-            tree.insert((dst, src), metadata);
-        }
     }
 
     fn holdout(
@@ -240,8 +202,8 @@ impl Graph {
 
             // We stop adding edges when we have reached the minimum amount.
             if user_condition(src, dst, edge_type) && valid.len() < valid_edges_number {
-                self.extend_tree(
-                    &mut valid,
+                valid.extend(
+                    &self,
                     src,
                     dst,
                     edge_type,
@@ -250,8 +212,8 @@ impl Graph {
                 );
             } else {
                 // Otherwise we add the edges to the training set.
-                self.extend_tree(
-                    &mut train,
+                train.extend(
+                    &self,
                     src,
                     dst,
                     edge_type,
@@ -535,7 +497,7 @@ impl Graph {
                     unique_nodes.insert(*node);
                     unique_nodes.insert(dst);
 
-                    self.extend_tree(&mut graph_data, src, dst, None, None, true);
+                    graph_data.extend(&self, src, dst, None, None, true);
                     // If we reach the desired number of unique nodes we can stop the iteration.
                     if unique_nodes.len() >= nodes_number {
                         break 'outer;
@@ -612,7 +574,7 @@ impl Graph {
             })
             .filter(|(_, _, edge_type, _)| edge_type_ids.contains(edge_type))
             .for_each(|(src, dst, edge_type, weight)| {
-                self.extend_tree(&mut graph_data, src, dst, Some(edge_type), weight, false)
+                graph_data.extend(&self, src, dst, Some(edge_type), weight, false)
             });
 
         Ok(build_graph(
