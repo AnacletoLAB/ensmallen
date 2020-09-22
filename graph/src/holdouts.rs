@@ -209,9 +209,7 @@ impl Graph {
             }
         }
 
-        if valid.len() != valid_edges_number
-            && (self.is_directed || valid.len() != valid_edges_number + 1)
-        {
+        if valid.len() < valid_edges_number {
             let actual_valid_edges_number = valid.len();
             let valid_percentage = 1.0 - train_percentage;
             let actual_valid_percentage =

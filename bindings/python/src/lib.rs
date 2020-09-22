@@ -14,6 +14,7 @@ mod node_file_writer;
 mod tarjan;
 mod operators;
 mod preprocessing;
+mod drop;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
 mod tree;
