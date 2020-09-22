@@ -266,9 +266,9 @@ impl Graph {
         {
             let actual_valid_edges_number = valid.len();
             let valid_percentage = 1.0 - train_percentage;
-            let actual_train_percentage = train.len() as f64 / self.get_edges_number() as f64;
             let actual_valid_percentage =
                 actual_valid_edges_number as f64 / self.get_edges_number() as f64;
+            let actual_train_percentage = 1.0 - actual_valid_percentage;
             return Err(format!(
                 concat!(
                     "With the given configuration for the holdout, it is not possible to ",
