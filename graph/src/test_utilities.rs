@@ -262,8 +262,6 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     {
         let without_edges = graph.drop_edge_types();
         assert_eq!(without_edges.is_ok(), graph.has_edge_types());
-        assert!(graph.overlaps(without_edges).is_err());
-        assert!(graph.contains(without_edges).is_err());
         if let Some(we) = &without_edges.ok() {
             assert_eq!(we.has_edge_types(), false);
             assert_eq!(we.has_weights(), graph.has_weights());
@@ -271,6 +269,10 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(we.get_selfloops_number(), graph.get_selfloops_number());
             assert_eq!(we.has_traps, graph.has_traps);
             assert_eq!(we.nodes, graph.nodes);
+
+            // test for (expected) errors for undefined behavior in overlap() and contains() 
+            assert!(graph.overlaps(&we).is_err());
+            assert!(graph.contains(&we).is_err());
         }
     }
     {
