@@ -270,7 +270,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(we.has_traps, graph.has_traps);
             assert_eq!(we.nodes, graph.nodes);
 
-            // test for (expected) errors for undefined behavior in overlap() and contains() 
+            // expect errors for undefined behavior in overlap() and contains() 
             assert!(graph.overlaps(&we).is_err());
             assert!(graph.contains(&we).is_err());
         }
