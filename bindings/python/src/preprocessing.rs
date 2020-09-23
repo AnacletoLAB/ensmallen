@@ -171,12 +171,7 @@ impl EnsmallenGraph {
             build_walk_parameters_list(&["window_size", "verbose"]),
         )?;
 
-        let parameters = pyex!(self.build_walk_parameters(
-            length,
-            0,
-            self.graph.get_not_trap_nodes_number(),
-            kwargs
-        ))?;
+        let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
 
         let (words, contexts, frequencies) = pyex!(self.graph.cooccurence_matrix(
             &parameters,
@@ -273,12 +268,11 @@ impl EnsmallenGraph {
             build_walk_parameters_list(&["window_size", "shuffle"]),
         )?;
 
-        let (start_node, end_node) = self.get_batch_range(idx, batch_size);
-
-        let parameters = pyex!(self.build_walk_parameters(length, start_node, end_node, kwargs))?;
+        let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
 
         let (contexts, words) = pyex!(self.graph.node2vec(
             &parameters,
+            batch_size,
             extract_value!(kwargs, "window_size", usize),
             extract_value!(kwargs, "shuffle", bool),
             idx,

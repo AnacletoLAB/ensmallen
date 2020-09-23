@@ -1,10 +1,10 @@
 use super::*;
-use std::collections::HashMap;
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
 use rayon::prelude::*;
+use std::collections::HashMap;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift as rand_u64;
 
@@ -219,12 +219,13 @@ impl Graph {
     pub fn node2vec(
         &self,
         walk_parameters: &WalksParameters,
+        quantity: usize,
         window_size: Option<usize>,
         shuffle: Option<bool>,
         seed: usize,
     ) -> Result<(Contexts, Words), String> {
         // do the walks and check the result
-        let walks = self.walk(walk_parameters)?;
+        let walks = self.random_walks(quantity, walk_parameters)?;
 
         if walks.is_empty() {
             return Err(concat!(
@@ -256,7 +257,7 @@ impl Graph {
         window_size: Option<usize>,
         verbose: Option<bool>,
     ) -> Result<(Words, Words, Frequencies), String> {
-        let walks = self.walk(walks_parameters)?;
+        let walks = self.complete_walks(walks_parameters)?;
 
         if walks.is_empty() {
             return Err(concat!(

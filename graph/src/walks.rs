@@ -2,6 +2,7 @@ use super::*;
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use log::info;
 use rayon::prelude::*;
+use vec_rand::xorshift::xorshift;
 use vec_rand::{sample, sample_uniform};
 
 impl Graph {
@@ -179,20 +180,71 @@ impl Graph {
         (dsts[index], min_edge + index)
     }
 
+    /// Return vector of walks run on each non-trap node of the graph.
+    ///
+    /// # Arguments
+    ///
+    /// * parameters: WalksParameters - the weighted walks parameters.
+    ///
+    pub fn random_walks(
+        &self,
+        quantity: usize,
+        parameters: &WalksParameters,
+    ) -> Result<Vec<Vec<NodeT>>, String> {
+        self.walk(
+            quantity,
+            |global_index| {
+                let local_index = global_index % quantity;
+                let random_index = xorshift((parameters.seed + local_index) as u64) as usize;
+                (
+                    random_index,
+                    self.not_trap_nodes[random_index % self.not_trap_nodes.len()],
+                )
+            },
+            parameters,
+        )
+    }
+
+    /// Return vector of walks run on a random subset of the not trap nodes.
+    ///
+    /// # Arguments
+    ///
+    /// * parameters: WalksParameters - the weighted walks parameters.
+    ///
+    pub fn complete_walks(&self, parameters: &WalksParameters) -> Result<Vec<Vec<NodeT>>, String> {
+        self.walk(
+            self.not_trap_nodes.len(),
+            |index| {
+                (
+                    index,
+                    self.not_trap_nodes[index % self.not_trap_nodes.len()],
+                )
+            },
+            parameters,
+        )
+    }
+
     /// Returns vector of walks.
     ///
     /// # Arguments
     ///
     /// * parameters: WalksParameters - the weighted walks parameters.
     ///
-    pub fn walk(&self, parameters: &WalksParameters) -> Result<Vec<Vec<NodeT>>, String> {
+    fn walk(
+        &self,
+        quantity: usize,
+        to_node: impl Fn(usize) -> (usize, NodeT) + Sync + Send,
+        parameters: &WalksParameters,
+    ) -> Result<Vec<Vec<NodeT>>, String> {
         // Validate if given parameters are compatible with current graph.
         parameters.validate(&self)?;
 
+        let total_iterations = quantity * parameters.iterations;
+
         info!("Starting random walk.");
         let pb = if parameters.verbose {
-            let pb = ProgressBar::new(parameters.total_iterations() as u64);
-            pb.set_draw_delta(parameters.total_iterations() as u64 / 100);
+            let pb = ProgressBar::new(total_iterations as u64);
+            pb.set_draw_delta(total_iterations as u64 / 100);
             pb.set_style(ProgressStyle::default_bar().template(
                 "Computing random walks {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
             ));
@@ -201,15 +253,10 @@ impl Graph {
             ProgressBar::hidden()
         };
 
-        let iterator = (0..parameters.total_iterations())
+        let iterator = (0..total_iterations)
             .into_par_iter()
             .progress_with(pb)
-            .map(|index| {
-                (
-                    parameters.seed + index,
-                    self.not_trap_nodes[parameters.mode_index(index)],
-                )
-            });
+            .map(to_node);
 
         let mut walks = if self.has_traps {
             if self.weights.is_none() && parameters.is_first_order_walk() {

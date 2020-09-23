@@ -40,7 +40,7 @@ pub(crate) fn parse_nodes(
             if node_type.is_some() != *ht {
                 return Err(format!(
                     concat!(
-                        "The node {} {:?} has node type incosistent with all the nodes before.\n",
+                        "The node {} {:?} has node type inconsistent with all the nodes before.\n",
                         "Either all nodes have node types or none have it."
                     ),
                     node_name, node_type
@@ -127,7 +127,7 @@ pub(crate) fn parse_edges(
             if edge_type.is_some() != *he {
                 return Err(format!(
                     concat!(
-                        "The edge {} {} {:?} {:?} has edge type incosistent with all the edges before.\n",
+                        "The edge {} {} {:?} {:?} has edge type inconsistent with all the edges before.\n",
                         "Either all edges have edge types or none have it."
                     ),
                     source_node_name, destination_node_name, edge_type, edge_weight
@@ -138,7 +138,7 @@ pub(crate) fn parse_edges(
             if edge_weight.is_some() != *hw {
                 return Err(format!(
                     concat!(
-                        "The edge {} {} {:?} {:?} has weight incosistent with all the edges before.\n",
+                        "The edge {} {} {:?} {:?} has weight inconsistent with all the edges before.\n",
                         "Either all edges have weights or none have it."
                     ),
                     source_node_name, destination_node_name, edge_type, edge_weight

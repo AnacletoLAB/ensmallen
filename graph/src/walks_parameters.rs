@@ -1,8 +1,8 @@
-use super::graph::*;
-use super::types::*;
+use super::*;
 use rayon::prelude::*;
 use std::collections::HashMap;
 
+#[derive(Clone)]
 pub struct WalkWeights {
     pub(crate) return_weight: ParamsT,
     pub(crate) explore_weight: ParamsT,
@@ -10,18 +10,18 @@ pub struct WalkWeights {
     pub(crate) change_edge_type_weight: ParamsT,
 }
 
+#[derive(Clone)]
 pub struct SingleWalkParameters {
     pub(crate) length: usize,
     pub(crate) weights: WalkWeights,
 }
 
+#[derive(Clone)]
 pub struct WalksParameters {
     pub(crate) single_walk_parameters: SingleWalkParameters,
     pub(crate) iterations: usize,
     pub(crate) min_length: usize,
     pub(crate) verbose: bool,
-    pub(crate) start_node: NodeT,
-    pub(crate) end_node: NodeT,
     pub(crate) seed: NodeT,
     pub(crate) dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
 }
@@ -65,11 +65,11 @@ impl WalkWeights {
             self.change_node_type_weight,
             self.change_edge_type_weight,
             self.return_weight,
-            self.explore_weight
+            self.explore_weight,
         ];
-        weights.iter().all(
-            |weight| (weight - 1.0).abs() <= f64::EPSILON
-        )
+        weights
+            .iter()
+            .all(|weight| (weight - 1.0).abs() <= f64::EPSILON)
     }
 }
 
@@ -88,31 +88,12 @@ impl SingleWalkParameters {
 }
 
 impl WalksParameters {
-    pub fn new(
-        length: usize,
-        start_node: NodeT,
-        end_node: NodeT,
-    ) -> Result<WalksParameters, String> {
-        if start_node > end_node {
-            return Err(format!(
-                concat!(
-                    "Given start node index ({}) ",
-                    "is greater than given end node index ({})."
-                ),
-                start_node, end_node
-            ));
-        }
-
+    pub fn new(length: usize) -> Result<WalksParameters, String> {
         Ok(WalksParameters {
-            start_node,
-            end_node,
-            single_walk_parameters: SingleWalkParameters::new(
-                length,
-                WalkWeights::default()
-            )?,
+            single_walk_parameters: SingleWalkParameters::new(length, WalkWeights::default())?,
             iterations: 1,
             min_length: 1,
-            seed: 42,
+            seed: 42 ^ SEED_XOR,
             verbose: false,
             dense_nodes_mapping: None,
         })
@@ -175,7 +156,7 @@ impl WalksParameters {
     ///
     pub fn set_seed(mut self, seed: Option<usize>) -> WalksParameters {
         if let Some(s) = seed {
-            self.seed = s;
+            self.seed = s ^ SEED_XOR;
         }
         self
     }
@@ -197,7 +178,6 @@ impl WalksParameters {
         self
     }
 
-
     /// Set the return weight.
     ///
     /// # Arguments
@@ -209,7 +189,8 @@ impl WalksParameters {
         return_weight: Option<WeightT>,
     ) -> Result<WalksParameters, String> {
         if let Some(rw) = return_weight {
-            self.single_walk_parameters.weights.return_weight = WalkWeights::validate_weight("return_weight", rw)?;
+            self.single_walk_parameters.weights.return_weight =
+                WalkWeights::validate_weight("return_weight", rw)?;
         }
         Ok(self)
     }
@@ -225,7 +206,8 @@ impl WalksParameters {
         explore_weight: Option<WeightT>,
     ) -> Result<WalksParameters, String> {
         if let Some(ew) = explore_weight {
-            self.single_walk_parameters.weights.explore_weight = WalkWeights::validate_weight("explore_weight", ew)?;
+            self.single_walk_parameters.weights.explore_weight =
+                WalkWeights::validate_weight("explore_weight", ew)?;
         }
         Ok(self)
     }
@@ -273,32 +255,10 @@ impl WalksParameters {
     /// * graph: Graph - Graph object for which parameters are to be validated.
     ///
     pub fn validate(&self, graph: &Graph) -> Result<(), String> {
-        if self.start_node >= graph.not_trap_nodes.len() {
-            return Err(format!(
-                concat!(
-                    "Given start node index ({})",
-                    "is greater than number of not trap nodes in graph ({})."
-                ),
-                self.start_node,
-                graph.not_trap_nodes.len()
-            ));
-        }
-
         if self.min_length >= self.single_walk_parameters.length {
             return Err(format!(
                 "The given min-walk-length {} is bigger or equal to the given walk length {}",
                 self.min_length, self.single_walk_parameters.length
-            ));
-        }
-
-        if self.end_node > graph.not_trap_nodes.len() {
-            return Err(format!(
-                concat!(
-                    "Given end node index ({})",
-                    "is greater than number of not trap nodes in graph ({})."
-                ),
-                self.end_node,
-                graph.not_trap_nodes.len()
             ));
         }
 
@@ -309,27 +269,12 @@ impl WalksParameters {
             {
                 return Err(String::from(concat!(
                     "Given nodes mapping does not contain ",
-                    "one or more not trap nodes that may be extracted from walk."
+                    "one or more NOT trap nodes that may be extracted from walk."
                 )));
             }
         }
 
         Ok(())
-    }
-
-    /// Return delta between start and end nodes.
-    fn delta(&self) -> NodeT {
-        self.end_node - self.start_node
-    }
-
-    /// Return number of total iterations to execute.
-    pub fn total_iterations(&self) -> usize {
-        self.iterations * self.delta()
-    }
-
-    /// Return given index with mode applied using given parameters.
-    pub fn mode_index(&self, index: usize) -> NodeT {
-        self.start_node + (index % self.delta())
     }
 
     /// Return boolean value representing if walk is of first order.

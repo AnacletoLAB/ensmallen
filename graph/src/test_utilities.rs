@@ -89,28 +89,25 @@ pub fn load_ppi(
 }
 
 pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
-    Ok(
-        WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())?
-            .set_iterations(Some(1))?
-            .set_min_length(Some(1))?
-            .set_verbose(Some(verbose))
-            .set_seed(Some(43))
-            .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping())),
-    )
+    Ok(WalksParameters::new(50)?
+        .set_iterations(Some(1))?
+        .set_min_length(Some(1))?
+        .set_verbose(Some(verbose))
+        .set_seed(Some(43))
+        .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping())))
 }
 
 pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
-    Ok(
-        WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())?
-            .set_iterations(Some(1))?
-            .set_min_length(Some(1))?
-            .set_verbose(Some(verbose))
-            .set_return_weight(Some(2.0))?
-            .set_explore_weight(Some(2.0))?
-            .set_change_edge_type_weight(Some(2.0))?
-            .set_change_node_type_weight(Some(2.0))?
-            .set_seed(Some(43)),
-    )
+    Ok(WalksParameters::new(50)?
+        .set_iterations(Some(1))?
+        .set_min_length(Some(1))?
+        .set_verbose(Some(verbose))
+        .set_return_weight(Some(2.0))?
+        .set_explore_weight(Some(2.0))?
+        .set_change_edge_type_weight(Some(2.0))?
+        .set_change_node_type_weight(Some(2.0))?
+        .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
+        .set_seed(Some(43)))
 }
 
 pub fn default_holdout_test_suite(
@@ -137,8 +134,24 @@ pub fn default_holdout_test_suite(
 pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph, verbose)?;
-    graph.walk(&walker)?;
-    graph.walk(&second_order_walker(&graph, verbose)?)?;
+    assert_eq!(
+        graph.random_walks(100, &walker)?,
+        graph.random_walks(100, &walker)?
+    );
+    
+    assert_eq!(
+        graph.random_walks(100, &second_order_walker(&graph, verbose)?)?,
+        graph.random_walks(100, &second_order_walker(&graph, verbose)?)?
+    );
+
+    assert_eq!(
+        graph.complete_walks(&walker)?,
+        graph.complete_walks(&walker)?
+    );
+    assert_eq!(
+        graph.complete_walks(&second_order_walker(&graph, verbose)?)?,
+        graph.complete_walks(&second_order_walker(&graph, verbose)?)?
+    );
 
     // Testing main holdout mechanisms
     for include_all_edge_types in &[true, false] {
@@ -204,7 +217,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
 
     // Testing SkipGram / CBOW / GloVe preprocessing
     graph.cooccurence_matrix(&walker, Some(3), Some(verbose))?;
-    graph.node2vec(&walker, Some(3), Some(true), 56)?;
+    graph.node2vec(&walker, 100, Some(3), Some(true), 56)?;
     // Testing link prediction pre-processing
     graph.link_prediction(0, 16, Some(1.0), None, None)?;
     // Compute metrics of the graph
@@ -273,7 +286,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         }
     }
     {
-        let without_weights = graph.drop_weights();    
+        let without_weights = graph.drop_weights();
         assert_eq!(without_weights.is_ok(), graph.has_weights());
         if let Some(ww) = &without_weights.ok() {
             assert_eq!(ww.has_weights(), false);

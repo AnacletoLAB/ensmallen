@@ -19,8 +19,8 @@ impl EnsmallenGraph {
 
     #[text_signature = "($self)"]
     /// Returns ratio of self-loops.
-    pub fn get_selfloops_ratio(&self) -> usize {
-        self.graph.get_selfloops_ratio()
+    pub fn get_selfloops_rate(&self) -> f64 {
+        self.graph.get_selfloops_rate()
     }
 
     #[text_signature = "($self)"]
