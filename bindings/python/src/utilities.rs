@@ -3,19 +3,6 @@ use graph::{NodeT, WalksParameters, WeightT};
 use std::collections::HashMap;
 
 impl EnsmallenGraph {
-    /// Return start node and end node for given batch.
-    pub(crate) fn get_batch_range(&self, idx: usize, batch_size: usize) -> (usize, usize) {
-        let (start_node, end_node) = (idx * batch_size, (idx + 1) * batch_size);
-        (
-            start_node,
-            if end_node > self.graph.get_not_trap_nodes_number() {
-                self.graph.get_not_trap_nodes_number()
-            } else {
-                end_node
-            },
-        )
-    }
-
     pub(crate) fn build_walk_parameters(
         &self,
         length: usize,

@@ -21,16 +21,13 @@ use vec_rand::xorshift::xorshift as rand_u64;
 /// # Arguments
 ///
 /// * sequences: Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
-/// * window_size: Option<usize> - Window size to consider for the sequences.
-/// * shuffle: Option<bool> - Wethever to shuffle the vectors on return.
-/// * seed: usize - The seed for reproducibility.
+/// * window_size: usize - Window size to consider for the sequences.
 ///
 pub fn word2vec(
     sequences: Vec<Vec<usize>>,
-    window_size: Option<usize>,
+    window_size: usize,
 ) -> Result<(Vec<Vec<usize>>, Vec<usize>), String> {
-    let _window_size = window_size.unwrap_or(4);
-    let context_length = _window_size.checked_mul(2).ok_or(
+    let context_length = window_size.checked_mul(2).ok_or(
         "The given window size is too big, using this would result in an overflowing of a u64.",
     )?;
 
@@ -56,12 +53,12 @@ pub fn word2vec(
                 .iter()
                 .enumerate()
                 .filter_map(|(i, word)| {
-                    let start = if i <= _window_size {
+                    let start = if i <= window_size {
                         0
                     } else {
-                        i - _window_size
+                        i - window_size
                     };
-                    let end = min!(sequence.len(), i + _window_size);
+                    let end = min!(sequence.len(), i + window_size);
                     if end - start == context_length {
                         filters[partial_sum - i - 1] = true;
                         centers[partial_sum - i - 1] = *word;
@@ -195,15 +192,14 @@ impl Graph {
     /// # Arguments
     ///
     /// * walk_parameters: &WalksParameters - the weighted walks parameters.
-    /// * window_size: Option<usize> - Window size to consider for the sequences.
-    /// * shuffle: Option<bool> - Wethever to shuffle the vectors on return.
-    /// * idx: usize - The seed for reproducibility.
+    /// * quantity: usize - Number of nodes to consider.
+    /// * window_size: usize - Window size to consider for the sequences.
     ///
     pub fn node2vec(
         &self,
         walk_parameters: &WalksParameters,
         quantity: usize,
-        window_size: Option<usize>,
+        window_size: usize,
     ) -> Result<(Contexts, Words), String> {
         // do the walks and check the result
         let walks = self.random_walks(quantity, walk_parameters)?;

@@ -10,7 +10,7 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 }
 
 #[pyfunction(py_kwargs = "**")]
-#[text_signature = "(seed, sequences, *, window_size, shuffle)"]
+#[text_signature = "(sequences, window_size)"]
 /// Return training batches for Word2Vec models.
 ///
 /// The batch is composed of a tuple as the following:
@@ -28,30 +28,10 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///     the sequence of sequences of integers to preprocess.
 /// window_size: int,
 ///     Window size to consider for the sequences.
-/// shuffle: bool,
-///     Wethever to shuffle the vectors on return.
-/// seed: int,
-///     The seed for reproducibility.
 ///
-fn word2vec(
-    seed: usize,
-    sequences: Vec<Vec<usize>>,
-    py_kwargs: Option<&PyDict>,
-) -> PyResult<(PyContexts, PyWords)> {
+fn word2vec(sequences: Vec<Vec<usize>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
+    let (contexts, words) = pyex!(rust_word2vec(sequences, window_size))?;
     let gil = pyo3::Python::acquire_gil();
-    let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-    validate_kwargs(
-        kwargs,
-        ["window_size", "shuffle"]
-            .iter()
-            .map(|x| x.to_string())
-            .collect(),
-    )?;
-    let (contexts, words) = pyex!(rust_word2vec(
-        sequences,
-        extract_value!(kwargs, "window_size", usize),
-        seed,
-    ))?;
     Ok((
         to_nparray_2d!(gil, contexts, NodeT),
         to_nparray_1d!(gil, words, NodeT),
@@ -186,7 +166,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, length, *, iterations, window_size, shuffle, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, seed)"]
+    #[text_signature = "($self, batch_size, length, *, iterations, window_size, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, seed)"]
     /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
@@ -199,8 +179,6 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// ---------------------
-    /// idx: int,
-    ///     Identifier of the batch to generate.
     /// batch_size:
     ///     Number of walks to include within this batch.
     ///     Consider that the walks may be filtered by the given min_length.
@@ -211,10 +189,10 @@ impl EnsmallenGraph {
     /// length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
+    /// window_size: int,
+    ///     Size of the window for local contexts.
     /// iterations: int = 1,
     ///     Number of iterations for each node.
-    /// window_size: int = 4,
-    ///     Size of the window for local contexts.
     /// min_length: int = 0,
     ///     Minimal length of the random walk. Will filter out smaller
     ///     random walks.
@@ -254,27 +232,17 @@ impl EnsmallenGraph {
     /// Tuple with vector of integer with contexts and words.
     fn node2vec(
         &self,
-        idx: usize,
         batch_size: usize,
         length: usize,
+        window_size: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyContexts, PyWords)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
-        validate_kwargs(
-            kwargs,
-            build_walk_parameters_list(&["window_size", "shuffle"]),
-        )?;
-
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
 
-        let (contexts, words) = pyex!(self.graph.node2vec(
-            &parameters,
-            batch_size,
-            extract_value!(kwargs, "window_size", usize),
-            idx,
-        ))?;
+        let (contexts, words) = pyex!(self.graph.node2vec(&parameters, batch_size, window_size))?;
 
         Ok((
             to_nparray_2d!(gil, contexts, NodeT),
