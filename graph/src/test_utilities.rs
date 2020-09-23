@@ -262,6 +262,8 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     {
         let without_edges = graph.drop_edge_types();
         assert_eq!(without_edges.is_ok(), graph.has_edge_types());
+        assert!(graph.overlaps(without_edges).is_err());
+        assert!(graph.contains(without_edges).is_err());
         if let Some(we) = &without_edges.ok() {
             assert_eq!(we.has_edge_types(), false);
             assert_eq!(we.has_weights(), graph.has_weights());
