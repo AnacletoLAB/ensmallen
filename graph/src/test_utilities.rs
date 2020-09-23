@@ -302,5 +302,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         }
     }
 
+    assert_eq!(graph.get_not_trap_nodes_number(), graph.not_trap_nodes.len());
+
     Ok(())
 }
