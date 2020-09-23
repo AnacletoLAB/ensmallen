@@ -28,64 +28,58 @@ use vec_rand::xorshift::xorshift as rand_u64;
 pub fn word2vec(
     sequences: Vec<Vec<usize>>,
     window_size: Option<usize>,
-    seed: usize,
 ) -> Result<(Vec<Vec<usize>>, Vec<usize>), String> {
     let _window_size = window_size.unwrap_or(4);
     let context_length = _window_size.checked_mul(2).ok_or(
         "The given window size is too big, using this would result in an overflowing of a u64.",
     )?;
 
-    let mut sequences_centers: Vec<Vec<usize>> = sequences
-        .par_iter()
-        .map(|sequence| vec![0; sequence.len()])
+    // Compute the cumsums of the sequences lengths
+    let cumsum: Vec<usize> = sequences
+        .iter()
+        .scan(0, |partial, sequence| {
+            *partial += sequence.len();
+            Some(*partial)
+        })
         .collect();
-    let mut sequences_filters: Vec<Vec<bool>> = sequences
-        .par_iter()
-        .map(|sequence| vec![false; sequence.len()])
-        .collect();
-    let mut contexts: Vec<Vec<usize>> = sequences
-        .par_iter()
-        .zip(sequences_centers.par_iter_mut())
-        .zip(sequences_filters.par_iter_mut())
-        .map(|((sequence, centers), filters)| {
+    // We start by allocating the vectors to be able to execute the
+    // creation of the contexts in parallel.
+    let mut centers: Vec<usize> = vec![0; *cumsum.last().unwrap()];
+    // We also need a vector of filters to know which of the centers to drop.
+    let mut filters: Vec<bool> = vec![false; *cumsum.last().unwrap()];
+    // We create the contexts
+    let contexts: Vec<Vec<usize>> = sequences
+        .iter()
+        .zip(cumsum.iter())
+        .flat_map(|(sequence, partial_sum)| {
             sequence
                 .iter()
                 .enumerate()
-                .zip(centers.iter_mut())
-                .map(|((i, word), center)| {
+                .filter_map(|(i, word)| {
                     let start = if i <= _window_size {
                         0
                     } else {
                         i - _window_size
                     };
                     let end = min!(sequence.len(), i + _window_size);
-                    *center = *word;
-                    let context: Vec<usize> = sequence[start..end].to_vec();
-                    context
-                })
-                .zip(filters.iter_mut())
-                .filter_map(|(context, filter)| {
-                    if context.len() == context_length {
-                        *filter = true;
-                        Some(context)
+                    if end - start == context_length {
+                        filters[partial_sum - i - 1] = true;
+                        centers[partial_sum - i - 1] = *word;
+                        Some(sequence[start..end].to_vec())
                     } else {
-                        *filter = false;
+                        filters[partial_sum - i - 1] = false;
                         None
                     }
                 })
                 .collect::<Vec<Vec<usize>>>()
         })
-        .flatten()
         .collect();
 
-    let filters: Vec<bool> = sequences_filters.iter().flatten().cloned().collect();
-
-    let mut centers: Vec<usize> = sequences_centers
-        .iter()
-        .flatten()
-        .cloned()
-        .zip(filters.iter())
-        .filter_map(|(center, filter)| if *filter { Some(center) } else { None })
+    // And finally we filter out the centers relative to the paddings.
+    let centers: Vec<usize> = centers
+        .par_iter()
+        .zip(filters.par_iter())
+        .filter_map(|(center, filter)| if *filter { Some(*center) } else { None })
         .collect();
 
     Ok((contexts, centers))
@@ -210,7 +204,6 @@ impl Graph {
         walk_parameters: &WalksParameters,
         quantity: usize,
         window_size: Option<usize>,
-        seed: usize,
     ) -> Result<(Contexts, Words), String> {
         // do the walks and check the result
         let walks = self.random_walks(quantity, walk_parameters)?;
@@ -223,7 +216,7 @@ impl Graph {
             .to_string());
         }
 
-        word2vec(walks, window_size, seed)
+        word2vec(walks, window_size)
     }
 
     /// Return triple with CSR representation of cooccurrence matrix.

@@ -217,7 +217,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
 
     // Testing SkipGram / CBOW / GloVe preprocessing
     graph.cooccurence_matrix(&walker, Some(3), Some(verbose))?;
-    graph.node2vec(&walker, 100, Some(3), 56)?;
+    graph.node2vec(&walker, 100, Some(3))?;
     // Testing link prediction pre-processing
     graph.link_prediction(0, 16, Some(1.0), None, None)?;
     // Compute metrics of the graph
