@@ -28,11 +28,9 @@ use vec_rand::xorshift::xorshift as rand_u64;
 pub fn word2vec(
     sequences: Vec<Vec<usize>>,
     window_size: Option<usize>,
-    shuffle: Option<bool>,
     seed: usize,
 ) -> Result<(Vec<Vec<usize>>, Vec<usize>), String> {
     let _window_size = window_size.unwrap_or(4);
-    let _shuffle: bool = shuffle.unwrap_or(true);
     let context_length = _window_size.checked_mul(2).ok_or(
         "The given window size is too big, using this would result in an overflowing of a u64.",
     )?;
@@ -89,15 +87,6 @@ pub fn word2vec(
         .zip(filters.iter())
         .filter_map(|(center, filter)| if *filter { Some(center) } else { None })
         .collect();
-
-    if _shuffle {
-        let mut indices: Vec<usize> = (0..centers.len() as usize).collect();
-        let mut rng: StdRng = SeedableRng::seed_from_u64(seed as u64);
-        indices.shuffle(&mut rng);
-
-        contexts = indices.par_iter().map(|i| contexts[*i].clone()).collect();
-        centers = indices.par_iter().map(|i| centers[*i]).collect();
-    }
 
     Ok((contexts, centers))
 }
@@ -221,7 +210,6 @@ impl Graph {
         walk_parameters: &WalksParameters,
         quantity: usize,
         window_size: Option<usize>,
-        shuffle: Option<bool>,
         seed: usize,
     ) -> Result<(Contexts, Words), String> {
         // do the walks and check the result
@@ -235,7 +223,7 @@ impl Graph {
             .to_string());
         }
 
-        word2vec(walks, window_size, shuffle, seed)
+        word2vec(walks, window_size, seed)
     }
 
     /// Return triple with CSR representation of cooccurrence matrix.

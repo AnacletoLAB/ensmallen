@@ -50,7 +50,6 @@ fn word2vec(
     let (contexts, words) = pyex!(rust_word2vec(
         sequences,
         extract_value!(kwargs, "window_size", usize),
-        extract_value!(kwargs, "shuffle", bool),
         seed,
     ))?;
     Ok((
@@ -274,7 +273,6 @@ impl EnsmallenGraph {
             &parameters,
             batch_size,
             extract_value!(kwargs, "window_size", usize),
-            extract_value!(kwargs, "shuffle", bool),
             idx,
         ))?;
 
