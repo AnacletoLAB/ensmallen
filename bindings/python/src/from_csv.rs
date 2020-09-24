@@ -179,7 +179,7 @@ impl EnsmallenGraph {
                 pyex!(pyex!(pyex!(pyex!(pyex!(NodeFileReader::new(
                     extract_value!(kwargs, "node_path", String).unwrap()
                 ))?
-                .set_separator(extract_value!(kwargs, "node_separator", String)),
+                .set_separator(extract_value!(kwargs, "node_separator", String))
                 .set_header(extract_value!(kwargs, "egde_header", bool))
                 .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize))        
                 .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize)))?
