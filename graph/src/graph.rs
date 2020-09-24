@@ -6,7 +6,6 @@ use derive_getters::Getters;
 use rayon::prelude::*;
 use std::collections::HashMap;
 
-// TODO FIGURE OUT HOW TO REMOVE PUB FROM ATTRIBUTES
 /// A graph representation optimized for executing random walks on huge graphs.
 ///
 /// This class should be initialized using the two constructors:

@@ -4,7 +4,7 @@ use graph::NodeT;
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, seed, verbose, iterations, dense_nodes_mapping)"]
+    #[text_signature = "($self, length, quantity, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, seed, verbose, iterations, dense_nodes_mapping)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -12,6 +12,8 @@ impl EnsmallenGraph {
     /// length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
+    /// quantity: int,
+    ///     Number of nodes to sample.
     /// min_length: int = 0,
     ///     Minimal length of the random walk. Will filter out smaller
     ///     random walks.
@@ -58,7 +60,7 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// List of list of walks containing the numeric IDs of nodes.
     ///
-    fn walk(&self, length: usize, py_kwargs: Option<&PyDict>) -> PyResult<Vec<Vec<NodeT>>> {
+    fn walk(&self, length: usize, quantity:usize, py_kwargs: Option<&PyDict>) -> PyResult<Vec<Vec<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
@@ -66,10 +68,8 @@ impl EnsmallenGraph {
 
         let parameters = pyex!(self.build_walk_parameters(
             length,
-            0,
-            self.graph.get_not_trap_nodes_number(),
             kwargs
         ))?;
-        pyex!(self.graph.walk(&parameters))
+        pyex!(self.graph.random_walks(quantity, &parameters))
     }
 }

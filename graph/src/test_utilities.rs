@@ -87,28 +87,25 @@ pub fn load_ppi(
 }
 
 pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
-    Ok(
-        WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())?
-            .set_iterations(Some(1))?
-            .set_min_length(Some(1))?
-            .set_verbose(Some(verbose))
-            .set_seed(Some(43))
-            .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping())),
-    )
+    Ok(WalksParameters::new(50)?
+        .set_iterations(Some(1))?
+        .set_min_length(Some(1))?
+        .set_verbose(Some(verbose))
+        .set_seed(Some(43))
+        .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping())))
 }
 
 pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
-    Ok(
-        WalksParameters::new(50, 0, graph.get_not_trap_nodes_number())?
-            .set_iterations(Some(1))?
-            .set_min_length(Some(1))?
-            .set_verbose(Some(verbose))
-            .set_return_weight(Some(2.0))?
-            .set_explore_weight(Some(2.0))?
-            .set_change_edge_type_weight(Some(2.0))?
-            .set_change_node_type_weight(Some(2.0))?
-            .set_seed(Some(43)),
-    )
+    Ok(WalksParameters::new(50)?
+        .set_iterations(Some(1))?
+        .set_min_length(Some(1))?
+        .set_verbose(Some(verbose))
+        .set_return_weight(Some(2.0))?
+        .set_explore_weight(Some(2.0))?
+        .set_change_edge_type_weight(Some(2.0))?
+        .set_change_node_type_weight(Some(2.0))?
+        .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
+        .set_seed(Some(43)))
 }
 
 pub fn default_holdout_test_suite(
@@ -135,8 +132,24 @@ pub fn default_holdout_test_suite(
 pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph, verbose)?;
-    graph.walk(&walker)?;
-    graph.walk(&second_order_walker(&graph, verbose)?)?;
+    assert_eq!(
+        graph.random_walks(100, &walker)?,
+        graph.random_walks(100, &walker)?
+    );
+
+    assert_eq!(
+        graph.random_walks(100, &second_order_walker(&graph, verbose)?)?,
+        graph.random_walks(100, &second_order_walker(&graph, verbose)?)?
+    );
+
+    assert_eq!(
+        graph.complete_walks(&walker)?,
+        graph.complete_walks(&walker)?
+    );
+    assert_eq!(
+        graph.complete_walks(&second_order_walker(&graph, verbose)?)?,
+        graph.complete_walks(&second_order_walker(&graph, verbose)?)?
+    );
 
     // Testing main holdout mechanisms
     for include_all_edge_types in &[true, false] {
@@ -202,7 +215,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
 
     // Testing SkipGram / CBOW / GloVe preprocessing
     graph.cooccurence_matrix(&walker, Some(3), Some(verbose))?;
-    graph.node2vec(&walker, Some(3), Some(true), 56)?;
+    graph.node2vec(&walker, 100, 3)?;
     // Testing link prediction pre-processing
     graph.link_prediction(0, 16, Some(1.0), None, None)?;
     // Compute metrics of the graph
@@ -247,44 +260,49 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     {
         let without_edges = graph.drop_edge_types();
         assert_eq!(without_edges.is_ok(), graph.has_edge_types());
-        if without_edges.is_ok() {
-            let without_edges = without_edges.unwrap();
-            assert_eq!(without_edges.has_edge_types(), false);
-            assert_eq!(without_edges.has_weights(), graph.has_weights());
-            assert_eq!(without_edges.has_node_types(), graph.has_node_types());
-            assert_eq!(without_edges.has_selfloops(), graph.has_selfloops());
-            assert_eq!(without_edges.has_traps, graph.has_traps);
-            assert_eq!(without_edges.get_nodes_number(), graph.get_nodes_number());
+        if let Some(we) = &without_edges.ok() {
+            assert_eq!(we.has_edge_types(), false);
+            assert_eq!(we.has_weights(), graph.has_weights());
+            assert_eq!(we.node_types, graph.node_types);
+            assert_eq!(we.get_selfloops_number(), graph.get_selfloops_number());
+            assert_eq!(we.has_traps, graph.has_traps);
+            assert_eq!(we.nodes, graph.nodes);
+
+            // expect errors for undefined behavior in overlap() and contains() 
+            assert!(graph.overlaps(&we).is_err());
+            assert!(graph.contains(&we).is_err());
         }
     }
     {
         let without_nodes = graph.drop_node_types();
         assert_eq!(without_nodes.is_ok(), graph.has_node_types());
-        if without_nodes.is_ok() {
-            let without_nodes = without_nodes.unwrap();
-            assert_eq!(without_nodes.has_node_types(), false);
-            assert_eq!(without_nodes.has_edge_types(), graph.has_edge_types());
-            assert_eq!(without_nodes.has_weights(), graph.has_weights());
-            assert_eq!(without_nodes.has_selfloops(), graph.has_selfloops());
-            assert_eq!(without_nodes.has_traps, graph.has_traps);
-            assert_eq!(without_nodes.get_nodes_number(), graph.get_nodes_number());
-            assert_eq!(without_nodes.get_edges_number(), graph.get_edges_number());
+        if let Some(wn) = &without_nodes.ok() {
+            assert_eq!(wn.has_node_types(), false);
+            assert_eq!(wn.edge_types, graph.edge_types);
+            assert_eq!(wn.weights, graph.weights);
+            assert_eq!(wn.has_selfloops(), graph.has_selfloops());
+            assert_eq!(wn.has_traps, graph.has_traps);
+            assert_eq!(wn.nodes, graph.nodes);
+            assert_eq!(wn.sources, graph.sources);
+            assert_eq!(wn.destinations, graph.destinations);
         }
     }
     {
-        let without_weights = graph.drop_weights();    
+        let without_weights = graph.drop_weights();
         assert_eq!(without_weights.is_ok(), graph.has_weights());
-        if without_weights.is_ok() {
-            let without_weights = without_weights.unwrap();
-            assert_eq!(without_weights.has_weights(), false);
-            assert_eq!(without_weights.has_node_types(), graph.has_node_types());
-            assert_eq!(without_weights.has_edge_types(), graph.has_edge_types());
-            assert_eq!(without_weights.has_selfloops(), graph.has_selfloops());
-            assert_eq!(without_weights.has_traps, graph.has_traps);
-            assert_eq!(without_weights.get_nodes_number(), graph.get_nodes_number());
-            assert_eq!(without_weights.get_edges_number(), graph.get_edges_number());
+        if let Some(ww) = &without_weights.ok() {
+            assert_eq!(ww.has_weights(), false);
+            assert_eq!(ww.node_types, graph.node_types);
+            assert_eq!(ww.edge_types, graph.edge_types);
+            assert_eq!(ww.has_selfloops(), graph.has_selfloops());
+            assert_eq!(ww.has_traps, graph.has_traps);
+            assert_eq!(ww.nodes, graph.nodes);
+            assert_eq!(ww.sources, graph.sources);
+            assert_eq!(ww.destinations, graph.destinations);
         }
     }
+
+    assert_eq!(graph.get_not_trap_nodes_number(), graph.not_trap_nodes.len());
 
     Ok(())
 }
