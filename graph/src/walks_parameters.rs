@@ -87,6 +87,7 @@ impl SingleWalkParameters {
     }
 }
 
+/// Setters for the Walk's parameters
 impl WalksParameters {
     pub fn new(length: usize) -> Result<WalksParameters, String> {
         Ok(WalksParameters {
