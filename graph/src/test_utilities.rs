@@ -11,9 +11,7 @@ static DEFAULT_PATH: &str = "/tmp/";
 #[cfg(target_os = "windows")]
 static DEFAULT_PATH: &str = "";
 
-const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
-                        abcdefghijklmnopqrstuvwxyz\
-                        0123456789()*&^%$#@!~";
+const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 pub fn random_string(len: usize) -> String {
     let mut rng = rand::thread_rng();
