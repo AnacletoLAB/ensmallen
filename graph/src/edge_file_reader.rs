@@ -272,8 +272,8 @@ impl EdgeFileReader {
     /// * separator: Option<String> - The separator to use for the file.
     ///
     pub fn set_separator(mut self, separator: Option<String>) -> EdgeFileReader {
-        if let Some(v) = separator {
-            self.reader.separator = v;
+        if let Some(sep) = separator {
+            self.reader.separator = sep;
         }
         self
     }
