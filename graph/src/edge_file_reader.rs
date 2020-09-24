@@ -304,6 +304,17 @@ impl EdgeFileReader {
         self
     }
 
+    /// Set the maximum number of rows to load from the file
+    ///
+    /// # Arguments
+    ///
+    /// * max_number_of_rows_to_load: Option<u64> - The edge type to use when edge type is missing.
+    ///
+    pub fn set_max_number_of_rows_to_load(mut self, max_number_of_rows_to_load: Option<u64>) -> EdgeFileReader {
+        self.reader.max_number_of_rows_to_load = max_number_of_rows_to_load;
+        self
+    }
+    
     /// Parse a single line (vecotr of strings already splitted)
     /// # Arguments
     ///

@@ -189,6 +189,17 @@ impl NodeFileReader {
         self
     }
 
+    /// Set the maximum number of rows to load from the file
+    ///
+    /// # Arguments
+    ///
+    /// * max_number_of_rows_to_load: Option<u64> - The edge type to use when edge type is missing.
+    ///
+    pub fn set_max_number_of_rows_to_load(mut self, max_number_of_rows_to_load: Option<u64>) -> NodeFileReader {
+        self.reader.max_number_of_rows_to_load = max_number_of_rows_to_load;
+        self
+    }
+
     /// Return iterator of the lines of the node file.
     pub fn read_lines(
         &self,
