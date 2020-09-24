@@ -10,3 +10,13 @@ python_manylinux1:
 
 build_manylinux1:
 	sudo docker build -t manylinux1 -f ./setup/DockerFileManylinux1 ./setup
+
+update:
+	(cd graph; cargo update)
+	(cd bindings/python; cargo update)
+	(cd fuzzing/graph_harness; cargo update)
+	(cd fuzzing/graph_harness/fuzz; cargo update)
+	(cd fuzzing/honggfuzz/from_csv; cargo update)
+	(cd fuzzing/honggfuzz/from_vec; cargo update)
+	(cd fuzzing/afl/from_csv; cargo update)
+	(cd fuzzing/afl/from_vec; cargo update)

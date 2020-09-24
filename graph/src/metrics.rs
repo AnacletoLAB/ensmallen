@@ -1,0 +1,353 @@
+use super::types::*;
+use super::*;
+use std::collections::{HashMap, HashSet};
+use rayon::prelude::*;
+use std::collections::HashMap as DefaultHashMap;
+
+/// # Properties and measurements of the graph
+impl Graph {
+    /// Returns product of degrees of given nodes.
+    ///
+    /// # Arguments
+    ///
+    /// * `one` - Integer ID of the first node.
+    /// * `two` - Integer ID of the second node.
+    ///
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The degrees_product between 0 and 1 is {}", graph.degrees_product(0, 1).unwrap());
+    /// ```
+    pub fn degrees_product(&self, one: NodeT, two: NodeT) -> Result<usize, String> {
+        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "One or more of the given nodes indices ({}, {}) are ",
+                    "biggen than the number of nodes present in the graph ({})."
+                ),
+                one,
+                two,
+                self.get_nodes_number()
+            ));
+        }
+        Ok(self.degree(one) as usize * self.degree(two) as usize)
+    }
+
+    /// Returns the Jaccard index for the two given nodes.
+    ///
+    /// # Arguments
+    ///
+    /// * `one` - Integer ID of the first node.
+    /// * `two` - Integer ID of the second node.
+    ///
+    /// # References
+    /// [D. Liben-Nowell, J. Kleinberg.
+    /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
+    ///
+    pub fn jaccard_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
+        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "One or more of the given nodes indices ({}, {}) are ",
+                    "biggen than the number of nodes present in the graph ({})."
+                ),
+                one,
+                two,
+                self.get_nodes_number()
+            ));
+        }
+
+        if self.is_node_trap(one) || self.is_node_trap(two) {
+            return Ok(0.0f64);
+        }
+
+        let one_neighbors: HashSet<NodeT> = self.get_node_neighbours(one).iter().cloned().collect();
+        let two_neighbors: HashSet<NodeT> = self.get_node_neighbours(two).iter().cloned().collect();
+        let intersections: HashSet<NodeT> = one_neighbors
+            .intersection(&two_neighbors)
+            .cloned()
+            .collect();
+
+        Ok(intersections.len() as f64 / (one_neighbors.len() + two_neighbors.len()) as f64)
+    }
+
+    /// Returns the Adamic/Adar Index for the given pair of nodes.
+    ///
+    /// # Arguments:
+    ///
+    /// * `one` - Integer ID of the first node.
+    /// * `two` - Integer ID of the second node.
+    ///
+    /// # Implementation details
+    /// Since the Adamic/Adar Index is only defined for graph not containing
+    /// node traps (nodes without any outbound edge) and must support all kind
+    /// of graphs, the sinks node are excluded from
+    /// the computation because they would result in an infinity.
+    ///
+    /// # References
+    /// [D. Liben-Nowell, J. Kleinberg.
+    /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
+    ///
+    pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
+        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "One or more of the given nodes indices ({}, {}) are ",
+                    "biggen than the number of nodes present in the graph ({})."
+                ),
+                one,
+                two,
+                self.get_nodes_number()
+            ));
+        }
+
+        if self.is_node_trap(one) || self.is_node_trap(two) {
+            return Ok(0.0f64);
+        }
+
+        let one_neighbors: HashSet<NodeT> = self.get_node_neighbours(one).iter().cloned().collect();
+        let two_neighbors: HashSet<NodeT> = self.get_node_neighbours(two).iter().cloned().collect();
+        let intersections: HashSet<NodeT> = one_neighbors
+            .intersection(&two_neighbors)
+            .cloned()
+            .collect();
+
+        Ok(intersections
+            .par_iter()
+            .filter(|node| !self.is_node_trap(**node))
+            .map(|node| 1.0 / (self.degree(*node) as f64).ln())
+            .sum())
+    }
+
+    /// Returns the Resource Allocation Index for the given pair of nodes.
+    ///
+    /// # Arguments:
+    ///
+    /// * `one` - Integer ID of the first node.
+    /// * `two` - Integer ID of the second node.
+    ///
+    /// # References
+    /// [T. Zhou, L. Lu, Y.-C. Zhang.
+    /// Predicting missing links via local information.
+    /// Eur. Phys. J. B 71 (2009) 623.](http://arxiv.org/pdf/0901.0553.pdf)
+    ///
+    /// # Implementation details
+    /// Since the Resource Allocation Index is only defined for graph not
+    /// containing node traps (nodes without any outbound edge) and
+    /// must support all kind of graphs, the sinks node are excluded from
+    /// the computation because they would result in an infinity.
+    ///
+    pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
+        if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
+            return Err(format!(
+                concat!(
+                    "One or more of the given nodes indices ({}, {}) are ",
+                    "biggen than the number of nodes present in the graph ({})."
+                ),
+                one,
+                two,
+                self.get_nodes_number()
+            ));
+        }
+
+        if self.is_node_trap(one) || self.is_node_trap(two) {
+            return Ok(0.0f64);
+        }
+
+        let one_neighbors: HashSet<NodeT> = self.get_node_neighbours(one).iter().cloned().collect();
+        let two_neighbors: HashSet<NodeT> = self.get_node_neighbours(two).iter().cloned().collect();
+        let intersections: HashSet<NodeT> = one_neighbors
+            .intersection(&two_neighbors)
+            .cloned()
+            .collect();
+
+        Ok(intersections
+            .par_iter()
+            .filter(|node| !self.is_node_trap(**node))
+            .map(|node| 1.0 / self.degree(*node) as f64)
+            .sum())
+    }
+
+    /// Returns the traps rate of the graph.
+    ///
+    /// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
+    ///
+    pub fn traps_rate(&self) -> f64 {
+        (0..self.get_nodes_number())
+            .into_par_iter()
+            .map(|node| {
+                if !self.is_node_trap(node) {
+                    let neighbours = self.get_node_neighbours(node);
+                    neighbours
+                        .iter()
+                        .map(|n| self.is_node_trap(*n) as usize as f64)
+                        .sum::<f64>()
+                        / neighbours.len() as f64
+                } else {
+                    1.0
+                }
+            })
+            .sum::<f64>()
+            / self.get_nodes_number() as f64
+    }
+
+    /// Returns mean node degree of the graph.
+    pub fn degrees_mean(&self) -> f64 {
+        (0..self.get_nodes_number())
+            .into_par_iter()
+            .map(|node| self.degree(node))
+            .sum::<usize>() as f64
+            / self.get_nodes_number() as f64
+    }
+
+    /// Returns median node degree of the graph
+    pub fn degrees_median(&self) -> NodeT {
+        let mut degrees = self.degrees();
+        degrees.par_sort_unstable();
+        degrees[self.get_nodes_number() / 2]
+    }
+
+    /// Returns maximum node degree of the graph
+    pub fn degrees_max(&self) -> NodeT {
+        *self.degrees().iter().max().unwrap()
+    }
+
+    /// Returns minimum node degree of the graph
+    pub fn degrees_min(&self) -> NodeT {
+        *self.degrees().iter().min().unwrap()
+    }
+
+    /// Returns mode node degree of the graph
+    pub fn degrees_mode(&self) -> NodeT {
+        let mut occurrences: HashMap<NodeT, usize> = HashMap::new();
+
+        for value in self.degrees() {
+            *occurrences.entry(value).or_insert(0) += 1;
+        }
+
+        occurrences
+            .into_iter()
+            .max_by_key(|&(_, count)| count)
+            .map(|(val, _)| val)
+            .unwrap()
+    }
+
+    /// Returns number of self-loops.
+    pub fn get_selfloops_number(&self) -> usize {
+        (0..self.get_nodes_number())
+            .into_par_iter()
+            .map(|node| self.has_edge(node, node) as usize)
+            .sum::<usize>()
+    }
+
+    /// Returns rate of self-loops.
+    pub fn get_selfloops_rate(&self) -> f64 {
+        self.get_selfloops_number() as f64 / self.get_edges_number() as f64
+    }
+
+    /// Returns rate of bidirectional edges.
+    pub fn bidirectional_rate(&self) -> f64 {
+        self.unique_edges
+            .keys()
+            .map(|(src, dst)| self.has_edge(*dst, *src) as usize)
+            .sum::<usize>() as f64
+            / self.unique_edges.len() as f64
+    }
+
+    /// Returns number of connected components in graph.
+    pub fn connected_components_number(&self, include_all_edge_types: bool) -> NodeT {
+        self.get_nodes_number() - self.spanning_tree(0, include_all_edge_types).len()
+    }
+
+    /// Returns number of singleton nodes within the graph.
+    pub fn singleton_nodes_number(&self) -> NodeT {
+        self.singletons_number
+    }
+
+    /// Returns density of the graph.
+    pub fn density(&self) -> f64 {
+        self.get_edges_number() as f64 / (self.get_nodes_number().pow(2)) as f64
+    }
+
+    /// Returns the mean number of types for each edge.
+    pub fn get_mean_number_of_types_for_edge(&self) -> f64 {
+        self.unique_edges.values().map(|data| {
+            if let Some(edt) = &data.edge_types {
+                edt.len()
+            } else {
+                0
+            }
+        }).sum::<usize>() as f64 / self.get_edges_number() as f64
+    }
+
+    /// Returns the number of edges that have multiple types.
+    pub fn get_multigraph_edges_number(&self) -> usize {
+        self.unique_edges.values().filter(|data| {
+            if let Some(edt) = &data.edge_types {
+                edt.len() > 1
+            } else {
+                false
+            }
+        }).count()
+    }
+
+    /// Returns the ratio of edges that have multiple types.
+    pub fn get_multigraph_edges_ratio(&self) -> f64 {
+        self.get_multigraph_edges_number() as f64 /  self.get_edges_number() as f64
+    }
+
+    /// Returns report relative to the graph metrics
+    ///
+    /// The report includes a few useful metrics like:
+    ///
+    /// * degrees_median: the median degree of the nodes.
+    /// * degrees_mean: the mean degree of the nodes.
+    /// * degrees_mode: the mode degree of the nodes.
+    /// * degrees_max: the max degree of the nodes.
+    /// * degrees_min: the min degree of the nodes.
+    /// * nodes_number: the number of nodes in the graph.
+    /// * edges_number: the number of edges in the graph.
+    /// * unique_node_types_number: the number of different node types in the graph.
+    /// * unique_edge_types_number: the number of different edge types in the graph.
+    /// * traps_rate: probability to end up in a trap when starting into any given node.
+    /// * selfloops_rate: pecentage of edges that are selfloops.
+    /// * bidirectional_rate: rate of edges that are bidirectional.
+    ///
+    pub fn report(&self) -> DefaultHashMap<&str, String> {
+        let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
+        report.insert("degrees_median", self.degrees_median().to_string());
+        report.insert("degrees_mean", self.degrees_mean().to_string());
+        report.insert("degrees_mode", self.degrees_mode().to_string());
+        report.insert("degrees_min", self.degrees_min().to_string());
+        report.insert("degrees_max", self.degrees_max().to_string());
+        report.insert("nodes_number", self.get_nodes_number().to_string());
+        report.insert("edges_number", self.get_edges_number().to_string());
+        report.insert("density", self.density().to_string());
+        report.insert("singleton_nodes", self.singleton_nodes_number().to_string());
+        report.insert("is_directed", self.is_directed.to_string());
+        report.insert("is_multigraph", self.is_multigraph().to_string());
+        report.insert("multigraph_edges_number", self.get_multigraph_edges_number().to_string());
+        report.insert("multigraph_edges_ratio", self.get_multigraph_edges_ratio().to_string());
+        report.insert("mean_number_of_types_for_edge", self.get_mean_number_of_types_for_edge().to_string());
+        report.insert(
+            "unique_node_types_number",
+            self.get_node_types_number().to_string(),
+        );
+        report.insert(
+            "unique_edge_types_number",
+            self.get_edge_types_number().to_string(),
+        );
+        report.insert("traps_rate", self.traps_rate().to_string());
+        report.insert("selfloops_rate", self.get_selfloops_rate().to_string());
+        report.insert("selfloops_number", self.get_selfloops_number().to_string());
+        report.insert("bidirectional_rate", self.bidirectional_rate().to_string());
+        report.insert(
+            "connected_components_number",
+            self.connected_components_number(false).to_string(),
+        );
+        report.insert(
+            "strongly_connected_components_number",
+            self.strongly_connected_components().len().to_string(),
+        );
+        report
+    }
+}
