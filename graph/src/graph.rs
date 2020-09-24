@@ -112,6 +112,45 @@ impl Graph {
         ))
     }
 
+    pub fn get_edge_id(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> Result<EdgeT, String> {
+        match self.unique_edges.get(&(src, dst)) {
+            Some(metadata) => {
+                let id = metadata.edge_id;
+                if edge_type.is_some() ^ self.edge_types.is_some() {
+                    return Err(concat!(
+                        "If you are on a graph with edge types yoy must pass the edge types to get_edge_id. ",
+                        "else if you are on a graph without edge types you cannot pass it to get_edge_id."
+                    ).to_string());
+                }
+                if let Some(edt) = &metadata.edge_types {
+                    if let Some(edts) = &self.edge_types {
+                        if let Some(et) = edge_type {
+                            for index in id..id + edt.len() {
+                                if edts.ids[index] == et {
+                                    return Ok(index);
+                                }
+                            }
+                            return Err(format!(
+                                "Edge type not found for {src} {dst}",
+                                src=src,
+                                dst=dst
+                            ));
+                        }
+                    }
+                    Err("Something went horribly wrong.".to_string())
+                } else {
+                    Ok(id)
+                }
+            },
+            None => Err(format!(
+                "There is no edge in the current graph that starts at {src} and ends at {dst}.",
+                src=src,
+                dst=dst
+            ))
+        }
+    }
+
+
     /// Returns edge type counts.
     ///
     /// # Arguments
