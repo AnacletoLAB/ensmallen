@@ -3,6 +3,11 @@ use super::Graph;
 use std::collections::HashSet;
 
 #[macro_export]
+/// Macro that computes the maximum between two numbers
+/// 
+/// ```rust
+/// assert_eq!(max!(3, 4), 4)
+/// ```
 macro_rules! max {
     ($a: expr, $b: expr) => {
         if $a >= $b {
@@ -13,6 +18,11 @@ macro_rules! max {
     };
 }
 #[macro_export]
+/// Macro that computes the minimum between two numbers
+/// 
+/// ```rust
+/// assert_eq!(min!(3, 4), 3)
+/// ```
 macro_rules! min {
     ($a: expr, $b: expr) => {
         if $a < $b {

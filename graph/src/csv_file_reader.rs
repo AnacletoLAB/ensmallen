@@ -131,7 +131,7 @@ impl CSVFileReader {
         // we copy the value so that it can be moved inside the closure
         // because without this hack there would be a lifetime problem
         // because the iterator might live more than the self of csv file reader
-        let max_number_of_rows_to_load_cloned =  self.max_number_of_rows_to_load.clone();
+        let max_number_of_rows_to_load_cloned =  self.max_number_of_rows_to_load;
         
         let number_of_elements_per_line = self.get_elements_per_line()?;
         Ok(BufReader::new(File::open(&self.path).unwrap())

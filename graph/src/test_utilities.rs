@@ -13,6 +13,7 @@ static DEFAULT_PATH: &str = "";
 
 const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+/// Computes a random string,
 pub fn random_string(len: usize) -> String {
     let mut rng = rand::thread_rng();
 
@@ -24,6 +25,7 @@ pub fn random_string(len: usize) -> String {
         .collect()
 }
 
+/// Computes a random path.
 pub fn random_path() -> String {
     Path::new(DEFAULT_PATH)
         .join(random_string(64))
@@ -32,6 +34,7 @@ pub fn random_path() -> String {
         .to_string()
 }
 
+/// Load PPI with given parametrization.
 pub fn load_ppi(
     load_nodes: bool,
     load_edge_types: bool,
@@ -86,6 +89,7 @@ pub fn load_ppi(
     Graph::from_csv(edges_reader, nodes_reader, directed)
 }
 
+/// Return WalksParameters to execute a first order walk.
 pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(50)?
         .set_iterations(Some(1))?
@@ -95,6 +99,7 @@ pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameter
         .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping())))
 }
 
+/// Return WalksParameters to execute a second order walk.
 pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(50)?
         .set_iterations(Some(1))?
@@ -108,6 +113,7 @@ pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParamete
         .set_seed(Some(43)))
 }
 
+/// Executes the default test suite for holdouts.
 pub fn default_holdout_test_suite(
     graph: &Graph,
     train: &Graph,
@@ -129,6 +135,7 @@ pub fn default_holdout_test_suite(
     Ok(())
 }
 
+/// Executes near-complete test of all functions for the given graph.
 pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph, verbose)?;
@@ -263,7 +270,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         if let Some(we) = &without_edges.ok() {
             assert_eq!(we.has_edge_types(), false);
             assert_eq!(we.has_weights(), graph.has_weights());
-            assert_eq!(we.node_types, graph.node_types);
+            assert!(we.node_types == graph.node_types);
             assert_eq!(we.get_selfloops_number(), graph.get_selfloops_number());
             assert_eq!(we.has_traps, graph.has_traps);
             assert_eq!(we.nodes, graph.nodes);
@@ -278,7 +285,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         assert_eq!(without_nodes.is_ok(), graph.has_node_types());
         if let Some(wn) = &without_nodes.ok() {
             assert_eq!(wn.has_node_types(), false);
-            assert_eq!(wn.edge_types, graph.edge_types);
+            assert!(wn.edge_types == graph.edge_types);
             assert_eq!(wn.weights, graph.weights);
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
             assert_eq!(wn.has_traps, graph.has_traps);
@@ -292,8 +299,8 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         assert_eq!(without_weights.is_ok(), graph.has_weights());
         if let Some(ww) = &without_weights.ok() {
             assert_eq!(ww.has_weights(), false);
-            assert_eq!(ww.node_types, graph.node_types);
-            assert_eq!(ww.edge_types, graph.edge_types);
+            assert!(ww.node_types == graph.node_types);
+            assert!(ww.edge_types == graph.edge_types);
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
             assert_eq!(ww.has_traps, graph.has_traps);
             assert_eq!(ww.nodes, graph.nodes);

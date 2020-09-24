@@ -1,8 +1,7 @@
 use super::types::*;
-use derive_getters::Getters;
 use std::collections::HashMap;
 
-#[derive(Debug, Clone, Getters, PartialEq, Default)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub struct Vocabulary<IndexT: ToFromUsize> {
     pub map: HashMap<String, IndexT>,
     pub reverse_map: Vec<String>,

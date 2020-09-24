@@ -1,9 +1,5 @@
 #![warn(unused_macros)]
-#![deny(missing_docs)]
-#![deny(missing_doc_code_examples)]
 #![feature(map_first_last)]
-//! # Ensmallen Graph
-//! TODO! TEST DOC
 
 const SEED_XOR: usize = 0xbad5eedbad5eed11;
 

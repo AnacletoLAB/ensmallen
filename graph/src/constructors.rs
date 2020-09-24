@@ -340,9 +340,25 @@ pub(crate) fn build_graph(
 
 /// # Graph Constructors
 impl Graph {
+    /// Create new Graph object.
+    /// 
+    /// # Arguments
+    /// 
+    /// * edges_iterator: impl Iterator<Item = Result<(String, String, Option<String>, Option<WeightT>), String>>,
+    ///     Iterator of the edges.
+    /// * nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
+    ///     Iterator of the nodes.
+    /// * directed: bool,
+    ///     Wether the graph should be directed or undirected.
+    /// * ignore_duplicated_nodes: bool,
+    ///     Wether to ignore duplicated nodes or to raise a proper exception.
+    /// * ignore_duplicated_edges: bool,
+    ///     Wether to ignore duplicated edges or to raise a proper exception.
+    /// * skip_self_loops: bool,
+    ///     Wether to skip self loops while reading the the edges iterator.
     pub fn new(
         edges_iterator: impl Iterator<
-            Item = Result<(String, String, Option<String>, Option<WeightT>), String>,
+            Item = Result<(String, String, Option<String>, Option<WeightT>), String>
         >,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
         directed: bool,

@@ -1,7 +1,6 @@
 use super::*;
-use derive_getters::Getters;
 
-#[derive(Debug, Clone, Getters, PartialEq, Default)]
+#[derive(Clone, PartialEq, Default)]
 pub struct VocabularyVec<IndexT: ToFromUsize> {
     pub ids: Vec<IndexT>,
     pub vocabulary: Vocabulary<IndexT>,

@@ -16,19 +16,40 @@ use std::collections::HashMap;
 #[derive(Clone, Getters, PartialEq)]
 pub struct Graph {
     // properties
+    /// if the graph has traps or not
     pub(crate) has_traps: bool,
+    /// if the graph is directed or undirected
     pub(crate) is_directed: bool,
+    /// how many singoletons (nodes without any incoming or outgoing edges)
+    /// are present in the graph
     pub(crate) singletons_number: NodeT,
+    
     // graph structs
+    /// vector with the sources of every edge.
+    /// sources[10] returns the source of the edge with edge_id 10
     pub(crate) sources: Vec<NodeT>,
+    /// vector with the destinations of every edge.
+    /// destinations[10] returns the destination of the edge with edge_id 10
     pub(crate) destinations: Vec<NodeT>,
+    /// Vocabulary that save the mappings from string to index of every node
     pub(crate) nodes: Vocabulary<NodeT>,
+    /// Optional vector of the weights of every edge.
+    /// weights[10] return the weight of the edge with edge_id 10
     pub(crate) weights: Option<Vec<WeightT>>,
+    /// Vocabulary that save the mappings from string to index of every node type
     pub(crate) node_types: Option<VocabularyVec<NodeTypeT>>,
+    /// Vocabulary that save the mappings from string to index of every edge type
     pub(crate) edge_types: Option<VocabularyVec<EdgeTypeT>>,
+
     // helper structs
+    /// Vector that has the cumulative sum of the degree of each node.
+    /// This is used as an offset array to quickly retreive the outgoing edges
     pub(crate) outbounds: Vec<EdgeT>,
+    /// Hashmap with as keys (src, dst) and the id of the first edge from src to dst (just the first since 
+    /// all these edges have consecutive edge_ids) and a set of edge types present.
     pub(crate) unique_edges: HashMap<(NodeT, NodeT), EdgeMetadata>,
+    /// All the nodes that are not traps.
+    /// This is used to speed up the walk.
     pub(crate) not_trap_nodes: Vec<NodeT>,
 }
 
