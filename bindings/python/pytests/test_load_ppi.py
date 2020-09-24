@@ -5,7 +5,9 @@ ROOT_DIR = os.path.abspath(
     os.path.dirname(__file__)
 )
 
-def test_load_ppi():
+
+def test_load_ppi() -> EnsmallenGraph:
+    """Test that PPI can be loaded."""
     EnsmallenGraph.from_csv(
         edge_path=os.path.join(ROOT_DIR, "data/ppi/edges.tsv"),
         sources_column="subject",
