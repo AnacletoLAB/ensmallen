@@ -133,7 +133,7 @@ impl EnsmallenGraph {
                 "egde_header",
                 "edge_rows_to_skip",
                 "edge_separator",
-                "edge_max_number_of_rows_to_load",
+                "edge_max_rows_number",
                 "node_path",
                 "nodes_column_number",
                 "nodes_column",
@@ -144,7 +144,7 @@ impl EnsmallenGraph {
                 "node_header",
                 "node_rows_to_skip",
                 "node_separator",
-                "node_max_number_of_rows_to_load",
+                "node_max_rows_number",
                 "verbose",
             ]
             .iter()
@@ -175,7 +175,7 @@ impl EnsmallenGraph {
         .set_skip_self_loops(extract_value!(kwargs, "skip_self_loops", bool))
         .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_edges", bool))
         .set_verbose(extract_value!(kwargs, "verbose", bool))
-        .set_max_number_of_rows_to_load(extract_value!(kwargs, "edge_max_number_of_rows_to_load", u64));
+        .set_max_rows_number(extract_value!(kwargs, "edge_max_rows_number", u64));
 
         let nodes: Option<NodeFileReader> = match kwargs.get_item("node_path") {
             Some(_) => Some(
@@ -196,7 +196,7 @@ impl EnsmallenGraph {
                 .set_default_node_type(extract_value!(kwargs, "default_node_type", String))
                 .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_nodes", bool))
                 .set_verbose(extract_value!(kwargs, "verbose", bool))
-                .set_max_number_of_rows_to_load(extract_value!(kwargs, "node_max_number_of_rows_to_load", u64))
+                .set_max_rows_number(extract_value!(kwargs, "node_max_rows_number", u64))
             ),
             None => None,
         };
