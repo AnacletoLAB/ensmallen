@@ -153,6 +153,9 @@ impl EnsmallenGraph {
         let edges: EdgeFileReader = pyex!(pyex!(pyex!(pyex!(pyex!(pyex!(pyex!(pyex!(pyex!(
             EdgeFileReader::new(edge_path)
         )?
+        .set_separator(extract_value!(kwargs, "edge_separator", String))
+        .set_header(extract_value!(kwargs, "egde_header", bool))
+        .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize))
         .set_sources_column_number(extract_value!(
             kwargs,
             "sources_column_number",
@@ -169,16 +172,16 @@ impl EnsmallenGraph {
         .set_default_weight(extract_value!(kwargs, "default_weight", WeightT))
         .set_skip_self_loops(extract_value!(kwargs, "skip_self_loops", bool))
         .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_edges", bool))
-        .set_header(extract_value!(kwargs, "egde_header", bool))
-        .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize))
-        .set_verbose(extract_value!(kwargs, "verbose", bool))
-        .set_separator(extract_value!(kwargs, "edge_separator", String));
+        .set_verbose(extract_value!(kwargs, "verbose", bool));
 
         let nodes: Option<NodeFileReader> = match kwargs.get_item("node_path") {
             Some(_) => Some(
                 pyex!(pyex!(pyex!(pyex!(pyex!(NodeFileReader::new(
                     extract_value!(kwargs, "node_path", String).unwrap()
                 ))?
+                .set_separator(extract_value!(kwargs, "node_separator", String)),
+                .set_header(extract_value!(kwargs, "egde_header", bool))
+                .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize))        
                 .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize)))?
                 .set_nodes_column(extract_value!(kwargs, "nodes_column", String)))?
                 .set_node_types_column_number(extract_value!(
@@ -189,10 +192,7 @@ impl EnsmallenGraph {
                 .set_node_types_column(extract_value!(kwargs, "node_types_column", String)))?
                 .set_default_node_type(extract_value!(kwargs, "default_node_type", String))
                 .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_nodes", bool))
-                .set_header(extract_value!(kwargs, "node_header", bool))
-                .set_rows_to_skip(extract_value!(kwargs, "node_rows_to_skip", usize))
                 .set_verbose(extract_value!(kwargs, "verbose", bool))
-                .set_separator(extract_value!(kwargs, "node_separator", String)),
             ),
             None => None,
         };
