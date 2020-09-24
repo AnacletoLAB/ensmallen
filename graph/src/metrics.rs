@@ -43,6 +43,10 @@ impl Graph {
     /// [D. Liben-Nowell, J. Kleinberg.
     /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
     ///
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The jaccard_index between node 1 and node 2 is {}", graph.jaccard_index(1, 2).unwrap());
+    /// ```
     pub fn jaccard_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
         if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
             return Err(format!(
