@@ -1,7 +1,8 @@
 from ensmallen_graph import EnsmallenGraph  # pylint: disable=no-name-in-module
 
 
-def load_hpo():
+def load_hpo() -> EnsmallenGraph:
+    """Test that HPO graph can be loaded."""
     return EnsmallenGraph.from_csv(
         edge_path="./pytests/data/edges.tsv",
         sources_column="subject",
@@ -16,7 +17,8 @@ def load_hpo():
     )
 
 
-def load_pathway():
+def load_pathway() -> EnsmallenGraph:
+    """Test that Pathway can be loaded."""
     return EnsmallenGraph.from_csv(
         edge_path="./pytests/data/pathway.tsv",
         sources_column="Gene_A",
