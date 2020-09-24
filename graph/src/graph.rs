@@ -139,7 +139,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `edge_types`: Vec<String> - Vector of egde types to be converted.
+    /// * `edge_types`: Vec<String> - Vector of edge types to be converted.
     pub fn translate_edge_types(&self, edge_types: Vec<String>) -> Result<Vec<EdgeTypeT>, String> {
         Ok(match &self.edge_types {
             None => Err(String::from("Current graph does not have edge types.")),

@@ -86,20 +86,6 @@ impl GraphDictionary {
     
     /// Gets the given key's corresponding entry in the map for in-place manipulation.
     /// This is used when we want to modify some value that might not be initialized
-    /// 
-    /// # Examples
-    ///
-    /// Basic usage:
-    ///
-    /// ```
-    /// // create a new dictionary
-    /// let mut dictionary: GraphDictionary<u32> = GraphDictionary::new();
-    /// // get the value of the edge (0, 1) and if not present create a new empty struct
-    /// let mut value = dictionary.entry((0, 1)).or_insert(ConstructorEdgeMetadata::new());
-    /// // assign None to its weights
-    /// value.weights = None;
-    ///
-    /// ```
     pub(crate) fn entry(
         &mut self,
         key: (NodeT, NodeT),

@@ -5,7 +5,7 @@ use graph::{EdgeFileReader, Graph, NodeFileReader, WeightT};
 impl EnsmallenGraph {
     #[staticmethod]
     #[args(py_kwargs = "**")]
-    #[text_signature = "(edge_path, directed, *, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_self_loops, ignore_duplicated_edges, egde_header, edge_rows_to_skip, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, default_node_type, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_separator, verbose)"]
+    #[text_signature = "(edge_path, directed, *, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_self_loops, ignore_duplicated_edges, edge_header, edge_rows_to_skip, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, default_node_type, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_separator, verbose)"]
     /// Return graph loaded from given edge file and optionally node file.
     ///
     /// Parameters
@@ -56,7 +56,7 @@ impl EnsmallenGraph {
     ///     on the duplicated edge will be raised.
     ///     When ignoring the edge type while reading the file duplicated edges
     ///     in a multi-graph will be marked as duplicates.
-    /// egde_header: bool = True,
+    /// edge_header: bool = True,
     ///     Wethever to expect the first line of the edge file to be a header.
     /// edge_rows_to_skip: int = 0,
     ///     If the edge file has some descriptive text in the first few lines,
@@ -130,7 +130,7 @@ impl EnsmallenGraph {
                 "default_weight",
                 "skip_self_loops",
                 "ignore_duplicated_edges",
-                "egde_header",
+                "edge_header",
                 "edge_rows_to_skip",
                 "edge_separator",
                 "edge_max_rows_number",
@@ -156,7 +156,7 @@ impl EnsmallenGraph {
             EdgeFileReader::new(edge_path)
         )?
         .set_separator(extract_value!(kwargs, "edge_separator", String))
-        .set_header(extract_value!(kwargs, "egde_header", bool))
+        .set_header(extract_value!(kwargs, "edge_header", bool))
         .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize))
         .set_sources_column_number(extract_value!(
             kwargs,
@@ -183,7 +183,7 @@ impl EnsmallenGraph {
                     extract_value!(kwargs, "node_path", String).unwrap()
                 ))?
                 .set_separator(extract_value!(kwargs, "node_separator", String))
-                .set_header(extract_value!(kwargs, "egde_header", bool))
+                .set_header(extract_value!(kwargs, "edge_header", bool))
                 .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize))        
                 .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize)))?
                 .set_nodes_column(extract_value!(kwargs, "nodes_column", String)))?
