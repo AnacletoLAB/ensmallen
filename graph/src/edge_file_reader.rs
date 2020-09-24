@@ -72,7 +72,7 @@ impl EdgeFileReader {
             if column >= expected_elements {
                 return Err(format!(
                     concat!(
-                        "The source column number passed was {} but",
+                        "The source column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
                     column,
@@ -112,7 +112,7 @@ impl EdgeFileReader {
             if column >= expected_elements {
                 return Err(format!(
                     concat!(
-                        "The destinations column number passed was {} but",
+                        "The destinations column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
                     column,
@@ -152,7 +152,7 @@ impl EdgeFileReader {
             if *etcn >= expected_elements {
                 return Err(format!(
                     concat!(
-                        "The edge types column number passed was {} but",
+                        "The edge types column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
                     etcn,
@@ -192,7 +192,7 @@ impl EdgeFileReader {
             if *wcn >= expected_elements {
                 return Err(format!(
                     concat!(
-                        "The weights column number passed was {} but",
+                        "The weights column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
                     wcn,
@@ -388,7 +388,7 @@ impl EdgeFileReader {
         if self.sources_column_number >= expected_elements {
             return Err(format!(
                 concat!(
-                    "The sources column number passed was {} but",
+                    "The sources column number passed was {} but ",
                     "the first parsable line has {} values."
                 ),
                 self.sources_column_number,
@@ -398,7 +398,7 @@ impl EdgeFileReader {
         if self.destinations_column_number >= expected_elements {
             return Err(format!(
                 concat!(
-                    "The destinations column number passed was {} but",
+                    "The destinations column number passed was {} but ",
                     "the first parsable line has {} values."
                 ),
                 self.destinations_column_number,

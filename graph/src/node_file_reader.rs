@@ -58,7 +58,7 @@ impl NodeFileReader {
             if column >= expected_number_of_lines {
                 return Err(format!(
                     concat!(
-                        "The nodes column number passed was {} but",
+                        "The nodes column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
                     column,
@@ -101,7 +101,7 @@ impl NodeFileReader {
             if *etcn >= expected_number_of_lines {
                 return Err(format!(
                     concat!(
-                        "The nodes types column number passed was {} but",
+                        "The nodes types column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
                     etcn,
