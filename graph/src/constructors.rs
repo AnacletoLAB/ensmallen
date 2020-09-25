@@ -254,7 +254,7 @@ pub(crate) fn build_graph(
         // we gradually destroy the tree while we fill the other structures
         // in this way we reduce the memory peak
         // the unwrap is guaranteed to succeed because we check if the tree is empty
-        let ((src, dst), metadata) = unique_edges_tree.pop_first().unwrap();
+        let ((src, dst), mut metadata) = unique_edges_tree.pop_first().unwrap();
 
         // fill the outbounds vector
         // this is a vector that have the offset of the last
@@ -285,7 +285,7 @@ pub(crate) fn build_graph(
         );
 
         // Reverse the metadata of the edge into the graph vectors
-        match metadata {
+        match &mut metadata {
             Some(m) => {
                 i += m.len();
                 m.for_each(|(weight, edge_type)| {
@@ -305,6 +305,7 @@ pub(crate) fn build_graph(
                 i += 1;
             }
         }
+        drop(metadata);
     }
     for o in &mut outbounds[last_src..] {
         *o = i;
