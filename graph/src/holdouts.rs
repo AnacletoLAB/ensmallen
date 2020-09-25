@@ -113,11 +113,7 @@ impl Graph {
             &mut unique_edges_tree,
             self.nodes.clone(),
             self.node_types.clone(),
-            if let Some(et) = &self.edge_types {
-                Some(et.vocabulary.clone())
-            } else {
-                None
-            },
+            None,
             self.is_directed,
         ))
     }

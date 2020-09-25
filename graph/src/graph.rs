@@ -240,7 +240,7 @@ impl Graph {
     ///
     pub fn overlaps(&self, graph: &Graph) -> Result<bool, String> {
         if self.has_edge_types() ^ graph.has_edge_types() {
-            return Err("One of the graph has edge types while the other has not. This is an undefined behaviour.".to_string());
+            return Err("One of the graph has edge types while the other has not. This is an undefined behaviour for the overalps function.".to_string());
         }
 
         Ok(graph

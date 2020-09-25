@@ -171,8 +171,13 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     let _ = graph.clone();
     // Testing negative edges generation
     let negatives = graph.sample_negatives(4, graph.get_edges_number(), true, verbose)?;
-    assert!(!graph.overlaps(&negatives)?);
-    assert!(!negatives.overlaps(&graph)?);
+    if !graph.has_edge_types() {
+        assert!(!graph.overlaps(&negatives)?);
+        assert!(!negatives.overlaps(&graph)?);
+    }
+    // Testing holdouts executed on negative edges.
+    let (neg_train, neg_test) = negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
+    default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
     // Testing subgraph generation
     let expected_nodes = (graph.get_nodes_number() - graph.singleton_nodes_number()) / 10;
     let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
@@ -275,7 +280,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(we.has_traps, graph.has_traps);
             assert_eq!(we.nodes, graph.nodes);
 
-            // expect errors for undefined behavior in overlap() and contains() 
+            // expect errors for undefined behavior in overlap() and contains()
             assert!(graph.overlaps(&we).is_err());
             assert!(graph.contains(&we).is_err());
         }
@@ -309,7 +314,10 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         }
     }
 
-    assert_eq!(graph.get_not_trap_nodes_number(), graph.not_trap_nodes.len());
+    assert_eq!(
+        graph.get_not_trap_nodes_number(),
+        graph.not_trap_nodes.len()
+    );
 
     Ok(())
 }
