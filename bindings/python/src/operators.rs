@@ -6,7 +6,7 @@ use pyo3::class::PyObjectProtocol;
 
 #[pyproto]
 impl PyNumberProtocol for EnsmallenGraph {
-    fn __add__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
+    fn __or__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pyex!(&lhs.graph | &rhs.graph)?,
         })
