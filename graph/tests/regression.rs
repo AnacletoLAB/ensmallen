@@ -147,7 +147,6 @@ fn test_regression10() {
 }
 
 #[test]
-/// An unknown cause is making the library crash on this file.
 fn test_regression11() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/11.tsv".to_string()).unwrap()
         .set_separator(Some(",".to_string()))
@@ -157,5 +156,18 @@ fn test_regression11() {
         .set_destinations_column_number(Some(1)).unwrap()
         .set_header(Some(false));
     let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let _ = graph::test_utilities::default_test_suite(&g, false);
+}
+
+#[test]
+fn test_regression12() {
+    let edges_reader = EdgeFileReader::new("tests/data/regression/12.tsv".to_string()).unwrap()
+        .set_separator(Some(",".to_string()))
+        .set_verbose(Some(false))
+        .set_sources_column_number(Some(0)).unwrap()
+        .set_destinations_column_number(Some(1)).unwrap()
+        .set_edge_types_column_number(Some(2)).unwrap()
+        .set_header(Some(false));
+    let g = Graph::from_csv(edges_reader, None, false).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }

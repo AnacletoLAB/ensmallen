@@ -74,7 +74,9 @@ impl Graph {
                     // that is currently considered would be a self-loop
                     // we proceed to push the destination node and mark the
                     // nodes as covered.
-                    if covered_nodes[node_to_explore] && (covered_nodes[dst] || node_to_explore == dst) {
+                    if covered_nodes[node_to_explore] && covered_nodes[dst]
+                        || node_to_explore == dst
+                    {
                         continue;
                     }
                     // We retrieve the nodes of the edge, so to handle in a better

@@ -323,7 +323,9 @@ impl Graph {
     /// }
     /// ```
     pub fn connected_components_number(&self) -> NodeT {
-        self.get_nodes_number() - self.spanning_tree(0, false).len()
+        let tree = self.spanning_tree(0, false);
+        println!("{:?}, {}", tree, self.get_nodes_number());
+        self.get_nodes_number() - tree.len()
     }
 
     /// Returns number of singleton nodes within the graph.
