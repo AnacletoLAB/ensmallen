@@ -96,7 +96,7 @@ pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameter
         .set_min_length(Some(1))?
         .set_verbose(Some(verbose))
         .set_seed(Some(43))
-        .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping())))
+        .set_dense_node_mapping(Some(graph.get_dense_node_mapping())))
 }
 
 /// Return WalksParameters to execute a second order walk.
@@ -109,7 +109,7 @@ pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParamete
         .set_explore_weight(Some(2.0))?
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
-        .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
+        .set_dense_node_mapping(Some(graph.get_dense_node_mapping()))
         .set_seed(Some(43)))
 }
 

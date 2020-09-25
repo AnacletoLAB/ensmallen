@@ -392,7 +392,7 @@ impl Graph {
     }
 
     /// Return mapping from instance not trap nodes to dense nodes.
-    pub fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
+    pub fn get_dense_node_mapping(&self) -> HashMap<NodeT, NodeT> {
         self.sources
             .iter()
             .chain(self.destinations.iter())

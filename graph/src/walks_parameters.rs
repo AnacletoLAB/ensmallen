@@ -26,7 +26,7 @@ pub struct WalksParameters {
     pub(crate) min_length: usize,
     pub(crate) verbose: bool,
     pub(crate) seed: NodeT,
-    pub(crate) dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
+    pub(crate) dense_node_mapping: Option<HashMap<NodeT, NodeT>>,
 }
 
 impl Default for WalkWeights {
@@ -116,7 +116,7 @@ impl WalksParameters {
             min_length: 1,
             seed: 42 ^ SEED_XOR,
             verbose: false,
-            dense_nodes_mapping: None,
+            dense_node_mapping: None,
         })
     }
 
@@ -182,20 +182,20 @@ impl WalksParameters {
         self
     }
 
-    /// Set the dense_nodes_mapping.
+    /// Set the dense_node_mapping.
     ///
     /// The nodes mapping primary porpose is to map a sparse set of nodes into
     /// a smaller dense set of nodes.
     ///
     /// # Arguments
     ///
-    /// * dense_nodes_mapping: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
+    /// * dense_node_mapping: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
     ///
-    pub fn set_dense_nodes_mapping(
+    pub fn set_dense_node_mapping(
         mut self,
-        dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
+        dense_node_mapping: Option<HashMap<NodeT, NodeT>>,
     ) -> WalksParameters {
-        self.dense_nodes_mapping = dense_nodes_mapping;
+        self.dense_node_mapping = dense_node_mapping;
         self
     }
 
@@ -283,10 +283,10 @@ impl WalksParameters {
             ));
         }
 
-        if let Some(dense_nodes_mapping) = &self.dense_nodes_mapping {
+        if let Some(dense_node_mapping) = &self.dense_node_mapping {
             if !(&graph.not_trap_nodes)
                 .into_par_iter()
-                .all(|node| dense_nodes_mapping.contains_key(&node))
+                .all(|node| dense_node_mapping.contains_key(&node))
             {
                 return Err(String::from(concat!(
                     "Given nodes mapping does not contain ",

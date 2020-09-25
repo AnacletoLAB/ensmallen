@@ -27,8 +27,8 @@ impl EnsmallenGraph {
             .set_iterations(extract_value!(kwargs, "iterations", usize)))?
             .set_min_length(extract_value!(kwargs, "min_length", usize))
         )?
-        .set_dense_nodes_mapping(
-            extract_value!(kwargs, "dense_nodes_mapping", HashMap<NodeT, NodeT>),
+        .set_dense_node_mapping(
+            extract_value!(kwargs, "dense_node_mapping", HashMap<NodeT, NodeT>),
         ))
     }
 }

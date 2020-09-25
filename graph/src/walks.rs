@@ -292,10 +292,10 @@ impl Graph {
                 .collect::<Vec<Vec<NodeT>>>()
         };
 
-        if let Some(dense_nodes_mapping) = &parameters.dense_nodes_mapping {
+        if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
             walks.par_iter_mut().for_each(|walk| {
                 walk.iter_mut()
-                    .for_each(|node| *node = *dense_nodes_mapping.get(node).unwrap())
+                    .for_each(|node| *node = *dense_node_mapping.get(node).unwrap())
             })
         }
 

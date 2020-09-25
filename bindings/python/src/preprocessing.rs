@@ -85,7 +85,7 @@ fn cooccurence_matrix(
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, window_size, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, seed, verbose)"]
+    #[text_signature = "($self, length, *, window_size, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, seed, verbose)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
     ///
     /// Parameters
@@ -122,10 +122,10 @@ impl EnsmallenGraph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
-    /// dense_nodes_mapping: Dict[int, int],
+    /// dense_node_mapping: Dict[int, int],
     ///     Mapping to use for converting sparse walk space into a dense space.
     ///     This object can be created using the method available from graph
-    ///     called `get_dense_nodes_mapping` that returns a mapping from
+    ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
     /// seed: int,
@@ -166,7 +166,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, batch_size, length, window_size, *, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_nodes_mapping, seed)"]
+    #[text_signature = "($self, batch_size, length, window_size, *, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, seed)"]
     /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
@@ -218,10 +218,10 @@ impl EnsmallenGraph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
-    /// dense_nodes_mapping: Dict[int, int],
+    /// dense_node_mapping: Dict[int, int],
     ///     Mapping to use for converting sparse walk space into a dense space.
     ///     This object can be created using the method available from graph
-    ///     called `get_dense_nodes_mapping` that returns a mapping from
+    ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
     /// seed: int,

@@ -120,8 +120,8 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Dict with mapping from not trap nodes to dense range of nodes.
     ///
-    fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
-        self.graph.get_dense_nodes_mapping()
+    fn get_dense_node_mapping(&self) -> HashMap<NodeT, NodeT> {
+        self.graph.get_dense_node_mapping()
     }
 
     #[getter]

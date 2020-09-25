@@ -101,7 +101,7 @@ pub fn build_walk_parameters_list(parameters: &[&str]) -> Vec<String> {
         "seed",
         "verbose",
         "iterations",
-        "dense_nodes_mapping",
+        "dense_node_mapping",
     ];
     default
         .iter()
