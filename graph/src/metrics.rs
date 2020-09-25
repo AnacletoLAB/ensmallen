@@ -45,7 +45,7 @@ impl Graph {
     ///
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The jaccard_index between node 1 and node 2 is {}", graph.jaccard_index(1, 2).unwrap());
+    /// println!("The Jaccard Index between node 1 and node 2 is {}", graph.jaccard_index(1, 2).unwrap());
     /// ```
     pub fn jaccard_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
         if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
@@ -91,6 +91,10 @@ impl Graph {
     /// [D. Liben-Nowell, J. Kleinberg.
     /// The Link Prediction Problem for Social Networks (2004).](http://www.cs.cornell.edu/home/kleinber/link-pred.pdf)
     ///
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The Adamic/Adar Index between node 1 and node 2 is {}", graph.adamic_adar_index(1, 2).unwrap());
+    /// ```
     pub fn adamic_adar_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
         if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
             return Err(format!(
@@ -140,6 +144,10 @@ impl Graph {
     /// must support all kind of graphs, the sinks node are excluded from
     /// the computation because they would result in an infinity.
     ///
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The Resource Allocation Index between node 1 and node 2 is {}", graph.resource_allocation_index(1, 2).unwrap());
+    /// ```
     pub fn resource_allocation_index(&self, one: NodeT, two: NodeT) -> Result<f64, String> {
         if one >= self.get_nodes_number() || two >= self.get_nodes_number() {
             return Err(format!(
@@ -175,6 +183,10 @@ impl Graph {
     ///
     /// THIS IS EXPERIMENTAL AND MUST BE PROVEN!
     ///
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The Graph rate is {}", graph.traps_rate());
+    /// ```
     pub fn traps_rate(&self) -> f64 {
         (0..self.get_nodes_number())
             .into_par_iter()
@@ -195,6 +207,10 @@ impl Graph {
     }
 
     /// Returns mean node degree of the graph.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The mean node degree of the graph is  {}", graph.degrees_mean());
+    /// ```
     pub fn degrees_mean(&self) -> f64 {
         (0..self.get_nodes_number())
             .into_par_iter()
@@ -204,6 +220,10 @@ impl Graph {
     }
 
     /// Returns median node degree of the graph
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The median node degree of the graph is  {}", graph.degrees_median());
+    /// ```
     pub fn degrees_median(&self) -> NodeT {
         let mut degrees = self.degrees();
         degrees.par_sort_unstable();
@@ -211,16 +231,28 @@ impl Graph {
     }
 
     /// Returns maximum node degree of the graph
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The maximum node degree of the graph is  {}", graph.degrees_max());
+    /// ```
     pub fn degrees_max(&self) -> NodeT {
         *self.degrees().iter().max().unwrap()
     }
 
     /// Returns minimum node degree of the graph
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The minimum node degree of the graph is  {}", graph.degrees_min());
+    /// ```
     pub fn degrees_min(&self) -> NodeT {
         *self.degrees().iter().min().unwrap()
     }
 
     /// Returns mode node degree of the graph
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The mode node degree of the graph is  {}", graph.degrees_mode());
+    /// ```
     pub fn degrees_mode(&self) -> NodeT {
         let mut occurrences: HashMap<NodeT, usize> = HashMap::new();
 
@@ -236,6 +268,10 @@ impl Graph {
     }
 
     /// Returns number of self-loops.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The number of self-loops in the graph is  {}", graph.get_selfloops_number());
+    /// ```
     pub fn get_selfloops_number(&self) -> usize {
         (0..self.get_nodes_number())
             .into_par_iter()
@@ -244,11 +280,19 @@ impl Graph {
     }
 
     /// Returns rate of self-loops.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The rate of self-loops in the graph is  {}", graph.get_selfloops_rate());
+    /// ```
     pub fn get_selfloops_rate(&self) -> f64 {
         self.get_selfloops_number() as f64 / self.get_edges_number() as f64
     }
 
     /// Returns rate of bidirectional edges.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The rate of bidirectional edges in the graph is  {}", graph.bidirectional_rate());
+    /// ```
     pub fn bidirectional_rate(&self) -> f64 {
         self.unique_edges
             .keys()
@@ -257,22 +301,54 @@ impl Graph {
             / self.unique_edges.len() as f64
     }
 
-    /// Returns number of connected components in graph.
-    pub fn connected_components_number(&self, include_all_edge_types: bool) -> NodeT {
-        self.get_nodes_number() - self.spanning_tree(0, include_all_edge_types).len()
+    /// Returns number of connected components in graph. 
+    /// If the graph is or isn't a multigraph the edge types are not considered; if any edge exists, it is considered
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// let n = graph.get_mean_number_of_types_for_edge();
+    /// if n > 1.0 { 
+    ///     println!("The rate of connected components  in the multigraph is  {}", graph.connected_components_number());
+    /// }else{
+    ///     println!("The rate of connected components in the graph is {} ", graph.connected_components_number());
+    /// }
+    /// ```
+    /// note that, for understanding whether graph is a multigraph, instead of computing the mean number of edge types in the graph (n) and checking that n>1
+    /// we could directly use the function is_multigraph(&self):
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// if graph.is_multigraph() { 
+    ///     println!("The rate of connected components  in the multigraph is  {}", graph.connected_components_number());
+    /// }else{
+    ///     println!("The rate of connected components in the graph is {} ", graph.connected_components_number());
+    /// }
+    /// ```
+    pub fn connected_components_number(&self) -> NodeT {
+        self.get_nodes_number() - self.spanning_tree(0, false).len()
     }
 
     /// Returns number of singleton nodes within the graph.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The graph contains {} singleton nodes", graph.singleton_nodes_number());
+    /// ```
     pub fn singleton_nodes_number(&self) -> NodeT {
         self.singletons_number
     }
 
     /// Returns density of the graph.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The graph density is {}", graph.density());
+    /// ```
     pub fn density(&self) -> f64 {
         self.get_edges_number() as f64 / (self.get_nodes_number().pow(2)) as f64
     }
 
     /// Returns the mean number of types for each edge.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The mean number of edge types is {}", graph.get_mean_number_of_types_for_edge());
+    /// ```
     pub fn get_mean_number_of_types_for_edge(&self) -> f64 {
         self.unique_edges.values().map(|data| {
             if let Some(edt) = &data.edge_types {
@@ -284,6 +360,10 @@ impl Graph {
     }
 
     /// Returns the number of edges that have multiple types.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The number of edge with multiple types is {}", graph.get_multigraph_edges_number());
+    /// ```
     pub fn get_multigraph_edges_number(&self) -> usize {
         self.unique_edges.values().filter(|data| {
             if let Some(edt) = &data.edge_types {
@@ -294,7 +374,11 @@ impl Graph {
         }).count()
     }
 
-    /// Returns the ratio of edges that have multiple types.
+    /// Returns the ratio r_multi of edges that have multiple types; r_multi = (number of edges having multiple types)/(number of edges) 
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The percentage of edges having multiple types is {}", graph.get_multigraph_edges_ratio());
+    /// ```
     pub fn get_multigraph_edges_ratio(&self) -> f64 {
         self.get_multigraph_edges_number() as f64 /  self.get_edges_number() as f64
     }
@@ -316,6 +400,10 @@ impl Graph {
     /// * selfloops_rate: pecentage of edges that are selfloops.
     /// * bidirectional_rate: rate of edges that are bidirectional.
     ///
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// graph.report();
+    /// ```
     pub fn report(&self) -> DefaultHashMap<&str, String> {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
         report.insert("degrees_median", self.degrees_median().to_string());
@@ -346,7 +434,7 @@ impl Graph {
         report.insert("bidirectional_rate", self.bidirectional_rate().to_string());
         report.insert(
             "connected_components_number",
-            self.connected_components_number(false).to_string(),
+            self.connected_components_number().to_string(),
         );
         report.insert(
             "strongly_connected_components_number",

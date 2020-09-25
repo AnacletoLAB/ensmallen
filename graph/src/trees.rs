@@ -94,7 +94,7 @@ impl Graph {
                             None => vec![None],
                         }
                     } else {
-                        // Otherwise we only consider the one.
+                        // Otherwise we only consider the edge itself
                         vec![if let Some(et) = &self.edge_types {
                             Some(et.ids[neighbour])
                         } else {
