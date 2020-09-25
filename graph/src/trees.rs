@@ -89,7 +89,7 @@ impl Graph {
                     // when the user intends to execute link-prediction on the resulting embedding
                     // and not link-type prediction, we include all the edges between the considered nodes.
                     let edge_types = if include_all_edge_types {
-                        match self.get_link_edge_types(src, dst) {
+                        match self.get_link_edge_types(node_to_explore, dst) {
                             Some(ets) => ets.iter().map(|et| Some(*et)).collect(),
                             None => vec![None],
                         }

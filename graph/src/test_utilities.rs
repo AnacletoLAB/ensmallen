@@ -135,7 +135,6 @@ pub fn default_holdout_test_suite(
     train: &Graph,
     test: &Graph,
 ) -> Result<(), String> {
-    println!("{}, {}, {}", graph.get_edges_number(), train.get_edges_number(), test.get_edges_number());
     for g in &[graph, train, test] {
         validate_vocabularies(g);
     }
@@ -188,10 +187,10 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
 
     // Testing main holdout mechanisms
     for include_all_edge_types in &[false, true] {
-        println!("include_all_edge_types: {}", include_all_edge_types);
         let (train, test) = graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) = graph.connected_holdout(4, 0.8, *include_all_edge_types, verbose)?;
+        assert_eq!(graph.connected_components_number(), train.connected_components_number());
         default_holdout_test_suite(graph, &train, &test)?;
     }
     // Testing cloning
