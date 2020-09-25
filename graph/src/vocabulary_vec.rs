@@ -1,6 +1,6 @@
 use super::*;
 
-#[derive(Clone, PartialEq, Default)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub struct VocabularyVec<IndexT: ToFromUsize> {
     pub ids: Vec<IndexT>,
     pub vocabulary: Vocabulary<IndexT>,

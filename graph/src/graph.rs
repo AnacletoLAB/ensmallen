@@ -13,7 +13,7 @@ use std::collections::HashMap;
 ///
 /// # Examples
 ///
-#[derive(Clone, Getters, PartialEq)]
+#[derive(Debug, Clone, Getters, PartialEq)]
 pub struct Graph {
     // properties
     /// if the graph has traps or not

@@ -207,6 +207,12 @@ impl Graph {
             }
         }
 
+        if train.is_empty() {
+            return Err(String::from(
+                "With given holdouts parameters the train partition results empty.",
+            ));
+        }
+
         if valid.len() < valid_edges_number {
             let actual_valid_edges_number = valid.len();
             let valid_percentage = 1.0 - train_percentage;
