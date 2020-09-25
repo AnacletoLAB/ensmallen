@@ -44,10 +44,10 @@ fn generic_operator(
                 // we filter out the edges that were previously added to avoid
                 // introducing duplicates.
                 if let Some(t) = two {
-                    return !t.check_edge_overlap(*src, *dst, *edge_type);
+                    return t.get_edge_id(*src, *dst, *edge_type).is_err();
                 }
                 if let Some(t) = three {
-                    return t.check_edge_overlap(*src, *dst, *edge_type);
+                    return t.get_edge_id(*src, *dst, *edge_type).is_ok();
                 }
                 true
             })

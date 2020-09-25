@@ -1,8 +1,8 @@
 use super::types::*;
 use super::*;
-use std::collections::{HashMap, HashSet};
 use rayon::prelude::*;
 use std::collections::HashMap as DefaultHashMap;
+use std::collections::{HashMap, HashSet};
 
 /// # Properties and measurements of the graph
 impl Graph {
@@ -301,12 +301,12 @@ impl Graph {
             / self.unique_edges.len() as f64
     }
 
-    /// Returns number of connected components in graph. 
+    /// Returns number of connected components in graph.
     /// If the graph is or isn't a multigraph the edge types are not considered; if any edge exists, it is considered
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// let n = graph.get_mean_number_of_types_for_edge();
-    /// if n > 1.0 { 
+    /// if n > 1.0 {
     ///     println!("The rate of connected components  in the multigraph is  {}", graph.connected_components_number());
     /// }else{
     ///     println!("The rate of connected components in the graph is {} ", graph.connected_components_number());
@@ -316,7 +316,7 @@ impl Graph {
     /// we could directly use the function is_multigraph(&self):
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// if graph.is_multigraph() { 
+    /// if graph.is_multigraph() {
     ///     println!("The rate of connected components  in the multigraph is  {}", graph.connected_components_number());
     /// }else{
     ///     println!("The rate of connected components in the graph is {} ", graph.connected_components_number());
@@ -350,13 +350,11 @@ impl Graph {
     /// println!("The mean number of edge types is {}", graph.get_mean_number_of_types_for_edge());
     /// ```
     pub fn get_mean_number_of_types_for_edge(&self) -> f64 {
-        self.unique_edges.values().map(|data| {
-            if let Some(edt) = &data.edge_types {
-                edt.len()
-            } else {
-                0
-            }
-        }).sum::<usize>() as f64 / self.get_edges_number() as f64
+        self.unique_edges
+            .keys()
+            .map(|(src, dst)| self.get_edge_ids(*src, *dst).unwrap().len())
+            .sum::<usize>() as f64
+            / self.get_edges_number() as f64
     }
 
     /// Returns the number of edges that have multiple types.
@@ -365,22 +363,19 @@ impl Graph {
     /// println!("The number of edge with multiple types is {}", graph.get_multigraph_edges_number());
     /// ```
     pub fn get_multigraph_edges_number(&self) -> usize {
-        self.unique_edges.values().filter(|data| {
-            if let Some(edt) = &data.edge_types {
-                edt.len() > 1
-            } else {
-                false
-            }
-        }).count()
+        self.unique_edges
+            .keys()
+            .filter(|(src, dst)| self.get_edge_ids(*src, *dst).unwrap().len() > 1)
+            .count()
     }
 
-    /// Returns the ratio r_multi of edges that have multiple types; r_multi = (number of edges having multiple types)/(number of edges) 
+    /// Returns the ratio r_multi of edges that have multiple types; r_multi = (number of edges having multiple types)/(number of edges)
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The percentage of edges having multiple types is {}", graph.get_multigraph_edges_ratio());
     /// ```
     pub fn get_multigraph_edges_ratio(&self) -> f64 {
-        self.get_multigraph_edges_number() as f64 /  self.get_edges_number() as f64
+        self.get_multigraph_edges_number() as f64 / self.get_edges_number() as f64
     }
 
     /// Returns report relative to the graph metrics
@@ -417,9 +412,18 @@ impl Graph {
         report.insert("singleton_nodes", self.singleton_nodes_number().to_string());
         report.insert("is_directed", self.is_directed.to_string());
         report.insert("is_multigraph", self.is_multigraph().to_string());
-        report.insert("multigraph_edges_number", self.get_multigraph_edges_number().to_string());
-        report.insert("multigraph_edges_ratio", self.get_multigraph_edges_ratio().to_string());
-        report.insert("mean_number_of_types_for_edge", self.get_mean_number_of_types_for_edge().to_string());
+        report.insert(
+            "multigraph_edges_number",
+            self.get_multigraph_edges_number().to_string(),
+        );
+        report.insert(
+            "multigraph_edges_ratio",
+            self.get_multigraph_edges_ratio().to_string(),
+        );
+        report.insert(
+            "mean_number_of_types_for_edge",
+            self.get_mean_number_of_types_for_edge().to_string(),
+        );
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),

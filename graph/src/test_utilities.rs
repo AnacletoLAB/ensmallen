@@ -115,30 +115,56 @@ pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParamete
         .set_seed(Some(43)))
 }
 
+fn validate_vocabularies(graph: &Graph) {
+    if let Some(ets) = &graph.edge_types {
+        assert_eq!(!ets.ids.is_empty(), graph.has_edge_types());
+    }
+
+    if let Some(nts) = &graph.node_types {
+        assert_eq!(!nts.ids.is_empty(), graph.has_node_types());
+    }
+
+    if let Some(ws) = &graph.weights {
+        assert_eq!(!ws.is_empty(), graph.has_weights());
+    }
+}
+
 /// Executes the default test suite for holdouts.
 pub fn default_holdout_test_suite(
     graph: &Graph,
     train: &Graph,
     test: &Graph,
 ) -> Result<(), String> {
+    println!("{}, {}, {}", graph.get_edges_number(), train.get_edges_number(), test.get_edges_number());
+    for g in &[graph, train, test] {
+        validate_vocabularies(g);
+    }
     assert!(!train.overlaps(&test)?);
     assert!(!test.overlaps(&train)?);
     assert!(graph.contains(&train)?);
     assert!(graph.contains(&test)?);
     let summed = (train | test)?;
+    validate_vocabularies(&summed);
     assert!(summed.contains(&graph)?);
     let subtracted = (graph - test)?;
+    validate_vocabularies(&subtracted);
+
     assert!(subtracted.contains(&train)?);
     assert!(!subtracted.overlaps(&test)?);
     let xorred = (graph ^ test)?;
+    validate_vocabularies(&xorred);
     assert!(xorred.contains(&train)?);
     assert!(!xorred.overlaps(&test)?);
-    assert!((graph & test)?.contains(&test)?);
+    let anded = (graph & test)?;
+    validate_vocabularies(&anded);
+    assert!(anded.contains(&test)?);
     Ok(())
 }
 
 /// Executes near-complete test of all functions for the given graph.
 pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
+    // Testing that vocabularies are properly loaded
+    validate_vocabularies(graph);
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph, verbose)?;
     assert_eq!(
@@ -161,18 +187,18 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     );
 
     // Testing main holdout mechanisms
-    for include_all_edge_types in &[true, false] {
-        let (train, test) =
-            graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
+    for include_all_edge_types in &[false, true] {
+        println!("include_all_edge_types: {}", include_all_edge_types);
+        let (train, test) = graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) = graph.connected_holdout(4, 0.8, *include_all_edge_types, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
-        assert!(train != test);
     }
     // Testing cloning
     let _ = graph.clone();
     // Testing negative edges generation
     let negatives = graph.sample_negatives(4, graph.get_edges_number(), true, verbose)?;
+    validate_vocabularies(&negatives);
     if !graph.has_edge_types() {
         assert!(!graph.overlaps(&negatives)?);
         assert!(!negatives.overlaps(&graph)?);
@@ -275,6 +301,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         let without_edges = graph.drop_edge_types();
         assert_eq!(without_edges.is_ok(), graph.has_edge_types());
         if let Some(we) = &without_edges.ok() {
+            validate_vocabularies(we);
             assert_eq!(we.has_edge_types(), false);
             assert_eq!(we.has_weights(), graph.has_weights());
             assert!(we.node_types == graph.node_types);
@@ -291,6 +318,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         let without_nodes = graph.drop_node_types();
         assert_eq!(without_nodes.is_ok(), graph.has_node_types());
         if let Some(wn) = &without_nodes.ok() {
+            validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
             assert!(wn.edge_types == graph.edge_types);
             assert_eq!(wn.weights, graph.weights);
@@ -305,6 +333,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         let without_weights = graph.drop_weights();
         assert_eq!(without_weights.is_ok(), graph.has_weights());
         if let Some(ww) = &without_weights.ok() {
+            validate_vocabularies(ww);
             assert_eq!(ww.has_weights(), false);
             assert!(ww.node_types == graph.node_types);
             assert!(ww.edge_types == graph.edge_types);

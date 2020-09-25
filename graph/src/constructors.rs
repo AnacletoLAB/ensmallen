@@ -241,7 +241,7 @@ pub(crate) fn build_graph(
     let mut not_trap_nodes: Vec<NodeT> = Vec::new();
     let mut destinations: Vec<NodeT> = Vec::new();
     let mut weights: Vec<WeightT> = Vec::new();
-    let mut unique_edges: HashMap<(NodeT, NodeT), EdgeMetadata> = HashMap::new();
+    let mut unique_edges: HashMap<(NodeT, NodeT), EdgeT> = HashMap::new();
     let mut edge_types_vector: Vec<NodeTypeT> = Vec::new();
 
     // now that the tree is built
@@ -273,16 +273,7 @@ pub(crate) fn build_graph(
         }
 
         // initalize the hashmap
-        unique_edges.insert(
-            (src, dst),
-            EdgeMetadata {
-                edge_id: sources.len(),
-                edge_types: match &metadata {
-                    Some(m) => m.to_edge_types_set(),
-                    None => None,
-                },
-            },
-        );
+        unique_edges.insert((src, dst), sources.len());
 
         // Reverse the metadata of the edge into the graph vectors
         match &mut metadata {
@@ -342,9 +333,9 @@ pub(crate) fn build_graph(
 /// # Graph Constructors
 impl Graph {
     /// Create new Graph object.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * edges_iterator: impl Iterator<Item = Result<(String, String, Option<String>, Option<WeightT>), String>>,
     ///     Iterator of the edges.
     /// * nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
@@ -359,7 +350,7 @@ impl Graph {
     ///     Wether to skip self loops while reading the the edges iterator.
     pub fn new(
         edges_iterator: impl Iterator<
-            Item = Result<(String, String, Option<String>, Option<WeightT>), String>
+            Item = Result<(String, String, Option<String>, Option<WeightT>), String>,
         >,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
         directed: bool,
