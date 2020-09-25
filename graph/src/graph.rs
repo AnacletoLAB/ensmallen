@@ -256,15 +256,7 @@ impl Graph {
                     src,
                     dst,
                     match &graph.edge_types {
-                        Some(et) => {
-                            // The ids list can be empty with a filled vocabulary when
-                            // handling negative edges graphs.
-                            if et.ids.is_empty() {
-                                None
-                            } else {
-                                Some(et.ids[edge_id])
-                            }
-                        }
+                        Some(et) => Some(et.ids[edge_id]),
                         None => None,
                     },
                 )
