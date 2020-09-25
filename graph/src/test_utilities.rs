@@ -55,6 +55,7 @@ pub fn load_ppi(
                 .set_ignore_duplicates(Some(true))
                 .set_separator(Some("\t".to_string()))
                 .set_header(Some(true))
+                .set_max_rows_number(Some(100000))
                 .set_rows_to_skip(Some(0)),
         )
     } else {
@@ -83,6 +84,7 @@ pub fn load_ppi(
             None
         })?
         .set_default_edge_type(Some("Kebab".to_string()))
+        .set_max_rows_number(Some(100000))
         .set_default_weight(Some(5.0))
         .set_skip_self_loops(Some(skip_self_loops));
 
