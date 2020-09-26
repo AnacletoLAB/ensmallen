@@ -100,12 +100,8 @@ impl Graph {
                 && !self.has_edge(src, dst)
                 && !unique_edges_tree.contains_key(&(src, dst))
             {
-                unique_edges_tree.insert((src, dst), None);
-                pb.inc(1);
-                if !self.is_directed {
-                    unique_edges_tree.insert((dst, src), None);
-                    pb.inc(1);
-                }
+                unique_edges_tree.extend(self, src, dst, None, None, false);
+                pb.inc(1 + !self.is_directed as u64);
             }
         }
         pb.finish();
@@ -113,11 +109,7 @@ impl Graph {
             &mut unique_edges_tree,
             self.nodes.clone(),
             self.node_types.clone(),
-            if let Some(et) = &self.edge_types {
-                Some(et.vocabulary.clone())
-            } else {
-                None
-            },
+            None,
             self.is_directed,
         ))
     }
@@ -138,6 +130,12 @@ impl Graph {
 
         let valid_edges_number =
             (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
+
+        if valid_edges_number == 0 {
+            return Err(String::from(
+                "With given train percentage, the validation set will remain empty with the current graph.",
+            ));
+        }
 
         let pb = if verbose {
             let pb = ProgressBar::new(self.get_edges_number() as u64);
@@ -202,11 +200,17 @@ impl Graph {
 
             // We stop adding edges when we have reached the minimum amount.
             if user_condition(src, dst, edge_type) && valid.len() < valid_edges_number {
-                valid.extend(&self, src, dst, edge_type, weight, include_all_edge_types);
+                valid.extend(self, src, dst, edge_type, weight, include_all_edge_types);
             } else {
                 // Otherwise we add the edges to the training set.
-                train.extend(&self, src, dst, edge_type, weight, include_all_edge_types);
+                train.extend(self, src, dst, edge_type, weight, include_all_edge_types);
             }
+        }
+
+        if train.is_empty() {
+            return Err(String::from(
+                "With given holdouts parameters the train partition results empty.",
+            ));
         }
 
         if valid.len() < valid_edges_number {
@@ -220,7 +224,7 @@ impl Graph {
                     "With the given configuration for the holdout, it is not possible to ",
                     "generate a validation set composed of {valid_edges_number} edges from the current graph.\n",
                     "The validation set can be composed of at most {actual_valid_edges_number} edges.\n",
-                    "The acual train/valid split percentages, with the current configuration,",
+                    "The actual train/valid split percentages, with the current configuration,",
                     "would not be {train_percentage}/{valid_percentage} but {actual_train_percentage}/{actual_valid_percentage}.\n",
                     "If you really want to do this, you can pass the argument:\n",
                     "train_percentage: {actual_train_percentage}\n",
@@ -317,13 +321,14 @@ impl Graph {
             ));
         }
 
-        self.holdout(
+        let (train, test) = self.holdout(
             seed,
             train_percentage,
             include_all_edge_types,
-            |src, dst, edge_type| tree.contains(&(src, dst, edge_type)),
+            |src, dst, edge_type| !tree.contains(&(src, dst, edge_type)),
             verbose,
-        )
+        )?;
+        Ok((train, test))
     }
 
     /// Returns random holdout for training ML algorithms on the graph edges.
@@ -380,16 +385,7 @@ impl Graph {
                 // If a minimum number of overlaps was provided and the current
                 // edge has not the required minimum amount of overlaps.
                 if let Some(mno) = min_number_overlaps {
-                    if self
-                        .unique_edges
-                        .get(&(src, dst))
-                        .unwrap()
-                        .edge_types
-                        .as_ref()
-                        .unwrap()
-                        .len()
-                        < mno
-                    {
+                    if self.get_edge_ids(src, dst).unwrap().len() < mno {
                         return false;
                     }
                 }
@@ -478,10 +474,22 @@ impl Graph {
                         stack.push(dst);
                     }
 
+                    let edge_type = if let Some(et) = &self.edge_types {
+                        Some(et.ids[edge_id])
+                    } else {
+                        None
+                    };
+
+                    let weight = if let Some(w) = &self.weights {
+                        Some(w[edge_id])
+                    } else {
+                        None
+                    };
+
                     unique_nodes.insert(*node);
                     unique_nodes.insert(dst);
 
-                    graph_data.extend(&self, src, dst, None, None, true);
+                    graph_data.extend(&self, src, dst, edge_type, weight, true);
                     // If we reach the desired number of unique nodes we can stop the iteration.
                     if unique_nodes.len() >= nodes_number {
                         break 'outer;

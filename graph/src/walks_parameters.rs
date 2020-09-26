@@ -3,6 +3,7 @@ use rayon::prelude::*;
 use std::collections::HashMap;
 
 #[derive(Clone)]
+/// Struct to wrap walk weights.
 pub struct WalkWeights {
     pub(crate) return_weight: ParamsT,
     pub(crate) explore_weight: ParamsT,
@@ -11,22 +12,27 @@ pub struct WalkWeights {
 }
 
 #[derive(Clone)]
+/// Struct to wrap parameters relative to a single walk.
 pub struct SingleWalkParameters {
     pub(crate) length: usize,
     pub(crate) weights: WalkWeights,
 }
 
 #[derive(Clone)]
+/// Struct to wrap parameters relative to a set of walks.
 pub struct WalksParameters {
     pub(crate) single_walk_parameters: SingleWalkParameters,
     pub(crate) iterations: usize,
     pub(crate) min_length: usize,
     pub(crate) verbose: bool,
     pub(crate) seed: NodeT,
-    pub(crate) dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
+    pub(crate) dense_node_mapping: Option<HashMap<NodeT, NodeT>>,
 }
 
 impl Default for WalkWeights {
+    /// Create new WalkWeights object.
+    /// 
+    /// The default WalkWeights object is parametrized to execute a first-order walk.
     fn default() -> WalkWeights {
         WalkWeights {
             return_weight: 1.0,
@@ -74,11 +80,18 @@ impl WalkWeights {
 }
 
 impl SingleWalkParameters {
-    pub fn new(length: usize, weights: WalkWeights) -> Result<SingleWalkParameters, String> {
+    /// Create new WalksParameters object.
+    /// 
+    /// By default the object is parametrized for a simple first-order walk.
+    /// 
+    /// # Arguments
+    /// 
+    /// * length: usize - Maximal length of the walk.
+    pub fn new(length: usize) -> Result<SingleWalkParameters, String> {
         if length == 0 {
             return Err(String::from("The provided lenght for the walk is zero!"));
         }
-        Ok(SingleWalkParameters { length, weights })
+        Ok(SingleWalkParameters { length, weights:WalkWeights::default() })
     }
 
     /// Return boolean value representing if walk is of first order.
@@ -87,15 +100,23 @@ impl SingleWalkParameters {
     }
 }
 
+/// Setters for the Walk's parameters
 impl WalksParameters {
+    /// Create new WalksParameters object.
+    /// 
+    /// By default the object is parametrized for a simple first-order walk.
+    /// 
+    /// # Arguments
+    /// 
+    /// * length: usize - Maximal length of the walk.
     pub fn new(length: usize) -> Result<WalksParameters, String> {
         Ok(WalksParameters {
-            single_walk_parameters: SingleWalkParameters::new(length, WalkWeights::default())?,
+            single_walk_parameters: SingleWalkParameters::new(length)?,
             iterations: 1,
             min_length: 1,
             seed: 42 ^ SEED_XOR,
             verbose: false,
-            dense_nodes_mapping: None,
+            dense_node_mapping: None,
         })
     }
 
@@ -161,20 +182,20 @@ impl WalksParameters {
         self
     }
 
-    /// Set the dense_nodes_mapping.
+    /// Set the dense_node_mapping.
     ///
     /// The nodes mapping primary porpose is to map a sparse set of nodes into
     /// a smaller dense set of nodes.
     ///
     /// # Arguments
     ///
-    /// * dense_nodes_mapping: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
+    /// * dense_node_mapping: Option<HashMap<NodeT, NodeT>> - mapping for the mapping the nodes of the walks.
     ///
-    pub fn set_dense_nodes_mapping(
+    pub fn set_dense_node_mapping(
         mut self,
-        dense_nodes_mapping: Option<HashMap<NodeT, NodeT>>,
+        dense_node_mapping: Option<HashMap<NodeT, NodeT>>,
     ) -> WalksParameters {
-        self.dense_nodes_mapping = dense_nodes_mapping;
+        self.dense_node_mapping = dense_node_mapping;
         self
     }
 
@@ -262,10 +283,10 @@ impl WalksParameters {
             ));
         }
 
-        if let Some(dense_nodes_mapping) = &self.dense_nodes_mapping {
+        if let Some(dense_node_mapping) = &self.dense_node_mapping {
             if !(&graph.not_trap_nodes)
                 .into_par_iter()
-                .all(|node| dense_nodes_mapping.contains_key(&node))
+                .all(|node| dense_node_mapping.contains_key(&node))
             {
                 return Err(String::from(concat!(
                     "Given nodes mapping does not contain ",

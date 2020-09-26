@@ -127,8 +127,8 @@ impl EnsmallenGraph {
     ///     If a non None value is passed, the graph MUST be an heterogeneous graph
     ///     with multiple edge types, otherwise an exception will be raised.
     /// min_number_overlaps: int = None,
-    ///     The minimum number of overlapping edges for an egde to be put into the validation set.
-    ///     If the value passed is None (default value) any egde can be put into the validation set.
+    ///     The minimum number of overlapping edges for an edge to be put into the validation set.
+    ///     If the value passed is None (default value) any edge can be put into the validation set.
     ///     If a non None value is passed, the graph MUST be a multi-graph, otherwise an exception will be raised.
     /// verbose: bool = True,
     ///     Wethever to show the loading bar.
@@ -139,7 +139,7 @@ impl EnsmallenGraph {
     ///     If the given train percentage is invalid, for example less or equal to 0
     ///     or greater than one.
     /// ValueError,
-    ///     If egde types are required but graph is not heterogeneous.
+    ///     If edge types are required but graph is not heterogeneous.
     /// ValueError,
     ///     If given edge types do not exist.
     /// ValueError,

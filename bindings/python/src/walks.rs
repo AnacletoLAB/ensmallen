@@ -4,7 +4,7 @@ use graph::NodeT;
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, quantity, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, seed, verbose, iterations, dense_nodes_mapping)"]
+    #[text_signature = "($self, length, quantity, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, seed, verbose, iterations, dense_node_mapping)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -45,10 +45,10 @@ impl EnsmallenGraph {
     ///     Wethever to show or not the loading bar of the walks.
     /// iterations: int = 1,
     ///     Number of cycles on the graphs to execute.
-    /// dense_nodes_mapping: Dict[int, int] = None,
+    /// dense_node_mapping: Dict[int, int] = None,
     ///     Mapping to use for converting sparse walk space into a dense space.
     ///     This object can be created using the method available from graph
-    ///     called `get_dense_nodes_mapping` that returns a mapping from
+    ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
     ///

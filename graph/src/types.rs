@@ -3,58 +3,92 @@ use std::collections::btree_map::Entry;
 use std::collections::{BTreeMap, HashSet};
 
 // Types used to represent edges, nodes and their types.
+/// Type used to index the Nodes.
 pub type NodeT = usize;
-pub type EdgeT = usize;
-pub type WeightT = f64;
-pub type ParamsT = f64;
+/// Type used to index the Node Types.
 pub type NodeTypeT = u16;
+/// Type used to index the Edges.
+pub type EdgeT = usize;
+/// Type used to index the Edge Types.
 pub type EdgeTypeT = u16;
+/// Type used for the weights of the edges.
+pub type WeightT = f64;
+/// Type used for the parameters of the walk such as the return weight (p),
+/// and the explore weight (q).
+pub type ParamsT = f64;
+/// Type used to save contexts used for Skipgram and CBOW.
 pub type Contexts = Vec<Vec<NodeT>>;
+/// Type used to save a group of words indices.
 pub type Words = Vec<NodeT>;
+/// Type used to save the frequencies of words
 pub type Frequencies = Vec<f64>;
 
 /// Custom BTreeMap with some helper methods
 pub(crate) struct GraphDictionary {
     tree: BTreeMap<(NodeT, NodeT), Option<ConstructorEdgeMetadata>>,
+    edges: usize,
 }
 
 impl GraphDictionary {
     pub(crate) fn new() -> GraphDictionary {
         GraphDictionary {
             tree: BTreeMap::new(),
+            edges: 0,
         }
     }
 
+    /// Return number of elements currently present in tree.
     pub(crate) fn len(&self) -> usize {
-        self.tree.len()
+        self.edges
     }
 
+    /// Return ConstructorEdgeMetadata if present.
+    ///
+    /// # Arguments
+    ///
+    /// * key: &(NodeT, NodeT) - The tuple of nodes forming the dictionary key.
     pub(crate) fn get(&self, key: &(NodeT, NodeT)) -> Option<&Option<ConstructorEdgeMetadata>> {
         self.tree.get(key)
     }
 
+    /// Return boolean representing if given key is present within tree.
+    ///
+    /// # Arguments
+    ///
+    /// * key: &(NodeT, NodeT) - The tuple of nodes to check existance for.
     pub(crate) fn contains_key(&self, key: &(NodeT, NodeT)) -> bool {
         self.tree.contains_key(key)
     }
 
+    /// Insert given key and value within tree.
+    ///
+    /// # Arguments
+    ///
+    /// * key: (NodeT, NodeT) - The tuple of nodes to insert.
+    /// * value: Option<ConstructorEdgeMetadata> - The metadata to insert.
     pub(crate) fn insert(
         &mut self,
         key: (NodeT, NodeT),
         value: Option<ConstructorEdgeMetadata>,
     ) -> Option<Option<ConstructorEdgeMetadata>> {
+        self.edges += 1;
         self.tree.insert(key, value)
     }
 
+    /// Return boolea representing if tree is empty.
     pub(crate) fn is_empty(&self) -> bool {
         self.tree.is_empty()
     }
 
+    /// Return first value in the tree.
     pub(crate) fn pop_first(
         &mut self,
     ) -> Option<((NodeT, NodeT), Option<ConstructorEdgeMetadata>)> {
         self.tree.pop_first()
     }
 
+    /// Gets the given key's corresponding entry in the map for in-place manipulation.
+    /// This is used when we want to modify some value that might not be initialized
     pub(crate) fn entry(
         &mut self,
         key: (NodeT, NodeT),
@@ -62,6 +96,11 @@ impl GraphDictionary {
         self.tree.entry(key)
     }
 
+    /// Return mutable ConstructorEdgeMetadata if present.
+    ///
+    /// # Arguments
+    ///
+    /// * key: &(NodeT, NodeT) - The tuple of nodes forming the dictionary key.
     pub(crate) fn get_mut(
         &mut self,
         key: &(NodeT, NodeT),
@@ -69,6 +108,16 @@ impl GraphDictionary {
         self.tree.get_mut(key)
     }
 
+    /// Extends tree with given data.
+    ///
+    /// # Arguments
+    ///
+    /// * graph: &Graph - Reference of graph from where to extract informations.
+    /// * src: NodeT - The source node.
+    /// * dst: NodeT - The destination node.
+    /// * edge_type: Option<EdgeTypeT> - The optional edge type to insert.
+    /// * weight: Option<WeightT> - The optional weight to insert.
+    /// * include_all_edge_types: bool - Wether to insert all the original edge types. This is only relevant in multi-graphs.
     pub(crate) fn extend(
         &mut self,
         graph: &Graph,
@@ -78,15 +127,15 @@ impl GraphDictionary {
         weight: Option<WeightT>,
         include_all_edge_types: bool,
     ) {
-        let metadata = if let Some(md) = self.tree.get(&(src, dst)) {
+        let (metadata, new_edges) = if let Some(md) = self.tree.get(&(src, dst)) {
             let mut metadata = md.to_owned();
             if let Some(md) = &mut metadata {
                 md.add(weight, edge_type);
             }
-            metadata
+            (metadata, 1)
         } else {
             let mut metadata = ConstructorEdgeMetadata::new(weight.is_some(), edge_type.is_some());
-            if let Some(md) = &mut metadata {
+            let new_edges = if let Some(md) = &mut metadata {
                 if include_all_edge_types {
                     md.set(
                         graph.get_link_weights(src, dst),
@@ -95,14 +144,19 @@ impl GraphDictionary {
                 } else {
                     md.add(weight, edge_type);
                 }
-            }
-            metadata
+                md.len()
+            } else {
+                1
+            };
+            (metadata, new_edges)
         };
         self.tree.insert((src, dst), metadata.clone());
+        self.edges += new_edges;
         // If the current edge is not a self loop and the graph
         // is not directed, we add the simmetrical graph
         if !graph.is_directed && src != dst {
             self.tree.insert((dst, src), metadata);
+            self.edges += new_edges;
         }
     }
 }
@@ -110,7 +164,9 @@ impl GraphDictionary {
 /// Metadata of the edges of the graphs used for every graph.
 #[derive(Debug, Clone, PartialEq)]
 pub struct EdgeMetadata {
+    /// the id of the FIRST edge with the src and dst matching
     pub edge_id: EdgeT,
+    /// An optional set of the edge types of the edges between src and dst
     pub edge_types: Option<HashSet<EdgeTypeT>>,
 }
 
@@ -197,13 +253,6 @@ impl ConstructorEdgeMetadata {
         false
     }
 
-    /// Returns vector of edge types as HashSet.
-    pub(crate) fn to_edge_types_set(&self) -> Option<HashSet<EdgeTypeT>> {
-        self.edge_types
-            .clone()
-            .map(|et| et.into_iter().collect::<HashSet<EdgeTypeT>>())
-    }
-
     /// Return length of the vocabulary.
     pub fn len(&self) -> usize {
         if let Some(sws) = &self.weights {
@@ -244,11 +293,20 @@ impl Iterator for ConstructorEdgeMetadata {
     }
 }
 
+/// Trait used for the Vocabulary class.
+/// It represent an unsigned integer that can be converted to and from usize.
+/// This allows us to save memory using indicies of smaller size than u64
+/// and it has no effects on performance because it's optimized away during
+/// compilaton.
 pub trait ToFromUsize {
+    /// create the type from a usize
     fn from_usize(v: usize) -> Self;
+    /// create an usize frm the type
     fn to_usize(v: Self) -> usize;
 }
 
+/// Automatically implement the methods needed to convert from and to usize
+/// for the given numerical type.
 macro_rules! impl_to_from_usize {
     ($($ty:ty)*) => {
         $(

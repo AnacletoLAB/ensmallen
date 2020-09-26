@@ -13,6 +13,7 @@ static DEFAULT_PATH: &str = "";
 
 const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+/// Computes a random string,
 pub fn random_string(len: usize) -> String {
     let mut rng = rand::thread_rng();
 
@@ -24,6 +25,7 @@ pub fn random_string(len: usize) -> String {
         .collect()
 }
 
+/// Computes a random path.
 pub fn random_path() -> String {
     Path::new(DEFAULT_PATH)
         .join(random_string(64))
@@ -32,6 +34,7 @@ pub fn random_path() -> String {
         .to_string()
 }
 
+/// Load PPI with given parametrization.
 pub fn load_ppi(
     load_nodes: bool,
     load_edge_types: bool,
@@ -52,6 +55,7 @@ pub fn load_ppi(
                 .set_ignore_duplicates(Some(true))
                 .set_separator(Some("\t".to_string()))
                 .set_header(Some(true))
+                .set_max_rows_number(Some(100000))
                 .set_rows_to_skip(Some(0)),
         )
     } else {
@@ -80,21 +84,24 @@ pub fn load_ppi(
             None
         })?
         .set_default_edge_type(Some("Kebab".to_string()))
+        .set_max_rows_number(Some(100000))
         .set_default_weight(Some(5.0))
         .set_skip_self_loops(Some(skip_self_loops));
 
     Graph::from_csv(edges_reader, nodes_reader, directed)
 }
 
+/// Return WalksParameters to execute a first order walk.
 pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(50)?
         .set_iterations(Some(1))?
         .set_min_length(Some(1))?
         .set_verbose(Some(verbose))
         .set_seed(Some(43))
-        .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping())))
+        .set_dense_node_mapping(Some(graph.get_dense_node_mapping())))
 }
 
+/// Return WalksParameters to execute a second order walk.
 pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(50)?
         .set_iterations(Some(1))?
@@ -104,32 +111,59 @@ pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParamete
         .set_explore_weight(Some(2.0))?
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
-        .set_dense_nodes_mapping(Some(graph.get_dense_nodes_mapping()))
+        .set_dense_node_mapping(Some(graph.get_dense_node_mapping()))
         .set_seed(Some(43)))
 }
 
+fn validate_vocabularies(graph: &Graph) {
+    if let Some(ets) = &graph.edge_types {
+        assert_eq!(!ets.ids.is_empty(), graph.has_edge_types());
+    }
+
+    if let Some(nts) = &graph.node_types {
+        assert_eq!(!nts.ids.is_empty(), graph.has_node_types());
+    }
+
+    if let Some(ws) = &graph.weights {
+        assert_eq!(!ws.is_empty(), graph.has_weights());
+    }
+}
+
+/// Executes the default test suite for holdouts.
 pub fn default_holdout_test_suite(
     graph: &Graph,
     train: &Graph,
     test: &Graph,
 ) -> Result<(), String> {
+    for g in &[graph, train, test] {
+        validate_vocabularies(g);
+    }
     assert!(!train.overlaps(&test)?);
     assert!(!test.overlaps(&train)?);
     assert!(graph.contains(&train)?);
     assert!(graph.contains(&test)?);
     let summed = (train | test)?;
+    validate_vocabularies(&summed);
     assert!(summed.contains(&graph)?);
     let subtracted = (graph - test)?;
+    validate_vocabularies(&subtracted);
+
     assert!(subtracted.contains(&train)?);
     assert!(!subtracted.overlaps(&test)?);
     let xorred = (graph ^ test)?;
+    validate_vocabularies(&xorred);
     assert!(xorred.contains(&train)?);
     assert!(!xorred.overlaps(&test)?);
-    assert!((graph & test)?.contains(&test)?);
+    let anded = (graph & test)?;
+    validate_vocabularies(&anded);
+    assert!(anded.contains(&test)?);
     Ok(())
 }
 
+/// Executes near-complete test of all functions for the given graph.
 pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
+    // Testing that vocabularies are properly loaded
+    validate_vocabularies(graph);
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph, verbose)?;
     assert_eq!(
@@ -152,20 +186,25 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     );
 
     // Testing main holdout mechanisms
-    for include_all_edge_types in &[true, false] {
-        let (train, test) =
-            graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
+    for include_all_edge_types in &[false, true] {
+        let (train, test) = graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) = graph.connected_holdout(4, 0.8, *include_all_edge_types, verbose)?;
+        assert_eq!(graph.connected_components_number(), train.connected_components_number());
         default_holdout_test_suite(graph, &train, &test)?;
-        assert!(train != test);
     }
     // Testing cloning
     let _ = graph.clone();
     // Testing negative edges generation
     let negatives = graph.sample_negatives(4, graph.get_edges_number(), true, verbose)?;
-    assert!(!graph.overlaps(&negatives)?);
-    assert!(!negatives.overlaps(&graph)?);
+    validate_vocabularies(&negatives);
+    if !graph.has_edge_types() {
+        assert!(!graph.overlaps(&negatives)?);
+        assert!(!negatives.overlaps(&graph)?);
+    }
+    // Testing holdouts executed on negative edges.
+    let (neg_train, neg_test) = negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
+    default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
     // Testing subgraph generation
     let expected_nodes = (graph.get_nodes_number() - graph.singleton_nodes_number()) / 10;
     let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
@@ -261,14 +300,15 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         let without_edges = graph.drop_edge_types();
         assert_eq!(without_edges.is_ok(), graph.has_edge_types());
         if let Some(we) = &without_edges.ok() {
+            validate_vocabularies(we);
             assert_eq!(we.has_edge_types(), false);
             assert_eq!(we.has_weights(), graph.has_weights());
-            assert_eq!(we.node_types, graph.node_types);
+            assert!(we.node_types == graph.node_types);
             assert_eq!(we.get_selfloops_number(), graph.get_selfloops_number());
             assert_eq!(we.has_traps, graph.has_traps);
             assert_eq!(we.nodes, graph.nodes);
 
-            // expect errors for undefined behavior in overlap() and contains() 
+            // expect errors for undefined behavior in overlap() and contains()
             assert!(graph.overlaps(&we).is_err());
             assert!(graph.contains(&we).is_err());
         }
@@ -277,8 +317,9 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         let without_nodes = graph.drop_node_types();
         assert_eq!(without_nodes.is_ok(), graph.has_node_types());
         if let Some(wn) = &without_nodes.ok() {
+            validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
-            assert_eq!(wn.edge_types, graph.edge_types);
+            assert!(wn.edge_types == graph.edge_types);
             assert_eq!(wn.weights, graph.weights);
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
             assert_eq!(wn.has_traps, graph.has_traps);
@@ -291,9 +332,10 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         let without_weights = graph.drop_weights();
         assert_eq!(without_weights.is_ok(), graph.has_weights());
         if let Some(ww) = &without_weights.ok() {
+            validate_vocabularies(ww);
             assert_eq!(ww.has_weights(), false);
-            assert_eq!(ww.node_types, graph.node_types);
-            assert_eq!(ww.edge_types, graph.edge_types);
+            assert!(ww.node_types == graph.node_types);
+            assert!(ww.edge_types == graph.edge_types);
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
             assert_eq!(ww.has_traps, graph.has_traps);
             assert_eq!(ww.nodes, graph.nodes);
@@ -302,7 +344,10 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         }
     }
 
-    assert_eq!(graph.get_not_trap_nodes_number(), graph.not_trap_nodes.len());
+    assert_eq!(
+        graph.get_not_trap_nodes_number(),
+        graph.not_trap_nodes.len()
+    );
 
     Ok(())
 }

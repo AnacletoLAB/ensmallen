@@ -12,17 +12,16 @@ impl Graph {
 
         let mut unique_edges_tree =  GraphDictionary::new();
 
-        self.unique_edges.iter().for_each(
-            |((src, dst), data)| {
+        self.unique_edges.keys().for_each(
+            |(src, dst)| {
                 if !self.is_directed && src > dst {
                     return;
                 }
                 let weight = if let Some(w) = &self.weights {
-                    if let Some(edt) = &data.edge_types{
-                        Some(w[data.edge_id..data.edge_id+edt.len()].iter().sum())
-                    } else {
-                        Some(w[data.edge_id])
-                    }
+                    let edge_ids = self.get_edge_ids(*src, *dst).unwrap();
+                    Some(edge_ids.iter().map(|edge_id|{
+                        w[*edge_id]
+                    }).sum::<f64>() / edge_ids.len() as f64)
                 } else {
                     None
                 };

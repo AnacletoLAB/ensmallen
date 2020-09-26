@@ -1,5 +1,6 @@
 #![warn(unused_macros)]
 #![feature(map_first_last)]
+
 const SEED_XOR: usize = 0xbad5eedbad5eed11;
 
 mod vocabulary;

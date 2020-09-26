@@ -72,7 +72,7 @@ impl EdgeFileReader {
             if column >= expected_elements {
                 return Err(format!(
                     concat!(
-                        "The source column number passed was {} but",
+                        "The source column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
                     column,
@@ -112,7 +112,7 @@ impl EdgeFileReader {
             if column >= expected_elements {
                 return Err(format!(
                     concat!(
-                        "The destinations column number passed was {} but",
+                        "The destinations column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
                     column,
@@ -152,7 +152,7 @@ impl EdgeFileReader {
             if *etcn >= expected_elements {
                 return Err(format!(
                     concat!(
-                        "The edge types column number passed was {} but",
+                        "The edge types column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
                     etcn,
@@ -192,7 +192,7 @@ impl EdgeFileReader {
             if *wcn >= expected_elements {
                 return Err(format!(
                     concat!(
-                        "The weights column number passed was {} but",
+                        "The weights column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
                     wcn,
@@ -272,8 +272,8 @@ impl EdgeFileReader {
     /// * separator: Option<String> - The separator to use for the file.
     ///
     pub fn set_separator(mut self, separator: Option<String>) -> EdgeFileReader {
-        if let Some(v) = separator {
-            self.reader.separator = v;
+        if let Some(sep) = separator {
+            self.reader.separator = sep;
         }
         self
     }
@@ -304,6 +304,17 @@ impl EdgeFileReader {
         self
     }
 
+    /// Set the maximum number of rows to load from the file
+    ///
+    /// # Arguments
+    ///
+    /// * max_rows_number: Option<u64> - The edge type to use when edge type is missing.
+    ///
+    pub fn set_max_rows_number(mut self, max_rows_number: Option<u64>) -> EdgeFileReader {
+        self.reader.max_rows_number = max_rows_number;
+        self
+    }
+    
     /// Parse a single line (vecotr of strings already splitted)
     /// # Arguments
     ///
@@ -388,7 +399,7 @@ impl EdgeFileReader {
         if self.sources_column_number >= expected_elements {
             return Err(format!(
                 concat!(
-                    "The sources column number passed was {} but",
+                    "The sources column number passed was {} but ",
                     "the first parsable line has {} values."
                 ),
                 self.sources_column_number,
@@ -398,7 +409,7 @@ impl EdgeFileReader {
         if self.destinations_column_number >= expected_elements {
             return Err(format!(
                 concat!(
-                    "The destinations column number passed was {} but",
+                    "The destinations column number passed was {} but ",
                     "the first parsable line has {} values."
                 ),
                 self.destinations_column_number,

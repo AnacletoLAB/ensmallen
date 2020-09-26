@@ -3,6 +3,7 @@ use super::Graph;
 use std::collections::HashSet;
 
 #[macro_export]
+/// Macro that computes the maximum between two numbers
 macro_rules! max {
     ($a: expr, $b: expr) => {
         if $a >= $b {
@@ -13,6 +14,7 @@ macro_rules! max {
     };
 }
 #[macro_export]
+/// Macro that computes the minimum between two numbers
 macro_rules! min {
     ($a: expr, $b: expr) => {
         if $a < $b {
@@ -21,6 +23,10 @@ macro_rules! min {
             $b
         }
     };
+}
+
+fn find_node_set(sets: &[HashSet<NodeT>], node: NodeT) -> usize {
+    sets.iter().position(|set| set.contains(&node)).unwrap()
 }
 
 /// # Implementation of algorithms relative to trees.
@@ -37,78 +43,67 @@ impl Graph {
     ///
     pub fn spanning_tree(
         &self,
-        seed: NodeT,
+        seed: EdgeT,
         include_all_edge_types: bool,
     ) -> HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> {
-        let edges_number = self.get_nodes_number();
-        let mut covered_nodes: Vec<bool> = vec![false; self.get_nodes_number()];
+        let nodes_number = self.get_nodes_number();
+        let edges_number = self.get_edges_number();
+        // Create vector of sets of the single nodes.
+        let mut components: Vec<HashSet<NodeT>> = (0..nodes_number)
+            .map(|node_id| {
+                let mut set = HashSet::new();
+                set.insert(node_id);
+                set
+            })
+            .collect();
+        // Create the empty tree.
         let mut tree: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> =
-            HashSet::with_capacity(edges_number);
+            HashSet::with_capacity(nodes_number);
 
-        let n = self.get_nodes_number();
-        for node in 0..n {
-            // this is just (node + seed) % n but computed this way
-            // we minimize the possibility of overflowing
-            let src = ((node % n) + (seed % n)) % n;
-            // If the current node is already covered by the current tree
-            // we can move to the following one.
-            if covered_nodes[src] {
-                continue;
+        for (edge_id, src, dst) in (seed..edges_number + seed).filter_map(|i| {
+            let edge_id = i % edges_number;
+            let (src, dst) = (self.sources[edge_id], self.destinations[edge_id]);
+            match src == dst || !self.is_directed && src > dst {
+                true => None,
+                false => Some((edge_id, src, dst)),
             }
-            // We create a stack initially with only the current node.
-            let mut stack: Vec<NodeT> = vec![src];
-            // While the stack is not empty
-            while !stack.is_empty() {
-                // We extract the following node to explore
-                let node_to_explore = stack.pop().unwrap();
-                // Get the ranges of its edge ids
-                let (_min, _max) = self.get_min_max_edge(node_to_explore);
-                // And iterate on the available edge ids.
-                for neighbour in _min.._max {
-                    // We retrieve the id of the current destination node
-                    let dst = self.destinations[neighbour];
-                    // If the destination node is not already covered and it
-                    // does not match with the current source node, hence the edge
-                    // that is currently considered would be a self-loop
-                    // we proceed to push the destination node and mark the
-                    // nodes as covered.
-                    if covered_nodes[dst] || node_to_explore == dst {
-                        continue;
-                    }
-                    // We retrieve the nodes of the edge, so to handle in a better
-                    // way the undirected case.
-                    let (first, second) = if self.is_directed {
-                        (node_to_explore, dst)
-                    } else {
-                        (min!(node_to_explore, dst), max!(node_to_explore, dst))
-                    };
-                    // Here when the user requests to include all the edge types
-                    // between two nodes, which is very relevant in heterogeneous multi-graphs
-                    // when the user intends to execute link-prediction on the resulting embedding
-                    // and not link-type prediction, we include all the edges between the considered nodes.
-                    let edge_types = if include_all_edge_types {
-                        match &self.unique_edges.get(&(first, second)).unwrap().edge_types {
-                            Some(ets) => ets.iter().map(|et| Some(*et)).collect(),
-                            None => vec![None],
-                        }
-                    } else {
-                        // Otherwise we only consider the one.
-                        vec![if let Some(et) = &self.edge_types {
-                            Some(et.ids[neighbour])
-                        } else {
-                            None
-                        }]
-                    };
-                    // insert the edges in the tree
-                    for edge_type in edge_types {
-                        tree.insert((first, second, edge_type));
-                    }
-                    // sign both nodes as covered aka reachable
-                    covered_nodes[first] = true;
-                    covered_nodes[second] = true;
-                    // push dst as new node that will be explored later
-                    stack.push(dst);
+        }) {
+            let src_set_index = find_node_set(&components, src);
+            let mut dst_set_index = find_node_set(&components, dst);
+            if src_set_index != dst_set_index {
+                let src_set = components.remove(src_set_index);
+                if dst_set_index > src_set_index {
+                    dst_set_index -= 1;
                 }
+                components
+                    .get_mut(dst_set_index)
+                    .unwrap()
+                    .extend(src_set.iter());
+                // Here when the user requests to include all the edge types
+                // between two nodes, which is very relevant in heterogeneous multi-graphs
+                // when the user intends to execute link-prediction on the resulting embedding
+                // and not link-type prediction, we include all the edges between the considered nodes.
+                let edge_types = if include_all_edge_types {
+                    match self.get_link_edge_types(src, dst) {
+                        Some(ets) => ets.iter().map(|et| Some(*et)).collect(),
+                        None => vec![None],
+                    }
+                } else {
+                    // Otherwise we only consider the edge itself
+                    vec![if let Some(et) = &self.edge_types {
+                        Some(et.ids[edge_id])
+                    } else {
+                        None
+                    }]
+                };
+                // insert the edges in the tree
+                for edge_type in edge_types {
+                    tree.insert((src, dst, edge_type));
+                }
+            }
+            // If we have completed the spanning tree we can stop early.
+            if components.len() == 1 {
+                break;
             }
         }
         tree

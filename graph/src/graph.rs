@@ -1,8 +1,8 @@
 //! A graph representation optimized for executing random walks on huge graphs.
 use super::*;
 use counter::Counter;
-use itertools::Itertools;
 use derive_getters::Getters;
+use itertools::Itertools;
 use rayon::prelude::*;
 use std::collections::HashMap;
 
@@ -13,22 +13,44 @@ use std::collections::HashMap;
 ///
 /// # Examples
 ///
-#[derive(Clone, Getters, PartialEq)]
+#[derive(Debug, Clone, Getters, PartialEq)]
 pub struct Graph {
     // properties
+    /// if the graph has traps or not
     pub(crate) has_traps: bool,
+    /// if the graph is directed or undirected
     pub(crate) is_directed: bool,
+    /// how many singoletons (nodes without any incoming or outgoing edges)
+    /// are present in the graph
     pub(crate) singletons_number: NodeT,
+
     // graph structs
+    /// vector with the sources of every edge.
+    /// sources[10] returns the source of the edge with edge_id 10
     pub(crate) sources: Vec<NodeT>,
+    /// vector with the destinations of every edge.
+    /// destinations[10] returns the destination of the edge with edge_id 10
     pub(crate) destinations: Vec<NodeT>,
+    /// Vocabulary that save the mappings from string to index of every node
     pub(crate) nodes: Vocabulary<NodeT>,
+    /// Optional vector of the weights of every edge.
+    /// weights[10] return the weight of the edge with edge_id 10
     pub(crate) weights: Option<Vec<WeightT>>,
+    /// Vocabulary that save the mappings from string to index of every node type
     pub(crate) node_types: Option<VocabularyVec<NodeTypeT>>,
+    /// Vocabulary that save the mappings from string to index of every edge type
     pub(crate) edge_types: Option<VocabularyVec<EdgeTypeT>>,
+
     // helper structs
+    /// Vector that has the cumulative sum of the degree of each node.
+    /// This is used as an offset array to quickly retreive the outgoing edges
     pub(crate) outbounds: Vec<EdgeT>,
-    pub(crate) unique_edges: HashMap<(NodeT, NodeT), EdgeMetadata>,
+    /// TODO: update docstring accordinly
+    /// Hashmap with as keys (src, dst) and the id of the first edge from src to dst (just the first since
+    /// all these edges have consecutive edge_ids) and a set of edge types present.
+    pub(crate) unique_edges: HashMap<(NodeT, NodeT), EdgeT>,
+    /// All the nodes that are not traps.
+    /// This is used to speed up the walk.
     pub(crate) not_trap_nodes: Vec<NodeT>,
 }
 
@@ -91,6 +113,33 @@ impl Graph {
         ))
     }
 
+    pub fn get_edge_id(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        edge_type: Option<EdgeTypeT>,
+    ) -> Result<EdgeT, String> {
+        if let Some(edge_ids) = self.get_edge_ids(src, dst) {
+            if let Some(et) = edge_type {
+                if let Some(ets) = &self.edge_types {
+                    for edge_id in edge_ids {
+                        if ets.ids[edge_id] == et {
+                            return Ok(edge_id);
+                        }
+                    }
+                }
+            } else {
+                return Ok(*edge_ids.first().unwrap());
+            }
+        }
+        Err(format!(
+            "There is no edge in the current graph that starts at {src} and ends at {dst} and has edge type {edge_type:?}.",
+            src=src,
+            dst=dst,
+            edge_type=edge_type
+        ))
+    }
+
     /// Returns edge type counts.
     ///
     /// # Arguments
@@ -118,7 +167,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `edge_types`: Vec<String> - Vector of egde types to be converted.
+    /// * `edge_types`: Vec<String> - Vector of edge types to be converted.
     pub fn translate_edge_types(&self, edge_types: Vec<String>) -> Result<Vec<EdgeTypeT>, String> {
         Ok(match &self.edge_types {
             None => Err(String::from("Current graph does not have edge types.")),
@@ -183,32 +232,7 @@ impl Graph {
     /// Returns a boolean representing if the graph contains a pair of nodes
     /// which have edges of multiple types.
     pub fn is_multigraph(&self) -> bool {
-        self.unique_edges.values().any(|data| {
-            if let Some(edt) = &data.edge_types {
-                edt.len() > 1
-            } else {
-                false
-            }
-        })
-    }
-
-    /// Private method that check if a triple (src, dst, edge_type) is present in another graph.
-    /// This is used in overlaps and contains and it must be a method because we need to convert
-    /// from the indexing of one graph to the other.
-    ///
-    /// # Arguments
-    /// * src: NodeT - The source of the edge
-    /// * dst: NodeT - The destination of the edge
-    /// * et: Option<EdgeTypeT> - The optional edge type of the edge.
-    ///
-    pub(crate) fn check_edge_overlap(&self, src: NodeT, dst: NodeT, et: Option<EdgeTypeT>) -> bool {
-        match self.unique_edges.get(&(src, dst)) {
-            Some(metadata) => match &metadata.edge_types {
-                Some(ets) => ets.contains(&et.unwrap()),
-                None => true,
-            },
-            None => false,
-        }
+        self.unique_edges.len() != self.destinations.len()
     }
 
     /// Return true if given graph has any edge overlapping with current graph.
@@ -219,7 +243,7 @@ impl Graph {
     ///
     pub fn overlaps(&self, graph: &Graph) -> Result<bool, String> {
         if self.has_edge_types() ^ graph.has_edge_types() {
-            return Err("One of the graph has edge types while the other has not. This is an undefined behaviour.".to_string());
+            return Err("One of the graph has edge types while the other has not. This is an undefined behaviour for the overalps function.".to_string());
         }
 
         Ok(graph
@@ -232,20 +256,12 @@ impl Graph {
                     src,
                     dst,
                     match &graph.edge_types {
-                        Some(et) => {
-                            // The ids list can be empty with a filled vocabulary when
-                            // handling negative edges graphs.
-                            if et.ids.is_empty() {
-                                None
-                            } else {
-                                Some(et.ids[edge_id])
-                            }
-                        }
+                        Some(et) => Some(et.ids[edge_id]),
                         None => None,
                     },
                 )
             })
-            .any(|(src, dst, et)| self.check_edge_overlap(*src, *dst, et)))
+            .any(|(src, dst, et)| self.get_edge_id(*src, *dst, et).is_ok()))
     }
 
     /// Return true if given graph edges are all contained within current graph.
@@ -274,7 +290,7 @@ impl Graph {
                     },
                 )
             })
-            .all(|(src, dst, et)| self.check_edge_overlap(*src, *dst, et)))
+            .all(|(src, dst, et)| self.get_edge_id(*src, *dst, et).is_ok()))
     }
 
     /// Returns number of nodes in the graph.
@@ -332,7 +348,7 @@ impl Graph {
     }
 
     /// Return mapping from instance not trap nodes to dense nodes.
-    pub fn get_dense_nodes_mapping(&self) -> HashMap<NodeT, NodeT> {
+    pub fn get_dense_node_mapping(&self) -> HashMap<NodeT, NodeT> {
         self.sources
             .iter()
             .chain(self.destinations.iter())
@@ -372,15 +388,18 @@ impl Graph {
     /// * `src`: NodeT - Integer ID of the source node.
     /// * `dst`: NodeT - Integer ID of the destination node.
     ///
-    pub fn get_link_ids(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeT>> {
+    pub fn get_edge_ids(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeT>> {
         match self.unique_edges.get(&(src, dst)) {
-            Some(metadata) => {
-                let edge_id = metadata.edge_id;
-                let number_of_types = match &metadata.edge_types {
-                    Some(et) => et.len(),
-                    None => 1,
-                };
-                Some((edge_id..edge_id + number_of_types).collect())
+            Some(min_egde_id) => {
+                let mut max_edge_id = *min_egde_id;
+                let edges_number = self.get_edges_number();
+                while max_edge_id < edges_number
+                    && dst == self.destinations[max_edge_id]
+                    && src == self.sources[max_edge_id]
+                {
+                    max_edge_id += 1;
+                }
+                Some((*min_egde_id..max_edge_id).collect())
             }
             None => None,
         }
@@ -396,13 +415,11 @@ impl Graph {
     ///
     pub fn get_link_edge_types(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeTypeT>> {
         if let Some(ets) = &self.edge_types {
-            match self.get_link_ids(src, dst) {
-                Some(ids) => Some(ids.iter().map(|i| ets.ids[*i]).collect()),
-                None => None,
+            if let Some(edge_ids) = self.get_edge_ids(src, dst) {
+                return Some(edge_ids.iter().map(|edge_id| ets.ids[*edge_id]).collect());
             }
-        } else {
-            None
         }
+        None
     }
 
     /// Returns weights associated to the given link.
@@ -415,13 +432,11 @@ impl Graph {
     ///
     pub fn get_link_weights(&self, src: NodeT, dst: NodeT) -> Option<Vec<WeightT>> {
         if let Some(w) = &self.weights {
-            match self.get_link_ids(src, dst) {
-                Some(ids) => Some(ids.iter().map(|i| w[*i]).collect()),
-                None => None,
+            if let Some(edge_ids) = self.get_edge_ids(src, dst) {
+                return Some(edge_ids.iter().map(|edge_id| w[*edge_id]).collect());
             }
-        } else {
-            None
         }
+        None
     }
 
     /// Returns boolean representing if given node is a trap.
