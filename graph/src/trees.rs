@@ -1,6 +1,7 @@
 use super::types::*;
 use super::Graph;
 use std::collections::HashSet;
+use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 
 #[macro_export]
 /// Macro that computes the maximum between two numbers
@@ -40,11 +41,13 @@ impl Graph {
     ///
     /// * `seed`:NodeT - The seed to use for the holdout,
     /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
+    /// * `verbose`: bool - Wethever to show a loading bar or not.
     ///
     pub fn spanning_tree(
         &self,
         seed: EdgeT,
         include_all_edge_types: bool,
+        verbose: bool
     ) -> HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> {
         let nodes_number = self.get_nodes_number();
         let edges_number = self.get_edges_number();
@@ -60,7 +63,18 @@ impl Graph {
         let mut tree: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> =
             HashSet::with_capacity(nodes_number);
 
-        for (edge_id, src, dst) in (seed..edges_number + seed).filter_map(|i| {
+        let pb = if verbose {
+            let pb = ProgressBar::new(edges_number as u64);
+            pb.set_draw_delta(edges_number as u64 / 100);
+            pb.set_style(ProgressStyle::default_bar().template(
+                "Building spanning tree {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+            ));
+            pb
+        } else {
+            ProgressBar::hidden()
+        };
+
+        for (edge_id, src, dst) in (seed..edges_number + seed).progress_with(pb).filter_map(|i| {
             let edge_id = i % edges_number;
             let (src, dst) = (self.sources[edge_id], self.destinations[edge_id]);
             match src == dst || !self.is_directed && src > dst {
