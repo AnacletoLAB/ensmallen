@@ -1,7 +1,8 @@
 use super::types::*;
 use super::Graph;
-use std::collections::HashSet;
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
+use std::collections::HashSet;
+use std::iter::FromIterator;
 
 #[macro_export]
 /// Macro that computes the maximum between two numbers
@@ -47,18 +48,14 @@ impl Graph {
         &self,
         seed: EdgeT,
         include_all_edge_types: bool,
-        verbose: bool
+        verbose: bool,
     ) -> HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> {
         let nodes_number = self.get_nodes_number();
         let edges_number = self.get_edges_number();
         // Create vector of sets of the single nodes.
-        let mut components: Vec<HashSet<NodeT>> = (0..nodes_number)
-            .map(|node_id| {
-                let mut set = HashSet::new();
-                set.insert(node_id);
-                set
-            })
-            .collect();
+        let mut components: Vec<HashSet<NodeT>> = Vec::new();
+        // Create empty vector of inserted values
+        let mut inserted_nodes = vec![false; nodes_number];
         // Create the empty tree.
         let mut tree: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> =
             HashSet::with_capacity(nodes_number);
@@ -74,25 +71,53 @@ impl Graph {
             ProgressBar::hidden()
         };
 
-        for (edge_id, src, dst) in (seed..edges_number + seed).progress_with(pb).filter_map(|i| {
-            let edge_id = i % edges_number;
-            let (src, dst) = (self.sources[edge_id], self.destinations[edge_id]);
-            match src == dst || !self.is_directed && src > dst {
-                true => None,
-                false => Some((edge_id, src, dst)),
-            }
-        }) {
-            let src_set_index = find_node_set(&components, src);
-            let mut dst_set_index = find_node_set(&components, dst);
-            if src_set_index != dst_set_index {
-                let src_set = components.remove(src_set_index);
-                if dst_set_index > src_set_index {
-                    dst_set_index -= 1;
+        for (edge_id, src, dst) in (seed..edges_number + seed)
+            .progress_with(pb)
+            .filter_map(|i| {
+                let edge_id = i % edges_number;
+                let (src, dst) = (self.sources[edge_id], self.destinations[edge_id]);
+                match src == dst || !self.is_directed && src > dst {
+                    true => None,
+                    false => Some((edge_id, src, dst)),
                 }
+            })
+        {
+            let mut update_tree = false;
+            if !inserted_nodes[src] && !inserted_nodes[dst] {
+                inserted_nodes[src] = true;
+                inserted_nodes[dst] = true;
+                update_tree = true;
+                components.push(HashSet::from_iter(vec![src, dst]));
+            } else if inserted_nodes[src] ^ inserted_nodes[dst] {
+                let (inserted, not_inserted) = if inserted_nodes[src] {
+                    (src, dst)
+                } else {
+                    (dst, src)
+                };
+                inserted_nodes[not_inserted] = true;
+                let inserted_index = find_node_set(&components, inserted);
                 components
-                    .get_mut(dst_set_index)
+                    .get_mut(inserted_index)
                     .unwrap()
-                    .extend(src_set.iter());
+                    .insert(not_inserted);
+                update_tree = true;
+            } else {
+                let src_set_index = find_node_set(&components, src);
+                let mut dst_set_index = find_node_set(&components, dst);
+                if src_set_index != dst_set_index {
+                    let src_set = components.remove(src_set_index);
+                    if dst_set_index > src_set_index {
+                        dst_set_index -= 1;
+                    }
+                    components
+                        .get_mut(dst_set_index)
+                        .unwrap()
+                        .extend(src_set.iter());
+                    update_tree = true;
+                }
+            }
+
+            if update_tree {
                 // Here when the user requests to include all the edge types
                 // between two nodes, which is very relevant in heterogeneous multi-graphs
                 // when the user intends to execute link-prediction on the resulting embedding
@@ -114,10 +139,6 @@ impl Graph {
                 for edge_type in edge_types {
                     tree.insert((src, dst, edge_type));
                 }
-            }
-            // If we have completed the spanning tree we can stop early.
-            if components.len() == 1 {
-                break;
             }
         }
         tree
