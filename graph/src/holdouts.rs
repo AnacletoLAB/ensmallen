@@ -297,8 +297,6 @@ impl Graph {
         }
         let tree = self.spanning_tree(seed, include_all_edge_types);
 
-        println!("{:?}", tree);
-
         let edge_factor = if self.is_directed { 1 } else { 2 };
         let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as usize;
         let valid_edges_number =
@@ -330,7 +328,6 @@ impl Graph {
             |src, dst, edge_type| !tree.contains(&(src, dst, edge_type)),
             verbose,
         )?;
-        println!("{:?}", test);
         Ok((train, test))
     }
 
