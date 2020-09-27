@@ -3,7 +3,7 @@ use numpy::{PyArray1, PyArray2};
 use pyo3::prelude::*;
 
 #[pyclass]
-#[derive(Clone, PartialEq)]
+#[derive(Clone)]
 pub(crate) struct EnsmallenGraph {
     pub(crate) graph: Graph,
 }

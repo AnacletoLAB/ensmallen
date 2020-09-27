@@ -61,28 +61,28 @@ impl EnsmallenGraph {
         pyex!(self.graph.contains(&graph.graph))
     }
 }
-impl EnsmallenGraph {
-    // separate the method from the __richcmp__ so that we can capture and convert all the exceptions
-    // in an uniform way
-    pub(crate) fn compare_graphs(
-        &self,
-        other: EnsmallenGraph,
-        op: CompareOp,
-    ) -> Result<bool, String> {
-        Ok(match op {
-            CompareOp::Lt => other.graph.contains(&self.graph)? && &other != self,
-            CompareOp::Le => other.graph.contains(&self.graph)?,
-            CompareOp::Eq => &other == self,
-            CompareOp::Ne => &other != self,
-            CompareOp::Gt => self.graph.contains(&other.graph)? && &other != self,
-            CompareOp::Ge => self.graph.contains(&other.graph)?,
-        })
-    }
-}
+// impl EnsmallenGraph {
+//     // separate the method from the __richcmp__ so that we can capture and convert all the exceptions
+//     // in an uniform way
+//     pub(crate) fn compare_graphs(
+//         &self,
+//         other: EnsmallenGraph,
+//         op: CompareOp,
+//     ) -> Result<bool, String> {
+//         Ok(match op {
+//             //CompareOp::Lt => other.graph.contains(&self.graph)? && &other != self,
+//             CompareOp::Le => other.graph.contains(&self.graph)?,
+//             //CompareOp::Eq => &other == self,
+//             //CompareOp::Ne => &other != self,
+//             //CompareOp::Gt => self.graph.contains(&other.graph)? && &other != self,
+//             CompareOp::Ge => self.graph.contains(&other.graph)?,
+//         })
+//     }
+// }
 
-#[pyproto]
-impl PyObjectProtocol for EnsmallenGraph {
-    fn __richcmp__(&self, other: EnsmallenGraph, op: CompareOp) -> PyResult<bool> {
-        pyex!(self.compare_graphs(other, op))
-    }
-}
+// #[pyproto]
+// impl PyObjectProtocol for EnsmallenGraph {
+//     fn __richcmp__(&self, other: EnsmallenGraph, op: CompareOp) -> PyResult<bool> {
+//         pyex!(self.compare_graphs(other, op))
+//     }
+// }

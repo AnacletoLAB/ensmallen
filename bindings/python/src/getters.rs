@@ -124,11 +124,11 @@ impl EnsmallenGraph {
         self.graph.get_dense_node_mapping()
     }
 
-    #[getter]
-    fn sources(&self) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_1d!(gil, self.graph.sources().clone(), NodeT))
-    }
+    // #[getter]
+    // fn sources(&self) -> PyResult<Py<PyArray1<NodeT>>> {
+    //     let gil = pyo3::Python::acquire_gil();
+    //     Ok(to_nparray_1d!(gil, self.graph.sources().clone(), NodeT))
+    // }
 
     #[getter]
     fn destinations(&self) -> PyResult<Py<PyArray1<NodeT>>> {
@@ -148,12 +148,6 @@ impl EnsmallenGraph {
     #[getter]
     fn nodes_reverse_mapping(&self) -> Vec<String> {
         self.graph.nodes().reverse_map.clone()
-    }
-
-    #[getter]
-    fn outbounds(&self) -> PyResult<Py<PyArray1<EdgeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_1d!(gil, self.graph.outbounds().clone(), EdgeT))
     }
 
     #[getter]
