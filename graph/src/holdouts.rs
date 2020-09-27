@@ -295,7 +295,7 @@ impl Graph {
                 "Train percentage must be strictly between 0 and 1.",
             ));
         }
-        let tree = self.spanning_tree(seed, include_all_edge_types);
+        let tree = self.spanning_tree(seed, include_all_edge_types, verbose);
 
         let edge_factor = if self.is_directed { 1 } else { 2 };
         let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as usize;

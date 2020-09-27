@@ -323,7 +323,7 @@ impl Graph {
     /// }
     /// ```
     pub fn connected_components_number(&self) -> NodeT {
-        self.get_nodes_number() - self.spanning_tree(0, false).len()
+        self.get_nodes_number() - self.spanning_tree(0, false, false).len()
     }
 
     /// Returns number of singleton nodes within the graph.
@@ -436,14 +436,6 @@ impl Graph {
         report.insert("selfloops_rate", self.get_selfloops_rate().to_string());
         report.insert("selfloops_number", self.get_selfloops_number().to_string());
         report.insert("bidirectional_rate", self.bidirectional_rate().to_string());
-        report.insert(
-            "connected_components_number",
-            self.connected_components_number().to_string(),
-        );
-        report.insert(
-            "strongly_connected_components_number",
-            self.strongly_connected_components().len().to_string(),
-        );
         report
     }
 }
