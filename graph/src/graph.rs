@@ -5,6 +5,7 @@ use derive_getters::Getters;
 use itertools::Itertools;
 use rayon::prelude::*;
 use std::collections::HashMap;
+use elias_fano_rust::EliasFano;
 
 /// A graph representation optimized for executing random walks on huge graphs.
 ///
@@ -25,9 +26,6 @@ pub struct Graph {
     pub(crate) singletons_number: NodeT,
 
     // graph structs
-    /// vector with the sources of every edge.
-    /// sources[10] returns the source of the edge with edge_id 10
-    pub(crate) sources: Vec<NodeT>,
     /// vector with the destinations of every edge.
     /// destinations[10] returns the destination of the edge with edge_id 10
     pub(crate) destinations: Vec<NodeT>,
@@ -44,7 +42,7 @@ pub struct Graph {
     // helper structs
     /// Vector that has the cumulative sum of the degree of each node.
     /// This is used as an offset array to quickly retreive the outgoing edges
-    pub(crate) outbounds: Vec<EdgeT>,
+    pub(crate) outbounds: EliasFano,
     /// TODO: update docstring accordinly
     /// Hashmap with as keys (src, dst) and the id of the first edge from src to dst (just the first since
     /// all these edges have consecutive edge_ids) and a set of edge types present.
@@ -56,6 +54,11 @@ pub struct Graph {
 
 /// # Graph utility methods
 impl Graph {
+    
+    pub fn get_src_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
+        self.outbounds.rank(edge_id as u64).try_into().unwrap()
+    }
+
     /// Returns node type of given node.
     ///
     /// # Arguments
@@ -223,7 +226,7 @@ impl Graph {
     /// Returns a boolean representing if the graph contains an edge that has
     /// source == destination.
     pub fn has_selfloops(&self) -> bool {
-        self.sources
+        self.not_trap_nodes
             .iter()
             .zip(self.destinations.iter())
             .any(|(src, dst)| src == dst)
@@ -247,7 +250,7 @@ impl Graph {
         }
 
         Ok(graph
-            .sources
+            .not_trap_nodes
             .par_iter()
             .zip(graph.destinations.par_iter())
             .enumerate()
@@ -276,7 +279,7 @@ impl Graph {
         }
 
         Ok(graph
-            .sources
+            .node_types
             .par_iter()
             .zip(graph.destinations.par_iter())
             .enumerate()
@@ -305,7 +308,7 @@ impl Graph {
 
     /// Returns number of edges in the graph.
     pub fn get_edges_number(&self) -> usize {
-        self.sources.len()
+        self.destinations.len()
     }
 
     /// Returns the number of edges (ignoring the edge type)
