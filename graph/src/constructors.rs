@@ -247,7 +247,6 @@ pub(crate) fn build_graph(
     // now that the tree is built
     // we can iter on the edge in order (no further sorting required)
     // during the iteration we pop the minimum value each time
-    let mut first = true;
     let mut last_src = 0;
     let mut i = 0;
     while !unique_edges_tree.is_empty() {
@@ -265,10 +264,9 @@ pub(crate) fn build_graph(
             for o in &mut outbounds[last_src..src] {
                 *o = i;
             }
-            if !first {
+            if i > 0 {
                 not_trap_nodes.push(last_src as NodeT);
             }
-            first = false;
             last_src = src;
         }
 
