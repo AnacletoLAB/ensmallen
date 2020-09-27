@@ -226,7 +226,7 @@ impl Graph {
     /// Returns a boolean representing if the graph contains an edge that has
     /// source == destination.
     pub fn has_selfloops(&self) -> bool {
-        (0..self.get_edges_number()).into_iter()
+        (0..self.get_edges_number()).into_par_iter()
             .any(|edge_id| self.get_src_from_edge_id(edge_id) == self.destinations[edge_id])
     }
 
@@ -246,12 +246,11 @@ impl Graph {
         if self.has_edge_types() ^ graph.has_edge_types() {
             return Err("One of the graph has edge types while the other has not. This is an undefined behaviour for the overalps function.".to_string());
         }
-
-        Ok((0..self.get_edges_number()).into_par_iter()
+        Ok((0..graph.get_edges_number()).into_par_iter()
             .map(|edge_id| {
                 (
-                    self.get_src_from_edge_id(edge_id),
-                    self.destinations[edge_id],
+                    graph.get_src_from_edge_id(edge_id),
+                    graph.destinations[edge_id],
                     match &graph.edge_types {
                         Some(et) => Some(et.ids[edge_id]),
                         None => None,
@@ -272,12 +271,12 @@ impl Graph {
             return Err("One of the graph has edge types while the other has not. This is an undefined behaviour.".to_string());
         }
         
-        Ok((0..self.get_edges_number())
+        Ok((0..graph.get_edges_number())
             .into_par_iter()
             .map(|edge_id| {
                 (
-                    self.get_src_from_edge_id(edge_id),
-                    self.destinations[edge_id],
+                    graph.get_src_from_edge_id(edge_id),
+                    graph.destinations[edge_id],
                     match &graph.edge_types {
                         Some(et) => Some(et.ids[edge_id]),
                         None => None,

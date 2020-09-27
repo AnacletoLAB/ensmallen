@@ -156,8 +156,6 @@ impl Graph {
         let mut train: GraphDictionary = GraphDictionary::new();
         let mut valid: GraphDictionary = GraphDictionary::new();
 
-        self.outbounds.debug();
-
         for edge_id in edge_indices.iter().progress_with(pb) {
             let src = self.get_src_from_edge_id(*edge_id);
             let dst = self.destinations[*edge_id];
@@ -172,9 +170,6 @@ impl Graph {
             } else {
                 None
             };
-            
-            println!("edge_id: {}, src: {}, dst:{}, edge_type: {:?}", edge_id, src, dst, edge_type);
-
 
             // Check if the edge with the considered edge type as already been added.
             if [&train, &valid]
