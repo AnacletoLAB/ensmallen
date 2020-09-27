@@ -60,11 +60,11 @@ impl Graph {
     /// * weights: WalkWeights - Weights to use for the weighted walk.
     fn get_edge_transition(
         &self,
-        edge: EdgeT,
+        edge_id: EdgeT,
         walk_weights: &WalkWeights,
     ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
         // Get the source and destination for current edge.
-        let (src, dst) = (self.sources[edge], self.destinations[edge]);
+        let (src, dst) = (self.get_src_from_edge_id(edge_id), self.destinations[edge_id]);
 
         // Compute the transition weights relative to the node weights.
         let (mut transition, destinations, min_edge, max_edge) =
@@ -80,7 +80,7 @@ impl Graph {
                 //# If the neighbour edge type matches the previous
                 //# edge type (we are not changing the edge type)
                 //# we weigth using the provided change_edge_type_weight weight.
-                let this_type: EdgeTypeT = et.ids[edge];
+                let this_type: EdgeTypeT = et.ids[edge_id];
                 transition
                     .iter_mut()
                     .zip(et.ids[min_edge..max_edge].iter())

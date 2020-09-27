@@ -1,5 +1,6 @@
 use super::*;
 use itertools::Itertools;
+use elias_fano_rust::EliasFano;
 use std::collections::HashMap;
 
 macro_rules! optionify {
@@ -236,7 +237,7 @@ pub(crate) fn build_graph(
 ) -> Graph {
     // structures to fill for the graph
     // outbounds is initialized as vector of values unique edges and with length equal to the number of nodes.
-    let mut outbounds: Vec<EdgeT> = vec![0; nodes.len()];
+    let mut outbounds: Vec<u64> = vec![0; nodes.len()];
     let mut sources: Vec<NodeT> = Vec::new();
     let mut not_trap_nodes: Vec<NodeT> = Vec::new();
     let mut destinations: Vec<NodeT> = Vec::new();
@@ -276,7 +277,7 @@ pub(crate) fn build_graph(
         // Reverse the metadata of the edge into the graph vectors
         match &mut metadata {
             Some(m) => {
-                i += m.len();
+                i += m.len() as u64;
                 m.for_each(|(weight, edge_type)| {
                     sources.push(src);
                     destinations.push(dst);
@@ -308,14 +309,13 @@ pub(crate) fn build_graph(
 
     Graph {
         not_trap_nodes,
-        sources,
         destinations,
         nodes,
         unique_edges,
-        outbounds,
         node_types,
         has_traps,
         singletons_number,
+        outbounds:EliasFano::from_vec(&outbounds).unwrap(),
         is_directed: directed,
         weights: optionify!(weights),
         edge_types: match edge_types {

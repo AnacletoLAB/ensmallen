@@ -17,18 +17,18 @@ fn generic_operator(
 
     graphs.iter().for_each(|(one, two, three)| {
         (0..one.get_edges_number())
-            .map(|edge| {
-                let src = one.sources[edge];
-                let dst = one.destinations[edge];
+            .map(|edge_id| {
+                let src = one.get_src_from_edge_id(edge_id);
+                let dst = one.destinations[edge_id];
 
                 let edge_type = if let Some(et) = &one.edge_types {
-                    Some(et.ids[edge])
+                    Some(et.ids[edge_id])
                 } else {
                     None
                 };
 
                 let weight = if let Some(w) = &one.weights {
-                    Some(w[edge])
+                    Some(w[edge_id])
                 } else {
                     None
                 };

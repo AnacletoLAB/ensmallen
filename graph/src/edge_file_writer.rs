@@ -227,8 +227,14 @@ impl EdgeFileWriter {
             compose_lines(number_of_columns, header),
             (0..graph.get_edges_number())
                 .map(
-                    |index| (index, graph.sources[index], graph.destinations[index]), // filter away duplicated edges if the graph
-                                                                                      // is undirected
+                    |edge_id| {
+                        (
+                            edge_id,
+                            graph.get_src_from_edge_id(edge_id),
+                            graph.destinations[edge_id],
+                        )
+                    }, // filter away duplicated edges if the graph
+                       // is undirected
                 )
                 .filter(|(_, src, dst)| graph.is_directed || src <= dst)
                 .map(|(index, src, dst)| {

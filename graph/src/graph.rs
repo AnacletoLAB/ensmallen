@@ -14,7 +14,7 @@ use elias_fano_rust::EliasFano;
 ///
 /// # Examples
 ///
-#[derive(Debug, Clone, Getters, PartialEq)]
+#[derive(Clone, Getters)]
 pub struct Graph {
     // properties
     /// if the graph has traps or not
@@ -56,7 +56,7 @@ pub struct Graph {
 impl Graph {
     
     pub fn get_src_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        self.outbounds.rank(edge_id as u64).try_into().unwrap()
+        self.outbounds.rank(1 + edge_id as u64) as NodeT
     }
 
     /// Returns node type of given node.
@@ -249,22 +249,18 @@ impl Graph {
             return Err("One of the graph has edge types while the other has not. This is an undefined behaviour for the overalps function.".to_string());
         }
 
-        Ok(graph
-            .not_trap_nodes
-            .par_iter()
-            .zip(graph.destinations.par_iter())
-            .enumerate()
-            .map(|(edge_id, (src, dst))| {
+        Ok((0..self.get_edges_number()).into_par_iter()
+            .map(|edge_id| {
                 (
-                    src,
-                    dst,
+                    self.get_src_from_edge_id(edge_id),
+                    self.destinations[edge_id],
                     match &graph.edge_types {
                         Some(et) => Some(et.ids[edge_id]),
                         None => None,
                     },
                 )
             })
-            .any(|(src, dst, et)| self.get_edge_id(*src, *dst, et).is_ok()))
+            .any(|(src, dst, et)| self.get_edge_id(src, dst, et).is_ok()))
     }
 
     /// Return true if given graph edges are all contained within current graph.
@@ -277,23 +273,20 @@ impl Graph {
         if self.edge_types.is_some() ^ graph.edge_types.is_some() {
             return Err("One of the graph has edge types while the other has not. This is an undefined behaviour.".to_string());
         }
-
-        Ok(graph
-            .node_types
-            .par_iter()
-            .zip(graph.destinations.par_iter())
-            .enumerate()
-            .map(|(edge_id, (src, dst))| {
+        
+        Ok((0..self.get_edges_number())
+            .into_par_iter()
+            .map(|edge_id| {
                 (
-                    src,
-                    dst,
+                    self.get_src_from_edge_id(edge_id),
+                    self.destinations[edge_id],
                     match &graph.edge_types {
                         Some(et) => Some(et.ids[edge_id]),
                         None => None,
                     },
                 )
             })
-            .all(|(src, dst, et)| self.get_edge_id(*src, *dst, et).is_ok()))
+            .all(|(src, dst, et)| self.get_edge_id(src, dst, et).is_ok()))
     }
 
     /// Returns number of nodes in the graph.
@@ -344,15 +337,15 @@ impl Graph {
         let min_edge: EdgeT = if node == 0 {
             0
         } else {
-            self.outbounds[node - 1]
+            self.outbounds.unchecked_select(node as u64 - 1) as EdgeT
         };
-        let max_edge: EdgeT = self.outbounds[node];
+        let max_edge: EdgeT = self.outbounds.unchecked_select(node as u64) as EdgeT;
         (min_edge, max_edge)
     }
 
     /// Return mapping from instance not trap nodes to dense nodes.
     pub fn get_dense_node_mapping(&self) -> HashMap<NodeT, NodeT> {
-        self.sources
+        self.not_trap_nodes
             .iter()
             .chain(self.destinations.iter())
             .cloned()
@@ -398,7 +391,7 @@ impl Graph {
                 let edges_number = self.get_edges_number();
                 while max_edge_id < edges_number
                     && dst == self.destinations[max_edge_id]
-                    && src == self.sources[max_edge_id]
+                    && src == self.get_src_from_edge_id(max_edge_id)
                 {
                     max_edge_id += 1;
                 }

@@ -287,7 +287,7 @@ impl Graph {
             .into_par_iter()
             // to extract the random edges
             .map(|random_value| (random_value % edges_number) as EdgeT)
-            .map(|edge| vec![self.sources[edge], self.destinations[edge]])
+            .map(|edge| vec![self.get_src_from_edge_id(edge), self.destinations[edge]])
             // filter away the self_loops if the flag is set
             .filter(|edge| !_avoid_self_loops || edge[0] != edge[1])
             .collect();
@@ -308,7 +308,7 @@ impl Graph {
                 // convert them to plain (src, dst)
                 .map(|(random_src, random_dst)| {
                     (
-                        self.sources[(random_src % edges_number) as EdgeT],
+                        self.get_src_from_edge_id((random_src % edges_number) as EdgeT),
                         self.destinations[(random_dst % edges_number) as EdgeT],
                     )
                 })

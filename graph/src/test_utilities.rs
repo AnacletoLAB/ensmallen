@@ -324,7 +324,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
             assert_eq!(wn.has_traps, graph.has_traps);
             assert_eq!(wn.nodes, graph.nodes);
-            assert_eq!(wn.sources, graph.sources);
+            assert_eq!(wn.not_trap_nodes, graph.not_trap_nodes);
             assert_eq!(wn.destinations, graph.destinations);
         }
     }
@@ -339,7 +339,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
             assert_eq!(ww.has_traps, graph.has_traps);
             assert_eq!(ww.nodes, graph.nodes);
-            assert_eq!(ww.sources, graph.sources);
+            assert_eq!(ww.not_trap_nodes, graph.not_trap_nodes);
             assert_eq!(ww.destinations, graph.destinations);
         }
     }

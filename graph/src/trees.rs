@@ -75,7 +75,7 @@ impl Graph {
             .progress_with(pb)
             .filter_map(|i| {
                 let edge_id = i % edges_number;
-                let (src, dst) = (self.sources[edge_id], self.destinations[edge_id]);
+                let (src, dst) = (self.get_src_from_edge_id(edge_id), self.destinations[edge_id]);
                 match src == dst || !self.is_directed && src > dst {
                     true => None,
                     false => Some((edge_id, src, dst)),

@@ -156,19 +156,25 @@ impl Graph {
         let mut train: GraphDictionary = GraphDictionary::new();
         let mut valid: GraphDictionary = GraphDictionary::new();
 
-        for edge in edge_indices.iter().progress_with(pb) {
-            let src = self.sources[*edge];
-            let dst = self.destinations[*edge];
+        self.outbounds.debug();
+
+        for edge_id in edge_indices.iter().progress_with(pb) {
+            let src = self.get_src_from_edge_id(*edge_id);
+            let dst = self.destinations[*edge_id];
+
 
             if !self.is_directed && src > dst {
                 continue;
             }
 
             let edge_type = if let Some(et) = &self.edge_types {
-                Some(et.ids[*edge])
+                Some(et.ids[*edge_id])
             } else {
                 None
             };
+            
+            println!("edge_id: {}, src: {}, dst:{}, edge_type: {:?}", edge_id, src, dst, edge_type);
+
 
             // Check if the edge with the considered edge type as already been added.
             if [&train, &valid]
@@ -193,7 +199,7 @@ impl Graph {
             }
 
             let weight = if let Some(w) = &self.weights {
-                Some(w[*edge])
+                Some(w[*edge_id])
             } else {
                 None
             };
@@ -550,14 +556,14 @@ impl Graph {
 
         (0..self.get_edges_number())
             .progress_with(pb)
-            .map(|edge| {
-                let src = self.sources[edge];
-                let dst = self.destinations[edge];
+            .map(|edge_id| {
+                let src = self.get_src_from_edge_id(edge_id);
+                let dst = self.destinations[edge_id];
 
-                let edge_type = self.get_edge_type_id(edge).unwrap();
+                let edge_type = self.get_edge_type_id(edge_id).unwrap();
 
                 let weight = if let Some(w) = &self.weights {
-                    Some(w[edge])
+                    Some(w[edge_id])
                 } else {
                     None
                 };
