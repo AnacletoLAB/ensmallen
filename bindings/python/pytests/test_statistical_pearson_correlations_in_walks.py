@@ -24,9 +24,8 @@ def test_return_weight_behaviour_hpo():
         desc="Computing walks for different return_weight",
         leave=False
     ):
-        walks = graph.walk(
+        walks = graph.complete_walks(
             length=100,
-            quantity=1000,
             return_weight=return_weight,
             verbose=False
         )
@@ -59,9 +58,8 @@ def test_return_weight_behaviour_pathway():
         desc="Computing walks for different return_weight",
         leave=False
     ):
-        walks = graph.walk(
+        walks = graph.complete_walks(
             length=100,
-            quantity=1000,
             return_weight=return_weight,
             verbose=False
         )
@@ -94,9 +92,8 @@ def test_explore_weight_behaviour_hpo():
         desc="Computing walks for different explore_weights",
         leave=False
     ):
-        walks = graph.walk(
+        walks = graph.complete_walks(
             length=100,
-            quantity=1000,
             explore_weight=explore_weight,
             verbose=False
         )
@@ -129,9 +126,8 @@ def test_explore_weight_behaviour_pathway():
         desc="Computing walks for different explore_weights",
         leave=False
     ):
-        walks = graph.walk(
+        walks = graph.complete_walks(
             length=100,
-            quantity=1000,
             explore_weight=explore_weight,
             verbose=False
         )
@@ -164,10 +160,9 @@ def test_change_node_type_weight_behaviour_hpo():
         desc="Computing walks for different change_node_type_weights",
         leave=False
     ):
-        walks = graph.walk(
+        walks = graph.complete_walks(
             iterations=1,
             length=100,
-            quantity=1000,
             change_node_type_weight=change_node_type_weight,
             verbose=False,
         )
