@@ -436,10 +436,6 @@ impl Graph {
         report.insert("selfloops_rate", self.get_selfloops_rate().to_string());
         report.insert("selfloops_number", self.get_selfloops_number().to_string());
         report.insert("bidirectional_rate", self.bidirectional_rate().to_string());
-        report.insert(
-            "connected_components_number",
-            self.connected_components_number().to_string(),
-        );
         report
     }
 }
