@@ -226,10 +226,8 @@ impl Graph {
     /// Returns a boolean representing if the graph contains an edge that has
     /// source == destination.
     pub fn has_selfloops(&self) -> bool {
-        self.not_trap_nodes
-            .iter()
-            .zip(self.destinations.iter())
-            .any(|(src, dst)| src == dst)
+        (0..self.get_edges_number()).into_iter()
+            .any(|edge_id| self.get_src_from_edge_id(edge_id) == self.destinations[edge_id])
     }
 
     /// Returns a boolean representing if the graph contains a pair of nodes
