@@ -440,10 +440,6 @@ impl Graph {
             "connected_components_number",
             self.connected_components_number().to_string(),
         );
-        report.insert(
-            "strongly_connected_components_number",
-            self.strongly_connected_components().len().to_string(),
-        );
         report
     }
 }
