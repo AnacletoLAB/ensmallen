@@ -238,7 +238,6 @@ pub(crate) fn build_graph(
     // structures to fill for the graph
     // outbounds is initialized as vector of values unique edges and with length equal to the number of nodes.
     let mut outbounds: Vec<u64> = vec![0; nodes.len()];
-    let mut sources: Vec<NodeT> = Vec::new();
     let mut not_trap_nodes: Vec<NodeT> = Vec::new();
     let mut destinations: Vec<NodeT> = Vec::new();
     let mut weights: Vec<WeightT> = Vec::new();
@@ -249,7 +248,7 @@ pub(crate) fn build_graph(
     // we can iter on the edge in order (no further sorting required)
     // during the iteration we pop the minimum value each time
     let mut last_src = 0;
-    let mut i = 0;
+    let mut edge_id = 0;
     while !unique_edges_tree.is_empty() {
         // we gradually destroy the tree while we fill the other structures
         // in this way we reduce the memory peak
@@ -263,23 +262,22 @@ pub(crate) fn build_graph(
             // Assigning to range instead of single value, so that traps
             // have as delta between previous and next node zero.
             for o in &mut outbounds[last_src..src] {
-                *o = i;
+                *o = edge_id;
             }
-            if i > 0 {
+            if edge_id > 0 {
                 not_trap_nodes.push(last_src as NodeT);
             }
             last_src = src;
         }
 
         // initalize the hashmap
-        unique_edges.insert((src, dst), sources.len());
+        unique_edges.insert((src, dst), edge_id as EdgeT);
 
         // Reverse the metadata of the edge into the graph vectors
         match &mut metadata {
             Some(m) => {
-                i += m.len() as u64;
+                edge_id += m.len() as u64;
                 m.for_each(|(weight, edge_type)| {
-                    sources.push(src);
                     destinations.push(dst);
                     if let Some(w) = weight {
                         weights.push(w);
@@ -290,21 +288,21 @@ pub(crate) fn build_graph(
                 });
             }
             None => {
-                sources.push(src);
                 destinations.push(dst);
-                i += 1;
+                edge_id += 1;
             }
         }
         drop(metadata);
     }
     for o in &mut outbounds[last_src..] {
-        *o = i;
+        *o = edge_id;
     }
 
-    let singletons_number =
-        outbounds.len() - destinations.iter().chain(sources.iter()).unique().count();
-
     not_trap_nodes.push(last_src);
+
+    let singletons_number =
+        outbounds.len() - destinations.iter().chain(not_trap_nodes.iter()).unique().count();
+
     let has_traps = not_trap_nodes.len() != outbounds.len() - singletons_number;
 
     Graph {
