@@ -119,10 +119,31 @@ impl Graph {
         //############################################################
 
         if (walk_weights.explore_weight - 1.0).abs() > f64::EPSILON {
+            // In an undirected graph only
+            let (min_dst, max_dst) = if self.directed {
+                (0, 0)
+            } else {
+                // It holds that the destination must be within a range from the minimum min edge id and
+                // the max edge id.
+                let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(src);
+                if min_edge_id == max_edge_id {
+                    (0, 0)
+                } else {
+                    (
+                        self.get_destination(min_edge_id),
+                        self.get_destination(max_edge_id - 1),
+                    )
+                }
+            };
             transition
                 .iter_mut()
                 .zip(self.get_destinations_range(min_edge_id, max_edge_id))
-                .filter(|&(_, ndst)| !(src == ndst || dst == ndst || self.has_edge(ndst, src)))
+                .filter(|&(_, ndst)| {
+                    !(src == ndst
+                        || dst == ndst
+                        || !self.directed && (min_dst > ndst || max_dst < ndst)
+                        || self.has_edge_in_range(ndst, src, min_edge_id, max_edge_id))
+                })
                 .for_each(|(transition_value, _)| *transition_value *= walk_weights.explore_weight);
         }
 
