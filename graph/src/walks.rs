@@ -122,7 +122,7 @@ impl Graph {
             transition
                 .iter_mut()
                 .zip(self.get_destinations_range(min_edge_id, max_edge_id))
-                .filter(|&(_, ndst)| !(src == ndst || dst == ndst))
+                .filter(|&(_, ndst)| !(src == ndst || dst == ndst || self.has_edge(ndst, src)))
                 .for_each(|(transition_value, _)| *transition_value *= walk_weights.explore_weight);
         }
 
