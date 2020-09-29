@@ -12,12 +12,6 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "(self)"]
-    /// Return the number of non trap nodes in the graph.
-    fn get_not_trap_nodes_number(&self) -> usize {
-        self.graph.get_not_trap_nodes_number()
-    }
-
-    #[text_signature = "(self)"]
     /// Return the number of edges in the graph.
     fn get_edges_number(&self) -> usize {
         self.graph.get_edges_number()
@@ -79,22 +73,6 @@ impl EnsmallenGraph {
         self.graph.is_edge_trap(edge)
     }
 
-    #[text_signature = "($self, node)"]
-    /// Return list of Node IDs of the neighbours of given node.
-    ///
-    /// Parameters
-    /// ---------------------
-    /// node: int,
-    ///     Node ID to
-    ///
-    /// Returns
-    /// ----------------------------
-    /// List of Node IDs of the neighbouring nodes.
-    ///
-    fn get_node_neighbours(&self, node: NodeT) -> Vec<NodeT> {
-        self.graph.get_node_neighbours(node)
-    }
-
     #[text_signature = "($self, src, dst)"]
     /// Return boolean representing if given edge exists in graph.
     ///
@@ -129,107 +107,6 @@ impl EnsmallenGraph {
     //     let gil = pyo3::Python::acquire_gil();
     //     Ok(to_nparray_1d!(gil, self.graph.sources().clone(), NodeT))
     // }
-
-    #[getter]
-    fn destinations(&self) -> PyResult<Py<PyArray1<NodeT>>> {
-        let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_1d!(
-            gil,
-            self.graph.destinations().clone(),
-            NodeT
-        ))
-    }
-
-    #[getter]
-    fn nodes_mapping(&self) -> HashMap<String, NodeT> {
-        self.graph.nodes().map.clone()
-    }
-
-    #[getter]
-    fn nodes_reverse_mapping(&self) -> Vec<String> {
-        self.graph.nodes().reverse_map.clone()
-    }
-
-    #[getter]
-    fn weights(&self) -> PyResult<Option<Py<PyArray1<WeightT>>>> {
-        Ok(match self.graph.weights().clone() {
-            Some(w) => {
-                let gil = pyo3::Python::acquire_gil();
-                Some(to_nparray_1d!(gil, w, WeightT))
-            }
-            None => None,
-        })
-    }
-
-    #[getter]
-    fn node_types(&self) -> PyResult<Option<Py<PyArray1<NodeTypeT>>>> {
-        Ok(match self.graph.node_types().clone() {
-            Some(nts) => {
-                let gil = pyo3::Python::acquire_gil();
-                Some(to_nparray_1d!(gil, nts.ids, NodeTypeT))
-            }
-            None => None,
-        })
-    }
-
-    #[getter]
-    fn node_types_mapping(&self) -> Option<HashMap<String, NodeTypeT>> {
-        match self.graph.node_types().clone() {
-            None => None,
-            Some(nts) => Some(nts.vocabulary.map),
-        }
-    }
-
-    #[getter]
-    fn node_types_reverse_mapping(&self) -> Option<Vec<String>> {
-        match self.graph.node_types().clone() {
-            None => None,
-            Some(nts) => Some(nts.vocabulary.reverse_map),
-        }
-    }
-
-    #[getter]
-    fn edge_types(&self) -> PyResult<Option<Py<PyArray1<EdgeTypeT>>>> {
-        Ok(match self.graph.edge_types().clone() {
-            Some(ets) => {
-                let gil = pyo3::Python::acquire_gil();
-                Some(to_nparray_1d!(gil, ets.ids, EdgeTypeT))
-            }
-            None => None,
-        })
-    }
-
-    #[getter]
-    fn edge_types_mapping(&self) -> Option<HashMap<String, EdgeTypeT>> {
-        match self.graph.edge_types().clone() {
-            None => None,
-            Some(ets) => Some(ets.vocabulary.map),
-        }
-    }
-
-    #[getter]
-    fn edge_types_reverse_mapping(&self) -> Option<Vec<String>> {
-        match self.graph.edge_types().clone() {
-            None => None,
-            Some(ets) => Some(ets.vocabulary.reverse_map),
-        }
-    }
-
-    #[text_signature = "($self, node_id)"]
-    /// Return the id of the node type of the node.
-    ///
-    /// Parameters
-    /// ---------------------
-    /// node_id: int,
-    ///     Numeric ID of the node.
-    ///
-    /// Returns
-    /// ---------------------
-    /// Id of the node type of the node.
-    fn get_node_type_id(&self, node_id: NodeT) -> PyResult<NodeTypeT> {
-        pyex!(self.graph.get_node_type_id(node_id))
-    }
-
     #[text_signature = "($self, edge_id)"]
     /// Return the id of the edge type of the edge.
     ///

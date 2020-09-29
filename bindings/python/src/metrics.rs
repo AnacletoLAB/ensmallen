@@ -70,7 +70,7 @@ impl EnsmallenGraph {
     /// degrees product for the two given nodes.
     ///
     fn degree(&self, node: NodeT) -> NodeT {
-        self.graph.degree(node)
+        self.graph.get_node_degree(node)
     }
 
     #[text_signature = "($self)"]
@@ -81,7 +81,7 @@ impl EnsmallenGraph {
     /// Numpy array with all the degrees of the graph.
     ///
     fn degrees(&self) -> PyResult<Py<PyArray1<EdgeT>>> {
-        let degrees = self.graph.degrees();
+        let degrees = self.graph.get_node_degrees();
         let gil = pyo3::Python::acquire_gil();
         Ok(to_nparray_1d!(gil, degrees, EdgeT))
     }
