@@ -93,7 +93,7 @@ pub fn load_ppi(
 
 /// Return WalksParameters to execute a first order walk.
 pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
-    Ok(WalksParameters::new(50)?
+    Ok(WalksParameters::new(10)?
         .set_iterations(Some(1))?
         .set_min_length(Some(1))?
         .set_verbose(Some(verbose))
@@ -103,7 +103,7 @@ pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameter
 
 /// Return WalksParameters to execute a second order walk.
 pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
-    Ok(WalksParameters::new(50)?
+    Ok(WalksParameters::new(10)?
         .set_iterations(Some(1))?
         .set_min_length(Some(1))?
         .set_verbose(Some(verbose))
@@ -147,7 +147,6 @@ pub fn default_holdout_test_suite(
     assert!(summed.contains(&graph)?);
     let subtracted = (graph - test)?;
     validate_vocabularies(&subtracted);
-
     assert!(subtracted.contains(&train)?);
     assert!(!subtracted.overlaps(&test)?);
     let xorred = (graph ^ test)?;
@@ -167,13 +166,13 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph, verbose)?;
     assert_eq!(
-        graph.random_walks(100, &walker)?,
-        graph.random_walks(100, &walker)?
+        graph.random_walks(1, &walker)?,
+        graph.random_walks(1, &walker)?
     );
 
     assert_eq!(
-        graph.random_walks(100, &second_order_walker(&graph, verbose)?)?,
-        graph.random_walks(100, &second_order_walker(&graph, verbose)?)?
+        graph.random_walks(1, &second_order_walker(&graph, verbose)?)?,
+        graph.random_walks(1, &second_order_walker(&graph, verbose)?)?
     );
 
     assert_eq!(
@@ -206,10 +205,10 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     let (neg_train, neg_test) = negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
     default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
     // Testing subgraph generation
-    let expected_nodes = (graph.get_nodes_number() - graph.singleton_nodes_number()) / 10;
+    let expected_nodes = graph.get_not_singleton_nodes_number() / 10;
     let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
-    assert!(subgraph.get_nodes_number() - subgraph.singleton_nodes_number() <= expected_nodes + 1);
+    assert!(subgraph.get_not_singleton_nodes_number() <= expected_nodes + 1);
     // Testing edge-type based subgraph
     if let Some(ets) = &graph.edge_types {
         let edge_type = ets.translate(graph.get_edge_type_id(0)?);
@@ -324,8 +323,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
             assert_eq!(wn.has_traps, graph.has_traps);
             assert_eq!(wn.nodes, graph.nodes);
-            assert_eq!(wn.not_trap_nodes, graph.not_trap_nodes);
-            assert_eq!(wn.destinations, graph.destinations);
+            //assert_eq!(wn.edges, graph.edges);
         }
     }
     {
@@ -339,15 +337,9 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
             assert_eq!(ww.has_traps, graph.has_traps);
             assert_eq!(ww.nodes, graph.nodes);
-            assert_eq!(ww.not_trap_nodes, graph.not_trap_nodes);
-            assert_eq!(ww.destinations, graph.destinations);
+            //assert_eq!(ww.edges, graph.edges);
         }
     }
-
-    assert_eq!(
-        graph.get_not_trap_nodes_number(),
-        graph.not_trap_nodes.len()
-    );
 
     Ok(())
 }

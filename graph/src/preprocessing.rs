@@ -53,11 +53,7 @@ pub fn word2vec(
                 .iter()
                 .enumerate()
                 .filter_map(|(i, word)| {
-                    let start = if i <= window_size {
-                        0
-                    } else {
-                        i - window_size
-                    };
+                    let start = if i <= window_size { 0 } else { i - window_size };
                     let end = min!(sequence.len(), i + window_size);
                     if end - start == context_length {
                         filters[partial_sum - i - 1] = true;
@@ -282,14 +278,20 @@ impl Graph {
         let positives_number: usize = batch_size - negatives_number;
 
         let edges_number = self.get_edges_number() as u64;
+        let nodes_number = self.get_nodes_number() as u64;
         // generate a random vec of u64s and use them as indices
         let positives: Vec<Vec<NodeT>> = gen_random_vec(positives_number, seed)
             .into_par_iter()
             // to extract the random edges
-            .map(|random_value| (random_value % edges_number) as EdgeT)
-            .map(|edge| vec![self.get_src_from_edge_id(edge), self.destinations[edge]])
-            // filter away the self_loops if the flag is set
-            .filter(|edge| !_avoid_self_loops || edge[0] != edge[1])
+            .filter_map(|random_value| {
+                let edge_id = (random_value % edges_number) as EdgeT;
+                let (src, dst) = self.get_edge_from_edge_id(edge_id);
+                if !_avoid_self_loops || src != dst {
+                    Some(vec![src, dst])
+                } else {
+                    None
+                }
+            })
             .collect();
 
         // generate the negatives
@@ -308,8 +310,8 @@ impl Graph {
                 // convert them to plain (src, dst)
                 .map(|(random_src, random_dst)| {
                     (
-                        self.get_src_from_edge_id((random_src % edges_number) as EdgeT),
-                        self.destinations[(random_dst % edges_number) as EdgeT],
+                        (random_src % nodes_number) as NodeT,
+                        (random_dst % nodes_number) as NodeT,
                     )
                 })
                 // filter away the negatives that are:

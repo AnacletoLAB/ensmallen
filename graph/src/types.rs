@@ -24,6 +24,7 @@ pub type Words = Vec<NodeT>;
 pub type Frequencies = Vec<f64>;
 
 /// Custom BTreeMap with some helper methods
+#[derive(Debug)]
 pub(crate) struct GraphDictionary {
     tree: BTreeMap<(NodeT, NodeT), Option<ConstructorEdgeMetadata>>,
     edges: usize,
@@ -69,15 +70,22 @@ impl GraphDictionary {
     pub(crate) fn insert(
         &mut self,
         key: (NodeT, NodeT),
-        value: Option<ConstructorEdgeMetadata>,
+        metadata: Option<ConstructorEdgeMetadata>,
     ) -> Option<Option<ConstructorEdgeMetadata>> {
-        self.edges += 1;
-        self.tree.insert(key, value)
+        self.edges += if let Some(m) = &metadata { m.len() } else { 1 };
+        self.tree.insert(key, metadata)
     }
 
     /// Return boolea representing if tree is empty.
     pub(crate) fn is_empty(&self) -> bool {
         self.tree.is_empty()
+    }
+
+    /// Returnì last value of the tree.
+    pub(crate) fn last_key_value(
+        &self,
+    ) -> Option<(&(NodeT, NodeT), &Option<ConstructorEdgeMetadata>)> {
+        self.tree.last_key_value()
     }
 
     /// Return first value in the tree.
@@ -138,8 +146,8 @@ impl GraphDictionary {
             let new_edges = if let Some(md) = &mut metadata {
                 if include_all_edge_types {
                     md.set(
-                        graph.get_link_weights(src, dst),
-                        graph.get_link_edge_types(src, dst),
+                        graph.get_unchecked_link_weights(src, dst),
+                        graph.get_unchecked_link_edge_types(src, dst),
                     );
                 } else {
                     md.add(weight, edge_type);
@@ -154,9 +162,48 @@ impl GraphDictionary {
         self.edges += new_edges;
         // If the current edge is not a self loop and the graph
         // is not directed, we add the simmetrical graph
-        if !graph.is_directed && src != dst {
+        if !graph.directed && src != dst {
             self.tree.insert((dst, src), metadata);
             self.edges += new_edges;
+        }
+    }
+
+    /// Extends tree with given data.
+    ///
+    /// # Arguments
+    ///
+    /// * src: NodeT - The source node.
+    /// * dst: NodeT - The destination node.
+    /// * edge_type: Option<EdgeTypeT> - The optional edge type to insert.
+    /// * weight: Option<WeightT> - The optional weight to insert.
+    pub(crate) fn simple_extend(
+        &mut self,
+        src: NodeT,
+        dst: NodeT,
+        edge_type: Option<EdgeTypeT>,
+        weight: Option<WeightT>,
+        directed: bool,
+    ) {
+        let metadata = if let Some(md) = self.tree.get(&(src, dst)) {
+            let mut metadata = md.to_owned();
+            if let Some(md) = &mut metadata {
+                md.add(weight, edge_type);
+            }
+            metadata
+        } else {
+            let mut metadata = ConstructorEdgeMetadata::new(weight.is_some(), edge_type.is_some());
+            if let Some(md) = &mut metadata {
+                md.add(weight, edge_type);
+            }
+            metadata
+        };
+        self.tree.insert((src, dst), metadata.clone());
+        self.edges += 1;
+        // If the current edge is not a self loop and the graph
+        // is not directed, we add the simmetrical graph
+        if !directed && src != dst {
+            self.tree.insert((dst, src), metadata);
+            self.edges += 1;
         }
     }
 }
@@ -173,7 +220,7 @@ pub struct EdgeMetadata {
 /// Metadata of the edges used to describe both homogeneous and heterogeneous graphs and multi-graphs.
 ///
 /// It used during the construction process of the graphs, while another smaller one is used for the actual structure.
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub(crate) struct ConstructorEdgeMetadata {
     edge_types: Option<Vec<EdgeTypeT>>,
     weights: Option<Vec<WeightT>>,

@@ -17,17 +17,17 @@ impl Graph {
         &self,
         node: NodeT,
         change_node_type_weight: ParamsT,
-    ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
+    ) -> (Vec<WeightT>, EdgeT, EdgeT) {
         // Retrieve edge boundaries.
-        let (min_edge, max_edge) = self.get_min_max_edge(node);
+        let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
         // If weights are given
         let mut transition: Vec<WeightT> = if let Some(w) = &self.weights {
-            w[min_edge..max_edge].to_vec()
+            w[min_edge_id..max_edge_id].to_vec()
         } else {
-            vec![1.0; max_edge - min_edge]
+            vec![1.0; max_edge_id - min_edge_id]
         };
 
-        let destinations: &[NodeT] = &self.destinations[min_edge..max_edge];
+        let destinations = self.get_destinations_range(min_edge_id, max_edge_id);
 
         //############################################################
         //# Handling of the change node type parameter               #
@@ -43,13 +43,13 @@ impl Graph {
 
                 transition
                     .iter_mut()
-                    .zip(destinations.iter().map(|dst| nt.ids[*dst]))
+                    .zip(destinations.map(|dst| nt.ids[dst]))
                     .filter(|(_, neigh_type)| this_type == *neigh_type)
                     .for_each(|(transition_value, _)| *transition_value /= change_node_type_weight);
                 // credo non serva collect perche' modifichiamo i valori direttamente
             }
         }
-        (transition, destinations, min_edge, max_edge)
+        (transition, min_edge_id, max_edge_id)
     }
 
     /// Return the edge transition weights and the related node and edges.
@@ -62,12 +62,12 @@ impl Graph {
         &self,
         edge_id: EdgeT,
         walk_weights: &WalkWeights,
-    ) -> (Vec<WeightT>, &[NodeT], EdgeT, EdgeT) {
+    ) -> (Vec<WeightT>, EdgeT, EdgeT) {
         // Get the source and destination for current edge.
-        let (src, dst) = (self.get_src_from_edge_id(edge_id), self.destinations[edge_id]);
+        let (src, dst) = self.get_edge_from_edge_id(edge_id);
 
         // Compute the transition weights relative to the node weights.
-        let (mut transition, destinations, min_edge, max_edge) =
+        let (mut transition, min_edge_id, max_edge_id) =
             self.get_node_transition(dst, walk_weights.change_node_type_weight);
 
         //############################################################
@@ -83,7 +83,7 @@ impl Graph {
                 let this_type: EdgeTypeT = et.ids[edge_id];
                 transition
                     .iter_mut()
-                    .zip(et.ids[min_edge..max_edge].iter())
+                    .zip(et.ids[min_edge_id..max_edge_id].iter())
                     .filter(|(_, &neigh_type)| this_type == neigh_type)
                     .for_each(|(transition_value, _)| {
                         *transition_value /= walk_weights.change_edge_type_weight
@@ -110,8 +110,8 @@ impl Graph {
         if (walk_weights.return_weight - 1.0).abs() > f64::EPSILON {
             transition
                 .iter_mut()
-                .zip(destinations.iter())
-                .filter(|&(_, ndst)| src == *ndst || dst == *ndst)
+                .zip(self.get_destinations_range(min_edge_id, max_edge_id))
+                .filter(|&(_, ndst)| src == ndst || dst == ndst)
                 .for_each(|(transition_value, _)| *transition_value *= walk_weights.return_weight);
         }
         //############################################################
@@ -121,14 +121,12 @@ impl Graph {
         if (walk_weights.explore_weight - 1.0).abs() > f64::EPSILON {
             transition
                 .iter_mut()
-                .zip(destinations.iter())
-                .filter(|&(_, ndst)| {
-                    (src != *ndst || dst == *ndst) && !self.unique_edges.contains_key(&(*ndst, src))
-                })
+                .zip(self.get_destinations_range(min_edge_id, max_edge_id))
+                .filter(|&(_, ndst)| (src != ndst || dst == ndst) && !self.has_edge(ndst, src))
                 .for_each(|(transition_value, _)| *transition_value *= walk_weights.explore_weight);
         }
 
-        (transition, destinations, min_edge, max_edge)
+        (transition, min_edge_id, max_edge_id)
     }
 
     /// Return new sampled node with the transition edge used.
@@ -139,8 +137,8 @@ impl Graph {
     /// * seed: usize, the seed to use for extracting the node.
     ///
     pub fn extract_uniform_node(&self, node: NodeT, seed: usize) -> NodeT {
-        let (min_edge, max_edge) = self.get_min_max_edge(node);
-        self.destinations[min_edge + sample_uniform((max_edge - min_edge) as u64, seed as u64)]
+        let (min_edge, max_edge) = self.get_destinations_min_max_edge_ids(node);
+        self.get_destination(min_edge + sample_uniform((max_edge - min_edge) as u64, seed as u64))
     }
 
     /// Return new sampled node with the transition edge used.
@@ -156,10 +154,9 @@ impl Graph {
         seed: usize,
         change_node_type_weight: ParamsT,
     ) -> (NodeT, EdgeT) {
-        let (mut weights, dsts, min_edge, _) =
-            self.get_node_transition(node, change_node_type_weight);
-        let index = sample(&mut weights, seed as u64);
-        (dsts[index], min_edge + index)
+        let (mut weights, min_edge, _) = self.get_node_transition(node, change_node_type_weight);
+        let edge_id = min_edge + sample(&mut weights, seed as u64);
+        (self.get_destination(edge_id), edge_id)
     }
 
     /// Return new random edge with given weights.
@@ -175,9 +172,9 @@ impl Graph {
         seed: usize,
         walk_weights: &WalkWeights,
     ) -> (NodeT, EdgeT) {
-        let (mut weights, dsts, min_edge, _) = self.get_edge_transition(edge, walk_weights);
-        let index = sample(&mut weights, seed as u64);
-        (dsts[index], min_edge + index)
+        let (mut weights, min_edge, _) = self.get_edge_transition(edge, walk_weights);
+        let edge_id = min_edge + sample(&mut weights, seed as u64);
+        (self.get_destination(edge_id), edge_id)
     }
 
     /// Return vector of walks run on each non-trap node of the graph.
@@ -195,11 +192,8 @@ impl Graph {
             quantity,
             |global_index| {
                 let local_index = global_index % quantity;
-                let random_index = xorshift((parameters.seed + local_index) as u64) as usize;
-                (
-                    random_index,
-                    self.not_trap_nodes[random_index % self.not_trap_nodes.len()],
-                )
+                let random_source_id = xorshift((parameters.seed + local_index) as u64) as usize;
+                (random_source_id, self.get_unique_source(random_source_id))
             },
             parameters,
         )
@@ -213,13 +207,8 @@ impl Graph {
     ///
     pub fn complete_walks(&self, parameters: &WalksParameters) -> Result<Vec<Vec<NodeT>>, String> {
         self.walk(
-            self.not_trap_nodes.len(),
-            |index| {
-                (
-                    index,
-                    self.not_trap_nodes[index % self.not_trap_nodes.len()],
-                )
-            },
+            self.get_unique_sources_number(),
+            |random_source_id| (random_source_id, self.get_unique_source(random_source_id)),
             parameters,
         )
     }

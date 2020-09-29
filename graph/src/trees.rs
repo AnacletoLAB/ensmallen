@@ -75,8 +75,8 @@ impl Graph {
             .progress_with(pb)
             .filter_map(|i| {
                 let edge_id = i % edges_number;
-                let (src, dst) = (self.get_src_from_edge_id(edge_id), self.destinations[edge_id]);
-                match src == dst || !self.is_directed && src > dst {
+                let (src, dst) = self.get_edge_from_edge_id(edge_id);
+                match src == dst || !self.directed && src > dst {
                     true => None,
                     false => Some((edge_id, src, dst)),
                 }
@@ -123,7 +123,7 @@ impl Graph {
                 // when the user intends to execute link-prediction on the resulting embedding
                 // and not link-type prediction, we include all the edges between the considered nodes.
                 let edge_types = if include_all_edge_types {
-                    match self.get_link_edge_types(src, dst) {
+                    match self.get_unchecked_link_edge_types(src, dst) {
                         Some(ets) => ets.iter().map(|et| Some(*et)).collect(),
                         None => vec![None],
                     }

@@ -1,11 +1,9 @@
 //! A graph representation optimized for executing random walks on huge graphs.
 use super::*;
 use counter::Counter;
-use derive_getters::Getters;
-use itertools::Itertools;
+use elias_fano_rust::EliasFano;
 use rayon::prelude::*;
 use std::collections::HashMap;
-use elias_fano_rust::EliasFano;
 
 /// A graph representation optimized for executing random walks on huge graphs.
 ///
@@ -14,51 +12,41 @@ use elias_fano_rust::EliasFano;
 ///
 /// # Examples
 ///
-#[derive(Clone, Getters)]
+#[derive(Clone)]
 pub struct Graph {
     // properties
     /// if the graph has traps or not
     pub(crate) has_traps: bool,
     /// if the graph is directed or undirected
-    pub(crate) is_directed: bool,
-    /// how many singoletons (nodes without any incoming or outgoing edges)
-    /// are present in the graph
-    pub(crate) singletons_number: NodeT,
+    pub(crate) directed: bool,
 
-    // graph structs
-    /// vector with the destinations of every edge.
-    /// destinations[10] returns the destination of the edge with edge_id 10
-    pub(crate) destinations: Vec<NodeT>,
+    /// The main datastructure where all the edges are saved
+    /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
+    /// operation in O(1) without decompressing the data.
+    pub(crate) edges: EliasFano,
+    /// How many bits are needed to save a node.
+    pub(crate) node_bits: u8,
+    /// The mask used to extract the dst value form an encoded edge.
+    /// This is saved for speed sake. It's equivalent to (1 << self.node_bits) - 1;
+    pub(crate) node_bit_mask: u64,
     /// Vocabulary that save the mappings from string to index of every node
     pub(crate) nodes: Vocabulary<NodeT>,
+    pub(crate) unique_sources: EliasFano,
+
     /// Optional vector of the weights of every edge.
     /// weights[10] return the weight of the edge with edge_id 10
     pub(crate) weights: Option<Vec<WeightT>>,
     /// Vocabulary that save the mappings from string to index of every node type
     pub(crate) node_types: Option<VocabularyVec<NodeTypeT>>,
+
+    // This is the next attribute that will be embedded inside of edges once
+    // the first refactoring is done
     /// Vocabulary that save the mappings from string to index of every edge type
     pub(crate) edge_types: Option<VocabularyVec<EdgeTypeT>>,
-
-    // helper structs
-    /// Vector that has the cumulative sum of the degree of each node.
-    /// This is used as an offset array to quickly retreive the outgoing edges
-    pub(crate) outbounds: EliasFano,
-    /// TODO: update docstring accordinly
-    /// Hashmap with as keys (src, dst) and the id of the first edge from src to dst (just the first since
-    /// all these edges have consecutive edge_ids) and a set of edge types present.
-    pub(crate) unique_edges: HashMap<(NodeT, NodeT), EdgeT>,
-    /// All the nodes that are not traps.
-    /// This is used to speed up the walk.
-    pub(crate) not_trap_nodes: Vec<NodeT>,
 }
 
 /// # Graph utility methods
 impl Graph {
-    
-    pub fn get_src_from_edge_id(&self, edge_id: EdgeT) -> NodeT {
-        self.outbounds.rank(1 + edge_id as u64) as NodeT
-    }
-
     /// Returns node type of given node.
     ///
     /// # Arguments
@@ -116,31 +104,37 @@ impl Graph {
         ))
     }
 
+    pub fn get_unchecked_edge_id(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+        edge_type: Option<EdgeTypeT>,
+    ) -> EdgeT {
+        if let Some(et) = edge_type {
+            if let Some(ets) = &self.edge_types {
+                return self
+                    .get_unchecked_edge_ids_range(src, dst)
+                    .find(|edge_id| ets.ids[*edge_id] == et)
+                    .unwrap();
+            }
+        }
+        self.get_unchecked_edge_from_tuple(src, dst)
+    }
+
     pub fn get_edge_id(
         &self,
         src: NodeT,
         dst: NodeT,
         edge_type: Option<EdgeTypeT>,
-    ) -> Result<EdgeT, String> {
-        if let Some(edge_ids) = self.get_edge_ids(src, dst) {
-            if let Some(et) = edge_type {
-                if let Some(ets) = &self.edge_types {
-                    for edge_id in edge_ids {
-                        if ets.ids[edge_id] == et {
-                            return Ok(edge_id);
-                        }
-                    }
-                }
-            } else {
-                return Ok(*edge_ids.first().unwrap());
+    ) -> Option<EdgeT> {
+        if let Some(et) = edge_type {
+            if let Some(ets) = &self.edge_types {
+                return self
+                    .get_edge_ids(src, dst)
+                    .and_then(|mut edge_ids| edge_ids.find(|edge_id| ets.ids[*edge_id] == et));
             }
         }
-        Err(format!(
-            "There is no edge in the current graph that starts at {src} and ends at {dst} and has edge type {edge_type:?}.",
-            src=src,
-            dst=dst,
-            edge_type=edge_type
-        ))
+        self.get_edge_from_tuple(src, dst)
     }
 
     /// Returns edge type counts.
@@ -220,20 +214,7 @@ impl Graph {
     /// * dst: NodeT - The destination node of the edge.
     ///
     pub fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
-        self.unique_edges.contains_key(&(src, dst))
-    }
-
-    /// Returns a boolean representing if the graph contains an edge that has
-    /// source == destination.
-    pub fn has_selfloops(&self) -> bool {
-        (0..self.get_edges_number()).into_par_iter()
-            .any(|edge_id| self.get_src_from_edge_id(edge_id) == self.destinations[edge_id])
-    }
-
-    /// Returns a boolean representing if the graph contains a pair of nodes
-    /// which have edges of multiple types.
-    pub fn is_multigraph(&self) -> bool {
-        self.unique_edges.len() != self.destinations.len()
+        self.edges.contains(self.encode_edge(src, dst))
     }
 
     /// Return true if given graph has any edge overlapping with current graph.
@@ -244,20 +225,11 @@ impl Graph {
     ///
     pub fn overlaps(&self, graph: &Graph) -> Result<bool, String> {
         if self.has_edge_types() ^ graph.has_edge_types() {
-            return Err("One of the graph has edge types while the other has not. This is an undefined behaviour for the overalps function.".to_string());
+            return Err("One of the graph has edge types while the other has not. This is an undefined behaviour for the overalps method.".to_string());
         }
-        Ok((0..graph.get_edges_number()).into_par_iter()
-            .map(|edge_id| {
-                (
-                    graph.get_src_from_edge_id(edge_id),
-                    graph.destinations[edge_id],
-                    match &graph.edge_types {
-                        Some(et) => Some(et.ids[edge_id]),
-                        None => None,
-                    },
-                )
-            })
-            .any(|(src, dst, et)| self.get_edge_id(src, dst, et).is_ok()))
+        Ok(graph
+            .get_edge_triples_par_enumerate()
+            .any(|(_, src, dst, et)| self.get_edge_id(src, dst, et).is_some()))
     }
 
     /// Return true if given graph edges are all contained within current graph.
@@ -268,132 +240,113 @@ impl Graph {
     ///
     pub fn contains(&self, graph: &Graph) -> Result<bool, String> {
         if self.edge_types.is_some() ^ graph.edge_types.is_some() {
-            return Err("One of the graph has edge types while the other has not. This is an undefined behaviour.".to_string());
+            return Err("One of the graph has edge types while the other has not. This is an undefined behaviour for the contains method.".to_string());
         }
-        
-        Ok((0..graph.get_edges_number())
-            .into_par_iter()
-            .map(|edge_id| {
-                (
-                    graph.get_src_from_edge_id(edge_id),
-                    graph.destinations[edge_id],
-                    match &graph.edge_types {
-                        Some(et) => Some(et.ids[edge_id]),
-                        None => None,
-                    },
-                )
-            })
-            .all(|(src, dst, et)| self.get_edge_id(src, dst, et).is_ok()))
-    }
 
-    /// Returns number of nodes in the graph.
-    pub fn get_nodes_number(&self) -> usize {
-        self.nodes.len()
-    }
-
-    /// Returns number of not node nodes in the graph.
-    pub fn get_not_trap_nodes_number(&self) -> usize {
-        self.not_trap_nodes.len()
-    }
-
-    /// Returns number of edges in the graph.
-    pub fn get_edges_number(&self) -> usize {
-        self.destinations.len()
-    }
-
-    /// Returns the number of edges (ignoring the edge type)
-    pub fn get_unique_edges_number(&self) -> usize {
-        self.unique_edges.len()
-    }
-
-    /// Returns number of edge types in the graph.
-    pub fn get_edge_types_number(&self) -> usize {
-        if let Some(etm) = &self.edge_types {
-            etm.len()
-        } else {
-            0
-        }
-    }
-
-    /// Returns number of node types in the graph.
-    pub fn get_node_types_number(&self) -> usize {
-        if let Some(etm) = &self.node_types {
-            etm.len()
-        } else {
-            0
-        }
+        Ok(graph
+            .get_edge_triples_par_enumerate()
+            .all(|(_, src, dst, et)| self.get_edge_id(src, dst, et).is_some()))
     }
 
     /// Return range of outbound edges IDs for given Node.
     ///
     /// # Arguments
     ///
-    /// * node: NodeT - Node for which we need to compute the outbounds range.
+    /// * src: NodeT - Source node.
+    /// * dst: NodeT - Destination node.
     ///
-    pub(crate) fn get_min_max_edge(&self, node: NodeT) -> (EdgeT, EdgeT) {
-        let min_edge: EdgeT = if node == 0 {
-            0
-        } else {
-            self.outbounds.unchecked_select(node as u64 - 1) as EdgeT
-        };
-        let max_edge: EdgeT = self.outbounds.unchecked_select(node as u64) as EdgeT;
-        (min_edge, max_edge)
+    pub(crate) fn get_unchecked_edge_types_min_max_edge_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> (EdgeT, EdgeT) {
+        (
+            self.edges.unchecked_rank(self.encode_edge(src, dst)) as EdgeT,
+            self.edges.unchecked_rank(self.encode_edge(src, dst + 1)) as EdgeT,
+        )
     }
 
-    /// Return mapping from instance not trap nodes to dense nodes.
-    pub fn get_dense_node_mapping(&self) -> HashMap<NodeT, NodeT> {
-        self.not_trap_nodes
-            .iter()
-            .chain(self.destinations.iter())
-            .cloned()
-            .unique()
-            .enumerate()
-            .map(|(i, node)| (node, i))
-            .collect()
+    /// Return range of outbound edges IDs for given Node.
+    ///
+    /// # Arguments
+    ///
+    /// * src: NodeT - Source node.
+    /// * dst: NodeT - Destination node.
+    ///
+    pub(crate) fn get_unchecked_edge_types_number_from_tuple(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> EdgeT {
+        let (min_edge_id, max_edge_id) = self.get_unchecked_edge_types_min_max_edge_ids(src, dst);
+        max_edge_id - min_edge_id
+    }
+
+    /// Return range of outbound edges IDs for given Node.
+    ///
+    /// # Arguments
+    ///
+    /// * src: NodeT - Source node.
+    /// * dst: NodeT - Destination node.
+    ///
+    pub(crate) fn get_edge_types_min_max_edge_ids(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> Option<(EdgeT, EdgeT)> {
+        if let Some(min_edge) = self.get_edge_from_tuple(src, dst) {
+            let max_edge = self.get_unchecked_edge_from_tuple(src, dst + 1);
+            return Some((min_edge as EdgeT, max_edge as EdgeT));
+        }
+        None
+    }
+
+    /// Return range of outbound edges IDs for given Node.
+    ///
+    /// # Arguments
+    ///
+    /// * src: NodeT - Node for which we need to compute the outbounds range.
+    ///
+    pub(crate) fn get_destinations_min_max_edge_ids(&self, src: NodeT) -> (EdgeT, EdgeT) {
+        (
+            self.edges.unchecked_rank(self.encode_edge(src, 0)) as EdgeT,
+            self.edges.unchecked_rank(self.encode_edge(src + 1, 0)) as EdgeT,
+        )
     }
 
     /// Returns the number of outbound neighbours of given node.
     ///
+    /// This is implemented as proposed by [S. Vigna here](http://vigna.di.unimi.it/ftp/papers/Broadword.pdf).
     ///
     /// # Arguments
     ///
     /// * `node` - Integer ID of the node.
     ///
-    pub fn degree(&self, node: NodeT) -> NodeT {
-        let (_min, _max) = self.get_min_max_edge(node);
-        _max - _min
+    pub fn get_node_degree(&self, node: NodeT) -> EdgeT {
+        let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
+        max_edge_id - min_edge_id
     }
 
-    /// Returns the degree of every node in the graph.
-    pub fn degrees(&self) -> Vec<NodeT> {
-        (0..self.get_nodes_number())
-            .into_par_iter()
-            .map(|node| self.degree(node))
-            .collect()
+    // TODO: Update docstring
+    pub fn get_unchecked_edge_ids_range(
+        &self,
+        src: NodeT,
+        dst: NodeT,
+    ) -> impl Iterator<Item = EdgeT> {
+        let (min_edge_id, max_edge_id) = self.get_unchecked_edge_types_min_max_edge_ids(src, dst);
+        min_edge_id..max_edge_id
     }
 
-    // Return a vector with the ids of all the edges that start from src
-    // and ends at dst. This is meaningful on multigraphs.
-    /// A link is composed by all the edges that starts from src and ends at dst.
-    ///
-    /// # Arguments
-    ///
-    /// * `src`: NodeT - Integer ID of the source node.
-    /// * `dst`: NodeT - Integer ID of the destination node.
-    ///
-    pub fn get_edge_ids(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeT>> {
-        match self.unique_edges.get(&(src, dst)) {
-            Some(min_egde_id) => {
-                let mut max_edge_id = *min_egde_id;
-                let edges_number = self.get_edges_number();
-                while max_edge_id < edges_number
-                    && dst == self.destinations[max_edge_id]
-                    && src == self.get_src_from_edge_id(max_edge_id)
-                {
-                    max_edge_id += 1;
-                }
-                Some((*min_egde_id..max_edge_id).collect())
-            }
+    // TODO: Update docstring
+    pub fn get_unchecked_destinations_range(&self, src: NodeT) -> impl Iterator<Item = EdgeT> {
+        let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(src);
+        min_edge_id..max_edge_id
+    }
+
+    // TODO: Update docstring
+    pub fn get_edge_ids(&self, src: NodeT, dst: NodeT) -> Option<impl Iterator<Item = EdgeT>> {
+        match self.get_edge_types_min_max_edge_ids(src, dst) {
+            Some((min_edge_id, max_edge_id)) => Some(min_edge_id..max_edge_id),
             None => None,
         }
     }
@@ -406,13 +359,15 @@ impl Graph {
     /// * `src`: NodeT - Integer ID of the source node.
     /// * `dst`: NodeT - Integer ID of the destination node.
     ///
-    pub fn get_link_edge_types(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeTypeT>> {
-        if let Some(ets) = &self.edge_types {
-            if let Some(edge_ids) = self.get_edge_ids(src, dst) {
-                return Some(edge_ids.iter().map(|edge_id| ets.ids[*edge_id]).collect());
-            }
+    pub fn get_unchecked_link_edge_types(&self, src: NodeT, dst: NodeT) -> Option<Vec<EdgeTypeT>> {
+        match &self.edge_types {
+            Some(ets) => Some(
+                self.get_unchecked_edge_ids_range(src, dst)
+                    .map(|edge_id| ets.ids[edge_id])
+                    .collect(),
+            ),
+            None => None,
         }
-        None
     }
 
     /// Returns weights associated to the given link.
@@ -423,13 +378,15 @@ impl Graph {
     /// * `src`: NodeT - Integer ID of the source node.
     /// * `dst`: NodeT - Integer ID of the destination node.
     ///
-    pub fn get_link_weights(&self, src: NodeT, dst: NodeT) -> Option<Vec<WeightT>> {
-        if let Some(w) = &self.weights {
-            if let Some(edge_ids) = self.get_edge_ids(src, dst) {
-                return Some(edge_ids.iter().map(|edge_id| w[*edge_id]).collect());
-            }
+    pub fn get_unchecked_link_weights(&self, src: NodeT, dst: NodeT) -> Option<Vec<WeightT>> {
+        match &self.weights {
+            Some(ws) => Some(
+                self.get_unchecked_edge_ids_range(src, dst)
+                    .map(|edge_id| ws[edge_id])
+                    .collect(),
+            ),
+            None => None,
         }
-        None
     }
 
     /// Returns boolean representing if given node is a trap.
@@ -439,26 +396,15 @@ impl Graph {
     /// * `node` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
     pub fn is_node_trap(&self, node: NodeT) -> bool {
-        self.degree(node) == 0
+        self.get_node_degree(node) == 0
     }
     /// Returns boolean representing if given edge is a trap.
     ///
     /// # Arguments
     ///
-    /// * `edge` - Integer ID of the edge, if this is bigger that the number of edges it will panic.
+    /// * `edge_id` - Integer ID of the edge, if this is bigger that the number of edges it will panic.
     ///
-    pub fn is_edge_trap(&self, edge: EdgeT) -> bool {
-        self.is_node_trap(self.destinations[edge])
-    }
-
-    /// Returns list of neigbours of given node.
-    ///
-    /// # Arguments
-    ///
-    /// * `node` - Integer ID of the node, if this is bigger that the number of nodes it will panic.
-    ///
-    pub fn get_node_neighbours(&self, node: NodeT) -> Vec<NodeT> {
-        let (min_edge, max_edge) = self.get_min_max_edge(node);
-        self.destinations[min_edge..max_edge].to_vec()
+    pub fn is_edge_trap(&self, edge_id: EdgeT) -> bool {
+        self.is_node_trap(self.get_destination(edge_id))
     }
 }

@@ -11,7 +11,7 @@ fn inner_test(load_nodes: bool, load_edge_types: bool, load_weights: bool, direc
         skip_self_loops,
     )
     .unwrap();
-    assert_eq!(*ppi.is_directed(), directed);
+    assert_eq!(ppi.is_directed(), directed);
     assert_eq!(ppi.has_node_types(), load_nodes);
     assert_eq!(ppi.has_edge_types(), load_edge_types);
     assert_eq!(ppi.has_weights(), load_weights);

@@ -42,15 +42,6 @@ impl<IndexT: ToFromUsize + Clone + Copy> VocabularyVec<IndexT> {
         self.vocabulary.get(key)
     }
 
-    /// Return boolean representing if given key is present.
-    ///
-    /// # Arguments
-    ///
-    /// * `key`: &str - the key to check existance of.
-    pub fn contains_key(&self, key: &str) -> bool {
-        self.vocabulary.contains_key(key)
-    }
-
     /// Return vector of keys of the map.
     pub fn keys(&self) -> Vec<String> {
         self.vocabulary.keys()

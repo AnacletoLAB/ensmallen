@@ -48,7 +48,7 @@ impl Graph {
         } else {
             selfloops_in_graph
         };
-        let total_negative_edges = if self.is_directed {
+        let total_negative_edges = if self.directed {
             nodes_number * (nodes_number - 1) + self_loops_number - self.get_unique_edges_number()
         } else {
             nodes_number * (nodes_number - 1) / 2 + self_loops_number
@@ -101,7 +101,7 @@ impl Graph {
                 && !unique_edges_tree.contains_key(&(src, dst))
             {
                 unique_edges_tree.extend(self, src, dst, None, None, false);
-                pb.inc(1 + !self.is_directed as u64);
+                pb.inc(1 + !self.directed as u64);
             }
         }
         pb.finish();
@@ -110,7 +110,7 @@ impl Graph {
             self.nodes.clone(),
             self.node_types.clone(),
             None,
-            self.is_directed,
+            self.directed,
         ))
     }
 
@@ -156,17 +156,15 @@ impl Graph {
         let mut train: GraphDictionary = GraphDictionary::new();
         let mut valid: GraphDictionary = GraphDictionary::new();
 
-        for edge_id in edge_indices.iter().progress_with(pb) {
-            let src = self.get_src_from_edge_id(*edge_id);
-            let dst = self.destinations[*edge_id];
+        for edge_id in edge_indices.iter().cloned().progress_with(pb) {
+            let (src, dst) = self.get_edge_from_edge_id(edge_id);
 
-
-            if !self.is_directed && src > dst {
+            if !self.directed && src > dst {
                 continue;
             }
 
             let edge_type = if let Some(et) = &self.edge_types {
-                Some(et.ids[*edge_id])
+                Some(et.ids[edge_id])
             } else {
                 None
             };
@@ -194,7 +192,7 @@ impl Graph {
             }
 
             let weight = if let Some(w) = &self.weights {
-                Some(w[*edge_id])
+                Some(w[edge_id])
             } else {
                 None
             };
@@ -251,7 +249,7 @@ impl Graph {
                 } else {
                     None
                 },
-                self.is_directed,
+                self.directed,
             ),
             build_graph(
                 &mut valid,
@@ -262,7 +260,7 @@ impl Graph {
                 } else {
                     None
                 },
-                self.is_directed,
+                self.directed,
             ),
         ))
     }
@@ -298,7 +296,7 @@ impl Graph {
         }
         let tree = self.spanning_tree(seed, include_all_edge_types, verbose);
 
-        let edge_factor = if self.is_directed { 1 } else { 2 };
+        let edge_factor = if self.directed { 1 } else { 2 };
         let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as usize;
         let valid_edges_number =
             (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
@@ -386,7 +384,7 @@ impl Graph {
                 // If a minimum number of overlaps was provided and the current
                 // edge has not the required minimum amount of overlaps.
                 if let Some(mno) = min_number_overlaps {
-                    if self.get_edge_ids(src, dst).unwrap().len() < mno {
+                    if self.get_unchecked_edge_types_number_from_tuple(src, dst) < mno {
                         return false;
                     }
                 }
@@ -421,14 +419,14 @@ impl Graph {
         if nodes_number <= 1 {
             return Err(String::from("Required nodes number must be more than 1."));
         }
-        if nodes_number > self.get_nodes_number() - self.singleton_nodes_number() {
+        let not_singleton_nodes_number = self.get_not_singleton_nodes_number();
+        if nodes_number > not_singleton_nodes_number {
             return Err(format!(
                 concat!(
                     "Required number of nodes ({}) is more than available ",
                     "number of nodes ({}) that have edges in current graph."
                 ),
-                nodes_number,
-                self.get_nodes_number() - self.singleton_nodes_number()
+                nodes_number, not_singleton_nodes_number
             ));
         }
 
@@ -468,9 +466,8 @@ impl Graph {
             stack.push(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
-                let (min_edge, max_edge) = self.get_min_max_edge(src);
-                for edge_id in min_edge..max_edge {
-                    let dst: NodeT = self.destinations[edge_id];
+                for edge_id in self.get_unchecked_destinations_range(src) {
+                    let dst: NodeT = self.get_destination(edge_id);
                     if !unique_nodes.contains(&dst) && src != dst {
                         stack.push(dst);
                     }
@@ -508,7 +505,7 @@ impl Graph {
             } else {
                 None
             },
-            self.is_directed,
+            self.directed,
         ))
     }
 
@@ -549,25 +546,11 @@ impl Graph {
         // Initializing the vector for creating the new graph.
         let mut graph_data: GraphDictionary = GraphDictionary::new();
 
-        (0..self.get_edges_number())
+        self.get_edge_quadruples_enumerate()
             .progress_with(pb)
-            .map(|edge_id| {
-                let src = self.get_src_from_edge_id(edge_id);
-                let dst = self.destinations[edge_id];
-
-                let edge_type = self.get_edge_type_id(edge_id).unwrap();
-
-                let weight = if let Some(w) = &self.weights {
-                    Some(w[edge_id])
-                } else {
-                    None
-                };
-
-                (src, dst, edge_type, weight)
-            })
-            .filter(|(_, _, edge_type, _)| edge_type_ids.contains(edge_type))
-            .for_each(|(src, dst, edge_type, weight)| {
-                graph_data.extend(&self, src, dst, Some(edge_type), weight, false)
+            .filter(|(_, _, _, edge_type, _)| edge_type_ids.contains(&edge_type.unwrap()))
+            .for_each(|(_, src, dst, edge_type, weight)| {
+                graph_data.extend(&self, src, dst, edge_type, weight, false)
             });
 
         Ok(build_graph(
@@ -579,7 +562,7 @@ impl Graph {
             } else {
                 None
             },
-            self.is_directed,
+            self.directed,
         ))
     }
 }

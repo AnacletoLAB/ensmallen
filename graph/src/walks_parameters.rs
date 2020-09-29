@@ -31,7 +31,7 @@ pub struct WalksParameters {
 
 impl Default for WalkWeights {
     /// Create new WalkWeights object.
-    /// 
+    ///
     /// The default WalkWeights object is parametrized to execute a first-order walk.
     fn default() -> WalkWeights {
         WalkWeights {
@@ -81,17 +81,20 @@ impl WalkWeights {
 
 impl SingleWalkParameters {
     /// Create new WalksParameters object.
-    /// 
+    ///
     /// By default the object is parametrized for a simple first-order walk.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * length: usize - Maximal length of the walk.
     pub fn new(length: usize) -> Result<SingleWalkParameters, String> {
         if length == 0 {
             return Err(String::from("The provided lenght for the walk is zero!"));
         }
-        Ok(SingleWalkParameters { length, weights:WalkWeights::default() })
+        Ok(SingleWalkParameters {
+            length,
+            weights: WalkWeights::default(),
+        })
     }
 
     /// Return boolean value representing if walk is of first order.
@@ -103,11 +106,11 @@ impl SingleWalkParameters {
 /// Setters for the Walk's parameters
 impl WalksParameters {
     /// Create new WalksParameters object.
-    /// 
+    ///
     /// By default the object is parametrized for a simple first-order walk.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * length: usize - Maximal length of the walk.
     pub fn new(length: usize) -> Result<WalksParameters, String> {
         Ok(WalksParameters {
@@ -284,9 +287,10 @@ impl WalksParameters {
         }
 
         if let Some(dense_node_mapping) = &self.dense_node_mapping {
-            if !(&graph.not_trap_nodes)
-                .into_par_iter()
-                .all(|node| dense_node_mapping.contains_key(&node))
+            if !graph
+                .unique_sources
+                .par_iter()
+                .all(|node| dense_node_mapping.contains_key(&(node as usize)))
             {
                 return Err(String::from(concat!(
                     "Given nodes mapping does not contain ",

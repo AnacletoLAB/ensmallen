@@ -1,7 +1,7 @@
 use super::*;
-use itertools::Itertools;
 use elias_fano_rust::EliasFano;
-use std::collections::HashMap;
+use indicatif::{ProgressBar, ProgressStyle};
+use itertools::Itertools;
 
 macro_rules! optionify {
     ($val:expr) => {
@@ -175,54 +175,35 @@ pub(crate) fn parse_edges(
 
         // Get the metadata of the edge and if it's not present, add it
         let key = (*source_node_id, *destinations_node_id);
-        let edge_metadata = match unique_edges_tree.get_mut(&key) {
-            Some(em) => {
-                let edge_is_duplicated = match em {
-                    Some(e) => e.contains_edge_type(edge_types_id),
-                    None => true,
-                };
-                if edge_is_duplicated {
-                    if ignore_duplicated_edges {
-                        continue;
-                    }
-                    return Err(format!(
-                        concat!(
-                            "Found duplicated edges!\n",
-                            "The source node is {source} and the destination node is {destination}.\n",
-                            "The edge type of the row is {edge_type:?}.",
-                        ),
-                        source = source_node_name,
-                        destination = destination_node_name,
-                        edge_type = edge_type,
-                    ));
+        if let Some(metadata) = unique_edges_tree.get_mut(&key) {
+            let edge_is_duplicated = match metadata {
+                Some(e) => e.contains_edge_type(edge_types_id),
+                None => true,
+            };
+            if edge_is_duplicated {
+                if ignore_duplicated_edges {
+                    continue;
                 }
-                em
-            }
-            None => {
-                unique_edges_tree.insert(
-                    key,
-                    ConstructorEdgeMetadata::new(edge_weight.is_some(), edge_type.is_some()),
-                );
-                unique_edges_tree.get_mut(&key).unwrap()
-            }
-        };
-
-        if let Some(em) = edge_metadata {
-            em.add(edge_weight, edge_types_id);
-        }
-
-        // If the graph is undirected, add the inverse edge
-        if !directed && source_node_id != destinations_node_id {
-            let reverse_edge_metadata = unique_edges_tree
-                .entry((*destinations_node_id, *source_node_id))
-                .or_insert_with(|| {
-                    ConstructorEdgeMetadata::new(edge_weight.is_some(), edge_type.is_some())
-                });
-
-            if let Some(rem) = reverse_edge_metadata {
-                rem.add(edge_weight, edge_types_id);
+                return Err(format!(
+                    concat!(
+                        "Found duplicated edges!\n",
+                        "The source node is {source} and the destination node is {destination}.\n",
+                        "The edge type of the row is {edge_type:?}.",
+                    ),
+                    source = source_node_name,
+                    destination = destination_node_name,
+                    edge_type = edge_type,
+                ));
             }
         }
+
+        unique_edges_tree.simple_extend(
+            *source_node_id,
+            *destinations_node_id,
+            edge_types_id,
+            edge_weight,
+            directed,
+        );
     }
 
     Ok((unique_edges_tree, optionify!(edge_types_vocabulary)))
@@ -237,48 +218,41 @@ pub(crate) fn build_graph(
 ) -> Graph {
     // structures to fill for the graph
     // outbounds is initialized as vector of values unique edges and with length equal to the number of nodes.
-    let mut outbounds: Vec<u64> = vec![0; nodes.len()];
-    let mut not_trap_nodes: Vec<NodeT> = Vec::new();
-    let mut destinations: Vec<NodeT> = Vec::new();
     let mut weights: Vec<WeightT> = Vec::new();
-    let mut unique_edges: HashMap<(NodeT, NodeT), EdgeT> = HashMap::new();
     let mut edge_types_vector: Vec<NodeTypeT> = Vec::new();
+    let (max_src, max_dst);
+    // We get the tree last value without borrowing it for too long.
+    {
+        let ((tmp_max_src, tmp_max_dst), _) = unique_edges_tree.last_key_value().unwrap();
+        max_src = *tmp_max_src + 1;
+        max_dst = *tmp_max_dst + 1;
+    }
+    let node_bits = get_node_bits(max!(max_src, max_dst));
+    let node_bit_mask = (1 << node_bits) - 1;
+    let mut edges: EliasFano = EliasFano::new(
+        encode_edge(max_src, max_dst, node_bits) as u64,
+        unique_edges_tree.len(),
+    );
 
+    let pb = ProgressBar::new(unique_edges_tree.len() as u64);
+    pb.set_draw_delta(unique_edges_tree.len() as u64 / 100);
+    pb.set_style(ProgressStyle::default_bar().template(
+        "Building tree {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
+    ));
+    
     // now that the tree is built
     // we can iter on the edge in order (no further sorting required)
     // during the iteration we pop the minimum value each time
-    let mut last_src = 0;
-    let mut edge_id = 0;
     while !unique_edges_tree.is_empty() {
         // we gradually destroy the tree while we fill the other structures
         // in this way we reduce the memory peak
         // the unwrap is guaranteed to succeed because we check if the tree is empty
         let ((src, dst), mut metadata) = unique_edges_tree.pop_first().unwrap();
-
-        // fill the outbounds vector
-        // this is a vector that have the offset of the last
-        // edge of each src
-        if last_src != src {
-            // Assigning to range instead of single value, so that traps
-            // have as delta between previous and next node zero.
-            for o in &mut outbounds[last_src..src] {
-                *o = edge_id;
-            }
-            if edge_id > 0 {
-                not_trap_nodes.push(last_src as NodeT);
-            }
-            last_src = src;
-        }
-
-        // initalize the hashmap
-        unique_edges.insert((src, dst), edge_id as EdgeT);
-
         // Reverse the metadata of the edge into the graph vectors
         match &mut metadata {
             Some(m) => {
-                edge_id += m.len() as u64;
                 m.for_each(|(weight, edge_type)| {
-                    destinations.push(dst);
+                    edges.unchecked_push(encode_edge(src, dst, node_bits));
                     if let Some(w) = weight {
                         weights.push(w);
                     }
@@ -288,33 +262,35 @@ pub(crate) fn build_graph(
                 });
             }
             None => {
-                destinations.push(dst);
-                edge_id += 1;
+                edges.unchecked_push(encode_edge(src, dst, node_bits));
             }
         }
-        drop(metadata);
+        pb.inc(1);
     }
-    for o in &mut outbounds[last_src..] {
-        *o = edge_id;
-    }
+    pb.finish();
 
-    not_trap_nodes.push(last_src);
+    let unique_sources: EliasFano = EliasFano::from_iter(
+        edges
+            .iter()
+            .map(|edge| {
+                let (src, _) = decode_edge(edge, node_bits, node_bit_mask);
+                src as u64
+            })
+            .unique(),
+        max_src as u64,
+        max_src,
+    )
+    .unwrap();
 
-    let singletons_number =
-        outbounds.len() - destinations.iter().chain(not_trap_nodes.iter()).unique().count();
-
-    let has_traps = not_trap_nodes.len() != outbounds.len() - singletons_number;
-
-    Graph {
-        not_trap_nodes,
-        destinations,
+    let mut graph = Graph {
         nodes,
-        unique_edges,
+        edges,
         node_types,
-        has_traps,
-        singletons_number,
-        outbounds:EliasFano::from_vec(&outbounds).unwrap(),
-        is_directed: directed,
+        directed,
+        node_bits,
+        node_bit_mask,
+        unique_sources,
+        has_traps: false,
         weights: optionify!(weights),
         edge_types: match edge_types {
             Some(et) => Some(VocabularyVec::<EdgeTypeT> {
@@ -323,7 +299,11 @@ pub(crate) fn build_graph(
             }),
             None => None,
         },
-    }
+    };
+
+    graph.has_traps = !graph.get_trap_nodes().is_empty();
+
+    graph
 }
 
 /// # Graph Constructors

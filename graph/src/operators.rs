@@ -14,44 +14,28 @@ fn generic_operator(
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
 ) -> Result<Graph, String> {
     let mut unique_edges_tree = GraphDictionary::new();
-
-    graphs.iter().for_each(|(one, two, three)| {
-        (0..one.get_edges_number())
-            .map(|edge_id| {
-                let src = one.get_src_from_edge_id(edge_id);
-                let dst = one.destinations[edge_id];
-
-                let edge_type = if let Some(et) = &one.edge_types {
-                    Some(et.ids[edge_id])
-                } else {
-                    None
-                };
-
-                let weight = if let Some(w) = &one.weights {
-                    Some(w[edge_id])
-                } else {
-                    None
-                };
-
-                (src, dst, edge_type, weight)
-            })
-            .filter(|(src, dst, edge_type, _)| {
+    // one: left hand side of the operator
+    // deny_graph: right hand edges "deny list"
+    // must_have_graph: right hand edges "must have list
+    graphs.iter().for_each(|(one, deny_graph, must_have_graph)| {
+        one.get_edge_quadruples_enumerate()
+            .filter(|(_, src, dst, edge_type, _)| {
                 // We avoid to insert duplicates.
-                if !one.is_directed && src > dst {
+                if !one.directed && src > dst {
                     return false;
                 }
                 // If the secondary graph is given
                 // we filter out the edges that were previously added to avoid
                 // introducing duplicates.
-                if let Some(t) = two {
-                    return t.get_edge_id(*src, *dst, *edge_type).is_err();
+                if let Some(dg) = deny_graph {
+                    return dg.get_edge_id(*src, *dst, *edge_type).is_none();
                 }
-                if let Some(t) = three {
-                    return t.get_edge_id(*src, *dst, *edge_type).is_ok();
+                if let Some(mhg) = must_have_graph {
+                    return mhg.get_edge_id(*src, *dst, *edge_type).is_some();
                 }
                 true
             })
-            .for_each(|(src, dst, edge_type, weight)| {
+            .for_each(|(_, src, dst, edge_type, weight)| {
                 unique_edges_tree.extend(&one, src, dst, edge_type, weight, false)
             })
     });
@@ -65,13 +49,13 @@ fn generic_operator(
         } else {
             None
         },
-        main.is_directed,
+        main.directed,
     ))
 }
 
 impl<'a, 'b> Graph {
     fn validate_operator_terms(&self, other: &'b Graph) -> Result<(), String> {
-        if self.is_directed != other.is_directed {
+        if self.directed != other.directed {
             return Err(String::from(concat!(
                 "The graphs must either be both directed or undirected."
             )));

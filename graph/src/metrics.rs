@@ -29,7 +29,11 @@ impl Graph {
                 self.get_nodes_number()
             ));
         }
-        Ok(self.degree(one) as usize * self.degree(two) as usize)
+        Ok(self.get_node_degree(one) as usize * self.get_node_degree(two) as usize)
+    }
+
+    pub fn is_source(&self, candidate_source: NodeT) -> bool {
+        self.get_node_degree(candidate_source) != 0
     }
 
     /// Returns the Jaccard index for the two given nodes.
@@ -64,8 +68,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_node_neighbours(one).iter().cloned().collect();
-        let two_neighbors: HashSet<NodeT> = self.get_node_neighbours(two).iter().cloned().collect();
+        let one_neighbors: HashSet<NodeT> = self.get_source_destinations_range(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.get_source_destinations_range(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -112,8 +116,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_node_neighbours(one).iter().cloned().collect();
-        let two_neighbors: HashSet<NodeT> = self.get_node_neighbours(two).iter().cloned().collect();
+        let one_neighbors: HashSet<NodeT> = self.get_source_destinations_range(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.get_source_destinations_range(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -122,7 +126,7 @@ impl Graph {
         Ok(intersections
             .par_iter()
             .filter(|node| !self.is_node_trap(**node))
-            .map(|node| 1.0 / (self.degree(*node) as f64).ln())
+            .map(|node| 1.0 / (self.get_node_degree(*node) as f64).ln())
             .sum())
     }
 
@@ -165,8 +169,8 @@ impl Graph {
             return Ok(0.0f64);
         }
 
-        let one_neighbors: HashSet<NodeT> = self.get_node_neighbours(one).iter().cloned().collect();
-        let two_neighbors: HashSet<NodeT> = self.get_node_neighbours(two).iter().cloned().collect();
+        let one_neighbors: HashSet<NodeT> = self.get_source_destinations_range(one).collect();
+        let two_neighbors: HashSet<NodeT> = self.get_source_destinations_range(two).collect();
         let intersections: HashSet<NodeT> = one_neighbors
             .intersection(&two_neighbors)
             .cloned()
@@ -175,7 +179,7 @@ impl Graph {
         Ok(intersections
             .par_iter()
             .filter(|node| !self.is_node_trap(**node))
-            .map(|node| 1.0 / self.degree(*node) as f64)
+            .map(|node| 1.0 / self.get_node_degree(*node) as f64)
             .sum())
     }
 
@@ -192,12 +196,10 @@ impl Graph {
             .into_par_iter()
             .map(|node| {
                 if !self.is_node_trap(node) {
-                    let neighbours = self.get_node_neighbours(node);
-                    neighbours
-                        .iter()
-                        .map(|n| self.is_node_trap(*n) as usize as f64)
+                    self.get_source_destinations_range(node)
+                        .map(|dst| self.is_node_trap(dst) as usize as f64)
                         .sum::<f64>()
-                        / neighbours.len() as f64
+                        / self.get_node_degree(node) as f64
                 } else {
                     1.0
                 }
@@ -212,11 +214,7 @@ impl Graph {
     /// println!("The mean node degree of the graph is  {}", graph.degrees_mean());
     /// ```
     pub fn degrees_mean(&self) -> f64 {
-        (0..self.get_nodes_number())
-            .into_par_iter()
-            .map(|node| self.degree(node))
-            .sum::<usize>() as f64
-            / self.get_nodes_number() as f64
+        self.get_node_degrees().iter().sum::<usize>() as f64 / self.get_nodes_number() as f64
     }
 
     /// Returns median node degree of the graph
@@ -225,7 +223,7 @@ impl Graph {
     /// println!("The median node degree of the graph is  {}", graph.degrees_median());
     /// ```
     pub fn degrees_median(&self) -> NodeT {
-        let mut degrees = self.degrees();
+        let mut degrees = self.get_node_degrees();
         degrees.par_sort_unstable();
         degrees[self.get_nodes_number() / 2]
     }
@@ -236,7 +234,7 @@ impl Graph {
     /// println!("The maximum node degree of the graph is  {}", graph.degrees_max());
     /// ```
     pub fn degrees_max(&self) -> NodeT {
-        *self.degrees().iter().max().unwrap()
+        *self.get_node_degrees().iter().max().unwrap()
     }
 
     /// Returns minimum node degree of the graph
@@ -245,7 +243,7 @@ impl Graph {
     /// println!("The minimum node degree of the graph is  {}", graph.degrees_min());
     /// ```
     pub fn degrees_min(&self) -> NodeT {
-        *self.degrees().iter().min().unwrap()
+        *self.get_node_degrees().iter().min().unwrap()
     }
 
     /// Returns mode node degree of the graph
@@ -256,7 +254,7 @@ impl Graph {
     pub fn degrees_mode(&self) -> NodeT {
         let mut occurrences: HashMap<NodeT, usize> = HashMap::new();
 
-        for value in self.degrees() {
+        for value in self.get_node_degrees() {
             *occurrences.entry(value).or_insert(0) += 1;
         }
 
@@ -273,10 +271,7 @@ impl Graph {
     /// println!("The number of self-loops in the graph is  {}", graph.get_selfloops_number());
     /// ```
     pub fn get_selfloops_number(&self) -> usize {
-        (0..self.get_nodes_number())
-            .into_par_iter()
-            .map(|node| self.has_edge(node, node) as usize)
-            .sum::<usize>()
+        self.get_selfloops_iter().count()
     }
 
     /// Returns rate of self-loops.
@@ -294,11 +289,11 @@ impl Graph {
     /// println!("The rate of bidirectional edges in the graph is  {}", graph.bidirectional_rate());
     /// ```
     pub fn bidirectional_rate(&self) -> f64 {
-        self.unique_edges
-            .keys()
-            .map(|(src, dst)| self.has_edge(*dst, *src) as usize)
+        (0..self.get_nodes_number())
+            .into_par_iter()
+            .map(|node| self.has_edge(node, node) as usize)
             .sum::<usize>() as f64
-            / self.unique_edges.len() as f64
+            / self.edges.len() as f64
     }
 
     /// Returns number of connected components in graph.
@@ -331,8 +326,17 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The graph contains {} singleton nodes", graph.singleton_nodes_number());
     /// ```
-    pub fn singleton_nodes_number(&self) -> NodeT {
-        self.singletons_number
+    pub fn get_singleton_nodes_number(&self) -> NodeT {
+        self.get_nodes_number() - self.get_not_singletons().len()
+    }
+
+    /// Returns number of not singleton nodes within the graph.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The graph contains {} not singleton nodes", graph.get_not_singleton_nodes_number());
+    /// ```
+    pub fn get_not_singleton_nodes_number(&self) -> NodeT {
+        self.get_not_singletons().len()
     }
 
     /// Returns density of the graph.
@@ -350,11 +354,14 @@ impl Graph {
     /// println!("The mean number of edge types is {}", graph.get_mean_number_of_types_for_edge());
     /// ```
     pub fn get_mean_number_of_types_for_edge(&self) -> f64 {
-        self.unique_edges
-            .keys()
-            .map(|(src, dst)| self.get_edge_ids(*src, *dst).unwrap().len())
-            .sum::<usize>() as f64
-            / self.get_edges_number() as f64
+        let mut total = 0;
+        let mut number = 0;
+        // TODO!: This can probably be written better.
+        self.get_unique_edges_iter().for_each(|(src, dst)| {
+            total += self.get_unchecked_edge_types_number_from_tuple(src, dst);
+            number += 1;
+        });
+        total as f64 / number as f64
     }
 
     /// Returns the number of edges that have multiple types.
@@ -363,9 +370,8 @@ impl Graph {
     /// println!("The number of edge with multiple types is {}", graph.get_multigraph_edges_number());
     /// ```
     pub fn get_multigraph_edges_number(&self) -> usize {
-        self.unique_edges
-            .keys()
-            .filter(|(src, dst)| self.get_edge_ids(*src, *dst).unwrap().len() > 1)
+        self.get_unique_edges_iter()
+            .filter(|(src, dst)| self.get_unchecked_edge_types_number_from_tuple(*src, *dst) > 1)
             .count()
     }
 
@@ -409,8 +415,8 @@ impl Graph {
         report.insert("nodes_number", self.get_nodes_number().to_string());
         report.insert("edges_number", self.get_edges_number().to_string());
         report.insert("density", self.density().to_string());
-        report.insert("singleton_nodes", self.singleton_nodes_number().to_string());
-        report.insert("is_directed", self.is_directed.to_string());
+        report.insert("singleton_nodes", self.get_singleton_nodes_number().to_string());
+        report.insert("directed", self.directed.to_string());
         report.insert("is_multigraph", self.is_multigraph().to_string());
         report.insert(
             "multigraph_edges_number",

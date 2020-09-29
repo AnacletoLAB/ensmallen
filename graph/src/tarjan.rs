@@ -32,10 +32,10 @@ impl Graph {
                         components_stack.push(src);
                     }
                     recurse = false;
-                    let (_min, _max) = self.get_min_max_edge(src);
+                    let (_min, _max) = self.get_destinations_min_max_edge_ids(src);
                     // Consider successors of source node
                     for (j, dst) in ((_min + i).._max)
-                        .map(|edge| self.destinations[edge])
+                        .map(|edge_id| self.get_destination(edge_id))
                         .enumerate()
                     {
                         if !indexed_mask[dst] {

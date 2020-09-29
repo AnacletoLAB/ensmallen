@@ -225,19 +225,10 @@ impl EdgeFileWriter {
         self.writer.write_lines(
             graph.get_edges_number() as u64,
             compose_lines(number_of_columns, header),
-            (0..graph.get_edges_number())
-                .map(
-                    |edge_id| {
-                        (
-                            edge_id,
-                            graph.get_src_from_edge_id(edge_id),
-                            graph.destinations[edge_id],
-                        )
-                    }, // filter away duplicated edges if the graph
-                       // is undirected
-                )
-                .filter(|(_, src, dst)| graph.is_directed || src <= dst)
-                .map(|(index, src, dst)| {
+            graph
+                .get_edge_quadruples_enumerate()
+                .filter(|(_, src, dst, _, _)| graph.directed || src <= dst)
+                .map(|(_, src, dst, edge_type, weight)| {
                     let mut line = vec![
                         (
                             graph.nodes.translate(src).to_string(),
@@ -251,13 +242,13 @@ impl EdgeFileWriter {
 
                     if let Some(ets) = &graph.edge_types {
                         line.push((
-                            ets.translate(ets.ids[index]).to_string(),
+                            ets.translate(edge_type.unwrap()).to_string(),
                             self.edge_types_column_number,
                         ));
                     }
 
-                    if let Some(w) = &graph.weights {
-                        line.push((w[index].to_string(), self.weights_column_number));
+                    if let Some(w) = weight {
+                        line.push((w.to_string(), self.weights_column_number));
                     }
 
                     compose_lines(number_of_columns, line)

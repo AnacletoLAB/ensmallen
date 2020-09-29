@@ -23,6 +23,7 @@ mod edge_file_writer;
 pub use self::edge_file_writer::EdgeFileWriter;
 mod from_csv;
 mod compression;
+pub(crate) use self::compression::*;
 
 mod constructors;
 pub(crate) use self::constructors::build_graph;
