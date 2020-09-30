@@ -1,5 +1,4 @@
 use super::*;
-use std::collections::btree_map::Entry;
 use std::collections::{BTreeMap, HashSet};
 
 // Types used to represent edges, nodes and their types.
@@ -61,21 +60,6 @@ impl GraphDictionary {
         self.tree.contains_key(key)
     }
 
-    /// Insert given key and value within tree.
-    ///
-    /// # Arguments
-    ///
-    /// * key: (NodeT, NodeT) - The tuple of nodes to insert.
-    /// * value: Option<ConstructorEdgeMetadata> - The metadata to insert.
-    pub(crate) fn insert(
-        &mut self,
-        key: (NodeT, NodeT),
-        metadata: Option<ConstructorEdgeMetadata>,
-    ) -> Option<Option<ConstructorEdgeMetadata>> {
-        self.edges += if let Some(m) = &metadata { m.len() } else { 1 };
-        self.tree.insert(key, metadata)
-    }
-
     /// Return boolea representing if tree is empty.
     pub(crate) fn is_empty(&self) -> bool {
         self.tree.is_empty()
@@ -93,15 +77,6 @@ impl GraphDictionary {
         &mut self,
     ) -> Option<((NodeT, NodeT), Option<ConstructorEdgeMetadata>)> {
         self.tree.pop_first()
-    }
-
-    /// Gets the given key's corresponding entry in the map for in-place manipulation.
-    /// This is used when we want to modify some value that might not be initialized
-    pub(crate) fn entry(
-        &mut self,
-        key: (NodeT, NodeT),
-    ) -> Entry<(NodeT, NodeT), Option<ConstructorEdgeMetadata>> {
-        self.tree.entry(key)
     }
 
     /// Return mutable ConstructorEdgeMetadata if present.

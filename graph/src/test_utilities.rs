@@ -165,31 +165,38 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     validate_vocabularies(graph);
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph, verbose)?;
-    assert_eq!(
-        graph.random_walks(1, &walker)?,
-        graph.random_walks(1, &walker)?
-    );
+    if !graph.directed {
+        assert_eq!(
+            graph.random_walks(1, &walker)?,
+            graph.random_walks(1, &walker)?
+        );
 
-    assert_eq!(
-        graph.random_walks(1, &second_order_walker(&graph, verbose)?)?,
-        graph.random_walks(1, &second_order_walker(&graph, verbose)?)?
-    );
+        assert_eq!(
+            graph.random_walks(1, &second_order_walker(&graph, verbose)?)?,
+            graph.random_walks(1, &second_order_walker(&graph, verbose)?)?
+        );
 
-    assert_eq!(
-        graph.complete_walks(&walker)?,
-        graph.complete_walks(&walker)?
-    );
-    assert_eq!(
-        graph.complete_walks(&second_order_walker(&graph, verbose)?)?,
-        graph.complete_walks(&second_order_walker(&graph, verbose)?)?
-    );
+        assert_eq!(
+            graph.complete_walks(&walker)?,
+            graph.complete_walks(&walker)?
+        );
+
+        assert_eq!(
+            graph.complete_walks(&second_order_walker(&graph, verbose)?)?,
+            graph.complete_walks(&second_order_walker(&graph, verbose)?)?
+        );
+    }
 
     // Testing main holdout mechanisms
     for include_all_edge_types in &[false, true] {
-        let (train, test) = graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
+        let (train, test) =
+            graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) = graph.connected_holdout(4, 0.8, *include_all_edge_types, verbose)?;
-        assert_eq!(graph.connected_components_number(), train.connected_components_number());
+        assert_eq!(
+            graph.connected_components_number(),
+            train.connected_components_number()
+        );
         default_holdout_test_suite(graph, &train, &test)?;
     }
     // Testing cloning
