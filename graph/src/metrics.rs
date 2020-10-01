@@ -348,22 +348,6 @@ impl Graph {
         self.get_edges_number() as f64 / (self.get_nodes_number().pow(2)) as f64
     }
 
-    /// Returns the mean number of types for each edge.
-    ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The mean number of edge types is {}", graph.get_mean_number_of_types_for_edge());
-    /// ```
-    pub fn get_mean_number_of_types_for_edge(&self) -> f64 {
-        let mut total = 0;
-        let mut number = 0;
-        // TODO!: This can probably be written better.
-        self.get_unique_edges_iter().for_each(|(src, dst)| {
-            total += self.get_unchecked_edge_types_number_from_tuple(src, dst);
-            number += 1;
-        });
-        total as f64 / number as f64
-    }
-
     /// Returns the number of edges that have multiple types.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -407,29 +391,10 @@ impl Graph {
     /// ```
     pub fn report(&self) -> DefaultHashMap<&str, String> {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
-        report.insert("degrees_median", self.degrees_median().to_string());
-        report.insert("degrees_mean", self.degrees_mean().to_string());
-        report.insert("degrees_mode", self.degrees_mode().to_string());
-        report.insert("degrees_min", self.degrees_min().to_string());
-        report.insert("degrees_max", self.degrees_max().to_string());
         report.insert("nodes_number", self.get_nodes_number().to_string());
         report.insert("edges_number", self.get_edges_number().to_string());
         report.insert("density", self.density().to_string());
-        report.insert("singleton_nodes", self.get_singleton_nodes_number().to_string());
         report.insert("directed", self.directed.to_string());
-        report.insert("is_multigraph", self.is_multigraph().to_string());
-        report.insert(
-            "multigraph_edges_number",
-            self.get_multigraph_edges_number().to_string(),
-        );
-        report.insert(
-            "multigraph_edges_ratio",
-            self.get_multigraph_edges_ratio().to_string(),
-        );
-        report.insert(
-            "mean_number_of_types_for_edge",
-            self.get_mean_number_of_types_for_edge().to_string(),
-        );
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),
@@ -441,7 +406,6 @@ impl Graph {
         report.insert("traps_rate", self.traps_rate().to_string());
         report.insert("selfloops_rate", self.get_selfloops_rate().to_string());
         report.insert("selfloops_number", self.get_selfloops_number().to_string());
-        report.insert("bidirectional_rate", self.bidirectional_rate().to_string());
         report
     }
 }

@@ -35,12 +35,6 @@ impl Graph {
         self.get_selfloops_iter().any(|_| true)
     }
 
-    /// Returns a boolean representing if the graph contains a pair of nodes
-    /// which have edges of multiple types.
-    pub fn is_multigraph(&self) -> bool {
-        self.get_unique_edges_number() != self.get_edges_number()
-    }
-
     /// Returns number of nodes in the graph.
     pub fn get_nodes_number(&self) -> usize {
         self.nodes.len()
@@ -48,12 +42,6 @@ impl Graph {
 
     /// Returns number of edges in the graph.
     pub fn get_edges_number(&self) -> usize {
-        self.edges.len()
-    }
-
-    /// Returns the number of edges (ignoring the edge type)
-    pub fn get_unique_edges_number(&self) -> usize {
-        // TODO! CHECK IF RIGHT
         self.edges.len()
     }
 

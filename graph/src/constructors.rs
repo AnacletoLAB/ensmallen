@@ -225,7 +225,7 @@ pub(crate) fn parse_unsorted_edges<'a>(
         }
     }
 
-    let pb = get_loading_bar(verbose, "Parsing sorted tree", sorting_tmp.len() as u64);
+    let pb = get_loading_bar(verbose, "Sorting and building graph", sorting_tmp.len() as u64);
     let edges_number = sorting_tmp.len();
     edge_types_vocabulary.build_reverse_mapping()?;
 
