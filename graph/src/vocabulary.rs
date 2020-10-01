@@ -43,7 +43,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     pub fn build_reverse_mapping(&mut self) -> Result<(), String> {
         self.reverse_map = vec!["".to_string(); self.map.len()];
         for (k, v) in self.map.iter() {
-            if *v > IndexT::from_usize(self.map.len()) {
+            if *v >= IndexT::from_usize(self.map.len()) {
                 return Err(format!(
                     concat!(
                         "The given set of values is not dense. Found the tuple k:{} v:{} ",
