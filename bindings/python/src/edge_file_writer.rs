@@ -5,7 +5,7 @@ use pyo3::types::PyDict;
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, path, *, verbose, separator, header, sources_column_number, sources_column, destinations_column_number, destinations_column, weights_column_number, weights_column, edge_types_column_number, edges_type_column)"]
+    #[text_signature = "($self, path, *, verbose, separator, header, sources_column_number, sources_column, destinations_column_number, destinations_column, weights_column_number, weights_column, edge_types_column_number, edges_type_column, numeric_node_ids)"]
     /// Write to disk the edges (and optionally the metadata) of the graph.
     ///
     /// Parameters
@@ -34,6 +34,8 @@ impl EnsmallenGraph {
     ///     The column number where to write out the .
     /// weights_column: str = "weight",
     ///     The name of the column where to write out the .
+    /// numeric_node_ids: bool = False,
+    ///     Wethever to save the internal numeric Ids instead of the string names.
     ///
     /// Raises
     /// ------------------------
@@ -57,6 +59,7 @@ impl EnsmallenGraph {
                 "weights_column",
                 "edge_types_column_number",
                 "edges_type_column",
+                "numeric_node_ids"
             ]
             .iter()
             .map(|x| x.to_string())
@@ -78,6 +81,7 @@ impl EnsmallenGraph {
             .set_weights_column_number(extract_value!(kwargs, "weights_column_number", usize))
             .set_weights_column(extract_value!(kwargs, "weights_column", String))
             .set_edge_types_column_number(extract_value!(kwargs, "edge_types_column_number", usize))
+            .set_numeric_node_ids(extract_value!(kwargs, "numeric_node_ids", bool))
             .set_edge_types_column(extract_value!(kwargs, "edges_type_column", String));
         pyex!(writer.dump(&self.graph))
     }

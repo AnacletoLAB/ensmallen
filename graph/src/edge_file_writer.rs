@@ -13,6 +13,7 @@ pub struct EdgeFileWriter {
     pub(crate) edge_types_column_number: usize,
     pub(crate) weights_column: String,
     pub(crate) weights_column_number: usize,
+    pub(crate) numeric_node_ids: bool,
 }
 
 impl EdgeFileWriter {
@@ -33,6 +34,7 @@ impl EdgeFileWriter {
             edge_types_column_number: 2,
             weights_column: "weight".to_string(),
             weights_column_number: 3,
+            numeric_node_ids: false,
         }
     }
 
@@ -168,6 +170,19 @@ impl EdgeFileWriter {
         self
     }
 
+    /// Set the numeric_id.
+    ///
+    /// # Arguments
+    ///
+    /// * numeric_id: Option<bool> - Wethever to convert numeric Ids to Node Id.
+    ///
+    pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileWriter {
+        if let Some(nni) = numeric_node_ids {
+            self.numeric_node_ids = nni;
+        }
+        self
+    }
+
     /// Set the separator.
     ///
     /// # Arguments
@@ -231,11 +246,17 @@ impl EdgeFileWriter {
                 .map(|(src, dst, edge_type, weight)| {
                     let mut line = vec![
                         (
-                            graph.nodes.translate(src).to_string(),
+                            match self.numeric_node_ids {
+                                true => src.to_string(),
+                                false => graph.nodes.translate(src).to_string(),
+                            },
                             self.sources_column_number,
                         ),
                         (
-                            graph.nodes.translate(dst).to_string(),
+                            match self.numeric_node_ids {
+                                true => dst.to_string(),
+                                false => graph.nodes.translate(dst).to_string(),
+                            },
                             self.destinations_column_number,
                         ),
                     ];
