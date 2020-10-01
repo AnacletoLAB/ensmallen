@@ -1,4 +1,5 @@
 use super::*;
+use bitvec::prelude::*;
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
@@ -66,16 +67,7 @@ impl Graph {
             ));
         }
 
-        let pb = if verbose {
-            let pb = ProgressBar::new(negatives_number as u64);
-            pb.set_draw_delta(negatives_number as u64 / 100);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Computing negative edges {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        let pb = get_loading_bar(verbose, "Computing negative edges", negatives_number as u64);
 
         // xorshift breaks if the seed is zero
         // so we initialize xor it with a constat
@@ -83,7 +75,7 @@ impl Graph {
         seed ^= SEED_XOR;
 
         // initialize the vectors for the result
-        let mut unique_edges_tree: GraphDictionary = GraphDictionary::new();
+        let mut unique_edges_tree = GraphDictionary::new();
 
         // randomly extract negative edges until we have the choosen number
         while unique_edges_tree.len() < negatives_number {
@@ -117,151 +109,46 @@ impl Graph {
     fn holdout(
         &self,
         seed: NodeT,
-        train_percentage: f64,
-        include_all_edge_types: bool,
-        user_condition: impl Fn(NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: bool,
+        train_edges_number: EdgeT,
+        valid_edges_number: EdgeT,
+        mask: BitVec,
     ) -> Result<(Graph, Graph), String> {
-        if train_percentage <= 0.0 || train_percentage >= 1.0 {
-            return Err(String::from(
-                "Train percentage must be strictly between 0 and 1.",
-            ));
-        }
-
-        let valid_edges_number =
-            (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
-
-        if valid_edges_number == 0 {
-            return Err(String::from(
-                "With given train percentage, the validation set will remain empty with the current graph.",
-            ));
-        }
-
-        let pb = if verbose {
-            let pb = ProgressBar::new(self.get_edges_number() as u64);
-            pb.set_draw_delta(self.get_edges_number() as u64 / 100);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Generating holdout {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
-
-        // generate and shuffle the indices of the edges
-        let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
-        let mut edge_indices: Vec<NodeT> = (0..self.get_edges_number()).collect();
-        edge_indices.shuffle(&mut rng);
-
-        let mut train: GraphDictionary = GraphDictionary::new();
-        let mut valid: GraphDictionary = GraphDictionary::new();
-
-        for edge_id in edge_indices.iter().cloned().progress_with(pb) {
-            let (src, dst) = self.get_edge_from_edge_id(edge_id);
-
-            if !self.directed && src > dst {
-                continue;
-            }
-
-            let edge_type = if let Some(et) = &self.edge_types {
-                Some(et.ids[edge_id])
-            } else {
-                None
-            };
-
-            // Check if the edge with the considered edge type as already been added.
-            if [&train, &valid]
-                .iter()
-                .any(|tree| match tree.get(&(src, dst)) {
-                    Some(metadata) => {
-                        if let Some(md) = metadata {
-                            md.contains_edge_type(edge_type)
-                        } else {
-                            unreachable!(
-                                "This is not reacheable as it would imply duplicated edges."
-                            );
-                        }
-                    }
-                    None => false,
-                })
-            {
-                // The edge that is currently being considered as already
-                // been added in the current heterogenous multi-graph
-                // by the use of the parameter `include_all_edge_types`
-                continue;
-            }
-
-            let weight = if let Some(w) = &self.weights {
-                Some(w[edge_id])
-            } else {
-                None
-            };
-
-            // We stop adding edges when we have reached the minimum amount.
-            if user_condition(src, dst, edge_type) && valid.len() < valid_edges_number {
-                valid.extend(self, src, dst, edge_type, weight, include_all_edge_types);
-            } else {
-                // Otherwise we add the edges to the training set.
-                train.extend(self, src, dst, edge_type, weight, include_all_edge_types);
-            }
-        }
-
-        if train.is_empty() {
-            return Err(String::from(
-                "With given holdouts parameters the train partition results empty.",
-            ));
-        }
-
-        if valid.len() < valid_edges_number {
-            let actual_valid_edges_number = valid.len();
-            let valid_percentage = 1.0 - train_percentage;
-            let actual_valid_percentage =
-                actual_valid_edges_number as f64 / self.get_edges_number() as f64;
-            let actual_train_percentage = 1.0 - actual_valid_percentage;
-            return Err(format!(
-                concat!(
-                    "With the given configuration for the holdout, it is not possible to ",
-                    "generate a validation set composed of {valid_edges_number} edges from the current graph.\n",
-                    "The validation set can be composed of at most {actual_valid_edges_number} edges.\n",
-                    "The actual train/valid split percentages, with the current configuration,",
-                    "would not be {train_percentage}/{valid_percentage} but {actual_train_percentage}/{actual_valid_percentage}.\n",
-                    "If you really want to do this, you can pass the argument:\n",
-                    "train_percentage: {actual_train_percentage}\n",
-                    "Before proceeding, consider what is your experimental setup goal and ",
-                    "the possible bias and validation problems that this choice might cause."
-                ),
-                valid_edges_number=valid_edges_number,
-                actual_valid_edges_number=actual_valid_edges_number,
-                train_percentage=train_percentage,
-                valid_percentage=valid_percentage,
-                actual_train_percentage=actual_train_percentage,
-                actual_valid_percentage=actual_valid_percentage
-            ));
-        }
+        let pb = get_loading_bar(
+            verbose,
+            "Generating holdout",
+            self.get_edges_number() as u64,
+        );
 
         Ok((
             build_graph(
-                &mut train,
-                self.nodes.clone(),
+                self.get_edge_quadruples()
+                    .zip(mask)
+                    .filter_map(|(quadruple, keep)| match keep {
+                        true => None,
+                        false => Some(Ok(quadruple)),
+                    }),
+                train_edges_number,
+                self.nodes.len(),
+                self.edge_types.map(|v| v.vocabulary.clone()),
                 self.node_types.clone(),
-                if let Some(et) = &self.edge_types {
-                    Some(et.vocabulary.clone())
-                } else {
-                    None
-                },
                 self.directed,
-            ),
+                self.nodes.clone(),
+            )?,
             build_graph(
-                &mut valid,
-                self.nodes.clone(),
+                self.get_edge_quadruples()
+                    .zip(mask)
+                    .filter_map(|(quadruple, keep)| match keep {
+                        true => Some(Ok(quadruple)),
+                        false => None,
+                    }),
+                valid_edges_number,
+                self.nodes.len(),
+                self.edge_types.map(|v| v.vocabulary.clone()),
                 self.node_types.clone(),
-                if let Some(et) = &self.edge_types {
-                    Some(et.vocabulary.clone())
-                } else {
-                    None
-                },
                 self.directed,
-            ),
+                self.nodes.clone(),
+            )?,
         ))
     }
 

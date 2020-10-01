@@ -26,14 +26,16 @@ mod compression;
 pub(crate) use self::compression::*;
 
 mod constructors;
-pub(crate) use self::constructors::build_graph;
 
-mod drop;
+mod utils;
+pub(crate) use self::utils::get_loading_bar;
+
+//mod drop;
 mod getters;
 pub mod graph;
-mod holdouts;
+//mod holdouts;
 mod metrics;
-mod operators;
+//mod operators;
 mod preprocessing;
 mod setters;
 mod tarjan;
@@ -42,11 +44,11 @@ pub mod types;
 mod walks;
 mod walks_parameters;
 
-pub mod test_utilities;
+//pub mod test_utilities;
 
 pub use self::graph::Graph;
-pub use self::holdouts::*;
-pub use self::operators::*;
+//pub use self::holdouts::*;
+//pub use self::operators::*;
 pub use self::tarjan::*;
 pub use self::trees::*;
 pub use self::types::*;

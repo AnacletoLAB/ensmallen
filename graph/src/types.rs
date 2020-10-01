@@ -21,6 +21,10 @@ pub type Contexts = Vec<Vec<NodeT>>;
 pub type Words = Vec<NodeT>;
 /// Type used to save the frequencies of words
 pub type Frequencies = Vec<f64>;
+/// Triple of edge data
+pub type Triple = (NodeT, NodeT, Option<EdgeTypeT>);
+/// Quadruple of edge data
+pub type Quadruple = (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>);
 
 /// Custom BTreeMap with some helper methods
 #[derive(Debug)]

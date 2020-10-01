@@ -6,7 +6,32 @@ pub struct VocabularyVec<IndexT: ToFromUsize> {
     pub vocabulary: Vocabulary<IndexT>,
 }
 
-impl<IndexT: ToFromUsize + Clone + Copy> VocabularyVec<IndexT> {
+impl<IndexT: ToFromUsize + Clone + Copy + Default> VocabularyVec<IndexT> {
+    /// Create a new vocabulary vec from a given vocabulary
+    /// if the given vocabulary is none then initialize it with an empty one
+    pub fn new(vocabulary: Option<Vocabulary<IndexT>>) -> VocabularyVec<IndexT> {
+        if let Some(vocab) = vocabulary {
+            VocabularyVec{
+                vocabulary: vocab,
+                ids: Vec::new(),
+            }
+        } else {
+            VocabularyVec{
+                vocabulary: Vocabulary::default(),
+                ids: Vec::new(),
+            }
+        }
+    }
+
+    /// Add the id to the vocabulary vector
+    ///
+    /// # Arguments
+    ///
+    /// * `id`: IndexT - The Id to insert.
+    pub fn add(&mut self, id: IndexT){
+        self.ids.push(id)
+    }
+
     /// Returns id of given value inserted.
     ///
     /// # Arguments

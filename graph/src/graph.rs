@@ -38,7 +38,6 @@ pub struct Graph {
     pub(crate) weights: Option<Vec<WeightT>>,
     /// Vocabulary that save the mappings from string to index of every node type
     pub(crate) node_types: Option<VocabularyVec<NodeTypeT>>,
-
     // This is the next attribute that will be embedded inside of edges once
     // the first refactoring is done
     /// Vocabulary that save the mappings from string to index of every edge type
@@ -215,24 +214,6 @@ impl Graph {
     ///
     pub fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
         self.edges.contains(self.encode_edge(src, dst))
-    }
-
-    /// Returns boolean representing if edge passing between given nodes exists.
-    ///
-    /// # Arguments
-    ///
-    /// * src: NodeT - The source node of the edge.
-    /// * dst: NodeT - The destination node of the edge.
-    ///
-    pub fn has_edge_in_range(
-        &self,
-        src: NodeT,
-        dst: NodeT,
-        min_edge: EdgeT,
-        max_edge: EdgeT,
-    ) -> bool {
-        self.edges
-            .contains_in_range(self.encode_edge(src, dst), min_edge as u64, max_edge as u64)
     }
 
     /// Return true if given graph has any edge overlapping with current graph.

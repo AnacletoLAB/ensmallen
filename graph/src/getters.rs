@@ -195,6 +195,13 @@ impl Graph {
             })
     }
 
+    pub fn get_edge_quadruples(
+        &self,
+    ) -> impl Iterator<Item = (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> + '_ {
+        self.get_edge_quadruples_enumerate()
+            .map(move |(_, src, dst, edge_type, weight)| (src, dst, edge_type, weight))
+    }
+
     /// Return iterator on the edges of the graph.
     pub fn get_unique_edges_iter(&self) -> impl Iterator<Item = (NodeT, NodeT)> + '_ {
         self.get_edges_iter().unique()

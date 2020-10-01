@@ -387,16 +387,11 @@ impl Graph {
         let total_iterations = quantity * parameters.iterations;
 
         info!("Starting random walk.");
-        let pb = if parameters.verbose {
-            let pb = ProgressBar::new(total_iterations as u64);
-            pb.set_draw_delta(total_iterations as u64 / 100);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Computing random walks {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        let pb = get_loading_bar(
+            parameters.verbose,
+            "Compute random walks",
+            total_iterations as u64,
+        );
 
         let iterator = (0..total_iterations)
             .into_par_iter()

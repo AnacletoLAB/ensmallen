@@ -8,13 +8,10 @@ mod edge_file_writer;
 mod from_csv;
 mod getters;
 mod setters;
-mod holdout;
 mod metrics;
 mod node_file_writer;
 mod tarjan;
-mod operators;
 mod preprocessing;
-mod drop;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
 mod tree;
@@ -22,6 +19,10 @@ mod types;
 pub(crate) use crate::types::*;
 mod walks;
 pub(crate) use crate::types::EnsmallenGraph;
+
+//mod operators;
+//mod holdout;
+//mod drop;
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
