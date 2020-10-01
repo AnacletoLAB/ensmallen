@@ -56,7 +56,10 @@ where
                     }
                 },
                 None=>{
-                    Some(Ok((nodes.insert(node_name), node_type)))
+                    Some(match nodes.insert(node_name){
+                        Ok(node_id) => Ok((node_id, node_type)),
+                        Err(e) => Err(e)
+                    })
                 }
             },
             Err(e) => Some(Err(e))
@@ -91,7 +94,7 @@ where
             for node_name in [src_name.clone(), dst_name.clone()].iter() {
                 if !nodes.contains_key(node_name) {
                     if empty_nodes_mapping {
-                        nodes.insert(node_name.to_owned());
+                        nodes.insert(node_name.to_owned())?;
                     } else {
                         return Err(format!(
                             concat!(
@@ -120,8 +123,17 @@ pub(crate) fn parse_edge_type_ids_vocabulary<'a>(
         + 'a,
     edge_types: &'a mut Vocabulary<EdgeTypeT>,
 ) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
-    edges_iter.map_results(move |(src, dst, edge_type, weight)| {
-        (src, dst, edge_type.map(|nt| edge_types.insert(nt)), weight)
+    edges_iter.map(move |row| {
+        match row {
+            Ok((src, dst, edge_type, weight)) => {
+                let edge_type_id = match edge_type {
+                   Some(et)=>Some(edge_types.insert(et)?),
+                   None => None
+                };
+                Ok((src, dst, edge_type_id, weight))
+            },
+            Err(e) => Err(e)
+        }
     })
 }
 

@@ -9,12 +9,11 @@ pub struct Vocabulary<IndexT: ToFromUsize> {
 }
 
 impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
-    
     pub fn new(numeric_ids: bool) -> Vocabulary<IndexT> {
-        Vocabulary{
+        Vocabulary {
             numeric_ids,
             map: HashMap::new(),
-            reverse_map: Vec::new()
+            reverse_map: Vec::new(),
         }
     }
 
@@ -23,18 +22,21 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// # Arguments
     ///
     /// * `value`: String - The value to be inserted.
-    pub fn insert(&mut self, value: String) -> IndexT {
+    pub fn insert(&mut self, value: String) -> Result<IndexT, String> {
         if !self.map.contains_key(&value) {
             self.map.insert(
                 value.clone(),
                 IndexT::from_usize(if self.numeric_ids {
-                    value.parse::<usize>().unwrap()
+                    match value.parse::<usize>() {
+                        Ok(val) => Ok(val),
+                        Err(_) => Err(format!("The given ID `{}` is not numeric.", value)),
+                    }?
                 } else {
                     self.map.len()
                 }),
             );
         }
-        *self.get(&value).unwrap()
+        Ok(*self.get(&value).unwrap())
     }
 
     /// Compute the reverse mapping vector for fast decoding
