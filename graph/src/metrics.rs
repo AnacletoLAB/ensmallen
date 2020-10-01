@@ -403,9 +403,6 @@ impl Graph {
             "unique_edge_types_number",
             self.get_edge_types_number().to_string(),
         );
-        report.insert("traps_rate", self.traps_rate().to_string());
-        report.insert("selfloops_rate", self.get_selfloops_rate().to_string());
-        report.insert("selfloops_number", self.get_selfloops_number().to_string());
         report
     }
 }
