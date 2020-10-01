@@ -1,5 +1,6 @@
 use super::*;
 use std::collections::{BTreeMap, HashSet};
+use std::fmt::Display;
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.
@@ -324,7 +325,7 @@ impl Iterator for ConstructorEdgeMetadata {
 /// This allows us to save memory using indicies of smaller size than u64
 /// and it has no effects on performance because it's optimized away during
 /// compilaton.
-pub trait ToFromUsize {
+pub trait ToFromUsize: Clone + Display + Ord + Copy{
     /// create the type from a usize
     fn from_usize(v: usize) -> Self;
     /// create an usize frm the type

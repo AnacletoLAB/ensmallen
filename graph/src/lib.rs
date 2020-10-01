@@ -44,7 +44,7 @@ pub mod types;
 mod walks;
 mod walks_parameters;
 
-//pub mod test_utilities;
+pub mod test_utilities;
 
 pub use self::graph::Graph;
 //pub use self::holdouts::*;

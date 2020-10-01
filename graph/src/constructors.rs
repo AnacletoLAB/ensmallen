@@ -176,8 +176,14 @@ pub(crate) fn parse_sorted_edges<'a>(
                 while !sorting_tmp.is_empty()
                     && *sorting_tmp.first_key_value().unwrap().0 < (src, dst, edge_type)
                 {
-                    let ((src, dst, edge_type), weight) = sorting_tmp.pop_first().unwrap();
-                    results.push(Ok((src, dst, edge_type, weight)));
+                    let ((smaller_src, smaller_dst, smaller_edge_type), smaller_weight) =
+                        sorting_tmp.pop_first().unwrap();
+                    results.push(Ok((
+                        smaller_src,
+                        smaller_dst,
+                        smaller_edge_type,
+                        smaller_weight,
+                    )));
                 }
                 Ok((src, dst, edge_type, weight))
             }
@@ -194,6 +200,7 @@ pub(crate) fn parse_unsorted_edges<'a>(
     mut nodes: Vocabulary<NodeT>,
     directed: bool,
     verbose: bool,
+    numeric_edge_types_ids: bool,
 ) -> Result<
     (
         EdgeT,
@@ -203,7 +210,7 @@ pub(crate) fn parse_unsorted_edges<'a>(
     ),
     String,
 > {
-    let mut edge_types_vocabulary = Vocabulary::default();
+    let mut edge_types_vocabulary = Vocabulary::new(numeric_edge_types_ids);
 
     let wrapped_edges_iterator = parse_edge_type_ids_vocabulary(
         parse_edges_node_ids(edges_iter, &mut nodes),
@@ -220,6 +227,7 @@ pub(crate) fn parse_unsorted_edges<'a>(
 
     let pb = get_loading_bar(verbose, "Parsing sorted tree", sorting_tmp.len() as u64);
     let edges_number = sorting_tmp.len();
+    edge_types_vocabulary.build_reverse_mapping()?;
 
     Ok((
         edges_number,
@@ -252,9 +260,9 @@ pub(crate) fn build_edges(
 
     for value in edges_iter {
         let (src, dst, _, _) = value?;
-        edges.unchecked_push(encode_edge(src, dst, node_bits));
+        edges.push(encode_edge(src, dst, node_bits))?;
         if first || last_source != src {
-            unique_sources.unchecked_push(src as u64);
+            unique_sources.push(src as u64)?;
             last_source = src;
             first = false;
         }
@@ -266,9 +274,11 @@ pub(crate) fn build_edges(
 fn parse_nodes(
     nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
     ignore_duplicated_nodes: bool,
-) -> (Vocabulary<NodeT>, VocabularyVec<NodeTypeT>) {
-    let mut nodes = Vocabulary::default();
-    let mut node_types = VocabularyVec::default();
+    numeric_node_ids: bool,
+    numeric_node_types_ids: bool,
+) -> Result<(Vocabulary<NodeT>, VocabularyVec<NodeTypeT>), String> {
+    let mut nodes = Vocabulary::new(numeric_node_ids);
+    let mut node_types = VocabularyVec::new(numeric_node_types_ids);
 
     if let Some(ni) = nodes_iterator {
         parse_node_type_ids(
@@ -276,9 +286,10 @@ fn parse_nodes(
             &mut node_types,
         )
         .for_each(|_| {});
+        node_types.build_reverse_mapping()?;
     }
 
-    (nodes, node_types)
+    Ok((nodes, node_types))
 }
 
 pub(crate) fn parse_string_edges(
@@ -287,9 +298,10 @@ pub(crate) fn parse_string_edges(
     nodes_number: NodeT,
     directed: bool,
     mut nodes: Vocabulary<NodeT>,
+    numeric_edge_types_ids: bool,
 ) -> ParsedEdgesType {
     let mut weights: Vec<WeightT> = Vec::new();
-    let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::default();
+    let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::new(numeric_edge_types_ids);
     let mut edge_types_ids: Vec<EdgeTypeT> = Vec::new();
     let mut edge_sorting_tmp = BTreeMap::new();
 
@@ -324,6 +336,8 @@ pub(crate) fn parse_string_edges(
             edges.len()
         ));
     }
+
+    edge_types_vocabulary.build_reverse_mapping()?;
 
     Ok((
         edges,
@@ -398,7 +412,7 @@ impl Graph {
         edge_types_vocabulary: Vocabulary<EdgeTypeT>,
         directed: bool,
     ) -> Result<Graph, String> {
-        let (edges, unique_sources, nodes, edge_types, weights, node_bit_mask, node_bits) =
+        let (edges, unique_sources, mut nodes, edge_types, weights, node_bit_mask, node_bits) =
             parse_integer_edges(
                 edge_iter,
                 edges_number,
@@ -406,6 +420,8 @@ impl Graph {
                 edge_types_vocabulary,
                 nodes,
             )?;
+
+        nodes.build_reverse_mapping()?;
 
         let mut graph = Graph {
             directed,
@@ -419,7 +435,7 @@ impl Graph {
             edge_types: optionify!(edge_types),
             weights: optionify!(weights),
         };
-        graph.has_traps = graph.get_trap_nodes().is_empty();
+        graph.has_traps = !graph.get_trap_nodes().is_empty();
         Ok(graph)
     }
     /// Create new Graph object from unsorted source.
@@ -446,10 +462,18 @@ impl Graph {
         directed: bool,
         ignore_duplicated_nodes: bool,
         verbose: bool,
+        numeric_edge_types_ids: bool,
+        numeric_node_ids: bool,
+        numeric_node_types_ids: bool,
     ) -> Result<Graph, String> {
         let mut edge_sorting_tmp = BTreeMap::new();
 
-        let (nodes, node_types) = parse_nodes(nodes_iterator, ignore_duplicated_nodes);
+        let (nodes, node_types) = parse_nodes(
+            nodes_iterator,
+            ignore_duplicated_nodes,
+            numeric_node_ids,
+            numeric_node_types_ids,
+        )?;
 
         let (edges_number, edges_iterator, nodes, edge_types_vocabulary) = parse_unsorted_edges(
             edges_iterator,
@@ -457,6 +481,7 @@ impl Graph {
             nodes,
             directed,
             verbose,
+            numeric_edge_types_ids,
         )?;
 
         Graph::build_graph(
@@ -479,11 +504,28 @@ impl Graph {
         ignore_duplicated_nodes: bool,
         edges_number: EdgeT,
         nodes_number: NodeT,
+        numeric_edge_types_ids: bool,
+        numeric_node_ids: bool,
+        numeric_node_types_ids: bool,
     ) -> Result<Graph, String> {
-        let (nodes, node_types) = parse_nodes(nodes_iterator, ignore_duplicated_nodes);
+        let (nodes, node_types) = parse_nodes(
+            nodes_iterator,
+            ignore_duplicated_nodes,
+            numeric_node_ids,
+            numeric_node_types_ids,
+        )?;
 
-        let (edges, unique_sources, nodes, edge_types, weights, node_bit_mask, node_bits) =
-            parse_string_edges(edges_iterator, edges_number, nodes_number, directed, nodes)?;
+        let (edges, unique_sources, mut nodes, edge_types, weights, node_bit_mask, node_bits) =
+            parse_string_edges(
+                edges_iterator,
+                edges_number,
+                nodes_number,
+                directed,
+                nodes,
+                numeric_edge_types_ids,
+            )?;
+
+        nodes.build_reverse_mapping()?;
 
         let mut graph = Graph {
             directed,
@@ -497,7 +539,7 @@ impl Graph {
             node_types: optionify!(node_types),
             weights: optionify!(weights),
         };
-        graph.has_traps = graph.get_trap_nodes().is_empty();
+        graph.has_traps = !graph.get_trap_nodes().is_empty();
         Ok(graph)
     }
 }

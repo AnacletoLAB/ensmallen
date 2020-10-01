@@ -1,13 +1,23 @@
 use super::types::*;
 use std::collections::HashMap;
 
-#[derive(Debug, Clone, PartialEq, Default)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct Vocabulary<IndexT: ToFromUsize> {
     pub map: HashMap<String, IndexT>,
     pub reverse_map: Vec<String>,
+    pub numeric_ids: bool,
 }
 
-impl<IndexT: ToFromUsize + Clone + Copy> Vocabulary<IndexT> {
+impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
+    
+    pub fn new(numeric_ids: bool) -> Vocabulary<IndexT> {
+        Vocabulary{
+            numeric_ids,
+            map: HashMap::new(),
+            reverse_map: Vec::new()
+        }
+    }
+
     /// Returns id of given value inserted.
     ///
     /// # Arguments
@@ -15,10 +25,36 @@ impl<IndexT: ToFromUsize + Clone + Copy> Vocabulary<IndexT> {
     /// * `value`: String - The value to be inserted.
     pub fn insert(&mut self, value: String) -> IndexT {
         if !self.map.contains_key(&value) {
-            self.map.insert(value.clone(), IndexT::from_usize(self.map.len()));
-            self.reverse_map.push(value.clone());
+            self.map.insert(
+                value.clone(),
+                IndexT::from_usize(if self.numeric_ids {
+                    value.parse::<usize>().unwrap()
+                } else {
+                    self.map.len()
+                }),
+            );
         }
         *self.get(&value).unwrap()
+    }
+
+    /// Compute the reverse mapping vector for fast decoding
+    pub fn build_reverse_mapping(&mut self) -> Result<(), String> {
+        self.reverse_map = vec!["".to_string(); self.map.len()];
+        for (k, v) in self.map.iter() {
+            if *v > IndexT::from_usize(self.map.len()) {
+                return Err(format!(
+                    concat!(
+                        "The given set of values is not dense. Found the tuple k:{} v:{} ",
+                        "which has index bigger than the number of elements in the map {}."
+                    ),
+                    k,
+                    v,
+                    self.map.len()
+                ));
+            }
+            self.reverse_map[IndexT::to_usize(*v)] = k.clone();
+        }
+        Ok(())
     }
 
     /// Returns wethever the value is empty or not.

@@ -10,7 +10,7 @@ fn test_deadlock1() {
         .set_separator(Some(",".to_string()))
         .set_verbose(Some(false))
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, false).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, false).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -23,7 +23,7 @@ fn test_deadlock2() {
         .set_separator(Some(",".to_string()))
         .set_verbose(Some(false))
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -39,7 +39,7 @@ fn test_deadlock3() {
         .set_verbose(Some(false))
         .set_header(Some(false))
         .set_edge_types_column_number(Some(2)).unwrap();
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -52,7 +52,7 @@ fn test_deadlock4() {
         .set_separator(Some(",".to_string()))
         .set_verbose(Some(false))
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, false).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, false).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -68,7 +68,7 @@ fn test_regression5() {
         .set_separator(Some(",".to_string()))
         .set_verbose(Some(false))
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -84,7 +84,7 @@ fn test_regression6() {
         .set_separator(Some(",".to_string()))
         .set_verbose(Some(false))
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -101,7 +101,7 @@ fn test_regression7() {
         .set_edge_types_column_number(Some(2)).unwrap()
         .set_weights_column_number(Some(3)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -115,7 +115,7 @@ fn test_regression8() {
         .set_edge_types_column_number(Some(2)).unwrap()
         .set_weights_column_number(Some(3)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, false).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, false).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -128,7 +128,7 @@ fn test_regression9() {
         .set_skip_self_loops(Some(true))
         .set_ignore_duplicates(Some(true)) 
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -142,7 +142,7 @@ fn test_regression10() {
         .set_destinations_column_number(Some(1)).unwrap()
         .set_weights_column_number(Some(1)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -155,7 +155,7 @@ fn test_regression11() {
         .set_sources_column_number(Some(0)).unwrap()
         .set_destinations_column_number(Some(1)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -168,7 +168,7 @@ fn test_regression12() {
         .set_destinations_column_number(Some(1)).unwrap()
         .set_edge_types_column_number(Some(2)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, false).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, false).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -181,7 +181,7 @@ fn test_regression13() {
         .set_destinations_column_number(Some(1)).unwrap()
         .set_edge_types_column_number(Some(2)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, false).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, false).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -194,6 +194,6 @@ fn test_regression14() {
         .set_destinations_column_number(Some(1)).unwrap()
         .set_edge_types_column_number(Some(2)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }

@@ -1,4 +1,5 @@
-use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
+use super::*;
+use indicatif::{ProgressIterator};
 use std::{fs::File, io::prelude::*};
 
 /// Structure that saves the common parameters for reading csv files.
@@ -45,16 +46,7 @@ impl CSVFileWriter {
         header: Vec<String>,
         values: impl Iterator<Item = Vec<String>>,
     ) -> Result<(), String> {
-        let pb = if self.verbose {
-            let pb = ProgressBar::new(lines_number);
-            pb.set_draw_delta(lines_number / 100);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Writing csv {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        let pb = get_loading_bar(self.verbose, "Writing to file", lines_number);
 
         let mut file = match File::create(self.path.clone()) {
             Ok(f) => Ok(f),

@@ -13,6 +13,7 @@ fn parse_edge_weight(weight: Option<String>) -> Result<Option<WeightT>, String> 
 /// Structure that saves the reader specific to writing and reading a nodes csv file.
 ///
 /// # Attributes
+#[derive(Clone)]
 pub struct EdgeFileReader {
     pub(crate) reader: CSVFileReader,
     pub(crate) sources_column_number: usize,
@@ -22,6 +23,8 @@ pub struct EdgeFileReader {
     pub(crate) weights_column_number: Option<usize>,
     pub(crate) default_weight: Option<WeightT>,
     pub(crate) skip_self_loops: bool,
+    pub(crate) numeric_edge_type_ids: bool,
+    pub(crate) numeric_node_ids: bool,
 }
 
 impl EdgeFileReader {
@@ -41,6 +44,8 @@ impl EdgeFileReader {
             weights_column_number: None,
             default_weight: None,
             skip_self_loops: false,
+            numeric_edge_type_ids: false,
+            numeric_node_ids: false,
         })
     }
 
@@ -66,7 +71,10 @@ impl EdgeFileReader {
     ///
     /// * sources_column_number: Option<usize> - The sources column number to use for the file.
     ///
-    pub fn set_sources_column_number(mut self, sources_column_number: Option<usize>) -> Result<EdgeFileReader, String> {
+    pub fn set_sources_column_number(
+        mut self,
+        sources_column_number: Option<usize>,
+    ) -> Result<EdgeFileReader, String> {
         if let Some(column) = sources_column_number {
             let expected_elements = self.reader.get_elements_per_line()?;
             if column >= expected_elements {
@@ -75,8 +83,7 @@ impl EdgeFileReader {
                         "The source column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
-                    column,
-                    expected_elements
+                    column, expected_elements
                 ));
             }
             self.sources_column_number = column;
@@ -106,7 +113,10 @@ impl EdgeFileReader {
     ///
     /// * destinations_column_number: Option<usize> - The destinations column number to use for the file.
     ///
-    pub fn set_destinations_column_number(mut self, destinations_column_number: Option<usize>) -> Result<EdgeFileReader, String> {
+    pub fn set_destinations_column_number(
+        mut self,
+        destinations_column_number: Option<usize>,
+    ) -> Result<EdgeFileReader, String> {
         if let Some(column) = destinations_column_number {
             let expected_elements = self.reader.get_elements_per_line()?;
             if column >= expected_elements {
@@ -115,8 +125,7 @@ impl EdgeFileReader {
                         "The destinations column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
-                    column,
-                    expected_elements
+                    column, expected_elements
                 ));
             }
             self.destinations_column_number = column;
@@ -146,7 +155,10 @@ impl EdgeFileReader {
     ///
     /// * edge_types_column_number: Option<usize> - The edge_types column number to use for the file.
     ///
-    pub fn set_edge_types_column_number(mut self, edge_types_column_number: Option<usize>) -> Result<EdgeFileReader, String> {
+    pub fn set_edge_types_column_number(
+        mut self,
+        edge_types_column_number: Option<usize>,
+    ) -> Result<EdgeFileReader, String> {
         if let Some(etcn) = &edge_types_column_number {
             let expected_elements = self.reader.get_elements_per_line()?;
             if *etcn >= expected_elements {
@@ -155,8 +167,7 @@ impl EdgeFileReader {
                         "The edge types column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
-                    etcn,
-                    expected_elements
+                    etcn, expected_elements
                 ));
             }
         }
@@ -186,7 +197,10 @@ impl EdgeFileReader {
     ///
     /// * weights_column_number: Option<usize> - The weights column number to use for the file.
     ///
-    pub fn set_weights_column_number(mut self, weights_column_number: Option<usize>) -> Result<EdgeFileReader, String> {
+    pub fn set_weights_column_number(
+        mut self,
+        weights_column_number: Option<usize>,
+    ) -> Result<EdgeFileReader, String> {
         if let Some(wcn) = &weights_column_number {
             let expected_elements = self.reader.get_elements_per_line()?;
             if *wcn >= expected_elements {
@@ -195,8 +209,7 @@ impl EdgeFileReader {
                         "The weights column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
-                    wcn,
-                    expected_elements
+                    wcn, expected_elements
                 ));
             }
         }
@@ -248,6 +261,38 @@ impl EdgeFileReader {
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileReader {
         if let Some(v) = verbose {
             self.reader.verbose = v;
+        }
+        self
+    }
+
+    /// Set the numeric_id.
+    ///
+    /// # Arguments
+    ///
+    /// * numeric_id: Option<bool> - Wethever to convert numeric Ids to Node Id.
+    ///
+    pub fn set_numeric_edge_type_ids(
+        mut self,
+        numeric_edge_type_ids: Option<bool>,
+    ) -> EdgeFileReader {
+        if let Some(neti) = numeric_edge_type_ids {
+            self.numeric_edge_type_ids = neti;
+        }
+        self
+    }
+
+    /// Set the numeric_id.
+    ///
+    /// # Arguments
+    ///
+    /// * numeric_id: Option<bool> - Wethever to convert numeric Ids to Node Id.
+    ///
+    pub fn set_numeric_node_ids(
+        mut self,
+        numeric_node_ids: Option<bool>,
+    ) -> EdgeFileReader {
+        if let Some(nni) = numeric_node_ids {
+            self.numeric_node_ids = nni;
         }
         self
     }
@@ -314,7 +359,7 @@ impl EdgeFileReader {
         self.reader.max_rows_number = max_rows_number;
         self
     }
-    
+
     /// Parse a single line (vecotr of strings already splitted)
     /// # Arguments
     ///
@@ -402,9 +447,8 @@ impl EdgeFileReader {
                     "The sources column number passed was {} but ",
                     "the first parsable line has {} values."
                 ),
-                self.sources_column_number,
-                expected_elements
-            )); 
+                self.sources_column_number, expected_elements
+            ));
         }
         if self.destinations_column_number >= expected_elements {
             return Err(format!(
@@ -412,16 +456,12 @@ impl EdgeFileReader {
                     "The destinations column number passed was {} but ",
                     "the first parsable line has {} values."
                 ),
-                self.destinations_column_number,
-                expected_elements
+                self.destinations_column_number, expected_elements
             ));
         }
-        Ok(self
-            .reader
-            .read_lines()?
-            .map(move |values| match values {
-                Ok(vals) => self.parse_edge_line(vals),
-                Err(e) => Err(e),
-            }))
+        Ok(self.reader.read_lines()?.map(move |values| match values {
+            Ok(vals) => self.parse_edge_line(vals),
+            Err(e) => Err(e),
+        }))
     }
 }

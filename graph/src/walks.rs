@@ -1,5 +1,5 @@
 use super::*;
-use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
+use indicatif::{ParallelProgressIterator};
 use linked_hash_set::LinkedHashSet;
 use log::info;
 use rayon::prelude::*;
@@ -272,6 +272,9 @@ impl Graph {
     ///
     pub fn extract_uniform_node(&self, node: NodeT, seed: usize) -> NodeT {
         let (min_edge, max_edge) = self.get_destinations_min_max_edge_ids(node);
+        if min_edge == max_edge {
+            println!("{}, {}, {}", min_edge, max_edge, node);
+        }
         self.get_destination(min_edge + sample_uniform((max_edge - min_edge) as u64, seed as u64))
     }
 

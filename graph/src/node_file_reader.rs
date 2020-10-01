@@ -7,11 +7,14 @@ use super::*;
 /// * nodes_column_number: usize - The rank of the column with the nodes names. This parameter is mutually exclusive with nodes_column.
 /// * node_types_column_number: Option<usize> - The rank of the column with the nodes types. This parameter is mutually exclusive with node_types_column.
 /// * default_node_type: Option<String> - The node type to use if a node has node type or its node type is "".
+#[derive(Clone)]
 pub struct NodeFileReader {
     pub(crate) reader: CSVFileReader,
     pub(crate) default_node_type: Option<String>,
     pub(crate) nodes_column_number: usize,
     pub(crate) node_types_column_number: Option<usize>,
+    pub(crate) numeric_node_ids: bool,
+    pub(crate) numeric_node_type_ids: bool
 }
 
 impl NodeFileReader {
@@ -27,6 +30,8 @@ impl NodeFileReader {
             nodes_column_number: 0,
             default_node_type: None,
             node_types_column_number: None,
+            numeric_node_ids: false,
+            numeric_node_type_ids: false
         })
     }
 
@@ -52,7 +57,10 @@ impl NodeFileReader {
     ///
     /// * nodes_column_number: Option<usize> - The nodes column_number to use for the file.
     ///
-    pub fn set_nodes_column_number(mut self, nodes_column_number: Option<usize>) -> Result<NodeFileReader, String> {
+    pub fn set_nodes_column_number(
+        mut self,
+        nodes_column_number: Option<usize>,
+    ) -> Result<NodeFileReader, String> {
         if let Some(column) = nodes_column_number {
             let expected_number_of_elements = self.reader.get_elements_per_line()?;
             if column >= expected_number_of_elements {
@@ -61,8 +69,7 @@ impl NodeFileReader {
                         "The nodes column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
-                    column,
-                    expected_number_of_elements
+                    column, expected_number_of_elements
                 ));
             }
             self.nodes_column_number = column;
@@ -104,8 +111,7 @@ impl NodeFileReader {
                         "The nodes types column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
-                    etcn,
-                    expected_number_of_elements
+                    etcn, expected_number_of_elements
                 ));
             }
         }
@@ -136,6 +142,33 @@ impl NodeFileReader {
         }
         self
     }
+
+    /// Set the numeric_id.
+    ///
+    /// # Arguments
+    ///
+    /// * numeric_node_type_ids: Option<bool> - Wethever to convert numeric node type Ids to Node Type Ids.
+    ///
+    pub fn set_numeric_node_type_ids(mut self, numeric_node_type_ids: Option<bool>) -> NodeFileReader {
+        if let Some(nnti) = numeric_node_type_ids {
+            self.numeric_node_type_ids = nnti;
+        }
+        self
+    }
+
+    /// Set the numeric_id.
+    ///
+    /// # Arguments
+    ///
+    /// * numeric_node_ids: Option<bool> - Wethever to convert numeric node type Ids to Node Type Ids.
+    ///
+    pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> NodeFileReader {
+        if let Some(nni) = numeric_node_ids {
+            self.numeric_node_ids = nni;
+        }
+        self
+    }
+
 
     /// Set the ignore_duplicates.
     ///

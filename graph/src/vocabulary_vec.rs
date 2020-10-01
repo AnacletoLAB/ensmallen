@@ -1,35 +1,29 @@
 use super::*;
 
-#[derive(Debug, Clone, PartialEq, Default)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct VocabularyVec<IndexT: ToFromUsize> {
     pub ids: Vec<IndexT>,
     pub vocabulary: Vocabulary<IndexT>,
 }
 
-impl<IndexT: ToFromUsize + Clone + Copy + Default> VocabularyVec<IndexT> {
-    /// Create a new vocabulary vec from a given vocabulary
-    /// if the given vocabulary is none then initialize it with an empty one
-    pub fn new(vocabulary: Option<Vocabulary<IndexT>>) -> VocabularyVec<IndexT> {
-        if let Some(vocab) = vocabulary {
-            VocabularyVec{
-                vocabulary: vocab,
-                ids: Vec::new(),
-            }
-        } else {
-            VocabularyVec{
-                vocabulary: Vocabulary::default(),
-                ids: Vec::new(),
-            }
+impl<IndexT: ToFromUsize> VocabularyVec<IndexT> {
+    pub fn new(numeric_ids: bool) -> VocabularyVec<IndexT> {
+        VocabularyVec {
+            ids: Vec::new(),
+            vocabulary: Vocabulary::new(numeric_ids),
         }
     }
-
     /// Add the id to the vocabulary vector
     ///
     /// # Arguments
     ///
     /// * `id`: IndexT - The Id to insert.
-    pub fn add(&mut self, id: IndexT){
+    pub fn add(&mut self, id: IndexT) {
         self.ids.push(id)
+    }
+
+    pub fn build_reverse_mapping(&mut self) -> Result<(), String> {
+        self.vocabulary.build_reverse_mapping()
     }
 
     /// Returns id of given value inserted.
