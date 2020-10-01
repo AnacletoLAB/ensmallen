@@ -178,10 +178,4 @@ impl EnsmallenGraph {
     fn get_multigraph_edges_number(&self) -> usize {
         self.graph.get_multigraph_edges_number()
     }
-
-    #[text_signature = "(self)"]
-    /// Returns the mean number of types for each edge.
-    fn get_mean_number_of_types_for_edge(&self) -> f64 {
-        self.graph.get_mean_number_of_types_for_edge()
-    }
 }
