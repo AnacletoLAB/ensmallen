@@ -26,8 +26,8 @@ fn test_load_sorted() {
         edges_reader,
         None,
         false,
-        g.get_edges_number()*2,
-        g.get_nodes_number()*2,
+        g.get_edges_number(),
+        g.get_nodes_number(),
     )
     .unwrap();
 
