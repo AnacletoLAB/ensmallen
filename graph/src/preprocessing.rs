@@ -24,9 +24,9 @@ use vec_rand::xorshift::xorshift as rand_u64;
 /// * window_size: usize - Window size to consider for the sequences.
 ///
 pub fn word2vec(
-    sequences: Vec<Vec<usize>>,
+    sequences: Vec<Vec<NodeT>>,
     window_size: usize,
-) -> Result<(Vec<Vec<usize>>, Vec<usize>), String> {
+) -> Result<(Vec<Vec<NodeT>>, Vec<NodeT>), String> {
     let context_length = window_size.checked_mul(2).ok_or(
         "The given window size is too big, using this would result in an overflowing of a u64.",
     )?;
@@ -41,11 +41,11 @@ pub fn word2vec(
         .collect();
     // We start by allocating the vectors to be able to execute the
     // creation of the contexts in parallel.
-    let mut centers: Vec<usize> = vec![0; *cumsum.last().unwrap()];
+    let mut centers: Vec<NodeT> = vec![0; *cumsum.last().unwrap()];
     // We also need a vector of filters to know which of the centers to drop.
     let mut filters: Vec<bool> = vec![false; *cumsum.last().unwrap()];
     // We create the contexts
-    let contexts: Vec<Vec<usize>> = sequences
+    let contexts: Vec<Vec<NodeT>> = sequences
         .iter()
         .zip(cumsum.iter())
         .flat_map(|(sequence, partial_sum)| {
@@ -64,12 +64,12 @@ pub fn word2vec(
                         None
                     }
                 })
-                .collect::<Vec<Vec<usize>>>()
+                .collect::<Vec<Vec<NodeT>>>()
         })
         .collect();
 
     // And finally we filter out the centers relative to the paddings.
-    let centers: Vec<usize> = centers
+    let centers: Vec<NodeT> = centers
         .par_iter()
         .zip(filters.par_iter())
         .filter_map(|(center, filter)| if *filter { Some(*center) } else { None })
@@ -92,7 +92,7 @@ pub fn word2vec(
 ///     The default behaviour is false.
 ///     
 pub fn cooccurence_matrix(
-    sequences: Vec<Vec<usize>>,
+    sequences: Vec<Vec<NodeT>>,
     window_size: Option<usize>,
     verbose: Option<bool>,
 ) -> Result<(Words, Words, Frequencies), String> {
@@ -122,11 +122,11 @@ pub fn cooccurence_matrix(
                 let context_id = walk[central_index + distance];
                 if central_word_id < context_id {
                     *cooccurence_matrix
-                        .entry((central_word_id, context_id))
+                        .entry((central_word_id as NodeT, context_id as NodeT))
                         .or_insert(0.0) += 1.0 / distance as f64;
                 } else {
                     *cooccurence_matrix
-                        .entry((context_id, central_word_id))
+                        .entry((context_id as NodeT, central_word_id as NodeT))
                         .or_insert(0.0) += 1.0 / distance as f64;
                 }
             }
@@ -194,7 +194,7 @@ impl Graph {
     pub fn node2vec(
         &self,
         walk_parameters: &WalksParameters,
-        quantity: usize,
+        quantity: NodeT,
         window_size: usize,
     ) -> Result<(Contexts, Words), String> {
         // do the walks and check the result

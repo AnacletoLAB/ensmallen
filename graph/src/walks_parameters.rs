@@ -14,7 +14,7 @@ pub struct WalkWeights {
 #[derive(Clone)]
 /// Struct to wrap parameters relative to a single walk.
 pub struct SingleWalkParameters {
-    pub(crate) length: usize,
+    pub(crate) length: NodeT,
     pub(crate) weights: WalkWeights,
 }
 
@@ -22,8 +22,8 @@ pub struct SingleWalkParameters {
 /// Struct to wrap parameters relative to a set of walks.
 pub struct WalksParameters {
     pub(crate) single_walk_parameters: SingleWalkParameters,
-    pub(crate) iterations: usize,
-    pub(crate) min_length: usize,
+    pub(crate) iterations: NodeT,
+    pub(crate) min_length: NodeT,
     pub(crate) verbose: bool,
     pub(crate) seed: NodeT,
     pub(crate) dense_node_mapping: Option<HashMap<NodeT, NodeT>>,
@@ -87,7 +87,7 @@ impl SingleWalkParameters {
     /// # Arguments
     ///
     /// * length: usize - Maximal length of the walk.
-    pub fn new(length: usize) -> Result<SingleWalkParameters, String> {
+    pub fn new(length: NodeT) -> Result<SingleWalkParameters, String> {
         if length == 0 {
             return Err(String::from("The provided lenght for the walk is zero!"));
         }
@@ -111,13 +111,13 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * length: usize - Maximal length of the walk.
-    pub fn new(length: usize) -> Result<WalksParameters, String> {
+    /// * length: NodeT - Maximal length of the walk.
+    pub fn new(length: NodeT) -> Result<WalksParameters, String> {
         Ok(WalksParameters {
             single_walk_parameters: SingleWalkParameters::new(length)?,
             iterations: 1,
             min_length: 1,
-            seed: 42 ^ SEED_XOR,
+            seed: (42 ^ SEED_XOR) as NodeT,
             verbose: false,
             dense_node_mapping: None,
         })
@@ -127,9 +127,9 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * iterations: Option<usize> - Wethever to show the loading bar or not.
+    /// * iterations: Option<NodeT> - Wethever to show the loading bar or not.
     ///
-    pub fn set_iterations(mut self, iterations: Option<usize>) -> Result<WalksParameters, String> {
+    pub fn set_iterations(mut self, iterations: Option<NodeT>) -> Result<WalksParameters, String> {
         if let Some(it) = iterations {
             if it == 0 {
                 return Err(String::from(
@@ -145,9 +145,9 @@ impl WalksParameters {
     ///
     /// # Arguments
     ///
-    /// * min_length: Option<usize> - Wethever to show the loading bar or not.
+    /// * min_length: Option<NodeT> - Wethever to show the loading bar or not.
     ///
-    pub fn set_min_length(mut self, min_length: Option<usize>) -> Result<WalksParameters, String> {
+    pub fn set_min_length(mut self, min_length: Option<NodeT>) -> Result<WalksParameters, String> {
         if let Some(ml) = min_length {
             if ml == 0 {
                 return Err(String::from(
@@ -180,7 +180,7 @@ impl WalksParameters {
     ///
     pub fn set_seed(mut self, seed: Option<usize>) -> WalksParameters {
         if let Some(s) = seed {
-            self.seed = s ^ SEED_XOR;
+            self.seed = (s ^ SEED_XOR) as NodeT;
         }
         self
     }
@@ -290,7 +290,7 @@ impl WalksParameters {
             if !graph
                 .unique_sources
                 .par_iter()
-                .all(|node| dense_node_mapping.contains_key(&(node as usize)))
+                .all(|node| dense_node_mapping.contains_key(&(node as NodeT)))
             {
                 return Err(String::from(concat!(
                     "Given nodes mapping does not contain ",

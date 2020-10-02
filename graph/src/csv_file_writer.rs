@@ -42,7 +42,7 @@ impl CSVFileWriter {
     /// * `values`: impl Iterator<Item = Vec<String>> - Iterator of rows to write out.
     pub(crate) fn write_lines(
         &self,
-        lines_number: u64,
+        lines_number: usize,
         header: Vec<String>,
         values: impl Iterator<Item = Vec<String>>,
     ) -> Result<(), String> {

@@ -28,22 +28,22 @@ impl Graph {
 
     #[inline(always)]
     pub(crate) fn get_edge_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
-        let edge = self.edges.unchecked_select(edge_id as u64);
+        let edge = self.edges.unchecked_select(edge_id);
         self.decode_edge(edge)
     }
 
     #[inline(always)]
     pub(crate) fn get_edge_from_tuple(&self, src: NodeT, dst: NodeT) -> Option<EdgeT> {
-        self.edges.rank(self.encode_edge(src, dst)).map(|value| value as usize)
+        self.edges.rank(self.encode_edge(src, dst)).map(|value| value)
     }
 
     #[inline(always)]
     pub(crate) fn get_unchecked_edge_from_tuple(&self, src: NodeT, dst: NodeT) -> EdgeT {
-        self.edges.unchecked_rank(self.encode_edge(src, dst)) as usize
+        self.edges.unchecked_rank(self.encode_edge(src, dst))
     }
 
     #[inline(always)]
     pub(crate) fn get_unique_source(&self, source_id:NodeT) -> NodeT {
-        self.unique_sources.unchecked_select((source_id % self.unique_sources.len()) as u64) as usize
+        self.unique_sources.unchecked_select((source_id % self.unique_sources.len() as NodeT) as u64) as NodeT
     }
 }

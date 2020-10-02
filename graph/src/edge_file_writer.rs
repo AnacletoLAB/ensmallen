@@ -238,7 +238,7 @@ impl EdgeFileWriter {
         let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
 
         self.writer.write_lines(
-            graph.get_edges_number() as u64,
+            graph.get_edges_number() as usize,
             compose_lines(number_of_columns, header),
             graph
                 .get_edge_quadruples()

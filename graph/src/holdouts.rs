@@ -250,9 +250,7 @@ impl Graph {
         } else {
             None
         };
-        if min_number_overlaps.is_some() && !self.is_multigraph() {
-            return Err("Current graph is not a multigraph!".to_string());
-        }
+
         self.holdout(
             seed,
             train_percentage,
@@ -317,16 +315,10 @@ impl Graph {
             ));
         }
 
-        let pb = if verbose {
-            let pb = ProgressBar::new(self.get_edges_number() as u64);
-            pb.set_draw_delta(self.get_edges_number() as u64 / 100);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Generating subgraph {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        // Creating the loading bars
+        let pb1 = get_loading_bar(verbose, "Sampling nodes subset", nodes_number);
+        let pb2 = get_loading_bar(verbose, "Computing subgraph edges", nodes_number);
+        let pb3 = get_loading_bar(verbose, "Building subgraph", self.get_edges_number());
 
         // Creating the random number generator
         let mut rnd = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
@@ -337,15 +329,12 @@ impl Graph {
         // Shuffling the components using the given seed.
         nodes.shuffle(&mut rnd);
 
-        // Initializing the vector for creating the new graph.
-        let mut graph_data: GraphDictionary = GraphDictionary::new();
-
         // Initializing stack and set of nodes
         let mut unique_nodes: HashSet<NodeT> = HashSet::with_capacity(nodes_number);
         let mut stack: Vec<NodeT> = Vec::new();
 
         // We iterate on the components
-        'outer: for node in nodes.iter().progress_with(pb) {
+        'outer: for node in nodes.iter() {
             // If the current node is a trap there is no need to continue with the current loop.
             if self.is_node_trap(*node) {
                 continue;
@@ -353,28 +342,15 @@ impl Graph {
             stack.push(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
-                for edge_id in self.get_unchecked_destinations_range(src) {
-                    let dst: NodeT = self.get_destination(edge_id);
+                for dst in self.get_source_destinations_range(src) {
                     if !unique_nodes.contains(&dst) && src != dst {
                         stack.push(dst);
                     }
 
-                    let edge_type = if let Some(et) = &self.edge_types {
-                        Some(et.ids[edge_id])
-                    } else {
-                        None
-                    };
-
-                    let weight = if let Some(w) = &self.weights {
-                        Some(w[edge_id])
-                    } else {
-                        None
-                    };
-
                     unique_nodes.insert(*node);
                     unique_nodes.insert(dst);
+                    pb1.inc(2);
 
-                    graph_data.extend(&self, src, dst, edge_type, weight, true);
                     // If we reach the desired number of unique nodes we can stop the iteration.
                     if unique_nodes.len() >= nodes_number {
                         break 'outer;
@@ -383,17 +359,32 @@ impl Graph {
             }
         }
 
-        Ok(build_graph(
-            &mut graph_data,
+        pb1.finish();
+
+        let edges_number: EdgeT = unique_nodes
+            .iter()
+            .progress_with(pb2)
+            .map(|src| {
+                self.get_source_destinations_range(*src)
+                    .map(|dst| unique_nodes.contains(&dst) as usize)
+                    .sum::<usize>()
+            })
+            .sum::<usize>();
+
+        pb2.finish();
+
+        Graph::build_graph(
+            // TODO: the iterable might be smaller than this by using a filter like the one above.
+            self.get_edge_quadruples()
+                .progress_with(pb3)
+                .filter(|(src, dst, _, _)| unique_nodes.contains(src) && unique_nodes.contains(dst))
+                .map(|row| Ok(row)),
+            edges_number,
             self.nodes.clone(),
             self.node_types.clone(),
-            if let Some(et) = &self.edge_types {
-                Some(et.vocabulary.clone())
-            } else {
-                None
-            },
+            self.edge_types.map(|ets| ets.vocabulary),
             self.directed,
-        ))
+        )
     }
 
     /// Returns subgraph with given set of edge types.
@@ -417,39 +408,33 @@ impl Graph {
             ));
         }
 
-        let edge_type_ids = self.translate_edge_types(edge_types)?;
+        let edge_type_ids: HashSet<EdgeTypeT> = self
+            .translate_edge_types(edge_types)?
+            .iter()
+            .cloned()
+            .collect::<HashSet<EdgeTypeT>>();
 
-        let pb = if verbose {
-            let pb = ProgressBar::new(self.get_edges_number() as u64);
-            pb.set_draw_delta(self.get_edges_number() as u64 / 100);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Generating subgraph {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        let pb = get_loading_bar(
+            verbose,
+            "Creating subgraph with given edge types",
+            self.get_edges_number(),
+        );
 
-        // Initializing the vector for creating the new graph.
-        let mut graph_data: GraphDictionary = GraphDictionary::new();
+        let edges_number = edge_type_ids
+            .iter()
+            .map(|et| self.get_edge_type_number(*et))
+            .sum();
 
-        self.get_edge_quadruples_enumerate()
-            .progress_with(pb)
-            .filter(|(_, _, _, edge_type, _)| edge_type_ids.contains(&edge_type.unwrap()))
-            .for_each(|(_, src, dst, edge_type, weight)| {
-                graph_data.extend(&self, src, dst, edge_type, weight, false)
-            });
-
-        Ok(build_graph(
-            &mut graph_data,
+        Graph::build_graph(
+            self.get_edge_quadruples()
+                .progress_with(pb)
+                .filter(|(_, _, edge_type, _)| edge_type_ids.contains(&edge_type.unwrap()))
+                .map(|row| Ok(row)),
+            edges_number,
             self.nodes.clone(),
             self.node_types.clone(),
-            if let Some(et) = &self.edge_types {
-                Some(et.vocabulary.clone())
-            } else {
-                None
-            },
+            self.edge_types.map(|ets| ets.vocabulary),
             self.directed,
-        ))
+        )
     }
 }

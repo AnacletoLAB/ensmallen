@@ -60,8 +60,8 @@ impl Graph {
     ///
     pub fn get_node_type_id(&self, node_id: NodeT) -> Result<NodeTypeT, String> {
         if let Some(nt) = &self.node_types {
-            return if node_id <= nt.ids.len() {
-                Ok(nt.ids[node_id])
+            return if node_id <= nt.ids.len() as NodeT {
+                Ok(nt.ids[node_id as usize])
             } else {
                 Err(format!(
                     "The node_index {} is too big for the node_types vector which has len {}",
@@ -88,8 +88,8 @@ impl Graph {
     /// ```
     pub fn get_edge_type_id(&self, edge_id: EdgeT) -> Result<EdgeTypeT, String> {
         if let Some(et) = &self.edge_types {
-            return if edge_id <= et.ids.len() {
-                Ok(et.ids[edge_id])
+            return if edge_id <= et.ids.len() as EdgeT {
+                Ok(et.ids[edge_id as usize])
             } else {
                 Err(format!(
                     "The edge_index {} is too big for the edge_types vector which has len {}",
@@ -113,7 +113,7 @@ impl Graph {
             if let Some(ets) = &self.edge_types {
                 return self
                     .get_unchecked_edge_ids_range(src, dst)
-                    .find(|edge_id| ets.ids[*edge_id] == et)
+                    .find(|edge_id| ets.ids[*edge_id as usize] == et)
                     .unwrap();
             }
         }
@@ -130,7 +130,7 @@ impl Graph {
             if let Some(ets) = &self.edge_types {
                 return self
                     .get_edge_ids(src, dst)
-                    .and_then(|mut edge_ids| edge_ids.find(|edge_id| ets.ids[*edge_id] == et));
+                    .and_then(|mut edge_ids| edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == et));
             }
         }
         self.get_edge_from_tuple(src, dst)
@@ -321,9 +321,9 @@ impl Graph {
     ///
     /// * `node` - Integer ID of the node.
     ///
-    pub fn get_node_degree(&self, node: NodeT) -> EdgeT {
+    pub fn get_node_degree(&self, node: NodeT) -> NodeT {
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
-        max_edge_id - min_edge_id
+        (max_edge_id - min_edge_id) as NodeT
     }
 
     // TODO: Update docstring
@@ -362,7 +362,7 @@ impl Graph {
         match &self.edge_types {
             Some(ets) => Some(
                 self.get_unchecked_edge_ids_range(src, dst)
-                    .map(|edge_id| ets.ids[edge_id])
+                    .map(|edge_id| ets.ids[edge_id as usize])
                     .collect(),
             ),
             None => None,
@@ -381,7 +381,7 @@ impl Graph {
         match &self.weights {
             Some(ws) => Some(
                 self.get_unchecked_edge_ids_range(src, dst)
-                    .map(|edge_id| ws[edge_id])
+                    .map(|edge_id| ws[edge_id as usize])
                     .collect(),
             ),
             None => None,

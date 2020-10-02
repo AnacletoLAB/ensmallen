@@ -17,9 +17,9 @@ impl Graph {
     fn get_weighted_transitions(&self, min_edge_id: EdgeT, max_edge_id: EdgeT) -> Vec<WeightT> {
         match &self.weights {
             // If the graph is weighted we return the weights
-            Some(ws) => ws[min_edge_id..max_edge_id].to_vec(),
+            Some(ws) => ws[(min_edge_id as usize)..(max_edge_id as usize)].to_vec(),
             // Otherwise we return an uniform vector.
-            None => vec![1.0; max_edge_id - min_edge_id],
+            None => vec![1.0; (max_edge_id - min_edge_id) as usize],
         }
     }
 
@@ -34,7 +34,7 @@ impl Graph {
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
     ) -> (LinkedHashSet<NodeT>, NodeT, NodeT) {
-        let mut destinations = LinkedHashSet::with_capacity(max_edge_id - min_edge_id);
+        let mut destinations = LinkedHashSet::with_capacity((max_edge_id - min_edge_id) as usize);
         let mut min_dst: NodeT = 0;
         let mut max_dst: NodeT = 0;
         for edge_id in min_edge_id..max_edge_id {
@@ -94,11 +94,11 @@ impl Graph {
                 // if the destination node type matches the neighbour
                 // destination node type (we are not changing the node type)
                 // we weigth using the provided change_node_type_weight weight.
-                let this_type: NodeTypeT = nt.ids[node];
+                let this_type: NodeTypeT = nt.ids[node as usize];
 
                 transition.iter_mut().zip(destinations.iter()).for_each(
                     |(transition_value, dst)| {
-                        if this_type == nt.ids[*dst] {
+                        if this_type == nt.ids[*dst as usize] {
                             *transition_value /= change_node_type_weight
                         }
                     },
@@ -193,12 +193,12 @@ impl Graph {
                 //# If the neighbour edge type matches the previous
                 //# edge type (we are not changing the edge type)
                 //# we weigth using the provided change_edge_type_weight weight.
-                let this_type: EdgeTypeT = ets.ids[edge_id];
+                let this_type: EdgeTypeT = ets.ids[edge_id as usize];
                 transition
                     .iter_mut()
                     .zip(min_edge_id..max_edge_id)
                     .for_each(|(transition_value, edge_id)| {
-                        if this_type == ets.ids[edge_id] {
+                        if this_type == ets.ids[edge_id as usize] {
                             *transition_value /= walk_weights.change_edge_type_weight
                         }
                     });
@@ -270,12 +270,9 @@ impl Graph {
     /// * node: NodeT, the previous node from which to compute the transitions.
     /// * seed: usize, the seed to use for extracting the node.
     ///
-    pub fn extract_uniform_node(&self, node: NodeT, seed: usize) -> NodeT {
+    pub fn extract_uniform_node(&self, node: NodeT, seed: NodeT) -> NodeT {
         let (min_edge, max_edge) = self.get_destinations_min_max_edge_ids(node);
-        if min_edge == max_edge {
-            println!("{}, {}, {}", min_edge, max_edge, node);
-        }
-        self.get_destination(min_edge + sample_uniform((max_edge - min_edge) as u64, seed as u64))
+        self.get_destination(min_edge + sample_uniform(max_edge - min_edge, seed as u64) as EdgeT)
     }
 
     /// Return new sampled node with the transition edge used.
@@ -288,12 +285,12 @@ impl Graph {
     pub fn extract_node(
         &self,
         node: NodeT,
-        seed: usize,
+        seed: NodeT,
         change_node_type_weight: ParamsT,
     ) -> (LinkedHashSet<NodeT>, NodeT, NodeT, NodeT, EdgeT) {
         let (destinations, min_dst, max_dst, mut weights, min_edge, _) =
             self.get_node_transition(node, change_node_type_weight);
-        let edge_id = min_edge + sample(&mut weights, seed as u64);
+        let edge_id = min_edge + sample(&mut weights, seed as u64) as EdgeT;
         (
             destinations,
             min_dst,
@@ -313,7 +310,7 @@ impl Graph {
     pub fn extract_edge(
         &self,
         edge: EdgeT,
-        seed: usize,
+        seed: NodeT,
         walk_weights: &WalkWeights,
         previous_destinations: &LinkedHashSet<NodeT>,
         previous_min_dst: NodeT,
@@ -326,7 +323,7 @@ impl Graph {
             previous_min_dst,
             previous_max_dst,
         );
-        let edge_id = min_edge + sample(&mut weights, seed as u64);
+        let edge_id = min_edge + sample(&mut weights, seed as u64) as EdgeT;
         (
             destinations,
             min_dst,
@@ -344,15 +341,15 @@ impl Graph {
     ///
     pub fn random_walks(
         &self,
-        quantity: usize,
+        quantity: NodeT,
         parameters: &WalksParameters,
     ) -> Result<Vec<Vec<NodeT>>, String> {
         self.walk(
             quantity,
             |global_index| {
                 let local_index = global_index % quantity;
-                let random_source_id = xorshift((parameters.seed + local_index) as u64) as usize;
-                (random_source_id, self.get_unique_source(random_source_id))
+                let random_source_id = xorshift((parameters.seed + local_index as NodeT) as u64) as NodeT;
+                (random_source_id as NodeT, self.get_unique_source(random_source_id))
             },
             parameters,
         )
@@ -367,7 +364,7 @@ impl Graph {
     pub fn complete_walks(&self, parameters: &WalksParameters) -> Result<Vec<Vec<NodeT>>, String> {
         self.walk(
             self.get_unique_sources_number(),
-            |random_source_id| (random_source_id, self.get_unique_source(random_source_id)),
+            |random_source_id| (random_source_id, self.get_unique_source(random_source_id as NodeT)),
             parameters,
         )
     }
@@ -380,8 +377,8 @@ impl Graph {
     ///
     fn walk(
         &self,
-        quantity: usize,
-        to_node: impl Fn(usize) -> (usize, NodeT) + Sync + Send,
+        quantity: NodeT,
+        to_node: impl Fn(NodeT) -> (NodeT, NodeT) + Sync + Send,
         parameters: &WalksParameters,
     ) -> Result<Vec<Vec<NodeT>>, String> {
         // Validate if given parameters are compatible with current graph.
@@ -393,7 +390,7 @@ impl Graph {
         let pb = get_loading_bar(
             parameters.verbose,
             "Compute random walks",
-            total_iterations as u64,
+            total_iterations as usize
         );
 
         let iterator = (0..total_iterations)
@@ -408,7 +405,7 @@ impl Graph {
                     .map(|(seed, node)| {
                         self.uniform_walk(node, seed, &parameters.single_walk_parameters)
                     })
-                    .filter(|walk| walk.len() >= parameters.min_length)
+                    .filter(|walk| walk.len() >= parameters.min_length as usize)
                     .collect::<Vec<Vec<NodeT>>>()
             } else {
                 if self.directed {
@@ -419,7 +416,7 @@ impl Graph {
                     .map(|(seed, node)| {
                         self.single_walk(node, seed, &parameters.single_walk_parameters)
                     })
-                    .filter(|walk| walk.len() >= parameters.min_length)
+                    .filter(|walk| walk.len() >= parameters.min_length as usize)
                     .collect::<Vec<Vec<NodeT>>>()
             }
         } else if self.weights.is_none() && parameters.is_first_order_walk() {
@@ -462,7 +459,7 @@ impl Graph {
     pub fn single_walk(
         &self,
         node: NodeT,
-        seed: usize,
+        seed: NodeT,
         parameters: &SingleWalkParameters,
     ) -> Vec<NodeT> {
         let (mut previous_destinations, mut previous_min_dst, mut previous_max_dst, dst, mut edge) =
@@ -472,7 +469,7 @@ impl Graph {
             return vec![node, dst];
         }
 
-        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length);
+        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length as usize);
         walk.push(node);
         walk.push(dst);
 
@@ -510,10 +507,10 @@ impl Graph {
     pub fn single_walk_no_traps(
         &self,
         node: NodeT,
-        seed: usize,
+        seed: NodeT,
         parameters: &SingleWalkParameters,
     ) -> Vec<NodeT> {
-        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length);
+        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length as usize);
         walk.push(node);
 
         let (mut previous_destinations, mut previous_min_dst, mut previous_max_dst, dst, mut edge) =
@@ -553,7 +550,7 @@ impl Graph {
     fn uniform_walk(
         &self,
         node: NodeT,
-        seed: usize,
+        seed: NodeT,
         parameters: &SingleWalkParameters,
     ) -> Vec<NodeT> {
         let mut dst = self.extract_uniform_node(node, seed);
@@ -562,7 +559,7 @@ impl Graph {
             return vec![node, dst];
         }
 
-        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length);
+        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length as usize);
         walk.push(node);
         walk.push(dst);
 
@@ -589,10 +586,10 @@ impl Graph {
     fn uniform_walk_no_traps(
         &self,
         node: NodeT,
-        seed: usize,
+        seed: NodeT,
         parameters: &SingleWalkParameters,
     ) -> Vec<NodeT> {
-        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length);
+        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length as usize);
         let mut dst = self.extract_uniform_node(node, seed);
         walk.push(node);
         walk.push(dst);

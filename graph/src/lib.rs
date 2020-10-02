@@ -30,12 +30,12 @@ mod constructors;
 mod utils;
 pub(crate) use self::utils::get_loading_bar;
 
-//mod drop;
+mod drop;
 mod getters;
 pub mod graph;
-//mod holdouts;
+mod holdouts;
 mod metrics;
-//mod operators;
+mod operators;
 mod preprocessing;
 mod setters;
 mod tarjan;
@@ -47,8 +47,8 @@ mod walks_parameters;
 pub mod test_utilities;
 
 pub use self::graph::Graph;
-//pub use self::holdouts::*;
-//pub use self::operators::*;
+pub use self::holdouts::*;
+pub use self::operators::*;
 pub use self::tarjan::*;
 pub use self::trees::*;
 pub use self::types::*;

@@ -27,7 +27,13 @@ impl Graph {
 
     /// Return iterator of nodes that have selfloops.
     pub fn get_selfloops_iter(&self) -> impl Iterator<Item = NodeT> + '_ {
-        (0..self.get_nodes_number()).filter(move |node| self.has_edge(*node, *node))
+        (0..self.get_nodes_number()).filter_map(move |node| {
+            let node_id = node as NodeT;
+            match self.has_edge(node_id, node_id){
+                true=>Some(node_id),
+                false=>None
+            }
+        })
     }
 
     /// Return boolean representing if graph has selfloops.
@@ -36,28 +42,28 @@ impl Graph {
     }
 
     /// Returns number of nodes in the graph.
-    pub fn get_nodes_number(&self) -> usize {
-        self.nodes.len()
+    pub fn get_nodes_number(&self) -> NodeT {
+        self.nodes.len() as NodeT
     }
 
     /// Returns number of edges in the graph.
-    pub fn get_edges_number(&self) -> usize {
-        self.edges.len()
+    pub fn get_edges_number(&self) -> EdgeT {
+        self.edges.len() as EdgeT
     }
 
     /// Returns number of edge types in the graph.
-    pub fn get_edge_types_number(&self) -> usize {
+    pub fn get_edge_types_number(&self) -> EdgeTypeT {
         if let Some(etm) = &self.edge_types {
-            etm.len()
+            etm.len() as EdgeTypeT
         } else {
             0
         }
     }
 
     /// Returns number of node types in the graph.
-    pub fn get_node_types_number(&self) -> usize {
+    pub fn get_node_types_number(&self) -> NodeTypeT {
         if let Some(etm) = &self.node_types {
-            etm.len()
+            etm.len() as NodeTypeT
         } else {
             0
         }
@@ -67,7 +73,7 @@ impl Graph {
     pub fn get_node_degrees(&self) -> Vec<NodeT> {
         (0..self.get_nodes_number())
             .into_par_iter()
-            .map(|node| self.get_node_degree(node) as NodeT)
+            .map(|node| self.get_node_degree(node as NodeT))
             .collect::<Vec<NodeT>>()
     }
 
@@ -84,8 +90,15 @@ impl Graph {
             .iter()
             .cloned()
             .enumerate()
-            .map(|(i, node)| (node, i))
+            .map(|(i, node)| (node as NodeT, i as NodeT))
             .collect()
+    }
+
+    pub fn get_edge_type_number(&self, edge_type:EdgeTypeT)->EdgeTypeT{
+        match self.edge_types{
+            None=>0,
+            Some(ets)=>ets.counts[edge_type as usize] as EdgeTypeT
+        }
     }
 
     /// Return iterator on the edges of the graph.
@@ -122,7 +135,7 @@ impl Graph {
                     src,
                     dst,
                     match &self.edge_types {
-                        Some(et) => Some(et.ids[edge_id]),
+                        Some(et) => Some(et.ids[edge_id as usize]),
                         None => None,
                     },
                 )
@@ -141,7 +154,7 @@ impl Graph {
                     dst,
                     edge_type,
                     match &self.weights {
-                        Some(ws) => Some(ws[edge_id]),
+                        Some(ws) => Some(ws[edge_id as usize]),
                         None => None,
                     },
                 )
@@ -158,7 +171,7 @@ impl Graph {
                 src,
                 dst,
                 match &self.edge_types {
-                    Some(et) => Some(et.ids[edge_id]),
+                    Some(et) => Some(et.ids[edge_id as usize]),
                     None => None,
                 },
             )
@@ -176,7 +189,7 @@ impl Graph {
                     dst,
                     edge_type,
                     match &self.weights {
-                        Some(ws) => Some(ws[edge_id]),
+                        Some(ws) => Some(ws[edge_id as usize]),
                         None => None,
                     },
                 )
@@ -235,12 +248,13 @@ impl Graph {
     }
 
     pub fn get_unique_sources_number(&self) -> NodeT {
-        self.unique_sources.len()
+        self.unique_sources.len() as NodeT
     }
 
     pub fn get_trap_nodes(&self) -> HashSet<NodeT> {
         (0..self.get_nodes_number())
             .filter(|candidate_src| !self.unique_sources.contains(*candidate_src as u64))
+            .map(|node_id| node_id as NodeT)
             .collect()
     }
 }

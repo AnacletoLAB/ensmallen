@@ -55,10 +55,10 @@ impl Graph {
         // Create vector of sets of the single nodes.
         let mut components: Vec<HashSet<NodeT>> = Vec::new();
         // Create empty vector of inserted values
-        let mut inserted_nodes = vec![false; nodes_number];
+        let mut inserted_nodes = vec![false; nodes_number as usize];
         // Create the empty tree.
         let mut tree: HashSet<(NodeT, NodeT, Option<EdgeTypeT>)> =
-            HashSet::with_capacity(nodes_number);
+            HashSet::with_capacity(nodes_number as usize);
 
         let pb = if verbose {
             let pb = ProgressBar::new(edges_number as u64);
@@ -83,18 +83,18 @@ impl Graph {
             })
         {
             let mut update_tree = false;
-            if !inserted_nodes[src] && !inserted_nodes[dst] {
-                inserted_nodes[src] = true;
-                inserted_nodes[dst] = true;
+            if !inserted_nodes[src as usize] && !inserted_nodes[dst as usize] {
+                inserted_nodes[src as usize] = true;
+                inserted_nodes[dst as usize] = true;
                 update_tree = true;
                 components.push(HashSet::from_iter(vec![src, dst]));
-            } else if inserted_nodes[src] ^ inserted_nodes[dst] {
-                let (inserted, not_inserted) = if inserted_nodes[src] {
+            } else if inserted_nodes[src as usize] ^ inserted_nodes[dst as usize] {
+                let (inserted, not_inserted) = if inserted_nodes[src as usize] {
                     (src, dst)
                 } else {
                     (dst, src)
                 };
-                inserted_nodes[not_inserted] = true;
+                inserted_nodes[not_inserted as usize] = true;
                 let inserted_index = find_node_set(&components, inserted);
                 components
                     .get_mut(inserted_index)
@@ -130,7 +130,7 @@ impl Graph {
                 } else {
                     // Otherwise we only consider the edge itself
                     vec![if let Some(et) = &self.edge_types {
-                        Some(et.ids[edge_id])
+                        Some(et.ids[edge_id as usize])
                     } else {
                         None
                     }]

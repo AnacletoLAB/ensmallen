@@ -9,7 +9,7 @@ type ParsedEdgesType = Result<
         EliasFano,
         EliasFano,
         Vocabulary<NodeT>,
-        VocabularyVec<EdgeTypeT>,
+        Option<VocabularyVec<EdgeTypeT>>,
         Vec<WeightT>,
         u64,
         u8,
@@ -75,8 +75,15 @@ pub(crate) fn parse_node_type_ids<'a, 'b>(
 where
     'b: 'a,
 {
-    nodes_iter.map_results(move |(node_id, node_type)| {
-        (node_id, node_type.map(|nt| node_types.insert(nt)))
+    nodes_iter.map(move |row| match row {
+        Ok((node_id, node_type)) => {
+            let node_type_id = match node_type {
+                Some(nt) => Some(node_types.insert(nt)?),
+                None => None,
+            };
+            Ok((node_id, node_type_id))
+        }
+        Err(e) => Err(e),
     })
 }
 
@@ -123,17 +130,15 @@ pub(crate) fn parse_edge_type_ids_vocabulary<'a>(
         + 'a,
     edge_types: &'a mut Vocabulary<EdgeTypeT>,
 ) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
-    edges_iter.map(move |row| {
-        match row {
-            Ok((src, dst, edge_type, weight)) => {
-                let edge_type_id = match edge_type {
-                   Some(et)=>Some(edge_types.insert(et)?),
-                   None => None
-                };
-                Ok((src, dst, edge_type_id, weight))
-            },
-            Err(e) => Err(e)
+    edges_iter.map(move |row| match row {
+        Ok((src, dst, edge_type, weight)) => {
+            let edge_type_id = match edge_type {
+                Some(et) => Some(edge_types.insert(et)?),
+                None => None,
+            };
+            Ok((src, dst, edge_type_id, weight))
         }
+        Err(e) => Err(e),
     })
 }
 
@@ -237,8 +242,8 @@ pub(crate) fn parse_unsorted_edges<'a>(
         }
     }
 
-    let pb = get_loading_bar(verbose, "Sorting and building graph", sorting_tmp.len() as u64);
-    let edges_number = sorting_tmp.len();
+    let pb = get_loading_bar(verbose, "Sorting and building graph", sorting_tmp.len());
+    let edges_number = sorting_tmp.len() as EdgeT;
     edge_types_vocabulary.build_reverse_mapping()?;
 
     Ok((
@@ -261,11 +266,11 @@ pub(crate) fn build_edges(
     let node_bit_mask = (1 << node_bits) - 1;
     let mut edges: EliasFano = EliasFano::new(
         encode_edge(nodes_number, nodes_number, node_bits) as u64,
-        edges_number,
+        edges_number as usize
     );
     // TODO: the following data structure would be better to be a bitvector.
     // This is because universe == number of elements
-    let mut unique_sources: EliasFano = EliasFano::new(nodes_number as u64, nodes_number);
+    let mut unique_sources: EliasFano = EliasFano::new(nodes_number as u64, nodes_number as usize);
     // Last source inserted
     let mut last_source: NodeT = 0;
     let mut first = true;
@@ -299,6 +304,7 @@ fn parse_nodes(
         )
         .for_each(|_| {});
         node_types.build_reverse_mapping()?;
+        node_types.build_counts();
     }
 
     Ok((nodes, node_types))
@@ -350,15 +356,13 @@ pub(crate) fn parse_string_edges(
     }
 
     edge_types_vocabulary.build_reverse_mapping()?;
+    let edge_types = VocabularyVec::from_structs(edge_types_ids, optionify!(edge_types_vocabulary));
 
     Ok((
         edges,
         unique_sources,
         nodes,
-        VocabularyVec {
-            vocabulary: edge_types_vocabulary,
-            ids: edge_types_ids,
-        },
+        edge_types,
         weights,
         node_bit_mask,
         node_bits,
@@ -366,10 +370,10 @@ pub(crate) fn parse_string_edges(
 }
 
 pub(crate) fn parse_integer_edges(
-    edges_iter: impl Iterator<Item = Result<(EdgeT, EdgeT, Option<EdgeTypeT>, Option<WeightT>), String>>,
+    edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
     edges_number: EdgeT,
     nodes_number: NodeT,
-    edge_types_vocabulary: Vocabulary<EdgeTypeT>,
+    edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
     nodes: Vocabulary<NodeT>,
 ) -> ParsedEdgesType {
     let mut weights: Vec<WeightT> = Vec::new();
@@ -398,14 +402,13 @@ pub(crate) fn parse_integer_edges(
         ));
     }
 
+    let edge_types = VocabularyVec::from_structs(edge_types_ids, edge_types_vocabulary);
+
     Ok((
         edges,
         unique_sources,
         nodes,
-        VocabularyVec {
-            vocabulary: edge_types_vocabulary,
-            ids: edge_types_ids,
-        },
+        edge_types,
         weights,
         node_bit_mask,
         node_bits,
@@ -414,21 +417,21 @@ pub(crate) fn parse_integer_edges(
 
 /// # Graph Constructors
 impl Graph {
-    pub fn build_graph(
+    pub(crate) fn build_graph(
         edge_iter: impl Iterator<
-            Item = Result<(EdgeT, EdgeT, Option<EdgeTypeT>, Option<WeightT>), String>,
+            Item = Result<Quadruple, String>,
         >,
         edges_number: EdgeT,
         nodes: Vocabulary<NodeT>,
         node_types: Option<VocabularyVec<NodeTypeT>>,
-        edge_types_vocabulary: Vocabulary<EdgeTypeT>,
+        edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
     ) -> Result<Graph, String> {
         let (edges, unique_sources, mut nodes, edge_types, weights, node_bit_mask, node_bits) =
             parse_integer_edges(
                 edge_iter,
                 edges_number,
-                nodes.len(),
+                nodes.len() as NodeT,
                 edge_types_vocabulary,
                 nodes,
             )?;
@@ -443,8 +446,8 @@ impl Graph {
             node_bit_mask,
             node_bits,
             node_types,
+            edge_types,
             has_traps: false,
-            edge_types: optionify!(edge_types),
             weights: optionify!(weights),
         };
         graph.has_traps = !graph.get_trap_nodes().is_empty();
@@ -501,7 +504,7 @@ impl Graph {
             edges_number,
             nodes,
             optionify!(node_types),
-            edge_types_vocabulary,
+            optionify!(edge_types_vocabulary),
             directed,
         )
     }
@@ -546,8 +549,8 @@ impl Graph {
             nodes,
             node_bit_mask,
             node_bits,
+            edge_types,
             has_traps: false,
-            edge_types: optionify!(edge_types),
             node_types: optionify!(node_types),
             weights: optionify!(weights),
         };

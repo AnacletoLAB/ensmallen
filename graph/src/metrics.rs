@@ -214,7 +214,7 @@ impl Graph {
     /// println!("The mean node degree of the graph is  {}", graph.degrees_mean());
     /// ```
     pub fn degrees_mean(&self) -> f64 {
-        self.get_node_degrees().iter().sum::<usize>() as f64 / self.get_nodes_number() as f64
+        self.get_edges_number() as f64 / self.get_nodes_number() as f64
     }
 
     /// Returns median node degree of the graph
@@ -225,7 +225,7 @@ impl Graph {
     pub fn degrees_median(&self) -> NodeT {
         let mut degrees = self.get_node_degrees();
         degrees.par_sort_unstable();
-        degrees[self.get_nodes_number() / 2]
+        degrees[(self.get_nodes_number() / 2) as usize]
     }
 
     /// Returns maximum node degree of the graph
@@ -318,7 +318,7 @@ impl Graph {
     /// }
     /// ```
     pub fn connected_components_number(&self) -> NodeT {
-        self.get_nodes_number() - self.spanning_tree(0, false, false).len()
+        self.get_nodes_number() - self.spanning_tree(0, false, false).len() as NodeT
     }
 
     /// Returns number of singleton nodes within the graph.
@@ -327,7 +327,7 @@ impl Graph {
     /// println!("The graph contains {} singleton nodes", graph.singleton_nodes_number());
     /// ```
     pub fn get_singleton_nodes_number(&self) -> NodeT {
-        self.get_nodes_number() - self.get_not_singletons().len()
+        self.get_nodes_number() - self.get_not_singleton_nodes_number()
     }
 
     /// Returns number of not singleton nodes within the graph.
@@ -336,7 +336,7 @@ impl Graph {
     /// println!("The graph contains {} not singleton nodes", graph.get_not_singleton_nodes_number());
     /// ```
     pub fn get_not_singleton_nodes_number(&self) -> NodeT {
-        self.get_not_singletons().len()
+        self.get_not_singletons().len() as NodeT
     }
 
     /// Returns density of the graph.

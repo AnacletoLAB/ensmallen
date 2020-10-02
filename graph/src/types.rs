@@ -4,11 +4,11 @@ use std::fmt::Display;
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.
-pub type NodeT = usize;
+pub type NodeT = u32;
 /// Type used to index the Node Types.
 pub type NodeTypeT = u16;
 /// Type used to index the Edges.
-pub type EdgeT = usize;
+pub type EdgeT = u64;
 /// Type used to index the Edge Types.
 pub type EdgeTypeT = u16;
 /// Type used for the weights of the edges.
