@@ -188,32 +188,41 @@ pub(crate) fn parse_sorted_edges<'a>(
     directed: bool,
     sorting_tmp: &'a mut BTreeMap<Triple, Option<WeightT>>,
 ) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
-    edges_iter.flat_map(move |row| {
-        let mut results: Vec<Result<Quadruple, String>> = Vec::with_capacity(1);
-        let result = match row {
-            Ok((src, dst, edge_type, weight)) => {
-                if !directed && src < dst {
-                    sorting_tmp.insert((dst, src, edge_type), weight);
-                }
-                while !sorting_tmp.is_empty()
-                    && *sorting_tmp.first_key_value().unwrap().0 < (src, dst, edge_type)
-                {
-                    let ((smaller_src, smaller_dst, smaller_edge_type), smaller_weight) =
-                        sorting_tmp.pop_first().unwrap();
-                    results.push(Ok((
-                        smaller_src,
-                        smaller_dst,
-                        smaller_edge_type,
-                        smaller_weight,
-                    )));
-                }
-                Ok((src, dst, edge_type, weight))
+    edges_iter
+        .map(Some)
+        .chain(vec![None])
+        .flat_map(move |maybe_row| match maybe_row {
+            Some(row) => {
+                let mut results: Vec<Result<Quadruple, String>> = Vec::with_capacity(1);
+                let result = match row {
+                    Ok((src, dst, edge_type, weight)) => {
+                        if !directed && src < dst {
+                            sorting_tmp.insert((dst, src, edge_type), weight);
+                        }
+                        while !sorting_tmp.is_empty()
+                            && *sorting_tmp.first_key_value().unwrap().0 < (src, dst, edge_type)
+                        {
+                            let ((smaller_src, smaller_dst, smaller_edge_type), smaller_weight) =
+                                sorting_tmp.pop_first().unwrap();
+                            results.push(Ok((
+                                smaller_src,
+                                smaller_dst,
+                                smaller_edge_type,
+                                smaller_weight,
+                            )));
+                        }
+                        Ok((src, dst, edge_type, weight))
+                    }
+                    Err(e) => Err(e),
+                };
+                results.push(result);
+                results
             }
-            Err(e) => Err(e),
-        };
-        results.push(result);
-        results
-    })
+            None => sorting_tmp
+                .iter()
+                .map(|((src, dst, edge_type), weight)| Ok((*src, *dst, *edge_type, *weight)))
+                .collect::<Vec<_>>(),
+        })
 }
 
 pub(crate) fn parse_unsorted_edges<'a>(
@@ -273,10 +282,10 @@ pub(crate) fn build_edges(
     let mut edges: EliasFano = EliasFano::new(
         encode_edge(nodes_number, nodes_number, node_bits) as u64,
         edges_number as usize,
-    );
+    )?;
     // TODO: the following data structure could be better to be a bitvector.
     // This is because universe == number of elements
-    let mut unique_sources: EliasFano = EliasFano::new(nodes_number as u64, nodes_number as usize);
+    let mut unique_sources: EliasFano = EliasFano::new(nodes_number as u64, nodes_number as usize)?;
     // Last source inserted
     let mut last_src: NodeT = 0;
     let mut last_dst: NodeT = 0;
@@ -289,7 +298,7 @@ pub(crate) fn build_edges(
 
     for value in edges_iter {
         let (src, dst, _, _) = value?;
-        edges.push(encode_edge(src, dst, node_bits))?;
+        edges.push(encode_edge(src, dst, node_bits)).unwrap();
         if src == dst {
             self_loop_number += 1;
         }
@@ -302,7 +311,7 @@ pub(crate) fn build_edges(
             }
         }
         if first || last_src != src {
-            unique_sources.push(src as u64)?;
+            unique_sources.push(src as u64).unwrap();
             last_src = src;
             if first || last_dst != dst {
                 last_dst = dst;
@@ -490,7 +499,6 @@ pub(crate) fn parse_integer_edges(
 
 /// # Graph Constructors
 impl Graph {
-
     pub(crate) fn build_graph(
         edge_iter: impl Iterator<Item = Result<Quadruple, String>>,
         edges_number: EdgeT,

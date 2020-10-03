@@ -8,9 +8,9 @@ pub fn built_tests(_item: TokenStream) -> TokenStream {
     for load_nodes in bools {
         for load_edge_types in bools {
             for load_weights in bools {
-                for directed in bools {
-                    for skip_self_loops in bools {
-                        for verbose in bools {
+                //for directed in bools {
+                    //for skip_self_loops in bools {
+                        //for verbose in bools {
                             result.push_str(&format!(
                                 concat!(
                                     "#[test]\n",
@@ -21,13 +21,13 @@ pub fn built_tests(_item: TokenStream) -> TokenStream {
                                 load_nodes=load_nodes,
                                 load_edge_types=load_edge_types,
                                 load_weights=load_weights,
-                                directed=directed,
-                                skip_self_loops=skip_self_loops,
-                                verbose=verbose
+                                directed=false,
+                                skip_self_loops=false,
+                                verbose=true//verbose
                             ));
-                        }
-                    }
-                }
+                        //}
+                    //}
+                //}
             }
         }
     }

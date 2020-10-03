@@ -138,24 +138,24 @@ pub fn default_holdout_test_suite(
     for g in &[graph, train, test] {
         validate_vocabularies(g);
     }
-    assert!(!train.overlaps(&test)?);
-    assert!(!test.overlaps(&train)?);
-    assert!(graph.contains(&train)?);
-    assert!(graph.contains(&test)?);
+    assert!(!train.overlaps(&test));
+    assert!(!test.overlaps(&train));
+    assert!(graph.contains(&train));
+    assert!(graph.contains(&test));
     let summed = (train | test)?;
     validate_vocabularies(&summed);
-    assert!(summed.contains(&graph)?);
+    assert!(summed.contains(&graph));
     let subtracted = (graph - test)?;
     validate_vocabularies(&subtracted);
-    assert!(subtracted.contains(&train)?);
-    assert!(!subtracted.overlaps(&test)?);
+    assert!(subtracted.contains(&train));
+    assert!(!subtracted.overlaps(&test));
     let xorred = (graph ^ test)?;
     validate_vocabularies(&xorred);
-    assert!(xorred.contains(&train)?);
-    assert!(!xorred.overlaps(&test)?);
+    assert!(xorred.contains(&train));
+    assert!(!xorred.overlaps(&test));
     let anded = (graph & test)?;
     validate_vocabularies(&anded);
-    assert!(anded.contains(&test)?);
+    assert!(anded.contains(&test));
     Ok(())
 }
 
@@ -197,6 +197,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             graph.connected_components_number(),
             train.connected_components_number()
         );
+    
         default_holdout_test_suite(graph, &train, &test)?;
     }
     // Testing cloning
@@ -205,8 +206,8 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     let negatives = graph.sample_negatives(4, graph.get_edges_number(), true, verbose)?;
     validate_vocabularies(&negatives);
     if !graph.has_edge_types() {
-        assert!(!graph.overlaps(&negatives)?);
-        assert!(!negatives.overlaps(&graph)?);
+        assert!(!graph.overlaps(&negatives));
+        assert!(!negatives.overlaps(&graph));
     }
     // Testing holdouts executed on negative edges.
     let (neg_train, neg_test) = negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
@@ -214,7 +215,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     // Testing subgraph generation
     let expected_nodes = graph.get_not_singleton_nodes_number() / 10;
     let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
-    assert!(subgraph.overlaps(&graph)?);
+    assert!(subgraph.overlaps(&graph));
     assert!(subgraph.get_not_singleton_nodes_number() <= expected_nodes + 1);
     // Testing edge-type based subgraph
     if let Some(ets) = &graph.edge_types {
@@ -311,8 +312,8 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(we.nodes, graph.nodes);
 
             // expect errors for undefined behavior in overlap() and contains()
-            assert!(graph.overlaps(&we).is_err());
-            assert!(graph.contains(&we).is_err());
+            assert!(!graph.overlaps(&we));
+            assert!(!graph.contains(&we));
         }
     }
     {

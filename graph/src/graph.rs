@@ -249,14 +249,14 @@ impl Graph {
     ) -> bool {
         if let Some(src) = self.nodes.get(src_name) {
             if let Some(dst) = self.nodes.get(dst_name) {
-                return self.has_edge(
-                    *src,
-                    *dst,
-                    edge_type_name.and_then(|etn| match &self.edge_types {
-                        Some(ets) => ets.get(etn).copied(),
-                        None => None,
-                    }),
-                );
+                let edge_type_id = edge_type_name.and_then(|etn| match &self.edge_types {
+                    Some(ets) => ets.get(etn).copied(),
+                    None => None,
+                });
+                if edge_type_id.is_none() && edge_type_name.is_some() {
+                    return false;
+                }
+                return self.has_edge(*src, *dst, edge_type_id);
             }
         }
         false
@@ -268,10 +268,10 @@ impl Graph {
     ///
     /// * graph: Graph - The graph to check against.
     ///
-    pub fn overlaps(&self, graph: &Graph) -> Result<bool, String> {
-        Ok(graph
-            .get_edges_par_triples()
-            .any(|(_, src, dst, et)| self.get_edge_id(src, dst, et).is_some()))
+    pub fn overlaps(&self, graph: &Graph) -> bool {
+        graph
+            .get_edges_par_string_triples()
+            .any(|(_, src, dst, et)| self.has_edge_string(&src, &dst, et.as_ref()))
     }
 
     /// Return true if given graph edges are all contained within current graph.
@@ -280,16 +280,10 @@ impl Graph {
     ///
     /// * graph: Graph - The graph to check against.
     ///
-    pub fn contains(&self, graph: &Graph) -> Result<bool, String> {
-        if self.edge_types.is_some() ^ graph.edge_types.is_some() {
-            return Err("One of the graph has edge types while the other has not. This is an undefined behaviour for the contains method.".to_string());
-        }
-        if self.nodes != graph.nodes {
-            return Err("The two graphs nodes mapping are not compatible.".to_string());
-        }
-        Ok(graph
-            .get_edges_par_triples()
-            .all(|(_, src, dst, et)| self.get_edge_id(src, dst, et).is_some()))
+    pub fn contains(&self, graph: &Graph) -> bool {
+        graph
+            .get_edges_par_string_triples()
+            .all(|(_, src, dst, et)| self.has_edge_string(&src, &dst, et.as_ref()))
     }
 
     /// Return range of outbound edges IDs for given Node.

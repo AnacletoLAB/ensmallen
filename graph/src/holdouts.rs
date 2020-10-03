@@ -125,6 +125,13 @@ impl Graph {
                 "Train percentage must be strictly between 0 and 1.",
             ));
         }
+        if self.directed && self.get_edges_number() == 1
+            || !self.directed && self.get_edges_number() == 2
+        {
+            return Err(String::from(
+                "The current graph instance has only one edge. You cannot build an holdout with one edge.",
+            ));
+        }
         let total_edges_number = if include_all_edge_types {
             self.unique_edges_number
         } else {
@@ -171,11 +178,11 @@ impl Graph {
 
         let mut valid_edges_bitmap = RoaringTreemap::new();
 
-        for (edge_id, (src, dst)) in edge_indices
+        for (edge_id, (src, dst, edge_type)) in edge_indices
             .iter()
             .progress_with(pb1)
             .cloned()
-            .map(|edge_id| (edge_id, self.get_edge_from_edge_id(edge_id)))
+            .map(|edge_id| (edge_id, self.get_edge_triple(edge_id)))
         {
             // If the graph is undirected and we have extracted an edge that is a
             // simmetric one, we can skip this iteration.
@@ -183,24 +190,26 @@ impl Graph {
                 continue;
             }
 
-            // Compute the forward edge ids that are required.
-            let mut edge_ids =
-                self.compute_edge_ids_vector(edge_id, src, dst, include_all_edge_types);
-
-            // If the graph is undirected
-            if !self.directed {
-                // we compute also the backward edge ids that are required.
-                edge_ids.append(&mut self.compute_edge_ids_vector(
-                    edge_id,
-                    dst,
-                    src,
-                    include_all_edge_types,
-                ));
-            }
-
             // We stop adding edges when we have reached the minimum amount.
             if user_condition(edge_id, src, dst) && valid_edges_bitmap.len() < valid_edges_number {
-                valid_edges_bitmap.extend(edge_ids);
+                // Compute the forward edge ids that are required.
+                valid_edges_bitmap.extend(self.compute_edge_ids_vector(
+                    edge_id,
+                    src,
+                    dst,
+                    include_all_edge_types,
+                ));
+
+                // If the graph is undirected
+                if !self.directed {
+                    // we compute also the backward edge ids that are required.
+                    valid_edges_bitmap.extend(self.compute_edge_ids_vector(
+                        self.get_unchecked_edge_id(dst, src, edge_type),
+                        dst,
+                        src,
+                        include_all_edge_types,
+                    ));
+                }
             }
         }
 
@@ -243,13 +252,16 @@ impl Graph {
             (self.get_edges_number() - valid_edges_bitmap.len()) as usize,
         );
 
+        let results = (0..self.get_edges_number())
+            .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
+            .progress_with(pb_train)
+            .map(|edge_id| Ok(self.get_edge_quadruple(edge_id)))
+            .collect::<Vec<_>>();
+
         Ok((
             Graph::build_graph(
-                valid_edges_bitmap
-                    .iter()
-                    .progress_with(pb_valid)
-                    .map(|edge_id| Ok(self.get_edge_quadruple(edge_id))),
-                valid_edges_bitmap.len() as EdgeT,
+                results.iter().cloned(),
+                self.get_edges_number() - valid_edges_bitmap.len() as EdgeT,
                 self.nodes.clone(),
                 self.node_types.clone(),
                 match &self.edge_types {
@@ -259,9 +271,9 @@ impl Graph {
                 self.directed,
             )?,
             Graph::build_graph(
-                (0..self.get_edges_number())
-                    .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
-                    .progress_with(pb_train)
+                valid_edges_bitmap
+                    .iter()
+                    .progress_with(pb_valid)
                     .map(|edge_id| Ok(self.get_edge_quadruple(edge_id))),
                 valid_edges_bitmap.len() as EdgeT,
                 self.nodes.clone(),

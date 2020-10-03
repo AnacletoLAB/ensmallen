@@ -34,7 +34,7 @@ fn generic_operator(
                 })
                 .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight)))
         });
-
+    
     let nodes_iterator = graphs
         .iter()
         .flat_map(|(one, _, _)| one.get_nodes_string_iter().map(Ok));
@@ -43,7 +43,7 @@ fn generic_operator(
         edges_iterator,
         Some(nodes_iterator),
         main.directed,
-        false,
+        true,
         true,
         false,
         false,
@@ -75,35 +75,6 @@ impl<'a, 'b> Graph {
             return Err(String::from(concat!(
                 "Both graphs need to have node types or neither can."
             )));
-        }
-
-        if self.nodes != other.nodes {
-            return Err(String::from(concat!(
-                "The two given graphs do not have ",
-                "the same nodes mapping."
-            )));
-        }
-
-        if let Some(sntm) = &self.node_types {
-            if let Some(ontm) = &other.node_types {
-                if sntm.vocabulary != ontm.vocabulary {
-                    return Err(String::from(concat!(
-                        "The two given graphs do not have ",
-                        "the same node types mapping."
-                    )));
-                }
-            }
-        }
-
-        if let Some(setm) = &self.edge_types {
-            if let Some(oetm) = &other.edge_types {
-                if setm.vocabulary != oetm.vocabulary {
-                    return Err(String::from(concat!(
-                        "The two given graphs do not have ",
-                        "the same edge types mapping."
-                    )));
-                }
-            }
         }
 
         Ok(())
