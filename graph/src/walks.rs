@@ -272,7 +272,7 @@ impl Graph {
     ///
     pub fn extract_uniform_node(&self, node: NodeT, seed: NodeT) -> NodeT {
         let (min_edge, max_edge) = self.get_destinations_min_max_edge_ids(node);
-        self.get_destination(min_edge + sample_uniform(max_edge - min_edge, seed as u64) as EdgeT)
+        self.get_destination(min_edge + sample_uniform((max_edge - min_edge) as u64, seed as u64) as EdgeT)
     }
 
     /// Return new sampled node with the transition edge used.
@@ -398,7 +398,7 @@ impl Graph {
             .progress_with(pb)
             .map(to_node);
 
-        let mut walks = if self.has_traps {
+        let mut walks = if self.has_traps() {
             if self.weights.is_none() && parameters.is_first_order_walk() {
                 info!("Using trap-aware uniform first order random walk algorithm.");
                 iterator

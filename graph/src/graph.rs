@@ -15,10 +15,17 @@ use std::collections::HashMap;
 #[derive(Clone)]
 pub struct Graph {
     // properties
-    /// if the graph has traps or not
-    pub(crate) has_traps: bool,
     /// if the graph is directed or undirected
     pub(crate) directed: bool,
+    /// Number of nodes that have at least a self-loop.
+    /// This means that if a nodes has multiples self-loops they will be count as one.
+    pub(crate) unique_self_loop_number: NodeT,
+    /// Number of self-loop edges. This counts multiple times eventual multi-graph self-loops.
+    pub(crate) self_loop_number: EdgeT,
+    /// Number of nodes that have at least an edge inbound or outbound.
+    pub(crate) not_singleton_nodes_number: NodeT,
+    /// How many unique edges the graph has (excluding the multi-graph ones)
+    pub(crate) unique_edges_number: EdgeT,
 
     /// The main datastructure where all the edges are saved
     /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
@@ -128,9 +135,9 @@ impl Graph {
     ) -> Option<EdgeT> {
         if let Some(et) = edge_type {
             if let Some(ets) = &self.edge_types {
-                return self
-                    .get_edge_ids(src, dst)
-                    .and_then(|mut edge_ids| edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == et));
+                return self.get_edge_ids(src, dst).and_then(|mut edge_ids| {
+                    edge_ids.find(|edge_id| ets.ids[*edge_id as usize] == et)
+                });
             }
         }
         self.get_edge_from_tuple(src, dst)
@@ -211,9 +218,48 @@ impl Graph {
     ///
     /// * src: NodeT - The source node of the edge.
     /// * dst: NodeT - The destination node of the edge.
+    /// * edge_type: Option<EdgeTypeT> - The (optional) edge type.
     ///
-    pub fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
-        self.edges.contains(self.encode_edge(src, dst))
+    pub fn has_edge(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> bool {
+        if self.edges.contains(self.encode_edge(src, dst)) {
+            return match &edge_type {
+                Some(et) => self
+                    .get_unchecked_link_edge_types(src, dst)
+                    .unwrap()
+                    .contains(et),
+                None => true,
+            };
+        }
+        false
+    }
+
+    /// Returns boolean representing if edge passing between given nodes exists.
+    ///
+    /// # Arguments
+    ///
+    /// * src: String - The source node name of the edge.
+    /// * dst: String - The destination node name of the edge.
+    /// * edge_type: Option<String> - The (optional) edge type name.
+    ///
+    pub fn has_edge_string(
+        &self,
+        src_name: &str,
+        dst_name: &str,
+        edge_type_name: Option<&String>,
+    ) -> bool {
+        if let Some(src) = self.nodes.get(src_name) {
+            if let Some(dst) = self.nodes.get(dst_name) {
+                return self.has_edge(
+                    *src,
+                    *dst,
+                    edge_type_name.and_then(|etn| match &self.edge_types {
+                        Some(ets) => ets.get(etn).copied(),
+                        None => None,
+                    }),
+                );
+            }
+        }
+        false
     }
 
     /// Return true if given graph has any edge overlapping with current graph.
@@ -223,11 +269,8 @@ impl Graph {
     /// * graph: Graph - The graph to check against.
     ///
     pub fn overlaps(&self, graph: &Graph) -> Result<bool, String> {
-        if self.has_edge_types() ^ graph.has_edge_types() {
-            return Err("One of the graph has edge types while the other has not. This is an undefined behaviour for the overalps method.".to_string());
-        }
         Ok(graph
-            .get_edge_triples_par_enumerate()
+            .get_edges_par_triples()
             .any(|(_, src, dst, et)| self.get_edge_id(src, dst, et).is_some()))
     }
 
@@ -241,9 +284,11 @@ impl Graph {
         if self.edge_types.is_some() ^ graph.edge_types.is_some() {
             return Err("One of the graph has edge types while the other has not. This is an undefined behaviour for the contains method.".to_string());
         }
-
+        if self.nodes != graph.nodes {
+            return Err("The two graphs nodes mapping are not compatible.".to_string());
+        }
         Ok(graph
-            .get_edge_triples_par_enumerate()
+            .get_edges_par_triples()
             .all(|(_, src, dst, et)| self.get_edge_id(src, dst, et).is_some()))
     }
 

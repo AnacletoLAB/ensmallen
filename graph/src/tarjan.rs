@@ -34,7 +34,7 @@ impl Graph {
                     recurse = false;
                     let (_min, _max) = self.get_destinations_min_max_edge_ids(src);
                     // Consider successors of source node
-                    for (j, dst) in ((_min + i as u64).._max)
+                    for (j, dst) in ((_min + i as EdgeT).._max)
                         .map(|edge_id| self.get_destination(edge_id))
                         .enumerate()
                     {

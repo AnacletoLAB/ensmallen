@@ -130,34 +130,34 @@ fn validate_vocabularies(graph: &Graph) {
 }
 
 /// Executes the default test suite for holdouts.
-// pub fn default_holdout_test_suite(
-//     graph: &Graph,
-//     train: &Graph,
-//     test: &Graph,
-// ) -> Result<(), String> {
-//     for g in &[graph, train, test] {
-//         validate_vocabularies(g);
-//     }
-//     assert!(!train.overlaps(&test)?);
-//     assert!(!test.overlaps(&train)?);
-//     assert!(graph.contains(&train)?);
-//     assert!(graph.contains(&test)?);
-//     let summed = (train | test)?;
-//     validate_vocabularies(&summed);
-//     assert!(summed.contains(&graph)?);
-//     let subtracted = (graph - test)?;
-//     validate_vocabularies(&subtracted);
-//     assert!(subtracted.contains(&train)?);
-//     assert!(!subtracted.overlaps(&test)?);
-//     let xorred = (graph ^ test)?;
-//     validate_vocabularies(&xorred);
-//     assert!(xorred.contains(&train)?);
-//     assert!(!xorred.overlaps(&test)?);
-//     let anded = (graph & test)?;
-//     validate_vocabularies(&anded);
-//     assert!(anded.contains(&test)?);
-//     Ok(())
-// }
+pub fn default_holdout_test_suite(
+    graph: &Graph,
+    train: &Graph,
+    test: &Graph,
+) -> Result<(), String> {
+    for g in &[graph, train, test] {
+        validate_vocabularies(g);
+    }
+    assert!(!train.overlaps(&test)?);
+    assert!(!test.overlaps(&train)?);
+    assert!(graph.contains(&train)?);
+    assert!(graph.contains(&test)?);
+    let summed = (train | test)?;
+    validate_vocabularies(&summed);
+    assert!(summed.contains(&graph)?);
+    let subtracted = (graph - test)?;
+    validate_vocabularies(&subtracted);
+    assert!(subtracted.contains(&train)?);
+    assert!(!subtracted.overlaps(&test)?);
+    let xorred = (graph ^ test)?;
+    validate_vocabularies(&xorred);
+    assert!(xorred.contains(&train)?);
+    assert!(!xorred.overlaps(&test)?);
+    let anded = (graph & test)?;
+    validate_vocabularies(&anded);
+    assert!(anded.contains(&test)?);
+    Ok(())
+}
 
 /// Executes near-complete test of all functions for the given graph.
 pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
@@ -188,46 +188,40 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     }
 
     // Testing main holdout mechanisms
-    // for include_all_edge_types in &[false, true] {
-    //     let (train, test) =
-    //         graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
-    //     default_holdout_test_suite(graph, &train, &test)?;
-    //     let (train, test) = graph.connected_holdout(4, 0.8, *include_all_edge_types, verbose)?;
-    //     assert_eq!(
-    //         graph.connected_components_number(),
-    //         train.connected_components_number()
-    //     );
-    //     default_holdout_test_suite(graph, &train, &test)?;
-    // }
+    for include_all_edge_types in &[false, true] {
+        let (train, test) =
+            graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
+        default_holdout_test_suite(graph, &train, &test)?;
+        let (train, test) = graph.connected_holdout(4, 0.8, *include_all_edge_types, verbose)?;
+        assert_eq!(
+            graph.connected_components_number(),
+            train.connected_components_number()
+        );
+        default_holdout_test_suite(graph, &train, &test)?;
+    }
     // Testing cloning
     let _ = graph.clone();
     // Testing negative edges generation
-    // let negatives = graph.sample_negatives(4, graph.get_edges_number(), true, verbose)?;
-    // validate_vocabularies(&negatives);
-    // if !graph.has_edge_types() {
-    //     assert!(!graph.overlaps(&negatives)?);
-    //     assert!(!negatives.overlaps(&graph)?);
-    // }
+    let negatives = graph.sample_negatives(4, graph.get_edges_number(), true, verbose)?;
+    validate_vocabularies(&negatives);
+    if !graph.has_edge_types() {
+        assert!(!graph.overlaps(&negatives)?);
+        assert!(!negatives.overlaps(&graph)?);
+    }
     // Testing holdouts executed on negative edges.
-    // let (neg_train, neg_test) = negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
-    // default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
+    let (neg_train, neg_test) = negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
+    default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
     // Testing subgraph generation
-    // let expected_nodes = graph.get_not_singleton_nodes_number() / 10;
-    // let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
-    // assert!(subgraph.overlaps(&graph)?);
-    // assert!(subgraph.get_not_singleton_nodes_number() <= expected_nodes + 1);
+    let expected_nodes = graph.get_not_singleton_nodes_number() / 10;
+    let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
+    assert!(subgraph.overlaps(&graph)?);
+    assert!(subgraph.get_not_singleton_nodes_number() <= expected_nodes + 1);
     // Testing edge-type based subgraph
-    // if let Some(ets) = &graph.edge_types {
-    //     let edge_type = ets.translate(graph.get_edge_type_id(0)?);
-    //     let edge_type_subgraph = graph.edge_types_subgraph(vec![edge_type.to_string()], verbose);
-    //     assert_eq!(edge_type_subgraph.is_ok(), graph.has_edge_types());
-    // }
-
-    // let wrong_edge_type_subgraph = graph.edge_types_subgraph(vec![], verbose);
-    // assert!(wrong_edge_type_subgraph.is_err());
-
-    // let wrong_edge_type_subgraph = graph.edge_types_subgraph(vec!["missing".to_string()], verbose);
-    // assert!(wrong_edge_type_subgraph.is_err());
+    if let Some(ets) = &graph.edge_types {
+        let edge_type = ets.translate(graph.get_edge_type_id(0)?);
+        let edge_type_subgraph = graph.edge_types_subgraph(vec![edge_type.to_string()], verbose);
+        assert_eq!(edge_type_subgraph.is_ok(), graph.has_edge_types());
+    }
 
     // Testing writing out graph to file
     let node_file = random_path();
@@ -258,7 +252,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     edges_writer.dump(&graph)?;
     fs::remove_file(edges_file).unwrap();
 
-    if !graph.directed{
+    if !graph.directed {
         // Testing SkipGram / CBOW / GloVe preprocessing
         graph.cooccurence_matrix(&walker, Some(3), Some(verbose))?;
         graph.node2vec(&walker, 1, 3)?;
@@ -303,52 +297,52 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     // Evaluate get_edge_type_counts
     assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
 
-    // test drops
-    // {
-    //     let without_edges = graph.drop_edge_types();
-    //     assert_eq!(without_edges.is_ok(), graph.has_edge_types());
-    //     if let Some(we) = &without_edges.ok() {
-    //         validate_vocabularies(we);
-    //         assert_eq!(we.has_edge_types(), false);
-    //         assert_eq!(we.has_weights(), graph.has_weights());
-    //         assert!(we.node_types == graph.node_types);
-    //         assert_eq!(we.get_selfloops_number(), graph.get_selfloops_number());
-    //         assert_eq!(we.has_traps, graph.has_traps);
-    //         assert_eq!(we.nodes, graph.nodes);
+    //test drops
+    {
+        let without_edges = graph.drop_edge_types();
+        assert_eq!(without_edges.is_ok(), graph.has_edge_types());
+        if let Some(we) = &without_edges.ok() {
+            validate_vocabularies(we);
+            assert_eq!(we.has_edge_types(), false);
+            assert_eq!(we.has_weights(), graph.has_weights());
+            assert!(we.node_types == graph.node_types);
+            assert_eq!(we.get_self_loop_number(), graph.get_self_loop_number());
+            assert_eq!(we.has_traps(), graph.has_traps());
+            assert_eq!(we.nodes, graph.nodes);
 
-    //         // expect errors for undefined behavior in overlap() and contains()
-    //         assert!(graph.overlaps(&we).is_err());
-    //         assert!(graph.contains(&we).is_err());
-    //     }
-    // }
-    // {
-    //     let without_nodes = graph.drop_node_types();
-    //     assert_eq!(without_nodes.is_ok(), graph.has_node_types());
-    //     if let Some(wn) = &without_nodes.ok() {
-    //         validate_vocabularies(wn);
-    //         assert_eq!(wn.has_node_types(), false);
-    //         assert!(wn.edge_types == graph.edge_types);
-    //         assert_eq!(wn.weights, graph.weights);
-    //         assert_eq!(wn.has_selfloops(), graph.has_selfloops());
-    //         assert_eq!(wn.has_traps, graph.has_traps);
-    //         assert_eq!(wn.nodes, graph.nodes);
-    //         //assert_eq!(wn.edges, graph.edges);
-    //     }
-    // }
-    // {
-    //     let without_weights = graph.drop_weights();
-    //     assert_eq!(without_weights.is_ok(), graph.has_weights());
-    //     if let Some(ww) = &without_weights.ok() {
-    //         validate_vocabularies(ww);
-    //         assert_eq!(ww.has_weights(), false);
-    //         assert!(ww.node_types == graph.node_types);
-    //         assert!(ww.edge_types == graph.edge_types);
-    //         assert_eq!(ww.has_selfloops(), graph.has_selfloops());
-    //         assert_eq!(ww.has_traps, graph.has_traps);
-    //         assert_eq!(ww.nodes, graph.nodes);
-    //         //assert_eq!(ww.edges, graph.edges);
-    //     }
-    // }
+            // expect errors for undefined behavior in overlap() and contains()
+            assert!(graph.overlaps(&we).is_err());
+            assert!(graph.contains(&we).is_err());
+        }
+    }
+    {
+        let without_nodes = graph.drop_node_types();
+        assert_eq!(without_nodes.is_ok(), graph.has_node_types());
+        if let Some(wn) = &without_nodes.ok() {
+            validate_vocabularies(wn);
+            assert_eq!(wn.has_node_types(), false);
+            assert!(wn.edge_types == graph.edge_types);
+            assert_eq!(wn.weights, graph.weights);
+            assert_eq!(wn.has_selfloops(), graph.has_selfloops());
+            assert_eq!(wn.has_traps(), graph.has_traps());
+            assert_eq!(wn.nodes, graph.nodes);
+            assert_eq!(wn.edges, graph.edges);
+        }
+    }
+    {
+        let without_weights = graph.drop_weights();
+        assert_eq!(without_weights.is_ok(), graph.has_weights());
+        if let Some(ww) = &without_weights.ok() {
+            validate_vocabularies(ww);
+            assert_eq!(ww.has_weights(), false);
+            assert!(ww.node_types == graph.node_types);
+            assert!(ww.edge_types == graph.edge_types);
+            assert_eq!(ww.has_selfloops(), graph.has_selfloops());
+            assert_eq!(ww.has_traps(), graph.has_traps());
+            assert_eq!(ww.nodes, graph.nodes);
+            assert_eq!(ww.edges, graph.edges);
+        }
+    }
 
     Ok(())
 }

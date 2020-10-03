@@ -318,10 +318,10 @@ impl Graph {
                 .filter(|(src, dst)| {
                     !(
                         // false negatives or
-                        self.has_edge(*src, *dst)
+                        self.has_edge(*src, *dst, None)
                         // are in the graph to avoid
                         || if let Some(g) = &graph_to_avoid {
-                            g.has_edge(*src, *dst)
+                            g.has_edge(*src, *dst, None)
                         } else {
                             false
                         }

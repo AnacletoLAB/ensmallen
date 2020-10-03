@@ -265,13 +265,13 @@ impl Graph {
             .unwrap()
     }
 
-    /// Returns number of self-loops.
+    /// Returns number of self-loops, including also those in eventual multi-edges.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The number of self-loops in the graph is  {}", graph.get_selfloops_number());
     /// ```
-    pub fn get_selfloops_number(&self) -> usize {
-        self.get_selfloops_iter().count()
+    pub fn get_self_loop_number(&self) -> EdgeT {
+        self.self_loop_number
     }
 
     /// Returns rate of self-loops.
@@ -279,21 +279,8 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// println!("The rate of self-loops in the graph is  {}", graph.get_selfloops_rate());
     /// ```
-    pub fn get_selfloops_rate(&self) -> f64 {
-        self.get_selfloops_number() as f64 / self.get_edges_number() as f64
-    }
-
-    /// Returns rate of bidirectional edges.
-    ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The rate of bidirectional edges in the graph is  {}", graph.bidirectional_rate());
-    /// ```
-    pub fn bidirectional_rate(&self) -> f64 {
-        (0..self.get_nodes_number())
-            .into_par_iter()
-            .map(|node| self.has_edge(node, node) as usize)
-            .sum::<usize>() as f64
-            / self.edges.len() as f64
+    pub fn get_self_loop_rate(&self) -> f64 {
+        self.get_self_loop_number() as f64 / self.get_edges_number() as f64
     }
 
     /// Returns number of connected components in graph.
@@ -345,27 +332,8 @@ impl Graph {
     /// println!("The graph density is {}", graph.density());
     /// ```
     pub fn density(&self) -> f64 {
-        self.get_edges_number() as f64 / (self.get_nodes_number().pow(2)) as f64
-    }
-
-    /// Returns the number of edges that have multiple types.
-    ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The number of edge with multiple types is {}", graph.get_multigraph_edges_number());
-    /// ```
-    pub fn get_multigraph_edges_number(&self) -> usize {
-        self.get_unique_edges_iter()
-            .filter(|(src, dst)| self.get_unchecked_edge_types_number_from_tuple(*src, *dst) > 1)
-            .count()
-    }
-
-    /// Returns the ratio r_multi of edges that have multiple types; r_multi = (number of edges having multiple types)/(number of edges)
-    /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The percentage of edges having multiple types is {}", graph.get_multigraph_edges_ratio());
-    /// ```
-    pub fn get_multigraph_edges_ratio(&self) -> f64 {
-        self.get_multigraph_edges_number() as f64 / self.get_edges_number() as f64
+        let nodes_number = self.get_nodes_number();
+        self.get_edges_number() as f64 / (nodes_number * (nodes_number - 1)) as f64
     }
 
     /// Returns report relative to the graph metrics

@@ -40,6 +40,7 @@ mod preprocessing;
 mod setters;
 mod tarjan;
 mod trees;
+mod iters;
 pub mod types;
 mod walks;
 mod walks_parameters;

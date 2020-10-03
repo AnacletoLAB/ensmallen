@@ -1,10 +1,20 @@
 use super::*;
 use itertools::Itertools;
 use rayon::prelude::*;
-use std::collections::{HashMap, HashSet};
+use std::collections::HashMap;
 use std::iter::once;
 
 impl Graph {
+    /// Return the number of traps (nodes without any outgoing edges that are not singletons)
+    pub fn get_traps_number(&self) -> EdgeT {
+        self.not_singleton_nodes_number as EdgeT - self.unique_sources.len() as EdgeT
+    }
+
+    // Return if the graph has traps or not
+    pub fn has_traps(&self) -> bool {
+        self.get_traps_number() > 0
+    }
+
     /// Returns boolean representing if graph is directed.
     pub fn is_directed(&self) -> bool {
         self.directed
@@ -20,25 +30,60 @@ impl Graph {
         self.edge_types.is_some()
     }
 
+    /// Returns boolean representing if graph has self-loops.
+    pub fn has_selfloops(&self) -> bool {
+        self.self_loop_number > 0
+    }
+
+    /// Returs option with the edge type of the given edge id.
+    pub fn get_edge_type(&self, edge_id: EdgeT) -> Option<EdgeTypeT> {
+        match &self.edge_types {
+            Some(ets) => Some(ets.ids[edge_id as usize]),
+            None => None,
+        }
+    }
+
+    /// Returs option with the node type of the given node id.
+    pub fn get_node_type(&self, node_id: NodeT) -> Option<NodeTypeT> {
+        match &self.node_types {
+            Some(nts) => Some(nts.ids[node_id as usize]),
+            None => None,
+        }
+    }
+
+    /// Returs option with the node type of the given node id.
+    pub fn get_node_type_string(&self, node_id: NodeT) -> Option<String> {
+        match &self.node_types {
+            Some(nts) => Some(
+                nts.translate(self.get_node_type(node_id).unwrap())
+                    .to_owned(),
+            ),
+            None => None,
+        }
+    }
+
+    /// Returs option with the edge type of the given edge id.
+    pub fn get_edge_type_string(&self, edge_id: EdgeT) -> Option<String> {
+        match &self.edge_types {
+            Some(ets) => Some(
+                ets.translate(self.get_edge_type(edge_id).unwrap())
+                    .to_owned(),
+            ),
+            None => None,
+        }
+    }
+
+    /// Returs option with the weight of the given edge id.
+    pub fn get_edge_weight(&self, edge_id: EdgeT) -> Option<WeightT> {
+        match &self.weights {
+            Some(ws) => Some(ws[edge_id as usize]),
+            None => None,
+        }
+    }
+
     /// Returns boolean representing if graph has node types.
     pub fn has_node_types(&self) -> bool {
         self.node_types.is_some()
-    }
-
-    /// Return iterator of nodes that have selfloops.
-    pub fn get_selfloops_iter(&self) -> impl Iterator<Item = NodeT> + '_ {
-        (0..self.get_nodes_number()).filter_map(move |node| {
-            let node_id = node as NodeT;
-            match self.has_edge(node_id, node_id){
-                true=>Some(node_id),
-                false=>None
-            }
-        })
-    }
-
-    /// Return boolean representing if graph has selfloops.
-    pub fn has_selfloops(&self) -> bool {
-        self.get_selfloops_iter().any(|_| true)
     }
 
     /// Returns number of nodes in the graph.
@@ -79,7 +124,7 @@ impl Graph {
 
     pub fn get_not_singletons(&self) -> Vec<NodeT> {
         self.get_edges_iter()
-            .flat_map(|(src, dst)| once(src).chain(once(dst)))
+            .flat_map(|(_, src, dst)| once(src).chain(once(dst)))
             .unique()
             .collect()
     }
@@ -94,140 +139,16 @@ impl Graph {
             .collect()
     }
 
-    pub fn get_edge_type_number(&self, edge_type:EdgeTypeT)->EdgeTypeT{
-        match self.edge_types{
-            None=>0,
-            Some(ets)=>ets.counts[edge_type as usize] as EdgeTypeT
+    pub fn get_edge_type_number(&self, edge_type: EdgeTypeT) -> EdgeTypeT {
+        match &self.edge_types {
+            None => 0,
+            Some(ets) => ets.counts[edge_type as usize] as EdgeTypeT,
         }
     }
 
-    /// Return iterator on the edges of the graph.
-    pub fn get_edges_iter(&self) -> impl Iterator<Item = (NodeT, NodeT)> + '_ {
-        self.edges.iter().map(move |edge| self.decode_edge(edge))
-    }
-
-    /// Return iterator on the edges of the graph.
-    pub fn get_edges_enumerate(&self) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        self.edges.enumerate().map(move |(edge_id, edge)| {
-            let (src, dst) = self.decode_edge(edge);
-            (edge_id as EdgeT, src, dst)
-        })
-    }
-
-    /// Return iterator on the edges of the graph.
-    pub fn get_edges_par_enumerate(
-        &self,
-    ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        self.edges.par_enumerate().map(move |(edge_id, edge)| {
-            let (src, dst) = self.decode_edge(edge);
-            (edge_id as EdgeT, src, dst)
-        })
-    }
-
-    /// Return parallel iterator on the edges (as triples) of the graph.
-    pub fn get_edge_triples_par_enumerate(
-        &self,
-    ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_ {
-        self.get_edges_par_enumerate()
-            .map(move |(edge_id, src, dst)| {
-                (
-                    edge_id,
-                    src,
-                    dst,
-                    match &self.edge_types {
-                        Some(et) => Some(et.ids[edge_id as usize]),
-                        None => None,
-                    },
-                )
-            })
-    }
-
-    pub fn get_edge_quadruples_par_enumerate(
-        &self,
-    ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> + '_
-    {
-        self.get_edge_triples_par_enumerate()
-            .map(move |(edge_id, src, dst, edge_type)| {
-                (
-                    edge_id,
-                    src,
-                    dst,
-                    edge_type,
-                    match &self.weights {
-                        Some(ws) => Some(ws[edge_id as usize]),
-                        None => None,
-                    },
-                )
-            })
-    }
-
-    /// Return iterator on the edges (as triples) of the graph.
-    pub fn get_edge_triples_enumerate(
-        &self,
-    ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_ {
-        self.get_edges_enumerate().map(move |(edge_id, src, dst)| {
-            (
-                edge_id,
-                src,
-                dst,
-                match &self.edge_types {
-                    Some(et) => Some(et.ids[edge_id as usize]),
-                    None => None,
-                },
-            )
-        })
-    }
-
-    pub fn get_edge_quadruples_enumerate(
-        &self,
-    ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> + '_ {
-        self.get_edge_triples_enumerate()
-            .map(move |(edge_id, src, dst, edge_type)| {
-                (
-                    edge_id,
-                    src,
-                    dst,
-                    edge_type,
-                    match &self.weights {
-                        Some(ws) => Some(ws[edge_id as usize]),
-                        None => None,
-                    },
-                )
-            })
-    }
-
-    pub fn get_edge_quadruples(
-        &self,
-    ) -> impl Iterator<Item = (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> + '_ {
-        self.get_edge_quadruples_enumerate()
-            .map(move |(_, src, dst, edge_type, weight)| (src, dst, edge_type, weight))
-    }
-
-    /// Return iterator on the edges of the graph.
-    pub fn get_unique_edges_iter(&self) -> impl Iterator<Item = (NodeT, NodeT)> + '_ {
-        self.get_edges_iter().unique()
-    }
-
-    /// Return iterator on the edges of the graph.
-    pub fn get_unique_edges(&self) -> HashSet<(NodeT, NodeT)> {
-        self.get_unique_edges_iter().collect()
-    }
-
-    /// Return parallel iterator on the edges of the graph.
-    pub fn get_edges_par_iter(&self) -> impl ParallelIterator<Item = (NodeT, NodeT)> + '_ {
-        self.edges
-            .par_iter()
-            .map(move |edge| decode_edge(edge, self.node_bits, self.node_bit_mask))
-    }
-
-    /// Return iterable of the sources.
-    pub fn get_sources_par_iter(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
-        self.get_edges_par_iter().map(|(src, _)| src)
-    }
-
-    /// Return iterable of the sources.
-    pub fn get_sources_iter(&self) -> impl Iterator<Item = NodeT> + '_ {
-        self.get_edges_iter().map(|(src, _)| src)
+    /// Return if there are multiple edges between two nodes
+    pub fn is_multigraph(&self) -> bool {
+        self.unique_edges_number != self.get_edges_number()
     }
 
     pub fn get_destination(&self, edge_id: EdgeT) -> NodeT {
@@ -249,12 +170,5 @@ impl Graph {
 
     pub fn get_unique_sources_number(&self) -> NodeT {
         self.unique_sources.len() as NodeT
-    }
-
-    pub fn get_trap_nodes(&self) -> HashSet<NodeT> {
-        (0..self.get_nodes_number())
-            .filter(|candidate_src| !self.unique_sources.contains(*candidate_src as u64))
-            .map(|node_id| node_id as NodeT)
-            .collect()
     }
 }

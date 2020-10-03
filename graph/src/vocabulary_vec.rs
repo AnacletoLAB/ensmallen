@@ -4,7 +4,7 @@ use super::*;
 pub struct VocabularyVec<IndexT: ToFromUsize> {
     pub ids: Vec<IndexT>,
     pub vocabulary: Vocabulary<IndexT>,
-    pub counts: Vec<EdgeT>
+    pub counts: Vec<EdgeT>,
 }
 
 impl<IndexT: ToFromUsize> VocabularyVec<IndexT> {
@@ -12,38 +12,33 @@ impl<IndexT: ToFromUsize> VocabularyVec<IndexT> {
         VocabularyVec {
             ids: Vec::new(),
             vocabulary: Vocabulary::new(numeric_ids),
-            counts: Vec::new()
+            counts: Vec::new(),
         }
     }
 
-    pub fn from_structs(ids:Vec<IndexT>, vocabulary:Option<Vocabulary<IndexT>>) -> Option<VocabularyVec<IndexT>> {
-        match vocabulary{
+    pub fn from_structs(
+        ids: Vec<IndexT>,
+        vocabulary: Option<Vocabulary<IndexT>>,
+    ) -> Option<VocabularyVec<IndexT>> {
+        match vocabulary {
             Some(vocab) => {
                 let mut vocabvec = VocabularyVec {
                     ids,
                     vocabulary: vocab,
-                    counts: Vec::new()
+                    counts: Vec::new(),
                 };
                 vocabvec.build_counts();
                 Some(vocabvec)
-            },
-            None => None
+            }
+            None => None,
         }
-        
-    }
-    
-    /// Add the id to the vocabulary vector
-    ///
-    /// # Arguments
-    ///
-    /// * `id`: IndexT - The Id to insert.
-    pub fn add(&mut self, id: IndexT) {
-        self.ids.push(id)
     }
 
-    pub fn build_counts(&mut self){
+    pub fn build_counts(&mut self) {
         self.counts = vec![0; self.vocabulary.len()];
-        self.ids.iter().for_each(|index| self.counts[IndexT::to_usize(*index)] += 1);
+        for index in self.ids.iter() {
+            self.counts[IndexT::to_usize(*index)] += 1;
+        }
     }
 
     pub fn build_reverse_mapping(&mut self) -> Result<(), String> {

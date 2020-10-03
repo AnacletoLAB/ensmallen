@@ -2,15 +2,20 @@ use super::*;
 use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
 use itertools::Itertools;
+use roaring::RoaringBitmap;
 use std::collections::BTreeMap;
 
-type ParsedEdgesType = Result<
+type ParsedStringEdgesType = Result<
     (
         EliasFano,
         EliasFano,
         Vocabulary<NodeT>,
         Option<VocabularyVec<EdgeTypeT>>,
         Vec<WeightT>,
+        EdgeT,
+        EdgeT,
+        NodeT,
+        NodeT,
         u64,
         u8,
     ),
@@ -245,6 +250,7 @@ pub(crate) fn parse_unsorted_edges<'a>(
     let pb = get_loading_bar(verbose, "Sorting and building graph", sorting_tmp.len());
     let edges_number = sorting_tmp.len() as EdgeT;
     edge_types_vocabulary.build_reverse_mapping()?;
+    nodes.build_reverse_mapping()?;
 
     Ok((
         edges_number,
@@ -261,31 +267,60 @@ pub(crate) fn build_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
     edges_number: EdgeT,
     nodes_number: NodeT,
-) -> Result<(EliasFano, EliasFano, u8, u64), String> {
+) -> Result<(EliasFano, EliasFano, EdgeT, EdgeT, NodeT, NodeT, u8, u64), String> {
     let node_bits = get_node_bits(nodes_number);
     let node_bit_mask = (1 << node_bits) - 1;
     let mut edges: EliasFano = EliasFano::new(
         encode_edge(nodes_number, nodes_number, node_bits) as u64,
-        edges_number as usize
+        edges_number as usize,
     );
-    // TODO: the following data structure would be better to be a bitvector.
+    // TODO: the following data structure could be better to be a bitvector.
     // This is because universe == number of elements
     let mut unique_sources: EliasFano = EliasFano::new(nodes_number as u64, nodes_number as usize);
     // Last source inserted
-    let mut last_source: NodeT = 0;
+    let mut last_src: NodeT = 0;
+    let mut last_dst: NodeT = 0;
+    let mut unique_edges_number: EdgeT = 0;
+    let mut unique_self_loop_number: NodeT = 0;
+    let mut self_loop_number: EdgeT = 0;
+    // TODO: using roaring might be sub-optimal when the bitvec is dense.
+    let mut non_singleton_nodes = RoaringBitmap::new();
     let mut first = true;
 
     for value in edges_iter {
         let (src, dst, _, _) = value?;
         edges.push(encode_edge(src, dst, node_bits))?;
-        if first || last_source != src {
+        if src == dst {
+            self_loop_number += 1;
+        }
+        if first || last_src != src || last_dst != dst {
+            non_singleton_nodes.insert(src);
+            non_singleton_nodes.insert(dst);
+            unique_edges_number += 1;
+            if src == dst {
+                unique_self_loop_number += 1;
+            }
+        }
+        if first || last_src != src {
             unique_sources.push(src as u64)?;
-            last_source = src;
+            last_src = src;
+            if first || last_dst != dst {
+                last_dst = dst;
+            }
             first = false;
         }
     }
 
-    Ok((edges, unique_sources, node_bits, node_bit_mask))
+    Ok((
+        edges,
+        unique_sources,
+        unique_edges_number,
+        self_loop_number,
+        unique_self_loop_number,
+        non_singleton_nodes.len() as NodeT,
+        node_bits,
+        node_bit_mask,
+    ))
 }
 
 fn parse_nodes(
@@ -317,7 +352,7 @@ pub(crate) fn parse_string_edges(
     directed: bool,
     mut nodes: Vocabulary<NodeT>,
     numeric_edge_types_ids: bool,
-) -> ParsedEdgesType {
+) -> ParsedStringEdgesType {
     let mut weights: Vec<WeightT> = Vec::new();
     let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::new(numeric_edge_types_ids);
     let mut edge_types_ids: Vec<EdgeTypeT> = Vec::new();
@@ -336,8 +371,18 @@ pub(crate) fn parse_string_edges(
 
     let weighted_edges_iter = parse_weights(typed_edges_iter, &mut weights);
 
-    let (edges, unique_sources, node_bits, node_bit_mask) =
-        build_edges(weighted_edges_iter, edges_number, nodes_number)?;
+    let (
+        edges,
+        unique_sources,
+        unique_edges_number,
+        self_loop_number,
+        unique_self_loop_number,
+        not_singleton_nodes_number,
+        node_bits,
+        node_bit_mask,
+    ) = build_edges(weighted_edges_iter, edges_number, nodes_number)?;
+
+    nodes.build_reverse_mapping()?;
 
     if !weights.is_empty() && edges.len() != weights.len() {
         return Err(format!(
@@ -364,6 +409,10 @@ pub(crate) fn parse_string_edges(
         nodes,
         edge_types,
         weights,
+        unique_edges_number,
+        self_loop_number,
+        unique_self_loop_number,
+        not_singleton_nodes_number,
         node_bit_mask,
         node_bits,
     ))
@@ -374,8 +423,21 @@ pub(crate) fn parse_integer_edges(
     edges_number: EdgeT,
     nodes_number: NodeT,
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
-    nodes: Vocabulary<NodeT>,
-) -> ParsedEdgesType {
+) -> Result<
+    (
+        EliasFano,
+        EliasFano,
+        Option<VocabularyVec<EdgeTypeT>>,
+        Vec<WeightT>,
+        EdgeT,
+        EdgeT,
+        NodeT,
+        NodeT,
+        u64,
+        u8,
+    ),
+    String,
+> {
     let mut weights: Vec<WeightT> = Vec::new();
     let mut edge_types_ids: Vec<EdgeTypeT> = Vec::new();
 
@@ -383,8 +445,16 @@ pub(crate) fn parse_integer_edges(
 
     let weighted_edges_iter = parse_weights(typed_edges_iter, &mut weights);
 
-    let (edges, unique_sources, node_bits, node_bit_mask) =
-        build_edges(weighted_edges_iter, edges_number, nodes_number)?;
+    let (
+        edges,
+        unique_sources,
+        unique_edges_number,
+        self_loop_number,
+        unique_self_loop_number,
+        not_singleton_nodes_number,
+        node_bits,
+        node_bit_mask,
+    ) = build_edges(weighted_edges_iter, edges_number, nodes_number)?;
 
     if !weights.is_empty() && edges.len() != weights.len() {
         return Err(format!(
@@ -407,9 +477,12 @@ pub(crate) fn parse_integer_edges(
     Ok((
         edges,
         unique_sources,
-        nodes,
         edge_types,
         weights,
+        unique_edges_number,
+        self_loop_number,
+        unique_self_loop_number,
+        not_singleton_nodes_number,
         node_bit_mask,
         node_bits,
     ))
@@ -417,28 +490,34 @@ pub(crate) fn parse_integer_edges(
 
 /// # Graph Constructors
 impl Graph {
+
     pub(crate) fn build_graph(
-        edge_iter: impl Iterator<
-            Item = Result<Quadruple, String>,
-        >,
+        edge_iter: impl Iterator<Item = Result<Quadruple, String>>,
         edges_number: EdgeT,
         nodes: Vocabulary<NodeT>,
         node_types: Option<VocabularyVec<NodeTypeT>>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
     ) -> Result<Graph, String> {
-        let (edges, unique_sources, mut nodes, edge_types, weights, node_bit_mask, node_bits) =
-            parse_integer_edges(
-                edge_iter,
-                edges_number,
-                nodes.len() as NodeT,
-                edge_types_vocabulary,
-                nodes,
-            )?;
+        let (
+            edges,
+            unique_sources,
+            edge_types,
+            weights,
+            unique_edges_number,
+            self_loop_number,
+            unique_self_loop_number,
+            not_singleton_nodes_number,
+            node_bit_mask,
+            node_bits,
+        ) = parse_integer_edges(
+            edge_iter,
+            edges_number,
+            nodes.len() as NodeT,
+            edge_types_vocabulary,
+        )?;
 
-        nodes.build_reverse_mapping()?;
-
-        let mut graph = Graph {
+        Ok(Graph {
             directed,
             edges,
             unique_sources,
@@ -447,11 +526,12 @@ impl Graph {
             node_bits,
             node_types,
             edge_types,
-            has_traps: false,
+            unique_edges_number,
+            self_loop_number,
+            unique_self_loop_number,
+            not_singleton_nodes_number,
             weights: optionify!(weights),
-        };
-        graph.has_traps = !graph.get_trap_nodes().is_empty();
-        Ok(graph)
+        })
     }
     /// Create new Graph object from unsorted source.
     ///
@@ -530,19 +610,28 @@ impl Graph {
             numeric_node_types_ids,
         )?;
 
-        let (edges, unique_sources, mut nodes, edge_types, weights, node_bit_mask, node_bits) =
-            parse_string_edges(
-                edges_iterator,
-                edges_number,
-                nodes_number,
-                directed,
-                nodes,
-                numeric_edge_types_ids,
-            )?;
+        let (
+            edges,
+            unique_sources,
+            nodes,
+            edge_types,
+            weights,
+            unique_edges_number,
+            self_loop_number,
+            unique_self_loop_number,
+            not_singleton_nodes_number,
+            node_bit_mask,
+            node_bits,
+        ) = parse_string_edges(
+            edges_iterator,
+            edges_number,
+            nodes_number,
+            directed,
+            nodes,
+            numeric_edge_types_ids,
+        )?;
 
-        nodes.build_reverse_mapping()?;
-
-        let mut graph = Graph {
+        Ok(Graph {
             directed,
             edges,
             unique_sources,
@@ -550,11 +639,12 @@ impl Graph {
             node_bit_mask,
             node_bits,
             edge_types,
-            has_traps: false,
+            unique_edges_number,
+            self_loop_number,
+            unique_self_loop_number,
+            not_singleton_nodes_number,
             node_types: optionify!(node_types),
             weights: optionify!(weights),
-        };
-        graph.has_traps = !graph.get_trap_nodes().is_empty();
-        Ok(graph)
+        })
     }
 }

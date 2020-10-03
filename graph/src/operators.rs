@@ -13,44 +13,42 @@ fn generic_operator(
     main: &Graph,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
 ) -> Result<Graph, String> {
-    let mut unique_edges_tree = GraphDictionary::new();
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
     // must_have_graph: right hand edges "must have list
-    graphs.iter().for_each(|(one, deny_graph, must_have_graph)| {
-        one.get_edge_quadruples_enumerate()
-            .filter(|(_, src, dst, edge_type, _)| {
-                // We avoid to insert duplicates.
-                if !one.directed && src > dst {
-                    return false;
-                }
-                // If the secondary graph is given
-                // we filter out the edges that were previously added to avoid
-                // introducing duplicates.
-                if let Some(dg) = deny_graph {
-                    return dg.get_edge_id(*src, *dst, *edge_type).is_none();
-                }
-                if let Some(mhg) = must_have_graph {
-                    return mhg.get_edge_id(*src, *dst, *edge_type).is_some();
-                }
-                true
-            })
-            .for_each(|(_, src, dst, edge_type, weight)| {
-                unique_edges_tree.extend(&one, src, dst, edge_type, weight, false)
-            })
-    });
+    let edges_iterator = graphs
+        .iter()
+        .flat_map(|(one, deny_graph, must_have_graph)| {
+            one.get_edges_string_quadruples()
+                .filter(move |(_, src, dst, edge_type, _)| {
+                    // If the secondary graph is given
+                    // we filter out the edges that were previously added to avoid
+                    // introducing duplicates.
+                    if let Some(dg) = deny_graph {
+                        return !dg.has_edge_string(src, dst, edge_type.as_ref());
+                    }
+                    if let Some(mhg) = must_have_graph {
+                        return mhg.has_edge_string(src, dst, edge_type.as_ref());
+                    }
+                    true
+                })
+                .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight)))
+        });
 
-    Ok(build_graph(
-        &mut unique_edges_tree,
-        main.nodes.clone(),
-        main.node_types.clone(),
-        if let Some(et) = &main.edge_types {
-            Some(et.vocabulary.clone())
-        } else {
-            None
-        },
+    let nodes_iterator = graphs
+        .iter()
+        .flat_map(|(one, _, _)| one.get_nodes_string_iter().map(Ok));
+
+    Graph::from_unsorted(
+        edges_iterator,
+        Some(nodes_iterator),
         main.directed,
-    ))
+        false,
+        true,
+        false,
+        false,
+        false,
+    )
 }
 
 impl<'a, 'b> Graph {
