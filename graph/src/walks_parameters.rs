@@ -2,7 +2,7 @@ use super::*;
 use rayon::prelude::*;
 use std::collections::HashMap;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 /// Struct to wrap walk weights.
 pub struct WalkWeights {
     pub(crate) return_weight: ParamsT,
@@ -11,14 +11,14 @@ pub struct WalkWeights {
     pub(crate) change_edge_type_weight: ParamsT,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 /// Struct to wrap parameters relative to a single walk.
 pub struct SingleWalkParameters {
     pub(crate) length: NodeT,
     pub(crate) weights: WalkWeights,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 /// Struct to wrap parameters relative to a set of walks.
 pub struct WalksParameters {
     pub(crate) single_walk_parameters: SingleWalkParameters,

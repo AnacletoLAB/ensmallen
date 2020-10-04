@@ -1,5 +1,6 @@
 use super::*;
 use rand::Rng;
+use log::info;
 use std::fs;
 use std::path::Path;
 
@@ -166,6 +167,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph, verbose)?;
     if !graph.directed {
+        info!("Executing random walks.");
         assert_eq!(
             graph.random_walks(1, &walker)?,
             graph.random_walks(1, &walker)?

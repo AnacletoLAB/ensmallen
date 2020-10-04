@@ -1,6 +1,6 @@
 use super::*;
 use indicatif::{ParallelProgressIterator};
-use linked_hash_set::LinkedHashSet;
+use roaring::RoaringBitmap;
 use log::info;
 use rayon::prelude::*;
 use vec_rand::xorshift::xorshift;
@@ -33,8 +33,8 @@ impl Graph {
         &self,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
-    ) -> (LinkedHashSet<NodeT>, NodeT, NodeT) {
-        let mut destinations = LinkedHashSet::with_capacity((max_edge_id - min_edge_id) as usize);
+    ) -> (RoaringBitmap, NodeT, NodeT) {
+        let mut destinations = RoaringBitmap::new();
         let mut min_dst: NodeT = 0;
         let mut max_dst: NodeT = 0;
         for edge_id in min_edge_id..max_edge_id {
@@ -56,7 +56,7 @@ impl Graph {
         &self,
         node: NodeT,
     ) -> (
-        LinkedHashSet<NodeT>,
+        RoaringBitmap,
         NodeT,
         NodeT,
         Vec<WeightT>,
@@ -81,7 +81,7 @@ impl Graph {
         &self,
         node: NodeT,
         transition: &mut Vec<WeightT>,
-        destinations: &LinkedHashSet<NodeT>,
+        destinations: &RoaringBitmap,
         change_node_type_weight: ParamsT,
     ) {
         //############################################################
@@ -98,7 +98,7 @@ impl Graph {
 
                 transition.iter_mut().zip(destinations.iter()).for_each(
                     |(transition_value, dst)| {
-                        if this_type == nt.ids[*dst as usize] {
+                        if this_type == nt.ids[dst as usize] {
                             *transition_value /= change_node_type_weight
                         }
                     },
@@ -119,7 +119,7 @@ impl Graph {
         node: NodeT,
         change_node_type_weight: ParamsT,
     ) -> (
-        LinkedHashSet<NodeT>,
+        RoaringBitmap,
         NodeT,
         NodeT,
         Vec<WeightT>,
@@ -158,11 +158,11 @@ impl Graph {
         &self,
         edge_id: EdgeT,
         walk_weights: &WalkWeights,
-        previous_destinations: &LinkedHashSet<NodeT>,
+        previous_destinations: &RoaringBitmap,
         previous_min_dst: NodeT,
         previous_max_dst: NodeT,
     ) -> (
-        LinkedHashSet<NodeT>,
+        RoaringBitmap,
         NodeT,
         NodeT,
         Vec<WeightT>,
@@ -204,49 +204,46 @@ impl Graph {
                     });
             }
         }
+        
+        //###############################################################
+        //# Handling of the P & Q parameters: the node2vec coefficients #
+        //###############################################################
 
-        //############################################################
-        //# Handling of the P parameter: the return coefficient      #
-        //############################################################
-
-        //# If the neigbour matches with the source, hence this is
-        //# a backward loop like the following:
-        //# SRC -> DST
-        //#  ▲     /
-        //#   \___/
-        //#
-        //# We weight the edge weight with the given return weight.
-
-        // If the return weight, which is the inverse of p, is not 1, hence
-        // it has some impact, we procced and increase by the given weight
-        // the probability of transitions that go back a previously visited
-        // node.
-        if (walk_weights.return_weight - 1.0).abs() > f64::EPSILON
-            || (walk_weights.explore_weight - 1.0).abs() > f64::EPSILON
-        {
+        if (walk_weights.explore_weight - 1.0).abs() > f64::EPSILON || (walk_weights.return_weight - 1.0).abs() > f64::EPSILON{
             transition
                 .iter_mut()
                 .zip(&destinations)
                 .for_each(|(transition_value, ndst)| {
-                    if src == *ndst || dst == *ndst {
+                    //############################################################
+                    //# Handling of the P parameter: the return coefficient      #
+                    //############################################################
+
+                    // If the neigbour matches with the source, hence this is
+                    // a backward loop like the following:
+                    // SRC -> DST
+                    //  ▲     /
+                    //   \___/
+                    //
+                    // We weight the edge weight with the given return weight.
+
+                    // If the return weight, which is the inverse of p, is not 1, hence
+                    // it has some impact, we procced and increase by the given weight
+                    // the probability of transitions that go back a previously visited
+                    // node.
+                    if src == ndst || dst == ndst {
                         *transition_value *= walk_weights.return_weight
-                    }
-                });
-        }
-        //############################################################
-        //# Handling of the Q parameter: the exploration coefficient #
-        //############################################################
 
-        if (walk_weights.explore_weight - 1.0).abs() > f64::EPSILON {
-            transition
-                .iter_mut()
-                .zip(&destinations)
-                .for_each(|(transition_value, ndst)| {
-                    if !(src == *ndst
-                        || dst == *ndst
-                        || previous_min_dst > *ndst
-                        || previous_max_dst < *ndst
-                        || previous_destinations.contains(ndst))
+                    //############################################################
+                    //# Handling of the Q parameter: the explore coefficient     #
+                    //############################################################
+                    // This coefficient increases the probability of switching
+                    // to nodes not locally seen.
+                    } else if !(
+                        previous_min_dst > ndst
+                        || previous_max_dst < ndst
+                        // this works only for undirected graphs
+                        // for the directed graphs we will need to add some support structure.
+                        || previous_destinations.contains(ndst)) 
                     {
                         *transition_value *= walk_weights.explore_weight
                     }
@@ -287,7 +284,7 @@ impl Graph {
         node: NodeT,
         seed: NodeT,
         change_node_type_weight: ParamsT,
-    ) -> (LinkedHashSet<NodeT>, NodeT, NodeT, NodeT, EdgeT) {
+    ) -> (RoaringBitmap, NodeT, NodeT, NodeT, EdgeT) {
         let (destinations, min_dst, max_dst, mut weights, min_edge, _) =
             self.get_node_transition(node, change_node_type_weight);
         let edge_id = min_edge + sample(&mut weights, seed as u64) as EdgeT;
@@ -312,10 +309,10 @@ impl Graph {
         edge: EdgeT,
         seed: NodeT,
         walk_weights: &WalkWeights,
-        previous_destinations: &LinkedHashSet<NodeT>,
+        previous_destinations: &RoaringBitmap,
         previous_min_dst: NodeT,
         previous_max_dst: NodeT,
-    ) -> (LinkedHashSet<NodeT>, NodeT, NodeT, NodeT, EdgeT) {
+    ) -> (RoaringBitmap, NodeT, NodeT, NodeT, EdgeT) {
         let (destinations, min_dst, max_dst, mut weights, min_edge, _) = self.get_edge_transition(
             edge,
             walk_weights,
@@ -385,7 +382,6 @@ impl Graph {
         parameters.validate(&self)?;
 
         let total_iterations = quantity * parameters.iterations;
-
         info!("Starting random walk.");
         let pb = get_loading_bar(
             parameters.verbose,

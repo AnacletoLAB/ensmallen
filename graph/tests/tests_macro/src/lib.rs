@@ -15,7 +15,7 @@ pub fn built_tests(_item: TokenStream) -> TokenStream {
                                 concat!(
                                     "#[test]\n",
                                     "fn test_load_nodes_{load_nodes}_load_edge_types_{load_edge_types}_load_weights_{load_weights}_directed_{directed}_skip_self_loops{skip_self_loops}_verbose_{verbose}() {{\n",
-                                    "inner_test({load_nodes}, {load_edge_types}, {load_weights}, {directed}, {skip_self_loops}, {verbose}) \n",
+                                    "inner_test({load_nodes}, {load_edge_types}, {load_weights}, {directed}, {verbose}, {skip_self_loops}) \n",
                                     "}}"
                                 ),
                                 load_nodes=load_nodes,
