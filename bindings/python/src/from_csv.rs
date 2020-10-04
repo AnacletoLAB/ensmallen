@@ -382,7 +382,7 @@ impl EnsmallenGraph {
                 "numeric_node_ids",
                 "numeric_node_type_ids",
                 "numeric_edge_type_ids",
-
+                "cached_edges_number"
             ]
             .iter()
             .map(|x| x.to_string())
@@ -418,6 +418,7 @@ impl EnsmallenGraph {
         .set_verbose(extract_value!(kwargs, "verbose", bool))
         .set_numeric_node_ids(extract_value!(kwargs, "numeric_node_ids", bool))
         .set_numeric_edge_type_ids(extract_value!(kwargs, "numeric_edge_type_ids", bool))
+        .set_cached_edges_number(extract_value!(kwargs, "cached_edges_number", EdgeT))
         .set_max_rows_number(extract_value!(kwargs, "edge_max_rows_number", u64));
 
         let nodes: Option<NodeFileReader> =
