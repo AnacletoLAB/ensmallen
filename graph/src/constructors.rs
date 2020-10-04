@@ -252,7 +252,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     for value in wrapped_edges_iterator {
         let (src, dst, edt, weight) = value?;
         sorting_tmp.insert((src, dst, edt), weight);
-        if !directed {
+        if !directed && src != dst {
             sorting_tmp.insert((dst, src, edt), weight);
         }
     }
