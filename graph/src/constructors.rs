@@ -335,7 +335,7 @@ pub(crate) fn build_edges(
             }
         }
         last_edge_type = edge_type;
-        edges.push(encode_edge(src, dst, node_bits)).unwrap();
+        edges.push(encode_edge(src, dst, node_bits))?;
         if src == dst {
             self_loop_number += 1;
         }
@@ -348,7 +348,7 @@ pub(crate) fn build_edges(
             }
         }
         if first || last_src != src {
-            unique_sources.push(src as u64).unwrap();
+            unique_sources.push(src as u64)?;
             last_src = src;
             if first || last_dst != dst {
                 last_dst = dst;
