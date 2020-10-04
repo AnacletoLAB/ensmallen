@@ -27,7 +27,8 @@ impl Graph {
             self.node_types.clone(),
             None,
             self.directed,
-            false
+            false,
+            self.edges_cache.len() as EdgeT
         )
     }
 

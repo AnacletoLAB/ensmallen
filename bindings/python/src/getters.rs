@@ -1,5 +1,5 @@
 use super::*;
-use graph::{EdgeT, NodeT, WeightT, NodeTypeT, EdgeTypeT};
+use graph::{EdgeT, NodeT, NodeTypeT, EdgeTypeT};
 use numpy::{PyArray, PyArray1};
 use std::collections::HashMap;
 
@@ -7,13 +7,13 @@ use std::collections::HashMap;
 impl EnsmallenGraph {
     #[text_signature = "(self)"]
     /// Return the number of nodes in the graph.
-    fn get_nodes_number(&self) -> usize {
+    fn get_nodes_number(&self) -> NodeT {
         self.graph.get_nodes_number()
     }
 
     #[text_signature = "(self)"]
     /// Return the number of edges in the graph.
-    fn get_edges_number(&self) -> usize {
+    fn get_edges_number(&self) -> EdgeT {
         self.graph.get_edges_number()
     }
 
@@ -23,7 +23,7 @@ impl EnsmallenGraph {
     /// This method will include, if found necessary by a missing value,
     /// also the default edge type in the count of total edge types.
     ///
-    fn get_edge_types_number(&self) -> usize {
+    fn get_edge_types_number(&self) -> EdgeTypeT {
         self.graph.get_edge_types_number()
     }
 
@@ -33,7 +33,7 @@ impl EnsmallenGraph {
     /// This method will include, if found necessary by a missing value,
     /// also the default node type in the count of total node types.
     ///
-    fn get_node_types_number(&self) -> usize {
+    fn get_node_types_number(&self) -> NodeTypeT {
         self.graph.get_node_types_number()
     }
 
@@ -87,8 +87,8 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Boolean representing if given edge exists in graph.
     ///
-    fn has_edge(&self, src: NodeT, dst: NodeT) -> bool {
-        self.graph.has_edge(src, dst)
+    fn has_edge(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> bool {
+        self.graph.has_edge(src, dst, edge_type)
     }
 
     #[text_signature = "($self)"]

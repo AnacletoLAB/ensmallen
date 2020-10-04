@@ -3,7 +3,8 @@ use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
 use itertools::Itertools;
 use roaring::RoaringBitmap;
-use std::collections::BTreeMap;
+use std::cmp::Reverse;
+use std::collections::{BTreeMap, BinaryHeap, HashMap};
 
 type ParsedStringEdgesType = Result<
     (
@@ -231,7 +232,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     mut nodes: Vocabulary<NodeT>,
     directed: bool,
     verbose: bool,
-    numeric_edge_types_ids: bool
+    numeric_edge_types_ids: bool,
 ) -> Result<
     (
         EdgeT,
@@ -272,23 +273,16 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     ))
 }
 
-
 pub(crate) fn parse_integer_unsorted_edges<'a>(
     edges_iter: impl Iterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>>,
     sorting_tmp: &'a mut BTreeMap<Triple, Option<WeightT>>,
     directed: bool,
     verbose: bool,
-) -> Result<
-    (
-        EdgeT,
-        impl Iterator<Item = Result<Quadruple, String>> + 'a,
-    ),
-    String,
-> {
+) -> Result<(EdgeT, impl Iterator<Item = Result<Quadruple, String>> + 'a), String> {
     for value in edges_iter {
         let (src, dst, edt, weight) = value?;
         sorting_tmp.insert((src, dst, edt), weight);
-        if !directed && src != dst{
+        if !directed && src != dst {
             sorting_tmp.insert((dst, src, edt), weight);
         }
     }
@@ -301,7 +295,7 @@ pub(crate) fn parse_integer_unsorted_edges<'a>(
         (0..sorting_tmp.len()).progress_with(pb).map(move |_| {
             let ((src, dst, edge_type), weight) = sorting_tmp.pop_first().unwrap();
             Ok((src, dst, edge_type, weight))
-        })
+        }),
     ))
 }
 
@@ -309,7 +303,7 @@ pub(crate) fn build_edges(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>>,
     edges_number: EdgeT,
     nodes_number: NodeT,
-    ignore_duplicated_edges: bool
+    ignore_duplicated_edges: bool,
 ) -> Result<(EliasFano, EliasFano, EdgeT, EdgeT, NodeT, NodeT, u8, u64), String> {
     let node_bits = get_node_bits(nodes_number);
     let node_bit_mask = (1 << node_bits) - 1;
@@ -404,7 +398,7 @@ pub(crate) fn parse_string_edges(
     directed: bool,
     mut nodes: Vocabulary<NodeT>,
     numeric_edge_types_ids: bool,
-    ignore_duplicated_edges: bool
+    ignore_duplicated_edges: bool,
 ) -> ParsedStringEdgesType {
     let mut weights: Vec<WeightT> = Vec::new();
     let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::new(numeric_edge_types_ids);
@@ -433,7 +427,12 @@ pub(crate) fn parse_string_edges(
         not_singleton_nodes_number,
         node_bits,
         node_bit_mask,
-    ) = build_edges(weighted_edges_iter, edges_number, nodes_number, ignore_duplicated_edges)?;
+    ) = build_edges(
+        weighted_edges_iter,
+        edges_number,
+        nodes_number,
+        ignore_duplicated_edges,
+    )?;
 
     nodes.build_reverse_mapping()?;
 
@@ -476,7 +475,7 @@ pub(crate) fn parse_integer_edges(
     edges_number: EdgeT,
     nodes_number: NodeT,
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
-    ignore_duplicated_edges: bool
+    ignore_duplicated_edges: bool,
 ) -> Result<
     (
         EliasFano,
@@ -508,7 +507,12 @@ pub(crate) fn parse_integer_edges(
         not_singleton_nodes_number,
         node_bits,
         node_bit_mask,
-    ) = build_edges(weighted_edges_iter, edges_number, nodes_number, ignore_duplicated_edges)?;
+    ) = build_edges(
+        weighted_edges_iter,
+        edges_number,
+        nodes_number,
+        ignore_duplicated_edges,
+    )?;
 
     if !weights.is_empty() && edges.len() != weights.len() {
         return Err(format!(
@@ -544,6 +548,58 @@ pub(crate) fn parse_integer_edges(
 
 /// # Graph Constructors
 impl Graph {
+    pub(crate) fn new(
+        directed: bool,
+        unique_self_loop_number: NodeT,
+        self_loop_number: EdgeT,
+        not_singleton_nodes_number: NodeT,
+        unique_edges_number: EdgeT,
+        edges: EliasFano,
+        unique_sources: EliasFano,
+        nodes: Vocabulary<NodeT>,
+        node_bit_mask: u64,
+        node_bits: u8,
+        weights: Option<Vec<WeightT>>,
+        node_types: Option<VocabularyVec<NodeTypeT>>,
+        edge_types: Option<VocabularyVec<EdgeTypeT>>,
+        cached_edges_number: EdgeT,
+    ) -> Graph {
+        let mut graph = Graph {
+            directed,
+            edges,
+            unique_sources,
+            nodes,
+            node_bit_mask,
+            node_bits,
+            node_types,
+            edge_types,
+            unique_edges_number,
+            self_loop_number,
+            unique_self_loop_number,
+            not_singleton_nodes_number,
+            weights,
+            edges_cache: HashMap::with_capacity(cached_edges_number as usize),
+        };
+        if cached_edges_number != 0 {
+            let mut edges_heap = BinaryHeap::with_capacity(cached_edges_number as usize);
+            graph.get_edges_iter().for_each(|(edge_id, src, dst)| {
+                let degree = graph.get_node_degree(src);
+                let edge = graph.encode_edge(src, dst);
+                let heap_value = Reverse((degree, edge_id, edge));
+                if edges_heap.len() < cached_edges_number as usize {
+                    edges_heap.push(heap_value);
+                } else if *edges_heap.peek().unwrap() < heap_value {
+                    edges_heap.pop();
+                    edges_heap.push(heap_value);
+                }
+            });
+            edges_heap.iter().for_each(|Reverse((_, edge_id, edge))| {
+                graph.edges_cache.insert(*edge_id, *edge);
+            });
+        }
+        graph
+    }
+
     pub(crate) fn build_graph(
         edge_iter: impl Iterator<Item = Result<Quadruple, String>>,
         edges_number: EdgeT,
@@ -551,7 +607,8 @@ impl Graph {
         node_types: Option<VocabularyVec<NodeTypeT>>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
-        ignore_duplicated_edges: bool
+        ignore_duplicated_edges: bool,
+        cached_edges_number: EdgeT,
     ) -> Result<Graph, String> {
         let (
             edges,
@@ -569,26 +626,27 @@ impl Graph {
             edges_number,
             nodes.len() as NodeT,
             edge_types_vocabulary,
-            ignore_duplicated_edges
+            ignore_duplicated_edges,
         )?;
 
-        Ok(Graph {
+        Ok(Graph::new(
             directed,
+            unique_self_loop_number,
+            self_loop_number,
+            not_singleton_nodes_number,
+            unique_edges_number,
             edges,
             unique_sources,
             nodes,
             node_bit_mask,
             node_bits,
+            optionify!(weights),
             node_types,
             edge_types,
-            unique_edges_number,
-            self_loop_number,
-            unique_self_loop_number,
-            not_singleton_nodes_number,
-            weights: optionify!(weights),
-        })
+            cached_edges_number,
+        ))
     }
-    
+
     /// Create new Graph object from unsorted source.
     ///
     /// # Arguments
@@ -617,6 +675,7 @@ impl Graph {
         numeric_edge_types_ids: bool,
         numeric_node_ids: bool,
         numeric_node_types_ids: bool,
+        cached_edges_number: EdgeT,
     ) -> Result<Graph, String> {
         let mut edge_sorting_tmp = BTreeMap::new();
 
@@ -627,14 +686,15 @@ impl Graph {
             numeric_node_types_ids,
         )?;
 
-        let (edges_number, edges_iterator, nodes, edge_types_vocabulary) = parse_string_unsorted_edges(
-            edges_iterator,
-            &mut edge_sorting_tmp,
-            nodes,
-            directed,
-            verbose,
-            numeric_edge_types_ids
-        )?;
+        let (edges_number, edges_iterator, nodes, edge_types_vocabulary) =
+            parse_string_unsorted_edges(
+                edges_iterator,
+                &mut edge_sorting_tmp,
+                nodes,
+                directed,
+                verbose,
+                numeric_edge_types_ids,
+            )?;
 
         Graph::build_graph(
             edges_iterator,
@@ -643,7 +703,8 @@ impl Graph {
             optionify!(node_types),
             optionify!(edge_types_vocabulary),
             directed,
-            ignore_duplicated_edges
+            ignore_duplicated_edges,
+            cached_edges_number,
         )
     }
 
@@ -672,16 +733,13 @@ impl Graph {
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
         ignore_duplicated_edges: bool,
-        verbose: bool
+        verbose: bool,
+        cached_edges_number: EdgeT,
     ) -> Result<Graph, String> {
         let mut edge_sorting_tmp = BTreeMap::new();
 
-        let (edges_number, edges_iterator) = parse_integer_unsorted_edges(
-            edges_iterator,
-            &mut edge_sorting_tmp,
-            directed,
-            verbose
-        )?;
+        let (edges_number, edges_iterator) =
+            parse_integer_unsorted_edges(edges_iterator, &mut edge_sorting_tmp, directed, verbose)?;
 
         Graph::build_graph(
             edges_iterator,
@@ -690,7 +748,8 @@ impl Graph {
             node_types,
             edge_types_vocabulary,
             directed,
-            ignore_duplicated_edges
+            ignore_duplicated_edges,
+            cached_edges_number,
         )
     }
 
@@ -708,6 +767,7 @@ impl Graph {
         numeric_edge_types_ids: bool,
         numeric_node_ids: bool,
         numeric_node_types_ids: bool,
+        cached_edges_number: EdgeT,
     ) -> Result<Graph, String> {
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
@@ -735,23 +795,24 @@ impl Graph {
             directed,
             nodes,
             numeric_edge_types_ids,
-            ignore_duplicated_edges
+            ignore_duplicated_edges,
         )?;
 
-        Ok(Graph {
+        Ok(Graph::new(
             directed,
+            unique_self_loop_number,
+            self_loop_number,
+            not_singleton_nodes_number,
+            unique_edges_number,
             edges,
             unique_sources,
             nodes,
             node_bit_mask,
             node_bits,
+            optionify!(weights),
+            optionify!(node_types),
             edge_types,
-            unique_edges_number,
-            self_loop_number,
-            unique_self_loop_number,
-            not_singleton_nodes_number,
-            node_types: optionify!(node_types),
-            weights: optionify!(weights),
-        })
+            cached_edges_number,
+        ))
     }
 }

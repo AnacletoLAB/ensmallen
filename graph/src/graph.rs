@@ -39,6 +39,11 @@ pub struct Graph {
     /// Vocabulary that save the mappings from string to index of every node
     pub(crate) nodes: Vocabulary<NodeT>,
     pub(crate) unique_sources: EliasFano,
+    /// High performance cache for high-degree edges to avoid executing most
+    /// of the select operations. This is what allows to let the user choose
+    /// the trade-off between speed and memory usage.
+    /// The map is between edge_id to encoded edge.
+    pub(crate) edges_cache: HashMap<EdgeT, EdgeT>,
 
     /// Optional vector of the weights of every edge.
     /// weights[10] return the weight of the edge with edge_id 10
@@ -124,7 +129,7 @@ impl Graph {
                     .unwrap();
             }
         }
-        self.get_unchecked_edge_from_tuple(src, dst)
+        self.get_unchecked_edge_id_from_tuple(src, dst)
     }
 
     pub fn get_edge_id(
@@ -140,7 +145,7 @@ impl Graph {
                 });
             }
         }
-        self.get_edge_from_tuple(src, dst)
+        self.get_edge_id_from_tuple(src, dst)
     }
 
     /// Returns edge type counts.
@@ -299,8 +304,8 @@ impl Graph {
         dst: NodeT,
     ) -> (EdgeT, EdgeT) {
         (
-            self.edges.unchecked_rank(self.encode_edge(src, dst)) as EdgeT,
-            self.edges.unchecked_rank(self.encode_edge(src, dst + 1)) as EdgeT,
+            self.get_unchecked_edge_id_from_tuple(src, dst),
+            self.get_unchecked_edge_id_from_tuple(src, dst+1),
         )
     }
 
@@ -332,8 +337,8 @@ impl Graph {
         src: NodeT,
         dst: NodeT,
     ) -> Option<(EdgeT, EdgeT)> {
-        if let Some(min_edge) = self.get_edge_from_tuple(src, dst) {
-            let max_edge = self.get_unchecked_edge_from_tuple(src, dst + 1);
+        if let Some(min_edge) = self.get_edge_id_from_tuple(src, dst) {
+            let max_edge = self.get_unchecked_edge_id_from_tuple(src, dst + 1);
             return Some((min_edge as EdgeT, max_edge as EdgeT));
         }
         None
@@ -347,8 +352,8 @@ impl Graph {
     ///
     pub(crate) fn get_destinations_min_max_edge_ids(&self, src: NodeT) -> (EdgeT, EdgeT) {
         (
-            self.edges.unchecked_rank(self.encode_edge(src, 0)) as EdgeT,
-            self.edges.unchecked_rank(self.encode_edge(src + 1, 0)) as EdgeT,
+            self.get_unchecked_edge_id_from_tuple(src, 0),
+            self.get_unchecked_edge_id_from_tuple(src+1, 0),
         )
     }
 

@@ -25,6 +25,7 @@ pub struct EdgeFileReader {
     pub(crate) skip_self_loops: bool,
     pub(crate) numeric_edge_type_ids: bool,
     pub(crate) numeric_node_ids: bool,
+    pub(crate) cached_edges_number: EdgeT,
 }
 
 impl EdgeFileReader {
@@ -46,6 +47,7 @@ impl EdgeFileReader {
             skip_self_loops: false,
             numeric_edge_type_ids: false,
             numeric_node_ids: false,
+            cached_edges_number: 0,
         })
     }
 
@@ -287,12 +289,22 @@ impl EdgeFileReader {
     ///
     /// * numeric_id: Option<bool> - Wethever to convert numeric Ids to Node Id.
     ///
-    pub fn set_numeric_node_ids(
-        mut self,
-        numeric_node_ids: Option<bool>,
-    ) -> EdgeFileReader {
+    pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileReader {
         if let Some(nni) = numeric_node_ids {
             self.numeric_node_ids = nni;
+        }
+        self
+    }
+
+    /// Set the number of cached edges number.
+    ///
+    /// # Arguments
+    ///
+    /// * cached_edges_number: Option<EdgeT> - Number of edges to keep in fast cache.
+    ///
+    pub fn set_cached_edges_number(mut self, cached_edges_number: Option<EdgeT>) -> EdgeFileReader {
+        if let Some(cen) = cached_edges_number {
+            self.cached_edges_number = cen;
         }
         self
     }

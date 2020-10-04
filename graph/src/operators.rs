@@ -51,6 +51,7 @@ fn generic_string_operator(
         false,
         false,
         false,
+        main.edges_cache.len() as EdgeT
     )
 }
 
@@ -104,6 +105,7 @@ fn generic_integer_operator(
         main.directed,
         true,
         true,
+        main.edges_cache.len() as EdgeT
     )
 }
 

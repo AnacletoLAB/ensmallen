@@ -111,7 +111,8 @@ impl Graph {
             self.node_types.clone(),
             None,
             self.directed,
-            false
+            false,
+            self.edges_cache.len() as EdgeT,
         )
     }
 
@@ -270,7 +271,8 @@ impl Graph {
                     None => None,
                 },
                 self.directed,
-                false
+                false,
+                self.edges_cache.len() as EdgeT,
             )?,
             Graph::build_graph(
                 valid_edges_bitmap
@@ -285,7 +287,8 @@ impl Graph {
                     None => None,
                 },
                 self.directed,
-                false
+                false,
+                self.edges_cache.len() as EdgeT,
             )?,
         ))
     }
@@ -526,7 +529,8 @@ impl Graph {
                 None => None,
             },
             self.directed,
-            false
+            false,
+            self.edges_cache.len() as EdgeT,
         )
     }
 
@@ -587,7 +591,8 @@ impl Graph {
                 None => None,
             },
             self.directed,
-            false
+            false,
+            self.edges_cache.len() as EdgeT,
         )
     }
 }

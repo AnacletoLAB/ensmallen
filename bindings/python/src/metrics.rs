@@ -13,14 +13,14 @@ impl EnsmallenGraph {
 
     #[text_signature = "($self)"]
     /// Returns number of self-loops.
-    pub fn get_selfloops_number(&self) -> usize {
-        self.graph.get_selfloops_number()
+    pub fn get_selfloops_number(&self) -> EdgeT {
+        self.graph.get_self_loop_number()
     }
 
     #[text_signature = "($self)"]
     /// Returns ratio of self-loops.
     pub fn get_selfloops_rate(&self) -> f64 {
-        self.graph.get_selfloops_rate()
+        self.graph.get_self_loop_rate()
     }
 
     #[text_signature = "($self)"]
@@ -165,17 +165,5 @@ impl EnsmallenGraph {
     ///
     fn traps_rate(&self) -> f64 {
         self.graph.traps_rate()
-    }
-
-    #[text_signature = "(self)"]
-    /// Returns the ratio of edges that have multiple types.
-    fn get_multigraph_edges_ratio(&self) -> f64 {
-        self.graph.get_multigraph_edges_ratio()
-    }
-
-    #[text_signature = "(self)"]
-    /// Returns the number of edges that have multiple types.
-    fn get_multigraph_edges_number(&self) -> usize {
-        self.graph.get_multigraph_edges_number()
     }
 }

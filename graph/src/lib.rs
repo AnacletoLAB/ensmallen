@@ -4,9 +4,9 @@
 const SEED_XOR: usize = 0xbad5eedbad5eed11;
 
 mod vocabulary;
-pub(crate) use self::vocabulary::Vocabulary;
+pub use self::vocabulary::Vocabulary;
 mod vocabulary_vec;
-pub(crate) use self::vocabulary_vec::VocabularyVec;
+pub use self::vocabulary_vec::VocabularyVec;
 
 mod csv_file_writer;
 pub(crate) use self::csv_file_writer::compose_lines;
@@ -51,6 +51,8 @@ pub use self::graph::Graph;
 pub use self::holdouts::*;
 pub use self::operators::*;
 pub use self::tarjan::*;
+pub use self::getters::*;
+pub use self::metrics::*;
 pub use self::trees::*;
 pub use self::types::*;
 pub use self::walks::*;

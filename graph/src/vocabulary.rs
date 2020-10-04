@@ -1,7 +1,8 @@
 use super::types::*;
 use std::collections::HashMap;
+use arbitrary::Arbitrary;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Arbitrary)]
 pub struct Vocabulary<IndexT: ToFromUsize> {
     pub map: HashMap<String, IndexT>,
     pub reverse_map: Vec<String>,
