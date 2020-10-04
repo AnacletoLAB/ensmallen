@@ -28,7 +28,7 @@ pub(crate) use self::compression::*;
 mod constructors;
 
 mod utils;
-pub(crate) use self::utils::get_loading_bar;
+pub(crate) use self::utils::{get_loading_bar, not_one};
 
 mod drop;
 mod getters;

@@ -38,6 +38,11 @@ pub(crate) fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize
     }
 }
 
+/// Return true if the given weight is near to one.
+pub(crate) fn not_one(weight:WeightT)->bool {
+    (weight - 1.0).abs() > f64::EPSILON
+}
+
 impl Graph {
     /// Return vector of edges to be inserted in the holdout.
     pub(crate) fn compute_edge_ids_vector(
