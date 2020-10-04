@@ -149,6 +149,7 @@ impl EnsmallenGraph {
                 "numeric_node_ids",
                 "numeric_node_type_ids",
                 "numeric_edge_type_ids",
+                "cached_edges_number"
             ]
             .iter()
             .map(|x| x.to_string())
@@ -182,8 +183,9 @@ impl EnsmallenGraph {
         .set_skip_self_loops(extract_value!(kwargs, "skip_self_loops", bool))
         .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_edges", bool))
         .set_verbose(extract_value!(kwargs, "verbose", bool))
-        .set_verbose(extract_value!(kwargs, "numeric_node_ids", bool))
-        .set_verbose(extract_value!(kwargs, "numeric_edge_type_ids", bool))
+        .set_numeric_node_ids(extract_value!(kwargs, "numeric_node_ids", bool))
+        .set_numeric_edge_type_ids(extract_value!(kwargs, "numeric_edge_type_ids", bool))
+        .set_cached_edges_number(extract_value!(kwargs, "cached_edges_number", EdgeT))
         .set_max_rows_number(extract_value!(kwargs, "edge_max_rows_number", u64));
 
         let nodes: Option<NodeFileReader> =
@@ -214,8 +216,8 @@ impl EnsmallenGraph {
                     .set_default_node_type(extract_value!(kwargs, "default_node_type", String))
                     .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_nodes", bool))
                     .set_verbose(extract_value!(kwargs, "verbose", bool))
-                    .set_verbose(extract_value!(kwargs, "numeric_node_ids", bool))
-                    .set_verbose(extract_value!(kwargs, "numeric_node_type_ids", bool))
+                    .set_numeric_node_ids(extract_value!(kwargs, "numeric_node_ids", bool))
+                    .set_numeric_node_type_ids(extract_value!(kwargs, "numeric_node_type_ids", bool))
                     .set_max_rows_number(extract_value!(
                         kwargs,
                         "node_max_rows_number",
@@ -380,6 +382,7 @@ impl EnsmallenGraph {
                 "numeric_node_ids",
                 "numeric_node_type_ids",
                 "numeric_edge_type_ids",
+
             ]
             .iter()
             .map(|x| x.to_string())
