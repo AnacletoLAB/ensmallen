@@ -1,6 +1,5 @@
 use super::*;
 use graph::{EdgeT, NodeT, NodeTypeT, EdgeTypeT};
-use numpy::{PyArray, PyArray1};
 use std::collections::HashMap;
 
 #[pymethods]
