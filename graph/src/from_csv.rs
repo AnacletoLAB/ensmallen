@@ -18,13 +18,17 @@ impl Graph {
         edges_number: EdgeT,
         nodes_number: NodeT,
     ) -> Result<Graph, String> {
-        Graph::from_sorted(
+        Graph::from_string_sorted(
             edge_file_reader.read_lines()?,
             match &node_file_reader {
                 Some(nfr) => Some(nfr.read_lines()?),
                 None => None,
             },
             directed,
+            match &node_file_reader {
+                Some(nfr) => nfr.reader.ignore_duplicates,
+                None => false,
+            },
             edge_file_reader.reader.ignore_duplicates,
             edges_number,
             nodes_number,
@@ -55,13 +59,17 @@ impl Graph {
         node_file_reader: Option<NodeFileReader>,
         directed: bool,
     ) -> Result<Graph, String> {
-        Graph::from_unsorted(
+        Graph::from_string_unsorted(
             edge_file_reader.read_lines()?,
             match &node_file_reader {
                 Some(nfr) => Some(nfr.read_lines()?),
                 None => None,
             },
             directed,
+            match &node_file_reader {
+                Some(nfr) => nfr.reader.ignore_duplicates,
+                None => false,
+            },
             edge_file_reader.reader.ignore_duplicates,
             edge_file_reader.reader.verbose,
             edge_file_reader.numeric_edge_type_ids,
