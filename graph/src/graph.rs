@@ -271,24 +271,34 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * graph: Graph - The graph to check against.
+    /// * other: Graph - The graph to check against.
     ///
-    pub fn overlaps(&self, graph: &Graph) -> bool {
-        graph
-            .get_edges_par_string_triples()
-            .any(|(_, src, dst, et)| self.has_edge_string(&src, &dst, et.as_ref()))
+    pub fn overlaps(&self, other: &Graph) -> Result<bool, String> {
+        Ok(match self.is_compatible(other)? {
+            true => other
+                .get_edges_par_triples()
+                .any(|(_, src, dst, et)| self.has_edge(src, dst, et)),
+            false => other
+                .get_edges_par_string_triples()
+                .any(|(_, src, dst, et)| self.has_edge_string(&src, &dst, et.as_ref())),
+        })
     }
 
     /// Return true if given graph edges are all contained within current graph.
     ///
     /// # Arguments
     ///
-    /// * graph: Graph - The graph to check against.
+    /// * other: Graph - The graph to check against.
     ///
-    pub fn contains(&self, graph: &Graph) -> bool {
-        graph
-            .get_edges_par_string_triples()
-            .all(|(_, src, dst, et)| self.has_edge_string(&src, &dst, et.as_ref()))
+    pub fn contains(&self, other: &Graph) -> Result<bool, String> {
+        Ok(match self.is_compatible(other)? {
+            true => other
+                .get_edges_par_triples()
+                .all(|(_, src, dst, et)| self.has_edge(src, dst, et)),
+            false => other
+                .get_edges_par_string_triples()
+                .all(|(_, src, dst, et)| self.has_edge_string(&src, &dst, et.as_ref())),
+        })
     }
 
     /// Return range of outbound edges IDs for given Node.
@@ -305,7 +315,7 @@ impl Graph {
     ) -> (EdgeT, EdgeT) {
         (
             self.get_unchecked_edge_id_from_tuple(src, dst),
-            self.get_unchecked_edge_id_from_tuple(src, dst+1),
+            self.get_unchecked_edge_id_from_tuple(src, dst + 1),
         )
     }
 
@@ -353,7 +363,7 @@ impl Graph {
     pub(crate) fn get_destinations_min_max_edge_ids(&self, src: NodeT) -> (EdgeT, EdgeT) {
         (
             self.get_unchecked_edge_id_from_tuple(src, 0),
-            self.get_unchecked_edge_id_from_tuple(src+1, 0),
+            self.get_unchecked_edge_id_from_tuple(src + 1, 0),
         )
     }
 

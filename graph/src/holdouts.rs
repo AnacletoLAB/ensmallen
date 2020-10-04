@@ -170,7 +170,7 @@ impl Graph {
         let pb1 = get_loading_bar(
             verbose,
             "Picking validation edges",
-            self.get_edges_number() as usize,
+            valid_edges_number as usize,
         );
 
         // generate and shuffle the indices of the edges
@@ -182,7 +182,6 @@ impl Graph {
 
         for (edge_id, (src, dst, edge_type)) in edge_indices
             .iter()
-            .progress_with(pb1)
             .cloned()
             .map(|edge_id| (edge_id, self.get_edge_triple(edge_id)))
         {
@@ -193,7 +192,7 @@ impl Graph {
             }
 
             // We stop adding edges when we have reached the minimum amount.
-            if user_condition(edge_id, src, dst) && valid_edges_bitmap.len() < valid_edges_number {
+            if user_condition(edge_id, src, dst) {
                 // Compute the forward edge ids that are required.
                 valid_edges_bitmap.extend(self.compute_edge_ids_vector(
                     edge_id,
@@ -212,6 +211,12 @@ impl Graph {
                         include_all_edge_types,
                     ));
                 }
+                pb1.set_length(valid_edges_bitmap.len());
+            }
+
+            // We stop the iteration when we found all the edges.
+            if valid_edges_bitmap.len() >= valid_edges_number {
+                break;
             }
         }
 
