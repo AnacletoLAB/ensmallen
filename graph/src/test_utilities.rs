@@ -67,7 +67,7 @@ pub fn load_ppi(
         .set_ignore_duplicates(Some(true))
         .set_separator(Some("\t".to_string()))
         .set_header(Some(true))
-        .set_cached_edges_number(Some(5000))
+        .set_cached_edges_number(Some(8000))
         .set_rows_to_skip(Some(0))
         .set_sources_column_number(Some(1))?
         .set_sources_column(Some("subject".to_string()))?
