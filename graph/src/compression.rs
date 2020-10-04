@@ -1,8 +1,8 @@
 use super::*;
 
 #[inline(always)]
-pub(crate) fn encode_edge(src: NodeT, dst: NodeT, node_bits: u8) -> u64 {
-    ((src << node_bits) | dst) as u64
+pub(crate) fn encode_edge(src: NodeT, dst: NodeT, node_bits: u8) -> EdgeT {
+    ((src as EdgeT) << node_bits) | dst as EdgeT
 }
 
 #[inline(always)]
