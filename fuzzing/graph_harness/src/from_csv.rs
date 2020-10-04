@@ -111,6 +111,6 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
         }
     };
 
-    Graph::from_csv(edges_reader, nodes_reader, data.directed)?;
+    Graph::from_unsorted_csv(edges_reader, nodes_reader, data.directed)?;
     Ok(())
 }

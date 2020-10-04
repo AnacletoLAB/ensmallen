@@ -43,7 +43,7 @@ impl EnsmallenGraph {
         )?;
 
         let (g1, g2) = pyex!(self.graph.connected_holdout(
-            extract_value!(kwargs, "seed", usize)
+            extract_value!(kwargs, "seed", EdgeT)
                 .or_else(|| Some(42))
                 .unwrap(),
             train_percentage,
@@ -168,7 +168,7 @@ impl EnsmallenGraph {
         )?;
 
         let (g1, g2) = pyex!(self.graph.random_holdout(
-            extract_value!(kwargs, "seed", usize)
+            extract_value!(kwargs, "seed", EdgeT)
                 .or_else(|| Some(42))
                 .unwrap(),
             train_percentage,
@@ -176,7 +176,7 @@ impl EnsmallenGraph {
                 .or_else(|| Some(true))
                 .unwrap(),
             extract_value!(kwargs, "edge_types", Vec<String>),
-            extract_value!(kwargs, "min_number_overlaps", usize),
+            extract_value!(kwargs, "min_number_overlaps", EdgeT),
             extract_value!(kwargs, "verbose", bool)
                 .or_else(|| Some(true))
                 .unwrap()
@@ -229,7 +229,7 @@ impl EnsmallenGraph {
 
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.sample_negatives(
-                extract_value!(kwargs, "seed", usize)
+                extract_value!(kwargs, "seed", EdgeT)
                     .or_else(|| Some(42))
                     .unwrap(),
                 negatives_number,

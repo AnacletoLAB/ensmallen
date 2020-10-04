@@ -62,8 +62,8 @@ impl EnsmallenGraph {
     ///
     fn random_walks(
         &self,
-        length: usize,
-        quantity: usize,
+        length: NodeT,
+        quantity: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
@@ -132,7 +132,7 @@ impl EnsmallenGraph {
     ///
     fn complete_walks(
         &self,
-        length: usize,
+        length: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
         let py = pyo3::Python::acquire_gil();

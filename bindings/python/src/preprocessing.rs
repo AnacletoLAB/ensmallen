@@ -29,7 +29,7 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 /// window_size: int,
 ///     Window size to consider for the sequences.
 ///
-fn word2vec(sequences: Vec<Vec<usize>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
+fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
     let (contexts, words) = pyex!(rust_word2vec(sequences, window_size))?;
     let gil = pyo3::Python::acquire_gil();
     Ok((
@@ -57,7 +57,7 @@ fn word2vec(sequences: Vec<Vec<usize>>, window_size: usize) -> PyResult<(PyConte
 ///     The default behaviour is false.
 ///     
 fn cooccurence_matrix(
-    sequences: Vec<Vec<usize>>,
+    sequences: Vec<Vec<NodeT>>,
     py_kwargs: Option<&PyDict>,
 ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
     let gil = pyo3::Python::acquire_gil();
@@ -139,7 +139,7 @@ impl EnsmallenGraph {
     ///
     fn cooccurence_matrix(
         &self,
-        length: usize,
+        length: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
         let gil = pyo3::Python::acquire_gil();
@@ -232,8 +232,8 @@ impl EnsmallenGraph {
     /// Tuple with vector of integer with contexts and words.
     fn node2vec(
         &self,
-        batch_size: usize,
-        length: usize,
+        batch_size: NodeT,
+        length: NodeT,
         window_size: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyContexts, PyWords)> {

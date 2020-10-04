@@ -1,8 +1,8 @@
 use super::*;
 
 #[inline(always)]
-pub(crate) fn encode_edge(src: NodeT, dst: NodeT, node_bits: u8) -> u64 {
-    ((src << node_bits) | dst) as u64
+pub(crate) fn encode_edge(src: NodeT, dst: NodeT, node_bits: u8) -> EdgeT {
+    ((src as EdgeT) << node_bits) | dst as EdgeT
 }
 
 #[inline(always)]
@@ -31,19 +31,22 @@ impl Graph {
 
     #[inline(always)]
     pub(crate) fn get_edge_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
-        let edge = self.edges.unchecked_select(edge_id as u64);
+        let edge: EdgeT = match self.edges_cache.get(&edge_id) {
+            Some(edge) => *edge,
+            None => self.edges.unchecked_select(edge_id),
+        };
         self.decode_edge(edge)
     }
 
     #[inline(always)]
-    pub(crate) fn get_edge_from_tuple(&self, src: NodeT, dst: NodeT) -> Option<EdgeT> {
+    pub(crate) fn get_edge_id_from_tuple(&self, src: NodeT, dst: NodeT) -> Option<EdgeT> {
         self.edges
             .rank(self.encode_edge(src, dst))
             .map(|value| value as EdgeT)
     }
 
     #[inline(always)]
-    pub(crate) fn get_unchecked_edge_from_tuple(&self, src: NodeT, dst: NodeT) -> EdgeT {
+    pub(crate) fn get_unchecked_edge_id_from_tuple(&self, src: NodeT, dst: NodeT) -> EdgeT {
         self.edges.unchecked_rank(self.encode_edge(src, dst)) as EdgeT
     }
 

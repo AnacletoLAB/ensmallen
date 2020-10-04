@@ -3,22 +3,19 @@ use arbitrary::Arbitrary;
 
 #[derive(Arbitrary, Debug)]
 pub struct FromVecHarnessParams {
-    edges: Vec<Result<(String, String, Option<String>, Option<WeightT>), String>>,
-    nodes: Option<Vec<Result<(String, Option<String>), String>>>,
+    edges: Vec<Result<(NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>), String>>,
+    nodes: Option<Vocabulary<NodeT>>,
+    edge_types_vocabulary: Option<VocabularyVec<EdgeTypeT>>,
     directed: bool,
-    ignore_duplicated_nodes: bool,
     ignore_duplicated_edges: bool,
-    skip_self_loops: bool,
+    verbose: bool,
+    cached_edges_number: EdgeT
 }
 
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
-    let g = graph::Graph::new(
+    let g = graph::Graph::from_integer_unsorted(
         data.edges.iter().cloned(),
-        if let Some(dn) = &data.nodes {
-            Some(dn.iter().cloned())
-        } else {
-            None
-        },
+        data.nodes,
         data.directed,
         data.ignore_duplicated_nodes,
         data.ignore_duplicated_edges,

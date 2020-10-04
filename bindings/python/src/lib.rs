@@ -14,15 +14,14 @@ mod tarjan;
 mod preprocessing;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
-mod tree;
 mod types;
 pub(crate) use crate::types::*;
 mod walks;
 pub(crate) use crate::types::EnsmallenGraph;
 
-//mod operators;
-//mod holdout;
-//mod drop;
+mod operators;
+mod holdout;
+mod drop;
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
