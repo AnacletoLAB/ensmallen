@@ -223,7 +223,8 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     if let Some(ets) = &graph.edge_types {
         let edge_type = ets.translate(graph.get_edge_type(0)?);
         let edge_type_subgraph = graph.edge_types_subgraph(vec![edge_type.to_string()], verbose);
-        assert_eq!(edge_type_subgraph.is_ok(), graph.has_edge_types());
+        edge_type_subgraph.unwrap();
+        //assert_eq!(, graph.has_edge_types());
     }
 
     // Testing writing out graph to file
