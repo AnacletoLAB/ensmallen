@@ -35,6 +35,63 @@ impl Graph {
         self.self_loop_number > 0
     }
 
+    /// Return vector of the non-unique source nodes.
+    pub fn get_sources(&self) -> Vec<NodeT> {
+        self.get_sources_iter().collect()
+    }
+
+    /// Return vector on the (non unique) destination nodes of the graph.
+    pub fn get_destinations(&self) -> Vec<NodeT> {
+        self.get_destinations_iter().collect()
+    }
+
+    /// Return the nodes reverse mapping.
+    pub fn get_nodes_reverse_mapping(&self) -> Vec<String> {
+        self.nodes.reverse_map.clone()
+    }
+
+    /// Return the edge types of the edges.
+    pub fn get_edge_types(&self) -> Option<Vec<EdgeTypeT>> {
+        match &self.edge_types {
+            Some(ets) => Some(ets.ids.clone()),
+            None => None,
+        }
+    }
+
+    /// Return the edge types reverse mapping.
+    pub fn get_edge_types_reverse_mapping(&self) -> Option<Vec<String>> {
+        match &self.edge_types {
+            Some(ets) => Some(ets.vocabulary.reverse_map.clone()),
+            None => None,
+        }
+    }
+
+    /// Return the node types of the nodes.
+    pub fn get_node_types(&self) -> Option<Vec<NodeTypeT>> {
+        match &self.node_types {
+            Some(nts) => Some(nts.ids.clone()),
+            None => None,
+        }
+    }
+
+    /// Return the weights of the nodes.
+    pub fn get_weights(&self) -> Option<Vec<WeightT>> {
+        self.weights.clone()
+    }
+
+    /// Return the node types reverse mapping.
+    pub fn get_node_types_reverse_mapping(&self) -> Option<Vec<String>> {
+        match &self.node_types {
+            Some(nts) => Some(nts.vocabulary.reverse_map.clone()),
+            None => None,
+        }
+    }
+
+    /// Return the nodes mapping.
+    pub fn get_nodes_mapping(&self) -> HashMap<String, NodeT> {
+        self.nodes.map.clone()
+    }
+
     /// Returs option with the edge type of the given edge id.
     pub fn get_edge_type(&self, edge_id: EdgeT) -> Option<EdgeTypeT> {
         match &self.edge_types {

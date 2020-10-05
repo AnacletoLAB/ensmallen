@@ -32,10 +32,6 @@ impl Graph {
         Ok(self.get_node_degree(one) as usize * self.get_node_degree(two) as usize)
     }
 
-    pub fn is_source(&self, candidate_source: NodeT) -> bool {
-        self.get_node_degree(candidate_source) != 0
-    }
-
     /// Returns the Jaccard index for the two given nodes.
     ///
     /// # Arguments
@@ -283,6 +279,15 @@ impl Graph {
         self.get_self_loop_number() as f64 / self.get_edges_number() as f64
     }
 
+    /// Returns number of the source nodes.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The number of sources of the graph (not trap nodes) is {}", graph.get_source_nodes_number());
+    /// ```
+    pub fn get_source_nodes_number(&self) -> NodeT {
+        self.unique_sources.len() as NodeT
+    }
+
     /// Returns number of connected components in graph.
     /// If the graph is or isn't a multigraph the edge types are not considered; if any edge exists, it is considered
     ///```rust
@@ -323,7 +328,7 @@ impl Graph {
     /// println!("The graph contains {} not singleton nodes", graph.get_not_singleton_nodes_number());
     /// ```
     pub fn get_not_singleton_nodes_number(&self) -> NodeT {
-        self.get_not_singletons().len() as NodeT
+        self.not_singleton_nodes_number
     }
 
     /// Returns density of the graph.
@@ -362,7 +367,11 @@ impl Graph {
         report.insert("nodes_number", self.get_nodes_number().to_string());
         report.insert("edges_number", self.get_edges_number().to_string());
         report.insert("density", self.density().to_string());
-        report.insert("directed", self.directed.to_string());
+        report.insert("directed", self.is_directed().to_string());
+        report.insert("self_loops_number", self.get_self_loop_number().to_string());
+        report.insert("self_loops_rate", self.get_self_loop_rate().to_string());
+        report.insert("singletons", self.get_singleton_nodes_number().to_string());
+        report.insert("degree_mean", self.degrees_mean().to_string());
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),

@@ -113,7 +113,7 @@ pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParamete
         .set_explore_weight(Some(2.0))?
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
-        //.set_dense_node_mapping(Some(graph.get_dense_node_mapping()))
+        .set_dense_node_mapping(Some(graph.get_dense_node_mapping()))
         .set_seed(Some(43)))
 }
 
@@ -253,6 +253,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         .set_sources_column_number(Some(0))
         .set_destinations_column(Some("The land of pizza".to_string()))
         .set_destinations_column_number(Some(1));
+        
     edges_writer.dump(&graph)?;
     fs::remove_file(edges_file).unwrap();
 

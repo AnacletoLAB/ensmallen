@@ -14,6 +14,7 @@ pub struct EdgeFileWriter {
     pub(crate) weights_column: String,
     pub(crate) weights_column_number: usize,
     pub(crate) numeric_node_ids: bool,
+    pub(crate) directed: Option<bool>
 }
 
 impl EdgeFileWriter {
@@ -35,6 +36,7 @@ impl EdgeFileWriter {
             weights_column: "weight".to_string(),
             weights_column_number: 3,
             numeric_node_ids: false,
+            directed: None
         }
     }
 
@@ -209,12 +211,24 @@ impl EdgeFileWriter {
         self
     }
 
+    /// Set the directed.
+    ///
+    /// # Arguments
+    ///
+    /// * directed: Option<bool> - Wethever to write out the graph as directed or not.
+    ///
+    pub fn set_directed(mut self, directed: Option<bool>) -> EdgeFileWriter {
+        self.directed = directed;
+        self
+    }
+
     /// Write edge file.
     ///  
     /// # Arguments
     ///
     /// * `graph`: &Graph - the graph to write out.
     pub fn dump(&self, graph: &Graph) -> Result<(), String> {
+        let directed: bool = self.directed.unwrap_or_else(|| graph.is_directed());
         // build the header
         let mut header = vec![
             (self.sources_column.clone(), self.sources_column_number),
@@ -242,7 +256,7 @@ impl EdgeFileWriter {
             compose_lines(number_of_columns, header),
             graph
                 .get_edges_quadruples()
-                .filter(|(_, src, dst, _, _)| graph.directed || src <= dst)
+                .filter(|(_, src, dst, _, _)| directed || src <= dst)
                 .map(|(_, src, dst, edge_type, weight)| {
                     let mut line = vec![
                         (

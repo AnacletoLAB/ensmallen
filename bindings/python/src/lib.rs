@@ -7,21 +7,22 @@ pub(crate) use crate::macros::*;
 mod edge_file_writer;
 mod from_csv;
 mod getters;
-mod setters;
 mod metrics;
 mod node_file_writer;
-mod tarjan;
 mod preprocessing;
+mod setters;
+mod tarjan;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
+pub(crate) use crate::utilities::*;
 mod types;
 pub(crate) use crate::types::*;
 mod walks;
 pub(crate) use crate::types::EnsmallenGraph;
 
-mod operators;
-mod holdout;
 mod drop;
+mod holdout;
+mod operators;
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {

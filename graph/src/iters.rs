@@ -25,6 +25,16 @@ impl Graph {
         })
     }
 
+    /// Return iterator on the (non unique) source nodes of the graph.
+    pub fn get_sources_iter(&self) -> impl Iterator<Item = NodeT> + '_ {
+        self.get_edges_iter().map(move |(_, src, _)| src)
+    }
+
+    /// Return iterator on the (non unique) destination nodes of the graph.
+    pub fn get_destinations_iter(&self) -> impl Iterator<Item = NodeT> + '_ {
+        self.get_edges_iter().map(move |(_, _, dst)| dst)
+    }
+
     /// Return iterator on the edges of the graph with the string name.
     pub fn get_edges_string_iter(&self) -> impl Iterator<Item = (EdgeT, String, String)> + '_ {
         self.get_edges_iter().map(move |(edge_id, src, dst)| {
@@ -137,22 +147,13 @@ impl Graph {
         edge_id: EdgeT,
     ) -> (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>) {
         let (src, dst, edge_type) = self.get_edge_triple(edge_id);
-        (
-            src,
-            dst,
-            edge_type,
-            self.get_edge_weight(edge_id)
-        )
+        (src, dst, edge_type, self.get_edge_weight(edge_id))
     }
 
     /// Return the src, dst, edge type of a given edge id
     pub fn get_edge_triple(&self, edge_id: EdgeT) -> (NodeT, NodeT, Option<EdgeTypeT>) {
         let (src, dst) = self.get_edge_from_edge_id(edge_id);
-        (
-            src,
-            dst,
-            self.get_edge_type(edge_id)
-        )
+        (src, dst, self.get_edge_type(edge_id))
     }
 
     /// Return iterator on the edges of the graph.

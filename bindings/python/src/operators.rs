@@ -1,7 +1,6 @@
 use super::*;
 use pyo3::class::number::PyNumberProtocol;
 
-
 #[pyproto]
 impl PyNumberProtocol for EnsmallenGraph {
     fn __or__(lhs: EnsmallenGraph, rhs: EnsmallenGraph) -> PyResult<EnsmallenGraph> {
@@ -41,8 +40,8 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Boolean representing if any overlapping edge was found.
-    pub fn overlaps(&self, graph: &EnsmallenGraph) -> bool {
-        self.graph.overlaps(&graph.graph)
+    pub fn overlaps(&self, graph: &EnsmallenGraph) -> PyResult<bool> {
+        pyex!(self.graph.overlaps(&graph.graph))
     }
 
     /// Return true if given graph edges are all contained within current graph.
@@ -55,7 +54,7 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Boolean representing if graph contains completely the othe graph.
-    pub fn contains(&self, graph: &EnsmallenGraph) -> bool {
-        self.graph.contains(&graph.graph)
+    pub fn contains(&self, graph: &EnsmallenGraph) -> PyResult<bool> {
+        pyex!(self.graph.contains(&graph.graph))
     }
 }
