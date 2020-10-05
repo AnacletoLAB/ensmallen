@@ -189,8 +189,23 @@ impl EnsmallenGraph {
     /// Returns
     /// ---------------------
     /// Id of the edge type of the edge.
-    fn get_edge_type_id(&self, edge_id: EdgeT) -> PyResult<EdgeTypeT> {
-        pyex!(self.graph.get_edge_type_id(edge_id))
+    fn get_edge_type(&self, edge_id: EdgeT) -> PyResult<EdgeTypeT> {
+        pyex!(self.graph.get_edge_type(edge_id))
+    }
+
+    #[text_signature = "($self, node_id)"]
+    /// Return the id of the node type of the node.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node_id: int,
+    ///     Numeric ID of the node.
+    ///
+    /// Returns
+    /// ---------------------
+    /// Id of the node type of the node.
+    fn get_node_type(&self, node_id: NodeT) -> PyResult<NodeTypeT> {
+        pyex!(self.graph.get_node_type(node_id))
     }
 
     #[text_signature = "($self)"]

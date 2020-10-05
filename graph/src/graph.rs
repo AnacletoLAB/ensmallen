@@ -58,63 +58,6 @@ pub struct Graph {
 
 /// # Graph utility methods
 impl Graph {
-    /// Returns node type of given node.
-    ///
-    /// # Arguments
-    ///
-    /// * node_id: NodeT - node whose node type is to be returned.
-    ///
-    /// # Examples
-    /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The node type id of node {} is {}", 0, graph.get_node_type_id(0).unwrap());
-    /// ```
-    ///
-    pub fn get_node_type_id(&self, node_id: NodeT) -> Result<NodeTypeT, String> {
-        if let Some(nt) = &self.node_types {
-            return if node_id <= nt.ids.len() as NodeT {
-                Ok(nt.ids[node_id as usize])
-            } else {
-                Err(format!(
-                    "The node_index {} is too big for the node_types vector which has len {}",
-                    node_id,
-                    nt.ids.len()
-                ))
-            };
-        }
-        Err(String::from(
-            "Node types are not defined for current graph instance.",
-        ))
-    }
-
-    /// Returns edge type of given edge.
-    ///
-    /// # Arguments
-    ///
-    /// * edge_id: EdgeT - edge whose edge type is to be returned.
-    ///
-    /// # Examples
-    /// ```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The edge type id of edge {} is {}", 0, graph.get_edge_type_id(0).unwrap());
-    /// ```
-    pub fn get_edge_type_id(&self, edge_id: EdgeT) -> Result<EdgeTypeT, String> {
-        if let Some(et) = &self.edge_types {
-            return if edge_id <= et.ids.len() as EdgeT {
-                Ok(et.ids[edge_id as usize])
-            } else {
-                Err(format!(
-                    "The edge_index {} is too big for the edge_types vector which has len {}",
-                    edge_id,
-                    et.ids.len()
-                ))
-            };
-        }
-        Err(String::from(
-            "Edge types are not defined for current graph instance.",
-        ))
-    }
-
     pub fn get_unchecked_edge_id(
         &self,
         src: NodeT,

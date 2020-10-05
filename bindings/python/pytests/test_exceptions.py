@@ -7,7 +7,7 @@ from tqdm.auto import tqdm
 
 def test_no_existent_column():
     with pytest.raises(ValueError):
-        EnsmallenGraph.from_csv(
+        EnsmallenGraph.from_unsorted_csv(
             edge_path="./pytests/data/edges.tsv",
             sources_column="subject",
             destinations_column="NOT A REAL COLUMN",
@@ -21,7 +21,7 @@ def test_no_existent_column():
         )
 
     with pytest.raises(ValueError):
-        EnsmallenGraph.from_csv(
+        EnsmallenGraph.from_unsorted_csv(
             edge_path="./pytests/data/edges.tsv",
             sources_column="subject",
             destinations_column="",
@@ -35,7 +35,7 @@ def test_no_existent_column():
         )
 
     with pytest.raises(ValueError):
-        EnsmallenGraph.from_csv(
+        EnsmallenGraph.from_unsorted_csv(
             edge_path="./pytests/data/edges.tsv",
             sources_column="subject",
             destinations_column="",
@@ -49,7 +49,7 @@ def test_no_existent_column():
         )
 
     with pytest.raises(ValueError):
-        EnsmallenGraph.from_csv(
+        EnsmallenGraph.from_unsorted_csv(
             edge_path="./pytests/data/edges.tsv",
             sources_column="subject",
             destinations_column="object",

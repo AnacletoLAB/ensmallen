@@ -20,4 +20,4 @@ fn inner_test(load_nodes: bool, load_edge_types: bool, load_weights: bool, direc
 
 
 // create all the tests
-built_tests!();
+// built_tests!();

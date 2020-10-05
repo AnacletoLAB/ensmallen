@@ -1,6 +1,6 @@
 use super::*;
-use rand::Rng;
 use log::info;
+use rand::Rng;
 use std::fs;
 use std::path::Path;
 
@@ -200,7 +200,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             graph.connected_components_number(),
             train.connected_components_number()
         );
-    
+
         default_holdout_test_suite(graph, &train, &test)?;
     }
     // Testing cloning
@@ -222,7 +222,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     assert!(subgraph.get_not_singleton_nodes_number() <= expected_nodes + 1);
     // Testing edge-type based subgraph
     if let Some(ets) = &graph.edge_types {
-        let edge_type = ets.translate(graph.get_edge_type_id(0)?);
+        let edge_type = ets.translate(graph.get_edge_type(0)?);
         let edge_type_subgraph = graph.edge_types_subgraph(vec![edge_type.to_string()], verbose);
         assert_eq!(edge_type_subgraph.is_ok(), graph.has_edge_types());
     }
@@ -253,7 +253,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         .set_sources_column_number(Some(0))
         .set_destinations_column(Some("The land of pizza".to_string()))
         .set_destinations_column_number(Some(1));
-        
+
     edges_writer.dump(&graph)?;
     fs::remove_file(edges_file).unwrap();
 
@@ -277,24 +277,20 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     }
     // Testing the top Ks
     if graph.has_node_types() {
-        graph.get_node_type_id(0)?;
+        graph.get_node_type(0)?;
 
-        assert!(graph
-            .get_node_type_id(graph.get_nodes_number() + 1)
-            .is_err());
+        assert!(graph.get_node_type(graph.get_nodes_number() + 1).is_err());
     }
     if graph.has_edge_types() {
-        graph.get_edge_type_id(0)?;
+        graph.get_edge_type(0)?;
 
-        assert!(graph
-            .get_edge_type_id(graph.get_edges_number() + 1)
-            .is_err());
+        assert!(graph.get_edge_type(graph.get_edges_number() + 1).is_err());
     }
-    // Evaluate get_node_type_id
-    assert_eq!(graph.get_node_type_id(0).is_ok(), graph.has_node_types());
+    // Evaluate get_node_type
+    assert_eq!(graph.get_node_type(0).is_ok(), graph.has_node_types());
 
-    // Evaluate get_edge_type_id
-    assert_eq!(graph.get_edge_type_id(0).is_ok(), graph.has_edge_types());
+    // Evaluate get_edge_type
+    assert_eq!(graph.get_edge_type(0).is_ok(), graph.has_edge_types());
 
     // Evaluate get_node_type_counts
     assert_eq!(graph.get_node_type_counts().is_ok(), graph.has_node_types());

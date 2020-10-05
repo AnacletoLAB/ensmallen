@@ -4,7 +4,8 @@ use rayon::prelude::*;
 impl Graph {
     /// Return iterator on the node of the graph.
     pub fn get_nodes_iter(&self) -> impl Iterator<Item = (NodeT, Option<NodeTypeT>)> + '_ {
-        (0..self.get_nodes_number()).map(move |node_id| (node_id, self.get_node_type(node_id)))
+        (0..self.get_nodes_number())
+            .map(move |node_id| (node_id, self.get_unchecked_node_type(node_id)))
     }
 
     /// Return iterator on the node of the graph as Strings.
@@ -71,8 +72,9 @@ impl Graph {
     pub fn get_edges_triples(
         &self,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_ {
-        self.get_edges_iter()
-            .map(move |(edge_id, src, dst)| (edge_id, src, dst, self.get_edge_type(edge_id)))
+        self.get_edges_iter().map(move |(edge_id, src, dst)| {
+            (edge_id, src, dst, self.get_unchecked_edge_type(edge_id))
+        })
     }
 
     /// Return iterator on the edges of the graph with the string name.
@@ -116,8 +118,9 @@ impl Graph {
     pub fn get_edges_par_triples(
         &self,
     ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_ {
-        self.get_edges_par_iter()
-            .map(move |(edge_id, src, dst)| (edge_id, src, dst, self.get_edge_type(edge_id)))
+        self.get_edges_par_iter().map(move |(edge_id, src, dst)| {
+            (edge_id, src, dst, self.get_unchecked_edge_type(edge_id))
+        })
     }
 
     /// Return iterator on the edges of the graph.
@@ -153,7 +156,7 @@ impl Graph {
     /// Return the src, dst, edge type of a given edge id
     pub fn get_edge_triple(&self, edge_id: EdgeT) -> (NodeT, NodeT, Option<EdgeTypeT>) {
         let (src, dst) = self.get_edge_from_edge_id(edge_id);
-        (src, dst, self.get_edge_type(edge_id))
+        (src, dst, self.get_unchecked_edge_type(edge_id))
     }
 
     /// Return iterator on the edges of the graph.
