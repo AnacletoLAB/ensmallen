@@ -563,6 +563,7 @@ impl Graph {
         edge_types: Option<VocabularyVec<EdgeTypeT>>,
         cached_edges_number: EdgeT,
     ) -> Graph {
+        let cached_edges_number: EdgeT = min!(cached_edges_number, edges.len() as EdgeT);
         let mut graph = Graph {
             directed,
             edges,
