@@ -83,7 +83,7 @@ impl Graph {
         seed ^= SEED_XOR as EdgeT;
 
         let mut negative_edges_bitmap = RoaringTreemap::new();
-        let chunk_size = 1024;
+        let chunk_size = max!(4096, negatives_number/100);
         let mut last_length = 0;
 
         // randomly extract negative edges until we have the choosen number
