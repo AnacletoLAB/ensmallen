@@ -394,11 +394,13 @@ fn parse_nodes(
     let mut node_types = VocabularyVec::new(numeric_node_types_ids);
 
     if let Some(ni) = nodes_iterator {
-        parse_node_type_ids(
+        // TODO: the following can likely be dealt with in a better way.
+        for row in parse_node_type_ids(
             parse_node_ids(ni, ignore_duplicated_nodes, &mut nodes),
             &mut node_types,
-        )
-        .for_each(|_| {});
+        ) {
+            row?;
+        }
         node_types.build_reverse_mapping()?;
         node_types.build_counts();
     }
