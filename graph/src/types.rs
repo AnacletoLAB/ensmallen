@@ -25,7 +25,7 @@ pub type Triple = (NodeT, NodeT, Option<EdgeTypeT>);
 /// Quadruple of edge data
 pub type Quadruple = (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>);
 /// Quadrule of string edge data
-pub type StringQuadruple = StringQuadruple;
+pub type StringQuadruple = (String, String, Option<String>, Option<WeightT>);
 
 
 /// Trait used for the Vocabulary class.
