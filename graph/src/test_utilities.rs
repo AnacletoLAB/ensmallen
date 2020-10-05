@@ -307,7 +307,10 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(we.has_edge_types(), false);
             assert_eq!(we.has_weights(), graph.has_weights());
             assert!(we.node_types == graph.node_types);
-            assert_eq!(we.get_unique_self_loop_number(), graph.get_unique_self_loop_number());
+            assert_eq!(
+                we.get_unique_self_loop_number(),
+                graph.get_unique_self_loop_number()
+            );
             assert_eq!(we.has_traps(), graph.has_traps());
             assert_eq!(we.nodes, graph.nodes);
 

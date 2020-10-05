@@ -1,7 +1,6 @@
 use super::*;
 use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
-use itertools::Itertools;
 use roaring::RoaringBitmap;
 use std::collections::BTreeMap;
 
@@ -138,12 +137,8 @@ pub(crate) fn parse_edge_type_ids_vocabulary<'a>(
         + 'a,
     edge_types: &'a mut Vocabulary<EdgeTypeT>,
 ) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
-    let mut has_edge_types: Option<bool> = None;
     edges_iter.map(move |row| match row {
         Ok((src, dst, edge_type, weight)) => {
-            if *has_edge_types.get_or_insert(edge_type.is_some()) != edge_type.is_some(){
-                return Err("The edge_types are not consistents. Either all edge_types are None, or all have valid values.".to_string());
-            }
             let edge_type_id = match edge_type {
                 Some(et) => Some(edge_types.insert(et)?),
                 None => None,
@@ -159,16 +154,26 @@ pub(crate) fn parse_edge_type_ids<'a>(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>> + 'a,
     edge_types: &'a mut Vec<EdgeTypeT>,
 ) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
-    edges_iter.map_results(move |(src, dst, edge_type, weight)| {
-        (
-            src,
-            dst,
-            edge_type.map(|nt| {
-                edge_types.push(nt);
-                nt
-            }),
-            weight,
-        )
+    let mut has_edge_types: Option<bool> = None;
+    edges_iter.map(move |row| {
+        match row {
+            Ok((src, dst, edge_type, weight)) => {
+                if *has_edge_types.get_or_insert(edge_type.is_some()) != edge_type.is_some(){
+                    return Err("The edge_types are not consistents. Either all edge_types are None, or all have valid values.".to_string());
+                }
+                Ok((
+                    src,
+                    dst,
+                    edge_type.map(|nt| {
+                        edge_types.push(nt);
+                        nt
+                    }),
+                    weight,
+                ))
+            },
+            Err(e) => Err(e)
+        }
+        
     })
 }
 

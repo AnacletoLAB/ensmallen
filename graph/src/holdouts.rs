@@ -580,8 +580,8 @@ impl Graph {
                 .progress_with(pb)
                 .filter_map(|edge_id| match &self.edge_types {
                     Some(ets) => match edge_type_ids.contains(&ets.ids[edge_id as usize]) {
-                        false => Some(self.get_edge_quadruple(edge_id)),
-                        true => None,
+                        true => Some(self.get_edge_quadruple(edge_id)),
+                        false => None,
                     },
                     None => None,
                 })
