@@ -365,9 +365,11 @@ pub(crate) fn build_edges(
         if first || last_src != src {
             unique_sources.push(src as u64)?;
             last_src = src;
-            if first || last_dst != dst {
-                last_dst = dst;
-            }
+        }
+        if first || last_dst != dst {
+            last_dst = dst;
+        }
+        if first {
             first = false;
         }
     }

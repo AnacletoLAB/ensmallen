@@ -53,6 +53,7 @@ impl Graph {
             complete_edges_number += nodes_number;
         }
 
+        println!("{}, {}", complete_edges_number, self.unique_edges_number);
         // Now we compute the maximum number of negative edges that we can actually generate
         let max_negative_edges = complete_edges_number - self.unique_edges_number;
 
