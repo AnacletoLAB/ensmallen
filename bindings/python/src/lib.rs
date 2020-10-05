@@ -10,7 +10,6 @@ mod getters;
 mod metrics;
 mod node_file_writer;
 mod preprocessing;
-mod setters;
 mod tarjan;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
