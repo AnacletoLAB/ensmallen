@@ -3,25 +3,37 @@ use arbitrary::Arbitrary;
 
 #[derive(Arbitrary, Debug)]
 pub struct FromVecHarnessParams {
-    edges: Vec<Result<(NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>), String>>,
-    nodes: Option<Vocabulary<NodeT>>,
-    edge_types_vocabulary: Option<VocabularyVec<EdgeTypeT>>,
+    edges: Vec<Result<(String, String, Option<String>, Option<WeightT>), String>>,
+    nodes: Option<Vec<Result<(String, Option<String>), String>>>,
     directed: bool,
+    ignore_duplicated_nodes: bool,
     ignore_duplicated_edges: bool,
     verbose: bool,
-    cached_edges_number: EdgeT
+    numeric_edge_types_ids: bool,
+    numeric_node_ids: bool,
+    numeric_node_types_ids: bool,
+    cached_edges_number: EdgeT,
 }
 
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
-    let g = graph::Graph::from_integer_unsorted(
+    let g = graph::Graph::from_string_unsorted(
         data.edges.iter().cloned(),
-        data.nodes,
+        match &data.nodes {
+            Some(ns) => Some(ns.iter().cloned()),
+            None => None,
+        },
         data.directed,
         data.ignore_duplicated_nodes,
         data.ignore_duplicated_edges,
-        data.skip_self_loops
+        data.verbose,
+        data.numeric_edge_types_ids,
+        data.numeric_node_ids,
+        data.numeric_node_types_ids,
+        data.cached_edges_number,
     )?;
-    graph::test_utilities::default_test_suite(&g, false);
+    // We ignore this error because we execute only the fuzzing to find
+    // the panic situations that are NOT just errors, but unhandled errors.
+    let _ = graph::test_utilities::default_test_suite(&g, false);
 
     Ok(())
-}  
+}
