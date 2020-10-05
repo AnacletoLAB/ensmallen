@@ -1,5 +1,4 @@
 use super::*;
-use itertools::Itertools;
 
 /// # Drop.
 impl Graph {
