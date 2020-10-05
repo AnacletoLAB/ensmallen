@@ -111,7 +111,7 @@ impl Graph {
             self.node_types.clone(),
             None,
             self.directed,
-            false
+            false,
         )
     }
 
@@ -277,7 +277,7 @@ impl Graph {
                     None => None,
                 },
                 self.directed,
-                false
+                false,
             )?,
             Graph::build_graph(
                 valid_edges_bitmap
@@ -292,7 +292,7 @@ impl Graph {
                     None => None,
                 },
                 self.directed,
-                false
+                false,
             )?,
         ))
     }
@@ -533,7 +533,7 @@ impl Graph {
                 None => None,
             },
             self.directed,
-            false
+            false,
         )
     }
 
@@ -594,7 +594,7 @@ impl Graph {
                 None => None,
             },
             self.directed,
-            false
+            false,
         )
     }
 }
