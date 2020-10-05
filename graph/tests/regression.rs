@@ -210,3 +210,17 @@ fn test_regression15() {
     let g = Graph::from_unsorted_csv(edges_reader, None, false).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
+
+#[test]
+fn test_regression16() {
+    let edges_reader = EdgeFileReader::new("tests/data/regression/16.tsv".to_string()).unwrap()
+        .set_separator(Some(",".to_string()))
+        .set_verbose(Some(false))
+        .set_sources_column_number(Some(0)).unwrap()
+        .set_destinations_column_number(Some(1)).unwrap()
+        .set_edge_types_column_number(Some(2)).unwrap()
+        .set_weights_column_number(Some(3)).unwrap()
+        .set_header(Some(false));
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
+    let _ = graph::test_utilities::default_test_suite(&g, false);
+}

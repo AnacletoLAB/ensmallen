@@ -3,8 +3,7 @@ use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
 use itertools::Itertools;
 use roaring::RoaringBitmap;
-use std::cmp::Reverse;
-use std::collections::{BTreeMap, BinaryHeap, HashMap};
+use std::collections::BTreeMap;
 
 type ParsedStringEdgesType = Result<
     (
@@ -567,58 +566,6 @@ pub(crate) fn parse_integer_edges(
 
 /// # Graph Constructors
 impl Graph {
-    pub(crate) fn new(
-        directed: bool,
-        unique_self_loop_number: NodeT,
-        self_loop_number: EdgeT,
-        not_singleton_nodes_number: NodeT,
-        unique_edges_number: EdgeT,
-        edges: EliasFano,
-        unique_sources: EliasFano,
-        nodes: Vocabulary<NodeT>,
-        node_bit_mask: u64,
-        node_bits: u8,
-        weights: Option<Vec<WeightT>>,
-        node_types: Option<VocabularyVec<NodeTypeT>>,
-        edge_types: Option<VocabularyVec<EdgeTypeT>>,
-        cached_edges_number: EdgeT,
-    ) -> Graph {
-        let cached_edges_number: EdgeT = min!(cached_edges_number, edges.len() as EdgeT);
-        let mut graph = Graph {
-            directed,
-            edges,
-            unique_sources,
-            nodes,
-            node_bit_mask,
-            node_bits,
-            node_types,
-            edge_types,
-            unique_edges_number,
-            self_loop_number,
-            unique_self_loop_number,
-            not_singleton_nodes_number,
-            weights,
-            edges_cache: HashMap::with_capacity(cached_edges_number as usize),
-        };
-        if cached_edges_number != 0 {
-            let mut edges_heap = BinaryHeap::with_capacity(cached_edges_number as usize);
-            graph.get_edges_iter().for_each(|(edge_id, src, dst)| {
-                let degree = graph.get_node_degree(src);
-                let edge = graph.encode_edge(src, dst);
-                let heap_value = Reverse((degree, edge_id, edge));
-                if edges_heap.len() < cached_edges_number as usize {
-                    edges_heap.push(heap_value);
-                } else if *edges_heap.peek().unwrap() < heap_value {
-                    edges_heap.pop();
-                    edges_heap.push(heap_value);
-                }
-            });
-            edges_heap.iter().for_each(|Reverse((_, edge_id, edge))| {
-                graph.edges_cache.insert(*edge_id, *edge);
-            });
-        }
-        graph
-    }
 
     pub(crate) fn build_graph(
         edge_iter: impl Iterator<Item = Result<Quadruple, String>>,
@@ -627,8 +574,7 @@ impl Graph {
         node_types: Option<VocabularyVec<NodeTypeT>>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
-        ignore_duplicated_edges: bool,
-        cached_edges_number: EdgeT,
+        ignore_duplicated_edges: bool
     ) -> Result<Graph, String> {
         let (
             edges,
@@ -649,7 +595,7 @@ impl Graph {
             ignore_duplicated_edges,
         )?;
 
-        Ok(Graph::new(
+        Ok(Graph {
             directed,
             unique_self_loop_number,
             self_loop_number,
@@ -660,11 +606,10 @@ impl Graph {
             nodes,
             node_bit_mask,
             node_bits,
-            optionify!(weights),
             node_types,
             edge_types,
-            cached_edges_number,
-        ))
+            weights:optionify!(weights),
+        })
     }
 
     /// Create new Graph object from unsorted source.
@@ -692,8 +637,7 @@ impl Graph {
         verbose: bool,
         numeric_edge_types_ids: bool,
         numeric_node_ids: bool,
-        numeric_node_types_ids: bool,
-        cached_edges_number: EdgeT,
+        numeric_node_types_ids: bool
     ) -> Result<Graph, String> {
         let mut edge_sorting_tmp = BTreeMap::new();
 
@@ -721,8 +665,7 @@ impl Graph {
             optionify!(node_types),
             optionify!(edge_types_vocabulary),
             directed,
-            ignore_duplicated_edges,
-            cached_edges_number,
+            ignore_duplicated_edges
         )
     }
 
@@ -751,8 +694,7 @@ impl Graph {
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
         ignore_duplicated_edges: bool,
-        verbose: bool,
-        cached_edges_number: EdgeT,
+        verbose: bool
     ) -> Result<Graph, String> {
         let mut edge_sorting_tmp = BTreeMap::new();
 
@@ -766,8 +708,7 @@ impl Graph {
             node_types,
             edge_types_vocabulary,
             directed,
-            ignore_duplicated_edges,
-            cached_edges_number,
+            ignore_duplicated_edges
         )
     }
 
@@ -782,8 +723,7 @@ impl Graph {
         nodes_number: NodeT,
         numeric_edge_types_ids: bool,
         numeric_node_ids: bool,
-        numeric_node_types_ids: bool,
-        cached_edges_number: EdgeT,
+        numeric_node_types_ids: bool
     ) -> Result<Graph, String> {
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
@@ -814,8 +754,7 @@ impl Graph {
             ignore_duplicated_edges,
         )?;
 
-        Ok(Graph::new(
-            directed,
+        Ok(Graph {           directed,
             unique_self_loop_number,
             self_loop_number,
             not_singleton_nodes_number,
@@ -825,10 +764,9 @@ impl Graph {
             nodes,
             node_bit_mask,
             node_bits,
-            optionify!(weights),
-            optionify!(node_types),
             edge_types,
-            cached_edges_number,
-        ))
+            weights: optionify!(weights),
+            node_types:optionify!(node_types),
+    })
     }
 }

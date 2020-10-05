@@ -39,11 +39,6 @@ pub struct Graph {
     /// Vocabulary that save the mappings from string to index of every node
     pub(crate) nodes: Vocabulary<NodeT>,
     pub(crate) unique_sources: EliasFano,
-    /// High performance cache for high-degree edges to avoid executing most
-    /// of the select operations. This is what allows to let the user choose
-    /// the trade-off between speed and memory usage.
-    /// The map is between edge_id to encoded edge.
-    pub(crate) edges_cache: HashMap<EdgeT, EdgeT>,
 
     /// Optional vector of the weights of every edge.
     /// weights[10] return the weight of the edge with edge_id 10

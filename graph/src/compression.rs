@@ -31,11 +31,7 @@ impl Graph {
 
     #[inline(always)]
     pub(crate) fn get_edge_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
-        let edge: EdgeT = match self.edges_cache.get(&edge_id) {
-            Some(edge) => *edge,
-            None => self.edges.unchecked_select(edge_id),
-        };
-        self.decode_edge(edge)
+        self.decode_edge(self.edges.unchecked_select(edge_id))
     }
 
     #[inline(always)]
@@ -53,7 +49,7 @@ impl Graph {
     #[inline(always)]
     pub(crate) fn get_unique_source(&self, source_id: NodeT) -> NodeT {
         self.unique_sources
-            .unchecked_select((source_id % self.unique_sources.len() as NodeT) as u64)
+            .unchecked_select((source_id % self.get_source_nodes_number()) as u64)
             as NodeT
     }
 }

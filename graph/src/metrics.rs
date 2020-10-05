@@ -270,6 +270,16 @@ impl Graph {
         self.self_loop_number
     }
 
+    /// Returns number of unique self-loops, excluding those in eventual multi-edges.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The number of unique self-loops in the graph is  {}", graph.get_unique_self_loop_number());
+    /// ```
+    pub fn get_unique_self_loop_number(&self) -> NodeT {
+        self.unique_self_loop_number
+    }
+
+
     /// Returns rate of self-loops.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();

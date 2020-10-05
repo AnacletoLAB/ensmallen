@@ -67,7 +67,6 @@ pub fn load_ppi(
         .set_ignore_duplicates(Some(true))
         .set_separator(Some("\t".to_string()))
         .set_header(Some(true))
-        .set_cached_edges_number(Some(8000))
         .set_rows_to_skip(Some(0))
         .set_sources_column_number(Some(1))?
         .set_sources_column(Some("subject".to_string()))?
@@ -307,7 +306,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(we.has_edge_types(), false);
             assert_eq!(we.has_weights(), graph.has_weights());
             assert!(we.node_types == graph.node_types);
-            assert_eq!(we.get_self_loop_number(), graph.get_self_loop_number());
+            assert_eq!(we.get_unique_self_loop_number(), graph.get_unique_self_loop_number());
             assert_eq!(we.has_traps(), graph.has_traps());
             assert_eq!(we.nodes, graph.nodes);
 

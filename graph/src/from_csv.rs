@@ -40,8 +40,7 @@ impl Graph {
             match &node_file_reader {
                 Some(nfr) => nfr.numeric_node_type_ids,
                 None => false,
-            },
-            edge_file_reader.cached_edges_number
+            }
         )
     }
 
@@ -81,8 +80,7 @@ impl Graph {
             match &node_file_reader {
                 Some(nfr) => nfr.numeric_node_type_ids,
                 None => false,
-            },
-            edge_file_reader.cached_edges_number
+            }
         )
     }
 }
