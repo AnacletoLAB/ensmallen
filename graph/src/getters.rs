@@ -87,6 +87,11 @@ impl Graph {
         }
     }
 
+    /// Return number of the unique edges in the graph.
+    pub fn get_unique_edges_number(&self) -> EdgeT {
+        self.unique_edges_number
+    }
+
     /// Return the nodes mapping.
     pub fn get_nodes_mapping(&self) -> HashMap<String, NodeT> {
         self.nodes.map.clone()

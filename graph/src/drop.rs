@@ -1,4 +1,5 @@
 use super::*;
+use itertools::Itertools;
 
 /// # Drop.
 impl Graph {
@@ -27,7 +28,7 @@ impl Graph {
             self.node_types.clone(),
             None,
             self.directed,
-            false
+            false,
         )
     }
 
