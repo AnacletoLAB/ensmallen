@@ -81,11 +81,15 @@ pub(crate) fn parse_node_type_ids<'a, 'b>(
 where
     'b: 'a,
 {
+    let mut has_node_types: Option<bool> = None;
     nodes_iter.map(move |row| match row {
         Ok((node_id, node_type)) => {
+            if *has_node_types.get_or_insert(node_type.is_some()) != node_type.is_some(){
+                return Err("The node types are not consistents. Either all node types are None, or all have valid values.".to_string());
+            }
             let node_type_id = match node_type {
                 Some(nt) => Some(node_types.insert(nt)?),
-                None => None,
+                None => None
             };
             Ok((node_id, node_type_id))
         }
@@ -135,8 +139,12 @@ pub(crate) fn parse_edge_type_ids_vocabulary<'a>(
         + 'a,
     edge_types: &'a mut Vocabulary<EdgeTypeT>,
 ) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
+    let mut has_edge_types: Option<bool> = None;
     edges_iter.map(move |row| match row {
         Ok((src, dst, edge_type, weight)) => {
+            if *has_edge_types.get_or_insert(edge_type.is_some()) != edge_type.is_some(){
+                return Err("The edge_types are not consistents. Either all edge_types are None, or all have valid values.".to_string());
+            }
             let edge_type_id = match edge_type {
                 Some(et) => Some(edge_types.insert(et)?),
                 None => None,
@@ -170,8 +178,13 @@ pub(crate) fn parse_weights<'a>(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>> + 'a,
     weights: &'a mut Vec<WeightT>,
 ) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
+    let mut has_weights: Option<bool> = None;
     edges_iter.map(move |row| match row {
         Ok((src, dst, edge_type, weight)) => {
+            if *has_weights.get_or_insert(weight.is_some()) != weight.is_some(){
+                return Err("The weights are not consistents. Either all weights are None, or all have valid values.".to_string());
+            }
+            
             let parsed_weight = match weight {
                 Some(w) => {
                     validate_weight(w)?;
