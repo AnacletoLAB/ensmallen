@@ -3,10 +3,14 @@ use indicatif::ProgressIterator;
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
+use rayon::iter::IndexedParallelIterator;
+use rayon::iter::IntoParallelIterator;
+use rayon::iter::ParallelIterator;
 use roaring::RoaringTreemap;
 use std::collections::HashSet;
 use std::iter::FromIterator;
-use vec_rand::xorshift::xorshift;
+use vec_rand::gen_random_vec;
+use vec_rand::xorshift::xorshift as rand_u64;
 
 /// # Holdouts.
 impl Graph {
@@ -79,28 +83,59 @@ impl Graph {
         seed ^= SEED_XOR as EdgeT;
 
         let mut negative_edges_bitmap = RoaringTreemap::new();
+        let chunk_size = 1024;
+        let mut last_length = 0;
 
         // randomly extract negative edges until we have the choosen number
         while negative_edges_bitmap.len() < negatives_number {
-            seed = xorshift(seed);
-            let src: NodeT = (seed % nodes_number) as NodeT;
-            seed = xorshift(seed);
-            let dst: NodeT = (seed % nodes_number) as NodeT;
-            // If the edge is not a self-loop or the user allows self-loops and
-            // the graph is directed or the edges are inserted in a way to avoid
-            // inserting bidirectional edges, avoiding to execute the check
-            // of edge types so to insert them twice if the edge types are
-            // different.
-            if (allow_selfloops || src != dst) && !self.has_edge(src, dst, None) {
-                negative_edges_bitmap.insert(self.encode_edge(src, dst));
-                pb.inc(1);
-                if !self.is_directed() {
-                    negative_edges_bitmap.insert(self.encode_edge(dst, src));
-                    pb.inc(1);
-                }
-            }
+            // generate two seeds for reproducibility porpouses
+            let sources_seed = rand_u64(seed);
+            let destinations_seed = rand_u64(sources_seed);
+            seed = destinations_seed;
+
+            let edges_to_sample: usize = min!(chunk_size, match self.is_directed() {
+                true => negatives_number - negative_edges_bitmap.len(),
+                false => ((negatives_number - negative_edges_bitmap.len()) as f64/2.0).ceil() as u64
+            }) as usize;
+
+            // generate the random edge-sources
+            negative_edges_bitmap.extend(
+                gen_random_vec(edges_to_sample, sources_seed)
+                    .into_par_iter()
+                    // generate the random edge-destinations
+                    .zip(gen_random_vec(edges_to_sample, destinations_seed).into_par_iter())
+                    // convert them to plain (src, dst)
+                    .map(|(random_src, random_dst)| {
+                        (
+                            (random_src % nodes_number) as NodeT,
+                            (random_dst % nodes_number) as NodeT,
+                        )
+                    })
+                    // filter away the negatives that are:
+                    .filter(|(src, dst)| {
+                        // If the edge is not a self-loop or the user allows self-loops and
+                        // the graph is directed or the edges are inserted in a way to avoid
+                        // inserting bidirectional edges.
+                        (allow_selfloops || src != dst) && !self.has_edge(*src, *dst, None)
+                    })
+                    .flat_map(|(src, dst)| {
+                        let forward_edge = self.encode_edge(src, dst);
+                        if !self.is_directed() && src != dst {
+                            let backward_edge = self.encode_edge(dst, src);
+                            vec![forward_edge, backward_edge]
+                        } else {
+                            vec![forward_edge]
+                        }
+                    })
+                    .collect::<Vec<EdgeT>>(),
+            );
+
+            pb.inc(negative_edges_bitmap.len() - last_length);
+            last_length = negative_edges_bitmap.len();
         }
+
         pb.finish();
+
         Graph::build_graph(
             negative_edges_bitmap.iter().map(|edge| {
                 let (src, dst) = self.decode_edge(edge);
@@ -178,7 +213,7 @@ impl Graph {
         edge_indices.shuffle(&mut rng);
 
         let mut valid_edges_bitmap = RoaringTreemap::new();
-        let mut delta = 0;
+        let mut last_length = 0;
 
         for (edge_id, (src, dst, edge_type)) in edge_indices
             .iter()
@@ -211,8 +246,8 @@ impl Graph {
                         include_all_edge_types,
                     ));
                 }
-                pb1.inc(valid_edges_bitmap.len() - delta);
-                delta = valid_edges_bitmap.len();
+                pb1.inc(valid_edges_bitmap.len() - last_length);
+                last_length = valid_edges_bitmap.len();
             }
 
             // We stop the iteration when we found all the edges.
