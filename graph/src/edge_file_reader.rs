@@ -379,7 +379,7 @@ impl EdgeFileReader {
     fn parse_edge_line(
         &self,
         vals: Vec<String>,
-    ) -> Result<(String, String, Option<String>, Option<WeightT>), String> {
+    ) -> Result<StringQuadruple, String> {
         // exctract the values
         let source_node_name = vals[self.sources_column_number].to_owned();
         let destination_node_name = vals[self.destinations_column_number].to_owned();
@@ -449,7 +449,7 @@ impl EdgeFileReader {
     pub fn read_lines(
         &self,
     ) -> Result<
-        impl Iterator<Item = Result<(String, String, Option<String>, Option<WeightT>), String>> + '_,
+        impl Iterator<Item = Result<StringQuadruple, String>> + '_,
         String,
     > {
         let expected_elements = self.reader.get_elements_per_line()?;

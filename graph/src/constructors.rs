@@ -101,7 +101,7 @@ where
     'b: 'a,
 {
     let empty_nodes_mapping = nodes.is_empty();
-    edges_iterator.map(move |row| match row {
+    edges_iterator.map(move |row: Result<StringQuadruple, String>| match row {
         Ok((src_name, dst_name, node_type, weight)) => {
             for node_name in [src_name.clone(), dst_name.clone()].iter() {
                 if !nodes.contains_key(node_name) {
