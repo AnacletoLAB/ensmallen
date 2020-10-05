@@ -1,5 +1,5 @@
 extern crate graph;
-use graph::{EdgeFileReader, EdgeFileWriter, Graph};
+use graph::{EdgeFileReader, Graph};
 
 #[test]
 /// this test used to deadlock the sample negatives

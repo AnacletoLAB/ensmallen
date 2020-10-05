@@ -94,8 +94,7 @@ where
 }
 
 pub(crate) fn parse_edges_node_ids<'a, 'b>(
-    edges_iterator: impl Iterator<Item = Result<(String, String, Option<String>, Option<WeightT>), String>>
-        + 'a,
+    edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>> + 'a,
     nodes: &'b mut Vocabulary<NodeT>,
 ) -> impl Iterator<Item = Result<(NodeT, NodeT, Option<String>, Option<WeightT>), String>> + 'a
 where
@@ -227,7 +226,7 @@ pub(crate) fn parse_sorted_edges<'a>(
 }
 
 pub(crate) fn parse_string_unsorted_edges<'a>(
-    edges_iter: impl Iterator<Item = Result<(String, String, Option<String>, Option<WeightT>), String>>,
+    edges_iter: impl Iterator<Item = Result<StringQuadruple, String>>,
     sorting_tmp: &'a mut BTreeMap<Triple, Option<WeightT>>,
     mut nodes: Vocabulary<NodeT>,
     directed: bool,
@@ -392,7 +391,7 @@ fn parse_nodes(
 }
 
 pub(crate) fn parse_string_edges(
-    edges_iter: impl Iterator<Item = Result<(String, String, Option<String>, Option<WeightT>), String>>,
+    edges_iter: impl Iterator<Item = Result<StringQuadruple, String>>,
     edges_number: EdgeT,
     nodes_number: NodeT,
     directed: bool,
@@ -651,7 +650,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * edges_iterator: impl Iterator<Item = Result<(String, String, Option<String>, Option<WeightT>), String>>,
+    /// * edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
     ///     Iterator of the edges.
     /// * nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
     ///     Iterator of the nodes.
@@ -664,9 +663,7 @@ impl Graph {
     /// * skip_self_loops: bool,
     ///     Wether to skip self loops while reading the the edges iterator.
     pub fn from_string_unsorted(
-        edges_iterator: impl Iterator<
-            Item = Result<(String, String, Option<String>, Option<WeightT>), String>,
-        >,
+        edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
         directed: bool,
         ignore_duplicated_nodes: bool,
@@ -712,7 +709,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * edges_iterator: impl Iterator<Item = Result<(String, String, Option<String>, Option<WeightT>), String>>,
+    /// * edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
     ///     Iterator of the edges.
     /// * nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
     ///     Iterator of the nodes.
@@ -755,9 +752,7 @@ impl Graph {
 
     /// Create new Graph object from sorted sources.
     pub fn from_string_sorted(
-        edges_iterator: impl Iterator<
-            Item = Result<(String, String, Option<String>, Option<WeightT>), String>,
-        >,
+        edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
         directed: bool,
         ignore_duplicated_nodes: bool,

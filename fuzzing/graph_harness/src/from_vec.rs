@@ -3,7 +3,7 @@ use arbitrary::Arbitrary;
 
 #[derive(Arbitrary, Debug)]
 pub struct FromVecHarnessParams {
-    edges: Vec<Result<(String, String, Option<String>, Option<WeightT>), String>>,
+    edges: Vec<Result<StringQuadruple, String>>,
     nodes: Option<Vec<Result<(String, Option<String>), String>>>,
     directed: bool,
     ignore_duplicated_nodes: bool,
