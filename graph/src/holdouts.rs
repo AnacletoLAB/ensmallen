@@ -6,7 +6,7 @@ use rand::SeedableRng;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
-use roaring::RoaringTreemap;
+use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
 use std::iter::FromIterator;
 use vec_rand::gen_random_vec;
@@ -83,7 +83,7 @@ impl Graph {
         seed ^= SEED_XOR as EdgeT;
 
         let mut negative_edges_bitmap = RoaringTreemap::new();
-        let chunk_size = max!(4096, negatives_number/100);
+        let chunk_size = max!(4096, negatives_number / 100);
         let mut last_length = 0;
 
         // randomly extract negative edges until we have the choosen number
@@ -93,10 +93,14 @@ impl Graph {
             let destinations_seed = rand_u64(sources_seed);
             seed = destinations_seed;
 
-            let edges_to_sample: usize = min!(chunk_size, match self.is_directed() {
-                true => negatives_number - negative_edges_bitmap.len(),
-                false => ((negatives_number - negative_edges_bitmap.len()) as f64/2.0).ceil() as u64
-            }) as usize;
+            let edges_to_sample: usize = min!(
+                chunk_size,
+                match self.is_directed() {
+                    true => negatives_number - negative_edges_bitmap.len(),
+                    false => ((negatives_number - negative_edges_bitmap.len()) as f64 / 2.0).ceil()
+                        as u64,
+                }
+            ) as usize;
 
             // generate the random edge-sources
             negative_edges_bitmap.extend(
@@ -516,7 +520,7 @@ impl Graph {
         nodes.shuffle(&mut rnd);
 
         // Initializing stack and set of nodes
-        let mut unique_nodes: HashSet<NodeT> = HashSet::with_capacity(nodes_number as usize);
+        let mut unique_nodes = RoaringBitmap::new();
         let mut stack: Vec<NodeT> = Vec::new();
 
         // We iterate on the components
@@ -529,7 +533,7 @@ impl Graph {
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
                 for dst in self.get_source_destinations_range(src) {
-                    if !unique_nodes.contains(&dst) && src != dst {
+                    if !unique_nodes.contains(dst) && src != dst {
                         stack.push(dst);
                     }
 
@@ -538,7 +542,7 @@ impl Graph {
                     pb1.inc(2);
 
                     // If we reach the desired number of unique nodes we can stop the iteration.
-                    if unique_nodes.len() >= nodes_number as usize {
+                    if unique_nodes.len() as NodeT >= nodes_number {
                         break 'outer;
                     }
                 }
@@ -549,9 +553,9 @@ impl Graph {
 
         let edges_bitmap =
             RoaringTreemap::from_iter(unique_nodes.iter().progress_with(pb2).flat_map(|src| {
-                let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(*src);
+                let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(src);
                 (min_edge_id..max_edge_id)
-                    .filter(|edge_id| unique_nodes.contains(&self.get_destination(*edge_id)))
+                    .filter(|edge_id| unique_nodes.contains(self.get_destination(*edge_id)))
                     .collect::<Vec<EdgeT>>()
             }));
 
