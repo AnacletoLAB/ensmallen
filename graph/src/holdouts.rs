@@ -93,10 +93,11 @@ impl Graph {
             // different.
             if (allow_selfloops || src != dst) && !self.has_edge(src, dst, None) {
                 negative_edges_bitmap.insert(self.encode_edge(src, dst));
+                pb.inc(1);
                 if !self.is_directed() {
                     negative_edges_bitmap.insert(self.encode_edge(dst, src));
+                    pb.inc(1);
                 }
-                pb.set_length(negative_edges_bitmap.len());
             }
         }
         pb.finish();
@@ -177,6 +178,7 @@ impl Graph {
         edge_indices.shuffle(&mut rng);
 
         let mut valid_edges_bitmap = RoaringTreemap::new();
+        let mut delta = 0;
 
         for (edge_id, (src, dst, edge_type)) in edge_indices
             .iter()
@@ -209,7 +211,8 @@ impl Graph {
                         include_all_edge_types,
                     ));
                 }
-                pb1.set_length(valid_edges_bitmap.len());
+                pb1.inc(valid_edges_bitmap.len() - delta);
+                delta = valid_edges_bitmap.len();
             }
 
             // We stop the iteration when we found all the edges.
