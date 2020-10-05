@@ -61,3 +61,24 @@ impl Graph {
         }
     }
 }
+
+pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
+    if weight.is_finite() && weight > 0.0 {
+        Ok(weight)
+    } else {
+        Err(format!("The weight is '{}' but the weights must be strictly positives and finite.", weight))
+    }
+}
+
+pub fn parse_weight(weight: Option<String>) -> Result<Option<WeightT>, String> {
+    match weight {
+        None => Ok(None),
+        Some(w) => match w.parse::<WeightT>() {
+            Ok(val) => match validate_weight(val) {
+                Ok(val) => Ok(Some(val)),
+                Err(e) => Err(e)
+            },
+            Err(_) => Err(format!("Cannot parse weight {} as a float.", w)),
+        },
+    }
+}

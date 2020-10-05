@@ -170,16 +170,19 @@ pub(crate) fn parse_weights<'a>(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>> + 'a,
     weights: &'a mut Vec<WeightT>,
 ) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
-    edges_iter.map_results(move |(src, dst, edge_type, weight)| {
-        (
-            src,
-            dst,
-            edge_type,
-            weight.map(|w| {
-                weights.push(w);
-                w
-            }),
-        )
+    edges_iter.map(move |row| match row {
+        Ok((src, dst, edge_type, weight)) => {
+            let parsed_weight = match weight {
+                Some(w) => {
+                    validate_weight(w)?;
+                    weights.push(w);
+                    Some(w)
+                }
+                None => None,
+            };
+            Ok((src, dst, edge_type, parsed_weight))
+        }
+        Err(e) => Err(e),
     })
 }
 

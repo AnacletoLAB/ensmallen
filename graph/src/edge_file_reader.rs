@@ -1,15 +1,4 @@
 use super::*;
-
-fn parse_edge_weight(weight: Option<String>) -> Result<Option<WeightT>, String> {
-    match weight {
-        None => Ok(None),
-        Some(w) => match w.parse::<WeightT>() {
-            Ok(val) => Ok(Some(val)),
-            Err(_) => Err(format!("Cannot parse weight {} as a float.", w)),
-        },
-    }
-}
-
 /// Structure that saves the reader specific to writing and reading a nodes csv file.
 ///
 /// # Attributes
@@ -414,7 +403,7 @@ impl EdgeFileReader {
             Some(idx) => {
                 let curr = vals[idx].to_owned();
                 if !curr.is_empty() {
-                    match parse_edge_weight(Some(curr)) {
+                    match parse_weight(Some(curr)) {
                         Ok(v) => Ok(v),
                         Err(e) => Err(e),
                     }
