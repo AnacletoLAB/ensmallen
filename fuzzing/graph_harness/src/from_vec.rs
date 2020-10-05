@@ -10,8 +10,7 @@ pub struct FromVecHarnessParams {
     ignore_duplicated_edges: bool,
     numeric_edge_types_ids: bool,
     numeric_node_ids: bool,
-    numeric_node_types_ids: bool,
-    cached_edges_number: EdgeT,
+    numeric_node_types_ids: bool
 }
 
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
@@ -27,8 +26,7 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
         false,
         data.numeric_edge_types_ids,
         data.numeric_node_ids,
-        data.numeric_node_types_ids,
-        data.cached_edges_number,
+        data.numeric_node_types_ids
     )?;
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.
