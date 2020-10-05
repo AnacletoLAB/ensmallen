@@ -264,7 +264,7 @@ impl Graph {
     /// Returns number of self-loops, including also those in eventual multi-edges.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The number of self-loops in the graph is  {}", graph.get_selfloops_number());
+    /// println!("The number of self-loops in the graph is  {}", graph.get_self_loop_number());
     /// ```
     pub fn get_self_loop_number(&self) -> EdgeT {
         self.self_loop_number
@@ -273,7 +273,7 @@ impl Graph {
     /// Returns rate of self-loops.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The rate of self-loops in the graph is  {}", graph.get_selfloops_rate());
+    /// println!("The rate of self-loops in the graph is  {}", graph.get_self_loop_rate());
     /// ```
     pub fn get_self_loop_rate(&self) -> f64 {
         self.get_self_loop_number() as f64 / self.get_edges_number() as f64
@@ -290,15 +290,6 @@ impl Graph {
 
     /// Returns number of connected components in graph.
     /// If the graph is or isn't a multigraph the edge types are not considered; if any edge exists, it is considered
-    ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// let n = graph.get_mean_number_of_types_for_edge();
-    /// if n > 1.0 {
-    ///     println!("The rate of connected components  in the multigraph is  {}", graph.connected_components_number());
-    /// }else{
-    ///     println!("The rate of connected components in the graph is {} ", graph.connected_components_number());
-    /// }
-    /// ```
     /// note that, for understanding whether graph is a multigraph, instead of computing the mean number of edge types in the graph (n) and checking that n>1
     /// we could directly use the function is_multigraph(&self):
     ///```rust
@@ -316,7 +307,7 @@ impl Graph {
     /// Returns number of singleton nodes within the graph.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The graph contains {} singleton nodes", graph.singleton_nodes_number());
+    /// println!("The graph contains {} singleton nodes", graph.get_singleton_nodes_number());
     /// ```
     pub fn get_singleton_nodes_number(&self) -> NodeT {
         self.get_nodes_number() - self.get_not_singleton_nodes_number()

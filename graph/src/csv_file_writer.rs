@@ -1,6 +1,6 @@
 use super::*;
 use indicatif::{ProgressIterator};
-use std::{fs::File, io::prelude::*};
+use std::{fs::File, io::BufWriter, io::prelude::*};
 
 /// Structure that saves the common parameters for reading csv files.
 ///
@@ -48,15 +48,17 @@ impl CSVFileWriter {
     ) -> Result<(), String> {
         let pb = get_loading_bar(self.verbose, "Writing to file", lines_number);
 
-        let mut file = match File::create(self.path.clone()) {
+        let file = match File::create(self.path.clone()) {
             Ok(f) => Ok(f),
             Err(_) => Err(format!("Cannot open in writing the file {}", self.path)),
         }?;
 
+        let mut stream = BufWriter::new(file);
+
         if self.header {
             let mut line = header.join(&self.separator);
             line.push('\n');
-            match file.write_all(line.as_bytes()) {
+            match stream.write(line.as_bytes()) {
                 Ok(_) => Ok(()),
                 Err(_) => {
                     Err("Cannot write the header. There might have been an I/O error.".to_string())
@@ -67,7 +69,7 @@ impl CSVFileWriter {
         for (i, value) in values.progress_with(pb).enumerate() {
             let mut line = value.join(&self.separator);
             line.push('\n');
-            match file.write_all(line.as_bytes()) {
+            match stream.write(line.as_bytes()) {
                 Ok(_) => Ok(()),
                 Err(_) => Err(format!(
                     "Cannot write the {i} line. There might have been an I/O error.",
@@ -76,7 +78,7 @@ impl CSVFileWriter {
             }?;
         }
 
-        match file.sync_all() {
+        match stream.flush() {
             Ok(_) => Ok(()),
             Err(_) => Err(
                 "Unable to close file. There might have been an I/O error.".to_string()
