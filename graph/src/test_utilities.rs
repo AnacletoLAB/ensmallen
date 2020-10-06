@@ -261,7 +261,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         graph.cooccurence_matrix(&walker, 3, verbose)?;
         graph.node2vec(&walker, 1, 3)?;
         // Testing link prediction pre-processing
-        graph.link_prediction(0, 1, Some(1.0), None, None)?;
+        graph.link_prediction(0, 1, 1.0, None)?;
     }
     // Compute metrics of the graph
     graph.report();

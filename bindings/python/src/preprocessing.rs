@@ -276,8 +276,6 @@ impl EnsmallenGraph {
     /// graph_to_avoid: EnsmallenGraph = None,
     ///     Graph to avoid when generating the links.
     ///     This can be the validation component of the graph, for example.
-    /// avoid_self_loops: bool = False,
-    ///     If the result should be filtered of self loops.
     ///
     /// Returns
     /// -----------------------------
@@ -294,7 +292,7 @@ impl EnsmallenGraph {
 
         validate_kwargs(
             kwargs,
-            ["graph_to_avoid", "negative_samples", "avoid_self_loops"]
+            ["graph_to_avoid", "negative_samples"]
                 .iter()
                 .map(|x| x.to_string())
                 .collect(),
@@ -304,12 +302,11 @@ impl EnsmallenGraph {
         let (edges, labels) = pyex!(self.graph.link_prediction(
             idx,
             batch_size,
-            extract_value!(kwargs, "negative_samples", f64),
+            extract_value!(kwargs, "negative_samples", f64).or_else(|| Some(1.0)).unwrap(),
             match &graph_to_avoid {
                 Some(g) => Some(&g.graph),
                 None => None,
-            },
-            extract_value!(kwargs, "avoid_self_loops", bool),
+            }
         ))?;
 
         Ok((

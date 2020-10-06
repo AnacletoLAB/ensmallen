@@ -201,31 +201,27 @@ impl Graph {
     ///
     /// * idx:u64 - The index of the batch to generate, behaves like a random seed,
     /// * batch_size:usize - The maximal size of the batch to generate,
-    /// * negative_samples: Option<f64> - The component of netagetive samples to use,
+    /// * negative_samples: f64 - The component of netagetive samples to use,
     /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     pub fn link_prediction(
         &self,
         idx: u64,
         batch_size: usize,
-        negative_samples: Option<f64>,
+        negative_samples: f64,
         graph_to_avoid: Option<&Graph>,
-        avoid_self_loops: Option<bool>,
     ) -> Result<(Contexts, Vec<u8>), String> {
         // xor the seed with a constant so that we have a good amount of 0s and 1s in the number
         // even with low values (this is needed becasue the seed 0 make xorshift return always 0)
         let seed = idx ^ SEED_XOR as u64;
-        // extract options
-        let _negative_samples = negative_samples.unwrap_or(1.0);
 
-        if _negative_samples < 0.0 || !_negative_samples.is_finite() {
+        if negative_samples < 0.0 || !negative_samples.is_finite() {
             return Err(String::from("Negative sample must be a posive real value."));
         }
 
-        let _avoid_self_loops = avoid_self_loops.unwrap_or(false);
         // The number of negatives is given by computing their fraction of batchsize
         let negatives_number: usize =
-            ((batch_size as f64 / (1.0 + _negative_samples)) * _negative_samples) as usize;
+            ((batch_size as f64 / (1.0 + negative_samples)) * negative_samples) as usize;
         // All the remaining values then are positives
         let positives_number: usize = batch_size - negatives_number;
 
@@ -238,7 +234,7 @@ impl Graph {
             .filter_map(|random_value| {
                 let edge_id = (random_value % edges_number) as EdgeT;
                 let (src, dst) = self.get_edge_from_edge_id(edge_id);
-                if !_avoid_self_loops || src != dst {
+                if !self.has_selfloops() || src != dst {
                     Some(vec![src, dst])
                 } else {
                     None
@@ -279,7 +275,7 @@ impl Graph {
                         }
                         // If it's a self loop and the flag is set
                         || (
-                            _avoid_self_loops && src == dst
+                            self.has_selfloops() && src == dst
                         )
                     )
                 })
