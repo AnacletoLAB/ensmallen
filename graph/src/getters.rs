@@ -92,6 +92,14 @@ impl Graph {
         self.unique_edges_number
     }
 
+    /// Return maximum encodable edge number.
+    pub fn get_max_encodable_edge_number(&self) -> EdgeT {
+        encode_max_edge(
+            self.get_nodes_number(),
+            get_node_bits(self.get_nodes_number()),
+        )
+    }
+
     /// Return the nodes mapping.
     pub fn get_nodes_mapping(&self) -> HashMap<String, NodeT> {
         self.nodes.map.clone()

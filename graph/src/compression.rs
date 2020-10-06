@@ -6,6 +6,11 @@ pub(crate) fn encode_edge(src: NodeT, dst: NodeT, node_bits: u8) -> EdgeT {
 }
 
 #[inline(always)]
+pub(crate) fn encode_max_edge(node: NodeT, node_bits: u8) -> EdgeT {
+    ((node as EdgeT) << node_bits) | node as EdgeT
+}
+
+#[inline(always)]
 pub(crate) fn decode_edge(edge: u64, node_bits: u8, node_bit_mask: u64) -> (NodeT, NodeT) {
     (
         (edge >> node_bits) as NodeT,
@@ -49,7 +54,6 @@ impl Graph {
     #[inline(always)]
     pub(crate) fn get_unique_source(&self, source_id: NodeT) -> NodeT {
         self.unique_sources
-            .unchecked_select((source_id % self.get_source_nodes_number()) as u64)
-            as NodeT
+            .unchecked_select((source_id % self.get_source_nodes_number()) as u64) as NodeT
     }
 }

@@ -327,7 +327,7 @@ pub(crate) fn build_edges(
     let node_bits = get_node_bits(nodes_number);
     let node_bit_mask = (1 << node_bits) - 1;
     let mut edges: EliasFano = EliasFano::new(
-        encode_edge(nodes_number, nodes_number, node_bits) as u64,
+        encode_max_edge(nodes_number, node_bits),
         edges_number as usize,
     )?;
     // TODO: the following data structure could be better to be a bitvector.
@@ -354,7 +354,7 @@ pub(crate) fn build_edges(
             }
         }
         last_edge_type = edge_type;
-        edges.push(encode_edge(src, dst, node_bits))?;
+        edges.push(encode_edge(src, dst, node_bits)).unwrap();
         if src == dst {
             self_loop_number += 1;
         }
@@ -367,7 +367,7 @@ pub(crate) fn build_edges(
             }
         }
         if first || last_src != src {
-            unique_sources.push(src as u64)?;
+            unique_sources.push(src as u64).unwrap();
             last_src = src;
         }
         if first || last_dst != dst {

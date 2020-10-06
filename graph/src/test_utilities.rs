@@ -205,7 +205,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     // Testing cloning
     let _ = graph.clone();
     // Testing negative edges generation
-    let negatives = graph.sample_negatives(4, graph.get_edges_number(), true, verbose)?;
+    let negatives = graph.sample_negatives(4, graph.get_edges_number(), verbose)?;
     validate_vocabularies(&negatives);
     if !graph.has_edge_types() {
         assert!(!graph.overlaps(&negatives)?);

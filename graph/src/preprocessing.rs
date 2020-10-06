@@ -4,6 +4,7 @@ use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
 use rayon::prelude::*;
+use roaring::RoaringBitmap;
 use std::collections::HashMap;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift as rand_u64;
@@ -32,18 +33,18 @@ pub fn word2vec(
     )?;
 
     // Compute the cumsums of the sequences lengths
-    let cumsum: Vec<usize> = sequences
+    let cumsum: Vec<NodeT> = sequences
         .iter()
-        .scan(0, |partial, sequence| {
-            *partial += sequence.len();
+        .scan(0, |partial: &mut NodeT, sequence| {
+            *partial += sequence.len() as NodeT;
             Some(*partial)
         })
-        .collect();
+        .collect::<Vec<NodeT>>();
     // We start by allocating the vectors to be able to execute the
     // creation of the contexts in parallel.
-    let mut centers: Vec<NodeT> = vec![0; *cumsum.last().unwrap()];
+    let mut centers: Vec<NodeT> = vec![0; *cumsum.last().unwrap() as usize];
     // We also need a vector of filters to know which of the centers to drop.
-    let mut filters: Vec<bool> = vec![false; *cumsum.last().unwrap()];
+    let mut filters: RoaringBitmap = RoaringBitmap::new();
     // We create the contexts
     let contexts: Vec<Vec<NodeT>> = sequences
         .iter()
@@ -56,11 +57,10 @@ pub fn word2vec(
                     let start = if i <= window_size { 0 } else { i - window_size };
                     let end = min!(sequence.len(), i + window_size);
                     if end - start == context_length {
-                        filters[partial_sum - i - 1] = true;
-                        centers[partial_sum - i - 1] = *word;
+                        filters.insert(partial_sum - i as NodeT - 1);
+                        centers[*partial_sum as usize - i - 1] = *word;
                         Some(sequence[start..end].to_vec())
                     } else {
-                        filters[partial_sum - i - 1] = false;
                         None
                     }
                 })
@@ -71,9 +71,12 @@ pub fn word2vec(
     // And finally we filter out the centers relative to the paddings.
     let centers: Vec<NodeT> = centers
         .par_iter()
-        .zip(filters.par_iter())
-        .filter_map(|(center, filter)| if *filter { Some(*center) } else { None })
-        .collect();
+        .enumerate()
+        .filter_map(|(i, center)| match filters.contains(i as NodeT) {
+            true => None,
+            false => Some(*center),
+        })
+        .collect::<Vec<NodeT>>();
 
     Ok((contexts, centers))
 }
