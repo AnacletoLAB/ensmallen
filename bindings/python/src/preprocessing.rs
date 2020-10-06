@@ -29,7 +29,7 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 /// window_size: int,
 ///     Window size to consider for the sequences.
 ///
-fn word2vec(sequences: Vec<Vec<usize>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
+fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
     let (contexts, words) = pyex!(rust_word2vec(sequences, window_size))?;
     let gil = pyo3::Python::acquire_gil();
     Ok((
@@ -57,7 +57,7 @@ fn word2vec(sequences: Vec<Vec<usize>>, window_size: usize) -> PyResult<(PyConte
 ///     The default behaviour is false.
 ///     
 fn cooccurence_matrix(
-    sequences: Vec<Vec<usize>>,
+    sequences: Vec<Vec<NodeT>>,
     py_kwargs: Option<&PyDict>,
 ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
     let gil = pyo3::Python::acquire_gil();
@@ -71,8 +71,12 @@ fn cooccurence_matrix(
     )?;
     let (words, contexts, frequencies) = pyex!(rust_cooccurence_matrix(
         sequences,
-        extract_value!(kwargs, "window_size", usize),
-        extract_value!(kwargs, "verbose", bool),
+        extract_value!(kwargs, "window_size", usize)
+            .or_else(|| Some(3))
+            .unwrap(),
+        extract_value!(kwargs, "verbose", bool)
+            .or_else(|| Some(true))
+            .unwrap()
     ))?;
 
     Ok((
@@ -139,7 +143,7 @@ impl EnsmallenGraph {
     ///
     fn cooccurence_matrix(
         &self,
-        length: usize,
+        length: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
         let gil = pyo3::Python::acquire_gil();
@@ -154,8 +158,12 @@ impl EnsmallenGraph {
 
         let (words, contexts, frequencies) = pyex!(self.graph.cooccurence_matrix(
             &parameters,
-            extract_value!(kwargs, "window_size", usize),
-            extract_value!(kwargs, "verbose", bool),
+            extract_value!(kwargs, "window_size", usize)
+                .or_else(|| Some(3))
+                .unwrap(),
+            extract_value!(kwargs, "verbose", bool)
+                .or_else(|| Some(true))
+                .unwrap()
         ))?;
 
         Ok((
@@ -232,8 +240,8 @@ impl EnsmallenGraph {
     /// Tuple with vector of integer with contexts and words.
     fn node2vec(
         &self,
-        batch_size: usize,
-        length: usize,
+        batch_size: NodeT,
+        length: NodeT,
         window_size: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyContexts, PyWords)> {
@@ -268,8 +276,6 @@ impl EnsmallenGraph {
     /// graph_to_avoid: EnsmallenGraph = None,
     ///     Graph to avoid when generating the links.
     ///     This can be the validation component of the graph, for example.
-    /// avoid_self_loops: bool = False,
-    ///     If the result should be filtered of self loops.
     ///
     /// Returns
     /// -----------------------------
@@ -286,7 +292,7 @@ impl EnsmallenGraph {
 
         validate_kwargs(
             kwargs,
-            ["graph_to_avoid", "negative_samples", "avoid_self_loops"]
+            ["graph_to_avoid", "negative_samples"]
                 .iter()
                 .map(|x| x.to_string())
                 .collect(),
@@ -296,12 +302,11 @@ impl EnsmallenGraph {
         let (edges, labels) = pyex!(self.graph.link_prediction(
             idx,
             batch_size,
-            extract_value!(kwargs, "negative_samples", f64),
+            extract_value!(kwargs, "negative_samples", f64).or_else(|| Some(1.0)).unwrap(),
             match &graph_to_avoid {
                 Some(g) => Some(&g.graph),
                 None => None,
-            },
-            extract_value!(kwargs, "avoid_self_loops", bool),
+            }
         ))?;
 
         Ok((

@@ -3,8 +3,8 @@ name = "graph"
 version = "0.1.0"
 authors = [
     "LucaCappelletti94 <cappelletti.luca94@gmail.com>",
-    "Tommaso Fontana <tommaso.fontana.96@gmail.com>"    
-]
+    "Tommaso Fontana <tommaso.fontana.96@gmail.com>"   
+] 
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -25,10 +25,14 @@ itertools = "0.9.0"
 permutation = "0.2.5"
 counter = "0.5.2"
 derive-getters = "0.1.0"
+bitvec = "0.19"
 glob = "0.3.0"
+linked_hash_set = "0.1.4"
+roaring = "0.6.1"
 indicatif = {version = "0.15.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
+elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "rsdict_based"}
 
 [build]
 rustflags = ["-C target-cpu=native", "-C target-feature=-crt-static"]

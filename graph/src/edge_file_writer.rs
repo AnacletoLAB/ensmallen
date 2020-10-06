@@ -13,6 +13,8 @@ pub struct EdgeFileWriter {
     pub(crate) edge_types_column_number: usize,
     pub(crate) weights_column: String,
     pub(crate) weights_column_number: usize,
+    pub(crate) numeric_node_ids: bool,
+    pub(crate) directed: Option<bool>
 }
 
 impl EdgeFileWriter {
@@ -33,6 +35,8 @@ impl EdgeFileWriter {
             edge_types_column_number: 2,
             weights_column: "weight".to_string(),
             weights_column_number: 3,
+            numeric_node_ids: false,
+            directed: None
         }
     }
 
@@ -168,6 +172,19 @@ impl EdgeFileWriter {
         self
     }
 
+    /// Set the numeric_id.
+    ///
+    /// # Arguments
+    ///
+    /// * numeric_id: Option<bool> - Wethever to convert numeric Ids to Node Id.
+    ///
+    pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileWriter {
+        if let Some(nni) = numeric_node_ids {
+            self.numeric_node_ids = nni;
+        }
+        self
+    }
+
     /// Set the separator.
     ///
     /// # Arguments
@@ -194,12 +211,24 @@ impl EdgeFileWriter {
         self
     }
 
+    /// Set the directed.
+    ///
+    /// # Arguments
+    ///
+    /// * directed: Option<bool> - Wethever to write out the graph as directed or not.
+    ///
+    pub fn set_directed(mut self, directed: Option<bool>) -> EdgeFileWriter {
+        self.directed = directed;
+        self
+    }
+
     /// Write edge file.
     ///  
     /// # Arguments
     ///
     /// * `graph`: &Graph - the graph to write out.
     pub fn dump(&self, graph: &Graph) -> Result<(), String> {
+        let directed: bool = self.directed.unwrap_or_else(|| graph.is_directed());
         // build the header
         let mut header = vec![
             (self.sources_column.clone(), self.sources_column_number),
@@ -223,35 +252,38 @@ impl EdgeFileWriter {
         let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
 
         self.writer.write_lines(
-            graph.get_edges_number() as u64,
+            graph.get_edges_number() as usize,
             compose_lines(number_of_columns, header),
-            (0..graph.get_edges_number())
-                .map(
-                    |index| (index, graph.sources[index], graph.destinations[index]), // filter away duplicated edges if the graph
-                                                                                      // is undirected
-                )
-                .filter(|(_, src, dst)| graph.is_directed || src <= dst)
-                .map(|(index, src, dst)| {
+            graph
+                .get_edges_quadruples()
+                .filter(|(_, src, dst, _, _)| directed || src <= dst)
+                .map(|(_, src, dst, edge_type, weight)| {
                     let mut line = vec![
                         (
-                            graph.nodes.translate(src).to_string(),
+                            match self.numeric_node_ids {
+                                true => src.to_string(),
+                                false => graph.nodes.translate(src).to_string(),
+                            },
                             self.sources_column_number,
                         ),
                         (
-                            graph.nodes.translate(dst).to_string(),
+                            match self.numeric_node_ids {
+                                true => dst.to_string(),
+                                false => graph.nodes.translate(dst).to_string(),
+                            },
                             self.destinations_column_number,
                         ),
                     ];
 
                     if let Some(ets) = &graph.edge_types {
                         line.push((
-                            ets.translate(ets.ids[index]).to_string(),
+                            ets.translate(edge_type.unwrap()).to_string(),
                             self.edge_types_column_number,
                         ));
                     }
 
-                    if let Some(w) = &graph.weights {
-                        line.push((w[index].to_string(), self.weights_column_number));
+                    if let Some(w) = weight {
+                        line.push((w.to_string(), self.weights_column_number));
                     }
 
                     compose_lines(number_of_columns, line)

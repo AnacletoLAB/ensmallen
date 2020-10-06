@@ -1,5 +1,5 @@
 use super::*;
-use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
+use indicatif::{ProgressIterator};
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
@@ -24,62 +24,27 @@ use vec_rand::xorshift::xorshift as rand_u64;
 /// * window_size: usize - Window size to consider for the sequences.
 ///
 pub fn word2vec(
-    sequences: Vec<Vec<usize>>,
+    sequences: Vec<Vec<NodeT>>,
     window_size: usize,
-) -> Result<(Vec<Vec<usize>>, Vec<usize>), String> {
+) -> Result<(Vec<Vec<NodeT>>, Vec<NodeT>), String> {
     let context_length = window_size.checked_mul(2).ok_or(
         "The given window size is too big, using this would result in an overflowing of a u64.",
     )?;
 
-    // Compute the cumsums of the sequences lengths
-    let cumsum: Vec<usize> = sequences
+    Ok(sequences
         .iter()
-        .scan(0, |partial, sequence| {
-            *partial += sequence.len();
-            Some(*partial)
+        .flat_map(|sequence| {
+            sequence.iter().enumerate().filter_map(move |(i, word)| {
+                let start = if i <= window_size { 0 } else { i - window_size };
+                let end = min!(sequence.len(), i + window_size);
+                if end - start == context_length {
+                    Some((sequence[start..end].to_vec(), *word))
+                } else {
+                    None
+                }
+            })
         })
-        .collect();
-    // We start by allocating the vectors to be able to execute the
-    // creation of the contexts in parallel.
-    let mut centers: Vec<usize> = vec![0; *cumsum.last().unwrap()];
-    // We also need a vector of filters to know which of the centers to drop.
-    let mut filters: Vec<bool> = vec![false; *cumsum.last().unwrap()];
-    // We create the contexts
-    let contexts: Vec<Vec<usize>> = sequences
-        .iter()
-        .zip(cumsum.iter())
-        .flat_map(|(sequence, partial_sum)| {
-            sequence
-                .iter()
-                .enumerate()
-                .filter_map(|(i, word)| {
-                    let start = if i <= window_size {
-                        0
-                    } else {
-                        i - window_size
-                    };
-                    let end = min!(sequence.len(), i + window_size);
-                    if end - start == context_length {
-                        filters[partial_sum - i - 1] = true;
-                        centers[partial_sum - i - 1] = *word;
-                        Some(sequence[start..end].to_vec())
-                    } else {
-                        filters[partial_sum - i - 1] = false;
-                        None
-                    }
-                })
-                .collect::<Vec<Vec<usize>>>()
-        })
-        .collect();
-
-    // And finally we filter out the centers relative to the paddings.
-    let centers: Vec<usize> = centers
-        .par_iter()
-        .zip(filters.par_iter())
-        .filter_map(|(center, filter)| if *filter { Some(*center) } else { None })
-        .collect();
-
-    Ok((contexts, centers))
+        .unzip())
 }
 
 /// Return triple with CSR representation of cooccurrence matrix.
@@ -96,41 +61,29 @@ pub fn word2vec(
 ///     The default behaviour is false.
 ///     
 pub fn cooccurence_matrix(
-    sequences: Vec<Vec<usize>>,
-    window_size: Option<usize>,
-    verbose: Option<bool>,
+    sequences: Vec<Vec<NodeT>>,
+    window_size: usize,
+    verbose: bool,
 ) -> Result<(Words, Words, Frequencies), String> {
-    let _verbose = verbose.unwrap_or(false);
-    let _window_size = window_size.unwrap_or(4);
-
     let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
-    let pb1 = if _verbose {
-        let pb1 = ProgressBar::new(sequences.len() as u64);
-        pb1.set_style(ProgressStyle::default_bar().template(
-            "Computing cooccurrence mapping {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-        ));
-        pb1.set_draw_delta(sequences.len() as u64 / 100);
-        pb1
-    } else {
-        ProgressBar::hidden()
-    };
+    let pb1 = get_loading_bar(verbose, "Computing frequencies", sequences.len());
 
     for i in (0..sequences.len()).progress_with(pb1) {
         let walk = &sequences[i];
         let walk_length = walk.len();
         for (central_index, &central_word_id) in walk.iter().enumerate() {
-            for distance in 1..1 + _window_size {
+            for distance in 1..1 + window_size {
                 if central_index + distance >= walk_length {
                     break;
                 }
                 let context_id = walk[central_index + distance];
                 if central_word_id < context_id {
                     *cooccurence_matrix
-                        .entry((central_word_id, context_id))
+                        .entry((central_word_id as NodeT, context_id as NodeT))
                         .or_insert(0.0) += 1.0 / distance as f64;
                 } else {
                     *cooccurence_matrix
-                        .entry((context_id, central_word_id))
+                        .entry((context_id as NodeT, central_word_id as NodeT))
                         .or_insert(0.0) += 1.0 / distance as f64;
                 }
             }
@@ -142,16 +95,11 @@ pub fn cooccurence_matrix(
     let mut words: Vec<NodeT> = vec![0; elements];
     let mut contexts: Vec<NodeT> = vec![0; elements];
     let mut frequencies: Vec<f64> = vec![0.0; elements];
-    let pb2 = if _verbose {
-        let pb2 = ProgressBar::new(cooccurence_matrix.len() as u64);
-        pb2.set_style(ProgressStyle::default_bar().template(
-            "Converting mapping into CSR matrix {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-        ));
-        pb2.set_draw_delta(cooccurence_matrix.len() as u64 / 100);
-        pb2
-    } else {
-        ProgressBar::hidden()
-    };
+    let pb2 = get_loading_bar(
+        verbose,
+        "Converting mapping into CSR matrix",
+        cooccurence_matrix.len(),
+    );
 
     cooccurence_matrix
         .iter()
@@ -198,7 +146,7 @@ impl Graph {
     pub fn node2vec(
         &self,
         walk_parameters: &WalksParameters,
-        quantity: usize,
+        quantity: NodeT,
         window_size: usize,
     ) -> Result<(Contexts, Words), String> {
         // do the walks and check the result
@@ -231,8 +179,8 @@ impl Graph {
     pub fn cooccurence_matrix(
         &self,
         walks_parameters: &WalksParameters,
-        window_size: Option<usize>,
-        verbose: Option<bool>,
+        window_size: usize,
+        verbose: bool,
     ) -> Result<(Words, Words, Frequencies), String> {
         let walks = self.complete_walks(walks_parameters)?;
 
@@ -253,43 +201,45 @@ impl Graph {
     ///
     /// * idx:u64 - The index of the batch to generate, behaves like a random seed,
     /// * batch_size:usize - The maximal size of the batch to generate,
-    /// * negative_samples: Option<f64> - The component of netagetive samples to use,
+    /// * negative_samples: f64 - The component of netagetive samples to use,
     /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     pub fn link_prediction(
         &self,
         idx: u64,
         batch_size: usize,
-        negative_samples: Option<f64>,
+        negative_samples: f64,
         graph_to_avoid: Option<&Graph>,
-        avoid_self_loops: Option<bool>,
     ) -> Result<(Contexts, Vec<u8>), String> {
         // xor the seed with a constant so that we have a good amount of 0s and 1s in the number
         // even with low values (this is needed becasue the seed 0 make xorshift return always 0)
         let seed = idx ^ SEED_XOR as u64;
-        // extract options
-        let _negative_samples = negative_samples.unwrap_or(1.0);
 
-        if _negative_samples < 0.0 || !_negative_samples.is_finite() {
+        if negative_samples < 0.0 || !negative_samples.is_finite() {
             return Err(String::from("Negative sample must be a posive real value."));
         }
 
-        let _avoid_self_loops = avoid_self_loops.unwrap_or(false);
         // The number of negatives is given by computing their fraction of batchsize
         let negatives_number: usize =
-            ((batch_size as f64 / (1.0 + _negative_samples)) * _negative_samples) as usize;
+            ((batch_size as f64 / (1.0 + negative_samples)) * negative_samples) as usize;
         // All the remaining values then are positives
         let positives_number: usize = batch_size - negatives_number;
 
         let edges_number = self.get_edges_number() as u64;
+        let nodes_number = self.get_nodes_number() as u64;
         // generate a random vec of u64s and use them as indices
         let positives: Vec<Vec<NodeT>> = gen_random_vec(positives_number, seed)
             .into_par_iter()
             // to extract the random edges
-            .map(|random_value| (random_value % edges_number) as EdgeT)
-            .map(|edge| vec![self.sources[edge], self.destinations[edge]])
-            // filter away the self_loops if the flag is set
-            .filter(|edge| !_avoid_self_loops || edge[0] != edge[1])
+            .filter_map(|random_value| {
+                let edge_id = (random_value % edges_number) as EdgeT;
+                let (src, dst) = self.get_edge_from_edge_id(edge_id);
+                if !self.has_selfloops() || src != dst {
+                    Some(vec![src, dst])
+                } else {
+                    None
+                }
+            })
             .collect();
 
         // generate the negatives
@@ -308,24 +258,24 @@ impl Graph {
                 // convert them to plain (src, dst)
                 .map(|(random_src, random_dst)| {
                     (
-                        self.sources[(random_src % edges_number) as EdgeT],
-                        self.destinations[(random_dst % edges_number) as EdgeT],
+                        (random_src % nodes_number) as NodeT,
+                        (random_dst % nodes_number) as NodeT,
                     )
                 })
                 // filter away the negatives that are:
                 .filter(|(src, dst)| {
                     !(
                         // false negatives or
-                        self.has_edge(*src, *dst)
+                        self.has_edge(*src, *dst, None)
                         // are in the graph to avoid
                         || if let Some(g) = &graph_to_avoid {
-                            g.has_edge(*src, *dst)
+                            g.has_edge(*src, *dst, None)
                         } else {
                             false
                         }
                         // If it's a self loop and the flag is set
                         || (
-                            _avoid_self_loops && src == dst
+                            self.has_selfloops() && src == dst
                         )
                     )
                 })

@@ -43,7 +43,7 @@ impl EnsmallenGraph {
         )?;
 
         let (g1, g2) = pyex!(self.graph.connected_holdout(
-            extract_value!(kwargs, "seed", usize)
+            extract_value!(kwargs, "seed", EdgeT)
                 .or_else(|| Some(42))
                 .unwrap(),
             train_percentage,
@@ -168,7 +168,7 @@ impl EnsmallenGraph {
         )?;
 
         let (g1, g2) = pyex!(self.graph.random_holdout(
-            extract_value!(kwargs, "seed", usize)
+            extract_value!(kwargs, "seed", EdgeT)
                 .or_else(|| Some(42))
                 .unwrap(),
             train_percentage,
@@ -176,7 +176,7 @@ impl EnsmallenGraph {
                 .or_else(|| Some(true))
                 .unwrap(),
             extract_value!(kwargs, "edge_types", Vec<String>),
-            extract_value!(kwargs, "min_number_overlaps", usize),
+            extract_value!(kwargs, "min_number_overlaps", EdgeT),
             extract_value!(kwargs, "verbose", bool)
                 .or_else(|| Some(true))
                 .unwrap()
@@ -199,10 +199,6 @@ impl EnsmallenGraph {
     ///     The number of negative edges to use.
     /// seed: int = 42,
     ///     The seed to use to generate the holdout.
-    /// allow_selfloops: bool = None,
-    ///     Wethever to allow creation of self-loops.
-    ///     If None (default value) is provided, self-loops are created only
-    ///     if they are present in the original graph.
     /// verbose: bool = True,
     ///     Wethever to show the loading bar.
     ///     The loading bar will only be visible in console.
@@ -229,13 +225,10 @@ impl EnsmallenGraph {
 
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.sample_negatives(
-                extract_value!(kwargs, "seed", usize)
+                extract_value!(kwargs, "seed", EdgeT)
                     .or_else(|| Some(42))
                     .unwrap(),
                 negatives_number,
-                extract_value!(kwargs, "allow_selfloops", bool)
-                    .or_else(|| Some(self.graph.has_selfloops()))
-                    .unwrap(),
                 extract_value!(kwargs, "verbose", bool)
                     .or_else(|| Some(true))
                     .unwrap()

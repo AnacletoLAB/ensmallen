@@ -11,6 +11,7 @@ use std::{fs::File, io::prelude::*, io::BufReader};
 /// * rows_to_skip: usize - When reading, how many lines to skip before starting to read the file.
 /// * ignore_duplicates: bool -if the program should raise an exception or not when the file contains duplicated edges / nodes.
 /// * max_rows_number: Option<u64> -if the program should stop reading after a certain number of rows.
+#[derive(Clone)]
 pub struct CSVFileReader {
     pub(crate) path: String,
     pub(crate) verbose: bool,
@@ -18,7 +19,7 @@ pub struct CSVFileReader {
     pub(crate) header: bool,
     pub(crate) rows_to_skip: usize,
     pub(crate) ignore_duplicates: bool,
-    pub(crate) max_rows_number: Option<u64>
+    pub(crate) max_rows_number: Option<u64>,
 }
 
 /// # Builder methods
@@ -39,7 +40,7 @@ impl CSVFileReader {
                 header: true,
                 rows_to_skip: 0,
                 ignore_duplicates: true,
-                max_rows_number: None
+                max_rows_number: None,
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
         }
@@ -105,7 +106,7 @@ impl CSVFileReader {
                     "This overflow was caused because rows to skip = 2**64 - 1",
                     "and header is setted to true which causes to skip one extra line.",
                     "Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad."
-                ))
+                )),
             }?;
             if number_of_rows < rows_to_skip {
                 return Err(format!(
@@ -113,8 +114,7 @@ impl CSVFileReader {
                         "The given file has {} lines but it was asked to skip",
                         "{} rows. This is not possible."
                     ),
-                    number_of_rows,
-                    rows_to_skip
+                    number_of_rows, rows_to_skip
                 ));
             }
 
@@ -131,8 +131,8 @@ impl CSVFileReader {
         // we copy the value so that it can be moved inside the closure
         // because without this hack there would be a lifetime problem
         // because the iterator might live more than the self of csv file reader
-        let max_rows_number_cloned =  self.max_rows_number;
-        
+        let max_rows_number_cloned = self.max_rows_number;
+
         let number_of_elements_per_line = self.get_elements_per_line()?;
         Ok(BufReader::new(File::open(&self.path).unwrap())
             .lines()

@@ -1,4 +1,5 @@
 use super::*;
+use log::info;
 use rand::Rng;
 use std::fs;
 use std::path::Path;
@@ -88,12 +89,12 @@ pub fn load_ppi(
         .set_default_weight(Some(5.0))
         .set_skip_self_loops(Some(skip_self_loops));
 
-    Graph::from_csv(edges_reader, nodes_reader, directed)
+    Graph::from_unsorted_csv(edges_reader, nodes_reader, directed)
 }
 
 /// Return WalksParameters to execute a first order walk.
 pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
-    Ok(WalksParameters::new(50)?
+    Ok(WalksParameters::new(10)?
         .set_iterations(Some(1))?
         .set_min_length(Some(1))?
         .set_verbose(Some(verbose))
@@ -103,7 +104,7 @@ pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameter
 
 /// Return WalksParameters to execute a second order walk.
 pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
-    Ok(WalksParameters::new(50)?
+    Ok(WalksParameters::new(10)?
         .set_iterations(Some(1))?
         .set_min_length(Some(1))?
         .set_verbose(Some(verbose))
@@ -147,7 +148,6 @@ pub fn default_holdout_test_suite(
     assert!(summed.contains(&graph)?);
     let subtracted = (graph - test)?;
     validate_vocabularies(&subtracted);
-
     assert!(subtracted.contains(&train)?);
     assert!(!subtracted.overlaps(&test)?);
     let xorred = (graph ^ test)?;
@@ -166,37 +166,46 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     validate_vocabularies(graph);
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph, verbose)?;
-    assert_eq!(
-        graph.random_walks(100, &walker)?,
-        graph.random_walks(100, &walker)?
-    );
+    if !graph.directed {
+        info!("Executing random walks.");
+        assert_eq!(
+            graph.random_walks(1, &walker)?,
+            graph.random_walks(1, &walker)?
+        );
 
-    assert_eq!(
-        graph.random_walks(100, &second_order_walker(&graph, verbose)?)?,
-        graph.random_walks(100, &second_order_walker(&graph, verbose)?)?
-    );
+        assert_eq!(
+            graph.random_walks(1, &second_order_walker(&graph, verbose)?)?,
+            graph.random_walks(1, &second_order_walker(&graph, verbose)?)?
+        );
 
-    assert_eq!(
-        graph.complete_walks(&walker)?,
-        graph.complete_walks(&walker)?
-    );
-    assert_eq!(
-        graph.complete_walks(&second_order_walker(&graph, verbose)?)?,
-        graph.complete_walks(&second_order_walker(&graph, verbose)?)?
-    );
+        assert_eq!(
+            graph.complete_walks(&walker)?,
+            graph.complete_walks(&walker)?
+        );
+
+        assert_eq!(
+            graph.complete_walks(&second_order_walker(&graph, verbose)?)?,
+            graph.complete_walks(&second_order_walker(&graph, verbose)?)?
+        );
+    }
 
     // Testing main holdout mechanisms
     for include_all_edge_types in &[false, true] {
-        let (train, test) = graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
+        let (train, test) =
+            graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) = graph.connected_holdout(4, 0.8, *include_all_edge_types, verbose)?;
-        assert_eq!(graph.connected_components_number(), train.connected_components_number());
+        assert_eq!(
+            graph.connected_components_number(),
+            train.connected_components_number()
+        );
+
         default_holdout_test_suite(graph, &train, &test)?;
     }
     // Testing cloning
     let _ = graph.clone();
     // Testing negative edges generation
-    let negatives = graph.sample_negatives(4, graph.get_edges_number(), true, verbose)?;
+    let negatives = graph.sample_negatives(4, graph.get_edges_number(), verbose)?;
     validate_vocabularies(&negatives);
     if !graph.has_edge_types() {
         assert!(!graph.overlaps(&negatives)?);
@@ -206,22 +215,16 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     let (neg_train, neg_test) = negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
     default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
     // Testing subgraph generation
-    let expected_nodes = (graph.get_nodes_number() - graph.singleton_nodes_number()) / 10;
+    let expected_nodes = graph.get_not_singleton_nodes_number() / 10;
     let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
-    assert!(subgraph.get_nodes_number() - subgraph.singleton_nodes_number() <= expected_nodes + 1);
+    assert!(subgraph.get_not_singleton_nodes_number() <= expected_nodes + 1);
     // Testing edge-type based subgraph
     if let Some(ets) = &graph.edge_types {
-        let edge_type = ets.translate(graph.get_edge_type_id(0)?);
+        let edge_type = ets.translate(graph.get_edge_type(0)?);
         let edge_type_subgraph = graph.edge_types_subgraph(vec![edge_type.to_string()], verbose);
         assert_eq!(edge_type_subgraph.is_ok(), graph.has_edge_types());
     }
-
-    let wrong_edge_type_subgraph = graph.edge_types_subgraph(vec![], verbose);
-    assert!(wrong_edge_type_subgraph.is_err());
-
-    let wrong_edge_type_subgraph = graph.edge_types_subgraph(vec!["missing".to_string()], verbose);
-    assert!(wrong_edge_type_subgraph.is_err());
 
     // Testing writing out graph to file
     let node_file = random_path();
@@ -249,14 +252,17 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         .set_sources_column_number(Some(0))
         .set_destinations_column(Some("The land of pizza".to_string()))
         .set_destinations_column_number(Some(1));
+
     edges_writer.dump(&graph)?;
     fs::remove_file(edges_file).unwrap();
 
-    // Testing SkipGram / CBOW / GloVe preprocessing
-    graph.cooccurence_matrix(&walker, Some(3), Some(verbose))?;
-    graph.node2vec(&walker, 100, 3)?;
-    // Testing link prediction pre-processing
-    graph.link_prediction(0, 16, Some(1.0), None, None)?;
+    if !graph.directed {
+        // Testing SkipGram / CBOW / GloVe preprocessing
+        graph.cooccurence_matrix(&walker, 3, verbose)?;
+        graph.node2vec(&walker, 1, 3)?;
+        // Testing link prediction pre-processing
+        graph.link_prediction(0, 1, 1.0, None)?;
+    }
     // Compute metrics of the graph
     graph.report();
     // Compute degrees metrics
@@ -270,24 +276,20 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     }
     // Testing the top Ks
     if graph.has_node_types() {
-        graph.get_node_type_id(0)?;
+        graph.get_node_type(0)?;
 
-        assert!(graph
-            .get_node_type_id(graph.get_nodes_number() + 1)
-            .is_err());
+        assert!(graph.get_node_type(graph.get_nodes_number() + 1).is_err());
     }
     if graph.has_edge_types() {
-        graph.get_edge_type_id(0)?;
+        graph.get_edge_type(0)?;
 
-        assert!(graph
-            .get_edge_type_id(graph.get_edges_number() + 1)
-            .is_err());
+        assert!(graph.get_edge_type(graph.get_edges_number() + 1).is_err());
     }
-    // Evaluate get_node_type_id
-    assert_eq!(graph.get_node_type_id(0).is_ok(), graph.has_node_types());
+    // Evaluate get_node_type
+    assert_eq!(graph.get_node_type(0).is_ok(), graph.has_node_types());
 
-    // Evaluate get_edge_type_id
-    assert_eq!(graph.get_edge_type_id(0).is_ok(), graph.has_edge_types());
+    // Evaluate get_edge_type
+    assert_eq!(graph.get_edge_type(0).is_ok(), graph.has_edge_types());
 
     // Evaluate get_node_type_counts
     assert_eq!(graph.get_node_type_counts().is_ok(), graph.has_node_types());
@@ -295,7 +297,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     // Evaluate get_edge_type_counts
     assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
 
-    // test drops
+    //test drops
     {
         let without_edges = graph.drop_edge_types();
         assert_eq!(without_edges.is_ok(), graph.has_edge_types());
@@ -304,13 +306,20 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(we.has_edge_types(), false);
             assert_eq!(we.has_weights(), graph.has_weights());
             assert!(we.node_types == graph.node_types);
-            assert_eq!(we.get_selfloops_number(), graph.get_selfloops_number());
-            assert_eq!(we.has_traps, graph.has_traps);
+            assert_eq!(
+                we.get_unique_edges_number(),
+                graph.get_unique_edges_number()
+            );
+            assert_eq!(
+                we.get_unique_self_loop_number(),
+                graph.get_unique_self_loop_number()
+            );
+            assert_eq!(we.has_traps(), graph.has_traps());
             assert_eq!(we.nodes, graph.nodes);
 
             // expect errors for undefined behavior in overlap() and contains()
-            assert!(graph.overlaps(&we).is_err());
-            assert!(graph.contains(&we).is_err());
+            assert!(!graph.overlaps(&we)?);
+            assert!(!graph.contains(&we)?);
         }
     }
     {
@@ -322,10 +331,9 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert!(wn.edge_types == graph.edge_types);
             assert_eq!(wn.weights, graph.weights);
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
-            assert_eq!(wn.has_traps, graph.has_traps);
+            assert_eq!(wn.has_traps(), graph.has_traps());
             assert_eq!(wn.nodes, graph.nodes);
-            assert_eq!(wn.sources, graph.sources);
-            assert_eq!(wn.destinations, graph.destinations);
+            assert_eq!(wn.edges, graph.edges);
         }
     }
     {
@@ -337,17 +345,11 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert!(ww.node_types == graph.node_types);
             assert!(ww.edge_types == graph.edge_types);
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
-            assert_eq!(ww.has_traps, graph.has_traps);
+            assert_eq!(ww.has_traps(), graph.has_traps());
             assert_eq!(ww.nodes, graph.nodes);
-            assert_eq!(ww.sources, graph.sources);
-            assert_eq!(ww.destinations, graph.destinations);
+            assert_eq!(ww.edges, graph.edges);
         }
     }
-
-    assert_eq!(
-        graph.get_not_trap_nodes_number(),
-        graph.not_trap_nodes.len()
-    );
 
     Ok(())
 }

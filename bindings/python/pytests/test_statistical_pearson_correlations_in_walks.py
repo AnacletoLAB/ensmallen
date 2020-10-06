@@ -171,7 +171,7 @@ def test_change_node_type_weight_behaviour_hpo():
             type_changes = 0
             previous_node_type = -1
             for node_id in walk:
-                node_type_id = graph.get_node_type_id(node_id)
+                node_type_id = graph.get_node_type(node_id)
                 if previous_node_type != node_type_id:
                     type_changes += 1
                     previous_node_type = node_type_id

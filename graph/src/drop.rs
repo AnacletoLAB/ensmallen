@@ -10,33 +10,25 @@ impl Graph {
             return Err("Cannot drop edge types from a graph without edge types".to_string());
         }
 
-        let mut unique_edges_tree =  GraphDictionary::new();
-
-        self.unique_edges.keys().for_each(
-            |(src, dst)| {
-                if !self.is_directed && src > dst {
-                    return;
-                }
-                let weight = if let Some(w) = &self.weights {
-                    let edge_ids = self.get_edge_ids(*src, *dst).unwrap();
-                    Some(edge_ids.iter().map(|edge_id|{
-                        w[*edge_id]
-                    }).sum::<f64>() / edge_ids.len() as f64)
-                } else {
-                    None
-                };
-
-                unique_edges_tree.extend(self, *src, *dst, None, weight, false);
-            }  
-        );
-
-        Ok(build_graph(
-            &mut unique_edges_tree,
+        Graph::build_graph(
+            self.get_unique_edges_iter().map(|(src, dst)| {
+                Ok((
+                    src,
+                    dst,
+                    None,
+                    match self.get_unchecked_link_weights(src, dst) {
+                        Some(ws) => Some(ws.iter().sum::<f64>() / ws.len() as f64),
+                        None => None,
+                    },
+                ))
+            }),
+            self.unique_edges_number,
             self.nodes.clone(),
             self.node_types.clone(),
             None,
-            self.is_directed,
-        ))
+            self.directed,
+            false,
+        )
     }
 
     /// Returns a **NEW** Graph that have no weights.

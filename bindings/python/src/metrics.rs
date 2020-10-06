@@ -13,14 +13,14 @@ impl EnsmallenGraph {
 
     #[text_signature = "($self)"]
     /// Returns number of self-loops.
-    pub fn get_selfloops_number(&self) -> usize {
-        self.graph.get_selfloops_number()
+    pub fn get_selfloops_number(&self) -> EdgeT {
+        self.graph.get_self_loop_number()
     }
 
     #[text_signature = "($self)"]
     /// Returns ratio of self-loops.
     pub fn get_selfloops_rate(&self) -> f64 {
-        self.graph.get_selfloops_rate()
+        self.graph.get_self_loop_rate()
     }
 
     #[text_signature = "($self)"]
@@ -70,7 +70,7 @@ impl EnsmallenGraph {
     /// degrees product for the two given nodes.
     ///
     fn degree(&self, node: NodeT) -> NodeT {
-        self.graph.degree(node)
+        self.graph.get_node_degree(node)
     }
 
     #[text_signature = "($self)"]
@@ -81,7 +81,7 @@ impl EnsmallenGraph {
     /// Numpy array with all the degrees of the graph.
     ///
     fn degrees(&self) -> PyResult<Py<PyArray1<EdgeT>>> {
-        let degrees = self.graph.degrees();
+        let degrees = self.graph.get_node_degrees();
         let gil = pyo3::Python::acquire_gil();
         Ok(to_nparray_1d!(gil, degrees, EdgeT))
     }
@@ -165,23 +165,5 @@ impl EnsmallenGraph {
     ///
     fn traps_rate(&self) -> f64 {
         self.graph.traps_rate()
-    }
-
-    #[text_signature = "(self)"]
-    /// Returns the ratio of edges that have multiple types.
-    fn get_multigraph_edges_ratio(&self) -> f64 {
-        self.graph.get_multigraph_edges_ratio()
-    }
-
-    #[text_signature = "(self)"]
-    /// Returns the number of edges that have multiple types.
-    fn get_multigraph_edges_number(&self) -> usize {
-        self.graph.get_multigraph_edges_number()
-    }
-
-    #[text_signature = "(self)"]
-    /// Returns the mean number of types for each edge.
-    fn get_mean_number_of_types_for_edge(&self) -> f64 {
-        self.graph.get_mean_number_of_types_for_edge()
     }
 }
