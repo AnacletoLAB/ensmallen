@@ -31,12 +31,8 @@ pub fn word2vec(
         "The given window size is too big, using this would result in an overflowing of a u64.",
     )?;
 
-    // We start by allocating the vectors to be able to execute the
-    // creation of the contexts in parallel.
-    let mut centers: Vec<NodeT> = Vec::new(); //vec![0; *cumsum.last().unwrap() as usize];
-                                              // We create the contexts
-    let contexts: Vec<Vec<NodeT>> = sequences
-        .iter()
+    Ok(sequences
+        .par_iter()
         .flat_map(|sequence| {
             sequence
                 .iter()
@@ -45,17 +41,14 @@ pub fn word2vec(
                     let start = if i <= window_size { 0 } else { i - window_size };
                     let end = min!(sequence.len(), i + window_size);
                     if end - start == context_length {
-                        centers.push(*word);
-                        Some(sequence[start..end].to_vec())
+                        Some((sequence[start..end].to_vec(), *word))
                     } else {
                         None
                     }
                 })
-                .collect::<Vec<Vec<NodeT>>>()
+                .collect::<Vec<(Vec<NodeT>, NodeT)>>()
         })
-        .collect::<Vec<Vec<NodeT>>>();
-
-    Ok((contexts, centers))
+        .unzip())
 }
 
 /// Return triple with CSR representation of cooccurrence matrix.
