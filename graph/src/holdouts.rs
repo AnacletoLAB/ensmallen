@@ -56,11 +56,6 @@ impl Graph {
         // Now we compute the maximum number of negative edges that we can actually generate
         let max_negative_edges = complete_edges_number - self.unique_edges_number;
 
-        println!(
-            "negatives_number: {}, max_negative_edges: {}",
-            negatives_number, max_negative_edges
-        );
-
         // We check that the number of requested negative edges is compatible with the
         // current graph instance.
         if negatives_number > max_negative_edges {
