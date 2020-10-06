@@ -199,10 +199,6 @@ impl EnsmallenGraph {
     ///     The number of negative edges to use.
     /// seed: int = 42,
     ///     The seed to use to generate the holdout.
-    /// allow_selfloops: bool = None,
-    ///     Wethever to allow creation of self-loops.
-    ///     If None (default value) is provided, self-loops are created only
-    ///     if they are present in the original graph.
     /// verbose: bool = True,
     ///     Wethever to show the loading bar.
     ///     The loading bar will only be visible in console.
@@ -233,9 +229,6 @@ impl EnsmallenGraph {
                     .or_else(|| Some(42))
                     .unwrap(),
                 negatives_number,
-                extract_value!(kwargs, "allow_selfloops", bool)
-                    .or_else(|| Some(self.graph.has_selfloops()))
-                    .unwrap(),
                 extract_value!(kwargs, "verbose", bool)
                     .or_else(|| Some(true))
                     .unwrap()
