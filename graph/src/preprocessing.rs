@@ -32,7 +32,7 @@ pub fn word2vec(
     )?;
 
     Ok(sequences
-        .par_iter()
+        .iter()
         .flat_map(|sequence| {
             sequence
                 .iter()
