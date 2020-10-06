@@ -258,7 +258,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
 
     if !graph.directed {
         // Testing SkipGram / CBOW / GloVe preprocessing
-        graph.cooccurence_matrix(&walker, Some(3), Some(verbose))?;
+        graph.cooccurence_matrix(&walker, 3, verbose)?;
         graph.node2vec(&walker, 1, 3)?;
         // Testing link prediction pre-processing
         graph.link_prediction(0, 1, Some(1.0), None, None)?;

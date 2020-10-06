@@ -71,8 +71,12 @@ fn cooccurence_matrix(
     )?;
     let (words, contexts, frequencies) = pyex!(rust_cooccurence_matrix(
         sequences,
-        extract_value!(kwargs, "window_size", usize),
-        extract_value!(kwargs, "verbose", bool),
+        extract_value!(kwargs, "window_size", usize)
+            .or_else(|| Some(3))
+            .unwrap(),
+        extract_value!(kwargs, "verbose", bool)
+            .or_else(|| Some(true))
+            .unwrap()
     ))?;
 
     Ok((
@@ -154,8 +158,12 @@ impl EnsmallenGraph {
 
         let (words, contexts, frequencies) = pyex!(self.graph.cooccurence_matrix(
             &parameters,
-            extract_value!(kwargs, "window_size", usize),
-            extract_value!(kwargs, "verbose", bool),
+            extract_value!(kwargs, "window_size", usize)
+                .or_else(|| Some(3))
+                .unwrap(),
+            extract_value!(kwargs, "verbose", bool)
+                .or_else(|| Some(true))
+                .unwrap()
         ))?;
 
         Ok((

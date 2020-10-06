@@ -34,18 +34,15 @@ pub fn word2vec(
     Ok(sequences
         .iter()
         .flat_map(|sequence| {
-            sequence
-                .iter()
-                .enumerate()
-                .filter_map(move |(i, word)| {
-                    let start = if i <= window_size { 0 } else { i - window_size };
-                    let end = min!(sequence.len(), i + window_size);
-                    if end - start == context_length {
-                        Some((sequence[start..end].to_vec(), *word))
-                    } else {
-                        None
-                    }
-                })
+            sequence.iter().enumerate().filter_map(move |(i, word)| {
+                let start = if i <= window_size { 0 } else { i - window_size };
+                let end = min!(sequence.len(), i + window_size);
+                if end - start == context_length {
+                    Some((sequence[start..end].to_vec(), *word))
+                } else {
+                    None
+                }
+            })
         })
         .unzip())
 }
@@ -65,29 +62,17 @@ pub fn word2vec(
 ///     
 pub fn cooccurence_matrix(
     sequences: Vec<Vec<NodeT>>,
-    window_size: Option<usize>,
-    verbose: Option<bool>,
+    window_size: usize,
+    verbose: bool,
 ) -> Result<(Words, Words, Frequencies), String> {
-    let _verbose = verbose.unwrap_or(false);
-    let _window_size = window_size.unwrap_or(4);
-
     let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
-    let pb1 = if _verbose {
-        let pb1 = ProgressBar::new(sequences.len() as u64);
-        pb1.set_style(ProgressStyle::default_bar().template(
-            "Computing cooccurrence mapping {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-        ));
-        pb1.set_draw_delta(sequences.len() as u64 / 100);
-        pb1
-    } else {
-        ProgressBar::hidden()
-    };
+    let pb1 = get_loading_bar(verbose, "Computing frequencies", sequences.len());
 
     for i in (0..sequences.len()).progress_with(pb1) {
         let walk = &sequences[i];
         let walk_length = walk.len();
         for (central_index, &central_word_id) in walk.iter().enumerate() {
-            for distance in 1..1 + _window_size {
+            for distance in 1..1 + window_size {
                 if central_index + distance >= walk_length {
                     break;
                 }
@@ -110,16 +95,11 @@ pub fn cooccurence_matrix(
     let mut words: Vec<NodeT> = vec![0; elements];
     let mut contexts: Vec<NodeT> = vec![0; elements];
     let mut frequencies: Vec<f64> = vec![0.0; elements];
-    let pb2 = if _verbose {
-        let pb2 = ProgressBar::new(cooccurence_matrix.len() as u64);
-        pb2.set_style(ProgressStyle::default_bar().template(
-            "Converting mapping into CSR matrix {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-        ));
-        pb2.set_draw_delta(cooccurence_matrix.len() as u64 / 100);
-        pb2
-    } else {
-        ProgressBar::hidden()
-    };
+    let pb2 = get_loading_bar(
+        verbose,
+        "Converting mapping into CSR matrix",
+        cooccurence_matrix.len(),
+    );
 
     cooccurence_matrix
         .iter()
@@ -199,8 +179,8 @@ impl Graph {
     pub fn cooccurence_matrix(
         &self,
         walks_parameters: &WalksParameters,
-        window_size: Option<usize>,
-        verbose: Option<bool>,
+        window_size: usize,
+        verbose: bool,
     ) -> Result<(Words, Words, Frequencies), String> {
         let walks = self.complete_walks(walks_parameters)?;
 
