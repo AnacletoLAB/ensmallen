@@ -37,7 +37,7 @@ pub fn word2vec(
             sequence
                 .iter()
                 .enumerate()
-                .filter_map(|(i, word)| {
+                .filter_map(move |(i, word)| {
                     let start = if i <= window_size { 0 } else { i - window_size };
                     let end = min!(sequence.len(), i + window_size);
                     if end - start == context_length {
@@ -46,7 +46,6 @@ pub fn word2vec(
                         None
                     }
                 })
-                .collect::<Vec<(Vec<NodeT>, NodeT)>>()
         })
         .unzip())
 }
