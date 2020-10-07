@@ -68,15 +68,14 @@ pub fn cooccurence_matrix(
     let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
     let pb1 = get_loading_bar(verbose, "Computing frequencies", sequences.len());
 
-    for i in (0..sequences.len()).progress_with(pb1) {
-        let walk = &sequences[i];
-        let walk_length = walk.len();
-        for (central_index, &central_word_id) in walk.iter().enumerate() {
+    sequences.iter().progress_with(pb1).for_each(|sequence| {
+        let walk_length = sequence.len();
+        for (central_index, &central_word_id) in sequence.iter().enumerate() {
             for distance in 1..1 + window_size {
                 if central_index + distance >= walk_length {
                     break;
                 }
-                let context_id = walk[central_index + distance];
+                let context_id = sequence[central_index + distance];
                 if central_word_id < context_id {
                     *cooccurence_matrix
                         .entry((central_word_id as NodeT, context_id as NodeT))
@@ -88,7 +87,7 @@ pub fn cooccurence_matrix(
                 }
             }
         }
-    }
+    });
 
     let elements = cooccurence_matrix.len() * 2;
     let mut max_frequency = 0.0;
