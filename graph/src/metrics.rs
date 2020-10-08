@@ -369,6 +369,9 @@ impl Graph {
         report.insert("edges_number", self.get_edges_number().to_string());
         report.insert("density", self.density().to_string());
         report.insert("directed", self.is_directed().to_string());
+        report.insert("has_weights", self.has_weights().to_string());
+        report.insert("has_edge_types", self.has_edge_types().to_string());
+        report.insert("has_node_types", self.has_node_types().to_string());
         report.insert("self_loops_number", self.get_self_loop_number().to_string());
         report.insert("self_loops_rate", self.get_self_loop_rate().to_string());
         report.insert("singletons", self.get_singleton_nodes_number().to_string());
