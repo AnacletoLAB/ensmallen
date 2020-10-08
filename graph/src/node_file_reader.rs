@@ -11,7 +11,7 @@ use super::*;
 pub struct NodeFileReader {
     pub(crate) reader: CSVFileReader,
     pub(crate) default_node_type: Option<String>,
-    pub(crate) nodes_column_number: usize,
+    pub(crate) nodes_column_number: Option<usize>,
     pub(crate) node_types_column_number: Option<usize>,
     pub(crate) numeric_node_ids: bool,
     pub(crate) numeric_node_type_ids: bool,
@@ -27,7 +27,7 @@ impl NodeFileReader {
     pub fn new(path: String) -> Result<NodeFileReader, String> {
         Ok(NodeFileReader {
             reader: CSVFileReader::new(path)?,
-            nodes_column_number: 0,
+            nodes_column_number: None,
             default_node_type: None,
             node_types_column_number: None,
             numeric_node_ids: false,
@@ -49,7 +49,7 @@ impl NodeFileReader {
             if column.is_empty() {
                 return Err("The given node column is empty.".to_owned());
             }
-            self.nodes_column_number = self.reader.get_column_number(column)?;
+            self.nodes_column_number = Some(self.reader.get_column_number(column)?);
         }
         Ok(self)
     }
@@ -75,7 +75,7 @@ impl NodeFileReader {
                     column, expected_number_of_elements
                 ));
             }
-            self.nodes_column_number = column;
+            self.nodes_column_number = Some(column);
         }
         Ok(self)
     }
@@ -248,34 +248,39 @@ impl NodeFileReader {
     pub fn read_lines(
         &self,
     ) -> Result<impl Iterator<Item = Result<(String, Option<String>), String>> + '_, String> {
-        Ok(self.reader.read_lines()?.map(move |values| match values {
-            Ok(vals) => {
-                let node_name = vals[self.nodes_column_number].to_owned();
-                let node_type = if let Some(num) = self.node_types_column_number {
-                    let mut node_type = vals[num].to_owned();
-                    if node_type.is_empty() {
-                        if let Some(dnt) = &self.default_node_type {
-                            node_type = dnt.clone();
+        match self.nodes_column_number {
+            Some(nodes_column_number) => {
+                Ok(self.reader.read_lines()?.map(move |values| match values {
+                    Ok(vals) => {
+                        let node_name = vals[nodes_column_number].to_owned();
+                        let node_type = if let Some(num) = self.node_types_column_number {
+                            let mut node_type = vals[num].to_owned();
+                            if node_type.is_empty() {
+                                if let Some(dnt) = &self.default_node_type {
+                                    node_type = dnt.clone();
+                                } else {
+                                    return Err(format!(
+                                        concat!(
+                                            "Found empty node type but no default node ",
+                                            "type to use was provided. ",
+                                            "The node name is {node_name}.\n",
+                                            "The path of the document was {path}.\n"
+                                        ),
+                                        node_name = node_name,
+                                        path = self.reader.path
+                                    ));
+                                }
+                            }
+                            Some(node_type)
                         } else {
-                            return Err(format!(
-                                concat!(
-                                    "Found empty node type but no default node ",
-                                    "type to use was provided. ",
-                                    "The node name is {node_name}.\n",
-                                    "The path of the document was {path}.\n"
-                                ),
-                                node_name = node_name,
-                                path = self.reader.path
-                            ));
-                        }
+                            None
+                        };
+                        Ok((node_name, node_type))
                     }
-                    Some(node_type)
-                } else {
-                    None
-                };
-                Ok((node_name, node_type))
+                    Err(e) => Err(e),
+                }))
             }
-            Err(e) => Err(e),
-        }))
+            None => Err("Node ID column was not provided.".to_owned()),
+        }
     }
 }
