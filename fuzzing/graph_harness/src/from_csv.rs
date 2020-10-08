@@ -69,7 +69,7 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
     
     // create the reader
     let edges_reader = EdgeFileReader::new(edges_path.to_string())?
-        .set_verbose(data.edge_reader.reader.verbose)
+        .set_verbose(Some(false))
         .set_ignore_duplicates(data.edge_reader.reader.ignore_duplicates)
         .set_separator(data.edge_reader.reader.separator)
         .set_header(data.edge_reader.reader.header)
@@ -97,7 +97,7 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
             // return the reader
             Some(
                 NodeFileReader::new(nodes_path.to_string())?
-                    .set_verbose(nr.reader.verbose)
+                    .set_verbose(Some(false))
                     .set_node_types_column_number(nr.node_types_column_number)?
                     .set_nodes_column_number(nr.node_types_column_number)?
                     .set_node_types_column(nr.node_types_column)?

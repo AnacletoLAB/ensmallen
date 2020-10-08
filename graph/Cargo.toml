@@ -13,7 +13,6 @@ edition = "2018"
 name = "graph"
 
 [dev-dependencies]
-tests_macro = { path = "tests/tests_macro" }
 linecount= "0.1.0"
 
 [dependencies]
