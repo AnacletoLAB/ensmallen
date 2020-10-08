@@ -98,13 +98,13 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
             Some(
                 NodeFileReader::new(nodes_path.to_string())?
                     .set_verbose(Some(false))
+                    .set_separator(nr.reader.separator)?
                     .set_node_types_column_number(nr.node_types_column_number)?
                     .set_nodes_column_number(nr.node_types_column_number)?
                     .set_node_types_column(nr.node_types_column)?
                     .set_default_node_type(nr.default_node_type)
                     .set_nodes_column(nr.nodes_column)?
                     .set_ignore_duplicates(nr.reader.ignore_duplicates)
-                    .set_separator(nr.reader.separator)?
                     .set_header(nr.reader.header)
                     .set_rows_to_skip(nr.reader.rows_to_skip)
             )
