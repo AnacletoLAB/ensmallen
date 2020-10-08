@@ -14,7 +14,7 @@ pub struct NodeFileReader {
     pub(crate) nodes_column_number: usize,
     pub(crate) node_types_column_number: Option<usize>,
     pub(crate) numeric_node_ids: bool,
-    pub(crate) numeric_node_type_ids: bool
+    pub(crate) numeric_node_type_ids: bool,
 }
 
 impl NodeFileReader {
@@ -31,7 +31,7 @@ impl NodeFileReader {
             default_node_type: None,
             node_types_column_number: None,
             numeric_node_ids: false,
-            numeric_node_type_ids: false
+            numeric_node_type_ids: false,
         })
     }
 
@@ -46,6 +46,9 @@ impl NodeFileReader {
         nodes_column: Option<String>,
     ) -> Result<NodeFileReader, String> {
         if let Some(column) = nodes_column {
+            if column.is_empty() {
+                return Err("The given node column is empty.".to_owned());
+            }
             self.nodes_column_number = self.reader.get_column_number(column)?;
         }
         Ok(self)
@@ -88,6 +91,9 @@ impl NodeFileReader {
         nodes_type_column: Option<String>,
     ) -> Result<NodeFileReader, String> {
         if let Some(column) = nodes_type_column {
+            if column.is_empty() {
+                return Err("The given node types column is empty.".to_owned());
+            }
             self.node_types_column_number = Some(self.reader.get_column_number(column)?);
         }
         Ok(self)
@@ -149,7 +155,10 @@ impl NodeFileReader {
     ///
     /// * numeric_node_type_ids: Option<bool> - Wethever to convert numeric node type Ids to Node Type Ids.
     ///
-    pub fn set_numeric_node_type_ids(mut self, numeric_node_type_ids: Option<bool>) -> NodeFileReader {
+    pub fn set_numeric_node_type_ids(
+        mut self,
+        numeric_node_type_ids: Option<bool>,
+    ) -> NodeFileReader {
         if let Some(nnti) = numeric_node_type_ids {
             self.numeric_node_type_ids = nnti;
         }
@@ -168,7 +177,6 @@ impl NodeFileReader {
         }
         self
     }
-
 
     /// Set the ignore_duplicates.
     ///
@@ -189,11 +197,14 @@ impl NodeFileReader {
     ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> NodeFileReader {
-        if let Some(v) = separator {
-            self.reader.separator = v;
+    pub fn set_separator(mut self, separator: Option<String>) -> Result<NodeFileReader, String> {
+        if let Some(sep) = separator {
+            if sep.is_empty() {
+                return Err("The separator cannot be empty.".to_owned());
+            }
+            self.reader.separator = sep;
         }
-        self
+        Ok(self)
     }
 
     /// Set the header.

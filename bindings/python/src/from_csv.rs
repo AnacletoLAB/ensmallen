@@ -112,7 +112,7 @@ impl EnsmallenGraph {
         directed: bool,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<EnsmallenGraph> {
-        let (edges, nodes) = build_csv_file_reader(edge_path, py_kwargs)?;
+        let (edges, nodes) = pyex!(build_csv_file_reader(edge_path, py_kwargs))?;
 
         Ok(EnsmallenGraph {
             graph: pyex!(Graph::from_unsorted_csv(edges, nodes, directed))?,
@@ -232,7 +232,7 @@ impl EnsmallenGraph {
         edges_number: EdgeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<EnsmallenGraph> {
-        let (edges, nodes) = build_csv_file_reader(edge_path, py_kwargs)?;
+        let (edges, nodes) = pyex!(build_csv_file_reader(edge_path, py_kwargs))?;
 
         Ok(EnsmallenGraph {
             graph: pyex!(Graph::from_sorted_csv(

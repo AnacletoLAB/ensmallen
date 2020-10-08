@@ -54,7 +54,7 @@ pub fn load_ppi(
                 .set_default_node_type(Some("default".to_string()))
                 .set_nodes_column(Some("id".to_string()))?
                 .set_ignore_duplicates(Some(true))
-                .set_separator(Some("\t".to_string()))
+                .set_separator(Some("\t".to_string())).unwrap()
                 .set_header(Some(true))
                 .set_max_rows_number(Some(100000))
                 .set_rows_to_skip(Some(0)),
@@ -65,7 +65,7 @@ pub fn load_ppi(
     let edges_reader = EdgeFileReader::new("tests/data/ppi/edges.tsv".to_string())?
         .set_verbose(Some(verbose))
         .set_ignore_duplicates(Some(true))
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some("\t".to_string())).unwrap()
         .set_header(Some(true))
         .set_rows_to_skip(Some(0))
         .set_sources_column_number(Some(1))?

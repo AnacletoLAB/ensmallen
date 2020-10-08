@@ -8,7 +8,7 @@ use graph::{EdgeFileReader, Graph};
 fn test_load_sorted() {
     let edges_reader = EdgeFileReader::new("tests/data/macaque.tsv".to_string())
         .unwrap()
-        .set_separator(Some("\t".to_string()))
+        .set_separator(Some("\t".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))
         .set_header(Some(false));

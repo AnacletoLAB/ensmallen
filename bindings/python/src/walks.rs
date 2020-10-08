@@ -69,7 +69,7 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        validate_kwargs(kwargs, build_walk_parameters_list(&[]))?;
+        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
         pyex!(self.graph.random_walks(quantity, &parameters))
@@ -138,7 +138,7 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        validate_kwargs(kwargs, build_walk_parameters_list(&[]))?;
+        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
         pyex!(self.graph.complete_walks(&parameters))
