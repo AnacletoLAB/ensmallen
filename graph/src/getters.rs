@@ -266,10 +266,10 @@ impl Graph {
             .collect()
     }
 
-    pub fn get_edge_type_number(&self, edge_type: EdgeTypeT) -> EdgeTypeT {
+    pub fn get_edge_type_number(&self, edge_type: EdgeTypeT) -> EdgeT {
         match &self.edge_types {
             None => 0,
-            Some(ets) => ets.counts[edge_type as usize] as EdgeTypeT,
+            Some(ets) => ets.counts[edge_type as usize],
         }
     }
 
