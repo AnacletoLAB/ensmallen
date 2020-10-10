@@ -73,7 +73,7 @@ impl EnsmallenGraph {
         self.graph.is_edge_trap(edge)
     }
 
-    #[text_signature = "($self, src, dst)"]
+    #[text_signature = "($self, src, dst, edge_type)"]
     /// Return boolean representing if given edge exists in graph.
     ///
     /// Parameters
@@ -82,6 +82,8 @@ impl EnsmallenGraph {
     ///     Node ID to use as source of given edge.
     /// dst: int,
     ///     Node ID to use as destination of given edge.
+    /// edge_type: Union[None, int],
+    ///     Edge type ID. (By deafult is None).
     ///
     /// Returns
     /// ----------------------------
@@ -89,6 +91,66 @@ impl EnsmallenGraph {
     ///
     fn has_edge(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> bool {
         self.graph.has_edge(src, dst, edge_type)
+    }
+
+    #[text_signature = "($self, src, dst, edge_type)"]
+    /// Return boolean representing if given edge exists in graph.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// src: str,
+    ///     Node name to use as source of given edge.
+    /// dst: str,
+    ///     Node name to use as destination of given edge.
+    /// edge_type: Union[None, str],
+    ///     Edge type name. (By deafult is None).
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if given edge exists in graph.
+    ///
+    fn has_edge_string(&self, src: &str, dst: &str, edge_type: Option<String>) -> bool {
+        self.graph.has_edge_string(&src, &dst, edge_type.as_ref())
+    }
+
+    #[text_signature = "($self, src, dst, edge_type)"]
+    /// Return integer representing ID of the edge.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// src: int,
+    ///     Node ID to use as source of given edge.
+    /// dst: int,
+    ///     Node ID to use as destination of given edge.
+    /// edge_type: Union[None, int],
+    ///     Edge type ID. (By deafult is None).
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Integer representing ID of the edge. It will return None when the edge does not exist.
+    ///
+    fn get_edge_id(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> Option<EdgeT> {
+        self.graph.get_edge_id(src, dst, edge_type)
+    }
+
+    #[text_signature = "($self, src, dst, edge_type)"]
+    /// Return integer representing ID of the edge.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// src: str,
+    ///     Node name to use as source of given edge.
+    /// dst: str,
+    ///     Node name to use as destination of given edge.
+    /// edge_type: Union[None, str],
+    ///     Edge type name. (By deafult is None).
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Integer representing ID of the edge. It will return None when the edge does not exist.
+    ///
+    fn get_edge_id_string(&self, src: &str, dst: &str, edge_type: Option<String>) -> Option<EdgeT> {
+        self.graph.get_edge_id_string(src, dst, edge_type.as_ref())
     }
 
     #[text_signature = "($self)"]

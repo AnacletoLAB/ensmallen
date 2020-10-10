@@ -86,6 +86,27 @@ impl Graph {
         self.get_edge_id_from_tuple(src, dst)
     }
 
+    pub fn get_edge_id_string(
+        &self,
+        src_name: &str,
+        dst_name: &str,
+        edge_type_name: Option<&String>,
+    ) -> Option<EdgeT> {
+        if let Some(src) = self.nodes.get(src_name) {
+            if let Some(dst) = self.nodes.get(dst_name) {
+                let edge_type_id = edge_type_name.and_then(|etn| match &self.edge_types {
+                    Some(ets) => ets.get(etn).copied(),
+                    None => None,
+                });
+                if edge_type_id.is_none() && edge_type_name.is_some() {
+                    return None;
+                }
+                return self.get_edge_id(*src, *dst, edge_type_id);
+            }
+        }
+        None
+    }
+
     /// Returns edge type counts.
     ///
     /// # Arguments
@@ -145,7 +166,7 @@ impl Graph {
     ///     println!("node type id {}: count: {}", node_type_id, count);
     /// }
     /// ```
-    pub fn get_node_type_counts(&self) -> Result<HashMap<NodeTypeT, usize>, String> {
+    pub fn get_node_type_counts(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
         if let Some(nt) = &self.node_types {
             Ok(Counter::init(nt.ids.clone()).into_map())
         } else {
@@ -164,16 +185,7 @@ impl Graph {
     /// * edge_type: Option<EdgeTypeT> - The (optional) edge type.
     ///
     pub fn has_edge(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> bool {
-        if self.edges.contains(self.encode_edge(src, dst)) {
-            return match &edge_type {
-                Some(et) => self
-                    .get_unchecked_link_edge_types(src, dst)
-                    .unwrap()
-                    .contains(et),
-                None => true,
-            };
-        }
-        false
+        self.get_edge_id(src, dst, edge_type).is_some()
     }
 
     /// Returns boolean representing if edge passing between given nodes exists.
@@ -190,19 +202,8 @@ impl Graph {
         dst_name: &str,
         edge_type_name: Option<&String>,
     ) -> bool {
-        if let Some(src) = self.nodes.get(src_name) {
-            if let Some(dst) = self.nodes.get(dst_name) {
-                let edge_type_id = edge_type_name.and_then(|etn| match &self.edge_types {
-                    Some(ets) => ets.get(etn).copied(),
-                    None => None,
-                });
-                if edge_type_id.is_none() && edge_type_name.is_some() {
-                    return false;
-                }
-                return self.has_edge(*src, *dst, edge_type_id);
-            }
-        }
-        false
+        self.get_edge_id_string(src_name, dst_name, edge_type_name)
+            .is_some()
     }
 
     /// Return true if given graph has any edge overlapping with current graph.
