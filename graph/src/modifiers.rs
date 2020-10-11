@@ -8,11 +8,7 @@ impl Graph {
     pub fn set_all_edge_types(&mut self, edge_type: String){
         let mut vocabulary = Vocabulary::new(false);
         vocabulary.insert(edge_type).unwrap();
-
-        self.edge_types = Some(VocabularyVec{
-            vocabulary,
-            ids: vec![0; self.get_edges_number() as usize],
-            counts: vec![self.get_edges_number()]
-        })
+        vocabulary.build_reverse_mapping().unwrap();
+        self.edge_types = VocabularyVec::from_structs( vec![0; self.get_edges_number() as usize], Some(vocabulary));
     }
 }
