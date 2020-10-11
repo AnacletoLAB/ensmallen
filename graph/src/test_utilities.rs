@@ -205,8 +205,6 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
 
         default_holdout_test_suite(graph, &train, &test)?;
     }
-    // Testing cloning
-    let _ = graph.clone();
     // Testing negative edges generation
     let negatives = graph.sample_negatives(4, graph.get_edges_number(), verbose)?;
     validate_vocabularies(&negatives);
@@ -353,6 +351,13 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(ww.edges, graph.edges);
         }
     }
+
+    // Testing cloning
+    let mut clone = graph.clone();
+    clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES".to_string());
+
+    assert_eq!(clone.get_edge_types_number(), 1);
+    assert_eq!(clone.get_edge_type_number(0), graph.get_edges_number());
 
     Ok(())
 }

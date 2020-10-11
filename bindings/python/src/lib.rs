@@ -18,6 +18,7 @@ mod types;
 pub(crate) use crate::types::*;
 mod walks;
 pub(crate) use crate::types::EnsmallenGraph;
+mod modifiers;
 
 mod drop;
 mod holdout;
