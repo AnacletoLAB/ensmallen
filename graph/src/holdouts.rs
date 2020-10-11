@@ -438,6 +438,7 @@ impl Graph {
                 // And the edge type of the edge ID is within the provided edge type
                     && match &edge_type_ids {
                         Some(etis) => {
+                            println!("{:?}, {:?}, {}", edge_type, etis, etis.contains(&edge_type.unwrap()));
                             etis.contains(&edge_type.unwrap())
                         },
                         None => true
