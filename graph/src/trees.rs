@@ -28,6 +28,7 @@ impl Graph {
         verbose: bool,
         unwanted_edge_types: &'a Option<HashSet<EdgeTypeT>>,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + 'a {
+        // TODO! FIX THIS CRASH if called with unwanted_edge_types and the graph does not have edge types.
         let result: Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)>> = if let Some(uet) = unwanted_edge_types {
             Box::new(self.iter_edges_from_seed(seed)
                 .filter(move |(edge_id, _, _)| {
@@ -57,6 +58,7 @@ impl Graph {
     ///
     /// * `seed`:NodeT - The seed to use for the holdout,
     /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
+    /// * `unwanted_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.
     /// * `verbose`: bool - Wethever to show a loading bar or not.
     ///
     pub fn spanning_tree(

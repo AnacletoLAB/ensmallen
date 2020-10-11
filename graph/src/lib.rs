@@ -43,6 +43,7 @@ mod iters;
 pub mod types;
 mod walks;
 mod walks_parameters;
+mod modifiers;
 
 pub mod test_utilities;
 
