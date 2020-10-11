@@ -194,7 +194,7 @@ impl Graph {
         seed: EdgeT,
         train_rate: f64,
         include_all_edge_types: bool,
-        user_condition: impl Fn(EdgeT, NodeT, NodeT) -> bool,
+        user_condition: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
         let (_, valid_edges_number) =
@@ -226,7 +226,7 @@ impl Graph {
             }
 
             // We stop adding edges when we have reached the minimum amount.
-            if user_condition(edge_id, src, dst) {
+            if user_condition(edge_id, src, dst, edge_type) {
                 // Compute the forward edge ids that are required.
                 valid_edges_bitmap.extend(self.compute_edge_ids_vector(
                     edge_id,
@@ -432,13 +432,15 @@ impl Graph {
             seed,
             train_rate,
             include_all_edge_types,
-            |edge_id, _, _| {
+            |edge_id, _, _, edge_type| {
+                // The tree must not contain the provided edge ID
                 !tree.contains(edge_id)
+                // And the edge type of the edge ID is within the provided edge type
                     && match &edge_type_ids {
                         Some(etis) => {
-                            etis.contains(&self.get_unchecked_edge_type(edge_id).unwrap())
-                        }
-                        None => true,
+                            etis.contains(&edge_type.unwrap())
+                        },
+                        None => true
                     }
             },
             verbose,
@@ -485,15 +487,13 @@ impl Graph {
             seed,
             train_rate,
             include_all_edge_types,
-            |edge_id, src, dst| {
+            |_, src, dst, edge_type| {
                 // If a list of edge types was provided and the edge type
                 // of the current edge is not within the provided list,
                 // we skip the current edge.
                 if let Some(etis) = &edge_type_ids {
-                    if let Some(ets) = &self.edge_types {
-                        if !etis.contains(&ets.ids[edge_id as usize]) {
-                            return false;
-                        }
+                    if !etis.contains(&edge_type.unwrap()) {
+                        return false;
                     }
                 }
                 // If a minimum number of overlaps was provided and the current
