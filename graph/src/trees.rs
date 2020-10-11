@@ -79,10 +79,6 @@ impl Graph {
             self.iter_on_edges_with_preference(seed, verbose,unwanted_edge_types)
         {
             let mut update_tree = false;
-            // in a spanning tree self loops are useless
-            if src == dst {
-                continue;
-            }
             // if both nodes are not covered then the edge is isolated
             // and must start its own component
             if !inserted_nodes.contains(src) && !inserted_nodes.contains(dst) {
