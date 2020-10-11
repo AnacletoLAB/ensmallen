@@ -1,5 +1,6 @@
-use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
-use std::{fs::File, io::prelude::*};
+use super::*;
+use indicatif::{ProgressIterator};
+use std::{fs::File, io::BufWriter, io::prelude::*};
 
 /// Structure that saves the common parameters for reading csv files.
 ///
@@ -41,30 +42,23 @@ impl CSVFileWriter {
     /// * `values`: impl Iterator<Item = Vec<String>> - Iterator of rows to write out.
     pub(crate) fn write_lines(
         &self,
-        lines_number: u64,
+        lines_number: usize,
         header: Vec<String>,
         values: impl Iterator<Item = Vec<String>>,
     ) -> Result<(), String> {
-        let pb = if self.verbose {
-            let pb = ProgressBar::new(lines_number);
-            pb.set_draw_delta(lines_number / 100);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Writing csv {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        let pb = get_loading_bar(self.verbose, "Writing to file", lines_number);
 
-        let mut file = match File::create(self.path.clone()) {
+        let file = match File::create(self.path.clone()) {
             Ok(f) => Ok(f),
             Err(_) => Err(format!("Cannot open in writing the file {}", self.path)),
         }?;
 
+        let mut stream = BufWriter::new(file);
+
         if self.header {
             let mut line = header.join(&self.separator);
             line.push('\n');
-            match file.write_all(line.as_bytes()) {
+            match stream.write(line.as_bytes()) {
                 Ok(_) => Ok(()),
                 Err(_) => {
                     Err("Cannot write the header. There might have been an I/O error.".to_string())
@@ -75,7 +69,7 @@ impl CSVFileWriter {
         for (i, value) in values.progress_with(pb).enumerate() {
             let mut line = value.join(&self.separator);
             line.push('\n');
-            match file.write_all(line.as_bytes()) {
+            match stream.write(line.as_bytes()) {
                 Ok(_) => Ok(()),
                 Err(_) => Err(format!(
                     "Cannot write the {i} line. There might have been an I/O error.",
@@ -84,7 +78,7 @@ impl CSVFileWriter {
             }?;
         }
 
-        match file.sync_all() {
+        match stream.flush() {
             Ok(_) => Ok(()),
             Err(_) => Err(
                 "Unable to close file. There might have been an I/O error.".to_string()

@@ -1,10 +1,15 @@
 use super::*;
-use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
+use indicatif::ProgressIterator;
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
+use rayon::iter::IntoParallelIterator;
+use rayon::iter::ParallelIterator;
+use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
-use vec_rand::xorshift::xorshift;
+use std::iter::FromIterator;
+use vec_rand::gen_random_vec;
+use vec_rand::xorshift::xorshift as rand_u64;
 
 /// # Holdouts.
 impl Graph {
@@ -19,14 +24,12 @@ impl Graph {
     ///
     /// * `seed`: EdgeT - Seed to use to reproduce negative edge set.
     /// * `negatives_number`: EdgeT - Number of negatives edges to include.
-    /// * `allow_selfloops`: bool - Wethever to allow creation of selfloops or not.
     /// * `verbose`: bool - Wether to show the loading bar.
     ///
     pub fn sample_negatives(
         &self,
         mut seed: EdgeT,
         negatives_number: EdgeT,
-        allow_selfloops: bool,
         verbose: bool,
     ) -> Result<Graph, String> {
         if negatives_number == 0 {
@@ -41,181 +44,221 @@ impl Graph {
 
         // Here we use unique edges number because on a multigraph the negative
         // edges cannot have an edge type.
-        let nodes_number = self.get_nodes_number();
-        let selfloops_in_graph = self.get_selfloops_number();
-        let self_loops_number = if allow_selfloops {
-            nodes_number
-        } else {
-            selfloops_in_graph
-        };
-        let total_negative_edges = if self.is_directed {
-            nodes_number * (nodes_number - 1) + self_loops_number - self.get_unique_edges_number()
-        } else {
-            nodes_number * (nodes_number - 1) / 2 + self_loops_number
-                - (self.get_unique_edges_number() - selfloops_in_graph) / 2
-                - selfloops_in_graph
-        };
+        let nodes_number = self.get_nodes_number() as EdgeT;
 
-        if negatives_number > total_negative_edges {
+        // Here we compute the number of edges that a complete graph would have if it had the same number of nodes
+        // of the current graph. Moreover, the complete graph will have selfloops IFF the current graph has at
+        // least one of them.
+        let mut complete_edges_number: EdgeT = nodes_number * (nodes_number - 1);
+        if self.has_selfloops() {
+            complete_edges_number += nodes_number;
+        }
+        // Now we compute the maximum number of negative edges that we can actually generate
+        let max_negative_edges = complete_edges_number - self.unique_edges_number;
+
+        // We check that the number of requested negative edges is compatible with the
+        // current graph instance.
+        if negatives_number > max_negative_edges {
             return Err(format!(
                 concat!(
                     "The requested negatives number {} is more than the ",
                     "number of negative edges that exist in the graph ({})."
                 ),
-                negatives_number, total_negative_edges
+                negatives_number, max_negative_edges
             ));
         }
 
-        let pb = if verbose {
-            let pb = ProgressBar::new(negatives_number as u64);
-            pb.set_draw_delta(negatives_number as u64 / 100);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Computing negative edges {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        let pb1 = get_loading_bar(
+            verbose,
+            "Computing negative edges",
+            negatives_number as usize,
+        );
+
+        let pb2 = get_loading_bar(
+            verbose,
+            "Building negative graph",
+            negatives_number as usize,
+        );
 
         // xorshift breaks if the seed is zero
         // so we initialize xor it with a constat
         // to mitigate this problem
-        seed ^= SEED_XOR;
+        seed ^= SEED_XOR as EdgeT;
 
-        // initialize the vectors for the result
-        let mut unique_edges_tree: GraphDictionary = GraphDictionary::new();
+        let mut negative_edges_bitmap = RoaringTreemap::new();
+        let chunk_size = max!(4096, negatives_number / 100);
+        let mut last_length = 0;
 
         // randomly extract negative edges until we have the choosen number
-        while unique_edges_tree.len() < negatives_number {
-            seed = xorshift(seed as u64) as usize;
-            let src: NodeT = seed % nodes_number;
-            seed = xorshift(seed as u64) as usize;
-            let dst: NodeT = seed % nodes_number;
-            // If the edge is not a self-loop or the user allows self-loops and
-            // the graph is directed or the edges are inserted in a way to avoid
-            // inserting bidirectional edges, avoiding to execute the check
-            // of edge types so to insert them twice if the edge types are
-            // different.
-            if (allow_selfloops || src != dst)
-                && !self.has_edge(src, dst)
-                && !unique_edges_tree.contains_key(&(src, dst))
-            {
-                unique_edges_tree.extend(self, src, dst, None, None, false);
-                pb.inc(1 + !self.is_directed as u64);
-            }
+        while negative_edges_bitmap.len() < negatives_number {
+            // generate two seeds for reproducibility porpouses
+            seed = rand_u64(seed);
+
+            let edges_to_sample: usize = min!(
+                chunk_size,
+                match self.is_directed() {
+                    true => negatives_number - negative_edges_bitmap.len(),
+                    false => ((negatives_number - negative_edges_bitmap.len()) as f64 / 2.0).ceil()
+                        as u64,
+                }
+            ) as usize;
+
+            // generate the random edge-sources
+            negative_edges_bitmap.extend(
+                gen_random_vec(edges_to_sample, seed)
+                    .into_par_iter()
+                    // convert them to plain (src, dst)
+                    .filter_map(|edge| {
+                        let (mut src, mut dst) = self.decode_edge(edge);
+                        src %= nodes_number as NodeT;
+                        dst %= nodes_number as NodeT;
+                        // If the edge is not a self-loop or the user allows self-loops and
+                        // the graph is directed or the edges are inserted in a way to avoid
+                        // inserting bidirectional edges.
+                        match (self.has_selfloops() || src != dst) && !self.has_edge(src, dst, None)
+                        {
+                            true => Some((src, dst)),
+                            false => None,
+                        }
+                    })
+                    .flat_map(|(src, dst)| {
+                        if !self.is_directed() && src != dst {
+                            vec![self.encode_edge(src, dst), self.encode_edge(dst, src)]
+                        } else {
+                            vec![self.encode_edge(src, dst)]
+                        }
+                    })
+                    .collect::<Vec<EdgeT>>(),
+            );
+
+            pb1.inc(negative_edges_bitmap.len() - last_length);
+            last_length = negative_edges_bitmap.len();
         }
-        pb.finish();
-        Ok(build_graph(
-            &mut unique_edges_tree,
+
+        pb1.finish();
+
+        Graph::build_graph(
+            negative_edges_bitmap.iter().progress_with(pb2).map(|edge| {
+                let (src, dst) = self.decode_edge(edge);
+                Ok((src, dst, None, None))
+            }),
+            negative_edges_bitmap.len(),
             self.nodes.clone(),
             self.node_types.clone(),
             None,
-            self.is_directed,
-        ))
+            self.directed,
+            false,
+        )
     }
 
-    fn holdout(
+    /// Compute the training and validation edges number from the training percentage
+    fn get_holdouts_edges_number(
         &self,
-        seed: NodeT,
         train_percentage: f64,
         include_all_edge_types: bool,
-        user_condition: impl Fn(NodeT, NodeT, Option<EdgeTypeT>) -> bool,
-        verbose: bool,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(EdgeT, EdgeT), String> {
         if train_percentage <= 0.0 || train_percentage >= 1.0 {
             return Err(String::from(
                 "Train percentage must be strictly between 0 and 1.",
             ));
         }
+        if self.directed && self.get_edges_number() == 1
+            || !self.directed && self.get_edges_number() == 2
+        {
+            return Err(String::from(
+                "The current graph instance has only one edge. You cannot build an holdout with one edge.",
+            ));
+        }
+        let total_edges_number = if include_all_edge_types {
+            self.unique_edges_number
+        } else {
+            self.get_edges_number()
+        };
+        let train_edges_number = (total_edges_number as f64 * train_percentage) as EdgeT;
+        let valid_edges_number = total_edges_number - train_edges_number;
 
-        let valid_edges_number =
-            (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
-
+        if train_edges_number == 0 || train_edges_number >= total_edges_number {
+            return Err(String::from(
+                "The training set has 0 edges! Change the training percentage.",
+            ));
+        }
         if valid_edges_number == 0 {
             return Err(String::from(
-                "With given train percentage, the validation set will remain empty with the current graph.",
+                "The validation set has 0 edges! Change the training percentage.",
             ));
         }
 
-        let pb = if verbose {
-            let pb = ProgressBar::new(self.get_edges_number() as u64);
-            pb.set_draw_delta(self.get_edges_number() as u64 / 100);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Generating holdout {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        Ok((train_edges_number, valid_edges_number))
+    }
+
+    fn holdout(
+        &self,
+        seed: EdgeT,
+        train_percentage: f64,
+        include_all_edge_types: bool,
+        user_condition: impl Fn(EdgeT, NodeT, NodeT) -> bool,
+        verbose: bool,
+    ) -> Result<(Graph, Graph), String> {
+        let (_, valid_edges_number) =
+            self.get_holdouts_edges_number(train_percentage, include_all_edge_types)?;
+
+        let pb1 = get_loading_bar(
+            verbose,
+            "Picking validation edges",
+            valid_edges_number as usize,
+        );
 
         // generate and shuffle the indices of the edges
-        let mut rng = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
-        let mut edge_indices: Vec<NodeT> = (0..self.get_edges_number()).collect();
+        let mut rng = SmallRng::seed_from_u64(seed ^ SEED_XOR as EdgeT);
+        let mut edge_indices: Vec<EdgeT> = (0..self.get_edges_number()).collect();
         edge_indices.shuffle(&mut rng);
 
-        let mut train: GraphDictionary = GraphDictionary::new();
-        let mut valid: GraphDictionary = GraphDictionary::new();
+        let mut valid_edges_bitmap = RoaringTreemap::new();
+        let mut last_length = 0;
 
-        for edge_id in edge_indices.iter().progress_with(pb) {
-            let src = self.get_src_from_edge_id(*edge_id);
-            let dst = self.destinations[*edge_id];
-
-
-            if !self.is_directed && src > dst {
+        for (edge_id, (src, dst, edge_type)) in edge_indices
+            .iter()
+            .cloned()
+            .map(|edge_id| (edge_id, self.get_edge_triple(edge_id)))
+        {
+            // If the graph is undirected and we have extracted an edge that is a
+            // simmetric one, we can skip this iteration.
+            if !self.directed && src > dst {
                 continue;
             }
-
-            let edge_type = if let Some(et) = &self.edge_types {
-                Some(et.ids[*edge_id])
-            } else {
-                None
-            };
-
-            // Check if the edge with the considered edge type as already been added.
-            if [&train, &valid]
-                .iter()
-                .any(|tree| match tree.get(&(src, dst)) {
-                    Some(metadata) => {
-                        if let Some(md) = metadata {
-                            md.contains_edge_type(edge_type)
-                        } else {
-                            unreachable!(
-                                "This is not reacheable as it would imply duplicated edges."
-                            );
-                        }
-                    }
-                    None => false,
-                })
-            {
-                // The edge that is currently being considered as already
-                // been added in the current heterogenous multi-graph
-                // by the use of the parameter `include_all_edge_types`
-                continue;
-            }
-
-            let weight = if let Some(w) = &self.weights {
-                Some(w[*edge_id])
-            } else {
-                None
-            };
 
             // We stop adding edges when we have reached the minimum amount.
-            if user_condition(src, dst, edge_type) && valid.len() < valid_edges_number {
-                valid.extend(self, src, dst, edge_type, weight, include_all_edge_types);
-            } else {
-                // Otherwise we add the edges to the training set.
-                train.extend(self, src, dst, edge_type, weight, include_all_edge_types);
+            if user_condition(edge_id, src, dst) {
+                // Compute the forward edge ids that are required.
+                valid_edges_bitmap.extend(self.compute_edge_ids_vector(
+                    edge_id,
+                    src,
+                    dst,
+                    include_all_edge_types,
+                ));
+
+                // If the graph is undirected
+                if !self.directed {
+                    // we compute also the backward edge ids that are required.
+                    valid_edges_bitmap.extend(self.compute_edge_ids_vector(
+                        self.get_unchecked_edge_id(dst, src, edge_type),
+                        dst,
+                        src,
+                        include_all_edge_types,
+                    ));
+                }
+                pb1.inc(valid_edges_bitmap.len() - last_length);
+                last_length = valid_edges_bitmap.len();
+            }
+
+            // We stop the iteration when we found all the edges.
+            if valid_edges_bitmap.len() >= valid_edges_number {
+                break;
             }
         }
 
-        if train.is_empty() {
-            return Err(String::from(
-                "With given holdouts parameters the train partition results empty.",
-            ));
-        }
-
-        if valid.len() < valid_edges_number {
-            let actual_valid_edges_number = valid.len();
+        if valid_edges_bitmap.len() < valid_edges_number {
+            let actual_valid_edges_number = valid_edges_bitmap.len();
             let valid_percentage = 1.0 - train_percentage;
             let actual_valid_percentage =
                 actual_valid_edges_number as f64 / self.get_edges_number() as f64;
@@ -241,29 +284,52 @@ impl Graph {
             ));
         }
 
+        // Creating the loading bar for the building of both the training and validation.
+        let pb_valid = get_loading_bar(
+            verbose,
+            "Building the valid partition",
+            valid_edges_bitmap.len() as usize,
+        );
+        let pb_train = get_loading_bar(
+            verbose,
+            "Building the train partition",
+            (self.get_edges_number() - valid_edges_bitmap.len()) as usize,
+        );
+
+        let results = (0..self.get_edges_number())
+            .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
+            .progress_with(pb_train)
+            .map(|edge_id| Ok(self.get_edge_quadruple(edge_id)))
+            .collect::<Vec<_>>();
+
         Ok((
-            build_graph(
-                &mut train,
+            Graph::build_graph(
+                results.iter().cloned(),
+                self.get_edges_number() - valid_edges_bitmap.len() as EdgeT,
                 self.nodes.clone(),
                 self.node_types.clone(),
-                if let Some(et) = &self.edge_types {
-                    Some(et.vocabulary.clone())
-                } else {
-                    None
+                match &self.edge_types {
+                    Some(ets) => Some(ets.vocabulary.clone()),
+                    None => None,
                 },
-                self.is_directed,
-            ),
-            build_graph(
-                &mut valid,
+                self.directed,
+                false,
+            )?,
+            Graph::build_graph(
+                valid_edges_bitmap
+                    .iter()
+                    .progress_with(pb_valid)
+                    .map(|edge_id| Ok(self.get_edge_quadruple(edge_id))),
+                valid_edges_bitmap.len() as EdgeT,
                 self.nodes.clone(),
                 self.node_types.clone(),
-                if let Some(et) = &self.edge_types {
-                    Some(et.vocabulary.clone())
-                } else {
-                    None
+                match &self.edge_types {
+                    Some(ets) => Some(ets.vocabulary.clone()),
+                    None => None,
                 },
-                self.is_directed,
-            ),
+                self.directed,
+                false,
+            )?,
         ))
     }
 
@@ -286,7 +352,7 @@ impl Graph {
     ///
     pub fn connected_holdout(
         &self,
-        seed: NodeT,
+        seed: EdgeT,
         train_percentage: f64,
         include_all_edge_types: bool,
         verbose: bool,
@@ -296,12 +362,13 @@ impl Graph {
                 "Train percentage must be strictly between 0 and 1.",
             ));
         }
+
         let tree = self.spanning_tree(seed, include_all_edge_types, verbose);
 
-        let edge_factor = if self.is_directed { 1 } else { 2 };
-        let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as usize;
+        let edge_factor = if self.is_directed() { 1 } else { 2 };
+        let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as EdgeT;
         let valid_edges_number =
-            (self.get_edges_number() as f64 * (1.0 - train_percentage)) as usize;
+            (self.get_edges_number() as f64 * (1.0 - train_percentage)) as EdgeT;
 
         if tree.len() * edge_factor > train_edges_number {
             return Err(format!(
@@ -322,14 +389,13 @@ impl Graph {
             ));
         }
 
-        let (train, test) = self.holdout(
+        self.holdout(
             seed,
             train_percentage,
             include_all_edge_types,
-            |src, dst, edge_type| !tree.contains(&(src, dst, edge_type)),
+            |edge_id, _, _| !tree.contains(edge_id),
             verbose,
-        )?;
-        Ok((train, test))
+        )
     }
 
     /// Returns random holdout for training ML algorithms on the graph edges.
@@ -349,11 +415,11 @@ impl Graph {
     ///
     pub fn random_holdout(
         &self,
-        seed: NodeT,
+        seed: EdgeT,
         train_percentage: f64,
         include_all_edge_types: bool,
         edge_types: Option<Vec<String>>,
-        min_number_overlaps: Option<usize>,
+        min_number_overlaps: Option<EdgeT>,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
         let edge_type_ids = if let Some(ets) = edge_types {
@@ -372,13 +438,13 @@ impl Graph {
             seed,
             train_percentage,
             include_all_edge_types,
-            |src, dst, edge_type| {
+            |edge_id, src, dst| {
                 // If a list of edge types was provided and the edge type
                 // of the current edge is not within the provided list,
                 // we skip the current edge.
                 if let Some(etis) = &edge_type_ids {
-                    if let Some(et) = &edge_type {
-                        if !etis.contains(et) {
+                    if let Some(ets) = &self.edge_types {
+                        if !etis.contains(&ets.ids[edge_id as usize]) {
                             return false;
                         }
                     }
@@ -386,7 +452,7 @@ impl Graph {
                 // If a minimum number of overlaps was provided and the current
                 // edge has not the required minimum amount of overlaps.
                 if let Some(mno) = min_number_overlaps {
-                    if self.get_edge_ids(src, dst).unwrap().len() < mno {
+                    if self.get_unchecked_edge_types_number_from_tuple(src, dst) < mno {
                         return false;
                     }
                 }
@@ -415,33 +481,31 @@ impl Graph {
     pub fn random_subgraph(
         &self,
         seed: usize,
-        nodes_number: usize,
+        nodes_number: NodeT,
         verbose: bool,
     ) -> Result<Graph, String> {
         if nodes_number <= 1 {
             return Err(String::from("Required nodes number must be more than 1."));
         }
-        if nodes_number > self.get_nodes_number() - self.singleton_nodes_number() {
+        let not_singleton_nodes_number = self.get_not_singleton_nodes_number();
+        if nodes_number > not_singleton_nodes_number {
             return Err(format!(
                 concat!(
                     "Required number of nodes ({}) is more than available ",
                     "number of nodes ({}) that have edges in current graph."
                 ),
-                nodes_number,
-                self.get_nodes_number() - self.singleton_nodes_number()
+                nodes_number, not_singleton_nodes_number
             ));
         }
 
-        let pb = if verbose {
-            let pb = ProgressBar::new(self.get_edges_number() as u64);
-            pb.set_draw_delta(self.get_edges_number() as u64 / 100);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Generating subgraph {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        // Creating the loading bars
+        let pb1 = get_loading_bar(verbose, "Sampling nodes subset", nodes_number as usize);
+        let pb2 = get_loading_bar(verbose, "Computing subgraph edges", nodes_number as usize);
+        let pb3 = get_loading_bar(
+            verbose,
+            "Building subgraph",
+            self.get_edges_number() as usize,
+        );
 
         // Creating the random number generator
         let mut rnd = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
@@ -452,15 +516,12 @@ impl Graph {
         // Shuffling the components using the given seed.
         nodes.shuffle(&mut rnd);
 
-        // Initializing the vector for creating the new graph.
-        let mut graph_data: GraphDictionary = GraphDictionary::new();
-
         // Initializing stack and set of nodes
-        let mut unique_nodes: HashSet<NodeT> = HashSet::with_capacity(nodes_number);
+        let mut unique_nodes = RoaringBitmap::new();
         let mut stack: Vec<NodeT> = Vec::new();
 
         // We iterate on the components
-        'outer: for node in nodes.iter().progress_with(pb) {
+        'outer: for node in nodes.iter() {
             // If the current node is a trap there is no need to continue with the current loop.
             if self.is_node_trap(*node) {
                 continue;
@@ -468,48 +529,48 @@ impl Graph {
             stack.push(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
-                let (min_edge, max_edge) = self.get_min_max_edge(src);
-                for edge_id in min_edge..max_edge {
-                    let dst: NodeT = self.destinations[edge_id];
-                    if !unique_nodes.contains(&dst) && src != dst {
+                for dst in self.get_source_destinations_range(src) {
+                    if !unique_nodes.contains(dst) && src != dst {
                         stack.push(dst);
                     }
 
-                    let edge_type = if let Some(et) = &self.edge_types {
-                        Some(et.ids[edge_id])
-                    } else {
-                        None
-                    };
-
-                    let weight = if let Some(w) = &self.weights {
-                        Some(w[edge_id])
-                    } else {
-                        None
-                    };
-
                     unique_nodes.insert(*node);
                     unique_nodes.insert(dst);
+                    pb1.inc(2);
 
-                    graph_data.extend(&self, src, dst, edge_type, weight, true);
                     // If we reach the desired number of unique nodes we can stop the iteration.
-                    if unique_nodes.len() >= nodes_number {
+                    if unique_nodes.len() as NodeT >= nodes_number {
                         break 'outer;
                     }
                 }
             }
         }
 
-        Ok(build_graph(
-            &mut graph_data,
+        pb1.finish();
+
+        let edges_bitmap =
+            RoaringTreemap::from_iter(unique_nodes.iter().progress_with(pb2).flat_map(|src| {
+                let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(src);
+                (min_edge_id..max_edge_id)
+                    .filter(|edge_id| unique_nodes.contains(self.get_destination(*edge_id)))
+                    .collect::<Vec<EdgeT>>()
+            }));
+
+        Graph::build_graph(
+            edges_bitmap
+                .iter()
+                .progress_with(pb3)
+                .map(|edge_id| Ok(self.get_edge_quadruple(edge_id))),
+            edges_bitmap.len() as EdgeT,
             self.nodes.clone(),
             self.node_types.clone(),
-            if let Some(et) = &self.edge_types {
-                Some(et.vocabulary.clone())
-            } else {
-                None
+            match &self.edge_types {
+                Some(ets) => Some(ets.vocabulary.clone()),
+                None => None,
             },
-            self.is_directed,
-        ))
+            self.directed,
+            false,
+        )
     }
 
     /// Returns subgraph with given set of edge types.
@@ -533,53 +594,43 @@ impl Graph {
             ));
         }
 
-        let edge_type_ids = self.translate_edge_types(edge_types)?;
+        let edge_type_ids: HashSet<EdgeTypeT> = self
+            .translate_edge_types(edge_types)?
+            .iter()
+            .cloned()
+            .collect::<HashSet<EdgeTypeT>>();
 
-        let pb = if verbose {
-            let pb = ProgressBar::new(self.get_edges_number() as u64);
-            pb.set_draw_delta(self.get_edges_number() as u64 / 100);
-            pb.set_style(ProgressStyle::default_bar().template(
-                "Generating subgraph {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
-            ));
-            pb
-        } else {
-            ProgressBar::hidden()
-        };
+        let pb = get_loading_bar(
+            verbose,
+            "Creating subgraph with given edge types",
+            self.get_edges_number() as usize,
+        );
 
-        // Initializing the vector for creating the new graph.
-        let mut graph_data: GraphDictionary = GraphDictionary::new();
+        let edges_number = edge_type_ids
+            .iter()
+            .map(|et| self.get_edge_type_number(*et) as EdgeT)
+            .sum();
 
-        (0..self.get_edges_number())
-            .progress_with(pb)
-            .map(|edge_id| {
-                let src = self.get_src_from_edge_id(edge_id);
-                let dst = self.destinations[edge_id];
-
-                let edge_type = self.get_edge_type_id(edge_id).unwrap();
-
-                let weight = if let Some(w) = &self.weights {
-                    Some(w[edge_id])
-                } else {
-                    None
-                };
-
-                (src, dst, edge_type, weight)
-            })
-            .filter(|(_, _, edge_type, _)| edge_type_ids.contains(edge_type))
-            .for_each(|(src, dst, edge_type, weight)| {
-                graph_data.extend(&self, src, dst, Some(edge_type), weight, false)
-            });
-
-        Ok(build_graph(
-            &mut graph_data,
+        Graph::build_graph(
+            (0..self.get_edges_number())
+                .progress_with(pb)
+                .filter_map(|edge_id| match &self.edge_types {
+                    Some(ets) => match edge_type_ids.contains(&ets.ids[edge_id as usize]) {
+                        true => Some(self.get_edge_quadruple(edge_id)),
+                        false => None,
+                    },
+                    None => None,
+                })
+                .map(Ok),
+            edges_number,
             self.nodes.clone(),
             self.node_types.clone(),
-            if let Some(et) = &self.edge_types {
-                Some(et.vocabulary.clone())
-            } else {
-                None
+            match &self.edge_types {
+                Some(ets) => Some(ets.vocabulary.clone()),
+                None => None,
             },
-            self.is_directed,
-        ))
+            self.directed,
+            false,
+        )
     }
 }

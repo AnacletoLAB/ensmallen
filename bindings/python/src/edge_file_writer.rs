@@ -5,7 +5,7 @@ use pyo3::types::PyDict;
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, path, *, verbose, separator, header, sources_column_number, sources_column, destinations_column_number, destinations_column, weights_column_number, weights_column, edge_types_column_number, edges_type_column)"]
+    #[text_signature = "($self, path, *, verbose, separator, header, sources_column_number, sources_column, destinations_column_number, destinations_column, weights_column_number, weights_column, edge_types_column_number, edges_type_column, numeric_node_ids, directed)"]
     /// Write to disk the edges (and optionally the metadata) of the graph.
     ///
     /// Parameters
@@ -34,6 +34,10 @@ impl EnsmallenGraph {
     ///     The column number where to write out the .
     /// weights_column: str = "weight",
     ///     The name of the column where to write out the .
+    /// numeric_node_ids: bool = False,
+    ///     Wethever to save the internal numeric Ids instead of the string names.
+    /// directed: bool = False,
+    ///     Wethever to save graph as directed or undirected.
     ///
     /// Raises
     /// ------------------------
@@ -43,7 +47,7 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        validate_kwargs(
+        pyex!(validate_kwargs(
             kwargs,
             [
                 "verbose",
@@ -57,28 +61,32 @@ impl EnsmallenGraph {
                 "weights_column",
                 "edge_types_column_number",
                 "edges_type_column",
+                "numeric_node_ids",
+                "directed"
             ]
             .iter()
             .map(|x| x.to_string())
             .collect(),
-        )?;
+        ))?;
 
         let writer = EdgeFileWriter::new(path)
-            .set_verbose(extract_value!(kwargs, "verbose", bool))
-            .set_separator(extract_value!(kwargs, "separator", String))
-            .set_header(extract_value!(kwargs, "header", bool))
-            .set_sources_column_number(extract_value!(kwargs, "sources_column_number", usize))
-            .set_sources_column(extract_value!(kwargs, "sources_column", String))
-            .set_destinations_column_number(extract_value!(
+            .set_verbose(pyex!(extract_value!(kwargs, "verbose", bool))?)
+            .set_separator(pyex!(extract_value!(kwargs, "separator", String))?)
+            .set_header(pyex!(extract_value!(kwargs, "header", bool))?)
+            .set_directed(pyex!(extract_value!(kwargs, "directed", bool))?)
+            .set_sources_column_number(pyex!(extract_value!(kwargs, "sources_column_number", usize))?)
+            .set_sources_column(pyex!(extract_value!(kwargs, "sources_column", String))?)
+            .set_destinations_column_number(pyex!(extract_value!(
                 kwargs,
                 "destinations_column_number",
                 usize
-            ))
-            .set_destinations_column(extract_value!(kwargs, "destinations_column", String))
-            .set_weights_column_number(extract_value!(kwargs, "weights_column_number", usize))
-            .set_weights_column(extract_value!(kwargs, "weights_column", String))
-            .set_edge_types_column_number(extract_value!(kwargs, "edge_types_column_number", usize))
-            .set_edge_types_column(extract_value!(kwargs, "edges_type_column", String));
+            ))?)
+            .set_destinations_column(pyex!(extract_value!(kwargs, "destinations_column", String))?)
+            .set_weights_column_number(pyex!(extract_value!(kwargs, "weights_column_number", usize))?)
+            .set_weights_column(pyex!(extract_value!(kwargs, "weights_column", String))?)
+            .set_edge_types_column_number(pyex!(extract_value!(kwargs, "edge_types_column_number", usize))?)
+            .set_numeric_node_ids(pyex!(extract_value!(kwargs, "numeric_node_ids", bool))?)
+            .set_edge_types_column(pyex!(extract_value!(kwargs, "edges_type_column", String))?);
         pyex!(writer.dump(&self.graph))
     }
 }

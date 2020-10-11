@@ -7,10 +7,10 @@ use graph::{EdgeFileReader, Graph};
 /// in undirected graphs.
 fn test_deadlock1() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/1.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, false).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, false).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -20,10 +20,10 @@ fn test_deadlock1() {
 /// present srcs and dsts instead of random nodes.
 fn test_deadlock2() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/2.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -35,11 +35,11 @@ fn test_deadlock2() {
 /// and if the graph had EXACTLY the number of negative edges as the wanted
 fn test_deadlock3() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/3.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_header(Some(false))
         .set_edge_types_column_number(Some(2)).unwrap();
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -49,10 +49,10 @@ fn test_deadlock3() {
 /// place that made impossible to add some self-loops.
 fn test_deadlock4() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/4.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, false).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, false).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -65,10 +65,10 @@ fn test_deadlock4() {
 /// add nodes already present.
 fn test_regression5() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/5.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -81,10 +81,10 @@ fn test_regression5() {
 /// Therefore it could became a knapsack problem.
 fn test_regression6() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/6.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -94,14 +94,14 @@ fn test_regression6() {
 /// we will keep it because it's an extra test for free. 
 fn test_regression7() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/7.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_skip_self_loops(Some(true))
         .set_ignore_duplicates(Some(true))
         .set_edge_types_column_number(Some(2)).unwrap()
         .set_weights_column_number(Some(3)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -109,13 +109,13 @@ fn test_regression7() {
 /// Some issue is causing the walk to mis-behave when the graph is composite of two self loops of different types on the same node.
 fn test_regression8() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/8.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_ignore_duplicates(Some(true))
         .set_edge_types_column_number(Some(2)).unwrap()
         .set_weights_column_number(Some(3)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, false).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, false).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -123,12 +123,12 @@ fn test_regression8() {
 /// An unknown cause that does no longer exist used to make the library crash on this file.
 fn test_regression9() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/9.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_skip_self_loops(Some(true))
         .set_ignore_duplicates(Some(true)) 
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
@@ -136,64 +136,119 @@ fn test_regression9() {
 /// An unknown cause is making the library crash on this file.
 fn test_regression10() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/10.tsv".to_string()).unwrap()
-        .set_separator(Some(" ".to_string()))
+        .set_separator(Some(" ".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_sources_column_number(Some(0)).unwrap()
         .set_destinations_column_number(Some(1)).unwrap()
         .set_weights_column_number(Some(1)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
 #[test]
 fn test_regression11() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/11.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_skip_self_loops(Some(true))
         .set_sources_column_number(Some(0)).unwrap()
         .set_destinations_column_number(Some(1)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
 #[test]
 fn test_regression12() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/12.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_sources_column_number(Some(0)).unwrap()
         .set_destinations_column_number(Some(1)).unwrap()
         .set_edge_types_column_number(Some(2)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, false).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, false).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
 #[test]
 fn test_regression13() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/13.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_sources_column_number(Some(0)).unwrap()
         .set_destinations_column_number(Some(1)).unwrap()
         .set_edge_types_column_number(Some(2)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, false).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, false).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }
 
 #[test]
 fn test_regression14() {
     let edges_reader = EdgeFileReader::new("tests/data/regression/14.tsv".to_string()).unwrap()
-        .set_separator(Some(",".to_string()))
+        .set_separator(Some(",".to_string())).unwrap()
         .set_verbose(Some(false))
         .set_sources_column_number(Some(0)).unwrap()
         .set_destinations_column_number(Some(1)).unwrap()
         .set_edge_types_column_number(Some(2)).unwrap()
         .set_header(Some(false));
-    let g = Graph::from_csv(edges_reader, None, true).unwrap();
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
+    let _ = graph::test_utilities::default_test_suite(&g, false);
+}
+
+#[test]
+fn test_regression15() {
+    let edges_reader = EdgeFileReader::new("tests/data/regression/15.tsv".to_string()).unwrap()
+        .set_separator(Some(",".to_string())).unwrap()
+        .set_verbose(Some(false))
+        .set_sources_column_number(Some(0)).unwrap()
+        .set_destinations_column_number(Some(1)).unwrap()
+        .set_edge_types_column_number(Some(2)).unwrap()
+        .set_header(Some(false));
+    let g = Graph::from_unsorted_csv(edges_reader, None, false).unwrap();
+    let _ = graph::test_utilities::default_test_suite(&g, false);
+}
+
+#[test]
+fn test_regression16() {
+    let edges_reader = EdgeFileReader::new("tests/data/regression/16.tsv".to_string()).unwrap()
+        .set_separator(Some(",".to_string())).unwrap()
+        .set_verbose(Some(false))
+        .set_sources_column_number(Some(0)).unwrap()
+        .set_destinations_column_number(Some(1)).unwrap()
+        .set_edge_types_column_number(Some(2)).unwrap()
+        .set_weights_column_number(Some(3)).unwrap()
+        .set_header(Some(false));
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
+    let _ = graph::test_utilities::default_test_suite(&g, false);
+}
+
+#[test]
+fn test_regression17() {
+    let edges_reader = EdgeFileReader::new("tests/data/regression/17.tsv".to_string()).unwrap()
+        .set_separator(Some(",".to_string())).unwrap()
+        .set_verbose(Some(false))
+        .set_sources_column_number(Some(0)).unwrap()
+        .set_destinations_column_number(Some(1)).unwrap()
+        .set_edge_types_column_number(Some(2)).unwrap()
+        .set_weights_column_number(Some(3)).unwrap()
+        .set_header(Some(false));
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
+    let _ = graph::test_utilities::default_test_suite(&g, false);
+}
+
+#[test]
+fn test_regression18() {
+    let edges_reader = EdgeFileReader::new("tests/data/regression/18.tsv".to_string()).unwrap()
+        .set_separator(Some(",".to_string())).unwrap()
+        .set_verbose(Some(false))
+        .set_sources_column_number(Some(0)).unwrap()
+        .set_destinations_column_number(Some(1)).unwrap()
+        .set_edge_types_column_number(Some(2)).unwrap()
+        .set_weights_column_number(Some(3)).unwrap()
+        .set_header(Some(false));
+    let g = Graph::from_unsorted_csv(edges_reader, None, true).unwrap();
     let _ = graph::test_utilities::default_test_suite(&g, false);
 }

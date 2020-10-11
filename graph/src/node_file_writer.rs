@@ -155,14 +155,14 @@ impl NodeFileWriter {
         let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
 
         self.writer.write_lines(
-            graph.get_nodes_number() as u64,
+            graph.get_nodes_number() as usize,
             compose_lines(number_of_columns, header),
             (0..graph.get_nodes_number()).map(|index| {
                 let mut line = vec![(graph.nodes.translate(index).to_string(), self.nodes_column_number)];
 
                 if let Some(nt) = &graph.node_types {
                     line.push((
-                        nt.translate(nt.ids[index]).to_string(),
+                        nt.translate(nt.ids[index as usize]).to_string(),
                         self.node_types_column_number,
                     ));
                 }

@@ -37,20 +37,20 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        validate_kwargs(
+        pyex!(validate_kwargs(
             kwargs,
             build_walk_parameters_list(&["seed", "include_all_edge_types", "verbose"]),
-        )?;
+        ))?;
 
         let (g1, g2) = pyex!(self.graph.connected_holdout(
-            extract_value!(kwargs, "seed", usize)
+            pyex!(extract_value!(kwargs, "seed", EdgeT))?
                 .or_else(|| Some(42))
                 .unwrap(),
             train_percentage,
-            extract_value!(kwargs, "include_all_edge_types", bool)
+            pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?
                 .or_else(|| Some(true))
                 .unwrap(),
-            extract_value!(kwargs, "verbose", bool)
+            pyex!(extract_value!(kwargs, "verbose", bool))?
                 .or_else(|| Some(true))
                 .unwrap()
         ))?;
@@ -90,15 +90,15 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        validate_kwargs(kwargs, build_walk_parameters_list(&["seed", "verbose"]))?;
+        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&["seed", "verbose"])))?;
 
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.random_subgraph(
-                extract_value!(kwargs, "seed", usize)
+                pyex!(extract_value!(kwargs, "seed", usize))?
                     .or_else(|| Some(42))
                     .unwrap(),
                 nodes_number,
-                extract_value!(kwargs, "verbose", bool)
+                pyex!(extract_value!(kwargs, "verbose", bool))?
                     .or_else(|| Some(true))
                     .unwrap()
             ))?,
@@ -156,7 +156,7 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        validate_kwargs(
+        pyex!(validate_kwargs(
             kwargs,
             build_walk_parameters_list(&[
                 "seed",
@@ -165,19 +165,19 @@ impl EnsmallenGraph {
                 "min_number_overlaps",
                 "verbose",
             ]),
-        )?;
+        ))?;
 
         let (g1, g2) = pyex!(self.graph.random_holdout(
-            extract_value!(kwargs, "seed", usize)
+            pyex!(extract_value!(kwargs, "seed", EdgeT))?
                 .or_else(|| Some(42))
                 .unwrap(),
             train_percentage,
-            extract_value!(kwargs, "include_all_edge_types", bool)
+            pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?
                 .or_else(|| Some(true))
                 .unwrap(),
-            extract_value!(kwargs, "edge_types", Vec<String>),
-            extract_value!(kwargs, "min_number_overlaps", usize),
-            extract_value!(kwargs, "verbose", bool)
+            pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
+            pyex!(extract_value!(kwargs, "min_number_overlaps", EdgeT))?,
+            pyex!(extract_value!(kwargs, "verbose", bool))?
                 .or_else(|| Some(true))
                 .unwrap()
         ))?;
@@ -199,10 +199,6 @@ impl EnsmallenGraph {
     ///     The number of negative edges to use.
     /// seed: int = 42,
     ///     The seed to use to generate the holdout.
-    /// allow_selfloops: bool = None,
-    ///     Wethever to allow creation of self-loops.
-    ///     If None (default value) is provided, self-loops are created only
-    ///     if they are present in the original graph.
     /// verbose: bool = True,
     ///     Wethever to show the loading bar.
     ///     The loading bar will only be visible in console.
@@ -222,21 +218,18 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        validate_kwargs(
+        pyex!(validate_kwargs(
             kwargs,
             build_walk_parameters_list(&["seed", "allow_selfloops", "verbose"]),
-        )?;
+        ))?;
 
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.sample_negatives(
-                extract_value!(kwargs, "seed", usize)
+                pyex!(extract_value!(kwargs, "seed", EdgeT))?
                     .or_else(|| Some(42))
                     .unwrap(),
                 negatives_number,
-                extract_value!(kwargs, "allow_selfloops", bool)
-                    .or_else(|| Some(self.graph.has_selfloops()))
-                    .unwrap(),
-                extract_value!(kwargs, "verbose", bool)
+                pyex!(extract_value!(kwargs, "verbose", bool))?
                     .or_else(|| Some(true))
                     .unwrap()
             ))?,
@@ -269,12 +262,12 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        validate_kwargs(kwargs, build_walk_parameters_list(&["verbose"]))?;
+        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&["verbose"])))?;
 
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.edge_types_subgraph(
                 edge_types,
-                extract_value!(kwargs, "verbose", bool)
+                pyex!(extract_value!(kwargs, "verbose", bool))?
                     .or_else(|| Some(true))
                     .unwrap()
             ))?,
