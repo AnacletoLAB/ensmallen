@@ -4,7 +4,7 @@ use graph::{EdgeT, NodeT};
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, train_percentage, *, seed, include_all_edge_types, verbose)"]
+    #[text_signature = "($self, train_rate, *, seed, edge_types, include_all_edge_types, verbose)"]
     /// Returns training and validation holdouts extracted from current graph.
     ///
     /// The holdouts is generated in such a way that the training set remains
@@ -12,10 +12,12 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// -----------------------------
-    /// train_percentage: float,
-    ///     The percentage to reserve for the training.
+    /// train_rate: float,
+    ///     The rate of edges to reserve for the training.
     /// seed: int = 42,
     ///     The seed to use to generate the holdout.
+    /// edge_types: List[str] = None,
+    ///     List of names of the edge types to put into the validation.
     /// include_all_edge_types: bool = True,
     ///     Wethever to include all the edges between two nodes.
     ///     This is only relevant in multi-graphs.
@@ -24,14 +26,15 @@ impl EnsmallenGraph {
     ///
     /// Raises
     /// -----------------------------
-    /// TODO: Add the docstring for the raised exceptions.
+    /// ValueError,
+    ///     If the given train rate is not a real number between 0 and 1.
     ///
     /// Returns
     /// -----------------------------
     /// Tuple containing training and validation graphs.
     fn connected_holdout(
         &self,
-        train_percentage: f64,
+        train_rate: f64,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
         let py = pyo3::Python::acquire_gil();
@@ -39,14 +42,15 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["seed", "include_all_edge_types", "verbose"]),
+            build_walk_parameters_list(&["seed", "edge_types", "include_all_edge_types", "verbose"]),
         ))?;
 
         let (g1, g2) = pyex!(self.graph.connected_holdout(
             pyex!(extract_value!(kwargs, "seed", EdgeT))?
                 .or_else(|| Some(42))
                 .unwrap(),
-            train_percentage,
+            train_rate,
+            pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
             pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?
                 .or_else(|| Some(true))
                 .unwrap(),
@@ -106,7 +110,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, train_percentage, *, seed, include_all_edge_types, edge_types, min_number_overlaps, verbose)"]
+    #[text_signature = "($self, train_rate, *, seed, include_all_edge_types, edge_types, min_number_overlaps, verbose)"]
     /// Returns training and validation holdouts extracted from current graph.
     ///
     /// The holdouts edges are randomly sampled and have no garanties that any
@@ -114,8 +118,8 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// -----------------------------
-    /// train_percentage: float,
-    ///     The percentage to reserve for the training.
+    /// train_rate: float,
+    ///     The rate to reserve for the training.
     /// seed: int = 42,
     ///     The seed to make the holdout reproducible.
     /// include_all_edge_types: bool = True,
@@ -136,7 +140,7 @@ impl EnsmallenGraph {
     /// Raises
     /// -----------------------------
     /// ValueError,
-    ///     If the given train percentage is invalid, for example less or equal to 0
+    ///     If the given train rate is invalid, for example less or equal to 0
     ///     or greater than one.
     /// ValueError,
     ///     If edge types are required but graph is not heterogeneous.
@@ -150,7 +154,7 @@ impl EnsmallenGraph {
     /// Tuple containing training and validation graphs.
     fn random_holdout(
         &self,
-        train_percentage: f64,
+        train_rate: f64,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
         let py = pyo3::Python::acquire_gil();
@@ -171,7 +175,7 @@ impl EnsmallenGraph {
             pyex!(extract_value!(kwargs, "seed", EdgeT))?
                 .or_else(|| Some(42))
                 .unwrap(),
-            train_percentage,
+            train_rate,
             pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?
                 .or_else(|| Some(true))
                 .unwrap(),

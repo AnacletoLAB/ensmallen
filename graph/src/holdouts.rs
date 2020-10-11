@@ -151,16 +151,14 @@ impl Graph {
         )
     }
 
-    /// Compute the training and validation edges number from the training percentage
+    /// Compute the training and validation edges number from the training rate
     fn get_holdouts_edges_number(
         &self,
-        train_percentage: f64,
+        train_rate: f64,
         include_all_edge_types: bool,
     ) -> Result<(EdgeT, EdgeT), String> {
-        if train_percentage <= 0.0 || train_percentage >= 1.0 {
-            return Err(String::from(
-                "Train percentage must be strictly between 0 and 1.",
-            ));
+        if train_rate <= 0.0 || train_rate >= 1.0 {
+            return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
         if self.directed && self.get_edges_number() == 1
             || !self.directed && self.get_edges_number() == 2
@@ -174,17 +172,17 @@ impl Graph {
         } else {
             self.get_edges_number()
         };
-        let train_edges_number = (total_edges_number as f64 * train_percentage) as EdgeT;
+        let train_edges_number = (total_edges_number as f64 * train_rate) as EdgeT;
         let valid_edges_number = total_edges_number - train_edges_number;
 
         if train_edges_number == 0 || train_edges_number >= total_edges_number {
             return Err(String::from(
-                "The training set has 0 edges! Change the training percentage.",
+                "The training set has 0 edges! Change the training rate.",
             ));
         }
         if valid_edges_number == 0 {
             return Err(String::from(
-                "The validation set has 0 edges! Change the training percentage.",
+                "The validation set has 0 edges! Change the training rate.",
             ));
         }
 
@@ -194,13 +192,13 @@ impl Graph {
     fn holdout(
         &self,
         seed: EdgeT,
-        train_percentage: f64,
+        train_rate: f64,
         include_all_edge_types: bool,
         user_condition: impl Fn(EdgeT, NodeT, NodeT) -> bool,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
         let (_, valid_edges_number) =
-            self.get_holdouts_edges_number(train_percentage, include_all_edge_types)?;
+            self.get_holdouts_edges_number(train_rate, include_all_edge_types)?;
 
         let pb1 = get_loading_bar(
             verbose,
@@ -259,28 +257,28 @@ impl Graph {
 
         if valid_edges_bitmap.len() < valid_edges_number {
             let actual_valid_edges_number = valid_edges_bitmap.len();
-            let valid_percentage = 1.0 - train_percentage;
-            let actual_valid_percentage =
+            let valid_rate = 1.0 - train_rate;
+            let actual_valid_rate =
                 actual_valid_edges_number as f64 / self.get_edges_number() as f64;
-            let actual_train_percentage = 1.0 - actual_valid_percentage;
+            let actual_train_rate = 1.0 - actual_valid_rate;
             return Err(format!(
                 concat!(
                     "With the given configuration for the holdout, it is not possible to ",
                     "generate a validation set composed of {valid_edges_number} edges from the current graph.\n",
                     "The validation set can be composed of at most {actual_valid_edges_number} edges.\n",
-                    "The actual train/valid split percentages, with the current configuration,",
-                    "would not be {train_percentage}/{valid_percentage} but {actual_train_percentage}/{actual_valid_percentage}.\n",
+                    "The actual train/valid split rates, with the current configuration,",
+                    "would not be {train_rate}/{valid_rate} but {actual_train_rate}/{actual_valid_rate}.\n",
                     "If you really want to do this, you can pass the argument:\n",
-                    "train_percentage: {actual_train_percentage}\n",
+                    "train_rate: {actual_train_rate}\n",
                     "Before proceeding, consider what is your experimental setup goal and ",
                     "the possible bias and validation problems that this choice might cause."
                 ),
                 valid_edges_number=valid_edges_number,
                 actual_valid_edges_number=actual_valid_edges_number,
-                train_percentage=train_percentage,
-                valid_percentage=valid_percentage,
-                actual_train_percentage=actual_train_percentage,
-                actual_valid_percentage=actual_valid_percentage
+                train_rate=train_rate,
+                valid_rate=valid_rate,
+                actual_train_rate=actual_train_rate,
+                actual_valid_rate=actual_valid_rate
             ));
         }
 
@@ -339,36 +337,77 @@ impl Graph {
     /// is the training graph, is garanteed to have the same number of
     /// graph components as the initial graph. The second graph is the graph
     /// meant for testing or validation of the algorithm, and has no garantee
-    /// to be connected. It will have at most (1-train_percentage) edges,
+    /// to be connected. It will have at most (1-train_rate) edges,
     /// as the bound of connectivity which is required for the training graph
     /// may lead to more edges being left into the training partition.
     ///
+    /// In the option where a list of edge types has been provided, these
+    /// edge types will be those put into the validation set.
+    ///
     /// # Arguments
     ///
-    /// * `seed`:NodeT - The seed to use for the holdout,
-    /// * `train_percentage`:f64 - Percentage target to reserve for training.
+    /// * `seed`: NodeT - The seed to use for the holdout,
+    /// * `train_rate`: f64 - Rate target to reserve for training.
+    /// * `edge_types`: Option<Vec<String>> - Edge types to be selected for in the validation set.
     /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
     /// * `verbose`: bool - Wethever to show the loading bar.
+    ///
     ///
     pub fn connected_holdout(
         &self,
         seed: EdgeT,
-        train_percentage: f64,
+        train_rate: f64,
+        edge_types: Option<Vec<String>>,
         include_all_edge_types: bool,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
-        if train_percentage <= 0.0 || train_percentage >= 1.0 {
-            return Err(String::from(
-                "Train percentage must be strictly between 0 and 1.",
-            ));
+        if train_rate <= 0.0 || train_rate >= 1.0 {
+            return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
 
-        let tree = self.spanning_tree(seed, include_all_edge_types, verbose);
+        let edge_type_ids = if let Some(ets) = edge_types {
+            Some(
+                self.translate_edge_types(ets)?
+                    .into_iter()
+                    .collect::<HashSet<EdgeTypeT>>(),
+            )
+        } else {
+            None
+        };
+
+        let tree = self.spanning_tree(seed, include_all_edge_types, &edge_type_ids, verbose);
 
         let edge_factor = if self.is_directed() { 1 } else { 2 };
-        let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as EdgeT;
-        let valid_edges_number =
-            (self.get_edges_number() as f64 * (1.0 - train_percentage)) as EdgeT;
+        let train_edges_number = (self.get_edges_number() as f64 * train_rate) as EdgeT;
+        let valid_edges_number = (self.get_edges_number() as f64 * (1.0 - train_rate)) as EdgeT;
+
+        if let Some(etis) = &edge_type_ids {
+            let selected_edges_number = etis
+                .iter()
+                .map(|et| self.get_edge_type_number(*et) as EdgeT)
+                .sum();
+
+            if valid_edges_number > selected_edges_number {
+                return Err(format!(
+                    concat!(
+                        "Given number of requested validation edges number ({}) ",
+                        "is greater than the available number of edges with the ",
+                        "required edge type ({}).\n",
+                        "The minimal train rate to put all the edges of the ",
+                        "requested type into the validation set would be {}.\n",
+                        "If you intended to put the {} of the edges with the ",
+                        "edge types you have specified in the validation set, ",
+                        "you would need to specify as training rate {}."
+                    ),
+                    valid_edges_number,
+                    selected_edges_number,
+                    1.0 - selected_edges_number as f64 / self.get_edges_number() as f64,
+                    1.0 - train_rate,
+                    1.0 - (1.0 - train_rate)
+                        * (selected_edges_number as f64 / self.get_edges_number() as f64),
+                ));
+            }
+        }
 
         if tree.len() * edge_factor > train_edges_number {
             return Err(format!(
@@ -377,23 +416,31 @@ impl Graph {
                     "that is more than the required training edges number {}.\n",
                     "This makes impossible to create a validation set using ",
                     "{} edges.\nIf possible, you should increase the ",
-                    "train_percentage parameter which is currently equal to ",
+                    "train_rate parameter which is currently equal to ",
                     "{}.\nThe deny map, by itself, is requiring at least ",
-                    "a train percentage of {}."
+                    "a train rate of {}."
                 ),
                 tree.len() * edge_factor,
                 train_edges_number,
                 valid_edges_number,
-                train_percentage,
+                train_rate,
                 (tree.len() * edge_factor) as f64 / train_edges_number as f64
             ));
         }
 
         self.holdout(
             seed,
-            train_percentage,
+            train_rate,
             include_all_edge_types,
-            |edge_id, _, _| !tree.contains(edge_id),
+            |edge_id, _, _| {
+                !tree.contains(edge_id)
+                    && match &edge_type_ids {
+                        Some(etis) => {
+                            etis.contains(&self.get_unchecked_edge_type(edge_id).unwrap())
+                        }
+                        None => true,
+                    }
+            },
             verbose,
         )
     }
@@ -407,7 +454,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * `seed`: NodeT - The seed to use for the holdout,
-    /// * `train_percentage`: f64 - Percentage target to reserve for training
+    /// * `train_rate`: f64 - rate target to reserve for training
     /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
     /// * `edge_types`: Option<Vec<String>> - The edges to include in validation set.
     /// * `min_number_overlaps`: Option<usize> - The minimum number of overlaps to include the edge into the validation set.
@@ -416,7 +463,7 @@ impl Graph {
     pub fn random_holdout(
         &self,
         seed: EdgeT,
-        train_percentage: f64,
+        train_rate: f64,
         include_all_edge_types: bool,
         edge_types: Option<Vec<String>>,
         min_number_overlaps: Option<EdgeT>,
@@ -436,7 +483,7 @@ impl Graph {
         }
         self.holdout(
             seed,
-            train_percentage,
+            train_rate,
             include_all_edge_types,
             |edge_id, src, dst| {
                 // If a list of edge types was provided and the edge type

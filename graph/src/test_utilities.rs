@@ -54,7 +54,8 @@ pub fn load_ppi(
                 .set_default_node_type(Some("default".to_string()))
                 .set_nodes_column(Some("id".to_string()))?
                 .set_ignore_duplicates(Some(true))
-                .set_separator(Some("\t".to_string())).unwrap()
+                .set_separator(Some("\t".to_string()))
+                .unwrap()
                 .set_header(Some(true))
                 .set_max_rows_number(Some(100000))
                 .set_rows_to_skip(Some(0)),
@@ -65,7 +66,8 @@ pub fn load_ppi(
     let edges_reader = EdgeFileReader::new("tests/data/ppi/edges.tsv".to_string())?
         .set_verbose(Some(verbose))
         .set_ignore_duplicates(Some(true))
-        .set_separator(Some("\t".to_string())).unwrap()
+        .set_separator(Some("\t".to_string()))
+        .unwrap()
         .set_header(Some(true))
         .set_rows_to_skip(Some(0))
         .set_sources_column_number(Some(1))?
@@ -194,10 +196,11 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         let (train, test) =
             graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
-        let (train, test) = graph.connected_holdout(4, 0.8, *include_all_edge_types, verbose)?;
+        let (train, test) =
+            graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;
         assert_eq!(
-            graph.connected_components_number(),
-            train.connected_components_number()
+            graph.connected_components_number(false),
+            train.connected_components_number(false)
         );
 
         default_holdout_test_suite(graph, &train, &test)?;

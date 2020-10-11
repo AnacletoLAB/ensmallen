@@ -187,6 +187,16 @@ impl EnsmallenGraph {
         Ok(to_nparray_1d!(gil, self.graph.get_destinations(), NodeT))
     }
 
+    /// Return vector of the non-unique source nodes names.
+    pub fn get_source_names(&self) -> Vec<String> {
+        self.graph.get_source_names()
+    }
+
+    /// Return vector on the (non unique) destination nodes of the graph.
+    pub fn get_destination_names(&self) -> Vec<String> {
+        self.graph.get_destination_names()
+    }
+
     /// Return vector of strings representing the node Ids reverse mapping.
     pub fn get_nodes_reverse_mapping(&self) -> Vec<String> {
         self.graph.get_nodes_reverse_mapping()
@@ -268,6 +278,36 @@ impl EnsmallenGraph {
     /// Id of the node type of the node.
     fn get_node_type(&self, node_id: NodeT) -> PyResult<NodeTypeT> {
         pyex!(self.graph.get_node_type(node_id))
+    }
+
+    #[text_signature = "($self, node_id)"]
+    /// Return the string name of the node.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node_id: int,
+    ///     Numeric ID of the node.
+    ///
+    /// Returns
+    /// ---------------------
+    /// String name of the node.
+    fn get_node_name(&self, node_id: NodeT) -> PyResult<String> {
+        pyex!(self.graph.get_node_name(node_id))
+    }
+
+    #[text_signature = "($self, node_name)"]
+    /// Return the node id curresponding to given string name.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node_name: str,
+    ///     String name of the node.
+    ///
+    /// Returns
+    /// ---------------------
+    /// Node ID.
+    fn get_node_id(&self, node_name: &str) -> PyResult<NodeT> {
+        pyex!(self.graph.get_node_id(node_name))
     }
 
     #[text_signature = "($self)"]

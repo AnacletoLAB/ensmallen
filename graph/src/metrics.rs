@@ -279,7 +279,6 @@ impl Graph {
         self.unique_self_loop_number
     }
 
-
     /// Returns rate of self-loops.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -305,13 +304,13 @@ impl Graph {
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
     /// if graph.is_multigraph() {
-    ///     println!("The rate of connected components  in the multigraph is  {}", graph.connected_components_number());
+    ///     println!("The rate of connected components  in the multigraph is  {}", graph.connected_components_number(false));
     /// }else{
-    ///     println!("The rate of connected components in the graph is {} ", graph.connected_components_number());
+    ///     println!("The rate of connected components in the graph is {} ", graph.connected_components_number(false));
     /// }
     /// ```
-    pub fn connected_components_number(&self) -> NodeT {
-        self.get_nodes_number() - self.spanning_tree(0, false, false).len() as NodeT
+    pub fn connected_components_number(&self, verbose: bool) -> NodeT {
+        self.get_nodes_number() - self.spanning_tree(0, false, &None, verbose).len() as NodeT
     }
 
     /// Returns number of singleton nodes within the graph.

@@ -40,9 +40,19 @@ impl Graph {
         self.get_sources_iter().collect()
     }
 
+    /// Return vector of the non-unique source nodes names.
+    pub fn get_source_names(&self) -> Vec<String> {
+        self.get_sources_iter().map(|src| self.get_node_name(src).unwrap()).collect()
+    }
+
     /// Return vector on the (non unique) destination nodes of the graph.
     pub fn get_destinations(&self) -> Vec<NodeT> {
         self.get_destinations_iter().collect()
+    }
+
+    /// Return vector of the non-unique destination nodes names.
+    pub fn get_destination_names(&self) -> Vec<String> {
+        self.get_destinations_iter().map(|dst| self.get_node_name(dst).unwrap()).collect()
     }
 
     /// Return the nodes reverse mapping.
@@ -197,6 +207,29 @@ impl Graph {
                     .to_owned(),
             ),
             None => None,
+        }
+    }
+
+    /// Returs result with the node name.
+    pub fn get_node_name(&self, node_id: NodeT) -> Result<String, String> {
+        match node_id < self.get_nodes_number() {
+            true => Ok(self.nodes.translate(node_id).to_string()),
+            false => Err(format!(
+                "Given node_id {} is greater than number of nodes in the graph ({}).",
+                node_id,
+                self.get_nodes_number()
+            )),
+        }
+    }
+
+    /// Returs result with the node id.
+    pub fn get_node_id(&self, node_name: &str) -> Result<NodeT, String> {
+        match self.nodes.get(node_name) {
+            Some(node_id) => Ok(*node_id),
+            None => Err(format!(
+                "Given node name {} is not available in current graph.",
+                node_name
+            )),
         }
     }
 
