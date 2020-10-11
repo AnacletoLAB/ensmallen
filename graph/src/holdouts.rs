@@ -294,15 +294,12 @@ impl Graph {
             (self.get_edges_number() - valid_edges_bitmap.len()) as usize,
         );
 
-        let results = (0..self.get_edges_number())
-            .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
-            .progress_with(pb_train)
-            .map(|edge_id| Ok(self.get_edge_quadruple(edge_id)))
-            .collect::<Vec<_>>();
-
         Ok((
             Graph::build_graph(
-                results.iter().cloned(),
+                (0..self.get_edges_number())
+                    .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
+                    .progress_with(pb_train)
+                    .map(|edge_id| Ok(self.get_edge_quadruple(edge_id))),
                 self.get_edges_number() - valid_edges_bitmap.len() as EdgeT,
                 self.nodes.clone(),
                 self.node_types.clone(),
@@ -438,7 +435,6 @@ impl Graph {
                 // And the edge type of the edge ID is within the provided edge type
                     && match &edge_type_ids {
                         Some(etis) => {
-                            println!("{:?}, {:?}, {}", edge_type, etis, etis.contains(&edge_type.unwrap()));
                             etis.contains(&edge_type.unwrap())
                         },
                         None => true

@@ -52,7 +52,7 @@ impl EnsmallenGraph {
             train_rate,
             pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
             pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?
-                .or_else(|| Some(true))
+                .or_else(|| Some(false))
                 .unwrap(),
             pyex!(extract_value!(kwargs, "verbose", bool))?
                 .or_else(|| Some(true))
