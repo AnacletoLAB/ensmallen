@@ -39,7 +39,7 @@ impl Graph {
         &self,
         node: NodeT,
         transition: &mut Vec<WeightT>,
-        maybe_destinations: &Option<RoaringBitmap>,
+        destinations: &RoaringBitmap,
         change_node_type_weight: ParamsT,
     ) {
         //############################################################
@@ -47,22 +47,20 @@ impl Graph {
         //############################################################
 
         if not_one(change_node_type_weight) {
-            if let Some(destinations) = &maybe_destinations {
-                // If the node types were given:
-                if let Some(nt) = &self.node_types {
-                    // if the destination node type matches the neighbour
-                    // destination node type (we are not changing the node type)
-                    // we weigth using the provided change_node_type_weight weight.
-                    let this_type: NodeTypeT = nt.ids[node as usize];
+            // If the node types were given:
+            if let Some(nt) = &self.node_types {
+                // if the destination node type matches the neighbour
+                // destination node type (we are not changing the node type)
+                // we weigth using the provided change_node_type_weight weight.
+                let this_type: NodeTypeT = nt.ids[node as usize];
 
-                    transition.iter_mut().zip(destinations.iter()).for_each(
-                        |(transition_value, dst)| {
-                            if this_type == nt.ids[dst as usize] {
-                                *transition_value /= change_node_type_weight
-                            }
-                        },
-                    );
-                }
+                transition.iter_mut().zip(destinations.iter()).for_each(
+                    |(transition_value, dst)| {
+                        if this_type == nt.ids[dst as usize] {
+                            *transition_value /= change_node_type_weight
+                        }
+                    },
+                );
             }
         }
     }
@@ -80,13 +78,9 @@ impl Graph {
         change_node_type_weight: ParamsT,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
-    ) -> (Option<RoaringBitmap>, Vec<WeightT>) {
+    ) -> (RoaringBitmap, Vec<WeightT>) {
         // Retrieve the data to compute the update transition
-        let destinations = if not_one(change_node_type_weight) {
-            Some(self.get_destinations_bitmap(min_edge_id, max_edge_id))
-        } else {
-            None
-        };
+        let destinations = self.get_destinations_bitmap(min_edge_id, max_edge_id);
         let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
 
         // Compute the transition weights relative to the node weights.
@@ -112,17 +106,13 @@ impl Graph {
         dst: NodeT,
         edge_id: EdgeT,
         walk_weights: &WalkWeights,
-        maybe_previous_destinations: &Option<RoaringBitmap>,
-    ) -> (Option<RoaringBitmap>, Vec<WeightT>, EdgeT) {
+        previous_destinations: &RoaringBitmap,
+    ) -> (RoaringBitmap, Vec<WeightT>, EdgeT) {
         // Retrieve minimum and maximum edge ID for the given node.
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(dst);
 
         // Retrieve the data to compute the update transition
-        let maybe_destinations = if walk_weights.is_walk_without_destinations() {
-            Some(self.get_destinations_bitmap(min_edge_id, max_edge_id))
-        } else {
-            None
-        };
+        let destinations = self.get_destinations_bitmap(min_edge_id, max_edge_id);
 
         let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
 
@@ -130,7 +120,7 @@ impl Graph {
         self.update_node_transition(
             dst,
             &mut transition,
-            &maybe_destinations,
+            &destinations,
             walk_weights.change_node_type_weight,
         );
 
@@ -160,47 +150,45 @@ impl Graph {
         //# Handling of the P & Q parameters: the node2vec coefficients #
         //###############################################################
 
-        if let Some(previous_destinations) = &maybe_previous_destinations {
-            if let Some(destinations) = &maybe_destinations {
-                transition
-                    .iter_mut()
-                    .zip(destinations)
-                    .for_each(|(transition_value, ndst)| {
-                        //############################################################
-                        //# Handling of the P parameter: the return coefficient      #
-                        //############################################################
+        if not_one(walk_weights.return_weight) || not_one(walk_weights.explore_weight) {
+            transition
+                .iter_mut()
+                .zip(&destinations)
+                .for_each(|(transition_value, ndst)| {
+                    //############################################################
+                    //# Handling of the P parameter: the return coefficient      #
+                    //############################################################
 
-                        // If the neigbour matches with the source, hence this is
-                        // a backward loop like the following:
-                        // SRC -> DST
-                        //  ▲     /
-                        //   \___/
-                        //
-                        // We weight the edge weight with the given return weight.
+                    // If the neigbour matches with the source, hence this is
+                    // a backward loop like the following:
+                    // SRC -> DST
+                    //  ▲     /
+                    //   \___/
+                    //
+                    // We weight the edge weight with the given return weight.
 
-                        // If the return weight, which is the inverse of p, is not 1, hence
-                        // it has some impact, we procced and increase by the given weight
-                        // the probability of transitions that go back a previously visited
-                        // node.
-                        if src == ndst || dst == ndst {
-                            *transition_value *= walk_weights.return_weight
+                    // If the return weight, which is the inverse of p, is not 1, hence
+                    // it has some impact, we procced and increase by the given weight
+                    // the probability of transitions that go back a previously visited
+                    // node.
+                    if src == ndst || dst == ndst {
+                        *transition_value *= walk_weights.return_weight
 
-                        //############################################################
-                        //# Handling of the Q parameter: the explore coefficient     #
-                        //############################################################
-                        // This coefficient increases the probability of switching
-                        // to nodes not locally seen.
-                        } else if
-                        // this works only for undirected graphs
-                        // for the directed graphs we will need to add some support structure.
-                        !previous_destinations.contains(ndst) {
-                            *transition_value *= walk_weights.explore_weight
-                        }
-                    });
-            }
+                    //############################################################
+                    //# Handling of the Q parameter: the explore coefficient     #
+                    //############################################################
+                    // This coefficient increases the probability of switching
+                    // to nodes not locally seen.
+                    } else if
+                    // this works only for undirected graphs
+                    // for the directed graphs we will need to add some support structure.
+                    !previous_destinations.contains(ndst) {
+                        *transition_value *= walk_weights.explore_weight
+                    }
+                });
         }
 
-        (maybe_destinations, transition, min_edge_id)
+        (destinations, transition, min_edge_id)
     }
 
     /// Return new sampled node with the transition edge used.
@@ -229,7 +217,7 @@ impl Graph {
         node: NodeT,
         seed: NodeT,
         change_node_type_weight: ParamsT,
-    ) -> (Option<RoaringBitmap>, NodeT, EdgeT) {
+    ) -> (RoaringBitmap, NodeT, EdgeT) {
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
         let (destinations, mut weights) =
             self.get_node_transition(node, change_node_type_weight, min_edge_id, max_edge_id);
@@ -251,10 +239,10 @@ impl Graph {
         edge: EdgeT,
         seed: NodeT,
         walk_weights: &WalkWeights,
-        maybe_previous_destinations: &Option<RoaringBitmap>,
-    ) -> (Option<RoaringBitmap>, NodeT, EdgeT) {
+        previous_destinations: &RoaringBitmap,
+    ) -> (RoaringBitmap, NodeT, EdgeT) {
         let (destinations, mut weights, min_edge_id) =
-            self.get_edge_transition(src, dst, edge, walk_weights, maybe_previous_destinations);
+            self.get_edge_transition(src, dst, edge, walk_weights, previous_destinations);
         let edge_id = min_edge_id + sample(&mut weights, seed as u64) as EdgeT;
         (destinations, self.get_destination(edge_id), edge_id)
     }
@@ -382,22 +370,22 @@ impl Graph {
         walk.push(node);
         let mut src = node;
 
-        let (mut maybe_previous_destinations, mut dst, mut edge) =
+        let (mut previous_destinations, mut dst, mut edge) =
             self.extract_node(node, seed, parameters.weights.change_node_type_weight);
         walk.push(dst);
 
         for iteration in 2..parameters.length {
-            let (maybe_destinations, new_dst, inner_edge) = self.extract_edge(
+            let (destinations, new_dst, inner_edge) = self.extract_edge(
                 src,
                 dst,
                 edge,
                 seed + iteration,
                 &parameters.weights,
-                &maybe_previous_destinations,
+                &previous_destinations,
             );
             src = dst;
             dst = new_dst;
-            maybe_previous_destinations = maybe_destinations;
+            previous_destinations = destinations;
             edge = inner_edge;
             walk.push(dst);
         }
