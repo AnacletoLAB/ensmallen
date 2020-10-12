@@ -75,7 +75,19 @@ impl WalkWeights {
         ];
         weights
             .iter()
-            .all(|weight| (weight - 1.0).abs() <= f64::EPSILON)
+            .all(|weight| !not_one(*weight))
+    }
+
+    /// Return boolean value representing if walk is of first order.
+    pub fn is_walk_without_destinations(&self) -> bool {
+        let weights = vec![
+            self.change_node_type_weight,
+            self.return_weight,
+            self.explore_weight,
+        ];
+        weights
+            .iter()
+            .all(|weight| !not_one(*weight))
     }
 }
 

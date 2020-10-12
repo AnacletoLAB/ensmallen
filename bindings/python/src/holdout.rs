@@ -18,7 +18,7 @@ impl EnsmallenGraph {
     ///     The seed to use to generate the holdout.
     /// edge_types: List[str] = None,
     ///     List of names of the edge types to put into the validation.
-    /// include_all_edge_types: bool = True,
+    /// include_all_edge_types: bool = False,
     ///     Wethever to include all the edges between two nodes.
     ///     This is only relevant in multi-graphs.
     /// verbose: bool = True,
