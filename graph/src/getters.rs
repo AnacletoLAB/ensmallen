@@ -312,7 +312,7 @@ impl Graph {
     }
 
     pub fn get_outbounds(&self) -> Vec<EdgeT>{
-        self.unique_sources.iter().map(|src|{
+        (0..self.get_nodes_number()).map(|src|{
             self.get_unchecked_edge_id_from_tuple(src as NodeT +1, 0)
         }).collect()
     }
