@@ -14,7 +14,7 @@ pub struct FromVecHarnessParams {
 }
 
 pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
-    let g = graph::Graph::from_string_unsorted(
+    let mut g = graph::Graph::from_string_unsorted(
         data.edges.iter().cloned(),
         match &data.nodes {
             Some(ns) => Some(ns.iter().cloned()),
@@ -30,7 +30,7 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
     )?;
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.
-    let _ = graph::test_utilities::default_test_suite(&g, false);
+    let _ = graph::test_utilities::default_test_suite(&mut g, false);
 
     Ok(())
 }

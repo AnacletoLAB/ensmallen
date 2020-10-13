@@ -111,6 +111,8 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
         }
     };
 
-    Graph::from_unsorted_csv(edges_reader, nodes_reader, data.directed)?;
+    let mut g = Graph::from_unsorted_csv(edges_reader, nodes_reader, data.directed)?;
+    let _ = graph::test_utilities::default_test_suite(&mut g, false);
+
     Ok(())
 }
