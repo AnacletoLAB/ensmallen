@@ -305,7 +305,14 @@ impl Graph {
     ///
     pub(crate) fn get_destinations_min_max_edge_ids(&self, src: NodeT) -> (EdgeT, EdgeT) {
         match &self.outbounds {
-            Some(outbounds) => (outbounds[src as usize], outbounds[src as usize + 1]),
+            Some(outbounds) => {
+                let min_edge_id = if src == 0 {
+                    0
+                } else {
+                    outbounds[src as usize - 1]
+                };
+                (min_edge_id, outbounds[src as usize])
+            }
             None => (
                 self.get_unchecked_edge_id_from_tuple(src, 0),
                 self.get_unchecked_edge_id_from_tuple(src + 1, 0),

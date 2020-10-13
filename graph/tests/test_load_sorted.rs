@@ -13,7 +13,7 @@ fn test_load_sorted() {
         .set_numeric_node_ids(Some(true))
         .set_header(Some(false));
 
-    let g = Graph::from_sorted_csv(
+    let mut g = Graph::from_sorted_csv(
         edges_reader,
         None,
         false,
@@ -22,5 +22,5 @@ fn test_load_sorted() {
     )
     .unwrap();
 
-    let _ = graph::test_utilities::default_test_suite(&g, true).unwrap();
+    let _ = graph::test_utilities::default_test_suite(&mut g, true).unwrap();
 }

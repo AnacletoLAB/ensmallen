@@ -163,32 +163,37 @@ pub fn default_holdout_test_suite(
 }
 
 /// Executes near-complete test of all functions for the given graph.
-pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
+pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph, verbose)?;
     if !graph.directed {
-        info!("Executing random walks.");
-        assert_eq!(
-            graph.random_walks(1, &walker)?,
-            graph.random_walks(1, &walker)?
-        );
+        for i in 0..2 {
+            if i == 1 {
+                graph.enable_fast_walk(true, true);
+            }
+            info!("Executing random walks.");
+            assert_eq!(
+                graph.random_walks(1, &walker)?,
+                graph.random_walks(1, &walker)?
+            );
 
-        assert_eq!(
-            graph.random_walks(1, &second_order_walker(&graph, verbose)?)?,
-            graph.random_walks(1, &second_order_walker(&graph, verbose)?)?
-        );
+            assert_eq!(
+                graph.random_walks(1, &second_order_walker(&graph, verbose)?)?,
+                graph.random_walks(1, &second_order_walker(&graph, verbose)?)?
+            );
 
-        assert_eq!(
-            graph.complete_walks(&walker)?,
-            graph.complete_walks(&walker)?
-        );
+            assert_eq!(
+                graph.complete_walks(&walker)?,
+                graph.complete_walks(&walker)?
+            );
 
-        assert_eq!(
-            graph.complete_walks(&second_order_walker(&graph, verbose)?)?,
-            graph.complete_walks(&second_order_walker(&graph, verbose)?)?
-        );
+            assert_eq!(
+                graph.complete_walks(&second_order_walker(&graph, verbose)?)?,
+                graph.complete_walks(&second_order_walker(&graph, verbose)?)?
+            );
+        }
     }
 
     // Testing main holdout mechanisms
