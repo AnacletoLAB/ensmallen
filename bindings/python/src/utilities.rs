@@ -120,7 +120,7 @@ impl EnsmallenGraph {
             )?)?
             .set_explore_weight(extract_value!(kwargs, "explore_weight", WeightT)?)?
             .set_return_weight(extract_value!(kwargs, "return_weight", WeightT)?)?
-            .set_seed(extract_value!(kwargs, "seed", usize)?)
+            .set_random_state(extract_value!(kwargs, "random_state", usize)?)
             .set_verbose(extract_value!(kwargs, "verbose", bool)?)
             .set_iterations(extract_value!(kwargs, "iterations", NodeT)?)?
             .set_min_length(extract_value!(kwargs, "min_length", NodeT)?)?

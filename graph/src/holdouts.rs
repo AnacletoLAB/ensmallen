@@ -22,13 +22,13 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `seed`: EdgeT - Seed to use to reproduce negative edge set.
+    /// * `random_state`: EdgeT - random_state to use to reproduce negative edge set.
     /// * `negatives_number`: EdgeT - Number of negatives edges to include.
     /// * `verbose`: bool - Wether to show the loading bar.
     ///
     pub fn sample_negatives(
         &self,
-        mut seed: EdgeT,
+        mut random_state: EdgeT,
         negatives_number: EdgeT,
         verbose: bool,
     ) -> Result<Graph, String> {
@@ -80,10 +80,10 @@ impl Graph {
             negatives_number as usize,
         );
 
-        // xorshift breaks if the seed is zero
+        // xorshift breaks if the random_state is zero
         // so we initialize xor it with a constat
         // to mitigate this problem
-        seed ^= SEED_XOR as EdgeT;
+        random_state ^= SEED_XOR as EdgeT;
 
         let mut negative_edges_bitmap = RoaringTreemap::new();
         let chunk_size = max!(4096, negatives_number / 100);
@@ -91,8 +91,8 @@ impl Graph {
 
         // randomly extract negative edges until we have the choosen number
         while negative_edges_bitmap.len() < negatives_number {
-            // generate two seeds for reproducibility porpouses
-            seed = rand_u64(seed);
+            // generate two random_states for reproducibility porpouses
+            random_state = rand_u64(random_state);
 
             let edges_to_sample: usize = min!(
                 chunk_size,
@@ -105,7 +105,7 @@ impl Graph {
 
             // generate the random edge-sources
             negative_edges_bitmap.extend(
-                gen_random_vec(edges_to_sample, seed)
+                gen_random_vec(edges_to_sample, random_state)
                     .into_par_iter()
                     // convert them to plain (src, dst)
                     .filter_map(|edge| {
@@ -154,10 +154,10 @@ impl Graph {
     /// Compute the training and validation edges number from the training rate
     fn get_holdouts_edges_number(
         &self,
-        train_rate: f64,
+        train_size: f64,
         include_all_edge_types: bool,
     ) -> Result<(EdgeT, EdgeT), String> {
-        if train_rate <= 0.0 || train_rate >= 1.0 {
+        if train_size <= 0.0 || train_size >= 1.0 {
             return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
         if self.directed && self.get_edges_number() == 1
@@ -172,7 +172,7 @@ impl Graph {
         } else {
             self.get_edges_number()
         };
-        let train_edges_number = (total_edges_number as f64 * train_rate) as EdgeT;
+        let train_edges_number = (total_edges_number as f64 * train_size) as EdgeT;
         let valid_edges_number = total_edges_number - train_edges_number;
 
         if train_edges_number == 0 || train_edges_number >= total_edges_number {
@@ -191,14 +191,14 @@ impl Graph {
 
     fn holdout(
         &self,
-        seed: EdgeT,
-        train_rate: f64,
+        random_state: EdgeT,
+        train_size: f64,
         include_all_edge_types: bool,
         user_condition: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
         let (_, valid_edges_number) =
-            self.get_holdouts_edges_number(train_rate, include_all_edge_types)?;
+            self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
 
         let pb1 = get_loading_bar(
             verbose,
@@ -207,7 +207,7 @@ impl Graph {
         );
 
         // generate and shuffle the indices of the edges
-        let mut rng = SmallRng::seed_from_u64(seed ^ SEED_XOR as EdgeT);
+        let mut rng = SmallRng::seed_from_u64(random_state ^ SEED_XOR as EdgeT);
         let mut edge_indices: Vec<EdgeT> = (0..self.get_edges_number()).collect();
         edge_indices.shuffle(&mut rng);
 
@@ -257,27 +257,27 @@ impl Graph {
 
         if valid_edges_bitmap.len() < valid_edges_number {
             let actual_valid_edges_number = valid_edges_bitmap.len();
-            let valid_rate = 1.0 - train_rate;
+            let valid_rate = 1.0 - train_size;
             let actual_valid_rate =
                 actual_valid_edges_number as f64 / self.get_edges_number() as f64;
-            let actual_train_rate = 1.0 - actual_valid_rate;
+            let actual_train_size = 1.0 - actual_valid_rate;
             return Err(format!(
                 concat!(
                     "With the given configuration for the holdout, it is not possible to ",
                     "generate a validation set composed of {valid_edges_number} edges from the current graph.\n",
                     "The validation set can be composed of at most {actual_valid_edges_number} edges.\n",
                     "The actual train/valid split rates, with the current configuration,",
-                    "would not be {train_rate}/{valid_rate} but {actual_train_rate}/{actual_valid_rate}.\n",
+                    "would not be {train_size}/{valid_rate} but {actual_train_size}/{actual_valid_rate}.\n",
                     "If you really want to do this, you can pass the argument:\n",
-                    "train_rate: {actual_train_rate}\n",
+                    "train_size: {actual_train_size}\n",
                     "Before proceeding, consider what is your experimental setup goal and ",
                     "the possible bias and validation problems that this choice might cause."
                 ),
                 valid_edges_number=valid_edges_number,
                 actual_valid_edges_number=actual_valid_edges_number,
-                train_rate=train_rate,
+                train_size=train_size,
                 valid_rate=valid_rate,
-                actual_train_rate=actual_train_rate,
+                actual_train_size=actual_train_size,
                 actual_valid_rate=actual_valid_rate
             ));
         }
@@ -334,7 +334,7 @@ impl Graph {
     /// is the training graph, is garanteed to have the same number of
     /// graph components as the initial graph. The second graph is the graph
     /// meant for testing or validation of the algorithm, and has no garantee
-    /// to be connected. It will have at most (1-train_rate) edges,
+    /// to be connected. It will have at most (1-train_size) edges,
     /// as the bound of connectivity which is required for the training graph
     /// may lead to more edges being left into the training partition.
     ///
@@ -343,8 +343,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `seed`: NodeT - The seed to use for the holdout,
-    /// * `train_rate`: f64 - Rate target to reserve for training.
+    /// * `random_state`: NodeT - The random_state to use for the holdout,
+    /// * `train_size`: f64 - Rate target to reserve for training.
     /// * `edge_types`: Option<Vec<String>> - Edge types to be selected for in the validation set.
     /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
     /// * `verbose`: bool - Wethever to show the loading bar.
@@ -352,13 +352,13 @@ impl Graph {
     ///
     pub fn connected_holdout(
         &self,
-        seed: EdgeT,
-        train_rate: f64,
+        random_state: EdgeT,
+        train_size: f64,
         edge_types: Option<Vec<String>>,
         include_all_edge_types: bool,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
-        if train_rate <= 0.0 || train_rate >= 1.0 {
+        if train_size <= 0.0 || train_size >= 1.0 {
             return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
 
@@ -372,11 +372,11 @@ impl Graph {
             None
         };
 
-        let tree = self.spanning_tree(seed, include_all_edge_types, &edge_type_ids, verbose);
+        let tree = self.spanning_tree(random_state, include_all_edge_types, &edge_type_ids, verbose);
 
         let edge_factor = if self.is_directed() { 1 } else { 2 };
-        let train_edges_number = (self.get_edges_number() as f64 * train_rate) as EdgeT;
-        let valid_edges_number = (self.get_edges_number() as f64 * (1.0 - train_rate)) as EdgeT;
+        let train_edges_number = (self.get_edges_number() as f64 * train_size) as EdgeT;
+        let valid_edges_number = (self.get_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
 
         if let Some(etis) = &edge_type_ids {
             let selected_edges_number = etis
@@ -399,8 +399,8 @@ impl Graph {
                     valid_edges_number,
                     selected_edges_number,
                     1.0 - selected_edges_number as f64 / self.get_edges_number() as f64,
-                    1.0 - train_rate,
-                    1.0 - (1.0 - train_rate)
+                    1.0 - train_size,
+                    1.0 - (1.0 - train_size)
                         * (selected_edges_number as f64 / self.get_edges_number() as f64),
                 ));
             }
@@ -413,21 +413,21 @@ impl Graph {
                     "that is more than the required training edges number {}.\n",
                     "This makes impossible to create a validation set using ",
                     "{} edges.\nIf possible, you should increase the ",
-                    "train_rate parameter which is currently equal to ",
+                    "train_size parameter which is currently equal to ",
                     "{}.\nThe deny map, by itself, is requiring at least ",
                     "a train rate of {}."
                 ),
                 tree.len() * edge_factor,
                 train_edges_number,
                 valid_edges_number,
-                train_rate,
+                train_size,
                 (tree.len() * edge_factor) as f64 / train_edges_number as f64
             ));
         }
 
         self.holdout(
-            seed,
-            train_rate,
+            random_state,
+            train_size,
             include_all_edge_types,
             |edge_id, _, _, edge_type| {
                 // The tree must not contain the provided edge ID
@@ -452,8 +452,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `seed`: NodeT - The seed to use for the holdout,
-    /// * `train_rate`: f64 - rate target to reserve for training
+    /// * `random_state`: NodeT - The random_state to use for the holdout,
+    /// * `train_size`: f64 - rate target to reserve for training
     /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
     /// * `edge_types`: Option<Vec<String>> - The edges to include in validation set.
     /// * `min_number_overlaps`: Option<usize> - The minimum number of overlaps to include the edge into the validation set.
@@ -461,8 +461,8 @@ impl Graph {
     ///
     pub fn random_holdout(
         &self,
-        seed: EdgeT,
-        train_rate: f64,
+        random_state: EdgeT,
+        train_size: f64,
         include_all_edge_types: bool,
         edge_types: Option<Vec<String>>,
         min_number_overlaps: Option<EdgeT>,
@@ -481,8 +481,8 @@ impl Graph {
             return Err("Current graph is not a multigraph!".to_string());
         }
         self.holdout(
-            seed,
-            train_rate,
+            random_state,
+            train_size,
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 // If a list of edge types was provided and the edge type
@@ -510,7 +510,7 @@ impl Graph {
     /// Returns subgraph with given number of nodes.
     ///
     /// This method creates a subset of the graph starting from a random node
-    /// sampled using given seed and includes all neighbouring nodes until
+    /// sampled using given random_state and includes all neighbouring nodes until
     /// the required number of nodes is reached. All the edges connecting any
     /// of the selected nodes are then inserted into this graph.
     ///
@@ -518,13 +518,13 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `seed`: usize - Random seed to use.
+    /// * `random_state`: usize - Random random_state to use.
     /// * `nodes_number`: usize - Number of nodes to extract.
     /// * `verbose`: bool - Wethever to show the loading bar.
     ///
     pub fn random_subgraph(
         &self,
-        seed: usize,
+        random_state: usize,
         nodes_number: NodeT,
         verbose: bool,
     ) -> Result<Graph, String> {
@@ -552,12 +552,12 @@ impl Graph {
         );
 
         // Creating the random number generator
-        let mut rnd = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
+        let mut rnd = SmallRng::seed_from_u64((random_state ^ SEED_XOR) as u64);
 
         // Nodes indices
         let mut nodes: Vec<NodeT> = (0..self.get_nodes_number()).collect();
 
-        // Shuffling the components using the given seed.
+        // Shuffling the components using the given random_state.
         nodes.shuffle(&mut rnd);
 
         // Initializing stack and set of nodes

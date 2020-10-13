@@ -100,7 +100,7 @@ pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameter
         .set_iterations(Some(1))?
         .set_min_length(Some(1))?
         .set_verbose(Some(verbose))
-        .set_seed(Some(43))
+        .set_random_state(Some(43))
         .set_dense_node_mapping(Some(graph.get_dense_node_mapping())))
 }
 
@@ -115,7 +115,7 @@ pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParamete
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
         .set_dense_node_mapping(Some(graph.get_dense_node_mapping()))
-        .set_seed(Some(43)))
+        .set_random_state(Some(43)))
 }
 
 fn validate_vocabularies(graph: &Graph) {

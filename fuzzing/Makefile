@@ -1,4 +1,4 @@
-SEED := 1337420
+random_state := 1337420
 TIMEOUT := 60 # seconds
 MAX_RAM := 8192 # Mb
 MAX_LEN := 81920 # bytes
@@ -9,14 +9,14 @@ libfuzz_from_csv:
 	(\
 	cd graph_harness;\
 	cargo update;\
-	cargo fuzz run from_csv ../$(CORPUS_FOLDER)/from_csv/ -- -timeout=$(TIMEOUT) -rss_limit_mb=$(MAX_RAM) -max_len=$(MAX_LEN) -seed=$(SEED); \
+	cargo fuzz run from_csv ../$(CORPUS_FOLDER)/from_csv/ -- -timeout=$(TIMEOUT) -rss_limit_mb=$(MAX_RAM) -max_len=$(MAX_LEN) -random_state=$(random_state); \
 	)
 
 libfuzz_from_vec:
 	(\
 	cd graph_harness;\
 	cargo update;\
-	cargo fuzz run from_vec ../$(CORPUS_FOLDER)/from_vec/ -- -timeout=$(TIMEOUT) -rss_limit_mb=$(MAX_RAM) -max_len=$(MAX_LEN) -seed=$(SEED);\
+	cargo fuzz run from_vec ../$(CORPUS_FOLDER)/from_vec/ -- -timeout=$(TIMEOUT) -rss_limit_mb=$(MAX_RAM) -max_len=$(MAX_LEN) -random_state=$(random_state);\
 	)
 
 hfuzz_from_csv:

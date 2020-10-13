@@ -10,9 +10,9 @@ fn find_node_set(sets: &[RoaringBitmap], node: NodeT) -> usize {
 
 /// # Implementation of algorithms relative to trees.
 impl Graph {
-    fn iter_edges_from_seed(&self, seed: u64) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
+    fn iter_edges_from_random_state(&self, random_state: u64) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
         let edges_number = self.get_edges_number();
-        (seed..edges_number + seed).filter_map(move |i| {
+        (random_state..edges_number + random_state).filter_map(move |i| {
             let edge_id = i % edges_number;
             let (src, dst) = self.get_edge_from_edge_id(edge_id);
             match src == dst || !self.directed && src > dst {
@@ -24,21 +24,21 @@ impl Graph {
 
     fn iter_on_edges_with_preference<'a>(
         &'a self,
-        seed: u64,
+        random_state: u64,
         verbose: bool,
         unwanted_edge_types: &'a Option<HashSet<EdgeTypeT>>,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + 'a {
         // TODO! FIX THIS CRASH if called with unwanted_edge_types and the graph does not have edge types.
         let result: Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)>> = if let Some(uet) = unwanted_edge_types {
-            Box::new(self.iter_edges_from_seed(seed)
+            Box::new(self.iter_edges_from_random_state(random_state)
                 .filter(move |(edge_id, _, _)| {
                     uet.contains(&self.get_unchecked_edge_type(*edge_id).unwrap())
                 })
-                .chain(self.iter_edges_from_seed(seed).filter(move |(edge_id, _, _)| {
+                .chain(self.iter_edges_from_random_state(random_state).filter(move |(edge_id, _, _)| {
                     !uet.contains(&self.get_unchecked_edge_type(*edge_id).unwrap())
                 })))
         } else {
-            Box::new(self.iter_edges_from_seed(seed))
+            Box::new(self.iter_edges_from_random_state(random_state))
         };
 
         let pb = get_loading_bar(
@@ -52,18 +52,18 @@ impl Graph {
     /// Returns set of edges composing a spanning tree.
     ///
     /// The spanning tree is NOT minimal.
-    /// The given seed is NOT the root of the tree.
+    /// The given random_state is NOT the root of the tree.
     ///
     /// # Arguments
     ///
-    /// * `seed`:NodeT - The seed to use for the holdout,
+    /// * `random_state`:NodeT - The random_state to use for the holdout,
     /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
     /// * `unwanted_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.
     /// * `verbose`: bool - Wethever to show a loading bar or not.
     ///
     pub fn spanning_tree(
         &self,
-        seed: EdgeT,
+        random_state: EdgeT,
         include_all_edge_types: bool,
         unwanted_edge_types: &Option<HashSet<EdgeTypeT>>,
         verbose: bool,
@@ -78,7 +78,7 @@ impl Graph {
         // Iterate over all the edges and add and edge to the mst
         // iff the edge create, expand or merge components.
         for (edge_id, src, dst) in
-            self.iter_on_edges_with_preference(seed, verbose,unwanted_edge_types)
+            self.iter_on_edges_with_preference(random_state, verbose,unwanted_edge_types)
         {
             let mut update_tree = false;
             // if both nodes are not covered then the edge is isolated

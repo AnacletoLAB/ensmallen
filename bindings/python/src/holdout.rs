@@ -4,7 +4,7 @@ use graph::{EdgeT, NodeT};
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, train_rate, *, seed, edge_types, include_all_edge_types, verbose)"]
+    #[text_signature = "($self, train_size, *, random_state, edge_types, include_all_edge_types, verbose)"]
     /// Returns training and validation holdouts extracted from current graph.
     ///
     /// The holdouts is generated in such a way that the training set remains
@@ -12,10 +12,10 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// -----------------------------
-    /// train_rate: float,
+    /// train_size: float,
     ///     The rate of edges to reserve for the training.
-    /// seed: int = 42,
-    ///     The seed to use to generate the holdout.
+    /// random_state: int = 42,
+    ///     The random_state to use to generate the holdout.
     /// edge_types: List[str] = None,
     ///     List of names of the edge types to put into the validation.
     /// include_all_edge_types: bool = False,
@@ -34,7 +34,7 @@ impl EnsmallenGraph {
     /// Tuple containing training and validation graphs.
     fn connected_holdout(
         &self,
-        train_rate: f64,
+        train_size: f64,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
         let py = pyo3::Python::acquire_gil();
@@ -42,14 +42,14 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["seed", "edge_types", "include_all_edge_types", "verbose"]),
+            build_walk_parameters_list(&["random_state", "edge_types", "include_all_edge_types", "verbose"]),
         ))?;
 
         let (g1, g2) = pyex!(self.graph.connected_holdout(
-            pyex!(extract_value!(kwargs, "seed", EdgeT))?
+            pyex!(extract_value!(kwargs, "random_state", EdgeT))?
                 .or_else(|| Some(42))
                 .unwrap(),
-            train_rate,
+            train_size,
             pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
             pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?
                 .or_else(|| Some(false))
@@ -62,11 +62,11 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, nodes_number, *, seed, verbose)"]
+    #[text_signature = "($self, nodes_number, *, random_state, verbose)"]
     /// Returns partial subgraph.
     ///
     /// This method creates a subset of the graph starting from a random node
-    /// sampled using given seed and includes all neighbouring nodes until
+    /// sampled using given random_state and includes all neighbouring nodes until
     /// the required number of nodes is reached. All the edges connecting any
     /// of the selected nodes are then inserted into this graph.
     ///
@@ -74,8 +74,8 @@ impl EnsmallenGraph {
     /// -----------------------------
     /// nodes_number: int,
     ///     The number of edges to insert in the partial graph.
-    /// seed: int = 42,
-    ///     The seed to use to generate the partial graph.
+    /// random_state: int = 42,
+    ///     The random_state to use to generate the partial graph.
     /// verbose: bool = True,
     ///     Wethever to show the loading bar.
     ///
@@ -94,11 +94,11 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&["seed", "verbose"])))?;
+        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&["random_state", "verbose"])))?;
 
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.random_subgraph(
-                pyex!(extract_value!(kwargs, "seed", usize))?
+                pyex!(extract_value!(kwargs, "random_state", usize))?
                     .or_else(|| Some(42))
                     .unwrap(),
                 nodes_number,
@@ -110,7 +110,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, train_rate, *, seed, include_all_edge_types, edge_types, min_number_overlaps, verbose)"]
+    #[text_signature = "($self, train_size, *, random_state, include_all_edge_types, edge_types, min_number_overlaps, verbose)"]
     /// Returns training and validation holdouts extracted from current graph.
     ///
     /// The holdouts edges are randomly sampled and have no garanties that any
@@ -118,10 +118,10 @@ impl EnsmallenGraph {
     ///
     /// Parameters
     /// -----------------------------
-    /// train_rate: float,
+    /// train_size: float,
     ///     The rate to reserve for the training.
-    /// seed: int = 42,
-    ///     The seed to make the holdout reproducible.
+    /// random_state: int = 42,
+    ///     The random_state to make the holdout reproducible.
     /// include_all_edge_types: bool = True,
     ///     Wethever to include all the edges between two nodes.
     ///     This is only relevant in multi-graphs.
@@ -154,7 +154,7 @@ impl EnsmallenGraph {
     /// Tuple containing training and validation graphs.
     fn random_holdout(
         &self,
-        train_rate: f64,
+        train_size: f64,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
         let py = pyo3::Python::acquire_gil();
@@ -163,7 +163,7 @@ impl EnsmallenGraph {
         pyex!(validate_kwargs(
             kwargs,
             build_walk_parameters_list(&[
-                "seed",
+                "random_state",
                 "include_all_edge_types",
                 "edge_types",
                 "min_number_overlaps",
@@ -172,10 +172,10 @@ impl EnsmallenGraph {
         ))?;
 
         let (g1, g2) = pyex!(self.graph.random_holdout(
-            pyex!(extract_value!(kwargs, "seed", EdgeT))?
+            pyex!(extract_value!(kwargs, "random_state", EdgeT))?
                 .or_else(|| Some(42))
                 .unwrap(),
-            train_rate,
+            train_size,
             pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?
                 .or_else(|| Some(true))
                 .unwrap(),
@@ -189,7 +189,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, negatives_number, *, seed, allow_selfloops, verbose)"]
+    #[text_signature = "($self, negatives_number, *, random_state, verbose)"]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
     /// The graph generated may be used as a testing negatives partition to be
@@ -201,8 +201,8 @@ impl EnsmallenGraph {
     /// -----------------------------
     /// negatives_number: int,
     ///     The number of negative edges to use.
-    /// seed: int = 42,
-    ///     The seed to use to generate the holdout.
+    /// random_state: int = 42,
+    ///     The random_state to use to generate the holdout.
     /// verbose: bool = True,
     ///     Wethever to show the loading bar.
     ///     The loading bar will only be visible in console.
@@ -224,12 +224,12 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["seed", "allow_selfloops", "verbose"]),
+            build_walk_parameters_list(&["random_state", "allow_selfloops", "verbose"]),
         ))?;
 
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.sample_negatives(
-                pyex!(extract_value!(kwargs, "seed", EdgeT))?
+                pyex!(extract_value!(kwargs, "random_state", EdgeT))?
                     .or_else(|| Some(42))
                     .unwrap(),
                 negatives_number,
