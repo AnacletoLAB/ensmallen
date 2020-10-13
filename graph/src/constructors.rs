@@ -614,7 +614,8 @@ impl Graph {
             node_types,
             edge_types,
             weights:optionify!(weights),
-            destinations: None
+            destinations: None,
+            outbounds: None
         })
     }
 
@@ -760,7 +761,8 @@ impl Graph {
             ignore_duplicated_edges,
         )?;
 
-        Ok(Graph {           directed,
+        Ok(Graph {
+            directed,
             unique_self_loop_number,
             self_loop_number,
             not_singleton_nodes_number,
@@ -773,7 +775,8 @@ impl Graph {
             edge_types,
             weights: optionify!(weights),
             node_types:optionify!(node_types),
-            destinations: None
+            destinations: None,
+            outbounds: None
     })
     }
 }

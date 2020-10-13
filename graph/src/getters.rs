@@ -311,6 +311,12 @@ impl Graph {
         self.unique_edges_number != self.get_edges_number()
     }
 
+    pub fn get_outbounds(&self) -> Vec<EdgeT>{
+        self.unique_sources.iter().map(|src|{
+            self.get_unchecked_edge_id_from_tuple(src as NodeT +1, 0)
+        }).collect()
+    }
+
     pub fn get_destination(&self, edge_id: EdgeT) -> NodeT {
         match &self.destinations{
             Some(destinations) => destinations[edge_id as usize],

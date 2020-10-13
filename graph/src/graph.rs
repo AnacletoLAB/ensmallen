@@ -28,6 +28,8 @@ pub struct Graph {
     pub(crate) unique_edges_number: EdgeT,
     /// Vector of destinations to execute fast walks if required.
     pub(crate) destinations: Option<Vec<NodeT>>,
+    /// Vector of outbounds to execute fast walks if required.
+    pub(crate) outbounds: Option<Vec<EdgeT>>,
 
     /// The main datastructure where all the edges are saved
     /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
@@ -302,10 +304,13 @@ impl Graph {
     /// * src: NodeT - Node for which we need to compute the outbounds range.
     ///
     pub(crate) fn get_destinations_min_max_edge_ids(&self, src: NodeT) -> (EdgeT, EdgeT) {
-        (
-            self.get_unchecked_edge_id_from_tuple(src, 0),
-            self.get_unchecked_edge_id_from_tuple(src + 1, 0),
-        )
+        match &self.outbounds {
+            Some(outbounds) => (outbounds[src as usize], outbounds[src as usize + 1]),
+            None => (
+                self.get_unchecked_edge_id_from_tuple(src, 0),
+                self.get_unchecked_edge_id_from_tuple(src + 1, 0),
+            ),
+        }
     }
 
     /// Returns the number of outbound neighbours of given node.

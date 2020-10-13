@@ -13,8 +13,21 @@ impl Graph {
     }
 
     /// Enable fast walk, using more memory.
-    pub fn enable_fast_walk(&mut self) {
-        self.destinations = Some(self.get_destinations());
+    /// 
+    /// # Arguments
+    /// - vector_destinations: bool, wether to cache destinations into a vector for faster walks.
+    /// - vector_outbounds: bool, wether to cache outbounds into a vector for faster walks.
+    pub fn enable_fast_walk(
+        &mut self,
+        vector_destinations: bool,
+        vector_outbounds: bool
+    ) {
+        if vector_destinations{
+            self.destinations = Some(self.get_destinations());
+        }
+        if vector_outbounds{
+            self.outbounds = Some(self.get_outbounds());
+        }
     }
 
     /// Disable fast walk, using less memory.
