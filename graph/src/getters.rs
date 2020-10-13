@@ -312,7 +312,10 @@ impl Graph {
     }
 
     pub fn get_destination(&self, edge_id: EdgeT) -> NodeT {
-        self.get_edge_from_edge_id(edge_id).1
+        match &self.destinations{
+            Some(destinations) => destinations[edge_id as usize],
+            None=> self.get_edge_from_edge_id(edge_id).1
+        }
     }
 
     pub fn get_destinations_range(

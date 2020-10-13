@@ -11,4 +11,14 @@ impl Graph {
         vocabulary.build_reverse_mapping().unwrap();
         self.edge_types = VocabularyVec::from_structs( vec![0; self.get_edges_number() as usize], Some(vocabulary));
     }
+
+    /// Enable fast walk, using more memory.
+    pub fn enable_fast_walk(&mut self) {
+        self.destinations = Some(self.get_destinations());
+    }
+
+    /// Disable fast walk, using less memory.
+    pub fn disable_fast_walk(&mut self) {
+        self.destinations = None;
+    }
 }

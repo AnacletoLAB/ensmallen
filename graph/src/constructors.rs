@@ -614,6 +614,7 @@ impl Graph {
             node_types,
             edge_types,
             weights:optionify!(weights),
+            destinations: None
         })
     }
 
@@ -772,6 +773,7 @@ impl Graph {
             edge_types,
             weights: optionify!(weights),
             node_types:optionify!(node_types),
+            destinations: None
     })
     }
 }

@@ -26,6 +26,8 @@ pub struct Graph {
     pub(crate) not_singleton_nodes_number: NodeT,
     /// How many unique edges the graph has (excluding the multi-graph ones)
     pub(crate) unique_edges_number: EdgeT,
+    /// Vector of destinations to execute fast walks if required.
+    pub(crate) destinations: Option<Vec<NodeT>>,
 
     /// The main datastructure where all the edges are saved
     /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
