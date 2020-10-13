@@ -172,6 +172,12 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         for i in 0..2 {
             if i == 1 {
                 graph.enable_fast_walk(true, true);
+                if let Some(outbounds) = &graph.outbounds{
+                    assert_eq!(outbounds.len(), graph.get_nodes_number() as usize);
+                }
+                if let Some(destinations) = &graph.destinations{
+                    assert_eq!(destinations.len(), graph.get_edges_number() as usize);
+                }
             }
             info!("Executing random walks.");
             assert_eq!(
