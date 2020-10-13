@@ -39,7 +39,7 @@ impl Graph {
         &self,
         node: NodeT,
         transition: &mut Vec<WeightT>,
-        destinations: &RoaringBitmap,
+        destinations: impl Iterator<Item = NodeT>,
         change_node_type_weight: ParamsT,
     ) {
         //############################################################
@@ -54,13 +54,14 @@ impl Graph {
                 // we weigth using the provided change_node_type_weight weight.
                 let this_type: NodeTypeT = nt.ids[node as usize];
 
-                transition.iter_mut().zip(destinations.iter()).for_each(
-                    |(transition_value, dst)| {
+                transition
+                    .iter_mut()
+                    .zip(destinations)
+                    .for_each(|(transition_value, dst)| {
                         if this_type == nt.ids[dst as usize] {
                             *transition_value /= change_node_type_weight
                         }
-                    },
-                );
+                    });
             }
         }
     }
@@ -83,15 +84,29 @@ impl Graph {
         let destinations = self.get_destinations_bitmap(min_edge_id, max_edge_id);
         let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
 
+        
+
         // Compute the transition weights relative to the node weights.
         self.update_node_transition(
             node,
             &mut transition,
-            &destinations,
+            destinations.iter(),
             change_node_type_weight,
         );
 
         (destinations, transition)
+    }
+
+    fn get_destinations_iterator<'a>(
+        &'a self,
+        destinations_bitmap: &'a RoaringBitmap,
+        min_edge_id:EdgeT,
+        max_edge_id:EdgeT
+    )-> Box<dyn Iterator<Item = NodeT> + 'a>{
+        match &self.destinations {
+            Some(destinations)=> Box::new(destinations[(min_edge_id as usize)..(max_edge_id as usize)].iter().cloned()),
+            None => Box::new(destinations_bitmap.iter())
+        }
     }
 
     /// Return the edge transition weights and the related node and edges.
@@ -112,7 +127,7 @@ impl Graph {
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(dst);
 
         // Retrieve the data to compute the update transition
-        let destinations = self.get_destinations_bitmap(min_edge_id, max_edge_id);
+        let destinations_bitmap = self.get_destinations_bitmap(min_edge_id, max_edge_id);
 
         let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
 
@@ -120,7 +135,7 @@ impl Graph {
         self.update_node_transition(
             dst,
             &mut transition,
-            &destinations,
+            self.get_destinations_iterator(&destinations_bitmap, min_edge_id, max_edge_id),
             walk_weights.change_node_type_weight,
         );
 
@@ -153,7 +168,7 @@ impl Graph {
         if not_one(walk_weights.return_weight) || not_one(walk_weights.explore_weight) {
             transition
                 .iter_mut()
-                .zip(&destinations)
+                .zip(self.get_destinations_iterator(&destinations_bitmap, min_edge_id, max_edge_id))
                 .for_each(|(transition_value, ndst)| {
                     //############################################################
                     //# Handling of the P parameter: the return coefficient      #
@@ -188,7 +203,7 @@ impl Graph {
                 });
         }
 
-        (destinations, transition, min_edge_id)
+        (destinations_bitmap, transition, min_edge_id)
     }
 
     /// Return new sampled node with the transition edge used.
