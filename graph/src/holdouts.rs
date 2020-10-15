@@ -31,7 +31,7 @@ impl Graph {
         &self,
         mut random_state: EdgeT,
         negatives_number: EdgeT,
-        seed_graph: Option<Graph>,
+        seed_graph: Option<&Graph>,
         verbose: bool,
     ) -> Result<Graph, String> {
         if negatives_number == 0 {

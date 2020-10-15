@@ -232,8 +232,10 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["random_state", "allow_selfloops", "verbose"]),
+            build_walk_parameters_list(&["random_state", "verbose", "seed_graph"]),
         ))?;
+
+        let seed_graph = pyex!(extract_value!(kwargs, "seed_graph", EnsmallenGraph))?;
 
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.sample_negatives(
@@ -241,6 +243,10 @@ impl EnsmallenGraph {
                     .or_else(|| Some(42))
                     .unwrap(),
                 negatives_number,
+                match &seed_graph {
+                    Some(sg) => Some(&sg.graph),
+                    None => None,
+                },
                 pyex!(extract_value!(kwargs, "verbose", bool))?
                     .or_else(|| Some(true))
                     .unwrap()
