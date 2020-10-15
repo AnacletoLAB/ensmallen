@@ -39,7 +39,7 @@ fn generic_string_operator(
 
     let nodes_iterator = graphs
         .iter()
-        .flat_map(|(one, _, _)| one.get_nodes_string_iter().map(Ok));
+        .flat_map(|(one, _, _)| one.get_nodes_names_iter().map(Ok));
 
     Graph::from_string_unsorted(
         edges_iterator,

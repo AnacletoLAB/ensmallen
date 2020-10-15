@@ -172,10 +172,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         for i in 0..2 {
             if i == 1 {
                 graph.enable_fast_walk(true, true);
-                if let Some(outbounds) = &graph.outbounds{
+                if let Some(outbounds) = &graph.outbounds {
                     assert_eq!(outbounds.len(), graph.get_nodes_number() as usize);
                 }
-                if let Some(destinations) = &graph.destinations{
+                if let Some(destinations) = &graph.destinations {
                     assert_eq!(destinations.len(), graph.get_edges_number() as usize);
                 }
             }
@@ -217,7 +217,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         default_holdout_test_suite(graph, &train, &test)?;
     }
     // Testing negative edges generation
-    let negatives = graph.sample_negatives(4, graph.get_edges_number(), verbose)?;
+    let negatives = graph.sample_negatives(4, graph.get_edges_number(), None, verbose)?;
     validate_vocabularies(&negatives);
     if !graph.has_edge_types() {
         assert!(!graph.overlaps(&negatives)?);

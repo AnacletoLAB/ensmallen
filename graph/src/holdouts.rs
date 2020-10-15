@@ -24,17 +24,31 @@ impl Graph {
     ///
     /// * `random_state`: EdgeT - random_state to use to reproduce negative edge set.
     /// * `negatives_number`: EdgeT - Number of negatives edges to include.
+    /// * `seed_graph`: Option<Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
     /// * `verbose`: bool - Wether to show the loading bar.
     ///
     pub fn sample_negatives(
         &self,
         mut random_state: EdgeT,
         negatives_number: EdgeT,
+        seed_graph: Option<Graph>,
         verbose: bool,
     ) -> Result<Graph, String> {
         if negatives_number == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
         }
+        let seed_nodes: Option<RoaringBitmap> = if let Some(sg) = &seed_graph {
+            if !self.overlaps(&sg)? {
+                return Err(String::from(
+                    "The given seed graph does not overlap with the current graph instance.",
+                ));
+            }
+            Some(RoaringBitmap::from_iter(sg.get_nodes_names_iter().map(
+                |(node_name, _)| self.get_unchecked_node_id(&node_name),
+            )))
+        } else {
+            None
+        };
         // In a complete directed graph allowing selfloops with N nodes there are N^2
         // edges. In a complete directed graph without selfloops there are N*(N-1) edges.
         // We can rewrite the first formula as (N*(N-1)) + N.
@@ -112,6 +126,11 @@ impl Graph {
                         let (mut src, mut dst) = self.decode_edge(edge);
                         src %= nodes_number as NodeT;
                         dst %= nodes_number as NodeT;
+                        if let Some(sn) = &seed_nodes {
+                            if !sn.contains(src) && !sn.contains(dst) {
+                                return None;
+                            }
+                        }
                         // If the edge is not a self-loop or the user allows self-loops and
                         // the graph is directed or the edges are inserted in a way to avoid
                         // inserting bidirectional edges.
@@ -372,38 +391,23 @@ impl Graph {
             None
         };
 
-        let tree = self.spanning_tree(random_state, include_all_edge_types, &edge_type_ids, verbose);
+        let tree = self.spanning_tree(
+            random_state,
+            include_all_edge_types,
+            &edge_type_ids,
+            verbose,
+        );
 
         let edge_factor = if self.is_directed() { 1 } else { 2 };
         let train_edges_number = (self.get_edges_number() as f64 * train_size) as EdgeT;
-        let valid_edges_number = (self.get_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
+        let mut valid_edges_number = (self.get_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
 
         if let Some(etis) = &edge_type_ids {
-            let selected_edges_number = etis
+            let selected_edges_number: EdgeT = etis
                 .iter()
                 .map(|et| self.get_edge_type_number(*et) as EdgeT)
                 .sum();
-
-            if valid_edges_number > selected_edges_number {
-                return Err(format!(
-                    concat!(
-                        "Given number of requested validation edges number ({}) ",
-                        "is greater than the available number of edges with the ",
-                        "required edge type ({}).\n",
-                        "The minimal train rate to put all the edges of the ",
-                        "requested type into the validation set would be {}.\n",
-                        "If you intended to put the {} of the edges with the ",
-                        "edge types you have specified in the validation set, ",
-                        "you would need to specify as training rate {}."
-                    ),
-                    valid_edges_number,
-                    selected_edges_number,
-                    1.0 - selected_edges_number as f64 / self.get_edges_number() as f64,
-                    1.0 - train_size,
-                    1.0 - (1.0 - train_size)
-                        * (selected_edges_number as f64 / self.get_edges_number() as f64),
-                ));
-            }
+            valid_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;
         }
 
         if tree.len() * edge_factor > train_edges_number {

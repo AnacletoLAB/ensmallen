@@ -42,7 +42,12 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["random_state", "edge_types", "include_all_edge_types", "verbose"]),
+            build_walk_parameters_list(&[
+                "random_state",
+                "edge_types",
+                "include_all_edge_types",
+                "verbose"
+            ]),
         ))?;
 
         let (g1, g2) = pyex!(self.graph.connected_holdout(
@@ -94,7 +99,10 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&["random_state", "verbose"])))?;
+        pyex!(validate_kwargs(
+            kwargs,
+            build_walk_parameters_list(&["random_state", "verbose"])
+        ))?;
 
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.random_subgraph(
@@ -266,7 +274,10 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&["verbose"])))?;
+        pyex!(validate_kwargs(
+            kwargs,
+            build_walk_parameters_list(&["verbose"])
+        ))?;
 
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.edge_types_subgraph(

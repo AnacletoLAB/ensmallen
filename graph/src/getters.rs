@@ -42,7 +42,9 @@ impl Graph {
 
     /// Return vector of the non-unique source nodes names.
     pub fn get_source_names(&self) -> Vec<String> {
-        self.get_sources_iter().map(|src| self.get_node_name(src).unwrap()).collect()
+        self.get_sources_iter()
+            .map(|src| self.get_node_name(src).unwrap())
+            .collect()
     }
 
     /// Return vector on the (non unique) destination nodes of the graph.
@@ -52,7 +54,9 @@ impl Graph {
 
     /// Return vector of the non-unique destination nodes names.
     pub fn get_destination_names(&self) -> Vec<String> {
-        self.get_destinations_iter().map(|dst| self.get_node_name(dst).unwrap()).collect()
+        self.get_destinations_iter()
+            .map(|dst| self.get_node_name(dst).unwrap())
+            .collect()
     }
 
     /// Return the nodes reverse mapping.
@@ -233,6 +237,11 @@ impl Graph {
         }
     }
 
+    /// Returs node id raising a panic if used unproperly.
+    pub fn get_unchecked_node_id(&self, node_name: &str) -> NodeT {
+        *self.nodes.get(node_name).unwrap()
+    }
+
     /// Returs option with the weight of the given edge id.
     pub fn get_edge_weight(&self, edge_id: EdgeT) -> Option<WeightT> {
         match &self.weights {
@@ -311,16 +320,16 @@ impl Graph {
         self.unique_edges_number != self.get_edges_number()
     }
 
-    pub fn get_outbounds(&self) -> Vec<EdgeT>{
-        (0..self.get_nodes_number()).map(|src|{
-            self.get_unchecked_edge_id_from_tuple(src as NodeT +1, 0)
-        }).collect()
+    pub fn get_outbounds(&self) -> Vec<EdgeT> {
+        (0..self.get_nodes_number())
+            .map(|src| self.get_unchecked_edge_id_from_tuple(src as NodeT + 1, 0))
+            .collect()
     }
 
     pub fn get_destination(&self, edge_id: EdgeT) -> NodeT {
-        match &self.destinations{
+        match &self.destinations {
             Some(destinations) => destinations[edge_id as usize],
-            None=> self.get_edge_from_edge_id(edge_id).1
+            None => self.get_edge_from_edge_id(edge_id).1,
         }
     }
 

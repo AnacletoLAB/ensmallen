@@ -9,7 +9,7 @@ impl Graph {
     }
 
     /// Return iterator on the node of the graph as Strings.
-    pub fn get_nodes_string_iter(&self) -> impl Iterator<Item = (String, Option<String>)> + '_ {
+    pub fn get_nodes_names_iter(&self) -> impl Iterator<Item = (String, Option<String>)> + '_ {
         (0..self.get_nodes_number()).map(move |node_id| {
             (
                 self.nodes.translate(node_id).to_owned(),
