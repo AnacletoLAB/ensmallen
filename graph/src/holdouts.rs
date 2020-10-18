@@ -212,14 +212,11 @@ impl Graph {
     fn holdout(
         &self,
         random_state: EdgeT,
-        train_size: f64,
+        valid_edges_number: EdgeT,
         include_all_edge_types: bool,
         user_condition: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
-        let (_, valid_edges_number) =
-            self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
-
         let pb1 = get_loading_bar(
             verbose,
             "Picking validation edges",
@@ -277,28 +274,14 @@ impl Graph {
 
         if valid_edges_bitmap.len() < valid_edges_number {
             let actual_valid_edges_number = valid_edges_bitmap.len();
-            let valid_rate = 1.0 - train_size;
-            let actual_valid_rate =
-                actual_valid_edges_number as f64 / self.get_edges_number() as f64;
-            let actual_train_size = 1.0 - actual_valid_rate;
             return Err(format!(
                 concat!(
                     "With the given configuration for the holdout, it is not possible to ",
                     "generate a validation set composed of {valid_edges_number} edges from the current graph.\n",
-                    "The validation set can be composed of at most {actual_valid_edges_number} edges.\n",
-                    "The actual train/valid split rates, with the current configuration,",
-                    "would not be {train_size}/{valid_rate} but {actual_train_size}/{actual_valid_rate}.\n",
-                    "If you really want to do this, you can pass the argument:\n",
-                    "train_size: {actual_train_size}\n",
-                    "Before proceeding, consider what is your experimental setup goal and ",
-                    "the possible bias and validation problems that this choice might cause."
+                    "The validation set can be composed of at most {actual_valid_edges_number} edges.\n"
                 ),
                 valid_edges_number=valid_edges_number,
                 actual_valid_edges_number=actual_valid_edges_number,
-                train_size=train_size,
-                valid_rate=valid_rate,
-                actual_train_size=actual_train_size,
-                actual_valid_rate=actual_valid_rate
             ));
         }
 
@@ -434,7 +417,7 @@ impl Graph {
 
         self.holdout(
             random_state,
-            train_size,
+            valid_edges_number,
             include_all_edge_types,
             |edge_id, _, _, edge_type| {
                 // The tree must not contain the provided edge ID
@@ -475,6 +458,7 @@ impl Graph {
         min_number_overlaps: Option<EdgeT>,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
+        let (_, valid_edges_number) = self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
         let edge_type_ids = if let Some(ets) = edge_types {
             Some(
                 self.translate_edge_types(ets)?
@@ -489,7 +473,7 @@ impl Graph {
         }
         self.holdout(
             random_state,
-            train_size,
+            valid_edges_number,
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 // If a list of edge types was provided and the edge type
