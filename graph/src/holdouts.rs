@@ -8,7 +8,7 @@ use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
 use std::iter::FromIterator;
-use vec_rand::gen_random_vec;
+use vec_rand::{gen_random_vec, sample_uniform};
 use vec_rand::xorshift::xorshift as rand_u64;
 
 /// # Holdouts.
@@ -124,8 +124,8 @@ impl Graph {
                     // convert them to plain (src, dst)
                     .filter_map(|edge| {
                         let (mut src, mut dst) = self.decode_edge(edge);
-                        src %= nodes_number as NodeT;
-                        dst %= nodes_number as NodeT;
+                        src = sample_uniform(nodes_number as u64, src as u64) as NodeT;
+                        dst = sample_uniform(nodes_number as u64, dst as u64) as NodeT;
                         if let Some(sn) = &seed_nodes {
                             if !sn.contains(src) && !sn.contains(dst) {
                                 return None;
