@@ -1,5 +1,4 @@
 use super::*;
-use std::hash::Hash;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct VocabularyVec<IndexT: ToFromUsize> {
