@@ -32,7 +32,7 @@ impl PyNumberProtocol for EnsmallenGraph {
 #[pyproto]
 impl PyObjectProtocol for EnsmallenGraph {
     fn __repr__(&'p self) -> PyResult<String> {
-        Ok(format!("{:?}", self.graph.report()))
+        Ok(self.graph.textual_report())
     }
 }
 

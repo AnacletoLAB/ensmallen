@@ -5,7 +5,7 @@ use std::collections::HashMap;
 pub(crate) fn build_csv_file_reader(
     edge_path: String,
     py_kwargs: Option<&PyDict>,
-) -> Result<(EdgeFileReader, Option<NodeFileReader>), String> {
+) -> Result<(EdgeFileReader, Option<NodeFileReader>, String), String> {
     let py = pyo3::Python::acquire_gil();
     let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
@@ -43,6 +43,7 @@ pub(crate) fn build_csv_file_reader(
             "numeric_node_ids",
             "numeric_node_type_ids",
             "numeric_edge_type_ids",
+            "name",
         ]
         .iter()
         .map(|x| x.to_string())
@@ -98,7 +99,11 @@ pub(crate) fn build_csv_file_reader(
         None => None,
     };
 
-    Ok((edges, nodes))
+    Ok((
+        edges,
+        nodes,
+        extract_value!(kwargs, "name", String)?.or_else(|| Some("Graph".to_owned())).unwrap(),
+    ))
 }
 
 impl EnsmallenGraph {

@@ -277,6 +277,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     }
     // Compute metrics of the graph
     graph.report();
+    graph.textual_report();
     // Compute degrees metrics
     for src in 0..10 {
         for dst in 0..10 {
