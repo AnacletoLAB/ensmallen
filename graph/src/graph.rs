@@ -30,6 +30,8 @@ pub struct Graph {
     pub(crate) destinations: Option<Vec<NodeT>>,
     /// Vector of outbounds to execute fast walks if required.
     pub(crate) outbounds: Option<Vec<EdgeT>>,
+    /// Graph name
+    pub(crate) name: String,
 
     /// The main datastructure where all the edges are saved
     /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every

@@ -579,6 +579,7 @@ impl Graph {
         node_types: Option<VocabularyVec<NodeTypeT>>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
+        name: String,
         ignore_duplicated_edges: bool
     ) -> Result<Graph, String> {
         let (
@@ -613,6 +614,7 @@ impl Graph {
             node_bits,
             node_types,
             edge_types,
+            name,
             weights:optionify!(weights),
             destinations: None,
             outbounds: None
@@ -639,6 +641,7 @@ impl Graph {
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
         directed: bool,
+        name: String,
         ignore_duplicated_nodes: bool,
         ignore_duplicated_edges: bool,
         verbose: bool,
@@ -672,6 +675,7 @@ impl Graph {
             optionify!(node_types),
             optionify!(edge_types_vocabulary),
             directed,
+            name,
             ignore_duplicated_edges
         )
     }
@@ -700,6 +704,7 @@ impl Graph {
         node_types: Option<VocabularyVec<NodeTypeT>>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
+        name: String,
         ignore_duplicated_edges: bool,
         verbose: bool
     ) -> Result<Graph, String> {
@@ -715,6 +720,7 @@ impl Graph {
             node_types,
             edge_types_vocabulary,
             directed,
+            name,
             ignore_duplicated_edges
         )
     }
@@ -730,7 +736,8 @@ impl Graph {
         nodes_number: NodeT,
         numeric_edge_types_ids: bool,
         numeric_node_ids: bool,
-        numeric_node_types_ids: bool
+        numeric_node_types_ids: bool,
+        name: String,
     ) -> Result<Graph, String> {
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
@@ -773,6 +780,7 @@ impl Graph {
             node_bit_mask,
             node_bits,
             edge_types,
+            name,
             weights: optionify!(weights),
             node_types:optionify!(node_types),
             destinations: None,

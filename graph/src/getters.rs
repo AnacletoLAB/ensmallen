@@ -35,6 +35,11 @@ impl Graph {
         self.self_loop_number > 0
     }
 
+    /// Returns boolean representing if graph has singletons.
+    pub fn has_singletons(&self) -> bool {
+        self.get_singleton_nodes_number() > 0
+    }
+
     /// Return vector of the non-unique source nodes.
     pub fn get_sources(&self) -> Vec<NodeT> {
         self.get_sources_iter().collect()
@@ -62,6 +67,22 @@ impl Graph {
     /// Return the nodes reverse mapping.
     pub fn get_nodes_reverse_mapping(&self) -> Vec<String> {
         self.nodes.reverse_map.clone()
+    }
+
+    /// Return the nodes reverse mapping.
+    /// 
+    /// # Arguments
+    /// 
+    /// * k: NodeT - Number of central nodes to extract.usize
+    pub fn get_top_k_central_nodes(&self, k: NodeT) -> Vec<NodeT> {
+        let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
+            .map(|node_id| (self.get_node_degree(node_id), node_id))
+            .collect();
+        nodes_degrees.sort();
+        nodes_degrees[0..k as usize]
+            .iter()
+            .map(|(_, node_id)| *node_id)
+            .collect()
     }
 
     /// Return the edge types of the edges.

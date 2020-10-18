@@ -91,7 +91,7 @@ pub fn load_ppi(
         .set_default_weight(Some(5.0))
         .set_skip_self_loops(Some(skip_self_loops));
 
-    Graph::from_unsorted_csv(edges_reader, nodes_reader, directed)
+    Graph::from_unsorted_csv(edges_reader, nodes_reader, directed, "Graph".to_owned())
 }
 
 /// Return WalksParameters to execute a first order walk.

@@ -166,6 +166,7 @@ impl Graph {
             self.node_types.clone(),
             None,
             self.directed,
+            format!("{} negatives", self.name.clone()),
             false,
         )
     }
@@ -327,6 +328,7 @@ impl Graph {
                     None => None,
                 },
                 self.directed,
+                format!("{} training", self.name.clone()),
                 false,
             )?,
             Graph::build_graph(
@@ -342,6 +344,7 @@ impl Graph {
                     None => None,
                 },
                 self.directed,
+                format!("{} testing", self.name.clone()),
                 false,
             )?,
         ))
@@ -617,6 +620,7 @@ impl Graph {
                 None => None,
             },
             self.directed,
+            format!("{} subgraph", self.name.clone()),
             false,
         )
     }
@@ -678,6 +682,7 @@ impl Graph {
                 None => None,
             },
             self.directed,
+            format!("{} edge type subgraph", self.name.clone()),
             false,
         )
     }

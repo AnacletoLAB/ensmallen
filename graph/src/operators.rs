@@ -1,6 +1,10 @@
 use super::*;
 use std::ops;
 
+fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> String {
+    format!("({} {} {})", main.name, operator, other.name)
+}
+
 /// Return graph composed of the two near-incompatible graphs.
 ///
 /// The two graphs can have different nodes, edge types and node types.
@@ -9,10 +13,15 @@ use std::ops;
 ///
 /// # Arguments
 ///
-/// * other: Graph - Graph to be summed.
+/// * main: &Graph - The current graph instance.
+/// * other: &Graph - The other graph.
+/// * operator: String - The operator used.
+/// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
 ///
 fn generic_string_operator(
     main: &Graph,
+    other: &Graph,
+    operator: String,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
 ) -> Result<Graph, String> {
     // one: left hand side of the operator
@@ -45,12 +54,13 @@ fn generic_string_operator(
         edges_iterator,
         Some(nodes_iterator),
         main.directed,
+        build_operator_graph_name(main, other, operator),
         true,
         true,
         false,
         false,
         false,
-        false
+        false,
     )
 }
 
@@ -62,10 +72,15 @@ fn generic_string_operator(
 ///
 /// # Arguments
 ///
-/// * other: Graph - Graph to be summed.
+/// * main: &Graph - The current graph instance.
+/// * other: &Graph - The other graph.
+/// * operator: String - The operator used.
+/// * graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
 ///
 fn generic_integer_operator(
     main: &Graph,
+    other: &Graph,
+    operator: String,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
 ) -> Result<Graph, String> {
     // one: left hand side of the operator
@@ -102,8 +117,9 @@ fn generic_integer_operator(
             None => None,
         },
         main.directed,
+        build_operator_graph_name(main, other, operator),
         true,
-        false
+        false,
     )
 }
 
@@ -160,11 +176,12 @@ impl Graph {
     pub(crate) fn generic_operator(
         &self,
         other: &Graph,
+        operator: String,
         graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
     ) -> Result<Graph, String> {
         match self.is_compatible(other)? {
-            true => generic_integer_operator(self, graphs),
-            false => generic_string_operator(self, graphs),
+            true => generic_integer_operator(self, other, operator, graphs),
+            false => generic_string_operator(self, other, operator, graphs),
         }
     }
 }
@@ -180,7 +197,11 @@ impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
     /// * other: Graph - Graph to be summed.
     ///
     fn bitor(self, other: &'b Graph) -> Result<Graph, String> {
-        self.generic_operator(other, vec![(self, None, None), (other, Some(self), None)])
+        self.generic_operator(
+            other,
+            "|".to_owned(),
+            vec![(self, None, None), (other, Some(self), None)],
+        )
     }
 }
 
@@ -197,6 +218,7 @@ impl<'a, 'b> ops::BitXor<&'b Graph> for &'a Graph {
     fn bitxor(self, other: &'b Graph) -> Result<Graph, String> {
         self.generic_operator(
             self,
+            "^".to_owned(),
             vec![(self, Some(other), None), (other, Some(self), None)],
         )
     }
@@ -213,7 +235,7 @@ impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
     /// * other: Graph - Graph to be subtracted.
     ///
     fn sub(self, other: &'b Graph) -> Result<Graph, String> {
-        self.generic_operator(other, vec![(self, Some(other), None)])
+        self.generic_operator(other, "-".to_owned(), vec![(self, Some(other), None)])
     }
 }
 
@@ -228,6 +250,6 @@ impl<'a, 'b> ops::BitAnd<&'b Graph> for &'a Graph {
     /// * other: Graph - Graph to be subtracted.
     ///
     fn bitand(self, other: &'b Graph) -> Result<Graph, String> {
-        self.generic_operator(other, vec![(self, None, Some(other))])
+        self.generic_operator(other, "&".to_owned(), vec![(self, None, Some(other))])
     }
 }

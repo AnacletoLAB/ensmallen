@@ -17,6 +17,7 @@ impl Graph {
         directed: bool,
         edges_number: EdgeT,
         nodes_number: NodeT,
+        name: String,
     ) -> Result<Graph, String> {
         Graph::from_string_sorted(
             edge_file_reader.read_lines()?,
@@ -40,7 +41,8 @@ impl Graph {
             match &node_file_reader {
                 Some(nfr) => nfr.numeric_node_type_ids,
                 None => false,
-            }
+            },
+            name,
         )
     }
 
@@ -58,6 +60,7 @@ impl Graph {
         edge_file_reader: EdgeFileReader,
         node_file_reader: Option<NodeFileReader>,
         directed: bool,
+        name: String,
     ) -> Result<Graph, String> {
         Graph::from_string_unsorted(
             edge_file_reader.read_lines()?,
@@ -66,6 +69,7 @@ impl Graph {
                 None => None,
             },
             directed,
+            name,
             match &node_file_reader {
                 Some(nfr) => nfr.reader.ignore_duplicates,
                 None => false,
@@ -80,7 +84,7 @@ impl Graph {
             match &node_file_reader {
                 Some(nfr) => nfr.numeric_node_type_ids,
                 None => false,
-            }
+            },
         )
     }
 }

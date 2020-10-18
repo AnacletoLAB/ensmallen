@@ -373,6 +373,7 @@ impl Graph {
     /// ```
     pub fn report(&self) -> DefaultHashMap<&str, String> {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
+        report.insert("name", self.name.clone());
         report.insert("nodes_number", self.get_nodes_number().to_string());
         report.insert("edges_number", self.get_edges_number().to_string());
         report.insert(
@@ -397,5 +398,77 @@ impl Graph {
             self.get_edge_types_number().to_string(),
         );
         report
+    }
+
+    /// Return rendered textual report of the graph.
+    pub fn textual_report(&self) -> String {
+        format!(
+            concat!(
+                "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}.\n",
+                "The graph is {quantized_density} as is has a density of {density} and has {components_number} connected components.\n",
+                "The graph median node degree is {median_node_degree}, the mean node degree {mean_node_degree} and the node degree mode is {mode_node_degree}.\n",
+                "The most {most_common_nodes_number} central nodes are {central_nodes}."
+            ),
+            direction = match self.directed {
+                true=> "directed",
+                false => "undirected"
+            }.to_owned(),
+            graph_type = match self.is_multigraph() {
+                true=> "multigraph",
+                false => "graph"
+            }.to_owned(),
+            name = self.name,
+            nodes_number = self.get_nodes_number(),
+            edges_number = match self.directed {
+                true => self.get_edges_number(),
+                false => self.get_undirected_edges_number(),
+            },
+            weighted = match self.has_weights(){
+                true=> "weighted",
+                false=> "unweighted"
+            }.to_owned(),
+            self_loops = match self.has_selfloops() {
+                true => format!("{} are selfloops", self.get_self_loop_number()),
+                false => "none are selfloops".to_owned()
+            },
+            node_types= match self.has_node_types() {
+                true => format!(" with {} different node types", self.get_node_types_number()),
+                false => "".to_owned()
+            },
+            singletons = match self.has_singletons() {
+                true => format!(", of which {} are singletons,", self.get_singleton_nodes_number()),
+                false => "".to_owned()
+            },
+            edge_types= match self.has_edge_types() {
+                true => format!(" with {} different edge types", self.get_edge_types_number()),
+                false => "".to_owned()
+            },
+            quantized_density = match self.density() {
+                d if d < 0.0001 => "extremely sparse".to_owned(),
+                d if d < 0.001 => "quite sparse".to_owned(),
+                d if d < 0.01 => "sparse".to_owned(),
+                d if d < 0.1 => "dense".to_owned(),
+                d if d < 0.5 => "quite dense".to_owned(),
+                d if (d - 1.0 as f64).abs() < f64::EPSILON => "complete".to_owned(),
+                d if d < 1.0 => "extremely dense".to_owned(),
+                _ => unreachable!("Unreacheable density case")
+            },
+            density=self.density(),
+            components_number=self.connected_components_number(false),
+            median_node_degree=self.degrees_median(),
+            mean_node_degree=self.degrees_mean(),
+            mode_node_degree=self.degrees_mode(),
+            most_common_nodes_number=min!(3, self.get_nodes_number()),
+            central_nodes = {
+                let top_k = self.get_top_k_central_nodes(min!(3, self.get_nodes_number()));
+                let central_nodes:String = top_k[0..top_k.len()-1].iter().map(|node_id| format!("{node_name} ({node_degree})", node_name=self.get_node_name(*node_id).unwrap(), node_degree=self.get_node_degree(*node_id))).collect::<Vec<String>>().join(", ");
+                format!(
+                    "{central_nodes} and {node_name} ({node_degree})",
+                    central_nodes=central_nodes,
+                    node_name=self.get_node_name(*top_k.last().unwrap()).unwrap(),
+                    node_degree=self.get_node_degree(*top_k.last().unwrap())
+                )
+            }
+        )
     }
 }
