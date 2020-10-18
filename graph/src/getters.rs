@@ -5,6 +5,11 @@ use std::collections::HashMap;
 use std::iter::once;
 
 impl Graph {
+    /// Return name of the graph.
+    pub fn get_name(&self) -> String {
+        self.name.clone()
+    }
+
     /// Return the number of traps (nodes without any outgoing edges that are not singletons)
     pub fn get_traps_number(&self) -> EdgeT {
         self.not_singleton_nodes_number as EdgeT - self.unique_sources.len() as EdgeT
@@ -70,9 +75,9 @@ impl Graph {
     }
 
     /// Return the nodes reverse mapping.
-    /// 
+    ///
     /// # Arguments
-    /// 
+    ///
     /// * k: NodeT - Number of central nodes to extract.usize
     pub fn get_top_k_central_nodes(&self, k: NodeT) -> Vec<NodeT> {
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())

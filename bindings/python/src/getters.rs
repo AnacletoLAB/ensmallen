@@ -12,6 +12,12 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "(self)"]
+    /// Return the name of the graph.
+    fn get_name(&self) -> NodeT {
+        self.graph.get_name()
+    }
+
+    #[text_signature = "(self)"]
     /// Return the number of edges in the graph.
     fn get_edges_number(&self) -> EdgeT {
         self.graph.get_edges_number()
