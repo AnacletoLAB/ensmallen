@@ -406,7 +406,7 @@ impl Graph {
             concat!(
                 "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}.\n",
                 "The graph is {quantized_density} as is has a density of {density:.5} and has {components_number} connected components.\n",
-                "The graph median node degree is {median_node_degree}, the mean node degree {mean_node_degree} and the node degree mode is {mode_node_degree}.\n",
+                "The graph median node degree is {median_node_degree}, the mean node degree {mean_node_degree:.2} and the node degree mode is {mode_node_degree}.\n",
                 "The most {most_common_nodes_number} central nodes are {central_nodes}."
             ),
             direction = match self.directed {
