@@ -24,6 +24,12 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "(self)"]
+    /// Return the number of undirected edges in the graph.
+    fn get_undirected_edges_number(&self) -> EdgeT {
+        self.graph.get_undirected_edges_number()
+    }
+
+    #[text_signature = "(self)"]
     /// Return the number of edges types in the graph.
     ///
     /// This method will include, if found necessary by a missing value,
