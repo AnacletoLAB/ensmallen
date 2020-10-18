@@ -405,7 +405,7 @@ impl Graph {
         format!(
             concat!(
                 "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}.\n",
-                "The graph is {quantized_density} as is has a density of {density} and has {components_number} connected components.\n",
+                "The graph is {quantized_density} as is has a density of {density:.5} and has {components_number} connected components.\n",
                 "The graph median node degree is {median_node_degree}, the mean node degree {mean_node_degree} and the node degree mode is {mode_node_degree}.\n",
                 "The most {most_common_nodes_number} central nodes are {central_nodes}."
             ),
@@ -458,12 +458,12 @@ impl Graph {
             median_node_degree=self.degrees_median(),
             mean_node_degree=self.degrees_mean(),
             mode_node_degree=self.degrees_mode(),
-            most_common_nodes_number=min!(3, self.get_nodes_number()),
+            most_common_nodes_number=min!(5, self.get_nodes_number()),
             central_nodes = {
                 let top_k = self.get_top_k_central_nodes(min!(5, self.get_nodes_number()));
-                let central_nodes:String = top_k[0..top_k.len()-1].iter().map(|node_id| format!("{node_name} ({node_degree})", node_name=self.get_node_name(*node_id).unwrap(), node_degree=self.get_node_degree(*node_id))).collect::<Vec<String>>().join(", ");
+                let central_nodes:String = top_k[0..top_k.len()-1].iter().map(|node_id| format!("{node_name} (degree {node_degree})", node_name=self.get_node_name(*node_id).unwrap(), node_degree=self.get_node_degree(*node_id))).collect::<Vec<String>>().join(", ");
                 format!(
-                    "{central_nodes} and {node_name} ({node_degree})",
+                    "{central_nodes} and {node_name} (degree {node_degree})",
                     central_nodes=central_nodes,
                     node_name=self.get_node_name(*top_k.last().unwrap()).unwrap(),
                     node_degree=self.get_node_degree(*top_k.last().unwrap())
