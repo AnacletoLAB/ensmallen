@@ -460,7 +460,7 @@ impl Graph {
             mode_node_degree=self.degrees_mode(),
             most_common_nodes_number=min!(3, self.get_nodes_number()),
             central_nodes = {
-                let top_k = self.get_top_k_central_nodes(min!(3, self.get_nodes_number()));
+                let top_k = self.get_top_k_central_nodes(min!(5, self.get_nodes_number()));
                 let central_nodes:String = top_k[0..top_k.len()-1].iter().map(|node_id| format!("{node_name} ({node_degree})", node_name=self.get_node_name(*node_id).unwrap(), node_degree=self.get_node_degree(*node_id))).collect::<Vec<String>>().join(", ");
                 format!(
                     "{central_nodes} and {node_name} ({node_degree})",
