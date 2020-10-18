@@ -1,5 +1,6 @@
 use super::types::*;
 use std::collections::HashMap;
+use std::hash::Hash;
 use arbitrary::Arbitrary;
 
 #[derive(Debug, Clone, PartialEq, Arbitrary)]

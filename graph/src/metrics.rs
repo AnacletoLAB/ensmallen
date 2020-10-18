@@ -213,6 +213,15 @@ impl Graph {
         self.get_edges_number() as f64 / self.get_nodes_number() as f64
     }
 
+    /// Returns number of undirected edges of the graph.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
+    /// ```
+    pub fn get_undirected_edges_number(&self) -> EdgeT {
+        (self.get_edges_number() - self.get_self_loop_number()) / 2 + self.get_self_loop_number()
+    }
+
     /// Returns median node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -366,6 +375,10 @@ impl Graph {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
         report.insert("nodes_number", self.get_nodes_number().to_string());
         report.insert("edges_number", self.get_edges_number().to_string());
+        report.insert(
+            "undirected_edges_number",
+            self.get_undirected_edges_number().to_string(),
+        );
         report.insert("density", self.density().to_string());
         report.insert("directed", self.is_directed().to_string());
         report.insert("has_weights", self.has_weights().to_string());
