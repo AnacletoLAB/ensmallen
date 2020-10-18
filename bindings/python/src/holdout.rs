@@ -197,7 +197,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, negatives_number, *, random_state, verbose)"]
+    #[text_signature = "($self, negatives_number, *, random_state, seed_graph, verbose)"]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
     /// The graph generated may be used as a testing negatives partition to be
@@ -211,6 +211,9 @@ impl EnsmallenGraph {
     ///     The number of negative edges to use.
     /// random_state: int = 42,
     ///     The random_state to use to generate the holdout.
+    /// seed_graph: EnsmallenGraph = None,
+    ///     The (optional) graph whose nodes are used as sources or destinations
+    ///     of the generated negative edges.
     /// verbose: bool = True,
     ///     Wethever to show the loading bar.
     ///     The loading bar will only be visible in console.
