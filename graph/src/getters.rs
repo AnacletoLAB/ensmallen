@@ -79,6 +79,7 @@ impl Graph {
             .map(|node_id| (self.get_node_degree(node_id), node_id))
             .collect();
         nodes_degrees.sort();
+        nodes_degrees.reverse();
         nodes_degrees[0..k as usize]
             .iter()
             .map(|(_, node_id)| *node_id)
