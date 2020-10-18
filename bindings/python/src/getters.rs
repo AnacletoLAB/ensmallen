@@ -13,7 +13,7 @@ impl EnsmallenGraph {
 
     #[text_signature = "(self)"]
     /// Return the name of the graph.
-    fn get_name(&self) -> NodeT {
+    fn get_name(&self) -> String {
         self.graph.get_name()
     }
 
