@@ -7,6 +7,7 @@ pub(crate) use crate::macros::*;
 mod edge_file_writer;
 mod from_csv;
 mod getters;
+mod setters;
 mod metrics;
 mod node_file_writer;
 mod preprocessing;
