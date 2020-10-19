@@ -404,9 +404,9 @@ impl Graph {
     pub fn textual_report(&self) -> String {
         format!(
             concat!(
-                "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}.\n",
-                "The graph is {quantized_density} as it has a density of {density:.5} and has {components_number} connected components.\n",
-                "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2} and the node degree mode is {mode_node_degree}.\n",
+                "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}. ",
+                "The graph is {quantized_density} as it has a density of {density:.5} and has {components_number} connected components. ",
+                "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2} and the node degree mode is {mode_node_degree}. ",
                 "The top {most_common_nodes_number} most central nodes are {central_nodes}."
             ),
             direction = match self.directed {
