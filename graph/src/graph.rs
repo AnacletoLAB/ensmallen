@@ -212,6 +212,19 @@ impl Graph {
             .is_some()
     }
 
+    /// Returns boolean representing if node with given name exists in current graph.
+    ///
+    /// # Arguments
+    ///
+    /// * node_name: String - The node name.
+    ///
+    pub fn has_node_string(
+        &self,
+        node_name: &str,
+    ) -> bool {
+        self.get_node_id(node_name).is_ok()
+    }
+
     /// Return true if given graph has any edge overlapping with current graph.
     ///
     /// # Arguments

@@ -136,6 +136,22 @@ impl EnsmallenGraph {
         self.graph.has_edge_string(&src, &dst, edge_type.as_ref())
     }
 
+    #[text_signature = "($self, node_name)"]
+    /// Return boolean representing if given node exists in graph.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node_name: str,
+    ///     Name of the node.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if given node exists in graph.
+    ///
+    fn has_node_string(&self, node_name: &str) -> bool {
+        self.graph.has_node_string(node_name)
+    }
+
     #[text_signature = "($self, src, dst, edge_type)"]
     /// Return integer representing ID of the edge.
     ///
