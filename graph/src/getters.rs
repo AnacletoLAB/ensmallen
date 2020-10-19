@@ -78,7 +78,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * k: NodeT - Number of central nodes to extract.usize
+    /// * k: NodeT - Number of central nodes to extract.
     pub fn get_top_k_central_nodes(&self, k: NodeT) -> Vec<NodeT> {
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
             .map(|node_id| (self.get_node_degree(node_id), node_id))

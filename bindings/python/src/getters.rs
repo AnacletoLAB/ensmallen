@@ -12,6 +12,17 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "(self)"]
+    /// Return the nodes reverse mapping.
+    ///
+    /// Parameters
+    /// -----------------
+    /// k: int,
+    ///      Number of central nodes to extract.
+    fn get_top_k_central_nodes(&self, k: NodeT) -> Vec<NodeT> {
+        self.graph.get_top_k_central_nodes(k)
+    }
+
+    #[text_signature = "(self)"]
     /// Return the name of the graph.
     fn get_name(&self) -> String {
         self.graph.get_name()
