@@ -13,12 +13,12 @@ impl EnsmallenGraph {
 
     #[text_signature = "($self, verbose)"]
     /// Returns number of connected components in graph.
-    /// 
+    ///
     /// Parameters
     /// ------------------------
     /// verbose: bool,
     ///     Wethever to display a loading bar while computing the spanning tree.
-    /// 
+    ///
     /// Returns
     /// ------------------------
     /// Number of connected components.
@@ -66,10 +66,23 @@ impl EnsmallenGraph {
     /// * unique_edge_types_number: the number of different edge types in the graph.
     /// * traps_rate: probability to end up in a trap when starting into any given node.
     /// * selfloops_rate: pecentage of edges that are selfloops.
-    /// * bidirectional_rate: rate of edges that are bidirectional.
     ///
     fn report(&self) -> HashMap<&str, String> {
         self.graph.report()
+    }
+
+    /// Return report on overlaps of the two graphs.
+    /// 
+    /// Parameters
+    /// -------------------
+    /// other: &EnsmallenGraph,
+    ///     Graph to compute the overlaps with.
+    /// 
+    /// Returns
+    /// -------------------
+    /// Textual report.
+    fn overlap_textual_report(&self, other: &EnsmallenGraph) -> PyResult<String> {
+        pyex!(self.graph.overlap_textual_report(&other.graph))
     }
 
     #[text_signature = "($self, node)"]
