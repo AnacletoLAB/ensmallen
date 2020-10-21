@@ -124,7 +124,7 @@ fn generic_integer_operator(
 }
 
 impl<'a, 'b> Graph {
-    fn validate_operator_terms(&self, other: &'b Graph) -> Result<(), String> {
+    pub fn validate_operator_terms(&self, other: &'b Graph) -> Result<(), String> {
         if self.directed != other.directed {
             return Err(String::from(concat!(
                 "The graphs must either be both directed or undirected."

@@ -218,8 +218,11 @@ impl Graph {
     ///
     /// * node_name: String - The node name.
     ///
-    pub fn has_node_string(&self, node_name: &str) -> bool {
-        self.get_node_id(node_name).is_ok()
+    pub fn has_node_string(&self, node_name: &str, node_type_name: Option<String>) -> bool {
+        match self.get_node_id(node_name) {
+            Err(_) => false,
+            Ok(node_id) => self.get_node_type_string(node_id) == node_type_name
+        }
     }
 
     /// Return true if given graph has any edge overlapping with current graph.

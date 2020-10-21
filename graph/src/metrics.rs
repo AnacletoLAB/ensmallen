@@ -310,10 +310,13 @@ impl Graph {
     pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT) {
         let (tree, components) = self.spanning_tree(0, false, &None, verbose);
         let connected_components_number = self.get_nodes_number() - tree.len() as NodeT;
-        (connected_components_number as NodeT, match components.iter().map(|c| c.len()).max() {
-            Some(max_components_number) => max_components_number,
-            None=> 1
-        } as NodeT)
+        (
+            connected_components_number as NodeT,
+            match components.iter().map(|c| c.len()).max() {
+                Some(max_components_number) => max_components_number,
+                None => 1,
+            } as NodeT,
+        )
     }
 
     /// Returns number of singleton nodes within the graph.
@@ -394,9 +397,46 @@ impl Graph {
         report
     }
 
+    /// Return rendered textual report about the graph overlaps.
+    ///
+    /// # Arguments
+    ///
+    /// - `other`: &Graph - graph to create overlap report with.
+    pub fn overlap_textual_report(&self, other: &Graph) -> Result<String, String> {
+        // Checking if overlap is allowed
+        self.validate_operator_terms(other)?;
+        // Get overlapping nodes
+        let overlapping_nodes_number = self
+            .get_nodes_names_iter()
+            .filter(|(node_name, node_type)| self.has_node_string(node_name, node_type.clone()))
+            .count();
+        // Get overlapping edges
+        let overlapping_edges_number = self
+            .get_edges_par_string_triples()
+            .filter(|(_, src_name, dst_name, edge_type_name)| self.has_edge_string(src_name, dst_name, edge_type_name.as_ref()))
+            .count();
+        // Building up the report
+        Ok(format!(
+            concat!(
+                "The graph {first_graph} and the graph {second_graph} share {nodes_number} nodes and {edges_number} edges. ",
+                "By percent, {first_graph} shares {first_node_percentage:.2}% of its nodes and {first_edge_percentage:.2}% of its edges with {second_graph}. ",
+                "{second_graph} shares {second_node_percentage:.2}% of its nodes and {second_edge_percentage:.2}% of its edges with {first_graph}."
+            ),
+            first_graph=self.get_name(),
+            second_graph=other.get_name(),
+            nodes_number=overlapping_nodes_number,
+            edges_number=overlapping_edges_number,
+            first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),
+            second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_nodes_number() as f64),
+            first_edge_percentage=100.0*(overlapping_edges_number as f64 / self.get_edges_number() as f64),
+            second_edge_percentage=100.0*(overlapping_edges_number as f64 / other.get_edges_number() as f64),
+        ))
+    }
+
     /// Return rendered textual report of the graph.
     pub fn textual_report(&self) -> String {
-        let (connected_components_number, maximum_connected_component) = self.connected_components_number(true);
+        let (connected_components_number, maximum_connected_component) =
+            self.connected_components_number(true);
 
         format!(
             concat!(
