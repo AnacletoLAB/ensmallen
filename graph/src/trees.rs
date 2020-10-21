@@ -35,10 +35,10 @@ impl Graph {
         let result: Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)>> = if let Some(uet) = unwanted_edge_types {
             Box::new(self.iter_edges_from_random_state(random_state)
                 .filter(move |(edge_id, _, _)| {
-                    uet.contains(&self.get_unchecked_edge_type(*edge_id).unwrap())
+                    !uet.contains(&self.get_unchecked_edge_type(*edge_id).unwrap())
                 })
                 .chain(self.iter_edges_from_random_state(random_state).filter(move |(edge_id, _, _)| {
-                    !uet.contains(&self.get_unchecked_edge_type(*edge_id).unwrap())
+                    uet.contains(&self.get_unchecked_edge_type(*edge_id).unwrap())
                 })))
         } else {
             Box::new(self.iter_edges_from_random_state(random_state))
