@@ -1,14 +1,14 @@
 use super::*;
 
 #[derive(Debug, Clone, PartialEq)]
-pub struct VocabularyVec<IndexT: ToFromUsize> {
+pub struct VocabularyVec<IndexT: ToFromUsize, CountT: ToFromUsize> {
     pub ids: Vec<IndexT>,
     pub vocabulary: Vocabulary<IndexT>,
-    pub counts: Vec<EdgeT>,
+    pub counts: Vec<CountT>,
 }
 
-impl<IndexT: ToFromUsize> VocabularyVec<IndexT> {
-    pub fn new(numeric_ids: bool) -> VocabularyVec<IndexT> {
+impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
+    pub fn new(numeric_ids: bool) -> VocabularyVec<IndexT, CountT> {
         VocabularyVec {
             ids: Vec::new(),
             vocabulary: Vocabulary::new(numeric_ids),
@@ -19,7 +19,7 @@ impl<IndexT: ToFromUsize> VocabularyVec<IndexT> {
     pub fn from_structs(
         ids: Vec<IndexT>,
         vocabulary: Option<Vocabulary<IndexT>>,
-    ) -> Option<VocabularyVec<IndexT>> {
+    ) -> Option<VocabularyVec<IndexT, CountT>> {
         match vocabulary {
             Some(vocab) => {
                 let mut vocabvec = VocabularyVec {
@@ -35,9 +35,9 @@ impl<IndexT: ToFromUsize> VocabularyVec<IndexT> {
     }
 
     pub fn build_counts(&mut self) {
-        self.counts = vec![0; self.vocabulary.len()];
+        self.counts = vec![CountT::from_usize(0); self.vocabulary.len()];
         for index in self.ids.iter() {
-            self.counts[IndexT::to_usize(*index)] += 1;
+            self.counts[IndexT::to_usize(*index)] += CountT::from_usize(1);
         }
     }
 

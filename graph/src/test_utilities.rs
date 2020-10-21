@@ -366,10 +366,14 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
 
     // Testing cloning
     let mut clone = graph.clone();
-    clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES".to_string());
+    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES".to_string());
+    clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES".to_string());
 
     assert_eq!(clone.get_edge_types_number(), 1);
     assert_eq!(clone.get_edge_type_number(0), graph.get_edges_number());
+
+    assert_eq!(clone.get_node_types_number(), 1);
+    assert_eq!(clone.get_node_type_number(0), graph.get_nodes_number());
 
     Ok(())
 }

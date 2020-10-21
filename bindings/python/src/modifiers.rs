@@ -9,8 +9,23 @@ impl EnsmallenGraph {
     /// ---------
     /// edge_type: str,
     ///     The edge type to assing to all the edges.
-    pub fn set_all_edge_types(&mut self, edge_type: String) {
-        self.graph.set_all_edge_types(edge_type);
+    pub fn set_all_edge_types(&self, edge_type: String) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.clone().set_all_edge_types(edge_type),
+        }
+    }
+
+    #[text_signature = "($self, node_type)"]
+    /// Drop all node types (if presents) and set all the node to node_type.
+    ///
+    /// Arguments
+    /// ---------
+    /// node_type: str,
+    ///     The node type to assing to all the nodes.
+    pub fn set_all_node_types(&self, node_type: String) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.clone().set_all_node_types(node_type),
+        }
     }
 
     #[args(py_kwargs = "**")]

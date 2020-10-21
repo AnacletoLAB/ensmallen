@@ -50,11 +50,11 @@ pub struct Graph {
     /// weights[10] return the weight of the edge with edge_id 10
     pub(crate) weights: Option<Vec<WeightT>>,
     /// Vocabulary that save the mappings from string to index of every node type
-    pub(crate) node_types: Option<VocabularyVec<NodeTypeT>>,
+    pub(crate) node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
     // This is the next attribute that will be embedded inside of edges once
     // the first refactoring is done
     /// Vocabulary that save the mappings from string to index of every edge type
-    pub(crate) edge_types: Option<VocabularyVec<EdgeTypeT>>,
+    pub(crate) edge_types: Option<VocabularyVec<EdgeTypeT, EdgeT>>,
 }
 
 /// # Graph utility methods
@@ -218,10 +218,7 @@ impl Graph {
     ///
     /// * node_name: String - The node name.
     ///
-    pub fn has_node_string(
-        &self,
-        node_name: &str,
-    ) -> bool {
+    pub fn has_node_string(&self, node_name: &str) -> bool {
         self.get_node_id(node_name).is_ok()
     }
 

@@ -1,4 +1,5 @@
 use std::fmt::Display;
+use std::ops::AddAssign;
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.
@@ -27,13 +28,12 @@ pub type Quadruple = (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>);
 /// Quadrule of string edge data
 pub type StringQuadruple = (String, String, Option<String>, Option<WeightT>);
 
-
 /// Trait used for the Vocabulary class.
 /// It represent an unsigned integer that can be converted to and from usize.
 /// This allows us to save memory using indicies of smaller size than u64
 /// and it has no effects on performance because it's optimized away during
 /// compilaton.
-pub trait ToFromUsize: Clone + Display + Ord + Copy{
+pub trait ToFromUsize: Clone + Display + Ord + Copy + AddAssign {
     /// create the type from a usize
     fn from_usize(v: usize) -> Self;
     /// create an usize frm the type

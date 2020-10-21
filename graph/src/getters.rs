@@ -342,6 +342,13 @@ impl Graph {
         }
     }
 
+    pub fn get_node_type_number(&self, node_type: NodeTypeT) -> NodeT {
+        match &self.node_types {
+            None => 0 as NodeT,
+            Some(nts) => nts.counts[node_type as usize],
+        }
+    }
+
     /// Return if there are multiple edges between two nodes
     pub fn is_multigraph(&self) -> bool {
         self.unique_edges_number != self.get_edges_number()
