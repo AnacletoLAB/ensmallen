@@ -55,6 +55,7 @@ pub fn load_ppi(
                 .set_nodes_column(Some("id".to_string()))?
                 .set_ignore_duplicates(Some(true))
                 .set_separator(Some("\t".to_string()))
+                .unwrap()
                 .set_header(Some(true))
                 .set_max_rows_number(Some(100000))
                 .set_rows_to_skip(Some(0)),
@@ -66,6 +67,7 @@ pub fn load_ppi(
         .set_verbose(Some(verbose))
         .set_ignore_duplicates(Some(true))
         .set_separator(Some("\t".to_string()))
+        .unwrap()
         .set_header(Some(true))
         .set_rows_to_skip(Some(0))
         .set_sources_column_number(Some(1))?
@@ -89,7 +91,7 @@ pub fn load_ppi(
         .set_default_weight(Some(5.0))
         .set_skip_self_loops(Some(skip_self_loops));
 
-    Graph::from_unsorted_csv(edges_reader, nodes_reader, directed)
+    Graph::from_unsorted_csv(edges_reader, nodes_reader, directed, "Graph".to_owned())
 }
 
 /// Return WalksParameters to execute a first order walk.
@@ -98,7 +100,7 @@ pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameter
         .set_iterations(Some(1))?
         .set_min_length(Some(1))?
         .set_verbose(Some(verbose))
-        .set_seed(Some(43))
+        .set_random_state(Some(43))
         .set_dense_node_mapping(Some(graph.get_dense_node_mapping())))
 }
 
@@ -113,7 +115,7 @@ pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParamete
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
         .set_dense_node_mapping(Some(graph.get_dense_node_mapping()))
-        .set_seed(Some(43)))
+        .set_random_state(Some(43)))
 }
 
 fn validate_vocabularies(graph: &Graph) {
@@ -161,32 +163,43 @@ pub fn default_holdout_test_suite(
 }
 
 /// Executes near-complete test of all functions for the given graph.
-pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
+pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph, verbose)?;
     if !graph.directed {
-        info!("Executing random walks.");
-        assert_eq!(
-            graph.random_walks(1, &walker)?,
-            graph.random_walks(1, &walker)?
-        );
+        for i in 0..2 {
+            if i == 1 {
+                graph.enable_fast_walk(true, true);
+                if let Some(outbounds) = &graph.outbounds {
+                    assert_eq!(outbounds.len(), graph.get_nodes_number() as usize);
+                }
+                if let Some(destinations) = &graph.destinations {
+                    assert_eq!(destinations.len(), graph.get_edges_number() as usize);
+                }
+            }
+            info!("Executing random walks.");
+            assert_eq!(
+                graph.random_walks(1, &walker)?,
+                graph.random_walks(1, &walker)?
+            );
 
-        assert_eq!(
-            graph.random_walks(1, &second_order_walker(&graph, verbose)?)?,
-            graph.random_walks(1, &second_order_walker(&graph, verbose)?)?
-        );
+            assert_eq!(
+                graph.random_walks(1, &second_order_walker(&graph, verbose)?)?,
+                graph.random_walks(1, &second_order_walker(&graph, verbose)?)?
+            );
 
-        assert_eq!(
-            graph.complete_walks(&walker)?,
-            graph.complete_walks(&walker)?
-        );
+            assert_eq!(
+                graph.complete_walks(&walker)?,
+                graph.complete_walks(&walker)?
+            );
 
-        assert_eq!(
-            graph.complete_walks(&second_order_walker(&graph, verbose)?)?,
-            graph.complete_walks(&second_order_walker(&graph, verbose)?)?
-        );
+            assert_eq!(
+                graph.complete_walks(&second_order_walker(&graph, verbose)?)?,
+                graph.complete_walks(&second_order_walker(&graph, verbose)?)?
+            );
+        }
     }
 
     // Testing main holdout mechanisms
@@ -194,18 +207,17 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
         let (train, test) =
             graph.random_holdout(4, 0.6, *include_all_edge_types, None, None, verbose)?;
         default_holdout_test_suite(graph, &train, &test)?;
-        let (train, test) = graph.connected_holdout(4, 0.8, *include_all_edge_types, verbose)?;
+        let (train, test) =
+            graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;
         assert_eq!(
-            graph.connected_components_number(),
-            train.connected_components_number()
+            graph.connected_components_number(false),
+            train.connected_components_number(false)
         );
 
         default_holdout_test_suite(graph, &train, &test)?;
     }
-    // Testing cloning
-    let _ = graph.clone();
     // Testing negative edges generation
-    let negatives = graph.sample_negatives(4, graph.get_edges_number(), verbose)?;
+    let negatives = graph.sample_negatives(4, graph.get_edges_number(), None, verbose)?;
     validate_vocabularies(&negatives);
     if !graph.has_edge_types() {
         assert!(!graph.overlaps(&negatives)?);
@@ -265,6 +277,7 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
     }
     // Compute metrics of the graph
     graph.report();
+    graph.textual_report();
     // Compute degrees metrics
     for src in 0..10 {
         for dst in 0..10 {
@@ -350,6 +363,17 @@ pub fn default_test_suite(graph: &Graph, verbose: bool) -> Result<(), String> {
             assert_eq!(ww.edges, graph.edges);
         }
     }
+
+    // Testing cloning
+    let mut clone = graph.clone();
+    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES".to_string());
+    clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES".to_string());
+
+    assert_eq!(clone.get_edge_types_number(), 1);
+    assert_eq!(clone.get_edge_type_number(0), graph.get_edges_number());
+
+    assert_eq!(clone.get_node_types_number(), 1);
+    assert_eq!(clone.get_node_type_number(0), graph.get_nodes_number());
 
     Ok(())
 }

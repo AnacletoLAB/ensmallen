@@ -5,6 +5,11 @@ use std::collections::HashMap;
 use std::iter::once;
 
 impl Graph {
+    /// Return name of the graph.
+    pub fn get_name(&self) -> String {
+        self.name.clone()
+    }
+
     /// Return the number of traps (nodes without any outgoing edges that are not singletons)
     pub fn get_traps_number(&self) -> EdgeT {
         self.not_singleton_nodes_number as EdgeT - self.unique_sources.len() as EdgeT
@@ -35,9 +40,21 @@ impl Graph {
         self.self_loop_number > 0
     }
 
+    /// Returns boolean representing if graph has singletons.
+    pub fn has_singletons(&self) -> bool {
+        self.get_singleton_nodes_number() > 0
+    }
+
     /// Return vector of the non-unique source nodes.
     pub fn get_sources(&self) -> Vec<NodeT> {
         self.get_sources_iter().collect()
+    }
+
+    /// Return vector of the non-unique source nodes names.
+    pub fn get_source_names(&self) -> Vec<String> {
+        self.get_sources_iter()
+            .map(|src| self.get_node_name(src).unwrap())
+            .collect()
     }
 
     /// Return vector on the (non unique) destination nodes of the graph.
@@ -45,9 +62,33 @@ impl Graph {
         self.get_destinations_iter().collect()
     }
 
+    /// Return vector of the non-unique destination nodes names.
+    pub fn get_destination_names(&self) -> Vec<String> {
+        self.get_destinations_iter()
+            .map(|dst| self.get_node_name(dst).unwrap())
+            .collect()
+    }
+
     /// Return the nodes reverse mapping.
     pub fn get_nodes_reverse_mapping(&self) -> Vec<String> {
         self.nodes.reverse_map.clone()
+    }
+
+    /// Return the nodes reverse mapping.
+    ///
+    /// # Arguments
+    ///
+    /// * k: NodeT - Number of central nodes to extract.
+    pub fn get_top_k_central_nodes(&self, k: NodeT) -> Vec<NodeT> {
+        let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
+            .map(|node_id| (self.get_node_degree(node_id), node_id))
+            .collect();
+        nodes_degrees.sort();
+        nodes_degrees.reverse();
+        nodes_degrees[0..k as usize]
+            .iter()
+            .map(|(_, node_id)| *node_id)
+            .collect()
     }
 
     /// Return the edge types of the edges.
@@ -200,6 +241,34 @@ impl Graph {
         }
     }
 
+    /// Returs result with the node name.
+    pub fn get_node_name(&self, node_id: NodeT) -> Result<String, String> {
+        match node_id < self.get_nodes_number() {
+            true => Ok(self.nodes.translate(node_id).to_string()),
+            false => Err(format!(
+                "Given node_id {} is greater than number of nodes in the graph ({}).",
+                node_id,
+                self.get_nodes_number()
+            )),
+        }
+    }
+
+    /// Returs result with the node id.
+    pub fn get_node_id(&self, node_name: &str) -> Result<NodeT, String> {
+        match self.nodes.get(node_name) {
+            Some(node_id) => Ok(*node_id),
+            None => Err(format!(
+                "Given node name {} is not available in current graph.",
+                node_name
+            )),
+        }
+    }
+
+    /// Returs node id raising a panic if used unproperly.
+    pub fn get_unchecked_node_id(&self, node_name: &str) -> NodeT {
+        *self.nodes.get(node_name).unwrap()
+    }
+
     /// Returs option with the weight of the given edge id.
     pub fn get_edge_weight(&self, edge_id: EdgeT) -> Option<WeightT> {
         match &self.weights {
@@ -266,10 +335,17 @@ impl Graph {
             .collect()
     }
 
-    pub fn get_edge_type_number(&self, edge_type: EdgeTypeT) -> EdgeTypeT {
+    pub fn get_edge_type_number(&self, edge_type: EdgeTypeT) -> EdgeT {
         match &self.edge_types {
             None => 0,
-            Some(ets) => ets.counts[edge_type as usize] as EdgeTypeT,
+            Some(ets) => ets.counts[edge_type as usize],
+        }
+    }
+
+    pub fn get_node_type_number(&self, node_type: NodeTypeT) -> NodeT {
+        match &self.node_types {
+            None => 0 as NodeT,
+            Some(nts) => nts.counts[node_type as usize],
         }
     }
 
@@ -278,8 +354,17 @@ impl Graph {
         self.unique_edges_number != self.get_edges_number()
     }
 
+    pub fn get_outbounds(&self) -> Vec<EdgeT> {
+        (0..self.get_nodes_number())
+            .map(|src| self.get_unchecked_edge_id_from_tuple(src as NodeT + 1, 0))
+            .collect()
+    }
+
     pub fn get_destination(&self, edge_id: EdgeT) -> NodeT {
-        self.get_edge_from_edge_id(edge_id).1
+        match &self.destinations {
+            Some(destinations) => destinations[edge_id as usize],
+            None => self.get_edge_from_edge_id(edge_id).1,
+        }
     }
 
     pub fn get_destinations_range(

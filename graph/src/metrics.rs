@@ -213,6 +213,15 @@ impl Graph {
         self.get_edges_number() as f64 / self.get_nodes_number() as f64
     }
 
+    /// Returns number of undirected edges of the graph.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
+    /// ```
+    pub fn get_undirected_edges_number(&self) -> EdgeT {
+        (self.get_edges_number() - self.get_self_loop_number()) / 2 + self.get_self_loop_number()
+    }
+
     /// Returns median node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -279,7 +288,6 @@ impl Graph {
         self.unique_self_loop_number
     }
 
-
     /// Returns rate of self-loops.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -299,19 +307,13 @@ impl Graph {
     }
 
     /// Returns number of connected components in graph.
-    /// If the graph is or isn't a multigraph the edge types are not considered; if any edge exists, it is considered
-    /// note that, for understanding whether graph is a multigraph, instead of computing the mean number of edge types in the graph (n) and checking that n>1
-    /// we could directly use the function is_multigraph(&self):
-    ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// if graph.is_multigraph() {
-    ///     println!("The rate of connected components  in the multigraph is  {}", graph.connected_components_number());
-    /// }else{
-    ///     println!("The rate of connected components in the graph is {} ", graph.connected_components_number());
-    /// }
-    /// ```
-    pub fn connected_components_number(&self) -> NodeT {
-        self.get_nodes_number() - self.spanning_tree(0, false, false).len() as NodeT
+    pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT) {
+        let (tree, components) = self.spanning_tree(0, false, &None, verbose);
+        let connected_components_number = self.get_nodes_number() - tree.len() as NodeT;
+        (connected_components_number as NodeT, match components.iter().map(|c| c.len()).max() {
+            Some(max_components_number) => max_components_number,
+            None=> 1
+        } as NodeT)
     }
 
     /// Returns number of singleton nodes within the graph.
@@ -365,8 +367,13 @@ impl Graph {
     /// ```
     pub fn report(&self) -> DefaultHashMap<&str, String> {
         let mut report: DefaultHashMap<&str, String> = DefaultHashMap::new();
+        report.insert("name", self.name.clone());
         report.insert("nodes_number", self.get_nodes_number().to_string());
         report.insert("edges_number", self.get_edges_number().to_string());
+        report.insert(
+            "undirected_edges_number",
+            self.get_undirected_edges_number().to_string(),
+        );
         report.insert("density", self.density().to_string());
         report.insert("directed", self.is_directed().to_string());
         report.insert("has_weights", self.has_weights().to_string());
@@ -385,5 +392,80 @@ impl Graph {
             self.get_edge_types_number().to_string(),
         );
         report
+    }
+
+    /// Return rendered textual report of the graph.
+    pub fn textual_report(&self) -> String {
+        let (connected_components_number, maximum_connected_component) = self.connected_components_number(true);
+
+        format!(
+            concat!(
+                "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}. ",
+                "The graph is {quantized_density} as it has a density of {density:.5} and has {components_number} connected components, where the component with most nodes has {maximum_connected_component} nodes. ",
+                "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2} and the node degree mode is {mode_node_degree}. ",
+                "The top {most_common_nodes_number} most central nodes are {central_nodes}."
+            ),
+            direction = match self.directed {
+                true=> "directed",
+                false => "undirected"
+            }.to_owned(),
+            graph_type = match self.is_multigraph() {
+                true=> "multigraph",
+                false => "graph"
+            }.to_owned(),
+            name = self.name,
+            nodes_number = self.get_nodes_number(),
+            edges_number = match self.directed {
+                true => self.get_edges_number(),
+                false => self.get_undirected_edges_number(),
+            },
+            weighted = match self.has_weights(){
+                true=> "weighted",
+                false=> "unweighted"
+            }.to_owned(),
+            self_loops = match self.has_selfloops() {
+                true => format!("{} are selfloops", self.get_self_loop_number()),
+                false => "none are selfloops".to_owned()
+            },
+            node_types= match self.has_node_types() {
+                true => format!(" with {} different node types", self.get_node_types_number()),
+                false => "".to_owned()
+            },
+            singletons = match self.has_singletons() {
+                true => format!(", of which {} are singletons,", self.get_singleton_nodes_number()),
+                false => "".to_owned()
+            },
+            edge_types= match self.has_edge_types() {
+                true => format!(" with {} different edge types", self.get_edge_types_number()),
+                false => "".to_owned()
+            },
+            quantized_density = match self.density() {
+                d if d < 0.0001 => "extremely sparse".to_owned(),
+                d if d < 0.001 => "quite sparse".to_owned(),
+                d if d < 0.01 => "sparse".to_owned(),
+                d if d < 0.1 => "dense".to_owned(),
+                d if d < 0.5 => "quite dense".to_owned(),
+                d if (d - 1.0 as f64).abs() < f64::EPSILON => "complete".to_owned(),
+                d if d < 1.0 => "extremely dense".to_owned(),
+                _ => unreachable!("Unreacheable density case")
+            },
+            density=self.density(),
+            components_number=connected_components_number,
+            maximum_connected_component=maximum_connected_component,
+            median_node_degree=self.degrees_median(),
+            mean_node_degree=self.degrees_mean(),
+            mode_node_degree=self.degrees_mode(),
+            most_common_nodes_number=min!(5, self.get_nodes_number()),
+            central_nodes = {
+                let top_k = self.get_top_k_central_nodes(min!(5, self.get_nodes_number()));
+                let central_nodes:String = top_k[0..top_k.len()-1].iter().map(|node_id| format!("{node_name} (degree {node_degree})", node_name=self.get_node_name(*node_id).unwrap(), node_degree=self.get_node_degree(*node_id))).collect::<Vec<String>>().join(", ");
+                format!(
+                    "{central_nodes} and {node_name} (degree {node_degree})",
+                    central_nodes=central_nodes,
+                    node_name=self.get_node_name(*top_k.last().unwrap()).unwrap(),
+                    node_degree=self.get_node_degree(*top_k.last().unwrap())
+                )
+            }
+        )
     }
 }

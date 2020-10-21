@@ -9,7 +9,7 @@ type ParsedStringEdgesType = Result<
         EliasFano,
         EliasFano,
         Vocabulary<NodeT>,
-        Option<VocabularyVec<EdgeTypeT>>,
+        Option<VocabularyVec<EdgeTypeT, EdgeT>>,
         Vec<WeightT>,
         EdgeT,
         EdgeT,
@@ -74,7 +74,7 @@ where
 /// Returns iterator of nodes handling the node type IDs.
 pub(crate) fn parse_node_type_ids<'a, 'b>(
     nodes_iter: impl Iterator<Item = Result<(NodeT, Option<String>), String>> + 'a,
-    node_types: &'b mut VocabularyVec<NodeTypeT>,
+    node_types: &'b mut VocabularyVec<NodeTypeT, NodeT>,
 ) -> impl Iterator<Item = Result<(NodeT, Option<NodeTypeT>), String>> + 'a
 where
     'b: 'a,
@@ -395,7 +395,7 @@ fn parse_nodes(
     ignore_duplicated_nodes: bool,
     numeric_node_ids: bool,
     numeric_node_types_ids: bool,
-) -> Result<(Vocabulary<NodeT>, VocabularyVec<NodeTypeT>), String> {
+) -> Result<(Vocabulary<NodeT>, VocabularyVec<NodeTypeT, NodeT>), String> {
     let mut nodes = Vocabulary::new(numeric_node_ids);
     let mut node_types = VocabularyVec::new(numeric_node_types_ids);
 
@@ -503,7 +503,7 @@ pub(crate) fn parse_integer_edges(
     (
         EliasFano,
         EliasFano,
-        Option<VocabularyVec<EdgeTypeT>>,
+        Option<VocabularyVec<EdgeTypeT, EdgeT>>,
         Vec<WeightT>,
         EdgeT,
         EdgeT,
@@ -576,9 +576,10 @@ impl Graph {
         edge_iter: impl Iterator<Item = Result<Quadruple, String>>,
         edges_number: EdgeT,
         nodes: Vocabulary<NodeT>,
-        node_types: Option<VocabularyVec<NodeTypeT>>,
+        node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
+        name: String,
         ignore_duplicated_edges: bool
     ) -> Result<Graph, String> {
         let (
@@ -613,7 +614,10 @@ impl Graph {
             node_bits,
             node_types,
             edge_types,
+            name,
             weights:optionify!(weights),
+            destinations: None,
+            outbounds: None
         })
     }
 
@@ -637,6 +641,7 @@ impl Graph {
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
         directed: bool,
+        name: String,
         ignore_duplicated_nodes: bool,
         ignore_duplicated_edges: bool,
         verbose: bool,
@@ -670,6 +675,7 @@ impl Graph {
             optionify!(node_types),
             optionify!(edge_types_vocabulary),
             directed,
+            name,
             ignore_duplicated_edges
         )
     }
@@ -695,9 +701,10 @@ impl Graph {
             Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,
         >,
         nodes: Vocabulary<NodeT>,
-        node_types: Option<VocabularyVec<NodeTypeT>>,
+        node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
+        name: String,
         ignore_duplicated_edges: bool,
         verbose: bool
     ) -> Result<Graph, String> {
@@ -713,6 +720,7 @@ impl Graph {
             node_types,
             edge_types_vocabulary,
             directed,
+            name,
             ignore_duplicated_edges
         )
     }
@@ -728,7 +736,8 @@ impl Graph {
         nodes_number: NodeT,
         numeric_edge_types_ids: bool,
         numeric_node_ids: bool,
-        numeric_node_types_ids: bool
+        numeric_node_types_ids: bool,
+        name: String,
     ) -> Result<Graph, String> {
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
@@ -759,7 +768,8 @@ impl Graph {
             ignore_duplicated_edges,
         )?;
 
-        Ok(Graph {           directed,
+        Ok(Graph {
+            directed,
             unique_self_loop_number,
             self_loop_number,
             not_singleton_nodes_number,
@@ -770,8 +780,11 @@ impl Graph {
             node_bit_mask,
             node_bits,
             edge_types,
+            name,
             weights: optionify!(weights),
             node_types:optionify!(node_types),
+            destinations: None,
+            outbounds: None
     })
     }
 }

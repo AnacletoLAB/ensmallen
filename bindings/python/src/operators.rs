@@ -1,4 +1,5 @@
 use super::*;
+use pyo3::class::basic::PyObjectProtocol;
 use pyo3::class::number::PyNumberProtocol;
 
 #[pyproto]
@@ -25,6 +26,13 @@ impl PyNumberProtocol for EnsmallenGraph {
         Ok(EnsmallenGraph {
             graph: pyex!(&lhs.graph ^ &rhs.graph)?,
         })
+    }
+}
+
+#[pyproto]
+impl PyObjectProtocol for EnsmallenGraph {
+    fn __repr__(&'p self) -> PyResult<String> {
+        Ok(self.graph.textual_report())
     }
 }
 

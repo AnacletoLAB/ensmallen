@@ -12,9 +12,32 @@ impl EnsmallenGraph {
     }
 
     #[text_signature = "(self)"]
+    /// Return the nodes reverse mapping.
+    ///
+    /// Parameters
+    /// -----------------
+    /// k: int,
+    ///      Number of central nodes to extract.
+    fn get_top_k_central_nodes(&self, k: NodeT) -> Vec<NodeT> {
+        self.graph.get_top_k_central_nodes(k)
+    }
+
+    #[text_signature = "(self)"]
+    /// Return the name of the graph.
+    fn get_name(&self) -> String {
+        self.graph.get_name()
+    }
+
+    #[text_signature = "(self)"]
     /// Return the number of edges in the graph.
     fn get_edges_number(&self) -> EdgeT {
         self.graph.get_edges_number()
+    }
+
+    #[text_signature = "(self)"]
+    /// Return the number of undirected edges in the graph.
+    fn get_undirected_edges_number(&self) -> EdgeT {
+        self.graph.get_undirected_edges_number()
     }
 
     #[text_signature = "(self)"]
@@ -73,7 +96,7 @@ impl EnsmallenGraph {
         self.graph.is_edge_trap(edge)
     }
 
-    #[text_signature = "($self, src, dst)"]
+    #[text_signature = "($self, src, dst, edge_type)"]
     /// Return boolean representing if given edge exists in graph.
     ///
     /// Parameters
@@ -82,6 +105,8 @@ impl EnsmallenGraph {
     ///     Node ID to use as source of given edge.
     /// dst: int,
     ///     Node ID to use as destination of given edge.
+    /// edge_type: Union[None, int],
+    ///     Edge type ID. (By deafult is None).
     ///
     /// Returns
     /// ----------------------------
@@ -89,6 +114,82 @@ impl EnsmallenGraph {
     ///
     fn has_edge(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> bool {
         self.graph.has_edge(src, dst, edge_type)
+    }
+
+    #[text_signature = "($self, src, dst, edge_type)"]
+    /// Return boolean representing if given edge exists in graph.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// src: str,
+    ///     Node name to use as source of given edge.
+    /// dst: str,
+    ///     Node name to use as destination of given edge.
+    /// edge_type: Union[None, str],
+    ///     Edge type name. (By deafult is None).
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if given edge exists in graph.
+    ///
+    fn has_edge_string(&self, src: &str, dst: &str, edge_type: Option<String>) -> bool {
+        self.graph.has_edge_string(&src, &dst, edge_type.as_ref())
+    }
+
+    #[text_signature = "($self, node_name)"]
+    /// Return boolean representing if given node exists in graph.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node_name: str,
+    ///     Name of the node.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if given node exists in graph.
+    ///
+    fn has_node_string(&self, node_name: &str) -> bool {
+        self.graph.has_node_string(node_name)
+    }
+
+    #[text_signature = "($self, src, dst, edge_type)"]
+    /// Return integer representing ID of the edge.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// src: int,
+    ///     Node ID to use as source of given edge.
+    /// dst: int,
+    ///     Node ID to use as destination of given edge.
+    /// edge_type: Union[None, int],
+    ///     Edge type ID. (By deafult is None).
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Integer representing ID of the edge. It will return None when the edge does not exist.
+    ///
+    fn get_edge_id(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> Option<EdgeT> {
+        self.graph.get_edge_id(src, dst, edge_type)
+    }
+
+    #[text_signature = "($self, src, dst, edge_type)"]
+    /// Return integer representing ID of the edge.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// src: str,
+    ///     Node name to use as source of given edge.
+    /// dst: str,
+    ///     Node name to use as destination of given edge.
+    /// edge_type: Union[None, str],
+    ///     Edge type name. (By deafult is None).
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Integer representing ID of the edge. It will return None when the edge does not exist.
+    ///
+    fn get_edge_id_string(&self, src: &str, dst: &str, edge_type: Option<String>) -> Option<EdgeT> {
+        self.graph.get_edge_id_string(src, dst, edge_type.as_ref())
     }
 
     #[text_signature = "($self)"]
@@ -123,6 +224,16 @@ impl EnsmallenGraph {
     pub fn get_destinations(&self) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
         Ok(to_nparray_1d!(gil, self.graph.get_destinations(), NodeT))
+    }
+
+    /// Return vector of the non-unique source nodes names.
+    pub fn get_source_names(&self) -> Vec<String> {
+        self.graph.get_source_names()
+    }
+
+    /// Return vector on the (non unique) destination nodes of the graph.
+    pub fn get_destination_names(&self) -> Vec<String> {
+        self.graph.get_destination_names()
     }
 
     /// Return vector of strings representing the node Ids reverse mapping.
@@ -206,6 +317,36 @@ impl EnsmallenGraph {
     /// Id of the node type of the node.
     fn get_node_type(&self, node_id: NodeT) -> PyResult<NodeTypeT> {
         pyex!(self.graph.get_node_type(node_id))
+    }
+
+    #[text_signature = "($self, node_id)"]
+    /// Return the string name of the node.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node_id: int,
+    ///     Numeric ID of the node.
+    ///
+    /// Returns
+    /// ---------------------
+    /// String name of the node.
+    fn get_node_name(&self, node_id: NodeT) -> PyResult<String> {
+        pyex!(self.graph.get_node_name(node_id))
+    }
+
+    #[text_signature = "($self, node_name)"]
+    /// Return the node id curresponding to given string name.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node_name: str,
+    ///     String name of the node.
+    ///
+    /// Returns
+    /// ---------------------
+    /// Node ID.
+    fn get_node_id(&self, node_name: &str) -> PyResult<NodeT> {
+        pyex!(self.graph.get_node_id(node_name))
     }
 
     #[text_signature = "($self)"]

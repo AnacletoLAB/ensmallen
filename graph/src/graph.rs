@@ -26,6 +26,12 @@ pub struct Graph {
     pub(crate) not_singleton_nodes_number: NodeT,
     /// How many unique edges the graph has (excluding the multi-graph ones)
     pub(crate) unique_edges_number: EdgeT,
+    /// Vector of destinations to execute fast walks if required.
+    pub(crate) destinations: Option<Vec<NodeT>>,
+    /// Vector of outbounds to execute fast walks if required.
+    pub(crate) outbounds: Option<Vec<EdgeT>>,
+    /// Graph name
+    pub(crate) name: String,
 
     /// The main datastructure where all the edges are saved
     /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
@@ -44,11 +50,11 @@ pub struct Graph {
     /// weights[10] return the weight of the edge with edge_id 10
     pub(crate) weights: Option<Vec<WeightT>>,
     /// Vocabulary that save the mappings from string to index of every node type
-    pub(crate) node_types: Option<VocabularyVec<NodeTypeT>>,
+    pub(crate) node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
     // This is the next attribute that will be embedded inside of edges once
     // the first refactoring is done
     /// Vocabulary that save the mappings from string to index of every edge type
-    pub(crate) edge_types: Option<VocabularyVec<EdgeTypeT>>,
+    pub(crate) edge_types: Option<VocabularyVec<EdgeTypeT, EdgeT>>,
 }
 
 /// # Graph utility methods
@@ -84,6 +90,27 @@ impl Graph {
             }
         }
         self.get_edge_id_from_tuple(src, dst)
+    }
+
+    pub fn get_edge_id_string(
+        &self,
+        src_name: &str,
+        dst_name: &str,
+        edge_type_name: Option<&String>,
+    ) -> Option<EdgeT> {
+        if let Some(src) = self.nodes.get(src_name) {
+            if let Some(dst) = self.nodes.get(dst_name) {
+                let edge_type_id = edge_type_name.and_then(|etn| match &self.edge_types {
+                    Some(ets) => ets.get(etn).copied(),
+                    None => None,
+                });
+                if edge_type_id.is_none() && edge_type_name.is_some() {
+                    return None;
+                }
+                return self.get_edge_id(*src, *dst, edge_type_id);
+            }
+        }
+        None
     }
 
     /// Returns edge type counts.
@@ -145,7 +172,7 @@ impl Graph {
     ///     println!("node type id {}: count: {}", node_type_id, count);
     /// }
     /// ```
-    pub fn get_node_type_counts(&self) -> Result<HashMap<NodeTypeT, usize>, String> {
+    pub fn get_node_type_counts(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
         if let Some(nt) = &self.node_types {
             Ok(Counter::init(nt.ids.clone()).into_map())
         } else {
@@ -164,16 +191,7 @@ impl Graph {
     /// * edge_type: Option<EdgeTypeT> - The (optional) edge type.
     ///
     pub fn has_edge(&self, src: NodeT, dst: NodeT, edge_type: Option<EdgeTypeT>) -> bool {
-        if self.edges.contains(self.encode_edge(src, dst)) {
-            return match &edge_type {
-                Some(et) => self
-                    .get_unchecked_link_edge_types(src, dst)
-                    .unwrap()
-                    .contains(et),
-                None => true,
-            };
-        }
-        false
+        self.get_edge_id(src, dst, edge_type).is_some()
     }
 
     /// Returns boolean representing if edge passing between given nodes exists.
@@ -190,19 +208,18 @@ impl Graph {
         dst_name: &str,
         edge_type_name: Option<&String>,
     ) -> bool {
-        if let Some(src) = self.nodes.get(src_name) {
-            if let Some(dst) = self.nodes.get(dst_name) {
-                let edge_type_id = edge_type_name.and_then(|etn| match &self.edge_types {
-                    Some(ets) => ets.get(etn).copied(),
-                    None => None,
-                });
-                if edge_type_id.is_none() && edge_type_name.is_some() {
-                    return false;
-                }
-                return self.has_edge(*src, *dst, edge_type_id);
-            }
-        }
-        false
+        self.get_edge_id_string(src_name, dst_name, edge_type_name)
+            .is_some()
+    }
+
+    /// Returns boolean representing if node with given name exists in current graph.
+    ///
+    /// # Arguments
+    ///
+    /// * node_name: String - The node name.
+    ///
+    pub fn has_node_string(&self, node_name: &str) -> bool {
+        self.get_node_id(node_name).is_ok()
     }
 
     /// Return true if given graph has any edge overlapping with current graph.
@@ -299,10 +316,20 @@ impl Graph {
     /// * src: NodeT - Node for which we need to compute the outbounds range.
     ///
     pub(crate) fn get_destinations_min_max_edge_ids(&self, src: NodeT) -> (EdgeT, EdgeT) {
-        (
-            self.get_unchecked_edge_id_from_tuple(src, 0),
-            self.get_unchecked_edge_id_from_tuple(src + 1, 0),
-        )
+        match &self.outbounds {
+            Some(outbounds) => {
+                let min_edge_id = if src == 0 {
+                    0
+                } else {
+                    outbounds[src as usize - 1]
+                };
+                (min_edge_id, outbounds[src as usize])
+            }
+            None => (
+                self.get_unchecked_edge_id_from_tuple(src, 0),
+                self.get_unchecked_edge_id_from_tuple(src + 1, 0),
+            ),
+        }
     }
 
     /// Returns the number of outbound neighbours of given node.

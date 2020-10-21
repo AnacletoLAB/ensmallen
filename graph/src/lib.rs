@@ -36,6 +36,7 @@ pub mod graph;
 mod holdouts;
 mod metrics;
 mod operators;
+mod setters;
 mod preprocessing;
 mod tarjan;
 mod trees;
@@ -43,6 +44,7 @@ mod iters;
 pub mod types;
 mod walks;
 mod walks_parameters;
+mod modifiers;
 
 pub mod test_utilities;
 
@@ -51,6 +53,7 @@ pub use self::holdouts::*;
 pub use self::operators::*;
 pub use self::tarjan::*;
 pub use self::getters::*;
+pub use self::setters::*;
 pub use self::metrics::*;
 pub use self::trees::*;
 pub use self::types::*;

@@ -62,19 +62,20 @@ fn cooccurence_matrix(
 ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
     let gil = pyo3::Python::acquire_gil();
     let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-    validate_kwargs(
+    pyex!(validate_kwargs(
         kwargs,
         ["window_size", "verbose"]
             .iter()
             .map(|x| x.to_string())
             .collect(),
-    )?;
+    ))?;
+
     let (words, contexts, frequencies) = pyex!(rust_cooccurence_matrix(
         sequences,
-        extract_value!(kwargs, "window_size", usize)
+        pyex!(extract_value!(kwargs, "window_size", usize))?
             .or_else(|| Some(3))
             .unwrap(),
-        extract_value!(kwargs, "verbose", bool)
+        pyex!(extract_value!(kwargs, "verbose", bool))?
             .or_else(|| Some(true))
             .unwrap()
     ))?;
@@ -89,7 +90,7 @@ fn cooccurence_matrix(
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, window_size, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, seed, verbose)"]
+    #[text_signature = "($self, length, *, window_size, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, random_state, verbose)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
     ///
     /// Parameters
@@ -132,8 +133,8 @@ impl EnsmallenGraph {
     ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
-    /// seed: int,
-    ///     Seed to use to reproduce the walks.
+    /// random_state: int,
+    ///     random_state to use to reproduce the walks.
     /// verbose: int = True,
     ///     Wethever to show or not the loading bar of the walks.
     ///
@@ -149,19 +150,19 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
-        validate_kwargs(
+        pyex!(validate_kwargs(
             kwargs,
             build_walk_parameters_list(&["window_size", "verbose"]),
-        )?;
+        ))?;
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
 
         let (words, contexts, frequencies) = pyex!(self.graph.cooccurence_matrix(
             &parameters,
-            extract_value!(kwargs, "window_size", usize)
+            pyex!(extract_value!(kwargs, "window_size", usize))?
                 .or_else(|| Some(3))
                 .unwrap(),
-            extract_value!(kwargs, "verbose", bool)
+            pyex!(extract_value!(kwargs, "verbose", bool))?
                 .or_else(|| Some(true))
                 .unwrap()
         ))?;
@@ -174,7 +175,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, batch_size, length, window_size, *, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, seed)"]
+    #[text_signature = "($self, batch_size, length, window_size, *, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, random_state)"]
     /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
@@ -232,8 +233,8 @@ impl EnsmallenGraph {
     ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
-    /// seed: int,
-    ///     Seed to use to reproduce the walks.
+    /// random_state: int,
+    ///     random_state to use to reproduce the walks.
     ///
     /// Returns
     /// ----------------------------
@@ -290,19 +291,21 @@ impl EnsmallenGraph {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
-        validate_kwargs(
+        pyex!(validate_kwargs(
             kwargs,
             ["graph_to_avoid", "negative_samples"]
                 .iter()
                 .map(|x| x.to_string())
                 .collect(),
-        )?;
-        let graph_to_avoid = extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph);
+        ))?;
+        let graph_to_avoid = pyex!(extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph))?;
 
         let (edges, labels) = pyex!(self.graph.link_prediction(
             idx,
             batch_size,
-            extract_value!(kwargs, "negative_samples", f64).or_else(|| Some(1.0)).unwrap(),
+            pyex!(extract_value!(kwargs, "negative_samples", f64))?
+                .or_else(|| Some(1.0))
+                .unwrap(),
             match &graph_to_avoid {
                 Some(g) => Some(&g.graph),
                 None => None,

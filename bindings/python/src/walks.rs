@@ -4,7 +4,7 @@ use graph::NodeT;
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, quantity, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, seed, verbose, iterations, dense_node_mapping)"]
+    #[text_signature = "($self, length, quantity, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, verbose, iterations, dense_node_mapping)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -39,8 +39,8 @@ impl EnsmallenGraph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
-    /// seed: int = 42,
-    ///     Seed to use to reproduce the walks.
+    /// random_state: int = 42,
+    ///     random_state to use to reproduce the walks.
     /// verbose: bool = False,
     ///     Wethever to show or not the loading bar of the walks.
     /// iterations: int = 1,
@@ -69,14 +69,14 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        validate_kwargs(kwargs, build_walk_parameters_list(&[]))?;
+        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
         pyex!(self.graph.random_walks(quantity, &parameters))
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, seed, verbose, iterations, dense_node_mapping)"]
+    #[text_signature = "($self, length, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, verbose, iterations, dense_node_mapping)"]
     /// Return complete random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -109,8 +109,8 @@ impl EnsmallenGraph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
-    /// seed: int = 42,
-    ///     Seed to use to reproduce the walks.
+    /// random_state: int = 42,
+    ///     random_state to use to reproduce the walks.
     /// verbose: bool = False,
     ///     Wethever to show or not the loading bar of the walks.
     /// iterations: int = 1,
@@ -138,7 +138,7 @@ impl EnsmallenGraph {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
-        validate_kwargs(kwargs, build_walk_parameters_list(&[]))?;
+        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
         pyex!(self.graph.complete_walks(&parameters))

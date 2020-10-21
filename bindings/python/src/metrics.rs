@@ -11,6 +11,21 @@ impl EnsmallenGraph {
         self.graph.degrees_mean()
     }
 
+    #[text_signature = "($self, verbose)"]
+    /// Returns number of connected components in graph.
+    /// 
+    /// Parameters
+    /// ------------------------
+    /// verbose: bool,
+    ///     Wethever to display a loading bar while computing the spanning tree.
+    /// 
+    /// Returns
+    /// ------------------------
+    /// Number of connected components.
+    pub fn connected_components_number(&self, verbose: bool) -> NodeT {
+        self.graph.connected_components_number(verbose).0
+    }
+
     #[text_signature = "($self)"]
     /// Returns number of self-loops.
     pub fn get_selfloops_number(&self) -> EdgeT {

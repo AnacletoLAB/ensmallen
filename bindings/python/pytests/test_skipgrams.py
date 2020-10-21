@@ -9,7 +9,7 @@ def test_skipgrams():
             batch_size=32,
             length=50,
             window_size=4,
-            seed=42,
+            random_state=42,
         )
         assert len(words) == len(contexts)
         edges, labels = graph.link_prediction(

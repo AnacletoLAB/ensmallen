@@ -25,7 +25,7 @@ pub struct WalksParameters {
     pub(crate) iterations: NodeT,
     pub(crate) min_length: NodeT,
     pub(crate) verbose: bool,
-    pub(crate) seed: NodeT,
+    pub(crate) random_state: NodeT,
     pub(crate) dense_node_mapping: Option<HashMap<NodeT, NodeT>>,
 }
 
@@ -75,7 +75,19 @@ impl WalkWeights {
         ];
         weights
             .iter()
-            .all(|weight| (weight - 1.0).abs() <= f64::EPSILON)
+            .all(|weight| !not_one(*weight))
+    }
+
+    /// Return boolean value representing if walk is of first order.
+    pub fn is_walk_without_destinations(&self) -> bool {
+        let weights = vec![
+            self.change_node_type_weight,
+            self.return_weight,
+            self.explore_weight,
+        ];
+        weights
+            .iter()
+            .all(|weight| !not_one(*weight))
     }
 }
 
@@ -117,7 +129,7 @@ impl WalksParameters {
             single_walk_parameters: SingleWalkParameters::new(length)?,
             iterations: 1,
             min_length: 1,
-            seed: (42 ^ SEED_XOR) as NodeT,
+            random_state: (42 ^ SEED_XOR) as NodeT,
             verbose: false,
             dense_node_mapping: None,
         })
@@ -172,15 +184,15 @@ impl WalksParameters {
         self
     }
 
-    /// Set the seed.
+    /// Set the random_state.
     ///
     /// # Arguments
     ///
-    /// * seed: Option<usize> - Seed for reproducible random walks.
+    /// * random_state: Option<usize> - random_state for reproducible random walks.
     ///
-    pub fn set_seed(mut self, seed: Option<usize>) -> WalksParameters {
-        if let Some(s) = seed {
-            self.seed = (s ^ SEED_XOR) as NodeT;
+    pub fn set_random_state(mut self, random_state: Option<usize>) -> WalksParameters {
+        if let Some(s) = random_state {
+            self.random_state = (s ^ SEED_XOR) as NodeT;
         }
         self
     }

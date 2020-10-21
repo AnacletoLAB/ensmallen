@@ -27,6 +27,7 @@ impl Graph {
             self.node_types.clone(),
             None,
             self.directed,
+            self.name.clone(),
             false,
         )
     }

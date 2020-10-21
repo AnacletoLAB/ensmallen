@@ -198,7 +198,7 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * idx:u64 - The index of the batch to generate, behaves like a random seed,
+    /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
     /// * batch_size:usize - The maximal size of the batch to generate,
     /// * negative_samples: f64 - The component of netagetive samples to use,
     /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
@@ -210,9 +210,9 @@ impl Graph {
         negative_samples: f64,
         graph_to_avoid: Option<&Graph>,
     ) -> Result<(Contexts, Vec<u8>), String> {
-        // xor the seed with a constant so that we have a good amount of 0s and 1s in the number
-        // even with low values (this is needed becasue the seed 0 make xorshift return always 0)
-        let seed = idx ^ SEED_XOR as u64;
+        // xor the random_state with a constant so that we have a good amount of 0s and 1s in the number
+        // even with low values (this is needed becasue the random_state 0 make xorshift return always 0)
+        let random_state = idx ^ SEED_XOR as u64;
 
         if negative_samples < 0.0 || !negative_samples.is_finite() {
             return Err(String::from("Negative sample must be a posive real value."));
@@ -227,7 +227,7 @@ impl Graph {
         let edges_number = self.get_edges_number() as u64;
         let nodes_number = self.get_nodes_number() as u64;
         // generate a random vec of u64s and use them as indices
-        let positives: Vec<Vec<NodeT>> = gen_random_vec(positives_number, seed)
+        let positives: Vec<Vec<NodeT>> = gen_random_vec(positives_number, random_state)
             .into_par_iter()
             // to extract the random edges
             .filter_map(|random_value| {
@@ -246,14 +246,14 @@ impl Graph {
             // if the number of negatives is 0 then just return an empty array
             vec![]
         } else {
-            // generate two seeds for reproducibility porpouses
-            let sources_seed = rand_u64(seed);
-            let destinations_seed = rand_u64(sources_seed);
+            // generate two random_states for reproducibility porpouses
+            let sources_random_state = rand_u64(random_state);
+            let destinations_random_state = rand_u64(sources_random_state);
             // generate the random edge-sources
-            gen_random_vec(negatives_number, sources_seed)
+            gen_random_vec(negatives_number, sources_random_state)
                 .into_par_iter()
                 // generate the random edge-destinations
-                .zip(gen_random_vec(negatives_number, destinations_seed).into_par_iter())
+                .zip(gen_random_vec(negatives_number, destinations_random_state).into_par_iter())
                 // convert them to plain (src, dst)
                 .map(|(random_src, random_dst)| {
                     (
@@ -289,7 +289,7 @@ impl Graph {
         edges.extend(negatives);
 
         let mut indices: Vec<usize> = (0..labels.len() as usize).collect();
-        let mut rng: StdRng = SeedableRng::seed_from_u64(seed);
+        let mut rng: StdRng = SeedableRng::seed_from_u64(random_state);
         indices.shuffle(&mut rng);
 
         labels = indices.par_iter().map(|i| labels[*i]).collect();

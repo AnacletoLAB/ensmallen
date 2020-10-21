@@ -8,7 +8,7 @@ use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
 use std::iter::FromIterator;
-use vec_rand::gen_random_vec;
+use vec_rand::{gen_random_vec, sample_uniform};
 use vec_rand::xorshift::xorshift as rand_u64;
 
 /// # Holdouts.
@@ -22,19 +22,33 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `seed`: EdgeT - Seed to use to reproduce negative edge set.
+    /// * `random_state`: EdgeT - random_state to use to reproduce negative edge set.
     /// * `negatives_number`: EdgeT - Number of negatives edges to include.
+    /// * `seed_graph`: Option<Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
     /// * `verbose`: bool - Wether to show the loading bar.
     ///
     pub fn sample_negatives(
         &self,
-        mut seed: EdgeT,
+        mut random_state: EdgeT,
         negatives_number: EdgeT,
+        seed_graph: Option<&Graph>,
         verbose: bool,
     ) -> Result<Graph, String> {
         if negatives_number == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
         }
+        let seed_nodes: Option<RoaringBitmap> = if let Some(sg) = &seed_graph {
+            if !self.overlaps(&sg)? {
+                return Err(String::from(
+                    "The given seed graph does not overlap with the current graph instance.",
+                ));
+            }
+            Some(RoaringBitmap::from_iter(sg.get_nodes_names_iter().map(
+                |(node_name, _)| self.get_unchecked_node_id(&node_name),
+            )))
+        } else {
+            None
+        };
         // In a complete directed graph allowing selfloops with N nodes there are N^2
         // edges. In a complete directed graph without selfloops there are N*(N-1) edges.
         // We can rewrite the first formula as (N*(N-1)) + N.
@@ -80,10 +94,10 @@ impl Graph {
             negatives_number as usize,
         );
 
-        // xorshift breaks if the seed is zero
+        // xorshift breaks if the random_state is zero
         // so we initialize xor it with a constat
         // to mitigate this problem
-        seed ^= SEED_XOR as EdgeT;
+        random_state ^= SEED_XOR as EdgeT;
 
         let mut negative_edges_bitmap = RoaringTreemap::new();
         let chunk_size = max!(4096, negatives_number / 100);
@@ -91,8 +105,8 @@ impl Graph {
 
         // randomly extract negative edges until we have the choosen number
         while negative_edges_bitmap.len() < negatives_number {
-            // generate two seeds for reproducibility porpouses
-            seed = rand_u64(seed);
+            // generate two random_states for reproducibility porpouses
+            random_state = rand_u64(random_state);
 
             let edges_to_sample: usize = min!(
                 chunk_size,
@@ -105,13 +119,18 @@ impl Graph {
 
             // generate the random edge-sources
             negative_edges_bitmap.extend(
-                gen_random_vec(edges_to_sample, seed)
+                gen_random_vec(edges_to_sample, random_state)
                     .into_par_iter()
                     // convert them to plain (src, dst)
                     .filter_map(|edge| {
                         let (mut src, mut dst) = self.decode_edge(edge);
-                        src %= nodes_number as NodeT;
-                        dst %= nodes_number as NodeT;
+                        src = sample_uniform(nodes_number as u64, src as u64) as NodeT;
+                        dst = sample_uniform(nodes_number as u64, dst as u64) as NodeT;
+                        if let Some(sn) = &seed_nodes {
+                            if !sn.contains(src) && !sn.contains(dst) {
+                                return None;
+                            }
+                        }
                         // If the edge is not a self-loop or the user allows self-loops and
                         // the graph is directed or the edges are inserted in a way to avoid
                         // inserting bidirectional edges.
@@ -147,20 +166,19 @@ impl Graph {
             self.node_types.clone(),
             None,
             self.directed,
+            format!("{} negatives", self.name.clone()),
             false,
         )
     }
 
-    /// Compute the training and validation edges number from the training percentage
+    /// Compute the training and validation edges number from the training rate
     fn get_holdouts_edges_number(
         &self,
-        train_percentage: f64,
+        train_size: f64,
         include_all_edge_types: bool,
     ) -> Result<(EdgeT, EdgeT), String> {
-        if train_percentage <= 0.0 || train_percentage >= 1.0 {
-            return Err(String::from(
-                "Train percentage must be strictly between 0 and 1.",
-            ));
+        if train_size <= 0.0 || train_size >= 1.0 {
+            return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
         if self.directed && self.get_edges_number() == 1
             || !self.directed && self.get_edges_number() == 2
@@ -174,17 +192,17 @@ impl Graph {
         } else {
             self.get_edges_number()
         };
-        let train_edges_number = (total_edges_number as f64 * train_percentage) as EdgeT;
+        let train_edges_number = (total_edges_number as f64 * train_size) as EdgeT;
         let valid_edges_number = total_edges_number - train_edges_number;
 
         if train_edges_number == 0 || train_edges_number >= total_edges_number {
             return Err(String::from(
-                "The training set has 0 edges! Change the training percentage.",
+                "The training set has 0 edges! Change the training rate.",
             ));
         }
         if valid_edges_number == 0 {
             return Err(String::from(
-                "The validation set has 0 edges! Change the training percentage.",
+                "The validation set has 0 edges! Change the training rate.",
             ));
         }
 
@@ -193,15 +211,12 @@ impl Graph {
 
     fn holdout(
         &self,
-        seed: EdgeT,
-        train_percentage: f64,
+        random_state: EdgeT,
+        valid_edges_number: EdgeT,
         include_all_edge_types: bool,
-        user_condition: impl Fn(EdgeT, NodeT, NodeT) -> bool,
+        user_condition: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
-        let (_, valid_edges_number) =
-            self.get_holdouts_edges_number(train_percentage, include_all_edge_types)?;
-
         let pb1 = get_loading_bar(
             verbose,
             "Picking validation edges",
@@ -209,7 +224,7 @@ impl Graph {
         );
 
         // generate and shuffle the indices of the edges
-        let mut rng = SmallRng::seed_from_u64(seed ^ SEED_XOR as EdgeT);
+        let mut rng = SmallRng::seed_from_u64(random_state ^ SEED_XOR as EdgeT);
         let mut edge_indices: Vec<EdgeT> = (0..self.get_edges_number()).collect();
         edge_indices.shuffle(&mut rng);
 
@@ -228,7 +243,7 @@ impl Graph {
             }
 
             // We stop adding edges when we have reached the minimum amount.
-            if user_condition(edge_id, src, dst) {
+            if user_condition(edge_id, src, dst, edge_type) {
                 // Compute the forward edge ids that are required.
                 valid_edges_bitmap.extend(self.compute_edge_ids_vector(
                     edge_id,
@@ -259,28 +274,14 @@ impl Graph {
 
         if valid_edges_bitmap.len() < valid_edges_number {
             let actual_valid_edges_number = valid_edges_bitmap.len();
-            let valid_percentage = 1.0 - train_percentage;
-            let actual_valid_percentage =
-                actual_valid_edges_number as f64 / self.get_edges_number() as f64;
-            let actual_train_percentage = 1.0 - actual_valid_percentage;
             return Err(format!(
                 concat!(
                     "With the given configuration for the holdout, it is not possible to ",
                     "generate a validation set composed of {valid_edges_number} edges from the current graph.\n",
-                    "The validation set can be composed of at most {actual_valid_edges_number} edges.\n",
-                    "The actual train/valid split percentages, with the current configuration,",
-                    "would not be {train_percentage}/{valid_percentage} but {actual_train_percentage}/{actual_valid_percentage}.\n",
-                    "If you really want to do this, you can pass the argument:\n",
-                    "train_percentage: {actual_train_percentage}\n",
-                    "Before proceeding, consider what is your experimental setup goal and ",
-                    "the possible bias and validation problems that this choice might cause."
+                    "The validation set can be composed of at most {actual_valid_edges_number} edges.\n"
                 ),
                 valid_edges_number=valid_edges_number,
                 actual_valid_edges_number=actual_valid_edges_number,
-                train_percentage=train_percentage,
-                valid_percentage=valid_percentage,
-                actual_train_percentage=actual_train_percentage,
-                actual_valid_percentage=actual_valid_percentage
             ));
         }
 
@@ -296,15 +297,12 @@ impl Graph {
             (self.get_edges_number() - valid_edges_bitmap.len()) as usize,
         );
 
-        let results = (0..self.get_edges_number())
-            .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
-            .progress_with(pb_train)
-            .map(|edge_id| Ok(self.get_edge_quadruple(edge_id)))
-            .collect::<Vec<_>>();
-
         Ok((
             Graph::build_graph(
-                results.iter().cloned(),
+                (0..self.get_edges_number())
+                    .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
+                    .progress_with(pb_train)
+                    .map(|edge_id| Ok(self.get_edge_quadruple(edge_id))),
                 self.get_edges_number() - valid_edges_bitmap.len() as EdgeT,
                 self.nodes.clone(),
                 self.node_types.clone(),
@@ -313,6 +311,7 @@ impl Graph {
                     None => None,
                 },
                 self.directed,
+                format!("{} training", self.name.clone()),
                 false,
             )?,
             Graph::build_graph(
@@ -328,6 +327,7 @@ impl Graph {
                     None => None,
                 },
                 self.directed,
+                format!("{} testing", self.name.clone()),
                 false,
             )?,
         ))
@@ -339,36 +339,62 @@ impl Graph {
     /// is the training graph, is garanteed to have the same number of
     /// graph components as the initial graph. The second graph is the graph
     /// meant for testing or validation of the algorithm, and has no garantee
-    /// to be connected. It will have at most (1-train_percentage) edges,
+    /// to be connected. It will have at most (1-train_size) edges,
     /// as the bound of connectivity which is required for the training graph
     /// may lead to more edges being left into the training partition.
     ///
+    /// In the option where a list of edge types has been provided, these
+    /// edge types will be those put into the validation set.
+    ///
     /// # Arguments
     ///
-    /// * `seed`:NodeT - The seed to use for the holdout,
-    /// * `train_percentage`:f64 - Percentage target to reserve for training.
+    /// * `random_state`: NodeT - The random_state to use for the holdout,
+    /// * `train_size`: f64 - Rate target to reserve for training.
+    /// * `edge_types`: Option<Vec<String>> - Edge types to be selected for in the validation set.
     /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
     /// * `verbose`: bool - Wethever to show the loading bar.
     ///
+    ///
     pub fn connected_holdout(
         &self,
-        seed: EdgeT,
-        train_percentage: f64,
+        random_state: EdgeT,
+        train_size: f64,
+        edge_types: Option<Vec<String>>,
         include_all_edge_types: bool,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
-        if train_percentage <= 0.0 || train_percentage >= 1.0 {
-            return Err(String::from(
-                "Train percentage must be strictly between 0 and 1.",
-            ));
+        if train_size <= 0.0 || train_size >= 1.0 {
+            return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
 
-        let tree = self.spanning_tree(seed, include_all_edge_types, verbose);
+        let edge_type_ids = if let Some(ets) = edge_types {
+            Some(
+                self.translate_edge_types(ets)?
+                    .into_iter()
+                    .collect::<HashSet<EdgeTypeT>>(),
+            )
+        } else {
+            None
+        };
+
+        let (tree, _) = self.spanning_tree(
+            random_state,
+            include_all_edge_types,
+            &edge_type_ids,
+            verbose,
+        );
 
         let edge_factor = if self.is_directed() { 1 } else { 2 };
-        let train_edges_number = (self.get_edges_number() as f64 * train_percentage) as EdgeT;
-        let valid_edges_number =
-            (self.get_edges_number() as f64 * (1.0 - train_percentage)) as EdgeT;
+        let train_edges_number = (self.get_edges_number() as f64 * train_size) as EdgeT;
+        let mut valid_edges_number = (self.get_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
+
+        if let Some(etis) = &edge_type_ids {
+            let selected_edges_number: EdgeT = etis
+                .iter()
+                .map(|et| self.get_edge_type_number(*et) as EdgeT)
+                .sum();
+            valid_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;
+        }
 
         if tree.len() * edge_factor > train_edges_number {
             return Err(format!(
@@ -377,23 +403,33 @@ impl Graph {
                     "that is more than the required training edges number {}.\n",
                     "This makes impossible to create a validation set using ",
                     "{} edges.\nIf possible, you should increase the ",
-                    "train_percentage parameter which is currently equal to ",
+                    "train_size parameter which is currently equal to ",
                     "{}.\nThe deny map, by itself, is requiring at least ",
-                    "a train percentage of {}."
+                    "a train rate of {}."
                 ),
                 tree.len() * edge_factor,
                 train_edges_number,
                 valid_edges_number,
-                train_percentage,
+                train_size,
                 (tree.len() * edge_factor) as f64 / train_edges_number as f64
             ));
         }
 
         self.holdout(
-            seed,
-            train_percentage,
+            random_state,
+            valid_edges_number,
             include_all_edge_types,
-            |edge_id, _, _| !tree.contains(edge_id),
+            |edge_id, _, _, edge_type| {
+                // The tree must not contain the provided edge ID
+                !tree.contains(edge_id)
+                // And the edge type of the edge ID is within the provided edge type
+                    && match &edge_type_ids {
+                        Some(etis) => {
+                            etis.contains(&edge_type.unwrap())
+                        },
+                        None => true
+                    }
+            },
             verbose,
         )
     }
@@ -406,8 +442,8 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `seed`: NodeT - The seed to use for the holdout,
-    /// * `train_percentage`: f64 - Percentage target to reserve for training
+    /// * `random_state`: NodeT - The random_state to use for the holdout,
+    /// * `train_size`: f64 - rate target to reserve for training
     /// * `include_all_edge_types`: bool - Wethever to include all the edges between two nodes.
     /// * `edge_types`: Option<Vec<String>> - The edges to include in validation set.
     /// * `min_number_overlaps`: Option<usize> - The minimum number of overlaps to include the edge into the validation set.
@@ -415,13 +451,14 @@ impl Graph {
     ///
     pub fn random_holdout(
         &self,
-        seed: EdgeT,
-        train_percentage: f64,
+        random_state: EdgeT,
+        train_size: f64,
         include_all_edge_types: bool,
         edge_types: Option<Vec<String>>,
         min_number_overlaps: Option<EdgeT>,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
+        let (_, valid_edges_number) = self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
         let edge_type_ids = if let Some(ets) = edge_types {
             Some(
                 self.translate_edge_types(ets)?
@@ -435,18 +472,16 @@ impl Graph {
             return Err("Current graph is not a multigraph!".to_string());
         }
         self.holdout(
-            seed,
-            train_percentage,
+            random_state,
+            valid_edges_number,
             include_all_edge_types,
-            |edge_id, src, dst| {
+            |_, src, dst, edge_type| {
                 // If a list of edge types was provided and the edge type
                 // of the current edge is not within the provided list,
                 // we skip the current edge.
                 if let Some(etis) = &edge_type_ids {
-                    if let Some(ets) = &self.edge_types {
-                        if !etis.contains(&ets.ids[edge_id as usize]) {
-                            return false;
-                        }
+                    if !etis.contains(&edge_type.unwrap()) {
+                        return false;
                     }
                 }
                 // If a minimum number of overlaps was provided and the current
@@ -466,7 +501,7 @@ impl Graph {
     /// Returns subgraph with given number of nodes.
     ///
     /// This method creates a subset of the graph starting from a random node
-    /// sampled using given seed and includes all neighbouring nodes until
+    /// sampled using given random_state and includes all neighbouring nodes until
     /// the required number of nodes is reached. All the edges connecting any
     /// of the selected nodes are then inserted into this graph.
     ///
@@ -474,13 +509,13 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * `seed`: usize - Random seed to use.
+    /// * `random_state`: usize - Random random_state to use.
     /// * `nodes_number`: usize - Number of nodes to extract.
     /// * `verbose`: bool - Wethever to show the loading bar.
     ///
     pub fn random_subgraph(
         &self,
-        seed: usize,
+        random_state: usize,
         nodes_number: NodeT,
         verbose: bool,
     ) -> Result<Graph, String> {
@@ -508,12 +543,12 @@ impl Graph {
         );
 
         // Creating the random number generator
-        let mut rnd = SmallRng::seed_from_u64((seed ^ SEED_XOR) as u64);
+        let mut rnd = SmallRng::seed_from_u64((random_state ^ SEED_XOR) as u64);
 
         // Nodes indices
         let mut nodes: Vec<NodeT> = (0..self.get_nodes_number()).collect();
 
-        // Shuffling the components using the given seed.
+        // Shuffling the components using the given random_state.
         nodes.shuffle(&mut rnd);
 
         // Initializing stack and set of nodes
@@ -569,6 +604,7 @@ impl Graph {
                 None => None,
             },
             self.directed,
+            format!("{} subgraph", self.name.clone()),
             false,
         )
     }
@@ -630,6 +666,7 @@ impl Graph {
                 None => None,
             },
             self.directed,
+            format!("{} edge type subgraph", self.name.clone()),
             false,
         )
     }

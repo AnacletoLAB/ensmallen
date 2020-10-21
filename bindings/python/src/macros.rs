@@ -1,7 +1,5 @@
 extern crate edit_distance;
 use edit_distance::edit_distance;
-use pyo3::exceptions;
-use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use std::collections::HashSet;
 
@@ -39,20 +37,20 @@ macro_rules! normalize_kwargs {
 macro_rules! extract_value {
     ($kwargs: ident, $key: literal, $_type: ty) => {
         match $kwargs.get_item($key) {
-            None => None,
+            None => Ok(None),
             Some(value) => {
                 if value.get_type().name() == "NoneType" {
-                    None
+                    Ok(None)
                 } else {
-                    Some(match value.extract::<$_type>() {
-                        Ok(v) => Ok(v),
-                        Err(_) => Err(PyErr::new::<exceptions::ValueError, _>(format!(
+                    match value.extract::<$_type>() {
+                        Ok(v) => Ok(Some(v)),
+                        Err(_) => Err(format!(
                             "The value passed for {} cannot be casted from {} to {}.",
                             $key,
                             value.get_type().name(),
                             stringify!($_type)
-                        ))),
-                    }?)
+                        )),
+                    }
                 }
             }
         }
@@ -98,7 +96,7 @@ pub fn build_walk_parameters_list(parameters: &[&str]) -> Vec<String> {
         "explore_weight",
         "change_edge_type_weight",
         "change_node_type_weight",
-        "seed",
+        "random_state",
         "verbose",
         "iterations",
         "dense_node_mapping",
@@ -111,41 +109,41 @@ pub fn build_walk_parameters_list(parameters: &[&str]) -> Vec<String> {
 }
 
 /// Validate given kwargs.
-pub fn validate_kwargs(kwargs: &PyDict, columns: Vec<String>) -> PyResult<()> {
+pub fn validate_kwargs(kwargs: &PyDict, columns: Vec<String>) -> Result<(), String> {
     let mut keys: HashSet<String> = kwargs
         .keys()
         .iter()
         .map(|v| v.extract::<String>().unwrap())
         .collect();
     let columns: HashSet<String> = columns.iter().cloned().collect();
-    pyex!(if keys.is_subset(&columns) {
+    if keys.is_subset(&columns) {
         return Ok(());
-    } else {
-        for k in &columns {
-            keys.remove(k);
-        }
-        let mut err_msg = String::new();
-        for k in &keys {
-            let (distance, column) = columns
-                .iter()
-                .map(|col| (edit_distance(k, col), col))
-                .min_by_key(|x| x.0)
-                .unwrap();
+    }
 
-            if distance <= 2 {
-                err_msg = format!(
-                        "The passed argument {} is not a valid one.\n Did you mean {} ?\nThe available ones are: \n{:?}",
-                        k, column, columns
-                    );
-                break;
-            }
-        }
-        if err_msg.is_empty() {
+    for k in &columns {
+        keys.remove(k);
+    }
+    let mut err_msg = String::new();
+    for k in &keys {
+        let (distance, column) = columns
+            .iter()
+            .map(|col| (edit_distance(k, col), col))
+            .min_by_key(|x| x.0)
+            .unwrap();
+
+        if distance <= 2 {
             err_msg = format!(
-                "The following arguments are not valid keyword arguments for this function. \n{:?}\n the available ones are: \n{:?}",
-                keys, columns
-            );
+                    "The passed argument {} is not a valid one.\n Did you mean {} ?\nThe available ones are: \n{:?}",
+                    k, column, columns
+                );
+            break;
         }
-        Err(err_msg)
-    })
+    }
+    if err_msg.is_empty() {
+        err_msg = format!(
+            "The following arguments are not valid keyword arguments for this function. \n{:?}\n the available ones are: \n{:?}",
+            keys, columns
+        );
+    }
+    Err(err_msg)
 }

@@ -13,7 +13,7 @@ pub struct EdgeFileReader {
     pub(crate) default_weight: Option<WeightT>,
     pub(crate) skip_self_loops: bool,
     pub(crate) numeric_edge_type_ids: bool,
-    pub(crate) numeric_node_ids: bool
+    pub(crate) numeric_node_ids: bool,
 }
 
 impl EdgeFileReader {
@@ -34,7 +34,7 @@ impl EdgeFileReader {
             default_weight: None,
             skip_self_loops: false,
             numeric_edge_type_ids: false,
-            numeric_node_ids: false
+            numeric_node_ids: false,
         })
     }
 
@@ -49,6 +49,9 @@ impl EdgeFileReader {
         sources_column: Option<String>,
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = sources_column {
+            if column.is_empty() {
+                return Err("The given node types column is empty.".to_owned());
+            }
             self.sources_column_number = self.reader.get_column_number(column)?;
         }
         Ok(self)
@@ -91,6 +94,9 @@ impl EdgeFileReader {
         destinations_column: Option<String>,
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = destinations_column {
+            if column.is_empty() {
+                return Err("The given node types column is empty.".to_owned());
+            }
             self.destinations_column_number = self.reader.get_column_number(column)?;
         }
         Ok(self)
@@ -133,6 +139,9 @@ impl EdgeFileReader {
         edge_type_column: Option<String>,
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = edge_type_column {
+            if column.is_empty() {
+                return Err("The given node types column is empty.".to_owned());
+            }
             self.edge_types_column_number = Some(self.reader.get_column_number(column)?);
         }
         Ok(self)
@@ -175,6 +184,9 @@ impl EdgeFileReader {
         weights_column: Option<String>,
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = weights_column {
+            if column.is_empty() {
+                return Err("The given node types column is empty.".to_owned());
+            }
             self.weights_column_number = Some(self.reader.get_column_number(column)?);
         }
         Ok(self)
@@ -302,11 +314,14 @@ impl EdgeFileReader {
     ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> EdgeFileReader {
+    pub fn set_separator(mut self, separator: Option<String>) -> Result<EdgeFileReader, String> {
         if let Some(sep) = separator {
+            if sep.is_empty() {
+                return Err("The separator cannot be empty.".to_owned());
+            }
             self.reader.separator = sep;
         }
-        self
+        Ok(self)
     }
 
     /// Set the header.
@@ -350,10 +365,7 @@ impl EdgeFileReader {
     /// # Arguments
     ///
     /// * vals: Vec<String> - Vector of the values of the line to be parsed
-    fn parse_edge_line(
-        &self,
-        vals: Vec<String>,
-    ) -> Result<StringQuadruple, String> {
+    fn parse_edge_line(&self, vals: Vec<String>) -> Result<StringQuadruple, String> {
         // exctract the values
         let source_node_name = vals[self.sources_column_number].to_owned();
         let destination_node_name = vals[self.destinations_column_number].to_owned();
@@ -422,10 +434,7 @@ impl EdgeFileReader {
     /// Return iterator of rows of the edge file.
     pub fn read_lines(
         &self,
-    ) -> Result<
-        impl Iterator<Item = Result<StringQuadruple, String>> + '_,
-        String,
-    > {
+    ) -> Result<impl Iterator<Item = Result<StringQuadruple, String>> + '_, String> {
         let expected_elements = self.reader.get_elements_per_line()?;
         if self.sources_column_number >= expected_elements {
             return Err(format!(
