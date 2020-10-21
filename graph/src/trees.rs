@@ -3,6 +3,7 @@ use indicatif::ProgressIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
 use std::iter::FromIterator;
+use vec_rand::xorshift::xorshift as rand_u64;
 
 fn find_node_set(sets: &[RoaringBitmap], node: NodeT) -> usize {
     sets.iter().position(|set| set.contains(node)).unwrap()
@@ -12,7 +13,9 @@ fn find_node_set(sets: &[RoaringBitmap], node: NodeT) -> usize {
 impl Graph {
     fn iter_edges_from_random_state(&self, random_state: u64) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
         let edges_number = self.get_edges_number();
-        (random_state..edges_number + random_state).filter_map(move |i| {
+        // We execute two times the xorshift to improve the randomness of the seed.
+        let updated_random_state = rand_u64(rand_u64(random_state ^ SEED_XOR as u64));
+        (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
             let edge_id = i % edges_number;
             let (src, dst) = self.get_edge_from_edge_id(edge_id);
             match src == dst || !self.directed && src > dst {
