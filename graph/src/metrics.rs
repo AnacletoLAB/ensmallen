@@ -307,19 +307,13 @@ impl Graph {
     }
 
     /// Returns number of connected components in graph.
-    /// If the graph is or isn't a multigraph the edge types are not considered; if any edge exists, it is considered
-    /// note that, for understanding whether graph is a multigraph, instead of computing the mean number of edge types in the graph (n) and checking that n>1
-    /// we could directly use the function is_multigraph(&self):
-    ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// if graph.is_multigraph() {
-    ///     println!("The rate of connected components  in the multigraph is  {}", graph.connected_components_number(false));
-    /// }else{
-    ///     println!("The rate of connected components in the graph is {} ", graph.connected_components_number(false));
-    /// }
-    /// ```
-    pub fn connected_components_number(&self, verbose: bool) -> NodeT {
-        self.get_nodes_number() - self.spanning_tree(0, false, &None, verbose).len() as NodeT
+    pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT) {
+        let (tree, components) = self.spanning_tree(0, false, &None, verbose);
+        let connected_components_number = self.get_nodes_number() - tree.len() as NodeT;
+        (connected_components_number as NodeT, match components.iter().map(|c| c.len()).max() {
+            Some(max_components_number) => max_components_number,
+            None=> 1
+        } as NodeT)
     }
 
     /// Returns number of singleton nodes within the graph.
@@ -402,10 +396,12 @@ impl Graph {
 
     /// Return rendered textual report of the graph.
     pub fn textual_report(&self) -> String {
+        let (connected_components_number, maximum_connected_component) = self.connected_components_number(true);
+
         format!(
             concat!(
                 "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}. ",
-                "The graph is {quantized_density} as it has a density of {density:.5} and has {components_number} connected components. ",
+                "The graph is {quantized_density} as it has a density of {density:.5} and has {components_number} connected components, where the component with most nodes has {maximum_connected_component} nodes. ",
                 "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2} and the node degree mode is {mode_node_degree}. ",
                 "The top {most_common_nodes_number} most central nodes are {central_nodes}."
             ),
@@ -454,7 +450,8 @@ impl Graph {
                 _ => unreachable!("Unreacheable density case")
             },
             density=self.density(),
-            components_number=self.connected_components_number(false),
+            components_number=connected_components_number,
+            maximum_connected_component=maximum_connected_component,
             median_node_degree=self.degrees_median(),
             mean_node_degree=self.degrees_mean(),
             mode_node_degree=self.degrees_mode(),

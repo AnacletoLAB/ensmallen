@@ -49,7 +49,7 @@ impl Graph {
         result.progress_with(pb)
     }
 
-    /// Returns set of edges composing a spanning tree.
+    /// Returns set of edges composing a spanning tree and connected components.
     ///
     /// The spanning tree is NOT minimal.
     /// The given random_state is NOT the root of the tree.
@@ -67,7 +67,7 @@ impl Graph {
         include_all_edge_types: bool,
         unwanted_edge_types: &Option<HashSet<EdgeTypeT>>,
         verbose: bool,
-    ) -> RoaringTreemap {
+    ) -> (RoaringTreemap, Vec<RoaringBitmap>) {
         // Create vector of sets of the single nodes.
         let mut components: Vec<RoaringBitmap> = Vec::new();
         // Create empty vector of inserted values (this will be dense so its a normal BitVec)
@@ -128,6 +128,6 @@ impl Graph {
                 tree.extend(self.compute_edge_ids_vector(edge_id, src, dst, include_all_edge_types))
             }
         }
-        tree
+        (tree, components)
     }
 }
