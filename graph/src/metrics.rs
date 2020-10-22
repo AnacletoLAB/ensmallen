@@ -408,12 +408,12 @@ impl Graph {
         // Get overlapping nodes
         let overlapping_nodes_number = self
             .get_nodes_names_iter()
-            .filter(|(node_name, node_type)| self.has_node_string(node_name, node_type.clone()))
+            .filter(|(node_name, node_type)| other.has_node_string(node_name, node_type.clone()))
             .count();
         // Get overlapping edges
         let overlapping_edges_number = self
             .get_edges_par_string_triples()
-            .filter(|(_, src_name, dst_name, edge_type_name)| self.has_edge_string(src_name, dst_name, edge_type_name.as_ref()))
+            .filter(|(_, src_name, dst_name, edge_type_name)| other.has_edge_string(src_name, dst_name, edge_type_name.as_ref()))
             .count();
         // Building up the report
         Ok(format!(
