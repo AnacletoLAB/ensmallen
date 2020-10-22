@@ -1,12 +1,16 @@
 use super::*;
 use indicatif::ProgressIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
+use rayon::iter::IntoParallelRefIterator;
+use rayon::iter::IndexedParallelIterator;
+use rayon::iter::ParallelIterator;
+use rayon::iter::IntoParallelIterator;
 use std::collections::HashSet;
 use std::iter::FromIterator;
 use vec_rand::xorshift::xorshift as rand_u64;
 
 fn find_node_set(sets: &[RoaringBitmap], node: NodeT) -> usize {
-    sets.iter().position(|set| set.contains(node)).unwrap()
+    sets.par_iter().zip((0..sets.len()).into_par_iter()).find_any(|(set, _)| set.contains(node)).unwrap().1
 }
 
 /// # Implementation of algorithms relative to trees.
