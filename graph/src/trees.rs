@@ -1,21 +1,20 @@
 use super::*;
 use indicatif::ProgressIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
-use rayon::iter::IntoParallelRefIterator;
-use rayon::iter::IndexedParallelIterator;
-use rayon::iter::ParallelIterator;
-use rayon::iter::IntoParallelIterator;
 use std::collections::HashSet;
 use std::iter::FromIterator;
 use vec_rand::xorshift::xorshift as rand_u64;
 
 fn find_node_set(sets: &[RoaringBitmap], node: NodeT) -> usize {
-    sets.par_iter().zip((0..sets.len()).into_par_iter()).find_any(|(set, _)| set.contains(node)).unwrap().1
+    sets.iter().position(|set| set.contains(node)).unwrap()
 }
 
 /// # Implementation of algorithms relative to trees.
 impl Graph {
-    fn iter_edges_from_random_state(&self, random_state: u64) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
+    fn iter_edges_from_random_state(
+        &self,
+        random_state: u64,
+    ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
         let edges_number = self.get_edges_number();
         // We execute two times the xorshift to improve the randomness of the seed.
         let updated_random_state = rand_u64(rand_u64(random_state ^ SEED_XOR as u64));
@@ -36,17 +35,22 @@ impl Graph {
         unwanted_edge_types: &'a Option<HashSet<EdgeTypeT>>,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + 'a {
         // TODO! FIX THIS CRASH if called with unwanted_edge_types and the graph does not have edge types.
-        let result: Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)>> = if let Some(uet) = unwanted_edge_types {
-            Box::new(self.iter_edges_from_random_state(random_state)
-                .filter(move |(edge_id, _, _)| {
-                    !uet.contains(&self.get_unchecked_edge_type(*edge_id).unwrap())
-                })
-                .chain(self.iter_edges_from_random_state(random_state).filter(move |(edge_id, _, _)| {
-                    uet.contains(&self.get_unchecked_edge_type(*edge_id).unwrap())
-                })))
-        } else {
-            Box::new(self.iter_edges_from_random_state(random_state))
-        };
+        let result: Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)>> =
+            if let Some(uet) = unwanted_edge_types {
+                Box::new(
+                    self.iter_edges_from_random_state(random_state)
+                        .filter(move |(edge_id, _, _)| {
+                            !uet.contains(&self.get_unchecked_edge_type(*edge_id).unwrap())
+                        })
+                        .chain(self.iter_edges_from_random_state(random_state).filter(
+                            move |(edge_id, _, _)| {
+                                uet.contains(&self.get_unchecked_edge_type(*edge_id).unwrap())
+                            },
+                        )),
+                )
+            } else {
+                Box::new(self.iter_edges_from_random_state(random_state))
+            };
 
         let pb = get_loading_bar(
             verbose,
@@ -85,7 +89,7 @@ impl Graph {
         // Iterate over all the edges and add and edge to the mst
         // iff the edge create, expand or merge components.
         for (edge_id, src, dst) in
-            self.iter_on_edges_with_preference(random_state, verbose,unwanted_edge_types)
+            self.iter_on_edges_with_preference(random_state, verbose, unwanted_edge_types)
         {
             let mut update_tree = false;
             // if both nodes are not covered then the edge is isolated
