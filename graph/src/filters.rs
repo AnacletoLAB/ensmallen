@@ -1,4 +1,5 @@
 use super::*;
+use indicatif::ProgressIterator;
 
 impl Graph {
     /// Return graph filtered by given weights range.
@@ -18,9 +19,15 @@ impl Graph {
         max_weight: Option<WeightT>,
         verbose: bool,
     ) -> Result<Graph, String> {
-        Graph::from_integer_unsorted(
-            self.get_edges_quadruples()
-                .filter_map(|(_, src, dst, edge_type, weight)| {
+        let pb = get_loading_bar(
+            verbose,
+            "Building weight filtered graph",
+            self.get_edges_number() as usize,
+        );
+
+        Graph::build_graph(
+            self.get_edges_quadruples().progress_with(pb).filter_map(
+                |(_, src, dst, edge_type, weight)| {
                     if let (Some(_min), Some(w)) = (min_weight, weight) {
                         if _min > w {
                             return None;
@@ -32,7 +39,9 @@ impl Graph {
                         }
                     }
                     Some(Ok((src, dst, edge_type, weight)))
-                }),
+                },
+            ),
+            self.get_edges_number(),
             self.nodes.clone(),
             self.node_types.clone(),
             match &self.edge_types {
@@ -40,12 +49,8 @@ impl Graph {
                 None => None,
             },
             self.directed,
-            format!(
-                "({} - filtered by weights with min: {:?} and max: {:?}",
-                self.name, min_weight, max_weight
-            ),
+            self.name.clone(),
             false,
-            verbose,
         )
     }
 }

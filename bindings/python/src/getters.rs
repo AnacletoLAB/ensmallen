@@ -78,6 +78,38 @@ impl EnsmallenGraph {
         self.graph.is_node_trap(node)
     }
 
+    #[text_signature = "($self, node_id)"]
+    /// Return boolean representing singletons.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node_id: int,
+    ///     Node ID to search if it's a singleton.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if given node is a singleton.
+    ///
+    fn is_singleton(&self, node_id: NodeT) -> bool {
+        self.graph.is_singleton(node_id)
+    }
+
+    #[text_signature = "($self, node_name)"]
+    /// Return boolean representing singletons.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node_name: str,
+    ///     Node name to search if it's a singleton.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if given node is a singleton.
+    ///
+    fn is_singleton_string(&self, node_name: &str) -> PyResult<bool> {
+        pyex!(self.graph.is_singleton_string(node_name))
+    }
+
     #[text_signature = "($self, edge)"]
     /// Return boolean representing if given edge is a trap.
     ///

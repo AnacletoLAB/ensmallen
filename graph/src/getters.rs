@@ -40,6 +40,24 @@ impl Graph {
         self.self_loop_number > 0
     }
 
+    /// Returns boolean representing if given node is a singleton.
+    ///
+    /// # Arguments
+    ///
+    /// `node_id`: NodeT - The node to be checked for.
+    pub fn is_singleton(&self, node_id: NodeT) -> bool {
+        self.get_node_degree(node_id) == 0
+    }
+
+    /// Returns boolean representing if given node is a singleton.
+    ///
+    /// # Arguments
+    ///
+    /// `node_name`: &str - The node name to be checked for.
+    pub fn is_singleton_string(&self, node_name: &str) -> Result<bool, String> {
+        Ok(self.is_singleton(self.get_node_id(node_name)?))
+    }
+
     /// Returns boolean representing if graph has singletons.
     pub fn has_singletons(&self) -> bool {
         self.get_singleton_nodes_number() > 0
