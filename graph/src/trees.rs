@@ -125,7 +125,7 @@ impl Graph {
                     components
                         .get_mut(dst_set_index)
                         .unwrap()
-                        .extend(src_set.iter());
+                        .union_with(&src_set);
                     update_tree = true;
                     // else the edge is already covered
                 }
