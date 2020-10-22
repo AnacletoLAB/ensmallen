@@ -22,12 +22,12 @@ impl Graph {
             self.get_edges_quadruples()
                 .filter_map(|(_, src, dst, edge_type, weight)| {
                     if let (Some(_min), Some(w)) = (min_weight, weight) {
-                        if _min >= w {
+                        if _min > w {
                             return None;
                         }
                     }
                     if let (Some(_max), Some(w)) = (max_weight, weight) {
-                        if w > _max {
+                        if w >= _max {
                             return None;
                         }
                     }
