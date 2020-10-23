@@ -101,7 +101,7 @@ impl Graph {
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
             .map(|node_id| (self.get_node_degree(node_id), node_id))
             .collect();
-        nodes_degrees.sort();
+        nodes_degrees.sort_unstable();
         nodes_degrees.reverse();
         nodes_degrees[0..k as usize]
             .iter()

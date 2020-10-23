@@ -52,4 +52,35 @@ impl Graph {
         new.node_types = None;
         Ok(new)
     }
+
+    /// Returns a **NEW** Graph that have no singletons.
+    ///
+    /// If the given graph does not have singletons, a cloned one is returned.
+    pub fn drop_singletons(&self) -> Result<Graph, String> {
+        if !self.has_singletons() {
+            return Ok(self.clone());
+        }
+        Graph::from_string_sorted(
+            self.get_edges_string_quadruples()
+                .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight))),
+            Some(
+                self.get_nodes_names_iter()
+                    .filter_map(|(node_name, node_type)| {
+                        match self.is_singleton_string(&node_name).unwrap() {
+                            true => None,
+                            false => Some(Ok((node_name, node_type))),
+                        }
+                    }),
+            ),
+            self.directed,
+            false,
+            false,
+            self.get_edges_number(),
+            self.get_nodes_number() - self.get_singleton_nodes_number(),
+            false,
+            false,
+            false,
+            self.name.clone(),
+        )
+    }
 }
