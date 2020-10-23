@@ -90,7 +90,7 @@ impl EnsmallenGraph {
     ) -> PyResult<String> {
         pyex!(self
             .graph
-            .overlap_textual_report(&other.graph, verbose.or_else(|| Some(true)).unwrap(),))
+            .overlap_textual_report(&other.graph, verbose.unwrap_or(true)))
     }
 
     #[text_signature = "($self, node)"]

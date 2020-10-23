@@ -34,7 +34,7 @@ impl EnsmallenGraph {
                 edge_types,
                 min_weight,
                 max_weight,
-                verbose.or_else(|| Some(true)).unwrap(),
+                verbose.unwrap_or(true),
             ))?,
         })
     }

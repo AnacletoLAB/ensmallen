@@ -102,7 +102,7 @@ pub(crate) fn build_csv_file_reader(
     Ok((
         edges,
         nodes,
-        extract_value!(kwargs, "name", String)?.or_else(|| Some("Graph".to_owned())).unwrap(),
+        extract_value!(kwargs, "name", String)?.unwrap_or_else(|| "Graph".to_owned()),
     ))
 }
 
