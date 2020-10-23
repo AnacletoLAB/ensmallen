@@ -28,7 +28,7 @@ impl EnsmallenGraph {
             graph: pyex!(self.graph.filter_weights(
                 min_weight,
                 max_weight,
-                verbose.or_else(|| Some(true)).unwrap(),
+                verbose.unwrap_or(true),
             ))?,
         })
     }

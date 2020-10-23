@@ -38,7 +38,7 @@ impl EnsmallenGraph {
         Ok(EnsmallenGraph {
             graph: pyex!(self
                 .graph
-                .drop_singletons(verbose.or_else(|| Some(true)).unwrap()))?,
+                .drop_singletons(verbose.unwrap_or(true)))?,
         })
     }
 

@@ -51,11 +51,9 @@ impl EnsmallenGraph {
 
         self.graph.enable_fast_walk(
             pyex!(extract_value!(kwargs, "vector_destinations", bool))?
-                .or_else(|| Some(true))
-                .unwrap(),
+                .unwrap_or(true),
             pyex!(extract_value!(kwargs, "vector_outbounds", bool))?
-                .or_else(|| Some(true))
-                .unwrap(),
+                .unwrap_or(true),
         );
         Ok(())
     }
