@@ -54,7 +54,7 @@ impl Graph {
 
         let pb = get_loading_bar(
             verbose,
-            "Building spanning tree",
+            format!("Building spanning tree for {}", self.name).as_ref(),
             self.get_edges_number() as usize,
         );
         result.progress_with(pb)
