@@ -434,8 +434,14 @@ impl Graph {
             edges_number=overlapping_edges_number,
             first_nodes=self.get_nodes_number(),
             second_nodes=other.get_nodes_number(),
-            first_edges=self.get_edges_number(),
-            second_edges=other.get_edges_number(),
+            first_edges=match self.directed {
+                true => self.get_edges_number(),
+                false => self.get_undirected_edges_number(),
+            },
+            second_edges=match other.directed {
+                true => other.get_edges_number(),
+                false => other.get_undirected_edges_number(),
+            },
             first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),
             second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_nodes_number() as f64),
             first_edge_percentage=100.0*(overlapping_edges_number as f64 / self.get_edges_number() as f64),
