@@ -143,6 +143,7 @@ impl Graph {
                 format!("Negatives sampling round {}", sampling_round).as_ref(),
                 edges_to_sample as usize,
             );
+            sampling_round += 1;
 
             // generate the random edge-sources
             negative_edges_bitmap.extend(
