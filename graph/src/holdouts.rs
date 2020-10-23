@@ -698,4 +698,75 @@ impl Graph {
             false,
         )
     }
+
+
+    /// Returns train and test graph following kfold validation scheme.
+    ///
+    /// The edges are splitted into k chunks. The k_index-th chunk is used to build
+    /// the validation graph, all the other edges create the training graph.
+    /// 
+    /// # Arguments
+    ///
+    /// * `edge_types`: Option<Vec<String>> - Edge types to be selected when computing the folds 
+    ///         (All the edge types not listed here will be always be used in the training set).
+    /// * `k`: u64 - The number of folds.
+    /// * `k_index`: u64 - Which fold to use for the validation.
+    /// * `random_state`: NodeT - The random_state (seed) to use for the holdout,
+    /// * `verbose`: bool - Wethever to show the loading bar.
+    ///
+    pub fn kfold(
+        &self,
+        edge_types: Option<Vec<String>>,
+        k: u64,
+        k_index: u64,
+        random_state: EdgeT,
+        verbose: bool,
+    ) -> Result<(Graph, Graph), String> {
+        if k == 1 {
+            return Err(String::from("Cannot do a k-fold with only one fold."));
+        }
+        if k_index >= k {
+            return Err(String::from("The index of the k-fold must be strictly less than the number of folds."));
+        }
+
+        // If edge types is not None, to compute the chunks only use the edges
+        // of the chosen edge_types
+        let mut indices = if let (Some(_edge_types), Some(ets)) = (edge_types, &self.edge_types) {
+            if _edge_types.is_empty() {
+                return Err(String::from(
+                    "Required edge types must be a non-empty list.",
+                ));
+            }
+
+            let edge_type_ids: HashSet<EdgeTypeT> = self
+                .translate_edge_types(_edge_types)?
+                .iter()
+                .cloned()
+                .collect::<HashSet<EdgeTypeT>>();
+
+            (0..self.get_edges_number())
+            .filter(|edge_id| {
+                edge_type_ids.contains(&ets.ids[*edge_id as usize])
+            }).collect::<Vec<EdgeT>>()
+        } else {
+            (0..self.get_edges_number()).collect::<Vec<EdgeT>>()
+        };
+
+        // shuffle the indices
+        let mut rng = SmallRng::seed_from_u64(random_state ^ SEED_XOR as EdgeT);
+        indices.shuffle(&mut rng);
+        // Get the k_index-th chunk
+        let chunk_size = self.get_edges_number() / k;
+        let start = k_index*chunk_size;
+        let end = max!(self.get_edges_number(), (k_index + 1)*chunk_size);
+        let chunk = RoaringTreemap::from_iter(indices[start as usize..end as usize].iter().cloned());
+        // Create the two graphs
+        self.holdout(
+            random_state,
+            chunk_size,
+            false,
+            |edge_id, _, _, _| chunk.contains(edge_id),
+            verbose,
+        )
+    }
 }

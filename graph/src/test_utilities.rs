@@ -213,9 +213,26 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             graph.connected_components_number(false),
             train.connected_components_number(false)
         );
-
+        
         default_holdout_test_suite(graph, &train, &test)?;
     }
+
+    // test the kfold
+    let k = 10;
+    if graph.get_edges_number() >= 100 {
+        for i in 0..k {
+            let (train, test) = graph.kfold(None, k, i, 42, false)?;
+            assert!((test.get_edges_number() * k - graph.get_edges_number()) < k);
+            default_holdout_test_suite(graph, &train, &test)?;
+        }
+        if let Some(edge_t) = graph.get_edge_type_string(0) {
+            for i in 0..k {
+                let (train, test) = graph.kfold(Some(vec![edge_t.clone()]), k, i, 1337, false)?;
+                default_holdout_test_suite(graph, &train, &test)?;
+            }
+        }
+    }
+
     // Testing negative edges generation
     for only_from_same_component in &[true, false]{
         let negatives = graph.sample_negatives(4, graph.get_edges_number(), None, *only_from_same_component, verbose)?;
