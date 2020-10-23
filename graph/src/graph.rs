@@ -160,6 +160,30 @@ impl Graph {
         }?)
     }
 
+    /// Return translated node types from string to internal node ID.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_types`: Vec<String> - Vector of node types to be converted.
+    pub fn translate_node_types(&self, node_types: Vec<String>) -> Result<Vec<NodeTypeT>, String> {
+        Ok(match &self.node_types {
+            None => Err(String::from("Current graph does not have node types.")),
+            Some(nts) => {
+                Ok(node_types
+                .iter()
+                .map(|node_type| match nts.get(node_type) {
+                    None => Err(format!(
+                        "The node type {} does not exist in current graph. The available node types are {}.",
+                        node_type,
+                        nts.keys().join(", ")
+                    )),
+                    Some(et) => Ok(*et),
+                })
+                .collect::<Result<Vec<NodeTypeT>, String>>()?)
+            }
+        }?)
+    }
+
     /// Returns node type counts.
     ///
     /// # Arguments
