@@ -461,8 +461,8 @@ impl Graph {
         // Get number of overlapping components
         let first_nodes_components = self.get_node_components_vector(verbose);
         let second_nodes_components = other.get_node_components_vector(verbose);
-        let first_components_number = first_nodes_components.iter().unique().count();
-        let second_components_number = second_nodes_components.iter().unique().count();
+        let first_components_number = first_nodes_components.iter().unique().count() as NodeT;
+        let second_components_number = second_nodes_components.iter().unique().count() as NodeT;
         let first_shared_components_number =
             self.shared_components_number(&first_nodes_components, other);
         let second_shared_components_number =
@@ -478,8 +478,8 @@ impl Graph {
                 "The graph {first_graph} and the graph {second_graph} share {nodes_number} nodes and {edges_number} edges. ",
                 "By percent, {first_graph} shares {first_node_percentage:.2}% ({nodes_number} out of {first_nodes}) of its nodes and {first_edge_percentage:.2}% ({edges_number} out of {first_edges}) of its edges with {second_graph}. ",
                 "{second_graph} shares {second_node_percentage:.2}% ({nodes_number} out of {second_nodes}) of its nodes and {second_edge_percentage:.2}% ({edges_number} out of {second_edges}) of its edges with {first_graph}. ",
-                "Nodes from {first_graph} appear in {second_shared_components_number} of the {second_components_number} components of {second_graph}: of these components, {second_merged_components_number} are connected by edges of {first_graph}. ",
-                "Similarly, nodes from {second_graph} appear in {first_shared_components_number} of the {first_components_number} components of {first_graph}: of these components, {first_merged_components_number} are connected by edges of {second_graph}. ",
+                "Nodes from {first_graph} appear in {first_components_statement} components of {second_graph}{first_merged_components_statement}. ",
+                "Similarly, nodes from {second_graph} appear in {second_components_statement} components of {first_graph}{second_merged_components_statement}. ",
             ),
             first_graph=self.get_name(),
             second_graph=other.get_name(),
@@ -495,12 +495,46 @@ impl Graph {
                 true => other.get_edges_number(),
                 false => other.get_undirected_edges_number(),
             },
-            first_components_number=first_components_number,
-            second_components_number=second_components_number,
-            first_shared_components_number=first_shared_components_number,
-            second_shared_components_number=second_shared_components_number,
-            first_merged_components_number=first_merged_components_number,
-            second_merged_components_number=second_merged_components_number,
+            first_components_statement = match second_shared_components_number== second_components_number{
+                true=> "all the".to_owned(),
+                false => format!(
+                    "{second_shared_components_number} of the {second_components_number}",
+                    second_shared_components_number=second_shared_components_number,
+                    second_components_number=second_components_number
+                )
+            },
+            second_components_statement = match first_shared_components_number== first_components_number{
+                true=> "all the".to_owned(),
+                false => format!(
+                    "{first_shared_components_number} of the {first_components_number}",
+                    first_shared_components_number=first_shared_components_number,
+                    first_components_number=first_components_number
+                )
+            },
+            first_merged_components_statement = match second_components_number > 1 {
+                false=>"".to_owned(),
+                true=>format!(
+                    "of these components, {edges_number} connected by edges of {first_graph}",
+                    first_graph=self.name,
+                    edges_number= match second_merged_components_number {
+                        d if d==0=>"none are".to_owned(),
+                        d if d==1=>"one is".to_owned(),
+                        d if d==second_components_number=>"all are".to_owned(),
+                        _ => format!("{} are", second_merged_components_number)
+                    })
+                },
+            second_merged_components_statement = match first_components_number > 1 {
+                false=>"".to_owned(),
+                true=>format!(
+                    "of these components, {edges_number} connected by edges of {second_graph}",
+                    second_graph=other.name,
+                    edges_number= match first_merged_components_number {
+                        d if d==0=>"none are".to_owned(),
+                        d if d==1=>"one is".to_owned(),
+                        d if d==first_components_number=>"all are".to_owned(),
+                        _ => format!("{} are", first_merged_components_number)
+                    })
+                },
             first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),
             second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_nodes_number() as f64),
             first_edge_percentage=100.0*(overlapping_edges_number as f64 / self.get_edges_number() as f64),
