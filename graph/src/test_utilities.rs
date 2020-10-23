@@ -222,7 +222,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     if graph.get_edges_number() >= 100 {
         for i in 0..k {
             let (train, test) = graph.kfold(None, k, i, 42, false)?;
-            assert!((test.get_edges_number() * k - graph.get_edges_number()) < k);
+            assert!(test.get_edges_number() <= graph.get_edges_number()/k);
             default_holdout_test_suite(graph, &train, &test)?;
         }
         if let Some(edge_t) = graph.get_edge_type_string(0) {
