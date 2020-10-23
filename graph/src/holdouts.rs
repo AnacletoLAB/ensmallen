@@ -1,17 +1,18 @@
 use super::*;
+use counter::Counter;
+use indicatif::ParallelProgressIterator;
 use indicatif::ProgressIterator;
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
+use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
-use rayon::iter::IndexedParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
-use counter::Counter;
 use std::collections::HashSet;
 use std::iter::FromIterator;
-use vec_rand::{gen_random_vec, sample_uniform};
 use vec_rand::xorshift::xorshift as rand_u64;
+use vec_rand::{gen_random_vec, sample_uniform};
 
 /// # Holdouts.
 impl Graph {
@@ -67,9 +68,12 @@ impl Graph {
         // Wether to sample negative edges only from the same connected component.
         let (node_components, mut complete_edges_number) = if only_from_same_component {
             let node_components = self.get_node_components_vector(verbose);
-            let complete_edges_number: EdgeT = Counter::init(node_components.clone()).into_iter().map(|(_, nodes_number):(_, &usize)|{
-                (*nodes_number * (*nodes_number - 1)) as EdgeT
-            }).sum();
+            let complete_edges_number: EdgeT = Counter::init(node_components.clone())
+                .into_iter()
+                .map(|(_, nodes_number): (_, &usize)| {
+                    (*nodes_number * (*nodes_number - 1)) as EdgeT
+                })
+                .sum();
             (Some(node_components), complete_edges_number)
         } else {
             (None, nodes_number * (nodes_number - 1))
@@ -81,7 +85,6 @@ impl Graph {
         if self.has_selfloops() {
             complete_edges_number += nodes_number;
         }
-
 
         // Now we compute the maximum number of negative edges that we can actually generate
         let max_negative_edges = complete_edges_number - self.unique_edges_number;
@@ -117,6 +120,7 @@ impl Graph {
 
         let mut negative_edges_bitmap = RoaringTreemap::new();
         let mut last_length = 0;
+        let mut sampling_round: usize = 0;
 
         // randomly extract negative edges until we have the choosen number
         while negative_edges_bitmap.len() < negatives_number {
@@ -124,7 +128,6 @@ impl Graph {
             let src_random_state = rand_u64(random_state);
             let dst_random_state = rand_u64(src_random_state);
             random_state = rand_u64(dst_random_state);
-            
 
             let edges_to_sample: usize = min!(
                 negatives_number,
@@ -135,14 +138,20 @@ impl Graph {
                 }
             ) as usize;
 
+            let tmp_tb = get_loading_bar(
+                verbose,
+                format!("Negatives sampling round {}", sampling_round).as_ref(),
+                edges_to_sample as usize,
+            );
+            sampling_round += 1;
+
             // generate the random edge-sources
             negative_edges_bitmap.extend(
                 gen_random_vec(edges_to_sample, src_random_state)
                     .into_par_iter()
-                    .zip(
-                        gen_random_vec(edges_to_sample, dst_random_state).into_par_iter()
-                    )
+                    .zip(gen_random_vec(edges_to_sample, dst_random_state).into_par_iter())
                     // convert them to plain (src, dst)
+                    .progress_with(tmp_tb)
                     .filter_map(|(src_seed, dst_seed)| {
                         let src = sample_uniform(nodes_number as u64, src_seed as u64) as NodeT;
                         let dst = sample_uniform(nodes_number as u64, dst_seed as u64) as NodeT;
@@ -151,8 +160,8 @@ impl Graph {
                                 return None;
                             }
                         }
-                        if let Some(ncs) = &node_components{
-                            if ncs[src as usize] != ncs[dst as usize]{
+                        if let Some(ncs) = &node_components {
+                            if ncs[src as usize] != ncs[dst as usize] {
                                 return None;
                             }
                         }
@@ -483,7 +492,8 @@ impl Graph {
         min_number_overlaps: Option<EdgeT>,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
-        let (_, valid_edges_number) = self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
+        let (_, valid_edges_number) =
+            self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
         let edge_type_ids = if let Some(ets) = edge_types {
             Some(
                 self.translate_edge_types(ets)?
@@ -638,10 +648,10 @@ impl Graph {
     ///
     /// The edges are splitted into k chunks. The k_index-th chunk is used to build
     /// the validation graph, all the other edges create the training graph.
-    /// 
+    ///
     /// # Arguments
     ///
-    /// * `edge_types`: Option<Vec<String>> - Edge types to be selected when computing the folds 
+    /// * `edge_types`: Option<Vec<String>> - Edge types to be selected when computing the folds
     ///         (All the edge types not listed here will be always be used in the training set).
     /// * `k`: u64 - The number of folds.
     /// * `k_index`: u64 - Which fold to use for the validation.
@@ -660,7 +670,9 @@ impl Graph {
             return Err(String::from("Cannot do a k-fold with only one fold."));
         }
         if k_index >= k {
-            return Err(String::from("The index of the k-fold must be strictly less than the number of folds."));
+            return Err(String::from(
+                "The index of the k-fold must be strictly less than the number of folds.",
+            ));
         }
 
         // If edge types is not None, to compute the chunks only use the edges
@@ -671,7 +683,7 @@ impl Graph {
                     "Required edge types must be a non-empty list.",
                 ));
             }
-            if !self.has_edge_types(){
+            if !self.has_edge_types() {
                 return Err(String::from(
                     "Edge types-based k-fold requested but the edge types are not available in this graph."
                 ));
@@ -684,23 +696,28 @@ impl Graph {
                 .collect::<HashSet<EdgeTypeT>>();
 
             self.get_edges_triples()
-            .filter_map(|(edge_id, src, dst , edge_type)| {
-                if !self.directed && src > dst || !edge_type_ids.contains(&edge_type.unwrap()){
-                    return None;
-                }
-                Some(edge_id)
-            }).collect::<Vec<EdgeT>>()
+                .filter_map(|(edge_id, src, dst, edge_type)| {
+                    if !self.directed && src > dst || !edge_type_ids.contains(&edge_type.unwrap()) {
+                        return None;
+                    }
+                    Some(edge_id)
+                })
+                .collect::<Vec<EdgeT>>()
         } else {
-            self.get_edges_iter().filter_map(|(edge_id, src, dst)| {
-                if !self.directed && src > dst{
-                    return None;
-                }
-                Some(edge_id)
-            }).collect::<Vec<EdgeT>>()
+            self.get_edges_iter()
+                .filter_map(|(edge_id, src, dst)| {
+                    if !self.directed && src > dst {
+                        return None;
+                    }
+                    Some(edge_id)
+                })
+                .collect::<Vec<EdgeT>>()
         };
 
         if k >= indices.len() as EdgeT {
-            return Err(String::from("Cannot do a number of k-fold greater than the number of available edges."));
+            return Err(String::from(
+                "Cannot do a number of k-fold greater than the number of available edges.",
+            ));
         }
 
         // shuffle the indices
@@ -708,9 +725,13 @@ impl Graph {
         indices.shuffle(&mut rng);
         // Get the k_index-th chunk
         let chunk_size = indices.len() as f64 / k as f64;
-        let start = (k_index as f64*chunk_size).ceil() as EdgeT;
-        let end = min!(indices.len() as EdgeT, (((k_index + 1) as f64)*chunk_size).ceil() as EdgeT);
-        let chunk = RoaringTreemap::from_iter(indices[start as usize..end as usize].iter().cloned());
+        let start = (k_index as f64 * chunk_size).ceil() as EdgeT;
+        let end = min!(
+            indices.len() as EdgeT,
+            (((k_index + 1) as f64) * chunk_size).ceil() as EdgeT
+        );
+        let chunk =
+            RoaringTreemap::from_iter(indices[start as usize..end as usize].iter().cloned());
         // Create the two graphs
         self.holdout(
             random_state,

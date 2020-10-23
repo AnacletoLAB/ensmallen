@@ -5,7 +5,7 @@ use graph::{EdgeT, Graph, NodeT};
 impl EnsmallenGraph {
     #[staticmethod]
     #[args(py_kwargs = "**")]
-    #[text_signature = "(edge_path, directed, *, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_self_loops, ignore_duplicated_edges, edge_header, edge_rows_to_skip, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, default_node_type, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_separator, verbose, numeric_node_ids, numeric_node_type_ids, numeric_edge_type_ids)"]
+    #[text_signature = "(edge_path, directed, *, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_self_loops, ignore_duplicated_edges, edge_header, edge_rows_to_skip, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, default_node_type, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_separator, numeric_node_ids, numeric_node_type_ids, numeric_edge_type_ids, name, verbose)"]
     /// Return graph loaded from given edge file and optionally node file.
     ///
     /// Parameters
@@ -96,6 +96,14 @@ impl EnsmallenGraph {
     ///     this is the parameter that allows you to skip it.
     /// node_separator: str = "\t",
     ///      The expected separator for the node file.
+    /// numeric_node_ids: bool = False,
+    ///     Wether to load the Node Ids as numeric.
+    /// numeric_node_type_ids: bool = False,
+    ///     Wether to load the Node Type Ids as numeric.
+    /// numeric_edge_type_ids: bool = False,
+    ///     Wether to load the Edge Type Ids as numeric.
+    /// name: str = "Graph",
+    ///     The name of the graph to use.
     /// verbose: bool = True,
     ///     Wethever to load the files verbosely, showing a loading bar.
     ///
@@ -121,10 +129,8 @@ impl EnsmallenGraph {
 
     #[staticmethod]
     #[args(py_kwargs = "**")]
-    #[text_signature = "(edge_path, directed, *, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_self_loops, ignore_duplicated_edges, edge_header, edge_rows_to_skip, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, default_node_type, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_separator, verbose, numeric_node_ids, numeric_node_type_ids, numeric_edge_type_ids)"]
+    #[text_signature = "(edge_path, directed, *, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_types_column_number, edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_self_loops, ignore_duplicated_edges, edge_header, edge_rows_to_skip, edge_separator, node_path, nodes_column_number, nodes_column, node_types_column_number, node_types_column, default_node_type, ignore_duplicated_nodes, node_header, node_rows_to_skip, node_separator, numeric_node_ids, numeric_node_type_ids, numeric_edge_type_ids, name, verbose)"]
     /// Return graph loaded from given edge file and optionally node file.
-    ///
-    /// TODO: update docstrinG!!!
     ///
     /// Parameters
     /// -------------------------------
@@ -214,6 +220,14 @@ impl EnsmallenGraph {
     ///     this is the parameter that allows you to skip it.
     /// node_separator: str = "\t",
     ///      The expected separator for the node file.
+    /// numeric_node_ids: bool = False,
+    ///     Wether to load the Node Ids as numeric.
+    /// numeric_node_type_ids: bool = False,
+    ///     Wether to load the Node Type Ids as numeric.
+    /// numeric_edge_type_ids: bool = False,
+    ///     Wether to load the Edge Type Ids as numeric.
+    /// name: str = "Graph",
+    ///     The name of the graph to use.
     /// verbose: bool = True,
     ///     Wethever to load the files verbosely, showing a loading bar.
     ///

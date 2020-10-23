@@ -1,24 +1,23 @@
 use super::*;
 use indicatif::ProgressIterator;
-use roaring::RoaringBitmap;
 
 impl Graph {
     /// Return graph filtered by given weights range.
     ///
     /// # Arguments
-    ///
-    /// min_weight: Option<WeightT>,
-    ///     Minimum weight to use to filter edges.
-    /// max_weight: Option<WeightT>,
-    ///     Maximum weight to use to filter edges.
-    /// verbose: bool,
-    ///     Wether to show the loading bar.
+    /// 
+    /// * node_names: Option<Vec<String>> - The node names to keep.
+    /// * node_types: Option<Vec<String>> - The node types to keep.
+    /// * edge_types: Option<Vec<String>> - The edge types to keep.
+    /// * min_weight: Option<WeightT> - Minimum weight to use to filter edges.
+    /// * max_weight: Option<WeightT> - Maximum weight to use to filter edges.
+    /// * verbose: bool - Wether to show the loading bar.
     ///
     pub fn filter(
         &self,
-        nodes: Option<Vec<String>>,
-        _node_types: Option<Vec<String>>,
-        _edge_types: Option<Vec<String>>,
+        node_names: Option<Vec<String>>,
+        node_types: Option<Vec<String>>,
+        edge_types: Option<Vec<String>>,
         min_weight: Option<WeightT>,
         max_weight: Option<WeightT>,
         verbose: bool,
@@ -29,18 +28,18 @@ impl Graph {
             self.get_edges_number() as usize,
         );
 
-        let mut node_ids = RoaringBitmap::new();
-        if let Some(ns) = nodes {
-            node_ids.extend(
-                ns.iter()
-                    .map(|node_name| self.get_node_id(node_name))
-                    .collect::<Result<Vec<NodeT>, String>>()?,
-            );
-        }
+        let node_ids = self.get_filter_bitmap(node_names, node_types)?;
+        let edge_types_ids = match edge_types {
+            Some(ets) => Some(self.translate_edge_types(ets)?),
+            None => None,
+        };
 
         Graph::build_graph(
             self.get_edges_quadruples().progress_with(pb).filter_map(
                 |(_, src, dst, edge_type, weight)| {
+                    if !node_ids.contains(src) || !node_ids.contains(dst) {
+                        return None;
+                    }
                     if let (Some(_min), Some(w)) = (min_weight, weight) {
                         if _min > w {
                             return None;
@@ -48,6 +47,11 @@ impl Graph {
                     }
                     if let (Some(_max), Some(w)) = (max_weight, weight) {
                         if w >= _max {
+                            return None;
+                        }
+                    }
+                    if let Some(ets) = &edge_types_ids {
+                        if !ets.contains(&edge_type.unwrap()) {
                             return None;
                         }
                     }

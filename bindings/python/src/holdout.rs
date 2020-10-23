@@ -265,12 +265,12 @@ impl EnsmallenGraph {
     ///     The number of folds.
     /// k_index: int,
     ///     Which fold to use for the validation.
-    /// edge_types: List[str],
+    /// edge_types: List[str] = None,
     ///     Edge types to be selected when computing the folds 
     ///        (All the edge types not listed here will be always be used in the training set).
-    /// random_state: int,
+    /// random_state: int = 42,
     ///     The random_state (seed) to use for the holdout,
-    /// verbose: bool,
+    /// verbose: bool = True,
     ///     Wethever to show the loading bar.
     ///
     /// Raises
