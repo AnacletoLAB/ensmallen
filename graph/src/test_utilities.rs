@@ -217,15 +217,17 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         default_holdout_test_suite(graph, &train, &test)?;
     }
     // Testing negative edges generation
-    let negatives = graph.sample_negatives(4, graph.get_edges_number(), None, verbose)?;
-    validate_vocabularies(&negatives);
-    if !graph.has_edge_types() {
-        assert!(!graph.overlaps(&negatives)?);
-        assert!(!negatives.overlaps(&graph)?);
+    for only_from_same_component in &[true, false]{
+        let negatives = graph.sample_negatives(4, graph.get_edges_number(), None, *only_from_same_component, verbose)?;
+        validate_vocabularies(&negatives);
+        if !graph.has_edge_types() {
+            assert!(!graph.overlaps(&negatives)?);
+            assert!(!negatives.overlaps(&graph)?);
+        }
+        // Testing holdouts executed on negative edges.
+        let (neg_train, neg_test) = negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
+        default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
     }
-    // Testing holdouts executed on negative edges.
-    let (neg_train, neg_test) = negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
-    default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
     // Testing subgraph generation
     let expected_nodes = graph.get_not_singleton_nodes_number() / 10;
     let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;

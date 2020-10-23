@@ -5,7 +5,9 @@ use rand::seq::SliceRandom;
 use rand::SeedableRng;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
+use rayon::iter::IndexedParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
+use counter::Counter;
 use std::collections::HashSet;
 use std::iter::FromIterator;
 use vec_rand::{gen_random_vec, sample_uniform};
@@ -25,6 +27,7 @@ impl Graph {
     /// * `random_state`: EdgeT - random_state to use to reproduce negative edge set.
     /// * `negatives_number`: EdgeT - Number of negatives edges to include.
     /// * `seed_graph`: Option<Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
+    /// * `only_from_same_component`: bool - Wether to sample negative edges only from nodes that are from the same component.
     /// * `verbose`: bool - Wether to show the loading bar.
     ///
     pub fn sample_negatives(
@@ -32,6 +35,7 @@ impl Graph {
         mut random_state: EdgeT,
         negatives_number: EdgeT,
         seed_graph: Option<&Graph>,
+        only_from_same_component: bool,
         verbose: bool,
     ) -> Result<Graph, String> {
         if negatives_number == 0 {
@@ -60,13 +64,28 @@ impl Graph {
         // edges cannot have an edge type.
         let nodes_number = self.get_nodes_number() as EdgeT;
 
+        // Wether to sample negative edges only from the same connected component.
+        let (node_components, mut complete_edges_number) = if only_from_same_component {
+            let node_components = self.get_node_components_vector(verbose);
+            println!("{:?}", node_components);
+            let complete_edges_number: EdgeT = Counter::init(node_components.clone()).into_iter().map(|(_, nodes_number):(_, &usize)|{
+                println!("{}", nodes_number);
+                (*nodes_number * (*nodes_number - 1)) as EdgeT
+            }).sum();
+            (Some(node_components), complete_edges_number)
+        } else {
+            (None, nodes_number * (nodes_number - 1))
+        };
+
         // Here we compute the number of edges that a complete graph would have if it had the same number of nodes
         // of the current graph. Moreover, the complete graph will have selfloops IFF the current graph has at
         // least one of them.
-        let mut complete_edges_number: EdgeT = nodes_number * (nodes_number - 1);
         if self.has_selfloops() {
             complete_edges_number += nodes_number;
         }
+
+        println!("complete_edges_number: {}, {}, {}", complete_edges_number, self.unique_edges_number, negatives_number);
+
         // Now we compute the maximum number of negative edges that we can actually generate
         let max_negative_edges = complete_edges_number - self.unique_edges_number;
 
@@ -100,16 +119,18 @@ impl Graph {
         random_state ^= SEED_XOR as EdgeT;
 
         let mut negative_edges_bitmap = RoaringTreemap::new();
-        let chunk_size = max!(4096, negatives_number / 100);
         let mut last_length = 0;
 
         // randomly extract negative edges until we have the choosen number
         while negative_edges_bitmap.len() < negatives_number {
             // generate two random_states for reproducibility porpouses
-            random_state = rand_u64(random_state);
+            let src_random_state = rand_u64(random_state);
+            let dst_random_state = rand_u64(src_random_state);
+            random_state = rand_u64(dst_random_state);
+            
 
             let edges_to_sample: usize = min!(
-                chunk_size,
+                negatives_number,
                 match self.is_directed() {
                     true => negatives_number - negative_edges_bitmap.len(),
                     false => ((negatives_number - negative_edges_bitmap.len()) as f64 / 2.0).ceil()
@@ -119,15 +140,22 @@ impl Graph {
 
             // generate the random edge-sources
             negative_edges_bitmap.extend(
-                gen_random_vec(edges_to_sample, random_state)
+                gen_random_vec(edges_to_sample, src_random_state)
                     .into_par_iter()
+                    .zip(
+                        gen_random_vec(edges_to_sample, dst_random_state).into_par_iter()
+                    )
                     // convert them to plain (src, dst)
-                    .filter_map(|edge| {
-                        let (mut src, mut dst) = self.decode_edge(edge);
-                        src = sample_uniform(nodes_number as u64, src as u64) as NodeT;
-                        dst = sample_uniform(nodes_number as u64, dst as u64) as NodeT;
+                    .filter_map(|(src_seed, dst_seed)| {
+                        let src = sample_uniform(nodes_number as u64, src_seed as u64) as NodeT;
+                        let dst = sample_uniform(nodes_number as u64, dst_seed as u64) as NodeT;
                         if let Some(sn) = &seed_nodes {
                             if !sn.contains(src) && !sn.contains(dst) {
+                                return None;
+                            }
+                        }
+                        if let Some(ncs) = &node_components{
+                            if ncs[src as usize] != ncs[dst as usize]{
                                 return None;
                             }
                         }
