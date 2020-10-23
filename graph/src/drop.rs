@@ -1,4 +1,5 @@
 use super::*;
+use indicatif::ProgressIterator;
 
 /// # Drop.
 impl Graph {
@@ -51,5 +52,60 @@ impl Graph {
         let mut new = self.clone();
         new.node_types = None;
         Ok(new)
+    }
+
+    /// Returns a **NEW** Graph that have no singletons.
+    ///
+    /// If the given graph does not have singletons, a cloned one is returned.
+    ///
+    /// # Arguments
+    /// ---------------------
+    /// `verbose`: bool - Wether to display a loading bar.
+    ///
+    pub fn drop_singletons(&self, verbose: bool) -> Result<Graph, String> {
+        if !self.has_singletons() {
+            return Ok(self.clone());
+        }
+        let pb_edges = get_loading_bar(
+            verbose,
+            "Building edges of graph without singletons",
+            self.get_edges_number() as usize,
+        );
+        let pb_nodes = get_loading_bar(
+            verbose,
+            "Building nodes of graph without singletons",
+            self.get_nodes_number() as usize,
+        );
+        Graph::from_string_sorted(
+            self.get_edges_string_quadruples()
+                .progress_with(pb_edges)
+                .filter_map(|(_, src_name, dst_name, edge_type, weight)| {
+                    let src = self.get_node_id(&src_name).unwrap();
+                    let dst = self.get_node_id(&dst_name).unwrap();
+                    match self.directed || src <= dst {
+                        true => Some(Ok((src_name, dst_name, edge_type, weight))),
+                        false => None,
+                    }
+                }),
+            Some(
+                self.get_nodes_names_iter()
+                    .progress_with(pb_nodes)
+                    .filter_map(|(node_name, node_type)| {
+                        match self.is_singleton_string(&node_name).unwrap() {
+                            true => None,
+                            false => Some(Ok((node_name, node_type))),
+                        }
+                    }),
+            ),
+            self.directed,
+            false,
+            false,
+            self.get_edges_number(),
+            self.get_nodes_number() - self.get_singleton_nodes_number(),
+            false,
+            false,
+            false,
+            self.name.clone(),
+        )
     }
 }

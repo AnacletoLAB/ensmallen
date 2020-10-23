@@ -101,7 +101,7 @@ impl Graph {
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
             .map(|node_id| (self.get_node_degree(node_id), node_id))
             .collect();
-        nodes_degrees.sort();
+        nodes_degrees.sort_unstable();
         nodes_degrees.reverse();
         nodes_degrees[0..k as usize]
             .iter()
@@ -303,6 +303,38 @@ impl Graph {
     /// Returns number of nodes in the graph.
     pub fn get_nodes_number(&self) -> NodeT {
         self.nodes.len() as NodeT
+    }
+
+    /// Return the nodes components vector.
+    ///
+    /// # Arguments
+    /// * `verbose`: bool - wether to show the loading bar.
+    pub fn get_node_components_vector(&self, verbose: bool) -> Vec<NodeT> {
+        let mut node_components: Vec<NodeT> =
+            vec![self.get_nodes_number(); self.get_nodes_number() as usize];
+        let (_, components) = self.spanning_tree(42, false, &None, verbose);
+        components
+            .iter()
+            .enumerate()
+            .for_each(|(component_number, component)| {
+                component.iter().for_each(|node_id| {
+                    node_components[node_id as usize] = component_number as NodeT;
+                })
+            });
+        // Handling singletons
+        if self.has_singletons() {
+            let mut singleton_number = components.len() as NodeT;
+            node_components
+                .iter_mut()
+                .enumerate()
+                .for_each(|(node_id, component_number)| {
+                    if self.is_singleton(node_id as NodeT) {
+                        *component_number = singleton_number;
+                        singleton_number += 1;
+                    }
+                });
+        }
+        node_components
     }
 
     /// Returns number of edges in the graph.

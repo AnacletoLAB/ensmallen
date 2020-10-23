@@ -1,5 +1,6 @@
 use super::types::*;
 use super::*;
+use itertools::Itertools;
 use rayon::prelude::*;
 use std::collections::HashMap as DefaultHashMap;
 use std::collections::{HashMap, HashSet};
@@ -307,13 +308,20 @@ impl Graph {
     }
 
     /// Returns number of connected components in graph.
-    pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT) {
+    pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
         let (tree, components) = self.spanning_tree(0, false, &None, verbose);
         let connected_components_number = self.get_nodes_number() - tree.len() as NodeT;
         (
             connected_components_number as NodeT,
             match components.iter().map(|c| c.len()).max() {
                 Some(max_components_number) => max_components_number,
+                None => 1,
+            } as NodeT,
+            match components.iter().map(|c| c.len()).min() {
+                Some(min_components_number) => match self.has_singletons() {
+                    true => 1,
+                    false => min_components_number,
+                },
                 None => 1,
             } as NodeT,
         )
@@ -397,12 +405,45 @@ impl Graph {
         report
     }
 
+    fn shared_components_number(&self, nodes_components: &[NodeT], other: &Graph) -> NodeT {
+        other
+            .get_nodes_names_iter()
+            .filter_map(|(node_name, _)| match self.get_node_id(&node_name) {
+                Ok(node_id) => Some(nodes_components[node_id as usize]),
+                Err(_) => None,
+            })
+            .unique()
+            .count() as NodeT
+    }
+
+    fn merged_components_number(&self, nodes_components: &[NodeT], other: &Graph) -> NodeT {
+        other
+            .get_edges_string_iter()
+            .filter_map(|(_, src_name, dst_name)| {
+                match (self.get_node_id(&src_name), self.get_node_id(&dst_name)) {
+                    (Ok(src_id), Ok(dst_id)) => {
+                        let src_component_number = nodes_components[src_id as usize];
+                        let dst_component_number = nodes_components[dst_id as usize];
+                        match src_component_number == dst_component_number {
+                            true => None,
+                            false => Some(vec![src_component_number, dst_component_number]),
+                        }
+                    }
+                    _ => None,
+                }
+            })
+            .flatten()
+            .unique()
+            .count() as NodeT
+    }
+
     /// Return rendered textual report about the graph overlaps.
     ///
     /// # Arguments
     ///
     /// - `other`: &Graph - graph to create overlap report with.
-    pub fn overlap_textual_report(&self, other: &Graph) -> Result<String, String> {
+    /// - `verbose`: bool - wether to shor the loading bars.
+    pub fn overlap_textual_report(&self, other: &Graph, verbose: bool) -> Result<String, String> {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;
         // Get overlapping nodes
@@ -413,19 +454,87 @@ impl Graph {
         // Get overlapping edges
         let overlapping_edges_number = self
             .get_edges_par_string_triples()
-            .filter(|(_, src_name, dst_name, edge_type_name)| other.has_edge_string(src_name, dst_name, edge_type_name.as_ref()))
+            .filter(|(_, src_name, dst_name, edge_type_name)| {
+                other.has_edge_string(src_name, dst_name, edge_type_name.as_ref())
+            })
             .count();
+        // Get number of overlapping components
+        let first_nodes_components = self.get_node_components_vector(verbose);
+        let second_nodes_components = other.get_node_components_vector(verbose);
+        let first_components_number = first_nodes_components.iter().unique().count() as NodeT;
+        let second_components_number = second_nodes_components.iter().unique().count() as NodeT;
+        let first_shared_components_number =
+            self.shared_components_number(&first_nodes_components, other);
+        let second_shared_components_number =
+            other.shared_components_number(&second_nodes_components, self);
+        // Get number of overlapping components
+        let first_merged_components_number =
+            self.merged_components_number(&first_nodes_components, other);
+        let second_merged_components_number =
+            other.merged_components_number(&second_nodes_components, self);
         // Building up the report
         Ok(format!(
             concat!(
                 "The graph {first_graph} and the graph {second_graph} share {nodes_number} nodes and {edges_number} edges. ",
-                "By percent, {first_graph} shares {first_node_percentage:.2}% of its nodes and {first_edge_percentage:.2}% of its edges with {second_graph}. ",
-                "{second_graph} shares {second_node_percentage:.2}% of its nodes and {second_edge_percentage:.2}% of its edges with {first_graph}."
+                "By percent, {first_graph} shares {first_node_percentage:.2}% ({nodes_number} out of {first_nodes}) of its nodes and {first_edge_percentage:.2}% ({edges_number} out of {first_edges}) of its edges with {second_graph}. ",
+                "{second_graph} shares {second_node_percentage:.2}% ({nodes_number} out of {second_nodes}) of its nodes and {second_edge_percentage:.2}% ({edges_number} out of {second_edges}) of its edges with {first_graph}. ",
+                "Nodes from {first_graph} appear in {first_components_statement} components of {second_graph}{first_merged_components_statement}. ",
+                "Similarly, nodes from {second_graph} appear in {second_components_statement} components of {first_graph}{second_merged_components_statement}. ",
             ),
             first_graph=self.get_name(),
             second_graph=other.get_name(),
             nodes_number=overlapping_nodes_number,
             edges_number=overlapping_edges_number,
+            first_nodes=self.get_nodes_number(),
+            second_nodes=other.get_nodes_number(),
+            first_edges=match self.directed {
+                true => self.get_edges_number(),
+                false => self.get_undirected_edges_number(),
+            },
+            second_edges=match other.directed {
+                true => other.get_edges_number(),
+                false => other.get_undirected_edges_number(),
+            },
+            first_components_statement = match second_shared_components_number== second_components_number{
+                true=> "all the".to_owned(),
+                false => format!(
+                    "{second_shared_components_number} of the {second_components_number}",
+                    second_shared_components_number=second_shared_components_number,
+                    second_components_number=second_components_number
+                )
+            },
+            second_components_statement = match first_shared_components_number== first_components_number{
+                true=> "all the".to_owned(),
+                false => format!(
+                    "{first_shared_components_number} of the {first_components_number}",
+                    first_shared_components_number=first_shared_components_number,
+                    first_components_number=first_components_number
+                )
+            },
+            first_merged_components_statement = match second_components_number > 1 {
+                false=>"".to_owned(),
+                true=>format!(
+                    ": of these, {edges_number} connected by edges of {first_graph}",
+                    first_graph=self.name,
+                    edges_number= match second_merged_components_number {
+                        d if d==0=>"none are".to_owned(),
+                        d if d==1=>"one is".to_owned(),
+                        d if d==second_components_number=>"all components are".to_owned(),
+                        _ => format!("{} components are", second_merged_components_number)
+                    })
+                },
+            second_merged_components_statement = match first_components_number > 1 {
+                false=>"".to_owned(),
+                true=>format!(
+                    ": of these, {edges_number} connected by edges of {second_graph}",
+                    second_graph=other.name,
+                    edges_number= match first_merged_components_number {
+                        d if d==0=>"none are".to_owned(),
+                        d if d==1=>"one is".to_owned(),
+                        d if d==first_components_number=>"all components are".to_owned(),
+                        _ => format!("{} components are", first_merged_components_number)
+                    })
+                },
             first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),
             second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_nodes_number() as f64),
             first_edge_percentage=100.0*(overlapping_edges_number as f64 / self.get_edges_number() as f64),
@@ -433,15 +542,39 @@ impl Graph {
         ))
     }
 
+    /// Return formatted node list.
+    ///
+    /// # Arguments
+    /// * `node_list`: &[NodeT] - list of nodes to be formatted.
+    pub fn format_node_list(&self, node_list: &[NodeT]) -> String {
+        let central_nodes: String = node_list[0..node_list.len() - 1]
+            .iter()
+            .map(|node_id| {
+                format!(
+                    "{node_name} (degree {node_degree})",
+                    node_name = self.get_node_name(*node_id).unwrap(),
+                    node_degree = self.get_node_degree(*node_id)
+                )
+            })
+            .collect::<Vec<String>>()
+            .join(", ");
+        format!(
+            "{central_nodes} and {node_name} (degree {node_degree})",
+            central_nodes = central_nodes,
+            node_name = self.get_node_name(*node_list.last().unwrap()).unwrap(),
+            node_degree = self.get_node_degree(*node_list.last().unwrap())
+        )
+    }
+
     /// Return rendered textual report of the graph.
     pub fn textual_report(&self) -> String {
-        let (connected_components_number, maximum_connected_component) =
+        let (connected_components_number, maximum_connected_component, minimum_connected_component) =
             self.connected_components_number(true);
 
         format!(
             concat!(
                 "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}. ",
-                "The graph is {quantized_density} as it has a density of {density:.5} and has {components_number} connected components, where the component with most nodes has {maximum_connected_component} nodes. ",
+                "The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. ",
                 "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2} and the node degree mode is {mode_node_degree}. ",
                 "The top {most_common_nodes_number} most central nodes are {central_nodes}."
             ),
@@ -490,22 +623,20 @@ impl Graph {
                 _ => unreachable!("Unreacheable density case")
             },
             density=self.density(),
-            components_number=connected_components_number,
-            maximum_connected_component=maximum_connected_component,
+            connected_components=match connected_components_number> 1{
+                true=>format!(
+                    "has {components_number} connected components, where the component with most nodes has {maximum_connected_component} nodes and the component with least nodes has {minimum_connected_component} nodes",
+                    components_number=connected_components_number,
+                    maximum_connected_component=maximum_connected_component,
+                    minimum_connected_component=minimum_connected_component
+                ),
+                false=>"is connected, as it has a single component".to_owned()
+            },
             median_node_degree=self.degrees_median(),
             mean_node_degree=self.degrees_mean(),
             mode_node_degree=self.degrees_mode(),
             most_common_nodes_number=min!(5, self.get_nodes_number()),
-            central_nodes = {
-                let top_k = self.get_top_k_central_nodes(min!(5, self.get_nodes_number()));
-                let central_nodes:String = top_k[0..top_k.len()-1].iter().map(|node_id| format!("{node_name} (degree {node_degree})", node_name=self.get_node_name(*node_id).unwrap(), node_degree=self.get_node_degree(*node_id))).collect::<Vec<String>>().join(", ");
-                format!(
-                    "{central_nodes} and {node_name} (degree {node_degree})",
-                    central_nodes=central_nodes,
-                    node_name=self.get_node_name(*top_k.last().unwrap()).unwrap(),
-                    node_degree=self.get_node_degree(*top_k.last().unwrap())
-                )
-            }
+            central_nodes = self.format_node_list(self.get_top_k_central_nodes(min!(5, self.get_nodes_number())).as_slice())
         )
     }
 }
