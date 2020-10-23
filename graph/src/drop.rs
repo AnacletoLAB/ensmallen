@@ -92,7 +92,7 @@ impl Graph {
             ),
             self.directed,
             false,
-            false,
+            true,
             self.get_edges_number(),
             self.get_nodes_number() - self.get_singleton_nodes_number(),
             false,
