@@ -67,9 +67,7 @@ impl Graph {
         // Wether to sample negative edges only from the same connected component.
         let (node_components, mut complete_edges_number) = if only_from_same_component {
             let node_components = self.get_node_components_vector(verbose);
-            println!("{:?}", node_components);
             let complete_edges_number: EdgeT = Counter::init(node_components.clone()).into_iter().map(|(_, nodes_number):(_, &usize)|{
-                println!("{}", nodes_number);
                 (*nodes_number * (*nodes_number - 1)) as EdgeT
             }).sum();
             (Some(node_components), complete_edges_number)
@@ -84,7 +82,6 @@ impl Graph {
             complete_edges_number += nodes_number;
         }
 
-        println!("complete_edges_number: {}, {}, {}", complete_edges_number, self.unique_edges_number, negatives_number);
 
         // Now we compute the maximum number of negative edges that we can actually generate
         let max_negative_edges = complete_edges_number - self.unique_edges_number;
@@ -717,7 +714,7 @@ impl Graph {
     pub fn kfold(
         &self,
         edge_types: Option<Vec<String>>,
-        k: u64,
+        k: EdgeT,
         k_index: u64,
         random_state: EdgeT,
         verbose: bool,
@@ -731,39 +728,56 @@ impl Graph {
 
         // If edge types is not None, to compute the chunks only use the edges
         // of the chosen edge_types
-        let mut indices = if let (Some(_edge_types), Some(ets)) = (edge_types, &self.edge_types) {
-            if _edge_types.is_empty() {
+        let mut indices = if let Some(ets) = edge_types {
+            if ets.is_empty() {
                 return Err(String::from(
                     "Required edge types must be a non-empty list.",
                 ));
             }
+            if !self.has_edge_types(){
+                return Err(String::from(
+                    "Edge types-based k-fold requested but the edge types are not available in this graph."
+                ));
+            }
 
             let edge_type_ids: HashSet<EdgeTypeT> = self
-                .translate_edge_types(_edge_types)?
+                .translate_edge_types(ets)?
                 .iter()
                 .cloned()
                 .collect::<HashSet<EdgeTypeT>>();
 
-            (0..self.get_edges_number())
-            .filter(|edge_id| {
-                edge_type_ids.contains(&ets.ids[*edge_id as usize])
+            self.get_edges_triples()
+            .filter_map(|(edge_id, src, dst , edge_type)| {
+                if !self.directed && src > dst || !edge_type_ids.contains(&edge_type.unwrap()){
+                    return None;
+                }
+                Some(edge_id)
             }).collect::<Vec<EdgeT>>()
         } else {
-            (0..self.get_edges_number()).collect::<Vec<EdgeT>>()
+            self.get_edges_iter().filter_map(|(edge_id, src, dst)| {
+                if !self.directed && src > dst{
+                    return None;
+                }
+                Some(edge_id)
+            }).collect::<Vec<EdgeT>>()
         };
+
+        if k >= indices.len() as EdgeT {
+            return Err(String::from("Cannot do a number of k-fold greater than the number of available edges."));
+        }
 
         // shuffle the indices
         let mut rng = SmallRng::seed_from_u64(random_state ^ SEED_XOR as EdgeT);
         indices.shuffle(&mut rng);
         // Get the k_index-th chunk
-        let chunk_size = (self.get_edges_number() as f64 / k as f64).ceil() as u64;
-        let start = k_index*chunk_size;
-        let end = max!(self.get_edges_number(), (k_index + 1)*chunk_size);
+        let chunk_size = indices.len() as f64 / k as f64;
+        let start = (k_index as f64*chunk_size).ceil() as EdgeT;
+        let end = min!(indices.len() as EdgeT, (((k_index + 1) as f64)*chunk_size).ceil() as EdgeT);
         let chunk = RoaringTreemap::from_iter(indices[start as usize..end as usize].iter().cloned());
         // Create the two graphs
         self.holdout(
             random_state,
-            chunk_size,
+            end - start,
             false,
             |edge_id, _, _, _| chunk.contains(edge_id),
             verbose,

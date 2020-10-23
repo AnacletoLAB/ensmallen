@@ -197,7 +197,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, negatives_number, *, random_state, seed_graph, verbose)"]
+    #[text_signature = "($self, negatives_number, *, random_state, seed_graph, only_from_same_component, verbose)"]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
     /// The graph generated may be used as a testing negatives partition to be
@@ -214,6 +214,9 @@ impl EnsmallenGraph {
     /// seed_graph: EnsmallenGraph = None,
     ///     The (optional) graph whose nodes are used as sources or destinations
     ///     of the generated negative edges.
+    /// only_from_same_component: bool = True,
+    ///     Wether to sample negative edges only from the same node component.
+    ///     This avoids generating topologically impossible negative edges.
     /// verbose: bool = True,
     ///     Wethever to show the loading bar.
     ///     The loading bar will only be visible in console.
@@ -235,7 +238,7 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["random_state", "verbose", "seed_graph"]),
+            build_walk_parameters_list(&["random_state", "verbose", "seed_graph", "only_from_same_component"]),
         ))?;
 
         let seed_graph = pyex!(extract_value!(kwargs, "seed_graph", EnsmallenGraph))?;
@@ -250,6 +253,9 @@ impl EnsmallenGraph {
                     Some(sg) => Some(&sg.graph),
                     None => None,
                 },
+                pyex!(extract_value!(kwargs, "only_from_same_component", bool))?
+                    .or_else(|| Some(true))
+                    .unwrap(),
                 pyex!(extract_value!(kwargs, "verbose", bool))?
                     .or_else(|| Some(true))
                     .unwrap()
