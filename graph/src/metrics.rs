@@ -307,12 +307,16 @@ impl Graph {
     }
 
     /// Returns number of connected components in graph.
-    pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT) {
+    pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
         let (tree, components) = self.spanning_tree(0, false, &None, verbose);
         let connected_components_number = self.get_nodes_number() - tree.len() as NodeT;
         (
             connected_components_number as NodeT,
             match components.iter().map(|c| c.len()).max() {
+                Some(max_components_number) => max_components_number,
+                None => 1,
+            } as NodeT,
+            match components.iter().map(|c| c.len()).min() {
                 Some(max_components_number) => max_components_number,
                 None => 1,
             } as NodeT,
@@ -441,13 +445,13 @@ impl Graph {
 
     /// Return rendered textual report of the graph.
     pub fn textual_report(&self) -> String {
-        let (connected_components_number, maximum_connected_component) =
+        let (connected_components_number, maximum_connected_component, minimum_connected_component) =
             self.connected_components_number(true);
 
         format!(
             concat!(
                 "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}. ",
-                "The graph is {quantized_density} as it has a density of {density:.5} and has {components_number} connected components, where the component with most nodes has {maximum_connected_component} nodes. ",
+                "The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. ",
                 "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2} and the node degree mode is {mode_node_degree}. ",
                 "The top {most_common_nodes_number} most central nodes are {central_nodes}."
             ),
@@ -496,8 +500,15 @@ impl Graph {
                 _ => unreachable!("Unreacheable density case")
             },
             density=self.density(),
-            components_number=connected_components_number,
-            maximum_connected_component=maximum_connected_component,
+            connected_components=match connected_components_number> 1{
+                true=>format!(
+                    "has {components_number} connected components, where the component with most nodes has {maximum_connected_component} nodes and the component with least nodes has {minimum_connected_component} nodes",
+                    components_number=connected_components_number,
+                    maximum_connected_component=maximum_connected_component,
+                    minimum_connected_component=minimum_connected_component
+                ),
+                false=>"is connected, as it has a single component".to_owned()
+            },
             median_node_degree=self.degrees_median(),
             mean_node_degree=self.degrees_mean(),
             mode_node_degree=self.degrees_mode(),
