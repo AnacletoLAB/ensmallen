@@ -118,7 +118,7 @@ impl Graph {
     /// * `node_types` : Option<Vec<String>> - The types of the nodes of which components to keep
     /// * `edge_types` : Option<Vec<String>> - The types of the edges of which components to keep
     pub fn drop_components(
-        &mut self, 
+        &self, 
         node_names: Option<Vec<String>>,
         node_types: Option<Vec<String>>,
         edge_types: Option<Vec<String>>,
