@@ -79,7 +79,14 @@ impl Graph {
         Graph::from_string_sorted(
             self.get_edges_string_quadruples()
                 .progress_with(pb_edges)
-                .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight))),
+                .filter_map(|(_, src_name, dst_name, edge_type, weight)| {
+                    let src = self.get_node_id(&src_name).unwrap();
+                    let dst = self.get_node_id(&dst_name).unwrap();
+                    match self.directed || src <= dst {
+                        true => Some(Ok((src_name, dst_name, edge_type, weight))),
+                        false => None,
+                    }
+                }),
             Some(
                 self.get_nodes_names_iter()
                     .progress_with(pb_nodes)
@@ -92,7 +99,7 @@ impl Graph {
             ),
             self.directed,
             false,
-            true,
+            false,
             self.get_edges_number(),
             self.get_nodes_number() - self.get_singleton_nodes_number(),
             false,

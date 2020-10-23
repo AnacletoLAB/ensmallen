@@ -421,13 +421,17 @@ impl Graph {
         Ok(format!(
             concat!(
                 "The graph {first_graph} and the graph {second_graph} share {nodes_number} nodes and {edges_number} edges. ",
-                "By percent, {first_graph} shares {first_node_percentage:.2}% of its nodes and {first_edge_percentage:.2}% of its edges with {second_graph}. ",
-                "{second_graph} shares {second_node_percentage:.2}% of its nodes and {second_edge_percentage:.2}% of its edges with {first_graph}."
+                "By percent, {first_graph} shares {first_node_percentage:.2}% ({nodes_number} out of {first_nodes}) of its nodes and {first_edge_percentage:.2}% ({edges_number} out of {first_edges}) of its edges with {second_graph}. ",
+                "{second_graph} shares {second_node_percentage:.2}% ({nodes_number} out of {second_nodes}) of its nodes and {second_edge_percentage:.2}% ({edges_number} out of {second_edges}) of its edges with {first_graph}."
             ),
             first_graph=self.get_name(),
             second_graph=other.get_name(),
             nodes_number=overlapping_nodes_number,
             edges_number=overlapping_edges_number,
+            first_nodes=self.get_nodes_number(),
+            second_nodes=other.get_nodes_number(),
+            first_edges=self.get_edges_number(),
+            second_edges=other.get_edges_number(),
             first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),
             second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_nodes_number() as f64),
             first_edge_percentage=100.0*(overlapping_edges_number as f64 / self.get_edges_number() as f64),
