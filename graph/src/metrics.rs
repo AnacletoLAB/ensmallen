@@ -514,25 +514,25 @@ impl Graph {
             first_merged_components_statement = match second_components_number > 1 {
                 false=>"".to_owned(),
                 true=>format!(
-                    "of these components, {edges_number} connected by edges of {first_graph}",
+                    ": of these, {edges_number} connected by edges of {first_graph}",
                     first_graph=self.name,
                     edges_number= match second_merged_components_number {
                         d if d==0=>"none are".to_owned(),
                         d if d==1=>"one is".to_owned(),
-                        d if d==second_components_number=>"all are".to_owned(),
-                        _ => format!("{} are", second_merged_components_number)
+                        d if d==second_components_number=>"all components are".to_owned(),
+                        _ => format!("{} components are", second_merged_components_number)
                     })
                 },
             second_merged_components_statement = match first_components_number > 1 {
                 false=>"".to_owned(),
                 true=>format!(
-                    "of these components, {edges_number} connected by edges of {second_graph}",
+                    ": of these, {edges_number} connected by edges of {second_graph}",
                     second_graph=other.name,
                     edges_number= match first_merged_components_number {
                         d if d==0=>"none are".to_owned(),
                         d if d==1=>"one is".to_owned(),
-                        d if d==first_components_number=>"all are".to_owned(),
-                        _ => format!("{} are", first_merged_components_number)
+                        d if d==first_components_number=>"all components are".to_owned(),
+                        _ => format!("{} components are", first_merged_components_number)
                     })
                 },
             first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),
