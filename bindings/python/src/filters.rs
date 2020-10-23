@@ -20,12 +20,18 @@ impl EnsmallenGraph {
     /// The filtered graph.
     pub fn filter_weights(
         &self,
+        nodes: Option<Vec<String>>,
+        node_types: Option<Vec<String>>,
+        edge_types: Option<Vec<String>>,
         min_weight: Option<WeightT>,
         max_weight: Option<WeightT>,
         verbose: Option<bool>,
     ) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pyex!(self.graph.filter_weights(
+            graph: pyex!(self.graph.filter(
+                nodes,
+                node_types,
+                edge_types,
                 min_weight,
                 max_weight,
                 verbose.unwrap_or(true),

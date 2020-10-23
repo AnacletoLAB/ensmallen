@@ -213,35 +213,41 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             graph.connected_components_number(false),
             train.connected_components_number(false)
         );
-        
+
         default_holdout_test_suite(graph, &train, &test)?;
     }
 
     // test the kfold
     let k = 10;
     for i in 0..k {
-        let (train, test) = graph.kfold(None, k, i, 42, false)?;
-        println!("{}, {}, {}", test.get_edges_number(), graph.get_edges_number(), graph.get_edges_number()/k);
-        assert!(test.get_edges_number() <= graph.get_edges_number()/k+1);
+        let (train, test) = graph.kfold(k, i, None, 42, false)?;
+        assert!(test.get_edges_number() <= graph.get_edges_number() / k + 1);
         default_holdout_test_suite(graph, &train, &test)?;
     }
     if let Some(edge_t) = graph.get_edge_type_string(0) {
         for i in 0..k {
-            let (train, test) = graph.kfold(Some(vec![edge_t.clone()]), k, i, 1337, false)?;
+            let (train, test) = graph.kfold(k, i, Some(vec![edge_t.clone()]), 1337, false)?;
             default_holdout_test_suite(graph, &train, &test)?;
         }
     }
 
     // Testing negative edges generation
-    for only_from_same_component in &[true, false]{
-        let negatives = graph.sample_negatives(4, graph.get_edges_number(), None, *only_from_same_component, verbose)?;
+    for only_from_same_component in &[true, false] {
+        let negatives = graph.sample_negatives(
+            4,
+            graph.get_edges_number(),
+            None,
+            *only_from_same_component,
+            verbose,
+        )?;
         validate_vocabularies(&negatives);
         if !graph.has_edge_types() {
             assert!(!graph.overlaps(&negatives)?);
             assert!(!negatives.overlaps(&graph)?);
         }
         // Testing holdouts executed on negative edges.
-        let (neg_train, neg_test) = negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
+        let (neg_train, neg_test) =
+            negatives.random_holdout(32, 0.8, false, None, None, verbose)?;
         default_holdout_test_suite(&negatives, &neg_train, &neg_test)?;
     }
     // Testing subgraph generation
@@ -249,12 +255,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     let subgraph = graph.random_subgraph(6, expected_nodes, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
     assert!(subgraph.get_not_singleton_nodes_number() <= expected_nodes + 1);
-    // Testing edge-type based subgraph
-    if let Some(ets) = &graph.edge_types {
-        let edge_type = ets.translate(graph.get_edge_type(0)?);
-        let edge_type_subgraph = graph.edge_types_subgraph(vec![edge_type.to_string()], verbose);
-        assert_eq!(edge_type_subgraph.is_ok(), graph.has_edge_types());
-    }
 
     // Testing writing out graph to file
     let node_file = random_path();

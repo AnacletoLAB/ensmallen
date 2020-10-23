@@ -1,5 +1,6 @@
 use super::*;
 use indicatif::ProgressIterator;
+use roaring::RoaringBitmap;
 
 impl Graph {
     /// Return graph filtered by given weights range.
@@ -13,17 +14,29 @@ impl Graph {
     /// verbose: bool,
     ///     Wether to show the loading bar.
     ///
-    pub fn filter_weights(
+    pub fn filter(
         &self,
+        nodes: Option<Vec<String>>,
+        _node_types: Option<Vec<String>>,
+        _edge_types: Option<Vec<String>>,
         min_weight: Option<WeightT>,
         max_weight: Option<WeightT>,
         verbose: bool,
     ) -> Result<Graph, String> {
         let pb = get_loading_bar(
             verbose,
-            "Building weight filtered graph",
+            format!("Building filtered {}", self.name).as_ref(),
             self.get_edges_number() as usize,
         );
+
+        let mut node_ids = RoaringBitmap::new();
+        if let Some(ns) = nodes {
+            node_ids.extend(
+                ns.iter()
+                    .map(|node_name| self.get_node_id(node_name))
+                    .collect::<Result<Vec<NodeT>, String>>()?,
+            );
+        }
 
         Graph::build_graph(
             self.get_edges_quadruples().progress_with(pb).filter_map(
