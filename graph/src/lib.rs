@@ -46,6 +46,7 @@ mod walks;
 mod walks_parameters;
 mod modifiers;
 mod filters;
+mod bitmaps;
 
 pub mod test_utilities;
 
