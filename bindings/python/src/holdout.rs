@@ -262,45 +262,4 @@ impl EnsmallenGraph {
             ))?,
         })
     }
-
-    #[args(py_kwargs = "**")]
-    #[text_signature = "($self, edge_types, *, verbose)"]
-    /// Returns Graph with only the required edge types.
-    ///
-    /// Parameters
-    /// -----------------------------
-    /// edge_types: List[str],
-    ///     Edge types to include in the graph.
-    /// verbose: bool = True,
-    ///     Wethever to show the loading bar.
-    ///
-    /// Raises
-    /// -----------------------------
-    /// TODO: Add the docstring for the raised exceptions.
-    ///
-    /// Returns
-    /// -----------------------------
-    /// Graph containing given amount of edges missing in the original graph.
-    fn edge_types_subgraph(
-        &self,
-        edge_types: Vec<String>,
-        py_kwargs: Option<&PyDict>,
-    ) -> PyResult<EnsmallenGraph> {
-        let py = pyo3::Python::acquire_gil();
-        let kwargs = normalize_kwargs!(py_kwargs, py.python());
-
-        pyex!(validate_kwargs(
-            kwargs,
-            build_walk_parameters_list(&["verbose"])
-        ))?;
-
-        Ok(EnsmallenGraph {
-            graph: pyex!(self.graph.edge_types_subgraph(
-                edge_types,
-                pyex!(extract_value!(kwargs, "verbose", bool))?
-                    .or_else(|| Some(true))
-                    .unwrap()
-            ))?,
-        })
-    }
 }

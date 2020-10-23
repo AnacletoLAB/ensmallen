@@ -634,69 +634,6 @@ impl Graph {
         )
     }
 
-    /// Returns subgraph with given set of edge types.
-    ///
-    /// This method creates a subset of the graph by keeping also the edges
-    /// of the given edge types.
-    ///
-    /// # Arguments
-    ///
-    /// * edge_types: Vec<String> - Vector of edge types to keep in the graph.
-    /// * `verbose`: bool - Wethever to show the loading bar.
-    ///
-    pub fn edge_types_subgraph(
-        &self,
-        edge_types: Vec<String>,
-        verbose: bool,
-    ) -> Result<Graph, String> {
-        if edge_types.is_empty() {
-            return Err(String::from(
-                "Required edge types must be a non-empty list.",
-            ));
-        }
-
-        let edge_type_ids: HashSet<EdgeTypeT> = self
-            .translate_edge_types(edge_types)?
-            .iter()
-            .cloned()
-            .collect::<HashSet<EdgeTypeT>>();
-
-        let pb = get_loading_bar(
-            verbose,
-            "Creating subgraph with given edge types",
-            self.get_edges_number() as usize,
-        );
-
-        let edges_number = edge_type_ids
-            .iter()
-            .map(|et| self.get_edge_type_number(*et) as EdgeT)
-            .sum();
-
-        Graph::build_graph(
-            (0..self.get_edges_number())
-                .progress_with(pb)
-                .filter_map(|edge_id| match &self.edge_types {
-                    Some(ets) => match edge_type_ids.contains(&ets.ids[edge_id as usize]) {
-                        true => Some(self.get_edge_quadruple(edge_id)),
-                        false => None,
-                    },
-                    None => None,
-                })
-                .map(Ok),
-            edges_number,
-            self.nodes.clone(),
-            self.node_types.clone(),
-            match &self.edge_types {
-                Some(ets) => Some(ets.vocabulary.clone()),
-                None => None,
-            },
-            self.directed,
-            format!("{} edge type subgraph", self.name.clone()),
-            false,
-        )
-    }
-
-
     /// Returns train and test graph following kfold validation scheme.
     ///
     /// The edges are splitted into k chunks. The k_index-th chunk is used to build
