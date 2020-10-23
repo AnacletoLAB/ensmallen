@@ -1,5 +1,6 @@
 use super::*;
 use indicatif::ProgressIterator;
+use roaring::RoaringBitmap;
 
 /// # Drop.
 impl Graph {
@@ -106,6 +107,88 @@ impl Graph {
             false,
             false,
             self.name.clone(),
+        )
+    }
+    
+    /// Drop all the components that are not connected to interesting
+    /// nodes and edges.
+    /// 
+    /// # Arguments
+    /// * `node_names` : Option<Vec<String>> - The name of the nodes of which components to keep
+    /// * `node_types` : Option<Vec<String>> - The types of the nodes of which components to keep
+    /// * `edge_types` : Option<Vec<String>> - The types of the edges of which components to keep
+    pub fn drop_components(
+        &mut self, 
+        node_names: Option<Vec<String>>,
+        node_types: Option<Vec<String>>,
+        edge_types: Option<Vec<String>>,
+        verbose: bool,
+    ) -> Result<Graph, String> {
+
+        let mut keep_components = RoaringBitmap::new();
+
+        let node_ids = self.get_filter_bitmap(node_names, node_types)?;
+        let components_vector = self.get_node_components_vector(verbose);
+        
+        keep_components.extend(node_ids.iter().map(|node_id|{
+           components_vector[node_id as usize]
+        }));
+
+        if let Some(ets) = edge_types {
+            let mut edge_types_ids = RoaringBitmap::new();
+            edge_types_ids.extend(self.translate_edge_types(ets)?.iter().map(|x| *x as u32));
+    
+            let pb = get_loading_bar(
+                verbose,
+                &format!(
+                    "Computing which components are to keep for the graph {}",
+                    &self.name
+                ),
+                self.get_edges_number() as usize,
+            );
+
+            self.get_edges_triples()
+                .progress_with(pb)
+                .for_each(|(_, src, dst, edge_type)| {
+                    if let Some(et) =  edge_type {
+                        if edge_types_ids.contains(et as u32) {
+                            keep_components.insert(components_vector[src as usize]);
+                            keep_components.insert(components_vector[dst as usize]);
+                        }
+                    }
+                });
+        }
+        let pb = get_loading_bar(
+            verbose,
+            &format!(
+                "Dropping components for the graph {}",
+                &self.name
+            ),
+            self.get_edges_number() as usize,
+        );
+        
+        Graph::build_graph(
+            self.get_edges_quadruples()
+            .progress_with(pb)
+            .filter_map(|(_, src, dst, edge_type, weight)|{
+                match keep_components.contains(components_vector[src as usize]) 
+                && 
+                keep_components.contains(components_vector[dst as usize]) {
+                    true => Some(Ok((src, dst, edge_type, weight))),
+                    false => None,
+                }
+            }),
+            self.get_edges_number(),
+            self.nodes.clone(),
+            self.node_types.clone(),
+            match &self.edge_types {
+                Some(ets) => Some(ets.vocabulary.clone()),
+                None => None,
+            },
+            self.directed,
+            self.name.clone(),
+            true
+            
         )
     }
 }

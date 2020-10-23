@@ -305,7 +305,10 @@ impl Graph {
         self.nodes.len() as NodeT
     }
 
-    /// Return the nodes components vector.
+    /// Return a vector with the components each node belongs to.
+    /// 
+    /// E.g. If we have two components [0, 2, 3] and [1, 4, 5] the result will look like
+    /// [0, 1, 0, 0, 1, 1]
     ///
     /// # Arguments
     /// * `verbose`: bool - wether to show the loading bar.

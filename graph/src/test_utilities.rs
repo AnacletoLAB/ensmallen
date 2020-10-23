@@ -217,6 +217,23 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         default_holdout_test_suite(graph, &train, &test)?;
     }
 
+    // test drop components
+    if graph.connected_components_number(false).0 > 1 {
+        let test = graph.drop_components(Some(vec![graph.nodes.translate(0).to_string()]), None, None, false)?;
+        assert_eq!(test.drop_singletons(false)?.connected_components_number(false).0, 1);
+
+        if let Some(nts) = &graph.node_types {
+            let test = graph.drop_components(None, Some(vec![nts.translate(0).to_string()]), None, false)?;
+            assert_eq!(test.drop_singletons(false)?.connected_components_number(false).0, 1);
+        }
+
+        if let Some(ets) = &graph.edge_types {
+            let test = graph.drop_components(None, None, Some(vec![ets.translate(0).to_string()]), false)?;
+            assert_eq!(test.drop_singletons(false)?.connected_components_number(false).0, 1);
+        }
+
+    }
+
     // test the kfold
     let k = 10;
     for i in 0..k {
