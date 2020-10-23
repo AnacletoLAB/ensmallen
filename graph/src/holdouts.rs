@@ -756,7 +756,7 @@ impl Graph {
         let mut rng = SmallRng::seed_from_u64(random_state ^ SEED_XOR as EdgeT);
         indices.shuffle(&mut rng);
         // Get the k_index-th chunk
-        let chunk_size = self.get_edges_number() / k;
+        let chunk_size = (self.get_edges_number() / k) + 1;
         let start = k_index*chunk_size;
         let end = max!(self.get_edges_number(), (k_index + 1)*chunk_size);
         let chunk = RoaringTreemap::from_iter(indices[start as usize..end as usize].iter().cloned());
