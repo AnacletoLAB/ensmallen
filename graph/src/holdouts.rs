@@ -650,9 +650,9 @@ impl Graph {
     ///
     pub fn kfold(
         &self,
-        edge_types: Option<Vec<String>>,
         k: EdgeT,
         k_index: u64,
+        edge_types: Option<Vec<String>>,
         random_state: EdgeT,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {

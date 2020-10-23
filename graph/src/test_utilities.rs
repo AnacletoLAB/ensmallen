@@ -220,19 +220,13 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     // test the kfold
     let k = 10;
     for i in 0..k {
-        let (train, test) = graph.kfold(None, k, i, 42, false)?;
-        println!(
-            "{}, {}, {}",
-            test.get_edges_number(),
-            graph.get_edges_number(),
-            graph.get_edges_number() / k
-        );
+        let (train, test) = graph.kfold(k, i, None, 42, false)?;
         assert!(test.get_edges_number() <= graph.get_edges_number() / k + 1);
         default_holdout_test_suite(graph, &train, &test)?;
     }
     if let Some(edge_t) = graph.get_edge_type_string(0) {
         for i in 0..k {
-            let (train, test) = graph.kfold(Some(vec![edge_t.clone()]), k, i, 1337, false)?;
+            let (train, test) = graph.kfold(k, i, Some(vec![edge_t.clone()]), 1337, false)?;
             default_holdout_test_suite(graph, &train, &test)?;
         }
     }
