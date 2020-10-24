@@ -16,7 +16,7 @@ impl Graph {
         &self,
         node_names: Option<Vec<String>>,
         node_types: Option<Vec<String>>
-    ) -> Result<RoaringBitmap, String> {
+    ) -> Result<Option<RoaringBitmap>, String> {
         let mut node_ids = RoaringBitmap::new();
 
         if let Some(ns) = node_names {
@@ -40,6 +40,6 @@ impl Graph {
             }));
         }
 
-        Ok(node_ids)
+        Ok(optionify!(node_ids))
     }
 }
