@@ -202,7 +202,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
 
-    // test get_edge_id_string
+    // Test get_edge_id_string()
     assert_eq!(graph.get_edge_id_string("NONEXISTENT", "NONEXISTENT", None), None);
     if let Some(edge) = graph.get_unique_edges_iter().next() {
         let src_string = graph.get_node_name(edge.0).unwrap();
@@ -210,6 +210,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         assert_eq!(graph.get_edge_id_string(&src_string, &dst_string,
                                             Some(&"NONEXISTENT_EDGE_TYPE".to_string())),
                    None);
+        if ! graph.has_edge_types(){
+            assert_eq!(graph.get_edge_id_string(&src_string, &dst_string, None),
+                       graph.get_edge_id(edge.0, edge.1, None));
+        }
     }
 
     // Testing main holdout mechanisms
