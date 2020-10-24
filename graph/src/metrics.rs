@@ -307,7 +307,7 @@ impl Graph {
         self.unique_sources.len() as NodeT
     }
 
-    /// Returns number of connected components in graph.
+    /// Returns number a triple with (number of components, number of nodes of the biggest component, number of nodes of the smallest component )
     pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
         let (tree, components) = self.spanning_tree(0, false, &None, verbose);
         let connected_components_number = self.get_nodes_number() - tree.len() as NodeT;
