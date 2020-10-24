@@ -126,14 +126,14 @@ impl Graph {
     ) -> Result<Graph, String> {
 
         let mut keep_components = RoaringBitmap::new();
-
-        let node_ids = self.get_filter_bitmap(node_names, node_types)?;
         let components_vector = self.get_node_components_vector(verbose);
-        
-        keep_components.extend(node_ids.iter().map(|node_id|{
-           components_vector[node_id as usize]
-        }));
 
+        if let Some(node_ids) = self.get_filter_bitmap(node_names, node_types)?{
+            keep_components.extend(node_ids.iter().map(|node_id|{
+                components_vector[node_id as usize]
+             }));
+        }
+        
         if let Some(ets) = edge_types {
             let mut edge_types_ids = RoaringBitmap::new();
             edge_types_ids.extend(self.translate_edge_types(ets)?.iter().map(|x| *x as u32));
