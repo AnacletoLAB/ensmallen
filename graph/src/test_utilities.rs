@@ -202,6 +202,18 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
 
+    // test get_edge_id_string
+    assert_eq!(graph.get_edge_id_string("NONEXISTENT", "NONEXISTENT", None), None);
+    if let Some(edge) = graph.get_unique_edges_iter().next() {
+        if let src_string = graph.get_node_name(edge.0).unwrap() {
+            if let dst_string = graph.get_node_name(edge.1).unwrap() {
+                assert_eq!(graph.get_edge_id_string(&src_string, &dst_string,
+                                                    Some(&"NONEXISTENT_EDGE_TYPE".to_string())),
+                           None);
+            }
+        }
+    }
+
     // Testing main holdout mechanisms
     for include_all_edge_types in &[false, true] {
         let (train, test) =
