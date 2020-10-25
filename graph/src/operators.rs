@@ -145,7 +145,7 @@ impl<'a, 'b> Graph {
 
         if self.has_edge_types() != other.has_edge_types() {
             return Err(String::from(
-                "Both graphs need to have node types or neither can."
+                "Both graphs need to have edge types or neither can."
             ));
         }
 
