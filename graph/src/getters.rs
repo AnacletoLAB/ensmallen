@@ -117,6 +117,17 @@ impl Graph {
         }
     }
 
+    /// Return edge type name of given edge type.
+    ///
+    /// # Arguments
+    /// * edge_type_id: EdgeTypeT - Id of the edge type.
+    pub fn get_edge_type_name(&self, edge_type_id: EdgeTypeT) -> Option<String> {
+        match &self.edge_types {
+            Some(ets) => Some(ets.translate(edge_type_id).to_owned()),
+            None => None,
+        }
+    }
+
     /// Return the edge types reverse mapping.
     pub fn get_edge_types_reverse_mapping(&self) -> Option<Vec<String>> {
         match &self.edge_types {
@@ -129,6 +140,17 @@ impl Graph {
     pub fn get_node_types(&self) -> Option<Vec<NodeTypeT>> {
         match &self.node_types {
             Some(nts) => Some(nts.ids.clone()),
+            None => None,
+        }
+    }
+
+    /// Return node type name of given node type.
+    ///
+    /// # Arguments
+    /// * node_type_id: NodeTypeT - Id of the node type.
+    pub fn get_node_type_name(&self, node_type_id: NodeTypeT) -> Option<String> {
+        match &self.node_types {
+            Some(nts) => Some(nts.translate(node_type_id).to_owned()),
             None => None,
         }
     }
@@ -306,7 +328,7 @@ impl Graph {
     }
 
     /// Return a vector with the components each node belongs to.
-    /// 
+    ///
     /// E.g. If we have two components [0, 2, 3] and [1, 4, 5] the result will look like
     /// [0, 1, 0, 0, 1, 1]
     ///
@@ -404,7 +426,12 @@ impl Graph {
 
     /// Return if there are multiple edges between two nodes
     pub fn is_multigraph(&self) -> bool {
-        self.unique_edges_number != self.get_edges_number()
+        self.get_multigraph_edges_number() > 0
+    }
+
+    /// Return number of edges that have multigraph syblings.
+    pub fn get_multigraph_edges_number(&self) -> EdgeT {
+        self.get_edges_number() - self.unique_edges_number
     }
 
     pub fn get_outbounds(&self) -> Vec<EdgeT> {

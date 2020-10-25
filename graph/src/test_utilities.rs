@@ -203,6 +203,28 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
 
+    // Test get_edge_id_string()
+    assert_eq!(graph.get_edge_id_string("NONEXISTENT", "NONEXISTENT", None), None);
+    if let Some(edge) = graph.get_unique_edges_iter().next() {
+        let src_string = graph.get_node_name(edge.0).unwrap();
+        let dst_string = graph.get_node_name(edge.1).unwrap();
+        assert!(graph.has_edge_string(&src_string, &dst_string, None));
+        assert!(graph.has_node_string(&src_string, None) && graph.has_node_string(&dst_string, None));
+        assert_eq!(graph.get_edge_id_string(&src_string, &dst_string,
+                                            Some(&"NONEXISTENT_EDGE_TYPE".to_string())),
+                   None);
+        if ! graph.has_edge_types(){
+            assert_eq!(graph.get_edge_id_string(&src_string, &dst_string, None),
+                       graph.get_edge_id(edge.0, edge.1, None));
+        }
+    }
+    // Test has_node_string
+    assert!(!(graph.has_node_string("NONEXISTENT", None)));
+
+    // Test translate_edge|node_types()
+    assert!(graph.translate_edge_types(vec!["NONEXISTENT_EDGE_TYPE".to_string()]).is_err());
+    assert!(graph.translate_node_types(vec!["NONEXISTENT_NODE_TYPE".to_string()]).is_err());
+
     // Testing main holdout mechanisms
     for include_all_edge_types in &[false, true] {
         let (train, test) =
@@ -218,21 +240,56 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         default_holdout_test_suite(graph, &train, &test)?;
     }
 
-    // test drop components
+    // test remove components
     if graph.connected_components_number(false).0 > 1 {
-        let test = graph.drop_components(Some(vec![graph.nodes.translate(0).to_string()]), None, None, false)?;
-        assert_eq!(test.drop_singletons(false)?.connected_components_number(false).0, 1);
+        let test = graph.remove_components(
+            Some(vec![graph.nodes.translate(0).to_string()]),
+            None,
+            None,
+            None,
+            None,
+            verbose,
+        )?;
+        assert_eq!(
+            test.remove(None, None, None, None, false, false, false, true, verbose)?
+                .connected_components_number(false)
+                .0,
+            1
+        );
 
         if let Some(nts) = &graph.node_types {
-            let test = graph.drop_components(None, Some(vec![nts.translate(0).to_string()]), None, false)?;
-            assert_eq!(test.drop_singletons(false)?.connected_components_number(false).0, 1);
+            let test = graph.remove_components(
+                None,
+                Some(vec![nts.translate(0).to_string()]),
+                None,
+                None,
+                None,
+                verbose,
+            )?;
+            assert_eq!(
+                test.remove(None, None, None, None, false, false, false, true, verbose)?
+                    .connected_components_number(false)
+                    .0,
+                1
+            );
         }
 
         if let Some(ets) = &graph.edge_types {
-            let test = graph.drop_components(None, None, Some(vec![ets.translate(0).to_string()]), false)?;
-            assert_eq!(test.drop_singletons(false)?.connected_components_number(false).0, 1);
+            let test = graph.remove_components(
+                None,
+                None,
+                Some(vec![ets.translate(0).to_string()]),
+                None,
+                None,
+                verbose,
+            )?;
+            assert_eq!(
+                test.remove(None, None, None, None, false, false, false, true, verbose)?
+                    .connected_components_number(false)
+                    .0,
+                1
+            );
         }
-
     }
 
     // test the kfold
@@ -313,7 +370,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     }
     // Compute metrics of the graph
     graph.report();
-    graph.textual_report();
+    graph.textual_report()?;
     // Compute degrees metrics
     for src in 0..10 {
         for dst in 0..10 {
@@ -346,15 +403,15 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     // Evaluate get_edge_type_counts
     assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
 
-    //test drops
+    //test removes
     {
-        let without_edges = graph.drop_edge_types();
-        assert_eq!(without_edges.is_ok(), graph.has_edge_types());
+        let without_edges =
+            graph.remove(None, None, None, None, false, false, true, false, verbose);
         if let Some(we) = &without_edges.ok() {
             validate_vocabularies(we);
             assert_eq!(we.has_edge_types(), false);
             assert_eq!(we.has_weights(), graph.has_weights());
-            assert!(we.node_types == graph.node_types);
+            assert_eq!(we.node_types, graph.node_types);
             assert_eq!(
                 we.get_unique_edges_number(),
                 graph.get_unique_edges_number()
@@ -365,19 +422,13 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             );
             assert_eq!(we.has_traps(), graph.has_traps());
             assert_eq!(we.nodes, graph.nodes);
-
-            // expect errors for undefined behavior in overlap() and contains()
-            assert!(!graph.overlaps(&we)?);
-            assert!(!graph.contains(&we)?);
         }
     }
     {
-        let without_nodes = graph.drop_node_types();
-        assert_eq!(without_nodes.is_ok(), graph.has_node_types());
+        let without_nodes = graph.remove(None, None, None, None, false, true, false, false, verbose);
         if let Some(wn) = &without_nodes.ok() {
             validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
-            assert!(wn.edge_types == graph.edge_types);
             assert_eq!(wn.weights, graph.weights);
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
             assert_eq!(wn.has_traps(), graph.has_traps());
@@ -386,13 +437,11 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
     {
-        let without_weights = graph.drop_weights();
-        assert_eq!(without_weights.is_ok(), graph.has_weights());
+        let without_weights = graph.remove(None, None, None, None, true, false, false, false, verbose);
         if let Some(ww) = &without_weights.ok() {
             validate_vocabularies(ww);
             assert_eq!(ww.has_weights(), false);
-            assert!(ww.node_types == graph.node_types);
-            assert!(ww.edge_types == graph.edge_types);
+            assert_eq!(ww.node_types, graph.node_types);
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
             assert_eq!(ww.has_traps(), graph.has_traps());
             assert_eq!(ww.nodes, graph.nodes);

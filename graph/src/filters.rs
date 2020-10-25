@@ -37,8 +37,10 @@ impl Graph {
         Graph::build_graph(
             self.get_edges_quadruples().progress_with(pb).filter_map(
                 |(_, src, dst, edge_type, weight)| {
-                    if !node_ids.contains(src) || !node_ids.contains(dst) {
-                        return None;
+                    if let Some(nis) = &node_ids{
+                        if !nis.contains(src) || !nis.contains(dst) {
+                            return None;
+                        }
                     }
                     if let (Some(_min), Some(w)) = (min_weight, weight) {
                         if _min > w {

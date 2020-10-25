@@ -472,6 +472,15 @@ impl Graph {
             self.merged_components_number(&first_nodes_components, other);
         let second_merged_components_number =
             other.merged_components_number(&second_nodes_components, self);
+
+        let first_edges = match self.directed {
+            true => self.get_edges_number(),
+            false => self.get_undirected_edges_number(),
+        };
+        let second_edges = match other.directed {
+            true => other.get_edges_number(),
+            false => other.get_undirected_edges_number(),
+        };
         // Building up the report
         Ok(format!(
             concat!(
@@ -487,14 +496,8 @@ impl Graph {
             edges_number=overlapping_edges_number,
             first_nodes=self.get_nodes_number(),
             second_nodes=other.get_nodes_number(),
-            first_edges=match self.directed {
-                true => self.get_edges_number(),
-                false => self.get_undirected_edges_number(),
-            },
-            second_edges=match other.directed {
-                true => other.get_edges_number(),
-                false => other.get_undirected_edges_number(),
-            },
+            first_edges=first_edges,
+            second_edges=second_edges,
             first_components_statement = match second_shared_components_number== second_components_number{
                 true=> "all the".to_owned(),
                 false => format!(
@@ -537,8 +540,23 @@ impl Graph {
                 },
             first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),
             second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_nodes_number() as f64),
-            first_edge_percentage=100.0*(overlapping_edges_number as f64 / self.get_edges_number() as f64),
-            second_edge_percentage=100.0*(overlapping_edges_number as f64 / other.get_edges_number() as f64),
+            first_edge_percentage=100.0*(overlapping_edges_number as f64 / first_edges as f64),
+            second_edge_percentage=100.0*(overlapping_edges_number as f64 / second_edges as f64),
+        ))
+    }
+
+    fn format_list(&self, list: &[String]) -> Result<String, String> {
+        if list.is_empty() {
+            return Err("Cannot format a list with no elements.".to_owned());
+        }
+        if list.len() == 1 {
+            return Ok(list.first().unwrap().clone());
+        }
+        let all_minus_last: String = list[0..list.len() - 1].join(", ");
+        Ok(format!(
+            "{all_minus_last} and {last}",
+            all_minus_last = all_minus_last,
+            last = list.last().unwrap()
         ))
     }
 
@@ -546,34 +564,76 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_list`: &[NodeT] - list of nodes to be formatted.
-    pub fn format_node_list(&self, node_list: &[NodeT]) -> String {
-        let central_nodes: String = node_list[0..node_list.len() - 1]
-            .iter()
-            .map(|node_id| {
-                format!(
-                    "{node_name} (degree {node_degree})",
-                    node_name = self.get_node_name(*node_id).unwrap(),
-                    node_degree = self.get_node_degree(*node_id)
-                )
-            })
-            .collect::<Vec<String>>()
-            .join(", ");
-        format!(
-            "{central_nodes} and {node_name} (degree {node_degree})",
-            central_nodes = central_nodes,
-            node_name = self.get_node_name(*node_list.last().unwrap()).unwrap(),
-            node_degree = self.get_node_degree(*node_list.last().unwrap())
+    fn format_node_list(&self, node_list: &[NodeT]) -> Result<String, String> {
+        self.format_list(
+            node_list
+                .iter()
+                .map(|node_id| {
+                    format!(
+                        "{node_name} (degree {node_degree})",
+                        node_name = self.get_node_name(*node_id).unwrap(),
+                        node_degree = self.get_node_degree(*node_id)
+                    )
+                })
+                .collect::<Vec<String>>()
+                .as_slice(),
+        )
+    }
+
+    /// Return formatted node type list.
+    ///
+    /// # Arguments
+    /// * `node_types_list`: &[NodeT] - list of nodes to be formatted.
+    fn format_node_type_list(
+        &self,
+        node_types_list: &[(NodeTypeT, usize)],
+    ) -> Result<String, String> {
+        self.format_list(
+            node_types_list
+                .iter()
+                .map(|(node_type_id, number)| {
+                    format!(
+                        "{node_type} (nodes number {node_degree})",
+                        node_type = self.get_node_type_name(*node_type_id).unwrap(),
+                        node_degree = number
+                    )
+                })
+                .collect::<Vec<String>>()
+                .as_slice(),
+        )
+    }
+
+    /// Return formatted edge type list.
+    ///
+    /// # Arguments
+    /// * `edge_types_list`: &[edgeT] - list of edges to be formatted.
+    fn format_edge_type_list(
+        &self,
+        edge_types_list: &[(EdgeTypeT, usize)],
+    ) -> Result<String, String> {
+        self.format_list(
+            edge_types_list
+                .iter()
+                .map(|(edge_type_id, number)| {
+                    format!(
+                        "{edge_type} (edges number {edge_degree})",
+                        edge_type = self.get_edge_type_name(*edge_type_id).unwrap(),
+                        edge_degree = number
+                    )
+                })
+                .collect::<Vec<String>>()
+                .as_slice(),
         )
     }
 
     /// Return rendered textual report of the graph.
-    pub fn textual_report(&self) -> String {
+    pub fn textual_report(&self) -> Result<String, String> {
         let (connected_components_number, maximum_connected_component, minimum_connected_component) =
             self.connected_components_number(true);
 
-        format!(
+        Ok(format!(
             concat!(
-                "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}. ",
+                "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}{self_loops_multigraph_connector}{multigraph_edges}. ",
                 "The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. ",
                 "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2} and the node degree mode is {mode_node_degree}. ",
                 "The top {most_common_nodes_number} most central nodes are {central_nodes}."
@@ -600,8 +660,29 @@ impl Graph {
                 true => format!("{} are selfloops", self.get_self_loop_number()),
                 false => "none are selfloops".to_owned()
             },
+            self_loops_multigraph_connector = match self.has_selfloops() && self.is_multigraph() {
+                true => " and ".to_owned(),
+                false => "".to_owned()
+            },
+            multigraph_edges = match self.is_multigraph() {
+                true=>match self.get_multigraph_edges_number()>0 {
+                    true => format!("{} are parallel", self.get_multigraph_edges_number()),
+                    false => "none are parallel".to_owned()
+                },
+                false=>"".to_owned()
+            },
             node_types= match self.has_node_types() {
-                true => format!(" with {} different node types", self.get_node_types_number()),
+                true => format!(
+                    " with {node_types_number} different node types: {most_common_node_types}",
+                    node_types_number=self.get_node_types_number(),
+                    most_common_node_types={
+                        let node_types = self.get_node_type_counts()?;
+                        match node_types.len()>5{
+                            true=>format!(" the 5 most common are {}", self.format_node_type_list(node_types.most_common()[0..5].as_ref())?),
+                            false=>self.format_node_type_list(node_types.most_common().as_slice())?
+                        }
+                    }
+                ),
                 false => "".to_owned()
             },
             singletons = match self.has_singletons() {
@@ -609,7 +690,17 @@ impl Graph {
                 false => "".to_owned()
             },
             edge_types= match self.has_edge_types() {
-                true => format!(" with {} different edge types", self.get_edge_types_number()),
+                true => format!(
+                    " with {edge_types_number} different edge types: {most_common_edge_types}",
+                    edge_types_number=self.get_edge_types_number(),
+                    most_common_edge_types={
+                        let edge_types = self.get_edge_type_counts()?;
+                        match edge_types.len()>5{
+                            true=>format!(" the 5 most common are {}", self.format_edge_type_list(edge_types.most_common()[0..5].as_ref())?),
+                            false=>self.format_edge_type_list(edge_types.most_common().as_slice())?
+                        }
+                    }
+                ),
                 false => "".to_owned()
             },
             quantized_density = match self.density() {
@@ -636,7 +727,7 @@ impl Graph {
             mean_node_degree=self.degrees_mean(),
             mode_node_degree=self.degrees_mode(),
             most_common_nodes_number=min!(5, self.get_nodes_number()),
-            central_nodes = self.format_node_list(self.get_top_k_central_nodes(min!(5, self.get_nodes_number())).as_slice())
-        )
+            central_nodes = self.format_node_list(self.get_top_k_central_nodes(min!(5, self.get_nodes_number())).as_slice())?
+        ))
     }
 }

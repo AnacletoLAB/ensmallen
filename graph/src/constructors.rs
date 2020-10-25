@@ -21,6 +21,7 @@ type ParsedStringEdgesType = Result<
     String,
 >;
 
+#[macro_export]
 macro_rules! optionify {
     ($val:expr) => {
         if $val.is_empty() {
