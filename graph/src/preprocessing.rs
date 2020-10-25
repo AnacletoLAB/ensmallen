@@ -4,7 +4,6 @@ use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
 use rayon::prelude::*;
-use indicatif::ParallelProgressIterator;
 use std::collections::HashMap;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift as rand_u64;

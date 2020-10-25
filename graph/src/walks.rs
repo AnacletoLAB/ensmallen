@@ -1,5 +1,4 @@
 use super::*;
-use indicatif::ParallelProgressIterator;
 use log::info;
 use rayon::prelude::*;
 use roaring::RoaringBitmap;
