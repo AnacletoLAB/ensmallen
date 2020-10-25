@@ -1,5 +1,4 @@
 use super::*;
-use indicatif::ParallelProgressIterator;
 use log::info;
 use rayon::prelude::*;
 use roaring::RoaringBitmap;
@@ -268,14 +267,14 @@ impl Graph {
     ///
     /// * parameters: WalksParameters - the weighted walks parameters.
     ///
-    pub fn random_walks(
-        &self,
+    pub fn random_walks_iter<'a>(
+        &'a self,
         quantity: NodeT,
-        parameters: &WalksParameters,
-    ) -> Result<Vec<Vec<NodeT>>, String> {
-        self.walk(
+        parameters: &'a WalksParameters,
+    ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+        self.walk_iter(
             quantity,
-            |global_index| {
+            move |global_index| {
                 let local_index = global_index % quantity;
                 let random_source_id =
                     xorshift((parameters.random_state + local_index as NodeT) as u64) as NodeT;
@@ -294,10 +293,10 @@ impl Graph {
     ///
     /// * parameters: WalksParameters - the weighted walks parameters.
     ///
-    pub fn complete_walks(&self, parameters: &WalksParameters) -> Result<Vec<Vec<NodeT>>, String> {
-        self.walk(
+    pub fn complete_walks_iter<'a>(&'a self, parameters: &'a WalksParameters) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+        self.walk_iter(
             self.get_unique_sources_number(),
-            |random_source_id| {
+            move |random_source_id| {
                 (
                     random_source_id,
                     self.get_unique_source(random_source_id as NodeT),
@@ -313,12 +312,12 @@ impl Graph {
     ///
     /// * parameters: WalksParameters - the weighted walks parameters.
     ///
-    fn walk(
-        &self,
+    pub fn walk_iter<'a>(
+        &'a self,
         quantity: NodeT,
-        to_node: impl Fn(NodeT) -> (NodeT, NodeT) + Sync + Send,
-        parameters: &WalksParameters,
-    ) -> Result<Vec<Vec<NodeT>>, String> {
+        to_node: impl Fn(NodeT) -> (NodeT, NodeT) + Sync + Send + 'a,
+        parameters: &'a WalksParameters,
+    ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
         if self.directed {
             return Err("Not supporting directed walks as of now.".to_owned());
         }
@@ -328,39 +327,21 @@ impl Graph {
 
         let total_iterations = quantity * parameters.iterations;
         info!("Starting random walk.");
-        let pb = get_loading_bar(
-            parameters.verbose,
-            "Compute random walks",
-            total_iterations as usize,
-        );
 
-        let iterator = (0..total_iterations)
+        let walks = (0..total_iterations)
             .into_par_iter()
-            .progress_with(pb)
-            .map(to_node);
+            .map(move |index| {
+                    let (random_state, node) = to_node(index);
+                    let mut walk = match !self.has_weights() && parameters.is_first_order_walk() {
+                        true => self.uniform_walk(node, random_state, &parameters.single_walk_parameters),
+                        false => self.single_walk(node, random_state, &parameters.single_walk_parameters),
+                    };
 
-        let mut walks = if !self.has_weights() && parameters.is_first_order_walk() {
-            info!("Using trap-aware uniform first order random walk algorithm.");
-            iterator
-                .map(|(random_state, node)| {
-                    self.uniform_walk(node, random_state, &parameters.single_walk_parameters)
-                })
-                .collect::<Vec<Vec<NodeT>>>()
-        } else {
-            info!("Using trap-aware second order random walk algorithm.");
-            iterator
-                .map(|(random_state, node)| {
-                    self.single_walk(node, random_state, &parameters.single_walk_parameters)
-                })
-                .collect::<Vec<Vec<NodeT>>>()
-        };
-
-        if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
-            walks.par_iter_mut().for_each(|walk| {
-                walk.iter_mut()
-                    .for_each(|node| *node = *dense_node_mapping.get(node).unwrap())
-            })
-        }
+                    if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
+                        walk.iter_mut().for_each(|node| *node = *dense_node_mapping.get(node).unwrap());
+                    }
+                    walk
+                });
 
         Ok(walks)
     }

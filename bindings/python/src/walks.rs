@@ -1,5 +1,14 @@
 use super::*;
+use numpy::{PyArray2};
 use graph::NodeT;
+use rayon::prelude::*;
+use rayon::iter::IndexedParallelIterator;
+
+struct AWEFULWORKAROUND<'a, T> {
+    t: &'a PyArray2<T>
+}
+
+unsafe impl<'a, T> Sync for AWEFULWORKAROUND<'a, T> {}
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -65,14 +74,23 @@ impl EnsmallenGraph {
         length: NodeT,
         quantity: NodeT,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<Vec<Vec<NodeT>>> {
+    ) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
         pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
-        pyex!(self.graph.random_walks(quantity, &parameters))
+        let iter = pyex!(self.graph.random_walks_iter(quantity, &parameters))?;
+        let array = AWEFULWORKAROUND{t:PyArray2::new(py.python(), [length as usize, self.graph.get_nodes_number() as usize], false)};
+        unsafe {
+            iter.enumerate().for_each(|(y, vy)| 
+                vy.iter().enumerate().for_each(|(x, vyx)|
+                    *(array.t.uget_mut([y, x])) = vyx.clone()
+                )
+            );
+        }
+        Ok(array.t.to_owned())
     }
 
     #[args(py_kwargs = "**")]
@@ -134,13 +152,22 @@ impl EnsmallenGraph {
         &self,
         length: NodeT,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<Vec<Vec<NodeT>>> {
+    ) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
         pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
-        pyex!(self.graph.complete_walks(&parameters))
+        let iter = pyex!(self.graph.complete_walks_iter(&parameters))?;
+        let array = AWEFULWORKAROUND{t:PyArray2::new(py.python(), [self.graph.get_nodes_number() as usize, length as usize], false)};
+        unsafe {
+            iter.enumerate().for_each(|(y, vy)| 
+                vy.iter().enumerate().for_each(|(x, vyx)|
+                    *(array.t.uget_mut([y, x])) = vyx.clone()
+                )
+            );
+        }
+        Ok(array.t.to_owned())
     }
 }
