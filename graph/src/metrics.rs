@@ -614,13 +614,7 @@ impl Graph {
         self.format_list(
             edge_types_list
                 .iter()
-                .map(|(edge_type_id, number)| {
-                    format!(
-                        "{edge_type} (edges number {edge_degree})",
-                        edge_type = self.get_edge_type_name(*edge_type_id).unwrap(),
-                        edge_degree = number
-                    )
-                })
+                .map(|(edge_type_id, _)| self.get_edge_type_name(*edge_type_id).unwrap())
                 .collect::<Vec<String>>()
                 .as_slice(),
         )
@@ -671,37 +665,53 @@ impl Graph {
                 },
                 false=>"".to_owned()
             },
-            node_types= match self.has_node_types() {
-                true => format!(
+            node_types= match self.get_node_types_number() {
+                etn if etn==1 => format!(
+                    " with a single node type: {node_type}",
+                    node_type={
+                        let node_types = self.get_node_type_counts()?;
+                        self.format_node_type_list(node_types.most_common().as_slice())?
+                    }
+                ),
+                etn if etn > 1 => format!(
                     " with {node_types_number} different node types: {most_common_node_types}",
-                    node_types_number=self.get_node_types_number(),
+                    node_types_number=etn,
                     most_common_node_types={
                         let node_types = self.get_node_type_counts()?;
-                        match node_types.len()>5{
-                            true=>format!(" the 5 most common are {}", self.format_node_type_list(node_types.most_common()[0..5].as_ref())?),
-                            false=>self.format_node_type_list(node_types.most_common().as_slice())?
+                        let most_common = node_types.most_common();
+                        match etn>5 {
+                            true=>format!(" the 5 most common are {}", self.format_node_type_list(most_common[0..5].as_ref())?),
+                            false=>self.format_node_type_list(most_common.as_slice())?
                         }
                     }
                 ),
-                false => "".to_owned()
+                _ => "".to_owned()
             },
             singletons = match self.has_singletons() {
                 true => format!(", of which {} are singletons,", self.get_singleton_nodes_number()),
                 false => "".to_owned()
             },
-            edge_types= match self.has_edge_types() {
-                true => format!(
+            edge_types= match self.get_edge_types_number() {
+                etn if etn==1 => format!(
+                    " with a single edge type: {edge_type}",
+                    edge_type={
+                        let edge_types = self.get_edge_type_counts()?;
+                        self.format_edge_type_list(edge_types.most_common().as_slice())?
+                    }
+                ),
+                etn if etn > 1 => format!(
                     " with {edge_types_number} different edge types: {most_common_edge_types}",
-                    edge_types_number=self.get_edge_types_number(),
+                    edge_types_number=etn,
                     most_common_edge_types={
                         let edge_types = self.get_edge_type_counts()?;
-                        match edge_types.len()>5{
-                            true=>format!(" the 5 most common are {}", self.format_edge_type_list(edge_types.most_common()[0..5].as_ref())?),
-                            false=>self.format_edge_type_list(edge_types.most_common().as_slice())?
+                        let most_common = edge_types.most_common();
+                        match etn>5 {
+                            true=>format!(" the 5 most common are {}", self.format_edge_type_list(most_common[0..5].as_ref())?),
+                            false=>self.format_edge_type_list(most_common.as_slice())?
                         }
                     }
                 ),
-                false => "".to_owned()
+                _ => "".to_owned()
             },
             quantized_density = match self.density() {
                 d if d < 0.0001 => "extremely sparse".to_owned(),
