@@ -662,17 +662,20 @@ impl Graph {
                 false => "".to_owned()
             },
             multigraph_edges = match self.is_multigraph() {
-                true => format!("{} are parallel", self.get_multigraph_edges_number()),
-                false => "none are parallel".to_owned()
+                true=>match self.get_multigraph_edges_number()>0 {
+                    true => format!("{} are parallel", self.get_multigraph_edges_number()),
+                    false => "none are parallel".to_owned()
+                },
+                false=>"".to_owned()
             },
             node_types= match self.has_node_types() {
                 true => format!(
-                    " with {node_types_number} different node types {most_common_node_types}",
+                    " with {node_types_number} different node types: {most_common_node_types}",
                     node_types_number=self.get_node_types_number(),
                     most_common_node_types={
                         let node_types = self.get_node_type_counts()?;
                         match node_types.len()>5{
-                            true=>format!("where the 5 most common are {}", self.format_node_type_list(node_types.most_common()[0..5].as_ref())?),
+                            true=>format!(" the 5 most common are {}", self.format_node_type_list(node_types.most_common()[0..5].as_ref())?),
                             false=>self.format_node_type_list(node_types.most_common().as_slice())?
                         }
                     }
@@ -685,12 +688,12 @@ impl Graph {
             },
             edge_types= match self.has_edge_types() {
                 true => format!(
-                    " with {edge_types_number} different edge types {most_common_edge_types}",
+                    " with {edge_types_number} different edge types: {most_common_edge_types}",
                     edge_types_number=self.get_edge_types_number(),
                     most_common_edge_types={
                         let edge_types = self.get_edge_type_counts()?;
                         match edge_types.len()>5{
-                            true=>format!("where the 5 most common are {}", self.format_edge_type_list(edge_types.most_common()[0..5].as_ref())?),
+                            true=>format!(" the 5 most common are {}", self.format_edge_type_list(edge_types.most_common()[0..5].as_ref())?),
                             false=>self.format_edge_type_list(edge_types.most_common().as_slice())?
                         }
                     }
