@@ -23,8 +23,8 @@ use vec_rand::xorshift::xorshift as rand_u64;
 /// * sequences: Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
 /// * window_size: usize - Window size to consider for the sequences.
 ///
-pub fn word2vec(
-    sequences: Vec<Vec<NodeT>>,
+pub fn word2vec<'a>(
+    sequences: impl ParallelIterator<Item = Vec<NodeT>> + 'a,
     window_size: usize,
 ) -> Result<(Vec<Vec<NodeT>>, Vec<NodeT>), String> {
     let context_length = window_size.checked_mul(2).ok_or(
@@ -32,9 +32,8 @@ pub fn word2vec(
     )?;
 
     Ok(sequences
-        .iter()
-        .flat_map(|sequence| {
-            sequence.iter().enumerate().filter_map(move |(i, word)| {
+        .flat_map_iter( |sequence| {
+            sequence.iter().enumerate().filter_map(|(i, word)| {
                 let start = if i <= window_size { 0 } else { i - window_size };
                 let end = min!(sequence.len(), i + window_size);
                 if end - start == context_length {
@@ -42,7 +41,7 @@ pub fn word2vec(
                 } else {
                     None
                 }
-            })
+            }).collect::<Vec<(Vec<NodeT>, NodeT)>>()
         })
         .unzip())
 }
@@ -61,14 +60,15 @@ pub fn word2vec(
 ///     The default behaviour is false.
 ///     
 pub fn cooccurence_matrix(
-    sequences: Vec<Vec<NodeT>>,
+    sequences: impl ParallelIterator<Item = Vec<NodeT>>,
     window_size: usize,
+    number_of_sequences: usize,
     verbose: bool,
 ) -> Result<(Words, Words, Frequencies), String> {
     let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
-    let pb1 = get_loading_bar(verbose, "Computing frequencies", sequences.len());
-
-    sequences.iter().progress_with(pb1).for_each(|sequence| {
+    let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
+    let vec = sequences.collect::<Vec<Vec<NodeT>>>();
+    vec.iter().progress_with(pb1).for_each(|sequence| {
         let walk_length = sequence.len();
         for (central_index, &central_word_id) in sequence.iter().enumerate() {
             for distance in 1..1 + window_size {
@@ -149,16 +149,7 @@ impl Graph {
         window_size: usize,
     ) -> Result<(Contexts, Words), String> {
         // do the walks and check the result
-        let walks = self.random_walks(quantity, walk_parameters)?;
-
-        if walks.is_empty() {
-            return Err(concat!(
-                "In the current graph, with the given parameters, no walk could ",
-                "be performed which is above the given min-length"
-            )
-            .to_string());
-        }
-
+        let walks = self.random_walks_iter(quantity, walk_parameters)?;
         word2vec(walks, window_size)
     }
 
@@ -181,17 +172,13 @@ impl Graph {
         window_size: usize,
         verbose: bool,
     ) -> Result<(Words, Words, Frequencies), String> {
-        let walks = self.complete_walks(walks_parameters)?;
-
-        if walks.is_empty() {
-            return Err(concat!(
-                "In the current graph, with the given parameters, no walk could ",
-                "be performed which is above the given min-length"
-            )
-            .to_string());
-        }
-
-        cooccurence_matrix(walks, window_size, verbose)
+        let walks = self.complete_walks_iter(walks_parameters)?;
+        cooccurence_matrix(
+            walks, 
+            window_size, 
+            (self.get_unique_sources_number() * walks_parameters.iterations) as usize, 
+            verbose
+        )
     }
 
     /// Returns triple with source nodes, destination nodes and labels for training model for link prediction.

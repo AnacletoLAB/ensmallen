@@ -1,4 +1,5 @@
 use super::*;
+use rayon::prelude::*;
 use graph::{cooccurence_matrix as rust_cooccurence_matrix, word2vec as rust_word2vec, NodeT};
 use numpy::{PyArray, PyArray1};
 
@@ -30,7 +31,7 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///     Window size to consider for the sequences.
 ///
 fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
-    let (contexts, words) = pyex!(rust_word2vec(sequences, window_size))?;
+    let (contexts, words) = pyex!(rust_word2vec(sequences.into_par_iter(), window_size))?;
     let gil = pyo3::Python::acquire_gil();
     Ok((
         to_nparray_2d!(gil, contexts, NodeT),
@@ -69,11 +70,12 @@ fn cooccurence_matrix(
             .map(|x| x.to_string())
             .collect(),
     ))?;
-
+    let len = sequences.len();
     let (words, contexts, frequencies) = pyex!(rust_cooccurence_matrix(
-        sequences,
+        sequences.into_par_iter(),
         pyex!(extract_value!(kwargs, "window_size", usize))?
             .unwrap_or(3),
+        len,
         pyex!(extract_value!(kwargs, "verbose", bool))?
             .unwrap_or(true),
     ))?;
