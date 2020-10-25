@@ -116,10 +116,10 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Numpy array with all the degrees of the graph.
     ///
-    fn degrees(&self) -> PyResult<Py<PyArray1<EdgeT>>> {
+    fn degrees(&self) -> PyResult<Py<PyArray1<NodeT>>> {
         let degrees = self.graph.get_node_degrees();
         let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_1d!(gil, degrees, EdgeT))
+        Ok(to_nparray_1d!(gil, degrees, NodeT))
     }
 
     #[text_signature = "($self, one, two)"]
