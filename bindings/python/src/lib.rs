@@ -22,7 +22,7 @@ mod walks;
 pub(crate) use crate::types::EnsmallenGraph;
 mod modifiers;
 
-mod drop;
+mod remove;
 mod holdout;
 mod operators;
 

@@ -4,7 +4,7 @@ use indicatif::ProgressIterator;
 use roaring::RoaringBitmap;
 use std::collections::HashSet;
 
-/// # Drop.
+/// # remove.
 impl Graph {
     /// Returns a **NEW** Graph that does not have the required attributes.
     ///
@@ -14,8 +14,8 @@ impl Graph {
     /// We keep only the first edge when a multigraph is collapsed while removing
     /// the edge types, in the order provided when first reading from the CSV file.
     ///
-    /// ### Generation of new singleton nodes when dropping edges
-    /// Some of the drop operations allowed in this method might lead to the
+    /// ### Generation of new singleton nodes when removeping edges
+    /// Some of the remove operations allowed in this method might lead to the
     /// generation of new singleton nodes that will not be handled within this
     /// function call even if you provide the flag singletons to true, but you
     /// will need to call the method again if you want to get reed of also those
@@ -23,16 +23,16 @@ impl Graph {
     ///
     /// # Arguments
     /// * `allow_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to keep.
-    /// * `deny_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to drop.
+    /// * `deny_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to remove.
     /// * `allow_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to keep.
-    /// * `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to drop.
-    /// * `weights`: bool - Wether to drop the weights.
-    /// * `node_types`: bool - Wether to drop the node types.
-    /// * `edge_types`: bool - Wether to drop the edge types.
-    /// * `singletons`: bool - Wether to drop the singleton nodes.
+    /// * `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to remove.
+    /// * `weights`: bool - Wether to remove the weights.
+    /// * `node_types`: bool - Wether to remove the node types.
+    /// * `edge_types`: bool - Wether to remove the edge types.
+    /// * `singletons`: bool - Wether to remove the singleton nodes.
     /// * `verbose`: bool - Wether to show a loading bar while building the graph.
     ///
-    pub fn drop(
+    pub fn remove(
         &self,
         allow_nodes_set: Option<HashSet<String>>,
         deny_nodes_set: Option<HashSet<String>>,
@@ -157,23 +157,23 @@ impl Graph {
         )
     }
 
-    /// Drop all the components that are not connected to interesting
+    /// remove all the components that are not connected to interesting
     /// nodes and edges.
     ///
     /// # Arguments
     /// * `node_names` : Option<Vec<String>> - The name of the nodes of which components to keep.
     /// * `node_types` : Option<Vec<String>> - The types of the nodes of which components to keep.
     /// * `edge_types` : Option<Vec<String>> - The types of the edges of which components to keep.
-    /// * `minimum_component_size`: Option<usize> - Optional, Minimum size of the components to keep.
-    /// * `top_k_components`: Option<usize> - Optional, number of components to keep by number of nodes.
+    /// * `minimum_component_size`: Option<NodeT> - Optional, Minimum size of the components to keep.
+    /// * `top_k_components`: Option<NodeT> - Optional, number of components to keep sorted by number of nodes.
     /// * `verbose`: bool - Wether to show the loading bar.
-    pub fn drop_components(
+    pub fn remove_components(
         &self,
         node_names: Option<Vec<String>>,
         node_types: Option<Vec<String>>,
         edge_types: Option<Vec<String>>,
-        minimum_component_size: Option<usize>,
-        top_k_components: Option<usize>,
+        minimum_component_size: Option<NodeT>,
+        top_k_components: Option<NodeT>,
         verbose: bool,
     ) -> Result<Graph, String> {
         let mut keep_components = RoaringBitmap::new();
@@ -217,9 +217,9 @@ impl Graph {
         // Retrieve minimal size of the smallest top k components
         let components_counts = Counter::init(components_vector.clone()).most_common();
         let updated_min_component_size = match top_k_components {
-            Some(tkc) => Some(match components_counts.len() < tkc {
+            Some(tkc) => Some(match components_counts.len() < tkc as usize {
                 true => components_counts.last().unwrap().1,
-                false => components_counts.get(tkc).unwrap().1,
+                false => components_counts.get(tkc as usize).unwrap().1,
             }),
             None => minimum_component_size,
         };
@@ -237,7 +237,7 @@ impl Graph {
 
         let pb = get_loading_bar(
             verbose,
-            &format!("Dropping components for the graph {}", &self.name),
+            &format!("removeping components for the graph {}", &self.name),
             self.get_edges_number() as usize,
         );
 

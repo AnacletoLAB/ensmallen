@@ -239,9 +239,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         default_holdout_test_suite(graph, &train, &test)?;
     }
 
-    // test drop components
+    // test remove components
     if graph.connected_components_number(false).0 > 1 {
-        let test = graph.drop_components(
+        let test = graph.remove_components(
             Some(vec![graph.nodes.translate(0).to_string()]),
             None,
             None,
@@ -250,14 +250,14 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             verbose,
         )?;
         assert_eq!(
-            test.drop(None, None, None, None, false, false, false, true, verbose)?
+            test.remove(None, None, None, None, false, false, false, true, verbose)?
                 .connected_components_number(false)
                 .0,
             1
         );
 
         if let Some(nts) = &graph.node_types {
-            let test = graph.drop_components(
+            let test = graph.remove_components(
                 None,
                 Some(vec![nts.translate(0).to_string()]),
                 None,
@@ -266,7 +266,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 verbose,
             )?;
             assert_eq!(
-                test.drop(None, None, None, None, false, false, false, true, verbose)?
+                test.remove(None, None, None, None, false, false, false, true, verbose)?
                     .connected_components_number(false)
                     .0,
                 1
@@ -274,7 +274,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
 
         if let Some(ets) = &graph.edge_types {
-            let test = graph.drop_components(
+            let test = graph.remove_components(
                 None,
                 None,
                 Some(vec![ets.translate(0).to_string()]),
@@ -283,7 +283,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 verbose,
             )?;
             assert_eq!(
-                test.drop(None, None, None, None, false, false, false, true, verbose)?
+                test.remove(None, None, None, None, false, false, false, true, verbose)?
                     .connected_components_number(false)
                     .0,
                 1
@@ -402,10 +402,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     // Evaluate get_edge_type_counts
     assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
 
-    //test drops
+    //test removes
     {
         let without_edges =
-            graph.drop(None, None, None, None, false, false, true, false, verbose);
+            graph.remove(None, None, None, None, false, false, true, false, verbose);
         if let Some(we) = &without_edges.ok() {
             validate_vocabularies(we);
             assert_eq!(we.has_edge_types(), false);
@@ -424,7 +424,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
     {
-        let without_nodes = graph.drop(None, None, None, None, false, true, false, false, verbose);
+        let without_nodes = graph.remove(None, None, None, None, false, true, false, false, verbose);
         if let Some(wn) = &without_nodes.ok() {
             validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
@@ -436,7 +436,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
     {
-        let without_weights = graph.drop(None, None, None, None, true, false, false, false, verbose);
+        let without_weights = graph.remove(None, None, None, None, true, false, false, false, verbose);
         if let Some(ww) = &without_weights.ok() {
             validate_vocabularies(ww);
             assert_eq!(ww.has_weights(), false);
