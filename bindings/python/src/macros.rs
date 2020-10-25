@@ -133,7 +133,7 @@ pub fn validate_kwargs(kwargs: &PyDict, columns: Vec<String>) -> Result<(), Stri
 
         if distance <= 2 {
             err_msg = format!(
-                    "The passed argument {} is not a valid one.\n Did you mean {} ?\nThe available ones are: \n{:?}",
+                    "The passed argument {} is not valid.\n Did you mean {} ?\nThe available ones are: \n{:?}",
                     k, column, columns
                 );
             break;
