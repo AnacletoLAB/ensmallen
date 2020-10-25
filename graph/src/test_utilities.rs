@@ -220,6 +220,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     // Test has_node_string
     assert!(!(graph.has_node_string("NONEXISTENT", None)));
 
+    // Test translate_edge|node_types()
+    assert!(graph.translate_edge_types(vec!["NONEXISTENT_EDGE_TYPE".to_string()]).is_err());
+    assert!(graph.translate_node_types(vec!["NONEXISTENT_NODE_TYPE".to_string()]).is_err());
+
     // Testing main holdout mechanisms
     for include_all_edge_types in &[false, true] {
         let (train, test) =
