@@ -3,6 +3,7 @@ use log::info;
 use rand::Rng;
 use std::fs;
 use std::path::Path;
+use rayon::iter::ParallelIterator;
 
 // where to save the test files
 #[cfg(target_os = "macos")]
@@ -181,23 +182,23 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             }
             info!("Executing random walks.");
             assert_eq!(
-                graph.random_walks(1, &walker)?,
-                graph.random_walks(1, &walker)?
+                graph.random_walks_iter(1, &walker).map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph.random_walks_iter(1, &walker).map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
             );
 
             assert_eq!(
-                graph.random_walks(1, &second_order_walker(&graph, verbose)?)?,
-                graph.random_walks(1, &second_order_walker(&graph, verbose)?)?
+                graph.random_walks_iter(1, &second_order_walker(&graph, verbose)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph.random_walks_iter(1, &second_order_walker(&graph, verbose)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
             );
 
             assert_eq!(
-                graph.complete_walks(&walker)?,
-                graph.complete_walks(&walker)?
+                graph.complete_walks_iter(&walker).map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph.complete_walks_iter(&walker).map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
             );
 
             assert_eq!(
-                graph.complete_walks(&second_order_walker(&graph, verbose)?)?,
-                graph.complete_walks(&second_order_walker(&graph, verbose)?)?
+                graph.complete_walks_iter(&second_order_walker(&graph, verbose)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph.complete_walks_iter(&second_order_walker(&graph, verbose)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
             );
         }
     }
