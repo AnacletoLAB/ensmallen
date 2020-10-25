@@ -472,6 +472,15 @@ impl Graph {
             self.merged_components_number(&first_nodes_components, other);
         let second_merged_components_number =
             other.merged_components_number(&second_nodes_components, self);
+
+        let first_edges = match self.directed {
+            true => self.get_edges_number(),
+            false => self.get_undirected_edges_number(),
+        };
+        let second_edges = match other.directed {
+            true => other.get_edges_number(),
+            false => other.get_undirected_edges_number(),
+        };
         // Building up the report
         Ok(format!(
             concat!(
@@ -487,14 +496,8 @@ impl Graph {
             edges_number=overlapping_edges_number,
             first_nodes=self.get_nodes_number(),
             second_nodes=other.get_nodes_number(),
-            first_edges=match self.directed {
-                true => self.get_edges_number(),
-                false => self.get_undirected_edges_number(),
-            },
-            second_edges=match other.directed {
-                true => other.get_edges_number(),
-                false => other.get_undirected_edges_number(),
-            },
+            first_edges=first_edges,
+            second_edges=second_edges,
             first_components_statement = match second_shared_components_number== second_components_number{
                 true=> "all the".to_owned(),
                 false => format!(
@@ -537,8 +540,8 @@ impl Graph {
                 },
             first_node_percentage=100.0*(overlapping_nodes_number as f64 / self.get_nodes_number() as f64),
             second_node_percentage=100.0*(overlapping_nodes_number as f64 / other.get_nodes_number() as f64),
-            first_edge_percentage=100.0*(overlapping_edges_number as f64 / self.get_edges_number() as f64),
-            second_edge_percentage=100.0*(overlapping_edges_number as f64 / other.get_edges_number() as f64),
+            first_edge_percentage=100.0*(overlapping_edges_number as f64 / first_edges as f64),
+            second_edge_percentage=100.0*(overlapping_edges_number as f64 / second_edges as f64),
         ))
     }
 
