@@ -403,6 +403,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     // Evaluate get_edge_type_counts
     assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
 
+    // Evaluate get_edge_type_counts_hashmap
+    assert_eq!(graph.get_edge_type_counts_hashmap().is_ok(), graph.has_edge_types());
+
     //test removes
     {
         let without_edges =
