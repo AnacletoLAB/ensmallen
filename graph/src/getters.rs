@@ -426,7 +426,7 @@ impl Graph {
 
     /// Return if there are multiple edges between two nodes
     pub fn is_multigraph(&self) -> bool {
-        self.get_multigraph_edges_number() == 0
+        self.get_multigraph_edges_number() > 0
     }
 
     /// Return number of edges that have multigraph syblings.
