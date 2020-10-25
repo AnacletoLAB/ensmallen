@@ -126,14 +126,31 @@ impl Graph {
     ///     println!("edge type id {}: count: {}", edge_type_id, count);
     /// }
     /// ```
-    pub fn get_edge_type_counts(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
+    pub fn get_edge_type_counts(&self) -> Result<Counter<EdgeTypeT, usize>, String> {
         if let Some(et) = &self.edge_types {
-            Ok(Counter::init(et.ids.clone()).into_map())
+            Ok(Counter::init(et.ids.clone()))
         } else {
             Err(String::from(
                 "Edge types are not defined for current graph instance.",
             ))
         }
+    }
+
+    /// Returns edge type counts hashmap.
+    ///
+    /// # Arguments
+    ///
+    /// None
+    ///
+    /// # Examples
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// for (edge_type_id, count) in graph.get_edge_type_counts().unwrap().iter() {
+    ///     println!("edge type id {}: count: {}", edge_type_id, count);
+    /// }
+    /// ```
+    pub fn get_edge_type_counts_hashmap(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
+        Ok(self.get_edge_type_counts()?.into_map())
     }
 
     /// Return translated edge types from string to internal edge ID.
@@ -196,14 +213,30 @@ impl Graph {
     ///     println!("node type id {}: count: {}", node_type_id, count);
     /// }
     /// ```
-    pub fn get_node_type_counts(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
+    pub fn get_node_type_counts(&self) -> Result<Counter<NodeTypeT, usize>, String> {
         if let Some(nt) = &self.node_types {
-            Ok(Counter::init(nt.ids.clone()).into_map())
+            Ok(Counter::init(nt.ids.clone()))
         } else {
             Err(String::from(
                 "Node types are not defined for current graph instance.",
             ))
         }
+    }
+
+    /// Returns node type counts hashmap.
+    ///
+    /// # Arguments
+    ///
+    /// None
+    ///
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// for (node_type_id, count) in graph.get_node_type_counts().unwrap().iter() {
+    ///     println!("node type id {}: count: {}", node_type_id, count);
+    /// }
+    /// ```
+    pub fn get_node_type_counts_hashmap(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
+        Ok(self.get_node_type_counts()?.into_map())
     }
 
     /// Returns boolean representing if edge passing between given nodes exists.

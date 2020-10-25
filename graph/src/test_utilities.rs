@@ -369,7 +369,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     }
     // Compute metrics of the graph
     graph.report();
-    graph.textual_report();
+    graph.textual_report()?;
     // Compute degrees metrics
     for src in 0..10 {
         for dst in 0..10 {
@@ -406,12 +406,11 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     {
         let without_edges =
             graph.drop(None, None, None, None, false, false, true, false, verbose);
-        assert_eq!(without_edges.is_ok(), graph.has_edge_types());
         if let Some(we) = &without_edges.ok() {
             validate_vocabularies(we);
             assert_eq!(we.has_edge_types(), false);
             assert_eq!(we.has_weights(), graph.has_weights());
-            assert!(we.node_types == graph.node_types);
+            assert_eq!(we.node_types, graph.node_types);
             assert_eq!(
                 we.get_unique_edges_number(),
                 graph.get_unique_edges_number()
@@ -422,19 +421,13 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             );
             assert_eq!(we.has_traps(), graph.has_traps());
             assert_eq!(we.nodes, graph.nodes);
-
-            // expect errors for undefined behavior in overlap() and contains()
-            assert!(!graph.overlaps(&we)?);
-            assert!(!graph.contains(&we)?);
         }
     }
     {
         let without_nodes = graph.drop(None, None, None, None, false, true, false, false, verbose);
-        assert_eq!(without_nodes.is_ok(), graph.has_node_types());
         if let Some(wn) = &without_nodes.ok() {
             validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
-            assert!(wn.edge_types == graph.edge_types);
             assert_eq!(wn.weights, graph.weights);
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
             assert_eq!(wn.has_traps(), graph.has_traps());
@@ -444,12 +437,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     }
     {
         let without_weights = graph.drop(None, None, None, None, true, false, false, false, verbose);
-        assert_eq!(without_weights.is_ok(), graph.has_weights());
         if let Some(ww) = &without_weights.ok() {
             validate_vocabularies(ww);
             assert_eq!(ww.has_weights(), false);
-            assert!(ww.node_types == graph.node_types);
-            assert!(ww.edge_types == graph.edge_types);
+            assert_eq!(ww.node_types, graph.node_types);
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
             assert_eq!(ww.has_traps(), graph.has_traps());
             assert_eq!(ww.nodes, graph.nodes);

@@ -63,29 +63,42 @@ impl Graph {
             self.get_nodes_number() as usize,
         );
 
-        Graph::from_string_unsorted(
+        Graph::from_string_sorted(
             self.get_edges_string_quadruples()
                 .progress_with(pb_edges)
                 .filter_map(|(edge_id, src_name, dst_name, edge_type, weight)| {
+                    // If an allow edge set was provided
                     if let Some(aes) = &allow_edge_set {
+                        // We check that the current edge ID is within the edge set.
                         if !aes.contains(&edge_id) {
                             return None;
                         }
                     }
+                    // If a deny edge set was provided
                     if let Some(des) = &deny_edge_set {
+                        // We check that the current edge ID is NOT within the edge set.
                         if des.contains(&edge_id) {
                             return None;
                         }
                     }
+                    // If an allow nodes set was provided
                     if let Some(ans) = &allow_nodes_set {
+                        // We check that the current source or destination node name is within the edge set.
                         if !ans.contains(&src_name) || !ans.contains(&dst_name) {
                             return None;
                         }
                     }
+                    // If a deny nodes set was provided
                     if let Some(dns) = &deny_nodes_set {
+                        // We check that the current source or destination node name is NOT within the edge set.
                         if dns.contains(&src_name) || dns.contains(&dst_name) {
                             return None;
                         }
+                    }
+                    let src = self.get_node_id(&src_name).unwrap();
+                    let dst = self.get_node_id(&dst_name).unwrap();
+                    if !self.directed && src > dst {
+                        return None;
                     }
                     Some(Ok((
                         src_name,
@@ -127,13 +140,20 @@ impl Graph {
                     }),
             ),
             self.directed,
-            self.get_name(),
             false,
             true,
-            verbose,
-            false,
-            false,
-            false,
+            self.get_edges_number(), // Approximation of expected edges number.
+            self.get_nodes_number(), // Approximation of expected nodes number.
+            match &self.edge_types{
+                Some(ets)=> ets.has_numeric_ids(),
+                None=>false
+            },
+            self.nodes.has_numeric_ids() && (!singletons || !self.has_singletons()),
+            match &self.node_types{
+                Some(nts)=> nts.has_numeric_ids(),
+                None=>false
+            },
+            self.get_name()
         )
     }
 

@@ -126,27 +126,27 @@ fn generic_integer_operator(
 impl<'a, 'b> Graph {
     pub fn validate_operator_terms(&self, other: &'b Graph) -> Result<(), String> {
         if self.directed != other.directed {
-            return Err(String::from(concat!(
+            return Err(String::from(
                 "The graphs must either be both directed or undirected."
-            )));
+            ));
         }
 
         if self.has_weights() != other.has_weights() {
-            return Err(String::from(concat!(
+            return Err(String::from(
                 "Both graphs need to have weights or neither can."
-            )));
+            ));
         }
 
         if self.has_node_types() != other.has_node_types() {
-            return Err(String::from(concat!(
+            return Err(String::from(
                 "Both graphs need to have node types or neither can."
-            )));
+            ));
         }
 
         if self.has_edge_types() != other.has_edge_types() {
-            return Err(String::from(concat!(
+            return Err(String::from(
                 "Both graphs need to have node types or neither can."
-            )));
+            ));
         }
 
         Ok(())

@@ -89,4 +89,9 @@ impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
     pub fn len(&self) -> usize {
         self.vocabulary.len()
     }
+
+    /// Return boolean representing if values are numeric.
+    pub fn has_numeric_ids(&self)->bool{
+        self.vocabulary.has_numeric_ids()
+    }
 }
