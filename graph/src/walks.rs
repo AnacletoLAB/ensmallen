@@ -2,7 +2,6 @@ use super::*;
 use log::info;
 use rayon::prelude::*;
 use roaring::RoaringBitmap;
-use std::iter::FromIterator;
 use vec_rand::xorshift::xorshift;
 use vec_rand::{sample, sample_uniform};
 
@@ -30,7 +29,7 @@ impl Graph {
     /// * min_edge_id: EdgeT - The minimum edge id.
     /// * max_edge_id: EdgeT - The maximum edge id.
     fn get_destinations_bitmap(&self, min_edge_id: EdgeT, max_edge_id: EdgeT) -> RoaringBitmap {
-        RoaringBitmap::from_iter(self.get_destinations_range(min_edge_id, max_edge_id))
+        RoaringBitmap::from_sorted_iter(self.get_destinations_range(min_edge_id, max_edge_id))
     }
 
     /// TODO: Update docstring!
