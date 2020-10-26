@@ -360,8 +360,12 @@ pub(crate) fn build_edges(
             self_loop_number += 1;
         }
         if first || last_src != src || last_dst != dst {
-            non_singleton_nodes.insert(src);
-            non_singleton_nodes.insert(dst);
+            if !non_singleton_nodes.contains(src){
+                non_singleton_nodes.insert(src);
+            }
+            if !non_singleton_nodes.contains(dst){
+                non_singleton_nodes.insert(dst);
+            }
             unique_edges_number += 1;
             if src == dst {
                 unique_self_loop_number += 1;
