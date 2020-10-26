@@ -180,11 +180,6 @@ impl Graph {
         //###############################################################
 
         if not_one(walk_weights.return_weight) || not_one(walk_weights.explore_weight) {
-            let diff = match (&destinations_bitmap, &previous_destinations) {
-                (Some(dest), Some(prev)) =>  Some(dest - prev),
-                _ => None,
-            };
-
             transition
                 .iter_mut()
                 .zip(self.get_destinations_iterator(&destinations_bitmap, min_edge_id, max_edge_id))
@@ -213,10 +208,10 @@ impl Graph {
                     //############################################################
                     // This coefficient increases the probability of switching
                     // to nodes not locally seen.
-                    } else if let Some(d) = &diff {
+                    } else if let Some(pd) = &previous_destinations {
                         // this works only for undirected graphs
                         // for the directed graphs we will need to add some support structure.
-                        if d.contains(ndst) {
+                        if !pd.contains(ndst) {
                             *transition_value *= walk_weights.explore_weight
                         }
                     }
