@@ -1,0 +1,24 @@
+[package]
+name = "perf"
+version = "0.1.0"
+authors = ["zom <tommaso.fontana.96@gmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = "first"
+path = "src/first.rs"
+
+[[bin]]
+name = "second"
+path = "src/second.rs"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+graph = { path = "../graph" }
+rayon = "1.5.0"
+
+[profile.release]
+opt-level = 3
+codgen-units=1
+lto = "fat"
+debug = true
