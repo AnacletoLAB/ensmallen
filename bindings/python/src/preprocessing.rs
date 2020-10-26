@@ -152,7 +152,7 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["window_size", "verbose"]),
+            build_walk_parameters_list(&["window_size"]),
         ))?;
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
@@ -246,7 +246,7 @@ impl EnsmallenGraph {
     ) -> PyResult<(PyContexts, PyWords)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-
+        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&["window_size"])))?;
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
 
         let (contexts, words) = pyex!(self.graph.node2vec(&parameters, batch_size, window_size))?;
