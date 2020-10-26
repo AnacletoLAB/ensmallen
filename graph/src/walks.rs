@@ -70,41 +70,50 @@ impl Graph {
     /// # Arguments
     ///
     /// * node: NodeT, the previous node from which to compute the transitions, if this is bigger that the number of nodes it will panic.
-    /// * change_node_type_weight: ParamsT, weight for changing node type.
+    /// * walk_weights: WalkWeights, the weights for the weighted random walks.
     ///
     fn get_node_transition(
         &self,
         node: NodeT,
-        change_node_type_weight: ParamsT,
+        walk_weights: &WalkWeights,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
-    ) -> (RoaringBitmap, Vec<WeightT>) {
+    ) -> (Option<RoaringBitmap>, Vec<WeightT>) {
         // Retrieve the data to compute the update transition
-        let destinations = self.get_destinations_bitmap(min_edge_id, max_edge_id);
+        let destinations_bitmap = if not_one(walk_weights.explore_weight) || self.destinations.is_none(){
+            Some(self.get_destinations_bitmap(min_edge_id, max_edge_id))
+        } else {
+            None
+        };
         let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
-
-        
 
         // Compute the transition weights relative to the node weights.
         self.update_node_transition(
             node,
             &mut transition,
-            destinations.iter(),
-            change_node_type_weight,
+            self.get_destinations_iterator(&destinations_bitmap, min_edge_id, max_edge_id),
+            walk_weights.change_node_type_weight,
         );
 
-        (destinations, transition)
+        (destinations_bitmap, transition)
     }
 
     fn get_destinations_iterator<'a>(
         &'a self,
-        destinations_bitmap: &'a RoaringBitmap,
-        min_edge_id:EdgeT,
-        max_edge_id:EdgeT
-    )-> Box<dyn Iterator<Item = NodeT> + 'a>{
+        destinations_bitmap: &'a Option<RoaringBitmap>,
+        min_edge_id: EdgeT,
+        max_edge_id: EdgeT,
+    ) -> Box<dyn Iterator<Item = NodeT> + 'a> {
         match &self.destinations {
-            Some(destinations)=> Box::new(destinations[(min_edge_id as usize)..(max_edge_id as usize)].iter().cloned()),
-            None => Box::new(destinations_bitmap.iter())
+            Some(destinations) => Box::new(
+                destinations[(min_edge_id as usize)..(max_edge_id as usize)]
+                    .iter()
+                    .cloned(),
+            ),
+            None => match &destinations_bitmap{
+                Some(db)=>Box::new(db.iter()),
+                None=>unreachable!("Either destinations or destinations_bitmap must always exist.")
+            }
         }
     }
 
@@ -120,13 +129,17 @@ impl Graph {
         dst: NodeT,
         edge_id: EdgeT,
         walk_weights: &WalkWeights,
-        previous_destinations: &RoaringBitmap,
-    ) -> (RoaringBitmap, Vec<WeightT>, EdgeT) {
+        previous_destinations: &Option<RoaringBitmap>,
+    ) -> (Option<RoaringBitmap>, Vec<WeightT>, EdgeT) {
         // Retrieve minimum and maximum edge ID for the given node.
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(dst);
 
         // Retrieve the data to compute the update transition
-        let destinations_bitmap = self.get_destinations_bitmap(min_edge_id, max_edge_id);
+        let destinations_bitmap = if not_one(walk_weights.explore_weight) || self.destinations.is_none() {
+            Some(self.get_destinations_bitmap(min_edge_id, max_edge_id))
+        } else {
+            None
+        };
 
         let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
 
@@ -193,11 +206,12 @@ impl Graph {
                     //############################################################
                     // This coefficient increases the probability of switching
                     // to nodes not locally seen.
-                    } else if
-                    // this works only for undirected graphs
-                    // for the directed graphs we will need to add some support structure.
-                    !previous_destinations.contains(ndst) {
-                        *transition_value *= walk_weights.explore_weight
+                    } else if let Some(pd) = &previous_destinations {
+                        // this works only for undirected graphs
+                        // for the directed graphs we will need to add some support structure.
+                        if !pd.contains(ndst) {
+                            *transition_value *= walk_weights.explore_weight
+                        }
                     }
                 });
         }
@@ -225,16 +239,16 @@ impl Graph {
     ///
     /// * node: NodeT, the previous node from which to compute the transitions.
     /// * random_state: usize, the random_state to use for extracting the node.
-    /// * change_node_type_weight: ParamsT, weight for changing node type.
+    /// * walk_weights: WalkWeights, the weights for the weighted random walks.
     pub fn extract_node(
         &self,
         node: NodeT,
         random_state: NodeT,
-        change_node_type_weight: ParamsT,
-    ) -> (RoaringBitmap, NodeT, EdgeT) {
+        walk_weights: &WalkWeights,
+    ) -> (Option<RoaringBitmap>, NodeT, EdgeT) {
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
         let (destinations, mut weights) =
-            self.get_node_transition(node, change_node_type_weight, min_edge_id, max_edge_id);
+            self.get_node_transition(node, walk_weights, min_edge_id, max_edge_id);
         let edge_id = min_edge_id + sample(&mut weights, random_state as u64) as EdgeT;
         (destinations, self.get_destination(edge_id), edge_id)
     }
@@ -253,8 +267,8 @@ impl Graph {
         edge: EdgeT,
         random_state: NodeT,
         walk_weights: &WalkWeights,
-        previous_destinations: &RoaringBitmap,
-    ) -> (RoaringBitmap, NodeT, EdgeT) {
+        previous_destinations: &Option<RoaringBitmap>,
+    ) -> (Option<RoaringBitmap>, NodeT, EdgeT) {
         let (destinations, mut weights, min_edge_id) =
             self.get_edge_transition(src, dst, edge, walk_weights, previous_destinations);
         let edge_id = min_edge_id + sample(&mut weights, random_state as u64) as EdgeT;
@@ -293,7 +307,10 @@ impl Graph {
     ///
     /// * parameters: WalksParameters - the weighted walks parameters.
     ///
-    pub fn complete_walks_iter<'a>(&'a self, parameters: &'a WalksParameters) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
+    pub fn complete_walks_iter<'a>(
+        &'a self,
+        parameters: &'a WalksParameters,
+    ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
         self.walk_iter(
             self.get_unique_sources_number(),
             move |random_source_id| {
@@ -328,20 +345,19 @@ impl Graph {
         let total_iterations = quantity * parameters.iterations;
         info!("Starting random walk.");
 
-        let walks = (0..total_iterations)
-            .into_par_iter()
-            .map(move |index| {
-                    let (random_state, node) = to_node(index);
-                    let mut walk = match !self.has_weights() && parameters.is_first_order_walk() {
-                        true => self.uniform_walk(node, random_state, &parameters.single_walk_parameters),
-                        false => self.single_walk(node, random_state, &parameters.single_walk_parameters),
-                    };
+        let walks = (0..total_iterations).into_par_iter().map(move |index| {
+            let (random_state, node) = to_node(index);
+            let mut walk = match !self.has_weights() && parameters.is_first_order_walk() {
+                true => self.uniform_walk(node, random_state, &parameters.single_walk_parameters),
+                false => self.single_walk(node, random_state, &parameters.single_walk_parameters),
+            };
 
-                    if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
-                        walk.iter_mut().for_each(|node| *node = *dense_node_mapping.get(node).unwrap());
-                    }
-                    walk
-                });
+            if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
+                walk.iter_mut()
+                    .for_each(|node| *node = *dense_node_mapping.get(node).unwrap());
+            }
+            walk
+        });
 
         Ok(walks)
     }
@@ -366,8 +382,11 @@ impl Graph {
         walk.push(node);
         let mut src = node;
 
-        let (mut previous_destinations, mut dst, mut edge) =
-            self.extract_node(node, random_state, parameters.weights.change_node_type_weight);
+        let (mut previous_destinations, mut dst, mut edge) = self.extract_node(
+            node,
+            random_state,
+            &parameters.weights,
+        );
         walk.push(dst);
 
         for iteration in 2..parameters.length {
