@@ -110,7 +110,10 @@ impl Graph {
                     .cloned(),
             ),
             None => match &destinations_bitmap{
-                Some(db)=>Box::new(db.iter()),
+                Some(db)=>match self.is_multigraph() {
+                    true => Box::new(self.get_destinations_range(min_edge_id, max_edge_id)),
+                    false => Box::new(db.iter())
+                },
                 None=>unreachable!("Either destinations or destinations_bitmap must always exist.")
             }
         }
