@@ -86,7 +86,7 @@ impl EnsmallenGraph {
         unsafe {
             iter.enumerate().for_each(|(y, vy)| 
                 vy.iter().enumerate().for_each(|(x, vyx)|
-                    *(array.t.uget_mut([y, x])) = vyx.clone()
+                    *(array.t.uget_mut([y, x])) = *vyx
                 )
             );
         }
@@ -164,7 +164,7 @@ impl EnsmallenGraph {
         unsafe {
             iter.enumerate().for_each(|(y, vy)| 
                 vy.iter().enumerate().for_each(|(x, vyx)|
-                    *(array.t.uget_mut([y, x])) = vyx.clone()
+                    *(array.t.uget_mut([y, x])) = *vyx
                 )
             );
         }
