@@ -129,27 +129,17 @@ impl Graph {
             let dst_random_state = rand_u64(src_random_state);
             random_state = rand_u64(dst_random_state);
 
-            let edges_to_sample: usize = min!(
-                negatives_number,
-                match self.is_directed() {
-                    true => negatives_number - negative_edges_bitmap.len(),
-                    false => ((negatives_number - negative_edges_bitmap.len()) as f64 / 2.0).ceil()
-                        as u64,
-                }
-            ) as usize;
-
             let tmp_tb = get_loading_bar(
                 verbose,
                 format!("Negatives sampling round {}", sampling_round).as_ref(),
-                edges_to_sample as usize,
+                negatives_number as usize,
             );
             sampling_round += 1;
 
             // generate the random edge-sources
-            negative_edges_bitmap.extend(
-                gen_random_vec(edges_to_sample, src_random_state)
+            let sampled_edge_ids = gen_random_vec(negatives_number as usize, src_random_state)
                     .into_par_iter()
-                    .zip(gen_random_vec(edges_to_sample, dst_random_state).into_par_iter())
+                    .zip(gen_random_vec(negatives_number as usize, dst_random_state).into_par_iter())
                     // convert them to plain (src, dst)
                     .progress_with(tmp_tb)
                     .filter_map(|(src_seed, dst_seed)| {
@@ -181,8 +171,14 @@ impl Graph {
                             vec![self.encode_edge(src, dst)]
                         }
                     })
-                    .collect::<Vec<EdgeT>>(),
-            );
+                    .collect::<Vec<EdgeT>>();
+                
+                for edge_id in sampled_edge_ids.iter(){
+                    if negative_edges_bitmap.len() >= negatives_number {
+                        break;
+                    }
+                    negative_edges_bitmap.insert(*edge_id);
+                }
 
             pb1.inc(negative_edges_bitmap.len() - last_length);
             last_length = negative_edges_bitmap.len();
