@@ -1,5 +1,6 @@
 build:
 	rm -fdr target
+	rustup update
 	cargo update
 	maturin build --release
 
