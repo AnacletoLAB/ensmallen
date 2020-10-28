@@ -92,7 +92,6 @@ macro_rules! to_nparray_2d {
 
 pub fn build_walk_parameters_list(parameters: &[&str]) -> Vec<String> {
     let default = vec![
-        "min_length",
         "return_weight",
         "explore_weight",
         "change_edge_type_weight",

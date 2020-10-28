@@ -41,6 +41,7 @@ mod modifiers;
 mod operators;
 mod preprocessing;
 mod remove;
+mod remap;
 mod setters;
 mod tarjan;
 mod trees;
