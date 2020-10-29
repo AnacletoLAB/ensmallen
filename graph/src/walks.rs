@@ -22,16 +22,6 @@ impl Graph {
         }
     }
 
-    /// Return the sorted HashSet of the destinations.
-    ///
-    /// # Arguments
-    ///
-    /// * min_edge_id: EdgeT - The minimum edge id.
-    /// * max_edge_id: EdgeT - The maximum edge id.
-    fn get_destinations_bitmap(&self, min_edge_id: EdgeT, max_edge_id: EdgeT) -> RoaringBitmap {
-        RoaringBitmap::from_sorted_iter(self.get_destinations_range(min_edge_id, max_edge_id))
-    }
-
     /// TODO: Update docstring!
     fn update_node_transition(
         &self,
@@ -54,7 +44,7 @@ impl Graph {
 
                 transition
                     .iter_mut()
-                    .zip(destinations)
+                       .zip(destinations)
                     .for_each(|(transition_value, dst)| {
                         if this_type == nt.ids[dst as usize] {
                             *transition_value /= change_node_type_weight
@@ -77,46 +67,20 @@ impl Graph {
         walk_weights: &WalkWeights,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
-    ) -> (Option<RoaringBitmap>, Vec<WeightT>) {
+    ) -> (&[NodeT], Vec<WeightT>) {
         // Retrieve the data to compute the update transition
-        let destinations_bitmap = if not_one(walk_weights.explore_weight) || self.destinations.is_none(){
-            Some(self.get_destinations_bitmap(min_edge_id, max_edge_id))
-        } else {
-            None
-        };
+        let destinations = &self.destinations.as_ref().unwrap()[min_edge_id as usize..max_edge_id as usize];
         let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
 
         // Compute the transition weights relative to the node weights.
         self.update_node_transition(
             node,
             &mut transition,
-            self.get_destinations_iterator(&destinations_bitmap, min_edge_id, max_edge_id),
+            destinations.iter().cloned(),
             walk_weights.change_node_type_weight,
         );
 
-        (destinations_bitmap, transition)
-    }
-
-    fn get_destinations_iterator<'a>(
-        &'a self,
-        destinations_bitmap: &'a Option<RoaringBitmap>,
-        min_edge_id: EdgeT,
-        max_edge_id: EdgeT,
-    ) -> Box<dyn Iterator<Item = NodeT> + 'a> {
-        match &self.destinations {
-            Some(destinations) => Box::new(
-                destinations[(min_edge_id as usize)..(max_edge_id as usize)]
-                    .iter()
-                    .cloned(),
-            ),
-            None => match &destinations_bitmap{
-                Some(db)=>match self.is_multigraph() {
-                    true => Box::new(self.get_destinations_range(min_edge_id, max_edge_id)),
-                    false => Box::new(db.iter())
-                },
-                None=>unreachable!("Either destinations or destinations_bitmap must always exist.")
-            }
-        }
+        (destinations, transition)
     }
 
     /// Return the edge transition weights and the related node and edges.
@@ -131,17 +95,13 @@ impl Graph {
         dst: NodeT,
         edge_id: EdgeT,
         walk_weights: &WalkWeights,
-        previous_destinations: &Option<RoaringBitmap>,
-    ) -> (Option<RoaringBitmap>, Vec<WeightT>, EdgeT) {
+        previous_destinations: &[NodeT]
+    ) -> (&[NodeT], Vec<WeightT>, EdgeT) {
         // Retrieve minimum and maximum edge ID for the given node.
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(dst);
 
         // Retrieve the data to compute the update transition
-        let destinations_bitmap = if not_one(walk_weights.explore_weight) || self.destinations.is_none() {
-            Some(self.get_destinations_bitmap(min_edge_id, max_edge_id))
-        } else {
-            None
-        };
+        let destinations = &self.destinations.as_ref().unwrap()[min_edge_id as usize..max_edge_id as usize];
 
         let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
 
@@ -149,7 +109,7 @@ impl Graph {
         self.update_node_transition(
             dst,
             &mut transition,
-            self.get_destinations_iterator(&destinations_bitmap, min_edge_id, max_edge_id),
+            destinations.iter().cloned(),
             walk_weights.change_node_type_weight,
         );
 
@@ -178,11 +138,43 @@ impl Graph {
         //###############################################################
         //# Handling of the P & Q parameters: the node2vec coefficients #
         //###############################################################
+        if not_one(walk_weights.explore_weight) {
+            let mut i = 0;
+            let mut j = 0;
+            let mut v1:NodeT;
+            let mut v2:NodeT;
+            //############################################################
+            //# Handling of the Q parameter: the explore coefficient     #
+            //############################################################
+            // This coefficient increases the probability of switching
+            // to nodes not locally seen.
+            while !(i == destinations.len() || j == previous_destinations.len()) {
+                v1 = destinations[i];
+                v2 = previous_destinations[j];
+                match v1.cmp(&v2) {
+                    std::cmp::Ordering::Equal => {
+                        // In multigraphs we need to check multiple destinations.
+                        while v1 == v2 && i != destinations.len() {
+                            transition[i] *=  walk_weights.explore_weight;
+                            v1 = destinations[i];
+                            i += 1;
+                        }
+                        j += 1;
+                    },
+                    std::cmp::Ordering::Less => {
+                        i += 1; 
+                    },
+                    std::cmp::Ordering::Greater => {
+                        j += 1;
+                    },
+                }
+            }
+        }
 
-        if not_one(walk_weights.return_weight) || not_one(walk_weights.explore_weight) {
+        if not_one(walk_weights.return_weight) {
             transition
                 .iter_mut()
-                .zip(self.get_destinations_iterator(&destinations_bitmap, min_edge_id, max_edge_id))
+                .zip(destinations.iter())
                 .for_each(|(transition_value, ndst)| {
                     //############################################################
                     //# Handling of the P parameter: the return coefficient      #
@@ -200,25 +192,13 @@ impl Graph {
                     // it has some impact, we procced and increase by the given weight
                     // the probability of transitions that go back a previously visited
                     // node.
-                    if src == ndst || dst == ndst {
+                    if src == *ndst || dst == *ndst {
                         *transition_value *= walk_weights.return_weight
-
-                    //############################################################
-                    //# Handling of the Q parameter: the explore coefficient     #
-                    //############################################################
-                    // This coefficient increases the probability of switching
-                    // to nodes not locally seen.
-                    } else if let Some(pd) = &previous_destinations {
-                        // this works only for undirected graphs
-                        // for the directed graphs we will need to add some support structure.
-                        if !pd.contains(ndst) {
-                            *transition_value *= walk_weights.explore_weight
-                        }
                     }
                 });
         }
 
-        (destinations_bitmap, transition, min_edge_id)
+        (destinations, transition, min_edge_id)
     }
 
     /// Return new sampled node with the transition edge used.
@@ -247,7 +227,7 @@ impl Graph {
         node: NodeT,
         random_state: NodeT,
         walk_weights: &WalkWeights,
-    ) -> (Option<RoaringBitmap>, NodeT, EdgeT) {
+    ) -> (&[NodeT], NodeT, EdgeT) {
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
         let (destinations, mut weights) =
             self.get_node_transition(node, walk_weights, min_edge_id, max_edge_id);
@@ -269,8 +249,8 @@ impl Graph {
         edge: EdgeT,
         random_state: NodeT,
         walk_weights: &WalkWeights,
-        previous_destinations: &Option<RoaringBitmap>,
-    ) -> (Option<RoaringBitmap>, NodeT, EdgeT) {
+        previous_destinations: &[NodeT],
+    ) -> (&[NodeT], NodeT, EdgeT) {
         let (destinations, mut weights, min_edge_id) =
             self.get_edge_transition(src, dst, edge, walk_weights, previous_destinations);
         let edge_id = min_edge_id + sample(&mut weights, random_state as u64) as EdgeT;
