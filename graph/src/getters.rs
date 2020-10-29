@@ -309,6 +309,14 @@ impl Graph {
         *self.nodes.get(node_name).unwrap()
     }
 
+    /// Returs edge type id.
+    pub fn get_unchecked_edge_type_id(&self, edge_type: Option<&str>) -> Option<EdgeTypeT> {
+        match (&self.edge_types, edge_type) {
+            (Some(ets), Some(et)) => ets.get(et).copied(),
+            _ => None,
+        }
+    }
+
     /// Returs option with the weight of the given edge id.
     pub fn get_edge_weight(&self, edge_id: EdgeT) -> Option<WeightT> {
         match &self.weights {

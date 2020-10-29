@@ -79,11 +79,12 @@ impl Graph {
         max_edge_id: EdgeT,
     ) -> (Option<RoaringBitmap>, Vec<WeightT>) {
         // Retrieve the data to compute the update transition
-        let destinations_bitmap = if not_one(walk_weights.explore_weight) || self.destinations.is_none(){
-            Some(self.get_destinations_bitmap(min_edge_id, max_edge_id))
-        } else {
-            None
-        };
+        let destinations_bitmap =
+            if not_one(walk_weights.explore_weight) || self.destinations.is_none() {
+                Some(self.get_destinations_bitmap(min_edge_id, max_edge_id))
+            } else {
+                None
+            };
         let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
 
         // Compute the transition weights relative to the node weights.
@@ -109,13 +110,15 @@ impl Graph {
                     .iter()
                     .cloned(),
             ),
-            None => match &destinations_bitmap{
-                Some(db)=>match self.is_multigraph() {
+            None => match &destinations_bitmap {
+                Some(db) => match self.is_multigraph() {
                     true => Box::new(self.get_destinations_range(min_edge_id, max_edge_id)),
-                    false => Box::new(db.iter())
+                    false => Box::new(db.iter()),
                 },
-                None=>unreachable!("Either destinations or destinations_bitmap must always exist.")
-            }
+                None => {
+                    unreachable!("Either destinations or destinations_bitmap must always exist.")
+                }
+            },
         }
     }
 
@@ -137,11 +140,12 @@ impl Graph {
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(dst);
 
         // Retrieve the data to compute the update transition
-        let destinations_bitmap = if not_one(walk_weights.explore_weight) || self.destinations.is_none() {
-            Some(self.get_destinations_bitmap(min_edge_id, max_edge_id))
-        } else {
-            None
-        };
+        let destinations_bitmap =
+            if not_one(walk_weights.explore_weight) || self.destinations.is_none() {
+                Some(self.get_destinations_bitmap(min_edge_id, max_edge_id))
+            } else {
+                None
+            };
 
         let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
 
@@ -347,9 +351,11 @@ impl Graph {
         let total_iterations = quantity * parameters.iterations;
         info!("Starting random walk.");
 
+        let use_uniform = !self.has_weights() && parameters.is_first_order_walk();
+
         let walks = (0..total_iterations).into_par_iter().map(move |index| {
             let (random_state, node) = to_node(index);
-            let mut walk = match !self.has_weights() && parameters.is_first_order_walk() {
+            let mut walk = match use_uniform {
                 true => self.uniform_walk(node, random_state, &parameters.single_walk_parameters),
                 false => self.single_walk(node, random_state, &parameters.single_walk_parameters),
             };
@@ -384,11 +390,8 @@ impl Graph {
         walk.push(node);
         let mut src = node;
 
-        let (mut previous_destinations, mut dst, mut edge) = self.extract_node(
-            node,
-            random_state,
-            &parameters.weights,
-        );
+        let (mut previous_destinations, mut dst, mut edge) =
+            self.extract_node(node, random_state, &parameters.weights);
         walk.push(dst);
 
         for iteration in 2..parameters.length {
