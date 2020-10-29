@@ -162,10 +162,16 @@ impl Graph {
                         j += 1;
                     },
                     std::cmp::Ordering::Less => {
-                        i += 1; 
+                        i += 1;
+                        while i != destinations.len() && destinations[i] < v2  {
+                            i += 1;
+                        }
                     },
                     std::cmp::Ordering::Greater => {
                         j += 1;
+                        while j != previous_destinations.len() && v1 > previous_destinations[j]  {
+                            j += 1;
+                        }
                     },
                 }
             }
