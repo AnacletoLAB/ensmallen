@@ -371,9 +371,11 @@ impl Graph {
         let total_iterations = quantity * parameters.iterations;
         info!("Starting random walk.");
 
+        let use_uniform = !self.has_weights() && parameters.is_first_order_walk();
+
         let walks = (0..total_iterations).into_par_iter().map(move |index| {
             let (random_state, node) = to_node(index);
-            let mut walk = match !self.has_weights() && parameters.is_first_order_walk() {
+            let mut walk = match use_uniform {
                 true => self.uniform_walk(node, random_state, &parameters.single_walk_parameters),
                 false => self.single_walk(node, random_state, &parameters.single_walk_parameters),
             };
@@ -409,7 +411,6 @@ impl Graph {
         let mut src = node;
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
         let mut destinations: &[NodeT] = &self.destinations.as_ref().unwrap()[min_edge_id as usize.. max_edge_id as usize];
-
         let mut previous_destinations: &[NodeT];
         let (mut dst, mut edge) = self.extract_node(
             node,

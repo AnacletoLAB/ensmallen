@@ -46,9 +46,10 @@ fn generic_string_operator(
                 .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight)))
         });
 
+    let graphs = [main, other];
     let nodes_iterator = graphs
         .iter()
-        .flat_map(|(one, _, _)| one.get_nodes_names_iter().map(Ok));
+        .flat_map(|graph| graph.get_nodes_names_iter().map(Ok));
 
     Graph::from_string_unsorted(
         edges_iterator,
@@ -127,25 +128,25 @@ impl<'a, 'b> Graph {
     pub fn validate_operator_terms(&self, other: &'b Graph) -> Result<(), String> {
         if self.directed != other.directed {
             return Err(String::from(
-                "The graphs must either be both directed or undirected."
+                "The graphs must either be both directed or undirected.",
             ));
         }
 
         if self.has_weights() != other.has_weights() {
             return Err(String::from(
-                "Both graphs need to have weights or neither can."
+                "Both graphs need to have weights or neither can.",
             ));
         }
 
         if self.has_node_types() != other.has_node_types() {
             return Err(String::from(
-                "Both graphs need to have node types or neither can."
+                "Both graphs need to have node types or neither can.",
             ));
         }
 
         if self.has_edge_types() != other.has_edge_types() {
             return Err(String::from(
-                "Both graphs need to have edge types or neither can."
+                "Both graphs need to have edge types or neither can.",
             ));
         }
 

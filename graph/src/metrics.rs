@@ -651,8 +651,8 @@ impl Graph {
                 false=> "unweighted"
             }.to_owned(),
             self_loops = match self.has_selfloops() {
-                true => format!("{} are selfloops", self.get_self_loop_number()),
-                false => "none are selfloops".to_owned()
+                true => format!("{} are self-loops", self.get_self_loop_number()),
+                false => "none are self-loops".to_owned()
             },
             self_loops_multigraph_connector = match self.has_selfloops() && self.is_multigraph() {
                 true => " and ".to_owned(),
@@ -726,7 +726,7 @@ impl Graph {
             density=self.density(),
             connected_components=match connected_components_number> 1{
                 true=>format!(
-                    "has {components_number} connected components, where the component with most nodes has {maximum_connected_component} nodes and the component with least nodes has {minimum_connected_component} nodes",
+                    "has {components_number} connected components, where the component with most nodes has {maximum_connected_component} nodes and the component with the least nodes has {minimum_connected_component} nodes",
                     components_number=connected_components_number,
                     maximum_connected_component=maximum_connected_component,
                     minimum_connected_component=minimum_connected_component

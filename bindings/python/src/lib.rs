@@ -12,6 +12,7 @@ mod filters;
 mod metrics;
 mod node_file_writer;
 mod preprocessing;
+mod remap;
 mod tarjan;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
