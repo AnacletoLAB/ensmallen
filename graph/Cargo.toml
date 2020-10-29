@@ -29,7 +29,7 @@ glob = "0.3.0"
 linked_hash_set = "0.1.4"
 indicatif = {git = "https://github.com/drivasperez/indicatif", features = ["rayon"], branch="indexed-parallel-iterator"}
 arbitrary = { version = "0.4.5", features = ["derive"] }
-roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master"}
+roaring = { path = "../../roaring-rs" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "master", features = ["unsafe"] }
 

@@ -237,7 +237,7 @@ impl Graph {
 
         let pb = get_loading_bar(
             verbose,
-            &format!("removeping components for the graph {}", &self.name),
+            &format!("removing components for the graph {}", &self.name),
             self.get_edges_number() as usize,
         );
 
