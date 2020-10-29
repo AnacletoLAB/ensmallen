@@ -9,15 +9,17 @@ impl EnsmallenGraph {
     /// -----------------------------
     /// other: EnsmallenGraph,
     ///     The graph to remap towards.
-    /// verbose: bool,
-    ///     Wether to show a loding bar.
+    /// verbose: bool = True,
+    ///     Wether to show a loading bar. By default True.
     ///
     /// Returns
     /// -----------------------------
     /// New remapped graph.
-    pub fn remap(&self, other: &EnsmallenGraph, verbose: bool) -> PyResult<EnsmallenGraph> {
+    pub fn remap(&self, other: &EnsmallenGraph, verbose: Option<bool>) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pyex!(self.graph.remap(&other.graph, verbose))?,
+            graph: pyex!(self
+                .graph
+                .remap(&other.graph, verbose.or(Some(true)).unwrap()))?,
         })
     }
 }
