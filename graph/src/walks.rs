@@ -1,8 +1,6 @@
 use super::*;
 use log::info;
 use rayon::prelude::*;
-use roaring::RoaringBitmap;
-use std::borrow::Cow;
 use vec_rand::xorshift::xorshift;
 use vec_rand::{sample, sample_uniform};
 
@@ -38,7 +36,7 @@ fn update_return_weight_transition(
 
             // we always multiply because this way it's branchless
             // and we reduce the number of branch miss-prediction
-            *transition_value *= 1.0 + ((src == *ndst || dst == *ndst) as u64 as f64 * return_weight)
+            *transition_value *= 1.0 + ((src == *ndst || dst == *ndst) as u64 as f64 * (return_weight - 1.0))
         });
 }
 
@@ -68,7 +66,7 @@ fn update_explore_weight_transition(
                 // if v1 == v2 we multiply by 1 else by explore_weight
                 // we always multiply because this way it's branchless
                 // and we reduce the number of branch miss-prediction
-                transition[i] *= 1.0 + ((v1 == v2) as u64 as f64 * explore_weight);
+                transition[i] *= 1.0 + ((v1 == v2) as u64 as f64 * (explore_weight - 1.0));
                 v1 = destinations[i];
                 i += 1;
             }
@@ -372,12 +370,16 @@ impl Graph {
         info!("Starting random walk.");
 
         let use_uniform = !self.has_weights() && parameters.is_first_order_walk();
+        let use_fast = self.destinations.is_some();
 
         let walks = (0..total_iterations).into_par_iter().map(move |index| {
             let (random_state, node) = to_node(index);
             let mut walk = match use_uniform {
                 true => self.uniform_walk(node, random_state, &parameters.single_walk_parameters),
-                false => self.single_walk(node, random_state, &parameters.single_walk_parameters),
+                false => match use_fast {
+                    true => self.fast_single_walk(node, random_state, &parameters.single_walk_parameters),
+                    false => self.slow_single_walk(node, random_state, &parameters.single_walk_parameters),
+                }
             };
 
             if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
