@@ -50,7 +50,7 @@ pub fn load_ppi(
             NodeFileReader::new("tests/data/ppi/nodes.tsv".to_string())?
                 .set_verbose(Some(false))
                 .set_node_types_column_number(Some(1))?
-                .set_nodes_column_number(Some(1))?
+                .set_nodes_column_number(Some(0))?
                 .set_node_types_column(Some("category".to_string()))?
                 .set_default_node_type(Some("default".to_string()))
                 .set_nodes_column(Some("id".to_string()))?
@@ -71,17 +71,13 @@ pub fn load_ppi(
         .unwrap()
         .set_header(Some(true))
         .set_rows_to_skip(Some(0))
-        .set_sources_column_number(Some(1))?
         .set_sources_column(Some("subject".to_string()))?
-        .set_destinations_column_number(Some(1))?
         .set_destinations_column(Some("object".to_string()))?
-        .set_weights_column_number(if load_weights { Some(1) } else { None })?
         .set_weights_column(if load_weights {
             Some("weight".to_string())
         } else {
             None
         })?
-        .set_edge_types_column_number(if load_edge_types { Some(1) } else { None })?
         .set_edge_types_column(if load_edge_types {
             Some("edge_label".to_string())
         } else {
