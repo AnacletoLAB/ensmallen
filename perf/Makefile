@@ -5,7 +5,7 @@ first:
 		export RUST_FLAGS="";\
 		cargo build --release\
 	)
-	perf record --call-graph=dwarf ./target/release/first -o first.dat
+	perf record --call-graph=dwarf ./target/release/first
 
 second:
 	rm -rfd ./target
@@ -14,4 +14,13 @@ second:
 		export RUST_FLAGS="";\
 		cargo build --release\
 	)
-	perf record --call-graph=dwarf ./target/release/second -o second.dat
+	perf record --call-graph=dwarf ./target/release/second
+
+second_fast:
+	rm -rfd ./target
+	cargo update
+	(\
+		export RUST_FLAGS="";\
+		cargo build --release\
+	)
+	perf record --call-graph=dwarf ./target/release/second_fast

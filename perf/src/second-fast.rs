@@ -27,6 +27,8 @@ fn main() {
         .set_header(Some(false));
     let mut graph = Graph::from_unsorted_csv(edges_reader, None, false, "Graph".to_owned()).unwrap();
 
+    graph.enable_fast_walk(true, true);
+
     let walker = second_order_walker(&graph, false).unwrap();
     let walks = graph.complete_walks_iter( &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
     println!("{:?}", walks[walks.len() - 1]);

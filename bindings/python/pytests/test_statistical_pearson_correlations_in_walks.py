@@ -25,7 +25,7 @@ def test_return_weight_behaviour_hpo():
         leave=False
     ):
         walks = graph.complete_walks(
-            length=100,
+            length=400,
             return_weight=return_weight,
             verbose=False
         )
@@ -83,7 +83,7 @@ def test_explore_weight_behaviour_hpo():
     different nodes present in the walk and the parameter.
     """
     graph = load_hpo()
-
+    print(graph)
     mean_uniques_counts = []
     explore_weights = np.linspace(0.01, 10, num=50)
 
@@ -93,7 +93,7 @@ def test_explore_weight_behaviour_hpo():
         leave=False
     ):
         walks = graph.complete_walks(
-            length=100,
+            length=400,
             explore_weight=explore_weight,
             verbose=False
         )
