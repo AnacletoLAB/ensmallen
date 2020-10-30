@@ -1,6 +1,7 @@
 use super::*;
 use log::info;
 use rayon::prelude::*;
+use std::cmp::Ordering;
 use vec_rand::xorshift::xorshift;
 use vec_rand::{sample, sample_uniform};
 
@@ -101,8 +102,7 @@ fn update_return_explore_weight_transition(
     while i < destinations.len() && j < previous_destinations.len() {
         v1 = destinations[i];
         v2 = previous_destinations[j];
-        let goes_back = v1 == src || v1 == dst;
-        if goes_back {
+        if v1 == src || v1 == dst {
             transition[i] *= return_weight;
             i += 1;
             continue;
@@ -120,8 +120,7 @@ fn update_return_explore_weight_transition(
     }
     for k in i..destinations.len() {
         v1 = destinations[k];
-        let goes_back = v1 == src || v1 == dst;
-        if goes_back {
+        if v1 == src || v1 == dst {
             transition[k] *= return_weight;
         } else {
             transition[k] *= explore_weight;
