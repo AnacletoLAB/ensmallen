@@ -63,26 +63,23 @@ fn update_explore_weight_transition(
     while i < destinations.len() && j < previous_destinations.len() {
         v1 = destinations[i];
         v2 = previous_destinations[j];
-        if v1 == src || v1 == dst {
+        if v1 <= v2 {
+            if v1 < v2 {
+                transition[i] *=
+                    1.0 + (v1 != src && v1 != dst) as u64 as f64 * (explore_weight - 1.0);
+            } else {
+                j += 1;
+            }
             i += 1;
-            continue;
-        }
-        match v1.cmp(&v2) {
-            Ordering::Equal => {
-                i += 1;
-                j += 1;
-            }
-            Ordering::Greater => {
-                j += 1;
-            }
-            Ordering::Less => {
-                transition[i] *= explore_weight;
-                i += 1;
-            }
+        } else {
+            j += 1;
         }
     }
-    for (k, v1) in (i..destinations.len()).map(|k| (k, destinations[k])) {
-        transition[k] *= 1.0 + (v1 != src && v1 != dst) as u64 as f64 * (explore_weight - 1.0);
+    for k in i..destinations.len() {
+        v1 = destinations[k];
+        if v1 != src && v1 != dst {
+            transition[k] *= explore_weight;
+        }
     }
 }
 
