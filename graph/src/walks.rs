@@ -1,17 +1,17 @@
 use super::*;
 use log::info;
 use rayon::prelude::*;
+use std::cmp::Ordering;
 use vec_rand::xorshift::xorshift;
 use vec_rand::{sample, sample_uniform};
-use std::cmp::Ordering;
 
 #[inline(always)]
 fn update_return_weight_transition(
-    transition: &mut Vec<WeightT>, 
+    transition: &mut Vec<WeightT>,
     destinations: &[NodeT],
     src: NodeT,
     dst: NodeT,
-    return_weight: ParamsT
+    return_weight: ParamsT,
 ) {
     transition
         .iter_mut()
@@ -42,10 +42,9 @@ fn update_return_weight_transition(
         });
 }
 
-
 #[inline(always)]
 fn update_explore_weight_transition(
-    transition: &mut Vec<WeightT>, 
+    transition: &mut Vec<WeightT>,
     destinations: &[NodeT],
     previous_destinations: &[NodeT],
     explore_weight: ParamsT,
@@ -54,38 +53,36 @@ fn update_explore_weight_transition(
 ) {
     let mut i = 0;
     let mut j = 0;
-    let mut v1:NodeT;
-    let mut v2:NodeT;
+    let mut v1: NodeT;
+    let mut v2: NodeT;
     //############################################################
     //# Handling of the Q parameter: the explore coefficient     #
     //############################################################
     // This coefficient increases the probability of switching
     // to nodes not locally seen.
-    while !(i == destinations.len() || j == previous_destinations.len()) {
+    while i < destinations.len() && j < previous_destinations.len() {
         v1 = destinations[i];
         v2 = previous_destinations[j];
+        if v1 == src || v1 == dst {
+            i += 1;
+            continue;
+        }
         match v1.cmp(&v2) {
             Ordering::Equal => {
                 i += 1;
                 j += 1;
-            },
+            }
             Ordering::Greater => {
                 j += 1;
-            },
+            }
             Ordering::Less => {
-                if v1 != src && v1 != dst {
-                    transition[i] *= explore_weight;
-                }
+                transition[i] *= explore_weight;
                 i += 1;
             }
         }
     }
-    while i < destinations.len() {
-        v1 = destinations[i];
-        if v1 != src && v1 != dst {
-            transition[i] *= explore_weight;
-        }
-        i += 1;
+    for (k, v1) in (i..destinations.len()).map(|k| (k, destinations[k])) {
+        transition[k] *= 1.0 + (v1 != src && v1 != dst) as u64 as f64 * (explore_weight - 1.0);
     }
 }
 
@@ -98,7 +95,14 @@ mod tests {
         let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
         let previous_destinations = vec![2, 4, 4, 4];
         let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<f64>>();
-        update_explore_weight_transition(& mut transitions, &destinations, &previous_destinations, 2.0, 6, 100);
+        update_explore_weight_transition(
+            &mut transitions,
+            &destinations,
+            &previous_destinations,
+            2.0,
+            6,
+            100,
+        );
         assert_eq!(
             transitions,
             vec![2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0]
@@ -109,14 +113,13 @@ mod tests {
     fn test_update_return_weight_transition() {
         let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
         let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<f64>>();
-        update_return_weight_transition(& mut transitions, &destinations, 6, 2, 2.0);
+        update_return_weight_transition(&mut transitions, &destinations, 6, 2, 2.0);
         assert_eq!(
             transitions,
             vec![1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0]
         )
     }
 }
-
 
 impl Graph {
     /// Return the base weighted transitions.
@@ -157,7 +160,7 @@ impl Graph {
 
                 transition
                     .iter_mut()
-                       .zip(destinations)
+                    .zip(destinations)
                     .for_each(|(transition_value, dst)| {
                         if this_type == nt.ids[dst as usize] {
                             *transition_value /= change_node_type_weight
@@ -180,7 +183,7 @@ impl Graph {
         walk_weights: &WalkWeights,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
-        destinations: &[NodeT]
+        destinations: &[NodeT],
     ) -> Vec<WeightT> {
         // Retrieve the data to compute the update transition
         let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
@@ -195,7 +198,6 @@ impl Graph {
 
         transition
     }
-    
 
     /// Return the edge transition weights and the related node and edges.
     ///
@@ -212,7 +214,7 @@ impl Graph {
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
         destinations: &[NodeT],
-        previous_destinations: &[NodeT]
+        previous_destinations: &[NodeT],
     ) -> (Vec<WeightT>, EdgeT) {
         let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
 
@@ -250,11 +252,24 @@ impl Graph {
         //# Handling of the P & Q parameters: the node2vec coefficients #
         //###############################################################
         if not_one(walk_weights.explore_weight) {
-            update_explore_weight_transition(&mut transition, destinations, previous_destinations, walk_weights.explore_weight, src, dst);
+            update_explore_weight_transition(
+                &mut transition,
+                destinations,
+                previous_destinations,
+                walk_weights.explore_weight,
+                src,
+                dst,
+            );
         }
 
         if not_one(walk_weights.return_weight) {
-            update_return_weight_transition(&mut transition, destinations, src, dst, walk_weights.return_weight);
+            update_return_weight_transition(
+                &mut transition,
+                destinations,
+                src,
+                dst,
+                walk_weights.return_weight,
+            );
         }
 
         (transition, min_edge_id)
@@ -288,15 +303,10 @@ impl Graph {
         walk_weights: &WalkWeights,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
-        destinations: &[NodeT]
+        destinations: &[NodeT],
     ) -> (NodeT, EdgeT) {
-        let mut weights = self.get_node_transition(
-            node,
-            walk_weights,
-            min_edge_id,
-            max_edge_id,
-            destinations
-        );
+        let mut weights =
+            self.get_node_transition(node, walk_weights, min_edge_id, max_edge_id, destinations);
         let edge_id = min_edge_id + sample(&mut weights, random_state as u64) as EdgeT;
         (self.get_destination(edge_id), edge_id)
     }
@@ -320,16 +330,16 @@ impl Graph {
         destinations: &[NodeT],
         previous_destinations: &[NodeT],
     ) -> (NodeT, EdgeT) {
-        let (mut weights, min_edge_id) =self.get_edge_transition(
-                src,
-                dst,
-                edge,
-                walk_weights,
-                min_edge_id,
-                max_edge_id,
-                destinations,
-                previous_destinations
-            );
+        let (mut weights, min_edge_id) = self.get_edge_transition(
+            src,
+            dst,
+            edge,
+            walk_weights,
+            min_edge_id,
+            max_edge_id,
+            destinations,
+            previous_destinations,
+        );
         let edge_id = min_edge_id + sample(&mut weights, random_state as u64) as EdgeT;
         (self.get_destination(edge_id), edge_id)
     }
@@ -372,12 +382,7 @@ impl Graph {
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
         self.walk_iter(
             self.get_unique_sources_number(),
-            move |source_id| {
-                (
-                    source_id,
-                    self.get_unique_source(source_id as NodeT),
-                )
-            },
+            move |source_id| (source_id, self.get_unique_source(source_id as NodeT)),
             parameters,
         )
     }
@@ -412,9 +417,17 @@ impl Graph {
             let mut walk = match use_uniform {
                 true => self.uniform_walk(node, random_state, &parameters.single_walk_parameters),
                 false => match use_fast {
-                    true => self.fast_single_walk(node, random_state, &parameters.single_walk_parameters),
-                    false => self.slow_single_walk(node, random_state, &parameters.single_walk_parameters),
-                }
+                    true => self.fast_single_walk(
+                        node,
+                        random_state,
+                        &parameters.single_walk_parameters,
+                    ),
+                    false => self.slow_single_walk(
+                        node,
+                        random_state,
+                        &parameters.single_walk_parameters,
+                    ),
+                },
             };
 
             if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
@@ -447,7 +460,8 @@ impl Graph {
         walk.push(node);
         let mut src = node;
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
-        let mut destinations: &[NodeT] = &self.destinations.as_ref().unwrap()[min_edge_id as usize.. max_edge_id as usize];
+        let mut destinations: &[NodeT] =
+            &self.destinations.as_ref().unwrap()[min_edge_id as usize..max_edge_id as usize];
         let mut previous_destinations: &[NodeT];
         let (mut dst, mut edge) = self.extract_node(
             node,
@@ -455,14 +469,15 @@ impl Graph {
             &parameters.weights,
             min_edge_id,
             max_edge_id,
-            destinations
+            destinations,
         );
         walk.push(dst);
 
         for iteration in 2..parameters.length {
             let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(dst);
             previous_destinations = destinations;
-            destinations = &self.destinations.as_ref().unwrap()[min_edge_id as usize.. max_edge_id as usize];
+            destinations =
+                &self.destinations.as_ref().unwrap()[min_edge_id as usize..max_edge_id as usize];
             let (new_dst, inner_edge) = self.extract_edge(
                 src,
                 dst,
@@ -502,7 +517,9 @@ impl Graph {
         walk.push(node);
         let mut src = node;
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
-        let mut destinations: Vec<NodeT> = self.get_destinations_range(min_edge_id, max_edge_id).collect();
+        let mut destinations: Vec<NodeT> = self
+            .get_destinations_range(min_edge_id, max_edge_id)
+            .collect();
         let mut previous_destinations: Vec<NodeT>;
         let (mut dst, mut edge) = self.extract_node(
             node,
@@ -510,14 +527,16 @@ impl Graph {
             &parameters.weights,
             min_edge_id,
             max_edge_id,
-            destinations.as_slice()
+            destinations.as_slice(),
         );
         walk.push(dst);
 
         for iteration in 2..parameters.length {
             let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(dst);
             previous_destinations = destinations;
-            destinations = self.get_destinations_range(min_edge_id, max_edge_id).collect();
+            destinations = self
+                .get_destinations_range(min_edge_id, max_edge_id)
+                .collect();
             let (new_dst, inner_edge) = self.extract_edge(
                 src,
                 dst,
@@ -527,7 +546,7 @@ impl Graph {
                 min_edge_id,
                 max_edge_id,
                 destinations.as_slice(),
-                previous_destinations.as_slice()
+                previous_destinations.as_slice(),
             );
             src = dst;
             dst = new_dst;
