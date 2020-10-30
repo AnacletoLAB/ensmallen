@@ -51,7 +51,6 @@ pub struct EdgeFileReaderParams {
 }
 
 pub fn from_csv_harness(data: FromCsvHarnessParams) -> Result<(), String> {
-    println!("{:?}", data);
     // generate random paths
     let edges_path = graph::test_utilities::random_path();
     let nodes_path = graph::test_utilities::random_path();
