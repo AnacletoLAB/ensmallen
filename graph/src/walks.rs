@@ -1,7 +1,6 @@
 use super::*;
 use log::info;
 use rayon::prelude::*;
-use std::cmp::Ordering;
 use vec_rand::xorshift::xorshift;
 use vec_rand::{sample, sample_uniform};
 
@@ -77,6 +76,56 @@ fn update_explore_weight_transition(
     for k in i..destinations.len() {
         v1 = destinations[k];
         transition[k] *= 1.0 + (v1 != src && v1 != dst) as u64 as f64 * (explore_weight - 1.0);
+    }
+}
+
+#[inline(always)]
+fn update_return_explore_weight_transition(
+    transition: &mut Vec<WeightT>,
+    destinations: &[NodeT],
+    previous_destinations: &[NodeT],
+    return_weight: ParamsT,
+    explore_weight: ParamsT,
+    src: NodeT,
+    dst: NodeT,
+) {
+    let mut i = 0;
+    let mut j = 0;
+    let mut v1: NodeT;
+    let mut v2: NodeT;
+    //############################################################
+    //# Handling of the Q parameter: the explore coefficient     #
+    //############################################################
+    // This coefficient increases the probability of switching
+    // to nodes not locally seen.
+    while i < destinations.len() && j < previous_destinations.len() {
+        v1 = destinations[i];
+        v2 = previous_destinations[j];
+        let goes_back = v1 == src || v1 == dst;
+        if goes_back {
+            transition[i] *= return_weight;
+            i += 1;
+            continue;
+        }
+        if v1 <= v2 {
+            let is_less = v1 < v2;
+            if is_less {
+                transition[i] *= explore_weight;
+            }
+            j += !is_less as usize;
+            i += 1;
+        } else {
+            j += 1;
+        }
+    }
+    for k in i..destinations.len() {
+        v1 = destinations[k];
+        let goes_back = v1 == src || v1 == dst;
+        if goes_back {
+            transition[k] *= return_weight;
+        } else {
+            transition[k] *= explore_weight;
+        }
     }
 }
 
@@ -245,25 +294,39 @@ impl Graph {
         //###############################################################
         //# Handling of the P & Q parameters: the node2vec coefficients #
         //###############################################################
-        if not_one(walk_weights.explore_weight) {
-            update_explore_weight_transition(
+        let has_q = not_one(walk_weights.explore_weight);
+        let has_p = not_one(walk_weights.return_weight);
+        if has_p && has_q {
+            update_return_explore_weight_transition(
                 &mut transition,
                 destinations,
                 previous_destinations,
+                walk_weights.return_weight,
                 walk_weights.explore_weight,
                 src,
                 dst,
             );
-        }
+        } else {
+            if has_q {
+                update_explore_weight_transition(
+                    &mut transition,
+                    destinations,
+                    previous_destinations,
+                    walk_weights.explore_weight,
+                    src,
+                    dst,
+                );
+            }
 
-        if not_one(walk_weights.return_weight) {
-            update_return_weight_transition(
-                &mut transition,
-                destinations,
-                src,
-                dst,
-                walk_weights.return_weight,
-            );
+            if has_p {
+                update_return_weight_transition(
+                    &mut transition,
+                    destinations,
+                    src,
+                    dst,
+                    walk_weights.return_weight,
+                );
+            }
         }
 
         (transition, min_edge_id)
