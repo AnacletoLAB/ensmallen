@@ -1,7 +1,6 @@
 use super::*;
 use log::info;
 use rayon::prelude::*;
-use std::cmp::Ordering;
 use vec_rand::xorshift::xorshift;
 use vec_rand::{sample, sample_uniform};
 
