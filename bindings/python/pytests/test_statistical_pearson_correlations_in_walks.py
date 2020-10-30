@@ -83,7 +83,6 @@ def test_explore_weight_behaviour_hpo():
     different nodes present in the walk and the parameter.
     """
     graph = load_hpo()
-    print(graph)
     mean_uniques_counts = []
     explore_weights = np.linspace(0.01, 10, num=50)
 
