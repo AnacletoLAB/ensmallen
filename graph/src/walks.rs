@@ -63,23 +63,16 @@ fn update_explore_weight_transition(
     while i < destinations.len() && j < previous_destinations.len() {
         v1 = destinations[i];
         v2 = previous_destinations[j];
-        if v1 <= v2 {
-            if v1 < v2 {
-                transition[i] *=
-                    1.0 + (v1 != src && v1 != dst) as u64 as f64 * (explore_weight - 1.0);
-            } else {
-                j += 1;
-            }
-            i += 1;
-        } else {
-            j += 1;
-        }
+        let is_less_or_equal = v1 <= v2;
+        let is_less = v1 < v2;
+        transition[i] *=
+            1.0 + (is_less && v1 != src && v1 != dst) as u64 as f64 * (explore_weight - 1.0);
+        j += !is_less as usize;
+        i += is_less_or_equal as usize;
     }
     for k in i..destinations.len() {
         v1 = destinations[k];
-        if v1 != src && v1 != dst {
-            transition[k] *= explore_weight;
-        }
+        transition[k] *= 1.0 + (v1 != src && v1 != dst) as u64 as f64 * (explore_weight - 1.0);
     }
 }
 
