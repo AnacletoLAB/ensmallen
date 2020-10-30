@@ -43,7 +43,16 @@ where
 {
     nodes_iter.filter_map(move |row|{
         match row{
-            Ok((node_name, node_type)) =>  match nodes.get(&node_name){
+            Ok((node_name, node_type)) =>  {
+                if node_name.is_empty() {
+                    return Some(Err("Found an empty node name. Node names cannot be empty.".to_owned()))
+                }
+                if let Some(node_type_string) = &node_type{
+                    if node_type_string.is_empty() {
+                        return Some(Err("Found an empty node type name. Node type names cannot be empty.".to_owned()))
+                    }
+                }
+                match nodes.get(&node_name){
                 Some(_) => {
                     if ignore_duplicated_nodes {
                         None
@@ -66,7 +75,7 @@ where
                         Err(e) => Err(e)
                     })
                 }
-            },
+            }},
             Err(e) => Some(Err(e))
         }
     })
@@ -105,8 +114,11 @@ where
 {
     let empty_nodes_mapping = nodes.is_empty();
     edges_iterator.map(move |row: Result<StringQuadruple, String>| match row {
-        Ok((src_name, dst_name, node_type, weight)) => {
+        Ok((src_name, dst_name, edge_type, weight)) => {
             for node_name in [src_name.clone(), dst_name.clone()].iter() {
+                if node_name.is_empty() {
+                    return Err("Found an empty node name. Node names cannot be empty.".to_owned());
+                }
                 if !nodes.contains_key(node_name) {
                     if empty_nodes_mapping {
                         nodes.insert(node_name.to_owned())?;
@@ -121,10 +133,15 @@ where
                     }
                 }
             }
+            if let Some(edge_type_string) = &edge_type{
+                if edge_type_string.is_empty() {
+                    return Err("Found an empty edge type name. Edge type names cannot be empty.".to_owned());
+                }
+            }
             Ok((
                 *nodes.get(&src_name).unwrap(),
                 *nodes.get(&dst_name).unwrap(),
-                node_type,
+                edge_type,
                 weight,
             ))
         }
