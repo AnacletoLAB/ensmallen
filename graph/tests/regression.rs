@@ -166,7 +166,7 @@ fn test_regression10() {
         .unwrap()
         .set_destinations_column_number(Some(1))
         .unwrap()
-        .set_weights_column_number(Some(1))
+        .set_weights_column_number(Some(2))
         .unwrap()
         .set_header(Some(false));
     let mut g = Graph::from_unsorted_csv(edges_reader, None, true, "Graph".to_owned()).unwrap();

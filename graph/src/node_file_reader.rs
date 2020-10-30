@@ -50,6 +50,9 @@ impl NodeFileReader {
                 return Err("The given node column is empty.".to_owned());
             }
             self.nodes_column_number = self.reader.get_column_number(column)?;
+            if Some(self.nodes_column_number) == self.node_types_column_number {
+                return Err("The node column is the same as the node type one.".to_string());
+            }
         }
         Ok(self)
     }
@@ -76,6 +79,9 @@ impl NodeFileReader {
                 ));
             }
             self.nodes_column_number = column;
+            if Some(self.nodes_column_number) == self.node_types_column_number {
+                return Err("The node column is the same as the node type one.".to_string());
+            }
         }
         Ok(self)
     }
@@ -95,6 +101,9 @@ impl NodeFileReader {
                 return Err("The given node types column is empty.".to_owned());
             }
             self.node_types_column_number = Some(self.reader.get_column_number(column)?);
+            if Some(self.nodes_column_number) == self.node_types_column_number {
+                return Err("The node type column is the same as the node one.".to_string());
+            }
         }
         Ok(self)
     }
@@ -122,6 +131,9 @@ impl NodeFileReader {
             }
         }
         self.node_types_column_number = node_types_column_number;
+        if Some(self.nodes_column_number) == self.node_types_column_number {
+            return Err("The node type column is the same as the node one.".to_string());
+        }
         Ok(self)
     }
 
