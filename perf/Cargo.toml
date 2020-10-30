@@ -11,6 +11,10 @@ path = "src/first.rs"
 [[bin]]
 name = "second"
 path = "src/second.rs"
+
+[[bin]]
+name = "second_fast"
+path = "src/second_fast.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]

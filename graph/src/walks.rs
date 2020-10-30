@@ -1,11 +1,9 @@
 use super::*;
 use log::info;
 use rayon::prelude::*;
-use roaring::RoaringBitmap;
-use std::borrow::Cow;
 use vec_rand::xorshift::xorshift;
 use vec_rand::{sample, sample_uniform};
-
+use std::cmp::Ordering;
 
 #[inline(always)]
 fn update_return_weight_transition(
@@ -38,7 +36,9 @@ fn update_return_weight_transition(
 
             // we always multiply because this way it's branchless
             // and we reduce the number of branch miss-prediction
-            *transition_value *= 1.0 + ((src == *ndst || dst == *ndst) as u64 as f64 * return_weight)
+            if src == *ndst || dst == *ndst {
+                *transition_value *= return_weight;
+            }
         });
 }
 
@@ -48,7 +48,9 @@ fn update_explore_weight_transition(
     transition: &mut Vec<WeightT>, 
     destinations: &[NodeT],
     previous_destinations: &[NodeT],
-    explore_weight: ParamsT
+    explore_weight: ParamsT,
+    src: NodeT,
+    dst: NodeT,
 ) {
     let mut i = 0;
     let mut j = 0;
@@ -62,25 +64,56 @@ fn update_explore_weight_transition(
     while !(i == destinations.len() || j == previous_destinations.len()) {
         v1 = destinations[i];
         v2 = previous_destinations[j];
-        if v1 <= v2{
-            // In multigraphs we need to check multiple destinations.
-            while v1 <= v2 && i != destinations.len() {
-                // if v1 == v2 we multiply by 1 else by explore_weight
-                // we always multiply because this way it's branchless
-                // and we reduce the number of branch miss-prediction
-                transition[i] *= 1.0 + ((v1 == v2) as u64 as f64 * explore_weight);
-                v1 = destinations[i];
+        match v1.cmp(&v2) {
+            Ordering::Equal => {
+                i += 1;
+                j += 1;
+            },
+            Ordering::Greater => {
+                j += 1;
+            },
+            Ordering::Less => {
+                if v1 != src && v1 != dst {
+                    transition[i] *= explore_weight;
+                }
                 i += 1;
             }
-            // we tried merging this and putting it before the while
-            // but like this is faster ¯\_(ツ)_/¯
-            j += 1;
-        } else {
-            j += 1;
-            while j != previous_destinations.len() && v1 > previous_destinations[j]  {
-                j += 1;
-            }
         }
+    }
+    while i < destinations.len() {
+        v1 = destinations[i];
+        if v1 != src && v1 != dst {
+            transition[i] *= explore_weight;
+        }
+        i += 1;
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::update_explore_weight_transition;
+    use super::update_return_weight_transition;
+    #[test]
+    fn test_update_explore_weight_transition() {
+        let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
+        let previous_destinations = vec![2, 4, 4, 4];
+        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<f64>>();
+        update_explore_weight_transition(& mut transitions, &destinations, &previous_destinations, 2.0, 6, 100);
+        assert_eq!(
+            transitions,
+            vec![2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0]
+        )
+    }
+
+    #[test]
+    fn test_update_return_weight_transition() {
+        let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
+        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<f64>>();
+        update_return_weight_transition(& mut transitions, &destinations, 6, 2, 2.0);
+        assert_eq!(
+            transitions,
+            vec![1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0]
+        )
     }
 }
 
@@ -217,7 +250,7 @@ impl Graph {
         //# Handling of the P & Q parameters: the node2vec coefficients #
         //###############################################################
         if not_one(walk_weights.explore_weight) {
-            update_explore_weight_transition(&mut transition, destinations, previous_destinations, walk_weights.explore_weight);
+            update_explore_weight_transition(&mut transition, destinations, previous_destinations, walk_weights.explore_weight, src, dst);
         }
 
         if not_one(walk_weights.return_weight) {
@@ -339,10 +372,10 @@ impl Graph {
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
         self.walk_iter(
             self.get_unique_sources_number(),
-            move |random_source_id| {
+            move |source_id| {
                 (
-                    random_source_id,
-                    self.get_unique_source(random_source_id as NodeT),
+                    source_id,
+                    self.get_unique_source(source_id as NodeT),
                 )
             },
             parameters,
@@ -372,12 +405,16 @@ impl Graph {
         info!("Starting random walk.");
 
         let use_uniform = !self.has_weights() && parameters.is_first_order_walk();
+        let use_fast = self.destinations.is_some();
 
         let walks = (0..total_iterations).into_par_iter().map(move |index| {
             let (random_state, node) = to_node(index);
             let mut walk = match use_uniform {
                 true => self.uniform_walk(node, random_state, &parameters.single_walk_parameters),
-                false => self.single_walk(node, random_state, &parameters.single_walk_parameters),
+                false => match use_fast {
+                    true => self.fast_single_walk(node, random_state, &parameters.single_walk_parameters),
+                    false => self.slow_single_walk(node, random_state, &parameters.single_walk_parameters),
+                }
             };
 
             if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
@@ -423,7 +460,7 @@ impl Graph {
         walk.push(dst);
 
         for iteration in 2..parameters.length {
-            let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
+            let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(dst);
             previous_destinations = destinations;
             destinations = &self.destinations.as_ref().unwrap()[min_edge_id as usize.. max_edge_id as usize];
             let (new_dst, inner_edge) = self.extract_edge(
@@ -478,7 +515,7 @@ impl Graph {
         walk.push(dst);
 
         for iteration in 2..parameters.length {
-            let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
+            let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(dst);
             previous_destinations = destinations;
             destinations = self.get_destinations_range(min_edge_id, max_edge_id).collect();
             let (new_dst, inner_edge) = self.extract_edge(
