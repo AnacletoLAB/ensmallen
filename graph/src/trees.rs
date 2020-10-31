@@ -82,8 +82,6 @@ impl Graph {
         // Create the empty tree (this will be sparse on most graphs so roaring can save memory).
         let mut tree = RoaringTreemap::new();
 
-        println!("=======================================================",);
-
         // Iterate over all the edges and add and edge to the mst
         // iff the edge create, expand or merge components.
         for (edge_id, src, dst) in
@@ -141,7 +139,6 @@ impl Graph {
             }
 
             if update_tree {
-                println!("Adding edge from {} to {}", src, dst);
                 tree.extend(self.compute_edge_ids_vector(edge_id, src, dst, include_all_edge_types))
             }
         }
