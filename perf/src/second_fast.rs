@@ -3,7 +3,7 @@ use graph::*;
 use rayon::iter::ParallelIterator;
 
 /// Return WalksParameters to execute a second order walk.
-pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
+pub fn second_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(100)?
         .set_iterations(Some(1))?
         .set_return_weight(Some(2.0))?
@@ -27,7 +27,7 @@ fn main() {
 
     graph.enable_fast_walk(true, true);
 
-    let walker = second_order_walker(&graph, false).unwrap();
+    let walker = second_order_walker(&graph).unwrap();
     let walks = graph.complete_walks_iter( &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
     println!("{:?}", walks[walks.len() - 1]);
 }   

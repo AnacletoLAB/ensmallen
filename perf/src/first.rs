@@ -3,7 +3,7 @@ use graph::*;
 use rayon::iter::ParallelIterator;
 
 /// Return WalksParameters to execute a first order walk.
-pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
+pub fn first_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(1_000)?
         .set_iterations(Some(50_000))?
         .set_random_state(Some(43))
@@ -23,7 +23,7 @@ fn main() {
 
     graph.enable_fast_walk(true, true);
 
-    let walker = first_order_walker(&graph, false).unwrap();
+    let walker = first_order_walker(&graph).unwrap();
     let walks = graph.random_walks_iter(1, &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
     println!("{:?}", walks[walks.len() - 1]);
 }   
