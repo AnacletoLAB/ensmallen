@@ -6,8 +6,6 @@ use rayon::iter::ParallelIterator;
 pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(100)?
         .set_iterations(Some(1))?
-        .set_min_length(Some(1))?
-        .set_verbose(Some(verbose))
         .set_return_weight(Some(2.0))?
         .set_explore_weight(Some(2.0))?
         .set_change_edge_type_weight(Some(2.0))?

@@ -23,8 +23,6 @@ pub struct SingleWalkParameters {
 pub struct WalksParameters {
     pub(crate) single_walk_parameters: SingleWalkParameters,
     pub(crate) iterations: NodeT,
-    pub(crate) min_length: NodeT,
-    pub(crate) verbose: bool,
     pub(crate) random_state: NodeT,
     pub(crate) dense_node_mapping: Option<HashMap<NodeT, NodeT>>,
 }
@@ -128,9 +126,7 @@ impl WalksParameters {
         Ok(WalksParameters {
             single_walk_parameters: SingleWalkParameters::new(length)?,
             iterations: 1,
-            min_length: 1,
             random_state: (42 ^ SEED_XOR) as NodeT,
-            verbose: false,
             dense_node_mapping: None,
         })
     }
@@ -151,37 +147,6 @@ impl WalksParameters {
             self.iterations = it;
         }
         Ok(self)
-    }
-
-    /// Set the min_length.
-    ///
-    /// # Arguments
-    ///
-    /// * min_length: Option<NodeT> - Wethever to show the loading bar or not.
-    ///
-    pub fn set_min_length(mut self, min_length: Option<NodeT>) -> Result<WalksParameters, String> {
-        if let Some(ml) = min_length {
-            if ml == 0 {
-                return Err(String::from(
-                    "min_length parameter must be a strictly positive integer.",
-                ));
-            }
-            self.min_length = ml;
-        }
-        Ok(self)
-    }
-
-    /// Set the verbose.
-    ///
-    /// # Arguments
-    ///
-    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
-    ///
-    pub fn set_verbose(mut self, verbose: Option<bool>) -> WalksParameters {
-        if let Some(v) = verbose {
-            self.verbose = v;
-        }
-        self
     }
 
     /// Set the random_state.
@@ -291,13 +256,6 @@ impl WalksParameters {
     /// * graph: Graph - Graph object for which parameters are to be validated.
     ///
     pub fn validate(&self, graph: &Graph) -> Result<(), String> {
-        if self.min_length >= self.single_walk_parameters.length {
-            return Err(format!(
-                "The given min-walk-length {} is bigger or equal to the given walk length {}",
-                self.min_length, self.single_walk_parameters.length
-            ));
-        }
-
         if let Some(dense_node_mapping) = &self.dense_node_mapping {
             if !graph
                 .unique_sources

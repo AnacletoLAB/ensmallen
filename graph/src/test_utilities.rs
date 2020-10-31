@@ -92,21 +92,17 @@ pub fn load_ppi(
 }
 
 /// Return WalksParameters to execute a first order walk.
-pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
+pub fn first_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(10)?
         .set_iterations(Some(1))?
-        .set_min_length(Some(1))?
-        .set_verbose(Some(verbose))
         .set_random_state(Some(43))
         .set_dense_node_mapping(Some(graph.get_dense_node_mapping())))
 }
 
 /// Return WalksParameters to execute a second order walk.
-pub fn second_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
+pub fn second_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(10)?
         .set_iterations(Some(1))?
-        .set_min_length(Some(1))?
-        .set_verbose(Some(verbose))
         .set_return_weight(Some(2.0))?
         .set_explore_weight(Some(2.0))?
         .set_change_edge_type_weight(Some(2.0))?
@@ -164,7 +160,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
     // Testing principal random walk algorithms
-    let walker = first_order_walker(&graph, verbose)?;
+    let walker = first_order_walker(&graph)?;
     if !graph.directed {
         for i in 0..2 {
             if i == 1 {
@@ -183,8 +179,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             );
 
             assert_eq!(
-                graph.random_walks_iter(1, &second_order_walker(&graph, verbose)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph.random_walks_iter(1, &second_order_walker(&graph, verbose)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
+                graph.random_walks_iter(1, &second_order_walker(&graph)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph.random_walks_iter(1, &second_order_walker(&graph)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
             );
 
             assert_eq!(
@@ -193,8 +189,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             );
 
             assert_eq!(
-                graph.complete_walks_iter(&second_order_walker(&graph, verbose)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph.complete_walks_iter(&second_order_walker(&graph, verbose)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
+                graph.complete_walks_iter(&second_order_walker(&graph)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph.complete_walks_iter(&second_order_walker(&graph)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
             );
         }
     }

@@ -19,7 +19,6 @@ start_walk = time()
 walks = graph.walk(
     iterations=1,
     length=80,
-    min_length=0,
     return_weight=1,
     explore_weight=1,
     change_node_type_weight=1,

@@ -6,8 +6,6 @@ use rayon::iter::ParallelIterator;
 pub fn first_order_walker(graph: &Graph, verbose: bool) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(1_000)?
         .set_iterations(Some(50_000))?
-        .set_min_length(Some(1))?
-        .set_verbose(Some(verbose))
         .set_random_state(Some(43))
         .set_dense_node_mapping(Some(graph.get_dense_node_mapping())))
 }

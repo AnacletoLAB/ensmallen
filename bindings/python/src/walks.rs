@@ -13,7 +13,7 @@ unsafe impl<'a, T> Sync for AWEFULWORKAROUND<'a, T> {}
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, quantity, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, verbose, iterations, dense_node_mapping)"]
+    #[text_signature = "($self, length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -23,9 +23,6 @@ impl EnsmallenGraph {
     ///     On graphs without traps, all walks have this length.
     /// quantity: int,
     ///     Number of nodes to sample.
-    /// min_length: int = 0,
-    ///     Minimal length of the random walk. Will filter out smaller
-    ///     random walks.
     /// return_weight: float = 1.0,
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
@@ -50,8 +47,6 @@ impl EnsmallenGraph {
     ///     multigraphs, otherwise it has no impact.
     /// random_state: int = 42,
     ///     random_state to use to reproduce the walks.
-    /// verbose: bool = False,
-    ///     Wethever to show or not the loading bar of the walks.
     /// iterations: int = 1,
     ///     Number of cycles on the graphs to execute.
     /// dense_node_mapping: Dict[int, int] = None,
@@ -94,7 +89,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, verbose, iterations, dense_node_mapping)"]
+    #[text_signature = "($self, length, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping)"]
     /// Return complete random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -102,9 +97,6 @@ impl EnsmallenGraph {
     /// length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
-    /// min_length: int = 0,
-    ///     Minimal length of the random walk. Will filter out smaller
-    ///     random walks.
     /// return_weight: float = 1.0,
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
@@ -129,8 +121,6 @@ impl EnsmallenGraph {
     ///     multigraphs, otherwise it has no impact.
     /// random_state: int = 42,
     ///     random_state to use to reproduce the walks.
-    /// verbose: bool = False,
-    ///     Wethever to show or not the loading bar of the walks.
     /// iterations: int = 1,
     ///     Number of cycles on the graphs to execute.
     /// dense_node_mapping: Dict[int, int] = None,

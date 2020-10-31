@@ -90,7 +90,7 @@ fn cooccurence_matrix(
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, window_size, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, random_state, verbose)"]
+    #[text_signature = "($self, length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, random_state, verbose)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
     ///
     /// Parameters
@@ -102,9 +102,6 @@ impl EnsmallenGraph {
     ///     Size of the window for local contexts.
     /// iterations: int = 1,
     ///     Number of cycles on the graphs to execute.
-    /// min_length: int = 0,
-    ///     Minimal length of the random walk. Will filter out smaller
-    ///     random walks.
     /// return_weight: float = 1.0,
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
@@ -173,7 +170,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, batch_size, length, window_size, *, iterations, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, random_state)"]
+    #[text_signature = "($self, batch_size, length, window_size, *, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, random_state)"]
     /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
@@ -188,7 +185,6 @@ impl EnsmallenGraph {
     /// ---------------------
     /// batch_size:
     ///     Number of walks to include within this batch.
-    ///     Consider that the walks may be filtered by the given min_length.
     ///     In some pathological cases, this might leed to an empty batch.
     ///     These cases include graphs with particularly high number of traps.
     ///     Consider using the method graph.report() to verify if this might
@@ -200,9 +196,6 @@ impl EnsmallenGraph {
     ///     Size of the window for local contexts.
     /// iterations: int = 1,
     ///     Number of iterations for each node.
-    /// min_length: int = 0,
-    ///     Minimal length of the random walk. Will filter out smaller
-    ///     random walks.
     /// return_weight: float = 1.0,
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be

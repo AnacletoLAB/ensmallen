@@ -126,9 +126,7 @@ impl EnsmallenGraph {
             .set_explore_weight(extract_value!(kwargs, "explore_weight", WeightT)?)?
             .set_return_weight(extract_value!(kwargs, "return_weight", WeightT)?)?
             .set_random_state(extract_value!(kwargs, "random_state", usize)?)
-            .set_verbose(extract_value!(kwargs, "verbose", bool)?)
             .set_iterations(extract_value!(kwargs, "iterations", NodeT)?)?
-            .set_min_length(extract_value!(kwargs, "min_length", NodeT)?)?
             .set_dense_node_mapping(
                 extract_value!(kwargs, "dense_node_mapping", HashMap<NodeT, NodeT>)?,
             ))
