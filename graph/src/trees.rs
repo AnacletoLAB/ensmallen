@@ -88,26 +88,26 @@ impl Graph {
             self.iter_on_edges_with_preference(random_state, verbose, unwanted_edge_types)
         {
             let mut update_tree = false;
+            let src_component = nodes_components[src as usize];
+            let dst_component = nodes_components[dst as usize];
             // if both nodes are not covered then the edge is isolated
             // and must start its own component
-            if nodes_components[src as usize].is_none() && nodes_components[dst as usize].is_none()
-            {
+            if src_component.is_none() && dst_component.is_none() {
                 update_tree = true;
                 nodes_components[src as usize] = Some(components.len());
                 nodes_components[dst as usize] = Some(components.len());
                 components.push(RoaringBitmap::from_iter(vec![src, dst]));
             // if one of the nodes is covered then we are extending one componet.
-            } else if nodes_components[src as usize].is_some()
-                ^ nodes_components[dst as usize].is_some()
-            {
-                let (inserted, not_inserted) = if nodes_components[src as usize].is_some() {
-                    (src, dst)
-                } else {
-                    (dst, src)
-                };
-                let inserted_component = nodes_components[inserted as usize].unwrap();
+            } else if src_component.is_some() ^ dst_component.is_some() {
+                let (inserted_component, not_inserted, not_inserted_component) =
+                    if src_component.is_some() {
+                        (src_component, dst, &mut nodes_components[dst as usize])
+                    } else {
+                        (dst_component, src, &mut nodes_components[src as usize])
+                    };
+                let inserted_component = inserted_component.unwrap();
                 components[inserted_component].insert(not_inserted);
-                nodes_components[not_inserted as usize] = Some(inserted_component);
+                *not_inserted_component = Some(inserted_component);
 
                 update_tree = true;
             // if both are covered then we will insert the edge iff
@@ -115,8 +115,8 @@ impl Graph {
             // creating a single component
             } else {
                 // if the components are different then we add it because it will merge them
-                let src_component = nodes_components[src as usize].unwrap();
-                let dst_component = nodes_components[dst as usize].unwrap();
+                let src_component = src_component.unwrap();
+                let dst_component = dst_component.unwrap();
                 if src_component != dst_component {
                     let removed_component = components.remove(src_component);
                     nodes_components.iter_mut().for_each(|component_number| {
@@ -129,8 +129,7 @@ impl Graph {
                             }
                         }
                     });
-                    components[nodes_components[dst as usize].unwrap()]
-                        .union_with(&removed_component);
+                    components[nodes_components[dst as usize].unwrap()].union_with(&removed_component);
                     update_tree = true;
                     // else the edge is already covered
                 }
