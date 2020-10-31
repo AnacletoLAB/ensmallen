@@ -54,16 +54,6 @@ impl EdgeFileReader {
             }
             
             self.sources_column_number = self.reader.get_column_number(column)?;
-
-            if self.sources_column_number  == self.destinations_column_number {
-                return Err("The sources column is the same as the destinations one.".to_string());
-            }
-            if Some(self.sources_column_number ) == self.weights_column_number {
-                return Err("The sources column is the same as the weights one.".to_string());
-            }
-            if Some(self.sources_column_number ) == self.edge_types_column_number {
-                return Err("The sources column is the same as the edge types one.".to_string());
-            }
         }
         Ok(self)
     }
@@ -90,16 +80,6 @@ impl EdgeFileReader {
                 ));
             }
             self.sources_column_number = column;
-
-            if self.sources_column_number  == self.destinations_column_number {
-                return Err("The sources column is the same as the destinations one.".to_string());
-            }
-            if Some(self.sources_column_number ) == self.weights_column_number {
-                return Err("The sources column is the same as the weights one.".to_string());
-            }
-            if Some(self.sources_column_number ) == self.edge_types_column_number {
-                return Err("The sources column is the same as the edge types one.".to_string());
-            }
         }
         Ok(self)
     }
@@ -119,16 +99,6 @@ impl EdgeFileReader {
                 return Err("The given node types column is empty.".to_owned());
             }
             self.destinations_column_number = self.reader.get_column_number(column)?;
-
-            if self.destinations_column_number == self.sources_column_number {
-                return Err("The destinations column is the same as the sources one.".to_string());
-            }
-            if Some(self.destinations_column_number) == self.weights_column_number {
-                return Err("The destinations column is the same as the weights one.".to_string());
-            }
-            if Some(self.destinations_column_number) == self.edge_types_column_number {
-                return Err("The destinations column is the same as the edge types one.".to_string());
-            }
         }
         Ok(self)
     }
@@ -155,16 +125,6 @@ impl EdgeFileReader {
                 ));
             }
             self.destinations_column_number = column;
-
-            if self.destinations_column_number == self.sources_column_number {
-                return Err("The destinations column is the same as the sources one.".to_string());
-            }
-            if Some(self.destinations_column_number) == self.weights_column_number {
-                return Err("The destinations column is the same as the weights one.".to_string());
-            }
-            if Some(self.destinations_column_number) == self.edge_types_column_number {
-                return Err("The destinations column is the same as the edge types one.".to_string());
-            }
         }
         Ok(self)
     }
@@ -184,19 +144,6 @@ impl EdgeFileReader {
                 return Err("The given node types column is empty.".to_owned());
             }
             self.edge_types_column_number = Some(self.reader.get_column_number(column)?);
-
-            if let Some(new_column) = &self.edge_types_column_number {
-                if *new_column == self.sources_column_number {
-                    return Err("The edge types column is the same as the sources one.".to_string());
-                }
-                if *new_column == self.destinations_column_number {
-                    return Err("The edge types column is the same as the destinations one.".to_string());
-                } 
-                if self.edge_types_column_number == self.weights_column_number {
-                    return Err("The edge types column is the same as the weights one.".to_string());
-                }
-            }
-           
         }
         Ok(self)
     }
@@ -224,17 +171,6 @@ impl EdgeFileReader {
             }
         }
         self.edge_types_column_number = edge_types_column_number;
-        if let Some(new_column) = &self.edge_types_column_number {
-            if *new_column == self.sources_column_number {
-                return Err("The edge types column is the same as the sources one.".to_string());
-            }
-            if *new_column == self.destinations_column_number {
-                return Err("The edge types column is the same as the destinations one.".to_string());
-            }
-            if self.edge_types_column_number == self.weights_column_number {
-                return Err("The edge types column is the same as the weights one.".to_string());
-            }
-        }
         Ok(self)
     }
 
@@ -253,18 +189,6 @@ impl EdgeFileReader {
                 return Err("The given node types column is empty.".to_owned());
             }
             self.weights_column_number = Some(self.reader.get_column_number(column)?);
-            
-            if let Some(new_column) = &self.weights_column_number {
-                if *new_column == self.sources_column_number {
-                    return Err("The weights column is the same as the sources one.".to_string());
-                }
-                if *new_column == self.destinations_column_number {
-                    return Err("The weights column is the same as the destinations one.".to_string());
-                }
-                if self.weights_column_number == self.edge_types_column_number {
-                    return Err("The weights column is the same as the edge types one.".to_string());
-                }
-            }
         }
         Ok(self)
     }
@@ -292,18 +216,6 @@ impl EdgeFileReader {
             }
         }
         self.weights_column_number = weights_column_number;
-        
-        if let Some(new_column) = &self.weights_column_number {
-            if *new_column == self.sources_column_number {
-                return Err("The weights column is the same as the sources one.".to_string());
-            }
-            if *new_column == self.destinations_column_number {
-                return Err("The weights column is the same as the destinations one.".to_string());
-            }
-            if self.weights_column_number == self.edge_types_column_number {
-                return Err("The weights column is the same as the edge types one.".to_string());
-            }
-        }
         Ok(self)
     }
 
@@ -524,6 +436,25 @@ impl EdgeFileReader {
     pub fn read_lines(
         &self,
     ) -> Result<impl Iterator<Item = Result<StringQuadruple, String>> + '_, String> {
+        if self.destinations_column_number == self.sources_column_number {
+            return Err("The destinations column is the same as the sources one.".to_string());
+        }
+        if Some(self.destinations_column_number) == self.weights_column_number {
+            return Err("The destinations column is the same as the weights one.".to_string());
+        }
+        if Some(self.sources_column_number) == self.weights_column_number {
+            return Err("The sources column is the same as the weights one.".to_string());
+        }
+        if Some(self.sources_column_number) == self.edge_types_column_number {
+            return Err("The sources column is the same as the edge types one.".to_string());
+        }
+        if Some(self.destinations_column_number) == self.edge_types_column_number {
+            return Err("The destinations column is the same as the edge types one.".to_string());
+        }
+        if self.weights_column_number.is_some() && self.weights_column_number == self.edge_types_column_number {
+            return Err("The weights column is the same as the edge types one.".to_string());
+        }
+
         let expected_elements = self.reader.get_elements_per_line()?;
         if self.sources_column_number >= expected_elements {
             return Err(format!(
