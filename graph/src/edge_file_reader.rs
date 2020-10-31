@@ -191,11 +191,12 @@ impl EdgeFileReader {
                 }
                 if *new_column == self.destinations_column_number {
                     return Err("The edge types column is the same as the destinations one.".to_string());
+                } 
+                if self.edge_types_column_number == self.weights_column_number {
+                    return Err("The edge types column is the same as the weights one.".to_string());
                 }
             }
-            if self.edge_types_column_number == self.weights_column_number {
-                return Err("The edge types column is the same as the weights one.".to_string());
-            }
+           
         }
         Ok(self)
     }
@@ -230,9 +231,9 @@ impl EdgeFileReader {
             if *new_column == self.destinations_column_number {
                 return Err("The edge types column is the same as the destinations one.".to_string());
             }
-        }
-        if self.edge_types_column_number == self.weights_column_number {
-            return Err("The edge types column is the same as the weights one.".to_string());
+            if self.edge_types_column_number == self.weights_column_number {
+                return Err("The edge types column is the same as the weights one.".to_string());
+            }
         }
         Ok(self)
     }
@@ -260,9 +261,9 @@ impl EdgeFileReader {
                 if *new_column == self.destinations_column_number {
                     return Err("The weights column is the same as the destinations one.".to_string());
                 }
-            }
-            if self.weights_column_number == self.edge_types_column_number {
-                return Err("The weights column is the same as the edge types one.".to_string());
+                if self.weights_column_number == self.edge_types_column_number {
+                    return Err("The weights column is the same as the edge types one.".to_string());
+                }
             }
         }
         Ok(self)
@@ -299,9 +300,9 @@ impl EdgeFileReader {
             if *new_column == self.destinations_column_number {
                 return Err("The weights column is the same as the destinations one.".to_string());
             }
-        }
-        if self.weights_column_number == self.edge_types_column_number {
-            return Err("The weights column is the same as the edge types one.".to_string());
+            if self.weights_column_number == self.edge_types_column_number {
+                return Err("The weights column is the same as the edge types one.".to_string());
+            }
         }
         Ok(self)
     }
