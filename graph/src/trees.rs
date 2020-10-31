@@ -1,5 +1,7 @@
 use super::*;
 use indicatif::ProgressIterator;
+use rayon::iter::ParallelIterator;
+use rayon::iter::IntoParallelRefMutIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
 use std::iter::FromIterator;
@@ -119,16 +121,18 @@ impl Graph {
                 let dst_component = nodes_components[dst as usize].unwrap();
                 if src_component != dst_component {
                     let removed_component = components.remove(src_component);
-                    nodes_components.iter_mut().for_each(|component_number| {
-                        if let Some(cn) = component_number {
-                            if *cn == src_component {
-                                *cn = dst_component;
+                    nodes_components
+                        .par_iter_mut()
+                        .for_each(|component_number| {
+                            if let Some(cn) = component_number {
+                                if *cn == src_component {
+                                    *cn = dst_component;
+                                }
+                                if *cn > src_component {
+                                    *cn -= 1;
+                                }
                             }
-                            if *cn > src_component {
-                                *cn -= 1;
-                            }
-                        }
-                    });
+                        });
                     components
                         .get_mut(nodes_components[dst as usize].unwrap())
                         .unwrap()
