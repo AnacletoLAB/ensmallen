@@ -5,10 +5,6 @@ use std::collections::HashSet;
 use std::iter::FromIterator;
 use vec_rand::xorshift::xorshift as rand_u64;
 
-fn find_node_set(sets: &[RoaringBitmap], node: NodeT) -> usize {
-    sets.iter().position(|set| set.contains(node)).unwrap()
-}
-
 /// # Implementation of algorithms relative to trees.
 impl Graph {
     fn iter_edges_from_random_state(
@@ -81,8 +77,8 @@ impl Graph {
     ) -> (RoaringTreemap, Vec<RoaringBitmap>) {
         // Create vector of sets of the single nodes.
         let mut components: Vec<RoaringBitmap> = Vec::new();
-        // Create empty vector of inserted values (this will be dense so its a normal BitVec)
-        let mut inserted_nodes = RoaringBitmap::new();
+        // Create vector of nodes component numbers.
+        let mut nodes_components: Vec<Option<usize>> = vec![None; self.get_nodes_number() as usize];
         // Create the empty tree (this will be sparse on most graphs so roaring can save memory).
         let mut tree = RoaringTreemap::new();
 
@@ -92,44 +88,48 @@ impl Graph {
             self.iter_on_edges_with_preference(random_state, verbose, unwanted_edge_types)
         {
             let mut update_tree = false;
+            let src_component = nodes_components[src as usize];
+            let dst_component = nodes_components[dst as usize];
             // if both nodes are not covered then the edge is isolated
             // and must start its own component
-            if !inserted_nodes.contains(src) && !inserted_nodes.contains(dst) {
-                inserted_nodes.insert(src);
-                inserted_nodes.insert(dst);
+            if src_component.is_none() && dst_component.is_none() {
                 update_tree = true;
+                nodes_components[src as usize] = Some(components.len());
+                nodes_components[dst as usize] = Some(components.len());
                 components.push(RoaringBitmap::from_iter(vec![src, dst]));
             // if one of the nodes is covered then we are extending one componet.
-            } else if inserted_nodes.contains(src) ^ inserted_nodes.contains(dst) {
-                let (inserted, not_inserted) = if inserted_nodes.contains(src) {
-                    (src, dst)
-                } else {
-                    (dst, src)
-                };
-                inserted_nodes.insert(not_inserted);
-                let inserted_index = find_node_set(&components, inserted);
-                components
-                    .get_mut(inserted_index)
-                    .unwrap()
-                    .insert(not_inserted);
+            } else if src_component.is_some() ^ dst_component.is_some() {
+                let (inserted_component, not_inserted, not_inserted_component) =
+                    if src_component.is_some() {
+                        (src_component, dst, &mut nodes_components[dst as usize])
+                    } else {
+                        (dst_component, src, &mut nodes_components[src as usize])
+                    };
+                let inserted_component = inserted_component.unwrap();
+                components[inserted_component].insert(not_inserted);
+                *not_inserted_component = Some(inserted_component);
+
                 update_tree = true;
             // if both are covered then we will insert the edge iff
             // its nodes are form different components, this way the edge will merge them
             // creating a single component
             } else {
-                // get the components of the nodes
-                let src_set_index = find_node_set(&components, src);
-                let mut dst_set_index = find_node_set(&components, dst);
                 // if the components are different then we add it because it will merge them
-                if src_set_index != dst_set_index {
-                    let src_set = components.remove(src_set_index);
-                    if dst_set_index > src_set_index {
-                        dst_set_index -= 1;
-                    }
-                    components
-                        .get_mut(dst_set_index)
-                        .unwrap()
-                        .union_with(&src_set);
+                let src_component = src_component.unwrap();
+                let dst_component = dst_component.unwrap();
+                if src_component != dst_component {
+                    let removed_component = components.remove(src_component);
+                    nodes_components.iter_mut().for_each(|component_number| {
+                        if let Some(cn) = component_number {
+                            if *cn == src_component {
+                                *cn = dst_component;
+                            }
+                            if *cn > src_component {
+                                *cn -= 1;
+                            }
+                        }
+                    });
+                    components[nodes_components[dst as usize].unwrap()].union_with(&removed_component);
                     update_tree = true;
                     // else the edge is already covered
                 }
