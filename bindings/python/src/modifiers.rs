@@ -42,6 +42,12 @@ impl EnsmallenGraph {
     ///     Rate of nodes destinations to cache.
     ///     Must be a value between 0 and 1.
     ///     This cannot be used with the vector destinations.
+    /// 
+    /// Raises
+    /// -------------------
+    /// ValueError,
+    ///     If the cache_size parameter is given and vector destinations is enabled.
+    /// 
     pub fn enable_fast_walk(&mut self, py_kwargs: Option<&PyDict>) -> PyResult<()> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
