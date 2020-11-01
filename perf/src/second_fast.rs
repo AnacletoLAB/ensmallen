@@ -20,9 +20,9 @@ fn main() {
         .set_sources_column_number(Some(0)).unwrap()
         .set_destinations_column_number(Some(1)).unwrap()
         .set_weights_column_number(Some(2)).unwrap()
-        .set_default_weight(Some(1.0f64))
+        .set_default_weight(Some(1.0))
         .set_verbose(Some(false))
-        .set_header(Some(false));
+        .set_header(Some(true));
     let mut graph = Graph::from_unsorted_csv(edges_reader, None, false, "Graph".to_owned()).unwrap();
 
     graph.enable_fast_walk(true, true);

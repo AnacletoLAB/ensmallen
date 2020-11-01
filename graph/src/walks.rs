@@ -12,33 +12,24 @@ fn update_return_weight_transition(
     dst: NodeT,
     return_weight: ParamsT,
 ) {
-    transition
-        .iter_mut()
-        .zip(destinations.iter())
-        .for_each(|(transition_value, ndst)| {
-            //############################################################
-            //# Handling of the P parameter: the return coefficient      #
-            //############################################################
-
-            // If the neigbour matches with the source, hence this is
-            // a backward loop like the following:
-            // SRC -> DST
-            //  ▲     /
-            //   \___/
-            //
-            // We weight the edge weight with the given return weight.
-
-            // If the return weight, which is the inverse of p, is not 1, hence
-            // it has some impact, we procced and increase by the given weight
-            // the probability of transitions that go back a previously visited
-            // node.
-
-            // we always multiply because this way it's branchless
-            // and we reduce the number of branch miss-prediction
-            if src == *ndst || dst == *ndst {
-                *transition_value *= return_weight;
+    match destinations.binary_search(&src) {
+        Ok(mut i) => {
+            while i < destinations.len() && destinations[i] == src {
+                transition[i] *= return_weight;
+                i += 1;
             }
-        });
+        },
+        Err(_) => {}
+    }
+    match destinations.binary_search(&dst) {
+        Ok(mut i) => {
+            while i < destinations.len() && destinations[i] == dst {
+                transition[i] *= return_weight;
+                i += 1;
+            }
+        },
+        Err(_) => {}
+    }
 }
 
 #[inline(always)]
