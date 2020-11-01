@@ -2,7 +2,7 @@ use super::*;
 use log::info;
 use rayon::prelude::*;
 use vec_rand::xorshift::xorshift;
-use vec_rand::{sample, sample_uniform};
+use vec_rand::{sample_f32, sample_uniform};
 
 #[inline(always)]
 fn update_return_weight_transition(
@@ -75,7 +75,7 @@ fn update_explore_weight_transition(
     }
     for k in i..destinations.len() {
         v1 = destinations[k];
-        transition[k] *= 1.0 + (v1 != src && v1 != dst) as u64 as f64 * (explore_weight - 1.0);
+        transition[k] *= 1.0 + (v1 != src && v1 != dst) as u64 as WeightT * (explore_weight - 1.0);
     }
 }
 
@@ -135,7 +135,7 @@ mod tests {
     fn test_update_explore_weight_transition() {
         let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
         let previous_destinations = vec![2, 4, 4, 4];
-        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<f64>>();
+        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<f32>>();
         update_explore_weight_transition(
             &mut transitions,
             &destinations,
@@ -153,7 +153,7 @@ mod tests {
     #[test]
     fn test_update_return_weight_transition() {
         let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
-        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<f64>>();
+        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<f32>>();
         update_return_weight_transition(&mut transitions, &destinations, 6, 2, 2.0);
         assert_eq!(
             transitions,
@@ -362,7 +362,7 @@ impl Graph {
     ) -> (NodeT, EdgeT) {
         let mut weights =
             self.get_node_transition(node, walk_weights, min_edge_id, max_edge_id, destinations);
-        let edge_id = min_edge_id + sample(&mut weights, random_state as u64) as EdgeT;
+        let edge_id = min_edge_id + sample_f32(&mut weights, random_state as u64) as EdgeT;
         (self.get_destination(edge_id), edge_id)
     }
 
@@ -395,7 +395,7 @@ impl Graph {
             destinations,
             previous_destinations,
         );
-        let edge_id = min_edge_id + sample(&mut weights, random_state as u64) as EdgeT;
+        let edge_id = min_edge_id + sample_f32(&mut weights, random_state as u64) as EdgeT;
         (self.get_destination(edge_id), edge_id)
     }
 
