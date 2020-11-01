@@ -1,7 +1,7 @@
 use super::*;
 use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
-use roaring::RoaringBitmap;
+use bitvec::prelude::*;
 use std::collections::BTreeMap;
 
 type ParsedStringEdgesType = Result<
@@ -359,7 +359,8 @@ pub(crate) fn build_edges(
     let mut unique_self_loop_number: NodeT = 0;
     let mut self_loop_number: EdgeT = 0;
     // TODO: using roaring might be sub-optimal when the bitvec is dense.
-    let mut non_singleton_nodes = RoaringBitmap::new();
+    let mut non_singleton_nodes = bitvec![Msb0, u8; 0; nodes_number as usize];
+    let mut non_singleton_nodes_number: NodeT = 0;
     let mut first = true;
 
     for value in edges_iter {
@@ -380,8 +381,14 @@ pub(crate) fn build_edges(
             self_loop_number += 1;
         }
         if different_src || different_dst {
-            non_singleton_nodes.insert(src);
-            non_singleton_nodes.insert(dst);
+            if !non_singleton_nodes[src as usize]{
+                non_singleton_nodes.set(src as usize, true);
+                non_singleton_nodes_number+=1;
+            }
+            if !non_singleton_nodes[dst as usize]{
+                non_singleton_nodes.set(dst as usize, true);
+                non_singleton_nodes_number+=1;
+            }
             unique_edges_number += 1;
             if src == dst {
                 unique_self_loop_number += 1;
@@ -405,7 +412,7 @@ pub(crate) fn build_edges(
         unique_edges_number,
         self_loop_number,
         unique_self_loop_number,
-        non_singleton_nodes.len() as NodeT,
+        non_singleton_nodes_number,
         node_bits,
         node_bit_mask,
     ))

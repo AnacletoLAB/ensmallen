@@ -108,7 +108,6 @@ impl Graph {
                 let inserted_component = inserted_component.unwrap();
                 components[inserted_component].insert(not_inserted);
                 *not_inserted_component = Some(inserted_component);
-
                 update_tree = true;
             // if both are covered then we will insert the edge iff
             // its nodes are form different components, this way the edge will merge them
