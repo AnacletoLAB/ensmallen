@@ -497,10 +497,10 @@ impl Graph {
         destinations: &'a Option<Vec<NodeT>>,
     ) -> &'a [NodeT] {
         match (&self.destinations, &self.cached_destinations, destinations) {
-            (None, None, Some(dsts)) => &dsts.as_slice(),
+            (_, _, Some(dsts)) => &dsts.as_slice(),
             (Some(dsts), None, None) => &dsts[min_edge_id as usize..max_edge_id as usize],
             (None, Some(dsts), None) => dsts.get(&node).unwrap(),
-            _ => unreachable!(""),
+            _ => unreachable!("It is not possible to have both destinations and cached destinations at once."),
         }
     }
 
