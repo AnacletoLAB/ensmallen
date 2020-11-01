@@ -12,23 +12,17 @@ fn update_return_weight_transition(
     dst: NodeT,
     return_weight: ParamsT,
 ) {
-    match destinations.binary_search(&src) {
-        Ok(mut i) => {
-            while i < destinations.len() && destinations[i] == src {
-                transition[i] *= return_weight;
-                i += 1;
-            }
-        },
-        Err(_) => {}
+    if let Ok(mut i) = destinations.binary_search(&src) {
+        while i < destinations.len() && destinations[i] == src {
+            transition[i] *= return_weight;
+            i += 1;
+        }
     }
-    match destinations.binary_search(&dst) {
-        Ok(mut i) => {
-            while i < destinations.len() && destinations[i] == dst {
-                transition[i] *= return_weight;
-                i += 1;
-            }
-        },
-        Err(_) => {}
+    if let Ok(mut i) = destinations.binary_search(&dst) {
+        while i < destinations.len() && destinations[i] == dst {
+            transition[i] *= return_weight;
+            i += 1;
+        }
     }
 }
 
@@ -456,24 +450,12 @@ impl Graph {
         info!("Starting random walk.");
 
         let use_uniform = !self.has_weights() && parameters.is_first_order_walk();
-        let use_fast = self.destinations.is_some();
 
         let walks = (0..total_iterations).into_par_iter().map(move |index| {
             let (random_state, node) = to_node(index);
             let mut walk = match use_uniform {
                 true => self.uniform_walk(node, random_state, &parameters.single_walk_parameters),
-                false => match use_fast {
-                    true => self.fast_single_walk(
-                        node,
-                        random_state,
-                        &parameters.single_walk_parameters,
-                    ),
-                    false => self.slow_single_walk(
-                        node,
-                        random_state,
-                        &parameters.single_walk_parameters,
-                    ),
-                },
+                false => self.single_walk(node, random_state, &parameters.single_walk_parameters),
             };
 
             if let Some(dense_node_mapping) = &parameters.dense_node_mapping {
@@ -486,61 +468,40 @@ impl Graph {
         Ok(walks)
     }
 
-    /// Returns single walk from given node.
-    ///
-    /// This method assumes that there are no traps in the graph.
-    ///
-    /// # Arguments
-    ///
-    /// * node: NodeT - Node from where to start the random walks.
-    /// * random_state: usize, the random_state to use for extracting the nodes and edges.
-    /// * parameters: SingleWalkParameters - Parameters for the single walk.
-    ///
-    pub fn fast_single_walk(
-        &self,
-        node: NodeT,
-        random_state: NodeT,
-        parameters: &SingleWalkParameters,
-    ) -> Vec<NodeT> {
-        let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length as usize);
-        walk.push(node);
-        let mut src = node;
+    fn get_node_edges_and_destinations(&self, node: NodeT) -> (EdgeT, EdgeT, Option<Vec<NodeT>>) {
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
-        let mut destinations: &[NodeT] =
-            &self.destinations.as_ref().unwrap()[min_edge_id as usize..max_edge_id as usize];
-        let mut previous_destinations: &[NodeT];
-        let (mut dst, mut edge) = self.extract_node(
-            node,
-            random_state,
-            &parameters.weights,
-            min_edge_id,
-            max_edge_id,
-            destinations,
-        );
-        walk.push(dst);
+        let destinations: Option<Vec<NodeT>> =
+            match (&self.cached_destinations, &self.destinations) {
+                (Some(cached_destinations), None) => match cached_destinations.contains_key(&node) {
+                    true => None,
+                    false => Some(
+                        self.get_destinations_range(min_edge_id, max_edge_id)
+                            .collect(),
+                    ),
+                },
+                (None, Some(_)) => None,
+                (None, None) => Some(
+                    self.get_destinations_range(min_edge_id, max_edge_id)
+                        .collect(),
+                ),
+                _ => unreachable!("Cached destinations cannot exists alongside destinations!")
+            };
+        (min_edge_id, max_edge_id, destinations)
+    }
 
-        for iteration in 2..parameters.length {
-            let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(dst);
-            previous_destinations = destinations;
-            destinations =
-                &self.destinations.as_ref().unwrap()[min_edge_id as usize..max_edge_id as usize];
-            let (new_dst, inner_edge) = self.extract_edge(
-                src,
-                dst,
-                edge,
-                random_state + iteration,
-                &parameters.weights,
-                min_edge_id,
-                max_edge_id,
-                destinations,
-                previous_destinations,
-            );
-            src = dst;
-            dst = new_dst;
-            edge = inner_edge;
-            walk.push(dst);
+    fn get_destinations_slice<'a>(
+        &'a self,
+        min_edge_id: EdgeT,
+        max_edge_id: EdgeT,
+        node: NodeT,
+        destinations: &'a Option<Vec<NodeT>>,
+    ) -> &'a [NodeT] {
+        match (&self.destinations, &self.cached_destinations, destinations) {
+            (None, None, Some(dsts)) => &dsts.as_slice(),
+            (Some(dsts), None, None) => &dsts[min_edge_id as usize..max_edge_id as usize],
+            (None, Some(dsts), None) => dsts.get(&node).unwrap(),
+            _ => unreachable!(""),
         }
-        walk
     }
 
     /// Returns single walk from given node.
@@ -553,7 +514,7 @@ impl Graph {
     /// * random_state: usize, the random_state to use for extracting the nodes and edges.
     /// * parameters: SingleWalkParameters - Parameters for the single walk.
     ///
-    pub fn slow_single_walk(
+    pub fn single_walk(
         &self,
         node: NodeT,
         random_state: NodeT,
@@ -562,27 +523,28 @@ impl Graph {
         let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length as usize);
         walk.push(node);
         let mut src = node;
-        let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
-        let mut destinations: Vec<NodeT> = self
-            .get_destinations_range(min_edge_id, max_edge_id)
-            .collect();
-        let mut previous_destinations: Vec<NodeT>;
+        let (mut min_edge_id, mut max_edge_id, mut destinations) = self.get_node_edges_and_destinations(node);
+        let mut previous_destinations: Option<Vec<NodeT>>;
+        let mut previous_min_edge_id: EdgeT;
+        let mut previous_max_edge_id: EdgeT;
         let (mut dst, mut edge) = self.extract_node(
             node,
             random_state,
             &parameters.weights,
             min_edge_id,
             max_edge_id,
-            destinations.as_slice(),
+            self.get_destinations_slice(min_edge_id, max_edge_id, node, &destinations),
         );
         walk.push(dst);
 
         for iteration in 2..parameters.length {
-            let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(dst);
             previous_destinations = destinations;
-            destinations = self
-                .get_destinations_range(min_edge_id, max_edge_id)
-                .collect();
+            previous_min_edge_id = min_edge_id;
+            previous_max_edge_id = max_edge_id;
+            let (new_min_edge_id, new_max_edge_id, new_destinations) = self.get_node_edges_and_destinations(dst);
+            min_edge_id = new_min_edge_id;
+            max_edge_id = new_max_edge_id;
+            destinations = new_destinations;
             let (new_dst, inner_edge) = self.extract_edge(
                 src,
                 dst,
@@ -591,8 +553,8 @@ impl Graph {
                 &parameters.weights,
                 min_edge_id,
                 max_edge_id,
-                destinations.as_slice(),
-                previous_destinations.as_slice(),
+                self.get_destinations_slice(min_edge_id, max_edge_id, dst, &destinations),
+                self.get_destinations_slice(previous_min_edge_id, previous_max_edge_id, src, &previous_destinations),
             );
             src = dst;
             dst = new_dst;

@@ -1,4 +1,5 @@
 use super::*;
+use std::collections::HashMap;
 
 impl Graph {
     /// Replace all edge types (if present) and set all the edge to edge_type.
@@ -38,13 +39,43 @@ impl Graph {
     /// # Arguments
     /// - `vector_destinations`: bool, wether to cache destinations into a vector for faster walks.
     /// - `vector_outbounds`: bool, wether to cache outbounds into a vector for faster walks.
-    pub fn enable_fast_walk(&mut self, vector_destinations: bool, vector_outbounds: bool) {
+    pub fn enable_fast_walk(
+        &mut self,
+        vector_destinations: bool,
+        vector_outbounds: bool,
+        cache_size: Option<f64>,
+    ) -> Result<(), String> {
         if vector_destinations {
             self.destinations = Some(self.get_destinations());
         }
         if vector_outbounds {
             self.outbounds = Some(self.get_outbounds());
         }
+        if let Some(cs) = cache_size {
+            if vector_destinations {
+                return Err("You cannot use cache if you enable the destinations vector".to_owned());
+            }
+            if cs <= 0.0 || cs >= 1.0 {
+                return Err("Cache size must be between strictly 0 and 1.".to_owned());
+            }
+            let cached_nodes_number: NodeT = (self.get_nodes_number() as f64 * cs) as NodeT;
+            if cached_nodes_number == 0 || cached_nodes_number == self.get_nodes_number() {
+                return Err("required cached nodes number cannot be 0 or all the nodes.".to_owned());
+            }
+            self.cached_destinations = Some(
+                self.get_top_k_central_nodes(cached_nodes_number)
+                    .iter()
+                    .cloned()
+                    .map(|node_id| {
+                        (
+                            node_id,
+                            self.get_source_destinations_range(node_id)
+                                .collect::<Vec<NodeT>>(),
+                        )
+                    }).collect::<HashMap<NodeT, Vec<NodeT>>>()
+            );
+        }
+        Ok(())
     }
 
     /// Disable fast walk, using less memory.

@@ -1,9 +1,9 @@
 use super::*;
 use log::info;
 use rand::Rng;
+use rayon::iter::ParallelIterator;
 use std::fs;
 use std::path::Path;
-use rayon::iter::ParallelIterator;
 
 // where to save the test files
 #[cfg(target_os = "macos")]
@@ -164,7 +164,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     if !graph.directed {
         for i in 0..2 {
             if i == 1 {
-                graph.enable_fast_walk(true, true);
+                graph.enable_fast_walk(true, true, None)?;
                 if let Some(outbounds) = &graph.outbounds {
                     assert_eq!(outbounds.len(), graph.get_nodes_number() as usize);
                 }
@@ -174,48 +174,80 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             }
             info!("Executing random walks.");
             assert_eq!(
-                graph.random_walks_iter(1, &walker).map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph.random_walks_iter(1, &walker).map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
+                graph
+                    .random_walks_iter(1, &walker)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph
+                    .random_walks_iter(1, &walker)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
             );
 
             assert_eq!(
-                graph.random_walks_iter(1, &second_order_walker(&graph)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph.random_walks_iter(1, &second_order_walker(&graph)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
+                graph
+                    .random_walks_iter(1, &second_order_walker(&graph)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph
+                    .random_walks_iter(1, &second_order_walker(&graph)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
             );
 
             assert_eq!(
-                graph.complete_walks_iter(&walker).map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph.complete_walks_iter(&walker).map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
+                graph
+                    .complete_walks_iter(&walker)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph
+                    .complete_walks_iter(&walker)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
             );
 
             assert_eq!(
-                graph.complete_walks_iter(&second_order_walker(&graph)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
-                graph.complete_walks_iter(&second_order_walker(&graph)?).map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
+                graph
+                    .complete_walks_iter(&second_order_walker(&graph)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                graph
+                    .complete_walks_iter(&second_order_walker(&graph)?)
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
             );
         }
     }
 
     // Test get_edge_id_string()
-    assert_eq!(graph.get_edge_id_string("NONEXISTENT", "NONEXISTENT", None), None);
+    assert_eq!(
+        graph.get_edge_id_string("NONEXISTENT", "NONEXISTENT", None),
+        None
+    );
     if let Some(edge) = graph.get_unique_edges_iter().next() {
         let src_string = graph.get_node_name(edge.0).unwrap();
         let dst_string = graph.get_node_name(edge.1).unwrap();
         assert!(graph.has_edge_string(&src_string, &dst_string, None));
-        assert!(graph.has_node_string(&src_string, None) && graph.has_node_string(&dst_string, None));
-        assert_eq!(graph.get_edge_id_string(&src_string, &dst_string,
-                                            Some(&"NONEXISTENT_EDGE_TYPE".to_string())),
-                   None);
-        if ! graph.has_edge_types(){
-            assert_eq!(graph.get_edge_id_string(&src_string, &dst_string, None),
-                       graph.get_edge_id(edge.0, edge.1, None));
+        assert!(
+            graph.has_node_string(&src_string, None) && graph.has_node_string(&dst_string, None)
+        );
+        assert_eq!(
+            graph.get_edge_id_string(
+                &src_string,
+                &dst_string,
+                Some(&"NONEXISTENT_EDGE_TYPE".to_string())
+            ),
+            None
+        );
+        if !graph.has_edge_types() {
+            assert_eq!(
+                graph.get_edge_id_string(&src_string, &dst_string, None),
+                graph.get_edge_id(edge.0, edge.1, None)
+            );
         }
     }
     // Test has_node_string
     assert!(!(graph.has_node_string("NONEXISTENT", None)));
 
     // Test translate_edge|node_types()
-    assert!(graph.translate_edge_types(vec!["NONEXISTENT_EDGE_TYPE".to_string()]).is_err());
-    assert!(graph.translate_node_types(vec!["NONEXISTENT_NODE_TYPE".to_string()]).is_err());
+    assert!(graph
+        .translate_edge_types(vec!["NONEXISTENT_EDGE_TYPE".to_string()])
+        .is_err());
+    assert!(graph
+        .translate_node_types(vec!["NONEXISTENT_NODE_TYPE".to_string()])
+        .is_err());
 
     // Testing main holdout mechanisms
     for include_all_edge_types in &[false, true] {
@@ -396,7 +428,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     assert_eq!(graph.get_edge_type_counts().is_ok(), graph.has_edge_types());
 
     // Evaluate get_edge_type_counts_hashmap
-    assert_eq!(graph.get_edge_type_counts_hashmap().is_ok(), graph.has_edge_types());
+    assert_eq!(
+        graph.get_edge_type_counts_hashmap().is_ok(),
+        graph.has_edge_types()
+    );
 
     //test removes
     {
@@ -420,7 +455,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
     {
-        let without_nodes = graph.remove(None, None, None, None, false, true, false, false, verbose);
+        let without_nodes =
+            graph.remove(None, None, None, None, false, true, false, false, verbose);
         if let Some(wn) = &without_nodes.ok() {
             validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
@@ -432,7 +468,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
     {
-        let without_weights = graph.remove(None, None, None, None, true, false, false, false, verbose);
+        let without_weights =
+            graph.remove(None, None, None, None, true, false, false, false, verbose);
         if let Some(ww) = &without_weights.ok() {
             validate_vocabularies(ww);
             assert_eq!(ww.has_weights(), false);
