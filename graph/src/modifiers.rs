@@ -37,8 +37,9 @@ impl Graph {
     /// Enable fast walk, using more memory.
     ///
     /// # Arguments
-    /// - `vector_destinations`: bool, wether to cache destinations into a vector for faster walks.
-    /// - `vector_outbounds`: bool, wether to cache outbounds into a vector for faster walks.
+    /// * `vector_destinations`: bool, wether to cache destinations into a vector for faster walks.
+    /// * `vector_outbounds`: bool, wether to cache outbounds into a vector for faster walks.
+    /// * `cache_size`: Option<f64>, percentage of nodes destinations to cache. This cannot be used with the vector destinations.
     pub fn enable_fast_walk(
         &mut self,
         vector_destinations: bool,
