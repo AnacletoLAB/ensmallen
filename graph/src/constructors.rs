@@ -364,7 +364,10 @@ pub(crate) fn build_edges(
 
     for value in edges_iter {
         let (src, dst, edge_type, _) = value?;
-        if !first && last_src == src && last_dst == dst && last_edge_type == edge_type {
+        let different_src = last_src != src || first;
+        let different_dst = last_dst != dst || first;
+        let different_edge_type = last_edge_type != edge_type || first;
+        if !(different_src || different_dst || different_edge_type){
             if ignore_duplicated_edges {
                 continue;
             } else {
@@ -376,20 +379,20 @@ pub(crate) fn build_edges(
         if src == dst {
             self_loop_number += 1;
         }
-        if first || last_src != src || last_dst != dst {
+        if different_src || different_dst {
             non_singleton_nodes.insert(src);
             non_singleton_nodes.insert(dst);
             unique_edges_number += 1;
             if src == dst {
                 unique_self_loop_number += 1;
             }
-        }
-        if first || last_src != src {
-            unique_sources.push(src as u64).unwrap();
-            last_src = src;
-        }
-        if first || last_dst != dst {
-            last_dst = dst;
+            if different_src {
+                unique_sources.push(src as u64).unwrap();
+                last_src = src;
+            }
+            if different_dst {
+                last_dst = dst;
+            }
         }
         if first {
             first = false;
