@@ -48,9 +48,13 @@ impl Graph {
     ) -> Result<(), String> {
         if vector_destinations {
             self.destinations = Some(self.get_destinations());
+        } else {
+            self.destinations = None;
         }
         if vector_outbounds {
             self.outbounds = Some(self.get_outbounds());
+        } else {
+            self.outbounds = None;
         }
         if let Some(cs) = cache_size {
             if vector_destinations {
@@ -76,6 +80,8 @@ impl Graph {
                     })
                     .collect::<HashMap<NodeT, Vec<NodeT>>>(),
             );
+        } else {
+            self.cached_destinations = None;
         }
         Ok(())
     }
