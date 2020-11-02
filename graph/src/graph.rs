@@ -30,6 +30,8 @@ pub struct Graph {
     pub(crate) destinations: Option<Vec<NodeT>>,
     /// Vector of outbounds to execute fast walks if required.
     pub(crate) outbounds: Option<Vec<EdgeT>>,
+    // Hashmap of cached destinations to execute faster walks if required.
+    pub(crate) cached_destinations: Option<HashMap<NodeT, Vec<NodeT>>>,
     /// Graph name
     pub(crate) name: String,
 
