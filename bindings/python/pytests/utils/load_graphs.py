@@ -13,7 +13,8 @@ def load_hpo() -> EnsmallenGraph:
         nodes_column="id",
         node_types_column="category",
         default_edge_type='biolink:interacts_with',
-        default_node_type='biolink:NamedThing'
+        default_node_type='biolink:NamedThing',
+        name="HPO"
     )
     graph.enable_fast_walk()
     return graph
@@ -26,6 +27,7 @@ def load_pathway() -> EnsmallenGraph:
         sources_column="Gene_A",
         destinations_column="Gene_B",
         directed=False,
+        name="Pathway"
     )
     graph.enable_fast_walk()
     return graph
