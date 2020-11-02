@@ -92,7 +92,7 @@ impl Graph {
         self.nodes.reverse_map.clone()
     }
 
-    /// Return the nodes reverse mapping.
+    /// Return vector with top k central node Ids.
     ///
     /// # Arguments
     ///
@@ -106,6 +106,19 @@ impl Graph {
         nodes_degrees[0..k as usize]
             .iter()
             .map(|(_, node_id)| *node_id)
+            .collect()
+    }
+
+    /// Return vector with top k central node names.
+    ///
+    /// # Arguments
+    ///
+    /// * k: NodeT - Number of central nodes to extract.
+    pub fn get_top_k_central_node_names(&self, k: NodeT) -> Vec<String> {
+        self.get_top_k_central_nodes(k)
+            .iter()
+            .cloned()
+            .map(|node_id| self.get_node_name(node_id).unwrap())
             .collect()
     }
 
