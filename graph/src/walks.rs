@@ -2,7 +2,8 @@ use super::*;
 use log::info;
 use rayon::prelude::*;
 use vec_rand::xorshift::xorshift;
-use vec_rand::{sample_f32, sample_uniform};
+use vec_rand::sample_uniform;
+use vec_rand::sample_f32 as sample;
 
 #[inline(always)]
 fn update_return_weight_transition(
@@ -13,15 +14,27 @@ fn update_return_weight_transition(
     return_weight: ParamsT,
 ) {
     if let Ok(mut i) = destinations.binary_search(&src) {
+        let mut j = i;
+        while j > 0 && destinations[j] == src {
+            transition[j] *= return_weight;
+            j -= 1;
+        }
         while i < destinations.len() && destinations[i] == src {
             transition[i] *= return_weight;
             i += 1;
         }
     }
-    if let Ok(mut i) = destinations.binary_search(&dst) {
-        while i < destinations.len() && destinations[i] == dst {
-            transition[i] *= return_weight;
-            i += 1;
+    if src != dst {
+        if let Ok(mut i) = destinations.binary_search(&dst) {
+            let mut j = i;
+            while j > 0 && destinations[j] == src {
+                transition[j] *= return_weight;
+                j -= 1;
+            }
+            while i < destinations.len() && destinations[i] == dst {
+                transition[i] *= return_weight;
+                i += 1;
+            }
         }
     }
 }
@@ -114,13 +127,14 @@ fn update_return_explore_weight_transition(
 
 #[cfg(test)]
 mod tests {
+    use super::WeightT;
     use super::update_explore_weight_transition;
     use super::update_return_weight_transition;
     #[test]
     fn test_update_explore_weight_transition() {
         let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
         let previous_destinations = vec![2, 4, 4, 4];
-        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<f32>>();
+        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<WeightT>>();
         update_explore_weight_transition(
             &mut transitions,
             &destinations,
@@ -138,7 +152,7 @@ mod tests {
     #[test]
     fn test_update_return_weight_transition() {
         let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
-        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<f32>>();
+        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<WeightT>>();
         update_return_weight_transition(&mut transitions, &destinations, 6, 2, 2.0);
         assert_eq!(
             transitions,
@@ -347,7 +361,7 @@ impl Graph {
     ) -> (NodeT, EdgeT) {
         let mut weights =
             self.get_node_transition(node, walk_weights, min_edge_id, max_edge_id, destinations);
-        let edge_id = min_edge_id + sample_f32(&mut weights, random_state as u64) as EdgeT;
+        let edge_id = min_edge_id + sample(&mut weights, random_state as u64) as EdgeT;
         (self.get_destination(edge_id), edge_id)
     }
 
@@ -380,7 +394,7 @@ impl Graph {
             destinations,
             previous_destinations,
         );
-        let edge_id = min_edge_id + sample_f32(&mut weights, random_state as u64) as EdgeT;
+        let edge_id = min_edge_id + sample(&mut weights, random_state as u64) as EdgeT;
         (self.get_destination(edge_id), edge_id)
     }
 
