@@ -19,6 +19,7 @@ fn update_return_weight_transition(
             transition[j] *= return_weight;
             j -= 1;
         }
+        i += 1;
         while i < destinations.len() && destinations[i] == src {
             transition[i] *= return_weight;
             i += 1;
@@ -27,10 +28,11 @@ fn update_return_weight_transition(
     if src != dst {
         if let Ok(mut i) = destinations.binary_search(&dst) {
             let mut j = i;
-            while j > 0 && destinations[j] == src {
+            while j > 0 && destinations[j] == dst {
                 transition[j] *= return_weight;
                 j -= 1;
             }
+            i += 1;
             while i < destinations.len() && destinations[i] == dst {
                 transition[i] *= return_weight;
                 i += 1;
