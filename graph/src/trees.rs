@@ -1,9 +1,17 @@
 use super::*;
 use indicatif::ProgressIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 use std::iter::FromIterator;
 use vec_rand::xorshift::xorshift as rand_u64;
+
+// Return component of given node, including eventual remapping.
+fn get_node_component(component: usize, components_remapping: &HashMap<usize, usize>) -> usize {
+    match components_remapping.get(&component) {
+        Some(c) => *c,
+        None => component,
+    }
+}
 
 /// # Implementation of algorithms relative to trees.
 impl Graph {
@@ -81,6 +89,8 @@ impl Graph {
         let mut nodes_components: Vec<Option<usize>> = vec![None; self.get_nodes_number() as usize];
         // Create the empty tree (this will be sparse on most graphs so roaring can save memory).
         let mut tree = RoaringTreemap::new();
+        // Components remapping
+        let mut components_remapping: HashMap<usize, usize> = HashMap::new();
 
         // Iterate over all the edges and add and edge to the mst
         // iff the edge create, expand or merge components.
@@ -96,6 +106,7 @@ impl Graph {
                 update_tree = true;
                 nodes_components[src as usize] = Some(components.len());
                 nodes_components[dst as usize] = Some(components.len());
+                components_remapping.insert(components.len(), components.len());
                 components.push(RoaringBitmap::from_iter(vec![src, dst]));
             // if one of the nodes is covered then we are extending one componet.
             } else if src_component.is_some() ^ dst_component.is_some() {
@@ -105,7 +116,8 @@ impl Graph {
                     } else {
                         (dst_component, src, &mut nodes_components[src as usize])
                     };
-                let inserted_component = inserted_component.unwrap();
+                let inserted_component =
+                    get_node_component(inserted_component.unwrap(), &components_remapping);
                 components[inserted_component].insert(not_inserted);
                 *not_inserted_component = Some(inserted_component);
                 update_tree = true;
@@ -114,23 +126,21 @@ impl Graph {
             // creating a single component
             } else {
                 // if the components are different then we add it because it will merge them
-                let src_component = src_component.unwrap();
-                let dst_component = dst_component.unwrap();
+                let src_component =
+                    get_node_component(src_component.unwrap(), &components_remapping);
+                let dst_component =
+                    get_node_component(dst_component.unwrap(), &components_remapping);
                 if src_component != dst_component {
-                    let removed_component = components.remove(src_component);
-                    nodes_components.iter_mut().for_each(|component_number| {
-                        if let Some(cn) = component_number {
-                            if *cn == src_component {
-                                *cn = dst_component;
+                    let removed_component = components[src_component].clone();
+                    components[dst_component].union_with(&removed_component);
+                    components_remapping
+                        .iter_mut()
+                        .for_each(|(component, remapped_component)| {
+                            if *component == src_component || *remapped_component == src_component {
+                                *remapped_component = dst_component;
                             }
-                            if *cn > src_component {
-                                *cn -= 1;
-                            }
-                        }
-                    });
-                    components[nodes_components[dst as usize].unwrap()].union_with(&removed_component);
+                        });
                     update_tree = true;
-                    // else the edge is already covered
                 }
             }
 
@@ -138,6 +148,15 @@ impl Graph {
                 tree.extend(self.compute_edge_ids_vector(edge_id, src, dst, include_all_edge_types))
             }
         }
+
+        let components = components_remapping
+            .iter()
+            .filter_map(|(key, value)| match *key == *value {
+                true => Some(components[*key].clone()),
+                false => None,
+            })
+            .collect();
+
         (tree, components)
     }
 }
