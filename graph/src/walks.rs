@@ -41,6 +41,92 @@ fn update_return_weight_transition(
     }
 }
 
+#[inline(always)]
+fn rust_update_explore_weight_transition(
+    transition: &mut Vec<WeightT>,
+    destinations: &[NodeT],
+    previous_destinations: &[NodeT],
+    explore_weight: ParamsT,
+    src: NodeT,
+    dst: NodeT,
+) {
+    let mut i = 0;
+    let mut j = 0;
+    let mut v1: NodeT;
+    let mut v2: NodeT;
+    //############################################################
+    //# Handling of the Q parameter: the explore coefficient     #
+    //############################################################
+    // This coefficient increases the probability of switching
+    // to nodes not locally seen.
+    while i < destinations.len() && j < previous_destinations.len() {
+        v1 = destinations[i];
+        v2 = previous_destinations[j];
+        if v1 <= v2 {
+            let is_less = v1 < v2;
+            if is_less && v1 != src && v1 != dst {
+                transition[i] *= explore_weight;
+            }
+            j += !is_less as usize;
+            i += 1;
+        } else {
+            j += 1;
+        }
+    }
+    for k in i..destinations.len() {
+        v1 = destinations[k];
+        transition[k] *= 1.0 + (v1 != src && v1 != dst) as u64 as WeightT * (explore_weight - 1.0);
+    }
+}
+
+#[inline(always)]
+fn rust_update_return_explore_weight_transition(
+    transition: &mut Vec<WeightT>,
+    destinations: &[NodeT],
+    previous_destinations: &[NodeT],
+    return_weight: ParamsT,
+    explore_weight: ParamsT,
+    src: NodeT,
+    dst: NodeT,
+) {
+    let mut i = 0;
+    let mut j = 0;
+    let mut v1: NodeT;
+    let mut v2: NodeT;
+    //############################################################
+    //# Handling of the Q parameter: the explore coefficient     #
+    //############################################################
+    // This coefficient increases the probability of switching
+    // to nodes not locally seen.
+    while i < destinations.len() && j < previous_destinations.len() {
+        v1 = destinations[i];
+        v2 = previous_destinations[j];
+        if v1 == src || v1 == dst {
+            transition[i] *= return_weight;
+            i += 1;
+            continue;
+        }
+        if v1 <= v2 {
+            let is_less = v1 < v2;
+            if is_less {
+                transition[i] *= explore_weight;
+            }
+            j += !is_less as usize;
+            i += 1;
+        } else {
+            j += 1;
+        }
+    }
+    for k in i..destinations.len() {
+        v1 = destinations[k];
+        if v1 == src || v1 == dst {
+            transition[k] *= return_weight;
+        } else {
+            transition[k] *= explore_weight;
+        }
+    }
+}
+
 extern { 
     fn c_update_explore_weight_transition(
         transition: *const f32,
@@ -73,18 +159,32 @@ pub fn update_explore_weight_transition(
     src: NodeT,
     dst: NodeT,
 ){
-    unsafe{
-        c_update_explore_weight_transition(   
-            transition.as_ptr(), 
-            destinations.as_ptr(),
-            destinations.len() as u32,
-            previous_destinations.as_ptr(),
-            previous_destinations.len() as u32,
-            explore_weight,
-            src,
-            dst
-        )
+    #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
+    {
+        if is_x86_feature_detected!("avx2") {
+            unsafe{
+                c_update_explore_weight_transition(   
+                    transition.as_ptr(), 
+                    destinations.as_ptr(),
+                    destinations.len() as u32,
+                    previous_destinations.as_ptr(),
+                    previous_destinations.len() as u32,
+                    explore_weight,
+                    src,
+                    dst
+                );
+            }
+            return;
+        }
     }
+    rust_update_explore_weight_transition(
+        transition, 
+        destinations, 
+        previous_destinations, 
+        explore_weight, 
+        src, 
+        dst
+    );
 }
 
 pub fn update_return_explore_weight_transition(
@@ -96,19 +196,34 @@ pub fn update_return_explore_weight_transition(
     src: NodeT,
     dst: NodeT,
 ){
-    unsafe{
-        c_update_return_explore_weight_transition(   
-            transition.as_ptr(), 
-            destinations.as_ptr(),
-            destinations.len() as u32,
-            previous_destinations.as_ptr(),
-            previous_destinations.len() as u32,
-            explore_weight,
-            return_weight,
-            src,
-            dst
-        )
+    #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
+    {
+        if is_x86_feature_detected!("avx2") {
+            unsafe{
+                c_update_return_explore_weight_transition(   
+                    transition.as_ptr(), 
+                    destinations.as_ptr(),
+                    destinations.len() as u32,
+                    previous_destinations.as_ptr(),
+                    previous_destinations.len() as u32,
+                    explore_weight,
+                    return_weight,
+                    src,
+                    dst
+                );
+            }
+            return;
+        }
     }
+    rust_update_return_explore_weight_transition(
+        transition,
+        destinations,
+        previous_destinations,
+        return_weight,
+        explore_weight,
+        src,
+        dst
+    );
 }
 
 
