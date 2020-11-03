@@ -387,10 +387,19 @@ impl Graph {
                 };
                 (min_edge_id, outbounds[src as usize])
             }
-            None => (
-                self.get_unchecked_edge_id_from_tuple(src, 0),
-                self.get_unchecked_edge_id_from_tuple(src + 1, 0),
-            ),
+            None => {
+                let min_edge_id: EdgeT = self.get_unchecked_edge_id_from_tuple(src, 0);
+                (
+                    min_edge_id,
+                    match &self.cached_destinations{
+                        Some(cds) => match cds.get(&src){
+                            Some(destinations) => destinations.len() as EdgeT + min_edge_id,
+                            None => self.get_unchecked_edge_id_from_tuple(src + 1, 0)
+                        },
+                        None => self.get_unchecked_edge_id_from_tuple(src + 1, 0)
+                    },
+                )
+            },
         }
     }
 

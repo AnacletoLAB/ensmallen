@@ -373,8 +373,17 @@ impl Graph {
     ) -> (NodeT, EdgeT) {
         let mut weights =
             self.get_node_transition(node, walk_weights, min_edge_id, max_edge_id, destinations);
-        let edge_id = min_edge_id + sample(&mut weights, random_state as u64) as EdgeT;
-        (self.get_destination(edge_id), edge_id)
+        let sampled_offset = sample(&mut weights, random_state as u64);
+        let edge_id = min_edge_id + sampled_offset as EdgeT;
+
+        let destination = match &self.cached_destinations {
+            Some(cds) => match cds.get(&node) {
+                Some(dsts) => dsts[sampled_offset],
+                None => self.get_destination(edge_id),
+            },
+            None => self.get_destination(edge_id),
+        };
+        (destination, edge_id)
     }
 
     /// Return new random edge with given weights.
@@ -406,8 +415,17 @@ impl Graph {
             destinations,
             previous_destinations,
         );
-        let edge_id = min_edge_id + sample(&mut weights, random_state as u64) as EdgeT;
-        (self.get_destination(edge_id), edge_id)
+        let sampled_offset = sample(&mut weights, random_state as u64);
+        let edge_id = min_edge_id + sampled_offset as EdgeT;
+
+        let destination = match &self.cached_destinations {
+            Some(cds) => match cds.get(&dst) {
+                Some(dsts) => dsts[sampled_offset],
+                None => self.get_destination(edge_id),
+            },
+            None => self.get_destination(edge_id),
+        };
+        (destination, edge_id)
     }
 
     /// Return vector of walks run on each non-trap node of the graph.
