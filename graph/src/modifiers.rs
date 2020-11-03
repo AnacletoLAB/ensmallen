@@ -61,7 +61,7 @@ impl Graph {
                 return Err("You cannot use cache if you enable the destinations vector".to_owned());
             }
             if cs <= 0.0 || cs >= 1.0 {
-                return Err("Cache size must be between strictly 0 and 1, otherwise just enable the destinations vector..".to_owned());
+                return Err("Cache size must be between strictly 0 and 1, otherwise just enable the destinations vector.".to_owned());
             }
             let cached_nodes_number: NodeT = (self.get_nodes_number() as f64 * cs) as NodeT;
             if cached_nodes_number == 0 || cached_nodes_number == self.get_nodes_number() {

@@ -162,9 +162,18 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
-        for i in 0..2 {
-            if i == 1 {
+        for mode in 0..3 {
+            if mode == 1 {
                 graph.enable_fast_walk(true, true, None)?;
+                if let Some(outbounds) = &graph.outbounds {
+                    assert_eq!(outbounds.len(), graph.get_nodes_number() as usize);
+                }
+                if let Some(destinations) = &graph.destinations {
+                    assert_eq!(destinations.len(), graph.get_edges_number() as usize);
+                }
+            }
+            if mode == 2 {
+                graph.enable_fast_walk(false, false, Some(0.05 as f64))?;
                 if let Some(outbounds) = &graph.outbounds {
                     assert_eq!(outbounds.len(), graph.get_nodes_number() as usize);
                 }

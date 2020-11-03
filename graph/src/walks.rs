@@ -1,9 +1,9 @@
 use super::*;
 use log::info;
 use rayon::prelude::*;
-use vec_rand::xorshift::xorshift;
-use vec_rand::sample_uniform;
 use vec_rand::sample_f32 as sample;
+use vec_rand::sample_uniform;
+use vec_rand::xorshift::xorshift;
 
 #[inline(always)]
 fn update_return_weight_transition(
@@ -129,14 +129,16 @@ fn update_return_explore_weight_transition(
 
 #[cfg(test)]
 mod tests {
-    use super::WeightT;
     use super::update_explore_weight_transition;
     use super::update_return_weight_transition;
+    use super::WeightT;
     #[test]
     fn test_update_explore_weight_transition() {
         let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
         let previous_destinations = vec![2, 4, 4, 4];
-        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<WeightT>>();
+        let mut transitions = (0..destinations.len())
+            .map(|_| 1.0)
+            .collect::<Vec<WeightT>>();
         update_explore_weight_transition(
             &mut transitions,
             &destinations,
@@ -154,7 +156,9 @@ mod tests {
     #[test]
     fn test_update_return_weight_transition() {
         let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
-        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<WeightT>>();
+        let mut transitions = (0..destinations.len())
+            .map(|_| 1.0)
+            .collect::<Vec<WeightT>>();
         update_return_weight_transition(&mut transitions, &destinations, 6, 2, 2.0);
         assert_eq!(
             transitions,
@@ -340,9 +344,15 @@ impl Graph {
     ///
     pub fn extract_uniform_node(&self, node: NodeT, random_state: NodeT) -> NodeT {
         let (min_edge, max_edge) = self.get_destinations_min_max_edge_ids(node);
-        self.get_destination(
-            min_edge + sample_uniform((max_edge - min_edge) as u64, random_state as u64) as EdgeT,
-        )
+        let sampled_offset = sample_uniform((max_edge - min_edge) as u64, random_state as u64);
+
+        match &self.cached_destinations {
+            Some(cds) => match cds.get(&node) {
+                Some(dsts) => dsts[sampled_offset],
+                None => self.get_destination(min_edge + sampled_offset as EdgeT),
+            },
+            None => self.get_destination(min_edge + sampled_offset as EdgeT),
+        }
     }
 
     /// Return new sampled node with the transition edge used.
@@ -486,22 +496,22 @@ impl Graph {
 
     fn get_node_edges_and_destinations(&self, node: NodeT) -> (EdgeT, EdgeT, Option<Vec<NodeT>>) {
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
-        let destinations: Option<Vec<NodeT>> =
-            match (&self.cached_destinations, &self.destinations) {
-                (Some(cached_destinations), None) => match cached_destinations.contains_key(&node) {
-                    true => None,
-                    false => Some(
-                        self.get_destinations_range(min_edge_id, max_edge_id)
-                            .collect(),
-                    ),
-                },
-                (None, Some(_)) => None,
-                (None, None) => Some(
+        let destinations: Option<Vec<NodeT>> = match (&self.cached_destinations, &self.destinations)
+        {
+            (Some(cached_destinations), None) => match cached_destinations.contains_key(&node) {
+                true => None,
+                false => Some(
                     self.get_destinations_range(min_edge_id, max_edge_id)
                         .collect(),
                 ),
-                _ => unreachable!("Cached destinations cannot exists alongside destinations!")
-            };
+            },
+            (None, Some(_)) => None,
+            (None, None) => Some(
+                self.get_destinations_range(min_edge_id, max_edge_id)
+                    .collect(),
+            ),
+            _ => unreachable!("Cached destinations cannot exists alongside destinations!"),
+        };
         (min_edge_id, max_edge_id, destinations)
     }
 
@@ -516,7 +526,9 @@ impl Graph {
             (_, _, Some(dsts)) => &dsts.as_slice(),
             (Some(dsts), None, None) => &dsts[min_edge_id as usize..max_edge_id as usize],
             (None, Some(dsts), None) => dsts.get(&node).unwrap(),
-            _ => unreachable!("It is not possible to have both destinations and cached destinations at once."),
+            _ => unreachable!(
+                "It is not possible to have both destinations and cached destinations at once."
+            ),
         }
     }
 
@@ -539,7 +551,8 @@ impl Graph {
         let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length as usize);
         walk.push(node);
         let mut src = node;
-        let (mut min_edge_id, mut max_edge_id, mut destinations) = self.get_node_edges_and_destinations(node);
+        let (mut min_edge_id, mut max_edge_id, mut destinations) =
+            self.get_node_edges_and_destinations(node);
         let mut previous_destinations: Option<Vec<NodeT>>;
         let mut previous_min_edge_id: EdgeT;
         let mut previous_max_edge_id: EdgeT;
@@ -557,7 +570,8 @@ impl Graph {
             previous_destinations = destinations;
             previous_min_edge_id = min_edge_id;
             previous_max_edge_id = max_edge_id;
-            let (new_min_edge_id, new_max_edge_id, new_destinations) = self.get_node_edges_and_destinations(dst);
+            let (new_min_edge_id, new_max_edge_id, new_destinations) =
+                self.get_node_edges_and_destinations(dst);
             min_edge_id = new_min_edge_id;
             max_edge_id = new_max_edge_id;
             destinations = new_destinations;
@@ -570,7 +584,12 @@ impl Graph {
                 min_edge_id,
                 max_edge_id,
                 self.get_destinations_slice(min_edge_id, max_edge_id, dst, &destinations),
-                self.get_destinations_slice(previous_min_edge_id, previous_max_edge_id, src, &previous_destinations),
+                self.get_destinations_slice(
+                    previous_min_edge_id,
+                    previous_max_edge_id,
+                    src,
+                    &previous_destinations,
+                ),
             );
             src = dst;
             dst = new_dst;
