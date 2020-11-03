@@ -120,7 +120,7 @@ mod tests {
     use super::update_return_explore_weight_transition;
     #[test]
     fn test_update_explore_weight_transition() {
-        let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
+        let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101];
         let previous_destinations = vec![2, 4, 4, 4];
         let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<WeightT>>();
         update_explore_weight_transition(
@@ -133,7 +133,7 @@ mod tests {
         );
         assert_eq!(
             transitions,
-            vec![2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0]
+            vec![2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
         )
     }
 

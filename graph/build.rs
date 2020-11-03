@@ -6,6 +6,10 @@ fn main() {
     cc::Build::new()
         .file("src/core.c")
         .flag("-march=native")
+        .flag("-mtune=native")
+        .flag("-msse4.1")
+        .flag("-mavx")
+        .flag("-mavx2")
         .flag("-O3")
         .compile("core.a");
 }
