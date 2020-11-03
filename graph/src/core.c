@@ -38,7 +38,7 @@ extern void c_update_explore_weight_transition(
             ptr1++;
             ptrt++;
         } else {    
-            if ((ptr1 - end1) >= 8) {
+            if ((ptr1 - end1) >= 4) {
                 __m256i v2s   = _mm256_lddqu_si256((__m256i *) ptr1);
                 __m256i broad = _mm256_broadcastd_epi32(_mm_set1_epi32(v1));
                 __m256i cmp   = _mm256_cmpgt_epi32(v2s, broad);
@@ -122,53 +122,10 @@ extern void c_update_return_explore_weight_transition(
             ptr1++;
             ptrt++;
         } else {
-            if ((ptr1 - end1) >= 8) {
-                __m256i v2s   = _mm256_lddqu_si256((__m256i *) ptr1);
-                __m256i broad = _mm256_broadcastd_epi32(_mm_set1_epi32(v1));
-                __m256i cmp   = _mm256_cmpgt_epi32(v2s, broad);
-                int mask = _mm256_movemask_epi8(cmp);
-                ptr2 += _lzcnt_u64(~mask) >> 2;
-            } else {
-                ptr2 += 1;
-            }
+            ptr2++;
         }
     }
 
-    float ret = return_weight;
-    float coef = explore_weight;
-    __m256 return_coeff = _mm256_broadcast_ss(&ret);
-    __m256 explore_coeff = _mm256_broadcast_ss(&coef);
-
-    __m256i srcs =  _mm256_castps_si256(_mm256_broadcast_ss((float*) &src));
-    __m256i dsts =  _mm256_castps_si256(_mm256_broadcast_ss((float*) &dst));
-
-    while ((ptr1 - end1) >= 8) {
-        // v2s = *ptr1
-        __m256i v2s = _mm256_lddqu_si256((__m256i *)ptr1);
-        
-        // mask = (v2s == src) || (v2s == dst)
-        __m256 mask = _mm256_castsi256_ps(_mm256_or_si256(
-            _mm256_cmpeq_epi32(v2s, srcs),
-            _mm256_cmpeq_epi32(v2s, dsts)
-        ));
-
-        // mask & default_coeffs | (!mask & ones)
-        __m256 coeffs = _mm256_or_ps(
-            _mm256_and_ps(mask, explore_coeff),
-            _mm256_andnot_ps(mask, return_coeff)
-        );
-
-        // ptrt *= coeffs
-        __m256 trans = _mm256_loadu_ps(ptrt);
-        _mm256_storeu_ps(
-            ptrt,
-            _mm256_mul_ps(
-                trans,
-                coeffs
-            )
-        );
-        ptrt += 8;
-    }
     while(ptr1 < end1) {
         v1 = *ptr1++;
         int cond = (v1 != src && v1 != dst);
