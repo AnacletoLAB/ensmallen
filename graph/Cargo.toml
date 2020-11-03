@@ -12,6 +12,9 @@ edition = "2018"
 [lib]
 name = "graph"
 
+[build-dependencies]
+cc = "1.0.46"
+
 [dev-dependencies]
 linecount= "0.1.0"
 

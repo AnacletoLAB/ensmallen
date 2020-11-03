@@ -41,43 +41,41 @@ fn update_return_weight_transition(
     }
 }
 
-#[inline(always)]
-fn update_explore_weight_transition(
+extern { 
+    fn c_update_explore_weight_transition(
+        transition: *const f32,
+        destinations: *const u32,
+        destinations_len: u32,
+        previous_destinations: *const u32,
+        previous_destinations_len: u32,
+        explore_weight: f32,
+        src: u32,
+        dst: u32,
+    ); 
+}
+
+pub fn update_explore_weight_transition(
     transition: &mut Vec<WeightT>,
     destinations: &[NodeT],
     previous_destinations: &[NodeT],
     explore_weight: ParamsT,
     src: NodeT,
     dst: NodeT,
-) {
-    let mut i = 0;
-    let mut j = 0;
-    let mut v1: NodeT;
-    let mut v2: NodeT;
-    //############################################################
-    //# Handling of the Q parameter: the explore coefficient     #
-    //############################################################
-    // This coefficient increases the probability of switching
-    // to nodes not locally seen.
-    while i < destinations.len() && j < previous_destinations.len() {
-        v1 = destinations[i];
-        v2 = previous_destinations[j];
-        if v1 <= v2 {
-            let is_less = v1 < v2;
-            if is_less && v1 != src && v1 != dst {
-                transition[i] *= explore_weight;
-            }
-            j += !is_less as usize;
-            i += 1;
-        } else {
-            j += 1;
-        }
-    }
-    for k in i..destinations.len() {
-        v1 = destinations[k];
-        transition[k] *= 1.0 + (v1 != src && v1 != dst) as u64 as WeightT * (explore_weight - 1.0);
+){
+    unsafe{
+        c_update_explore_weight_transition(   
+            transition.as_ptr(), 
+            destinations.as_ptr(),
+            destinations.len() as u32,
+            previous_destinations.as_ptr(),
+            previous_destinations.len() as u32,
+            explore_weight,
+            src,
+            dst
+        )
     }
 }
+
 
 #[inline(always)]
 fn update_return_explore_weight_transition(
