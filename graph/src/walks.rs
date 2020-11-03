@@ -41,46 +41,53 @@ fn update_return_weight_transition(
     }
 }
 
-#[inline(always)]
-fn update_explore_weight_transition(
+extern { 
+    fn c_update_explore_weight_transition(
+        transition: *const f32,
+        destinations: *const u32,
+        destinations_len: u32,
+        previous_destinations: *const u32,
+        previous_destinations_len: u32,
+        explore_weight: f32,
+        src: u32,
+        dst: u32,
+    ); 
+    fn c_update_return_explore_weight_transition(
+        transition: *const f32,
+        destinations: *const u32,
+        destinations_len: u32,
+        previous_destinations: *const u32,
+        previous_destinations_len: u32,
+        explore_weight: f32,
+        return_weight: f32,
+        src: u32,
+        dst: u32,
+    ); 
+}
+
+pub fn update_explore_weight_transition(
     transition: &mut Vec<WeightT>,
     destinations: &[NodeT],
     previous_destinations: &[NodeT],
     explore_weight: ParamsT,
     src: NodeT,
     dst: NodeT,
-) {
-    let mut i = 0;
-    let mut j = 0;
-    let mut v1: NodeT;
-    let mut v2: NodeT;
-    //############################################################
-    //# Handling of the Q parameter: the explore coefficient     #
-    //############################################################
-    // This coefficient increases the probability of switching
-    // to nodes not locally seen.
-    while i < destinations.len() && j < previous_destinations.len() {
-        v1 = destinations[i];
-        v2 = previous_destinations[j];
-        if v1 <= v2 {
-            let is_less = v1 < v2;
-            if is_less && v1 != src && v1 != dst {
-                transition[i] *= explore_weight;
-            }
-            j += !is_less as usize;
-            i += 1;
-        } else {
-            j += 1;
-        }
-    }
-    for k in i..destinations.len() {
-        v1 = destinations[k];
-        transition[k] *= 1.0 + (v1 != src && v1 != dst) as u64 as WeightT * (explore_weight - 1.0);
+){
+    unsafe{
+        c_update_explore_weight_transition(   
+            transition.as_ptr(), 
+            destinations.as_ptr(),
+            destinations.len() as u32,
+            previous_destinations.as_ptr(),
+            previous_destinations.len() as u32,
+            explore_weight,
+            src,
+            dst
+        )
     }
 }
 
-#[inline(always)]
-fn update_return_explore_weight_transition(
+pub fn update_return_explore_weight_transition(
     transition: &mut Vec<WeightT>,
     destinations: &[NodeT],
     previous_destinations: &[NodeT],
@@ -88,53 +95,33 @@ fn update_return_explore_weight_transition(
     explore_weight: ParamsT,
     src: NodeT,
     dst: NodeT,
-) {
-    let mut i = 0;
-    let mut j = 0;
-    let mut v1: NodeT;
-    let mut v2: NodeT;
-    //############################################################
-    //# Handling of the Q parameter: the explore coefficient     #
-    //############################################################
-    // This coefficient increases the probability of switching
-    // to nodes not locally seen.
-    while i < destinations.len() && j < previous_destinations.len() {
-        v1 = destinations[i];
-        v2 = previous_destinations[j];
-        if v1 == src || v1 == dst {
-            transition[i] *= return_weight;
-            i += 1;
-            continue;
-        }
-        if v1 <= v2 {
-            let is_less = v1 < v2;
-            if is_less {
-                transition[i] *= explore_weight;
-            }
-            j += !is_less as usize;
-            i += 1;
-        } else {
-            j += 1;
-        }
-    }
-    for k in i..destinations.len() {
-        v1 = destinations[k];
-        if v1 == src || v1 == dst {
-            transition[k] *= return_weight;
-        } else {
-            transition[k] *= explore_weight;
-        }
+){
+    unsafe{
+        c_update_return_explore_weight_transition(   
+            transition.as_ptr(), 
+            destinations.as_ptr(),
+            destinations.len() as u32,
+            previous_destinations.as_ptr(),
+            previous_destinations.len() as u32,
+            explore_weight,
+            return_weight,
+            src,
+            dst
+        )
     }
 }
+
 
 #[cfg(test)]
 mod tests {
     use super::update_explore_weight_transition;
     use super::update_return_weight_transition;
     use super::WeightT;
+    use super::update_return_explore_weight_transition;
+  
     #[test]
     fn test_update_explore_weight_transition() {
-        let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
+        let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101];
         let previous_destinations = vec![2, 4, 4, 4];
         let mut transitions = (0..destinations.len())
             .map(|_| 1.0)
@@ -149,7 +136,27 @@ mod tests {
         );
         assert_eq!(
             transitions,
-            vec![2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0]
+            vec![2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
+        )
+    }
+
+    #[test]
+    fn test_update_return_explore_weight_transition() {
+        let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
+        let previous_destinations = vec![2, 4, 4, 4];
+        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<WeightT>>();
+        update_return_explore_weight_transition(
+            &mut transitions,
+            &destinations,
+            &previous_destinations,
+            3.0,
+            2.0,
+            6,
+            100,
+        );
+        assert_eq!(
+            transitions,
+            vec![2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 2.0, 3.0, 3.0]
         )
     }
 
