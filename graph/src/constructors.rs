@@ -2,6 +2,7 @@ use super::*;
 use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
 use bitvec::prelude::*;
+use rayon::prelude::ParallelSliceMut;
 use std::collections::BTreeMap;
 
 type ParsedStringEdgesType = Result<
@@ -265,11 +266,11 @@ pub(crate) fn parse_sorted_edges<'a>(
 
 pub(crate) fn parse_string_unsorted_edges<'a>(
     edges_iter: impl Iterator<Item = Result<StringQuadruple, String>>,
-    sorting_tmp: &'a mut BTreeMap<Triple, Option<WeightT>>,
     mut nodes: Vocabulary<NodeT>,
     directed: bool,
     verbose: bool,
     numeric_edge_types_ids: bool,
+    ignore_duplicated_edges: bool
 ) -> Result<
     (
         EdgeT,
@@ -286,24 +287,66 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
         &mut edge_types_vocabulary,
     );
 
-    for value in wrapped_edges_iterator {
-        let (src, dst, edt, weight) = value?;
-        sorting_tmp.insert((src, dst, edt), weight);
-        if !directed && src != dst {
-            sorting_tmp.insert((dst, src, edt), weight);
+    let mut edge_quadruples:Vec<Quadruple> = wrapped_edges_iterator.flat_map(|tuple|{
+        match tuple{
+            Ok((src, dst, edt, weight)) => if !directed && src != dst {
+                vec![Ok((src, dst, edt, weight)), Ok((dst, src, edt, weight))]
+            } else {
+                vec![Ok((src, dst, edt, weight))]
+            },
+            Err(e) => vec![Err(e)]
         }
-    }
+    }).collect::<Result<Vec<Quadruple>, String>>()?;
 
-    let pb = get_loading_bar(verbose, "Sorting and building graph", sorting_tmp.len());
-    let edges_number = sorting_tmp.len() as EdgeT;
+    edge_quadruples.par_sort_by(|(src1, dst1, edt1, weight1), (src2, dst2, edt2, weight2)|{
+        match (src1, dst1, edt1).cmp(&(src2, dst2, edt2)){
+            std::cmp::Ordering::Equal => match (weight1, weight2) {
+                (Some(w1), Some(w2)) => {
+                    if w1 < w2 {
+                        std::cmp::Ordering::Greater
+                    } else {
+                        std::cmp::Ordering::Less
+                    }
+                },
+                _ => std::cmp::Ordering::Equal
+            },
+            std::cmp::Ordering::Less => std::cmp::Ordering::Greater,
+            std::cmp::Ordering::Greater =>std::cmp::Ordering::Less
+        }
+    });
+
+    let pb = get_loading_bar(verbose, "Sorting and building graph", edge_quadruples.len());
+    let edges_number = edge_quadruples.len() as EdgeT;
     edge_types_vocabulary.build_reverse_mapping()?;
     nodes.build_reverse_mapping()?;
+    
+    let mut last_value: Option<Quadruple> = None;
 
     Ok((
         edges_number,
-        (0..sorting_tmp.len()).progress_with(pb).map(move |_| {
-            let ((src, dst, edge_type), weight) = sorting_tmp.pop_first().unwrap();
-            Ok((src, dst, edge_type, weight))
+        (0..edges_number).progress_with(pb).filter_map(move |_| {
+            let new_value = edge_quadruples.pop().unwrap();
+            let (src, dst, edt, _) = new_value;
+            match &mut last_value{
+                Some(lv) => {
+                    let (last_src, last_dst, last_edt, _) = *lv;
+                    match (last_src, last_dst, last_edt)==(src, dst, edt) {
+                    true => if ignore_duplicated_edges{
+                        None
+                    } else {
+                        // TODO! Make this error more helpful!
+                        Some(Err("Duplicated found!".to_owned()))
+                    },
+                    false => {
+                        *lv = new_value;
+                        Some(Ok(new_value))
+                    }
+                }},
+                None => {
+                    last_value = Some(new_value);
+                    Some(Ok(new_value))
+                }
+            }
         }),
         nodes,
         edge_types_vocabulary,
@@ -678,8 +721,6 @@ impl Graph {
         numeric_node_ids: bool,
         numeric_node_types_ids: bool
     ) -> Result<Graph, String> {
-        let mut edge_sorting_tmp = BTreeMap::new();
-
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
             ignore_duplicated_nodes,
@@ -690,11 +731,11 @@ impl Graph {
         let (edges_number, edges_iterator, nodes, edge_types_vocabulary) =
             parse_string_unsorted_edges(
                 edges_iterator,
-                &mut edge_sorting_tmp,
                 nodes,
                 directed,
                 verbose,
                 numeric_edge_types_ids,
+                ignore_duplicated_edges
             )?;
 
         Graph::build_graph(
