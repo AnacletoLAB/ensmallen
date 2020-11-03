@@ -74,5 +74,17 @@ fn bench_caches(c: &mut Criterion) {
     }
 }
 
-criterion_group!(benches, bench_fast, bench_caches, bench_slow);
+fn bench_spanning_tree(c: &mut Criterion) {
+    c.bench_function("spanning_tree", |b| {
+        let graph = load_ppi(true, true, true, false, false, false).unwrap();
+
+        b.iter(|| {
+            for _ in 0..10 {
+                black_box(graph.spanning_tree(1337, false, &None, false));
+            }
+        });
+    });
+}
+
+criterion_group!(benches, bench_spanning_tree, bench_fast, bench_caches, bench_slow);
 criterion_main!(benches);
