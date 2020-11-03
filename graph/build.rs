@@ -10,6 +10,7 @@ fn main() {
         .flag("-msse4.1")
         .flag("-mavx")
         .flag("-mavx2")
+        .flag("-mlzcnt")
         .flag("-O3")
         .compile("core.a");
 }
