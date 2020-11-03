@@ -103,8 +103,8 @@ pub fn update_return_explore_weight_transition(
             destinations.len() as u32,
             previous_destinations.as_ptr(),
             previous_destinations.len() as u32,
-            return_weight,
             explore_weight,
+            return_weight,
             src,
             dst
         )

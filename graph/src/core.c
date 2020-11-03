@@ -90,7 +90,7 @@ extern void c_update_return_explore_weight_transition(
         *ptrt++  *= (
             1.0 + cond * (explore_weight - 1.0)
         ) * (
-            !cond * (return_weight - 1.0)
+            1.0 + !cond * (return_weight - 1.0)
         );
     }
 }
