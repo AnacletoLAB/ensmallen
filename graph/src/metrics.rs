@@ -720,8 +720,8 @@ impl Graph {
                 d if d < 0.1 => "dense".to_owned(),
                 d if d < 0.5 => "quite dense".to_owned(),
                 d if (d - 1.0 as f64).abs() < f64::EPSILON => "complete".to_owned(),
-                d if d < 1.0 => "extremely dense".to_owned(),
-                _ => unreachable!("Unreacheable density case")
+                d if d <= 1.0 => "extremely dense".to_owned(),
+                d => unreachable!(format!("Unreacheable density case {}", d))
             },
             density=self.density(),
             connected_components=match connected_components_number> 1{
