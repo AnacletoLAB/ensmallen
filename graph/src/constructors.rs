@@ -335,7 +335,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
                         None
                     } else {
                         // TODO! Make this error more helpful!
-                        Some(Err("Duplicated found!".to_owned()))
+                        Some(Err("Duplicated edges found!".to_owned()))
                     },
                     false => {
                         *lv = new_value;

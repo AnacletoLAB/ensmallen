@@ -84,7 +84,7 @@ impl Graph {
         verbose: bool,
     ) -> (RoaringTreemap, Vec<RoaringBitmap>) {
         // Create vector of sets of the single nodes.
-        let mut components: Vec<RoaringBitmap> = Vec::new();
+        let mut components: Vec<Option<RoaringBitmap>> = Vec::new();
         // Create vector of nodes component numbers.
         let mut nodes_components: Vec<Option<usize>> = vec![None; self.get_nodes_number() as usize];
         // Create the empty tree (this will be sparse on most graphs so roaring can save memory).
@@ -102,60 +102,59 @@ impl Graph {
             let dst_component = nodes_components[dst as usize];
             // if both nodes are not covered then the edge is isolated
             // and must start its own component
-            if src_component.is_none() && dst_component.is_none() {
-                update_tree = true;
-                nodes_components[src as usize] = Some(components.len());
-                nodes_components[dst as usize] = Some(components.len());
-                components_remapping.insert(components.len(), components.len());
-                components.push(RoaringBitmap::from_iter(vec![src, dst]));
-            // if one of the nodes is covered then we are extending one componet.
-            } else if src_component.is_some() ^ dst_component.is_some() {
-                let (inserted_component, not_inserted, not_inserted_component) =
-                    if src_component.is_some() {
-                        (src_component, dst, &mut nodes_components[dst as usize])
-                    } else {
-                        (dst_component, src, &mut nodes_components[src as usize])
-                    };
-                let inserted_component =
-                    get_node_component(inserted_component.unwrap(), &components_remapping);
-                components[inserted_component].insert(not_inserted);
-                *not_inserted_component = Some(inserted_component);
-                update_tree = true;
-            // if both are covered then we will insert the edge iff
-            // its nodes are form different components, this way the edge will merge them
-            // creating a single component
-            } else {
-                // if the components are different then we add it because it will merge them
-                let src_component =
-                    get_node_component(src_component.unwrap(), &components_remapping);
-                let dst_component =
-                    get_node_component(dst_component.unwrap(), &components_remapping);
-                if src_component != dst_component {
-                    let removed_component = components[src_component].clone();
-                    components[dst_component].union_with(&removed_component);
-                    components_remapping
-                        .iter_mut()
-                        .for_each(|(component, remapped_component)| {
-                            if *component == src_component || *remapped_component == src_component {
-                                *remapped_component = dst_component;
-                            }
-                        });
+            match (src_component, dst_component) {
+                (None, None) => {
                     update_tree = true;
+                    nodes_components[src as usize] = Some(components.len());
+                    nodes_components[dst as usize] = Some(components.len());
+                    components.push(Some(RoaringBitmap::from_iter(vec![src, dst])));
                 }
-            }
+                (Some(src_component), Some(dst_component)) => {
+                    // if the components are different then we add it because it will merge them
+                    let src_component = get_node_component(src_component, &components_remapping);
+                    let dst_component = get_node_component(dst_component, &components_remapping);
+                    if src_component != dst_component {
+                        let removed_component = components[src_component].clone().unwrap();
+                        components[src_component] = None;
+                        if let Some(component) = &mut components[dst_component] {
+                            component.union_with(&removed_component);
+                        }
+                        components_remapping.iter_mut().for_each(
+                            |(component, remapped_component)| {
+                                if *component == src_component
+                                    || *remapped_component == src_component
+                                {
+                                    *remapped_component = dst_component;
+                                }
+                            },
+                        );
+                        components_remapping.insert(src_component, dst_component);
+                        update_tree = true;
+                    }
+                },
+                _ => {
+                    let (inserted_component, not_inserted, not_inserted_component) =
+                        if src_component.is_some() {
+                            (src_component, dst, &mut nodes_components[dst as usize])
+                        } else {
+                            (dst_component, src, &mut nodes_components[src as usize])
+                        };
+                    let inserted_component =
+                        get_node_component(inserted_component.unwrap(), &components_remapping);
+                    if let Some(component) = &mut components[inserted_component] {
+                        component.insert(not_inserted);
+                    }
+                    *not_inserted_component = Some(inserted_component);
+                    update_tree = true;
+                },
+            };
 
             if update_tree {
                 tree.extend(self.compute_edge_ids_vector(edge_id, src, dst, include_all_edge_types))
             }
         }
 
-        let components = components_remapping
-            .iter()
-            .filter_map(|(key, value)| match *key == *value {
-                true => Some(components[*key].clone()),
-                false => None,
-            })
-            .collect();
+        let components = components.iter().filter_map(|c| c.clone()).collect();
 
         (tree, components)
     }
