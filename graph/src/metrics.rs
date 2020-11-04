@@ -351,7 +351,7 @@ impl Graph {
     /// println!("The graph density is {}", graph.density());
     /// ```
     pub fn density(&self) -> f64 {
-        let nodes_number = self.get_nodes_number();
+        let nodes_number = self.get_nodes_number() as EdgeT;
         self.unique_edges_number as f64 / (nodes_number * (nodes_number - 1)) as f64
     }
 
