@@ -12,7 +12,7 @@ use std::collections::HashMap;
 ///
 /// # Examples
 ///
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Graph {
     // properties
     /// if the graph is directed or undirected

@@ -8,6 +8,7 @@ impl Graph {
     /// * `edge_file_reader`: EdgeFileReader - Reader of the edge file.
     /// * `node_file_reader`: Option<NodeFileReader> - Reader of the node file.
     /// * `directed`: bool - Wethever the graph is to be read as directed or undirected.
+    /// * `directed_edge_list`: bool - Wether to read the edge list as directed.
     /// * `ignore_duplicated_nodes`: bool - Wethever to ignore duplicated nodes while reading.
     /// * `ignore_duplicated_edges`: bool - Wethever to ignore duplicated edges while reading.
     /// * `skip_self_loops`: bool - Wethever to skip self-loops while reading the edge file.
@@ -15,6 +16,7 @@ impl Graph {
         edge_file_reader: EdgeFileReader,
         node_file_reader: Option<NodeFileReader>,
         directed: bool,
+        directed_edge_list: bool,
         edges_number: EdgeT,
         nodes_number: NodeT,
         name: String,
@@ -26,6 +28,7 @@ impl Graph {
                 None => None,
             },
             directed,
+            directed_edge_list,
             match &node_file_reader {
                 Some(nfr) => nfr.reader.ignore_duplicates,
                 None => false,
@@ -53,6 +56,7 @@ impl Graph {
     /// * `edge_file_reader`: EdgeFileReader - Reader of the edge file.
     /// * `node_file_reader`: Option<NodeFileReader> - Reader of the node file.
     /// * `directed`: bool - Wethever the graph is to be read as directed or undirected.
+    /// * `directed_edge_list`: bool - Wether to read the edge list as directed.
     /// * `ignore_duplicated_nodes`: bool - Wethever to ignore duplicated nodes while reading.
     /// * `ignore_duplicated_edges`: bool - Wethever to ignore duplicated edges while reading.
     /// * `skip_self_loops`: bool - Wethever to skip self-loops while reading the edge file.
@@ -60,6 +64,7 @@ impl Graph {
         edge_file_reader: EdgeFileReader,
         node_file_reader: Option<NodeFileReader>,
         directed: bool,
+        directed_edge_list: bool,
         name: String,
     ) -> Result<Graph, String> {
         Graph::from_string_unsorted(
@@ -69,6 +74,7 @@ impl Graph {
                 None => None,
             },
             directed,
+            directed_edge_list,
             name,
             match &node_file_reader {
                 Some(nfr) => nfr.reader.ignore_duplicates,

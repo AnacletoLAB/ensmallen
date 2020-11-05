@@ -5,13 +5,14 @@ use std::collections::HashMap;
 pub(crate) fn build_csv_file_reader(
     edge_path: String,
     py_kwargs: Option<&PyDict>,
-) -> Result<(EdgeFileReader, Option<NodeFileReader>, String), String> {
+) -> Result<(EdgeFileReader, Option<NodeFileReader>, String, bool), String> {
     let py = pyo3::Python::acquire_gil();
     let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
     validate_kwargs(
         kwargs,
         [
+            "directed_edge_list",
             "sources_column_number",
             "sources_column",
             "destinations_column_number",
@@ -103,6 +104,7 @@ pub(crate) fn build_csv_file_reader(
         edges,
         nodes,
         extract_value!(kwargs, "name", String)?.unwrap_or_else(|| "Graph".to_owned()),
+        extract_value!(kwargs, "directed_edge_list", bool)?.unwrap_or_else(|| false),
     ))
 }
 

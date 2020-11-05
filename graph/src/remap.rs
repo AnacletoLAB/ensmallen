@@ -33,19 +33,14 @@ impl Graph {
         }
 
         Graph::from_integer_unsorted(
-            self.get_edges_string_quadruples().progress_with(pb).filter_map(
+            self.get_edges_string_quadruples().progress_with(pb).map(
                 |(_, src_name, dst_name, edge_type, weight)| {
-                    let src = self.get_unchecked_node_id(&src_name);
-                    let dst = self.get_unchecked_node_id(&dst_name);
-                    if !self.directed && src > dst {
-                        return None;
-                    }
-                    Some(Ok((
-                        src,
-                        dst,
+                    Ok((
+                        other.get_unchecked_node_id(&src_name),
+                        other.get_unchecked_node_id(&dst_name),
                         edge_type.and_then(|et| self.get_unchecked_edge_type_id(Some(et.as_str()))),
                         weight,
-                    )))
+                    ))
                 },
             ),
             other.nodes.clone(),
@@ -55,6 +50,7 @@ impl Graph {
                 None => None,
             },
             self.directed,
+            false,
             self.name.clone(),
             false,
             verbose,

@@ -226,9 +226,13 @@ pub(crate) fn parse_weights<'a>(
 pub(crate) fn parse_sorted_edges<'a>(
     edges_iter: impl Iterator<Item = Result<Quadruple, String>> + 'a,
     directed: bool,
-    sorting_tmp: &'a mut BTreeMap<Triple, Option<WeightT>>,
-) -> impl Iterator<Item = Result<Quadruple, String>> + 'a {
-    edges_iter
+    directed_edge_list: bool
+) -> Box<dyn Iterator<Item = Result<Quadruple, String>> + 'a> {
+    if directed_edge_list {
+        return Box::new(edges_iter);
+    }
+    let mut sorting_tmp: BTreeMap<Triple, Option<WeightT>> = BTreeMap::new();
+    Box::new(edges_iter
         .map(Some)
         .chain(vec![None])
         .flat_map(move |maybe_row| match maybe_row {
@@ -262,7 +266,7 @@ pub(crate) fn parse_sorted_edges<'a>(
                 .iter()
                 .map(|((src, dst, edge_type), weight)| Ok((*src, *dst, *edge_type, *weight)))
                 .collect::<Vec<_>>(),
-        })
+        }))
 }
 
 pub(crate) fn parse_unsorted_quadruples(
@@ -306,12 +310,13 @@ pub(crate) fn parse_unsorted_quadruples(
 pub(crate) fn parse_integer_unsorted_edges<'a>(
     edges_iter: impl Iterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>>,
     directed: bool,
+    directed_edge_list: bool,
     ignore_duplicated_edges: bool,
     verbose: bool,
 ) -> Result<(EdgeT, impl Iterator<Item = Result<Quadruple, String>> + 'a), String> {
     let edge_quadruples:Vec<Quadruple> = edges_iter.flat_map(|tuple|{
         match tuple{
-            Ok((src, dst, edt, weight)) => if !directed && src != dst {
+            Ok((src, dst, edt, weight)) => if !directed && src != dst && !directed_edge_list {
                 vec![Ok((src, dst, edt, weight)), Ok((dst, src, edt, weight))]
             } else {
                 vec![Ok((src, dst, edt, weight))]
@@ -328,6 +333,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     edges_iter: impl Iterator<Item = Result<StringQuadruple, String>>,
     mut nodes: Vocabulary<NodeT>,
     directed: bool,
+    directed_edge_list: bool,
     verbose: bool,
     numeric_edge_types_ids: bool,
     ignore_duplicated_edges: bool
@@ -339,7 +345,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
                 &mut edge_types_vocabulary,
             ).flat_map(|tuple|{
                 match tuple{
-                    Ok((src, dst, edt, weight)) => if !directed && src != dst {
+                    Ok((src, dst, edt, weight)) => if !directed && src != dst && !directed_edge_list {
                         vec![Ok((src, dst, edt, weight)), Ok((dst, src, edt, weight))]
                     } else {
                         vec![Ok((src, dst, edt, weight))]
@@ -469,12 +475,12 @@ pub(crate) fn parse_string_edges(
     directed: bool,
     mut nodes: Vocabulary<NodeT>,
     numeric_edge_types_ids: bool,
+    directed_edge_list: bool,
     ignore_duplicated_edges: bool,
 ) -> ParsedStringEdgesType {
     let mut weights: Vec<WeightT> = Vec::new();
     let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::new(numeric_edge_types_ids);
     let mut edge_types_ids: Vec<EdgeTypeT> = Vec::new();
-    let mut edge_sorting_tmp = BTreeMap::new();
 
     let wrapped_edges_iterator = parse_sorted_edges(
         parse_edge_type_ids_vocabulary(
@@ -482,7 +488,7 @@ pub(crate) fn parse_string_edges(
             &mut edge_types_vocabulary,
         ),
         directed,
-        &mut edge_sorting_tmp,
+        directed_edge_list
     );
 
     let typed_edges_iter = parse_edge_type_ids(wrapped_edges_iterator, &mut edge_types_ids);
@@ -690,6 +696,7 @@ impl Graph {
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
         directed: bool,
+        directed_edge_list: bool,
         name: String,
         ignore_duplicated_nodes: bool,
         ignore_duplicated_edges: bool,
@@ -710,6 +717,7 @@ impl Graph {
                 edges_iterator,
                 nodes,
                 directed,
+                directed_edge_list,
                 verbose,
                 numeric_edge_types_ids,
                 ignore_duplicated_edges
@@ -751,12 +759,13 @@ impl Graph {
         node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
+        directed_edge_list: bool,
         name: String,
         ignore_duplicated_edges: bool,
         verbose: bool
     ) -> Result<Graph, String> {
         let (edges_number, edges_iterator) =
-            parse_integer_unsorted_edges(edges_iterator, directed, ignore_duplicated_edges, verbose)?;
+            parse_integer_unsorted_edges(edges_iterator, directed, directed_edge_list, ignore_duplicated_edges, verbose)?;
 
         Graph::build_graph(
             edges_iterator,
@@ -775,6 +784,7 @@ impl Graph {
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
         directed: bool,
+        directed_edge_list: bool,
         ignore_duplicated_nodes: bool,
         ignore_duplicated_edges: bool,
         edges_number: EdgeT,
@@ -810,6 +820,7 @@ impl Graph {
             directed,
             nodes,
             numeric_edge_types_ids,
+            directed_edge_list,
             ignore_duplicated_edges,
         )?;
 

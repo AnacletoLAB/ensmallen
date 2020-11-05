@@ -24,8 +24,12 @@ impl Graph {
     /// # Arguments
     /// * `allow_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to keep.
     /// * `deny_nodes_set`: Option<HashSet<String>> - Optional set of nodes names to remove.
+    /// * `allow_node_types_set`: Option<HashSet<String>> - Optional set of node type names to keep.
+    /// * `deny_node_types_set`: Option<HashSet<String>> - Optional set of node type names to remove.
     /// * `allow_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to keep.
     /// * `deny_edge_set`: Option<HashSet<EdgeT>>- Optional set of numeric edge IDs to remove.
+    /// * `allow_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to keep.
+    /// * `deny_edge_types_set`: Option<HashSet<String>> - Optional set of edge type names to remove.
     /// * `weights`: bool - Wether to remove the weights.
     /// * `node_types`: bool - Wether to remove the node types.
     /// * `edge_types`: bool - Wether to remove the edge types.
@@ -36,8 +40,12 @@ impl Graph {
         &self,
         allow_nodes_set: Option<HashSet<String>>,
         deny_nodes_set: Option<HashSet<String>>,
+        allow_node_types_set: Option<HashSet<String>>,
+        deny_node_types_set: Option<HashSet<String>>,
         allow_edge_set: Option<HashSet<EdgeT>>,
         deny_edge_set: Option<HashSet<EdgeT>>,
+        allow_edge_types_set: Option<HashSet<String>>,
+        deny_edge_types_set: Option<HashSet<String>>,
         weights: bool,
         node_types: bool,
         edge_types: bool,
@@ -95,10 +103,19 @@ impl Graph {
                             return None;
                         }
                     }
-                    let src = self.get_node_id(&src_name).unwrap();
-                    let dst = self.get_node_id(&dst_name).unwrap();
-                    if !self.directed && src > dst {
-                        return None;
+                    // If the allow edge types set was provided
+                    if let (Some(aets), Some(et)) = (&allow_edge_types_set, &edge_type) {
+                        // We check that the current edge type name is within the edge set.
+                        if !aets.contains(et) {
+                            return None;
+                        }
+                    }
+                    // If the deny edge types set was provided
+                    if let (Some(dets), Some(et)) = (&deny_edge_types_set, &edge_type) {
+                        // We check that the current edge type name is NOT within the edge set.
+                        if !dets.contains(et) {
+                            return None;
+                        }
                     }
                     Some(Ok((
                         src_name,
@@ -130,6 +147,16 @@ impl Graph {
                                 return None;
                             }
                         }
+                        if let (Some(ants), Some(nt)) = (&allow_node_types_set, &node_type) {
+                            if !ants.contains(nt) {
+                                return None;
+                            }
+                        }
+                        if let (Some(dnts), Some(nt)) = (&deny_node_types_set, &node_type) {
+                            if !dnts.contains(nt) {
+                                return None;
+                            }
+                        }
                         Some(Ok((
                             node_name,
                             match node_types {
@@ -141,19 +168,20 @@ impl Graph {
             ),
             self.directed,
             false,
+            false,
             true,
             self.get_edges_number(), // Approximation of expected edges number.
             self.get_nodes_number(), // Approximation of expected nodes number.
-            match &self.edge_types{
-                Some(ets)=> ets.has_numeric_ids(),
-                None=>false
+            match &self.edge_types {
+                Some(ets) => ets.has_numeric_ids(),
+                None => false,
             },
             self.nodes.has_numeric_ids() && (!singletons || !self.has_singletons()),
-            match &self.node_types{
-                Some(nts)=> nts.has_numeric_ids(),
-                None=>false
+            match &self.node_types {
+                Some(nts) => nts.has_numeric_ids(),
+                None => false,
             },
-            self.get_name()
+            self.get_name(),
         )
     }
 
