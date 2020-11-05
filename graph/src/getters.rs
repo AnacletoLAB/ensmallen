@@ -217,9 +217,9 @@ impl Graph {
     }
 
     /// Return vector with the sorted edge Ids.
-    pub fn get_edges(&self, directed: bool) -> Vec<(NodeT, NodeT)> {
+    pub fn get_edges(&self, directed: bool) -> Vec<Vec<NodeT>> {
         self.get_edges_iter(directed)
-            .map(|(_, src, dst)| (src, dst))
+            .map(|(_, src, dst)| vec![src, dst])
             .collect()
     }
 
