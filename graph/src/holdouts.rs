@@ -49,7 +49,7 @@ impl Graph {
                 ));
             }
             Some(RoaringBitmap::from_iter(sg.get_nodes_names_iter().map(
-                |(node_name, _)| self.get_unchecked_node_id(&node_name),
+                |(_, node_name, _)| self.get_unchecked_node_id(&node_name),
             )))
         } else {
             None
@@ -138,47 +138,46 @@ impl Graph {
 
             // generate the random edge-sources
             let sampled_edge_ids = gen_random_vec(negatives_number as usize, src_random_state)
-                    .into_par_iter()
-                    .zip(gen_random_vec(negatives_number as usize, dst_random_state).into_par_iter())
-                    // convert them to plain (src, dst)
-                    .progress_with(tmp_tb)
-                    .filter_map(|(src_seed, dst_seed)| {
-                        let src = sample_uniform(nodes_number as u64, src_seed as u64) as NodeT;
-                        let dst = sample_uniform(nodes_number as u64, dst_seed as u64) as NodeT;
-                        if let Some(sn) = &seed_nodes {
-                            if !sn.contains(src) && !sn.contains(dst) {
-                                return None;
-                            }
+                .into_par_iter()
+                .zip(gen_random_vec(negatives_number as usize, dst_random_state).into_par_iter())
+                // convert them to plain (src, dst)
+                .progress_with(tmp_tb)
+                .filter_map(|(src_seed, dst_seed)| {
+                    let src = sample_uniform(nodes_number as u64, src_seed as u64) as NodeT;
+                    let dst = sample_uniform(nodes_number as u64, dst_seed as u64) as NodeT;
+                    if let Some(sn) = &seed_nodes {
+                        if !sn.contains(src) && !sn.contains(dst) {
+                            return None;
                         }
-                        if let Some(ncs) = &node_components {
-                            if ncs[src as usize] != ncs[dst as usize] {
-                                return None;
-                            }
-                        }
-                        // If the edge is not a self-loop or the user allows self-loops and
-                        // the graph is directed or the edges are inserted in a way to avoid
-                        // inserting bidirectional edges.
-                        match (self.has_selfloops() || src != dst) && !self.has_edge(src, dst, None)
-                        {
-                            true => Some((src, dst)),
-                            false => None,
-                        }
-                    })
-                    .flat_map(|(src, dst)| {
-                        if !self.is_directed() && src != dst {
-                            vec![self.encode_edge(src, dst), self.encode_edge(dst, src)]
-                        } else {
-                            vec![self.encode_edge(src, dst)]
-                        }
-                    })
-                    .collect::<Vec<EdgeT>>();
-                
-                for edge_id in sampled_edge_ids.iter(){
-                    if negative_edges_bitmap.len() >= negatives_number {
-                        break;
                     }
-                    negative_edges_bitmap.insert(*edge_id);
+                    if let Some(ncs) = &node_components {
+                        if ncs[src as usize] != ncs[dst as usize] {
+                            return None;
+                        }
+                    }
+                    // If the edge is not a self-loop or the user allows self-loops and
+                    // the graph is directed or the edges are inserted in a way to avoid
+                    // inserting bidirectional edges.
+                    match (self.has_selfloops() || src != dst) && !self.has_edge(src, dst, None) {
+                        true => Some((src, dst)),
+                        false => None,
+                    }
+                })
+                .flat_map(|(src, dst)| {
+                    if !self.is_directed() && src != dst {
+                        vec![self.encode_edge(src, dst), self.encode_edge(dst, src)]
+                    } else {
+                        vec![self.encode_edge(src, dst)]
+                    }
+                })
+                .collect::<Vec<EdgeT>>();
+
+            for edge_id in sampled_edge_ids.iter() {
+                if negative_edges_bitmap.len() >= negatives_number {
+                    break;
                 }
+                negative_edges_bitmap.insert(*edge_id);
+            }
 
             pb1.inc(negative_edges_bitmap.len() - last_length);
             last_length = negative_edges_bitmap.len();
@@ -691,22 +690,17 @@ impl Graph {
                 .cloned()
                 .collect::<HashSet<EdgeTypeT>>();
 
-            self.get_edges_triples()
-                .filter_map(|(edge_id, src, dst, edge_type)| {
-                    if !self.directed && src > dst || !edge_type_ids.contains(&edge_type.unwrap()) {
+            self.get_edges_triples(self.directed)
+                .filter_map(|(edge_id, _, _, edge_type)| {
+                    if !edge_type_ids.contains(&edge_type.unwrap()) {
                         return None;
                     }
                     Some(edge_id)
                 })
                 .collect::<Vec<EdgeT>>()
         } else {
-            self.get_edges_iter()
-                .filter_map(|(edge_id, src, dst)| {
-                    if !self.directed && src > dst {
-                        return None;
-                    }
-                    Some(edge_id)
-                })
+            self.get_edges_iter(self.directed)
+                .map(|(edge_id, _, _)| edge_id)
                 .collect::<Vec<EdgeT>>()
         };
 

@@ -72,7 +72,7 @@ impl Graph {
         );
 
         Graph::from_string_sorted(
-            self.get_edges_string_quadruples()
+            self.get_edges_string_quadruples(true)
                 .progress_with(pb_edges)
                 .filter_map(|(edge_id, src_name, dst_name, edge_type, weight)| {
                     // If an allow edge set was provided
@@ -133,7 +133,7 @@ impl Graph {
             Some(
                 self.get_nodes_names_iter()
                     .progress_with(pb_nodes)
-                    .filter_map(|(node_name, node_type)| {
+                    .filter_map(|(_, node_name, node_type)| {
                         if singletons && self.is_singleton_string(&node_name).unwrap() {
                             return None;
                         }
@@ -230,7 +230,7 @@ impl Graph {
                 self.get_edges_number() as usize,
             );
 
-            self.get_edges_triples()
+            self.get_edges_triples(self.directed)
                 .progress_with(pb)
                 .for_each(|(_, src, dst, edge_type)| {
                     if let Some(et) = edge_type {
@@ -270,7 +270,7 @@ impl Graph {
         );
 
         Graph::build_graph(
-            self.get_edges_quadruples().progress_with(pb).filter_map(
+            self.get_edges_quadruples(true).progress_with(pb).filter_map(
                 |(_, src, dst, edge_type, weight)| match keep_components
                     .contains(components_vector[src as usize])
                     && keep_components.contains(components_vector[dst as usize])

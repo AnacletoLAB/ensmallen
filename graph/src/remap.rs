@@ -11,7 +11,7 @@ impl Graph {
             return false;
         }
         self.get_nodes_names_iter()
-            .all(|(node_name, node_type)| other.has_node_string(&node_name, node_type))
+            .all(|(_, node_name, node_type)| other.has_node_string(&node_name, node_type))
     }
 
     /// Return graph remapped towards nodes of the given graph.
@@ -33,16 +33,16 @@ impl Graph {
         }
 
         Graph::from_integer_unsorted(
-            self.get_edges_string_quadruples().progress_with(pb).map(
-                |(_, src_name, dst_name, edge_type, weight)| {
+            self.get_edges_string_quadruples(true)
+                .progress_with(pb)
+                .map(|(_, src_name, dst_name, edge_type, weight)| {
                     Ok((
                         other.get_unchecked_node_id(&src_name),
                         other.get_unchecked_node_id(&dst_name),
                         edge_type.and_then(|et| self.get_unchecked_edge_type_id(Some(et.as_str()))),
                         weight,
                     ))
-                },
-            ),
+                }),
             other.nodes.clone(),
             other.node_types.clone(),
             match &self.edge_types {
@@ -50,7 +50,7 @@ impl Graph {
                 None => None,
             },
             self.directed,
-            false,
+            true,
             self.name.clone(),
             false,
             verbose,

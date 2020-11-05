@@ -408,7 +408,7 @@ impl Graph {
     fn shared_components_number(&self, nodes_components: &[NodeT], other: &Graph) -> NodeT {
         other
             .get_nodes_names_iter()
-            .filter_map(|(node_name, _)| match self.get_node_id(&node_name) {
+            .filter_map(|(_, node_name, _)| match self.get_node_id(&node_name) {
                 Ok(node_id) => Some(nodes_components[node_id as usize]),
                 Err(_) => None,
             })
@@ -416,9 +416,14 @@ impl Graph {
             .count() as NodeT
     }
 
+    /// Return number of distinct components that are merged by the other graph in current graph.bitvec
+    ///
+    /// # Arguments
+    /// * `nodes_components`: &[NodeT] - Slice with the node components.
+    /// * `other`: &Graph - Graph from where to extract the edge list.
     fn merged_components_number(&self, nodes_components: &[NodeT], other: &Graph) -> NodeT {
         other
-            .get_edges_string_iter()
+            .get_edges_string_iter(false)
             .filter_map(|(_, src_name, dst_name)| {
                 match (self.get_node_id(&src_name), self.get_node_id(&dst_name)) {
                     (Ok(src_id), Ok(dst_id)) => {
@@ -449,11 +454,11 @@ impl Graph {
         // Get overlapping nodes
         let overlapping_nodes_number = self
             .get_nodes_names_iter()
-            .filter(|(node_name, node_type)| other.has_node_string(node_name, node_type.clone()))
+            .filter(|(_, node_name, node_type)| other.has_node_string(node_name, node_type.clone()))
             .count();
         // Get overlapping edges
         let overlapping_edges_number = self
-            .get_edges_par_string_triples()
+            .get_edges_par_string_triples(self.directed)
             .filter(|(_, src_name, dst_name, edge_type_name)| {
                 other.has_edge_string(src_name, dst_name, edge_type_name.as_ref())
             })

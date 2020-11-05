@@ -47,7 +47,7 @@ impl Graph {
         cache_size: Option<f64>,
     ) -> Result<(), String> {
         if vector_destinations {
-            self.destinations = Some(self.get_destinations());
+            self.destinations = Some(self.get_destinations(true));
         } else {
             self.destinations = None;
         }

@@ -64,32 +64,49 @@ impl Graph {
     }
 
     /// Return vector of the non-unique source nodes.
-    pub fn get_sources(&self) -> Vec<NodeT> {
-        self.get_sources_iter().collect()
+    ///
+    /// # Arguments
+    /// * `directed`: bool, wethever to filter out the undirected edges.
+    pub fn get_sources(&self, directed: bool) -> Vec<NodeT> {
+        self.get_sources_iter(directed).collect()
     }
 
     /// Return vector of the non-unique source nodes names.
-    pub fn get_source_names(&self) -> Vec<String> {
-        self.get_sources_iter()
+    ///
+    /// # Arguments
+    /// * `directed`: bool, wethever to filter out the undirected edges.
+    pub fn get_source_names(&self, directed: bool) -> Vec<String> {
+        self.get_sources_iter(directed)
             .map(|src| self.get_node_name(src).unwrap())
             .collect()
     }
 
     /// Return vector on the (non unique) destination nodes of the graph.
-    pub fn get_destinations(&self) -> Vec<NodeT> {
-        self.get_destinations_iter().collect()
+    ///
+    /// # Arguments
+    /// * `directed`: bool, wethever to filter out the undirected edges.
+    pub fn get_destinations(&self, directed: bool) -> Vec<NodeT> {
+        self.get_destinations_iter(directed).collect()
     }
 
     /// Return vector of the non-unique destination nodes names.
-    pub fn get_destination_names(&self) -> Vec<String> {
-        self.get_destinations_iter()
+    ///
+    /// # Arguments
+    /// * `directed`: bool, wethever to filter out the undirected edges.
+    pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
+        self.get_destinations_iter(directed)
             .map(|dst| self.get_node_name(dst).unwrap())
             .collect()
     }
 
-    /// Return the nodes reverse mapping.
-    pub fn get_nodes_reverse_mapping(&self) -> Vec<String> {
+    /// Return vector with the sorted nodes names.
+    pub fn get_node_names(&self) -> Vec<String> {
         self.nodes.reverse_map.clone()
+    }
+
+    /// Return vector with the sorted nodes Ids.
+    pub fn get_nodes(&self) -> Vec<NodeT> {
+        (0..self.get_nodes_number()).collect()
     }
 
     /// Return vector with top k central node Ids.
@@ -197,6 +214,20 @@ impl Graph {
     /// Return the nodes mapping.
     pub fn get_nodes_mapping(&self) -> HashMap<String, NodeT> {
         self.nodes.map.clone()
+    }
+
+    /// Return vector with the sorted edge Ids.
+    pub fn get_edges(&self, directed: bool) -> Vec<(NodeT, NodeT)> {
+        self.get_edges_iter(directed)
+            .map(|(_, src, dst)| (src, dst))
+            .collect()
+    }
+
+    /// Return vector with the sorted edge names.
+    pub fn get_edge_names(&self, directed: bool) -> Vec<(String, String)> {
+        self.get_edges_string_iter(directed)
+            .map(|(_, src, dst)| (src, dst))
+            .collect()
     }
 
     /// Returs option with the edge type of the given edge id.
@@ -414,8 +445,9 @@ impl Graph {
             .collect::<Vec<NodeT>>()
     }
 
+    /// Return set of nodes that are not singletons.
     pub fn get_not_singletons(&self) -> Vec<NodeT> {
-        self.get_edges_iter()
+        self.get_edges_iter(false)
             .flat_map(|(_, src, dst)| once(src).chain(once(dst)))
             .unique()
             .collect()
