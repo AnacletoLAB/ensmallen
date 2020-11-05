@@ -113,7 +113,7 @@ impl Graph {
                     // If the deny edge types set was provided
                     if let (Some(dets), Some(et)) = (&deny_edge_types_set, &edge_type) {
                         // We check that the current edge type name is NOT within the edge set.
-                        if !dets.contains(et) {
+                        if dets.contains(et) {
                             return None;
                         }
                     }
@@ -153,7 +153,7 @@ impl Graph {
                             }
                         }
                         if let (Some(dnts), Some(nt)) = (&deny_node_types_set, &node_type) {
-                            if !dnts.contains(nt) {
+                            if dnts.contains(nt) {
                                 return None;
                             }
                         }
@@ -169,7 +169,7 @@ impl Graph {
             self.directed,
             false,
             false,
-            true,
+            false,
             self.get_edges_number(), // Approximation of expected edges number.
             self.get_nodes_number(), // Approximation of expected nodes number.
             match &self.edge_types {

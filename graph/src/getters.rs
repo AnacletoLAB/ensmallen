@@ -42,6 +42,9 @@ impl Graph {
 
     /// Returns boolean representing if given node is a singleton.
     ///
+    /// The following works for traps and singletons.
+    /// THIS IS SOMETHING TO BE GENERALIZED FOR DIRECTED GRAPHS.
+    /// 
     /// # Arguments
     ///
     /// `node_id`: NodeT - The node to be checked for.
@@ -52,7 +55,6 @@ impl Graph {
     /// Returns boolean representing if given node is a singleton.
     ///
     /// # Arguments
-    ///
     /// `node_name`: &str - The node name to be checked for.
     pub fn is_singleton_string(&self, node_name: &str) -> Result<bool, String> {
         Ok(self.is_singleton(self.get_node_id(node_name)?))
