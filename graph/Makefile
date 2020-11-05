@@ -19,7 +19,7 @@ coverage:
 	cargo test;\
 	mkdir ./target/debug/coverage;\
 	grcov ./target/debug/ -s . -t html --llvm --branch --ignore-not-existing -o ./target/debug/coverage/;\
-	$(OPEN_COMMAND) ./target/debug/coverage/index.html > /dev/null & \
+	$(OPEN_COMMAND) ./target/debug/coverage/src/index.html > /dev/null & \
 	)
 
 test:
