@@ -34,10 +34,10 @@ impl Graph {
 
         Graph::from_integer_unsorted(
             self.get_edges_string_quadruples().progress_with(pb).map(
-                |(_, src, dst, edge_type, weight)| {
+                |(_, src_name, dst_name, edge_type, weight)| {
                     Ok((
-                        other.get_unchecked_node_id(&src),
-                        other.get_unchecked_node_id(&dst),
+                        other.get_unchecked_node_id(&src_name),
+                        other.get_unchecked_node_id(&dst_name),
                         edge_type.and_then(|et| self.get_unchecked_edge_type_id(Some(et.as_str()))),
                         weight,
                     ))
@@ -50,6 +50,7 @@ impl Graph {
                 None => None,
             },
             self.directed,
+            false,
             self.name.clone(),
             false,
             verbose,

@@ -6,7 +6,7 @@ use std::collections::HashSet;
 impl EnsmallenGraph {
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, *, allow_nodes_set, deny_nodes_set, allow_edge_set, deny_edge_set, weights, node_types, edge_types, singletons, verbose)"]
+    #[text_signature = "($self, *, allow_nodes_set, deny_nodes_set, allow_node_types_set, deny_node_types_set,  allow_edge_set, deny_edge_set, allow_edge_types_set, deny_edge_types_set, weights, node_types, edge_types, singletons, verbose)"]
     /// Return new graph object without the indicated attributes.
     /// 
     /// Parameters
@@ -15,10 +15,18 @@ impl EnsmallenGraph {
     ///     Optional set of nodes names to keep.
     /// deny_nodes_set: Set[str] = None,
     ///     Optional set of nodes names to remove.
-    /// allow_edge_set: Set[EdgeT] = None,
+    /// allow_node_types_set: Set[str] = None,
+    ///     Optional set of node types names to keep.
+    /// deny_node_types_set: Set[str] = None,
+    ///     Optional set of node types names to remove.
+    /// allow_edge_set: Set[int] = None,
     ///     Optional set of numeric edge IDs to keep.
-    /// deny_edge_set: Set[EdgeT],
+    /// deny_edge_set: Set[int],
     ///     Optional set of numeric edge IDs to remove.
+    /// allow_edge_types_set: Set[str] = None,
+    ///     Optional set of edge types names to keep.
+    /// deny_edge_types_set: Set[str],
+    ///     Optional set of edge types names to remove.
     /// weights: bool = False,
     ///     Wether to remove the weights.
     ///     By default the parameter is false.
@@ -46,8 +54,12 @@ impl EnsmallenGraph {
             build_walk_parameters_list(&[
                 "allow_nodes_set",
                 "deny_nodes_set",
+                "allow_node_types_set",
+                "deny_node_types_set",
                 "allow_edge_set",
                 "deny_edge_set",
+                "allow_edge_types_set",
+                "deny_edge_types_set",
                 "weights",
                 "node_types",
                 "edge_types",
@@ -60,8 +72,12 @@ impl EnsmallenGraph {
             graph: pyex!(self.graph.remove(
                 pyex!(extract_value!(kwargs, "allow_nodes_set", HashSet<String>))?,
                 pyex!(extract_value!(kwargs, "deny_nodes_set", HashSet<String>))?,
+                pyex!(extract_value!(kwargs, "allow_node_types_set", HashSet<String>))?,
+                pyex!(extract_value!(kwargs, "deny_node_types_set", HashSet<String>))?,
                 pyex!(extract_value!(kwargs, "allow_edge_set", HashSet<EdgeT>))?,
                 pyex!(extract_value!(kwargs, "deny_edge_set", HashSet<EdgeT>))?,
+                pyex!(extract_value!(kwargs, "allow_edge_types_set", HashSet<String>))?,
+                pyex!(extract_value!(kwargs, "deny_edge_types_set", HashSet<String>))?,
                 pyex!(extract_value!(kwargs, "weights", bool))?.unwrap_or(false),
                 pyex!(extract_value!(kwargs, "node_types", bool))?.unwrap_or(false),
                 pyex!(extract_value!(kwargs, "edge_types", bool))?.unwrap_or(false),

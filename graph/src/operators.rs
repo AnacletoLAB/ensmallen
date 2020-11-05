@@ -55,6 +55,7 @@ fn generic_string_operator(
         edges_iterator,
         Some(nodes_iterator),
         main.directed,
+        false,
         build_operator_graph_name(main, other, operator),
         true,
         true,
@@ -92,9 +93,6 @@ fn generic_integer_operator(
         .flat_map(|(one, deny_graph, must_have_graph)| {
             one.get_edges_quadruples()
                 .filter(move |(_, src, dst, edge_type, _)| {
-                    if !main.directed && src > dst {
-                        return false;
-                    }
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid
                     // introducing duplicates.
@@ -118,6 +116,7 @@ fn generic_integer_operator(
             None => None,
         },
         main.directed,
+        false,
         build_operator_graph_name(main, other, operator),
         true,
         false,

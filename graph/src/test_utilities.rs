@@ -1,5 +1,4 @@
 use super::*;
-use log::info;
 use rand::Rng;
 use rayon::iter::ParallelIterator;
 use std::fs;
@@ -88,7 +87,7 @@ pub fn load_ppi(
         .set_default_weight(Some(5.0))
         .set_skip_self_loops(Some(skip_self_loops));
 
-    Graph::from_unsorted_csv(edges_reader, nodes_reader, directed, "Graph".to_owned())
+    Graph::from_unsorted_csv(edges_reader, nodes_reader, directed, true, "Graph".to_owned())
 }
 
 /// Return WalksParameters to execute a first order walk.
@@ -181,7 +180,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                     assert_eq!(destinations.len(), graph.get_edges_number() as usize);
                 }
             }
-            info!("Executing random walks.");
             assert_eq!(
                 graph
                     .random_walks_iter(1, &walker)
@@ -284,7 +282,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             verbose,
         )?;
         assert_eq!(
-            test.remove(None, None, None, None, false, false, false, true, verbose)?
+            test.remove(None, None, None, None, None, None, None, None, false, false, false, true, verbose)?
                 .connected_components_number(false)
                 .0,
             1
@@ -300,7 +298,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 verbose,
             )?;
             assert_eq!(
-                test.remove(None, None, None, None, false, false, false, true, verbose)?
+                test.remove(None, None, None, None, None, None, None, None, false, false, false, true, verbose)?
                     .connected_components_number(false)
                     .0,
                 1
@@ -317,7 +315,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 verbose,
             )?;
             assert_eq!(
-                test.remove(None, None, None, None, false, false, false, true, verbose)?
+                test.remove(None, None, None, None, None, None, None, None, false, false, false, true, verbose)?
                     .connected_components_number(false)
                     .0,
                 1
@@ -445,7 +443,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     //test removes
     {
         let without_edges =
-            graph.remove(None, None, None, None, false, false, true, false, verbose);
+            graph.remove(None, None, None, None, None, None, None, None,false, false, true, false, verbose);
         if let Some(we) = &without_edges.ok() {
             validate_vocabularies(we);
             assert_eq!(we.has_edge_types(), false);
@@ -465,7 +463,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     }
     {
         let without_nodes =
-            graph.remove(None, None, None, None, false, true, false, false, verbose);
+            graph.remove(None, None, None, None, None, None, None, None,false, true, false, false, verbose);
         if let Some(wn) = &without_nodes.ok() {
             validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
@@ -478,7 +476,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     }
     {
         let without_weights =
-            graph.remove(None, None, None, None, true, false, false, false, verbose);
+            graph.remove(None, None, None, None, None, None, None, None,true, false, false, false, verbose);
         if let Some(ww) = &without_weights.ok() {
             validate_vocabularies(ww);
             assert_eq!(ww.has_weights(), false);
