@@ -109,17 +109,20 @@ impl Graph {
     ///
     /// # Arguments
     /// `directed`: Option<bool> - Wether to return the edges as directed or undirected. By default, equal to the graph.
+    /// `allow_self_loops`: Option<bool> - Wether to allow self-loops in the clique. By default, equal to the graph.
     /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
     /// `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
     /// `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
     pub fn get_clique_edges(
         &self,
         directed: Option<bool>,
+        allow_self_loops: Option<bool>,
         removed_existing_edges: Option<bool>,
         allow_node_type_set: Option<HashSet<String>>,
         allow_node_set: Option<HashSet<String>>,
     ) -> Vec<Vec<NodeT>> {
         let directed_unwrapped = directed.unwrap_or(self.directed);
+        let allow_self_loops_unwrapped = allow_self_loops.unwrap_or_else(|| self.has_selfloops());
         let removed_existing_edges_unwrapped = removed_existing_edges.unwrap_or(true);
         let nodes: Vec<NodeT> = self
             .get_nodes_names_iter()
@@ -144,6 +147,9 @@ impl Graph {
                 nodes
                     .iter()
                     .filter_map(|dst| {
+                        if !allow_self_loops_unwrapped && src == dst{
+                            return None;
+                        }
                         if !directed_unwrapped && src > dst {
                             return None;
                         }
@@ -167,12 +173,14 @@ impl Graph {
     pub fn get_clique_edge_names(
         &self,
         directed: Option<bool>,
+        allow_self_loops: Option<bool>,
         removed_existing_edges: Option<bool>,
         allow_node_type_set: Option<HashSet<String>>,
         allow_node_set: Option<HashSet<String>>,
     ) -> Vec<Vec<String>> {
         self.get_clique_edges(
             directed,
+            allow_self_loops,
             removed_existing_edges,
             allow_node_type_set,
             allow_node_set,

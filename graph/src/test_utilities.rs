@@ -1,6 +1,7 @@
 use super::*;
 use rand::Rng;
 use rayon::iter::ParallelIterator;
+use std::collections::HashSet;
 use std::fs;
 use std::path::Path;
 
@@ -87,7 +88,13 @@ pub fn load_ppi(
         .set_default_weight(Some(5.0))
         .set_skip_self_loops(Some(skip_self_loops));
 
-    Graph::from_unsorted_csv(edges_reader, nodes_reader, directed, true, "Graph".to_owned())
+    Graph::from_unsorted_csv(
+        edges_reader,
+        nodes_reader,
+        directed,
+        true,
+        "Graph".to_owned(),
+    )
 }
 
 /// Return WalksParameters to execute a first order walk.
@@ -282,9 +289,11 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             verbose,
         )?;
         assert_eq!(
-            test.remove(None, None, None, None, None, None, None, None, false, false, false, true, verbose)?
-                .connected_components_number(false)
-                .0,
+            test.remove(
+                None, None, None, None, None, None, None, None, false, false, false, true, verbose
+            )?
+            .connected_components_number(false)
+            .0,
             1
         );
 
@@ -298,9 +307,12 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 verbose,
             )?;
             assert_eq!(
-                test.remove(None, None, None, None, None, None, None, None, false, false, false, true, verbose)?
-                    .connected_components_number(false)
-                    .0,
+                test.remove(
+                    None, None, None, None, None, None, None, None, false, false, false, true,
+                    verbose
+                )?
+                .connected_components_number(false)
+                .0,
                 1
             );
         }
@@ -315,9 +327,12 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 verbose,
             )?;
             assert_eq!(
-                test.remove(None, None, None, None, None, None, None, None, false, false, false, true, verbose)?
-                    .connected_components_number(false)
-                    .0,
+                test.remove(
+                    None, None, None, None, None, None, None, None, false, false, false, true,
+                    verbose
+                )?
+                .connected_components_number(false)
+                .0,
                 1
             );
         }
@@ -411,6 +426,28 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             graph.resource_allocation_index(src, dst)?;
         }
     }
+
+    // Testing generic filtering mechanisms
+    let _filtered = graph
+        .filter(
+            Some(graph.get_node_names()),
+            graph.get_node_type_names(),
+            graph.get_edge_type_names(),
+            graph.get_edge_weight(0),
+            graph.get_edge_weight(graph.get_edges_number() - 1),
+            verbose,
+        )
+        .unwrap();
+
+    // Tetsing edge lists generation
+    let _clique = graph.get_clique_edge_names(
+        None,
+        None,
+        Some(false),
+        None,
+        Some(graph.get_node_names().iter().cloned().collect::<HashSet<String>>()),
+    );
+
     // Testing the top Ks
     if graph.has_node_types() {
         graph.get_node_type(0)?;
@@ -442,8 +479,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
 
     //test removes
     {
-        let without_edges =
-            graph.remove(None, None, None, None, None, None, None, None,false, false, true, false, verbose);
+        let without_edges = graph.remove(
+            None, None, None, None, None, None, None, None, false, false, true, false, verbose,
+        );
         if let Some(we) = &without_edges.ok() {
             validate_vocabularies(we);
             assert_eq!(we.has_edge_types(), false);
@@ -462,8 +500,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
     {
-        let without_nodes =
-            graph.remove(None, None, None, None, None, None, None, None,false, true, false, false, verbose);
+        let without_nodes = graph.remove(
+            None, None, None, None, None, None, None, None, false, true, false, false, verbose,
+        );
         if let Some(wn) = &without_nodes.ok() {
             validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
@@ -475,8 +514,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         }
     }
     {
-        let without_weights =
-            graph.remove(None, None, None, None, None, None, None, None,true, false, false, false, verbose);
+        let without_weights = graph.remove(
+            None, None, None, None, None, None, None, None, true, false, false, false, verbose,
+        );
         if let Some(ww) = &without_weights.ok() {
             validate_vocabularies(ww);
             assert_eq!(ww.has_weights(), false);

@@ -399,14 +399,14 @@ impl EnsmallenGraph {
         })
     }
 
-    /// Return vector of node types_reverse_mapping.
-    pub fn get_node_types_reverse_mapping(&self) -> Option<Vec<String>> {
-        self.graph.get_node_types_reverse_mapping()
+    /// Return vector of node types_name.
+    pub fn get_node_types_name(&self) -> Option<Vec<String>> {
+        self.graph.get_node_types_name()
     }
 
-    /// Return vector of edge types_reverse_mapping.
-    pub fn get_edge_types_reverse_mapping(&self) -> Option<Vec<String>> {
-        self.graph.get_edge_types_reverse_mapping()
+    /// Return vector of edge types_name.
+    pub fn get_edge_types_name(&self) -> Option<Vec<String>> {
+        self.graph.get_edge_types_name()
     }
 
     /// Return dictionary of strings to Ids representing the ndoes mapping.

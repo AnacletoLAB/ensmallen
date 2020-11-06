@@ -160,8 +160,8 @@ impl Graph {
         }
     }
 
-    /// Return the edge types reverse mapping.
-    pub fn get_edge_types_reverse_mapping(&self) -> Option<Vec<String>> {
+    /// Return the edge types names.
+    pub fn get_edge_type_names(&self) -> Option<Vec<String>> {
         match &self.edge_types {
             Some(ets) => Some(ets.vocabulary.reverse_map.clone()),
             None => None,
@@ -192,8 +192,8 @@ impl Graph {
         self.weights.clone()
     }
 
-    /// Return the node types reverse mapping.
-    pub fn get_node_types_reverse_mapping(&self) -> Option<Vec<String>> {
+    /// Return the node types names.
+    pub fn get_node_type_names(&self) -> Option<Vec<String>> {
         match &self.node_types {
             Some(nts) => Some(nts.vocabulary.reverse_map.clone()),
             None => None,
