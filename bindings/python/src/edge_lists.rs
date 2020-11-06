@@ -97,6 +97,8 @@ impl EnsmallenGraph {
     /// ---------------------
     /// directed: bool = None,
     ///     Wether to return the edges as directed or undirected. By default, equal to the graph.
+    /// allow_self_loops: bool = None,
+    ///     Wether to allow self-loops in the clique. By default, equal to the graph.
     /// removed_existing_edges = True,
     ///     Wether to filter out the existing edges. By default, true.
     /// allow_node_type_set: Set[str] = None,
@@ -110,6 +112,7 @@ impl EnsmallenGraph {
     pub fn get_clique_edges(
         &self,
         directed: Option<bool>,
+        allow_self_loops: Option<bool>,
         removed_existing_edges: Option<bool>,
         allow_node_type_set: Option<HashSet<String>>,
         allow_node_set: Option<HashSet<String>>,
@@ -119,6 +122,7 @@ impl EnsmallenGraph {
             gil,
             self.graph.get_clique_edges(
                 directed,
+                allow_self_loops,
                 removed_existing_edges,
                 allow_node_type_set,
                 allow_node_set,
@@ -127,13 +131,15 @@ impl EnsmallenGraph {
         ))
     }
 
-    #[text_signature = "(self, *, directed, removed_existing_edges, allow_node_type_set, allow_node_set)"]
+    #[text_signature = "(self, *, directed, allow_self_loops, removed_existing_edges, allow_node_type_set, allow_node_set)"]
     /// Return vector of tuple of Node IDs that form the edges of the required clique.
     ///
     /// Parameters
     /// ---------------------
     /// directed: bool = None,
     ///     Wether to return the edges as directed or undirected. By default, equal to the graph.
+    /// allow_self_loops: bool = None,
+    ///     Wether to allow self-loops in the clique. By default, equal to the graph.
     /// removed_existing_edges = True,
     ///     Wether to filter out the existing edges. By default, true.
     /// allow_node_type_set: Set[str] = None,
@@ -147,12 +153,14 @@ impl EnsmallenGraph {
     pub fn get_clique_edge_names(
         &self,
         directed: Option<bool>,
+        allow_self_loops: Option<bool>,
         removed_existing_edges: Option<bool>,
         allow_node_type_set: Option<HashSet<String>>,
         allow_node_set: Option<HashSet<String>>,
     ) -> Vec<Vec<String>> {
         self.graph.get_clique_edge_names(
             directed,
+            allow_self_loops,
             removed_existing_edges,
             allow_node_type_set,
             allow_node_set,

@@ -167,6 +167,7 @@ impl Graph {
     ///
     /// # Arguments
     /// `directed`: Option<bool> - Wether to return the edges as directed or undirected. By default, equal to the graph.
+    /// `allow_self_loops`: Option<bool> - Wether to allow self-loops in the clique. By default, equal to the graph.
     /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
     /// `allow_node_type_set`: Option<HashSet<String>> - Node types to include in the clique.
     /// `allow_node_set`: Option<HashSet<String>> - Nodes to include i the clique.
