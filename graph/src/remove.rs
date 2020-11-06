@@ -64,7 +64,7 @@ impl Graph {
         let pb_nodes = get_loading_bar(
             verbose,
             format!(
-                "Building names of graph {} without required attributes",
+                "Building nodes of graph {} without required attributes",
                 self.name
             )
             .as_ref(),
