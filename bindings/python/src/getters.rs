@@ -79,6 +79,94 @@ impl EnsmallenGraph {
         self.graph.get_node_types_number()
     }
 
+    #[text_signature = "(self, edge_type)"]
+    /// Return the number of edges with the given edge type in the graph.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// edge_type: int,
+    ///     Edge type ID for which to count the edges.
+    /// 
+    /// Raises
+    /// ---------------------
+    /// ValueError,
+    ///     If the graph has no edge types.
+    /// ValueError,
+    ///     If the graph has not the given edge type.
+    /// 
+    /// Returns
+    /// ---------------------
+    /// Number of edges of given edge type.
+    fn get_edge_count_by_edge_type(&self, edge_type: EdgeTypeT) -> PyResult<EdgeT> {
+        pyex!(self.graph.get_edge_count_by_edge_type(edge_type))
+    }
+
+    #[text_signature = "(self, node_type)"]
+    /// Return the number of nodes with the given node type in the graph.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// node_type: int,
+    ///     Node type ID for which to number the nodes.
+    /// 
+    /// Raises
+    /// ---------------------
+    /// ValueError,
+    ///     If the graph has no node types.
+    /// ValueError,
+    ///     If the graph has not the given node type.
+    /// 
+    /// Returns
+    /// ---------------------
+    /// Number of nodes of given node type.
+    fn get_node_count_by_node_type(&self, node_type: NodeTypeT) -> PyResult<NodeT> {
+        pyex!(self.graph.get_node_count_by_node_type(node_type))
+    }
+
+    #[text_signature = "(self, edge_type)"]
+    /// Return the number of edges with the given edge type name in the graph.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// edge_type: str,
+    ///     Edge type name for which to number the edges.
+    /// 
+    /// Raises
+    /// ---------------------
+    /// ValueError,
+    ///     If the graph has no edge types.
+    /// ValueError,
+    ///     If the graph has not the given edge type.
+    /// 
+    /// Returns
+    /// ---------------------
+    /// Number of edges of given edge type.
+    fn get_edge_count_by_edge_type_name(&self, edge_type: &str) -> PyResult<EdgeT> {
+        pyex!(self.graph.get_edge_count_by_edge_type_name(edge_type))
+    }
+
+    #[text_signature = "(self, node_type)"]
+    /// Return the number of nodes with the given node type name in the graph.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// node_type: str,
+    ///     Node type name for which to number the nodes.
+    /// 
+    /// Raises
+    /// ---------------------
+    /// ValueError,
+    ///     If the graph has no node types.
+    /// ValueError,
+    ///     If the graph has not the given node type.
+    /// 
+    /// Returns
+    /// ---------------------
+    /// Number of nodes of given node type.
+    fn get_node_count_by_node_type_name(&self, node_type: &str) -> PyResult<NodeT> {
+        pyex!(self.graph.get_node_count_by_node_type_name(node_type))
+    }
+
     #[text_signature = "($self, node)"]
     /// Return boolean representing if given node is a trap.
     ///

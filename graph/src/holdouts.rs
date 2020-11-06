@@ -420,7 +420,7 @@ impl Graph {
         if let Some(etis) = &edge_type_ids {
             let selected_edges_number: EdgeT = etis
                 .iter()
-                .map(|et| self.get_edge_type_number(*et) as EdgeT)
+                .map(|et| self.get_unchecked_edge_count_by_edge_type(*et) as EdgeT)
                 .sum();
             valid_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;
         }

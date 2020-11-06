@@ -60,7 +60,8 @@ pub fn load_ppi(
                 .unwrap()
                 .set_header(Some(true))
                 .set_max_rows_number(Some(100000))
-                .set_rows_to_skip(Some(0)).clone(),
+                .set_rows_to_skip(Some(0))
+                .clone(),
         )
     } else {
         None
@@ -87,7 +88,8 @@ pub fn load_ppi(
         .set_default_edge_type(Some("Kebab".to_string()))
         .set_max_rows_number(Some(100000))
         .set_default_weight(Some(5.0))
-        .set_skip_self_loops(Some(skip_self_loops)).clone();
+        .set_skip_self_loops(Some(skip_self_loops))
+        .clone();
 
     Graph::from_unsorted_csv(
         edges_reader,
@@ -446,23 +448,34 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         None,
         Some(false),
         None,
-        Some(graph.get_node_names().iter().cloned().collect::<HashSet<String>>()),
+        Some(
+            graph
+                .get_node_names()
+                .iter()
+                .cloned()
+                .collect::<HashSet<String>>(),
+        ),
     );
-    if graph.get_nodes_number() > 1{
+    if graph.get_nodes_number() > 1 {
         let _bipartite = graph.get_bipartite_edge_names(
             None,
             None,
-            Some([
-                graph.get_node_name(0).unwrap(),
-            ].iter().cloned().collect::<HashSet<String>>()),
-            Some([
-                graph.get_node_name(1).unwrap(),
-            ].iter().cloned().collect::<HashSet<String>>()),
+            Some(
+                [graph.get_node_name(0).unwrap()]
+                    .iter()
+                    .cloned()
+                    .collect::<HashSet<String>>(),
+            ),
+            Some(
+                [graph.get_node_name(1).unwrap()]
+                    .iter()
+                    .cloned()
+                    .collect::<HashSet<String>>(),
+            ),
             None,
             None,
         );
     }
-
 
     // Testing the top Ks
     if graph.has_node_types() {
@@ -516,7 +529,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             );
             assert_eq!(we.has_traps(), graph.has_traps());
             assert_eq!(we.nodes, graph.nodes);
-            assert_eq!(graph.has_edge_types(), graph.validate_operator_terms(&we).is_err());
+            assert_eq!(
+                graph.has_edge_types(),
+                graph.validate_operator_terms(&we).is_err()
+            );
         }
     }
     {
@@ -531,7 +547,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(wn.has_traps(), graph.has_traps());
             assert_eq!(wn.nodes, graph.nodes);
             //assert_eq!(wn.edges, graph.edges);
-            assert_eq!(graph.has_node_types(), graph.validate_operator_terms(&wn).is_err());
+            assert_eq!(
+                graph.has_node_types(),
+                graph.validate_operator_terms(&wn).is_err()
+            );
         }
     }
     {
@@ -546,9 +565,11 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(ww.has_traps(), graph.has_traps());
             assert_eq!(ww.nodes, graph.nodes);
             //assert_eq!(ww.edges, graph.edges);
-            assert_eq!(graph.has_weights(), graph.validate_operator_terms(&ww).is_err());
+            assert_eq!(
+                graph.has_weights(),
+                graph.validate_operator_terms(&ww).is_err()
+            );
         }
-
     }
 
     // Testing cloning
@@ -557,10 +578,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES".to_string());
 
     assert_eq!(clone.get_edge_types_number(), 1);
-    assert_eq!(clone.get_edge_type_number(0), graph.get_edges_number());
+    assert_eq!(clone.get_unchecked_edge_count_by_edge_type(0), graph.get_edges_number());
 
     assert_eq!(clone.get_node_types_number(), 1);
-    assert_eq!(clone.get_node_type_number(0), graph.get_nodes_number());
+    assert_eq!(clone.get_unchecked_node_count_by_node_type(0), graph.get_nodes_number());
 
     Ok(())
 }

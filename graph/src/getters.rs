@@ -44,7 +44,7 @@ impl Graph {
     ///
     /// The following works for traps and singletons.
     /// THIS IS SOMETHING TO BE GENERALIZED FOR DIRECTED GRAPHS.
-    /// 
+    ///
     /// # Arguments
     ///
     /// `node_id`: NodeT - The node to be checked for.
@@ -465,18 +465,80 @@ impl Graph {
             .collect()
     }
 
-    pub fn get_edge_type_number(&self, edge_type: EdgeTypeT) -> EdgeT {
+    pub fn get_unchecked_edge_count_by_edge_type(&self, edge_type: EdgeTypeT) -> EdgeT {
         match &self.edge_types {
             None => 0,
             Some(ets) => ets.counts[edge_type as usize],
         }
     }
 
-    pub fn get_node_type_number(&self, node_type: NodeTypeT) -> NodeT {
+    pub fn get_edge_count_by_edge_type(&self, edge_type: EdgeTypeT) -> Result<EdgeT, String> {
+        if !self.has_edge_types() {
+            return Err("Current graph does not have edge types!".to_owned());
+        }
+        if self.get_edge_types_number() <= edge_type {
+            return Err(format!(
+                "Given edge type ID {} is bigger than number of edge types in the graph {}.",
+                self.get_edge_types_number(),
+                edge_type
+            ));
+        }
+        Ok(self.get_unchecked_edge_count_by_edge_type(edge_type))
+    }
+
+    pub fn get_edge_type_id(&self, edge_type_name: &str) -> Result<EdgeTypeT, String> {
+        if let Some(ets) = &self.edge_types {
+            return match ets.get(edge_type_name) {
+                Some(edge_type_id) => Ok(*edge_type_id),
+                None => Err(format!(
+                    "Given edge type name {} is not available in current graph.",
+                    edge_type_name
+                )),
+            };
+        }
+        Err("Current graph does not have edge types.".to_owned())
+    }
+
+    pub fn get_edge_count_by_edge_type_name(&self, edge_type: &str) -> Result<EdgeT, String> {
+        self.get_edge_count_by_edge_type(self.get_edge_type_id(edge_type)?)
+    }
+
+    pub fn get_unchecked_node_count_by_node_type(&self, node_type: NodeTypeT) -> NodeT {
         match &self.node_types {
             None => 0 as NodeT,
             Some(nts) => nts.counts[node_type as usize],
         }
+    }
+
+    pub fn get_node_type_id(&self, node_type_name: &str) -> Result<NodeTypeT, String> {
+        if let Some(ets) = &self.node_types {
+            return match ets.get(node_type_name) {
+                Some(node_type_id) => Ok(*node_type_id),
+                None => Err(format!(
+                    "Given node type name {} is not available in current graph.",
+                    node_type_name
+                )),
+            };
+        }
+        Err("Current graph does not have node types.".to_owned())
+    }
+
+    pub fn get_node_count_by_node_type(&self, node_type: NodeTypeT) -> Result<NodeT, String> {
+        if !self.has_node_types() {
+            return Err("Current graph does not have node types!".to_owned());
+        }
+        if self.get_node_types_number() <= node_type {
+            return Err(format!(
+                "Given node type ID {} is bigger than number of node types in the graph {}.",
+                self.get_node_types_number(),
+                node_type
+            ));
+        }
+        Ok(self.get_unchecked_node_count_by_node_type(node_type))
+    }
+
+    pub fn get_node_count_by_node_type_name(&self, node_type: &str) -> Result<NodeT, String> {
+        self.get_node_count_by_node_type(self.get_node_type_id(node_type)?)
     }
 
     /// Return if there are multiple edges between two nodes
