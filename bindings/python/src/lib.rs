@@ -8,6 +8,7 @@ mod edge_file_writer;
 mod from_csv;
 mod getters;
 mod setters;
+mod edge_lists;
 mod filters;
 mod metrics;
 mod node_file_writer;

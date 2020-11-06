@@ -37,6 +37,7 @@ pub mod graph;
 mod holdouts;
 mod iters;
 mod metrics;
+mod edge_lists;
 mod modifiers;
 mod operators;
 mod preprocessing;

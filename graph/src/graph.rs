@@ -293,10 +293,10 @@ impl Graph {
     pub fn overlaps(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
             true => other
-                .get_edges_par_triples()
+                .get_edges_par_triples(other.directed)
                 .any(|(_, src, dst, et)| self.has_edge(src, dst, et)),
             false => other
-                .get_edges_par_string_triples()
+                .get_edges_par_string_triples(other.directed)
                 .any(|(_, src, dst, et)| self.has_edge_string(&src, &dst, et.as_ref())),
         })
     }
@@ -310,10 +310,10 @@ impl Graph {
     pub fn contains(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
             true => other
-                .get_edges_par_triples()
+                .get_edges_par_triples(other.directed)
                 .all(|(_, src, dst, et)| self.has_edge(src, dst, et)),
             false => other
-                .get_edges_par_string_triples()
+                .get_edges_par_string_triples(other.directed)
                 .all(|(_, src, dst, et)| self.has_edge_string(&src, &dst, et.as_ref())),
         })
     }

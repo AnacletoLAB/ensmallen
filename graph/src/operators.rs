@@ -30,7 +30,7 @@ fn generic_string_operator(
     let edges_iterator = graphs
         .iter()
         .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.get_edges_string_quadruples()
+            one.get_edges_string_quadruples(main.directed)
                 .filter(move |(_, src, dst, edge_type, _)| {
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid
@@ -49,7 +49,7 @@ fn generic_string_operator(
     let graphs = [main, other];
     let nodes_iterator = graphs
         .iter()
-        .flat_map(|graph| graph.get_nodes_names_iter().map(Ok));
+        .flat_map(|graph| graph.get_nodes_names_iter().map(|(_, node_name, node_id)| Ok((node_name, node_id))));
 
     Graph::from_string_unsorted(
         edges_iterator,
@@ -58,7 +58,7 @@ fn generic_string_operator(
         false,
         build_operator_graph_name(main, other, operator),
         true,
-        true,
+        false,
         false,
         false,
         false,
@@ -91,7 +91,7 @@ fn generic_integer_operator(
     let edges_iterator = graphs
         .iter()
         .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.get_edges_quadruples()
+            one.get_edges_quadruples(main.directed)
                 .filter(move |(_, src, dst, edge_type, _)| {
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid
@@ -118,7 +118,7 @@ fn generic_integer_operator(
         main.directed,
         false,
         build_operator_graph_name(main, other, operator),
-        true,
+        false,
         false,
     )
 }

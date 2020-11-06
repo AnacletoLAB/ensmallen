@@ -5,7 +5,7 @@ impl Graph {
     /// Return graph filtered by given weights range.
     ///
     /// # Arguments
-    /// 
+    ///
     /// * node_names: Option<Vec<String>> - The node names to keep.
     /// * node_types: Option<Vec<String>> - The node types to keep.
     /// * edge_types: Option<Vec<String>> - The edge types to keep.
@@ -35,9 +35,10 @@ impl Graph {
         };
 
         Graph::build_graph(
-            self.get_edges_quadruples().progress_with(pb).filter_map(
-                |(_, src, dst, edge_type, weight)| {
-                    if let Some(nis) = &node_ids{
+            self.get_edges_quadruples(true)
+                .progress_with(pb)
+                .filter_map(|(_, src, dst, edge_type, weight)| {
+                    if let Some(nis) = &node_ids {
                         if !nis.contains(src) || !nis.contains(dst) {
                             return None;
                         }
@@ -58,8 +59,7 @@ impl Graph {
                         }
                     }
                     Some(Ok((src, dst, edge_type, weight)))
-                },
-            ),
+                }),
             self.get_edges_number(),
             self.nodes.clone(),
             self.node_types.clone(),

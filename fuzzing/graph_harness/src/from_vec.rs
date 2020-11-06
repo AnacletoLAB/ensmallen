@@ -21,6 +21,7 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
             None => None,
         },
         data.directed,
+        false,
         "Graph".to_owned(),
         data.ignore_duplicated_nodes,
         data.ignore_duplicated_edges,

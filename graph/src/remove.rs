@@ -72,7 +72,7 @@ impl Graph {
         );
 
         Graph::from_string_sorted(
-            self.get_edges_string_quadruples()
+            self.get_edges_string_quadruples(true)
                 .progress_with(pb_edges)
                 .filter_map(|(edge_id, src_name, dst_name, edge_type, weight)| {
                     // If an allow edge set was provided
@@ -105,18 +105,40 @@ impl Graph {
                     }
                     // If the allow edge types set was provided
                     if let (Some(aets), Some(et)) = (&allow_edge_types_set, &edge_type) {
-                        // We check that the current edge type name is within the edge set.
+                        // We check that the current edge type name is within the edge type set.
                         if !aets.contains(et) {
                             return None;
                         }
                     }
                     // If the deny edge types set was provided
                     if let (Some(dets), Some(et)) = (&deny_edge_types_set, &edge_type) {
-                        // We check that the current edge type name is NOT within the edge set.
-                        if !dets.contains(et) {
+                        // We check that the current edge type name is NOT within the edge type set.
+                        if dets.contains(et) {
                             return None;
                         }
                     }
+                    let src_node_type = self.get_unchecked_node_type(self.get_unchecked_node_id(&src_name));
+                    let dst_node_type = self.get_unchecked_node_type(self.get_unchecked_node_id(&dst_name));
+                    // If the graph has node types
+                    if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type){
+                        let src_node_type_name = self.get_node_type_name(src_nt).unwrap();
+                        let dst_node_type_name = self.get_node_type_name(dst_nt).unwrap();
+                        // If the allow node types set was provided
+                        if let Some(ants) = &allow_node_types_set {
+                            // We check that the current node type name is NOT within the node type set.
+                            if !ants.contains(&src_node_type_name) || !ants.contains(&dst_node_type_name){
+                                return None;
+                            }
+                        }
+                        // If the deny node types set was provided
+                        if let Some(dnts) = &deny_node_types_set {
+                            // We check that the current node type name is NOT within the node type set.
+                            if dnts.contains(&src_node_type_name) && dnts.contains(&dst_node_type_name){
+                                return None;
+                            }
+                        }
+                    }
+                    
                     Some(Ok((
                         src_name,
                         dst_name,
@@ -133,7 +155,7 @@ impl Graph {
             Some(
                 self.get_nodes_names_iter()
                     .progress_with(pb_nodes)
-                    .filter_map(|(node_name, node_type)| {
+                    .filter_map(|(_, node_name, node_type)| {
                         if singletons && self.is_singleton_string(&node_name).unwrap() {
                             return None;
                         }
@@ -153,7 +175,7 @@ impl Graph {
                             }
                         }
                         if let (Some(dnts), Some(nt)) = (&deny_node_types_set, &node_type) {
-                            if !dnts.contains(nt) {
+                            if dnts.contains(nt) {
                                 return None;
                             }
                         }
@@ -169,7 +191,7 @@ impl Graph {
             self.directed,
             false,
             false,
-            true,
+            false,
             self.get_edges_number(), // Approximation of expected edges number.
             self.get_nodes_number(), // Approximation of expected nodes number.
             match &self.edge_types {
@@ -230,7 +252,7 @@ impl Graph {
                 self.get_edges_number() as usize,
             );
 
-            self.get_edges_triples()
+            self.get_edges_triples(self.directed)
                 .progress_with(pb)
                 .for_each(|(_, src, dst, edge_type)| {
                     if let Some(et) = edge_type {
@@ -270,7 +292,7 @@ impl Graph {
         );
 
         Graph::build_graph(
-            self.get_edges_quadruples().progress_with(pb).filter_map(
+            self.get_edges_quadruples(true).progress_with(pb).filter_map(
                 |(_, src, dst, edge_type, weight)| match keep_components
                     .contains(components_vector[src as usize])
                 {

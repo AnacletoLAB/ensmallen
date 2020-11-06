@@ -1,6 +1,6 @@
 use super::*;
 use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, WeightT};
-use numpy::{PyArray, PyArray1};
+use numpy::{PyArray, PyArray1, PyArray2};
 use std::collections::HashMap;
 
 #[pymethods]
@@ -240,7 +240,6 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Integer representing ID of the edge. It will return None when the edge does not exist.
-    ///
     fn get_edge_id_string(&self, src: &str, dst: &str, edge_type: Option<String>) -> Option<EdgeT> {
         self.graph.get_edge_id_string(src, dst, edge_type.as_ref())
     }
@@ -251,7 +250,6 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Dict with mapping from not trap nodes to dense range of nodes.
-    ///
     fn get_dense_node_mapping(&self) -> HashMap<NodeT, NodeT> {
         self.graph.get_dense_node_mapping()
     }
@@ -262,36 +260,110 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Number of the source nodes.
-    ///
     fn get_source_nodes_number(&self) -> NodeT {
         self.graph.get_source_nodes_number()
     }
 
     /// Return vector of the non-unique source nodes.
-    pub fn get_sources(&self) -> PyResult<Py<PyArray1<NodeT>>> {
+    ///
+    /// Parameters
+    /// --------------------------
+    /// directed: bool,
+    ///     Wethever to filter out the undirected edges.
+    ///
+    /// Returns
+    /// --------------------------
+    /// Numpy array with numeric sources Ids.
+    pub fn get_sources(&self, directed: Option<bool>) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_1d!(gil, self.graph.get_sources(), NodeT))
+        Ok(to_nparray_1d!(
+            gil,
+            self.graph.get_sources(directed.unwrap_or(true)),
+            NodeT
+        ))
     }
 
     /// Return vector on the (non unique) destination nodes of the graph.
-    pub fn get_destinations(&self) -> PyResult<Py<PyArray1<NodeT>>> {
+    ///
+    /// Parameters
+    /// --------------------------
+    /// directed: bool,
+    ///     Wethever to filter out the undirected edges.
+    ///
+    /// Returns
+    /// --------------------------
+    /// Numpy array with numeric destination Ids.
+    pub fn get_destinations(&self, directed: Option<bool>) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_1d!(gil, self.graph.get_destinations(), NodeT))
+        Ok(to_nparray_1d!(
+            gil,
+            self.graph.get_destinations(directed.unwrap_or(true)),
+            NodeT
+        ))
+    }
+
+    /// Return vector on the edges of the graph.
+    ///
+    /// Parameters
+    /// --------------------------
+    /// directed: bool,
+    ///     Wethever to filter out the undirected edges.
+    ///
+    /// Returns
+    /// --------------------------
+    /// Numpy array with numeric source and destination Ids.
+    pub fn get_edges(&self, directed: Option<bool>) -> PyResult<Py<PyArray2<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_nparray_2d!(
+            gil,
+            self.graph.get_edges(directed.unwrap_or(true)),
+            NodeT
+        ))
+    }
+
+    /// Return list on the name of the edges of the graph.
+    ///
+    /// Parameters
+    /// --------------------------
+    /// directed: bool,
+    ///     Wethever to filter out the undirected edges.
+    ///
+    /// Returns
+    /// --------------------------
+    /// Numpy array with numeric source and destination string names.
+    pub fn get_edge_names(&self, directed: Option<bool>) -> Vec<(String, String)> {
+        self.graph.get_edge_names(directed.unwrap_or(true))
     }
 
     /// Return vector of the non-unique source nodes names.
-    pub fn get_source_names(&self) -> Vec<String> {
-        self.graph.get_source_names()
+    ///
+    /// Parameters
+    /// --------------------------
+    /// directed: bool,
+    ///     wethever to filter out the undirected edges.
+    pub fn get_source_names(&self, directed: Option<bool>) -> Vec<String> {
+        self.graph.get_source_names(directed.unwrap_or(true))
     }
 
     /// Return vector on the (non unique) destination nodes of the graph.
-    pub fn get_destination_names(&self) -> Vec<String> {
-        self.graph.get_destination_names()
+    ///
+    /// Parameters
+    /// --------------------------
+    /// directed: bool,
+    ///     wethever to filter out the undirected edges.
+    pub fn get_destination_names(&self, directed: Option<bool>) -> Vec<String> {
+        self.graph.get_destination_names(directed.unwrap_or(true))
     }
 
-    /// Return vector of strings representing the node Ids reverse mapping.
-    pub fn get_nodes_reverse_mapping(&self) -> Vec<String> {
-        self.graph.get_nodes_reverse_mapping()
+    /// Return vector with the sorted nodes names.
+    pub fn get_node_names(&self) -> Vec<String> {
+        self.graph.get_node_names()
+    }
+
+    /// Return vector with the sorted nodes Ids.
+    pub fn get_nodes(&self) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_nparray_1d!(gil, self.graph.get_nodes(), NodeT))
     }
 
     /// Return vector of node types.
