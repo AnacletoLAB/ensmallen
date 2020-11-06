@@ -105,18 +105,40 @@ impl Graph {
                     }
                     // If the allow edge types set was provided
                     if let (Some(aets), Some(et)) = (&allow_edge_types_set, &edge_type) {
-                        // We check that the current edge type name is within the edge set.
+                        // We check that the current edge type name is within the edge type set.
                         if !aets.contains(et) {
                             return None;
                         }
                     }
                     // If the deny edge types set was provided
                     if let (Some(dets), Some(et)) = (&deny_edge_types_set, &edge_type) {
-                        // We check that the current edge type name is NOT within the edge set.
+                        // We check that the current edge type name is NOT within the edge type set.
                         if dets.contains(et) {
                             return None;
                         }
                     }
+                    let src_node_type = self.get_unchecked_node_type(self.get_unchecked_node_id(&src_name));
+                    let dst_node_type = self.get_unchecked_node_type(self.get_unchecked_node_id(&dst_name));
+                    // If the graph has node types
+                    if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type){
+                        let src_node_type_name = self.get_node_type_name(src_nt).unwrap();
+                        let dst_node_type_name = self.get_node_type_name(dst_nt).unwrap();
+                        // If the allow node types set was provided
+                        if let Some(ants) = &allow_node_types_set {
+                            // We check that the current node type name is NOT within the node type set.
+                            if !ants.contains(&src_node_type_name) || !ants.contains(&dst_node_type_name){
+                                return None;
+                            }
+                        }
+                        // If the deny node types set was provided
+                        if let Some(dnts) = &deny_node_types_set {
+                            // We check that the current node type name is NOT within the node type set.
+                            if dnts.contains(&src_node_type_name) && dnts.contains(&dst_node_type_name){
+                                return None;
+                            }
+                        }
+                    }
+                    
                     Some(Ok((
                         src_name,
                         dst_name,
