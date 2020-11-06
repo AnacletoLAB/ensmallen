@@ -5,13 +5,11 @@ use std::collections::HashSet;
 
 #[pymethods]
 impl EnsmallenGraph {
-    #[text_signature = "(self, *, directed, removed_existing_edges, directed, removed_existing_edges, first_nodes_set, second_nodes_set, first_node_types_set, second_node_types_set)"]
+    #[text_signature = "(self, *, removed_existing_edges, first_nodes_set, second_nodes_set, first_node_types_set, second_node_types_set)"]
     /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// Parameteres
     /// ----------------------
-    /// directed: bool = None,
-    ///     Wether to return the edges as directed or undirected. By default, equal to the graph.
     /// removed_existing_edges: bool = True,
     ///     Wether to filter out the existing edges. By default, true.
     /// first_nodes_set: Set[str] = None,
@@ -28,7 +26,6 @@ impl EnsmallenGraph {
     /// Numpy vector of the edges IDs forming the required bipartite graph.
     pub fn get_bipartite_edges(
         &self,
-        directed: Option<bool>,
         removed_existing_edges: Option<bool>,
         first_nodes_set: Option<HashSet<String>>,
         second_nodes_set: Option<HashSet<String>>,
@@ -39,7 +36,6 @@ impl EnsmallenGraph {
         Ok(to_nparray_2d!(
             gil,
             self.graph.get_bipartite_edges(
-                directed,
                 removed_existing_edges,
                 first_nodes_set,
                 second_nodes_set,
@@ -50,13 +46,11 @@ impl EnsmallenGraph {
         ))
     }
 
-    #[text_signature = "(self, *, directed, removed_existing_edges, directed, removed_existing_edges, first_nodes_set, second_nodes_set, first_node_types_set, second_node_types_set)"]
+    #[text_signature = "(self, *, removed_existing_edges, first_nodes_set, second_nodes_set, first_node_types_set, second_node_types_set)"]
     /// Return vector of tuple of Node names that form the edges of the required bipartite graph.
     ///
     /// Parameteres
     /// ----------------------
-    /// directed: bool = None,
-    ///     Wether to return the edges as directed or undirected. By default, equal to the graph.
     /// removed_existing_edges: bool = True,
     ///     Wether to filter out the existing edges. By default, true.
     /// first_nodes_set: Set[str] = None,
@@ -73,7 +67,6 @@ impl EnsmallenGraph {
     /// Numpy vector of the edges names forming the required bipartite graph.
     pub fn get_bipartite_edge_names(
         &self,
-        directed: Option<bool>,
         removed_existing_edges: Option<bool>,
         first_nodes_set: Option<HashSet<String>>,
         second_nodes_set: Option<HashSet<String>>,
@@ -81,7 +74,6 @@ impl EnsmallenGraph {
         second_node_types_set: Option<HashSet<String>>,
     ) -> Vec<Vec<String>> {
         self.graph.get_bipartite_edge_names(
-            directed,
             removed_existing_edges,
             first_nodes_set,
             second_nodes_set,

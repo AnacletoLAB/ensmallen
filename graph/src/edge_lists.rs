@@ -8,7 +8,6 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required clique.
     ///
     /// # Arguments
-    /// `directed`: Option<bool> - Wether to return the edges as directed or undirected. By default, equal to the graph.
     /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
     /// `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
     /// `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
@@ -16,14 +15,12 @@ impl Graph {
     /// `second_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.
     pub fn get_bipartite_edges(
         &self,
-        directed: Option<bool>,
         removed_existing_edges: Option<bool>,
         first_nodes_set: Option<HashSet<String>>,
         second_nodes_set: Option<HashSet<String>>,
         first_node_types_set: Option<HashSet<String>>,
         second_node_types_set: Option<HashSet<String>>,
     ) -> Vec<Vec<NodeT>> {
-        let directed_unwrapped = directed.unwrap_or(self.directed);
         let removed_existing_edges_unwrapped = removed_existing_edges.unwrap_or(true);
         let (first_nodes, second_nodes): (Vec<NodeT>, Vec<NodeT>) = [
             (first_nodes_set, first_node_types_set),
@@ -56,9 +53,6 @@ impl Graph {
                 second_nodes
                     .iter()
                     .filter_map(|dst| {
-                        if !directed_unwrapped && src > dst {
-                            return None;
-                        }
                         if removed_existing_edges_unwrapped && self.has_edge(*src, *dst, None) {
                             return None;
                         }
@@ -72,7 +66,6 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required clique.
     ///
     /// # Arguments
-    /// `directed`: Option<bool> - Wether to return the edges as directed or undirected. By default, equal to the graph.
     /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
     /// `first_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the first set of nodes of the graph.
     /// `second_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
@@ -80,7 +73,6 @@ impl Graph {
     /// `second_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.
     pub fn get_bipartite_edge_names(
         &self,
-        directed: Option<bool>,
         removed_existing_edges: Option<bool>,
         first_nodes_set: Option<HashSet<String>>,
         second_nodes_set: Option<HashSet<String>>,
@@ -88,7 +80,6 @@ impl Graph {
         second_node_types_set: Option<HashSet<String>>,
     ) -> Vec<Vec<String>> {
         self.get_bipartite_edges(
-            directed,
             removed_existing_edges,
             first_nodes_set,
             second_nodes_set,

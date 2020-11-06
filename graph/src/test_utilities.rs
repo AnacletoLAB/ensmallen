@@ -459,7 +459,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     if graph.get_nodes_number() > 1 {
         let _bipartite = graph.get_bipartite_edge_names(
             None,
-            None,
             Some(
                 [graph.get_node_name(0).unwrap()]
                     .iter()
