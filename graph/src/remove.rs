@@ -191,7 +191,7 @@ impl Graph {
             self.directed,
             true,
             false,
-            false,
+            self.is_multigraph() && edge_types,
             self.get_edges_number(), // Approximation of expected edges number.
             self.get_nodes_number(), // Approximation of expected nodes number.
             match &self.edge_types {
