@@ -228,7 +228,7 @@ pub(crate) fn parse_sorted_edges<'a>(
     directed: bool,
     directed_edge_list: bool
 ) -> Box<dyn Iterator<Item = Result<Quadruple, String>> + 'a> {
-    if directed_edge_list {
+    if directed || directed_edge_list {
         return Box::new(edges_iter);
     }
     let mut sorting_tmp: BTreeMap<Triple, Option<WeightT>> = BTreeMap::new();
