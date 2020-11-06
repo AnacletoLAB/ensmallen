@@ -72,7 +72,7 @@ impl Graph {
         );
 
         Graph::from_string_sorted(
-            self.get_edges_string_quadruples(true)
+            self.get_edges_string_quadruples(self.directed)
                 .progress_with(pb_edges)
                 .filter_map(|(edge_id, src_name, dst_name, edge_type, weight)| {
                     // If an allow edge set was provided
