@@ -273,7 +273,6 @@ impl Graph {
             self.get_edges_quadruples().progress_with(pb).filter_map(
                 |(_, src, dst, edge_type, weight)| match keep_components
                     .contains(components_vector[src as usize])
-                    && keep_components.contains(components_vector[dst as usize])
                 {
                     true => Some(Ok((src, dst, edge_type, weight))),
                     false => None,
