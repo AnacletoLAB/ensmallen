@@ -4,11 +4,11 @@ use graph::test_utilities::*;
 /// Test that everything runs properly in the PPI graph.
 fn test_speed() { 
     let ppi = load_ppi(
-        false,
-        false,
+        true,
+        true,
         true,
         false,
-        false,
+        true,
         false,
     )
     .unwrap();

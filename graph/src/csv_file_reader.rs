@@ -54,7 +54,7 @@ impl CSVFileReader {
     }
 
     /// Return list of components of the header.
-    pub(crate) fn get_header(&self) -> Result<Vec<String>, String> {
+    pub fn get_header(&self) -> Result<Vec<String>, String> {
         let file = File::open(&self.path).unwrap();
         let node_buf_reader = BufReader::new(file);
         let mut lines = node_buf_reader.lines().skip(self.rows_to_skip);
@@ -74,7 +74,7 @@ impl CSVFileReader {
     }
 
     /// Return elements of the first line not to be skipped.
-    pub(crate) fn get_elements_per_line(&self) -> Result<usize, String> {
+    pub fn get_elements_per_line(&self) -> Result<usize, String> {
         let first_line = BufReader::new(File::open(&self.path).unwrap())
             .lines()
             .nth(self.rows_to_skip);
@@ -192,7 +192,7 @@ impl CSVFileReader {
     ///
     /// * column_name: String - Column to get the number of.
     ///
-    pub(crate) fn get_column_number(&self, column_name: String) -> Result<usize, String> {
+    pub fn get_column_number(&self, column_name: String) -> Result<usize, String> {
         let header = self.get_header()?;
 
         match header.iter().position(|x| *x == column_name) {

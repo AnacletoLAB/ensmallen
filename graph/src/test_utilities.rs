@@ -36,6 +36,7 @@ pub fn random_path() -> String {
         .to_string()
 }
 
+#[allow(clippy::redundant_clone)]
 /// Load PPI with given parametrization.
 pub fn load_ppi(
     load_nodes: bool,
@@ -59,7 +60,7 @@ pub fn load_ppi(
                 .unwrap()
                 .set_header(Some(true))
                 .set_max_rows_number(Some(100000))
-                .set_rows_to_skip(Some(0)),
+                .set_rows_to_skip(Some(0)).clone(),
         )
     } else {
         None
@@ -86,7 +87,7 @@ pub fn load_ppi(
         .set_default_edge_type(Some("Kebab".to_string()))
         .set_max_rows_number(Some(100000))
         .set_default_weight(Some(5.0))
-        .set_skip_self_loops(Some(skip_self_loops));
+        .set_skip_self_loops(Some(skip_self_loops)).clone();
 
     Graph::from_unsorted_csv(
         edges_reader,
@@ -447,6 +448,21 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         None,
         Some(graph.get_node_names().iter().cloned().collect::<HashSet<String>>()),
     );
+    if graph.get_nodes_number() > 1{
+        let _bipartite = graph.get_bipartite_edge_names(
+            None,
+            None,
+            Some([
+                graph.get_node_name(0).unwrap(),
+            ].iter().cloned().collect::<HashSet<String>>()),
+            Some([
+                graph.get_node_name(1).unwrap(),
+            ].iter().cloned().collect::<HashSet<String>>()),
+            None,
+            None,
+        );
+    }
+
 
     // Testing the top Ks
     if graph.has_node_types() {
@@ -477,12 +493,15 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         graph.has_edge_types()
     );
 
+    graph.set_name("Non c'è l'agavazzzz, c'è la manetta".to_owned());
+    graph.strongly_connected_components();
+
     //test removes
     {
-        let without_edges = graph.remove(
+        let without_edge_types = graph.remove(
             None, None, None, None, None, None, None, None, false, false, true, false, verbose,
         );
-        if let Some(we) = &without_edges.ok() {
+        if let Some(we) = &without_edge_types.ok() {
             validate_vocabularies(we);
             assert_eq!(we.has_edge_types(), false);
             assert_eq!(we.has_weights(), graph.has_weights());
@@ -497,13 +516,14 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             );
             assert_eq!(we.has_traps(), graph.has_traps());
             assert_eq!(we.nodes, graph.nodes);
+            assert_eq!(graph.has_edge_types(), graph.validate_operator_terms(&we).is_err());
         }
     }
     {
-        let without_nodes = graph.remove(
+        let without_node_types = graph.remove(
             None, None, None, None, None, None, None, None, false, true, false, false, verbose,
         );
-        if let Some(wn) = &without_nodes.ok() {
+        if let Some(wn) = &without_node_types.ok() {
             validate_vocabularies(wn);
             assert_eq!(wn.has_node_types(), false);
             assert_eq!(wn.weights, graph.weights);
@@ -511,6 +531,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(wn.has_traps(), graph.has_traps());
             assert_eq!(wn.nodes, graph.nodes);
             //assert_eq!(wn.edges, graph.edges);
+            assert_eq!(graph.has_node_types(), graph.validate_operator_terms(&wn).is_err());
         }
     }
     {
@@ -525,7 +546,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(ww.has_traps(), graph.has_traps());
             assert_eq!(ww.nodes, graph.nodes);
             //assert_eq!(ww.edges, graph.edges);
+            assert_eq!(graph.has_weights(), graph.validate_operator_terms(&ww).is_err());
         }
+
     }
 
     // Testing cloning
