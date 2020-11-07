@@ -473,19 +473,47 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             ),
             None,
             None,
-        );
+        )?;
+        let _star = graph.get_star_edges(
+            Some(false),
+            graph.get_node_name(0).unwrap(),
+            Some(
+                [graph.get_node_name(1).unwrap()]
+                    .iter()
+                    .cloned()
+                    .collect::<HashSet<String>>(),
+            ),
+            None,
+        )?;
+        let _star = graph.get_star_edge_names(
+            Some(false),
+            graph.get_node_name(0).unwrap(),
+            Some(
+                [graph.get_node_name(1).unwrap()]
+                    .iter()
+                    .cloned()
+                    .collect::<HashSet<String>>(),
+            ),
+            None,
+        )?;
     }
 
     // Testing the top Ks
     if graph.has_node_types() {
         graph.get_node_type(0)?;
 
-        assert!(graph.get_node_type(graph.get_nodes_number() + 1).is_err());
+        assert!(
+            graph.get_node_type(graph.get_nodes_number() + 1).is_err(),
+            "Given graph does not raise an exception when a node's node type greater than the number of available nodes is requested."
+        );
     }
     if graph.has_edge_types() {
         graph.get_edge_type(0)?;
 
-        assert!(graph.get_edge_type(graph.get_edges_number() + 1).is_err());
+        assert!(
+            graph.get_edge_type(graph.get_edges_number() + 1).is_err(),
+            "Given graph does not raise an exception when a edge's edge type greater than the number of available edges is requested."
+        );
     }
     // Evaluate get_node_type
     assert_eq!(graph.get_node_type(0).is_ok(), graph.has_node_types());
@@ -577,10 +605,16 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES".to_string());
 
     assert_eq!(clone.get_edge_types_number(), 1);
-    assert_eq!(clone.get_unchecked_edge_count_by_edge_type(0), graph.get_edges_number());
+    assert_eq!(
+        clone.get_unchecked_edge_count_by_edge_type(0),
+        graph.get_edges_number()
+    );
 
     assert_eq!(clone.get_node_types_number(), 1);
-    assert_eq!(clone.get_unchecked_node_count_by_node_type(0), graph.get_nodes_number());
+    assert_eq!(
+        clone.get_unchecked_node_count_by_node_type(0),
+        graph.get_nodes_number()
+    );
 
     Ok(())
 }

@@ -5,7 +5,7 @@ use rayon::iter::ParallelIterator;
 use std::collections::HashSet;
 
 impl Graph {
-    /// Return vector of tuple of Node IDs that form the edges of the required clique.
+    /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// # Arguments
     /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
@@ -20,7 +20,7 @@ impl Graph {
         second_nodes_set: Option<HashSet<String>>,
         first_node_types_set: Option<HashSet<String>>,
         second_node_types_set: Option<HashSet<String>>,
-    ) -> Vec<Vec<NodeT>> {
+    ) -> Result<Vec<Vec<NodeT>>, String> {
         let removed_existing_edges_unwrapped = removed_existing_edges.unwrap_or(true);
         let (first_nodes, second_nodes): (Vec<NodeT>, Vec<NodeT>) = [
             (first_nodes_set, first_node_types_set),
@@ -47,7 +47,18 @@ impl Graph {
         .collect_tuple()
         .unwrap();
 
-        first_nodes
+        // TODO: this would be faster by using an adapted merge sort
+        if first_nodes
+            .par_iter()
+            .any(|src| second_nodes.binary_search(src).is_ok())
+        {
+            return Err(
+                "The giving node sets of the required bipartite graph have shared nodes."
+                    .to_owned(),
+            );
+        }
+
+        Ok(first_nodes
             .par_iter()
             .flat_map(|src| {
                 second_nodes
@@ -60,10 +71,10 @@ impl Graph {
                     })
                     .collect::<Vec<Vec<NodeT>>>()
             })
-            .collect()
+            .collect())
     }
 
-    /// Return vector of tuple of Node IDs that form the edges of the required clique.
+    /// Return vector of tuple of Node IDs that form the edges of the required bipartite graph.
     ///
     /// # Arguments
     /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
@@ -78,22 +89,79 @@ impl Graph {
         second_nodes_set: Option<HashSet<String>>,
         first_node_types_set: Option<HashSet<String>>,
         second_node_types_set: Option<HashSet<String>>,
-    ) -> Vec<Vec<String>> {
+    ) -> Result<Vec<Vec<String>>, String> {
+        Ok(self
+            .get_bipartite_edges(
+                removed_existing_edges,
+                first_nodes_set,
+                second_nodes_set,
+                first_node_types_set,
+                second_node_types_set,
+            )?
+            .iter()
+            .map(|nodes| {
+                nodes
+                    .iter()
+                    .map(|node| self.get_node_name(*node).unwrap())
+                    .collect::<Vec<String>>()
+            })
+            .collect::<Vec<Vec<String>>>())
+    }
+
+    /// Return vector of tuple of Node IDs that form the edges of the required star.
+    ///
+    /// # Arguments
+    /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
+    /// `central_node`: String - Name of the node to use as center of the star.
+    /// `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
+    /// `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.
+    pub fn get_star_edges(
+        &self,
+        removed_existing_edges: Option<bool>,
+        central_node: String,
+        star_points_nodes_set: Option<HashSet<String>>,
+        star_points_node_types_set: Option<HashSet<String>>,
+    ) -> Result<Vec<Vec<NodeT>>, String> {
         self.get_bipartite_edges(
             removed_existing_edges,
-            first_nodes_set,
-            second_nodes_set,
-            first_node_types_set,
-            second_node_types_set,
+            Some(
+                vec![central_node]
+                    .iter()
+                    .cloned()
+                    .collect::<HashSet<String>>(),
+            ),
+            star_points_nodes_set,
+            None,
+            star_points_node_types_set,
         )
-        .iter()
-        .map(|nodes| {
-            nodes
-                .iter()
-                .map(|node| self.get_node_name(*node).unwrap())
-                .collect::<Vec<String>>()
-        })
-        .collect::<Vec<Vec<String>>>()
+    }
+
+    /// Return vector of tuple of Node names that form the edges of the required star.
+    ///
+    /// # Arguments
+    /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
+    /// `central_node`: String - Name of the node to use as center of the star.
+    /// `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
+    /// `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.
+    pub fn get_star_edge_names(
+        &self,
+        removed_existing_edges: Option<bool>,
+        central_node: String,
+        star_points_nodes_set: Option<HashSet<String>>,
+        star_points_node_types_set: Option<HashSet<String>>,
+    ) -> Result<Vec<Vec<String>>, String> {
+        self.get_bipartite_edge_names(
+            removed_existing_edges,
+            Some(
+                vec![central_node]
+                    .iter()
+                    .cloned()
+                    .collect::<HashSet<String>>(),
+            ),
+            star_points_nodes_set,
+            None,
+            star_points_node_types_set,
+        )
     }
 
     /// Return vector of tuple of Node IDs that form the edges of the required clique.
@@ -138,7 +206,7 @@ impl Graph {
                 nodes
                     .iter()
                     .filter_map(|dst| {
-                        if !allow_self_loops_unwrapped && src == dst{
+                        if !allow_self_loops_unwrapped && src == dst {
                             return None;
                         }
                         if !directed_unwrapped && src > dst {

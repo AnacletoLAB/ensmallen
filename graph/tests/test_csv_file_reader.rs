@@ -1,5 +1,5 @@
 extern crate graph;
-use graph::{CSVFileReader, EdgeFileReader};
+use graph::{CSVFileReader};
 
 #[test]
 /// Testing if a proper exception is raised when given path does not exists.
