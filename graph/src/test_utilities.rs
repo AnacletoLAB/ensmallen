@@ -183,12 +183,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             }
             if mode == 2 {
                 graph.enable_fast_walk(false, false, Some(0.05 as f64))?;
-                if let Some(outbounds) = &graph.outbounds {
-                    assert_eq!(outbounds.len(), graph.get_nodes_number() as usize);
-                }
-                if let Some(destinations) = &graph.destinations {
-                    assert_eq!(destinations.len(), graph.get_edges_number() as usize);
-                }
+                assert!(graph.cached_destinations.is_some());
             }
             assert_eq!(
                 graph
@@ -475,8 +470,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             None,
         )?;
         let _star = graph.get_star_edges(
-            Some(false),
             graph.get_node_name(0).unwrap(),
+            Some(false),
             Some(
                 [graph.get_node_name(1).unwrap()]
                     .iter()
@@ -486,8 +481,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             None,
         )?;
         let _star = graph.get_star_edge_names(
-            Some(false),
             graph.get_node_name(0).unwrap(),
+            Some(false),
             Some(
                 [graph.get_node_name(1).unwrap()]
                     .iter()

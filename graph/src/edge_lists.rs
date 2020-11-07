@@ -47,6 +47,14 @@ impl Graph {
         .collect_tuple()
         .unwrap();
 
+        if first_nodes.is_empty() {
+            return Err("The first nodes set of required bipartite graph is empty!".to_owned());
+        }
+
+        if second_nodes.is_empty() {
+            return Err("The second nodes set of required bipartite graph is empty!".to_owned());
+        }
+
         // TODO: this would be faster by using an adapted merge sort
         if first_nodes
             .par_iter()
@@ -111,14 +119,14 @@ impl Graph {
     /// Return vector of tuple of Node IDs that form the edges of the required star.
     ///
     /// # Arguments
-    /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
     /// `central_node`: String - Name of the node to use as center of the star.
-    /// `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
-    /// `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.
+    /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
+    /// `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
+    /// `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
     pub fn get_star_edges(
         &self,
-        removed_existing_edges: Option<bool>,
         central_node: String,
+        removed_existing_edges: Option<bool>,
         star_points_nodes_set: Option<HashSet<String>>,
         star_points_node_types_set: Option<HashSet<String>>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
@@ -139,14 +147,14 @@ impl Graph {
     /// Return vector of tuple of Node names that form the edges of the required star.
     ///
     /// # Arguments
-    /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
     /// `central_node`: String - Name of the node to use as center of the star.
-    /// `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the second set of nodes of the graph.
-    /// `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the second set of nodes of the graph.
+    /// `removed_existing_edges`: Option<bool> - Wether to filter out the existing edges. By default, true.
+    /// `star_points_nodes_set`: Option<HashMap<String>> - Optional set of nodes to use to create the set of star points.
+    /// `star_points_node_types_set`: Option<HashMap<String>> - Optional set of node types to create the set of star points.
     pub fn get_star_edge_names(
         &self,
-        removed_existing_edges: Option<bool>,
         central_node: String,
+        removed_existing_edges: Option<bool>,
         star_points_nodes_set: Option<HashSet<String>>,
         star_points_node_types_set: Option<HashSet<String>>,
     ) -> Result<Vec<Vec<String>>, String> {
