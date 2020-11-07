@@ -318,14 +318,11 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) =
             graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;
-        if graph.connected_components_number(false) != train.connected_components_number(false) {
-            println!("GRAPH: {}", graph.textual_report()?);
-            println!("{:?}", graph.get_edge_names(graph.directed));
-            println!("TRAIN: {}", train.textual_report()?);
-            println!("{:?}", train.get_edge_names(train.directed));
-            panic!("The connected train graph DOES NOT have the same components as the original graph!");
-        }
-
+        assert_eq!(
+            graph.connected_components_number(false),
+            train.connected_components_number(false),
+            "The number of components of the original graph and the connected training set does not match."
+        );
         default_holdout_test_suite(graph, &train, &test)?;
     }
 
