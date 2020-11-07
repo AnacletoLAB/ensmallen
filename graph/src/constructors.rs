@@ -407,11 +407,11 @@ pub(crate) fn build_edges(
             self_loop_number += 1;
         }
         if different_src || different_dst {
-            if !non_singleton_nodes[src as usize]{
+            if !non_singleton_nodes[src as usize] && src != dst{
                 non_singleton_nodes.set(src as usize, true);
                 non_singleton_nodes_number+=1;
             }
-            if !non_singleton_nodes[dst as usize]{
+            if !non_singleton_nodes[dst as usize] && src != dst{
                 non_singleton_nodes.set(dst as usize, true);
                 non_singleton_nodes_number+=1;
             }
