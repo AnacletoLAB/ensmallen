@@ -143,24 +143,48 @@ pub fn default_holdout_test_suite(
     for g in &[graph, train, test] {
         validate_vocabularies(g);
     }
-    assert!(!train.overlaps(&test)?);
-    assert!(!test.overlaps(&train)?);
-    assert!(graph.contains(&train)?);
-    assert!(graph.contains(&test)?);
+    assert!(
+        !train.overlaps(&test)?,
+        "Training graph overlaps with test graph!"
+    );
+    assert!(
+        !test.overlaps(&train)?,
+        "Test graph overlaps with training graph!"
+    );
+    assert!(graph.contains(&train)?, "Graph does not training graph.");
+    assert!(graph.contains(&test)?, "Graph does not contain test graph.");
     let summed = (train | test)?;
     validate_vocabularies(&summed);
-    assert!(summed.contains(&graph)?);
+    assert!(
+        summed.contains(&graph)?,
+        "Composed train and test graph do not contained original graph."
+    );
     let subtracted = (graph - test)?;
     validate_vocabularies(&subtracted);
-    assert!(subtracted.contains(&train)?);
-    assert!(!subtracted.overlaps(&test)?);
+    assert!(
+        subtracted.contains(&train)?,
+        "Main graph subtracted test does not contain training graph."
+    );
+    assert!(
+        !subtracted.overlaps(&test)?,
+        "Main graph subtracted train does not contain test graph."
+    );
     let xorred = (graph ^ test)?;
     validate_vocabularies(&xorred);
-    assert!(xorred.contains(&train)?);
-    assert!(!xorred.overlaps(&test)?);
+    assert!(
+        xorred.contains(&train)?,
+        "Main graph xorred test does not contain training graph."
+    );
+    assert!(
+        !xorred.overlaps(&test)?,
+        "Main graph xorred train does not contain testing graph."
+    );
     let anded = (graph & test)?;
     validate_vocabularies(&anded);
-    assert!(anded.contains(&test)?);
+    assert!(
+        anded.contains(&test)?,
+        "Main graph anded test does not contain training graph."
+    );
     Ok(())
 }
 
@@ -175,15 +199,26 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             if mode == 1 {
                 graph.enable_fast_walk(true, true, None)?;
                 if let Some(outbounds) = &graph.outbounds {
-                    assert_eq!(outbounds.len(), graph.get_nodes_number() as usize);
+                    assert_eq!(
+                        outbounds.len(),
+                        graph.get_nodes_number() as usize,
+                        "Length of outbounds does not match number of nodes in the graph."
+                    );
                 }
                 if let Some(destinations) = &graph.destinations {
-                    assert_eq!(destinations.len(), graph.get_edges_number() as usize);
+                    assert_eq!(
+                        destinations.len(),
+                        graph.get_edges_number() as usize,
+                        "Length of destinations does not match number of edges in the graph."
+                    );
                 }
             }
             if mode == 2 {
                 graph.enable_fast_walk(false, false, Some(0.05 as f64))?;
-                assert!(graph.cached_destinations.is_some());
+                assert!(
+                    graph.cached_destinations.is_some(),
+                    "Cached destinations are not None when cache is enabled."
+                );
             }
             assert_eq!(
                 graph
@@ -191,7 +226,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
                     .random_walks_iter(1, &walker)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                "Walks of first order are not reproducible!"
             );
 
             assert_eq!(
@@ -200,7 +236,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
                     .random_walks_iter(1, &second_order_walker(&graph)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                "Walks of second order are not reproducible!"
             );
 
             assert_eq!(
@@ -209,7 +246,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
                     .complete_walks_iter(&walker)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                "Complete first order walks are not reproducible!"
             );
 
             assert_eq!(
@@ -218,7 +256,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                     .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
                 graph
                     .complete_walks_iter(&second_order_walker(&graph)?)
-                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>())
+                    .map(|iter| iter.collect::<Vec<Vec<NodeT>>>()),
+                "Complete second order walks are not reproducible!"
             );
         }
     }
@@ -226,7 +265,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     // Test get_edge_id_string()
     assert_eq!(
         graph.get_edge_id_string("NONEXISTENT", "NONEXISTENT", None),
-        None
+        None,
+        "Graph contains non-existing edge."
     );
     if let Some(edge) = graph.get_unique_edges_iter().next() {
         let src_string = graph.get_node_name(edge.0).unwrap();
@@ -246,20 +286,30 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         if !graph.has_edge_types() {
             assert_eq!(
                 graph.get_edge_id_string(&src_string, &dst_string, None),
-                graph.get_edge_id(edge.0, edge.1, None)
+                graph.get_edge_id(edge.0, edge.1, None),
+                "Check of given edge ID does not match."
             );
         }
     }
     // Test has_node_string
-    assert!(!(graph.has_node_string("NONEXISTENT", None)));
+    assert!(
+        !(graph.has_node_string("NONEXISTENT", None)),
+        "The graph seems to have a non-existing node."
+    );
 
     // Test translate_edge|node_types()
-    assert!(graph
-        .translate_edge_types(vec!["NONEXISTENT_EDGE_TYPE".to_string()])
-        .is_err());
-    assert!(graph
-        .translate_node_types(vec!["NONEXISTENT_NODE_TYPE".to_string()])
-        .is_err());
+    assert!(
+        graph
+            .translate_edge_types(vec!["NONEXISTENT_EDGE_TYPE".to_string()])
+            .is_err(),
+        "The graph seems to have a non-existing edge type."
+    );
+    assert!(
+        graph
+            .translate_node_types(vec!["NONEXISTENT_NODE_TYPE".to_string()])
+            .is_err(),
+        "The graph seems to have a non-existing node type."
+    );
 
     // Testing main holdout mechanisms
     for include_all_edge_types in &[false, true] {
@@ -295,7 +345,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             )?
             .connected_components_number(false)
             .0,
-            1
+            1,
+            "Expected number of components (1) is not matched!"
         );
 
         if let Some(nts) = &graph.node_types {
@@ -314,7 +365,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 )?
                 .connected_components_number(false)
                 .0,
-                1
+                1,
+                "Expected number of components (1) is not matched!"
             );
         }
 
@@ -334,7 +386,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 )?
                 .connected_components_number(false)
                 .0,
-                1
+                1,
+                "Expected number of components (1) is not matched!"
             );
         }
     }
@@ -343,7 +396,10 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     let k = 10;
     for i in 0..k {
         let (train, test) = graph.kfold(k, i, None, 42, false)?;
-        assert!(test.get_edges_number() <= graph.get_edges_number() / k + 1);
+        assert!(
+            test.get_edges_number() <= graph.get_edges_number() / k + 1,
+            "Check that test kfolds respect size bound has failed!"
+        );
         default_holdout_test_suite(graph, &train, &test)?;
     }
     if let Some(edge_t) = graph.get_edge_type_string(0) {
@@ -546,11 +602,13 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(we.node_types, graph.node_types);
             assert_eq!(
                 we.get_unique_edges_number(),
-                graph.get_unique_edges_number()
+                graph.get_unique_edges_number(),
+                "Number of unique edges does not match in graph without edge types."
             );
             assert_eq!(
                 we.get_unique_self_loop_number(),
-                graph.get_unique_self_loop_number()
+                graph.get_unique_self_loop_number(),
+                "Number of unique self loops does not match in graph without edge types."
             );
             assert_eq!(we.has_traps(), graph.has_traps());
             assert_eq!(we.nodes, graph.nodes);
@@ -602,16 +660,26 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES".to_string());
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES".to_string());
 
-    assert_eq!(clone.get_edge_types_number(), 1);
+    assert_eq!(
+        clone.get_edge_types_number(),
+        1,
+        "Number of edge types of the graph is not 1."
+    );
     assert_eq!(
         clone.get_unchecked_edge_count_by_edge_type(0),
-        graph.get_edges_number()
+        graph.get_edges_number(),
+        "Number of edges with the unique edge type does not match number of edges in the graph."
     );
 
-    assert_eq!(clone.get_node_types_number(), 1);
+    assert_eq!(
+        clone.get_node_types_number(),
+        1,
+        "Number of node types of the graph is not 1."
+    );
     assert_eq!(
         clone.get_unchecked_node_count_by_node_type(0),
-        graph.get_nodes_number()
+        graph.get_nodes_number(),
+        "Number of nodes with the unique node type does not match number of nodes in the graph."
     );
 
     Ok(())

@@ -448,9 +448,11 @@ impl Graph {
             random_state,
             valid_edges_number,
             include_all_edge_types,
-            |edge_id, _, _, edge_type| {
+            |edge_id, src, dst, edge_type| {
                 // The tree must not contain the provided edge ID
                 !tree.contains(edge_id)
+                // And this is not a self-loop edge with degree 1
+                && !(src == dst && self.get_node_degree(src) == 1)
                 // And the edge type of the edge ID is within the provided edge type
                     && match &edge_type_ids {
                         Some(etis) => {
