@@ -268,10 +268,11 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) =
             graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;
-        assert_eq!(
-            graph.connected_components_number(false),
-            train.connected_components_number(false)
-        );
+        if graph.connected_components_number(false) != train.connected_components_number(false) {
+            println!("GRAPH: {}", graph.textual_report()?);
+            println!("TRAIN: {}", train.textual_report()?);
+            panic!("The connected train graph DOES NOT have the same components as the original graph!");
+        }
 
         default_holdout_test_suite(graph, &train, &test)?;
     }
