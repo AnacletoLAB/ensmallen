@@ -298,3 +298,18 @@ fn test_regression20()->Result<(), String>{
     let _ = graph::test_utilities::default_test_suite(&mut g, false);
     Ok(())
 }
+
+#[test]
+fn test_regression21()->Result<(), String>{
+    let edges_reader = EdgeFileReader::new("tests/data/regression/21.tsv".to_string())?
+        .set_separator(Some(",".to_string()))?
+        .set_verbose(Some(false))
+        .set_sources_column(Some("subject".to_owned()))?
+        .set_destinations_column(Some("object".to_owned()))?
+        .set_edge_types_column(Some("edge_type".to_owned()))?
+        .set_weights_column(Some("weight".to_owned()))?
+        .set_header(Some(true));
+    let mut g = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned())?;
+    let _ = graph::test_utilities::default_test_suite(&mut g, false);
+    Ok(())
+}
