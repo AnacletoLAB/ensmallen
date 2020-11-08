@@ -1,7 +1,8 @@
 use super::*;
-use rayon::prelude::*;
 use graph::{cooccurence_matrix as rust_cooccurence_matrix, word2vec as rust_word2vec, NodeT};
 use numpy::{PyArray, PyArray1};
+use pyo3::wrap_pyfunction;
+use rayon::prelude::*;
 
 #[pymodule]
 fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
@@ -61,6 +62,7 @@ fn cooccurence_matrix(
     sequences: Vec<Vec<NodeT>>,
     py_kwargs: Option<&PyDict>,
 ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
+    ctrlc::set_handler(|| std::process::exit(2)).unwrap();
     let gil = pyo3::Python::acquire_gil();
     let kwargs = normalize_kwargs!(py_kwargs, gil.python());
     pyex!(validate_kwargs(
@@ -73,11 +75,9 @@ fn cooccurence_matrix(
     let len = sequences.len();
     let (words, contexts, frequencies) = pyex!(rust_cooccurence_matrix(
         sequences.into_par_iter(),
-        pyex!(extract_value!(kwargs, "window_size", usize))?
-            .unwrap_or(3),
+        pyex!(extract_value!(kwargs, "window_size", usize))?.unwrap_or(3),
         len,
-        pyex!(extract_value!(kwargs, "verbose", bool))?
-            .unwrap_or(true),
+        pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
     ))?;
 
     Ok((
@@ -156,10 +156,8 @@ impl EnsmallenGraph {
 
         let (words, contexts, frequencies) = pyex!(self.graph.cooccurence_matrix(
             &parameters,
-            pyex!(extract_value!(kwargs, "window_size", usize))?
-                .unwrap_or(3),
-            pyex!(extract_value!(kwargs, "verbose", bool))?
-                .unwrap_or(true),
+            pyex!(extract_value!(kwargs, "window_size", usize))?.unwrap_or(3),
+            pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
         ))?;
 
         Ok((
@@ -239,7 +237,10 @@ impl EnsmallenGraph {
     ) -> PyResult<(PyContexts, PyWords)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
-        pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&["window_size"])))?;
+        pyex!(validate_kwargs(
+            kwargs,
+            build_walk_parameters_list(&["window_size"])
+        ))?;
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
 
         let (contexts, words) = pyex!(self.graph.node2vec(&parameters, batch_size, window_size))?;
@@ -294,8 +295,7 @@ impl EnsmallenGraph {
         let (edges, labels) = pyex!(self.graph.link_prediction(
             idx,
             batch_size,
-            pyex!(extract_value!(kwargs, "negative_samples", f64))?
-                .unwrap_or(1.0),
+            pyex!(extract_value!(kwargs, "negative_samples", f64))?.unwrap_or(1.0),
             match &graph_to_avoid {
                 Some(g) => Some(&g.graph),
                 None => None,

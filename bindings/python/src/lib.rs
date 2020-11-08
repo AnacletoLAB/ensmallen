@@ -1,7 +1,7 @@
 use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
-use pyo3::{wrap_pyfunction, wrap_pymodule};
+use pyo3::{wrap_pymodule};
 mod macros;
 pub(crate) use crate::macros::*;
 mod edge_file_writer;
