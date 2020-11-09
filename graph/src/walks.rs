@@ -2,6 +2,7 @@ use super::*;
 use log::info;
 use rayon::prelude::*;
 use vec_rand::sample_f32 as sample;
+use vec_rand::sample_k_distinct_uniform;
 use vec_rand::sample_uniform;
 use vec_rand::xorshift::xorshift;
 
@@ -127,7 +128,7 @@ fn rust_update_return_explore_weight_transition(
     }
 }
 
-extern { 
+extern "C" {
     fn c_update_explore_weight_transition(
         transition: *const f32,
         destinations: *const u32,
@@ -137,7 +138,7 @@ extern {
         explore_weight: f32,
         src: u32,
         dst: u32,
-    ); 
+    );
     fn c_update_return_explore_weight_transition(
         transition: *const f32,
         destinations: *const u32,
@@ -148,7 +149,7 @@ extern {
         return_weight: f32,
         src: u32,
         dst: u32,
-    ); 
+    );
 }
 
 pub fn update_explore_weight_transition(
@@ -158,32 +159,32 @@ pub fn update_explore_weight_transition(
     explore_weight: ParamsT,
     src: NodeT,
     dst: NodeT,
-){
+) {
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
     {
         if is_x86_feature_detected!("avx2") {
-            unsafe{
-                c_update_explore_weight_transition(   
-                    transition.as_ptr(), 
+            unsafe {
+                c_update_explore_weight_transition(
+                    transition.as_ptr(),
                     destinations.as_ptr(),
                     destinations.len() as u32,
                     previous_destinations.as_ptr(),
                     previous_destinations.len() as u32,
                     explore_weight,
                     src,
-                    dst
+                    dst,
                 );
             }
             return;
         }
     }
     rust_update_explore_weight_transition(
-        transition, 
-        destinations, 
-        previous_destinations, 
-        explore_weight, 
-        src, 
-        dst
+        transition,
+        destinations,
+        previous_destinations,
+        explore_weight,
+        src,
+        dst,
     );
 }
 
@@ -195,13 +196,13 @@ pub fn update_return_explore_weight_transition(
     explore_weight: ParamsT,
     src: NodeT,
     dst: NodeT,
-){
+) {
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
     {
         if is_x86_feature_detected!("avx2") {
-            unsafe{
-                c_update_return_explore_weight_transition(   
-                    transition.as_ptr(), 
+            unsafe {
+                c_update_return_explore_weight_transition(
+                    transition.as_ptr(),
                     destinations.as_ptr(),
                     destinations.len() as u32,
                     previous_destinations.as_ptr(),
@@ -209,7 +210,7 @@ pub fn update_return_explore_weight_transition(
                     explore_weight,
                     return_weight,
                     src,
-                    dst
+                    dst,
                 );
             }
             return;
@@ -222,21 +223,23 @@ pub fn update_return_explore_weight_transition(
         return_weight,
         explore_weight,
         src,
-        dst
+        dst,
     );
 }
-
 
 #[cfg(test)]
 mod tests {
     use super::update_explore_weight_transition;
+    use super::update_return_explore_weight_transition;
     use super::update_return_weight_transition;
     use super::WeightT;
-    use super::update_return_explore_weight_transition;
-  
+
     #[test]
     fn test_update_explore_weight_transition() {
-        let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101];
+        let destinations = vec![
+            1, 2, 3, 4, 4, 4, 5, 6, 100, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101,
+            101, 101, 101, 101,
+        ];
         let previous_destinations = vec![2, 4, 4, 4];
         let mut transitions = (0..destinations.len())
             .map(|_| 1.0)
@@ -251,7 +254,10 @@ mod tests {
         );
         assert_eq!(
             transitions,
-            vec![2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
+            vec![
+                2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0,
+                2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0
+            ]
         )
     }
 
@@ -259,7 +265,9 @@ mod tests {
     fn test_update_return_explore_weight_transition() {
         let destinations = vec![1, 2, 3, 4, 4, 4, 5, 6, 100];
         let previous_destinations = vec![2, 4, 4, 4];
-        let mut transitions = (0..destinations.len()).map(|_| 1.0).collect::<Vec<WeightT>>();
+        let mut transitions = (0..destinations.len())
+            .map(|_| 1.0)
+            .collect::<Vec<WeightT>>();
         update_return_explore_weight_transition(
             &mut transitions,
             &destinations,
@@ -297,13 +305,40 @@ impl Graph {
     /// * min_edge_id: EdgeT - The minimum edge id.
     /// * max_edge_id: EdgeT - The maximum edge id.
     ///
-    fn get_weighted_transitions(&self, min_edge_id: EdgeT, max_edge_id: EdgeT) -> Vec<WeightT> {
-        match &self.weights {
-            // If the graph is weighted we return the weights
-            Some(ws) => ws[(min_edge_id as usize)..(max_edge_id as usize)].to_vec(),
-            // Otherwise we return an uniform vector.
-            None => vec![1.0; (max_edge_id - min_edge_id) as usize],
+    fn get_weighted_transitions(
+        &self,
+        min_edge_id: EdgeT,
+        max_edge_id: EdgeT,
+        max_neighbours: &Option<NodeT>,
+        factor: &Option<NodeT>,
+        random_state: NodeT,
+    ) -> (Vec<WeightT>, Option<Vec<u64>>) {
+        if let (Some(mn), Some(f)) = (max_neighbours, factor) {
+            if (*mn as u64) < (max_edge_id - min_edge_id) / (*f as u64) {
+                let indices = sample_k_distinct_uniform(
+                    min_edge_id,
+                    max_edge_id,
+                    *mn as u64,
+                    random_state as u64,
+                );
+                return (
+                    match &self.weights {
+                        // If the graph is weighted we return the weights
+                        Some(ws) => indices.iter().map(|index| ws[*index as usize]).collect(),
+                        None => vec![1.0; *mn as usize],
+                    },
+                    Some(indices),
+                );
+            }
         }
+        (
+            match &self.weights {
+                Some(ws) => ws[(min_edge_id as usize)..(max_edge_id as usize)].to_vec(),
+                // Otherwise we return an uniform vector.
+                None => vec![1.0; (max_edge_id - min_edge_id) as usize],
+            },
+            None,
+        )
     }
 
     /// TODO: Update docstring!
@@ -348,13 +383,22 @@ impl Graph {
     fn get_node_transition(
         &self,
         node: NodeT,
+        random_state: NodeT,
         walk_weights: &WalkWeights,
+        max_neighbours: &Option<NodeT>,
+        neighbours_factor: &Option<NodeT>,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
         destinations: &[NodeT],
-    ) -> Vec<WeightT> {
+    ) -> (Vec<WeightT>, Option<Vec<u64>>) {
         // Retrieve the data to compute the update transition
-        let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
+        let (mut transition, indices) = self.get_weighted_transitions(
+            min_edge_id,
+            max_edge_id,
+            max_neighbours,
+            neighbours_factor,
+            random_state,
+        );
 
         // Compute the transition weights relative to the node weights.
         self.update_node_transition(
@@ -364,7 +408,7 @@ impl Graph {
             walk_weights.change_node_type_weight,
         );
 
-        transition
+        (transition, indices)
     }
 
     /// Return the edge transition weights and the related node and edges.
@@ -378,13 +422,22 @@ impl Graph {
         src: NodeT,
         dst: NodeT,
         edge_id: EdgeT,
+        random_state: NodeT,
         walk_weights: &WalkWeights,
+        max_neighbours: &Option<NodeT>,
+        neighbours_factor: &Option<NodeT>,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
         destinations: &[NodeT],
         previous_destinations: &[NodeT],
-    ) -> (Vec<WeightT>, EdgeT) {
-        let mut transition = self.get_weighted_transitions(min_edge_id, max_edge_id);
+    ) -> (Vec<WeightT>, Option<Vec<u64>>, EdgeT) {
+        let (mut transition, weight_indices) = self.get_weighted_transitions(
+            min_edge_id,
+            max_edge_id,
+            max_neighbours,
+            neighbours_factor,
+            random_state,
+        );
 
         // Compute the transition weights relative to the node weights.
         self.update_node_transition(
@@ -454,7 +507,7 @@ impl Graph {
             }
         }
 
-        (transition, min_edge_id)
+        (transition, weight_indices, min_edge_id)
     }
 
     /// Return new sampled node with the transition edge used.
@@ -488,16 +541,28 @@ impl Graph {
         &self,
         node: NodeT,
         random_state: NodeT,
+        max_neighbours: &Option<NodeT>,
+        neighbours_factor: &Option<NodeT>,
         walk_weights: &WalkWeights,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
         destinations: &[NodeT],
     ) -> (NodeT, EdgeT) {
-        let mut weights =
-            self.get_node_transition(node, walk_weights, min_edge_id, max_edge_id, destinations);
+        let (mut weights, indices) = self.get_node_transition(
+            node,
+            random_state,
+            walk_weights,
+            max_neighbours,
+            neighbours_factor,
+            min_edge_id,
+            max_edge_id,
+            destinations,
+        );
         let sampled_offset = sample(&mut weights, random_state as u64);
-        let edge_id = min_edge_id + sampled_offset as EdgeT;
-
+        let edge_id = match indices {
+            Some(inds) => inds[sampled_offset],
+            None=> min_edge_id + sampled_offset as EdgeT
+        };
         let destination = match &self.cached_destinations {
             Some(cds) => match cds.get(&node) {
                 Some(dsts) => dsts[sampled_offset],
@@ -515,6 +580,8 @@ impl Graph {
     /// * edge: EdgeT, the previous edge from which to compute the transitions.
     /// * random_state: usize, the random_state to use for extracting the node.
     /// * walk_weights: WalkWeights, the weights for the weighted random walks.
+    ///
+    /// TODO: UPDATE DOCSTRING!
     pub fn extract_edge(
         &self,
         src: NodeT,
@@ -522,24 +589,31 @@ impl Graph {
         edge: EdgeT,
         random_state: NodeT,
         walk_weights: &WalkWeights,
+        max_neighbours: &Option<NodeT>,
+        neighbours_factor: &Option<NodeT>,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
         destinations: &[NodeT],
         previous_destinations: &[NodeT],
     ) -> (NodeT, EdgeT) {
-        let (mut weights, min_edge_id) = self.get_edge_transition(
+        let (mut weights, indices, min_edge_id) = self.get_edge_transition(
             src,
             dst,
             edge,
+            random_state,
             walk_weights,
+            max_neighbours,
+            neighbours_factor,
             min_edge_id,
             max_edge_id,
             destinations,
             previous_destinations,
         );
         let sampled_offset = sample(&mut weights, random_state as u64);
-        let edge_id = min_edge_id + sampled_offset as EdgeT;
-
+        let edge_id = match indices {
+            Some(inds) => inds[sampled_offset],
+            None=> min_edge_id + sampled_offset as EdgeT
+        };
         let destination = match &self.cached_destinations {
             Some(cds) => match cds.get(&dst) {
                 Some(dsts) => dsts[sampled_offset],
@@ -699,6 +773,8 @@ impl Graph {
         let (mut dst, mut edge) = self.extract_node(
             node,
             random_state,
+            &parameters.max_neighbours,
+            &parameters.neighbours_factor,
             &parameters.weights,
             min_edge_id,
             max_edge_id,
@@ -721,6 +797,8 @@ impl Graph {
                 edge,
                 random_state + iteration,
                 &parameters.weights,
+                &parameters.max_neighbours,
+                &parameters.neighbours_factor,
                 min_edge_id,
                 max_edge_id,
                 self.get_destinations_slice(min_edge_id, max_edge_id, dst, &destinations),
