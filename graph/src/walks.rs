@@ -297,6 +297,26 @@ mod tests {
     }
 }
 
+fn get_probabilistic_indices(
+    min_edge_id: EdgeT,
+    max_edge_id: EdgeT,
+    max_neighbours: &Option<NodeT>,
+    factor: &Option<NodeT>,
+    random_state: NodeT,
+) -> Option<Vec<u64>> {
+    if let (Some(mn), Some(f)) = (max_neighbours, factor) {
+        if (*mn as u64) < (max_edge_id - min_edge_id) / (*f as u64) {
+            return Some(sample_k_distinct_uniform(
+                min_edge_id,
+                max_edge_id,
+                *mn as u64,
+                random_state as u64,
+            ));
+        }
+    }
+    None
+}
+
 impl Graph {
     /// Return the base weighted transitions.
     ///
@@ -309,36 +329,23 @@ impl Graph {
         &self,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
-        max_neighbours: &Option<NodeT>,
-        factor: &Option<NodeT>,
-        random_state: NodeT,
-    ) -> (Vec<WeightT>, Option<Vec<u64>>) {
-        if let (Some(mn), Some(f)) = (max_neighbours, factor) {
-            if (*mn as u64) < (max_edge_id - min_edge_id) / (*f as u64) {
-                let indices = sample_k_distinct_uniform(
-                    min_edge_id,
-                    max_edge_id,
-                    *mn as u64,
-                    random_state as u64,
-                );
-                return (
-                    match &self.weights {
-                        // If the graph is weighted we return the weights
-                        Some(ws) => indices.iter().map(|index| ws[*index as usize]).collect(),
-                        None => vec![1.0; *mn as usize],
-                    },
-                    Some(indices),
-                );
-            }
-        }
-        (
-            match &self.weights {
+        probabilistic_indices: &Option<Vec<u64>>,
+    ) -> Vec<WeightT> {
+        match &probabilistic_indices {
+            Some(indices) => match &self.weights {
+                Some(ws) => indices
+                    .iter()
+                    .map(|edge_id| ws[*edge_id as usize])
+                    .collect(),
+                // Otherwise we return an uniform vector.
+                None => vec![1.0; indices.len()],
+            },
+            None => match &self.weights {
                 Some(ws) => ws[(min_edge_id as usize)..(max_edge_id as usize)].to_vec(),
                 // Otherwise we return an uniform vector.
                 None => vec![1.0; (max_edge_id - min_edge_id) as usize],
             },
-            None,
-        )
+        }
     }
 
     /// TODO: Update docstring!
@@ -383,22 +390,15 @@ impl Graph {
     fn get_node_transition(
         &self,
         node: NodeT,
-        random_state: NodeT,
         walk_weights: &WalkWeights,
-        max_neighbours: &Option<NodeT>,
-        neighbours_factor: &Option<NodeT>,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
         destinations: &[NodeT],
-    ) -> (Vec<WeightT>, Option<Vec<u64>>) {
+        probabilistic_indices: &Option<Vec<u64>>,
+    ) -> Vec<WeightT> {
         // Retrieve the data to compute the update transition
-        let (mut transition, indices) = self.get_weighted_transitions(
-            min_edge_id,
-            max_edge_id,
-            max_neighbours,
-            neighbours_factor,
-            random_state,
-        );
+        let mut transition =
+            self.get_weighted_transitions(min_edge_id, max_edge_id, probabilistic_indices);
 
         // Compute the transition weights relative to the node weights.
         self.update_node_transition(
@@ -408,7 +408,7 @@ impl Graph {
             walk_weights.change_node_type_weight,
         );
 
-        (transition, indices)
+        transition
     }
 
     /// Return the edge transition weights and the related node and edges.
@@ -422,22 +422,15 @@ impl Graph {
         src: NodeT,
         dst: NodeT,
         edge_id: EdgeT,
-        random_state: NodeT,
         walk_weights: &WalkWeights,
-        max_neighbours: &Option<NodeT>,
-        neighbours_factor: &Option<NodeT>,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
         destinations: &[NodeT],
         previous_destinations: &[NodeT],
-    ) -> (Vec<WeightT>, Option<Vec<u64>>, EdgeT) {
-        let (mut transition, weight_indices) = self.get_weighted_transitions(
-            min_edge_id,
-            max_edge_id,
-            max_neighbours,
-            neighbours_factor,
-            random_state,
-        );
+        probabilistic_indices: &Option<Vec<u64>>,
+    ) -> (Vec<WeightT>, EdgeT) {
+        let mut transition =
+            self.get_weighted_transitions(min_edge_id, max_edge_id, probabilistic_indices);
 
         // Compute the transition weights relative to the node weights.
         self.update_node_transition(
@@ -507,7 +500,7 @@ impl Graph {
             }
         }
 
-        (transition, weight_indices, min_edge_id)
+        (transition, min_edge_id)
     }
 
     /// Return new sampled node with the transition edge used.
@@ -541,27 +534,24 @@ impl Graph {
         &self,
         node: NodeT,
         random_state: NodeT,
-        max_neighbours: &Option<NodeT>,
-        neighbours_factor: &Option<NodeT>,
         walk_weights: &WalkWeights,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
         destinations: &[NodeT],
+        probabilistic_indices: &Option<Vec<u64>>,
     ) -> (NodeT, EdgeT) {
-        let (mut weights, indices) = self.get_node_transition(
+        let mut weights = self.get_node_transition(
             node,
-            random_state,
             walk_weights,
-            max_neighbours,
-            neighbours_factor,
             min_edge_id,
             max_edge_id,
             destinations,
+            probabilistic_indices,
         );
         let sampled_offset = sample(&mut weights, random_state as u64);
-        let edge_id = match indices {
+        let edge_id = match probabilistic_indices {
             Some(inds) => inds[sampled_offset],
-            None=> min_edge_id + sampled_offset as EdgeT
+            None => min_edge_id + sampled_offset as EdgeT,
         };
         let destination = match &self.cached_destinations {
             Some(cds) => match cds.get(&node) {
@@ -589,30 +579,27 @@ impl Graph {
         edge: EdgeT,
         random_state: NodeT,
         walk_weights: &WalkWeights,
-        max_neighbours: &Option<NodeT>,
-        neighbours_factor: &Option<NodeT>,
         min_edge_id: EdgeT,
         max_edge_id: EdgeT,
         destinations: &[NodeT],
         previous_destinations: &[NodeT],
+        probabilistic_indices: &Option<Vec<u64>>,
     ) -> (NodeT, EdgeT) {
-        let (mut weights, indices, min_edge_id) = self.get_edge_transition(
+        let (mut weights, min_edge_id) = self.get_edge_transition(
             src,
             dst,
             edge,
-            random_state,
             walk_weights,
-            max_neighbours,
-            neighbours_factor,
             min_edge_id,
             max_edge_id,
             destinations,
             previous_destinations,
+            probabilistic_indices,
         );
         let sampled_offset = sample(&mut weights, random_state as u64);
-        let edge_id = match indices {
+        let edge_id = match probabilistic_indices {
             Some(inds) => inds[sampled_offset],
-            None=> min_edge_id + sampled_offset as EdgeT
+            None => min_edge_id + sampled_offset as EdgeT,
         };
         let destination = match &self.cached_destinations {
             Some(cds) => match cds.get(&dst) {
@@ -708,25 +695,63 @@ impl Graph {
         Ok(walks)
     }
 
-    fn get_node_edges_and_destinations(&self, node: NodeT) -> (EdgeT, EdgeT, Option<Vec<NodeT>>) {
+    fn get_node_edges_and_destinations(
+        &self,
+        max_neighbours: &Option<NodeT>,
+        neighbours_factor: &Option<NodeT>,
+        random_state: NodeT,
+        node: NodeT,
+    ) -> (EdgeT, EdgeT, Option<Vec<NodeT>>, Option<Vec<u64>>) {
         let (min_edge_id, max_edge_id) = self.get_destinations_min_max_edge_ids(node);
-        let destinations: Option<Vec<NodeT>> = match (&self.cached_destinations, &self.destinations)
-        {
-            (Some(cached_destinations), None) => match cached_destinations.contains_key(&node) {
+        let indices = get_probabilistic_indices(
+            min_edge_id,
+            max_edge_id,
+            max_neighbours,
+            neighbours_factor,
+            random_state,
+        );
+        if let Some(ids) = &indices {
+            let destinations: Option<Vec<NodeT>> = match &self.destinations {
+                Some(dsts) => Some(ids.iter().map(|edge_id| dsts[*edge_id as usize]).collect()),
+                None => match &self.cached_destinations {
+                    Some(cds) => match cds.get(&node) {
+                        Some(dsts) => Some(
+                            ids.iter()
+                                .map(|edge_id| dsts[(*edge_id - min_edge_id) as usize])
+                                .collect(),
+                        ),
+                        None => Some(
+                            ids.iter()
+                                .map(|edge_id| self.get_destination(*edge_id))
+                                .collect(),
+                        ),
+                    },
+                    None => Some(
+                        ids.iter()
+                            .map(|edge_id| self.get_destination(*edge_id))
+                            .collect(),
+                    ),
+                },
+            };
+            return (min_edge_id, max_edge_id, destinations, indices);
+        }
+        if self.destinations.is_some() {
+            return (min_edge_id, max_edge_id, None, None);
+        }
+        let destinations = match &self.cached_destinations {
+            Some(cds) => match cds.contains_key(&node) {
                 true => None,
                 false => Some(
                     self.get_destinations_range(min_edge_id, max_edge_id)
                         .collect(),
                 ),
             },
-            (None, Some(_)) => None,
-            (None, None) => Some(
+            None => Some(
                 self.get_destinations_range(min_edge_id, max_edge_id)
                     .collect(),
             ),
-            _ => unreachable!("Cached destinations cannot exists alongside destinations!"),
         };
-        (min_edge_id, max_edge_id, destinations)
+        (min_edge_id, max_edge_id, destinations, None)
     }
 
     fn get_destinations_slice<'a>(
@@ -765,20 +790,24 @@ impl Graph {
         let mut walk: Vec<NodeT> = Vec::with_capacity(parameters.length as usize);
         walk.push(node);
         let mut src = node;
-        let (mut min_edge_id, mut max_edge_id, mut destinations) =
-            self.get_node_edges_and_destinations(node);
+        let (mut min_edge_id, mut max_edge_id, mut destinations, indices) = self
+            .get_node_edges_and_destinations(
+                &parameters.max_neighbours,
+                &parameters.neighbours_factor,
+                random_state,
+                node,
+            );
         let mut previous_destinations: Option<Vec<NodeT>>;
         let mut previous_min_edge_id: EdgeT;
         let mut previous_max_edge_id: EdgeT;
         let (mut dst, mut edge) = self.extract_node(
             node,
             random_state,
-            &parameters.max_neighbours,
-            &parameters.neighbours_factor,
             &parameters.weights,
             min_edge_id,
             max_edge_id,
             self.get_destinations_slice(min_edge_id, max_edge_id, node, &destinations),
+            &indices,
         );
         walk.push(dst);
 
@@ -786,8 +815,13 @@ impl Graph {
             previous_destinations = destinations;
             previous_min_edge_id = min_edge_id;
             previous_max_edge_id = max_edge_id;
-            let (new_min_edge_id, new_max_edge_id, new_destinations) =
-                self.get_node_edges_and_destinations(dst);
+            let (new_min_edge_id, new_max_edge_id, new_destinations, new_indices) = self
+                .get_node_edges_and_destinations(
+                    &parameters.max_neighbours,
+                    &parameters.neighbours_factor,
+                    random_state + iteration,
+                    dst,
+                );
             min_edge_id = new_min_edge_id;
             max_edge_id = new_max_edge_id;
             destinations = new_destinations;
@@ -797,8 +831,6 @@ impl Graph {
                 edge,
                 random_state + iteration,
                 &parameters.weights,
-                &parameters.max_neighbours,
-                &parameters.neighbours_factor,
                 min_edge_id,
                 max_edge_id,
                 self.get_destinations_slice(min_edge_id, max_edge_id, dst, &destinations),
@@ -808,6 +840,7 @@ impl Graph {
                     src,
                     &previous_destinations,
                 ),
+                &new_indices,
             );
             src = dst;
             dst = new_dst;

@@ -39,7 +39,7 @@ indicatif = {version="0.15.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
-elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "master", features = ["unsafe"] }
+elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "master" }
 
 [build]
 rustflags = ["-C target-cpu=native", "-C target-feature=-crt-static"]
