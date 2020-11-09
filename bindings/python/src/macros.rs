@@ -96,8 +96,9 @@ pub fn build_walk_parameters_list(parameters: &[&str]) -> Vec<String> {
         "explore_weight",
         "change_edge_type_weight",
         "change_node_type_weight",
+        "max_neighbours",
+        "max_neighbours",
         "random_state",
-        "verbose",
         "iterations",
         "dense_node_mapping",
     ];

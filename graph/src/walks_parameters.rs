@@ -17,7 +17,6 @@ pub struct SingleWalkParameters {
     pub(crate) length: NodeT,
     pub(crate) weights: WalkWeights,
     pub(crate) max_neighbours: Option<NodeT>,
-    pub(crate) neighbours_factor: Option<NodeT>,
 }
 
 #[derive(Clone, Debug)]
@@ -107,7 +106,6 @@ impl SingleWalkParameters {
             length,
             weights: WalkWeights::default(),
             max_neighbours: None,
-            neighbours_factor: Some(5)
         })
     }
 
@@ -167,24 +165,6 @@ impl WalksParameters {
                 ));
             }
             self.single_walk_parameters.max_neighbours = Some(mn);
-        }
-        Ok(self)
-    }
-
-    /// Set the factor of neighbours where to use the probabilistic walk.
-    ///
-    /// # Arguments
-    ///
-    /// * neighbours_factor: Option<NodeT> - Wethever to show the loading bar or not.
-    ///
-    pub fn set_neighbours_factor(mut self, neighbours_factor: Option<NodeT>) -> Result<WalksParameters, String> {
-        if let Some(mn) = neighbours_factor {
-            if mn <= 1 {
-                return Err(String::from(
-                    "Neighbours factor parameter must be a positive integer greater than 1.",
-                ));
-            }
-            self.single_walk_parameters.neighbours_factor = Some(mn);
         }
         Ok(self)
     }
