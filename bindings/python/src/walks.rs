@@ -13,7 +13,7 @@ unsafe impl<'a, T> Sync for AWEFULWORKAROUND<'a, T> {}
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping)"]
+    #[text_signature = "($self, length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -55,6 +55,10 @@ impl EnsmallenGraph {
     ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
+    /// max_neighbours: int = None,
+    ///     Maximum number of randomly sampled neighbours to consider.
+    ///     If this parameter is used, the walks becomes probabilistic in nature
+    ///     and becomes an approximation of an exact walk.
     ///
     /// Raises
     /// ----------------------------
@@ -89,7 +93,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping)"]
+    #[text_signature = "($self, length, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
     /// Return complete random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -129,6 +133,10 @@ impl EnsmallenGraph {
     ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
+    /// max_neighbours: int = None,
+    ///     Maximum number of randomly sampled neighbours to consider.
+    ///     If this parameter is used, the walks becomes probabilistic in nature
+    ///     and becomes an approximation of an exact walk.
     ///
     /// Raises
     /// ----------------------------

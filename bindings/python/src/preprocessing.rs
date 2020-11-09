@@ -90,7 +90,7 @@ fn cooccurence_matrix(
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, random_state, verbose)"]
+    #[text_signature = "($self, length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state, verbose)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
     ///
     /// Parameters
@@ -124,13 +124,17 @@ impl EnsmallenGraph {
     ///     Weight on the probability of visiting a neighbor edge of a
     ///     different type than the previous edge. This only applies to
     ///     multigraphs, otherwise it has no impact.
-    /// dense_node_mapping: Dict[int, int],
+    /// dense_node_mapping: Dict[int, int] = None,
     ///     Mapping to use for converting sparse walk space into a dense space.
     ///     This object can be created using the method available from graph
     ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
-    /// random_state: int,
+    /// max_neighbours: int = None,
+    ///     Maximum number of randomly sampled neighbours to consider.
+    ///     If this parameter is used, the walks becomes probabilistic in nature
+    ///     and becomes an approximation of an exact walk.
+    /// random_state: int = 42,
     ///     random_state to use to reproduce the walks.
     /// verbose: int = True,
     ///     Wethever to show or not the loading bar of the walks.
@@ -168,7 +172,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, batch_size, length, window_size, *, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, random_state)"]
+    #[text_signature = "($self, batch_size, length, window_size, *, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
     /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
@@ -222,6 +226,10 @@ impl EnsmallenGraph {
     ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
+    /// max_neighbours: int = None,
+    ///     Maximum number of randomly sampled neighbours to consider.
+    ///     If this parameter is used, the walks becomes probabilistic in nature
+    ///     and becomes an approximation of an exact walk.
     /// random_state: int,
     ///     random_state to use to reproduce the walks.
     ///
