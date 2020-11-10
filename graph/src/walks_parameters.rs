@@ -16,6 +16,7 @@ pub struct WalkWeights {
 pub struct SingleWalkParameters {
     pub(crate) length: NodeT,
     pub(crate) weights: WalkWeights,
+    pub(crate) max_neighbours: Option<NodeT>,
 }
 
 #[derive(Clone, Debug)]
@@ -104,6 +105,7 @@ impl SingleWalkParameters {
         Ok(SingleWalkParameters {
             length,
             weights: WalkWeights::default(),
+            max_neighbours: None,
         })
     }
 
@@ -145,6 +147,24 @@ impl WalksParameters {
                 ));
             }
             self.iterations = it;
+        }
+        Ok(self)
+    }
+
+    /// Set the maximum neighbours number to consider, making the walk probabilistic.
+    ///
+    /// # Arguments
+    ///
+    /// * max_neighbours: Option<NodeT> - Number of neighbours to consider for each extraction.
+    ///
+    pub fn set_max_neighbours(mut self, max_neighbours: Option<NodeT>) -> Result<WalksParameters, String> {
+        if let Some(mn) = max_neighbours {
+            if mn == 0 {
+                return Err(String::from(
+                    "max_neighbours parameter must be a strictly positive integer.",
+                ));
+            }
+            self.single_walk_parameters.max_neighbours = Some(mn);
         }
         Ok(self)
     }

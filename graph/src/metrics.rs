@@ -237,18 +237,18 @@ impl Graph {
     /// Returns maximum node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The maximum node degree of the graph is  {}", graph.degrees_max());
+    /// println!("The maximum node degree of the graph is  {}", graph.min_degree());
     /// ```
-    pub fn degrees_max(&self) -> NodeT {
+    pub fn min_degree(&self) -> NodeT {
         *self.get_node_degrees().iter().max().unwrap()
     }
 
     /// Returns minimum node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The minimum node degree of the graph is  {}", graph.degrees_min());
+    /// println!("The minimum node degree of the graph is  {}", graph.max_degree());
     /// ```
-    pub fn degrees_min(&self) -> NodeT {
+    pub fn max_degree(&self) -> NodeT {
         *self.get_node_degrees().iter().min().unwrap()
     }
 
@@ -362,8 +362,8 @@ impl Graph {
     /// * degrees_median: the median degree of the nodes.
     /// * degrees_mean: the mean degree of the nodes.
     /// * degrees_mode: the mode degree of the nodes.
-    /// * degrees_max: the max degree of the nodes.
-    /// * degrees_min: the min degree of the nodes.
+    /// * min_degree: the max degree of the nodes.
+    /// * max_degree: the min degree of the nodes.
     /// * nodes_number: the number of nodes in the graph.
     /// * edges_number: the number of edges in the graph.
     /// * unique_node_types_number: the number of different node types in the graph.
@@ -394,6 +394,8 @@ impl Graph {
         report.insert("self_loops_rate", self.get_self_loop_rate().to_string());
         report.insert("singletons", self.get_singleton_nodes_number().to_string());
         report.insert("degree_mean", self.degrees_mean().to_string());
+        report.insert("max_degree", self.min_degree().to_string());
+        report.insert("min_degree", self.max_degree().to_string());
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),

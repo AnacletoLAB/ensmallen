@@ -114,6 +114,7 @@ pub fn second_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
         .set_iterations(Some(1))?
         .set_return_weight(Some(2.0))?
         .set_explore_weight(Some(2.0))?
+        .set_max_neighbours(Some(20))?
         .set_change_edge_type_weight(Some(2.0))?
         .set_change_node_type_weight(Some(2.0))?
         .set_dense_node_mapping(Some(graph.get_dense_node_mapping()))

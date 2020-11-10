@@ -128,6 +128,7 @@ impl EnsmallenGraph {
             .set_explore_weight(extract_value!(kwargs, "explore_weight", WeightT)?)?
             .set_return_weight(extract_value!(kwargs, "return_weight", WeightT)?)?
             .set_random_state(extract_value!(kwargs, "random_state", usize)?)
+            .set_max_neighbours(extract_value!(kwargs, "max_neighbours", NodeT)?)?
             .set_iterations(extract_value!(kwargs, "iterations", NodeT)?)?
             .set_dense_node_mapping(
                 extract_value!(kwargs, "dense_node_mapping", HashMap<NodeT, NodeT>)?,
