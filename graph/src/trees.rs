@@ -183,6 +183,20 @@ impl Graph {
             // if both nodes are not covered then the edge is isolated
             // and must start its own component
             match (src_component, dst_component) {
+                (None, None) => {
+                    let new_component_number = components.len();
+                    let component = [*src, *dst]
+                        .iter()
+                        .flat_map(|node| {
+                            self.get_source_destinations_range(*node)
+                                .collect::<Vec<NodeT>>()
+                        })
+                        .collect::<RoaringBitmap>();
+                    component.iter().for_each(|node| {
+                        nodes_components[node as usize] = Some(new_component_number);
+                    });
+                    components.push(Some(component));
+                }
                 (Some(src_component), Some(dst_component)) => {
                     // if the components are different then we add it because it will merge them
                     if src_component == dst_component {
@@ -208,19 +222,19 @@ impl Graph {
                     }
                 }
                 _ => {
-                    let new_component_number = components.len();
-                    let component = [*src, *dst]
-                        .iter()
-                        .filter(|node_id| nodes_components[**node_id as usize].is_none())
-                        .flat_map(|node| {
-                            self.get_source_destinations_range(*node)
-                                .collect::<Vec<NodeT>>()
-                        })
-                        .collect::<RoaringBitmap>();
-                    component.iter().for_each(|node| {
-                        nodes_components[node as usize] = Some(new_component_number);
-                    });
-                    components.push(Some(component));
+                    let (inserted_component, not_inserted, not_inserted_component) =
+                        if src_component.is_some() {
+                            (src_component, *dst, &mut nodes_components[*dst as usize])
+                        } else {
+                            (dst_component, *src, &mut nodes_components[*src as usize])
+                        };
+                    let inserted_component =
+                        get_node_component(inserted_component.unwrap(), &components_remapping);
+                    if let Some(component) = &mut components[inserted_component] {
+                        component.insert(not_inserted);
+                        component.extend(self.get_source_destinations_range(not_inserted));
+                    }
+                    *not_inserted_component = Some(inserted_component);
                 }
             };
         });
@@ -240,7 +254,6 @@ impl Graph {
             .collect::<Vec<AtomicU32>>();
         let cpus = (1..(num_cpus::get() as u16 + 1)).collect::<Vec<u16>>();
         loop {
-
             // find the first not explored node (this is guardanteed to be in a new component)
             let root = colors
                 .iter()
@@ -286,7 +299,7 @@ impl Graph {
             }
 
             // since we were able to build a stub tree with cpu.len() leafs,
-            // we spawn the treads and make anyone of them build the sub-trees. 
+            // we spawn the treads and make anyone of them build the sub-trees.
             cpus.par_iter()
                 .zip(roots.par_iter())
                 .for_each(|(color, root)| {
@@ -294,7 +307,7 @@ impl Graph {
                     // of which nodes we visited and updating accordingly the parents vector.
                     // the nice trick here is that, since all the leafs are part of the same tree,
                     // if two processes find the same node, we don't care which one of the two take
-                    // it so we can proceed in a lockless fashion (and maybe even without atomics 
+                    // it so we can proceed in a lockless fashion (and maybe even without atomics
                     // if we manage to remove the colors vecotr and only keep the parents one)
                     colors[*root as usize].store(*color, Ordering::SeqCst);
                     let mut stack: Vec<NodeT> = vec![*root];
