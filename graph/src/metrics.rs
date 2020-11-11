@@ -467,8 +467,8 @@ impl Graph {
             })
             .count();
         // Get number of overlapping components
-        let first_nodes_components = self.get_node_components_vector(verbose);
-        let second_nodes_components = other.get_node_components_vector(verbose);
+        let first_nodes_components = self.get_node_components_vector();
+        let second_nodes_components = other.get_node_components_vector();
         let first_components_number = first_nodes_components.iter().unique().count() as NodeT;
         let second_components_number = second_nodes_components.iter().unique().count() as NodeT;
         let first_shared_components_number =
