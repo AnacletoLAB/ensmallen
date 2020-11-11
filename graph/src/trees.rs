@@ -3,6 +3,8 @@ use indicatif::ProgressIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::{HashMap, HashSet};
 use std::iter::FromIterator;
+use rayon::iter::IntoParallelRefMutIterator;
+use rayon::iter::ParallelIterator;
 use vec_rand::xorshift::xorshift as rand_u64;
 
 // Return component of given node, including eventual remapping.
@@ -111,6 +113,9 @@ impl Graph {
                 }
                 (Some(src_component), Some(dst_component)) => {
                     // if the components are different then we add it because it will merge them
+                    if src_component == dst_component {
+                        continue;
+                    }
                     let src_component = get_node_component(src_component, &components_remapping);
                     let dst_component = get_node_component(dst_component, &components_remapping);
                     if src_component != dst_component {
@@ -119,7 +124,7 @@ impl Graph {
                         if let Some(component) = &mut components[dst_component] {
                             component.union_with(&removed_component);
                         }
-                        components_remapping.iter_mut().for_each(
+                        components_remapping.par_iter_mut().for_each(
                             |(component, remapped_component)| {
                                 if *component == src_component
                                     || *remapped_component == src_component
