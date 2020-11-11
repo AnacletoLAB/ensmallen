@@ -222,19 +222,25 @@ impl Graph {
                     }
                 }
                 _ => {
-                    let (inserted_component, not_inserted, not_inserted_component) =
-                        if src_component.is_some() {
-                            (src_component, *dst, &mut nodes_components[*dst as usize])
-                        } else {
-                            (dst_component, *src, &mut nodes_components[*src as usize])
-                        };
+                    let (inserted_component, not_inserted) = if src_component.is_some() {
+                        (src_component, *dst)
+                    } else {
+                        (dst_component, *src)
+                    };
                     let inserted_component =
                         get_node_component(inserted_component.unwrap(), &components_remapping);
+                    let destinations = self
+                        .get_source_destinations_range(not_inserted)
+                        .collect::<Vec<NodeT>>();
+
+                    destinations.iter().for_each(|node| {
+                        nodes_components[*node as usize] = Some(inserted_component);
+                    });
+                    nodes_components[not_inserted as usize] = Some(inserted_component);
                     if let Some(component) = &mut components[inserted_component] {
                         component.insert(not_inserted);
-                        component.extend(self.get_source_destinations_range(not_inserted));
+                        component.extend(destinations);
                     }
-                    *not_inserted_component = Some(inserted_component);
                 }
             };
         });
