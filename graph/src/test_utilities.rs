@@ -215,7 +215,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 }
             }
             if mode == 2 {
-                graph.enable_fast_walk(false, false, Some(0.05 as f64))?;
+                graph.enable_fast_walk(false, false, Some(0.05))?;
                 assert!(
                     graph.cached_destinations.is_some(),
                     "Cached destinations are not None when cache is enabled."

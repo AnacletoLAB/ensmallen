@@ -48,9 +48,11 @@ impl Graph {
                     "The given seed graph does not overlap with the current graph instance.",
                 ));
             }
-            Some(RoaringBitmap::from_iter(sg.get_nodes_names_iter().map(
-                |(_, node_name, _)| self.get_unchecked_node_id(&node_name),
-            )))
+            Some(
+                sg.get_nodes_names_iter()
+                    .map(|(_, node_name, _)| self.get_unchecked_node_id(&node_name))
+                    .collect::<RoaringBitmap>(),
+            )
         } else {
             None
         };

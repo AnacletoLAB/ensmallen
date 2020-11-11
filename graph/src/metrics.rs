@@ -313,10 +313,7 @@ impl Graph {
         let connected_components_number = self.get_nodes_number() - tree.len() as NodeT;
         (
             connected_components_number as NodeT,
-            match components.iter().map(|c| c.len()).max() {
-                Some(max_components_number) => max_components_number,
-                None => 1,
-            } as NodeT,
+            components.iter().map(|c| c.len()).max().unwrap_or(1) as NodeT,
             match components.iter().map(|c| c.len()).min() {
                 Some(min_components_number) => match self.has_singletons() {
                     true => 1,
@@ -726,7 +723,7 @@ impl Graph {
                 d if d < 0.01 => "sparse".to_owned(),
                 d if d < 0.1 => "dense".to_owned(),
                 d if d < 0.5 => "quite dense".to_owned(),
-                d if (d - 1.0 as f64).abs() < f64::EPSILON => "complete".to_owned(),
+                d if (d - 1.0).abs() < f64::EPSILON => "complete".to_owned(),
                 d if d <= 1.0 => "extremely dense".to_owned(),
                 d => unreachable!(format!("Unreacheable density case {}", d))
             },

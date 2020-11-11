@@ -147,7 +147,7 @@ impl CSVFileReader {
             // skip empty lines
             .filter(move |(i, line)| match line {
                 Ok(l) => {
-                    l != "" && if let Some(mnortl) = max_rows_number_cloned {
+                    !l.is_empty() && if let Some(mnortl) = max_rows_number_cloned {
                         *i as u64 <= mnortl
                     } else {
                         true

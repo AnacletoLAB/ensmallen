@@ -269,8 +269,8 @@ impl Graph {
                 .collect()
         };
         // create the corresponing labels
-        let mut labels: Vec<u8> = vec![1 as u8; positives.len()];
-        labels.extend(vec![0 as u8; negatives.len()]);
+        let mut labels: Vec<u8> = vec![1; positives.len()];
+        labels.extend(vec![0; negatives.len()]);
         // concat the two vectors of edges
         let mut edges: Vec<Vec<NodeT>> = positives;
         edges.extend(negatives);

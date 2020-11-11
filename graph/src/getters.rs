@@ -505,7 +505,7 @@ impl Graph {
 
     pub fn get_unchecked_node_count_by_node_type(&self, node_type: NodeTypeT) -> NodeT {
         match &self.node_types {
-            None => 0 as NodeT,
+            None => 0,
             Some(nts) => nts.counts[node_type as usize],
         }
     }
