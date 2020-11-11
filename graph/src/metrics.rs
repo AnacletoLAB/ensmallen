@@ -309,19 +309,15 @@ impl Graph {
 
     /// Returns number a triple with (number of components, number of nodes of the biggest component, number of nodes of the smallest component )
     pub fn connected_components_number(&self) -> (NodeT, NodeT, NodeT) {
-        let (tree, components) = if self.directed {
+        let (tree_len, components) = if self.directed {
             let (tree, components) = self.random_spanning_tree(0, false, &None, false);
-            let tree = tree
-                .iter()
-                .map(|edge_id| self.get_edge_from_edge_id(edge_id))
-                .collect::<Vec<(NodeT, NodeT)>>();
-            (tree, components)
+            (tree.len() as usize, components)
         } else {
             let tree = self.spanning_arborescence();
             let components = self.connected_components_from_spanning_arborescence(&tree);
-            (tree, components)
+            (tree.len(), components)
         };
-        let connected_components_number = self.get_nodes_number() - tree.len() as NodeT;
+        let connected_components_number = self.get_nodes_number() - tree_len as NodeT;
         (
             connected_components_number as NodeT,
             components.iter().map(|c| c.len()).max().unwrap_or(1) as NodeT,
