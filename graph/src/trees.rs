@@ -255,7 +255,7 @@ impl Graph {
         let parents = (0..nodes_number)
             .map(|_| AtomicU32::new(nodes_number))
             .collect::<Vec<AtomicU32>>();
-        let cpus = (1..(num_cpus::get() as u16 + 1)).collect::<Vec<u16>>();
+        let cpus_number = num_cpus::get();
         loop {
             // find the first not explored node (this is guardanteed to be in a new component)
             let root = parents
@@ -281,10 +281,10 @@ impl Graph {
             // if we never have that number of leafs then we just do the spanning tree
             // sequentially since parallelism would not improve in a significant manner
             let root = *root.first().unwrap();
-            let mut roots = Vec::with_capacity(cpus.len());
+            let mut roots = Vec::with_capacity(cpus_number);
             roots.push(root);
             // DFS visit to compute the spanning tree
-            while !roots.is_empty() && roots.len() < cpus.len() {
+            while !roots.is_empty() && roots.len() < cpus_number {
                 let src = roots.pop().unwrap();
                 parents[src as usize].store(src as NodeT, Ordering::SeqCst);
                 self.get_source_destinations_range(src).for_each(|dst| {
