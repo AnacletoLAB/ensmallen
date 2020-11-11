@@ -228,6 +228,8 @@ impl Graph {
     }
 
     /// Returns set of edges composing a spanning tree.
+    /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
+    /// by David A. Bader and Guojing Cong.
     pub fn spanning_arborescence(&self) -> Vec<(NodeT, NodeT)> {
         let nodes_number = self.get_nodes_number();
         let colors = (0..nodes_number)
@@ -238,7 +240,9 @@ impl Graph {
             .collect::<Vec<AtomicU32>>();
         let cpus = (1..(num_cpus::get() as u16 + 1)).collect::<Vec<u16>>();
         loop {
-            let roots = colors
+
+            // find the first not explored node (this is guardanteed to be in a new component)
+            let root = colors
                 .iter()
                 .enumerate()
                 .filter_map(|(node_id, color)| {
@@ -249,16 +253,49 @@ impl Graph {
                     }
                     None
                 })
-                .take(cpus.len())
+                .take(1)
                 .collect::<Vec<NodeT>>();
-
-            if roots.is_empty() {
+            // if we have no new components then we finished
+            if root.is_empty() {
                 break;
             }
 
+            // compute the initial spanning tree and make it go on until we have
+            // cpu.len() leafs, from each one of this leaf one process will start.
+            // if we never have that number of leafs then we just do the spanning tree
+            // sequentially since parallelism would not improve in a significant manner
+            let root = *root.first().unwrap();
+            let mut roots = Vec::with_capacity(cpus.len());
+            roots.push(root);
+            // DFS visit to compute the spanning tree
+            while !roots.is_empty() && roots.len() < cpus.len() {
+                let src = roots.pop().unwrap();
+                colors[src as usize].store(1, Ordering::SeqCst);
+                self.get_source_destinations_range(src).for_each(|dst| {
+                    if colors[dst as usize].load(Ordering::SeqCst) == 0 {
+                        parents[dst as usize].store(src, Ordering::SeqCst);
+                        colors[dst as usize].store(1, Ordering::SeqCst);
+                        roots.push(dst);
+                    }
+                });
+            }
+            // if we compilted the component spanning tree sequentially
+            // then go to the next one
+            if roots.is_empty() {
+                continue;
+            }
+
+            // since we were able to build a stub tree with cpu.len() leafs,
+            // we spawn the treads and make anyone of them build the sub-trees. 
             cpus.par_iter()
                 .zip(roots.par_iter())
                 .for_each(|(color, root)| {
+                    // for each leaf of the previous stub tree start a DFS keeping track
+                    // of which nodes we visited and updating accordingly the parents vector.
+                    // the nice trick here is that, since all the leafs are part of the same tree,
+                    // if two processes find the same node, we don't care which one of the two take
+                    // it so we can proceed in a lockless fashion (and maybe even without atomics 
+                    // if we manage to remove the colors vecotr and only keep the parents one)
                     colors[*root as usize].store(*color, Ordering::SeqCst);
                     let mut stack: Vec<NodeT> = vec![*root];
                     while !stack.is_empty() {
@@ -273,6 +310,9 @@ impl Graph {
                     }
                 });
         }
+
+        // convert the now completed parents vector to a list of tuples representing the edges
+        // of the spanning arborescense.
         parents
             .par_iter()
             .enumerate()
