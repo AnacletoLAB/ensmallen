@@ -214,7 +214,7 @@ impl Graph {
                 });
         }
         parents
-            .iter()
+            .par_iter()
             .enumerate()
             .filter_map(|(dst, src)| {
                 if src.load(Ordering::SeqCst) != nodes_number {
