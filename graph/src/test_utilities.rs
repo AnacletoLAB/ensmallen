@@ -319,6 +319,12 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) =
             graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;
+        if !graph.directed {
+            assert_eq!(
+                graph.connected_components_number(false).0,
+                graph.get_nodes_number() - graph.spanning_tree().len() as NodeT
+            );
+        }
         assert_eq!(
             graph.connected_components_number(false),
             train.connected_components_number(false),

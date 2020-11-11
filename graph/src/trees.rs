@@ -1,10 +1,13 @@
 use super::*;
 use indicatif::ProgressIterator;
+use rayon::iter::IndexedParallelIterator;
+use rayon::iter::IntoParallelRefIterator;
+use rayon::iter::IntoParallelRefMutIterator;
+use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::{HashMap, HashSet};
 use std::iter::FromIterator;
-use rayon::iter::IntoParallelRefMutIterator;
-use rayon::iter::ParallelIterator;
+use std::sync::atomic::{AtomicU16, AtomicU32, Ordering};
 use vec_rand::xorshift::xorshift as rand_u64;
 
 // Return component of given node, including eventual remapping.
@@ -136,7 +139,7 @@ impl Graph {
                         components_remapping.insert(src_component, dst_component);
                         update_tree = true;
                     }
-                },
+                }
                 _ => {
                     let (inserted_component, not_inserted, not_inserted_component) =
                         if src_component.is_some() {
@@ -151,7 +154,7 @@ impl Graph {
                     }
                     *not_inserted_component = Some(inserted_component);
                     update_tree = true;
-                },
+                }
             };
 
             if update_tree {
@@ -162,5 +165,63 @@ impl Graph {
         let components = components.iter().filter_map(|c| c.clone()).collect();
 
         (tree, components)
+    }
+
+    /// Returns set of edges composing a spanning tree and connected components.
+    pub fn spanning_tree(&self) -> Vec<(NodeT, NodeT)> {
+        let nodes_number = self.get_nodes_number();
+        let colors = (0..nodes_number)
+            .map(|_| AtomicU16::new(0))
+            .collect::<Vec<AtomicU16>>();
+        let parents = (0..nodes_number)
+            .map(|_| AtomicU32::new(nodes_number))
+            .collect::<Vec<AtomicU32>>();
+        let cpus = (1..(num_cpus::get() as u16 + 1)).collect::<Vec<u16>>();
+        loop {
+            let roots = colors
+                .iter()
+                .enumerate()
+                .filter_map(|(node_id, color)| {
+                    if self.is_singleton(node_id as NodeT) {
+                        colors[node_id as usize].store(1, Ordering::SeqCst);
+                    } else if color.load(Ordering::SeqCst) == 0 {
+                        return Some(node_id as NodeT);
+                    }
+                    None
+                })
+                .take(cpus.len())
+                .collect::<Vec<NodeT>>();
+
+            if roots.is_empty() {
+                break;
+            }
+
+            cpus.par_iter()
+                .zip(roots.par_iter())
+                .for_each(|(color, root)| {
+                    colors[*root as usize].store(*color, Ordering::SeqCst);
+                    let mut stack: Vec<NodeT> = vec![*root];
+                    while !stack.is_empty() {
+                        let src = stack.pop().unwrap();
+                        self.get_source_destinations_range(src).for_each(|dst| {
+                            if colors[dst as usize].load(Ordering::SeqCst) == 0 {
+                                colors[dst as usize].store(*color, Ordering::SeqCst);
+                                parents[dst as usize].store(src, Ordering::SeqCst);
+                                stack.push(dst);
+                            }
+                        });
+                    }
+                });
+        }
+        parents
+            .iter()
+            .enumerate()
+            .filter_map(|(dst, src)| {
+                if src.load(Ordering::SeqCst) != nodes_number {
+                    return Some((src.load(Ordering::SeqCst), dst as NodeT));
+                }
+                None
+            })
+            .collect::<Vec<(NodeT, NodeT)>>()
     }
 }
