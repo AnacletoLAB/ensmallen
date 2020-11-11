@@ -309,18 +309,16 @@ impl Graph {
 
     /// Returns number a triple with (number of components, number of nodes of the biggest component, number of nodes of the smallest component )
     pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
-        let (tree, components) = self.spanning_tree(0, false, &None, verbose);
+        // TODO! Replace with faster spanning tree!
+        let (tree, components) = self.random_spanning_tree(0, false, &None, verbose);
         let connected_components_number = self.get_nodes_number() - tree.len() as NodeT;
         (
             connected_components_number as NodeT,
             components.iter().map(|c| c.len()).max().unwrap_or(1) as NodeT,
-            match components.iter().map(|c| c.len()).min() {
-                Some(min_components_number) => match self.has_singletons() {
-                    true => 1,
-                    false => min_components_number,
-                },
-                None => 1,
-            } as NodeT,
+            match self.has_singletons() {
+                false => components.iter().map(|c| c.len()).max().unwrap_or(1) as NodeT,
+                true => 1,
+            }
         )
     }
 

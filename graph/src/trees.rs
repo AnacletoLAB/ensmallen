@@ -78,7 +78,7 @@ impl Graph {
     /// * `unwanted_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.
     /// * `verbose`: bool - Wethever to show a loading bar or not.
     ///
-    pub fn spanning_tree(
+    pub fn random_spanning_tree(
         &self,
         random_state: EdgeT,
         include_all_edge_types: bool,

@@ -408,7 +408,7 @@ impl Graph {
             None
         };
 
-        let (tree, _) = self.spanning_tree(
+        let (tree, _) = self.random_spanning_tree(
             random_state,
             include_all_edge_types,
             &edge_type_ids,
