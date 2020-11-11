@@ -246,22 +246,19 @@ impl Graph {
     /// by David A. Bader and Guojing Cong.
     pub fn spanning_arborescence(&self) -> Vec<(NodeT, NodeT)> {
         let nodes_number = self.get_nodes_number();
-        let colors = (0..nodes_number)
-            .map(|_| AtomicU16::new(0))
-            .collect::<Vec<AtomicU16>>();
         let parents = (0..nodes_number)
             .map(|_| AtomicU32::new(nodes_number))
             .collect::<Vec<AtomicU32>>();
         let cpus = (1..(num_cpus::get() as u16 + 1)).collect::<Vec<u16>>();
         loop {
             // find the first not explored node (this is guardanteed to be in a new component)
-            let root = colors
+            let root = parents
                 .iter()
                 .enumerate()
-                .filter_map(|(node_id, color)| {
+                .filter_map(|(node_id, parent)| {
                     if self.is_singleton(node_id as NodeT) {
-                        colors[node_id as usize].store(1, Ordering::SeqCst);
-                    } else if color.load(Ordering::SeqCst) == 0 {
+                        parents[node_id as usize].store(node_id as NodeT, Ordering::SeqCst);
+                    } else if parent.load(Ordering::SeqCst) == nodes_number {
                         return Some(node_id as NodeT);
                     }
                     None
@@ -283,11 +280,10 @@ impl Graph {
             // DFS visit to compute the spanning tree
             while !roots.is_empty() && roots.len() < cpus.len() {
                 let src = roots.pop().unwrap();
-                colors[src as usize].store(1, Ordering::SeqCst);
+                parents[src as usize].store(src as NodeT, Ordering::SeqCst);
                 self.get_source_destinations_range(src).for_each(|dst| {
-                    if colors[dst as usize].load(Ordering::SeqCst) == 0 {
+                    if parents[dst as usize].load(Ordering::SeqCst) == nodes_number {
                         parents[dst as usize].store(src, Ordering::SeqCst);
-                        colors[dst as usize].store(1, Ordering::SeqCst);
                         roots.push(dst);
                     }
                 });
@@ -300,21 +296,18 @@ impl Graph {
 
             // since we were able to build a stub tree with cpu.len() leafs,
             // we spawn the treads and make anyone of them build the sub-trees.
-            roots.par_iter().enumerate().for_each(|(mut color, root)| {
-                color += 1;
+            roots.par_iter().for_each(|root| {
                 // for each leaf of the previous stub tree start a DFS keeping track
                 // of which nodes we visited and updating accordingly the parents vector.
                 // the nice trick here is that, since all the leafs are part of the same tree,
                 // if two processes find the same node, we don't care which one of the two take
                 // it so we can proceed in a lockless fashion (and maybe even without atomics
                 // if we manage to remove the colors vecotr and only keep the parents one)
-                colors[*root as usize].store(color as u16, Ordering::SeqCst);
                 let mut stack: Vec<NodeT> = vec![*root];
                 while !stack.is_empty() {
                     let src = stack.pop().unwrap();
                     self.get_source_destinations_range(src).for_each(|dst| {
-                        if colors[dst as usize].load(Ordering::SeqCst) == 0 {
-                            colors[dst as usize].store(color as u16, Ordering::SeqCst);
+                        if parents[dst as usize].load(Ordering::SeqCst) == nodes_number {
                             parents[dst as usize].store(src, Ordering::SeqCst);
                             stack.push(dst);
                         }
