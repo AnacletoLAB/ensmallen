@@ -308,9 +308,19 @@ impl Graph {
     }
 
     /// Returns number a triple with (number of components, number of nodes of the biggest component, number of nodes of the smallest component )
-    pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
-        // TODO! Replace with faster spanning tree!
-        let (tree, components) = self.random_spanning_tree(0, false, &None, verbose);
+    pub fn connected_components_number(&self) -> (NodeT, NodeT, NodeT) {
+        let (tree, components) = if self.directed {
+            let (tree, components) = self.random_spanning_tree(0, false, &None, false);
+            let tree = tree
+                .iter()
+                .map(|edge_id| self.get_edge_from_edge_id(edge_id))
+                .collect::<Vec<(NodeT, NodeT)>>();
+            (tree, components)
+        } else {
+            let tree = self.spanning_arborescence();
+            let components = self.connected_components_from_spanning_arborescence(&tree);
+            (tree, components)
+        };
         let connected_components_number = self.get_nodes_number() - tree.len() as NodeT;
         (
             connected_components_number as NodeT,
@@ -318,7 +328,7 @@ impl Graph {
             match self.has_singletons() {
                 false => components.iter().map(|c| c.len()).max().unwrap_or(1) as NodeT,
                 true => 1,
-            }
+            },
         )
     }
 
@@ -625,7 +635,7 @@ impl Graph {
     /// Return rendered textual report of the graph.
     pub fn textual_report(&self) -> Result<String, String> {
         let (connected_components_number, maximum_connected_component, minimum_connected_component) =
-            self.connected_components_number(true);
+            self.connected_components_number();
 
         Ok(format!(
             concat!(

@@ -122,8 +122,7 @@ impl Graph {
                     let src_component = get_node_component(src_component, &components_remapping);
                     let dst_component = get_node_component(dst_component, &components_remapping);
                     if src_component != dst_component {
-                        let removed_component = components[src_component].clone().unwrap();
-                        components[src_component] = None;
+                        let removed_component = components[src_component].take().unwrap();
                         if let Some(component) = &mut components[dst_component] {
                             component.union_with(&removed_component);
                         }
@@ -167,8 +166,69 @@ impl Graph {
         (tree, components)
     }
 
-    /// Returns set of edges composing a spanning tree and connected components.
-    pub fn spanning_tree(&self) -> Vec<(NodeT, NodeT)> {
+    pub fn connected_components_from_spanning_arborescence(
+        &self,
+        spanning_arborescence: &[(NodeT, NodeT)],
+    ) -> Vec<RoaringBitmap> {
+        // Create vector of sets of the single nodes.
+        let mut components: Vec<Option<RoaringBitmap>> = Vec::new();
+        // Create vector of nodes component numbers.
+        let mut nodes_components: Vec<Option<usize>> = vec![None; self.get_nodes_number() as usize];
+        // Components remapping
+        let mut components_remapping: HashMap<usize, usize> = HashMap::new();
+        // Compute the connected components.
+        spanning_arborescence.iter().for_each(|(src, dst)| {
+            let src_component = nodes_components[*src as usize];
+            let dst_component = nodes_components[*dst as usize];
+            // if both nodes are not covered then the edge is isolated
+            // and must start its own component
+            match (src_component, dst_component) {
+                (Some(src_component), Some(dst_component)) => {
+                    // if the components are different then we add it because it will merge them
+                    if src_component == dst_component {
+                        return;
+                    }
+                    let src_component = get_node_component(src_component, &components_remapping);
+                    let dst_component = get_node_component(dst_component, &components_remapping);
+                    if src_component != dst_component {
+                        let removed_component = components[src_component].take().unwrap();
+                        if let Some(component) = &mut components[dst_component] {
+                            component.union_with(&removed_component);
+                        }
+                        components_remapping.iter_mut().for_each(
+                            |(component, remapped_component)| {
+                                if *component == src_component
+                                    || *remapped_component == src_component
+                                {
+                                    *remapped_component = dst_component;
+                                }
+                            },
+                        );
+                        components_remapping.insert(src_component, dst_component);
+                    }
+                }
+                _ => {
+                    let new_component_number = components.len();
+                    let component = [*src, *dst]
+                        .iter()
+                        .filter(|node_id| nodes_components[**node_id as usize].is_none())
+                        .flat_map(|node| {
+                            self.get_source_destinations_range(*node)
+                                .collect::<Vec<NodeT>>()
+                        })
+                        .collect::<RoaringBitmap>();
+                    component.iter().for_each(|node| {
+                        nodes_components[node as usize] = Some(new_component_number);
+                    });
+                    components.push(Some(component));
+                }
+            };
+        });
+        components.iter().cloned().filter_map(|c| c).collect()
+    }
+
+    /// Returns set of edges composing a spanning tree.
+    pub fn spanning_arborescence(&self) -> Vec<(NodeT, NodeT)> {
         let nodes_number = self.get_nodes_number();
         let colors = (0..nodes_number)
             .map(|_| AtomicU16::new(0))
