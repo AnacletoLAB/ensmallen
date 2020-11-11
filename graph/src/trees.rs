@@ -300,28 +300,27 @@ impl Graph {
 
             // since we were able to build a stub tree with cpu.len() leafs,
             // we spawn the treads and make anyone of them build the sub-trees.
-            cpus.par_iter()
-                .zip(roots.par_iter())
-                .for_each(|(color, root)| {
-                    // for each leaf of the previous stub tree start a DFS keeping track
-                    // of which nodes we visited and updating accordingly the parents vector.
-                    // the nice trick here is that, since all the leafs are part of the same tree,
-                    // if two processes find the same node, we don't care which one of the two take
-                    // it so we can proceed in a lockless fashion (and maybe even without atomics
-                    // if we manage to remove the colors vecotr and only keep the parents one)
-                    colors[*root as usize].store(*color, Ordering::SeqCst);
-                    let mut stack: Vec<NodeT> = vec![*root];
-                    while !stack.is_empty() {
-                        let src = stack.pop().unwrap();
-                        self.get_source_destinations_range(src).for_each(|dst| {
-                            if colors[dst as usize].load(Ordering::SeqCst) == 0 {
-                                colors[dst as usize].store(*color, Ordering::SeqCst);
-                                parents[dst as usize].store(src, Ordering::SeqCst);
-                                stack.push(dst);
-                            }
-                        });
-                    }
-                });
+            roots.par_iter().enumerate().for_each(|(mut color, root)| {
+                color = color + 1;
+                // for each leaf of the previous stub tree start a DFS keeping track
+                // of which nodes we visited and updating accordingly the parents vector.
+                // the nice trick here is that, since all the leafs are part of the same tree,
+                // if two processes find the same node, we don't care which one of the two take
+                // it so we can proceed in a lockless fashion (and maybe even without atomics
+                // if we manage to remove the colors vecotr and only keep the parents one)
+                colors[*root as usize].store(color as u16, Ordering::SeqCst);
+                let mut stack: Vec<NodeT> = vec![*root];
+                while !stack.is_empty() {
+                    let src = stack.pop().unwrap();
+                    self.get_source_destinations_range(src).for_each(|dst| {
+                        if colors[dst as usize].load(Ordering::SeqCst) == 0 {
+                            colors[dst as usize].store(color as u16, Ordering::SeqCst);
+                            parents[dst as usize].store(src, Ordering::SeqCst);
+                            stack.push(dst);
+                        }
+                    });
+                }
+            });
         }
 
         // convert the now completed parents vector to a list of tuples representing the edges
