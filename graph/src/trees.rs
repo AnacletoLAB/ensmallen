@@ -301,7 +301,7 @@ impl Graph {
             // since we were able to build a stub tree with cpu.len() leafs,
             // we spawn the treads and make anyone of them build the sub-trees.
             roots.par_iter().enumerate().for_each(|(mut color, root)| {
-                color = color + 1;
+                color += 1;
                 // for each leaf of the previous stub tree start a DFS keeping track
                 // of which nodes we visited and updating accordingly the parents vector.
                 // the nice trick here is that, since all the leafs are part of the same tree,
