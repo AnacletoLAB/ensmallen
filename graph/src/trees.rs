@@ -252,22 +252,22 @@ impl Graph {
     /// by David A. Bader and Guojing Cong.
     pub fn spanning_arborescence(&self) -> Vec<(NodeT, NodeT)> {
         let nodes_number = self.get_nodes_number();
-        let parents = (0..nodes_number)
-            .map(|_| AtomicU32::new(nodes_number))
-            .collect::<Vec<AtomicU32>>();
+        let mut parents = Box::new((0..nodes_number)
+            .map(|_| nodes_number)
+            .collect::<Vec<NodeT>>());
         let cpus_number = num_cpus::get();
         let mut parsed_nodes: usize = 0;
         loop {
             // find the first not explored node (this is guardanteed to be in a new component)
             let root = parents
-                .iter()
+                .iter_mut()
                 .skip(parsed_nodes)
                 .enumerate()
                 .filter_map(|(node_id, parent)| {
                     parsed_nodes += 1;
                     if self.is_singleton(node_id as NodeT) {
-                        parents[node_id as usize].store(node_id as NodeT, Ordering::SeqCst);
-                    } else if parent.load(Ordering::SeqCst) == nodes_number {
+                        *parent = node_id as NodeT;
+                    } else if *parent == nodes_number {
                         return Some(node_id as NodeT);
                     }
                     None
@@ -290,10 +290,10 @@ impl Graph {
             // DFS visit to compute the spanning tree
             while !roots.is_empty() && roots.len() < cpus_number {
                 let src = roots.pop().unwrap();
-                parents[src as usize].store(src as NodeT, Ordering::SeqCst);
+                parents[src as usize] = src as NodeT;
                 self.get_source_destinations_range(src).for_each(|dst| {
-                    if parents[dst as usize].load(Ordering::SeqCst) == nodes_number {
-                        parents[dst as usize].store(src, Ordering::SeqCst);
+                    if parents[dst as usize] == nodes_number {
+                        parents[dst as usize] = src;
                         roots.push(dst);
                     }
                 });
@@ -303,6 +303,8 @@ impl Graph {
             if roots.is_empty() {
                 continue;
             }
+
+            let bad = NotThreadSafe{value: std::cell::UnsafeCell::new(& mut parents)};
 
             // since we were able to build a stub tree with cpu.len() leafs,
             // we spawn the treads and make anyone of them build the sub-trees.
@@ -317,9 +319,12 @@ impl Graph {
                 while !stack.is_empty() {
                     let src = stack.pop().unwrap();
                     self.get_source_destinations_range(src).for_each(|dst| {
-                        if parents[dst as usize].load(Ordering::SeqCst) == nodes_number {
-                            parents[dst as usize].store(src, Ordering::SeqCst);
-                            stack.push(dst);
+                        unsafe{
+                            let ptr = bad.value.get();
+                            if (*ptr)[dst as usize] == nodes_number {
+                                (*ptr)[dst as usize] = src;
+                                stack.push(dst);
+                            }
                         }
                     });
                 }
@@ -332,11 +337,19 @@ impl Graph {
             .par_iter()
             .enumerate()
             .filter_map(|(dst, src)| {
-                if src.load(Ordering::SeqCst) != nodes_number {
-                    return Some((src.load(Ordering::SeqCst), dst as NodeT));
+                if *src != nodes_number {
+                    return Some((*src, dst as NodeT));
                 }
                 None
             })
             .collect::<Vec<(NodeT, NodeT)>>()
     }
 }
+
+use std::cell::UnsafeCell;
+
+struct NotThreadSafe<T> {
+    value: UnsafeCell<T>,
+}
+
+unsafe impl<T> Sync for NotThreadSafe<T> {}
