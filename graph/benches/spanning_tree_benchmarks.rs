@@ -21,7 +21,7 @@ fn bench_spanning_arborescence(b: &mut Bencher) {
 
 #[bench]
 fn bench_spanning_arborescence_with_fast_graph(b: &mut Bencher) {
-    let graph = load_ppi(true, true, true, false, false, false).unwrap();
+    let mut graph = load_ppi(true, true, true, false, false, false).unwrap();
 
     graph.enable_fast_walk(true, true, None);
 
@@ -45,7 +45,7 @@ fn bench_random_spanning_tree(b: &mut Bencher) {
 
 #[bench]
 fn bench_random_spanning_tree_with_fast_graph(b: &mut Bencher) {
-    let graph = load_ppi(true, true, true, false, false, false).unwrap();
+    let mut graph = load_ppi(true, true, true, false, false, false).unwrap();
 
     graph.enable_fast_walk(true, true, None);
 
