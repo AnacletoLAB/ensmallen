@@ -493,7 +493,7 @@ impl EnsmallenGraph {
     }
 
     /// Return vector of edge types_name.
-    pub fn get_edge_types_name(&self) -> Option<Vec<String>> {
+    pub fn get_edge_type_names(&self) -> Option<Vec<String>> {
         self.graph.get_edge_type_names()
     }
 
