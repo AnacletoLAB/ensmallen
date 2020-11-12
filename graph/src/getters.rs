@@ -220,14 +220,14 @@ impl Graph {
 
     /// Return vector with the sorted edge Ids.
     pub fn get_edges(&self, directed: bool) -> Vec<Vec<NodeT>> {
-        self.get_edges_iter(directed)
+        self.get_edges_par_iter(directed)
             .map(|(_, src, dst)| vec![src, dst])
             .collect()
     }
 
     /// Return vector with the sorted edge names.
     pub fn get_edge_names(&self, directed: bool) -> Vec<(String, String)> {
-        self.get_edges_string_iter(directed)
+        self.get_edges_par_string_iter(directed)
             .map(|(_, src, dst)| (src, dst))
             .collect()
     }
