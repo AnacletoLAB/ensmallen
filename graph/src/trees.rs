@@ -7,7 +7,7 @@ use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::{HashMap, HashSet};
 use std::iter::FromIterator;
-use std::sync::atomic::{AtomicU32, Ordering};
+use std::sync::atomic::{AtomicUsize, Ordering};
 use vec_rand::xorshift::xorshift as rand_u64;
 
 // Return component of given node, including eventual remapping.
@@ -286,7 +286,7 @@ impl Graph {
             let bad = NotThreadSafe{value: std::cell::UnsafeCell::new(& mut parents)};
             // number of waiting threads, if this number is equals to the number of threads,
             // we finished the component so we can continue and kill all the threads.
-            let number_of_threads_waiting = std::sync::atomic::AtomicUsize::new(0);
+            let number_of_threads_waiting = AtomicUsize::new(0);
             // global queue of nodes to explore
             let queue = crossbeam::queue::ArrayQueue::new(cpus_number);
             queue.push(root).unwrap();
@@ -337,7 +337,7 @@ impl Graph {
                     });
                 }
             }).expect("A child thread panicked during the computaiton of the spanning tree.");
-            
+
         }
 
         // convert the now completed parents vector to a list of tuples representing the edges
