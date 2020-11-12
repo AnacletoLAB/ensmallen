@@ -55,6 +55,14 @@ impl Graph {
         self.get_edges_iter(directed).map(move |(_, _, dst)| dst)
     }
 
+    /// Return parallel iterator on the (non unique) destination nodes of the graph.
+    ///
+    /// # Arguments
+    /// * `directed`: bool, wethever to filter out the undirected edges.
+    pub fn get_destinations_par_iter(&self, directed: bool) -> impl ParallelIterator<Item = NodeT> + '_ {
+        self.get_edges_par_iter(directed).map(move |(_, _, dst)| dst)
+    }
+
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments

@@ -1,4 +1,7 @@
 use super::*;
+use rayon::iter::FromParallelIterator;
+use rayon::iter::IntoParallelRefIterator;
+use rayon::iter::ParallelIterator;
 use std::collections::HashMap;
 
 impl Graph {
@@ -69,12 +72,11 @@ impl Graph {
             }
             self.cached_destinations = Some(
                 self.get_top_k_central_nodes(cached_nodes_number)
-                    .iter()
-                    .cloned()
+                    .par_iter()
                     .map(|node_id| {
                         (
-                            node_id,
-                            self.get_source_destinations_range(node_id)
+                            *node_id,
+                            self.get_source_destinations_range(*node_id)
                                 .collect::<Vec<NodeT>>(),
                         )
                     })
