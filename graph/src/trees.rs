@@ -7,7 +7,7 @@ use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::{HashMap, HashSet};
 use std::iter::FromIterator;
-use std::sync::atomic::{AtomicU16, AtomicU32, Ordering};
+use std::sync::atomic::{AtomicU32, Ordering};
 use vec_rand::xorshift::xorshift as rand_u64;
 
 // Return component of given node, including eventual remapping.

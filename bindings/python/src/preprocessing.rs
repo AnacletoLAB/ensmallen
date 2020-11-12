@@ -32,6 +32,7 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///     Window size to consider for the sequences.
 ///
 fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
+    let _ = ctrlc::set_handler(|| std::process::exit(2));
     let (contexts, words) = pyex!(rust_word2vec(sequences.into_par_iter(), window_size))?;
     let gil = pyo3::Python::acquire_gil();
     Ok((
@@ -62,7 +63,7 @@ fn cooccurence_matrix(
     sequences: Vec<Vec<NodeT>>,
     py_kwargs: Option<&PyDict>,
 ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
-    ctrlc::set_handler(|| std::process::exit(2)).unwrap();
+    let _ = ctrlc::set_handler(|| std::process::exit(2));
     let gil = pyo3::Python::acquire_gil();
     let kwargs = normalize_kwargs!(py_kwargs, gil.python());
     pyex!(validate_kwargs(

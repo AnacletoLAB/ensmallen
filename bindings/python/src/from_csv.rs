@@ -124,7 +124,7 @@ impl EnsmallenGraph {
         directed: bool,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<EnsmallenGraph> {
-        ctrlc::set_handler(|| std::process::exit(2)).unwrap();
+        let _ = ctrlc::set_handler(|| std::process::exit(2));
         let (edges, nodes, name, directed_edge_list) =
             pyex!(build_csv_file_reader(edge_path, py_kwargs))?;
 
@@ -262,7 +262,7 @@ impl EnsmallenGraph {
         edges_number: EdgeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<EnsmallenGraph> {
-        ctrlc::set_handler(|| std::process::exit(2)).unwrap();
+        let _ = ctrlc::set_handler(|| std::process::exit(2));
         let (edges, nodes, name, directed_edge_list) =
             pyex!(build_csv_file_reader(edge_path, py_kwargs))?;
 
