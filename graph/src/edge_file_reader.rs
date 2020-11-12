@@ -52,7 +52,7 @@ impl EdgeFileReader {
             if column.is_empty() {
                 return Err("The given node types column is empty.".to_owned());
             }
-            
+
             self.sources_column_number = self.reader.get_column_number(column)?;
         }
         Ok(self)
@@ -451,7 +451,9 @@ impl EdgeFileReader {
         if Some(self.destinations_column_number) == self.edge_types_column_number {
             return Err("The destinations column is the same as the edge types one.".to_string());
         }
-        if self.weights_column_number.is_some() && self.weights_column_number == self.edge_types_column_number {
+        if self.weights_column_number.is_some()
+            && self.weights_column_number == self.edge_types_column_number
+        {
             return Err("The weights column is the same as the edge types one.".to_string());
         }
 
