@@ -1,5 +1,4 @@
 use super::*;
-use rayon::iter::FromParallelIterator;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::ParallelIterator;
 use std::collections::HashMap;
