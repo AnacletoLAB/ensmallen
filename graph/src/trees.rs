@@ -281,6 +281,8 @@ impl Graph {
             }
 
             let root = *root.first().unwrap();
+            // add the root as the father of itself
+            parents[root as usize] = root;
 
             // make rust happy about having possible dataraces on parents
             let bad = NotThreadSafe{value: std::cell::UnsafeCell::new(& mut parents)};
@@ -346,7 +348,7 @@ impl Graph {
             .par_iter()
             .enumerate()
             .filter_map(|(dst, src)| {
-                if *src != nodes_number {
+                if *src != nodes_number && *src != dst as NodeT {
                     return Some((*src, dst as NodeT));
                 }
                 None
