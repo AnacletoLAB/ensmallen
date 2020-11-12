@@ -280,29 +280,7 @@ impl Graph {
                 break;
             }
 
-            // compute the initial spanning tree and make it go on until we have
-            // cpu.len() leafs, from each one of this leaf one process will start.
-            // if we never have that number of leafs then we just do the spanning tree
-            // sequentially since parallelism would not improve in a significant manner
             let root = *root.first().unwrap();
-            let mut roots = Vec::with_capacity(cpus_number);
-            roots.push(root);
-            // DFS visit to compute the spanning tree
-            while !roots.is_empty() && roots.len() < cpus_number {
-                let src = roots.pop().unwrap();
-                parents[src as usize] = src as NodeT;
-                self.get_source_destinations_range(src).for_each(|dst| {
-                    if parents[dst as usize] == nodes_number {
-                        parents[dst as usize] = src;
-                        roots.push(dst);
-                    }
-                });
-            }
-            // if we compilted the component spanning tree sequentially
-            // then go to the next one
-            if roots.is_empty() {
-                continue;
-            }
 
             // make rust happy about having possible dataraces on parents
             let bad = NotThreadSafe{value: std::cell::UnsafeCell::new(& mut parents)};
@@ -359,30 +337,7 @@ impl Graph {
                     });
                 }
             }).expect("A child thread panicked during the computaiton of the spanning tree.");
-
-            // since we were able to build a stub tree with cpu.len() leafs,
-            // we spawn the treads and make anyone of them build the sub-trees.
-            roots.par_iter().for_each(|root| {
-                // for each leaf of the previous stub tree start a DFS keeping track
-                // of which nodes we visited and updating accordingly the parents vector.
-                // the nice trick here is that, since all the leafs are part of the same tree,
-                // if two processes find the same node, we don't care which one of the two take
-                // it so we can proceed in a lockless fashion (and maybe even without atomics
-                // if we manage to remove the colors vecotr and only keep the parents one)
-                let mut stack: Vec<NodeT> = vec![*root];
-                while !stack.is_empty() {
-                    let src = stack.pop().unwrap();
-                    self.get_source_destinations_range(src).for_each(|dst| {
-                        unsafe{
-                            let ptr = bad.value.get();
-                            if (*ptr)[dst as usize] == nodes_number {
-                                (*ptr)[dst as usize] = src;
-                                stack.push(dst);
-                            }
-                        }
-                    });
-                }
-            });
+            
         }
 
         // convert the now completed parents vector to a list of tuples representing the edges
