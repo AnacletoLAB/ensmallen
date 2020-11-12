@@ -88,7 +88,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool, wethever to filter out the undirected edges.
     pub fn get_destinations(&self, directed: bool) -> Vec<NodeT> {
-        self.get_destinations_iter(directed).collect()
+        self.get_destinations_par_iter(directed).collect()
     }
 
     /// Return vector of the non-unique destination nodes names.
@@ -96,7 +96,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool, wethever to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
-        self.get_destinations_iter(directed)
+        self.get_destinations_par_iter(directed)
             .map(|dst| self.get_node_name(dst).unwrap())
             .collect()
     }
@@ -554,6 +554,7 @@ impl Graph {
 
     pub fn get_outbounds(&self) -> Vec<EdgeT> {
         (0..self.get_nodes_number())
+            .into_par_iter()
             .map(|src| self.get_unchecked_edge_id_from_tuple(src as NodeT + 1, 0))
             .collect()
     }
