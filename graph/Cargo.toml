@@ -19,10 +19,6 @@ cc = "1.0.46"
 linecount= "0.1.0"
 criterion = "0.3"
 
-[[bench]]
-name = "walks_benchmarks"
-harness = false
-
 [dependencies]
 crossbeam = "0.8.0"
 log = "0.4.8"

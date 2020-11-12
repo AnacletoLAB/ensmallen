@@ -10,6 +10,8 @@ use std::iter::FromIterator;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use vec_rand::xorshift::xorshift as rand_u64;
 
+const NOT_PRESENT: u32 = u32::MAX;
+
 // Return component of given node, including eventual remapping.
 fn get_node_component(component: usize, components_remapping: &HashMap<usize, usize>) -> usize {
     match components_remapping.get(&component) {
@@ -253,36 +255,19 @@ impl Graph {
     pub fn spanning_arborescence(&self) -> Vec<(NodeT, NodeT)> {
         let nodes_number = self.get_nodes_number();
         let mut parents = Box::new((0..nodes_number)
-            .map(|_| nodes_number)
+            .map(|_| NOT_PRESENT)
             .collect::<Vec<NodeT>>());
         let cpus_number = num_cpus::get();
-        let mut parsed_nodes: usize = 0;
-        loop {
+        for node_index in 0..nodes_number {
             // find the first not explored node (this is guardanteed to be in a new component)
-            let root = parents
-                .iter_mut()
-                .skip(parsed_nodes)
-                .enumerate()
-                .filter_map(|(node_id, parent)| {
-                    parsed_nodes += 1;
-                    if self.is_singleton(node_id as NodeT) {
-                        *parent = node_id as NodeT;
-                    } else if *parent == nodes_number {
-                        return Some(node_id as NodeT);
-                    }
-                    None
-                })
-                .take(1)
-                .collect::<Vec<NodeT>>();
-
-            // if we have no new components then we finished
-            if root.is_empty() {
-                break;
+            if self.is_singleton(node_index as NodeT) {
+                parents[node_index as usize] = node_index as NodeT;
+                continue;
             }
-
-            let root = *root.first().unwrap();
-            // add the root as the father of itself
-            parents[root as usize] = root;
+            if parents[node_index as usize] != NOT_PRESENT {
+                continue;
+            }
+            parents[node_index as usize] = node_index;
 
             // make rust happy about having possible dataraces on parents
             let bad = NotThreadSafe{value: std::cell::UnsafeCell::new(& mut parents)};
@@ -291,27 +276,26 @@ impl Graph {
             let number_of_working_threads = AtomicUsize::new(0);
             // global queue of nodes to explore
             let queue = crossbeam::queue::ArrayQueue::new(cpus_number);
-            queue.push(root).unwrap();
+            queue.push(node_index).unwrap();
             
             crossbeam::scope(|scope| {
                 for _ in 0..cpus_number {
                     scope.spawn(|_| {
-                        loop {
+                        'outer: loop {
                             let root = loop {
                                 // if we can get a new root then just go on.
                                 if let Some(new_root) = queue.pop() {
                                     break new_root;
                                 }
                                 // sleep a bit do don't utilize too much cpu
-                                std::thread::sleep(std::time::Duration::from_millis(100));
+                                //std::thread::sleep(std::time::Duration::from_millis(10));
                                 // if we are all waiting then we can just exit
                                 if number_of_working_threads.load(Ordering::Relaxed) == 0 {
-                                    return;
+                                    break 'outer;
                                 }
                             };
                             // we got a new root, we can remove this thread form the waiting ones
                             number_of_working_threads.fetch_add(1, Ordering::SeqCst);
-
                             let mut stack: Vec<NodeT> = vec![root];
                             while !stack.is_empty() {
                                 // get a new node.
@@ -323,7 +307,7 @@ impl Graph {
                                         // get an unsafe mutable reference to the parents array
                                         let ptr = bad.value.get();
                                         // if the node was not already explored
-                                        if (*ptr)[dst as usize] == nodes_number {
+                                        if (*ptr)[dst as usize] == NOT_PRESENT {
                                             // set the parent
                                             (*ptr)[dst as usize] = src;
                                             // put the node in either the local or
@@ -337,7 +321,6 @@ impl Graph {
                                     }
                                 });
                             }
-
                             // set the thread as waiting for the new value
                             number_of_working_threads.fetch_sub(1, Ordering::SeqCst);
                         }

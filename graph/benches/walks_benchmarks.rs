@@ -85,6 +85,6 @@ fn bench_spanning_tree(c: &mut Criterion) {
         });
     });
 }
-
-criterion_group!(benches, bench_spanning_tree, bench_fast, bench_caches, bench_slow);
+// bench_fast, bench_caches, bench_slow
+criterion_group!(benches, bench_spanning_tree);
 criterion_main!(benches);
