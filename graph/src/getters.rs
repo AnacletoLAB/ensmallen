@@ -70,7 +70,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool, wethever to filter out the undirected edges.
     pub fn get_sources(&self, directed: bool) -> Vec<NodeT> {
-        self.get_sources_iter(directed).collect()
+        self.get_sources_par_iter(directed).collect()
     }
 
     /// Return vector of the non-unique source nodes names.
@@ -78,7 +78,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool, wethever to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
-        self.get_sources_iter(directed)
+        self.get_sources_par_iter(directed)
             .map(|src| self.get_node_name(src).unwrap())
             .collect()
     }

@@ -9,7 +9,9 @@ impl Graph {
     }
 
     /// Return iterator on the node of the graph as Strings.
-    pub fn get_nodes_names_iter(&self) -> impl Iterator<Item = (NodeT, String, Option<String>)> + '_ {
+    pub fn get_nodes_names_iter(
+        &self,
+    ) -> impl Iterator<Item = (NodeT, String, Option<String>)> + '_ {
         (0..self.get_nodes_number()).map(move |node_id| {
             (
                 node_id,
@@ -47,6 +49,15 @@ impl Graph {
         self.get_edges_iter(directed).map(move |(_, src, _)| src)
     }
 
+    /// Return parallel iterator on the (non unique) source nodes of the graph.
+    ///
+    /// # Arguments
+    /// * `directed`: bool, wethever to filter out the undirected edges.
+    pub fn get_sources_par_iter(&self, directed: bool) -> impl ParallelIterator<Item = NodeT> + '_ {
+        self.get_edges_par_iter(directed)
+            .map(move |(_, src, _)| src)
+    }
+
     /// Return iterator on the (non unique) destination nodes of the graph.
     ///
     /// # Arguments
@@ -59,8 +70,12 @@ impl Graph {
     ///
     /// # Arguments
     /// * `directed`: bool, wethever to filter out the undirected edges.
-    pub fn get_destinations_par_iter(&self, directed: bool) -> impl ParallelIterator<Item = NodeT> + '_ {
-        self.get_edges_par_iter(directed).map(move |(_, _, dst)| dst)
+    pub fn get_destinations_par_iter(
+        &self,
+        directed: bool,
+    ) -> impl ParallelIterator<Item = NodeT> + '_ {
+        self.get_edges_par_iter(directed)
+            .map(move |(_, _, dst)| dst)
     }
 
     /// Return iterator on the edges of the graph with the string name.
@@ -89,13 +104,15 @@ impl Graph {
         &self,
         directed: bool,
     ) -> impl ParallelIterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        self.edges.par_enumerate().filter_map(move |(edge_id, edge)| {
-            let (src, dst) = self.decode_edge(edge);
-            if !directed && src > dst {
-                return None;
-            }
-            Some((edge_id as EdgeT, src, dst))
-        })
+        self.edges
+            .par_enumerate()
+            .filter_map(move |(edge_id, edge)| {
+                let (src, dst) = self.decode_edge(edge);
+                if !directed && src > dst {
+                    return None;
+                }
+                Some((edge_id as EdgeT, src, dst))
+            })
     }
 
     /// Return iterator on the edges of the graph with the string name.
