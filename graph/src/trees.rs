@@ -256,12 +256,15 @@ impl Graph {
             .map(|_| AtomicU32::new(nodes_number))
             .collect::<Vec<AtomicU32>>();
         let cpus_number = num_cpus::get();
+        let mut parsed_nodes: usize = 0;
         loop {
             // find the first not explored node (this is guardanteed to be in a new component)
             let root = parents
                 .iter()
+                .skip(parsed_nodes)
                 .enumerate()
                 .filter_map(|(node_id, parent)| {
+                    parsed_nodes += 1;
                     if self.is_singleton(node_id as NodeT) {
                         parents[node_id as usize].store(node_id as NodeT, Ordering::SeqCst);
                     } else if parent.load(Ordering::SeqCst) == nodes_number {
@@ -271,6 +274,7 @@ impl Graph {
                 })
                 .take(1)
                 .collect::<Vec<NodeT>>();
+
             // if we have no new components then we finished
             if root.is_empty() {
                 break;
