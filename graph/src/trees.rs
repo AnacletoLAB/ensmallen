@@ -304,7 +304,61 @@ impl Graph {
                 continue;
             }
 
+            // make rust happy about having possible dataraces on parents
             let bad = NotThreadSafe{value: std::cell::UnsafeCell::new(& mut parents)};
+            // number of waiting threads, if this number is equals to the number of threads,
+            // we finished the component so we can continue and kill all the threads.
+            let number_of_threads_waiting = std::sync::atomic::AtomicUsize::new(0);
+            // global queue of nodes to explore
+            let queue = crossbeam::queue::ArrayQueue::new(cpus_number);
+            queue.push(root).unwrap();
+            
+            crossbeam::scope(|scope| {
+                for _ in 0..cpus_number {
+                    scope.spawn(|_| {
+                        // while we don't want to kill the process 
+                        while number_of_threads_waiting.load(Ordering::Relaxed) < cpus_number {
+                            // try to get a new node
+                            match queue.pop() {
+                                Some(root) => {
+                                    // remove the thread from the waiting list
+                                    number_of_threads_waiting.fetch_sub(1, Ordering::SeqCst);
+                                    // initialize the local stack
+                                    let mut stack: Vec<NodeT> = vec![root];
+                                    // do a DFS visit as long as it can
+                                    while !stack.is_empty() {
+                                        // get a new node.
+                                        let src = stack.pop().unwrap();
+                                        // for each destination of the node, update it and add to stack
+                                        // if needed
+                                        self.get_source_destinations_range(src).for_each(|dst| {
+                                            unsafe {
+                                                // get an unsafe mutable reference to the parents array
+                                                let ptr = bad.value.get();
+                                                // if the node was not already explored
+                                                if (*ptr)[dst as usize] == nodes_number {
+                                                    // set the parent
+                                                    (*ptr)[dst as usize] = src;
+                                                    // put the node in either the local or
+                                                    // global stack so that it will be explored
+                                                    // in the future
+                                                    match queue.push(dst) {
+                                                    Ok(_) => {},
+                                                    Err(_) => {stack.push(dst);}
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    }
+                                },
+                                None => {
+                                    number_of_threads_waiting.fetch_add(1, Ordering::SeqCst);
+                                }
+                            }
+                        }
+                    });
+                }
+            }).expect("A child thread panicked during the computaiton of the spanning tree.");
 
             // since we were able to build a stub tree with cpu.len() leafs,
             // we spawn the treads and make anyone of them build the sub-trees.

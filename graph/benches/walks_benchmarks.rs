@@ -80,7 +80,7 @@ fn bench_spanning_tree(c: &mut Criterion) {
 
         b.iter(|| {
             for _ in 0..10 {
-                black_box(graph.spanning_tree(1337, false, &None, false));
+                black_box(graph.random_spanning_tree(1337, false, &None, false));
             }
         });
     });
