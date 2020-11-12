@@ -254,9 +254,9 @@ impl Graph {
     /// by David A. Bader and Guojing Cong.
     pub fn spanning_arborescence(&self) -> Vec<(NodeT, NodeT)> {
         let nodes_number = self.get_nodes_number();
-        let mut parents = Box::new((0..nodes_number)
+        let mut parents = (0..nodes_number)
             .map(|_| NOT_PRESENT)
-            .collect::<Vec<NodeT>>());
+            .collect::<Vec<NodeT>>();
         let cpus_number = num_cpus::get();
         for node_index in 0..nodes_number {
             // find the first not explored node (this is guardanteed to be in a new component)
