@@ -288,7 +288,7 @@ impl Graph {
             let bad = NotThreadSafe{value: std::cell::UnsafeCell::new(& mut parents)};
             // number of waiting threads, if this number is equals to the number of threads,
             // we finished the component so we can continue and kill all the threads.
-            let number_of_threads_waiting = AtomicUsize::new(0);
+            let number_of_working_threads = AtomicUsize::new(0);
             // global queue of nodes to explore
             let queue = crossbeam::queue::ArrayQueue::new(cpus_number);
             queue.push(root).unwrap();
@@ -296,45 +296,50 @@ impl Graph {
             crossbeam::scope(|scope| {
                 for _ in 0..cpus_number {
                     scope.spawn(|_| {
-                        // while we don't want to kill the process 
-                        while number_of_threads_waiting.load(Ordering::Relaxed) < cpus_number {
-                            // try to get a new node
-                            match queue.pop() {
-                                Some(root) => {
-                                    // remove the thread from the waiting list
-                                    number_of_threads_waiting.fetch_sub(1, Ordering::SeqCst);
-                                    // initialize the local stack
-                                    let mut stack: Vec<NodeT> = vec![root];
-                                    // do a DFS visit as long as it can
-                                    while !stack.is_empty() {
-                                        // get a new node.
-                                        let src = stack.pop().unwrap();
-                                        // for each destination of the node, update it and add to stack
-                                        // if needed
-                                        self.get_source_destinations_range(src).for_each(|dst| {
-                                            unsafe {
-                                                // get an unsafe mutable reference to the parents array
-                                                let ptr = bad.value.get();
-                                                // if the node was not already explored
-                                                if (*ptr)[dst as usize] == nodes_number {
-                                                    // set the parent
-                                                    (*ptr)[dst as usize] = src;
-                                                    // put the node in either the local or
-                                                    // global stack so that it will be explored
-                                                    // in the future
-                                                    match queue.push(dst) {
-                                                    Ok(_) => {},
-                                                    Err(_) => {stack.push(dst);}
-                                                    }
-                                                }
-                                            }
-                                        });
-                                    }
-                                },
-                                None => {
-                                    number_of_threads_waiting.fetch_add(1, Ordering::SeqCst);
+                        loop {
+                            let root = loop {
+                                // if we can get a new root then just go on.
+                                if let Some(new_root) = queue.pop() {
+                                    break new_root;
                                 }
+                                // sleep a bit do don't utilize too much cpu
+                                std::thread::sleep(std::time::Duration::from_millis(100));
+                                // if we are all waiting then we can just exit
+                                if number_of_working_threads.load(Ordering::Relaxed) == 0 {
+                                    return;
+                                }
+                            };
+                            // we got a new root, we can remove this thread form the waiting ones
+                            number_of_working_threads.fetch_add(1, Ordering::SeqCst);
+
+                            let mut stack: Vec<NodeT> = vec![root];
+                            while !stack.is_empty() {
+                                // get a new node.
+                                let src = stack.pop().unwrap();
+                                // for each destination of the node, update it and add to stack
+                                // if needed
+                                self.get_source_destinations_range(src).for_each(|dst| {
+                                    unsafe {
+                                        // get an unsafe mutable reference to the parents array
+                                        let ptr = bad.value.get();
+                                        // if the node was not already explored
+                                        if (*ptr)[dst as usize] == nodes_number {
+                                            // set the parent
+                                            (*ptr)[dst as usize] = src;
+                                            // put the node in either the local or
+                                            // global stack so that it will be explored
+                                            // in the future
+                                            match queue.push(dst) {
+                                            Ok(_) => {},
+                                            Err(_) => {stack.push(dst);}
+                                            }
+                                        }
+                                    }
+                                });
                             }
+
+                            // set the thread as waiting for the new value
+                            number_of_working_threads.fetch_sub(1, Ordering::SeqCst);
                         }
                     });
                 }
