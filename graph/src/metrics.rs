@@ -1,6 +1,7 @@
 use super::types::*;
 use super::*;
 use itertools::Itertools;
+use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap as DefaultHashMap;
 use std::collections::{HashMap, HashSet};
@@ -309,20 +310,30 @@ impl Graph {
 
     /// Returns number a triple with (number of components, number of nodes of the biggest component, number of nodes of the smallest component )
     pub fn connected_components_number(&self) -> (NodeT, NodeT, NodeT) {
+        info!("Computing connected components number.");
         let (tree_len, components) = if self.directed {
+            info!("Executing directed sequential version of spanning tree algorithm.");
             let (tree, components) = self.random_spanning_tree(0, false, &None, false);
             (tree.len() as usize, components)
         } else {
+            info!("Executing undirected parallel version of spanning tree algorithm.");
             let tree = self.spanning_arborescence();
+            info!("Computing connected components.");
             let components = self.connected_components_from_spanning_arborescence(&tree);
             (tree.len(), components)
         };
-        let connected_components_number = self.get_nodes_number() - tree_len as NodeT;
+        info!("Computing minimum and maximum size of connected components.");
+        let (min_component_size, max_component_size) = components
+            .iter()
+            .map(|c| c.len())
+            .minmax()
+            .into_option()
+            .unwrap_or((1, 1));
         (
-            connected_components_number as NodeT,
-            components.iter().map(|c| c.len()).max().unwrap_or(1) as NodeT,
+            self.get_nodes_number() - tree_len as NodeT,
+            min_component_size as NodeT,
             match self.has_singletons() {
-                false => components.iter().map(|c| c.len()).max().unwrap_or(1) as NodeT,
+                false => max_component_size as NodeT,
                 true => 1,
             },
         )
