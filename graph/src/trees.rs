@@ -353,7 +353,7 @@ impl Graph {
         // convert the now completed parents vector to a list of tuples representing the edges
         // of the spanning arborescense.
         parents
-            .par_iter()
+            .iter()
             .enumerate()
             .filter_map(|(dst, src)| {
                 // If the edge is NOT registered as a self-loop
