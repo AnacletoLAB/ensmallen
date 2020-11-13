@@ -7,7 +7,7 @@ use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::{HashMap, HashSet};
 use std::iter::FromIterator;
-use std::sync::atomic::{AtomicUsize, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 use vec_rand::xorshift::xorshift as rand_u64;
 
@@ -250,85 +250,102 @@ impl Graph {
         components.iter().cloned().filter_map(|c| c).collect()
     }
 
+    fn scale_node_threads(&self) -> usize {
+        1 + (1.0 / (1.0 + 1000000.0 / (self.get_nodes_number() as f64 * 0.8))) as usize
+    }
+
     /// Returns set of edges composing a spanning tree.
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
     pub fn spanning_arborescence(&self) -> Vec<(NodeT, NodeT)> {
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
-        let pool = rayon::ThreadPoolBuilder::new().build().unwrap();
+        let cpu_number = num_cpus::get();
+        let thread_number = min!(1 + self.scale_node_threads(), cpu_number);
+        let pool = rayon::ThreadPoolBuilder::new()
+            .num_threads(thread_number)
+            .build()
+            .unwrap();
         let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(
-            (0..pool.current_num_threads())
+            (0..(thread_number - 1))
                 .map(|_| Mutex::from(Vec::new()))
                 .collect::<Vec<Mutex<Vec<NodeT>>>>(),
         );
         let active_nodes_number = AtomicUsize::new(0);
+        let completed = AtomicBool::new(false);
         let thread_safe_parents = ThreadSafe {
             value: std::cell::UnsafeCell::new(&mut parents),
         };
-        (0..nodes_number).for_each(|src| {
-            let ptr = thread_safe_parents.value.get();
-            unsafe {
-                // If the node has already been explored we skip ahead.
-                if (*ptr)[src] != NOT_PRESENT {
-                    return;
-                }
-                (*ptr)[src] = src as NodeT;
-            }
-            unsafe {
-                // find the first not explored node (this is guardanteed to be in a new component)
-                if self.has_singletons() && self.is_singleton(src as NodeT) {
-                    // We set singletons as self-loops for now.
-                    (*ptr)[src] = src as NodeT;
-                    return;
-                }
-            }
-            shared_stacks[0].lock().unwrap().push(src as NodeT);
-            active_nodes_number.fetch_add(1, Ordering::SeqCst);
-            // since we were able to build a stub tree with cpu.len() leafs,
-            // we spawn the treads and make anyone of them build the sub-trees.
-            pool.scope(|s| {
-                // for each leaf of the previous stub tree start a DFS keeping track
-                // of which nodes we visited and updating accordingly the parents vector.
-                // the nice trick here is that, since all the leafs are part of the same tree,
-                // if two processes find the same node, we don't care which one of the two take
-                // it so we can proceed in a lockless fashion (and maybe even without atomics
-                // if we manage to remove the colors vecotr and only keep the parents one)
 
-                (0..shared_stacks.len()).for_each(|_| {
-                    s.spawn(|_| 'outer: loop {
-                        let thread_id = rayon::current_thread_index().unwrap();
-                        let src = 'inner: loop {
+        // since we were able to build a stub tree with cpu.len() leafs,
+        // we spawn the treads and make anyone of them build the sub-trees.
+        pool.scope(|s| {
+            // for each leaf of the previous stub tree start a DFS keeping track
+            // of which nodes we visited and updating accordingly the parents vector.
+            // the nice trick here is that, since all the leafs are part of the same tree,
+            // if two processes find the same node, we don't care which one of the two take
+            // it so we can proceed in a lockless fashion (and maybe even without atomics
+            // if we manage to remove the colors vecotr and only keep the parents one)
+            s.spawn(|_| {
+                (0..nodes_number).for_each(|src| {
+                    let ptr = thread_safe_parents.value.get();
+                    unsafe {
+                        // If the node has already been explored we skip ahead.
+                        if (*ptr)[src] != NOT_PRESENT {
+                            return;
+                        }
+                        (*ptr)[src] = src as NodeT;
+                    }
+                    unsafe {
+                        // find the first not explored node (this is guardanteed to be in a new component)
+                        if self.has_singletons() && self.is_singleton(src as NodeT) {
+                            // We set singletons as self-loops for now.
+                            (*ptr)[src] = src as NodeT;
+                            return;
+                        }
+                    }
+                    shared_stacks[0].lock().unwrap().push(src as NodeT);
+                    active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                    loop {
+                        if active_nodes_number.load(Ordering::Relaxed) == 0 {
+                            break;
+                        }
+                    }
+                });
+                completed.store(true, Ordering::SeqCst);
+            });
+            (0..shared_stacks.len()).for_each(|_| {
+                s.spawn(|_| 'outer: loop {
+                    let thread_id = rayon::current_thread_index().unwrap();
+                    let src = 'inner: loop {
+                        {
+                            for mut stack in (thread_id..(shared_stacks.len() + thread_id))
+                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().unwrap())
                             {
-                                for mut stack in (thread_id..(shared_stacks.len() + thread_id)).map(|id|{
-                                    shared_stacks[id % shared_stacks.len()].lock().unwrap()
-                                }) {
-                                    if let Some(src) = stack.pop() {
-                                        break 'inner src;
-                                    }
-                                }
-
-                                if active_nodes_number.load(Ordering::Relaxed) == 0 {
-                                    break 'outer;
+                                if let Some(src) = stack.pop() {
+                                    break 'inner src;
                                 }
                             }
-                        };
-                        self.get_source_destinations_range(src).for_each(|dst| {
-                            let ptr = thread_safe_parents.value.get();
-                            unsafe {
-                                if (*ptr)[dst as usize] == NOT_PRESENT {
-                                    (*ptr)[dst as usize] = src;
-                                    active_nodes_number.fetch_add(1, Ordering::SeqCst);
-                                    shared_stacks
-                                        [rand_u64(dst as u64) as usize % shared_stacks.len()]
+
+                            if completed.load(Ordering::SeqCst) {
+                                break 'outer;
+                            }
+                        }
+                    };
+                    self.get_source_destinations_range(src).for_each(|dst| {
+                        let ptr = thread_safe_parents.value.get();
+                        unsafe {
+                            if (*ptr)[dst as usize] == NOT_PRESENT {
+                                (*ptr)[dst as usize] = src;
+                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                     .lock()
                                     .unwrap()
                                     .push(dst);
-                                }
                             }
-                        });
-                        active_nodes_number.fetch_sub(1, Ordering::SeqCst);
+                        }
                     });
+                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);
                 });
             });
         });
