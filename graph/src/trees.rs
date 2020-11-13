@@ -258,7 +258,7 @@ impl Graph {
         let thread_safe_parents = ThreadSafe {
             value: std::cell::UnsafeCell::new(&mut parents),
         };
-        let cpus_number = num_cpus::get() * 4;
+        let cpus_number = num_cpus::get();
         (0..nodes_number).for_each(|src| {
             let ptr = thread_safe_parents.value.get();
             unsafe {
