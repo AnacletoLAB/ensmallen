@@ -352,6 +352,7 @@ impl EnsmallenGraph {
         self.graph.get_source_nodes_number()
     }
 
+    #[text_signature = "(self, directed)"]
     /// Return vector of the non-unique source nodes.
     ///
     /// Parameters
@@ -371,6 +372,7 @@ impl EnsmallenGraph {
         ))
     }
 
+    #[text_signature = "(self, directed)"]
     /// Return vector on the (non unique) destination nodes of the graph.
     ///
     /// Parameters
@@ -390,6 +392,7 @@ impl EnsmallenGraph {
         ))
     }
 
+    #[text_signature = "(self, directed)"]
     /// Return vector on the edges of the graph.
     ///
     /// Parameters
@@ -409,6 +412,7 @@ impl EnsmallenGraph {
         ))
     }
 
+    #[text_signature = "(self, directed)"]
     /// Return list on the name of the edges of the graph.
     ///
     /// Parameters
@@ -423,6 +427,7 @@ impl EnsmallenGraph {
         self.graph.get_edge_names(directed.unwrap_or(true))
     }
 
+    #[text_signature = "(self, directed)"]
     /// Return vector of the non-unique source nodes names.
     ///
     /// Parameters
@@ -433,6 +438,7 @@ impl EnsmallenGraph {
         self.graph.get_source_names(directed.unwrap_or(true))
     }
 
+    #[text_signature = "(self, directed)"]
     /// Return vector on the (non unique) destination nodes of the graph.
     ///
     /// Parameters
@@ -493,7 +499,7 @@ impl EnsmallenGraph {
     }
 
     /// Return vector of edge types_name.
-    pub fn get_edge_types_name(&self) -> Option<Vec<String>> {
+    pub fn get_edge_type_names(&self) -> Option<Vec<String>> {
         self.graph.get_edge_type_names()
     }
 

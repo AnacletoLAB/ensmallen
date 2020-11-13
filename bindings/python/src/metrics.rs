@@ -14,16 +14,11 @@ impl EnsmallenGraph {
     #[text_signature = "($self, verbose)"]
     /// Returns number of connected components in graph.
     ///
-    /// Parameters
-    /// ------------------------
-    /// verbose: bool,
-    ///     Wethever to display a loading bar while computing the spanning tree.
-    ///
     /// Returns
     /// ------------------------
     /// Number of connected components.
-    pub fn connected_components_number(&self, verbose: bool) -> NodeT {
-        self.graph.connected_components_number(verbose).0
+    pub fn connected_components_number(&self) -> NodeT {
+        self.graph.connected_components_number().unwrap().0
     }
 
     #[text_signature = "($self)"]
@@ -77,20 +72,12 @@ impl EnsmallenGraph {
     /// -------------------
     /// other: &EnsmallenGraph,
     ///     Graph to compute the overlaps with.
-    /// verbose: bool = True,
-    ///     Wether to show loading bars.
     ///
     /// Returns
     /// -------------------
     /// Textual report.
-    fn overlap_textual_report(
-        &self,
-        other: &EnsmallenGraph,
-        verbose: Option<bool>,
-    ) -> PyResult<String> {
-        pyex!(self
-            .graph
-            .overlap_textual_report(&other.graph, verbose.unwrap_or(true)))
+    fn overlap_textual_report(&self, other: &EnsmallenGraph) -> PyResult<String> {
+        pyex!(self.graph.overlap_textual_report(&other.graph))
     }
 
     #[text_signature = "($self, node)"]

@@ -69,7 +69,7 @@ impl Graph {
 
         // Wether to sample negative edges only from the same connected component.
         let (node_components, mut complete_edges_number) = if only_from_same_component {
-            let node_components = self.get_node_components_vector(verbose);
+            let node_components = self.get_node_components_vector();
             let complete_edges_number: EdgeT = Counter::init(node_components.clone())
                 .into_iter()
                 .map(|(_, nodes_number): (_, &usize)| {

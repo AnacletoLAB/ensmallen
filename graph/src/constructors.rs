@@ -276,7 +276,7 @@ pub(crate) fn parse_unsorted_quadruples(
 ) -> Result<(EdgeT, impl Iterator<Item = Result<Quadruple, String>>), String> {
     let pb = get_loading_bar(verbose, "Building sorted graph", edges.len());
 
-    edges.par_sort_by(|(src1, dst1, edt1, weight1), (src2, dst2, edt2, weight2)|{
+    edges.par_sort_unstable_by(|(src1, dst1, edt1, weight1), (src2, dst2, edt2, weight2)|{
         match (src1, dst1, edt1).cmp(&(src2, dst2, edt2)){
             std::cmp::Ordering::Equal => match (weight1, weight2) {
                 (Some(w1), Some(w2)) => {

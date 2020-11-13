@@ -70,7 +70,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool, wethever to filter out the undirected edges.
     pub fn get_sources(&self, directed: bool) -> Vec<NodeT> {
-        self.get_sources_iter(directed).collect()
+        self.get_sources_par_iter(directed).collect()
     }
 
     /// Return vector of the non-unique source nodes names.
@@ -78,7 +78,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool, wethever to filter out the undirected edges.
     pub fn get_source_names(&self, directed: bool) -> Vec<String> {
-        self.get_sources_iter(directed)
+        self.get_sources_par_iter(directed)
             .map(|src| self.get_node_name(src).unwrap())
             .collect()
     }
@@ -88,7 +88,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool, wethever to filter out the undirected edges.
     pub fn get_destinations(&self, directed: bool) -> Vec<NodeT> {
-        self.get_destinations_iter(directed).collect()
+        self.get_destinations_par_iter(directed).collect()
     }
 
     /// Return vector of the non-unique destination nodes names.
@@ -96,7 +96,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool, wethever to filter out the undirected edges.
     pub fn get_destination_names(&self, directed: bool) -> Vec<String> {
-        self.get_destinations_iter(directed)
+        self.get_destinations_par_iter(directed)
             .map(|dst| self.get_node_name(dst).unwrap())
             .collect()
     }
@@ -120,7 +120,7 @@ impl Graph {
         let mut nodes_degrees: Vec<(NodeT, NodeT)> = (0..self.get_nodes_number())
             .map(|node_id| (self.get_node_degree(node_id), node_id))
             .collect();
-        nodes_degrees.sort_unstable();
+        nodes_degrees.par_sort_unstable();
         nodes_degrees.reverse();
         nodes_degrees[0..k as usize]
             .iter()
@@ -220,14 +220,14 @@ impl Graph {
 
     /// Return vector with the sorted edge Ids.
     pub fn get_edges(&self, directed: bool) -> Vec<Vec<NodeT>> {
-        self.get_edges_iter(directed)
+        self.get_edges_par_iter(directed)
             .map(|(_, src, dst)| vec![src, dst])
             .collect()
     }
 
     /// Return vector with the sorted edge names.
     pub fn get_edge_names(&self, directed: bool) -> Vec<(String, String)> {
-        self.get_edges_string_iter(directed)
+        self.get_edges_par_string_iter(directed)
             .map(|(_, src, dst)| (src, dst))
             .collect()
     }
@@ -388,11 +388,11 @@ impl Graph {
     ///
     /// # Arguments
     /// * `verbose`: bool - wether to show the loading bar.
-    pub fn get_node_components_vector(&self, verbose: bool) -> Vec<NodeT> {
+    pub fn get_node_components_vector(&self) -> Vec<NodeT> {
         let mut node_components: Vec<NodeT> =
             vec![self.get_nodes_number(); self.get_nodes_number() as usize];
-        // TODO! Replace with faster spanning tree!
-        let (_, components) = self.random_spanning_tree(42, false, &None, verbose);
+        // TODO! Replace with faster
+        let (_, components) = self.random_spanning_tree(42, false, &None, false);
         components
             .iter()
             .enumerate()
@@ -554,6 +554,7 @@ impl Graph {
 
     pub fn get_outbounds(&self) -> Vec<EdgeT> {
         (0..self.get_nodes_number())
+            .into_par_iter()
             .map(|src| self.get_unchecked_edge_id_from_tuple(src as NodeT + 1, 0))
             .collect()
     }
