@@ -309,34 +309,32 @@ impl Graph {
     }
 
     /// Returns number a triple with (number of components, number of nodes of the biggest component, number of nodes of the smallest component )
-    pub fn connected_components_number(&self) -> (NodeT, NodeT, NodeT) {
+    pub fn connected_components_number(&self) -> Result<(NodeT, NodeT, NodeT), String> {
         info!("Computing connected components number.");
-        let (tree_len, components) = if self.directed {
+        Ok(if self.directed {
             info!("Executing directed sequential version of spanning tree algorithm.");
             let (tree, components) = self.random_spanning_tree(0, false, &None, false);
-            (tree.len() as usize, components)
+            info!("Computing minimum and maximum size of connected components.");
+            let (min_component_size, max_component_size) = components
+                .iter()
+                .map(|c| c.len())
+                .minmax()
+                .into_option()
+                .unwrap_or((1, 1));
+            (
+                self.get_nodes_number() - tree.len() as NodeT,
+                match self.has_singletons() {
+                    false => min_component_size as NodeT,
+                    true => 1,
+                },
+                max_component_size as NodeT,
+            )
         } else {
             info!("Executing undirected parallel version of spanning tree algorithm.");
-            let tree = self.spanning_arborescence();
-            info!("Computing connected components.");
-            let components = self.connected_components_from_spanning_arborescence(&tree);
-            (tree.len(), components)
-        };
-        info!("Computing minimum and maximum size of connected components.");
-        let (min_component_size, max_component_size) = components
-            .iter()
-            .map(|c| c.len())
-            .minmax()
-            .into_option()
-            .unwrap_or((1, 1));
-        (
-            self.get_nodes_number() - tree_len as NodeT,
-            min_component_size as NodeT,
-            match self.has_singletons() {
-                false => max_component_size as NodeT,
-                true => 1,
-            },
-        )
+            let (_, components_number, min_component_size, max_component_size) =
+                self.connected_components()?;
+            (components_number, min_component_size, max_component_size)
+        })
     }
 
     /// Returns number of singleton nodes within the graph.
@@ -641,8 +639,8 @@ impl Graph {
 
     /// Return rendered textual report of the graph.
     pub fn textual_report(&self) -> Result<String, String> {
-        let (connected_components_number, maximum_connected_component, minimum_connected_component) =
-            self.connected_components_number();
+        let (connected_components_number, minimum_connected_component, maximum_connected_component) =
+            self.connected_components_number()?;
 
         Ok(format!(
             concat!(

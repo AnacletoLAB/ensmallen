@@ -391,8 +391,8 @@ impl Graph {
     pub fn get_node_components_vector(&self) -> Vec<NodeT> {
         let mut node_components: Vec<NodeT> =
             vec![self.get_nodes_number(); self.get_nodes_number() as usize];
-        let tree = self.spanning_arborescence();
-        let components = self.connected_components_from_spanning_arborescence(&tree);
+        // TODO! Replace with faster
+        let (_, components) = self.random_spanning_tree(42, false, &None, false);
         components
             .iter()
             .enumerate()

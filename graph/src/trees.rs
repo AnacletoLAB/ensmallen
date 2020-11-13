@@ -167,87 +167,6 @@ impl Graph {
         (tree, components)
     }
 
-    pub fn connected_components_from_spanning_arborescence(
-        &self,
-        spanning_arborescence: &[(NodeT, NodeT)],
-    ) -> Vec<RoaringBitmap> {
-        // Create vector of sets of the single nodes.
-        let mut components: Vec<Option<RoaringBitmap>> = Vec::new();
-        // Create vector of nodes component numbers.
-        let mut nodes_components: Vec<Option<usize>> = vec![None; self.get_nodes_number() as usize];
-        // Components remapping
-        let mut components_remapping: HashMap<usize, usize> = HashMap::new();
-        // Compute the connected components.
-        spanning_arborescence.iter().for_each(|(src, dst)| {
-            let src_component = nodes_components[*src as usize];
-            let dst_component = nodes_components[*dst as usize];
-            // if both nodes are not covered then the edge is isolated
-            // and must start its own component
-            match (src_component, dst_component) {
-                (None, None) => {
-                    let new_component_number = components.len();
-                    let component = [*src, *dst]
-                        .iter()
-                        .flat_map(|node| {
-                            self.get_source_destinations_range(*node)
-                                .collect::<Vec<NodeT>>()
-                        })
-                        .collect::<RoaringBitmap>();
-                    component.iter().for_each(|node| {
-                        nodes_components[node as usize] = Some(new_component_number);
-                    });
-                    components.push(Some(component));
-                }
-                (Some(src_component), Some(dst_component)) => {
-                    // if the components are different then we add it because it will merge them
-                    if src_component == dst_component {
-                        return;
-                    }
-                    let src_component = get_node_component(src_component, &components_remapping);
-                    let dst_component = get_node_component(dst_component, &components_remapping);
-                    if src_component != dst_component {
-                        let removed_component = components[src_component].take().unwrap();
-                        if let Some(component) = &mut components[dst_component] {
-                            component.union_with(&removed_component);
-                        }
-                        components_remapping.iter_mut().for_each(
-                            |(component, remapped_component)| {
-                                if *component == src_component
-                                    || *remapped_component == src_component
-                                {
-                                    *remapped_component = dst_component;
-                                }
-                            },
-                        );
-                        components_remapping.insert(src_component, dst_component);
-                    }
-                }
-                _ => {
-                    let (inserted_component, not_inserted) = if src_component.is_some() {
-                        (src_component, *dst)
-                    } else {
-                        (dst_component, *src)
-                    };
-                    let inserted_component =
-                        get_node_component(inserted_component.unwrap(), &components_remapping);
-                    let destinations = self
-                        .get_source_destinations_range(not_inserted)
-                        .collect::<Vec<NodeT>>();
-
-                    destinations.iter().for_each(|node| {
-                        nodes_components[*node as usize] = Some(inserted_component);
-                    });
-                    nodes_components[not_inserted as usize] = Some(inserted_component);
-                    if let Some(component) = &mut components[inserted_component] {
-                        component.insert(not_inserted);
-                        component.extend(destinations);
-                    }
-                }
-            };
-        });
-        components.iter().cloned().filter_map(|c| c).collect()
-    }
-
     fn scale_node_threads(&self) -> usize {
         1 + (1.0 / (1.0 + 1000000.0 / (self.get_nodes_number() as f64 * 0.8))) as usize
     }
@@ -255,7 +174,12 @@ impl Graph {
     /// Returns set of edges composing a spanning tree.
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
-    pub fn spanning_arborescence(&self) -> Vec<(NodeT, NodeT)> {
+    pub fn spanning_arborescence(&self) -> Result<Vec<(NodeT, NodeT)>, String> {
+        if self.directed {
+            return Err(
+                "The connected components algorithm only works for undirected graphs!".to_owned(),
+            );
+        }
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
         let cpu_number = num_cpus::get();
@@ -360,7 +284,7 @@ impl Graph {
 
         // convert the now completed parents vector to a list of tuples representing the edges
         // of the spanning arborescense.
-        parents
+        Ok(parents
             .iter()
             .enumerate()
             .filter_map(|(dst, src)| {
@@ -372,7 +296,141 @@ impl Graph {
                 }
                 None
             })
-            .collect::<Vec<(NodeT, NodeT)>>()
+            .collect::<Vec<(NodeT, NodeT)>>())
+    }
+
+    /// Returns set of roaring bitmaps representing the connected components.
+    pub fn connected_components(&self) -> Result<(Vec<NodeT>, NodeT, NodeT, NodeT), String> {
+        if self.directed {
+            return Err(
+                "The connected components algorithm only works for undirected graphs!".to_owned(),
+            );
+        }
+        let nodes_number = self.get_nodes_number() as usize;
+        let mut parents = vec![NOT_PRESENT; nodes_number];
+        let cpu_number = num_cpus::get();
+        let thread_number = min!(1 + self.scale_node_threads(), cpu_number);
+        let pool = rayon::ThreadPoolBuilder::new()
+            .num_threads(thread_number)
+            .build()
+            .unwrap();
+        let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(
+            (0..(thread_number - 1))
+                .map(|_| Mutex::from(Vec::new()))
+                .collect::<Vec<Mutex<Vec<NodeT>>>>(),
+        );
+        let active_nodes_number = AtomicUsize::new(0);
+        let current_component_nodes_number = AtomicUsize::new(1);
+        let components_number = AtomicUsize::new(0);
+        let max_component_nodes_number = AtomicUsize::new(1);
+        let min_component_nodes_number = AtomicUsize::new(usize::MAX);
+        let completed = AtomicBool::new(false);
+        let thread_safe_parents = ThreadSafe {
+            value: std::cell::UnsafeCell::new(&mut parents),
+        };
+
+        // since we were able to build a stub tree with cpu.len() leafs,
+        // we spawn the treads and make anyone of them build the sub-trees.
+        pool.scope(|s| {
+            // for each leaf of the previous stub tree start a DFS keeping track
+            // of which nodes we visited and updating accordingly the parents vector.
+            // the nice trick here is that, since all the leafs are part of the same tree,
+            // if two processes find the same node, we don't care which one of the two take
+            // it so we can proceed in a lockless fashion (and maybe even without atomics
+            // if we manage to remove the colors vecotr and only keep the parents one)
+            s.spawn(|_| {
+                (0..nodes_number).for_each(|src| {
+                    let ptr = thread_safe_parents.value.get();
+                    unsafe {
+                        // If the node has already been explored we skip ahead.
+                        if (*ptr)[src] != NOT_PRESENT {
+                            return;
+                        }
+                    }
+                    unsafe {
+                        // find the first not explored node (this is guardanteed to be in a new component)
+                        if self.has_singletons() && self.is_singleton(src as NodeT) {
+                            // We set singletons as self-loops for now.
+                            (*ptr)[src] = components_number.load(Ordering::SeqCst) as NodeT;
+                            components_number.fetch_add(1, Ordering::SeqCst);
+                            min_component_nodes_number.store(1, Ordering::SeqCst);
+                            return;
+                        }
+                    }
+                    loop {
+                        unsafe {
+                            if (*ptr)[src] != NOT_PRESENT {
+                                break;
+                            }
+                        }
+                        if active_nodes_number.load(Ordering::Relaxed) == 0 {
+                            components_number.fetch_add(1, Ordering::SeqCst);
+                            unsafe {
+                                if (*ptr)[src] != NOT_PRESENT {
+                                    break;
+                                }
+                                (*ptr)[src] = components_number.load(Ordering::SeqCst) as NodeT;
+                            }
+                            shared_stacks[0].lock().unwrap().push(src as NodeT);
+                            let ccnn = current_component_nodes_number.swap(1, Ordering::SeqCst);
+                            if ccnn != 0 {
+                                if max_component_nodes_number.load(Ordering::SeqCst) < ccnn {
+                                    max_component_nodes_number.store(ccnn, Ordering::SeqCst);
+                                }
+                                if min_component_nodes_number.load(Ordering::SeqCst) > ccnn {
+                                    min_component_nodes_number.store(ccnn, Ordering::SeqCst);
+                                }
+                            }
+                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                            break;
+                        }
+                    }
+                });
+                completed.store(true, Ordering::SeqCst);
+            });
+            (0..shared_stacks.len()).for_each(|_| {
+                s.spawn(|_| 'outer: loop {
+                    let thread_id = rayon::current_thread_index().unwrap();
+                    let src = 'inner: loop {
+                        {
+                            for mut stack in (thread_id..(shared_stacks.len() + thread_id))
+                                .map(|id| shared_stacks[id % shared_stacks.len()].lock().unwrap())
+                            {
+                                if let Some(src) = stack.pop() {
+                                    break 'inner src;
+                                }
+                            }
+
+                            if completed.load(Ordering::SeqCst) {
+                                break 'outer;
+                            }
+                        }
+                    };
+                    self.get_source_destinations_range(src).for_each(|dst| {
+                        let ptr = thread_safe_parents.value.get();
+                        unsafe {
+                            if (*ptr)[dst as usize] == NOT_PRESENT {
+                                (*ptr)[dst as usize] = (*ptr)[src as usize];
+                                current_component_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
+                                    .lock()
+                                    .unwrap()
+                                    .push(dst);
+                            }
+                        }
+                    });
+                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);
+                });
+            });
+        });
+
+        Ok((
+            parents,
+            components_number.load(Ordering::SeqCst) as NodeT,
+            min_component_nodes_number.load(Ordering::SeqCst) as NodeT,
+            max_component_nodes_number.load(Ordering::SeqCst) as NodeT,
+        ))
     }
 }
 
