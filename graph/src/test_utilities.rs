@@ -320,7 +320,9 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         let (train, test) =
             graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;
         let (tree, _) = graph.random_spanning_tree(42, false, &None, false);
-        println!("{:?} {:?}", graph.get_nodes_number(), tree.len() as NodeT);
+        if !graph.directed {
+            assert_eq!(tree.len() as usize, graph.spanning_arborescence().len());
+        }
         assert_eq!(
             graph.connected_components_number(),
             train.connected_components_number(),

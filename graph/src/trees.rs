@@ -7,7 +7,8 @@ use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::{HashMap, HashSet};
 use std::iter::FromIterator;
-use std::sync::atomic::{AtomicU32, AtomicUsize, Ordering};
+use std::sync::atomic::{AtomicUsize, Ordering};
+use std::sync::{Arc, Mutex};
 use vec_rand::xorshift::xorshift as rand_u64;
 
 const NOT_PRESENT: u32 = u32::MAX;
@@ -255,72 +256,66 @@ impl Graph {
     pub fn spanning_arborescence(&self) -> Vec<(NodeT, NodeT)> {
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
+        let pool = rayon::ThreadPoolBuilder::new().build().unwrap();
+        let shared_stack: Arc<Mutex<Vec<NodeT>>> = Arc::from(Mutex::from(Vec::new()));
+        let number_of_working_threads = AtomicUsize::new(0);
         let thread_safe_parents = ThreadSafe {
             value: std::cell::UnsafeCell::new(&mut parents),
         };
-        let cpus_number = num_cpus::get();
         (0..nodes_number).for_each(|src| {
             let ptr = thread_safe_parents.value.get();
             unsafe {
                 // If the node has already been explored we skip ahead.
-                if (*ptr)[src] == NOT_PRESENT {
+                if (*ptr)[src] != NOT_PRESENT {
                     return;
                 }
+                (*ptr)[src] = src as NodeT;
             }
             unsafe {
                 // find the first not explored node (this is guardanteed to be in a new component)
                 if self.has_singletons() && self.is_singleton(src as NodeT) {
                     // We set singletons as self-loops for now.
                     (*ptr)[src] = src as NodeT;
+                    return;
                 }
             }
-
-            // compute the initial spanning tree and make it go on until we have
-            // cpu.len() leafs, from each one of this leaf one process will start.
-            // if we never have that number of leafs then we just do the spanning tree
-            // sequentially since parallelism would not improve in a significant manner
-            let mut roots = Vec::with_capacity(cpus_number);
-            roots.push(src as NodeT);
-            unsafe {
-                // DFS visit to compute the spanning tree
-                while !roots.is_empty() && roots.len() < cpus_number {
-                    let src = roots.pop().unwrap();
-                    (*ptr)[src as usize] = src as NodeT;
-                    self.get_source_destinations_range(src).for_each(|dst| {
-                        if (*ptr)[dst as usize] == NOT_PRESENT {
-                            (*ptr)[dst as usize] = src;
-                            roots.push(dst);
-                        }
-                    });
-                }
-            }
-            // if we compilted the component spanning tree sequentially
-            // then go to the next one
-            if roots.is_empty() {
-                return;
-            }
-
+            shared_stack.lock().unwrap().push(src as NodeT);
             // since we were able to build a stub tree with cpu.len() leafs,
             // we spawn the treads and make anyone of them build the sub-trees.
-            roots.par_iter().for_each(|root| {
+            pool.scope(|s| {
                 // for each leaf of the previous stub tree start a DFS keeping track
                 // of which nodes we visited and updating accordingly the parents vector.
                 // the nice trick here is that, since all the leafs are part of the same tree,
                 // if two processes find the same node, we don't care which one of the two take
                 // it so we can proceed in a lockless fashion (and maybe even without atomics
                 // if we manage to remove the colors vecotr and only keep the parents one)
-                let mut stack: Vec<NodeT> = vec![*root];
-                while !stack.is_empty() {
-                    let src = stack.pop().unwrap();
-                    self.get_source_destinations_range(src)
-                        .for_each(|dst| unsafe {
+
+                (0..pool.current_num_threads()).for_each(|_| {
+                    s.spawn(|_| 'outer: loop {
+                        let src = loop {
+                            {
+                                let mut stack = shared_stack.lock().unwrap();
+                                if let Some(src) = stack.pop() {
+                                    number_of_working_threads.fetch_add(1, Ordering::SeqCst);
+                                    break src;
+                                }
+                                if number_of_working_threads.load(Ordering::Relaxed) == 0 {
+                                    break 'outer;
+                                }
+                            }
+                        };
+                        self.get_source_destinations_range(src).for_each(|dst| {
                             let ptr = thread_safe_parents.value.get();
-                            if (*ptr)[dst as usize] == NOT_PRESENT {
-                                (*ptr)[dst as usize] = src;
-                                stack.push(dst);
+                            unsafe {
+                                if (*ptr)[dst as usize] == NOT_PRESENT {
+                                    (*ptr)[dst as usize] = src;
+                                    shared_stack.lock().unwrap().push(dst);
+                                }
                             }
                         });
-                }
+                        number_of_working_threads.fetch_sub(1, Ordering::SeqCst);
+                    });
+                });
             });
         });
 
@@ -330,7 +325,10 @@ impl Graph {
             .par_iter()
             .enumerate()
             .filter_map(|(dst, src)| {
-                if *src != NOT_PRESENT && *src != dst as NodeT {
+                // If the edge is NOT registered as a self-loop
+                // which may happen when dealing with singletons
+                // or the root nodes, we return the edge.
+                if *src != dst as NodeT {
                     return Some((*src, dst as NodeT));
                 }
                 None
