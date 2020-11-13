@@ -312,7 +312,7 @@ impl Graph {
     pub fn connected_components_number(&self) -> Result<(NodeT, NodeT, NodeT), String> {
         info!("Computing connected components number.");
         Ok(if self.directed {
-            info!("Executing directed sequential version of spanning tree algorithm.");
+            info!("Executing directed sequential version of spanning tree and connected components algorithm.");
             let (tree, components) = self.random_spanning_tree(0, false, &None, false);
             info!("Computing minimum and maximum size of connected components.");
             let (min_component_size, max_component_size) = components
@@ -330,7 +330,7 @@ impl Graph {
                 max_component_size as NodeT,
             )
         } else {
-            info!("Executing undirected parallel version of spanning tree algorithm.");
+            info!("Executing undirected parallel version of connected components.");
             let (_, components_number, min_component_size, max_component_size) =
                 self.connected_components()?;
             (components_number, min_component_size, max_component_size)
