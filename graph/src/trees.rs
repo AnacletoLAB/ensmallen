@@ -7,7 +7,7 @@ use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::{HashMap, HashSet};
 use std::iter::FromIterator;
-use std::sync::atomic::{AtomicUsize, Ordering};
+use std::sync::atomic::{AtomicU32, AtomicUsize, Ordering};
 use vec_rand::xorshift::xorshift as rand_u64;
 
 const NOT_PRESENT: u32 = u32::MAX;
@@ -253,82 +253,76 @@ impl Graph {
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
     pub fn spanning_arborescence(&self) -> Vec<(NodeT, NodeT)> {
-        let nodes_number = self.get_nodes_number();
-        let mut parents = (0..nodes_number)
-            .map(|_| NOT_PRESENT)
-            .collect::<Vec<NodeT>>();
-        let cpus_number = num_cpus::get();
-        for node_index in 0..nodes_number {
-            // find the first not explored node (this is guardanteed to be in a new component)
-            if self.is_singleton(node_index as NodeT) {
-                parents[node_index as usize] = node_index as NodeT;
-                continue;
+        let nodes_number = self.get_nodes_number() as usize;
+        let mut parents = vec![NOT_PRESENT; nodes_number];
+        let thread_safe_parents = ThreadSafe {
+            value: std::cell::UnsafeCell::new(&mut parents),
+        };
+        let cpus_number = num_cpus::get() * 4;
+        (0..nodes_number).for_each(|src| {
+            let ptr = thread_safe_parents.value.get();
+            unsafe {
+                // If the node has already been explored we skip ahead.
+                if (*ptr)[src] == NOT_PRESENT {
+                    return;
+                }
             }
-            if parents[node_index as usize] != NOT_PRESENT {
-                continue;
+            unsafe {
+                // find the first not explored node (this is guardanteed to be in a new component)
+                if self.has_singletons() && self.is_singleton(src as NodeT) {
+                    // We set singletons as self-loops for now.
+                    (*ptr)[src] = src as NodeT;
+                }
             }
-            parents[node_index as usize] = node_index;
 
-            // make rust happy about having possible dataraces on parents
-            let bad = NotThreadSafe{value: std::cell::UnsafeCell::new(& mut parents)};
-            // number of waiting threads, if this number is equals to the number of threads,
-            // we finished the component so we can continue and kill all the threads.
-            let number_of_working_threads = AtomicUsize::new(0);
-            // global queue of nodes to explore
-            let queue = crossbeam::queue::ArrayQueue::new(cpus_number);
-            queue.push(node_index).unwrap();
-            
-            crossbeam::scope(|scope| {
-                for _ in 0..cpus_number {
-                    scope.spawn(|_| {
-                        'outer: loop {
-                            let root = loop {
-                                // if we can get a new root then just go on.
-                                if let Some(new_root) = queue.pop() {
-                                    break new_root;
-                                }
-                                // sleep a bit do don't utilize too much cpu
-                                //std::thread::sleep(std::time::Duration::from_millis(10));
-                                // if we are all waiting then we can just exit
-                                if number_of_working_threads.load(Ordering::Relaxed) == 0 {
-                                    break 'outer;
-                                }
-                            };
-                            // we got a new root, we can remove this thread form the waiting ones
-                            number_of_working_threads.fetch_add(1, Ordering::SeqCst);
-                            let mut stack: Vec<NodeT> = vec![root];
-                            while !stack.is_empty() {
-                                // get a new node.
-                                let src = stack.pop().unwrap();
-                                // for each destination of the node, update it and add to stack
-                                // if needed
-                                self.get_source_destinations_range(src).for_each(|dst| {
-                                    unsafe {
-                                        // get an unsafe mutable reference to the parents array
-                                        let ptr = bad.value.get();
-                                        // if the node was not already explored
-                                        if (*ptr)[dst as usize] == NOT_PRESENT {
-                                            // set the parent
-                                            (*ptr)[dst as usize] = src;
-                                            // put the node in either the local or
-                                            // global stack so that it will be explored
-                                            // in the future
-                                            match queue.push(dst) {
-                                            Ok(_) => {},
-                                            Err(_) => {stack.push(dst);}
-                                            }
-                                        }
-                                    }
-                                });
-                            }
-                            // set the thread as waiting for the new value
-                            number_of_working_threads.fetch_sub(1, Ordering::SeqCst);
+            // compute the initial spanning tree and make it go on until we have
+            // cpu.len() leafs, from each one of this leaf one process will start.
+            // if we never have that number of leafs then we just do the spanning tree
+            // sequentially since parallelism would not improve in a significant manner
+            let mut roots = Vec::with_capacity(cpus_number);
+            roots.push(src as NodeT);
+            unsafe {
+                // DFS visit to compute the spanning tree
+                while !roots.is_empty() && roots.len() < cpus_number {
+                    let src = roots.pop().unwrap();
+                    (*ptr)[src as usize] = src as NodeT;
+                    self.get_source_destinations_range(src).for_each(|dst| {
+                        if (*ptr)[dst as usize] == NOT_PRESENT {
+                            (*ptr)[dst as usize] = src;
+                            roots.push(dst);
                         }
                     });
                 }
-            }).expect("A child thread panicked during the computaiton of the spanning tree.");
+            }
+            // if we compilted the component spanning tree sequentially
+            // then go to the next one
+            if roots.is_empty() {
+                return;
+            }
 
-        }
+            // since we were able to build a stub tree with cpu.len() leafs,
+            // we spawn the treads and make anyone of them build the sub-trees.
+            roots.par_iter().for_each(|root| {
+                // for each leaf of the previous stub tree start a DFS keeping track
+                // of which nodes we visited and updating accordingly the parents vector.
+                // the nice trick here is that, since all the leafs are part of the same tree,
+                // if two processes find the same node, we don't care which one of the two take
+                // it so we can proceed in a lockless fashion (and maybe even without atomics
+                // if we manage to remove the colors vecotr and only keep the parents one)
+                let mut stack: Vec<NodeT> = vec![*root];
+                while !stack.is_empty() {
+                    let src = stack.pop().unwrap();
+                    self.get_source_destinations_range(src)
+                        .for_each(|dst| unsafe {
+                            let ptr = thread_safe_parents.value.get();
+                            if (*ptr)[dst as usize] == NOT_PRESENT {
+                                (*ptr)[dst as usize] = src;
+                                stack.push(dst);
+                            }
+                        });
+                }
+            });
+        });
 
         // convert the now completed parents vector to a list of tuples representing the edges
         // of the spanning arborescense.
@@ -336,7 +330,7 @@ impl Graph {
             .par_iter()
             .enumerate()
             .filter_map(|(dst, src)| {
-                if *src != nodes_number && *src != dst as NodeT {
+                if *src != NOT_PRESENT && *src != dst as NodeT {
                     return Some((*src, dst as NodeT));
                 }
                 None
@@ -347,8 +341,8 @@ impl Graph {
 
 use std::cell::UnsafeCell;
 
-struct NotThreadSafe<T> {
+struct ThreadSafe<T> {
     value: UnsafeCell<T>,
 }
 
-unsafe impl<T> Sync for NotThreadSafe<T> {}
+unsafe impl<T> Sync for ThreadSafe<T> {}
