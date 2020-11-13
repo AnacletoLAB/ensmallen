@@ -257,8 +257,12 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
         let pool = rayon::ThreadPoolBuilder::new().build().unwrap();
-        let shared_stack: Arc<Mutex<Vec<NodeT>>> = Arc::from(Mutex::from(Vec::new()));
-        let number_of_working_threads = AtomicUsize::new(0);
+        let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(
+            (0..pool.current_num_threads())
+                .map(|_| Mutex::from(Vec::new()))
+                .collect::<Vec<Mutex<Vec<NodeT>>>>(),
+        );
+        let active_nodes_number = AtomicUsize::new(0);
         let thread_safe_parents = ThreadSafe {
             value: std::cell::UnsafeCell::new(&mut parents),
         };
@@ -279,7 +283,8 @@ impl Graph {
                     return;
                 }
             }
-            shared_stack.lock().unwrap().push(src as NodeT);
+            shared_stacks[0].lock().unwrap().push(src as NodeT);
+            active_nodes_number.fetch_add(1, Ordering::SeqCst);
             // since we were able to build a stub tree with cpu.len() leafs,
             // we spawn the treads and make anyone of them build the sub-trees.
             pool.scope(|s| {
@@ -290,16 +295,20 @@ impl Graph {
                 // it so we can proceed in a lockless fashion (and maybe even without atomics
                 // if we manage to remove the colors vecotr and only keep the parents one)
 
-                (0..pool.current_num_threads()).for_each(|_| {
+                (0..shared_stacks.len()).for_each(|_| {
                     s.spawn(|_| 'outer: loop {
-                        let src = loop {
+                        let thread_id = rayon::current_thread_index().unwrap();
+                        let src = 'inner: loop {
                             {
-                                let mut stack = shared_stack.lock().unwrap();
-                                if let Some(src) = stack.pop() {
-                                    number_of_working_threads.fetch_add(1, Ordering::SeqCst);
-                                    break src;
+                                for mut stack in (thread_id..(shared_stacks.len() + thread_id)).map(|id|{
+                                    shared_stacks[id % shared_stacks.len()].lock().unwrap()
+                                }) {
+                                    if let Some(src) = stack.pop() {
+                                        break 'inner src;
+                                    }
                                 }
-                                if number_of_working_threads.load(Ordering::Relaxed) == 0 {
+
+                                if active_nodes_number.load(Ordering::Relaxed) == 0 {
                                     break 'outer;
                                 }
                             }
@@ -309,11 +318,16 @@ impl Graph {
                             unsafe {
                                 if (*ptr)[dst as usize] == NOT_PRESENT {
                                     (*ptr)[dst as usize] = src;
-                                    shared_stack.lock().unwrap().push(dst);
+                                    active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                    shared_stacks
+                                        [rand_u64(dst as u64) as usize % shared_stacks.len()]
+                                    .lock()
+                                    .unwrap()
+                                    .push(dst);
                                 }
                             }
                         });
-                        number_of_working_threads.fetch_sub(1, Ordering::SeqCst);
+                        active_nodes_number.fetch_sub(1, Ordering::SeqCst);
                     });
                 });
             });
