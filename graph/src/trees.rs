@@ -292,7 +292,6 @@ impl Graph {
                         if (*ptr)[src] != NOT_PRESENT {
                             return;
                         }
-                        (*ptr)[src] = src as NodeT;
                     }
                     unsafe {
                         // find the first not explored node (this is guardanteed to be in a new component)
@@ -302,10 +301,21 @@ impl Graph {
                             return;
                         }
                     }
-                    shared_stacks[0].lock().unwrap().push(src as NodeT);
-                    active_nodes_number.fetch_add(1, Ordering::SeqCst);
                     loop {
+                        unsafe {
+                            if (*ptr)[src] != NOT_PRESENT {
+                                break;
+                            }
+                        }
                         if active_nodes_number.load(Ordering::Relaxed) == 0 {
+                            unsafe {
+                                if (*ptr)[src] != NOT_PRESENT {
+                                    break;
+                                }
+                                (*ptr)[src] = src as NodeT;
+                            }
+                            shared_stacks[0].lock().unwrap().push(src as NodeT);
+                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
                             break;
                         }
                     }
