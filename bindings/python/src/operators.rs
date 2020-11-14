@@ -31,8 +31,18 @@ impl PyNumberProtocol for EnsmallenGraph {
 
 #[pyproto]
 impl PyObjectProtocol for EnsmallenGraph {
+    fn __str__(&'p self) -> PyResult<String> {
+        pyex!(self.graph.textual_report(true))
+    }
     fn __repr__(&'p self) -> PyResult<String> {
-        pyex!(self.graph.textual_report())
+        self.__str__()
+    }
+}
+
+#[pymethods]
+impl EnsmallenGraph {
+    fn _repr_html_(&self) -> PyResult<String> {
+        Ok(format!(r#"<p style="text-align: justify; text-justify: inter-word;">{}</p>"#, self.__repr__()?))
     }
 }
 

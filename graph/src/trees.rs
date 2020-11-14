@@ -174,7 +174,7 @@ impl Graph {
     /// Returns set of edges composing a spanning tree.
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
-    pub fn spanning_arborescence(&self) -> Result<Vec<(NodeT, NodeT)>, String> {
+    pub fn spanning_arborescence(&self, verbose: bool) -> Result<Vec<(NodeT, NodeT)>, String> {
         if self.directed {
             return Err(
                 "The connected components algorithm only works for undirected graphs!".to_owned(),
@@ -209,7 +209,12 @@ impl Graph {
             // it so we can proceed in a lockless fashion (and maybe even without atomics
             // if we manage to remove the colors vecotr and only keep the parents one)
             s.spawn(|_| {
-                (0..nodes_number).for_each(|src| {
+                let pb = get_loading_bar(
+                    verbose,
+                    format!("Computing spanning tree of graph {}", self.get_name()).as_ref(),
+                    nodes_number,
+                );
+                (0..nodes_number).progress_with(pb).for_each(|src| {
                     let ptr = thread_safe_parents.value.get();
                     unsafe {
                         // If the node has already been explored we skip ahead.
@@ -300,7 +305,10 @@ impl Graph {
     }
 
     /// Returns set of roaring bitmaps representing the connected components.
-    pub fn connected_components(&self) -> Result<(Vec<NodeT>, NodeT, NodeT, NodeT), String> {
+    pub fn connected_components(
+        &self,
+        verbose: bool,
+    ) -> Result<(Vec<NodeT>, NodeT, NodeT, NodeT), String> {
         if self.directed {
             return Err(
                 "The connected components algorithm only works for undirected graphs!".to_owned(),
@@ -339,7 +347,16 @@ impl Graph {
             // it so we can proceed in a lockless fashion (and maybe even without atomics
             // if we manage to remove the colors vecotr and only keep the parents one)
             s.spawn(|_| {
-                (0..nodes_number).for_each(|src| {
+                let pb = get_loading_bar(
+                    verbose,
+                    format!(
+                        "Computing connected components of graph {}",
+                        self.get_name()
+                    )
+                    .as_ref(),
+                    nodes_number,
+                );
+                (0..nodes_number).progress_with(pb).for_each(|src| {
                     let ptr = thread_safe_parents.value.get();
                     unsafe {
                         // If the node has already been explored we skip ahead.

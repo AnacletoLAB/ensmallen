@@ -17,8 +17,8 @@ impl EnsmallenGraph {
     /// Returns
     /// ------------------------
     /// Number of connected components.
-    pub fn connected_components_number(&self) -> NodeT {
-        self.graph.connected_components_number().unwrap().0
+    pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
+        self.graph.connected_components_number(verbose)
     }
 
     #[text_signature = "($self)"]

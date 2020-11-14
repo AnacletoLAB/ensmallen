@@ -104,7 +104,7 @@ pub(crate) fn build_csv_file_reader(
         edges,
         nodes,
         extract_value!(kwargs, "name", String)?.unwrap_or_else(|| "Graph".to_owned()),
-        extract_value!(kwargs, "directed_edge_list", bool)?.unwrap_or_else(|| false),
+        extract_value!(kwargs, "directed_edge_list", bool)?.unwrap_or(false),
     ))
 }
 

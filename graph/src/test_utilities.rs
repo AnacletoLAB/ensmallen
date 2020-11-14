@@ -321,18 +321,21 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;
         let (tree, _) = graph.random_spanning_tree(42, false, &None, false);
         if !graph.directed {
-            assert_eq!(tree.len() as usize, graph.spanning_arborescence().unwrap().len());
+            assert_eq!(
+                tree.len() as usize,
+                graph.spanning_arborescence(verbose).unwrap().len()
+            );
         }
         assert_eq!(
-            graph.connected_components_number(),
-            train.connected_components_number(),
+            graph.connected_components_number(verbose),
+            train.connected_components_number(verbose),
             "The number of components of the original graph and the connected training set does not match."
         );
         default_holdout_test_suite(graph, &train, &test)?;
     }
 
     // test remove components
-    if graph.connected_components_number().unwrap().0 > 1 {
+    if graph.connected_components_number(verbose).0 > 1 {
         let test = graph.remove_components(
             Some(vec![graph.nodes.translate(0).to_string()]),
             None,
@@ -345,7 +348,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             test.remove(
                 None, None, None, None, None, None, None, None, false, false, false, true, verbose
             )?
-            .connected_components_number().unwrap()
+            .connected_components_number(verbose)
             .0,
             1,
             "Expected number of components (1) is not matched!"
@@ -365,7 +368,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                     None, None, None, None, None, None, None, None, false, false, false, true,
                     verbose
                 )?
-                .connected_components_number().unwrap()
+                .connected_components_number(verbose)
                 .0,
                 1,
                 "Expected number of components (1) is not matched!"
@@ -386,7 +389,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                     None, None, None, None, None, None, None, None, false, false, false, true,
                     verbose
                 )?
-                .connected_components_number().unwrap()
+                .connected_components_number(verbose)
                 .0,
                 1,
                 "Expected number of components (1) is not matched!"
@@ -475,7 +478,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     }
     // Compute metrics of the graph
     graph.report();
-    graph.textual_report()?;
+    graph.textual_report(verbose)?;
     // Compute degrees metrics
     for src in 0..10 {
         for dst in 0..10 {
