@@ -95,7 +95,7 @@ pub fn load_ppi(
         edges_reader,
         nodes_reader,
         directed,
-        true,
+        false,
         "Graph".to_owned(),
     )
 }
@@ -269,7 +269,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         None,
         "Graph contains non-existing edge."
     );
-    if let Some(edge) = graph.get_unique_edges_iter().next() {
+    if let Some(edge) = graph.get_unique_edges_iter(true).next() {
         let src_string = graph.get_node_name(edge.0).unwrap();
         let dst_string = graph.get_node_name(edge.1).unwrap();
         assert!(graph.has_edge_string(&src_string, &dst_string, None));
@@ -326,6 +326,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 graph.spanning_arborescence(verbose).unwrap().len()
             );
         }
+        let kruskal_tree = graph.spanning_arborescence_kruskal().unwrap().0;
+        assert_eq!(tree.len() as usize, kruskal_tree.len());
         assert_eq!(
             graph.connected_components_number(verbose),
             train.connected_components_number(verbose),

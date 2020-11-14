@@ -259,10 +259,38 @@ impl Graph {
     }
 
     /// Return iterator on the edges of the graph.
-    pub fn get_unique_edges_iter(&self) -> impl Iterator<Item = (NodeT, NodeT)> + '_ {
+    ///
+    /// # Arguments
+    /// * `directed`: bool, wethever to filter out the undirected edges.
+    pub fn get_unique_edges_iter(
+        &self,
+        directed: bool,
+    ) -> impl Iterator<Item = (NodeT, NodeT)> + '_ {
         // TODO: implement custom unique that uses bitvec instead of the default HashSet
-        self.edges
-            .iter_uniques()
-            .map(move |edge| self.decode_edge(edge))
+        self.edges.iter_uniques().filter_map(move |edge| {
+            let (src, dst) = self.decode_edge(edge);
+            if !directed && src > dst {
+                return None;
+            }
+            Some((src, dst))
+        })
+    }
+
+    /// Return iterator on the edges of the graph.
+    ///
+    /// # Arguments
+    /// * `directed`: bool, wethever to filter out the undirected edges.
+    pub fn get_unique_edges_par_iter(
+        &self,
+        directed: bool,
+    ) -> impl ParallelIterator<Item = (NodeT, NodeT)> + '_ {
+        // TODO: implement custom unique that uses bitvec instead of the default HashSet
+        self.edges.par_iter_uniques().filter_map(move |edge| {
+            let (src, dst) = self.decode_edge(edge);
+            if !directed && src > dst {
+                return None;
+            }
+            Some((src, dst))
+        })
     }
 }

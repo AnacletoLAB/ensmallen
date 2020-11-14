@@ -25,5 +25,4 @@ fn main() {
 
     let walker = first_order_walker(&graph).unwrap();
     let walks = graph.random_walks_iter(1, &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
-    println!("{:?}", walks[walks.len() - 1]);
 }   

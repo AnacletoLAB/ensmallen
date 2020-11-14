@@ -1,5 +1,6 @@
 use super::*;
 use indicatif::ProgressIterator;
+use itertools::Itertools;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
@@ -167,6 +168,157 @@ impl Graph {
         (tree, components)
     }
 
+    /// Returns set of edges composing a spanning tree and connected components.
+    ///
+    /// # Arguments
+    ///
+    /// TODO: Updated docstrings.
+    ///
+    pub fn kruskal<'a>(
+        &self,
+        edges: impl ParallelIterator<Item = (NodeT, NodeT)> + 'a,
+    ) -> (Vec<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
+        let nodes_number = self.get_nodes_number() as usize;
+        let mut tree = Vec::with_capacity(self.get_nodes_number() as usize);
+        let mutex_tree = Arc::from(Mutex::from(&mut tree));
+        let mut components = vec![NOT_PRESENT; nodes_number];
+        let merged_component_number = AtomicUsize::new(0);
+        let component_sizes: Arc<Mutex<Vec<usize>>> = Arc::from(Mutex::from(Vec::new()));
+        let components_remapping: Arc<Mutex<Vec<NodeT>>> = Arc::from(Mutex::from(Vec::new()));
+        let thread_safe_components = ThreadSafe {
+            value: std::cell::UnsafeCell::new(&mut components),
+        };
+
+        edges.for_each(|(src, dst)| {
+            if src == dst {
+                return;
+            }
+            let components = thread_safe_components.value.get();
+            loop {
+                let (src_component, dst_component) =
+                    unsafe { ((*components)[src as usize], (*components)[dst as usize]) };
+                match (src_component == NOT_PRESENT, dst_component == NOT_PRESENT) {
+                    // If neither nodes have a component, they must be inserted
+                    // both in the components vector and in the tree.
+                    // The edge must be added to the three.
+                    (true, true) => {
+                        let mut locked_remapping = components_remapping.lock().unwrap();
+                        let (src_component, dst_component) =
+                            unsafe { ((*components)[src as usize], (*components)[dst as usize]) };
+                        if src_component != NOT_PRESENT || dst_component != NOT_PRESENT {
+                            continue;
+                        }
+                        let component_number = locked_remapping.len() as NodeT;
+                        unsafe {
+                            (*components)[src as usize] = component_number;
+                            (*components)[dst as usize] = component_number;
+                        }
+                        locked_remapping.push(component_number);
+                        component_sizes.lock().unwrap().push(2);
+                        mutex_tree.lock().unwrap().push((src, dst));
+                    }
+                    // If both nodes have a component, the two components must be merged
+                    // if they are not the same one.
+                    // The edge must be added to the three.
+                    // The components mapping must be updated and afterwards the other nodes
+                    // must be updated accordingly to this update.
+                    (false, false) => {
+                        if src_component == dst_component {
+                            break;
+                        }
+                        let mut locked_remapping = components_remapping.lock().unwrap();
+                        let src_component = locked_remapping[src_component as usize];
+                        let dst_component = locked_remapping[dst_component as usize];
+                        unsafe {
+                            (*components)[src as usize] = dst_component;
+                            (*components)[dst as usize] = dst_component;
+                        }
+                        if src_component == dst_component {
+                            break;
+                        }
+                        let (min_component, max_component) = match src_component < dst_component {
+                            true => (src_component, dst_component),
+                            false => (dst_component, src_component),
+                        };
+                        merged_component_number.fetch_add(1, Ordering::SeqCst);
+                        let mut locked_component_sizes = component_sizes.lock().unwrap();
+                        locked_component_sizes[min_component as usize] +=
+                            locked_component_sizes[max_component as usize];
+
+                        locked_remapping
+                            .iter_mut()
+                            .enumerate()
+                            .for_each(|(comp, remapped)| {
+                                if *remapped == min_component {
+                                    *remapped = max_component;
+                                    locked_component_sizes[comp] = 0;
+                                }
+                            });
+                        mutex_tree.lock().unwrap().push((src, dst));
+                    }
+                    // If only one node has a component, the second model must be added.
+                    _ => {
+                        let locked_component = components_remapping.lock().unwrap();
+                        let (component_number, not_inserted_node) =
+                            match src_component == NOT_PRESENT {
+                                true => (dst_component, src),
+                                false => (src_component, dst),
+                            };
+                        if unsafe { (*components)[not_inserted_node as usize] != NOT_PRESENT } {
+                            continue;
+                        }
+                        let component_number = locked_component[component_number as usize];
+                        let mut locked_component_sizes = component_sizes.lock().unwrap();
+                        locked_component_sizes[component_number as usize] += 1;
+                        let mut unlocked_tree = mutex_tree.lock().unwrap();
+                        unsafe {
+                            (*components)[not_inserted_node as usize] = component_number as NodeT;
+                        }
+                        unlocked_tree.push((src, dst));
+                    }
+                };
+                break;
+            }
+        });
+
+        let locked_remapping = components_remapping.lock().unwrap();
+        let total_merged = merged_component_number.load(Ordering::SeqCst);
+        components.par_iter_mut().for_each(|remapped| {
+            if *remapped == NOT_PRESENT {
+                let mut locked_component_sizes = component_sizes.lock().unwrap();
+                *remapped = (locked_component_sizes.len() - total_merged) as NodeT;
+                locked_component_sizes.push(1);
+            } else {
+                *remapped = locked_remapping[*remapped as usize];
+            }
+        });
+        let (min_component_size, max_component_size) = component_sizes
+            .lock()
+            .unwrap()
+            .iter()
+            .cloned()
+            .filter(|c| *c != 0)
+            .minmax()
+            .into_option()
+            .unwrap();
+
+        let total_components_number = component_sizes.lock().unwrap().len() - total_merged;
+
+        (
+            tree,
+            components,
+            total_components_number as NodeT,
+            min_component_size as NodeT,
+            max_component_size as NodeT,
+        )
+    }
+
+    pub fn spanning_arborescence_kruskal(
+        &self,
+    ) -> Result<(Vec<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT), String> {
+        Ok(self.kruskal(self.get_unique_edges_par_iter(self.directed)))
+    }
+
     fn scale_node_threads(&self) -> usize {
         1 + (1.0 / (1.0 + 1000000.0 / (self.get_nodes_number() as f64 * 0.8))) as usize
     }
@@ -177,7 +329,7 @@ impl Graph {
     pub fn spanning_arborescence(&self, verbose: bool) -> Result<Vec<(NodeT, NodeT)>, String> {
         if self.directed {
             return Err(
-                "The connected components algorithm only works for undirected graphs!".to_owned(),
+                "The spanning arborescence from Bader et al. algorithm only works for undirected graphs!".to_owned(),
             );
         }
         let nodes_number = self.get_nodes_number() as usize;
@@ -315,7 +467,7 @@ impl Graph {
             );
         }
         let nodes_number = self.get_nodes_number() as usize;
-        let mut parents = vec![NOT_PRESENT; nodes_number];
+        let mut components = vec![NOT_PRESENT; nodes_number];
         let cpu_number = num_cpus::get();
         let thread_number = min!(1 + self.scale_node_threads(), cpu_number);
         let pool = rayon::ThreadPoolBuilder::new()
@@ -333,19 +485,19 @@ impl Graph {
         let max_component_nodes_number = AtomicUsize::new(1);
         let min_component_nodes_number = AtomicUsize::new(usize::MAX);
         let completed = AtomicBool::new(false);
-        let thread_safe_parents = ThreadSafe {
-            value: std::cell::UnsafeCell::new(&mut parents),
+        let thread_safe_components = ThreadSafe {
+            value: std::cell::UnsafeCell::new(&mut components),
         };
 
         // since we were able to build a stub tree with cpu.len() leafs,
         // we spawn the treads and make anyone of them build the sub-trees.
         pool.scope(|s| {
             // for each leaf of the previous stub tree start a DFS keeping track
-            // of which nodes we visited and updating accordingly the parents vector.
+            // of which nodes we visited and updating accordingly the components vector.
             // the nice trick here is that, since all the leafs are part of the same tree,
             // if two processes find the same node, we don't care which one of the two take
             // it so we can proceed in a lockless fashion (and maybe even without atomics
-            // if we manage to remove the colors vecotr and only keep the parents one)
+            // if we manage to remove the colors vecotr and only keep the components one)
             s.spawn(|_| {
                 let pb = get_loading_bar(
                     verbose,
@@ -357,7 +509,7 @@ impl Graph {
                     nodes_number,
                 );
                 (0..nodes_number).progress_with(pb).for_each(|src| {
-                    let ptr = thread_safe_parents.value.get();
+                    let ptr = thread_safe_components.value.get();
                     unsafe {
                         // If the node has already been explored we skip ahead.
                         if (*ptr)[src] != NOT_PRESENT {
@@ -424,7 +576,7 @@ impl Graph {
                         }
                     };
                     self.get_source_destinations_range(src).for_each(|dst| {
-                        let ptr = thread_safe_parents.value.get();
+                        let ptr = thread_safe_components.value.get();
                         unsafe {
                             if (*ptr)[dst as usize] == NOT_PRESENT {
                                 (*ptr)[dst as usize] = (*ptr)[src as usize];
@@ -443,7 +595,7 @@ impl Graph {
         });
 
         Ok((
-            parents,
+            components,
             components_number.load(Ordering::SeqCst) as NodeT,
             min_component_nodes_number.load(Ordering::SeqCst) as NodeT,
             max_component_nodes_number.load(Ordering::SeqCst) as NodeT,

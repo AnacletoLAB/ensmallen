@@ -9,7 +9,7 @@ use rayon::iter::ParallelIterator;
 
 #[bench]
 fn bench_slow(b: &mut Bencher) {
-    let graph = load_ppi(true, true, true, false, false, false).unwrap();
+    let graph = load_ppi(false, false, false, false, false, false).unwrap();
     let walker = first_order_walker(&graph).unwrap();
 
     b.iter(|| {
@@ -26,7 +26,7 @@ fn bench_slow(b: &mut Bencher) {
 
 #[bench]
 fn bench_fast(b: &mut Bencher) {
-    let mut graph = load_ppi(true, true, true, false, false, false).unwrap();
+    let mut graph = load_ppi(false, true, false, false, false, false).unwrap();
     let walker = first_order_walker(&graph).unwrap();
 
     graph.enable_fast_walk(true, true, None).unwrap();
@@ -44,7 +44,7 @@ fn bench_fast(b: &mut Bencher) {
 }
 
 fn bench_cache(b: &mut Bencher, level: f64) {
-    let mut graph = load_ppi(true, true, true, false, false, false).unwrap();
+    let mut graph = load_ppi(false, true, false, false, false, false).unwrap();
     let walker = first_order_walker(&graph).unwrap();
 
     graph.enable_fast_walk(false, false, Some(level)).unwrap();
