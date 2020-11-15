@@ -275,6 +275,12 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         "Graph singleton nodes with selfloops is bigger than number of singleton nodes."
     );
 
+    assert_eq!(
+        graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),
+        graph.get_nodes_number(),
+        "Sum of singleton and non singleton nodes number does not match."
+    );
+
     if !graph.directed {
         let has_singletons = graph.get_node_degrees().iter().any(|degree| *degree == 0);
         assert_eq!(has_singletons, graph.has_singletons());
