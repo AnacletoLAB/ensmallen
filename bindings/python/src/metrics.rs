@@ -72,12 +72,14 @@ impl EnsmallenGraph {
     /// -------------------
     /// other: &EnsmallenGraph,
     ///     Graph to compute the overlaps with.
+    /// verbose: bool = True,
+    ///     Wether to show loading bars.
     ///
     /// Returns
     /// -------------------
     /// Textual report.
-    fn overlap_textual_report(&self, other: &EnsmallenGraph) -> PyResult<String> {
-        pyex!(self.graph.overlap_textual_report(&other.graph))
+    fn overlap_textual_report(&self, other: &EnsmallenGraph, verbose: Option<bool>) -> PyResult<String> {
+        pyex!(self.graph.overlap_textual_report(&other.graph, verbose.unwrap_or(true)))
     }
 
     #[text_signature = "($self, node)"]
