@@ -2,6 +2,7 @@ use super::*;
 use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
 use bitvec::prelude::*;
+use std::cmp::Ordering;
 use rayon::prelude::ParallelSliceMut;
 use std::collections::BTreeMap;
 
@@ -405,10 +406,11 @@ pub(crate) fn build_edges(
             }
         }
         if  !directed && directed_edge_list{
-            if src < dst {
-                undirected_edges_cumulative_check += 1;
-            } else if src > dst {
-                undirected_edges_cumulative_check -= 1;
+
+            match src.cmp(&dst) {
+                Ordering::Greater => {undirected_edges_cumulative_check -= 1},
+                Ordering::Less => {undirected_edges_cumulative_check += 1},
+                Ordering::Equal => {}
             }
         }
         last_edge_type = edge_type;
