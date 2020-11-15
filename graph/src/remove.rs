@@ -227,7 +227,7 @@ impl Graph {
         verbose: bool,
     ) -> Result<Graph, String> {
         let mut keep_components = RoaringBitmap::new();
-        let components_vector = self.get_node_components_vector();
+        let components_vector = self.get_node_components_vector(verbose);
 
         // Extend the components so the include the given node Ids and node types.
         if let Some(node_ids) = self.get_filter_bitmap(node_names, node_types)? {

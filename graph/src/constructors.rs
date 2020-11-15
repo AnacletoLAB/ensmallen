@@ -390,8 +390,8 @@ pub(crate) fn build_edges(
     let mut self_loop_number: EdgeT = 0;
     let mut undirected_edges_cumulative_check: EdgeT = 0;
     // TODO: using roaring might be sub-optimal when the bitvec is dense.
-    let mut non_singleton_nodes = bitvec![Msb0, u8; 0; nodes_number as usize];
-    let mut non_singleton_nodes_number: NodeT = 0;
+    let mut nodes_with_edges = bitvec![Msb0, u8; 0; nodes_number as usize];
+    let mut not_singleton_node_number: NodeT = 0;
     let mut singleton_nodes_with_self_loops = bitvec![Msb0, u8; 0; nodes_number as usize];
     let mut singleton_nodes_with_self_loops_number: NodeT = 0;
     let mut first = true;
@@ -423,19 +423,18 @@ pub(crate) fn build_edges(
         }
         if different_src || different_dst {
             for node in &[src, dst]{
-                if !non_singleton_nodes[*node as usize]{
-                    non_singleton_nodes.set(*node as usize, true);
+                if !nodes_with_edges[*node as usize]{
+                    nodes_with_edges.set(*node as usize, true);
                     if !self_loop{
-                        non_singleton_nodes_number+=1;
+                        not_singleton_node_number+=1;
                     } else {
                         singleton_nodes_with_self_loops.set(*node as usize, true);
                         singleton_nodes_with_self_loops_number+= 1;
                     }
                 } else if !self_loop && singleton_nodes_with_self_loops[*node as usize]{
                     singleton_nodes_with_self_loops.set(*node as usize, false);
-                    non_singleton_nodes.set(*node as usize, true);
                     singleton_nodes_with_self_loops_number-= 1;
-                    non_singleton_nodes_number+=1;
+                    not_singleton_node_number+=1;
                 }
             }
             unique_edges_number += 1;
@@ -469,7 +468,7 @@ pub(crate) fn build_edges(
         unique_edges_number,
         self_loop_number,
         unique_self_loop_number,
-        non_singleton_nodes_number,
+        not_singleton_node_number,
         singleton_nodes_with_self_loops_number,
         node_bits,
         node_bit_mask,

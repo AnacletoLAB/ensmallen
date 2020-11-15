@@ -1,25 +1,14 @@
 use super::*;
-use indicatif::ParallelProgressIterator;
 use indicatif::ProgressIterator;
 use itertools::Itertools;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use roaring::{RoaringBitmap, RoaringTreemap};
-use std::collections::{HashMap, HashSet};
-use std::iter::FromIterator;
+use std::collections::{HashSet};
 use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 use vec_rand::xorshift::xorshift as rand_u64;
 
 const NOT_PRESENT: u32 = u32::MAX;
-
-// Return component of given node, including eventual remapping.
-fn get_node_component(component: usize, components_remapping: &HashMap<usize, usize>) -> usize {
-    match components_remapping.get(&component) {
-        Some(c) => *c,
-        None => component,
-    }
-}
 
 /// # Implementation of algorithms relative to trees.
 impl Graph {
@@ -43,33 +32,154 @@ impl Graph {
     fn iter_on_edges_with_preference<'a>(
         &'a self,
         random_state: u64,
-        verbose: bool,
         unwanted_edge_types: &'a Option<HashSet<EdgeTypeT>>,
-    ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + 'a {
-        // TODO! FIX THIS CRASH if called with unwanted_edge_types and the graph does not have edge types.
-        let result: Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)>> =
-            if let Some(uet) = unwanted_edge_types {
+        verbose: bool,
+    ) -> impl Iterator<Item = (NodeT, NodeT)> + 'a {
+        let pb = get_loading_bar(
+            verbose,
+            format!("Building random spanning tree for graph {}", self.name).as_ref(),
+            self.get_edges_number() as usize,
+        );
+        let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> =
+            if let (Some(uet), _) = (unwanted_edge_types, &self.edge_types) {
                 Box::new(
                     self.iter_edges_from_random_state(random_state)
-                        .filter(move |(edge_id, _, _)| {
-                            !uet.contains(&self.get_unchecked_edge_type(*edge_id).unwrap())
+                        .filter_map(move |(edge_id, src, dst)| {
+                            if uet.contains(&self.get_unchecked_edge_type(edge_id).unwrap()) {
+                                return None;
+                            }
+                            Some((src, dst))
                         })
-                        .chain(self.iter_edges_from_random_state(random_state).filter(
-                            move |(edge_id, _, _)| {
-                                uet.contains(&self.get_unchecked_edge_type(*edge_id).unwrap())
+                        .chain(self.iter_edges_from_random_state(random_state).filter_map(
+                            move |(edge_id, src, dst)| {
+                                if !uet.contains(&self.get_unchecked_edge_type(edge_id).unwrap()) {
+                                    return None;
+                                }
+                                Some((src, dst))
                             },
                         )),
                 )
             } else {
-                Box::new(self.iter_edges_from_random_state(random_state))
+                Box::new(
+                    self.iter_edges_from_random_state(random_state)
+                        .map(|(_, src, dst)| (src, dst)),
+                )
             };
 
-        let pb = get_loading_bar(
-            verbose,
-            format!("Building spanning tree for {}", self.name).as_ref(),
-            self.get_edges_number() as usize,
-        );
         result.progress_with(pb)
+    }
+
+    /// Returns set of edges composing a spanning tree and connected components.
+    ///
+    /// # Arguments
+    ///
+    /// TODO: Updated docstrings.
+    ///
+    pub fn kruskal<'a>(
+        &self,
+        edges: impl Iterator<Item = (NodeT, NodeT)> + 'a,
+    ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
+        let nodes_number = self.get_nodes_number() as usize;
+        let mut tree = HashSet::with_capacity(self.get_nodes_number() as usize);
+        let mut components = vec![NOT_PRESENT; nodes_number];
+        let mut merged_component_number = 0;
+        let mut component_sizes: Vec<usize> = Vec::new();
+        let mut components_remapping: Vec<NodeT> = Vec::new();
+
+        edges.for_each(|(src, dst)| {
+            if src == dst {
+                return;
+            }
+            let src_component = components[src as usize];
+            let dst_component = components[dst as usize];
+            match (src_component == NOT_PRESENT, dst_component == NOT_PRESENT) {
+                // If neither nodes have a component, they must be inserted
+                // both in the components vector and in the tree.
+                // The edge must be added to the three.
+                (true, true) => {
+                    let component_number = components_remapping.len() as NodeT;
+                    components[src as usize] = component_number;
+                    components[dst as usize] = component_number;
+                    components_remapping.push(component_number);
+                    component_sizes.push(2);
+                    tree.insert((src, dst));
+                }
+                // If both nodes have a component, the two components must be merged
+                // if they are not the same one.
+                // The edge must be added to the three.
+                // The components mapping must be updated and afterwards the other nodes
+                // must be updated accordingly to this update.
+                (false, false) => {
+                    if src_component == dst_component {
+                        return;
+                    }
+                    let src_component = components_remapping[src_component as usize];
+                    let dst_component = components_remapping[dst_component as usize];
+                    components[src as usize] = dst_component;
+                    components[dst as usize] = dst_component;
+                    if src_component == dst_component {
+                        return;
+                    }
+                    let (min_component, max_component) = match src_component < dst_component {
+                        true => (src_component, dst_component),
+                        false => (dst_component, src_component),
+                    };
+                    merged_component_number += 1;
+                    component_sizes[min_component as usize] +=
+                        component_sizes[max_component as usize];
+
+                    components_remapping
+                        .iter_mut()
+                        .enumerate()
+                        .for_each(|(comp, remapped)| {
+                            if *remapped == max_component {
+                                *remapped = min_component;
+                                component_sizes[comp] = 0;
+                            }
+                        });
+                    tree.insert((src, dst));
+                }
+                // If only one node has a component, the second model must be added.
+                _ => {
+                    let (component_number, not_inserted_node) = match src_component == NOT_PRESENT {
+                        true => (dst_component, src),
+                        false => (src_component, dst),
+                    };
+                    let component_number = components_remapping[component_number as usize];
+                    component_sizes[component_number as usize] += 1;
+                    components[not_inserted_node as usize] = component_number as NodeT;
+                    tree.insert((src, dst));
+                }
+            };
+        });
+
+        let components_number = AtomicUsize::new(component_sizes.len());
+        components.par_iter_mut().for_each(|remapped| {
+            if *remapped == NOT_PRESENT {
+                *remapped = (components_number.fetch_add(1, Ordering::SeqCst)
+                    - merged_component_number) as NodeT;
+            } else {
+                *remapped = components_remapping[*remapped as usize];
+            }
+        });
+
+        let (min_component_size, max_component_size) = component_sizes
+            .iter()
+            .cloned()
+            .filter(|c| *c != 0)
+            .minmax()
+            .into_option()
+            .unwrap();
+
+        let total_components_number = component_sizes.len() - merged_component_number;
+
+        (
+            tree,
+            components,
+            total_components_number as NodeT,
+            min_component_size as NodeT,
+            max_component_size as NodeT,
+        )
     }
 
     /// Returns set of edges composing a spanning tree and connected components.
@@ -84,249 +194,28 @@ impl Graph {
     /// * `unwanted_edge_types`: &Option<HashSet<EdgeTypeT>> - Which edge types id to try to avoid.
     /// * `verbose`: bool - Wethever to show a loading bar or not.
     ///
-    pub fn random_spanning_tree(
+    pub fn random_spanning_arborescence_kruskal(
         &self,
         random_state: EdgeT,
-        include_all_edge_types: bool,
         unwanted_edge_types: &Option<HashSet<EdgeTypeT>>,
         verbose: bool,
-    ) -> (RoaringTreemap, Vec<RoaringBitmap>) {
-        // Create vector of sets of the single nodes.
-        let mut components: Vec<Option<RoaringBitmap>> = Vec::new();
-        // Create vector of nodes component numbers.
-        let mut nodes_components: Vec<Option<usize>> = vec![None; self.get_nodes_number() as usize];
-        // Create the empty tree (this will be sparse on most graphs so roaring can save memory).
-        let mut tree = RoaringTreemap::new();
-        // Components remapping
-        let mut components_remapping: HashMap<usize, usize> = HashMap::new();
-
-        // Iterate over all the edges and add and edge to the mst
-        // iff the edge create, expand or merge components.
-        for (edge_id, src, dst) in
-            self.iter_on_edges_with_preference(random_state, verbose, unwanted_edge_types)
-        {
-            let mut update_tree = false;
-            let src_component = nodes_components[src as usize];
-            let dst_component = nodes_components[dst as usize];
-            // if both nodes are not covered then the edge is isolated
-            // and must start its own component
-            match (src_component, dst_component) {
-                (None, None) => {
-                    update_tree = true;
-                    nodes_components[src as usize] = Some(components.len());
-                    nodes_components[dst as usize] = Some(components.len());
-                    components.push(Some(RoaringBitmap::from_iter(vec![src, dst])));
-                }
-                (Some(src_component), Some(dst_component)) => {
-                    // if the components are different then we add it because it will merge them
-                    if src_component == dst_component {
-                        continue;
-                    }
-                    let src_component = get_node_component(src_component, &components_remapping);
-                    let dst_component = get_node_component(dst_component, &components_remapping);
-                    if src_component != dst_component {
-                        let removed_component = components[src_component].take().unwrap();
-                        if let Some(component) = &mut components[dst_component] {
-                            component.union_with(&removed_component);
-                        }
-                        components_remapping.par_iter_mut().for_each(
-                            |(component, remapped_component)| {
-                                if *component == src_component
-                                    || *remapped_component == src_component
-                                {
-                                    *remapped_component = dst_component;
-                                }
-                            },
-                        );
-                        components_remapping.insert(src_component, dst_component);
-                        update_tree = true;
-                    }
-                }
-                _ => {
-                    let (inserted_component, not_inserted, not_inserted_component) =
-                        if src_component.is_some() {
-                            (src_component, dst, &mut nodes_components[dst as usize])
-                        } else {
-                            (dst_component, src, &mut nodes_components[src as usize])
-                        };
-                    let inserted_component =
-                        get_node_component(inserted_component.unwrap(), &components_remapping);
-                    if let Some(component) = &mut components[inserted_component] {
-                        component.insert(not_inserted);
-                    }
-                    *not_inserted_component = Some(inserted_component);
-                    update_tree = true;
-                }
-            };
-
-            if update_tree {
-                tree.extend(self.compute_edge_ids_vector(edge_id, src, dst, include_all_edge_types))
-            }
-        }
-
-        let components = components.iter().filter_map(|c| c.clone()).collect();
-
-        (tree, components)
-    }
-
-    /// Returns set of edges composing a spanning tree and connected components.
-    ///
-    /// # Arguments
-    ///
-    /// TODO: Updated docstrings.
-    ///
-    pub fn kruskal<'a>(
-        &self,
-        edges: impl ParallelIterator<Item = (NodeT, NodeT)> + 'a,
-    ) -> (Vec<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
-        let nodes_number = self.get_nodes_number() as usize;
-        let mut tree = Vec::with_capacity(self.get_nodes_number() as usize);
-        let mutex_tree = Arc::from(Mutex::from(&mut tree));
-        let mut components = vec![NOT_PRESENT; nodes_number];
-        let merged_component_number = AtomicUsize::new(0);
-        let component_sizes: Arc<Mutex<Vec<usize>>> = Arc::from(Mutex::from(Vec::new()));
-        let components_remapping: Arc<Mutex<Vec<NodeT>>> = Arc::from(Mutex::from(Vec::new()));
-        let thread_safe_components = ThreadSafe {
-            value: std::cell::UnsafeCell::new(&mut components),
-        };
-
-        edges.for_each(|(src, dst)| {
-            if src == dst {
-                return;
-            }
-            let components = thread_safe_components.value.get();
-            loop {
-                let (src_component, dst_component) =
-                    unsafe { ((*components)[src as usize], (*components)[dst as usize]) };
-                match (src_component == NOT_PRESENT, dst_component == NOT_PRESENT) {
-                    // If neither nodes have a component, they must be inserted
-                    // both in the components vector and in the tree.
-                    // The edge must be added to the three.
-                    (true, true) => {
-                        let mut locked_remapping = components_remapping.lock().unwrap();
-                        let (src_component, dst_component) =
-                            unsafe { ((*components)[src as usize], (*components)[dst as usize]) };
-                        if src_component != NOT_PRESENT || dst_component != NOT_PRESENT {
-                            continue;
-                        }
-                        let component_number = locked_remapping.len() as NodeT;
-                        unsafe {
-                            (*components)[src as usize] = component_number;
-                            (*components)[dst as usize] = component_number;
-                        }
-                        locked_remapping.push(component_number);
-                        component_sizes.lock().unwrap().push(2);
-                        mutex_tree.lock().unwrap().push((src, dst));
-                    }
-                    // If both nodes have a component, the two components must be merged
-                    // if they are not the same one.
-                    // The edge must be added to the three.
-                    // The components mapping must be updated and afterwards the other nodes
-                    // must be updated accordingly to this update.
-                    (false, false) => {
-                        if src_component == dst_component {
-                            break;
-                        }
-                        let mut locked_remapping = components_remapping.lock().unwrap();
-                        let src_component = locked_remapping[src_component as usize];
-                        let dst_component = locked_remapping[dst_component as usize];
-                        unsafe {
-                            (*components)[src as usize] = dst_component;
-                            (*components)[dst as usize] = dst_component;
-                        }
-                        if src_component == dst_component {
-                            break;
-                        }
-                        let (min_component, max_component) = match src_component < dst_component {
-                            true => (src_component, dst_component),
-                            false => (dst_component, src_component),
-                        };
-                        merged_component_number.fetch_add(1, Ordering::SeqCst);
-                        let mut locked_component_sizes = component_sizes.lock().unwrap();
-                        locked_component_sizes[min_component as usize] +=
-                            locked_component_sizes[max_component as usize];
-
-                        locked_remapping
-                            .iter_mut()
-                            .enumerate()
-                            .for_each(|(comp, remapped)| {
-                                if *remapped == max_component {
-                                    *remapped = min_component;
-                                    locked_component_sizes[comp] = 0;
-                                }
-                            });
-                        mutex_tree.lock().unwrap().push((src, dst));
-                    }
-                    // If only one node has a component, the second model must be added.
-                    _ => {
-                        let locked_component = components_remapping.lock().unwrap();
-                        let (component_number, not_inserted_node) =
-                            match src_component == NOT_PRESENT {
-                                true => (dst_component, src),
-                                false => (src_component, dst),
-                            };
-                        if unsafe { (*components)[not_inserted_node as usize] != NOT_PRESENT } {
-                            continue;
-                        }
-                        let component_number = locked_component[component_number as usize];
-                        let mut locked_component_sizes = component_sizes.lock().unwrap();
-                        locked_component_sizes[component_number as usize] += 1;
-                        let mut unlocked_tree = mutex_tree.lock().unwrap();
-                        unsafe {
-                            (*components)[not_inserted_node as usize] = component_number as NodeT;
-                        }
-                        unlocked_tree.push((src, dst));
-                    }
-                };
-                break;
-            }
-        });
-
-        let locked_remapping = components_remapping.lock().unwrap();
-        let total_merged = merged_component_number.load(Ordering::SeqCst);
-        components.par_iter_mut().for_each(|remapped| {
-            if *remapped == NOT_PRESENT {
-                let mut locked_component_sizes = component_sizes.lock().unwrap();
-                *remapped = (locked_component_sizes.len() - total_merged) as NodeT;
-                locked_component_sizes.push(1);
-            } else {
-                *remapped = locked_remapping[*remapped as usize];
-            }
-        });
-        let (min_component_size, max_component_size) = component_sizes
-            .lock()
-            .unwrap()
-            .iter()
-            .cloned()
-            .filter(|c| *c != 0)
-            .minmax()
-            .into_option()
-            .unwrap();
-
-        let total_components_number = component_sizes.lock().unwrap().len() - total_merged;
-
-        (
-            tree,
-            components,
-            total_components_number as NodeT,
-            min_component_size as NodeT,
-            max_component_size as NodeT,
-        )
+    ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
+        self.kruskal(self.iter_on_edges_with_preference(random_state, unwanted_edge_types, verbose))
     }
 
     pub fn spanning_arborescence_kruskal(
         &self,
         verbose: bool,
-    ) -> (Vec<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
+    ) -> (HashSet<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
         let pb = get_loading_bar(
             verbose,
-            "Computing spanning arborescence with Kruskal.",
+            &format!(
+                "Computing spanning arborescence with Kruskal for graph {}",
+                self.get_name()
+            ),
             self.get_unique_edges_number() as usize,
         );
-        self.kruskal(
-            self.get_unique_edges_par_iter(self.directed)
-                .progress_with(pb),
-        )
+        self.kruskal(self.get_unique_edges_iter(self.directed).progress_with(pb))
     }
 
     fn scale_node_threads(&self) -> usize {
@@ -336,7 +225,7 @@ impl Graph {
     /// Returns set of edges composing a spanning tree.
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
-    pub fn spanning_arborescence(&self, verbose: bool) -> Result<Vec<(NodeT, NodeT)>, String> {
+    pub fn spanning_arborescence(&self, verbose: bool) -> Result<HashSet<(NodeT, NodeT)>, String> {
         if self.directed {
             return Err(
                 "The spanning arborescence from Bader et al. algorithm only works for undirected graphs!".to_owned(),
@@ -463,7 +352,7 @@ impl Graph {
                 }
                 None
             })
-            .collect::<Vec<(NodeT, NodeT)>>())
+            .collect::<HashSet<(NodeT, NodeT)>>())
     }
 
     /// Returns set of roaring bitmaps representing the connected components.

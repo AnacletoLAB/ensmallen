@@ -393,33 +393,11 @@ impl Graph {
     ///
     /// # Arguments
     /// * `verbose`: bool - wether to show the loading bar.
-    pub fn get_node_components_vector(&self) -> Vec<NodeT> {
-        let mut node_components: Vec<NodeT> =
-            vec![self.get_nodes_number(); self.get_nodes_number() as usize];
-        // TODO! Replace with faster
-        let (_, components) = self.random_spanning_tree(42, false, &None, false);
-        components
-            .iter()
-            .enumerate()
-            .for_each(|(component_number, component)| {
-                component.iter().for_each(|node_id| {
-                    node_components[node_id as usize] = component_number as NodeT;
-                })
-            });
-        // Handling singletons
-        if self.has_singletons() {
-            let mut singleton_number = components.len() as NodeT;
-            node_components
-                .iter_mut()
-                .enumerate()
-                .for_each(|(node_id, component_number)| {
-                    if self.is_singleton(node_id as NodeT) {
-                        *component_number = singleton_number;
-                        singleton_number += 1;
-                    }
-                });
+    pub fn get_node_components_vector(&self, verbose: bool) -> Vec<NodeT> {
+        match self.directed{
+            true=>self.spanning_arborescence_kruskal(verbose).1,
+            false=>self.connected_components(verbose).unwrap().0
         }
-        node_components
     }
 
     /// Returns number of edges in the graph.

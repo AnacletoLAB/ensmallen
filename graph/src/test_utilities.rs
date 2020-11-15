@@ -336,15 +336,11 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) =
             graph.connected_holdout(4, 0.8, None, *include_all_edge_types, verbose)?;
-        let (tree, _) = graph.random_spanning_tree(42, false, &None, false);
-        if !graph.directed {
-            assert_eq!(
-                tree.len() as usize,
-                graph.spanning_arborescence(verbose).unwrap().len()
-            );
-        }
         let kruskal_tree = graph.spanning_arborescence_kruskal(verbose).0;
-        assert_eq!(tree.len() as usize, kruskal_tree.len());
+        let random_kruskal_tree = graph
+            .random_spanning_arborescence_kruskal(42, &None, verbose)
+            .0;
+        assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
         let (total, min_comp, max_comp) = graph.connected_components_number(verbose);
         assert_eq!(
             graph.connected_components_number(verbose),

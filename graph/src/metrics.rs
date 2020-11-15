@@ -455,7 +455,7 @@ impl Graph {
     ///
     /// - `other`: &Graph - graph to create overlap report with.
     /// - `verbose`: bool - wether to shor the loading bars.
-    pub fn overlap_textual_report(&self, other: &Graph) -> Result<String, String> {
+    pub fn overlap_textual_report(&self, other: &Graph, verbose: bool) -> Result<String, String> {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;
         // Get overlapping nodes
@@ -471,8 +471,8 @@ impl Graph {
             })
             .count();
         // Get number of overlapping components
-        let first_nodes_components = self.get_node_components_vector();
-        let second_nodes_components = other.get_node_components_vector();
+        let first_nodes_components = self.get_node_components_vector(verbose);
+        let second_nodes_components = other.get_node_components_vector(verbose);
         let first_components_number = first_nodes_components.iter().unique().count() as NodeT;
         let second_components_number = second_nodes_components.iter().unique().count() as NodeT;
         let first_shared_components_number =
