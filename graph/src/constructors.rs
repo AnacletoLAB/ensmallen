@@ -433,6 +433,7 @@ pub(crate) fn build_edges(
                     }
                 } else if !self_loop && singleton_nodes_with_self_loops[*node as usize]{
                     singleton_nodes_with_self_loops.set(*node as usize, false);
+                    non_singleton_nodes.set(*node as usize, true);
                     singleton_nodes_with_self_loops_number-= 1;
                     non_singleton_nodes_number+=1;
                 }
