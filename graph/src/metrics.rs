@@ -332,6 +332,15 @@ impl Graph {
         self.get_nodes_number() - self.get_not_singleton_nodes_number()
     }
 
+    /// Returns number of singleton nodes with self-loops within the graph.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The graph contains {} singleton nodes with self-loops", graph.get_singleton_nodes_with_self_loops_number());
+    /// ```
+    pub fn get_singleton_nodes_with_self_loops_number(&self) -> NodeT {
+        self.singleton_nodes_with_self_loops_number
+    }
+
     /// Returns number of not singleton nodes within the graph.
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
@@ -691,7 +700,14 @@ impl Graph {
                 _ => "".to_owned()
             },
             singletons = match self.has_singletons() {
-                true => format!(", of which {} are singletons,", self.get_singleton_nodes_number()),
+                true => format!(
+                    ", of which {singleton_number} are singletons{self_loop_singleton},", 
+                    singleton_number=self.get_singleton_nodes_number(),
+                    self_loop_singleton=match self.has_singleton_nodes_with_self_loops_number(){
+                        true=>format!(" ({} of these have self-loops)", self.get_singleton_nodes_with_self_loops_number()),
+                        false=>"".to_owned()
+                    }
+                ),
                 false => "".to_owned()
             },
             edge_types= match self.get_edge_types_number() {

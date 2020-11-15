@@ -17,6 +17,7 @@ type ParsedStringEdgesType = Result<
         EdgeT,
         NodeT,
         NodeT,
+        NodeT,
         u64,
         u8,
     ),
@@ -370,7 +371,7 @@ pub(crate) fn build_edges(
     ignore_duplicated_edges: bool,
     directed: bool,
     directed_edge_list: bool
-) -> Result<(EliasFano, EliasFano, EdgeT, EdgeT, NodeT, NodeT, u8, u64), String> {
+) -> Result<(EliasFano, EliasFano, EdgeT, EdgeT, NodeT, NodeT, NodeT, u8, u64), String> {
     let node_bits = get_node_bits(nodes_number);
     let node_bit_mask = (1 << node_bits) - 1;
     let mut edges: EliasFano = EliasFano::new(
@@ -391,12 +392,15 @@ pub(crate) fn build_edges(
     // TODO: using roaring might be sub-optimal when the bitvec is dense.
     let mut non_singleton_nodes = bitvec![Msb0, u8; 0; nodes_number as usize];
     let mut non_singleton_nodes_number: NodeT = 0;
+    let mut singleton_nodes_with_self_loops = bitvec![Msb0, u8; 0; nodes_number as usize];
+    let mut singleton_nodes_with_self_loops_number: NodeT = 0;
     let mut first = true;
 
     for value in edges_iter {
         let (src, dst, edge_type, _) = value?;
         let different_src = last_src != src || first;
         let different_dst = last_dst != dst || first;
+        let self_loop = src == dst;
         let different_edge_type = last_edge_type != edge_type || first;
         if !(different_src || different_dst || different_edge_type){
             if ignore_duplicated_edges {
@@ -406,7 +410,6 @@ pub(crate) fn build_edges(
             }
         }
         if  !directed && directed_edge_list{
-
             match src.cmp(&dst) {
                 Ordering::Greater => {undirected_edges_cumulative_check -= 1},
                 Ordering::Less => {undirected_edges_cumulative_check += 1},
@@ -415,20 +418,26 @@ pub(crate) fn build_edges(
         }
         last_edge_type = edge_type;
         edges.unchecked_push(encode_edge(src, dst, node_bits));
-        if src == dst {
+        if self_loop {
             self_loop_number += 1;
         }
         if different_src || different_dst {
-            if !non_singleton_nodes[src as usize] && src != dst{
-                non_singleton_nodes.set(src as usize, true);
-                non_singleton_nodes_number+=1;
-            }
-            if !non_singleton_nodes[dst as usize] && src != dst{
-                non_singleton_nodes.set(dst as usize, true);
-                non_singleton_nodes_number+=1;
+            for node in &[src, dst]{
+                if !non_singleton_nodes[*node as usize]{
+                    non_singleton_nodes.set(*node as usize, true);
+                    if !self_loop{
+                        non_singleton_nodes_number+=1;
+                    } else {
+                        singleton_nodes_with_self_loops.set(*node as usize, true);
+                        singleton_nodes_with_self_loops_number+= 1;
+                    }
+                } else if !self_loop && singleton_nodes_with_self_loops[*node as usize]{
+                    singleton_nodes_with_self_loops.set(*node as usize, false);
+                    singleton_nodes_with_self_loops_number-= 1;
+                }
             }
             unique_edges_number += 1;
-            if src == dst {
+            if self_loop {
                 unique_self_loop_number += 1;
             }
             if different_src {
@@ -459,6 +468,7 @@ pub(crate) fn build_edges(
         self_loop_number,
         unique_self_loop_number,
         non_singleton_nodes_number,
+        singleton_nodes_with_self_loops_number,
         node_bits,
         node_bit_mask,
     ))
@@ -522,6 +532,7 @@ pub(crate) fn parse_string_edges(
         self_loop_number,
         unique_self_loop_number,
         not_singleton_nodes_number,
+        singleton_nodes_with_self_loops_number,
         node_bits,
         node_bit_mask,
     ) = build_edges(
@@ -564,6 +575,7 @@ pub(crate) fn parse_string_edges(
         self_loop_number,
         unique_self_loop_number,
         not_singleton_nodes_number,
+        singleton_nodes_with_self_loops_number,
         node_bit_mask,
         node_bits,
     ))
@@ -587,6 +599,7 @@ pub(crate) fn parse_integer_edges(
         EdgeT,
         NodeT,
         NodeT,
+        NodeT,
         u64,
         u8,
     ),
@@ -606,6 +619,7 @@ pub(crate) fn parse_integer_edges(
         self_loop_number,
         unique_self_loop_number,
         not_singleton_nodes_number,
+        singleton_nodes_with_self_loops_number,
         node_bits,
         node_bit_mask,
     ) = build_edges(
@@ -644,6 +658,7 @@ pub(crate) fn parse_integer_edges(
         self_loop_number,
         unique_self_loop_number,
         not_singleton_nodes_number,
+        singleton_nodes_with_self_loops_number,
         node_bit_mask,
         node_bits,
     ))
@@ -671,6 +686,7 @@ impl Graph {
             self_loop_number,
             unique_self_loop_number,
             not_singleton_nodes_number,
+            singleton_nodes_with_self_loops_number,
             node_bit_mask,
             node_bits,
         ) = parse_integer_edges(
@@ -688,6 +704,7 @@ impl Graph {
             unique_self_loop_number,
             self_loop_number,
             not_singleton_nodes_number,
+            singleton_nodes_with_self_loops_number,
             unique_edges_number,
             edges,
             unique_sources,
@@ -839,6 +856,7 @@ impl Graph {
             self_loop_number,
             unique_self_loop_number,
             not_singleton_nodes_number,
+            singleton_nodes_with_self_loops_number,
             node_bit_mask,
             node_bits,
         ) = parse_string_edges(
@@ -857,6 +875,7 @@ impl Graph {
             unique_self_loop_number,
             self_loop_number,
             not_singleton_nodes_number,
+            singleton_nodes_with_self_loops_number,
             unique_edges_number,
             edges,
             unique_sources,

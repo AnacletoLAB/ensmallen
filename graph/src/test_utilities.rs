@@ -269,6 +269,17 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         None,
         "Graph contains non-existing edge."
     );
+
+    assert!(
+        graph.get_singleton_nodes_with_self_loops_number() <= graph.get_singleton_nodes_number(),
+        "Graph singleton nodes with selfloops is bigger than number of singleton nodes."
+    );
+
+    if !graph.directed {
+        let has_singletons = graph.get_node_degrees().iter().any(|degree| *degree == 0);
+        assert_eq!(has_singletons, graph.has_singletons());
+    }
+
     if let Some(edge) = graph.get_unique_edges_iter(true).next() {
         let src_string = graph.get_node_name(edge.0).unwrap();
         let dst_string = graph.get_node_name(edge.1).unwrap();

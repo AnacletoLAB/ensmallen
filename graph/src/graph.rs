@@ -24,6 +24,8 @@ pub struct Graph {
     pub(crate) self_loop_number: EdgeT,
     /// Number of nodes that have at least an edge inbound or outbound.
     pub(crate) not_singleton_nodes_number: NodeT,
+    /// Number of singleton nodes that have a self-loop
+    pub(crate) singleton_nodes_with_self_loops_number: NodeT,
     /// How many unique edges the graph has (excluding the multi-graph ones)
     pub(crate) unique_edges_number: EdgeT,
     /// Vector of destinations to execute fast walks if required.

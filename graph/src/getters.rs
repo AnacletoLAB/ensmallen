@@ -65,6 +65,11 @@ impl Graph {
         self.get_singleton_nodes_number() > 0
     }
 
+    /// Returns boolean representing if graph has singletons.
+    pub fn has_singleton_nodes_with_self_loops_number(&self) -> bool {
+        self.get_singleton_nodes_with_self_loops_number() > 0
+    }
+
     /// Return vector of the non-unique source nodes.
     ///
     /// # Arguments
