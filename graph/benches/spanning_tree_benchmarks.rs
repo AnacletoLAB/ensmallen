@@ -34,7 +34,7 @@ fn bench_spanning_arborescence_kruskal(b: &mut Bencher) {
 
     b.iter(|| {
         for _ in 0..10 {
-            black_box(graph.spanning_arborescence_kruskal().unwrap());
+            black_box(graph.spanning_arborescence_kruskal(false));
         }
     });
 }
@@ -47,7 +47,7 @@ fn bench_spanning_arborescence_kruskal_with_fast_graph(b: &mut Bencher) {
 
     b.iter(|| {
         for _ in 0..10 {
-            black_box(graph.spanning_arborescence_kruskal().unwrap());
+            black_box(graph.spanning_arborescence_kruskal(false));
         }
     });
 }
