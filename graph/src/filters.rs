@@ -69,7 +69,7 @@ impl Graph {
             },
             self.directed,
             self.name.clone(),
-            false,
+            false
         )
     }
 }

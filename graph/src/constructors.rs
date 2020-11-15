@@ -367,6 +367,8 @@ pub(crate) fn build_edges(
     edges_number: EdgeT,
     nodes_number: NodeT,
     ignore_duplicated_edges: bool,
+    directed: bool,
+    directed_edge_list: bool
 ) -> Result<(EliasFano, EliasFano, EdgeT, EdgeT, NodeT, NodeT, u8, u64), String> {
     let node_bits = get_node_bits(nodes_number);
     let node_bit_mask = (1 << node_bits) - 1;
@@ -384,6 +386,7 @@ pub(crate) fn build_edges(
     let mut unique_edges_number: EdgeT = 0;
     let mut unique_self_loop_number: NodeT = 0;
     let mut self_loop_number: EdgeT = 0;
+    let mut undirected_edges_cumulative_check: EdgeT = 0;
     // TODO: using roaring might be sub-optimal when the bitvec is dense.
     let mut non_singleton_nodes = bitvec![Msb0, u8; 0; nodes_number as usize];
     let mut non_singleton_nodes_number: NodeT = 0;
@@ -399,6 +402,13 @@ pub(crate) fn build_edges(
                 continue;
             } else {
                 return Err("A duplicated edge was found while building the graph.".to_owned());
+            }
+        }
+        if  !directed && directed_edge_list{
+            if src < dst {
+                undirected_edges_cumulative_check += 1;
+            } else if src > dst {
+                undirected_edges_cumulative_check -= 1;
             }
         }
         last_edge_type = edge_type;
@@ -430,6 +440,14 @@ pub(crate) fn build_edges(
         if first {
             first = false;
         }
+    }
+
+    if undirected_edges_cumulative_check != 0{
+        return Err(concat!(
+            "You are trying to load an undirected graph ",
+            "from a directed edge list but the edge list is not ",
+            "complete."
+        ).to_owned());
     }
 
     Ok((
@@ -509,6 +527,8 @@ pub(crate) fn parse_string_edges(
         edges_number,
         nodes_number,
         ignore_duplicated_edges,
+        directed,
+        directed_edge_list
     )?;
 
     nodes.build_reverse_mapping()?;
@@ -553,6 +573,8 @@ pub(crate) fn parse_integer_edges(
     nodes_number: NodeT,
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
     ignore_duplicated_edges: bool,
+    directed: bool,
+    directed_edge_list: bool
 ) -> Result<
     (
         EliasFano,
@@ -589,6 +611,8 @@ pub(crate) fn parse_integer_edges(
         edges_number,
         nodes_number,
         ignore_duplicated_edges,
+        directed,
+        directed_edge_list
     )?;
 
     if !weights.is_empty() && edges.len() != weights.len() {
@@ -653,6 +677,8 @@ impl Graph {
             nodes.len() as NodeT,
             edge_types_vocabulary,
             ignore_duplicated_edges,
+            directed,
+            true
         )?;
 
         Ok(Graph {
