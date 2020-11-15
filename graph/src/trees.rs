@@ -1,4 +1,5 @@
 use super::*;
+use indicatif::ParallelProgressIterator;
 use indicatif::ProgressIterator;
 use itertools::Itertools;
 use rayon::iter::IntoParallelRefMutIterator;
@@ -249,8 +250,8 @@ impl Graph {
                             .iter_mut()
                             .enumerate()
                             .for_each(|(comp, remapped)| {
-                                if *remapped == min_component {
-                                    *remapped = max_component;
+                                if *remapped == max_component {
+                                    *remapped = min_component;
                                     locked_component_sizes[comp] = 0;
                                 }
                             });
@@ -315,8 +316,17 @@ impl Graph {
 
     pub fn spanning_arborescence_kruskal(
         &self,
-    ) -> Result<(Vec<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT), String> {
-        Ok(self.kruskal(self.get_unique_edges_par_iter(self.directed)))
+        verbose: bool,
+    ) -> (Vec<(NodeT, NodeT)>, Vec<NodeT>, NodeT, NodeT, NodeT) {
+        let pb = get_loading_bar(
+            verbose,
+            "Computing spanning arborescence with Kruskal.",
+            self.get_unique_edges_number() as usize,
+        );
+        self.kruskal(
+            self.get_unique_edges_par_iter(self.directed)
+                .progress_with(pb),
+        )
     }
 
     fn scale_node_threads(&self) -> usize {
@@ -480,7 +490,7 @@ impl Graph {
                 .collect::<Vec<Mutex<Vec<NodeT>>>>(),
         );
         let active_nodes_number = AtomicUsize::new(0);
-        let current_component_nodes_number = AtomicUsize::new(1);
+        let current_component_nodes_number = AtomicUsize::new(0);
         let components_number = AtomicUsize::new(0);
         let max_component_nodes_number = AtomicUsize::new(1);
         let min_component_nodes_number = AtomicUsize::new(usize::MAX);
@@ -520,8 +530,7 @@ impl Graph {
                         // find the first not explored node (this is guardanteed to be in a new component)
                         if self.has_singletons() && self.is_singleton(src as NodeT) {
                             // We set singletons as self-loops for now.
-                            (*ptr)[src] = components_number.load(Ordering::SeqCst) as NodeT;
-                            components_number.fetch_add(1, Ordering::SeqCst);
+                            (*ptr)[src] = components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
                             min_component_nodes_number.store(1, Ordering::SeqCst);
                             return;
                         }
@@ -533,14 +542,15 @@ impl Graph {
                             }
                         }
                         if active_nodes_number.load(Ordering::Relaxed) == 0 {
-                            components_number.fetch_add(1, Ordering::SeqCst);
                             unsafe {
                                 if (*ptr)[src] != NOT_PRESENT {
                                     break;
                                 }
-                                (*ptr)[src] = components_number.load(Ordering::SeqCst) as NodeT;
+                                (*ptr)[src] =
+                                    components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
                             }
                             shared_stacks[0].lock().unwrap().push(src as NodeT);
+                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
                             let ccnn = current_component_nodes_number.swap(1, Ordering::SeqCst);
                             if ccnn != 0 {
                                 if max_component_nodes_number.load(Ordering::SeqCst) < ccnn {
@@ -550,7 +560,6 @@ impl Graph {
                                     min_component_nodes_number.store(ccnn, Ordering::SeqCst);
                                 }
                             }
-                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
                             break;
                         }
                     }
@@ -593,7 +602,13 @@ impl Graph {
                 });
             });
         });
-
+        let ccnn = current_component_nodes_number.load(Ordering::SeqCst);
+        if max_component_nodes_number.load(Ordering::SeqCst) < ccnn {
+            max_component_nodes_number.store(ccnn, Ordering::SeqCst);
+        }
+        if min_component_nodes_number.load(Ordering::SeqCst) > ccnn {
+            min_component_nodes_number.store(ccnn, Ordering::SeqCst);
+        }
         Ok((
             components,
             components_number.load(Ordering::SeqCst) as NodeT,

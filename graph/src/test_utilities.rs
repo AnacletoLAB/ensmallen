@@ -326,13 +326,24 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 graph.spanning_arborescence(verbose).unwrap().len()
             );
         }
-        let kruskal_tree = graph.spanning_arborescence_kruskal().unwrap().0;
+        let kruskal_tree = graph.spanning_arborescence_kruskal(verbose).0;
         assert_eq!(tree.len() as usize, kruskal_tree.len());
+        let (total, min_comp, max_comp) = graph.connected_components_number(verbose);
         assert_eq!(
             graph.connected_components_number(verbose),
             train.connected_components_number(verbose),
             "The number of components of the original graph and the connected training set does not match."
         );
+        if total == 1 {
+            assert_eq!(min_comp, graph.get_nodes_number());
+            assert_eq!(max_comp, graph.get_nodes_number());
+            assert_eq!(min_comp, test.get_nodes_number());
+            assert_eq!(max_comp, test.get_nodes_number());
+        }
+        if total == 2 {
+            assert_eq!(max_comp + min_comp, graph.get_nodes_number());
+            assert_eq!(max_comp + min_comp, test.get_nodes_number());
+        }
         default_holdout_test_suite(graph, &train, &test)?;
     }
 

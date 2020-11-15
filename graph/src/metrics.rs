@@ -312,23 +312,9 @@ impl Graph {
     pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
         info!("Computing connected components number.");
         if self.directed {
-            info!("Executing directed sequential version of spanning tree and connected components algorithm.");
-            let (tree, components) = self.random_spanning_tree(0, false, &None, false);
-            info!("Computing minimum and maximum size of connected components.");
-            let (min_component_size, max_component_size) = components
-                .iter()
-                .map(|c| c.len())
-                .minmax()
-                .into_option()
-                .unwrap_or((1, 1));
-            (
-                self.get_nodes_number() - tree.len() as NodeT,
-                match self.has_singletons() {
-                    false => min_component_size as NodeT,
-                    true => 1,
-                },
-                max_component_size as NodeT,
-            )
+            let (_, _, components_number, min_component_size, max_component_size) =
+                self.spanning_arborescence_kruskal(verbose);
+            (components_number, min_component_size, max_component_size)
         } else {
             info!("Executing undirected parallel version of connected components.");
             let (_, components_number, min_component_size, max_component_size) =
