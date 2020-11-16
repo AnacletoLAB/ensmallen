@@ -275,6 +275,11 @@ impl EnsmallenGraph {
     ///     Factor of negatives to use in every batch.
     ///     For example, with a batch size of 128 and negative_samples equal
     ///     to 1.0, there will be 64 positives and 64 negatives.
+    /// avoid_false_negatives: bool = False,
+    ///     Wether to filter out false negatives.
+    ///     By default False.
+    ///     Enabling this will slow down the batch generation while (likely) not
+    ///     introducing any significant gain to the model performance.
     /// graph_to_avoid: EnsmallenGraph = None,
     ///     Graph to avoid when generating the links.
     ///     This can be the validation component of the graph, for example.
@@ -288,16 +293,20 @@ impl EnsmallenGraph {
         idx: u64,
         batch_size: usize,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(PyContexts, Py<PyArray1<u8>>)> {
+    ) -> PyResult<(PyContexts, Py<PyArray1<bool>>)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
         pyex!(validate_kwargs(
             kwargs,
-            ["graph_to_avoid", "negative_samples"]
-                .iter()
-                .map(|x| x.to_string())
-                .collect(),
+            [
+                "graph_to_avoid",
+                "negative_samples",
+                "avoid_false_negatives"
+            ]
+            .iter()
+            .map(|x| x.to_string())
+            .collect(),
         ))?;
         let graph_to_avoid = pyex!(extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph))?;
 
@@ -305,6 +314,7 @@ impl EnsmallenGraph {
             idx,
             batch_size,
             pyex!(extract_value!(kwargs, "negative_samples", f64))?.unwrap_or(1.0),
+            pyex!(extract_value!(kwargs, "avoid_false_negatives", bool))?.unwrap_or(false),
             match &graph_to_avoid {
                 Some(g) => Some(&g.graph),
                 None => None,
@@ -313,7 +323,7 @@ impl EnsmallenGraph {
 
         Ok((
             to_nparray_2d!(gil, edges, NodeT),
-            to_nparray_1d!(gil, labels, u8),
+            to_nparray_1d!(gil, labels, bool),
         ))
     }
 }

@@ -192,6 +192,8 @@ impl Graph {
     /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
     /// * batch_size:usize - The maximal size of the batch to generate,
     /// * negative_samples: f64 - The component of netagetive samples to use,
+    /// * avoid_false_negatives: bool - Wether to remove the false negatives when generated.
+    ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
     /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     pub fn link_prediction(
@@ -199,6 +201,7 @@ impl Graph {
         idx: u64,
         batch_size: usize,
         negative_samples: f64,
+        avoid_false_negatives: bool,
         graph_to_avoid: Option<&Graph>,
     ) -> Result<(Contexts, Vec<bool>), String> {
         // xor the random_state with a constant so that we have a good amount of 0s and 1s in the number
@@ -224,7 +227,7 @@ impl Graph {
 
         let mut sampled_edges: Vec<(Vec<NodeT>, bool)> =
             gen_random_vec(positives_number, random_state)
-                .into_par_iter()
+                .iter()
                 // to extract the random edges
                 .map(|random_value| {
                     let (src, dst) =
@@ -233,17 +236,14 @@ impl Graph {
                 })
                 .chain(
                     gen_random_vec(negatives_number, sources_random_state)
-                        .into_par_iter()
+                        .iter()
                         // generate the random edge-destinations
-                        .zip(
-                            gen_random_vec(negatives_number, destinations_random_state)
-                                .into_par_iter(),
-                        )
+                        .zip(gen_random_vec(negatives_number, destinations_random_state).iter())
                         // convert them to plain (src, dst)
                         .filter_map(|(random_src, random_dst)| {
                             let src = (random_src % nodes_number) as NodeT;
                             let dst = (random_dst % nodes_number) as NodeT;
-                            if self.has_edge(src, dst, None) {
+                            if avoid_false_negatives && self.has_edge(src, dst, None) {
                                 return None;
                             }
                             if let Some(g) = &graph_to_avoid {
