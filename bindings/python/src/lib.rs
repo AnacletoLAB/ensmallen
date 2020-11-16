@@ -14,6 +14,8 @@ mod metrics;
 mod node_file_writer;
 mod preprocessing;
 mod remap;
+mod trees;
+mod connected_components;
 mod tarjan;
 mod utilities;
 pub(crate) use crate::preprocessing::*;

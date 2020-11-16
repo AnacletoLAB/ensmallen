@@ -36,13 +36,13 @@ impl Graph {
         self
     }
 
-    /// Enable fast walk, using more memory.
+    /// Enable extra perks that buys you time as you accept to spend more memory.
     ///
     /// # Arguments
     /// * `vector_destinations`: bool, wether to cache destinations into a vector for faster walks.
     /// * `vector_outbounds`: bool, wether to cache outbounds into a vector for faster walks.
     /// * `cache_size`: Option<f64>, percentage of nodes destinations to cache. This cannot be used with the vector destinations.
-    pub fn enable_fast_walk(
+    pub fn enable(
         &mut self,
         vector_destinations: bool,
         vector_outbounds: bool,
@@ -87,8 +87,8 @@ impl Graph {
         Ok(())
     }
 
-    /// Disable fast walk, using less memory.
-    pub fn disable_fast_walk(&mut self) {
+    /// Disable all extra perks, reducing memory impact but incresing time requirements.
+    pub fn disable_all(&mut self) {
         self.destinations = None;
         self.outbounds = None;
         self.cached_destinations = None;

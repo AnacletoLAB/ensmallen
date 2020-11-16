@@ -198,7 +198,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     if !graph.directed {
         for mode in 0..3 {
             if mode == 1 {
-                graph.enable_fast_walk(true, true, None)?;
+                graph.enable(true, true, None)?;
                 if let Some(outbounds) = &graph.outbounds {
                     assert_eq!(
                         outbounds.len(),
@@ -215,7 +215,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 }
             }
             if mode == 2 {
-                graph.enable_fast_walk(false, false, Some(0.05))?;
+                graph.enable(false, false, Some(0.05))?;
                 assert!(
                     graph.cached_destinations.is_some(),
                     "Cached destinations are not None when cache is enabled."
