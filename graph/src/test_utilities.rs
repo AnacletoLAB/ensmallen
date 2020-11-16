@@ -340,6 +340,17 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         let random_kruskal_tree = graph
             .random_spanning_arborescence_kruskal(42, &None, verbose)
             .0;
+        if !graph.directed {
+            let spanning_arborescence_bader = graph
+                .spanning_arborescence(verbose)
+                .unwrap()
+                .1
+                .collect::<Vec<(NodeT, NodeT)>>();
+            assert_eq!(
+                spanning_arborescence_bader.len() as usize,
+                kruskal_tree.len()
+            );
+        }
         assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
         let (total, min_comp, max_comp) = graph.connected_components_number(verbose);
         assert_eq!(

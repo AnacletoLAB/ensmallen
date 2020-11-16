@@ -4,11 +4,11 @@ use graph::NodeT;
 use rayon::prelude::*;
 use rayon::iter::IndexedParallelIterator;
 
-struct AWEFULWORKAROUND<'a, T> {
+struct ThreadSafe<'a, T> {
     t: &'a PyArray2<T>
 }
 
-unsafe impl<'a, T> Sync for AWEFULWORKAROUND<'a, T> {}
+unsafe impl<'a, T> Sync for ThreadSafe<'a, T> {}
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -81,7 +81,7 @@ impl EnsmallenGraph {
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
         let iter = pyex!(self.graph.random_walks_iter(quantity, &parameters))?;
-        let array = AWEFULWORKAROUND{t:PyArray2::new(py.python(), [quantity as usize, length as usize], false)};
+        let array = ThreadSafe{t:PyArray2::new(py.python(), [quantity as usize, length as usize], false)};
         unsafe {
             iter.enumerate().for_each(|(y, vy)| 
                 vy.iter().enumerate().for_each(|(x, vyx)|
@@ -158,7 +158,7 @@ impl EnsmallenGraph {
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
         let iter = pyex!(self.graph.complete_walks_iter(&parameters))?;
-        let array = AWEFULWORKAROUND{t:PyArray2::new(py.python(), [self.graph.get_unique_sources_number() as usize, length as usize], false)};
+        let array = ThreadSafe{t:PyArray2::new(py.python(), [self.graph.get_unique_sources_number() as usize, length as usize], false)};
         unsafe {
             iter.enumerate().for_each(|(y, vy)| 
                 vy.iter().enumerate().for_each(|(x, vyx)|

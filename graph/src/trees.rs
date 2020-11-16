@@ -3,7 +3,7 @@ use indicatif::ProgressIterator;
 use itertools::Itertools;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use std::collections::{HashSet};
+use std::collections::HashSet;
 use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 use vec_rand::xorshift::xorshift as rand_u64;
@@ -225,7 +225,10 @@ impl Graph {
     /// Returns set of edges composing a spanning tree.
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
-    pub fn spanning_arborescence(&self, verbose: bool) -> Result<HashSet<(NodeT, NodeT)>, String> {
+    pub fn spanning_arborescence(
+        &self,
+        verbose: bool,
+    ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_), String> {
         if self.directed {
             return Err(
                 "The spanning arborescence from Bader et al. algorithm only works for undirected graphs!".to_owned(),
@@ -246,6 +249,7 @@ impl Graph {
         );
         let active_nodes_number = AtomicUsize::new(0);
         let completed = AtomicBool::new(false);
+        let total_inserted_edges = AtomicUsize::new(0);
         let thread_safe_parents = ThreadSafe {
             value: std::cell::UnsafeCell::new(&mut parents),
         };
@@ -295,12 +299,12 @@ impl Graph {
                                 (*ptr)[src] = src as NodeT;
                             }
                             shared_stacks[0].lock().unwrap().push(src as NodeT);
-                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                            active_nodes_number.fetch_add(1, Ordering::Relaxed);
                             break;
                         }
                     }
                 });
-                completed.store(true, Ordering::SeqCst);
+                completed.store(true, Ordering::Relaxed);
             });
             (0..shared_stacks.len()).for_each(|_| {
                 s.spawn(|_| 'outer: loop {
@@ -315,7 +319,7 @@ impl Graph {
                                 }
                             }
 
-                            if completed.load(Ordering::SeqCst) {
+                            if completed.load(Ordering::Relaxed) {
                                 break 'outer;
                             }
                         }
@@ -325,7 +329,8 @@ impl Graph {
                         unsafe {
                             if (*ptr)[dst as usize] == NOT_PRESENT {
                                 (*ptr)[dst as usize] = src;
-                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                total_inserted_edges.fetch_add(1, Ordering::Relaxed);
+                                active_nodes_number.fetch_add(1, Ordering::Relaxed);
                                 shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                     .lock()
                                     .unwrap()
@@ -333,26 +338,26 @@ impl Graph {
                             }
                         }
                     });
-                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);
+                    active_nodes_number.fetch_sub(1, Ordering::Relaxed);
                 });
             });
         });
 
         // convert the now completed parents vector to a list of tuples representing the edges
         // of the spanning arborescense.
-        Ok(parents
-            .iter()
-            .enumerate()
-            .filter_map(|(dst, src)| {
+        Ok((
+            total_inserted_edges.load(Ordering::Relaxed),
+            (0..self.get_nodes_number()).filter_map(move |src| {
+                let dst = parents[src as usize];
                 // If the edge is NOT registered as a self-loop
                 // which may happen when dealing with singletons
                 // or the root nodes, we return the edge.
-                if *src != dst as NodeT {
-                    return Some((*src, dst as NodeT));
+                if src != dst {
+                    return Some((src, dst));
                 }
                 None
-            })
-            .collect::<HashSet<(NodeT, NodeT)>>())
+            }),
+        ))
     }
 
     /// Returns set of roaring bitmaps representing the connected components.
@@ -419,8 +424,9 @@ impl Graph {
                         // find the first not explored node (this is guardanteed to be in a new component)
                         if self.has_singletons() && self.is_singleton(src as NodeT) {
                             // We set singletons as self-loops for now.
-                            (*ptr)[src] = components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
-                            min_component_nodes_number.store(1, Ordering::SeqCst);
+                            (*ptr)[src] =
+                                components_number.fetch_add(1, Ordering::Relaxed) as NodeT;
+                            min_component_nodes_number.store(1, Ordering::Relaxed);
                             return;
                         }
                     }
@@ -436,24 +442,24 @@ impl Graph {
                                     break;
                                 }
                                 (*ptr)[src] =
-                                    components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
+                                    components_number.fetch_add(1, Ordering::Relaxed) as NodeT;
                             }
                             shared_stacks[0].lock().unwrap().push(src as NodeT);
-                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
-                            let ccnn = current_component_nodes_number.swap(1, Ordering::SeqCst);
+                            active_nodes_number.fetch_add(1, Ordering::Relaxed);
+                            let ccnn = current_component_nodes_number.swap(1, Ordering::Relaxed);
                             if ccnn != 0 {
-                                if max_component_nodes_number.load(Ordering::SeqCst) < ccnn {
-                                    max_component_nodes_number.store(ccnn, Ordering::SeqCst);
+                                if max_component_nodes_number.load(Ordering::Relaxed) < ccnn {
+                                    max_component_nodes_number.store(ccnn, Ordering::Relaxed);
                                 }
-                                if min_component_nodes_number.load(Ordering::SeqCst) > ccnn {
-                                    min_component_nodes_number.store(ccnn, Ordering::SeqCst);
+                                if min_component_nodes_number.load(Ordering::Relaxed) > ccnn {
+                                    min_component_nodes_number.store(ccnn, Ordering::Relaxed);
                                 }
                             }
                             break;
                         }
                     }
                 });
-                completed.store(true, Ordering::SeqCst);
+                completed.store(true, Ordering::Relaxed);
             });
             (0..shared_stacks.len()).for_each(|_| {
                 s.spawn(|_| 'outer: loop {
@@ -468,7 +474,7 @@ impl Graph {
                                 }
                             }
 
-                            if completed.load(Ordering::SeqCst) {
+                            if completed.load(Ordering::Relaxed) {
                                 break 'outer;
                             }
                         }
@@ -478,8 +484,8 @@ impl Graph {
                         unsafe {
                             if (*ptr)[dst as usize] == NOT_PRESENT {
                                 (*ptr)[dst as usize] = (*ptr)[src as usize];
-                                current_component_nodes_number.fetch_add(1, Ordering::SeqCst);
-                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                current_component_nodes_number.fetch_add(1, Ordering::Relaxed);
+                                active_nodes_number.fetch_add(1, Ordering::Relaxed);
                                 shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                     .lock()
                                     .unwrap()
@@ -487,22 +493,22 @@ impl Graph {
                             }
                         }
                     });
-                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);
+                    active_nodes_number.fetch_sub(1, Ordering::Relaxed);
                 });
             });
         });
-        let ccnn = current_component_nodes_number.load(Ordering::SeqCst);
-        if max_component_nodes_number.load(Ordering::SeqCst) < ccnn {
-            max_component_nodes_number.store(ccnn, Ordering::SeqCst);
+        let ccnn = current_component_nodes_number.load(Ordering::Relaxed);
+        if max_component_nodes_number.load(Ordering::Relaxed) < ccnn {
+            max_component_nodes_number.store(ccnn, Ordering::Relaxed);
         }
-        if min_component_nodes_number.load(Ordering::SeqCst) > ccnn {
-            min_component_nodes_number.store(ccnn, Ordering::SeqCst);
+        if min_component_nodes_number.load(Ordering::Relaxed) > ccnn {
+            min_component_nodes_number.store(ccnn, Ordering::Relaxed);
         }
         Ok((
             components,
-            components_number.load(Ordering::SeqCst) as NodeT,
-            min_component_nodes_number.load(Ordering::SeqCst) as NodeT,
-            max_component_nodes_number.load(Ordering::SeqCst) as NodeT,
+            components_number.load(Ordering::Relaxed) as NodeT,
+            min_component_nodes_number.load(Ordering::Relaxed) as NodeT,
+            max_component_nodes_number.load(Ordering::Relaxed) as NodeT,
         ))
     }
 }
