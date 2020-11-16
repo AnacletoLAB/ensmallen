@@ -1,5 +1,5 @@
 use super::*;
-use indicatif::{ProgressIterator};
+use indicatif::ProgressIterator;
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
@@ -32,16 +32,20 @@ pub fn word2vec<'a>(
     )?;
 
     Ok(sequences
-        .flat_map_iter( |sequence| {
-            sequence.iter().enumerate().filter_map(|(i, word)| {
-                let start = if i <= window_size { 0 } else { i - window_size };
-                let end = min!(sequence.len(), i + window_size);
-                if end - start == context_length {
-                    Some((sequence[start..end].to_vec(), *word))
-                } else {
-                    None
-                }
-            }).collect::<Vec<(Vec<NodeT>, NodeT)>>()
+        .flat_map_iter(|sequence| {
+            sequence
+                .iter()
+                .enumerate()
+                .filter_map(|(i, word)| {
+                    let start = if i <= window_size { 0 } else { i - window_size };
+                    let end = min!(sequence.len(), i + window_size);
+                    if end - start == context_length {
+                        Some((sequence[start..end].to_vec(), *word))
+                    } else {
+                        None
+                    }
+                })
+                .collect::<Vec<(Vec<NodeT>, NodeT)>>()
         })
         .unzip())
 }
@@ -174,10 +178,10 @@ impl Graph {
     ) -> Result<(Words, Words, Frequencies), String> {
         let walks = self.complete_walks_iter(walks_parameters)?;
         cooccurence_matrix(
-            walks, 
-            window_size, 
-            (self.get_unique_sources_number() * walks_parameters.iterations) as usize, 
-            verbose
+            walks,
+            window_size,
+            (self.get_unique_sources_number() * walks_parameters.iterations) as usize,
+            verbose,
         )
     }
 
@@ -196,7 +200,7 @@ impl Graph {
         batch_size: usize,
         negative_samples: f64,
         graph_to_avoid: Option<&Graph>,
-    ) -> Result<(Contexts, Vec<u8>), String> {
+    ) -> Result<(Contexts, Vec<bool>), String> {
         // xor the random_state with a constant so that we have a good amount of 0s and 1s in the number
         // even with low values (this is needed becasue the random_state 0 make xorshift return always 0)
         let random_state = idx ^ SEED_XOR as u64;
@@ -214,74 +218,50 @@ impl Graph {
         let edges_number = self.get_edges_number() as u64;
         let nodes_number = self.get_nodes_number() as u64;
         // generate a random vec of u64s and use them as indices
-        let positives: Vec<Vec<NodeT>> = gen_random_vec(positives_number, random_state)
-            .into_par_iter()
-            // to extract the random edges
-            .filter_map(|random_value| {
-                let edge_id = (random_value % edges_number) as EdgeT;
-                let (src, dst) = self.get_edge_from_edge_id(edge_id);
-                if !self.has_selfloops() || src != dst {
-                    Some(vec![src, dst])
-                } else {
-                    None
-                }
-            })
-            .collect();
+        // generate two random_states for reproducibility porpouses
+        let sources_random_state = rand_u64(random_state);
+        let destinations_random_state = rand_u64(sources_random_state);
 
-        // generate the negatives
-        let negatives: Vec<Vec<NodeT>> = if negatives_number == 0 {
-            // if the number of negatives is 0 then just return an empty array
-            vec![]
-        } else {
-            // generate two random_states for reproducibility porpouses
-            let sources_random_state = rand_u64(random_state);
-            let destinations_random_state = rand_u64(sources_random_state);
-            // generate the random edge-sources
-            gen_random_vec(negatives_number, sources_random_state)
+        let mut sampled_edges: Vec<(Vec<NodeT>, bool)> =
+            gen_random_vec(positives_number, random_state)
                 .into_par_iter()
-                // generate the random edge-destinations
-                .zip(gen_random_vec(negatives_number, destinations_random_state).into_par_iter())
-                // convert them to plain (src, dst)
-                .map(|(random_src, random_dst)| {
-                    (
-                        (random_src % nodes_number) as NodeT,
-                        (random_dst % nodes_number) as NodeT,
-                    )
+                // to extract the random edges
+                .map(|random_value| {
+                    let (src, dst) =
+                        self.get_edge_from_edge_id((random_value % edges_number) as EdgeT);
+                    (vec![src, dst], true)
                 })
-                // filter away the negatives that are:
-                .filter(|(src, dst)| {
-                    !(
-                        // false negatives or
-                        self.has_edge(*src, *dst, None)
-                        // are in the graph to avoid
-                        || if let Some(g) = &graph_to_avoid {
-                            g.has_edge(*src, *dst, None)
-                        } else {
-                            false
-                        }
-                        // If it's a self loop and the flag is set
-                        || (
-                            self.has_selfloops() && src == dst
+                .chain(
+                    gen_random_vec(negatives_number, sources_random_state)
+                        .into_par_iter()
+                        // generate the random edge-destinations
+                        .zip(
+                            gen_random_vec(negatives_number, destinations_random_state)
+                                .into_par_iter(),
                         )
-                    )
-                })
-                .map(|(src, dst)| vec![src, dst])
-                .collect()
-        };
-        // create the corresponing labels
-        let mut labels: Vec<u8> = vec![1; positives.len()];
-        labels.extend(vec![0; negatives.len()]);
-        // concat the two vectors of edges
-        let mut edges: Vec<Vec<NodeT>> = positives;
-        edges.extend(negatives);
+                        // convert them to plain (src, dst)
+                        .filter_map(|(random_src, random_dst)| {
+                            let src = (random_src % nodes_number) as NodeT;
+                            let dst = (random_dst % nodes_number) as NodeT;
+                            if self.has_edge(src, dst, None) {
+                                return None;
+                            }
+                            if let Some(g) = &graph_to_avoid {
+                                if g.has_edge(src, dst, None) {
+                                    return None;
+                                }
+                            }
+                            if !self.has_selfloops() && src == dst {
+                                return None;
+                            }
+                            Some((vec![src, dst], false))
+                        }),
+                )
+                .collect();
 
-        let mut indices: Vec<usize> = (0..labels.len() as usize).collect();
         let mut rng: StdRng = SeedableRng::seed_from_u64(random_state);
-        indices.shuffle(&mut rng);
+        sampled_edges.shuffle(&mut rng);
 
-        labels = indices.par_iter().map(|i| labels[*i]).collect();
-        edges = indices.par_iter().map(|i| edges[*i].clone()).collect();
-
-        Ok((edges, labels))
+        Ok(sampled_edges.iter().cloned().unzip())
     }
 }
