@@ -16,7 +16,7 @@ def load_hpo() -> EnsmallenGraph:
         default_node_type='biolink:NamedThing',
         name="HPO"
     )
-    graph.enable_fast_walk()
+    graph.enable()
     return graph
 
 
@@ -29,5 +29,5 @@ def load_pathway() -> EnsmallenGraph:
         directed=False,
         name="Pathway"
     )
-    graph.enable_fast_walk()
+    graph.enable()
     return graph

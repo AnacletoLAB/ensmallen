@@ -154,7 +154,7 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["window_size"]),
+            build_walk_parameters_list(&["window_size", "verbose"]),
         ))?;
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;

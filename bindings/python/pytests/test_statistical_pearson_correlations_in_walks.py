@@ -30,7 +30,6 @@ def test_return_weight_behaviour_hpo():
             quantity=graph.get_nodes_number(),
             length=1000,
             return_weight=return_weight,
-            verbose=False,
             random_state=seed
         )
         mean_uniques_counts.append(np.mean([
@@ -65,7 +64,6 @@ def test_return_weight_behaviour_pathway():
         walks = graph.complete_walks(
             length=200,
             return_weight=return_weight,
-            verbose=False
         )
         mean_uniques_counts.append(np.mean([
             np.unique(walk).size
@@ -98,7 +96,6 @@ def test_explore_weight_behaviour_hpo():
         walks = graph.complete_walks(
             length=400,
             explore_weight=explore_weight,
-            verbose=False
         )
         mean_uniques_counts.append(np.mean([
             np.unique(walk).size
@@ -132,7 +129,6 @@ def test_explore_weight_behaviour_pathway():
         walks = graph.complete_walks(
             length=100,
             explore_weight=explore_weight,
-            verbose=False
         )
         mean_uniques_counts.append(np.mean([
             np.unique(walk).size
@@ -166,8 +162,7 @@ def test_change_node_type_weight_behaviour_hpo():
         walks = graph.complete_walks(
             iterations=1,
             length=100,
-            change_node_type_weight=change_node_type_weight,
-            verbose=False,
+            change_node_type_weight=change_node_type_weight
         )
         changes = []
         for walk in walks:
