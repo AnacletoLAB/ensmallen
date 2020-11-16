@@ -69,7 +69,9 @@ impl Graph {
             },
             self.directed,
             self.name.clone(),
-            false
+            false,
+            self.has_edge_types(),
+            self.has_weights(),
         )
     }
 }

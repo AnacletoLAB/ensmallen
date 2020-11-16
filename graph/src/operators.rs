@@ -47,9 +47,11 @@ fn generic_string_operator(
         });
 
     let graphs = [main, other];
-    let nodes_iterator = graphs
-        .iter()
-        .flat_map(|graph| graph.get_nodes_names_iter().map(|(_, node_name, node_id)| Ok((node_name, node_id))));
+    let nodes_iterator = graphs.iter().flat_map(|graph| {
+        graph
+            .get_nodes_names_iter()
+            .map(|(_, node_name, node_id)| Ok((node_name, node_id)))
+    });
 
     Graph::from_string_unsorted(
         edges_iterator,
@@ -63,6 +65,8 @@ fn generic_string_operator(
         false,
         false,
         false,
+        main.has_edge_types(),
+        main.has_weights(),
     )
 }
 
@@ -119,6 +123,8 @@ fn generic_integer_operator(
         false,
         build_operator_graph_name(main, other, operator),
         false,
+        main.has_edge_types(),
+        main.has_weights(),
         false,
     )
 }

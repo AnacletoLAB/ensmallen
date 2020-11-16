@@ -508,6 +508,8 @@ pub(crate) fn parse_string_edges(
     numeric_edge_types_ids: bool,
     directed_edge_list: bool,
     ignore_duplicated_edges: bool,
+    has_edge_types: bool,
+    has_weights: bool
 ) -> ParsedStringEdgesType {
     let mut weights: Vec<WeightT> = Vec::new();
     let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::new(numeric_edge_types_ids);
@@ -522,9 +524,15 @@ pub(crate) fn parse_string_edges(
         directed_edge_list
     );
 
-    let typed_edges_iter = parse_edge_type_ids(wrapped_edges_iterator, &mut edge_types_ids);
+    let typed_edges_iter: Box<dyn Iterator<Item=Result<Quadruple, String>>> = match has_edge_types{
+        true=> Box::new(parse_edge_type_ids(wrapped_edges_iterator, &mut edge_types_ids)),
+        false => Box::new(wrapped_edges_iterator)
+    };
 
-    let weighted_edges_iter = parse_weights(typed_edges_iter, &mut weights);
+    let weighted_edges_iter: Box<dyn Iterator<Item=Result<Quadruple, String>>> = match has_weights{
+        true=> Box::new(parse_weights(typed_edges_iter, &mut weights)),
+        false => Box::new(typed_edges_iter)
+    };
 
     let (
         edges,
@@ -589,7 +597,9 @@ pub(crate) fn parse_integer_edges(
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
     ignore_duplicated_edges: bool,
     directed: bool,
-    directed_edge_list: bool
+    directed_edge_list: bool,
+    has_edge_types: bool,
+    has_weights: bool
 ) -> Result<
     (
         EliasFano,
@@ -608,10 +618,16 @@ pub(crate) fn parse_integer_edges(
 > {
     let mut weights: Vec<WeightT> = Vec::new();
     let mut edge_types_ids: Vec<EdgeTypeT> = Vec::new();
+    
+    let edges_iter: Box<dyn Iterator<Item=Result<Quadruple, String>>> = match has_edge_types{
+        true=> Box::new(parse_edge_type_ids(edges_iter, &mut edge_types_ids)),
+        false => Box::new(edges_iter)
+    };
 
-    let typed_edges_iter = parse_edge_type_ids(edges_iter, &mut edge_types_ids);
-
-    let weighted_edges_iter = parse_weights(typed_edges_iter, &mut weights);
+    let edges_iter: Box<dyn Iterator<Item=Result<Quadruple, String>>> = match has_weights{
+        true=> Box::new(parse_weights(edges_iter, &mut weights)),
+        false => Box::new(edges_iter)
+    };
 
     let (
         edges,
@@ -624,7 +640,7 @@ pub(crate) fn parse_integer_edges(
         node_bits,
         node_bit_mask,
     ) = build_edges(
-        weighted_edges_iter,
+        edges_iter,
         edges_number,
         nodes_number,
         ignore_duplicated_edges,
@@ -676,7 +692,9 @@ impl Graph {
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
         name: String,
-        ignore_duplicated_edges: bool
+        ignore_duplicated_edges: bool,
+        has_edge_types: bool,
+        has_weights: bool
     ) -> Result<Graph, String> {
         let (
             edges,
@@ -697,7 +715,9 @@ impl Graph {
             edge_types_vocabulary,
             ignore_duplicated_edges,
             directed,
-            true
+            true,
+            has_edge_types,
+            has_weights
         )?;
 
         Ok(Graph {
@@ -749,7 +769,9 @@ impl Graph {
         verbose: bool,
         numeric_edge_types_ids: bool,
         numeric_node_ids: bool,
-        numeric_node_types_ids: bool
+        numeric_node_types_ids: bool,
+        has_edge_types: bool,
+        has_weights: bool
     ) -> Result<Graph, String> {
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,
@@ -777,7 +799,9 @@ impl Graph {
             optionify!(edge_types_vocabulary),
             directed,
             name,
-            ignore_duplicated_edges
+            ignore_duplicated_edges,
+            has_edge_types,
+            has_weights
         )
     }
 
@@ -808,6 +832,8 @@ impl Graph {
         directed_edge_list: bool,
         name: String,
         ignore_duplicated_edges: bool,
+        has_edge_types: bool,
+        has_weights: bool,
         verbose: bool
     ) -> Result<Graph, String> {
         let (edges_number, edges_iterator) =
@@ -821,7 +847,9 @@ impl Graph {
             edge_types_vocabulary,
             directed,
             name,
-            ignore_duplicated_edges
+            ignore_duplicated_edges,
+            has_edge_types,
+            has_weights
         )
     }
 
@@ -838,6 +866,8 @@ impl Graph {
         numeric_edge_types_ids: bool,
         numeric_node_ids: bool,
         numeric_node_types_ids: bool,
+        has_edge_types: bool,
+        has_weights: bool,
         name: String,
     ) -> Result<Graph, String> {
         let (nodes, node_types) = parse_nodes(
@@ -869,6 +899,8 @@ impl Graph {
             numeric_edge_types_ids,
             directed_edge_list,
             ignore_duplicated_edges,
+            has_edge_types,
+            has_weights
         )?;
 
         Ok(Graph {

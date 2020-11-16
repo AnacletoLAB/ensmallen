@@ -45,6 +45,8 @@ impl Graph {
                 Some(nfr) => nfr.numeric_node_type_ids,
                 None => false,
             },
+            edge_file_reader.edge_types_column_number.is_some(),
+            edge_file_reader.weights_column_number.is_some(),
             name,
         )
     }
@@ -91,6 +93,8 @@ impl Graph {
                 Some(nfr) => nfr.numeric_node_type_ids,
                 None => false,
             },
+            edge_file_reader.edge_types_column_number.is_some(),
+            edge_file_reader.weights_column_number.is_some(),
         )
     }
 }

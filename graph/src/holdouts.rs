@@ -199,6 +199,8 @@ impl Graph {
             self.directed,
             format!("{} negatives", self.name.clone()),
             false,
+            self.has_edge_types(),
+            self.has_weights(),
         )
     }
 
@@ -344,6 +346,8 @@ impl Graph {
                 self.directed,
                 format!("{} training", self.name.clone()),
                 false,
+                self.has_edge_types(),
+                self.has_weights(),
             )?,
             Graph::build_graph(
                 valid_edges_bitmap
@@ -360,6 +364,8 @@ impl Graph {
                 self.directed,
                 format!("{} testing", self.name.clone()),
                 false,
+                self.has_edge_types(),
+                self.has_weights(),
             )?,
         ))
     }
@@ -451,10 +457,8 @@ impl Graph {
                 let is_in_tree = tree.contains(&(src, dst));
                 let singleton_self_loop = src == dst && self.get_node_degree(src) == 1;
                 let correct_edge_type = match &edge_type_ids {
-                    Some(etis) => {
-                        etis.contains(&edge_type.unwrap())
-                    },
-                    None => true
+                    Some(etis) => etis.contains(&edge_type.unwrap()),
+                    None => true,
                 };
                 // The tree must not contain the provided edge ID
                 // And this is not a self-loop edge with degree 1
@@ -638,6 +642,8 @@ impl Graph {
             self.directed,
             format!("{} subgraph", self.name.clone()),
             false,
+            self.has_edge_types(),
+            self.has_weights(),
         )
     }
 

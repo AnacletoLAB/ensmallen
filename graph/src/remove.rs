@@ -117,28 +117,34 @@ impl Graph {
                             return None;
                         }
                     }
-                    let src_node_type = self.get_unchecked_node_type(self.get_unchecked_node_id(&src_name));
-                    let dst_node_type = self.get_unchecked_node_type(self.get_unchecked_node_id(&dst_name));
+                    let src_node_type =
+                        self.get_unchecked_node_type(self.get_unchecked_node_id(&src_name));
+                    let dst_node_type =
+                        self.get_unchecked_node_type(self.get_unchecked_node_id(&dst_name));
                     // If the graph has node types
-                    if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type){
+                    if let (Some(src_nt), Some(dst_nt)) = (src_node_type, dst_node_type) {
                         let src_node_type_name = self.get_node_type_name(src_nt).unwrap();
                         let dst_node_type_name = self.get_node_type_name(dst_nt).unwrap();
                         // If the allow node types set was provided
                         if let Some(ants) = &allow_node_types_set {
                             // We check that the current node type name is NOT within the node type set.
-                            if !ants.contains(&src_node_type_name) || !ants.contains(&dst_node_type_name){
+                            if !ants.contains(&src_node_type_name)
+                                || !ants.contains(&dst_node_type_name)
+                            {
                                 return None;
                             }
                         }
                         // If the deny node types set was provided
                         if let Some(dnts) = &deny_node_types_set {
                             // We check that the current node type name is NOT within the node type set.
-                            if dnts.contains(&src_node_type_name) && dnts.contains(&dst_node_type_name){
+                            if dnts.contains(&src_node_type_name)
+                                && dnts.contains(&dst_node_type_name)
+                            {
                                 return None;
                             }
                         }
                     }
-                    
+
                     Some(Ok((
                         src_name,
                         dst_name,
@@ -203,6 +209,8 @@ impl Graph {
                 Some(nts) => nts.has_numeric_ids(),
                 None => false,
             },
+            self.has_edge_types() && !edge_types,
+            self.has_weights() && !weights,
             self.get_name(),
         )
     }
@@ -292,14 +300,14 @@ impl Graph {
         );
 
         Graph::build_graph(
-            self.get_edges_quadruples(true).progress_with(pb).filter_map(
-                |(_, src, dst, edge_type, weight)| match keep_components
-                    .contains(components_vector[src as usize])
-                {
-                    true => Some(Ok((src, dst, edge_type, weight))),
-                    false => None,
-                },
-            ),
+            self.get_edges_quadruples(true)
+                .progress_with(pb)
+                .filter_map(|(_, src, dst, edge_type, weight)| {
+                    match keep_components.contains(components_vector[src as usize]) {
+                        true => Some(Ok((src, dst, edge_type, weight))),
+                        false => None,
+                    }
+                }),
             self.get_edges_number(),
             self.nodes.clone(),
             self.node_types.clone(),
@@ -310,6 +318,8 @@ impl Graph {
             self.directed,
             self.name.clone(),
             true,
+            self.has_edge_types(),
+            self.has_weights(),
         )
     }
 }

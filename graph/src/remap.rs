@@ -53,6 +53,8 @@ impl Graph {
             true,
             self.name.clone(),
             false,
+            self.has_edge_types(),
+            self.has_weights(),
             verbose,
         )
     }
