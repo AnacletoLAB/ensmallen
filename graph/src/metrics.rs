@@ -704,7 +704,10 @@ impl Graph {
                     ", of which {singleton_number} are singletons{self_loop_singleton},", 
                     singleton_number=self.get_singleton_nodes_number(),
                     self_loop_singleton=match self.has_singleton_nodes_with_self_loops_number(){
-                        true=>format!(" ({} of these have self-loops)", self.get_singleton_nodes_with_self_loops_number()),
+                        true=>format!(" ({} have self-loops)", match self.get_singleton_nodes_number()==self.get_singleton_nodes_with_self_loops_number(){
+                            true=>"all".to_owned(),
+                            false=>format!("{} of these", self.get_singleton_nodes_with_self_loops_number())
+                        }),
                         false=>"".to_owned()
                     }
                 ),
@@ -745,10 +748,16 @@ impl Graph {
             density=self.density(),
             connected_components=match connected_components_number> 1{
                 true=>format!(
-                    "has {components_number} connected components, where the component with most nodes has {maximum_connected_component} nodes and the component with the least nodes has {minimum_connected_component} nodes",
+                    "has {components_number} connected components, where the component with most nodes has {maximum_connected_component} and the component with the least nodes has {minimum_connected_component}",
                     components_number=connected_components_number,
-                    maximum_connected_component=maximum_connected_component,
-                    minimum_connected_component=minimum_connected_component
+                    maximum_connected_component=match maximum_connected_component==1{
+                        true=>"a single node".to_owned(),
+                        false=>format!("{} nodes", maximum_connected_component)
+                    },
+                    minimum_connected_component=match minimum_connected_component==1{
+                        true=>"a single node".to_owned(),
+                        false=>format!("{} nodes", minimum_connected_component)
+                    }
                 ),
                 false=>"is connected, as it has a single component".to_owned()
             },
