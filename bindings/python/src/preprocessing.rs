@@ -261,7 +261,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, negative_samples, avoid_false_negatives, graph_to_avoid)"]
+    #[text_signature = "($self, idx, batch_size, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
     /// Returns
     ///
     ///
@@ -280,6 +280,8 @@ impl EnsmallenGraph {
     ///     By default False.
     ///     Enabling this will slow down the batch generation while (likely) not
     ///     introducing any significant gain to the model performance.
+    /// maximal_sampling_attempts: usize = 100,
+    ///     Number of attempts to execute to sample the negative edges.
     /// graph_to_avoid: EnsmallenGraph = None,
     ///     Graph to avoid when generating the links.
     ///     This can be the validation component of the graph, for example.
@@ -300,9 +302,10 @@ impl EnsmallenGraph {
         pyex!(validate_kwargs(
             kwargs,
             [
-                "graph_to_avoid",
                 "negative_samples",
-                "avoid_false_negatives"
+                "avoid_false_negatives",
+                "maximal_sampling_attempts",
+                "graph_to_avoid",
             ]
             .iter()
             .map(|x| x.to_string())
@@ -315,6 +318,7 @@ impl EnsmallenGraph {
             batch_size,
             pyex!(extract_value!(kwargs, "negative_samples", f64))?.unwrap_or(1.0),
             pyex!(extract_value!(kwargs, "avoid_false_negatives", bool))?.unwrap_or(false),
+            pyex!(extract_value!(kwargs, "maximal_sampling_attempts", usize))?.unwrap_or(100),
             match &graph_to_avoid {
                 Some(g) => Some(&g.graph),
                 None => None,
