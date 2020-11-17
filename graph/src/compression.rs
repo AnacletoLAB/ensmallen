@@ -36,6 +36,9 @@ impl Graph {
 
     #[inline(always)]
     pub(crate) fn get_edge_from_edge_id(&self, edge_id: EdgeT) -> (NodeT, NodeT) {
+        if let (Some(sources), Some(destinations)) = (&self.sources, &self.destinations) {
+            return (sources[edge_id as usize], destinations[edge_id as usize]);
+        }
         self.decode_edge(self.edges.unchecked_select(edge_id))
     }
 
@@ -49,11 +52,5 @@ impl Graph {
     #[inline(always)]
     pub(crate) fn get_unchecked_edge_id_from_tuple(&self, src: NodeT, dst: NodeT) -> EdgeT {
         self.edges.unchecked_rank(self.encode_edge(src, dst)) as EdgeT
-    }
-
-    #[inline(always)]
-    pub(crate) fn get_unique_source(&self, source_id: NodeT) -> NodeT {
-        self.unique_sources
-            .unchecked_select((source_id % self.get_source_nodes_number()) as u64) as NodeT
     }
 }

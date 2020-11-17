@@ -348,8 +348,8 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Number of the source nodes.
-    fn get_source_nodes_number(&self) -> NodeT {
-        self.graph.get_source_nodes_number()
+    fn get_unique_sources_number(&self) -> NodeT {
+        self.graph.get_unique_sources_number()
     }
 
     #[text_signature = "(self, directed)"]

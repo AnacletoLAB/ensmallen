@@ -198,7 +198,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     if !graph.directed {
         for mode in 0..3 {
             if mode == 1 {
-                graph.enable(true, true, None)?;
+                graph.enable(false, true, true, None)?;
                 if let Some(outbounds) = &graph.outbounds {
                     assert_eq!(
                         outbounds.len(),
@@ -215,7 +215,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 }
             }
             if mode == 2 {
-                graph.enable(false, false, Some(0.05))?;
+                graph.enable(false, false, false, Some(0.05))?;
                 assert!(
                     graph.cached_destinations.is_some(),
                     "Cached destinations are not None when cache is enabled."
@@ -653,7 +653,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 graph.get_unique_self_loop_number(),
                 "Number of unique self loops does not match in graph without edge types."
             );
-            assert_eq!(we.has_traps(), graph.has_traps());
             assert_eq!(we.nodes, graph.nodes);
             assert_eq!(
                 graph.has_edge_types(),
@@ -670,7 +669,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(wn.has_node_types(), false);
             assert_eq!(wn.weights, graph.weights);
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
-            assert_eq!(wn.has_traps(), graph.has_traps());
             assert_eq!(wn.nodes, graph.nodes);
             //assert_eq!(wn.edges, graph.edges);
             assert_eq!(
@@ -688,7 +686,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(ww.has_weights(), false);
             assert_eq!(ww.node_types, graph.node_types);
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
-            assert_eq!(ww.has_traps(), graph.has_traps());
             assert_eq!(ww.nodes, graph.nodes);
             //assert_eq!(ww.edges, graph.edges);
             assert_eq!(

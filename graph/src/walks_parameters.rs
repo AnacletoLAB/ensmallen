@@ -72,9 +72,7 @@ impl WalkWeights {
             self.return_weight,
             self.explore_weight,
         ];
-        weights
-            .iter()
-            .all(|weight| !not_one(*weight))
+        weights.iter().all(|weight| !not_one(*weight))
     }
 
     /// Return boolean value representing if walk is of first order.
@@ -84,9 +82,7 @@ impl WalkWeights {
             self.return_weight,
             self.explore_weight,
         ];
-        weights
-            .iter()
-            .all(|weight| !not_one(*weight))
+        weights.iter().all(|weight| !not_one(*weight))
     }
 }
 
@@ -157,7 +153,10 @@ impl WalksParameters {
     ///
     /// * max_neighbours: Option<NodeT> - Number of neighbours to consider for each extraction.
     ///
-    pub fn set_max_neighbours(mut self, max_neighbours: Option<NodeT>) -> Result<WalksParameters, String> {
+    pub fn set_max_neighbours(
+        mut self,
+        max_neighbours: Option<NodeT>,
+    ) -> Result<WalksParameters, String> {
         if let Some(mn) = max_neighbours {
             if mn == 0 {
                 return Err(String::from(
@@ -278,8 +277,7 @@ impl WalksParameters {
     pub fn validate(&self, graph: &Graph) -> Result<(), String> {
         if let Some(dense_node_mapping) = &self.dense_node_mapping {
             if !graph
-                .unique_sources
-                .par_iter()
+                .get_unique_sources_par_iter()
                 .all(|node| dense_node_mapping.contains_key(&(node as NodeT)))
             {
                 return Err(String::from(concat!(

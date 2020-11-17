@@ -29,7 +29,7 @@ fn bench_fast(b: &mut Bencher) {
     let mut graph = load_ppi(false, true, false, false, false, false).unwrap();
     let walker = first_order_walker(&graph).unwrap();
 
-    graph.enable(true, true, None).unwrap();
+    graph.enable(false, true, true, None).unwrap();
 
     b.iter(|| {
         for _ in 0..10 {
@@ -47,7 +47,7 @@ fn bench_cache(b: &mut Bencher, level: f64) {
     let mut graph = load_ppi(false, true, false, false, false, false).unwrap();
     let walker = first_order_walker(&graph).unwrap();
 
-    graph.enable(false, false, Some(level)).unwrap();
+    graph.enable(false, false, false, Some(level)).unwrap();
 
     b.iter(|| {
         for _ in 0..10 {

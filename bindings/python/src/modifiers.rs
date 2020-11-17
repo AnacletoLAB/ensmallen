@@ -34,10 +34,12 @@ impl EnsmallenGraph {
     ///
     /// Arguments
     /// ------------------
+    /// vector_sources: bool = False,
+    ///     Wether to cache sources into a vector for faster walks.
     /// vector_destinations: bool = True,
-    ///     wether to cache destinations into a vector for faster walks.
+    ///     Wether to cache destinations into a vector for faster walks.
     /// vector_outbounds: bool = True,
-    ///     wether to cache outbounds into a vector for faster walks.
+    ///     Wether to cache outbounds into a vector for faster walks.
     /// cache_size: float = None,
     ///     Rate of nodes destinations to cache.
     ///     Must be a value between 0 and 1.
@@ -53,13 +55,14 @@ impl EnsmallenGraph {
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
         pyex!(validate_kwargs(
             kwargs,
-            ["vector_destinations", "vector_outbounds", "cache_size"]
+            ["vector_sources", "vector_destinations", "vector_outbounds", "cache_size"]
                 .iter()
                 .map(|x| x.to_string())
                 .collect(),
         ))?;
 
         pyex!(self.graph.enable(
+            pyex!(extract_value!(kwargs, "vector_sources", bool))?.unwrap_or(false),
             pyex!(extract_value!(kwargs, "vector_destinations", bool))?.unwrap_or(true),
             pyex!(extract_value!(kwargs, "vector_outbounds", bool))?.unwrap_or(true),
             pyex!(extract_value!(kwargs, "cache_size", f64))?,

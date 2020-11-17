@@ -19,7 +19,7 @@ fn bench_spanning_arborescence(b: &mut Bencher) {
 fn bench_spanning_arborescence_with_fast_graph(b: &mut Bencher) {
     let mut graph = load_ppi(true, true, true, false, false, false).unwrap();
 
-    graph.enable(true, true, None).unwrap();
+    graph.enable(false, true, true, None).unwrap();
 
     b.iter(|| {
         for _ in 0..10 {
@@ -43,35 +43,11 @@ fn bench_spanning_arborescence_kruskal(b: &mut Bencher) {
 fn bench_spanning_arborescence_kruskal_with_fast_graph(b: &mut Bencher) {
     let mut graph = load_ppi(true, true, true, false, false, false).unwrap();
 
-    graph.enable(true, true, None).unwrap();
+    graph.enable(false, true, true, None).unwrap();
 
     b.iter(|| {
         for _ in 0..10 {
             black_box(graph.spanning_arborescence_kruskal(false));
-        }
-    });
-}
-
-#[bench]
-fn bench_random_spanning_tree(b: &mut Bencher) {
-    let graph = load_ppi(true, true, true, false, false, false).unwrap();
-
-    b.iter(|| {
-        for _ in 0..10 {
-            black_box(graph.random_spanning_tree(42, false, &None, false));
-        }
-    });
-}
-
-#[bench]
-fn bench_random_spanning_tree_with_fast_graph(b: &mut Bencher) {
-    let mut graph = load_ppi(true, true, true, false, false, false).unwrap();
-
-    graph.enable(true, true, None).unwrap();
-
-    b.iter(|| {
-        for _ in 0..10 {
-            black_box(graph.random_spanning_tree(42, false, &None, false));
         }
     });
 }

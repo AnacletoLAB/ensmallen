@@ -9,7 +9,7 @@ use std::collections::BTreeMap;
 type ParsedStringEdgesType = Result<
     (
         EliasFano,
-        EliasFano,
+        NodeT,
         Vocabulary<NodeT>,
         Option<VocabularyVec<EdgeTypeT, EdgeT>>,
         Vec<WeightT>,
@@ -371,16 +371,14 @@ pub(crate) fn build_edges(
     ignore_duplicated_edges: bool,
     directed: bool,
     directed_edge_list: bool
-) -> Result<(EliasFano, EliasFano, EdgeT, EdgeT, NodeT, NodeT, NodeT, u8, u64), String> {
+) -> Result<(EliasFano, NodeT, EdgeT, EdgeT, NodeT, NodeT, NodeT, u8, u64), String> {
     let node_bits = get_node_bits(nodes_number);
     let node_bit_mask = (1 << node_bits) - 1;
     let mut edges: EliasFano = EliasFano::new(
         encode_max_edge(nodes_number, node_bits),
         edges_number as usize,
     )?;
-    // TODO: the following data structure could be better to be a bitvector.
-    // This is because universe == number of elements
-    let mut unique_sources: EliasFano = EliasFano::new(nodes_number as u64, nodes_number as usize)?;
+    let mut unique_sources_number: NodeT = 0;
     // Last source inserted
     let mut last_src: NodeT = 0;
     let mut last_dst: NodeT = 0;
@@ -389,7 +387,6 @@ pub(crate) fn build_edges(
     let mut unique_self_loop_number: NodeT = 0;
     let mut self_loop_number: EdgeT = 0;
     let mut undirected_edges_cumulative_check: EdgeT = 0;
-    // TODO: using roaring might be sub-optimal when the bitvec is dense.
     let mut nodes_with_edges = bitvec![Msb0, u8; 0; nodes_number as usize];
     let mut not_singleton_node_number: NodeT = 0;
     let mut singleton_nodes_with_self_loops = bitvec![Msb0, u8; 0; nodes_number as usize];
@@ -442,7 +439,7 @@ pub(crate) fn build_edges(
                 unique_self_loop_number += 1;
             }
             if different_src {
-                unique_sources.unchecked_push(src as u64);
+                unique_sources_number+= 1;
                 last_src = src;
             }
             if different_dst {
@@ -464,7 +461,7 @@ pub(crate) fn build_edges(
 
     Ok((
         edges,
-        unique_sources,
+        unique_sources_number,
         unique_edges_number,
         self_loop_number,
         unique_self_loop_number,
@@ -536,7 +533,7 @@ pub(crate) fn parse_string_edges(
 
     let (
         edges,
-        unique_sources,
+        unique_sources_number,
         unique_edges_number,
         self_loop_number,
         unique_self_loop_number,
@@ -576,7 +573,7 @@ pub(crate) fn parse_string_edges(
 
     Ok((
         edges,
-        unique_sources,
+        unique_sources_number,
         nodes,
         edge_types,
         weights,
@@ -603,7 +600,7 @@ pub(crate) fn parse_integer_edges(
 ) -> Result<
     (
         EliasFano,
-        EliasFano,
+        NodeT,
         Option<VocabularyVec<EdgeTypeT, EdgeT>>,
         Vec<WeightT>,
         EdgeT,
@@ -631,7 +628,7 @@ pub(crate) fn parse_integer_edges(
 
     let (
         edges,
-        unique_sources,
+        unique_sources_number,
         unique_edges_number,
         self_loop_number,
         unique_self_loop_number,
@@ -668,7 +665,7 @@ pub(crate) fn parse_integer_edges(
 
     Ok((
         edges,
-        unique_sources,
+        unique_sources_number,
         edge_types,
         weights,
         unique_edges_number,
@@ -698,7 +695,7 @@ impl Graph {
     ) -> Result<Graph, String> {
         let (
             edges,
-            unique_sources,
+            unique_sources_number,
             edge_types,
             weights,
             unique_edges_number,
@@ -728,7 +725,7 @@ impl Graph {
             singleton_nodes_with_self_loops_number,
             unique_edges_number,
             edges,
-            unique_sources,
+            unique_sources_number,
             nodes,
             node_bit_mask,
             node_bits,
@@ -737,6 +734,7 @@ impl Graph {
             name,
             weights:optionify!(weights),
             destinations: None,
+            sources: None,
             outbounds: None,
             cached_destinations: None
         })
@@ -879,7 +877,7 @@ impl Graph {
 
         let (
             edges,
-            unique_sources,
+            unique_sources_number,
             nodes,
             edge_types,
             weights,
@@ -911,7 +909,7 @@ impl Graph {
             singleton_nodes_with_self_loops_number,
             unique_edges_number,
             edges,
-            unique_sources,
+            unique_sources_number,
             nodes,
             node_bit_mask,
             node_bits,
@@ -919,6 +917,7 @@ impl Graph {
             name,
             weights: optionify!(weights),
             node_types:optionify!(node_types),
+            sources: None,
             destinations: None,
             outbounds: None,
             cached_destinations: None

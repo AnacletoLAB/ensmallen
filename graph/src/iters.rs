@@ -8,6 +8,52 @@ impl Graph {
             .map(move |node_id| (node_id, self.get_unchecked_node_type(node_id)))
     }
 
+    /// Return iterator on the node degrees of the graph.
+    pub fn get_node_degrees_iter(&self) -> impl Iterator<Item = NodeT> + '_ {
+        (0..self.get_nodes_number()).map(move |node| self.get_node_degree(node))
+    }
+
+    /// Return iterator on the node degrees of the graph.
+    pub fn get_node_degrees_par_iter(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
+        (0..self.get_nodes_number())
+            .into_par_iter()
+            .map(move |node| self.get_node_degree(node))
+    }
+
+    /// Return iterator on the sources minimum edges of the graph.
+    pub fn get_min_edge_ids_iter(&self) -> impl Iterator<Item = EdgeT> + '_ {
+        let mut last_min_edge_id = None;
+        (0..self.get_nodes_number()).filter_map(move |node| {
+            let edge_id = self.get_source_minimum_edge_id(node);
+            if edge_id == self.get_edges_number() {
+                return None;
+            }
+            if let Some(lmei) = last_min_edge_id {
+                if lmei == edge_id {
+                    return None;
+                }
+            }
+            last_min_edge_id = Some(edge_id);
+            Some(edge_id)
+        })
+    }
+
+    /// Return iterator on the sources minimum edges of the graph.
+    pub fn get_min_edge_ids_par_iter(&self) -> impl ParallelIterator<Item = EdgeT> + '_ {
+        (0..self.get_nodes_number())
+            .into_par_iter()
+            .filter_map(move |node| {
+                let edge_id = self.get_source_minimum_edge_id(node);
+                if edge_id == self.get_edges_number() {
+                    return None;
+                }
+                if node > 0 && self.get_source_minimum_edge_id(node - 1) == edge_id {
+                    return None;
+                }
+                Some(edge_id)
+            })
+    }
+
     /// Return iterator on the node of the graph as Strings.
     pub fn get_nodes_names_iter(
         &self,
@@ -28,17 +74,28 @@ impl Graph {
     pub fn get_edges_iter(
         &self,
         directed: bool,
-    ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT)> + '_ {
-        self.edges
-            .iter()
-            .enumerate()
-            .filter_map(move |(edge_id, edge)| {
-                let (src, dst) = self.decode_edge(edge);
+    ) -> Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)> + '_> {
+        if self.sources.is_some() && self.destinations.is_some() {
+            return Box::new((0..self.get_edges_number()).filter_map(move |edge_id| {
+                let (src, dst) = self.get_edge_from_edge_id(edge_id);
                 if !directed && src > dst {
                     return None;
                 }
-                Some((edge_id as EdgeT, src, dst))
-            })
+                Some((edge_id, src, dst))
+            }));
+        }
+        Box::new(
+            self.edges
+                .iter()
+                .enumerate()
+                .filter_map(move |(edge_id, edge)| {
+                    let (src, dst) = self.decode_edge(edge);
+                    if !directed && src > dst {
+                        return None;
+                    }
+                    Some((edge_id as EdgeT, src, dst))
+                }),
+        )
     }
 
     /// Return iterator on the (non unique) source nodes of the graph.
@@ -265,32 +322,40 @@ impl Graph {
     pub fn get_unique_edges_iter(
         &self,
         directed: bool,
-    ) -> impl Iterator<Item = (NodeT, NodeT)> + '_ {
-        // TODO: implement custom unique that uses bitvec instead of the default HashSet
-        self.edges.iter_uniques().filter_map(move |edge| {
+    ) -> Box<dyn Iterator<Item = (NodeT, NodeT)> + '_> {
+        if self.sources.is_some() && self.destinations.is_some() {
+            return Box::new((0..self.get_edges_number()).filter_map(move |edge_id| {
+                let (src, dst) = self.get_edge_from_edge_id(edge_id);
+                if edge_id > 0 {
+                    let (last_src, last_dst) = self.get_edge_from_edge_id(edge_id - 1);
+                    if last_src == src && last_dst == dst {
+                        return None;
+                    }
+                }
+                if !directed && src > dst {
+                    return None;
+                }
+                Some((src, dst))
+            }));
+        }
+        Box::new(self.edges.iter_uniques().filter_map(move |edge| {
             let (src, dst) = self.decode_edge(edge);
             if !directed && src > dst {
                 return None;
             }
             Some((src, dst))
-        })
+        }))
     }
 
-    /// Return iterator on the edges of the graph.
-    ///
-    /// # Arguments
-    /// * `directed`: bool, wethever to filter out the undirected edges.
-    pub fn get_unique_edges_par_iter(
-        &self,
-        directed: bool,
-    ) -> impl ParallelIterator<Item = (NodeT, NodeT)> + '_ {
-        // TODO: implement custom unique that uses bitvec instead of the default HashSet
-        self.edges.par_iter_uniques().filter_map(move |edge| {
-            let (src, dst) = self.decode_edge(edge);
-            if !directed && src > dst {
-                return None;
-            }
-            Some((src, dst))
-        })
+    /// Return iterator on the unique sources of the graph.
+    pub fn get_unique_sources_iter(&self) -> impl Iterator<Item = NodeT> + '_ {
+        self.get_min_edge_ids_iter()
+            .map(move |edge_id| self.get_edge_from_edge_id(edge_id).0)
+    }
+
+    /// Return iterator on the unique sources of the graph.
+    pub fn get_unique_sources_par_iter(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
+        self.get_min_edge_ids_par_iter()
+            .map(move |edge_id| self.get_edge_from_edge_id(edge_id).0)
     }
 }

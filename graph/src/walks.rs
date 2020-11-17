@@ -305,12 +305,15 @@ fn get_probabilistic_indices(
 ) -> Option<Vec<u64>> {
     if let Some(mn) = max_neighbours {
         if (*mn as u64) < (max_edge_id - min_edge_id) {
-            return Some(sample_k_distinct_uniform(
-                min_edge_id,
-                max_edge_id,
-                *mn as u64,
-                random_state as u64,
-            ).unwrap());
+            return Some(
+                sample_k_distinct_uniform(
+                    min_edge_id,
+                    max_edge_id,
+                    *mn as u64,
+                    random_state as u64,
+                )
+                .unwrap(),
+            );
         }
     }
     None
@@ -624,13 +627,11 @@ impl Graph {
         self.walk_iter(
             quantity,
             move |global_index| {
-                let local_index = global_index % quantity;
-                let random_source_id =
-                    xorshift((parameters.random_state + local_index as NodeT) as u64) as NodeT;
-                (
-                    random_source_id as NodeT,
-                    self.get_unique_source(random_source_id),
-                )
+                let local_index = global_index % quantity as NodeT;
+                let random_source_id = xorshift((parameters.random_state + local_index) as u64);
+                let modded_random_source_id = random_source_id as EdgeT % self.get_edges_number();
+                let src = self.get_edge_from_edge_id(modded_random_source_id).0;
+                (random_source_id as NodeT, src)
             },
             parameters,
         )
@@ -648,7 +649,13 @@ impl Graph {
     ) -> Result<impl IndexedParallelIterator<Item = Vec<NodeT>> + 'a, String> {
         self.walk_iter(
             self.get_unique_sources_number(),
-            move |source_id| (source_id, self.get_unique_source(source_id as NodeT)),
+            move |source_id| {
+                (
+                    source_id,
+                    self.get_edge_from_edge_id(self.get_source_minimum_edge_id(source_id))
+                        .0,
+                )
+            },
             parameters,
         )
     }

@@ -299,15 +299,6 @@ impl Graph {
         self.get_self_loop_number() as f64 / self.get_edges_number() as f64
     }
 
-    /// Returns number of the source nodes.
-    ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The number of sources of the graph (not trap nodes) is {}", graph.get_source_nodes_number());
-    /// ```
-    pub fn get_source_nodes_number(&self) -> NodeT {
-        self.unique_sources.len() as NodeT
-    }
-
     /// Returns number a triple with (number of components, number of nodes of the biggest component, number of nodes of the smallest component )
     pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
         info!("Computing connected components number.");

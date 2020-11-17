@@ -39,22 +39,35 @@ impl Graph {
     /// Enable extra perks that buys you time as you accept to spend more memory.
     ///
     /// # Arguments
+    /// * `vector_sources`: bool, wether to cache sources into a vector for faster walks.
     /// * `vector_destinations`: bool, wether to cache destinations into a vector for faster walks.
     /// * `vector_outbounds`: bool, wether to cache outbounds into a vector for faster walks.
     /// * `cache_size`: Option<f64>, percentage of nodes destinations to cache. This cannot be used with the vector destinations.
     pub fn enable(
         &mut self,
+        vector_sources: bool,
         vector_destinations: bool,
         vector_outbounds: bool,
         cache_size: Option<f64>,
     ) -> Result<(), String> {
         if vector_destinations {
-            self.destinations = Some(self.get_destinations(true));
+            if self.destinations.is_none() {
+                self.destinations = Some(self.get_destinations(true));
+            }
+        } else {
+            self.destinations = None;
+        }
+        if vector_sources {
+            if self.sources.is_none() {
+                self.sources = Some(self.get_sources(true));
+            }
         } else {
             self.destinations = None;
         }
         if vector_outbounds {
-            self.outbounds = Some(self.get_outbounds());
+            if self.outbounds.is_none() {
+                self.outbounds = Some(self.get_outbounds());
+            }
         } else {
             self.outbounds = None;
         }
@@ -90,6 +103,7 @@ impl Graph {
     /// Disable all extra perks, reducing memory impact but incresing time requirements.
     pub fn disable_all(&mut self) {
         self.destinations = None;
+        self.sources = None;
         self.outbounds = None;
         self.cached_destinations = None;
     }
