@@ -103,7 +103,7 @@ pub fn load_ppi(
 /// Return WalksParameters to execute a first order walk.
 pub fn first_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(10)?
-        .set_iterations(Some(1))?
+        .set_iterations(Some(2))?
         .set_random_state(Some(43))
         .set_dense_node_mapping(Some(graph.get_dense_node_mapping())))
 }
@@ -111,7 +111,7 @@ pub fn first_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
 /// Return WalksParameters to execute a second order walk.
 pub fn second_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
     Ok(WalksParameters::new(10)?
-        .set_iterations(Some(1))?
+        .set_iterations(Some(2))?
         .set_return_weight(Some(2.0))?
         .set_explore_weight(Some(2.0))?
         .set_max_neighbours(Some(20))?

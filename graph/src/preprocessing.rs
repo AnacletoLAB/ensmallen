@@ -6,6 +6,7 @@ use rand::SeedableRng;
 use rayon::prelude::*;
 use std::collections::HashMap;
 use vec_rand::gen_random_vec;
+use vec_rand::xorshift::xorshift;
 
 /// Return training batches for Word2Vec models.
 ///
@@ -70,6 +71,8 @@ pub fn cooccurence_matrix(
 ) -> Result<(Words, Words, Frequencies), String> {
     let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
     let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
+    // TODO!: Avoid this collect and create the cooccurrence matrix in a parallel way.
+    // Tommy is currently trying to develop a version of the hashmap that is able to handle this.
     let vec = sequences.collect::<Vec<Vec<NodeT>>>();
     vec.iter().progress_with(pb1).for_each(|sequence| {
         let walk_length = sequence.len();
@@ -241,7 +244,7 @@ impl Graph {
             });
 
         for (i, sampled) in gen_random_vec(negative_number, random_state)
-            .iter()
+            .iter_mut()
             .enumerate()
         {
             let mut attempts = 0;
@@ -249,7 +252,7 @@ impl Graph {
                 if attempts > maximal_sampling_attempts {
                     return Err(format!(
                         concat!(
-                            "Executed more than {} attempts to sample a negative edge. ",
+                            "Executed more than {} attempts to sample a negative edge.\n",
                             "If your graph is so small that you see this error, you may want to consider ",
                             "using one of the edge embedding transformer from the Embiggen library."
                         ),
@@ -257,21 +260,24 @@ impl Graph {
                     ));
                 }
                 attempts += 1;
-                let random_src = sampled & 0xffffffff; // We need this to be an u64.
-                let random_dst = sampled >> 32; // We need this to be an u64.
+                let random_src = *sampled & 0xffffffff; // We need this to be an u64.
+                let random_dst = *sampled >> 32; // We need this to be an u64.
                                                 // This technique is taken from:
                                                 // https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/
                 let src = ((random_src * nodes_number) >> 32) as NodeT;
                 let dst = ((random_dst * nodes_number) >> 32) as NodeT;
                 if avoid_false_negatives && self.has_edge(src, dst, None) {
+                    *sampled = xorshift(*sampled);
                     continue;
                 }
                 if let Some(g) = &graph_to_avoid {
                     if g.has_edge(src, dst, None) {
+                        *sampled = xorshift(*sampled);
                         continue;
                     }
                 }
                 if graph_has_no_self_loops && src == dst {
+                    *sampled = xorshift(*sampled);
                     continue;
                 }
                 contexts[indices[positive_number + i]][0] = src;

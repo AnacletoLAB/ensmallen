@@ -28,11 +28,9 @@ pub struct Graph {
     pub(crate) singleton_nodes_with_self_loops_number: NodeT,
     /// How many unique edges the graph has (excluding the multi-graph ones)
     pub(crate) unique_edges_number: EdgeT,
-    ///  How many unique source nodes the graph has.
-    pub(crate) unique_sources_number: NodeT,
     /// Vector of destinations to execute fast walks if required.
     pub(crate) destinations: Option<Vec<NodeT>>,
-    /// Vector of destinations to execute fast link prediction training sequences if required.
+    /// Vector of sources to execute fast link prediction sequences if required.
     pub(crate) sources: Option<Vec<NodeT>>,
     /// Vector of outbounds to execute fast walks if required.
     pub(crate) outbounds: Option<Vec<EdgeT>>,
@@ -40,6 +38,7 @@ pub struct Graph {
     pub(crate) cached_destinations: Option<HashMap<NodeT, Vec<NodeT>>>,
     /// Graph name
     pub(crate) name: String,
+
     /// The main datastructure where all the edges are saved
     /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
     /// operation in O(1) without decompressing the data.
@@ -51,6 +50,8 @@ pub struct Graph {
     pub(crate) node_bit_mask: u64,
     /// Vocabulary that save the mappings from string to index of every node
     pub(crate) nodes: Vocabulary<NodeT>,
+    pub(crate) unique_sources: EliasFano,
+
     /// Optional vector of the weights of every edge.
     /// weights[10] return the weight of the edge with edge_id 10
     pub(crate) weights: Option<Vec<WeightT>>,
@@ -283,7 +284,7 @@ impl Graph {
     pub fn has_node_string(&self, node_name: &str, node_type_name: Option<String>) -> bool {
         match self.get_node_id(node_name) {
             Err(_) => false,
-            Ok(node_id) => self.get_node_type_string(node_id) == node_type_name,
+            Ok(node_id) => self.get_node_type_string(node_id) == node_type_name
         }
     }
 
@@ -380,36 +381,29 @@ impl Graph {
     ///
     /// * src: NodeT - Node for which we need to compute the outbounds range.
     ///
-    pub(crate) fn get_source_minimum_edge_id(&self, src: NodeT) -> EdgeT {
-        match &self.outbounds {
-            Some(outbounds) => match src == 0 {
-                true => 0,
-                false => outbounds[(src - 1) as usize],
-            },
-            None => self.get_unchecked_edge_id_from_tuple(src, 0),
-        }
-    }
-
-    /// Return range of outbound edges IDs for given Node.
-    ///
-    /// # Arguments
-    ///
-    /// * src: NodeT - Node for which we need to compute the outbounds range.
-    ///
     pub(crate) fn get_destinations_min_max_edge_ids(&self, src: NodeT) -> (EdgeT, EdgeT) {
-        let min_edge_id = self.get_source_minimum_edge_id(src);
         match &self.outbounds {
-            Some(outbounds) => (min_edge_id, outbounds[src as usize]),
-            None => (
-                min_edge_id,
-                match &self.cached_destinations {
-                    Some(cds) => match cds.get(&src) {
-                        Some(destinations) => destinations.len() as EdgeT + min_edge_id,
-                        None => self.get_source_minimum_edge_id(src + 1),
+            Some(outbounds) => {
+                let min_edge_id = if src == 0 {
+                    0
+                } else {
+                    outbounds[src as usize - 1]
+                };
+                (min_edge_id, outbounds[src as usize])
+            }
+            None => {
+                let min_edge_id: EdgeT = self.get_unchecked_edge_id_from_tuple(src, 0);
+                (
+                    min_edge_id,
+                    match &self.cached_destinations{
+                        Some(cds) => match cds.get(&src){
+                            Some(destinations) => destinations.len() as EdgeT + min_edge_id,
+                            None => self.get_unchecked_edge_id_from_tuple(src + 1, 0)
+                        },
+                        None => self.get_unchecked_edge_id_from_tuple(src + 1, 0)
                     },
-                    None => self.get_source_minimum_edge_id(src + 1),
-                },
-            ),
+                )
+            },
         }
     }
 
