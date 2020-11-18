@@ -214,10 +214,10 @@ impl Graph {
         }
 
         // The number of negatives is given by computing their fraction of batchsize
-        let negatives_number: usize =
+        let negative_number: usize =
             ((batch_size as f64 / (1.0 + negative_samples)) * negative_samples) as usize;
         // All the remaining values then are positives
-        let positives_number: usize = batch_size - negatives_number;
+        let positive_number: usize = batch_size - negative_number;
         let graph_has_no_self_loops = !self.has_selfloops();
 
         let edges_number = self.get_edges_number() as u64;
@@ -230,7 +230,7 @@ impl Graph {
         let mut contexts = vec![vec![0; 2]; batch_size];
         let mut labels = vec![false; batch_size];
 
-        gen_random_vec(positives_number, random_state)
+        gen_random_vec(positive_number, random_state)
             .iter()
             .enumerate()
             .for_each(|(i, sampled)| {
@@ -240,7 +240,7 @@ impl Graph {
                 labels[indices[i]] = true;
             });
 
-        for (i, sampled) in gen_random_vec(negatives_number, random_state)
+        for (i, sampled) in gen_random_vec(negative_number, random_state)
             .iter()
             .enumerate()
         {
@@ -274,8 +274,8 @@ impl Graph {
                 if graph_has_no_self_loops && src == dst {
                     continue;
                 }
-                contexts[indices[positives_number + i]][0] = src;
-                contexts[indices[positives_number + i]][1] = dst;
+                contexts[indices[positive_number + i]][0] = src;
+                contexts[indices[positive_number + i]][1] = dst;
                 break;
             }
         }
