@@ -1,4 +1,8 @@
-#include <x86intrin.h>
+#if _WIN32
+	#include <immintrin.h>
+#else
+    #include <x86intrin.h>
+#endif
 #include <stdio.h>
 
 typedef float                 f32;
