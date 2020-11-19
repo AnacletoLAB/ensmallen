@@ -24,3 +24,12 @@ second_fast:
 		cargo build --release\
 	)
 	perf record --call-graph=dwarf ./target/release/second_fast
+
+link_prediction:
+	rm -rfd ./target
+	cargo update
+	(\
+		export RUSTFLAGS="";\
+		cargo build --release\
+	)
+	perf record --call-graph=dwarf ./target/release/link_prediction

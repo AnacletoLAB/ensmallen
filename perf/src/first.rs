@@ -19,9 +19,9 @@ fn main() {
         .set_default_weight(Some(1.0))
         .set_verbose(Some(false))
         .set_header(Some(true));
-    let mut graph = Graph::from_unsorted_csv(edges_reader, None, false, "Graph".to_owned()).unwrap();
+    let mut graph = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned()).unwrap();
 
-    graph.enable_fast_walk(true, true);
+    graph.enable(true, true, true, None).unwrap();
 
     let walker = first_order_walker(&graph).unwrap();
     let walks = graph.random_walks_iter(1, &walker).unwrap().collect::<Vec<Vec<NodeT>>>();

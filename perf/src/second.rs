@@ -23,7 +23,7 @@ fn main() {
         .set_default_weight(Some(1.0))
         .set_verbose(Some(false))
         .set_header(Some(true));
-    let graph = Graph::from_unsorted_csv(edges_reader, None, false, "Graph".to_owned()).unwrap();
+    let graph = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned()).unwrap();
 
     let walker = second_order_walker(&graph).unwrap();
     let walks = graph.complete_walks_iter( &walker).unwrap().collect::<Vec<Vec<NodeT>>>();

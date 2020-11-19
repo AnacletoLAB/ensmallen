@@ -2,18 +2,6 @@ extern crate graph;
 use graph::*;
 use rayon::iter::ParallelIterator;
 
-/// Return WalksParameters to execute a second order walk.
-pub fn second_order_walker(graph: &Graph) -> Result<WalksParameters, String> {
-    Ok(WalksParameters::new(100)?
-        .set_iterations(Some(1))?
-        .set_return_weight(Some(2.0))?
-        .set_explore_weight(Some(2.0))?
-        .set_change_edge_type_weight(Some(2.0))?
-        .set_change_node_type_weight(Some(2.0))?
-        .set_dense_node_mapping(Some(graph.get_dense_node_mapping()))
-        .set_random_state(Some(43)))
-}
-
 fn main() {
     let edges_reader = EdgeFileReader::new("/home/zom/complete_string.tsv".to_string()).unwrap()
         .set_separator(Some("\t".to_string())).unwrap()
@@ -27,6 +15,6 @@ fn main() {
 
     graph.enable(true, true, true, None).unwrap();
 
-    let walker = second_order_walker(&graph).unwrap();
-    let walks = graph.complete_walks_iter( &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
+    let _pred = graph.link_prediction(0, 1 << 26, 4.0, false, None).unwrap();
+
 }   
