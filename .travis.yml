@@ -7,6 +7,9 @@ rust:
 # Cache cargo symbols for faster build
 cache: cargo
 
+env:
+  - RUST_BACKTRACE=full
+
 # In future we could also add windows testing
 jobs:
   include:
