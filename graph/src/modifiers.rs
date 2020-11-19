@@ -62,7 +62,7 @@ impl Graph {
                 self.sources = Some(self.get_sources(true));
             }
         } else {
-            self.destinations = None;
+            self.sources = None;
         }
         if vector_outbounds {
             if self.outbounds.is_none() {

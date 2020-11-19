@@ -360,25 +360,6 @@ impl Graph {
     ///
     /// # Arguments
     ///
-    /// * src: NodeT - Source node.
-    /// * dst: NodeT - Destination node.
-    ///
-    pub(crate) fn get_edge_types_min_max_edge_ids(
-        &self,
-        src: NodeT,
-        dst: NodeT,
-    ) -> Option<(EdgeT, EdgeT)> {
-        if let Some(min_edge) = self.get_edge_id_from_tuple(src, dst) {
-            let max_edge = self.get_unchecked_edge_id_from_tuple(src, dst + 1);
-            return Some((min_edge as EdgeT, max_edge as EdgeT));
-        }
-        None
-    }
-
-    /// Return range of outbound edges IDs for given Node.
-    ///
-    /// # Arguments
-    ///
     /// * src: NodeT - Node for which we need to compute the outbounds range.
     ///
     pub(crate) fn get_destinations_min_max_edge_ids(&self, src: NodeT) -> (EdgeT, EdgeT) {
