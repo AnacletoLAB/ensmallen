@@ -37,7 +37,7 @@ impl EnsmallenGraph {
         let (edges_number, iter) =
             pyex!(self.graph.spanning_arborescence(verbose.unwrap_or(true)))?;
         let array = ThreadSafe {
-            t: PyArray2::new(py.python(), [edges_number - 1, 2], false),
+            t: PyArray2::new(py.python(), [edges_number, 2], false),
         };
         unsafe {
             iter.enumerate().for_each(|(index, (src, dst))| {
