@@ -291,7 +291,7 @@ impl Graph {
                                 break;
                             }
                         }
-                        if active_nodes_number.load(Ordering::Relaxed) == 0 {
+                        if active_nodes_number.load(Ordering::SeqCst) == 0 {
                             unsafe {
                                 if (*ptr)[src] != NOT_PRESENT {
                                     break;
@@ -299,12 +299,12 @@ impl Graph {
                                 (*ptr)[src] = src as NodeT;
                             }
                             shared_stacks[0].lock().unwrap().push(src as NodeT);
-                            active_nodes_number.fetch_add(1, Ordering::Relaxed);
+                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
                             break;
                         }
                     }
                 });
-                completed.store(true, Ordering::Relaxed);
+                completed.store(true, Ordering::SeqCst);
             });
             (0..shared_stacks.len()).for_each(|_| {
                 s.spawn(|_| 'outer: loop {
@@ -319,7 +319,7 @@ impl Graph {
                                 }
                             }
 
-                            if completed.load(Ordering::Relaxed) {
+                            if completed.load(Ordering::SeqCst) {
                                 break 'outer;
                             }
                         }
@@ -329,8 +329,8 @@ impl Graph {
                         unsafe {
                             if (*ptr)[dst as usize] == NOT_PRESENT {
                                 (*ptr)[dst as usize] = src;
-                                total_inserted_edges.fetch_add(1, Ordering::Relaxed);
-                                active_nodes_number.fetch_add(1, Ordering::Relaxed);
+                                total_inserted_edges.fetch_add(1, Ordering::SeqCst);
+                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
                                 shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                     .lock()
                                     .unwrap()
@@ -338,7 +338,7 @@ impl Graph {
                             }
                         }
                     });
-                    active_nodes_number.fetch_sub(1, Ordering::Relaxed);
+                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);
                 });
             });
         });
@@ -346,7 +346,7 @@ impl Graph {
         // convert the now completed parents vector to a list of tuples representing the edges
         // of the spanning arborescense.
         Ok((
-            total_inserted_edges.load(Ordering::Relaxed),
+            total_inserted_edges.load(Ordering::SeqCst),
             (0..self.get_nodes_number()).filter_map(move |src| {
                 let dst = parents[src as usize];
                 // If the edge is NOT registered as a self-loop
@@ -425,8 +425,8 @@ impl Graph {
                         if self.has_singletons() && self.is_singleton(src as NodeT) {
                             // We set singletons as self-loops for now.
                             (*ptr)[src] =
-                                components_number.fetch_add(1, Ordering::Relaxed) as NodeT;
-                            min_component_nodes_number.store(1, Ordering::Relaxed);
+                                components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
+                            min_component_nodes_number.store(1, Ordering::SeqCst);
                             return;
                         }
                     }
@@ -436,30 +436,30 @@ impl Graph {
                                 break;
                             }
                         }
-                        if active_nodes_number.load(Ordering::Relaxed) == 0 {
+                        if active_nodes_number.load(Ordering::SeqCst) == 0 {
                             unsafe {
                                 if (*ptr)[src] != NOT_PRESENT {
                                     break;
                                 }
                                 (*ptr)[src] =
-                                    components_number.fetch_add(1, Ordering::Relaxed) as NodeT;
+                                    components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
                             }
                             shared_stacks[0].lock().unwrap().push(src as NodeT);
-                            active_nodes_number.fetch_add(1, Ordering::Relaxed);
-                            let ccnn = current_component_nodes_number.swap(1, Ordering::Relaxed);
+                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                            let ccnn = current_component_nodes_number.swap(1, Ordering::SeqCst);
                             if ccnn != 0 {
-                                if max_component_nodes_number.load(Ordering::Relaxed) < ccnn {
-                                    max_component_nodes_number.store(ccnn, Ordering::Relaxed);
+                                if max_component_nodes_number.load(Ordering::SeqCst) < ccnn {
+                                    max_component_nodes_number.store(ccnn, Ordering::SeqCst);
                                 }
-                                if min_component_nodes_number.load(Ordering::Relaxed) > ccnn {
-                                    min_component_nodes_number.store(ccnn, Ordering::Relaxed);
+                                if min_component_nodes_number.load(Ordering::SeqCst) > ccnn {
+                                    min_component_nodes_number.store(ccnn, Ordering::SeqCst);
                                 }
                             }
                             break;
                         }
                     }
                 });
-                completed.store(true, Ordering::Relaxed);
+                completed.store(true, Ordering::SeqCst);
             });
             (0..shared_stacks.len()).for_each(|_| {
                 s.spawn(|_| 'outer: loop {
@@ -474,7 +474,7 @@ impl Graph {
                                 }
                             }
 
-                            if completed.load(Ordering::Relaxed) {
+                            if completed.load(Ordering::SeqCst) {
                                 break 'outer;
                             }
                         }
@@ -484,8 +484,8 @@ impl Graph {
                         unsafe {
                             if (*ptr)[dst as usize] == NOT_PRESENT {
                                 (*ptr)[dst as usize] = (*ptr)[src as usize];
-                                current_component_nodes_number.fetch_add(1, Ordering::Relaxed);
-                                active_nodes_number.fetch_add(1, Ordering::Relaxed);
+                                current_component_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
                                 shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                     .lock()
                                     .unwrap()
@@ -493,22 +493,22 @@ impl Graph {
                             }
                         }
                     });
-                    active_nodes_number.fetch_sub(1, Ordering::Relaxed);
+                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);
                 });
             });
         });
-        let ccnn = current_component_nodes_number.load(Ordering::Relaxed);
-        if max_component_nodes_number.load(Ordering::Relaxed) < ccnn {
-            max_component_nodes_number.store(ccnn, Ordering::Relaxed);
+        let ccnn = current_component_nodes_number.load(Ordering::SeqCst);
+        if max_component_nodes_number.load(Ordering::SeqCst) < ccnn {
+            max_component_nodes_number.store(ccnn, Ordering::SeqCst);
         }
-        if min_component_nodes_number.load(Ordering::Relaxed) > ccnn {
-            min_component_nodes_number.store(ccnn, Ordering::Relaxed);
+        if min_component_nodes_number.load(Ordering::SeqCst) > ccnn {
+            min_component_nodes_number.store(ccnn, Ordering::SeqCst);
         }
         Ok((
             components,
-            components_number.load(Ordering::Relaxed) as NodeT,
-            min_component_nodes_number.load(Ordering::Relaxed) as NodeT,
-            max_component_nodes_number.load(Ordering::Relaxed) as NodeT,
+            components_number.load(Ordering::SeqCst) as NodeT,
+            min_component_nodes_number.load(Ordering::SeqCst) as NodeT,
+            max_component_nodes_number.load(Ordering::SeqCst) as NodeT,
         ))
     }
 }

@@ -29,7 +29,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, *, vector_destinations, vector_outbounds, cache_size)"]
+    #[text_signature = "($self, *, vector_sources, vector_destinations, vector_outbounds, cache_size)"]
     /// Enable extra perks that buys you time as you accept to spend more memory.
     ///
     /// Arguments
