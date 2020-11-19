@@ -6,7 +6,7 @@ use rand::SeedableRng;
 use rayon::prelude::*;
 use std::collections::HashMap;
 use vec_rand::gen_random_vec;
-use vec_rand::xorshift::xorshift as rand_u64;
+use vec_rand::xorshift::xorshift;
 
 /// Return training batches for Word2Vec models.
 ///
@@ -71,6 +71,8 @@ pub fn cooccurence_matrix(
 ) -> Result<(Words, Words, Frequencies), String> {
     let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
     let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
+    // TODO!: Avoid this collect and create the cooccurrence matrix in a parallel way.
+    // Tommy is currently trying to develop a version of the hashmap that is able to handle this.
     let vec = sequences.collect::<Vec<Vec<NodeT>>>();
     vec.iter().progress_with(pb1).for_each(|sequence| {
         let walk_length = sequence.len();
@@ -194,6 +196,7 @@ impl Graph {
     /// * negative_samples: f64 - The component of netagetive samples to use,
     /// * avoid_false_negatives: bool - Wether to remove the false negatives when generated.
     ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
     /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
     pub fn link_prediction(
@@ -202,6 +205,7 @@ impl Graph {
         batch_size: usize,
         negative_samples: f64,
         avoid_false_negatives: bool,
+        maximal_sampling_attempts: usize,
         graph_to_avoid: Option<&Graph>,
     ) -> Result<(Contexts, Vec<bool>), String> {
         // xor the random_state with a constant so that we have a good amount of 0s and 1s in the number
@@ -213,55 +217,75 @@ impl Graph {
         }
 
         // The number of negatives is given by computing their fraction of batchsize
-        let negatives_number: usize =
+        let negative_number: usize =
             ((batch_size as f64 / (1.0 + negative_samples)) * negative_samples) as usize;
         // All the remaining values then are positives
-        let positives_number: usize = batch_size - negatives_number;
+        let positive_number: usize = batch_size - negative_number;
+        let graph_has_no_self_loops = !self.has_selfloops();
 
         let edges_number = self.get_edges_number() as u64;
         let nodes_number = self.get_nodes_number() as u64;
-        // generate a random vec of u64s and use them as indices
-        // generate two random_states for reproducibility porpouses
-        let sources_random_state = rand_u64(random_state);
-        let destinations_random_state = rand_u64(sources_random_state);
-
-        let mut sampled_edges: Vec<(Vec<NodeT>, bool)> =
-            gen_random_vec(positives_number, random_state)
-                .iter()
-                // to extract the random edges
-                .map(|random_value| {
-                    let (src, dst) =
-                        self.get_edge_from_edge_id((random_value % edges_number) as EdgeT);
-                    (vec![src, dst], true)
-                })
-                .chain(
-                    gen_random_vec(negatives_number, sources_random_state)
-                        .iter()
-                        // generate the random edge-destinations
-                        .zip(gen_random_vec(negatives_number, destinations_random_state).iter())
-                        // convert them to plain (src, dst)
-                        .filter_map(|(random_src, random_dst)| {
-                            let src = (random_src % nodes_number) as NodeT;
-                            let dst = (random_dst % nodes_number) as NodeT;
-                            if avoid_false_negatives && self.has_edge(src, dst, None) {
-                                return None;
-                            }
-                            if let Some(g) = &graph_to_avoid {
-                                if g.has_edge(src, dst, None) {
-                                    return None;
-                                }
-                            }
-                            if !self.has_selfloops() && src == dst {
-                                return None;
-                            }
-                            Some((vec![src, dst], false))
-                        }),
-                )
-                .collect();
 
         let mut rng: StdRng = SeedableRng::seed_from_u64(random_state);
-        sampled_edges.shuffle(&mut rng);
+        let mut indices: Vec<usize> = (0..batch_size).collect();
+        indices.shuffle(&mut rng);
 
-        Ok(sampled_edges.iter().cloned().unzip())
+        let mut contexts = vec![vec![0; 2]; batch_size];
+        let mut labels = vec![false; batch_size];
+
+        gen_random_vec(positive_number, random_state)
+            .iter()
+            .enumerate()
+            .for_each(|(i, sampled)| {
+                let (src, dst) = self.get_edge_from_edge_id(sampled % edges_number);
+                contexts[indices[i]][0] = src;
+                contexts[indices[i]][1] = dst;
+                labels[indices[i]] = true;
+            });
+
+        for (i, sampled) in gen_random_vec(negative_number, random_state)
+            .iter_mut()
+            .enumerate()
+        {
+            let mut attempts = 0;
+            loop {
+                if attempts > maximal_sampling_attempts {
+                    return Err(format!(
+                        concat!(
+                            "Executed more than {} attempts to sample a negative edge.\n",
+                            "If your graph is so small that you see this error, you may want to consider ",
+                            "using one of the edge embedding transformer from the Embiggen library."
+                        ),
+                        maximal_sampling_attempts
+                    ));
+                }
+                attempts += 1;
+                let random_src = *sampled & 0xffffffff; // We need this to be an u64.
+                let random_dst = *sampled >> 32; // We need this to be an u64.
+                                                // This technique is taken from:
+                                                // https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/
+                let src = ((random_src * nodes_number) >> 32) as NodeT;
+                let dst = ((random_dst * nodes_number) >> 32) as NodeT;
+                if avoid_false_negatives && self.has_edge(src, dst, None) {
+                    *sampled = xorshift(*sampled);
+                    continue;
+                }
+                if let Some(g) = &graph_to_avoid {
+                    if g.has_edge(src, dst, None) {
+                        *sampled = xorshift(*sampled);
+                        continue;
+                    }
+                }
+                if graph_has_no_self_loops && src == dst {
+                    *sampled = xorshift(*sampled);
+                    continue;
+                }
+                contexts[indices[positive_number + i]][0] = src;
+                contexts[indices[positive_number + i]][1] = dst;
+                break;
+            }
+        }
+
+        Ok((contexts, labels))
     }
 }

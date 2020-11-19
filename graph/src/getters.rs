@@ -10,6 +10,16 @@ impl Graph {
         self.name.clone()
     }
 
+    /// Return the number of traps (nodes without any outgoing edges that are not singletons)
+    pub fn get_traps_number(&self) -> EdgeT {
+        self.not_singleton_nodes_number as EdgeT - self.unique_sources.len() as EdgeT
+    }
+
+    // Return if the graph has traps or not
+    pub fn has_traps(&self) -> bool {
+        self.get_traps_number() > 0
+    }
+
     /// Returns boolean representing if graph is directed.
     pub fn is_directed(&self) -> bool {
         self.directed
@@ -415,7 +425,10 @@ impl Graph {
 
     /// Returns the degree of every node in the graph.
     pub fn get_node_degrees(&self) -> Vec<NodeT> {
-        self.get_node_degrees_par_iter().collect::<Vec<NodeT>>()
+        (0..self.get_nodes_number())
+            .into_par_iter()
+            .map(|node| self.get_node_degree(node as NodeT))
+            .collect::<Vec<NodeT>>()
     }
 
     /// Return set of nodes that are not singletons.
@@ -550,6 +563,15 @@ impl Graph {
     }
 
     pub fn get_unique_sources_number(&self) -> NodeT {
-        self.unique_sources_number
+        self.unique_sources.len() as NodeT
+    }
+
+    /// Returns number of the source nodes.
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// println!("The number of sources of the graph (not trap nodes) is {}", graph.get_source_nodes_number());
+    /// ```
+    pub fn get_source_nodes_number(&self) -> NodeT {
+        self.unique_sources.len() as NodeT
     }
 }

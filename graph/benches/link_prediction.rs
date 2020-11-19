@@ -10,7 +10,7 @@ fn bench_link_prediction(b: &mut Bencher) {
 
     b.iter(|| {
         for _ in 0..10 {
-            black_box(graph.link_prediction(0, 4096, 1.0, false, None).unwrap());
+            black_box(graph.link_prediction(0, 4096, 1.0, false, 100, None).unwrap());
         }
     });
 }
@@ -23,7 +23,7 @@ fn bench_link_prediction_fast(b: &mut Bencher) {
 
     b.iter(|| {
         for _ in 0..10 {
-            black_box(graph.link_prediction(0, 4096, 1.0, false, None).unwrap());
+            black_box(graph.link_prediction(0, 4096, 1.0, false, 100, None).unwrap());
         }
     });
 }

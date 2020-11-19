@@ -20,40 +20,6 @@ impl Graph {
             .map(move |node| self.get_node_degree(node))
     }
 
-    /// Return iterator on the sources minimum edges of the graph.
-    pub fn get_min_edge_ids_iter(&self) -> impl Iterator<Item = EdgeT> + '_ {
-        let mut last_min_edge_id = None;
-        (0..self.get_nodes_number()).filter_map(move |node| {
-            let edge_id = self.get_source_minimum_edge_id(node);
-            if edge_id == self.get_edges_number() {
-                return None;
-            }
-            if let Some(lmei) = last_min_edge_id {
-                if lmei == edge_id {
-                    return None;
-                }
-            }
-            last_min_edge_id = Some(edge_id);
-            Some(edge_id)
-        })
-    }
-
-    /// Return iterator on the sources minimum edges of the graph.
-    pub fn get_min_edge_ids_par_iter(&self) -> impl ParallelIterator<Item = EdgeT> + '_ {
-        (0..self.get_nodes_number())
-            .into_par_iter()
-            .filter_map(move |node| {
-                let edge_id = self.get_source_minimum_edge_id(node);
-                if edge_id == self.get_edges_number() {
-                    return None;
-                }
-                if node > 0 && self.get_source_minimum_edge_id(node - 1) == edge_id {
-                    return None;
-                }
-                Some(edge_id)
-            })
-    }
-
     /// Return iterator on the node of the graph as Strings.
     pub fn get_nodes_names_iter(
         &self,
@@ -349,13 +315,11 @@ impl Graph {
 
     /// Return iterator on the unique sources of the graph.
     pub fn get_unique_sources_iter(&self) -> impl Iterator<Item = NodeT> + '_ {
-        self.get_min_edge_ids_iter()
-            .map(move |edge_id| self.get_edge_from_edge_id(edge_id).0)
+        self.unique_sources.iter().map(|source| source as NodeT)
     }
 
     /// Return iterator on the unique sources of the graph.
     pub fn get_unique_sources_par_iter(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
-        self.get_min_edge_ids_par_iter()
-            .map(move |edge_id| self.get_edge_from_edge_id(edge_id).0)
+        self.unique_sources.par_iter().map(|source| source as NodeT)
     }
 }
