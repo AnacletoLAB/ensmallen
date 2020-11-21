@@ -29,6 +29,8 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
         data.numeric_edge_types_ids,
         data.numeric_node_ids,
         data.numeric_node_types_ids,
+        true,
+        true
     )?;
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.
