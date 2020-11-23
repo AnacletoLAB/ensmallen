@@ -3,12 +3,9 @@ use numpy::{PyArray2};
 use graph::NodeT;
 use rayon::prelude::*;
 use rayon::iter::IndexedParallelIterator;
+use thread_safe::ThreadSafe;
 
-struct ThreadSafe<'a, T> {
-    t: &'a PyArray2<T>
-}
 
-unsafe impl<'a, T> Sync for ThreadSafe<'a, T> {}
 
 #[pymethods]
 impl EnsmallenGraph {

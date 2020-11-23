@@ -199,15 +199,15 @@ impl Graph {
     /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
     /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
     ///
-    pub fn link_prediction(
-        &self,
+    pub fn link_prediction<'a>(
+        &'a self,
         idx: u64,
         batch_size: usize,
         negative_samples: f64,
         avoid_false_negatives: bool,
         maximal_sampling_attempts: usize,
-        graph_to_avoid: Option<&Graph>,
-    ) -> Result<(Contexts, Vec<bool>), String> {
+        graph_to_avoid: &'a Option<&Graph>,
+    ) -> Result<impl Iterator<Item = (usize, NodeT, NodeT, bool)> + 'a, String> {
         // xor the random_state with a constant so that we have a good amount of 0s and 1s in the number
         // even with low values (this is needed becasue the random_state 0 make xorshift return always 0)
         let random_state = idx ^ SEED_XOR as u64;
@@ -227,65 +227,52 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as u64;
 
         let mut rng: StdRng = SeedableRng::seed_from_u64(random_state);
+        let random_values = gen_random_vec(batch_size, random_state);
         let mut indices: Vec<usize> = (0..batch_size).collect();
         indices.shuffle(&mut rng);
 
-        let mut contexts = vec![vec![0; 2]; batch_size];
-        let mut labels = vec![false; batch_size];
-
-        gen_random_vec(positive_number, random_state)
-            .iter()
-            .enumerate()
-            .for_each(|(i, sampled)| {
-                let (src, dst) = self.get_edge_from_edge_id(sampled % edges_number);
-                contexts[indices[i]][0] = src;
-                contexts[indices[i]][1] = dst;
-                labels[indices[i]] = true;
-            });
-
-        for (i, sampled) in gen_random_vec(negative_number, random_state)
-            .iter_mut()
-            .enumerate()
-        {
-            let mut attempts = 0;
-            loop {
-                if attempts > maximal_sampling_attempts {
-                    return Err(format!(
-                        concat!(
-                            "Executed more than {} attempts to sample a negative edge.\n",
-                            "If your graph is so small that you see this error, you may want to consider ",
-                            "using one of the edge embedding transformer from the Embiggen library."
-                        ),
-                        maximal_sampling_attempts
-                    ));
+        Ok((0..batch_size)
+            .map(move |i| {
+                let mut sampled = random_values[i];
+                if i < positive_number{
+                    let (src, dst) = self.get_edge_from_edge_id(sampled % edges_number);
+                    return (indices[i], src, dst, true)
                 }
-                attempts += 1;
-                let random_src = *sampled & 0xffffffff; // We need this to be an u64.
-                let random_dst = *sampled >> 32; // We need this to be an u64.
-                                                // This technique is taken from:
-                                                // https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/
-                let src = ((random_src * nodes_number) >> 32) as NodeT;
-                let dst = ((random_dst * nodes_number) >> 32) as NodeT;
-                if avoid_false_negatives && self.has_edge(src, dst, None) {
-                    *sampled = xorshift(*sampled);
-                    continue;
-                }
-                if let Some(g) = &graph_to_avoid {
-                    if g.has_edge(src, dst, None) {
-                        *sampled = xorshift(*sampled);
+                let mut attempts = 0;
+                loop {
+                    if attempts > maximal_sampling_attempts {
+                        panic!(format!(
+                            concat!(
+                                "Executed more than {} attempts to sample a negative edge.\n",
+                                "If your graph is so small that you see this error, you may want to consider ",
+                                "using one of the edge embedding transformer from the Embiggen library."
+                            ),
+                            maximal_sampling_attempts
+                        ));
+                    }
+                    attempts += 1;
+                    let random_src = sampled & 0xffffffff; // We need this to be an u64.
+                    let random_dst = sampled >> 32; // We need this to be an u64.
+                                                    // This technique is taken from:
+                                                    // https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/
+                    let src = ((random_src * nodes_number) >> 32) as NodeT;
+                    let dst = ((random_dst * nodes_number) >> 32) as NodeT;
+                    if avoid_false_negatives && self.has_edge(src, dst, None) {
+                        sampled = xorshift(sampled);
                         continue;
                     }
+                    if let Some(g) = &graph_to_avoid {
+                        if g.has_edge(src, dst, None) {
+                            sampled = xorshift(sampled);
+                            continue;
+                        }
+                    }
+                    if graph_has_no_self_loops && src == dst {
+                        sampled = xorshift(sampled);
+                        continue;
+                    }
+                    return (indices[i], src, dst, false)
                 }
-                if graph_has_no_self_loops && src == dst {
-                    *sampled = xorshift(*sampled);
-                    continue;
-                }
-                contexts[indices[positive_number + i]][0] = src;
-                contexts[indices[positive_number + i]][1] = dst;
-                break;
-            }
-        }
-
-        Ok((contexts, labels))
+            }))
     }
 }

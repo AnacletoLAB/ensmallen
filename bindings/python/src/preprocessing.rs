@@ -1,6 +1,6 @@
 use super::*;
 use graph::{cooccurence_matrix as rust_cooccurence_matrix, word2vec as rust_word2vec, NodeT};
-use numpy::{PyArray, PyArray1};
+use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
 use rayon::prelude::*;
 
@@ -312,22 +312,29 @@ impl EnsmallenGraph {
             .collect(),
         ))?;
         let graph_to_avoid = pyex!(extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph))?;
+        let maybe_graph = match &graph_to_avoid {
+            Some(g) => Some(&g.graph),
+            None => None,
+        };
 
-        let (edges, labels) = pyex!(self.graph.link_prediction(
+        let iter = pyex!(self.graph.link_prediction(
             idx,
             batch_size,
             pyex!(extract_value!(kwargs, "negative_samples", f64))?.unwrap_or(1.0),
             pyex!(extract_value!(kwargs, "avoid_false_negatives", bool))?.unwrap_or(false),
             pyex!(extract_value!(kwargs, "maximal_sampling_attempts", usize))?.unwrap_or(100),
-            match &graph_to_avoid {
-                Some(g) => Some(&g.graph),
-                None => None,
-            }
+            &maybe_graph
         ))?;
 
-        Ok((
-            to_nparray_2d!(gil, edges, NodeT),
-            to_nparray_1d!(gil, labels, bool),
-        ))
+        let edges = PyArray2::new(gil.python(), [batch_size, 2], false);
+        let labels = PyArray1::new(gil.python(), [batch_size], false);
+        unsafe {
+            iter.for_each(|(i, src, dst, label)| {
+                *(edges.uget_mut([i, 0])) = src;
+                *(edges.uget_mut([i, 1])) = dst;
+                *(labels.uget_mut([i])) = label;
+            });
+        }
+        Ok((edges.to_owned(), labels.to_owned()))
     }
 }
