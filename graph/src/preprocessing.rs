@@ -8,6 +8,35 @@ use std::collections::HashMap;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift;
 
+enum EdgeEmbeddingMethods {
+    Hadamard,
+    Average,
+    Sum,
+    L1,
+    AbsoluteL1,
+    L2,
+}
+
+impl EdgeEmbeddingMethods {
+    fn new(method: &str) -> Result<EdgeEmbeddingMethods, String> {
+        match method {
+            "Hadamard" => Ok(EdgeEmbeddingMethods::Hadamard),
+            "Average" => Ok(EdgeEmbeddingMethods::Average),
+            "Sum" => Ok(EdgeEmbeddingMethods::Sum),
+            "L1" => Ok(EdgeEmbeddingMethods::L1),
+            "AbsoluteL1" => Ok(EdgeEmbeddingMethods::AbsoluteL1),
+            "L2" => Ok(EdgeEmbeddingMethods::L2),
+            _ => Err(format!(
+                concat!(
+                    "Given embedding method '{}' is not supported.",
+                    "The supported methods are 'Hadamard', 'Average', 'Sum', 'AbsoluteL1', 'L1' and 'L2'."
+                ),
+                method
+            )),
+        }
+    }
+}
+
 /// Return training batches for Word2Vec models.
 ///
 /// The batch is composed of a tuple as the following:
@@ -192,7 +221,8 @@ impl Graph {
     /// # Arguments
     ///
     /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
-    /// * batch_size:usize - The maximal size of the batch to generate,
+    /// * batch_size: usize - The maximal size of the batch to generate,
+    /// * method: &str - String representing the required edge embedding method.
     /// * negative_samples: f64 - The component of netagetive samples to use,
     /// * avoid_false_negatives: bool - Wether to remove the false negatives when generated.
     ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
@@ -203,18 +233,25 @@ impl Graph {
         &'a self,
         idx: u64,
         batch_size: usize,
+        method: &str,
         negative_samples: f64,
         avoid_false_negatives: bool,
         maximal_sampling_attempts: usize,
         graph_to_avoid: &'a Option<&Graph>,
-    ) -> Result<impl Iterator<Item = (usize, NodeT, NodeT, bool)> + 'a, String> {
+    ) -> Result<impl ParallelIterator<Item = (usize, Vec<f64>, bool)> + 'a, String> {
         // xor the random_state with a constant so that we have a good amount of 0s and 1s in the number
         // even with low values (this is needed becasue the random_state 0 make xorshift return always 0)
         let random_state = idx ^ SEED_XOR as u64;
 
         if negative_samples < 0.0 || !negative_samples.is_finite() {
-            return Err(String::from("Negative sample must be a posive real value."));
+            return Err("Negative sample must be a posive real value.".to_string());
         }
+
+        if self.embedding.is_none() {
+            return Err("Embedding object was not provided.".to_string());
+        }
+
+        let method = EdgeEmbeddingMethods::new(method)?;
 
         // The number of negatives is given by computing their fraction of batchsize
         let negative_number: usize =
@@ -230,49 +267,71 @@ impl Graph {
         let random_values = gen_random_vec(batch_size, random_state);
         let mut indices: Vec<usize> = (0..batch_size).collect();
         indices.shuffle(&mut rng);
+        let embedding_size = self.get_embedding_size()?;
 
-        Ok((0..batch_size)
-            .map(move |i| {
-                let mut sampled = random_values[i];
-                if i < positive_number{
-                    let (src, dst) = self.get_edge_from_edge_id(sampled % edges_number);
-                    return (indices[i], src, dst, true)
-                }
-                let mut attempts = 0;
-                loop {
-                    if attempts > maximal_sampling_attempts {
-                        panic!(format!(
-                            concat!(
-                                "Executed more than {} attempts to sample a negative edge.\n",
-                                "If your graph is so small that you see this error, you may want to consider ",
-                                "using one of the edge embedding transformer from the Embiggen library."
-                            ),
-                            maximal_sampling_attempts
-                        ));
-                    }
-                    attempts += 1;
-                    let random_src = sampled & 0xffffffff; // We need this to be an u64.
-                    let random_dst = sampled >> 32; // We need this to be an u64.
-                                                    // This technique is taken from:
-                                                    // https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/
-                    let src = ((random_src * nodes_number) >> 32) as NodeT;
-                    let dst = ((random_dst * nodes_number) >> 32) as NodeT;
-                    if avoid_false_negatives && self.has_edge(src, dst, None) {
-                        sampled = xorshift(sampled);
-                        continue;
-                    }
-                    if let Some(g) = &graph_to_avoid {
-                        if g.has_edge(src, dst, None) {
-                            sampled = xorshift(sampled);
-                            continue;
+        match &self.embedding {
+            Some(embedding) =>Ok((0..batch_size)
+                .into_par_iter()
+                .map(move |i| {
+                    let mut sampled = random_values[i];
+                    let (src, dst, label) = if i < positive_number{
+                        let (src, dst) = self.get_edge_from_edge_id(sampled % edges_number);
+                        (src, dst, true)
+                    } else {
+                        let mut attempts = 0;
+                        loop {
+                            if attempts > maximal_sampling_attempts {
+                                panic!(format!(
+                                    concat!(
+                                        "Executed more than {} attempts to sample a negative edge.\n",
+                                        "If your graph is so small that you see this error, you may want to consider ",
+                                        "using one of the edge embedding transformer from the Embiggen library."
+                                    ),
+                                    maximal_sampling_attempts
+                                ));
+                            }
+                            attempts += 1;
+                            let random_src = sampled & 0xffffffff; // We need this to be an u64.
+                            let random_dst = sampled >> 32; // We need this to be an u64.
+                                                            // This technique is taken from:
+                                                            // https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/
+                            let src = ((random_src * nodes_number) >> 32) as NodeT;
+                            let dst = ((random_dst * nodes_number) >> 32) as NodeT;
+                            if avoid_false_negatives && self.has_edge(src, dst, None) {
+                                sampled = xorshift(sampled);
+                                continue;
+                            }
+                            if let Some(g) = &graph_to_avoid {
+                                if g.has_edge(src, dst, None) {
+                                    sampled = xorshift(sampled);
+                                    continue;
+                                }
+                            }
+                            if graph_has_no_self_loops && src == dst {
+                                sampled = xorshift(sampled);
+                                continue;
+                            }
+                            break (src, dst, false);
                         }
-                    }
-                    if graph_has_no_self_loops && src == dst {
-                        sampled = xorshift(sampled);
-                        continue;
-                    }
-                    return (indices[i], src, dst, false)
-                }
-            }))
+                    };
+                    (
+                        indices[i],
+                        (0..embedding_size).map(|i| {
+                            let x1 = embedding[src as usize][i];
+                            let x2 = embedding[dst as usize][i];
+                            match method {
+                                EdgeEmbeddingMethods::Hadamard => x1*x2,
+                                EdgeEmbeddingMethods::Average => (x1+x2)/2.0,
+                                EdgeEmbeddingMethods::Sum => x1+x2,
+                                EdgeEmbeddingMethods::L1 => x1-x2,
+                                EdgeEmbeddingMethods::AbsoluteL1 => (x1-x2).abs(),
+                                EdgeEmbeddingMethods::L2 => (x1-x2).powi(2),
+                            }
+                        }).collect(),
+                        label
+                    )
+                })),
+            None=>Err("Embedding object was not provided. Use the method 'set_embedding' to provide the embedding.".to_string())
+        }
     }
 }

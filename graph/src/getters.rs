@@ -574,4 +574,12 @@ impl Graph {
     pub fn get_source_nodes_number(&self) -> NodeT {
         self.unique_sources.len() as NodeT
     }
+
+    /// Returns size of the embedding.
+    pub fn get_embedding_size(&self) -> Result<usize, String> {
+        match &self.embedding {
+            Some(embedding) => Ok(embedding.first().unwrap().len()),
+            None => Err("The embeddding object was not provided!".to_owned()),
+        }
+    }
 }

@@ -3,6 +3,7 @@ use graph::{cooccurence_matrix as rust_cooccurence_matrix, word2vec as rust_word
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
 use rayon::prelude::*;
+use thread_safe::ThreadSafe;
 
 #[pymodule]
 fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
@@ -261,7 +262,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, idx, batch_size, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
+    #[text_signature = "($self, idx, batch_size, method, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
     /// Returns
     ///
     ///
@@ -269,8 +270,10 @@ impl EnsmallenGraph {
     /// -----------------------------
     /// idx:int,
     ///     Index corresponding to batch to be rendered.
-    /// batch_size: int = 2**10,
+    /// batch_size: int,
     ///     The batch size to use.
+    /// method: str,
+    ///     The method to use for the edge embedding.
     /// negative_samples: float = 1.0,
     ///     Factor of negatives to use in every batch.
     ///     For example, with a batch size of 128 and negative_samples equal
@@ -294,8 +297,9 @@ impl EnsmallenGraph {
         &self,
         idx: u64,
         batch_size: usize,
+        method: &str,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<(PyContexts, Py<PyArray1<bool>>)> {
+    ) -> PyResult<(Py<PyArray2<f64>>, Py<PyArray1<bool>>)> {
         let gil = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, gil.python());
 
@@ -320,21 +324,31 @@ impl EnsmallenGraph {
         let iter = pyex!(self.graph.link_prediction(
             idx,
             batch_size,
+            method,
             pyex!(extract_value!(kwargs, "negative_samples", f64))?.unwrap_or(1.0),
             pyex!(extract_value!(kwargs, "avoid_false_negatives", bool))?.unwrap_or(false),
             pyex!(extract_value!(kwargs, "maximal_sampling_attempts", usize))?.unwrap_or(100),
             &maybe_graph
         ))?;
 
-        let edges = PyArray2::new(gil.python(), [batch_size, 2], false);
-        let labels = PyArray1::new(gil.python(), [batch_size], false);
+        let edges = ThreadSafe {
+            t: PyArray2::new(
+                gil.python(),
+                [batch_size, pyex!(self.graph.get_embedding_size())?],
+                false,
+            ),
+        };
+        let labels = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
         unsafe {
-            iter.for_each(|(i, src, dst, label)| {
-                *(edges.uget_mut([i, 0])) = src;
-                *(edges.uget_mut([i, 1])) = dst;
-                *(labels.uget_mut([i])) = label;
+            iter.for_each(|(i, edge_embedding, label)| {
+                edge_embedding.iter().enumerate().for_each(|(j, v)| {
+                    *(edges.t.uget_mut([i, j])) = *v;
+                });
+                *(labels.t.uget_mut([i])) = label;
             });
         }
-        Ok((edges.to_owned(), labels.to_owned()))
+        Ok((edges.t.to_owned(), labels.t.to_owned()))
     }
 }

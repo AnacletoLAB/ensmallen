@@ -38,6 +38,8 @@ pub struct Graph {
     pub(crate) cached_destinations: Option<HashMap<NodeT, Vec<NodeT>>>,
     /// Graph name
     pub(crate) name: String,
+    // Graph embedding for fast edge embedding operations.
+    pub(crate) embedding: Option<Vec<Vec<f64>>>,
 
     /// The main datastructure where all the edges are saved
     /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
@@ -284,7 +286,7 @@ impl Graph {
     pub fn has_node_string(&self, node_name: &str, node_type_name: Option<String>) -> bool {
         match self.get_node_id(node_name) {
             Err(_) => false,
-            Ok(node_id) => self.get_node_type_string(node_id) == node_type_name
+            Ok(node_id) => self.get_node_type_string(node_id) == node_type_name,
         }
     }
 
@@ -395,15 +397,15 @@ impl Graph {
                 let min_edge_id: EdgeT = self.get_unchecked_edge_id_from_tuple(src, 0);
                 (
                     min_edge_id,
-                    match &self.cached_destinations{
-                        Some(cds) => match cds.get(&src){
+                    match &self.cached_destinations {
+                        Some(cds) => match cds.get(&src) {
                             Some(destinations) => destinations.len() as EdgeT + min_edge_id,
-                            None => self.get_unchecked_edge_id_from_tuple(src + 1, 0)
+                            None => self.get_unchecked_edge_id_from_tuple(src + 1, 0),
                         },
-                        None => self.get_unchecked_edge_id_from_tuple(src + 1, 0)
+                        None => self.get_unchecked_edge_id_from_tuple(src + 1, 0),
                     },
                 )
-            },
+            }
         }
     }
 

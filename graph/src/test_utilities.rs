@@ -512,11 +512,12 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         graph.node2vec(&walker, 1, 3)?;
         // Testing link prediction pre-processing
         let batch_size = 10;
-        graph
-            .link_prediction(0, 1, 1.0, true, batch_size, &None)?
+        graph.set_embedding(vec![vec![1.0; 100]; graph.get_nodes_number() as usize])?;
+        let _ = graph
+            .link_prediction(0, 1, "Average", 1.0, true, batch_size, &None)?
             .collect::<Vec<_>>();
-        graph
-            .link_prediction(0, 1, 1.0, false, batch_size, &None)?
+        let _ = graph
+            .link_prediction(0, 1, "Average", 1.0, false, batch_size, &None)?
             .collect::<Vec<_>>();
     }
     // Compute metrics of the graph

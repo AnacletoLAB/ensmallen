@@ -737,6 +737,7 @@ impl Graph {
             name,
             weights:optionify!(weights),
             sources: None,
+            embedding: None,
             destinations: None,
             outbounds: None,
             cached_destinations: None
@@ -921,6 +922,7 @@ impl Graph {
             weights: optionify!(weights),
             node_types:optionify!(node_types),
             sources: None,
+            embedding: None,
             destinations: None,
             outbounds: None,
             cached_destinations: None
