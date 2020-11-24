@@ -147,6 +147,11 @@ impl WalksParameters {
         Ok(self)
     }
 
+    /// Return the iterations.
+    pub fn get_iterations(&self) -> NodeT {
+        self.iterations
+    }
+
     /// Set the maximum neighbours number to consider, making the walk probabilistic.
     ///
     /// # Arguments

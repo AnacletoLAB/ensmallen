@@ -1,4 +1,5 @@
 from tqdm.auto import tqdm
+import numpy as np
 from .utils import load_hpo, load_pathway
 
 
@@ -12,9 +13,15 @@ def test_skipgrams():
             random_state=42,
         )
         assert len(words) == len(contexts)
+        embedding = np.random.uniform(size=(
+            graph.get_nodes_number(),
+            100
+        ))
+        graph.set_embedding(embedding)
         edges, labels = graph.link_prediction(
             idx=0,
-            batch_size=32
+            batch_size=32,
+            method="Hadamard"
         )
         assert len(edges) == len(labels)
         assert set(labels) <= set([0, 1])

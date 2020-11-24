@@ -238,7 +238,8 @@ impl Graph {
         avoid_false_negatives: bool,
         maximal_sampling_attempts: usize,
         graph_to_avoid: &'a Option<&Graph>,
-    ) -> Result<impl ParallelIterator<Item = (usize, Vec<f64>, bool)> + 'a, String> {
+    ) -> Result<impl ParallelIterator<Item = (usize, impl Iterator<Item = f64> + 'a, bool)> + 'a, String>
+    {
         // xor the random_state with a constant so that we have a good amount of 0s and 1s in the number
         // even with low values (this is needed becasue the random_state 0 make xorshift return always 0)
         let random_state = idx ^ SEED_XOR as u64;
@@ -251,7 +252,14 @@ impl Graph {
             return Err("Embedding object was not provided.".to_string());
         }
 
-        let method = EdgeEmbeddingMethods::new(method)?;
+        let method = match EdgeEmbeddingMethods::new(method)? {
+            EdgeEmbeddingMethods::Hadamard => |x1: f64, x2: f64| x1 * x2,
+            EdgeEmbeddingMethods::Average => |x1: f64, x2: f64| (x1 + x2) / 2.0,
+            EdgeEmbeddingMethods::Sum => |x1: f64, x2: f64| x1 + x2,
+            EdgeEmbeddingMethods::L1 => |x1: f64, x2: f64| x1 - x2,
+            EdgeEmbeddingMethods::AbsoluteL1 => |x1: f64, x2: f64| (x1 - x2).abs(),
+            EdgeEmbeddingMethods::L2 => |x1: f64, x2: f64| (x1 - x2).powi(2),
+        };
 
         // The number of negatives is given by computing their fraction of batchsize
         let negative_number: usize =
@@ -262,12 +270,12 @@ impl Graph {
 
         let edges_number = self.get_edges_number() as u64;
         let nodes_number = self.get_nodes_number() as u64;
+        let embedding_size = self.get_embedding_size()?;
 
         let mut rng: StdRng = SeedableRng::seed_from_u64(random_state);
         let random_values = gen_random_vec(batch_size, random_state);
         let mut indices: Vec<usize> = (0..batch_size).collect();
         indices.shuffle(&mut rng);
-        let embedding_size = self.get_embedding_size()?;
 
         match &self.embedding {
             Some(embedding) =>Ok((0..batch_size)
@@ -314,20 +322,15 @@ impl Graph {
                             break (src, dst, false);
                         }
                     };
+                    let src_embedding = &embedding[src as usize];
+                    let dst_embedding = &embedding[dst as usize];
                     (
                         indices[i],
-                        (0..embedding_size).map(|i| {
-                            let x1 = embedding[src as usize][i];
-                            let x2 = embedding[dst as usize][i];
-                            match method {
-                                EdgeEmbeddingMethods::Hadamard => x1*x2,
-                                EdgeEmbeddingMethods::Average => (x1+x2)/2.0,
-                                EdgeEmbeddingMethods::Sum => x1+x2,
-                                EdgeEmbeddingMethods::L1 => x1-x2,
-                                EdgeEmbeddingMethods::AbsoluteL1 => (x1-x2).abs(),
-                                EdgeEmbeddingMethods::L2 => (x1-x2).powi(2),
-                            }
-                        }).collect(),
+                        (0..embedding_size).map(move |i| {
+                            let x1 = src_embedding[i];
+                            let x2 = dst_embedding[i];
+                            method(x1, x2)
+                        }),
                         label
                     )
                 })),
