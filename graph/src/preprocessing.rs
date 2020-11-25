@@ -62,19 +62,17 @@ pub fn word2vec<'a>(
 
     Ok(sequences
         .flat_map_iter(|sequence| {
-            sequence
-                .iter()
-                .enumerate()
-                .filter_map(|(i, word)| {
-                    let start = if i <= window_size { 0 } else { i - window_size };
-                    let end = min!(sequence.len(), i + window_size);
-                    if end - start == context_length {
-                        Some((sequence[start..end].to_vec(), *word))
-                    } else {
-                        None
-                    }
-                })
-                .collect::<Vec<(Vec<NodeT>, NodeT)>>()
+            let sequence_length = sequence.len();
+            (0..sequence_length).filter_map(move |i| {
+                let word = sequence[i];
+                let start = if i <= window_size { 0 } else { i - window_size };
+                let end = min!(sequence.len(), i + window_size);
+                if end - start == context_length {
+                    Some((sequence[start..end].to_vec(), word))
+                } else {
+                    None
+                }
+            })
         })
         .unzip())
 }
@@ -238,8 +236,10 @@ impl Graph {
         avoid_false_negatives: bool,
         maximal_sampling_attempts: usize,
         graph_to_avoid: &'a Option<&Graph>,
-    ) -> Result<impl ParallelIterator<Item = (usize, impl Iterator<Item = f64> + 'a, bool)> + 'a, String>
-    {
+    ) -> Result<
+        impl ParallelIterator<Item = (usize, impl Iterator<Item = f64> + 'a, bool)> + 'a,
+        String,
+    > {
         // xor the random_state with a constant so that we have a good amount of 0s and 1s in the number
         // even with low values (this is needed becasue the random_state 0 make xorshift return always 0)
         let random_state = idx ^ SEED_XOR as u64;
