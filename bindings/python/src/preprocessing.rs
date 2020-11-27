@@ -3,6 +3,7 @@ use graph::{cooccurence_matrix as rust_cooccurence_matrix, word2vec as rust_word
 use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::wrap_pyfunction;
 use rayon::prelude::*;
+use std::sync::atomic::{AtomicUsize, Ordering};
 use thread_safe::ThreadSafe;
 
 #[pymodule]
@@ -34,7 +35,7 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 ///
 fn word2vec(sequences: Vec<Vec<NodeT>>, window_size: usize) -> PyResult<(PyContexts, PyWords)> {
     let _ = ctrlc::set_handler(|| std::process::exit(2));
-    let (contexts, words) = pyex!(rust_word2vec(sequences.into_par_iter(), window_size))?;
+    let (contexts, words) = pyex!(rust_word2vec(sequences.into_par_iter(), window_size))?.unzip();
     let gil = pyo3::Python::acquire_gil();
     Ok((
         to_nparray_2d!(gil, contexts, NodeT),
@@ -174,7 +175,7 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, batch_size, length, window_size, *, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
+    #[text_signature = "($self, batch_size, walk_length, window_size, *, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
     /// Return training batches for Node2Vec models.
     ///
     /// The batch is composed of a tuple as the following:
@@ -193,7 +194,7 @@ impl EnsmallenGraph {
     ///     These cases include graphs with particularly high number of traps.
     ///     Consider using the method graph.report() to verify if this might
     ///     apply to your use case.
-    /// length: int,
+    /// walk_length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
     /// window_size: int,
@@ -241,7 +242,7 @@ impl EnsmallenGraph {
     fn node2vec(
         &self,
         batch_size: NodeT,
-        length: NodeT,
+        walk_length: NodeT,
         window_size: usize,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyContexts, PyWords)> {
@@ -251,14 +252,35 @@ impl EnsmallenGraph {
             kwargs,
             build_walk_parameters_list(&["window_size"])
         ))?;
-        let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
+        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
 
-        let (contexts, words) = pyex!(self.graph.node2vec(&parameters, batch_size, window_size))?;
+        let iter = pyex!(self.graph.node2vec(&parameters, batch_size, window_size))?;
+        let elements_per_batch = (walk_length as usize - window_size * 2 - 1)
+            * batch_size as usize
+            * parameters.get_iterations() as usize;
 
-        Ok((
-            to_nparray_2d!(gil, contexts, NodeT),
-            to_nparray_1d!(gil, words, NodeT),
-        ))
+        let contexts = ThreadSafe {
+            t: PyArray2::new(
+                gil.python(),
+                [elements_per_batch, window_size * 2],
+                false,
+            ),
+        };
+        let words = ThreadSafe {
+            t: PyArray1::new(gil.python(), [elements_per_batch], false),
+        };
+        let global_i = AtomicUsize::new(0);
+
+        iter.for_each(|(context, word)| {
+            let i = global_i.fetch_add(1, Ordering::SeqCst);
+            context.iter().enumerate().for_each(|(j, v)| unsafe {
+                *(contexts.t.uget_mut([i, j])) = *v;
+            });
+            unsafe {
+                *(words.t.uget_mut([i])) = word;
+            }
+        });
+        Ok((contexts.t.to_owned(), words.t.to_owned()))
     }
 
     #[args(py_kwargs = "**")]

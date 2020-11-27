@@ -55,26 +55,22 @@ impl EdgeEmbeddingMethods {
 pub fn word2vec<'a>(
     sequences: impl ParallelIterator<Item = Vec<NodeT>> + 'a,
     window_size: usize,
-) -> Result<(Vec<Vec<NodeT>>, Vec<NodeT>), String> {
-    let context_length = window_size.checked_mul(2).ok_or(
-        "The given window size is too big, using this would result in an overflowing of a u64.",
-    )?;
-
-    Ok(sequences
-        .flat_map_iter(|sequence| {
-            let sequence_length = sequence.len();
-            (0..sequence_length).filter_map(move |i| {
-                let word = sequence[i];
-                let start = if i <= window_size { 0 } else { i - window_size };
-                let end = min!(sequence.len(), i + window_size);
-                if end - start == context_length {
-                    Some((sequence[start..end].to_vec(), word))
-                } else {
-                    None
-                }
-            })
+) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a, String> {
+    Ok(sequences.flat_map_iter(move |sequence| {
+        let sequence_length = sequence.len();
+        if sequence_length < window_size * 2 {
+            panic!("You are providing sequences that are smaller than the the minimum amount.");
+        }
+        (window_size..(sequence_length - window_size - 1)).map(move |i| {
+            (
+                (i - window_size..i)
+                    .chain(i + 1..window_size + i + 1)
+                    .map(|j| sequence[j])
+                    .collect(),
+                sequence[i],
+            )
         })
-        .unzip())
+    }))
 }
 
 /// Return triple with CSR representation of cooccurrence matrix.
@@ -175,15 +171,17 @@ impl Graph {
     /// * quantity: usize - Number of nodes to consider.
     /// * window_size: usize - Window size to consider for the sequences.
     ///
-    pub fn node2vec(
-        &self,
-        walk_parameters: &WalksParameters,
+    pub fn node2vec<'a>(
+        &'a self,
+        walk_parameters: &'a WalksParameters,
         quantity: NodeT,
         window_size: usize,
-    ) -> Result<(Contexts, Words), String> {
+    ) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a, String> {
         // do the walks and check the result
-        let walks = self.random_walks_iter(quantity, walk_parameters)?;
-        word2vec(walks, window_size)
+        word2vec(
+            self.random_walks_iter(quantity, walk_parameters)?,
+            window_size,
+        )
     }
 
     /// Return triple with CSR representation of cooccurrence matrix.

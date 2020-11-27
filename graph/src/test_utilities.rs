@@ -509,7 +509,20 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
     if !graph.directed {
         // Testing SkipGram / CBOW / GloVe preprocessing
         graph.cooccurence_matrix(&walker, 3, verbose)?;
-        graph.node2vec(&walker, 1, 3)?;
+        let window_size = 3;
+        let batch_size = 256;
+        let data = graph
+            .node2vec(&walker, batch_size, window_size)?
+            .collect::<Vec<_>>();
+        assert_eq!(
+            data.len(),
+            batch_size as usize
+                * walker.iterations as usize
+                * (walker.single_walk_parameters.length as usize - window_size * 2 - 1)
+        );
+        for (context, _) in data.iter() {
+            assert_eq!(context.len(), window_size * 2);
+        }
         // Testing link prediction pre-processing
         let batch_size = 10;
         graph.set_embedding(vec![vec![1.0; 100]; graph.get_nodes_number() as usize])?;
