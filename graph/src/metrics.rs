@@ -669,20 +669,20 @@ impl Graph {
                 false=>"".to_owned()
             },
             node_types= match self.get_node_types_number() {
-                etn if etn==1 => format!(
+                ntn if ntn==1 => format!(
                     " with a single node type: {node_type}",
                     node_type={
                         let node_types = self.get_node_type_counts()?;
                         self.format_node_type_list(node_types.most_common().as_slice())?
                     }
                 ),
-                etn if etn > 1 => format!(
+                ntn if ntn > 1 => format!(
                     " with {node_types_number} different node types: {most_common_node_types}",
-                    node_types_number=etn,
+                    node_types_number=ntn,
                     most_common_node_types={
                         let node_types = self.get_node_type_counts()?;
                         let most_common = node_types.most_common();
-                        match etn>5 {
+                        match most_common.len()>5 {
                             true=>format!(" the 5 most common are {}", self.format_node_type_list(most_common[0..5].as_ref())?),
                             false=>self.format_node_type_list(most_common.as_slice())?
                         }
@@ -718,7 +718,7 @@ impl Graph {
                     most_common_edge_types={
                         let edge_types = self.get_edge_type_counts()?;
                         let most_common = edge_types.most_common();
-                        match etn>5 {
+                        match most_common.len()>5 {
                             true=>format!(" the 5 most common are {}", self.format_edge_type_list(most_common[0..5].as_ref())?),
                             false=>self.format_edge_type_list(most_common.as_slice())?
                         }

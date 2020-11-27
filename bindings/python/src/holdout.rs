@@ -125,7 +125,7 @@ impl EnsmallenGraph {
     ///     The rate to reserve for the training.
     /// random_state: int = 42,
     ///     The random_state to make the holdout reproducible.
-    /// include_all_edge_types: bool = True,
+    /// include_all_edge_types: bool = False,
     ///     Wethever to include all the edges between two nodes.
     ///     This is only relevant in multi-graphs.
     /// edge_types: List[String] = None,
@@ -179,7 +179,7 @@ impl EnsmallenGraph {
                 .unwrap_or(42),
             train_size,
             pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?
-                .unwrap_or(true),
+                .unwrap_or(false),
             pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
             pyex!(extract_value!(kwargs, "min_number_overlaps", EdgeT))?,
             pyex!(extract_value!(kwargs, "verbose", bool))?

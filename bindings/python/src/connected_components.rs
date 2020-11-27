@@ -1,5 +1,6 @@
 use super::*;
 use graph::NodeT;
+use numpy::{PyArray, PyArray1};
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -34,7 +35,15 @@ impl EnsmallenGraph {
     fn connected_components(
         &self,
         verbose: Option<bool>,
-    ) -> PyResult<(Vec<NodeT>, NodeT, NodeT, NodeT)> {
-        pyex!(self.graph.connected_components(verbose.unwrap_or(true)))
+    ) -> PyResult<(Py<PyArray1<NodeT>>, NodeT, NodeT, NodeT)> {
+        let (components, number, min_size, max_size) =
+            pyex!(self.graph.connected_components(verbose.unwrap_or(true)))?;
+        let gil = pyo3::Python::acquire_gil();
+        Ok((
+            to_nparray_1d!(gil, components, NodeT),
+            number,
+            min_size,
+            max_size,
+        ))
     }
 }

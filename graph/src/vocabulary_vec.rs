@@ -87,7 +87,7 @@ impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
 
     /// Return length of the vocabulary.    
     pub fn len(&self) -> usize {
-        self.vocabulary.len()
+        self.counts.len()
     }
 
     /// Return boolean representing if values are numeric.
