@@ -8,7 +8,7 @@ def test_skipgrams():
     for graph in tqdm((load_hpo(), load_pathway()), desc="Testing Skipgrams", leave=False):
         words, contexts = graph.node2vec(
             batch_size=32,
-            length=50,
+            walk_length=50,
             window_size=4,
             random_state=42,
         )
