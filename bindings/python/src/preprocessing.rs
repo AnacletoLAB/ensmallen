@@ -102,7 +102,7 @@ fn cooccurence_matrix(
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state, verbose)"]
+    #[text_signature = "($self, length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
     ///
     /// Parameters
@@ -148,8 +148,6 @@ impl EnsmallenGraph {
     ///     and becomes an approximation of an exact walk.
     /// random_state: int = 42,
     ///     random_state to use to reproduce the walks.
-    /// verbose: int = True,
-    ///     Wethever to show or not the loading bar of the walks.
     ///
     /// Returns
     /// ----------------------------
