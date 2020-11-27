@@ -75,18 +75,27 @@ fn cooccurence_matrix(
             .map(|x| x.to_string())
             .collect(),
     ))?;
-    let len = sequences.len();
-    let (words, contexts, frequencies) = pyex!(rust_cooccurence_matrix(
+    let (len, iter) = rust_cooccurence_matrix(
         sequences.into_par_iter(),
         pyex!(extract_value!(kwargs, "window_size", usize))?.unwrap_or(3),
-        len,
-        pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
-    ))?;
+    );
+
+    let words = PyArray1::<NodeT>::new(gil.python(), [len], false);
+    let contexts = PyArray1::<NodeT>::new(gil.python(), [len], false);
+    let frequencies = PyArray1::<f64>::new(gil.python(), [len], false);
+
+    iter.enumerate().for_each(|(i, ((node1, node2), frequency))| {
+            unsafe{
+                *words.uget_mut([i]) = node1;
+                *contexts.uget_mut([i]) = node2;
+                *frequencies.uget_mut([i]) = frequency;
+            }
+        });
 
     Ok((
-        to_nparray_1d!(gil, words, NodeT),
-        to_nparray_1d!(gil, contexts, NodeT),
-        to_nparray_1d!(gil, frequencies, f64),
+        words.to_owned(), 
+        contexts.to_owned(), 
+        frequencies.to_owned()
     ))
 }
 
@@ -161,16 +170,27 @@ impl EnsmallenGraph {
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
 
-        let (words, contexts, frequencies) = pyex!(self.graph.cooccurence_matrix(
+        let (len, iter) = pyex!(self.graph.cooccurence_matrix( 
             &parameters,
             pyex!(extract_value!(kwargs, "window_size", usize))?.unwrap_or(3),
-            pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
         ))?;
-
+    
+        let words = PyArray1::<NodeT>::new(gil.python(), [len], false);
+        let contexts = PyArray1::<NodeT>::new(gil.python(), [len], false);
+        let frequencies = PyArray1::<f64>::new(gil.python(), [len], false);
+    
+        iter.enumerate().for_each(|(i, ((node1, node2), frequency))| {
+                unsafe{
+                    *words.uget_mut([i]) = node1;
+                    *contexts.uget_mut([i]) = node2;
+                    *frequencies.uget_mut([i]) = frequency;
+                }
+            });
+    
         Ok((
-            to_nparray_1d!(gil, words, NodeT),
-            to_nparray_1d!(gil, contexts, NodeT),
-            to_nparray_1d!(gil, frequencies, f64),
+            words.to_owned(), 
+            contexts.to_owned(), 
+            frequencies.to_owned()
         ))
     }
 
