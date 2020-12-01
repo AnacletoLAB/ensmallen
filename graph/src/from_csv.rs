@@ -38,9 +38,10 @@ impl Graph {
             nodes_number,
             edge_file_reader.numeric_edge_type_ids,
             match &node_file_reader {
-                Some(nfr) => nfr.numeric_node_ids || edge_file_reader.numeric_node_ids,
-                None => edge_file_reader.numeric_node_ids,
+                Some(nfr) => nfr.numeric_node_ids,
+                None => false,
             },
+            edge_file_reader.numeric_node_ids,
             match &node_file_reader {
                 Some(nfr) => nfr.numeric_node_type_ids,
                 None => false,
@@ -86,9 +87,10 @@ impl Graph {
             edge_file_reader.reader.verbose,
             edge_file_reader.numeric_edge_type_ids,
             match &node_file_reader {
-                Some(nfr) => nfr.numeric_node_ids || edge_file_reader.numeric_node_ids,
-                None => edge_file_reader.numeric_node_ids,
+                Some(nfr) => nfr.numeric_node_ids,
+                None => false,
             },
+            edge_file_reader.numeric_node_ids,
             match &node_file_reader {
                 Some(nfr) => nfr.numeric_node_type_ids,
                 None => false,

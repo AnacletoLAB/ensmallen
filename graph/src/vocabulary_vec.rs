@@ -8,10 +8,10 @@ pub struct VocabularyVec<IndexT: ToFromUsize, CountT: ToFromUsize> {
 }
 
 impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
-    pub fn new(numeric_ids: bool) -> VocabularyVec<IndexT, CountT> {
+    pub fn new() -> VocabularyVec<IndexT, CountT> {
         VocabularyVec {
             ids: Vec::new(),
-            vocabulary: Vocabulary::new(numeric_ids),
+            vocabulary: Vocabulary::new(),
             counts: Vec::new(),
         }
     }
@@ -91,7 +91,17 @@ impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
     }
 
     /// Return boolean representing if values are numeric.
-    pub fn has_numeric_ids(&self)->bool{
+    pub fn has_numeric_ids(&self) -> bool {
         self.vocabulary.has_numeric_ids()
+    }
+
+    /// Set wether to load IDs as numeric.
+    ///
+    /// # Arguments
+    /// * numeric_ids: bool - Wether to load the IDs as numeric
+    ///
+    pub fn set_numeric_ids(mut self, numeric_ids: bool) -> VocabularyVec<IndexT, CountT> {
+        self.vocabulary = self.vocabulary.set_numeric_ids(numeric_ids);
+        self
     }
 }

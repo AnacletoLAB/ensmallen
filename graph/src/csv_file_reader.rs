@@ -20,6 +20,7 @@ pub struct CSVFileReader {
     pub(crate) rows_to_skip: usize,
     pub(crate) ignore_duplicates: bool,
     pub(crate) max_rows_number: Option<u64>,
+    pub(crate) comment_symbol: Option<String>,
 }
 
 /// # Builder methods
@@ -41,6 +42,7 @@ impl CSVFileReader {
                 rows_to_skip: 0,
                 ignore_duplicates: true,
                 max_rows_number: None,
+                comment_symbol: None,
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
         }
@@ -140,6 +142,11 @@ impl CSVFileReader {
                 Ok(l) => {
                     if l.is_empty() || self.max_rows_number.unwrap_or(u64::MAX) <= i as u64 {
                         return None;
+                    }
+                    if let Some(cs) = &self.comment_symbol{
+                        if l.starts_with(cs){
+                            return None;
+                        }
                     }
                     let line_components = l
                         .split(&self.separator)

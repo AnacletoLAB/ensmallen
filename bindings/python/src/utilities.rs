@@ -42,8 +42,14 @@ pub(crate) fn build_csv_file_reader(
             "node_max_rows_number",
             "verbose",
             "numeric_node_ids",
+            "numeric_edge_node_ids",
             "numeric_node_type_ids",
             "numeric_edge_type_ids",
+            "edge_file_comment_symbol",
+            "node_file_comment_symbol",
+            "skip_weights_if_unavailable",
+            "skip_edge_types_if_unavailable",
+            "skip_node_types_if_unavailable",
             "name",
         ]
         .iter()
@@ -53,6 +59,17 @@ pub(crate) fn build_csv_file_reader(
 
     let edges: EdgeFileReader = EdgeFileReader::new(edge_path)?
         .set_separator(extract_value!(kwargs, "edge_separator", String)?)?
+        .set_skip_edge_types_if_unavailable(extract_value!(
+            kwargs,
+            "skip_edge_types_if_unavailable",
+            bool
+        )?)?
+        .set_skip_weights_if_unavailable(extract_value!(
+            kwargs,
+            "skip_weights_if_unavailable",
+            bool
+        )?)?
+        .set_comment_symbol(extract_value!(kwargs, "edge_file_comment_symbol", String)?)?
         .set_header(extract_value!(kwargs, "edge_header", bool)?)
         .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize)?)
         .set_sources_column_number(extract_value!(kwargs, "sources_column_number", usize)?)?
@@ -72,7 +89,7 @@ pub(crate) fn build_csv_file_reader(
         .set_skip_self_loops(extract_value!(kwargs, "skip_self_loops", bool)?)
         .set_ignore_duplicates(extract_value!(kwargs, "ignore_duplicated_edges", bool)?)
         .set_verbose(extract_value!(kwargs, "verbose", bool)?)
-        .set_numeric_node_ids(extract_value!(kwargs, "numeric_node_ids", bool)?)
+        .set_numeric_node_ids(extract_value!(kwargs, "numeric_edge_node_ids", bool)?)
         .set_numeric_edge_type_ids(extract_value!(kwargs, "numeric_edge_type_ids", bool)?)
         .set_max_rows_number(extract_value!(kwargs, "edge_max_rows_number", u64)?);
 
@@ -80,6 +97,12 @@ pub(crate) fn build_csv_file_reader(
         Some(_) => Some(
             NodeFileReader::new(extract_value!(kwargs, "node_path", String)?.unwrap())?
                 .set_separator(extract_value!(kwargs, "node_separator", String)?)?
+                .set_skip_node_types_if_unavailable(extract_value!(
+                    kwargs,
+                    "skip_node_types_if_unavailable",
+                    bool
+                )?)?
+                .set_comment_symbol(extract_value!(kwargs, "node_file_comment_symbol", String)?)?
                 .set_header(extract_value!(kwargs, "edge_header", bool)?)
                 .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize)?)
                 .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize)?)?
