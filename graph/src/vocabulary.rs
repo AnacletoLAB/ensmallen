@@ -10,7 +10,7 @@ pub struct Vocabulary<IndexT: ToFromUsize> {
 }
 
 impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
-    pub fn new() -> Vocabulary<IndexT> {
+    pub fn default() -> Vocabulary<IndexT> {
         Vocabulary {
             map: HashMap::new(),
             reverse_map: Vec::new(),

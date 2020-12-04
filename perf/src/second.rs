@@ -26,5 +26,5 @@ fn main() {
     let graph = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned()).unwrap();
 
     let walker = second_order_walker(&graph).unwrap();
-    let walks = graph.complete_walks_iter( &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
+    let _ = graph.complete_walks_iter( &walker).unwrap().collect::<Vec<Vec<NodeT>>>();
 }   

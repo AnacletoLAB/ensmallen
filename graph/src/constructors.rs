@@ -353,7 +353,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     numeric_edge_types_ids: bool,
     ignore_duplicated_edges: bool
 ) -> Result<(EdgeT, impl Iterator<Item = Result<Quadruple, String>> + 'a, Vocabulary<NodeT>, Vocabulary<EdgeTypeT>), String>  {
-    let mut edge_types_vocabulary = Vocabulary::new().set_numeric_ids(numeric_edge_types_ids);
+    let mut edge_types_vocabulary = Vocabulary::default().set_numeric_ids(numeric_edge_types_ids);
     nodes = nodes.set_numeric_ids(numeric_node_ids);
     let (edges_number, edges_iter) = { 
             let edge_quadruples:Vec<Quadruple> = parse_edge_type_ids_vocabulary(
@@ -495,8 +495,8 @@ fn parse_nodes(
     numeric_node_ids: bool,
     numeric_node_types_ids: bool,
 ) -> Result<(Vocabulary<NodeT>, VocabularyVec<NodeTypeT, NodeT>), String> {
-    let mut nodes = Vocabulary::new().set_numeric_ids(numeric_node_ids);
-    let mut node_types = VocabularyVec::new().set_numeric_ids(numeric_node_types_ids);
+    let mut nodes = Vocabulary::default().set_numeric_ids(numeric_node_ids);
+    let mut node_types = VocabularyVec::default().set_numeric_ids(numeric_node_types_ids);
 
     if let Some(ni) = nodes_iterator {
         // TODO: the following can likely be dealt with in a better way.
@@ -527,7 +527,7 @@ pub(crate) fn parse_string_edges(
     has_weights: bool
 ) -> ParsedStringEdgesType {
     let mut weights: Vec<WeightT> = Vec::new();
-    let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::new().set_numeric_ids(numeric_edge_types_ids);
+    let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::default().set_numeric_ids(numeric_edge_types_ids);
     let mut edge_types_ids: Vec<EdgeTypeT> = Vec::new();
     nodes = nodes.set_numeric_ids(numeric_edge_node_ids);
 

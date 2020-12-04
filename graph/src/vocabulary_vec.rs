@@ -8,10 +8,10 @@ pub struct VocabularyVec<IndexT: ToFromUsize, CountT: ToFromUsize> {
 }
 
 impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
-    pub fn new() -> VocabularyVec<IndexT, CountT> {
+    pub fn default() -> VocabularyVec<IndexT, CountT> {
         VocabularyVec {
             ids: Vec::new(),
-            vocabulary: Vocabulary::new(),
+            vocabulary: Vocabulary::default(),
             counts: Vec::new(),
         }
     }

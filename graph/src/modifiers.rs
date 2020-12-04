@@ -9,7 +9,7 @@ impl Graph {
     /// # Arguments
     /// - `edge_type`: String - The edge type to assing to all the edges.
     pub fn set_all_edge_types(mut self, edge_type: String) -> Graph {
-        let mut vocabulary = Vocabulary::new();
+        let mut vocabulary = Vocabulary::default();
         vocabulary.insert(edge_type).unwrap();
         vocabulary.build_reverse_mapping().unwrap();
         let edge_types = VocabularyVec::from_structs(
@@ -25,7 +25,7 @@ impl Graph {
     /// # Arguments
     /// - `node_type`: String - The node type to assing to all the nodes.
     pub fn set_all_node_types(mut self, node_type: String) -> Graph {
-        let mut vocabulary = Vocabulary::new();
+        let mut vocabulary = Vocabulary::default();
         vocabulary.insert(node_type).unwrap();
         vocabulary.build_reverse_mapping().unwrap();
         let node_types = VocabularyVec::from_structs(
