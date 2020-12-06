@@ -371,10 +371,16 @@ impl EnsmallenGraph {
             &maybe_graph
         ))?;
 
+        let embedding_size = pyex!(self.graph.get_embedding_size())?;
+        let edge_vector_len = match method {
+            "Concatenate" => embedding_size*2,
+            _ => embedding_size
+        };
+
         let edges = ThreadSafe {
             t: PyArray2::new(
                 gil.python(),
-                [batch_size, pyex!(self.graph.get_embedding_size())?],
+                [batch_size, edge_vector_len],
                 false,
             ),
         };
