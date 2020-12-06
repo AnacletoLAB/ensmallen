@@ -736,7 +736,7 @@ impl Graph {
             has_weights
         )?;
 
-        Ok(Graph {
+        Ok(Graph::new(
             directed,
             unique_self_loop_number,
             self_loop_number,
@@ -748,16 +748,11 @@ impl Graph {
             nodes,
             node_bit_mask,
             node_bits,
-            node_types,
             edge_types,
             name,
-            weights:optionify!(weights),
-            sources: None,
-            embedding: None,
-            destinations: None,
-            outbounds: None,
-            cached_destinations: None
-        })
+            optionify!(weights),
+            node_types
+        ))
     }
 
     /// Create new Graph object from unsorted source.
@@ -925,7 +920,7 @@ impl Graph {
             has_weights
         )?;
 
-        Ok(Graph {
+        Ok(Graph::new(
             directed,
             unique_self_loop_number,
             self_loop_number,
@@ -939,13 +934,8 @@ impl Graph {
             node_bits,
             edge_types,
             name,
-            weights: optionify!(weights),
-            node_types:optionify!(node_types),
-            sources: None,
-            embedding: None,
-            destinations: None,
-            outbounds: None,
-            cached_destinations: None
-    })
+            optionify!(weights),
+            optionify!(node_types)
+        ))
     }
 }

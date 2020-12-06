@@ -67,6 +67,47 @@ pub struct Graph {
 
 /// # Graph utility methods
 impl Graph {
+    pub fn new(
+        directed: bool,
+        unique_self_loop_number: NodeT,
+        self_loop_number: EdgeT,
+        not_singleton_nodes_number: NodeT,
+        singleton_nodes_with_self_loops_number: NodeT,
+        unique_edges_number: EdgeT,
+        edges: EliasFano,
+        unique_sources: EliasFano,
+        nodes: Vocabulary<NodeT>,
+        node_bit_mask: EdgeT,
+        node_bits: u8,
+        edge_types: Option<VocabularyVec<EdgeTypeT, EdgeT>>,
+        name: String,
+        weights: Option<Vec<WeightT>>,
+        node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
+    ) -> Graph {
+        Graph {
+            directed,
+            unique_self_loop_number,
+            self_loop_number,
+            not_singleton_nodes_number,
+            singleton_nodes_with_self_loops_number,
+            unique_edges_number,
+            edges,
+            unique_sources,
+            node_bit_mask,
+            node_bits,
+            name,
+            weights,
+            node_types: node_types.map(|nts| nts.set_numeric_ids(false)),
+            edge_types: edge_types.map(|ets| ets.set_numeric_ids(false)),
+            nodes: nodes.set_numeric_ids(false),
+            sources: None,
+            embedding: None,
+            destinations: None,
+            outbounds: None,
+            cached_destinations: None,
+        }
+    }
+
     pub fn get_unchecked_edge_id(
         &self,
         src: NodeT,

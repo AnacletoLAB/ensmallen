@@ -693,7 +693,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(wn.has_node_types(), false);
             assert_eq!(wn.weights, graph.weights);
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
-            //assert_eq!(wn.nodes, graph.nodes);
+            assert_eq!(wn.nodes, graph.nodes);
             //assert_eq!(wn.edges, graph.edges);
             assert_eq!(
                 graph.has_node_types(),
@@ -710,7 +710,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(ww.has_weights(), false);
             assert_eq!(ww.node_types, graph.node_types);
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
-            //assert_eq!(ww.nodes, graph.nodes);
+            assert_eq!(ww.nodes, graph.nodes);
             //assert_eq!(ww.edges, graph.edges);
             assert_eq!(
                 graph.has_weights(),
