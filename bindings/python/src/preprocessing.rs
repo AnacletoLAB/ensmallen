@@ -383,8 +383,8 @@ impl EnsmallenGraph {
         };
         unsafe {
             iter.for_each(|(i, edge_embedding, label)| {
-                edge_embedding.enumerate().for_each(|(j, v)| {
-                    *(edges.t.uget_mut([i, j])) = v;
+                edge_embedding.iter().enumerate().for_each(|(j, v)| {
+                    *(edges.t.uget_mut([i, j])) = *v;
                 });
                 *(labels.t.uget_mut([i])) = label;
             });
