@@ -512,7 +512,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         let mut counter = 0;
         for ((_, _), _) in iter {
             counter += 1;
-        };
+        }
         assert_eq!(len, counter);
         let window_size = 3;
         let batch_size = 256;
@@ -694,7 +694,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(wn.weights, graph.weights);
             assert_eq!(wn.has_selfloops(), graph.has_selfloops());
             assert_eq!(wn.nodes, graph.nodes);
-            //assert_eq!(wn.edges, graph.edges);
+            assert_eq!(wn.edges, graph.edges);
             assert_eq!(
                 graph.has_node_types(),
                 graph.validate_operator_terms(&wn).is_err()
@@ -711,7 +711,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
             assert_eq!(ww.node_types, graph.node_types);
             assert_eq!(ww.has_selfloops(), graph.has_selfloops());
             assert_eq!(ww.nodes, graph.nodes);
-            //assert_eq!(ww.edges, graph.edges);
+            assert_eq!(ww.edges, graph.edges);
             assert_eq!(
                 graph.has_weights(),
                 graph.validate_operator_terms(&ww).is_err()

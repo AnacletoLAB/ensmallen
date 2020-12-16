@@ -204,7 +204,8 @@ impl Graph {
                 Some(ets) => ets.has_numeric_ids(),
                 None => false,
             },
-            self.nodes.has_numeric_ids() && (!singletons || !self.has_singletons()),
+            false,
+            false,
             match &self.node_types {
                 Some(nts) => nts.has_numeric_ids(),
                 None => false,

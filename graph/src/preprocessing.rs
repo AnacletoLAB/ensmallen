@@ -3,10 +3,10 @@ use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
 use rayon::prelude::*;
+use std::cmp::{max, min};
+use std::sync::Arc;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift;
-use std::cmp::{min, max};
-use std::sync::Arc;
 
 enum EdgeEmbeddingMethods {
     Hadamard,
@@ -15,6 +15,7 @@ enum EdgeEmbeddingMethods {
     L1,
     AbsoluteL1,
     L2,
+    Concatenate,
 }
 
 impl EdgeEmbeddingMethods {
@@ -26,6 +27,7 @@ impl EdgeEmbeddingMethods {
             "L1" => Ok(EdgeEmbeddingMethods::L1),
             "AbsoluteL1" => Ok(EdgeEmbeddingMethods::AbsoluteL1),
             "L2" => Ok(EdgeEmbeddingMethods::L2),
+            "Concatenate" => Ok(EdgeEmbeddingMethods::Concatenate),
             _ => Err(format!(
                 concat!(
                     "Given embedding method '{}' is not supported.",
@@ -96,14 +98,14 @@ pub fn cooccurence_matrix(
         let cooccurence_matrix = cooccurence_matrix.clone();
         let walk_length = sequence.len();
         // for each batch of size 2*window_size + 1
-        (window_size..walk_length - window_size - 1).for_each(|i|{
+        (window_size..walk_length - window_size - 1).for_each(|i| {
             let central_word_id = sequence[i];
             // for each index in the current batch update the matrix
             (i - window_size..i)
                 .chain(i + 1..window_size + i + 1)
                 .for_each(|j| {
                     let smaller = min(central_word_id, sequence[j]) as NodeT;
-                    let bigger  = max(central_word_id, sequence[j]) as NodeT;
+                    let bigger = max(central_word_id, sequence[j]) as NodeT;
                     cooccurence_matrix.add(&(smaller, bigger), 1.0 / (i as f64 - j as f64).abs());
                 });
         });
@@ -111,8 +113,9 @@ pub fn cooccurence_matrix(
 
     (
         cooccurence_matrix.len(),
-        Arc::try_unwrap(cooccurence_matrix).unwrap()
-        .into_iter_normalized()
+        Arc::try_unwrap(cooccurence_matrix)
+            .unwrap()
+            .into_iter_normalized(),
     )
 }
 
@@ -193,10 +196,7 @@ impl Graph {
         avoid_false_negatives: bool,
         maximal_sampling_attempts: usize,
         graph_to_avoid: &'a Option<&Graph>,
-    ) -> Result<
-        impl ParallelIterator<Item = (usize, impl Iterator<Item = f64> + 'a, bool)> + 'a,
-        String,
-    > {
+    ) -> Result<impl ParallelIterator<Item = (usize, Vec<f64>, bool)> + 'a, String> {
         // xor the random_state with a constant so that we have a good amount of 0s and 1s in the number
         // even with low values (this is needed becasue the random_state 0 make xorshift return always 0)
         let random_state = idx ^ SEED_XOR as u64;
@@ -210,12 +210,51 @@ impl Graph {
         }
 
         let method = match EdgeEmbeddingMethods::new(method)? {
-            EdgeEmbeddingMethods::Hadamard => |x1: f64, x2: f64| x1 * x2,
-            EdgeEmbeddingMethods::Average => |x1: f64, x2: f64| (x1 + x2) / 2.0,
-            EdgeEmbeddingMethods::Sum => |x1: f64, x2: f64| x1 + x2,
-            EdgeEmbeddingMethods::L1 => |x1: f64, x2: f64| x1 - x2,
-            EdgeEmbeddingMethods::AbsoluteL1 => |x1: f64, x2: f64| (x1 - x2).abs(),
-            EdgeEmbeddingMethods::L2 => |x1: f64, x2: f64| (x1 - x2).powi(2),
+            EdgeEmbeddingMethods::Hadamard => |x1: &Vec<f64>, x2: &Vec<f64>| {
+                x1.iter()
+                    .cloned()
+                    .zip(x2.iter().cloned())
+                    .map(|(x1, x2)| x1 * x2)
+                    .collect()
+            },
+            EdgeEmbeddingMethods::Average => |x1: &Vec<f64>, x2: &Vec<f64>| {
+                x1.iter()
+                    .cloned()
+                    .zip(x2.iter().cloned())
+                    .map(|(x1, x2)| (x1 + x2) / 2.0)
+                    .collect()
+            },
+            EdgeEmbeddingMethods::Sum => |x1: &Vec<f64>, x2: &Vec<f64>| {
+                x1.iter()
+                    .cloned()
+                    .zip(x2.iter().cloned())
+                    .map(|(x1, x2)| x1 + x2)
+                    .collect()
+            },
+            EdgeEmbeddingMethods::L1 => |x1: &Vec<f64>, x2: &Vec<f64>| {
+                x1.iter()
+                    .cloned()
+                    .zip(x2.iter().cloned())
+                    .map(|(x1, x2)| x1 - x2)
+                    .collect()
+            },
+            EdgeEmbeddingMethods::AbsoluteL1 => |x1: &Vec<f64>, x2: &Vec<f64>| {
+                x1.iter()
+                    .cloned()
+                    .zip(x2.iter().cloned())
+                    .map(|(x1, x2)| (x1 - x2).abs())
+                    .collect()
+            },
+            EdgeEmbeddingMethods::L2 => |x1: &Vec<f64>, x2: &Vec<f64>| {
+                x1.iter()
+                    .cloned()
+                    .zip(x2.iter().cloned())
+                    .map(|(x1, x2)| (x1 - x2).powi(2))
+                    .collect()
+            },
+            EdgeEmbeddingMethods::Concatenate => {
+                |x1: &Vec<f64>, x2: &Vec<f64>| x1.iter().chain(x2.iter()).cloned().collect()
+            }
         };
 
         // The number of negatives is given by computing their fraction of batchsize
@@ -227,7 +266,6 @@ impl Graph {
 
         let edges_number = self.get_edges_number() as u64;
         let nodes_number = self.get_nodes_number() as u64;
-        let embedding_size = self.get_embedding_size()?;
 
         let mut rng: StdRng = SeedableRng::seed_from_u64(random_state);
         let random_values = gen_random_vec(batch_size, random_state);
@@ -279,15 +317,9 @@ impl Graph {
                             break (src, dst, false);
                         }
                     };
-                    let src_embedding = &embedding[src as usize];
-                    let dst_embedding = &embedding[dst as usize];
                     (
                         indices[i],
-                        (0..embedding_size).map(move |i| {
-                            let x1 = src_embedding[i];
-                            let x2 = dst_embedding[i];
-                            method(x1, x2)
-                        }),
+                        method(&embedding[src as usize],&embedding[dst as usize]),
                         label
                     )
                 })),

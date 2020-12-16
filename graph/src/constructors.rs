@@ -125,7 +125,7 @@ where
                 if !nodes.contains_key(node_name) {
                     if empty_nodes_mapping {
                         nodes.insert(node_name.to_owned())?;
-                    } else {
+                    } else if !nodes.numeric_ids {
                         return Err(format!(
                             concat!(
                                 "In the edge file was found the node {} ",
@@ -142,8 +142,20 @@ where
                 }
             }
             Ok((
-                *nodes.get(&src_name).unwrap(),
-                *nodes.get(&dst_name).unwrap(),
+                match nodes.numeric_ids{
+                    true => match src_name.parse::<NodeT>() {
+                        Ok(val) => val,
+                        Err(_) => {return Err(format!("The given source node ID `{}` is not numeric.", src_name));},
+                    },
+                    false => *nodes.get(&src_name).unwrap()
+                },
+                match nodes.numeric_ids{
+                    true => match dst_name.parse::<NodeT>() {
+                        Ok(val) => val,
+                        Err(_) => {return Err(format!("The given destination node ID `{}` is not numeric.", dst_name));},
+                    },
+                    false => *nodes.get(&dst_name).unwrap()
+                },
                 edge_type,
                 weight,
             ))
@@ -337,10 +349,12 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
     directed: bool,
     directed_edge_list: bool,
     verbose: bool,
+    numeric_node_ids: bool,
     numeric_edge_types_ids: bool,
     ignore_duplicated_edges: bool
 ) -> Result<(EdgeT, impl Iterator<Item = Result<Quadruple, String>> + 'a, Vocabulary<NodeT>, Vocabulary<EdgeTypeT>), String>  {
-    let mut edge_types_vocabulary = Vocabulary::new(numeric_edge_types_ids);
+    let mut edge_types_vocabulary = Vocabulary::default().set_numeric_ids(numeric_edge_types_ids);
+    nodes = nodes.set_numeric_ids(numeric_node_ids);
     let (edges_number, edges_iter) = { 
             let edge_quadruples:Vec<Quadruple> = parse_edge_type_ids_vocabulary(
                 parse_edges_node_ids(edges_iter, &mut nodes),
@@ -481,8 +495,8 @@ fn parse_nodes(
     numeric_node_ids: bool,
     numeric_node_types_ids: bool,
 ) -> Result<(Vocabulary<NodeT>, VocabularyVec<NodeTypeT, NodeT>), String> {
-    let mut nodes = Vocabulary::new(numeric_node_ids);
-    let mut node_types = VocabularyVec::new(numeric_node_types_ids);
+    let mut nodes = Vocabulary::default().set_numeric_ids(numeric_node_ids);
+    let mut node_types = VocabularyVec::default().set_numeric_ids(numeric_node_types_ids);
 
     if let Some(ni) = nodes_iterator {
         // TODO: the following can likely be dealt with in a better way.
@@ -505,6 +519,7 @@ pub(crate) fn parse_string_edges(
     nodes_number: NodeT,
     directed: bool,
     mut nodes: Vocabulary<NodeT>,
+    numeric_edge_node_ids: bool,
     numeric_edge_types_ids: bool,
     directed_edge_list: bool,
     ignore_duplicated_edges: bool,
@@ -512,8 +527,9 @@ pub(crate) fn parse_string_edges(
     has_weights: bool
 ) -> ParsedStringEdgesType {
     let mut weights: Vec<WeightT> = Vec::new();
-    let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::new(numeric_edge_types_ids);
+    let mut edge_types_vocabulary: Vocabulary<EdgeTypeT> = Vocabulary::default().set_numeric_ids(numeric_edge_types_ids);
     let mut edge_types_ids: Vec<EdgeTypeT> = Vec::new();
+    nodes = nodes.set_numeric_ids(numeric_edge_node_ids);
 
     let wrapped_edges_iterator = parse_sorted_edges(
         parse_edge_type_ids_vocabulary(
@@ -720,7 +736,7 @@ impl Graph {
             has_weights
         )?;
 
-        Ok(Graph {
+        Ok(Graph::new(
             directed,
             unique_self_loop_number,
             self_loop_number,
@@ -732,16 +748,11 @@ impl Graph {
             nodes,
             node_bit_mask,
             node_bits,
-            node_types,
             edge_types,
             name,
-            weights:optionify!(weights),
-            sources: None,
-            embedding: None,
-            destinations: None,
-            outbounds: None,
-            cached_destinations: None
-        })
+            optionify!(weights),
+            node_types
+        ))
     }
 
     /// Create new Graph object from unsorted source.
@@ -771,6 +782,7 @@ impl Graph {
         verbose: bool,
         numeric_edge_types_ids: bool,
         numeric_node_ids: bool,
+        numeric_edge_node_ids: bool,
         numeric_node_types_ids: bool,
         has_edge_types: bool,
         has_weights: bool
@@ -789,6 +801,7 @@ impl Graph {
                 directed,
                 directed_edge_list,
                 verbose,
+                numeric_edge_node_ids,
                 numeric_edge_types_ids,
                 ignore_duplicated_edges
             )?;
@@ -867,6 +880,7 @@ impl Graph {
         nodes_number: NodeT,
         numeric_edge_types_ids: bool,
         numeric_node_ids: bool,
+        numeric_edge_node_ids: bool,
         numeric_node_types_ids: bool,
         has_edge_types: bool,
         has_weights: bool,
@@ -898,6 +912,7 @@ impl Graph {
             nodes_number,
             directed,
             nodes,
+            numeric_edge_node_ids,
             numeric_edge_types_ids,
             directed_edge_list,
             ignore_duplicated_edges,
@@ -905,7 +920,7 @@ impl Graph {
             has_weights
         )?;
 
-        Ok(Graph {
+        Ok(Graph::new(
             directed,
             unique_self_loop_number,
             self_loop_number,
@@ -919,13 +934,8 @@ impl Graph {
             node_bits,
             edge_types,
             name,
-            weights: optionify!(weights),
-            node_types:optionify!(node_types),
-            sources: None,
-            embedding: None,
-            destinations: None,
-            outbounds: None,
-            cached_destinations: None
-    })
+            optionify!(weights),
+            optionify!(node_types)
+        ))
     }
 }

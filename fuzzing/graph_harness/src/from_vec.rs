@@ -26,6 +26,7 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
         data.ignore_duplicated_nodes,
         data.ignore_duplicated_edges,
         false,
+        false,
         data.numeric_edge_types_ids,
         data.numeric_node_ids,
         data.numeric_node_types_ids,

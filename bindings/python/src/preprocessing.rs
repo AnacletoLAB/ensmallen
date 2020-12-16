@@ -155,7 +155,7 @@ impl EnsmallenGraph {
     ///
     fn cooccurence_matrix(
         &self,
-        length: NodeT,
+        walk_length: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
         let gil = pyo3::Python::acquire_gil();
@@ -166,7 +166,7 @@ impl EnsmallenGraph {
             build_walk_parameters_list(&["window_size", "verbose"]),
         ))?;
 
-        let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
+        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
 
         let (len, iter) = pyex!(self.graph.cooccurence_matrix( 
             &parameters,
@@ -371,10 +371,16 @@ impl EnsmallenGraph {
             &maybe_graph
         ))?;
 
+        let embedding_size = pyex!(self.graph.get_embedding_size())?;
+        let edge_vector_len = match method {
+            "Concatenate" => embedding_size*2,
+            _ => embedding_size
+        };
+
         let edges = ThreadSafe {
             t: PyArray2::new(
                 gil.python(),
-                [batch_size, pyex!(self.graph.get_embedding_size())?],
+                [batch_size, edge_vector_len],
                 false,
             ),
         };
@@ -383,8 +389,8 @@ impl EnsmallenGraph {
         };
         unsafe {
             iter.for_each(|(i, edge_embedding, label)| {
-                edge_embedding.enumerate().for_each(|(j, v)| {
-                    *(edges.t.uget_mut([i, j])) = v;
+                edge_embedding.iter().enumerate().for_each(|(j, v)| {
+                    *(edges.t.uget_mut([i, j])) = *v;
                 });
                 *(labels.t.uget_mut([i])) = label;
             });
