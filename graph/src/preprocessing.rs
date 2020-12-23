@@ -111,11 +111,14 @@ pub fn cooccurence_matrix(
         });
     });
 
+    let mut result = Arc::try_unwrap(cooccurence_matrix)
+    .unwrap();
+
+    result.merge();
+
     (
-        cooccurence_matrix.len(),
-        Arc::try_unwrap(cooccurence_matrix)
-            .unwrap()
-            .into_iter_normalized(),
+        result.len(),
+        result.into_iter_normalized(),
     )
 }
 

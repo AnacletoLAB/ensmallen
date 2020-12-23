@@ -1,6 +1,8 @@
 #![warn(unused_macros)]
 #![feature(map_first_last)]
-#![feature(unsafe_cell_get_mut)]
+#![feature(thread_id_value)]
+#![type_length_limit="3764086"] // WTF why, this is due to atomic_f64_hashmap
+//#![feature(unsafe_cell_get_mut)]
 
 const SEED_XOR: usize = 0xbad5eedbad5eed11;
 
