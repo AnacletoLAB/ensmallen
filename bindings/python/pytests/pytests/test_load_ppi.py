@@ -14,7 +14,7 @@ def test_load_ppi() -> EnsmallenGraph:
         destinations_column="object",
         directed=False,
         weights_column="weight",
-        node_path="./pytests/pytests/data/ppi/nodes.tsv",
+        node_path="./pytests/data/ppi/nodes.tsv",
         nodes_column="id",
         node_types_column="molecular_function",
         default_node_type="Missing"
