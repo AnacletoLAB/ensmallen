@@ -11,6 +11,10 @@ authors = [
 readme = "README.md"
 exclude = ["pytests/*", "Python-*", "./*.py"]
 keywords = ["python", "rust", "graph", "random", "walk"]
+dependencies = [
+    "downloaders",
+    "compress_json"
+]
 
 [package.metadata.maturin]
 requires-python = ">=3.5"
