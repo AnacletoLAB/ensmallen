@@ -84,25 +84,24 @@ fn cooccurence_matrix(
     let contexts = PyArray1::<NodeT>::new(gil.python(), [len], false);
     let frequencies = PyArray1::<f64>::new(gil.python(), [len], false);
 
-    iter.enumerate().for_each(|(i, ((node1, node2), frequency))| {
-            unsafe{
-                *words.uget_mut([i]) = node1;
-                *contexts.uget_mut([i]) = node2;
-                *frequencies.uget_mut([i]) = frequency;
-            }
+    iter.enumerate()
+        .for_each(|(i, ((node1, node2), frequency))| unsafe {
+            *words.uget_mut([i]) = node1;
+            *contexts.uget_mut([i]) = node2;
+            *frequencies.uget_mut([i]) = frequency;
         });
 
     Ok((
-        words.to_owned(), 
-        contexts.to_owned(), 
-        frequencies.to_owned()
+        words.to_owned(),
+        contexts.to_owned(),
+        frequencies.to_owned(),
     ))
 }
 
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
+    #[text_signature = "($self, walk_length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
     ///
     /// Parameters
@@ -168,27 +167,26 @@ impl EnsmallenGraph {
 
         let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
 
-        let (len, iter) = pyex!(self.graph.cooccurence_matrix( 
+        let (len, iter) = pyex!(self.graph.cooccurence_matrix(
             &parameters,
             pyex!(extract_value!(kwargs, "window_size", usize))?.unwrap_or(3),
         ))?;
-    
+
         let words = PyArray1::<NodeT>::new(gil.python(), [len], false);
         let contexts = PyArray1::<NodeT>::new(gil.python(), [len], false);
         let frequencies = PyArray1::<f64>::new(gil.python(), [len], false);
-    
-        iter.enumerate().for_each(|(i, ((node1, node2), frequency))| {
-                unsafe{
-                    *words.uget_mut([i]) = node1;
-                    *contexts.uget_mut([i]) = node2;
-                    *frequencies.uget_mut([i]) = frequency;
-                }
+
+        iter.enumerate()
+            .for_each(|(i, ((node1, node2), frequency))| unsafe {
+                *words.uget_mut([i]) = node1;
+                *contexts.uget_mut([i]) = node2;
+                *frequencies.uget_mut([i]) = frequency;
             });
-    
+
         Ok((
-            words.to_owned(), 
-            contexts.to_owned(), 
-            frequencies.to_owned()
+            words.to_owned(),
+            contexts.to_owned(),
+            frequencies.to_owned(),
         ))
     }
 
@@ -278,11 +276,7 @@ impl EnsmallenGraph {
             * parameters.get_iterations() as usize;
 
         let contexts = ThreadSafe {
-            t: PyArray2::new(
-                gil.python(),
-                [elements_per_batch, window_size * 2],
-                false,
-            ),
+            t: PyArray2::new(gil.python(), [elements_per_batch, window_size * 2], false),
         };
         let words = ThreadSafe {
             t: PyArray1::new(gil.python(), [elements_per_batch], false),
@@ -373,16 +367,12 @@ impl EnsmallenGraph {
 
         let embedding_size = pyex!(self.graph.get_embedding_size())?;
         let edge_vector_len = match method {
-            "Concatenate" => embedding_size*2,
-            _ => embedding_size
+            "Concatenate" => embedding_size * 2,
+            _ => embedding_size,
         };
 
         let edges = ThreadSafe {
-            t: PyArray2::new(
-                gil.python(),
-                [batch_size, edge_vector_len],
-                false,
-            ),
+            t: PyArray2::new(gil.python(), [batch_size, edge_vector_len], false),
         };
         let labels = ThreadSafe {
             t: PyArray1::new(gil.python(), [batch_size], false),

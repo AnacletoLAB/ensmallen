@@ -657,7 +657,7 @@ impl Graph {
                 true => format!("{} are self-loops", self.get_self_loop_number()),
                 false => "none are self-loops".to_owned()
             },
-            self_loops_multigraph_connector = match self.has_selfloops() && self.is_multigraph() {
+            self_loops_multigraph_connector = match self.is_multigraph() {
                 true => " and ".to_owned(),
                 false => "".to_owned()
             },

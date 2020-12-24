@@ -1,3 +1,7 @@
+[project]
+dependencies = [
+    "downloaders"
+] 
 [build-system]
 requires = ["maturin"]
 build-backend = "maturin"

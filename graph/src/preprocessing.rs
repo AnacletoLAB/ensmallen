@@ -31,7 +31,7 @@ impl EdgeEmbeddingMethods {
             _ => Err(format!(
                 concat!(
                     "Given embedding method '{}' is not supported.",
-                    "The supported methods are 'Hadamard', 'Average', 'Sum', 'AbsoluteL1', 'L1' and 'L2'."
+                    "The supported methods are 'Hadamard', 'Average', 'Sum', 'AbsoluteL1', 'L1', 'Concatenate' and 'L2'."
                 ),
                 method
             )),
@@ -60,7 +60,7 @@ pub fn word2vec<'a>(
 ) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a, String> {
     Ok(sequences.flat_map_iter(move |sequence| {
         let sequence_length = sequence.len();
-        if sequence_length < window_size * 2 {
+        if sequence_length < window_size * 2 + 1 {
             panic!("You are providing sequences that are smaller than the the minimum amount.");
         }
         (window_size..(sequence_length - window_size - 1)).map(move |i| {
@@ -97,7 +97,7 @@ pub fn cooccurence_matrix(
         // get a reference to the shared matrix
         let cooccurence_matrix = cooccurence_matrix.clone();
         let walk_length = sequence.len();
-        // for each batch of size 2*window_size + 1
+        // for each batch of size 2*window_size + 1 
         (window_size..walk_length - window_size - 1).for_each(|i| {
             let central_word_id = sequence[i];
             // for each index in the current batch update the matrix

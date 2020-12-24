@@ -531,12 +531,24 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         // Testing link prediction pre-processing
         let batch_size = 10;
         graph.set_embedding(vec![vec![1.0; 100]; graph.get_nodes_number() as usize])?;
-        let _ = graph
-            .link_prediction(0, 1, "Average", 1.0, true, batch_size, &None)?
+        vec!["Average", "L1", "L2", "AbsoluteL1", "Hadamard"]
+            .iter()
+            .for_each(|method| {
+                let link_prediction_edges = graph
+                    .link_prediction(0, batch_size, method, 1.0, true, 5, &None)
+                    .unwrap()
+                    .collect::<Vec<_>>();
+                for (_, edges, _) in link_prediction_edges.iter() {
+                    assert_eq!(edges.len(), 100);
+                }
+            });
+        let concatenated_edges = graph
+            .link_prediction(0, batch_size, "Concatenate", 1.0, false, 5, &None)
+            .unwrap()
             .collect::<Vec<_>>();
-        let _ = graph
-            .link_prediction(0, 1, "Average", 1.0, false, batch_size, &None)?
-            .collect::<Vec<_>>();
+        for (_, edge, _) in concatenated_edges.iter() {
+            assert_eq!(edge.len(), 200);
+        }
     }
     // Compute metrics of the graph
     graph.report();
