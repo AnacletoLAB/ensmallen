@@ -1,11 +1,8 @@
 #![warn(unused_macros)]
 #![feature(map_first_last)]
-#![feature(unsafe_cell_get_mut)]
+#![type_length_limit="3764086"]
 
 const SEED_XOR: usize = 0xbad5eedbad5eed11;
-
-mod atomic_f64_hashmap;
-pub(crate) use atomic_f64_hashmap::AtomicF64HashMap;
 
 mod vocabulary;
 pub use self::vocabulary::Vocabulary;

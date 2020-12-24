@@ -69,12 +69,12 @@ script:
       # Install the binding
       python -m pip install --user --upgrade ./target/wheels/*.whl
       # Run the python tests
-      python -m pytest -s ./pytests
+      python -m pytest -s ./pytests/pytests
     else
       # Install the binding
       python3 -m pip install --user --upgrade ./target/wheels/*.whl
       # Run the python tests
-      python3 -m pytest -s ./pytests
+      python3 -m pytest -s ./pytests/pytests
     fi
 
 after_success:

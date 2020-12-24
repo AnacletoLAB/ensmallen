@@ -1,10 +1,10 @@
 use super::*;
+use indicatif::ProgressIterator;
 use rand::rngs::StdRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
 use rayon::prelude::*;
-use std::cmp::{max, min};
-use std::sync::Arc;
+use std::collections::HashMap;
 use vec_rand::gen_random_vec;
 use vec_rand::xorshift::xorshift;
 
@@ -84,39 +84,75 @@ pub fn word2vec<'a>(
 ///
 /// * sequences:Vec<Vec<usize>> - the sequence of sequences of integers to preprocess.
 /// * window_size: Option<usize> - Window size to consider for the sequences.
+/// * verbose: Option<bool>,
+///     Wethever to show the progress bars.
+///     The default behaviour is false.
 ///     
 pub fn cooccurence_matrix(
     sequences: impl ParallelIterator<Item = Vec<NodeT>>,
     window_size: usize,
-) -> (usize, impl Iterator<Item = ((NodeT, NodeT), f64)>) {
-    let cooccurence_matrix = Arc::new(AtomicF64HashMap::<(NodeT, NodeT)>::new());
-    // TODO!: This could be implemented using word2vec, it should be cleaner
-    //        but we don't know about its performances yet.
-    // fill the matrix
-    sequences.for_each(|sequence| {
-        // get a reference to the shared matrix
-        let cooccurence_matrix = cooccurence_matrix.clone();
+    number_of_sequences: usize,
+    verbose: bool,
+) -> Result<(Words, Words, Frequencies), String> {
+    let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
+    let pb1 = get_loading_bar(verbose, "Computing frequencies", number_of_sequences);
+    // TODO!: Avoid this collect and create the cooccurrence matrix in a parallel way.
+    // Tommy is currently trying to develop a version of the hashmap that is able to handle this.
+    let vec = sequences.collect::<Vec<Vec<NodeT>>>();
+    vec.iter().progress_with(pb1).for_each(|sequence| {
         let walk_length = sequence.len();
-        // for each batch of size 2*window_size + 1 
-        (window_size..walk_length - window_size - 1).for_each(|i| {
-            let central_word_id = sequence[i];
-            // for each index in the current batch update the matrix
-            (i - window_size..i)
-                .chain(i + 1..window_size + i + 1)
-                .for_each(|j| {
-                    let smaller = min(central_word_id, sequence[j]) as NodeT;
-                    let bigger = max(central_word_id, sequence[j]) as NodeT;
-                    cooccurence_matrix.add(&(smaller, bigger), 1.0 / (i as f64 - j as f64).abs());
-                });
-        });
+        for (central_index, &central_word_id) in sequence.iter().enumerate() {
+            for distance in 1..1 + window_size {
+                if central_index + distance >= walk_length {
+                    break;
+                }
+                let context_id = sequence[central_index + distance];
+                if central_word_id < context_id {
+                    *cooccurence_matrix
+                        .entry((central_word_id as NodeT, context_id as NodeT))
+                        .or_insert(0.0) += 1.0 / distance as f64;
+                } else {
+                    *cooccurence_matrix
+                        .entry((context_id as NodeT, central_word_id as NodeT))
+                        .or_insert(0.0) += 1.0 / distance as f64;
+                }
+            }
+        }
     });
 
-    (
+    let elements = cooccurence_matrix.len() * 2;
+    let mut max_frequency = 0.0;
+    let mut words: Vec<NodeT> = vec![0; elements];
+    let mut contexts: Vec<NodeT> = vec![0; elements];
+    let mut frequencies: Vec<f64> = vec![0.0; elements];
+    let pb2 = get_loading_bar(
+        verbose,
+        "Converting mapping into CSR matrix",
         cooccurence_matrix.len(),
-        Arc::try_unwrap(cooccurence_matrix)
-            .unwrap()
-            .into_iter_normalized(),
-    )
+    );
+
+    cooccurence_matrix
+        .iter()
+        .progress_with(pb2)
+        .enumerate()
+        .for_each(|(i, ((word, context), frequency))| {
+            let (k, j) = (i * 2, i * 2 + 1);
+            if *frequency > max_frequency {
+                max_frequency = *frequency;
+            }
+            words[k] = *word;
+            words[j] = words[k];
+            contexts[k] = *context;
+            contexts[j] = contexts[k];
+            frequencies[k] = *frequency;
+            frequencies[j] = frequencies[k];
+        });
+
+    frequencies
+        .par_iter_mut()
+        .for_each(|frequency| *frequency /= max_frequency);
+
+    Ok((words, contexts, frequencies))
 }
 
 /// # Preprocessing for ML algorithms on graph.
@@ -163,15 +199,19 @@ impl Graph {
     ///     Wethever to show the progress bars.
     ///     The default behaviour is false.
     ///     
-    pub fn cooccurence_matrix<'a>(
-        &'a self,
-        walks_parameters: &'a WalksParameters,
+    pub fn cooccurence_matrix(
+        &self,
+        walks_parameters: &WalksParameters,
         window_size: usize,
-    ) -> Result<(usize, impl Iterator<Item = ((NodeT, NodeT), f64)> + 'a), String> {
-        Ok(cooccurence_matrix(
-            self.complete_walks_iter(walks_parameters)?,
+        verbose: bool,
+    ) -> Result<(Words, Words, Frequencies), String> {
+        let walks = self.complete_walks_iter(walks_parameters)?;
+        cooccurence_matrix(
+            walks,
             window_size,
-        ))
+            (self.get_unique_sources_number() * walks_parameters.iterations) as usize,
+            verbose,
+        )
     }
 
     /// Returns triple with source nodes, destination nodes and labels for training model for link prediction.
