@@ -16,8 +16,6 @@ keywords = ["python", "rust", "graph", "random", "walk"]
 requires-python = ">=3.5"
 requires-dist = ["toml~=0.10.0", "downloaders", "compress_json"]
 
-[package.metadata.pyo3-pack]
-
 [lib]
 name = "ensmallen_graph"
 crate-type = ["cdylib"]
