@@ -40,7 +40,7 @@ pub(crate) fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize
 
 /// Return true if the given weight is near to one.
 pub(crate) fn not_one(weight:WeightT)->bool {
-    (weight - 1.0).abs() > f64::EPSILON
+    (weight - 1.0).abs() > WeightT::EPSILON
 }
 
 impl Graph {

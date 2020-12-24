@@ -20,6 +20,7 @@ pub struct CSVFileReader {
     pub(crate) rows_to_skip: usize,
     pub(crate) ignore_duplicates: bool,
     pub(crate) max_rows_number: Option<u64>,
+    pub(crate) comment_symbol: Option<String>,
 }
 
 /// # Builder methods
@@ -41,6 +42,7 @@ impl CSVFileReader {
                 rows_to_skip: 0,
                 ignore_duplicates: true,
                 max_rows_number: None,
+                comment_symbol: None,
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
         }
@@ -54,7 +56,7 @@ impl CSVFileReader {
     }
 
     /// Return list of components of the header.
-    pub(crate) fn get_header(&self) -> Result<Vec<String>, String> {
+    pub fn get_header(&self) -> Result<Vec<String>, String> {
         let file = File::open(&self.path).unwrap();
         let node_buf_reader = BufReader::new(file);
         let mut lines = node_buf_reader.lines().skip(self.rows_to_skip);
@@ -74,7 +76,7 @@ impl CSVFileReader {
     }
 
     /// Return elements of the first line not to be skipped.
-    pub(crate) fn get_elements_per_line(&self) -> Result<usize, String> {
+    pub fn get_elements_per_line(&self) -> Result<usize, String> {
         let first_line = BufReader::new(File::open(&self.path).unwrap())
             .lines()
             .nth(self.rows_to_skip);
@@ -128,61 +130,47 @@ impl CSVFileReader {
         } else {
             ProgressBar::hidden()
         };
-        // we copy the value so that it can be moved inside the closure
-        // because without this hack there would be a lifetime problem
-        // because the iterator might live more than the self of csv file reader
-        let max_rows_number_cloned = self.max_rows_number;
 
         let number_of_elements_per_line = self.get_elements_per_line()?;
         Ok(BufReader::new(File::open(&self.path).unwrap())
             .lines()
             .skip(self.rows_to_skip + self.header as usize)
             .progress_with(pb)
-            // unwrap the line
-            .map(|line| match line {
-                Ok(l) => Ok(l),
-                Err(_) => Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string())
-            })
             .enumerate()
             // skip empty lines
-            .filter(move |(i, line)| match line {
+            .filter_map(move |(i, line)| match line {
                 Ok(l) => {
-                    l != "" && if let Some(mnortl) = max_rows_number_cloned {
-                        *i as u64 <= mnortl
-                    } else {
-                        true
+                    if l.is_empty() || self.max_rows_number.unwrap_or(u64::MAX) <= i as u64 {
+                        return None;
                     }
-                },
-                Err(_) => true
-            })
-            // split and validate the values
-            .map(move |(i, line)| {
-                match line {
-                    Ok(l) => {
-                        let line_components = l
+                    if let Some(cs) = &self.comment_symbol{
+                        if l.starts_with(cs){
+                            return None;
+                        }
+                    }
+                    let line_components = l
                         .split(&self.separator)
                         .map(|s| s.to_string())
                         .collect::<Vec<String>>();
-                        if line_components.len() != number_of_elements_per_line {
-                            return Err(format!(
-                                concat!(
-                                    "Found line {i} with different number",
-                                    " ({found}) of separator from the expected",
-                                    " one {expected}.\n",
-                                    "Specifically, the line is: {line}\n",
-                                    "And the line components is {line_components:?}"
-                                ),
-                                i=i,
-                                found=line_components.len(),
-                                expected=number_of_elements_per_line,
-                                line_components=line_components,
-                                line=l
-                            ));
-                        }
-                        Ok(line_components)
+                    if line_components.len() != number_of_elements_per_line {
+                        return Some(Err(format!(
+                            concat!(
+                                "Found line {i} with different number",
+                                " ({found}) of separator from the expected",
+                                " one {expected}.\n",
+                                "Specifically, the line is: {line}\n",
+                                "And the line components is {line_components:?}"
+                            ),
+                            i=i,
+                            found=line_components.len(),
+                            expected=number_of_elements_per_line,
+                            line_components=line_components,
+                            line=l
+                        )));
                     }
-                    Err(e) => Err(e)
-                }
+                    Some(Ok(line_components))
+                },
+                Err(_) => Some(Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string()))
             }))
     }
 
@@ -192,7 +180,7 @@ impl CSVFileReader {
     ///
     /// * column_name: String - Column to get the number of.
     ///
-    pub(crate) fn get_column_number(&self, column_name: String) -> Result<usize, String> {
+    pub fn get_column_number(&self, column_name: String) -> Result<usize, String> {
         let header = self.get_header()?;
 
         match header.iter().position(|x| *x == column_name) {

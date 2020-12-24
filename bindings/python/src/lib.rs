@@ -1,17 +1,23 @@
 use pyo3::exceptions;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
-use pyo3::{wrap_pyfunction, wrap_pymodule};
+use pyo3::{wrap_pymodule};
 mod macros;
 pub(crate) use crate::macros::*;
 mod edge_file_writer;
 mod from_csv;
 mod getters;
 mod setters;
+mod edge_lists;
+mod filters;
 mod metrics;
 mod node_file_writer;
 mod preprocessing;
+mod remap;
+mod trees;
+mod connected_components;
 mod tarjan;
+mod thread_safe;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
 pub(crate) use crate::utilities::*;
@@ -21,7 +27,7 @@ mod walks;
 pub(crate) use crate::types::EnsmallenGraph;
 mod modifiers;
 
-mod drop;
+mod remove;
 mod holdout;
 mod operators;
 

@@ -1,6 +1,6 @@
 use super::*;
 use graph::{EdgeT, EdgeTypeT, NodeT, NodeTypeT, WeightT};
-use numpy::{PyArray, PyArray1};
+use numpy::{PyArray, PyArray1, PyArray2};
 use std::collections::HashMap;
 
 #[pymethods]
@@ -11,15 +11,34 @@ impl EnsmallenGraph {
         self.graph.get_nodes_number()
     }
 
-    #[text_signature = "(self)"]
-    /// Return the nodes reverse mapping.
+    #[text_signature = "(self, k)"]
+    /// Return List with top k central node Ids.
     ///
     /// Parameters
     /// -----------------
     /// k: int,
     ///      Number of central nodes to extract.
+    ///
+    /// Returns
+    /// -----------------
+    /// List of the top k central node Ids.
     fn get_top_k_central_nodes(&self, k: NodeT) -> Vec<NodeT> {
         self.graph.get_top_k_central_nodes(k)
+    }
+
+    #[text_signature = "(self, k)"]
+    /// Return List with top k central node names.
+    ///
+    /// Parameters
+    /// -----------------
+    /// k: int,
+    ///      Number of central nodes names to extract.
+    ///
+    /// Returns
+    /// -----------------
+    /// List of the top k central node names.
+    fn get_top_k_central_node_names(&self, k: NodeT) -> Vec<String> {
+        self.graph.get_top_k_central_node_names(k)
     }
 
     #[text_signature = "(self)"]
@@ -60,6 +79,94 @@ impl EnsmallenGraph {
         self.graph.get_node_types_number()
     }
 
+    #[text_signature = "(self, edge_type)"]
+    /// Return the number of edges with the given edge type in the graph.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// edge_type: int,
+    ///     Edge type ID for which to count the edges.
+    /// 
+    /// Raises
+    /// ---------------------
+    /// ValueError,
+    ///     If the graph has no edge types.
+    /// ValueError,
+    ///     If the graph has not the given edge type.
+    /// 
+    /// Returns
+    /// ---------------------
+    /// Number of edges of given edge type.
+    fn get_edge_count_by_edge_type(&self, edge_type: EdgeTypeT) -> PyResult<EdgeT> {
+        pyex!(self.graph.get_edge_count_by_edge_type(edge_type))
+    }
+
+    #[text_signature = "(self, node_type)"]
+    /// Return the number of nodes with the given node type in the graph.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// node_type: int,
+    ///     Node type ID for which to number the nodes.
+    /// 
+    /// Raises
+    /// ---------------------
+    /// ValueError,
+    ///     If the graph has no node types.
+    /// ValueError,
+    ///     If the graph has not the given node type.
+    /// 
+    /// Returns
+    /// ---------------------
+    /// Number of nodes of given node type.
+    fn get_node_count_by_node_type(&self, node_type: NodeTypeT) -> PyResult<NodeT> {
+        pyex!(self.graph.get_node_count_by_node_type(node_type))
+    }
+
+    #[text_signature = "(self, edge_type)"]
+    /// Return the number of edges with the given edge type name in the graph.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// edge_type: str,
+    ///     Edge type name for which to number the edges.
+    /// 
+    /// Raises
+    /// ---------------------
+    /// ValueError,
+    ///     If the graph has no edge types.
+    /// ValueError,
+    ///     If the graph has not the given edge type.
+    /// 
+    /// Returns
+    /// ---------------------
+    /// Number of edges of given edge type.
+    fn get_edge_count_by_edge_type_name(&self, edge_type: &str) -> PyResult<EdgeT> {
+        pyex!(self.graph.get_edge_count_by_edge_type_name(edge_type))
+    }
+
+    #[text_signature = "(self, node_type)"]
+    /// Return the number of nodes with the given node type name in the graph.
+    /// 
+    /// Parameters
+    /// ---------------------
+    /// node_type: str,
+    ///     Node type name for which to number the nodes.
+    /// 
+    /// Raises
+    /// ---------------------
+    /// ValueError,
+    ///     If the graph has no node types.
+    /// ValueError,
+    ///     If the graph has not the given node type.
+    /// 
+    /// Returns
+    /// ---------------------
+    /// Number of nodes of given node type.
+    fn get_node_count_by_node_type_name(&self, node_type: &str) -> PyResult<NodeT> {
+        pyex!(self.graph.get_node_count_by_node_type_name(node_type))
+    }
+
     #[text_signature = "($self, node)"]
     /// Return boolean representing if given node is a trap.
     ///
@@ -76,6 +183,38 @@ impl EnsmallenGraph {
     ///
     fn is_node_trap(&self, node: NodeT) -> bool {
         self.graph.is_node_trap(node)
+    }
+
+    #[text_signature = "($self, node_id)"]
+    /// Return boolean representing singletons.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node_id: int,
+    ///     Node ID to search if it's a singleton.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if given node is a singleton.
+    ///
+    fn is_singleton(&self, node_id: NodeT) -> bool {
+        self.graph.is_singleton(node_id)
+    }
+
+    #[text_signature = "($self, node_name)"]
+    /// Return boolean representing singletons.
+    ///
+    /// Parameters
+    /// ---------------------
+    /// node_name: str,
+    ///     Node name to search if it's a singleton.
+    ///
+    /// Returns
+    /// ----------------------------
+    /// Boolean representing if given node is a singleton.
+    ///
+    fn is_singleton_string(&self, node_name: &str) -> PyResult<bool> {
+        pyex!(self.graph.is_singleton_string(node_name))
     }
 
     #[text_signature = "($self, edge)"]
@@ -136,20 +275,22 @@ impl EnsmallenGraph {
         self.graph.has_edge_string(&src, &dst, edge_type.as_ref())
     }
 
-    #[text_signature = "($self, node_name)"]
+    #[text_signature = "($self, node_name, node_type)"]
     /// Return boolean representing if given node exists in graph.
     ///
     /// Parameters
     /// ---------------------
     /// node_name: str,
     ///     Name of the node.
+    /// node_type: str = None,
+    ///     Optional node type of the node.
     ///
     /// Returns
     /// ----------------------------
     /// Boolean representing if given node exists in graph.
     ///
-    fn has_node_string(&self, node_name: &str) -> bool {
-        self.graph.has_node_string(node_name)
+    fn has_node_string(&self, node_name: &str, node_type: Option<String>) -> bool {
+        self.graph.has_node_string(node_name, node_type)
     }
 
     #[text_signature = "($self, src, dst, edge_type)"]
@@ -187,7 +328,6 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Integer representing ID of the edge. It will return None when the edge does not exist.
-    ///
     fn get_edge_id_string(&self, src: &str, dst: &str, edge_type: Option<String>) -> Option<EdgeT> {
         self.graph.get_edge_id_string(src, dst, edge_type.as_ref())
     }
@@ -198,7 +338,6 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Dict with mapping from not trap nodes to dense range of nodes.
-    ///
     fn get_dense_node_mapping(&self) -> HashMap<NodeT, NodeT> {
         self.graph.get_dense_node_mapping()
     }
@@ -209,36 +348,116 @@ impl EnsmallenGraph {
     /// Returns
     /// ----------------------------
     /// Number of the source nodes.
-    ///
-    fn get_source_nodes_number(&self) -> NodeT {
-        self.graph.get_source_nodes_number()
+    fn get_unique_sources_number(&self) -> NodeT {
+        self.graph.get_unique_sources_number()
     }
 
+    #[text_signature = "(self, directed)"]
     /// Return vector of the non-unique source nodes.
-    pub fn get_sources(&self) -> PyResult<Py<PyArray1<NodeT>>> {
+    ///
+    /// Parameters
+    /// --------------------------
+    /// directed: bool,
+    ///     Wethever to filter out the undirected edges.
+    ///
+    /// Returns
+    /// --------------------------
+    /// Numpy array with numeric sources Ids.
+    pub fn get_sources(&self, directed: Option<bool>) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_1d!(gil, self.graph.get_sources(), NodeT))
+        Ok(to_nparray_1d!(
+            gil,
+            self.graph.get_sources(directed.unwrap_or(true)),
+            NodeT
+        ))
     }
 
+    #[text_signature = "(self, directed)"]
     /// Return vector on the (non unique) destination nodes of the graph.
-    pub fn get_destinations(&self) -> PyResult<Py<PyArray1<NodeT>>> {
+    ///
+    /// Parameters
+    /// --------------------------
+    /// directed: bool,
+    ///     Wethever to filter out the undirected edges.
+    ///
+    /// Returns
+    /// --------------------------
+    /// Numpy array with numeric destination Ids.
+    pub fn get_destinations(&self, directed: Option<bool>) -> PyResult<Py<PyArray1<NodeT>>> {
         let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_1d!(gil, self.graph.get_destinations(), NodeT))
+        Ok(to_nparray_1d!(
+            gil,
+            self.graph.get_destinations(directed.unwrap_or(true)),
+            NodeT
+        ))
     }
 
+    #[text_signature = "(self, directed)"]
+    /// Return vector on the edges of the graph.
+    ///
+    /// Parameters
+    /// --------------------------
+    /// directed: bool,
+    ///     Wethever to filter out the undirected edges.
+    ///
+    /// Returns
+    /// --------------------------
+    /// Numpy array with numeric source and destination Ids.
+    pub fn get_edges(&self, directed: Option<bool>) -> PyResult<Py<PyArray2<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_nparray_2d!(
+            gil,
+            self.graph.get_edges(directed.unwrap_or(true)),
+            NodeT
+        ))
+    }
+
+    #[text_signature = "(self, directed)"]
+    /// Return list on the name of the edges of the graph.
+    ///
+    /// Parameters
+    /// --------------------------
+    /// directed: bool,
+    ///     Wethever to filter out the undirected edges.
+    ///
+    /// Returns
+    /// --------------------------
+    /// Numpy array with numeric source and destination string names.
+    pub fn get_edge_names(&self, directed: Option<bool>) -> Vec<(String, String)> {
+        self.graph.get_edge_names(directed.unwrap_or(true))
+    }
+
+    #[text_signature = "(self, directed)"]
     /// Return vector of the non-unique source nodes names.
-    pub fn get_source_names(&self) -> Vec<String> {
-        self.graph.get_source_names()
+    ///
+    /// Parameters
+    /// --------------------------
+    /// directed: bool,
+    ///     wethever to filter out the undirected edges.
+    pub fn get_source_names(&self, directed: Option<bool>) -> Vec<String> {
+        self.graph.get_source_names(directed.unwrap_or(true))
     }
 
+    #[text_signature = "(self, directed)"]
     /// Return vector on the (non unique) destination nodes of the graph.
-    pub fn get_destination_names(&self) -> Vec<String> {
-        self.graph.get_destination_names()
+    ///
+    /// Parameters
+    /// --------------------------
+    /// directed: bool,
+    ///     wethever to filter out the undirected edges.
+    pub fn get_destination_names(&self, directed: Option<bool>) -> Vec<String> {
+        self.graph.get_destination_names(directed.unwrap_or(true))
     }
 
-    /// Return vector of strings representing the node Ids reverse mapping.
-    pub fn get_nodes_reverse_mapping(&self) -> Vec<String> {
-        self.graph.get_nodes_reverse_mapping()
+    /// Return vector with the sorted nodes names.
+    pub fn get_node_names(&self) -> Vec<String> {
+        self.graph.get_node_names()
+    }
+
+    /// Return vector with the sorted nodes Ids.
+    pub fn get_nodes(&self) -> PyResult<Py<PyArray1<NodeT>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_nparray_1d!(gil, self.graph.get_nodes(), NodeT))
     }
 
     /// Return vector of node types.
@@ -274,14 +493,14 @@ impl EnsmallenGraph {
         })
     }
 
-    /// Return vector of node types_reverse_mapping.
-    pub fn get_node_types_reverse_mapping(&self) -> Option<Vec<String>> {
-        self.graph.get_node_types_reverse_mapping()
+    /// Return vector of node types_name.
+    pub fn get_node_type_names(&self) -> Option<Vec<String>> {
+        self.graph.get_node_type_names()
     }
 
-    /// Return vector of edge types_reverse_mapping.
-    pub fn get_edge_types_reverse_mapping(&self) -> Option<Vec<String>> {
-        self.graph.get_edge_types_reverse_mapping()
+    /// Return vector of edge types_name.
+    pub fn get_edge_type_names(&self) -> Option<Vec<String>> {
+        self.graph.get_edge_type_names()
     }
 
     /// Return dictionary of strings to Ids representing the ndoes mapping.
@@ -352,13 +571,13 @@ impl EnsmallenGraph {
     #[text_signature = "($self)"]
     /// Return the count of how many time an edge type appears.
     fn get_edge_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
-        pyex!(self.graph.get_edge_type_counts())
+        pyex!(self.graph.get_edge_type_counts_hashmap())
     }
 
     #[text_signature = "($self)"]
     /// Return the count of how many time an node type appears.
     fn get_node_type_counts(&self) -> PyResult<HashMap<EdgeTypeT, usize>> {
-        pyex!(self.graph.get_node_type_counts())
+        pyex!(self.graph.get_node_type_counts_hashmap())
     }
 
     #[text_signature = "(self)"]

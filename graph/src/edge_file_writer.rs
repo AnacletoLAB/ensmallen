@@ -14,7 +14,7 @@ pub struct EdgeFileWriter {
     pub(crate) weights_column: String,
     pub(crate) weights_column_number: usize,
     pub(crate) numeric_node_ids: bool,
-    pub(crate) directed: Option<bool>
+    pub(crate) directed: Option<bool>,
 }
 
 impl EdgeFileWriter {
@@ -36,7 +36,7 @@ impl EdgeFileWriter {
             weights_column: "weight".to_string(),
             weights_column_number: 3,
             numeric_node_ids: false,
-            directed: None
+            directed: None,
         }
     }
 
@@ -255,8 +255,7 @@ impl EdgeFileWriter {
             graph.get_edges_number() as usize,
             compose_lines(number_of_columns, header),
             graph
-                .get_edges_quadruples()
-                .filter(|(_, src, dst, _, _)| directed || src <= dst)
+                .get_edges_quadruples(directed)
                 .map(|(_, src, dst, edge_type, weight)| {
                     let mut line = vec![
                         (

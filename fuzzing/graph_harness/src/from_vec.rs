@@ -21,13 +21,17 @@ pub fn from_vec_harness(data: FromVecHarnessParams) -> Result<(), String> {
             None => None,
         },
         data.directed,
+        false,
         "Graph".to_owned(),
         data.ignore_duplicated_nodes,
         data.ignore_duplicated_edges,
         false,
+        false,
         data.numeric_edge_types_ids,
         data.numeric_node_ids,
         data.numeric_node_types_ids,
+        true,
+        true
     )?;
     // We ignore this error because we execute only the fuzzing to find
     // the panic situations that are NOT just errors, but unhandled errors.

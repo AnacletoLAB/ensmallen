@@ -52,16 +52,13 @@ impl EnsmallenGraph {
 
         let (g1, g2) = pyex!(self.graph.connected_holdout(
             pyex!(extract_value!(kwargs, "random_state", EdgeT))?
-                .or_else(|| Some(42))
-                .unwrap(),
+                .unwrap_or(42),
             train_size,
             pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
             pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?
-                .or_else(|| Some(false))
-                .unwrap(),
+                .unwrap_or(false),
             pyex!(extract_value!(kwargs, "verbose", bool))?
-                .or_else(|| Some(true))
-                .unwrap()
+                .unwrap_or(true),
         ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
@@ -107,12 +104,10 @@ impl EnsmallenGraph {
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.random_subgraph(
                 pyex!(extract_value!(kwargs, "random_state", usize))?
-                    .or_else(|| Some(42))
-                    .unwrap(),
+                    .unwrap_or(42),
                 nodes_number,
                 pyex!(extract_value!(kwargs, "verbose", bool))?
-                    .or_else(|| Some(true))
-                    .unwrap()
+                    .unwrap_or(true),
             ))?,
         })
     }
@@ -130,7 +125,7 @@ impl EnsmallenGraph {
     ///     The rate to reserve for the training.
     /// random_state: int = 42,
     ///     The random_state to make the holdout reproducible.
-    /// include_all_edge_types: bool = True,
+    /// include_all_edge_types: bool = False,
     ///     Wethever to include all the edges between two nodes.
     ///     This is only relevant in multi-graphs.
     /// edge_types: List[String] = None,
@@ -181,23 +176,20 @@ impl EnsmallenGraph {
 
         let (g1, g2) = pyex!(self.graph.random_holdout(
             pyex!(extract_value!(kwargs, "random_state", EdgeT))?
-                .or_else(|| Some(42))
-                .unwrap(),
+                .unwrap_or(42),
             train_size,
             pyex!(extract_value!(kwargs, "include_all_edge_types", bool))?
-                .or_else(|| Some(true))
-                .unwrap(),
+                .unwrap_or(false),
             pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
             pyex!(extract_value!(kwargs, "min_number_overlaps", EdgeT))?,
             pyex!(extract_value!(kwargs, "verbose", bool))?
-                .or_else(|| Some(true))
-                .unwrap()
+                .unwrap_or(true),
         ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, negatives_number, *, random_state, seed_graph, verbose)"]
+    #[text_signature = "($self, negatives_number, *, random_state, seed_graph, only_from_same_component, verbose)"]
     /// Returns Graph with given amount of negative edges as positive edges.
     ///
     /// The graph generated may be used as a testing negatives partition to be
@@ -214,6 +206,9 @@ impl EnsmallenGraph {
     /// seed_graph: EnsmallenGraph = None,
     ///     The (optional) graph whose nodes are used as sources or destinations
     ///     of the generated negative edges.
+    /// only_from_same_component: bool = True,
+    ///     Wether to sample negative edges only from the same node component.
+    ///     This avoids generating topologically impossible negative edges.
     /// verbose: bool = True,
     ///     Wethever to show the loading bar.
     ///     The loading bar will only be visible in console.
@@ -235,7 +230,7 @@ impl EnsmallenGraph {
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["random_state", "verbose", "seed_graph"]),
+            build_walk_parameters_list(&["random_state", "verbose", "seed_graph", "only_from_same_component"]),
         ))?;
 
         let seed_graph = pyex!(extract_value!(kwargs, "seed_graph", EnsmallenGraph))?;
@@ -243,28 +238,38 @@ impl EnsmallenGraph {
         Ok(EnsmallenGraph {
             graph: pyex!(self.graph.sample_negatives(
                 pyex!(extract_value!(kwargs, "random_state", EdgeT))?
-                    .or_else(|| Some(42))
-                    .unwrap(),
+                    .unwrap_or(42),
                 negatives_number,
                 match &seed_graph {
                     Some(sg) => Some(&sg.graph),
                     None => None,
                 },
+                pyex!(extract_value!(kwargs, "only_from_same_component", bool))?
+                    .unwrap_or(true),
                 pyex!(extract_value!(kwargs, "verbose", bool))?
-                    .or_else(|| Some(true))
-                    .unwrap()
+                    .unwrap_or(true),
             ))?,
         })
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, edge_types, *, verbose)"]
-    /// Returns Graph with only the required edge types.
+    #[text_signature = "($self, k, k_index, *, edge_types, random_state, verbose)"]
+    /// Returns train and test graph following kfold validation scheme.
+    ///
+    /// The edges are splitted into k chunks. The k_index-th chunk is used to build
+    /// the validation graph, all the other edges create the training graph.
     ///
     /// Parameters
     /// -----------------------------
-    /// edge_types: List[str],
-    ///     Edge types to include in the graph.
+    /// k: int,
+    ///     The number of folds.
+    /// k_index: int,
+    ///     Which fold to use for the validation.
+    /// edge_types: List[str] = None,
+    ///     Edge types to be selected when computing the folds 
+    ///        (All the edge types not listed here will be always be used in the training set).
+    /// random_state: int = 42,
+    ///     The random_state (seed) to use for the holdout,
     /// verbose: bool = True,
     ///     Wethever to show the loading bar.
     ///
@@ -274,27 +279,38 @@ impl EnsmallenGraph {
     ///
     /// Returns
     /// -----------------------------
-    /// Graph containing given amount of edges missing in the original graph.
-    fn edge_types_subgraph(
+    /// train, test graph.
+    fn kfold(
         &self,
-        edge_types: Vec<String>,
+        k: EdgeT,
+        k_index: u64,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<EnsmallenGraph> {
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
         pyex!(validate_kwargs(
             kwargs,
-            build_walk_parameters_list(&["verbose"])
+            build_walk_parameters_list(&["edge_types", "random_state", "verbose"])
         ))?;
 
-        Ok(EnsmallenGraph {
-            graph: pyex!(self.graph.edge_types_subgraph(
-                edge_types,
-                pyex!(extract_value!(kwargs, "verbose", bool))?
-                    .or_else(|| Some(true))
-                    .unwrap()
-            ))?,
-        })
+        let (train, test) = pyex!(self.graph.kfold(
+            k,
+            k_index,
+            pyex!(extract_value!(kwargs, "edge_types", Vec<String>))?,
+            pyex!(extract_value!(kwargs, "random_state", u64))?
+                .unwrap_or(42),
+            pyex!(extract_value!(kwargs, "verbose", bool))?
+                .unwrap_or(true),
+        ))?;
+
+        Ok((
+            EnsmallenGraph {
+                graph: train
+            },
+            EnsmallenGraph {
+                graph: test
+            },
+        ))
     }
 }

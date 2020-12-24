@@ -12,7 +12,7 @@ use std::collections::HashMap;
 ///
 /// # Examples
 ///
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Graph {
     // properties
     /// if the graph is directed or undirected
@@ -24,14 +24,22 @@ pub struct Graph {
     pub(crate) self_loop_number: EdgeT,
     /// Number of nodes that have at least an edge inbound or outbound.
     pub(crate) not_singleton_nodes_number: NodeT,
+    /// Number of singleton nodes that have a self-loop
+    pub(crate) singleton_nodes_with_self_loops_number: NodeT,
     /// How many unique edges the graph has (excluding the multi-graph ones)
     pub(crate) unique_edges_number: EdgeT,
     /// Vector of destinations to execute fast walks if required.
     pub(crate) destinations: Option<Vec<NodeT>>,
+    /// Vector of sources to execute fast link prediction sequences if required.
+    pub(crate) sources: Option<Vec<NodeT>>,
     /// Vector of outbounds to execute fast walks if required.
     pub(crate) outbounds: Option<Vec<EdgeT>>,
+    // Hashmap of cached destinations to execute faster walks if required.
+    pub(crate) cached_destinations: Option<HashMap<NodeT, Vec<NodeT>>>,
     /// Graph name
     pub(crate) name: String,
+    // Graph embedding for fast edge embedding operations.
+    pub(crate) embedding: Option<Vec<Vec<f64>>>,
 
     /// The main datastructure where all the edges are saved
     /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
@@ -59,6 +67,47 @@ pub struct Graph {
 
 /// # Graph utility methods
 impl Graph {
+    pub fn new(
+        directed: bool,
+        unique_self_loop_number: NodeT,
+        self_loop_number: EdgeT,
+        not_singleton_nodes_number: NodeT,
+        singleton_nodes_with_self_loops_number: NodeT,
+        unique_edges_number: EdgeT,
+        edges: EliasFano,
+        unique_sources: EliasFano,
+        nodes: Vocabulary<NodeT>,
+        node_bit_mask: EdgeT,
+        node_bits: u8,
+        edge_types: Option<VocabularyVec<EdgeTypeT, EdgeT>>,
+        name: String,
+        weights: Option<Vec<WeightT>>,
+        node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
+    ) -> Graph {
+        Graph {
+            directed,
+            unique_self_loop_number,
+            self_loop_number,
+            not_singleton_nodes_number,
+            singleton_nodes_with_self_loops_number,
+            unique_edges_number,
+            edges,
+            unique_sources,
+            node_bit_mask,
+            node_bits,
+            name,
+            weights,
+            node_types: node_types.map(|nts| nts.set_numeric_ids(false)),
+            edge_types: edge_types.map(|ets| ets.set_numeric_ids(false)),
+            nodes: nodes.set_numeric_ids(false),
+            sources: None,
+            embedding: None,
+            destinations: None,
+            outbounds: None,
+            cached_destinations: None,
+        }
+    }
+
     pub fn get_unchecked_edge_id(
         &self,
         src: NodeT,
@@ -126,14 +175,31 @@ impl Graph {
     ///     println!("edge type id {}: count: {}", edge_type_id, count);
     /// }
     /// ```
-    pub fn get_edge_type_counts(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
+    pub fn get_edge_type_counts(&self) -> Result<Counter<EdgeTypeT, usize>, String> {
         if let Some(et) = &self.edge_types {
-            Ok(Counter::init(et.ids.clone()).into_map())
+            Ok(Counter::init(et.ids.clone()))
         } else {
             Err(String::from(
                 "Edge types are not defined for current graph instance.",
             ))
         }
+    }
+
+    /// Returns edge type counts hashmap.
+    ///
+    /// # Arguments
+    ///
+    /// None
+    ///
+    /// # Examples
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// for (edge_type_id, count) in graph.get_edge_type_counts().unwrap().iter() {
+    ///     println!("edge type id {}: count: {}", edge_type_id, count);
+    /// }
+    /// ```
+    pub fn get_edge_type_counts_hashmap(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
+        Ok(self.get_edge_type_counts()?.into_map())
     }
 
     /// Return translated edge types from string to internal edge ID.
@@ -160,6 +226,30 @@ impl Graph {
         }?)
     }
 
+    /// Return translated node types from string to internal node ID.
+    ///
+    /// # Arguments
+    ///
+    /// * `node_types`: Vec<String> - Vector of node types to be converted.
+    pub fn translate_node_types(&self, node_types: Vec<String>) -> Result<Vec<NodeTypeT>, String> {
+        Ok(match &self.node_types {
+            None => Err(String::from("Current graph does not have node types.")),
+            Some(nts) => {
+                Ok(node_types
+                .iter()
+                .map(|node_type| match nts.get(node_type) {
+                    None => Err(format!(
+                        "The node type {} does not exist in current graph. The available node types are {}.",
+                        node_type,
+                        nts.keys().join(", ")
+                    )),
+                    Some(et) => Ok(*et),
+                })
+                .collect::<Result<Vec<NodeTypeT>, String>>()?)
+            }
+        }?)
+    }
+
     /// Returns node type counts.
     ///
     /// # Arguments
@@ -172,14 +262,30 @@ impl Graph {
     ///     println!("node type id {}: count: {}", node_type_id, count);
     /// }
     /// ```
-    pub fn get_node_type_counts(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
+    pub fn get_node_type_counts(&self) -> Result<Counter<NodeTypeT, usize>, String> {
         if let Some(nt) = &self.node_types {
-            Ok(Counter::init(nt.ids.clone()).into_map())
+            Ok(Counter::init(nt.ids.clone()))
         } else {
             Err(String::from(
                 "Node types are not defined for current graph instance.",
             ))
         }
+    }
+
+    /// Returns node type counts hashmap.
+    ///
+    /// # Arguments
+    ///
+    /// None
+    ///
+    /// ```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
+    /// for (node_type_id, count) in graph.get_node_type_counts().unwrap().iter() {
+    ///     println!("node type id {}: count: {}", node_type_id, count);
+    /// }
+    /// ```
+    pub fn get_node_type_counts_hashmap(&self) -> Result<HashMap<EdgeTypeT, usize>, String> {
+        Ok(self.get_node_type_counts()?.into_map())
     }
 
     /// Returns boolean representing if edge passing between given nodes exists.
@@ -218,8 +324,11 @@ impl Graph {
     ///
     /// * node_name: String - The node name.
     ///
-    pub fn has_node_string(&self, node_name: &str) -> bool {
-        self.get_node_id(node_name).is_ok()
+    pub fn has_node_string(&self, node_name: &str, node_type_name: Option<String>) -> bool {
+        match self.get_node_id(node_name) {
+            Err(_) => false,
+            Ok(node_id) => self.get_node_type_string(node_id) == node_type_name,
+        }
     }
 
     /// Return true if given graph has any edge overlapping with current graph.
@@ -231,10 +340,10 @@ impl Graph {
     pub fn overlaps(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
             true => other
-                .get_edges_par_triples()
+                .get_edges_par_triples(other.directed)
                 .any(|(_, src, dst, et)| self.has_edge(src, dst, et)),
             false => other
-                .get_edges_par_string_triples()
+                .get_edges_par_string_triples(other.directed)
                 .any(|(_, src, dst, et)| self.has_edge_string(&src, &dst, et.as_ref())),
         })
     }
@@ -248,10 +357,10 @@ impl Graph {
     pub fn contains(&self, other: &Graph) -> Result<bool, String> {
         Ok(match self.is_compatible(other)? {
             true => other
-                .get_edges_par_triples()
+                .get_edges_par_triples(other.directed)
                 .all(|(_, src, dst, et)| self.has_edge(src, dst, et)),
             false => other
-                .get_edges_par_string_triples()
+                .get_edges_par_string_triples(other.directed)
                 .all(|(_, src, dst, et)| self.has_edge_string(&src, &dst, et.as_ref())),
         })
     }
@@ -325,10 +434,19 @@ impl Graph {
                 };
                 (min_edge_id, outbounds[src as usize])
             }
-            None => (
-                self.get_unchecked_edge_id_from_tuple(src, 0),
-                self.get_unchecked_edge_id_from_tuple(src + 1, 0),
-            ),
+            None => {
+                let min_edge_id: EdgeT = self.get_unchecked_edge_id_from_tuple(src, 0);
+                (
+                    min_edge_id,
+                    match &self.cached_destinations {
+                        Some(cds) => match cds.get(&src) {
+                            Some(destinations) => destinations.len() as EdgeT + min_edge_id,
+                            None => self.get_unchecked_edge_id_from_tuple(src + 1, 0),
+                        },
+                        None => self.get_unchecked_edge_id_from_tuple(src + 1, 0),
+                    },
+                )
+            }
         }
     }
 

@@ -11,10 +11,10 @@ pub type EdgeT = u64;
 /// Type used to index the Edge Types.
 pub type EdgeTypeT = u16;
 /// Type used for the weights of the edges.
-pub type WeightT = f64;
+pub type WeightT = f32;
 /// Type used for the parameters of the walk such as the return weight (p),
 /// and the explore weight (q).
-pub type ParamsT = f64;
+pub type ParamsT = WeightT;
 /// Type used to save contexts used for Skipgram and CBOW.
 pub type Contexts = Vec<Vec<NodeT>>;
 /// Type used to save a group of words indices.

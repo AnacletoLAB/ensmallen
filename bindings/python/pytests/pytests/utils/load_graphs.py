@@ -3,7 +3,7 @@ from ensmallen_graph import EnsmallenGraph  # pylint: disable=no-name-in-module
 
 def load_hpo() -> EnsmallenGraph:
     """Test that HPO graph can be loaded."""
-    return EnsmallenGraph.from_unsorted_csv(
+    graph =  EnsmallenGraph.from_unsorted_csv(
         edge_path="./pytests/data/edges.tsv",
         sources_column="subject",
         destinations_column="object",
@@ -13,15 +13,21 @@ def load_hpo() -> EnsmallenGraph:
         nodes_column="id",
         node_types_column="category",
         default_edge_type='biolink:interacts_with',
-        default_node_type='biolink:NamedThing'
+        default_node_type='biolink:NamedThing',
+        name="HPO"
     )
+    graph.enable()
+    return graph
 
 
 def load_pathway() -> EnsmallenGraph:
     """Test that Pathway can be loaded."""
-    return EnsmallenGraph.from_unsorted_csv(
+    graph = EnsmallenGraph.from_unsorted_csv(
         edge_path="./pytests/data/pathway.tsv",
         sources_column="Gene_A",
         destinations_column="Gene_B",
         directed=False,
+        name="Pathway"
     )
+    graph.enable()
+    return graph

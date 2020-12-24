@@ -1,0 +1,29 @@
+FROM rocm/tensorflow
+
+RUN apt-get update -qyy && \
+    apt-get install -qyy \
+    build-essential\
+    binutils-dev  \
+    libunwind-dev \
+    libblocksruntime-dev \
+    liblzma-dev \
+    libnuma-dev \
+    wget curl tmux byobu htop nano vim
+
+RUN python3 -m pip install maturin
+
+ENV PATH /root/.cargo/bin:$PATH
+ENV USER root
+
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y \
+    && $HOME/anaconda3/bin/pip install --no-cache-dir cffi \
+    && mkdir /io
+
+# Install the required rust version
+RUN rustup default nightly-2020-06-01
+
+RUN cargo install maturin
+RUN cargo install cargo-fuzz
+RUN cargo install honggfuzz
+
+WORKDIR /io

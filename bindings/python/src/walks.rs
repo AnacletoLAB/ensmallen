@@ -1,10 +1,16 @@
 use super::*;
+use numpy::{PyArray2};
 use graph::NodeT;
+use rayon::prelude::*;
+use rayon::iter::IndexedParallelIterator;
+use thread_safe::ThreadSafe;
+
+
 
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, quantity, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, verbose, iterations, dense_node_mapping)"]
+    #[text_signature = "($self, length, quantity, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
     /// Return random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -14,9 +20,6 @@ impl EnsmallenGraph {
     ///     On graphs without traps, all walks have this length.
     /// quantity: int,
     ///     Number of nodes to sample.
-    /// min_length: int = 0,
-    ///     Minimal length of the random walk. Will filter out smaller
-    ///     random walks.
     /// return_weight: float = 1.0,
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
@@ -41,8 +44,6 @@ impl EnsmallenGraph {
     ///     multigraphs, otherwise it has no impact.
     /// random_state: int = 42,
     ///     random_state to use to reproduce the walks.
-    /// verbose: bool = False,
-    ///     Wethever to show or not the loading bar of the walks.
     /// iterations: int = 1,
     ///     Number of cycles on the graphs to execute.
     /// dense_node_mapping: Dict[int, int] = None,
@@ -51,6 +52,10 @@ impl EnsmallenGraph {
     ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
+    /// max_neighbours: int = None,
+    ///     Maximum number of randomly sampled neighbours to consider.
+    ///     If this parameter is used, the walks becomes probabilistic in nature
+    ///     and becomes an approximation of an exact walk.
     ///
     /// Raises
     /// ----------------------------
@@ -65,18 +70,27 @@ impl EnsmallenGraph {
         length: NodeT,
         quantity: NodeT,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<Vec<Vec<NodeT>>> {
+    ) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
         pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
-        pyex!(self.graph.random_walks(quantity, &parameters))
+        let iter = pyex!(self.graph.random_walks_iter(quantity, &parameters))?;
+        let array = ThreadSafe{t:PyArray2::new(py.python(), [quantity as usize, length as usize], false)};
+        unsafe {
+            iter.enumerate().for_each(|(y, vy)| 
+                vy.iter().enumerate().for_each(|(x, vyx)|
+                    *(array.t.uget_mut([y, x])) = *vyx
+                )
+            );
+        }
+        Ok(array.t.to_owned())
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, min_length, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, verbose, iterations, dense_node_mapping)"]
+    #[text_signature = "($self, length, *, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, random_state, iterations, dense_node_mapping, max_neighbours)"]
     /// Return complete random walks done on the graph using Rust.
     ///
     /// Parameters
@@ -84,9 +98,6 @@ impl EnsmallenGraph {
     /// length: int,
     ///     Maximal length of the random walk.
     ///     On graphs without traps, all walks have this length.
-    /// min_length: int = 0,
-    ///     Minimal length of the random walk. Will filter out smaller
-    ///     random walks.
     /// return_weight: float = 1.0,
     ///     Weight on the probability of returning to node coming from
     ///     Having this higher tends the walks to be
@@ -111,8 +122,6 @@ impl EnsmallenGraph {
     ///     multigraphs, otherwise it has no impact.
     /// random_state: int = 42,
     ///     random_state to use to reproduce the walks.
-    /// verbose: bool = False,
-    ///     Wethever to show or not the loading bar of the walks.
     /// iterations: int = 1,
     ///     Number of cycles on the graphs to execute.
     /// dense_node_mapping: Dict[int, int] = None,
@@ -121,6 +130,10 @@ impl EnsmallenGraph {
     ///     called `get_dense_node_mapping` that returns a mapping from
     ///     the non trap nodes (those from where a walk could start) and
     ///     maps these nodes into a dense range of values.
+    /// max_neighbours: int = None,
+    ///     Maximum number of randomly sampled neighbours to consider.
+    ///     If this parameter is used, the walks becomes probabilistic in nature
+    ///     and becomes an approximation of an exact walk.
     ///
     /// Raises
     /// ----------------------------
@@ -134,13 +147,22 @@ impl EnsmallenGraph {
         &self,
         length: NodeT,
         py_kwargs: Option<&PyDict>,
-    ) -> PyResult<Vec<Vec<NodeT>>> {
+    ) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
         pyex!(validate_kwargs(kwargs, build_walk_parameters_list(&[])))?;
 
         let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
-        pyex!(self.graph.complete_walks(&parameters))
+        let iter = pyex!(self.graph.complete_walks_iter(&parameters))?;
+        let array = ThreadSafe{t:PyArray2::new(py.python(), [self.graph.get_unique_sources_number() as usize, length as usize], false)};
+        unsafe {
+            iter.enumerate().for_each(|(y, vy)| 
+                vy.iter().enumerate().for_each(|(x, vyx)|
+                    *(array.t.uget_mut([y, x])) = *vyx
+                )
+            );
+        }
+        Ok(array.t.to_owned())
     }
 }

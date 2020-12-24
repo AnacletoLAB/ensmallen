@@ -29,40 +29,50 @@ impl EnsmallenGraph {
     }
 
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, *, vector_destinations, vector_outbounds)"]
-    /// Enable fast walk, using more memory.
+    #[text_signature = "($self, *, vector_sources, vector_destinations, vector_outbounds, cache_size)"]
+    /// Enable extra perks that buys you time as you accept to spend more memory.
     ///
     /// Arguments
     /// ------------------
-    /// vector_destinations: bool,
-    ///     wether to cache destinations into a vector for faster walks.
-    /// vector_outbounds: bool,
-    ///     wether to cache outbounds into a vector for faster walks.
-    pub fn enable_fast_walk(&mut self, py_kwargs: Option<&PyDict>) -> PyResult<()> {
+    /// vector_sources: bool = False,
+    ///     Wether to cache sources into a vector for faster walks.
+    /// vector_destinations: bool = True,
+    ///     Wether to cache destinations into a vector for faster walks.
+    /// vector_outbounds: bool = True,
+    ///     Wether to cache outbounds into a vector for faster walks.
+    /// cache_size: float = None,
+    ///     Rate of nodes destinations to cache.
+    ///     Must be a value between 0 and 1.
+    ///     This cannot be used with the vector destinations.
+    /// 
+    /// Raises
+    /// -------------------
+    /// ValueError,
+    ///     If the cache_size parameter is given and vector destinations is enabled.
+    /// 
+    pub fn enable(&mut self, py_kwargs: Option<&PyDict>) -> PyResult<()> {
         let py = pyo3::Python::acquire_gil();
         let kwargs = normalize_kwargs!(py_kwargs, py.python());
         pyex!(validate_kwargs(
             kwargs,
-            ["vector_destinations", "vector_outbounds"]
+            ["vector_sources", "vector_destinations", "vector_outbounds", "cache_size"]
                 .iter()
                 .map(|x| x.to_string())
                 .collect(),
         ))?;
 
-        self.graph.enable_fast_walk(
-            pyex!(extract_value!(kwargs, "vector_destinations", bool))?
-                .or_else(|| Some(true))
-                .unwrap(),
-            pyex!(extract_value!(kwargs, "vector_outbounds", bool))?
-                .or_else(|| Some(true))
-                .unwrap(),
-        );
+        pyex!(self.graph.enable(
+            pyex!(extract_value!(kwargs, "vector_sources", bool))?.unwrap_or(false),
+            pyex!(extract_value!(kwargs, "vector_destinations", bool))?.unwrap_or(true),
+            pyex!(extract_value!(kwargs, "vector_outbounds", bool))?.unwrap_or(true),
+            pyex!(extract_value!(kwargs, "cache_size", f64))?,
+        ))?;
         Ok(())
     }
 
     #[text_signature = "($self)"]
-    /// Disable fast walk, using less memory.
-    pub fn disable_fast_walk(&mut self) {
-        self.graph.disable_fast_walk()
+    /// Disable all extra perks, reducing memory impact but incresing time requirements.
+    pub fn disable_all(&mut self) {
+        self.graph.disable_all()
     }
 }

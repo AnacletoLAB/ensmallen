@@ -1,6 +1,6 @@
 use super::types::*;
-use std::collections::HashMap;
 use arbitrary::Arbitrary;
+use std::collections::HashMap;
 
 #[derive(Debug, Clone, PartialEq, Arbitrary)]
 pub struct Vocabulary<IndexT: ToFromUsize> {
@@ -10,11 +10,11 @@ pub struct Vocabulary<IndexT: ToFromUsize> {
 }
 
 impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
-    pub fn new(numeric_ids: bool) -> Vocabulary<IndexT> {
+    pub fn default() -> Vocabulary<IndexT> {
         Vocabulary {
-            numeric_ids,
             map: HashMap::new(),
             reverse_map: Vec::new(),
+            numeric_ids: false,
         }
     }
 
@@ -100,5 +100,20 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// Return length of the vocabulary.
     pub fn len(&self) -> usize {
         self.map.len()
+    }
+
+    /// Return boolean representing if values are numeric.
+    pub fn has_numeric_ids(&self) -> bool {
+        self.numeric_ids
+    }
+
+    /// Set wether to load IDs as numeric.
+    ///
+    /// # Arguments
+    /// * numeric_ids: bool - Wether to load the IDs as numeric
+    ///
+    pub fn set_numeric_ids(mut self, numeric_ids: bool) -> Vocabulary<IndexT> {
+        self.numeric_ids = numeric_ids;
+        self
     }
 }

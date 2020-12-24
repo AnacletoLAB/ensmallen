@@ -15,6 +15,7 @@ pub struct NodeFileReader {
     pub(crate) node_types_column_number: Option<usize>,
     pub(crate) numeric_node_ids: bool,
     pub(crate) numeric_node_type_ids: bool,
+    pub(crate) skip_node_types_if_unavailable: bool,
 }
 
 impl NodeFileReader {
@@ -32,6 +33,7 @@ impl NodeFileReader {
             node_types_column_number: None,
             numeric_node_ids: false,
             numeric_node_type_ids: false,
+            skip_node_types_if_unavailable: false,
         })
     }
 
@@ -50,6 +52,9 @@ impl NodeFileReader {
                 return Err("The given node column is empty.".to_owned());
             }
             self.nodes_column_number = self.reader.get_column_number(column)?;
+            if Some(self.nodes_column_number) == self.node_types_column_number {
+                return Err("The node column is the same as the node type one.".to_string());
+            }
         }
         Ok(self)
     }
@@ -94,7 +99,16 @@ impl NodeFileReader {
             if column.is_empty() {
                 return Err("The given node types column is empty.".to_owned());
             }
-            self.node_types_column_number = Some(self.reader.get_column_number(column)?);
+            match self.reader.get_column_number(column) {
+                Ok(ecn) => {
+                    self.node_types_column_number = Some(ecn);
+                }
+                Err(e) => {
+                    if !self.skip_node_types_if_unavailable {
+                        return Err(e);
+                    }
+                }
+            }
         }
         Ok(self)
     }
@@ -112,16 +126,54 @@ impl NodeFileReader {
         if let Some(etcn) = &node_types_column_number {
             let expected_number_of_elements = self.reader.get_elements_per_line()?;
             if *etcn >= expected_number_of_elements {
-                return Err(format!(
-                    concat!(
-                        "The nodes types column number passed was {} but ",
-                        "the first parsable line has {} values."
-                    ),
-                    etcn, expected_number_of_elements
-                ));
+                if !self.skip_node_types_if_unavailable {
+                    return Err(format!(
+                        concat!(
+                            "The nodes types column number passed was {} but ",
+                            "the first parsable line has {} values."
+                        ),
+                        etcn, expected_number_of_elements
+                    ));
+                }
+            } else {
+                self.node_types_column_number = node_types_column_number;
             }
         }
-        self.node_types_column_number = node_types_column_number;
+        Ok(self)
+    }
+
+    /// Set wether to automatically skip node_types if they are not avaitable instead of raising an exception.
+    ///
+    /// # Arguments
+    ///
+    /// * skip_node_types_if_unavailable: Option<bool> - Wether to skip node_types if they are not available.
+    ///
+    pub fn set_skip_node_types_if_unavailable(
+        mut self,
+        skip_node_types_if_unavailable: Option<bool>,
+    ) -> Result<NodeFileReader, String> {
+        if let Some(skip) = skip_node_types_if_unavailable {
+            self.skip_node_types_if_unavailable = skip;
+        }
+        Ok(self)
+    }
+
+    /// Set the comment symbol to use to skip the lines.
+    ///
+    /// # Arguments
+    ///
+    /// * comment_symbol: Option<String> - if the reader should ignore or not duplicated edges.
+    ///
+    pub fn set_comment_symbol(
+        mut self,
+        comment_symbol: Option<String>,
+    ) -> Result<NodeFileReader, String> {
+        if let Some(cs) = comment_symbol {
+            if cs.is_empty() {
+                return Err("The given comment symbol is empty.".to_string());
+            }
+            self.reader.comment_symbol = Some(cs);
+        }
         Ok(self)
     }
 
@@ -248,6 +300,9 @@ impl NodeFileReader {
     pub fn read_lines(
         &self,
     ) -> Result<impl Iterator<Item = Result<(String, Option<String>), String>> + '_, String> {
+        if Some(self.nodes_column_number) == self.node_types_column_number {
+            return Err("The node column is the same as the node type one.".to_string());
+        }
         let expected_elements = self.reader.get_elements_per_line()?;
         if self.nodes_column_number >= expected_elements {
             return Err(format!(

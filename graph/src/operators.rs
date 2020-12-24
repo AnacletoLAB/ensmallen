@@ -30,7 +30,7 @@ fn generic_string_operator(
     let edges_iterator = graphs
         .iter()
         .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.get_edges_string_quadruples()
+            one.get_edges_string_quadruples(main.directed)
                 .filter(move |(_, src, dst, edge_type, _)| {
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid
@@ -46,21 +46,28 @@ fn generic_string_operator(
                 .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight)))
         });
 
-    let nodes_iterator = graphs
-        .iter()
-        .flat_map(|(one, _, _)| one.get_nodes_names_iter().map(Ok));
+    let graphs = [main, other];
+    let nodes_iterator = graphs.iter().flat_map(|graph| {
+        graph
+            .get_nodes_names_iter()
+            .map(|(_, node_name, node_id)| Ok((node_name, node_id)))
+    });
 
     Graph::from_string_unsorted(
         edges_iterator,
         Some(nodes_iterator),
         main.directed,
+        false,
         build_operator_graph_name(main, other, operator),
         true,
-        true,
         false,
         false,
         false,
         false,
+        false,
+        false,
+        main.has_edge_types(),
+        main.has_weights(),
     )
 }
 
@@ -89,11 +96,8 @@ fn generic_integer_operator(
     let edges_iterator = graphs
         .iter()
         .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.get_edges_quadruples()
+            one.get_edges_quadruples(main.directed)
                 .filter(move |(_, src, dst, edge_type, _)| {
-                    if !main.directed && src > dst {
-                        return false;
-                    }
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid
                     // introducing duplicates.
@@ -117,36 +121,39 @@ fn generic_integer_operator(
             None => None,
         },
         main.directed,
+        false,
         build_operator_graph_name(main, other, operator),
-        true,
+        false,
+        main.has_edge_types(),
+        main.has_weights(),
         false,
     )
 }
 
 impl<'a, 'b> Graph {
-    fn validate_operator_terms(&self, other: &'b Graph) -> Result<(), String> {
+    pub fn validate_operator_terms(&self, other: &'b Graph) -> Result<(), String> {
         if self.directed != other.directed {
-            return Err(String::from(concat!(
-                "The graphs must either be both directed or undirected."
-            )));
+            return Err(String::from(
+                "The graphs must either be both directed or undirected.",
+            ));
         }
 
         if self.has_weights() != other.has_weights() {
-            return Err(String::from(concat!(
-                "Both graphs need to have weights or neither can."
-            )));
+            return Err(String::from(
+                "Both graphs need to have weights or neither can.",
+            ));
         }
 
         if self.has_node_types() != other.has_node_types() {
-            return Err(String::from(concat!(
-                "Both graphs need to have node types or neither can."
-            )));
+            return Err(String::from(
+                "Both graphs need to have node types or neither can.",
+            ));
         }
 
         if self.has_edge_types() != other.has_edge_types() {
-            return Err(String::from(concat!(
-                "Both graphs need to have node types or neither can."
-            )));
+            return Err(String::from(
+                "Both graphs need to have edge types or neither can.",
+            ));
         }
 
         Ok(())

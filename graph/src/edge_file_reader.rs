@@ -14,6 +14,8 @@ pub struct EdgeFileReader {
     pub(crate) skip_self_loops: bool,
     pub(crate) numeric_edge_type_ids: bool,
     pub(crate) numeric_node_ids: bool,
+    pub(crate) skip_weights_if_unavailable: bool,
+    pub(crate) skip_edge_types_if_unavailable: bool,
 }
 
 impl EdgeFileReader {
@@ -35,6 +37,8 @@ impl EdgeFileReader {
             skip_self_loops: false,
             numeric_edge_type_ids: false,
             numeric_node_ids: false,
+            skip_weights_if_unavailable: false,
+            skip_edge_types_if_unavailable: false,
         })
     }
 
@@ -52,6 +56,7 @@ impl EdgeFileReader {
             if column.is_empty() {
                 return Err("The given node types column is empty.".to_owned());
             }
+
             self.sources_column_number = self.reader.get_column_number(column)?;
         }
         Ok(self)
@@ -142,7 +147,16 @@ impl EdgeFileReader {
             if column.is_empty() {
                 return Err("The given node types column is empty.".to_owned());
             }
-            self.edge_types_column_number = Some(self.reader.get_column_number(column)?);
+            match self.reader.get_column_number(column) {
+                Ok(ecn) => {
+                    self.edge_types_column_number = Some(ecn);
+                }
+                Err(e) => {
+                    if !self.skip_edge_types_if_unavailable {
+                        return Err(e);
+                    }
+                }
+            }
         }
         Ok(self)
     }
@@ -160,24 +174,27 @@ impl EdgeFileReader {
         if let Some(etcn) = &edge_types_column_number {
             let expected_elements = self.reader.get_elements_per_line()?;
             if *etcn >= expected_elements {
-                return Err(format!(
-                    concat!(
-                        "The edge types column number passed was {} but ",
-                        "the first parsable line has {} values."
-                    ),
-                    etcn, expected_elements
-                ));
+                if !self.skip_edge_types_if_unavailable {
+                    return Err(format!(
+                        concat!(
+                            "The edge types column number passed was {} but ",
+                            "the first parsable line has {} values."
+                        ),
+                        etcn, expected_elements
+                    ));
+                }
+            } else {
+                self.edge_types_column_number = edge_types_column_number;
             }
         }
-        self.edge_types_column_number = edge_types_column_number;
         Ok(self)
     }
 
-    /// Set the column of the nodes.
+    /// Set the column of the edge weights.
     ///
     /// # Arguments
     ///
-    /// * destination_column: Option<String> - The node types column to use for the file.
+    /// * weights_column: Option<String> - The edge weights column to use for the file.
     ///
     pub fn set_weights_column(
         mut self,
@@ -185,9 +202,18 @@ impl EdgeFileReader {
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = weights_column {
             if column.is_empty() {
-                return Err("The given node types column is empty.".to_owned());
+                return Err("The given edge weights column is empty.".to_owned());
             }
-            self.weights_column_number = Some(self.reader.get_column_number(column)?);
+            match self.reader.get_column_number(column) {
+                Ok(wcn) => {
+                    self.weights_column_number = Some(wcn);
+                }
+                Err(e) => {
+                    if !self.skip_weights_if_unavailable {
+                        return Err(e);
+                    }
+                }
+            }
         }
         Ok(self)
     }
@@ -205,16 +231,51 @@ impl EdgeFileReader {
         if let Some(wcn) = &weights_column_number {
             let expected_elements = self.reader.get_elements_per_line()?;
             if *wcn >= expected_elements {
-                return Err(format!(
-                    concat!(
-                        "The weights column number passed was {} but ",
-                        "the first parsable line has {} values."
-                    ),
-                    wcn, expected_elements
-                ));
+                if !self.skip_edge_types_if_unavailable {
+                    return Err(format!(
+                        concat!(
+                            "The weights column number passed was {} but ",
+                            "the first parsable line has {} values."
+                        ),
+                        wcn, expected_elements
+                    ));
+                }
+            } else {
+                self.weights_column_number = weights_column_number;
             }
         }
-        self.weights_column_number = weights_column_number;
+        Ok(self)
+    }
+
+    /// Set wether to automatically skip weights if they are not avaitable instead of raising an exception.
+    ///
+    /// # Arguments
+    ///
+    /// * skip_weights_if_unavailable: Option<bool> - Wether to skip weights if they are not available.
+    ///
+    pub fn set_skip_weights_if_unavailable(
+        mut self,
+        skip_weights_if_unavailable: Option<bool>,
+    ) -> Result<EdgeFileReader, String> {
+        if let Some(skip) = skip_weights_if_unavailable {
+            self.skip_weights_if_unavailable = skip;
+        }
+        Ok(self)
+    }
+
+    /// Set wether to automatically skip edge types if they are not avaitable instead of raising an exception.
+    ///
+    /// # Arguments
+    ///
+    /// * skip_edge_types_if_unavailable: Option<bool> - Wether to skip edge types if they are not available.
+    ///
+    pub fn set_skip_edge_types_if_unavailable(
+        mut self,
+        skip_edge_types_if_unavailable: Option<bool>,
+    ) -> Result<EdgeFileReader, String> {
+        if let Some(skip) = skip_edge_types_if_unavailable {
+            self.skip_edge_types_if_unavailable = skip;
+        }
         Ok(self)
     }
 
@@ -251,6 +312,25 @@ impl EdgeFileReader {
             self.skip_self_loops = i;
         }
         self
+    }
+
+    /// Set the comment symbol to use to skip the lines.
+    ///
+    /// # Arguments
+    ///
+    /// * comment_symbol: Option<String> - if the reader should ignore or not duplicated edges.
+    ///
+    pub fn set_comment_symbol(
+        mut self,
+        comment_symbol: Option<String>,
+    ) -> Result<EdgeFileReader, String> {
+        if let Some(cs) = comment_symbol {
+            if cs.is_empty() {
+                return Err("The given comment symbol is empty.".to_string());
+            }
+            self.reader.comment_symbol = Some(cs);
+        }
+        Ok(self)
     }
 
     /// Set the verbose.
@@ -435,6 +515,27 @@ impl EdgeFileReader {
     pub fn read_lines(
         &self,
     ) -> Result<impl Iterator<Item = Result<StringQuadruple, String>> + '_, String> {
+        if self.destinations_column_number == self.sources_column_number {
+            return Err("The destinations column is the same as the sources one.".to_string());
+        }
+        if Some(self.destinations_column_number) == self.weights_column_number {
+            return Err("The destinations column is the same as the weights one.".to_string());
+        }
+        if Some(self.sources_column_number) == self.weights_column_number {
+            return Err("The sources column is the same as the weights one.".to_string());
+        }
+        if Some(self.sources_column_number) == self.edge_types_column_number {
+            return Err("The sources column is the same as the edge types one.".to_string());
+        }
+        if Some(self.destinations_column_number) == self.edge_types_column_number {
+            return Err("The destinations column is the same as the edge types one.".to_string());
+        }
+        if self.weights_column_number.is_some()
+            && self.weights_column_number == self.edge_types_column_number
+        {
+            return Err("The weights column is the same as the edge types one.".to_string());
+        }
+
         let expected_elements = self.reader.get_elements_per_line()?;
         if self.sources_column_number >= expected_elements {
             return Err(format!(

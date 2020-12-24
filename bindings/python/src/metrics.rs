@@ -13,17 +13,12 @@ impl EnsmallenGraph {
 
     #[text_signature = "($self, verbose)"]
     /// Returns number of connected components in graph.
-    /// 
-    /// Parameters
-    /// ------------------------
-    /// verbose: bool,
-    ///     Wethever to display a loading bar while computing the spanning tree.
-    /// 
+    ///
     /// Returns
     /// ------------------------
     /// Number of connected components.
-    pub fn connected_components_number(&self, verbose: bool) -> NodeT {
-        self.graph.connected_components_number(verbose).0
+    pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
+        self.graph.connected_components_number(verbose)
     }
 
     #[text_signature = "($self)"]
@@ -66,10 +61,25 @@ impl EnsmallenGraph {
     /// * unique_edge_types_number: the number of different edge types in the graph.
     /// * traps_rate: probability to end up in a trap when starting into any given node.
     /// * selfloops_rate: pecentage of edges that are selfloops.
-    /// * bidirectional_rate: rate of edges that are bidirectional.
     ///
     fn report(&self) -> HashMap<&str, String> {
         self.graph.report()
+    }
+
+    /// Return report on overlaps of the two graphs.
+    ///
+    /// Parameters
+    /// -------------------
+    /// other: &EnsmallenGraph,
+    ///     Graph to compute the overlaps with.
+    /// verbose: bool = True,
+    ///     Wether to show loading bars.
+    ///
+    /// Returns
+    /// -------------------
+    /// Textual report.
+    fn overlap_textual_report(&self, other: &EnsmallenGraph, verbose: Option<bool>) -> PyResult<String> {
+        pyex!(self.graph.overlap_textual_report(&other.graph, verbose.unwrap_or(true)))
     }
 
     #[text_signature = "($self, node)"]
@@ -95,10 +105,10 @@ impl EnsmallenGraph {
     /// ----------------------------
     /// Numpy array with all the degrees of the graph.
     ///
-    fn degrees(&self) -> PyResult<Py<PyArray1<EdgeT>>> {
+    fn degrees(&self) -> PyResult<Py<PyArray1<NodeT>>> {
         let degrees = self.graph.get_node_degrees();
         let gil = pyo3::Python::acquire_gil();
-        Ok(to_nparray_1d!(gil, degrees, EdgeT))
+        Ok(to_nparray_1d!(gil, degrees, NodeT))
     }
 
     #[text_signature = "($self, one, two)"]

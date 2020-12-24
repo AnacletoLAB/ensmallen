@@ -16,6 +16,7 @@ pub struct WalkWeights {
 pub struct SingleWalkParameters {
     pub(crate) length: NodeT,
     pub(crate) weights: WalkWeights,
+    pub(crate) max_neighbours: Option<NodeT>,
 }
 
 #[derive(Clone, Debug)]
@@ -23,8 +24,6 @@ pub struct SingleWalkParameters {
 pub struct WalksParameters {
     pub(crate) single_walk_parameters: SingleWalkParameters,
     pub(crate) iterations: NodeT,
-    pub(crate) min_length: NodeT,
-    pub(crate) verbose: bool,
     pub(crate) random_state: NodeT,
     pub(crate) dense_node_mapping: Option<HashMap<NodeT, NodeT>>,
 }
@@ -73,9 +72,7 @@ impl WalkWeights {
             self.return_weight,
             self.explore_weight,
         ];
-        weights
-            .iter()
-            .all(|weight| !not_one(*weight))
+        weights.iter().all(|weight| !not_one(*weight))
     }
 
     /// Return boolean value representing if walk is of first order.
@@ -85,9 +82,7 @@ impl WalkWeights {
             self.return_weight,
             self.explore_weight,
         ];
-        weights
-            .iter()
-            .all(|weight| !not_one(*weight))
+        weights.iter().all(|weight| !not_one(*weight))
     }
 }
 
@@ -106,6 +101,7 @@ impl SingleWalkParameters {
         Ok(SingleWalkParameters {
             length,
             weights: WalkWeights::default(),
+            max_neighbours: None,
         })
     }
 
@@ -128,9 +124,7 @@ impl WalksParameters {
         Ok(WalksParameters {
             single_walk_parameters: SingleWalkParameters::new(length)?,
             iterations: 1,
-            min_length: 1,
             random_state: (42 ^ SEED_XOR) as NodeT,
-            verbose: false,
             dense_node_mapping: None,
         })
     }
@@ -153,35 +147,30 @@ impl WalksParameters {
         Ok(self)
     }
 
-    /// Set the min_length.
-    ///
-    /// # Arguments
-    ///
-    /// * min_length: Option<NodeT> - Wethever to show the loading bar or not.
-    ///
-    pub fn set_min_length(mut self, min_length: Option<NodeT>) -> Result<WalksParameters, String> {
-        if let Some(ml) = min_length {
-            if ml == 0 {
-                return Err(String::from(
-                    "min_length parameter must be a strictly positive integer.",
-                ));
-            }
-            self.min_length = ml;
-        }
-        Ok(self)
+    /// Return the iterations.
+    pub fn get_iterations(&self) -> NodeT {
+        self.iterations
     }
 
-    /// Set the verbose.
+    /// Set the maximum neighbours number to consider, making the walk probabilistic.
     ///
     /// # Arguments
     ///
-    /// * verbose: Option<bool> - Wethever to show the loading bar or not.
+    /// * max_neighbours: Option<NodeT> - Number of neighbours to consider for each extraction.
     ///
-    pub fn set_verbose(mut self, verbose: Option<bool>) -> WalksParameters {
-        if let Some(v) = verbose {
-            self.verbose = v;
+    pub fn set_max_neighbours(
+        mut self,
+        max_neighbours: Option<NodeT>,
+    ) -> Result<WalksParameters, String> {
+        if let Some(mn) = max_neighbours {
+            if mn == 0 {
+                return Err(String::from(
+                    "max_neighbours parameter must be a strictly positive integer.",
+                ));
+            }
+            self.single_walk_parameters.max_neighbours = Some(mn);
         }
-        self
+        Ok(self)
     }
 
     /// Set the random_state.
@@ -291,17 +280,9 @@ impl WalksParameters {
     /// * graph: Graph - Graph object for which parameters are to be validated.
     ///
     pub fn validate(&self, graph: &Graph) -> Result<(), String> {
-        if self.min_length >= self.single_walk_parameters.length {
-            return Err(format!(
-                "The given min-walk-length {} is bigger or equal to the given walk length {}",
-                self.min_length, self.single_walk_parameters.length
-            ));
-        }
-
         if let Some(dense_node_mapping) = &self.dense_node_mapping {
             if !graph
-                .unique_sources
-                .par_iter()
+                .get_unique_sources_par_iter()
                 .all(|node| dense_node_mapping.contains_key(&(node as NodeT)))
             {
                 return Err(String::from(concat!(

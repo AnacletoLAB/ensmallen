@@ -1,15 +1,18 @@
 use super::*;
+use counter::Counter;
+use indicatif::ParallelProgressIterator;
 use indicatif::ProgressIterator;
 use rand::rngs::SmallRng;
 use rand::seq::SliceRandom;
 use rand::SeedableRng;
+use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use roaring::{RoaringBitmap, RoaringTreemap};
 use std::collections::HashSet;
 use std::iter::FromIterator;
-use vec_rand::{gen_random_vec, sample_uniform};
 use vec_rand::xorshift::xorshift as rand_u64;
+use vec_rand::{gen_random_vec, sample_uniform};
 
 /// # Holdouts.
 impl Graph {
@@ -25,6 +28,7 @@ impl Graph {
     /// * `random_state`: EdgeT - random_state to use to reproduce negative edge set.
     /// * `negatives_number`: EdgeT - Number of negatives edges to include.
     /// * `seed_graph`: Option<Graph> - Optional graph to use to filter the negative edges. The negative edges generated when this variable is provided will always have a node within this graph.
+    /// * `only_from_same_component`: bool - Wether to sample negative edges only from nodes that are from the same component.
     /// * `verbose`: bool - Wether to show the loading bar.
     ///
     pub fn sample_negatives(
@@ -32,6 +36,7 @@ impl Graph {
         mut random_state: EdgeT,
         negatives_number: EdgeT,
         seed_graph: Option<&Graph>,
+        only_from_same_component: bool,
         verbose: bool,
     ) -> Result<Graph, String> {
         if negatives_number == 0 {
@@ -43,9 +48,11 @@ impl Graph {
                     "The given seed graph does not overlap with the current graph instance.",
                 ));
             }
-            Some(RoaringBitmap::from_iter(sg.get_nodes_names_iter().map(
-                |(node_name, _)| self.get_unchecked_node_id(&node_name),
-            )))
+            Some(
+                sg.get_nodes_names_iter()
+                    .map(|(_, node_name, _)| self.get_unchecked_node_id(&node_name))
+                    .collect::<RoaringBitmap>(),
+            )
         } else {
             None
         };
@@ -60,13 +67,27 @@ impl Graph {
         // edges cannot have an edge type.
         let nodes_number = self.get_nodes_number() as EdgeT;
 
+        // Wether to sample negative edges only from the same connected component.
+        let (node_components, mut complete_edges_number) = if only_from_same_component {
+            let node_components = self.get_node_components_vector(verbose);
+            let complete_edges_number: EdgeT = Counter::init(node_components.clone())
+                .into_iter()
+                .map(|(_, nodes_number): (_, &usize)| {
+                    (*nodes_number * (*nodes_number - 1)) as EdgeT
+                })
+                .sum();
+            (Some(node_components), complete_edges_number)
+        } else {
+            (None, nodes_number * (nodes_number - 1))
+        };
+
         // Here we compute the number of edges that a complete graph would have if it had the same number of nodes
         // of the current graph. Moreover, the complete graph will have selfloops IFF the current graph has at
         // least one of them.
-        let mut complete_edges_number: EdgeT = nodes_number * (nodes_number - 1);
         if self.has_selfloops() {
             complete_edges_number += nodes_number;
         }
+
         // Now we compute the maximum number of negative edges that we can actually generate
         let max_negative_edges = complete_edges_number - self.unique_edges_number;
 
@@ -100,55 +121,65 @@ impl Graph {
         random_state ^= SEED_XOR as EdgeT;
 
         let mut negative_edges_bitmap = RoaringTreemap::new();
-        let chunk_size = max!(4096, negatives_number / 100);
         let mut last_length = 0;
+        let mut sampling_round: usize = 0;
 
         // randomly extract negative edges until we have the choosen number
         while negative_edges_bitmap.len() < negatives_number {
             // generate two random_states for reproducibility porpouses
-            random_state = rand_u64(random_state);
+            let src_random_state = rand_u64(random_state);
+            let dst_random_state = rand_u64(src_random_state);
+            random_state = rand_u64(dst_random_state);
 
-            let edges_to_sample: usize = min!(
-                chunk_size,
-                match self.is_directed() {
-                    true => negatives_number - negative_edges_bitmap.len(),
-                    false => ((negatives_number - negative_edges_bitmap.len()) as f64 / 2.0).ceil()
-                        as u64,
-                }
-            ) as usize;
+            let tmp_tb = get_loading_bar(
+                verbose,
+                format!("Negatives sampling round {}", sampling_round).as_ref(),
+                negatives_number as usize,
+            );
+            sampling_round += 1;
 
             // generate the random edge-sources
-            negative_edges_bitmap.extend(
-                gen_random_vec(edges_to_sample, random_state)
-                    .into_par_iter()
-                    // convert them to plain (src, dst)
-                    .filter_map(|edge| {
-                        let (mut src, mut dst) = self.decode_edge(edge);
-                        src = sample_uniform(nodes_number as u64, src as u64) as NodeT;
-                        dst = sample_uniform(nodes_number as u64, dst as u64) as NodeT;
-                        if let Some(sn) = &seed_nodes {
-                            if !sn.contains(src) && !sn.contains(dst) {
-                                return None;
-                            }
+            let sampled_edge_ids = gen_random_vec(negatives_number as usize, src_random_state)
+                .into_par_iter()
+                .zip(gen_random_vec(negatives_number as usize, dst_random_state).into_par_iter())
+                // convert them to plain (src, dst)
+                .progress_with(tmp_tb)
+                .filter_map(|(src_seed, dst_seed)| {
+                    let src = sample_uniform(nodes_number as u64, src_seed as u64) as NodeT;
+                    let dst = sample_uniform(nodes_number as u64, dst_seed as u64) as NodeT;
+                    if let Some(sn) = &seed_nodes {
+                        if !sn.contains(src) && !sn.contains(dst) {
+                            return None;
                         }
-                        // If the edge is not a self-loop or the user allows self-loops and
-                        // the graph is directed or the edges are inserted in a way to avoid
-                        // inserting bidirectional edges.
-                        match (self.has_selfloops() || src != dst) && !self.has_edge(src, dst, None)
-                        {
-                            true => Some((src, dst)),
-                            false => None,
+                    }
+                    if let Some(ncs) = &node_components {
+                        if ncs[src as usize] != ncs[dst as usize] {
+                            return None;
                         }
-                    })
-                    .flat_map(|(src, dst)| {
-                        if !self.is_directed() && src != dst {
-                            vec![self.encode_edge(src, dst), self.encode_edge(dst, src)]
-                        } else {
-                            vec![self.encode_edge(src, dst)]
-                        }
-                    })
-                    .collect::<Vec<EdgeT>>(),
-            );
+                    }
+                    // If the edge is not a self-loop or the user allows self-loops and
+                    // the graph is directed or the edges are inserted in a way to avoid
+                    // inserting bidirectional edges.
+                    match (self.has_selfloops() || src != dst) && !self.has_edge(src, dst, None) {
+                        true => Some((src, dst)),
+                        false => None,
+                    }
+                })
+                .flat_map(|(src, dst)| {
+                    if !self.is_directed() && src != dst {
+                        vec![self.encode_edge(src, dst), self.encode_edge(dst, src)]
+                    } else {
+                        vec![self.encode_edge(src, dst)]
+                    }
+                })
+                .collect::<Vec<EdgeT>>();
+
+            for edge_id in sampled_edge_ids.iter() {
+                if negative_edges_bitmap.len() >= negatives_number {
+                    break;
+                }
+                negative_edges_bitmap.insert(*edge_id);
+            }
 
             pb1.inc(negative_edges_bitmap.len() - last_length);
             last_length = negative_edges_bitmap.len();
@@ -168,6 +199,8 @@ impl Graph {
             self.directed,
             format!("{} negatives", self.name.clone()),
             false,
+            self.has_edge_types(),
+            self.has_weights(),
         )
     }
 
@@ -313,6 +346,8 @@ impl Graph {
                 self.directed,
                 format!("{} training", self.name.clone()),
                 false,
+                self.has_edge_types(),
+                self.has_weights(),
             )?,
             Graph::build_graph(
                 valid_edges_bitmap
@@ -329,6 +364,8 @@ impl Graph {
                 self.directed,
                 format!("{} testing", self.name.clone()),
                 false,
+                self.has_edge_types(),
+                self.has_weights(),
             )?,
         ))
     }
@@ -377,21 +414,18 @@ impl Graph {
             None
         };
 
-        let (tree, _) = self.spanning_tree(
-            random_state,
-            include_all_edge_types,
-            &edge_type_ids,
-            verbose,
-        );
+        let tree = self
+            .random_spanning_arborescence_kruskal(random_state, &edge_type_ids, verbose)
+            .0;
 
         let edge_factor = if self.is_directed() { 1 } else { 2 };
-        let train_edges_number = (self.get_edges_number() as f64 * train_size) as EdgeT;
+        let train_edges_number = (self.get_edges_number() as f64 * train_size) as usize;
         let mut valid_edges_number = (self.get_edges_number() as f64 * (1.0 - train_size)) as EdgeT;
 
         if let Some(etis) = &edge_type_ids {
             let selected_edges_number: EdgeT = etis
                 .iter()
-                .map(|et| self.get_edge_type_number(*et) as EdgeT)
+                .map(|et| self.get_unchecked_edge_count_by_edge_type(*et) as EdgeT)
                 .sum();
             valid_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;
         }
@@ -419,16 +453,17 @@ impl Graph {
             random_state,
             valid_edges_number,
             include_all_edge_types,
-            |edge_id, _, _, edge_type| {
+            |_, src, dst, edge_type| {
+                let is_in_tree = tree.contains(&(src, dst));
+                let singleton_self_loop = src == dst && self.get_node_degree(src) == 1;
+                let correct_edge_type = match &edge_type_ids {
+                    Some(etis) => etis.contains(&edge_type.unwrap()),
+                    None => true,
+                };
                 // The tree must not contain the provided edge ID
-                !tree.contains(edge_id)
+                // And this is not a self-loop edge with degree 1
                 // And the edge type of the edge ID is within the provided edge type
-                    && match &edge_type_ids {
-                        Some(etis) => {
-                            etis.contains(&edge_type.unwrap())
-                        },
-                        None => true
-                    }
+                !is_in_tree && !singleton_self_loop && correct_edge_type
             },
             verbose,
         )
@@ -458,7 +493,8 @@ impl Graph {
         min_number_overlaps: Option<EdgeT>,
         verbose: bool,
     ) -> Result<(Graph, Graph), String> {
-        let (_, valid_edges_number) = self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
+        let (_, valid_edges_number) =
+            self.get_holdouts_edges_number(train_size, include_all_edge_types)?;
         let edge_type_ids = if let Some(ets) = edge_types {
             Some(
                 self.translate_edge_types(ets)?
@@ -606,68 +642,101 @@ impl Graph {
             self.directed,
             format!("{} subgraph", self.name.clone()),
             false,
+            self.has_edge_types(),
+            self.has_weights(),
         )
     }
 
-    /// Returns subgraph with given set of edge types.
+    /// Returns train and test graph following kfold validation scheme.
     ///
-    /// This method creates a subset of the graph by keeping also the edges
-    /// of the given edge types.
+    /// The edges are splitted into k chunks. The k_index-th chunk is used to build
+    /// the validation graph, all the other edges create the training graph.
     ///
     /// # Arguments
     ///
-    /// * edge_types: Vec<String> - Vector of edge types to keep in the graph.
+    /// * `edge_types`: Option<Vec<String>> - Edge types to be selected when computing the folds
+    ///         (All the edge types not listed here will be always be used in the training set).
+    /// * `k`: u64 - The number of folds.
+    /// * `k_index`: u64 - Which fold to use for the validation.
+    /// * `random_state`: NodeT - The random_state (seed) to use for the holdout,
     /// * `verbose`: bool - Wethever to show the loading bar.
     ///
-    pub fn edge_types_subgraph(
+    pub fn kfold(
         &self,
-        edge_types: Vec<String>,
+        k: EdgeT,
+        k_index: u64,
+        edge_types: Option<Vec<String>>,
+        random_state: EdgeT,
         verbose: bool,
-    ) -> Result<Graph, String> {
-        if edge_types.is_empty() {
+    ) -> Result<(Graph, Graph), String> {
+        if k == 1 {
+            return Err(String::from("Cannot do a k-fold with only one fold."));
+        }
+        if k_index >= k {
             return Err(String::from(
-                "Required edge types must be a non-empty list.",
+                "The index of the k-fold must be strictly less than the number of folds.",
             ));
         }
 
-        let edge_type_ids: HashSet<EdgeTypeT> = self
-            .translate_edge_types(edge_types)?
-            .iter()
-            .cloned()
-            .collect::<HashSet<EdgeTypeT>>();
+        // If edge types is not None, to compute the chunks only use the edges
+        // of the chosen edge_types
+        let mut indices = if let Some(ets) = edge_types {
+            if ets.is_empty() {
+                return Err(String::from(
+                    "Required edge types must be a non-empty list.",
+                ));
+            }
+            if !self.has_edge_types() {
+                return Err(String::from(
+                    "Edge types-based k-fold requested but the edge types are not available in this graph."
+                ));
+            }
 
-        let pb = get_loading_bar(
-            verbose,
-            "Creating subgraph with given edge types",
-            self.get_edges_number() as usize,
-        );
+            let edge_type_ids: HashSet<EdgeTypeT> = self
+                .translate_edge_types(ets)?
+                .iter()
+                .cloned()
+                .collect::<HashSet<EdgeTypeT>>();
 
-        let edges_number = edge_type_ids
-            .iter()
-            .map(|et| self.get_edge_type_number(*et) as EdgeT)
-            .sum();
-
-        Graph::build_graph(
-            (0..self.get_edges_number())
-                .progress_with(pb)
-                .filter_map(|edge_id| match &self.edge_types {
-                    Some(ets) => match edge_type_ids.contains(&ets.ids[edge_id as usize]) {
-                        true => Some(self.get_edge_quadruple(edge_id)),
-                        false => None,
-                    },
-                    None => None,
+            self.get_edges_triples(self.directed)
+                .filter_map(|(edge_id, _, _, edge_type)| {
+                    if !edge_type_ids.contains(&edge_type.unwrap()) {
+                        return None;
+                    }
+                    Some(edge_id)
                 })
-                .map(Ok),
-            edges_number,
-            self.nodes.clone(),
-            self.node_types.clone(),
-            match &self.edge_types {
-                Some(ets) => Some(ets.vocabulary.clone()),
-                None => None,
-            },
-            self.directed,
-            format!("{} edge type subgraph", self.name.clone()),
+                .collect::<Vec<EdgeT>>()
+        } else {
+            self.get_edges_iter(self.directed)
+                .map(|(edge_id, _, _)| edge_id)
+                .collect::<Vec<EdgeT>>()
+        };
+
+        if k >= indices.len() as EdgeT {
+            return Err(String::from(
+                "Cannot do a number of k-fold greater than the number of available edges.",
+            ));
+        }
+
+        // shuffle the indices
+        let mut rng = SmallRng::seed_from_u64(random_state ^ SEED_XOR as EdgeT);
+        indices.shuffle(&mut rng);
+        // Get the k_index-th chunk
+        let chunk_size = indices.len() as f64 / k as f64;
+        let start = (k_index as f64 * chunk_size).ceil() as EdgeT;
+        let end = min!(
+            indices.len() as EdgeT,
+            (((k_index + 1) as f64) * chunk_size).ceil() as EdgeT
+        );
+        let chunk =
+            RoaringTreemap::from_iter(indices[start as usize..end as usize].iter().cloned());
+        // Create the two graphs
+        self.holdout(
+            random_state,
+            end - start,
             false,
+            |edge_id, _, _, _| chunk.contains(edge_id),
+            verbose,
         )
     }
 }

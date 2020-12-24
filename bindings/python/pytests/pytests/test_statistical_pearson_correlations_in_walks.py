@@ -14,20 +14,23 @@ def test_return_weight_behaviour_hpo():
     We test here that there is an inverse correlation between the number of
     different nodes present in the walk and the parameter.
     """
-    graph = load_hpo()
+    graph = load_hpo().remove(node_types=True, singletons=True)
 
     mean_uniques_counts = []
-    return_weights = np.linspace(0.01, 10, num=50)
+    return_weights = np.linspace(0.01, 10, num=20)
+    return_weights = np.concatenate([return_weights, return_weights])
 
-    for return_weight in tqdm(
-        return_weights,
+    for (seed, return_weight) in tqdm(
+        enumerate(return_weights),
         desc="Computing walks for different return_weight",
-        leave=False
+        leave=False,
+        total=len(return_weights)
     ):
-        walks = graph.complete_walks(
-            length=100,
+        walks = graph.random_walks(
+            quantity=graph.get_nodes_number(),
+            length=1000,
             return_weight=return_weight,
-            verbose=False
+            random_state=seed
         )
         mean_uniques_counts.append(np.mean([
             np.unique(walk).size
@@ -36,7 +39,7 @@ def test_return_weight_behaviour_hpo():
 
     correlation, p_value = pearsonr(return_weights, mean_uniques_counts)
     print("HPO return weight", correlation, p_value)
-    assert p_value < 0.01 and correlation < -0.9
+    assert p_value < 0.01 and correlation < -0.70
 
 
 def test_return_weight_behaviour_pathway():
@@ -51,7 +54,7 @@ def test_return_weight_behaviour_pathway():
     graph = load_pathway()
 
     mean_uniques_counts = []
-    return_weights = np.linspace(0.01, 10, num=50)
+    return_weights = np.linspace(0.01, 10, num=20)
 
     for return_weight in tqdm(
         return_weights,
@@ -59,9 +62,8 @@ def test_return_weight_behaviour_pathway():
         leave=False
     ):
         walks = graph.complete_walks(
-            length=100,
+            length=200,
             return_weight=return_weight,
-            verbose=False
         )
         mean_uniques_counts.append(np.mean([
             np.unique(walk).size
@@ -70,7 +72,7 @@ def test_return_weight_behaviour_pathway():
 
     correlation, p_value = pearsonr(return_weights, mean_uniques_counts)
     print("Pathway return weight", correlation, p_value)
-    assert p_value < 0.01 and correlation < -0.9
+    assert p_value < 0.01 and correlation < -0.8
 
 
 def test_explore_weight_behaviour_hpo():
@@ -83,7 +85,6 @@ def test_explore_weight_behaviour_hpo():
     different nodes present in the walk and the parameter.
     """
     graph = load_hpo()
-
     mean_uniques_counts = []
     explore_weights = np.linspace(0.01, 10, num=50)
 
@@ -93,9 +94,8 @@ def test_explore_weight_behaviour_hpo():
         leave=False
     ):
         walks = graph.complete_walks(
-            length=100,
+            length=400,
             explore_weight=explore_weight,
-            verbose=False
         )
         mean_uniques_counts.append(np.mean([
             np.unique(walk).size
@@ -129,7 +129,6 @@ def test_explore_weight_behaviour_pathway():
         walks = graph.complete_walks(
             length=100,
             explore_weight=explore_weight,
-            verbose=False
         )
         mean_uniques_counts.append(np.mean([
             np.unique(walk).size
@@ -163,8 +162,7 @@ def test_change_node_type_weight_behaviour_hpo():
         walks = graph.complete_walks(
             iterations=1,
             length=100,
-            change_node_type_weight=change_node_type_weight,
-            verbose=False,
+            change_node_type_weight=change_node_type_weight
         )
         changes = []
         for walk in walks:

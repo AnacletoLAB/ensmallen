@@ -89,15 +89,15 @@ macro_rules! to_nparray_2d {
     };
 }
 
+
 pub fn build_walk_parameters_list(parameters: &[&str]) -> Vec<String> {
     let default = vec![
-        "min_length",
         "return_weight",
         "explore_weight",
         "change_edge_type_weight",
         "change_node_type_weight",
+        "max_neighbours",
         "random_state",
-        "verbose",
         "iterations",
         "dense_node_mapping",
     ];
@@ -133,7 +133,7 @@ pub fn validate_kwargs(kwargs: &PyDict, columns: Vec<String>) -> Result<(), Stri
 
         if distance <= 2 {
             err_msg = format!(
-                    "The passed argument {} is not a valid one.\n Did you mean {} ?\nThe available ones are: \n{:?}",
+                    "The passed argument {} is not valid.\n Did you mean {} ?\nThe available ones are: \n{:?}",
                     k, column, columns
                 );
             break;

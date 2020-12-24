@@ -15,7 +15,7 @@ fn test_load_sorted() {
         .set_header(Some(false));
 
     let mut g =
-        Graph::from_sorted_csv(edges_reader, None, false, 6108, 242, "Graph".to_owned()).unwrap();
+        Graph::from_sorted_csv(edges_reader, None, false, false, 6108, 242, "Graph".to_owned()).unwrap();
 
     let _ = graph::test_utilities::default_test_suite(&mut g, true).unwrap();
 }

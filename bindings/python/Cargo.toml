@@ -1,7 +1,7 @@
 [package]
 edition = "2018"
 name = "ensmallen_graph"
-version = "0.4.4"
+version = "0.5.2"
 license = "MIT"
 repository= "https://github.com/LucaCappelletti94/ensmallen_graph"
 authors = [
@@ -14,7 +14,7 @@ keywords = ["python", "rust", "graph", "random", "walk"]
 
 [package.metadata.maturin]
 requires-python = ">=3.5"
-requires-dist = ["toml~=0.10.0"]
+requires-dist = ["toml~=0.10.0", "downloaders", "compress_json"]
 
 [lib]
 name = "ensmallen_graph"
@@ -25,10 +25,12 @@ version = "0.10.1"
 features = ["extension-module"]
 
 [dependencies]
-env_logger = "0.7.1"
+env_logger = "0.8.1"
 graph = { path = "../../graph" }
 numpy = "0.9.0"
 edit-distance = "2.1.0"
+rayon = "1.5.0"
+ctrlc = "3.1.7"
 
 [profile.release]
 opt-level = 3

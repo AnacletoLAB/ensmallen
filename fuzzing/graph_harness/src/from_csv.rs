@@ -111,7 +111,7 @@ fn internal_harness(edges_path: &str, nodes_path: &str, data: FromCsvHarnessPara
         }
     };
 
-    let mut g = Graph::from_unsorted_csv(edges_reader, nodes_reader, data.directed, "Graph".to_owned())?;
+    let mut g = Graph::from_unsorted_csv(edges_reader, nodes_reader, data.directed, false, "Graph".to_owned())?;
     let _ = graph::test_utilities::default_test_suite(&mut g, false);
 
     Ok(())
