@@ -508,12 +508,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
 
     if !graph.directed {
         // Testing SkipGram / CBOW / GloVe preprocessing
-        let (len, iter) = graph.cooccurence_matrix(&walker, 3)?;
-        let mut counter = 0;
-        for ((_, _), _) in iter {
-            counter += 1;
-        }
-        assert_eq!(len, counter);
+        graph.cooccurence_matrix(&walker, 3, verbose)?;
+    
         let window_size = 3;
         let batch_size = 256;
         let data = graph

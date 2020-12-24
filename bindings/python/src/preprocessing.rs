@@ -75,34 +75,26 @@ fn cooccurence_matrix(
             .map(|x| x.to_string())
             .collect(),
     ))?;
-    let (len, iter) = rust_cooccurence_matrix(
+    let len = sequences.len();
+    let (words, contexts, frequencies) = pyex!(rust_cooccurence_matrix(
         sequences.into_par_iter(),
         pyex!(extract_value!(kwargs, "window_size", usize))?.unwrap_or(3),
-    );
-
-    let words = PyArray1::<NodeT>::new(gil.python(), [len], false);
-    let contexts = PyArray1::<NodeT>::new(gil.python(), [len], false);
-    let frequencies = PyArray1::<f64>::new(gil.python(), [len], false);
-
-    iter.enumerate().for_each(|(i, ((node1, node2), frequency))| {
-            unsafe{
-                *words.uget_mut([i]) = node1;
-                *contexts.uget_mut([i]) = node2;
-                *frequencies.uget_mut([i]) = frequency;
-            }
-        });
+        len,
+        pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
+    ))?;
 
     Ok((
-        words.to_owned(), 
-        contexts.to_owned(), 
-        frequencies.to_owned()
+        to_nparray_1d!(gil, words, NodeT),
+        to_nparray_1d!(gil, contexts, NodeT),
+        to_nparray_1d!(gil, frequencies, f64),
     ))
 }
 
 #[pymethods]
 impl EnsmallenGraph {
+    
     #[args(py_kwargs = "**")]
-    #[text_signature = "($self, length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
+    #[text_signature = "($self, length, *, window_size, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state, verbose)"]
     /// Return cooccurence matrix-based triples of words, contexts and frequencies.
     ///
     /// Parameters
@@ -148,6 +140,8 @@ impl EnsmallenGraph {
     ///     and becomes an approximation of an exact walk.
     /// random_state: int = 42,
     ///     random_state to use to reproduce the walks.
+    /// verbose: int = True,
+    ///     Wethever to show or not the loading bar of the walks.
     ///
     /// Returns
     /// ----------------------------
@@ -155,7 +149,7 @@ impl EnsmallenGraph {
     ///
     fn cooccurence_matrix(
         &self,
-        walk_length: NodeT,
+        length: NodeT,
         py_kwargs: Option<&PyDict>,
     ) -> PyResult<(PyWords, PyWords, PyFrequencies)> {
         let gil = pyo3::Python::acquire_gil();
@@ -166,31 +160,21 @@ impl EnsmallenGraph {
             build_walk_parameters_list(&["window_size", "verbose"]),
         ))?;
 
-        let parameters = pyex!(self.build_walk_parameters(walk_length, kwargs))?;
+        let parameters = pyex!(self.build_walk_parameters(length, kwargs))?;
 
-        let (len, iter) = pyex!(self.graph.cooccurence_matrix( 
+        let (words, contexts, frequencies) = pyex!(self.graph.cooccurence_matrix(
             &parameters,
             pyex!(extract_value!(kwargs, "window_size", usize))?.unwrap_or(3),
+            pyex!(extract_value!(kwargs, "verbose", bool))?.unwrap_or(true),
         ))?;
-    
-        let words = PyArray1::<NodeT>::new(gil.python(), [len], false);
-        let contexts = PyArray1::<NodeT>::new(gil.python(), [len], false);
-        let frequencies = PyArray1::<f64>::new(gil.python(), [len], false);
-    
-        iter.enumerate().for_each(|(i, ((node1, node2), frequency))| {
-                unsafe{
-                    *words.uget_mut([i]) = node1;
-                    *contexts.uget_mut([i]) = node2;
-                    *frequencies.uget_mut([i]) = frequency;
-                }
-            });
-    
+
         Ok((
-            words.to_owned(), 
-            contexts.to_owned(), 
-            frequencies.to_owned()
+            to_nparray_1d!(gil, words, NodeT),
+            to_nparray_1d!(gil, contexts, NodeT),
+            to_nparray_1d!(gil, frequencies, f64),
         ))
     }
+
 
     #[args(py_kwargs = "**")]
     #[text_signature = "($self, batch_size, walk_length, window_size, *, iterations, return_weight, explore_weight, change_edge_type_weight, change_node_type_weight, dense_node_mapping, max_neighbours, random_state)"]
