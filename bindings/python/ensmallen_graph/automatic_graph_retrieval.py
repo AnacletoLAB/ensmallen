@@ -50,7 +50,7 @@ class AutomaticallyRetrievedGraph:
         self._downloader = BaseDownloader(
             auto_extract=True,
             target_directory=self._cache_path,
-            verbose=self._verbose
+            verbose=boolself._verbose
         )
 
     def __call__(self) -> EnsmallenGraph:
@@ -63,6 +63,6 @@ class AutomaticallyRetrievedGraph:
                 for key, value in self._graph["arguments"].items()
             },
             directed=self._directed,
-            verbose=self._verbose,
+            verbose=bool(self._verbose),
             name=self._name
         )
