@@ -56,11 +56,17 @@ RUSTFLAGS=" -C target-cpu=native" maturin build --release --no-sdist
 ```
 
 # Compiling the bindings for Linux to push them to Pipy
-In order to make the wheels usable by any linux system we must follow the [`manylinux1` standard](https://www.python.org/dev/peps/pep-0513/#the-manylinux1-policy).
+In order to make the wheels usable by any linux system we must follow the `manylinux2010` standard. We used to support `manylinux1` but rust no longer support Glibc 2.5 so we had to bump it to the next standard.
 
 This can be done by building the bindings inside a centos5 docker with:
 ```bash
-sudo docker run --rm -v $(pwd):/io konstin2/maturin build --release
+git clone https://github.com/LucaCappelletti95/ensmallen_graph
+cd ensmallen_graph
+make build_manylinux2010 python_manylinux2010
 ```
+
+The result wheels will be in `./ensmallen_graph/bindings/python/target/wheels/`.
+
+A wheel will be created for each version of python, this is configurable in the Dockerfile `./ensmallen_graph/setup/DockerFileManylinux2010` in a ENV var.
 
 A tutorial on how the internals of Python's Cffi can be found [here](https://blog.schuetze.link/2018/07/21/a-dive-into-packaging-native-python-extensions.html)
