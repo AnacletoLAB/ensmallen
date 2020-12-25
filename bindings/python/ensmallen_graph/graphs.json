@@ -17,10 +17,9 @@
         ],
         "arguments": {
             "edge_path": "protein.links.v11.0.txt",
-            "sources_column": "item_id_a",
-            "destinations_column": "item_id_b",
-            "edge_types_column": "mode",
-            "weights_column": "score"
+            "sources_column": "protein1",
+            "destinations_column": "protein2",
+            "weights_column": "combined_score"
         }
     },
     "KG-COVID19": {
