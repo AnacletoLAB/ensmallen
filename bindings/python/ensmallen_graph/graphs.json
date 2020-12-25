@@ -19,7 +19,7 @@
             "edge_path": "protein.links.v11.0.txt",
             "sources_column": "protein1",
             "destinations_column": "protein2",
-            "sep": " ",
+            "edge_separator": " ",
             "weights_column": "combined_score"
         }
     },
