@@ -11,6 +11,18 @@
             "weights_column": "score"
         }
     },
+    "CompleteStringPPI": {
+        "urls": [
+            "https://stringdb-static.org/download/protein.links.v11.0.txt.gz"
+        ],
+        "arguments": {
+            "edge_path": "protein.links.v11.0.txt",
+            "sources_column": "item_id_a",
+            "destinations_column": "item_id_b",
+            "edge_types_column": "mode",
+            "weights_column": "score"
+        }
+    },
     "KG-COVID19": {
         "urls": [
             "https://kg-hub.berkeleybop.io/kg-covid-19/current/kg-covid-19.tar.gz"
