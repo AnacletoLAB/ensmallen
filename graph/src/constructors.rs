@@ -5,6 +5,7 @@ use bitvec::prelude::*;
 use std::cmp::Ordering;
 use rayon::prelude::ParallelSliceMut;
 use std::collections::BTreeMap;
+use log::info;
 
 type ParsedStringEdgesType = Result<
     (
@@ -287,27 +288,16 @@ pub(crate) fn parse_unsorted_quadruples(
     mut edges: Vec<Quadruple>,
     ignore_duplicated_edges: bool,
     verbose: bool,
-) -> Result<(EdgeT, impl Iterator<Item = Result<Quadruple, String>>), String> {
+) -> (EdgeT, impl Iterator<Item = Result<Quadruple, String>>) {
     let pb = get_loading_bar(verbose, "Building sorted graph", edges.len());
 
-    edges.par_sort_unstable_by(|(src1, dst1, edt1, weight1), (src2, dst2, edt2, weight2)|{
-        match (src1, dst1, edt1).cmp(&(src2, dst2, edt2)){
-            std::cmp::Ordering::Equal => match (weight1, weight2) {
-                (Some(w1), Some(w2)) => {
-                    if w1 < w2 {
-                        std::cmp::Ordering::Greater
-                    } else {
-                        std::cmp::Ordering::Less
-                    }
-                },
-                _ => std::cmp::Ordering::Equal
-            },
-            std::cmp::Ordering::Less => std::cmp::Ordering::Greater,
-            std::cmp::Ordering::Greater =>std::cmp::Ordering::Less
-        }
+    info!("Sorting edges.");
+    edges.par_sort_unstable_by(|(src1, dst1, _, _), (src2, dst2, _, _)|{
+        (*src1, *dst1).cmp(&(*src2, *dst2))
     });
 
     if ignore_duplicated_edges{
+        info!("Removing duplicated edges if detected.");
         edges.dedup_by(|(src1, dst1, edt1, _), (src2, dst2, edt2, _)|{
             (src1, dst1, edt1) == (src2, dst2, edt2)
         });
@@ -315,10 +305,10 @@ pub(crate) fn parse_unsorted_quadruples(
 
     let edges_number = edges.len() as EdgeT;
 
-    Ok((
+    (
         edges_number,
         (0..edges_number).progress_with(pb).map(move |_| { Ok(edges.pop().unwrap())}),
-    ))
+    )
 }
 
 pub(crate) fn parse_integer_unsorted_edges<'a>(
@@ -339,7 +329,7 @@ pub(crate) fn parse_integer_unsorted_edges<'a>(
         }
     }).collect::<Result<Vec<Quadruple>, String>>()?;
 
-    parse_unsorted_quadruples(edge_quadruples, ignore_duplicated_edges, verbose)
+    Ok(parse_unsorted_quadruples(edge_quadruples, ignore_duplicated_edges, verbose))
 }
 
 pub(crate) fn parse_string_unsorted_edges<'a>(
@@ -370,7 +360,7 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
                 }
             }).collect::<Result<Vec<Quadruple>, String>>()?;
         
-            parse_unsorted_quadruples(edge_quadruples, ignore_duplicated_edges, verbose)?
+            parse_unsorted_quadruples(edge_quadruples, ignore_duplicated_edges, verbose)
     };
     nodes.build_reverse_mapping()?;
     edge_types_vocabulary.build_reverse_mapping()?;
@@ -403,7 +393,6 @@ pub(crate) fn build_edges(
     let mut unique_self_loop_number: NodeT = 0;
     let mut self_loop_number: EdgeT = 0;
     let mut undirected_edges_cumulative_check: EdgeT = 0;
-    // TODO: using roaring might be sub-optimal when the bitvec is dense.
     let mut nodes_with_edges = bitvec![Msb0, u8; 0; nodes_number as usize];
     let mut not_singleton_node_number: NodeT = 0;
     let mut singleton_nodes_with_self_loops = bitvec![Msb0, u8; 0; nodes_number as usize];
@@ -794,6 +783,7 @@ impl Graph {
             numeric_node_types_ids,
         )?;
         
+        info!("Parse unsorted edges.");
         let (edges_number, edges_iterator, nodes, edge_types_vocabulary) =
             parse_string_unsorted_edges(
                 edges_iterator,
