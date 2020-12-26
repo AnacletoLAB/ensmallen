@@ -362,7 +362,9 @@ pub(crate) fn parse_string_unsorted_edges<'a>(
         
             parse_unsorted_quadruples(edge_quadruples, ignore_duplicated_edges, verbose)
     };
+    info!("Building nodes reverse mapping.");
     nodes.build_reverse_mapping()?;
+    info!("Building edge types reverse mapping.");
     edge_types_vocabulary.build_reverse_mapping()?;
 
     Ok((edges_number, edges_iter, nodes, edge_types_vocabulary))
@@ -376,6 +378,7 @@ pub(crate) fn build_edges(
     directed: bool,
     directed_edge_list: bool
 ) -> Result<(EliasFano, EliasFano, EdgeT, EdgeT, NodeT, NodeT, NodeT, u8, u64), String> {
+    info!("Started building of compressed EliasFano edges data structure.");
     let node_bits = get_node_bits(nodes_number);
     let node_bit_mask = (1 << node_bits) - 1;
     let mut edges: EliasFano = EliasFano::new(
