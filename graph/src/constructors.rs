@@ -292,12 +292,12 @@ pub(crate) fn parse_unsorted_quadruples(
     let pb = get_loading_bar(verbose, "Building sorted graph", edges.len());
 
     info!("Sorting edges.");
-    edges.par_sort_unstable_by(|(src1, dst1, _, _), (src2, dst2, _, _)|{
-        (*src1, *dst1).cmp(&(*src2, *dst2))
+    edges.par_sort_unstable_by(|(src1, dst1, edt1, _), (src2, dst2, edt2, _)|{
+        (*src2, *dst2, *edt2).cmp(&(*src1, *dst1, *edt1))
     });
 
     if ignore_duplicated_edges{
-        info!("Removing duplicated edges if detected.");
+        info!("Removing duplicated edges.");
         edges.dedup_by(|(src1, dst1, edt1, _), (src2, dst2, edt2, _)|{
             (src1, dst1, edt1) == (src2, dst2, edt2)
         });
