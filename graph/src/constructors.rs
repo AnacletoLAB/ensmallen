@@ -292,7 +292,7 @@ pub(crate) fn parse_unsorted_quadruples(
     let pb = get_loading_bar(verbose, "Building sorted graph", edges.len());
 
     info!("Sorting edges.");
-    edges.par_sort_unstable_by(|(src1, dst1, edt1, _), (src2, dst2, edt2, _)|{
+    edges.par_sort_by(|(src1, dst1, edt1, _), (src2, dst2, edt2, _)|{
         (*src2, *dst2, *edt2).cmp(&(*src1, *dst1, *edt1))
     });
 
