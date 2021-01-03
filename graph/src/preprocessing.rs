@@ -246,58 +246,6 @@ impl Graph {
         )
     }
 
-    /// Returns triple with the embeddings of source nodes, destination nodes and labels for training model for link prediction.
-    ///
-    /// # Arguments
-    ///
-    /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
-    /// * batch_size: usize - The maximal size of the batch to generate,
-    /// * method: &str - String representing the required edge embedding method.
-    /// * negative_samples: f64 - The component of netagetive samples to use,
-    /// * avoid_false_negatives: bool - Wether to remove the false negatives when generated.
-    ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
-    /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
-    /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
-    ///
-    pub fn link_prediction<'a>(
-        &'a self,
-        idx: u64,
-        batch_size: usize,
-        method: &str,
-        negative_samples: f64,
-        avoid_false_negatives: bool,
-        maximal_sampling_attempts: usize,
-        graph_to_avoid: &'a Option<&Graph>,
-    ) -> Result<impl ParallelIterator<Item = (usize, Vec<f64>, bool)> + 'a, String> {
-        if self.embedding.is_none() {
-            return Err("Embedding object was not provided.".to_string());
-        }
-
-        let method = EdgeEmbeddingMethods::new(method)?;
-
-        match &self.embedding {
-            Some(embedding) => {
-                let iter = self.link_prediction_ids(
-                    idx,
-                    batch_size,
-                    negative_samples,
-                    avoid_false_negatives,
-                    maximal_sampling_attempts,
-                    graph_to_avoid
-                )?;
-                Ok(iter.map(move |(index, src, dst, label)| 
-                    (
-                        index,    
-                        method.call(&embedding[src as usize], &embedding[dst as usize]),
-                        label
-                    )
-                ))
-            }
-            None=>Err("Embedding object was not provided. Use the method 'set_embedding' to provide the embedding.".to_string())
-        }
-    }
-
-    
     /// Returns triple with the ids of source nodes, destination nodes and labels for training model for link prediction.
     ///
     /// # Arguments
@@ -385,5 +333,56 @@ impl Graph {
                     ));
                 }
             }))
+    }
+
+    /// Returns triple with the embeddings of source nodes, destination nodes and labels for training model for link prediction.
+    ///
+    /// # Arguments
+    ///
+    /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
+    /// * batch_size: usize - The maximal size of the batch to generate,
+    /// * method: &str - String representing the required edge embedding method.
+    /// * negative_samples: f64 - The component of netagetive samples to use,
+    /// * avoid_false_negatives: bool - Wether to remove the false negatives when generated.
+    ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
+    /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    ///
+    pub fn link_prediction<'a>(
+        &'a self,
+        idx: u64,
+        batch_size: usize,
+        method: &str,
+        negative_samples: f64,
+        avoid_false_negatives: bool,
+        maximal_sampling_attempts: usize,
+        graph_to_avoid: &'a Option<&Graph>,
+    ) -> Result<impl ParallelIterator<Item = (usize, Vec<f64>, bool)> + 'a, String> {
+        if self.embedding.is_none() {
+            return Err("Embedding object was not provided.".to_string());
+        }
+
+        let method = EdgeEmbeddingMethods::new(method)?;
+
+        match &self.embedding {
+            Some(embedding) => {
+                let iter = self.link_prediction_ids(
+                    idx,
+                    batch_size,
+                    negative_samples,
+                    avoid_false_negatives,
+                    maximal_sampling_attempts,
+                    graph_to_avoid
+                )?;
+                Ok(iter.map(move |(index, src, dst, label)| 
+                    (
+                        index,    
+                        method.call(&embedding[src as usize], &embedding[dst as usize]),
+                        label
+                    )
+                ))
+            }
+            None=>Err("Embedding object was not provided. Use the method 'set_embedding' to provide the embedding.".to_string())
+        }
     }
 }
