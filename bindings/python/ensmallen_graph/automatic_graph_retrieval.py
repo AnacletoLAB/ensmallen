@@ -11,7 +11,7 @@ class AutomaticallyRetrievedGraph:
         self,
         name: str,
         directed: bool = False,
-        verbose: bool = True,
+        verbose: int = 2,
         cache_path: str = "graphs"
     ):
         """Create new automatically retrieved graph.
@@ -23,7 +23,7 @@ class AutomaticallyRetrievedGraph:
         directed: bool = False,
             Wether to load the graph as directed or undirected.
             By default false.
-        verbose: bool = True,
+        verbose: int = 2,
             Wether to show loading bars.
         cache_path: str = "graphs",
             Where to store the downloaded graphs.
@@ -63,6 +63,6 @@ class AutomaticallyRetrievedGraph:
                 for key, value in self._graph["arguments"].items()
             },
             directed=self._directed,
-            verbose=self._verbose,
+            verbose=bool(self._verbose),
             name=self._name
         )
