@@ -37,6 +37,30 @@ impl EdgeEmbeddingMethods {
             )),
         }
     }
+
+    fn call(&self, x1: &Vec<f64>, x2: &Vec<f64>) -> Vec<f64>{
+        match self {
+            EdgeEmbeddingMethods::Concatenate => x1.iter().chain(x2.iter()).cloned().collect(),
+            _ => {
+                x1.iter()
+                .cloned()
+                .zip(x2.iter().cloned())
+                .map(
+                    match self {
+                        EdgeEmbeddingMethods::Hadamard   => |(x1, x2): (f64, f64)| -> f64 {x1 * x2},
+                        EdgeEmbeddingMethods::Average    => |(x1, x2): (f64, f64)| -> f64 {(x1 + x2) / 2.0},
+                        EdgeEmbeddingMethods::Sum        => |(x1, x2): (f64, f64)| -> f64 {x1 + x2},
+                        EdgeEmbeddingMethods::L1         => |(x1, x2): (f64, f64)| -> f64 {x1 - x2},
+                        EdgeEmbeddingMethods::AbsoluteL1 => |(x1, x2): (f64, f64)| -> f64 {(x1 - x2).abs()},
+                        EdgeEmbeddingMethods::L2         => |(x1, x2): (f64, f64)| -> f64 {(x1 - x2).powi(2)},   
+                        _ => unreachable!(),
+                    }
+                )
+                .collect()
+            }
+        }
+        
+    }
 }
 
 /// Return training batches for Word2Vec models.
@@ -249,53 +273,7 @@ impl Graph {
             return Err("Embedding object was not provided.".to_string());
         }
 
-        let method = match EdgeEmbeddingMethods::new(method)? {
-            EdgeEmbeddingMethods::Hadamard => |x1: &Vec<f64>, x2: &Vec<f64>| {
-                x1.iter()
-                    .cloned()
-                    .zip(x2.iter().cloned())
-                    .map(|(x1, x2)| x1 * x2)
-                    .collect()
-            },
-            EdgeEmbeddingMethods::Average => |x1: &Vec<f64>, x2: &Vec<f64>| {
-                x1.iter()
-                    .cloned()
-                    .zip(x2.iter().cloned())
-                    .map(|(x1, x2)| (x1 + x2) / 2.0)
-                    .collect()
-            },
-            EdgeEmbeddingMethods::Sum => |x1: &Vec<f64>, x2: &Vec<f64>| {
-                x1.iter()
-                    .cloned()
-                    .zip(x2.iter().cloned())
-                    .map(|(x1, x2)| x1 + x2)
-                    .collect()
-            },
-            EdgeEmbeddingMethods::L1 => |x1: &Vec<f64>, x2: &Vec<f64>| {
-                x1.iter()
-                    .cloned()
-                    .zip(x2.iter().cloned())
-                    .map(|(x1, x2)| x1 - x2)
-                    .collect()
-            },
-            EdgeEmbeddingMethods::AbsoluteL1 => |x1: &Vec<f64>, x2: &Vec<f64>| {
-                x1.iter()
-                    .cloned()
-                    .zip(x2.iter().cloned())
-                    .map(|(x1, x2)| (x1 - x2).abs())
-                    .collect()
-            },
-            EdgeEmbeddingMethods::L2 => |x1: &Vec<f64>, x2: &Vec<f64>| {
-                x1.iter()
-                    .cloned()
-                    .zip(x2.iter().cloned())
-                    .map(|(x1, x2)| (x1 - x2).powi(2))
-                    .collect()
-            },
-            EdgeEmbeddingMethods::Concatenate => {
-                |x1: &Vec<f64>, x2: &Vec<f64>| x1.iter().chain(x2.iter()).cloned().collect()
-            }
-        };
+        let method = EdgeEmbeddingMethods::new(method)?;
 
         // The number of negatives is given by computing their fraction of batchsize
         let negative_number: usize =
@@ -359,7 +337,7 @@ impl Graph {
                     };
                     (
                         indices[i],
-                        method(&embedding[src as usize],&embedding[dst as usize]),
+                        method.call(&embedding[src as usize],&embedding[dst as usize]),
                         label
                     )
                 })),
