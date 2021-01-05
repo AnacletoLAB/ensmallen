@@ -174,7 +174,13 @@ impl Graph {
                 })
                 .collect::<Vec<EdgeT>>();
 
-            for edge_id in sampled_edge_ids.iter() {
+            let pb3 = get_loading_bar(
+                verbose,
+                "Inserting negative graph",
+                negatives_number as usize,
+            );
+
+            for edge_id in sampled_edge_ids.iter().progress_with(pb3) {
                 if negative_edges_bitmap.len() >= negatives_number {
                     break;
                 }
