@@ -460,4 +460,96 @@ impl EnsmallenGraph {
 
         Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
     }
+
+    
+    #[args(py_kwargs = "**")]
+    #[text_signature = "($self, idx, batch_size, normalize, negative_samples, avoid_false_negatives, maximal_sampling_attempts, graph_to_avoid)"]
+    /// Returns
+    ///
+    ///
+    /// Parameters
+    /// -----------------------------
+    /// idx:int,
+    ///     Index corresponding to batch to be rendered.
+    /// batch_size: int,
+    ///     The batch size to use.
+    /// normalize: bool=True,
+    ///      Divide the degrees by the max, this way the values are in [0, 1].
+    /// negative_samples: float = 1.0,
+    ///     Factor of negatives to use in every batch.
+    ///     For example, with a batch size of 128 and negative_samples equal
+    ///     to 1.0, there will be 64 positives and 64 negatives.
+    /// avoid_false_negatives: bool = False,
+    ///     Wether to filter out false negatives.
+    ///     By default False.
+    ///     Enabling this will slow down the batch generation while (likely) not
+    ///     introducing any significant gain to the model performance.
+    /// maximal_sampling_attempts: usize = 100,
+    ///     Number of attempts to execute to sample the negative edges.
+    /// graph_to_avoid: EnsmallenGraph = None,
+    ///     Graph to avoid when generating the links.
+    ///     This can be the validation component of the graph, for example.
+    ///
+    /// Returns
+    /// -----------------------------
+    /// Tuple containing training and validation graphs.
+    ///
+    fn link_prediction_degrees(
+        &self,
+        idx: u64,
+        batch_size: usize,
+        py_kwargs: Option<&PyDict>,
+    ) -> PyResult<(Py<PyArray1<f64>>, Py<PyArray1<f64>>, Py<PyArray1<bool>>)> {
+        let gil = pyo3::Python::acquire_gil();
+        let kwargs = normalize_kwargs!(py_kwargs, gil.python());
+
+        pyex!(validate_kwargs(
+            kwargs,
+            [
+                "normalize",
+                "negative_samples",
+                "avoid_false_negatives",
+                "maximal_sampling_attempts",
+                "graph_to_avoid",
+            ]
+            .iter()
+            .map(|x| x.to_string())
+            .collect(),
+        ))?;
+        let graph_to_avoid = pyex!(extract_value!(kwargs, "graph_to_avoid", EnsmallenGraph))?;
+        let maybe_graph = match &graph_to_avoid {
+            Some(g) => Some(&g.graph),
+            None => None,
+        };
+
+        let iter = pyex!(self.graph.link_prediction_degrees(
+            idx,
+            batch_size,
+            pyex!(extract_value!(kwargs, "normalize", bool))?.unwrap_or(true),
+            pyex!(extract_value!(kwargs, "negative_samples", f64))?.unwrap_or(1.0),
+            pyex!(extract_value!(kwargs, "avoid_false_negatives", bool))?.unwrap_or(false),
+            pyex!(extract_value!(kwargs, "maximal_sampling_attempts", usize))?.unwrap_or(100),
+            &maybe_graph
+        ))?;
+
+        let srcs = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+        let dsts = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+        let labels = ThreadSafe {
+            t: PyArray1::new(gil.python(), [batch_size], false),
+        };
+        
+        unsafe {
+            iter.for_each(|(i, src, dst, label)| {
+                *(dsts.t.uget_mut([i]))   = src;
+                *(srcs.t.uget_mut([i]))   = dst;
+                *(labels.t.uget_mut([i])) = label;
+            });
+        }
+
+        Ok((srcs.t.to_owned(), dsts.t.to_owned(), labels.t.to_owned()))
+    }
 }

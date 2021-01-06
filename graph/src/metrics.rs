@@ -238,18 +238,18 @@ impl Graph {
     /// Returns maximum node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The maximum node degree of the graph is  {}", graph.min_degree());
+    /// println!("The maximum node degree of the graph is  {}", graph.max_degree());
     /// ```
-    pub fn min_degree(&self) -> NodeT {
+    pub fn max_degree(&self) -> NodeT {
         *self.get_node_degrees().iter().max().unwrap()
     }
 
     /// Returns minimum node degree of the graph
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false).unwrap();
-    /// println!("The minimum node degree of the graph is  {}", graph.max_degree());
+    /// println!("The minimum node degree of the graph is  {}", graph.min_degree());
     /// ```
-    pub fn max_degree(&self) -> NodeT {
+    pub fn min_degree(&self) -> NodeT {
         *self.get_node_degrees().iter().min().unwrap()
     }
 

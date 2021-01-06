@@ -176,7 +176,7 @@ impl Graph {
 
             let pb3 = get_loading_bar(
                 verbose,
-                "Inserting negative graph",
+                "Inserting negative graph edges",
                 negatives_number as usize,
             );
 

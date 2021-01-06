@@ -103,8 +103,8 @@ pub(crate) fn build_csv_file_reader(
                     bool
                 )?)?
                 .set_comment_symbol(extract_value!(kwargs, "node_file_comment_symbol", String)?)?
-                .set_header(extract_value!(kwargs, "edge_header", bool)?)
-                .set_rows_to_skip(extract_value!(kwargs, "edge_rows_to_skip", usize)?)
+                .set_header(extract_value!(kwargs, "node_header", bool)?)
+                .set_rows_to_skip(extract_value!(kwargs, "node_rows_to_skip", usize)?)
                 .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize)?)?
                 .set_nodes_column(extract_value!(kwargs, "nodes_column", String)?)?
                 .set_node_types_column_number(extract_value!(

@@ -50,7 +50,8 @@
             "sources_column_number": 0,
             "destinations_column_number": 1,
             "edge_header": false,
-            "nodes_column": "STRING_id"
+            "nodes_column": "STRING_id",
+            "numeric_edge_node_ids": true
         }
     },
     "YueCTDDDA": {
@@ -65,8 +66,11 @@
             "sources_column_number": 0,
             "destinations_column_number": 1,
             "edge_header": false,
-            "nodes_column": "CTD_id",
-            "node_types_column": "type"
+            "node_header": false,
+            "node_rows_to_skip": 1,
+            "nodes_column_number": 1,
+            "node_types_column_number": 3,
+            "numeric_edge_node_ids": true
         }
     },
     "YueDrugBankDDI": {
@@ -82,7 +86,7 @@
             "destinations_column_number": 1,
             "edge_header": false,
             "nodes_column": "DrugBank_id",
-            "node_types_column": "type"
+            "numeric_edge_node_ids": true
         }
     },
     "YueNDFRTDDA": {
@@ -97,8 +101,11 @@
             "sources_column_number": 0,
             "destinations_column_number": 1,
             "edge_header": false,
-            "nodes_column": "UMLS_CUI",
-            "node_types_column": "type"
+            "node_header": false,
+            "node_rows_to_skip": 1,
+            "nodes_column_number": 1,
+            "node_types_column_number": 2,
+            "numeric_edge_node_ids": true
         }
     }
 }
