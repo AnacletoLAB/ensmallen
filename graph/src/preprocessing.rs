@@ -298,6 +298,49 @@ impl Graph {
     }
 
     
+    /// Returns triple with the degrees of source nodes, destination nodes and labels for training model for link prediction.
+    /// This method is just for setting the lowerbound on the simplest possible model.
+    ///
+    /// # Arguments
+    ///
+    /// * idx:u64 - The index of the batch to generate, behaves like a random random_state,
+    /// * batch_size: usize - The maximal size of the batch to generate,
+    /// * normalize: bool - Divide the degrees by the max, this way the values are in [0, 1],
+    /// * negative_samples: f64 - The component of netagetive samples to use,
+    /// * avoid_false_negatives: bool - Wether to remove the false negatives when generated.
+    ///     - It should be left to false, as it has very limited impact on the training, but enabling this will slow things down.
+    /// * maximal_sampling_attempts: usize - Number of attempts to execute to sample the negative edges.
+    /// * graph_to_avoid: Option<&Graph> - The graph whose edges are to be avoided during the generation of false negatives,
+    ///
+    pub fn link_prediction_degrees<'a>(
+        &'a self,
+        idx: u64,
+        batch_size: usize,
+        normalize: bool,
+        negative_samples: f64,
+        avoid_false_negatives: bool,
+        maximal_sampling_attempts: usize,
+        graph_to_avoid: &'a Option<&Graph>,
+    ) -> Result<impl ParallelIterator<Item = (usize, f64, f64, bool)> + 'a, String> {
+        let iter = self.link_prediction_ids(
+            idx,
+            batch_size,
+            negative_samples,
+            avoid_false_negatives,
+            maximal_sampling_attempts,
+            graph_to_avoid
+        )?;
+        
+        Ok(iter.map(move |(index, src, dst, label)| 
+            (
+                index,    
+                self.get_node_degree(src),
+                self.get_node_degree(dst),
+                label
+            )
+        ))
+    }
+
     /// Returns triple with the ids of source nodes, destination nodes and labels for training model for link prediction.
     ///
     /// # Arguments
