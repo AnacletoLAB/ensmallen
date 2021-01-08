@@ -8,7 +8,7 @@ def StringPPI(
     verbose: int = 2,
     cache_path: str = "graphs"
 ) -> EnsmallenGraph:
-    """Return new instance of the StringPPI graph.
+    """Return new instance of the human StringPPI graph (not filtered).
 
     The retrieved graph is automatically retrieved directly from the STRING
     website, that is https://string-db.org/.
@@ -39,7 +39,7 @@ def CompleteStringPPI(
     verbose: int = 2,
     cache_path: str = "graphs"
 ) -> EnsmallenGraph:
-    """Return new instance of the Complete StringPPI graph.
+    """Return new instance of the Complete (cross-species) StringPPI graph (not filtered).
 
     THIS GRAPH IS VERY VERY BIG, ABOUT 43GB!
 
