@@ -390,8 +390,8 @@ impl Graph {
         report.insert("self_loops_rate", self.get_self_loop_rate().to_string());
         report.insert("singletons", self.get_singleton_nodes_number().to_string());
         report.insert("degree_mean", self.degrees_mean().to_string());
-        report.insert("max_degree", self.min_degree().to_string());
-        report.insert("min_degree", self.max_degree().to_string());
+        report.insert("min_degree", self.min_degree().to_string());
+        report.insert("max_degree", self.max_degree().to_string());
         report.insert(
             "unique_node_types_number",
             self.get_node_types_number().to_string(),

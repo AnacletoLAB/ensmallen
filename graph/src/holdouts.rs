@@ -109,23 +109,17 @@ impl Graph {
             negatives_number as usize,
         );
 
-        let pb2 = get_loading_bar(
-            verbose,
-            "Building negative graph",
-            negatives_number as usize,
-        );
-
         // xorshift breaks if the random_state is zero
         // so we initialize xor it with a constat
         // to mitigate this problem
         random_state ^= SEED_XOR as EdgeT;
 
-        let mut negative_edges_bitmap = RoaringTreemap::new();
+        let mut negative_edges_hashset = HashSet::new();
         let mut last_length = 0;
         let mut sampling_round: usize = 0;
 
         // randomly extract negative edges until we have the choosen number
-        while negative_edges_bitmap.len() < negatives_number {
+        while negative_edges_hashset.len() < negatives_number as usize {
             // generate two random_states for reproducibility porpouses
             let src_random_state = rand_u64(random_state);
             let dst_random_state = rand_u64(src_random_state);
@@ -181,32 +175,43 @@ impl Graph {
             );
 
             for edge_id in sampled_edge_ids.iter().progress_with(pb3) {
-                if negative_edges_bitmap.len() >= negatives_number {
+                if negative_edges_hashset.len() >= negatives_number as usize {
                     break;
                 }
-                negative_edges_bitmap.insert(*edge_id);
+                negative_edges_hashset.insert(*edge_id);
             }
 
-            pb1.inc(negative_edges_bitmap.len() - last_length);
-            last_length = negative_edges_bitmap.len();
+            pb1.inc((negative_edges_hashset.len() - last_length as usize) as u64);
+            last_length = negative_edges_hashset.len();
         }
 
         pb1.finish();
 
-        Graph::build_graph(
-            negative_edges_bitmap.iter().progress_with(pb2).map(|edge| {
-                let (src, dst) = self.decode_edge(edge);
-                Ok((src, dst, None, None))
-            }),
-            negative_edges_bitmap.len(),
+        let pb2 = get_loading_bar(
+            verbose,
+            "Building negative graph",
+            negatives_number as usize,
+        );
+
+        Graph::from_integer_unsorted(
+            negative_edges_hashset
+                .iter()
+                .cloned()
+                .progress_with(pb2)
+                .map(|edge| {
+                    let (src, dst) = self.decode_edge(edge);
+                    Ok((src, dst, None, None))
+                }),
             self.nodes.clone(),
             self.node_types.clone(),
             None,
             self.directed,
+            true,
             format!("{} negatives", self.name.clone()),
             false,
             self.has_edge_types(),
             self.has_weights(),
+            verbose
         )
     }
 
