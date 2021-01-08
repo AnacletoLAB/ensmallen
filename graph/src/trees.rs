@@ -37,7 +37,7 @@ impl Graph {
     ) -> impl Iterator<Item = (NodeT, NodeT)> + 'a {
         let pb = get_loading_bar(
             verbose,
-            format!("Building random spanning tree for graph {}", self.name).as_ref(),
+            format!("Building random spanning tree for {}", self.name).as_ref(),
             self.get_edges_number() as usize,
         );
         let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> =
@@ -210,7 +210,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             &format!(
-                "Computing spanning arborescence with Kruskal for graph {}",
+                "Computing spanning arborescence with Kruskal for {}",
                 self.get_name()
             ),
             self.get_unique_edges_number() as usize,
