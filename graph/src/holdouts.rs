@@ -187,17 +187,10 @@ impl Graph {
 
         pb1.finish();
 
-        let pb2 = get_loading_bar(
-            verbose,
-            "Building negative graph",
-            negatives_number as usize,
-        );
-
         Graph::from_integer_unsorted(
             negative_edges_hashset
                 .iter()
                 .cloned()
-                .progress_with(pb2)
                 .map(|edge| {
                     let (src, dst) = self.decode_edge(edge);
                     Ok((src, dst, None, None))
