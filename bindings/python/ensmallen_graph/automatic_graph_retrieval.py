@@ -12,7 +12,8 @@ class AutomaticallyRetrievedGraph:
         name: str,
         directed: bool = False,
         verbose: int = 2,
-        cache_path: str = "graphs"
+        cache_path: str = "graphs",
+        dataset: str = "graphs"
     ):
         """Create new automatically retrieved graph.
 
@@ -27,13 +28,15 @@ class AutomaticallyRetrievedGraph:
             Wether to show loading bars.
         cache_path: str = "graphs",
             Where to store the downloaded graphs.
+        dataset: str = "graphs",
+            Name of the dataset to load data from.
 
         Raises
         -------------------
         ValueError,
             If the given graph name is not available.
         """
-        graphs = compress_json.local_load("graphs.json")
+        graphs = compress_json.local_load("{}.json".format(dataset))
         if name not in graphs:
             raise ValueError(
                 (

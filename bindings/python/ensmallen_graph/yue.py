@@ -31,7 +31,8 @@ def StringPPI(
         "YueStringPPI",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="yue"
     )()
 
 
@@ -64,7 +65,8 @@ def CTDDDA(
         "YueCTDDDA",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="yue"
     )()
 
 
@@ -97,7 +99,8 @@ def DrugBankDDI(
         "YueDrugBankDDI",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="yue"
     )()
 
 
@@ -130,5 +133,6 @@ def NDFRTDDA(
         "YueNDFRTDDA",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="yue"
     )()
