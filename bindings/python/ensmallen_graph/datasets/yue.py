@@ -1,5 +1,5 @@
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
-from .ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
+from ..ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
 def StringPPI(

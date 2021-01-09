@@ -3,7 +3,7 @@ import os
 import compress_json
 from downloaders import BaseDownloader
 
-from .ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
+from ..ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
 class AutomaticallyRetrievedGraph:
