@@ -28,7 +28,7 @@ def StringPPI(
     String PPI graph.
     """
     return AutomaticallyRetrievedGraph(
-        "YueStringPPI",
+        "StringPPI",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
@@ -62,7 +62,7 @@ def CTDDDA(
     CTDDDA graph.
     """
     return AutomaticallyRetrievedGraph(
-        "YueCTDDDA",
+        "CTDDDA",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
@@ -96,7 +96,7 @@ def DrugBankDDI(
     DrugBankDDI graph.
     """
     return AutomaticallyRetrievedGraph(
-        "YueDrugBankDDI",
+        "DrugBankDDI",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
@@ -130,7 +130,7 @@ def NDFRTDDA(
     NDFRTDDA graph.
     """
     return AutomaticallyRetrievedGraph(
-        "YueNDFRTDDA",
+        "NDFRTDDA",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
