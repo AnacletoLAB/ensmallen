@@ -81,7 +81,7 @@ impl CSVFileReader {
             .lines()
             .filter(|line|{
                 match (line, &self.comment_symbol){
-                    (Ok(l), Some(cs)) => l.starts_with(cs),
+                    (Ok(l), Some(cs)) => !l.starts_with(cs),
                     _ => true
                 }
             })
