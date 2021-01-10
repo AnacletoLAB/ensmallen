@@ -79,6 +79,12 @@ impl CSVFileReader {
     pub fn get_elements_per_line(&self) -> Result<usize, String> {
         let first_line = BufReader::new(File::open(&self.path).unwrap())
             .lines()
+            .filter(|line|{
+                match (line, &self.comment_symbol){
+                    (Ok(l), Some(cs)) => l.starts_with(cs),
+                    _ => true
+                }
+            })
             .nth(self.rows_to_skip);
         match first_line {
             Some(fl) => {
