@@ -57,12 +57,7 @@ impl CSVFileReader {
 
     /// Return list of components of the header.
     pub fn get_header(&self) -> Result<Vec<String>, String> {
-        let file = File::open(&self.path).unwrap();
-        let node_buf_reader = BufReader::new(file);
-        let mut lines = node_buf_reader.lines().skip(self.rows_to_skip);
-        // read the first line
-
-        if let Some(lt) = lines.next() {
+        if let Some(lt) = self.get_lines_iterator(false)?.next() {
             match lt {
                 Ok(line) => Ok(line
                     .split(&self.separator)
@@ -75,17 +70,37 @@ impl CSVFileReader {
         }
     }
 
+    pub fn get_lines_iterator(
+        &self,
+        skip_header: bool,
+    ) -> Result<impl Iterator<Item = Result<String, std::io::Error>> + '_, String> {
+        let rows_to_skip = match skip_header {
+            true => match (self.rows_to_skip as u64).checked_add(self.header as u64) {
+                Some(v) => Ok(v),
+                None => Err(concat!(
+                    "This overflow was caused because rows to skip = 2**64 - 1",
+                    "and header is setted to true which causes to skip one extra line.",
+                    "Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad."
+                )),
+            }?,
+            false => self.rows_to_skip as u64,
+        } as usize;
+        Ok(BufReader::new(File::open(&self.path).unwrap())
+            .lines()
+            .filter(move |line| match line {
+                Ok(l) => !l.is_empty(),
+                _ => true,
+            })
+            .filter(move |line| match (line, &self.comment_symbol) {
+                (Ok(l), Some(cs)) => !l.starts_with(cs),
+                _ => true,
+            })
+            .skip(rows_to_skip))
+    }
+
     /// Return elements of the first line not to be skipped.
     pub fn get_elements_per_line(&self) -> Result<usize, String> {
-        let first_line = BufReader::new(File::open(&self.path).unwrap())
-            .lines()
-            .filter(|line|{
-                match (line, &self.comment_symbol){
-                    (Ok(l), Some(cs)) => !l.starts_with(cs),
-                    _ => true
-                }
-            })
-            .nth(self.rows_to_skip);
+        let first_line = self.get_lines_iterator(true)?.next();
         match first_line {
             Some(fl) => {
                 match fl {
@@ -107,28 +122,8 @@ impl CSVFileReader {
         &self,
     ) -> Result<impl Iterator<Item = Result<Vec<String>, String>> + '_, String> {
         let pb = if self.verbose {
-            let number_of_rows = self.count_rows() as u64;
-            let rows_to_skip = match (self.rows_to_skip as u64).checked_add(self.header as u64) {
-                Some(v) => Ok(v),
-                None => Err(concat!(
-                    "This overflow was caused because rows to skip = 2**64 - 1",
-                    "and header is setted to true which causes to skip one extra line.",
-                    "Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad."
-                )),
-            }?;
-            if number_of_rows < rows_to_skip {
-                return Err(format!(
-                    concat!(
-                        "The given file has {} lines but it was asked to skip",
-                        "{} rows. This is not possible."
-                    ),
-                    number_of_rows, rows_to_skip
-                ));
-            }
-
-            let rows_number = number_of_rows - rows_to_skip;
-            let pb = ProgressBar::new(rows_number);
-            pb.set_draw_delta(rows_number / 100);
+            let pb = ProgressBar::new(self.count_rows() as u64);
+            pb.set_draw_delta(self.count_rows() as u64 / 1000);
             pb.set_style(ProgressStyle::default_bar().template(
                 "Reading csv {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
             ));
@@ -138,21 +133,14 @@ impl CSVFileReader {
         };
 
         let number_of_elements_per_line = self.get_elements_per_line()?;
-        Ok(BufReader::new(File::open(&self.path).unwrap())
-            .lines()
-            .skip(self.rows_to_skip + self.header as usize)
+        Ok(self.get_lines_iterator(true)?
             .progress_with(pb)
             .enumerate()
             // skip empty lines
             .filter_map(move |(i, line)| match line {
                 Ok(l) => {
-                    if l.is_empty() || self.max_rows_number.unwrap_or(u64::MAX) <= i as u64 {
+                    if self.max_rows_number.unwrap_or(u64::MAX) <= i as u64 {
                         return None;
-                    }
-                    if let Some(cs) = &self.comment_symbol{
-                        if l.starts_with(cs){
-                            return None;
-                        }
                     }
                     let line_components = l
                         .split(&self.separator)
