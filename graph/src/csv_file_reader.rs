@@ -142,25 +142,14 @@ impl CSVFileReader {
                     if self.max_rows_number.unwrap_or(u64::MAX) <= i as u64 {
                         return None;
                     }
-                    let line_components = l
+                    let mut line_components = l
                         .split(&self.separator)
                         .map(|s| s.to_string())
                         .collect::<Vec<String>>();
-                    if line_components.len() != number_of_elements_per_line {
-                        return Some(Err(format!(
-                            concat!(
-                                "Found line {i} with different number",
-                                " ({found}) of separator from the expected",
-                                " one {expected}.\n",
-                                "Specifically, the line is: {line}\n",
-                                "And the line components is {line_components:?}"
-                            ),
-                            i=i,
-                            found=line_components.len(),
-                            expected=number_of_elements_per_line,
-                            line_components=line_components,
-                            line=l
-                        )));
+                    // If in this line some values have been implied,
+                    // we add the necessary padding.
+                    if line_components.len() < number_of_elements_per_line {
+                        line_components.extend((0..(number_of_elements_per_line - line_components.len())).map(|_| "".to_string()));
                     }
                     Some(Ok(line_components))
                 },
