@@ -2,6 +2,7 @@ use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
 use crate::max;
+use crate::min;
 
 /// Structure that saves the common parameters for reading csv files.
 ///
@@ -52,9 +53,12 @@ impl CSVFileReader {
 
     /// Read the whole file and return how many rows it has.
     pub(crate) fn count_rows(&self) -> usize {
-        BufReader::new(File::open(&self.path).unwrap())
-            .lines()
-            .count()
+        min!(
+            BufReader::new(File::open(&self.path).unwrap())
+                .lines()
+                .count(),
+            self.max_rows_number.unwrap_or(u64::MAX) as usize
+        )
     }
 
     /// Return list of components of the header.
