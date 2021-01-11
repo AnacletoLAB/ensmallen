@@ -137,11 +137,9 @@ impl CSVFileReader {
             .progress_with(pb)
             .enumerate()
             // skip empty lines
-            .filter_map(move |(i, line)| match line {
+            .take_while(move |(i, _)| self.max_rows_number.unwrap_or(u64::MAX) > *i as u64)
+            .map(move |(_, line)| match line {
                 Ok(l) => {
-                    if self.max_rows_number.unwrap_or(u64::MAX) <= i as u64 {
-                        return None;
-                    }
                     let mut line_components = l
                         .split(&self.separator)
                         .map(|s| s.to_string())
@@ -151,9 +149,9 @@ impl CSVFileReader {
                     if line_components.len() < number_of_elements_per_line {
                         line_components.extend((0..(number_of_elements_per_line - line_components.len())).map(|_| "".to_string()));
                     }
-                    Some(Ok(line_components))
+                    Ok(line_components)
                 },
-                Err(_) => Some(Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string()))
+                Err(_) => Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string())
             }))
     }
 
