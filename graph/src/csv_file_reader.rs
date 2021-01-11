@@ -1,6 +1,8 @@
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
+use crate::max;
+
 /// Structure that saves the common parameters for reading csv files.
 ///
 /// # Attributes
@@ -123,7 +125,7 @@ impl CSVFileReader {
     ) -> Result<impl Iterator<Item = Result<Vec<String>, String>> + '_, String> {
         let pb = if self.verbose {
             let pb = ProgressBar::new(self.count_rows() as u64);
-            pb.set_draw_delta(self.count_rows() as u64 / 1000);
+            pb.set_draw_delta(max!(self.count_rows() as u64 / 1000, 1));
             pb.set_style(ProgressStyle::default_bar().template(
                 "Reading csv {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
             ));
