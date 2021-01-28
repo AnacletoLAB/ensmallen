@@ -33,7 +33,8 @@ def KGCOVID19(
         "KG-COVID19",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="kg_hub"
     )()
 
 
@@ -64,7 +65,8 @@ def ChEMBL(
         "ChEMBL",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="kg_hub"
     )()
 
 
@@ -95,7 +97,8 @@ def GOCAMs(
         "GOCAMs",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="kg_hub"
     )()
 
 
@@ -126,7 +129,8 @@ def STRING(
         "STRING",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="kg_hub"
     )()
 
 
@@ -157,7 +161,8 @@ def DrugCentral(
         "DrugCentral",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="kg_hub"
     )()
 
 
@@ -188,7 +193,8 @@ def IntAct(
         "IntAct",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="kg_hub"
     )()
 
 
@@ -219,7 +225,8 @@ def PharmGKB(
         "PharmGKB",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="kg_hub"
     )()
 
 
@@ -250,7 +257,8 @@ def SARSCOV2GeneAnnot(
         "SARSCOV2GeneAnnot",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="kg_hub"
     )()
 
 
@@ -281,5 +289,6 @@ def ZhouHostProteins(
         "ZhouHostProteins",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="kg_hub"
     )()

@@ -31,7 +31,8 @@ def String(
         "String",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="string"
     )()
 
 
@@ -65,5 +66,6 @@ def CompleteString(
         "CompleteString",
         directed=directed,
         verbose=verbose,
-        cache_path=cache_path
+        cache_path=cache_path,
+        dataset="string"
     )()
