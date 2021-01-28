@@ -2,7 +2,7 @@ use super::*;
 use log::info;
 use rayon::prelude::*;
 use vec_rand::sample_f32 as sample;
-use vec_rand::sample_k_distinct_uniform;
+use vec_rand::sorted_unique_sub_sampling;
 use vec_rand::sample_uniform;
 use vec_rand::xorshift::xorshift;
 
@@ -306,7 +306,7 @@ fn get_probabilistic_indices(
     if let Some(mn) = max_neighbours {
         if (*mn as u64) < (max_edge_id - min_edge_id) {
             return Some(
-                sample_k_distinct_uniform(
+                sorted_unique_sub_sampling(
                     min_edge_id,
                     max_edge_id,
                     *mn as u64,
