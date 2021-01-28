@@ -20,8 +20,8 @@
             "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/GOCAMs/GOCAMs_nodes.tsv"
         ],
         "arguments": {
-            "edge_path": "edges.tsv",
-            "node_path": "nodes.tsv",
+            "edge_path": "GOCAMs_edges.tsv",
+            "node_path": "GOCAMs_nodes.tsv",
             "sources_column": "subject",
             "destinations_column": "object",
             "edge_types_column": "edge_label",
