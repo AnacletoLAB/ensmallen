@@ -3,12 +3,12 @@ from ..ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
 
 
-def StringPPI(
+def String(
     directed: bool = False,
     verbose: int = 2,
     cache_path: str = "graphs"
 ) -> EnsmallenGraph:
-    """Return new instance of the human StringPPI graph (not filtered).
+    """Return new instance of the human String graph (not filtered).
 
     The retrieved graph is automatically retrieved directly from the STRING
     website, that is https://string-db.org/.
@@ -28,18 +28,19 @@ def StringPPI(
     String PPI graph.
     """
     return AutomaticallyRetrievedGraph(
-        "StringPPI",
+        "String",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path
     )()
 
-def CompleteStringPPI(
+
+def CompleteString(
     directed: bool = False,
     verbose: int = 2,
     cache_path: str = "graphs"
 ) -> EnsmallenGraph:
-    """Return new instance of the Complete (cross-species) StringPPI graph (not filtered).
+    """Return new instance of the Complete (cross-species) String graph (not filtered).
 
     THIS GRAPH IS VERY VERY BIG, ABOUT 43GB!
 
@@ -58,42 +59,10 @@ def CompleteStringPPI(
 
     Returns
     -----------------------
-    String PPI graph.
+    String  graph.
     """
     return AutomaticallyRetrievedGraph(
-        "CompleteStringPPI",
-        directed=directed,
-        verbose=verbose,
-        cache_path=cache_path
-    )()
-
-
-def KGCOVID19(
-    directed: bool = False,
-    verbose: int = 2,
-    cache_path: str = "graphs"
-) -> EnsmallenGraph:
-    """Return new instance of the KG-COVID19 graph.
-
-    The retrieved graph is automatically retrieved directly from the STRING
-    website, that is https://string-db.org/.
-
-    Parameters
-    -------------------
-    directed: bool = False,
-        Wether to load the graph as directed or undirected.
-        By default false.
-    verbose: int = 2,
-        Wether to show loading bars.
-    cache_path: str = "graphs",
-        Where to store the downloaded graphs.
-
-    Returns
-    -----------------------
-    String PPI graph.
-    """
-    return AutomaticallyRetrievedGraph(
-        "KG-COVID19",
+        "CompleteString",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path
