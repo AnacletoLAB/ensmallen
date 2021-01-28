@@ -3,7 +3,7 @@ from ..ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 from .automatic_graph_retrieval import AutomaticallyRetrievedGraph
 
 
-def String(
+def HumanString(
     directed: bool = False,
     verbose: int = 2,
     cache_path: str = "graphs"
@@ -28,7 +28,7 @@ def String(
     String PPI graph.
     """
     return AutomaticallyRetrievedGraph(
-        "String",
+        "HumanString",
         directed=directed,
         verbose=verbose,
         cache_path=cache_path,
