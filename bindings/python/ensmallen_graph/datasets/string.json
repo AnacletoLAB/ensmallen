@@ -1,5 +1,5 @@
 {
-    "StringPPI": {
+    "HumanString": {
         "urls": [
             "https://stringdb-static.org/download/protein.actions.v11.0/9606.protein.actions.v11.0.txt.gz"
         ],
@@ -11,7 +11,7 @@
             "weights_column": "score"
         }
     },
-    "CompleteStringPPI": {
+    "CompleteString": {
         "urls": [
             "https://stringdb-static.org/download/protein.links.v11.0.txt.gz"
         ],
@@ -21,21 +21,6 @@
             "destinations_column": "protein2",
             "edge_separator": " ",
             "weights_column": "combined_score"
-        }
-    },
-    "KG-COVID19": {
-        "urls": [
-            "https://kg-hub.berkeleybop.io/kg-covid-19/current/kg-covid-19.tar.gz"
-        ],
-        "arguments": {
-            "edge_path": "kg-covid-19/merged-kg_edges.tsv",
-            "node_path": "kg-covid-19/merged-kg_nodes.tsv",
-            "sources_column": "subject",
-            "destinations_column": "object",
-            "edge_types_column": "edge_label",
-            "nodes_column": "id",
-            "node_types_column": "category",
-            "default_node_type": "biolink:NamedThing"
         }
     }
 }
