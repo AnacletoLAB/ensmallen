@@ -795,6 +795,7 @@ impl Graph {
             &indices,
         );
         let stub = [node, dst];
+        // We iterate two times before because we need to parse the two initial nodes
         (0..2)
             .map(move |i| stub[i])
             .chain((2..parameters.length).scan(
@@ -859,6 +860,7 @@ impl Graph {
     /// * parameters: SingleWalkParameters - Parameters for the single walk.
     ///
     fn uniform_walk(&self, node: NodeT, random_state: NodeT, length: NodeT) -> Vec<NodeT> {
+        // We iterate one time before because we need to parse the initial node.
         (0..1)
             .map(move |_| node)
             .chain((1..length).scan(node, move |node, iteration| {
