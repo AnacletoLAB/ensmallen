@@ -1,0 +1,137 @@
+{
+    "ChEMBL": {
+        "urls": [
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/ChEMBL/edges.tsv",
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/ChEMBL/nodes.tsv"
+        ],
+        "arguments": {
+            "edge_path": "edges.tsv",
+            "node_path": "nodes.tsv",
+            "sources_column": "subject",
+            "destinations_column": "object",
+            "edge_types_column": "edge_label",
+            "nodes_column": "id",
+            "node_types_column": "category"
+        }
+    },
+    "GOCAMs": {
+        "urls": [
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/GOCAMs/GOCAMs_edges.tsv",
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/GOCAMs/GOCAMs_nodes.tsv"
+        ],
+        "arguments": {
+            "edge_path": "GOCAMs_edges.tsv",
+            "node_path": "GOCAMs_nodes.tsv",
+            "sources_column": "subject",
+            "destinations_column": "object",
+            "edge_types_column": "edge_label",
+            "nodes_column": "id",
+            "node_types_column": "category"
+        }
+    },
+    "STRING": {
+        "urls": [
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/STRING/edges.tsv",
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/STRING/nodes.tsv"
+        ],
+        "arguments": {
+            "edge_path": "edges.tsv",
+            "node_path": "nodes.tsv",
+            "sources_column": "subject",
+            "destinations_column": "object",
+            "edge_types_column": "edge_label",
+            "nodes_column": "id",
+            "node_types_column": "category"
+        }
+    },
+    "DrugCentral": {
+        "urls": [
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/drug_central/edges.tsv",
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/drug_central/nodes.tsv"
+        ],
+        "arguments": {
+            "edge_path": "edges.tsv",
+            "node_path": "nodes.tsv",
+            "sources_column": "subject",
+            "destinations_column": "object",
+            "edge_types_column": "edge_label",
+            "nodes_column": "id",
+            "node_types_column": "category"
+        }
+    },
+    "IntAct": {
+        "urls": [
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/intact/edges.tsv",
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/intact/nodes.tsv"
+        ],
+        "arguments": {
+            "edge_path": "edges.tsv",
+            "node_path": "nodes.tsv",
+            "sources_column": "subject",
+            "destinations_column": "object",
+            "edge_types_column": "edge_label",
+            "nodes_column": "id",
+            "node_types_column": "category"
+        }
+    },
+    "PharmGKB": {
+        "urls": [
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/pharmgkb/edges.tsv",
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/pharmgkb/nodes.tsv"
+        ],
+        "arguments": {
+            "edge_path": "edges.tsv",
+            "node_path": "nodes.tsv",
+            "sources_column": "subject",
+            "destinations_column": "object",
+            "edge_types_column": "edge_label",
+            "nodes_column": "id",
+            "node_types_column": "category"
+        }
+    },
+    "SARSCOV2GeneAnnot": {
+        "urls": [
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/sars_cov_2_gene_annot/edges.tsv",
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/sars_cov_2_gene_annot/nodes.tsv"
+        ],
+        "arguments": {
+            "edge_path": "edges.tsv",
+            "node_path": "nodes.tsv",
+            "sources_column": "subject",
+            "destinations_column": "object",
+            "edge_types_column": "edge_label",
+            "nodes_column": "id",
+            "node_types_column": "category"
+        }
+    },
+    "ZhouHostProteins": {
+        "urls": [
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/zhou_host_proteins/edges.tsv",
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/zhou_host_proteins/nodes.tsv"
+        ],
+        "arguments": {
+            "edge_path": "edges.tsv",
+            "node_path": "nodes.tsv",
+            "sources_column": "subject",
+            "destinations_column": "object",
+            "edge_types_column": "edge_label",
+            "nodes_column": "id",
+            "node_types_column": "category"
+        }
+    },
+    "KG-COVID19": {
+        "urls": [
+            "https://kg-hub.berkeleybop.io/kg-covid-19/current/kg-covid-19.tar.gz"
+        ],
+        "arguments": {
+            "edge_path": "kg-covid-19/merged-kg_edges.tsv",
+            "node_path": "kg-covid-19/merged-kg_nodes.tsv",
+            "sources_column": "subject",
+            "destinations_column": "object",
+            "edge_types_column": "edge_label",
+            "nodes_column": "id",
+            "node_types_column": "category",
+            "default_node_type": "biolink:NamedThing"
+        }
+    }
+}

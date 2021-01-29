@@ -2,7 +2,7 @@ use super::*;
 use log::info;
 use rayon::prelude::*;
 use vec_rand::sample_f32 as sample;
-use vec_rand::sample_k_distinct_uniform;
+use vec_rand::sorted_unique_sub_sampling;
 use vec_rand::sample_uniform;
 use vec_rand::xorshift::xorshift;
 
@@ -307,7 +307,7 @@ fn get_probabilistic_indices(
     if let Some(mn) = max_neighbours {
         if (*mn as u64) < (max_edge_id - min_edge_id) {
             return Some(
-                sample_k_distinct_uniform(
+                sorted_unique_sub_sampling(
                     min_edge_id,
                     max_edge_id,
                     *mn as u64,
@@ -796,6 +796,7 @@ impl Graph {
             &indices,
         );
         let stub = [node, dst];
+        // We iterate two times before because we need to parse the two initial nodes
         (0..2)
             .map(move |i| stub[i])
             .chain((2..parameters.length).scan(
@@ -860,6 +861,7 @@ impl Graph {
     /// * parameters: SingleWalkParameters - Parameters for the single walk.
     ///
     fn uniform_walk(&self, node: NodeT, random_state: NodeT, length: NodeT) -> Vec<NodeT> {
+        // We iterate one time before because we need to parse the initial node.
         (0..1)
             .map(move |_| node)
             .chain((1..length).scan(node, move |node, iteration| {
