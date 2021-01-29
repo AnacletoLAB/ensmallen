@@ -59,7 +59,10 @@ class AutomaticallyRetrievedGraph:
 
     def __call__(self) -> EnsmallenGraph:
         """Return EnsmallenGraph containing required graph."""
-        self._downloader.download(self._graph["urls"])
+        self._downloader.download(
+            self._graph["urls"],
+            self._graph.get("paths", None)
+        )
         return EnsmallenGraph.from_unsorted_csv(
             **{
                 key: os.path.join(self._cache_path, value)

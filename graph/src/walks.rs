@@ -26,6 +26,7 @@ fn update_return_weight_transition(
             i += 1;
         }
     }
+    // TODO: This could possibly be skipped always if the graph does not have self-loops!
     if src != dst {
         if let Ok(mut i) = destinations.binary_search(&dst) {
             let mut j = i;
