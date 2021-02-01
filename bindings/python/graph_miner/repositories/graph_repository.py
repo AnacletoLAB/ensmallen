@@ -284,6 +284,7 @@ class GraphRepository:
             download_report = self.download(graph_data, graph_name)
             if len(download_report) == 1:
                 edge_path = download_report.extraction_destination[0]
+                node_path = None
             else:
                 edge_path = download_report.extraction_destination[0]
                 node_path = download_report.extraction_destination[1]
