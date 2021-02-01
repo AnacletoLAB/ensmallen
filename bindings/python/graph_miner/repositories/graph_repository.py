@@ -1,8 +1,10 @@
 """Class providing an abstract graph repository."""
 from typing import List, Dict, Set
+import pandas as pd
 import os
 import compress_json
 import datetime
+import shutil
 from downloaders import BaseDownloader
 from ensmallen_graph import EnsmallenGraph
 from tqdm.auto import tqdm
@@ -30,6 +32,22 @@ class GraphRepository:
         """
         raise NotImplementedError(
             "The method build_stored_graph_name must be implemented in child classes."
+        )
+
+    def get_graph_name(self, graph_data) -> str:
+        """Return built graph name.
+
+        Parameters
+        -----------------------
+        graph_data: str,
+            Partial graph name to be built.
+
+        Returns
+        -----------------------
+        Complete name of the graph.
+        """
+        raise NotImplementedError(
+            "The method get_graph_name must be implemented in child classes."
         )
 
     def build_graph_report_path(self, graph_name: str) -> str:
@@ -231,27 +249,30 @@ class GraphRepository:
             directed=False
         )
 
-    def download(self, graph_name: str):
+    def download(self, graph_data) -> pd.DataFrame:
         """Return url for the given graph.
 
         Parameters
         -----------------------
-        graph_name: str,
+        graph_data: str,
             Name of graph to retrieve.
         """
-        urls = self.get_graph_urls(graph_name)
+        urls = self.get_graph_urls(graph_data)
         return self._downloader.download(
             urls=urls,
-            paths=self.get_graph_paths(graph_name, urls)
+            paths=self.get_graph_paths(graph_data, urls)
         )
 
     def retrieve_all(self):
         """Return all the graph from the repository."""
-        for graph_name in tqdm(
+        for graph_data in tqdm(
             self.get_uncached_graph_list(),
             desc="Retrieving graphs for {}".format(self.name)
         ):
-            download_report = self.download(graph_name)
+            if os.path.exists(self.name):
+                shutil.rmtree(self.name)
+            graph_name = self.get_graph_name(graph_data)
+            download_report = self.download(graph_data)
             if len(download_report) == 1:
                 edge_path = download_report.extraction_destination[0]
             else:

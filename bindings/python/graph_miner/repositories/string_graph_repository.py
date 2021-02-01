@@ -10,7 +10,7 @@ class StringGraphRepository(GraphRepository):
     def __init__(self):
         """Create new String Graph Repository object."""
         super().__init__()
-        self._base_url = "https://string-db.org/cgi/download?species_text={}"
+        self._base_url = "https://stringdb-static.org/download/protein.links.v11.0/{}.protein.links.v11.0.txt.gz"
         self._organisms = pd.read_csv(
             "https://stringdb-static.org/download/species.v11.0.txt",
             sep="\t"
@@ -33,19 +33,33 @@ class StringGraphRepository(GraphRepository):
             for term in partial_graph_name.split(" ")
         ])
 
-    def get_graph_urls(self, graph_name: str) -> List[str]:
+    def get_graph_name(self, graph_data) -> str:
+        """Return built graph name.
+
+        Parameters
+        -----------------------
+        graph_data: str,
+            Partial graph name to be built.
+
+        Returns
+        -----------------------
+        Complete name of the graph.
+        """
+        return graph_data.STRING_name_compact
+
+    def get_graph_urls(self, graph_data) -> List[str]:
         """Return url for the given graph.
 
         Parameters
         -----------------------
-        graph_name: str,
+        graph_data,
             Name of graph to retrievel URLs for.
 
         Returns
         -----------------------
         The urls list from where to download the graph data.
         """
-        return self._base_url.format(graph_name.replace(" ", "+"))
+        return self._base_url.format(graph_data['## taxon_id'])
 
     def get_graph_paths(self, graph_name: str, urls: List[str]) -> List[str]:
         """Return url for the given graph.
@@ -103,4 +117,7 @@ class StringGraphRepository(GraphRepository):
 
     def get_graph_list(self) -> List[str]:
         """Return list of graph names."""
-        return list(set(self._organisms.STRING_name_compact))
+        return [
+            row
+            for _, row in self._organisms.iterrows()
+        ]
