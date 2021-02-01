@@ -249,18 +249,24 @@ class GraphRepository:
             directed=False
         )
 
-    def download(self, graph_data) -> pd.DataFrame:
+    def download(self, graph_data, graph_name:str) -> pd.DataFrame:
         """Return url for the given graph.
 
         Parameters
         -----------------------
-        graph_data: str,
-            Name of graph to retrieve.
+        graph_data,
+            Data of the graph to retrieve.
+        graph_name: str,
+            Nmae of the graph to retrieve.
+
+        Returns
+        -----------------------
+        Dataframe with download metadata.
         """
         urls = self.get_graph_urls(graph_data)
         return self._downloader.download(
             urls=urls,
-            paths=self.get_graph_paths(graph_data, urls)
+            paths=self.get_graph_paths(graph_name, urls)
         )
 
     def retrieve_all(self):
