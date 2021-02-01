@@ -1,5 +1,5 @@
 """Sub-module handling the retrieval and building of graphs from STRING."""
-from typing import List
+from typing import List, Dict
 import os
 import pandas as pd
 from .graph_repository import GraphRepository
@@ -67,6 +67,39 @@ class StringGraphRepository(GraphRepository):
                 graph_name.lower().replace(" ", "_")
             )
         )
+
+    def build_graph_parameters(
+        self,
+        graph_name: str,
+        edge_path: str,
+        node_path: str = None,
+    ) -> Dict:
+        """Return dictionary with kwargs to load graph.
+
+        Parameters
+        ---------------------
+        graph_name: str,
+            Name of the graph to load.
+        edge_path: str,
+            Path from where to load the edge list.
+        node_path: str = None,
+            Optionally, path from where to load the nodes.
+
+        Returns
+        -----------------------
+        Dictionary to build the graph object.
+        """
+        return {
+            **super().build_graph_parameters(
+                graph_name,
+                edge_path,
+                node_path
+            ),
+            "edge_separator": " ",
+            "sources_column": "protein1",
+            "destinations_column": "protein2",
+            "weights_column": "combined_score",
+        }
 
     def get_graph_list(self) -> List[str]:
         """Return list of graph names."""
