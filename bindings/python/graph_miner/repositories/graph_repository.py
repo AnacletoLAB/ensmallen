@@ -179,11 +179,11 @@ class GraphRepository:
     def get_uncached_graph_list(self) -> List[str]:
         """Return graphs to be parsed."""
         return [
-            graph_name
-            for graph_name in self.get_graph_list()
+            (self.get_graph_name(graph_data), graph_data)
+            for graph_data in self.get_graph_list()
             if not (
-                self.is_graph_cached(graph_name) or
-                self.is_graph_corrupted(graph_name)
+                self.is_graph_cached(self.get_graph_name(graph_data)) or
+                self.is_graph_corrupted(self.get_graph_name(graph_data))
             )
         ]
 
@@ -249,7 +249,7 @@ class GraphRepository:
             directed=False
         )
 
-    def download(self, graph_data, graph_name:str) -> pd.DataFrame:
+    def download(self, graph_data, graph_name: str) -> pd.DataFrame:
         """Return url for the given graph.
 
         Parameters
@@ -271,14 +271,13 @@ class GraphRepository:
 
     def retrieve_all(self):
         """Return all the graph from the repository."""
-        for graph_data in tqdm(
+        for graph_name, graph_data in tqdm(
             self.get_uncached_graph_list(),
             desc="Retrieving graphs for {}".format(self.name)
         ):
             if os.path.exists(self.name):
                 shutil.rmtree(self.name)
-            graph_name = self.get_graph_name(graph_data)
-            download_report = self.download(graph_data)
+            download_report = self.download(graph_data, graph_name)
             if len(download_report) == 1:
                 edge_path = download_report.extraction_destination[0]
             else:
