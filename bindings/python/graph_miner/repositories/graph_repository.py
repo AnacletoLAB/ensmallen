@@ -253,10 +253,10 @@ class GraphRepository:
         ):
             download_report = self.download(graph_name)
             if len(download_report) == 1:
-                edge_path = download_report.iloc[0].extraction_destination
+                edge_path = download_report.extraction_destination[0]
             else:
-                edge_path = download_report.iloc[0].extraction_destination
-                node_path = download_report.iloc[1].extraction_destination
+                edge_path = download_report.extraction_destination[0]
+                node_path = download_report.extraction_destination[1]
             arguments = self.build_graph_parameters(
                 graph_name,
                 edge_path=edge_path,
