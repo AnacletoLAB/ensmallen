@@ -245,7 +245,11 @@ class GraphRepository:
         return dict(
             name=graph_name,
             edge_path=edge_path,
-            node_path=node_path,
+            **(
+                dict(node_path=node_path)
+                if node_path is not None
+                else {}
+            ),
             directed=False
         )
 
@@ -280,7 +284,6 @@ class GraphRepository:
             download_report = self.download(graph_data, graph_name)
             if len(download_report) == 1:
                 edge_path = download_report.extraction_destination[0]
-                node_path = None
             else:
                 edge_path = download_report.extraction_destination[0]
                 node_path = download_report.extraction_destination[1]
@@ -289,7 +292,9 @@ class GraphRepository:
                 edge_path=edge_path,
                 node_path=node_path,
             )
-            graph = EnsmallenGraph.from_unsorted_csv(**arguments)
+            graph = EnsmallenGraph.from_unsorted_csv(
+                **arguments
+            )
             self.store_graph_report(
                 graph_name,
                 graph_report=str(graph),
