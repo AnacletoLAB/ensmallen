@@ -5,6 +5,7 @@ import compress_json
 import datetime
 from downloaders import BaseDownloader
 from ensmallen_graph import EnsmallenGraph
+from tqdm.auto import tqdm
 
 
 class GraphRepository:
@@ -246,7 +247,10 @@ class GraphRepository:
 
     def retrieve_all(self):
         """Return all the graph from the repository."""
-        for graph_name in self.get_uncached_graph_list():
+        for graph_name in tqdm(
+            self.get_uncached_graph_list(),
+            desc="Retrieving graphs for {}".format(self.name)
+        ):
             download_report = self.download(graph_name)
             if len(download_report) == 1:
                 edge_path = download_report.iloc[0].extraction_path
