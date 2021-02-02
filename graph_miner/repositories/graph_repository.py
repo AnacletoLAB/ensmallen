@@ -5,6 +5,7 @@ import os
 import compress_json
 import datetime
 import shutil
+from glob import glob
 from downloaders import BaseDownloader
 from ensmallen_graph import EnsmallenGraph
 from tqdm.auto import tqdm
@@ -50,6 +51,12 @@ class GraphRepository:
             "The method get_graph_name must be implemented in child classes."
         )
 
+    def get_formatted_repository_name(self) -> str:
+        """Return formatted reporitory name."""
+        raise NotImplementedError(
+            "The method get_formatted_repository_name must be implemented in child classes."
+        )
+
     def get_graph_citations(self, graph_data) -> List[str]:
         """Return citations relative to the graphs.
 
@@ -66,6 +73,19 @@ class GraphRepository:
             "The method get_graph_citations must be implemented in child classes."
         )
 
+    def build_graph_reports_directory(self) -> str:
+        """Return directory path where graph reports are stored.
+
+        Returns
+        -----------------------
+        String with directtory.
+        """
+        return os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            self.name,
+            "reports",
+        )
+
     def build_graph_report_path(self, graph_name: str) -> str:
         """Return path where graph report is stored.
 
@@ -79,9 +99,7 @@ class GraphRepository:
         String with path.
         """
         return os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
-            self.name,
-            "reports",
+            self.build_graph_reports_directory(),
             "{}.json.gz".format(
                 self.build_stored_graph_name(graph_name)
             )
@@ -106,7 +124,8 @@ class GraphRepository:
     def dump_graph_report(
         self,
         graph_name: str,
-        graph_report: str,
+        graph_textual_report: str,
+        graph_json_report: Dict,
         citations: List[str],
         urls: List[str],
         paths: List[str],
@@ -118,11 +137,27 @@ class GraphRepository:
         -----------------------
         graph_name: str,
             Name of graph to build path for.
+        graph_textual_report: str,
+            Textual report of the graph.
+        graph_json_report: Dict,
+            Report of the graph in JSON form.
+        citations: List[str],
+            List of citations.
+        urls: List[str],
+            Urls from where to download the files from.
+        paths: List[str],
+            Paths where to store the files.
+        arguments: Dict,
+            Arguments to use to load the graph object.
         """
+        if not paths:
+            paths = None
         compress_json.dump(
             {
                 "graph_name": graph_name,
-                "graph_report": graph_report,
+                "graph_method_name": self.build_stored_graph_name(graph_name),
+                "graph_textual_report": graph_textual_report,
+                "graph_json_report": graph_json_report,
                 "citations": citations,
                 "urls": urls,
                 "paths": paths,
@@ -150,6 +185,11 @@ class GraphRepository:
     def name(self) -> str:
         """Return name of the repository."""
         return self.__class__.__name__
+
+    @property
+    def repository_package_name(self) -> str:
+        """Return repository_package_name of the repository."""
+        return self.name[:-len("GraphRepository")].lower()
 
     @property
     def corrupted_graphs_path(self):
@@ -283,7 +323,7 @@ class GraphRepository:
         graph_data,
             Data of the graph to retrieve.
         graph_name: str,
-            Nmae of the graph to retrieve.
+            Name of the graph to retrieve.
 
         Returns
         -----------------------
@@ -296,10 +336,11 @@ class GraphRepository:
         )
 
     def retrieve_all(self):
-        """Return all the graph from the repository."""
+        """Retrives data for the graphs from the considered repository."""
         for graph_name, graph_data in tqdm(
             self.get_uncached_graph_list(),
-            desc="Retrieving graphs for {}".format(self.name)
+            desc="Retrieving graphs for {}".format(self.name),
+            leave=False
         ):
             if os.path.exists(self.name):
                 shutil.rmtree(self.name)
@@ -315,10 +356,13 @@ class GraphRepository:
                 edge_path=edge_path,
                 node_path=node_path,
             )
-            graph = EnsmallenGraph.from_unsorted_csv(**arguments)
+            graph: EnsmallenGraph = EnsmallenGraph.from_unsorted_csv(
+                **arguments
+            )
             self.dump_graph_report(
                 graph_name,
-                graph_report=str(graph),
+                graph_textual_report=str(graph),
+                graph_json_report=graph.report(),
                 arguments=arguments,
                 citations=self.get_graph_citations(graph_data),
                 urls=download_report.url.tolist(),
@@ -326,3 +370,143 @@ class GraphRepository:
             )
             if os.path.exists(self.name):
                 shutil.rmtree(self.name)
+
+    def format_references(self, references: List[str]) -> str:
+        """Return formatted references model.
+
+        Parameters
+        ---------------------
+        references: List[str],
+            List of the references of the graph.
+
+        Returns
+        ---------------------
+        Formatted model of the references.
+        """
+        if not references:
+            return ""
+        with open(
+            "{}/models/references.rst".format(
+                os.path.dirname(os.path.abspath(__file__))),
+            "r"
+        ) as f:
+            return f.read().format("\n\n".join(references))
+
+    def format_report(self, report: str, datetime: str) -> str:
+        """Return formatted report model.
+
+        Parameters
+        ---------------------
+        report: str,
+            Report of the graph.
+        datetime: str,
+            Datetime of when the report whas created.
+
+        Returns
+        ---------------------
+        Formatted model of the report.
+        """
+        with open(
+            "{}/models/report.rst".format(
+                os.path.dirname(os.path.abspath(__file__))),
+            "r"
+        ) as f:
+            return f.read().format(
+                report=report,
+                datetime=datetime
+            )
+
+    def format_usage_example(self, graph_name: str) -> str:
+        """Return formatted report model.
+
+        Parameters
+        ---------------------
+        graph_name: str,
+            Name of the graph to retrieve.
+
+        Returns
+        ---------------------
+        Formatted model of the report.
+        """
+        with open(
+            "{}/models/usage_example.rst".format(
+                os.path.dirname(os.path.abspath(__file__))),
+            "r"
+        ) as f:
+            return f.read().format(
+                repository_package_name=self.repository_package_name,
+                graph_method_name=self.build_stored_graph_name(graph_name)
+            )
+
+    def format_graph_retrieval_file(
+        self,
+        graph_name: str,
+        report: str,
+        references: List[str]
+    ) -> str:
+        """Return formatted report model.
+
+        Parameters
+        ---------------------
+        graph_name: str,
+            Name of the graph to retrieve.
+        report: str,
+            Report of the graph.
+        references: List[str],
+            List of the references of the graph.
+
+        Returns
+        ---------------------
+        Formatted model of the report.
+        """
+        with open(
+            "{}/models/graph_retrieval_file.py".format(
+                os.path.dirname(os.path.abspath(__file__))),
+            "r"
+        ) as f:
+            return f.read().format(
+                graph_method_name=self.build_stored_graph_name(graph_name),
+                repository_package_name=self.repository_package_name,
+                graph_name=graph_name,
+                repository_name=self.get_formatted_repository_name(),
+                report=report,
+                references=self.format_references(references),
+                usage_example=self.format_usage_example(graph_name)
+            )
+
+    def build_all(self):
+        """Build graph retrieval methods."""
+        for graph_report_path in tqdm(
+            glob("{}/*.json.gz".format(self.build_graph_reports_directory())),
+            desc="Building graph retrieval methods for {}".format(self.name),
+            leave=False
+        ):
+            graph_data = compress_json.load(graph_report_path)
+            graph_retrieval_file = self.format_graph_retrieval_file(
+                graph_name=graph_data["graph_name"],
+                report=self.format_report(
+                    graph_data["report"],
+                    graph_data["datetime"]
+                ),
+                references=graph_data["references"],
+            )
+            target_directory_path = os.path.join(
+                "bindings/python/ensmallen_graph/datasets",
+                self.repository_package_name,
+            )
+            target_path = os.path.join(
+                target_directory_path,
+                "{}.py".format(
+                    graph_data["graph_name"].replace(" ", "_").lower()
+                )
+            )
+            target_json_path = os.path.join(
+                target_directory_path,
+                "{}.json.gz".format(
+                    graph_data["graph_method_name"]
+                )
+            )
+            os.makedirs(target_directory_path, exist_ok=True)
+            with open(target_path, "w") as f:
+                f.write(graph_retrieval_file)
+            compress_json.dump(graph_data, target_json_path)
