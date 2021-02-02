@@ -293,9 +293,7 @@ class GraphRepository:
                 edge_path=edge_path,
                 node_path=node_path,
             )
-            graph = EnsmallenGraph.from_unsorted_csv(
-                **arguments
-            )
+            graph = EnsmallenGraph.from_unsorted_csv(**arguments)
             self.store_graph_report(
                 graph_name,
                 graph_report=str(graph),
