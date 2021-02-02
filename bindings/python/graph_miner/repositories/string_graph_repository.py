@@ -53,13 +53,40 @@ class StringGraphRepository(GraphRepository):
         Parameters
         -----------------------
         graph_data,
-            Name of graph to retrievel URLs for.
+            Graph data to use to retrieve the URLs.
 
         Returns
         -----------------------
         The urls list from where to download the graph data.
         """
         return [self._base_url.format(graph_data['## taxon_id'])]
+
+    def get_graph_citations(self, graph_data) -> List[str]:
+        """Return url for the given graph.
+
+        Parameters
+        -----------------------
+        graph_data,
+            Graph data to use to retrieve the citations.
+
+        Returns
+        -----------------------
+        Citations relative to the STRING graphs.
+        """
+        return [
+            """
+            @article{szklarczyk2019string,
+                title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
+                author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
+                journal={Nucleic acids research},
+                volume={47},
+                number={D1},
+                pages={D607--D613},
+                year={2019},
+                publisher={Oxford University Press}
+            }
+            """
+        ]
 
     def get_graph_paths(self, graph_name: str, urls: List[str]) -> List[str]:
         """Return url for the given graph.

@@ -40,7 +40,7 @@ class GraphRepository:
         Parameters
         -----------------------
         graph_data: str,
-            Partial graph name to be built.
+            Graph data to be used.
 
         Returns
         -----------------------
@@ -48,6 +48,22 @@ class GraphRepository:
         """
         raise NotImplementedError(
             "The method get_graph_name must be implemented in child classes."
+        )
+
+    def get_graph_citations(self, graph_data) -> List[str]:
+        """Return citations relative to the graphs.
+
+        Parameters
+        -----------------------
+        graph_data: str,
+            Graph data to be used.
+
+        Returns
+        -----------------------
+        Citations relative to the graph.
+        """
+        raise NotImplementedError(
+            "The method get_graph_citations must be implemented in child classes."
         )
 
     def build_graph_report_path(self, graph_name: str) -> str:
@@ -91,6 +107,7 @@ class GraphRepository:
         self,
         graph_name: str,
         graph_report: str,
+        citations: List[str],
         urls: List[str],
         paths: List[str],
         arguments: Dict
@@ -104,10 +121,11 @@ class GraphRepository:
         """
         compress_json.dump(
             {
-                "urls": urls,
-                "paths": paths,
                 "graph_name": graph_name,
                 "graph_report": graph_report,
+                "citations": citations,
+                "urls": urls,
+                "paths": paths,
                 "datetime": str(datetime.datetime.now()),
                 "arguments": arguments,
             },
@@ -302,8 +320,9 @@ class GraphRepository:
                 graph_name,
                 graph_report=str(graph),
                 arguments=arguments,
+                citations=self.get_graph_citations(graph_data),
                 urls=download_report.url.tolist(),
-                paths=download_report.destination.tolist()
+                paths=download_report.destination.tolist(),
             )
             if os.path.exists(self.name):
                 shutil.rmtree(self.name)
