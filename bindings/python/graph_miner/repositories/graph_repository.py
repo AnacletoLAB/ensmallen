@@ -91,6 +91,8 @@ class GraphRepository:
         self,
         graph_name: str,
         graph_report: str,
+        urls: List[str],
+        paths: List[str],
         arguments: Dict
     ):
         """Save given graph data into database.
@@ -102,6 +104,8 @@ class GraphRepository:
         """
         compress_json.dump(
             {
+                "urls": urls,
+                "paths": paths,
                 "graph_name": graph_name,
                 "graph_report": graph_report,
                 "datetime": str(datetime.datetime.now()),
@@ -297,5 +301,9 @@ class GraphRepository:
             self.store_graph_report(
                 graph_name,
                 graph_report=str(graph),
-                arguments=arguments
+                arguments=arguments,
+                urls=download_report.url.tolist(),
+                paths=download_report.destination.tolist()
             )
+            if os.path.exists(self.name):
+                shutil.rmtree(self.name)

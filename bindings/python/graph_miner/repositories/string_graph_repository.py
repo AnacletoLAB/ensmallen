@@ -59,7 +59,7 @@ class StringGraphRepository(GraphRepository):
         -----------------------
         The urls list from where to download the graph data.
         """
-        return self._base_url.format(graph_data['## taxon_id'])
+        return [self._base_url.format(graph_data['## taxon_id'])]
 
     def get_graph_paths(self, graph_name: str, urls: List[str]) -> List[str]:
         """Return url for the given graph.
@@ -75,12 +75,12 @@ class StringGraphRepository(GraphRepository):
         -----------------------
         The paths where to store the downloaded graphs.
         """
-        return os.path.join(
+        return [os.path.join(
             self.name,
             "{}.csv.gz".format(
                 graph_name.lower().replace(" ", "_")
             )
-        )
+        )]
 
     def build_graph_parameters(
         self,
