@@ -87,7 +87,7 @@ class GraphRepository:
             self.build_graph_report_path(graph_name)
         )
 
-    def store_graph_report(
+    def dump_graph_report(
         self,
         graph_name: str,
         graph_report: str,
@@ -298,7 +298,7 @@ class GraphRepository:
                 node_path=node_path,
             )
             graph = EnsmallenGraph.from_unsorted_csv(**arguments)
-            self.store_graph_report(
+            self.dump_graph_report(
                 graph_name,
                 graph_report=str(graph),
                 arguments=arguments,
