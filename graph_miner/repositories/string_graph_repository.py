@@ -103,7 +103,7 @@ class StringGraphRepository(GraphRepository):
         The paths where to store the downloaded graphs.
         """
         return [os.path.join(
-            self.name,
+            self.repository_package_name,
             "{}.csv.gz".format(
                 graph_name.lower().replace(" ", "_")
             )
