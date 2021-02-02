@@ -82,7 +82,7 @@ class GraphRepository:
         """
         return os.path.join(
             os.path.dirname(os.path.abspath(__file__)),
-            self.name,
+            self.repository_package_name,
             "reports",
         )
 
@@ -342,8 +342,8 @@ class GraphRepository:
             desc="Retrieving graphs for {}".format(self.name),
             leave=False
         ):
-            if os.path.exists(self.name):
-                shutil.rmtree(self.name)
+            if os.path.exists(self.repository_package_name):
+                shutil.rmtree(self.repository_package_name)
             download_report = self.download(graph_data, graph_name)
             if len(download_report) == 1:
                 edge_path = download_report.extraction_destination[0]
@@ -368,8 +368,8 @@ class GraphRepository:
                 urls=download_report.url.tolist(),
                 paths=download_report.destination.tolist(),
             )
-            if os.path.exists(self.name):
-                shutil.rmtree(self.name)
+            if os.path.exists(self.repository_package_name):
+                shutil.rmtree(self.repository_package_name)
 
     def format_references(self, references: List[str]) -> str:
         """Return formatted references model.
