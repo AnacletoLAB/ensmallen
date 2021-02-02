@@ -485,7 +485,7 @@ class GraphRepository:
             graph_retrieval_file = self.format_graph_retrieval_file(
                 graph_name=graph_data["graph_name"],
                 report=self.format_report(
-                    graph_data["report"],
+                    graph_data["graph_textual_report"],
                     graph_data["datetime"]
                 ),
                 references=graph_data["references"],
