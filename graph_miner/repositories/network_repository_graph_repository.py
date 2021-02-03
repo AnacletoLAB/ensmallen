@@ -171,6 +171,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             sources_column_number = 0
             destinations_column_number = 1
             weights_column_number = 2
+            edge_types_column_number = None
         elif (
             len(data.columns) == 2 and
             data[0].dtype == np.int64 and
@@ -181,6 +182,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             sources_column_number = 0
             destinations_column_number = 1
             weights_column_number = None
+            edge_types_column_number = None
         elif (
             len(data.columns) == 4 and
             all([
