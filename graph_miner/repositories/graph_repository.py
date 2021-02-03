@@ -437,6 +437,9 @@ class GraphRepository:
 
     def load_dataframe(self, path: str) -> pd.DataFrame:
         """Return data loaded as DataFrame."""
+        print(path)
+        print("separatir", self.get_file_separator(path))
+        print("skippers", self.get_starting_commented_lines_number(path) + self.get_lines_to_skip(path))
         return pd.read_csv(
             path,
             sep=self.get_file_separator(path),

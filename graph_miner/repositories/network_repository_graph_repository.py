@@ -182,7 +182,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             edge_types_column_number = None
 
         if node_path is not None:
-            data = self.load_dataframe(edge_path)
+            data = self.load_dataframe(node_path)
             self.display_dataframe_preview(data)
             nodes_column_number = userinput(
                 "nodes_column_number",
@@ -287,13 +287,18 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         candidate_file_name = None
         directory = download_report.extraction_destination[0]
-        file_names = os.listdir(directory)
+        file_names = [
+            file_name
+            for file_name in os.listdir(directory)
+            if "readme" not in file_name.lower()
+        ]
+        # if len(file_names) == 1:
+        #     return os.path.join(directory, file_names[0])
         for file_name in file_names:
             for target in ("edge", ".mtx"):
                 if target in file_name:
                     candidate_file_name = file_name
                     break
-        print(file_names)
         file_name = userinput(
             "edge_list_path",
             default=candidate_file_name,
