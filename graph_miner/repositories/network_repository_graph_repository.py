@@ -151,7 +151,14 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         -----------------------
         Wether the graph is known to be unsupported.
         """
-        return graph_name.startswith("ia-") or graph_name.endswith("-trapping") or super().is_graph_unsupported(graph_name)
+        return (
+            graph_name.startswith("ia-") or
+            any(
+                graph_name.endswith(term)
+                for term in ("-trapping", "-ratings")
+            ) or
+            super().is_graph_unsupported(graph_name)
+        )
 
     def build_graph_parameters(
         self,
