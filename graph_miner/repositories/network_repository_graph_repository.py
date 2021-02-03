@@ -251,7 +251,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         file_names = [
             file_name
             for file_name in os.listdir(directory)
-            if "readme" in file_name.lower()
+            if "readme" not in file_name.lower()
         ]
         if len(file_names) == 1:
             return None
