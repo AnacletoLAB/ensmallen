@@ -160,7 +160,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         data = self.load_dataframe(edge_path)
         self.display_dataframe_preview(data)
-        if len(data.columns == 3) and len(data) != len(data[0].unique()) and len(data) != len(data[1].unique()) and data[0].dtype == "float64":
+        if len(data.columns == 3) and len(data) != len(data[0].unique()) and len(data) != len(data[1].unique()) and data[0].dtype == np.float64:
             sources_column_number = 0
             destinations_column_number = 1
             weights_column_number = 2
