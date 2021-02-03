@@ -6,9 +6,12 @@ import compress_json
 import datetime
 import shutil
 from glob import glob
+from collections import Counter
 from downloaders import BaseDownloader
 from ensmallen_graph import EnsmallenGraph
 from tqdm.auto import tqdm
+from environments_utils import is_notebook
+from IPython.display import display
 
 
 class GraphRepository:
@@ -312,6 +315,10 @@ class GraphRepository:
                 if node_path is not None
                 else {}
             ),
+            edge_separator=self.get_file_separator(edge_path),
+            node_separator=self.get_file_separator(node_path),
+            edge_rows_to_skip=self.get_lines_to_skip(edge_path),
+            node_file_comment_symbol=self.get_file_comment_symbol(node_path),
             directed=False
         )
 
@@ -335,6 +342,160 @@ class GraphRepository:
             paths=self.get_graph_paths(graph_name, urls)
         )
 
+    def get_file_separator(
+        self,
+        path: str
+    ) -> str:
+        """Return the candidate file separator.
+
+        Parameters
+        -----------------------
+        path: str,
+            Path for which to identify the separator.
+
+        Returns
+        -----------------------
+        Character likely used as separator in the file.
+        """
+        if path is None:
+            None
+
+        counter = Counter()
+        with open(path, "r") as f:
+            for _ in range(2000):
+                counter.update(f.readline())
+
+        counter.most_common(n=1)[0][0]
+
+    def get_file_comment_symbol(
+        self,
+        path: str
+    ) -> str:
+        """Return the candidate file comment.
+
+        Parameters
+        -----------------------
+        path: str,
+            Path for which to identify the comment.
+
+        Returns
+        -----------------------
+        Character likely used as comment identifier in the file.
+        """
+        if path is None:
+            None
+
+        with open(path, "r") as f:
+            first_line = f.readline()
+
+        comment_character = None
+        for symbol in ("%", "#"):
+            if first_line.startswith(symbol):
+                comment_character = symbol
+
+        return comment_character
+
+    def get_starting_commented_lines_number(self, path: str) -> int:
+        """Return number of commented lines since beginning.
+
+        Parameters
+        -----------------------
+        path: str,
+            Path from which to count commented lines.
+
+        Returns
+        -----------------------
+        Number of commented lines.
+        """
+        comment_symbol = self.get_file_comment_symbol(path)
+        if comment_symbol is None:
+            return 0
+        commented_lines_number = 0
+        with open(path, "r") as f:
+            while True:
+                if f.readline().startswith(comment_symbol):
+                    commented_lines_number += 1
+                else:
+                    break
+        return commented_lines_number
+
+    def get_lines_to_skip(self, path: str) -> int:
+        """Return number of lines to skip.
+
+        Parameters
+        -----------------------
+        path: str,
+            Path from which to identify lines to skip.
+
+        Returns
+        -----------------------
+        Number of lines to skip.
+        """
+        if path.endswith(".mtx"):
+            return 1
+        return 0
+
+    def load_dataframe(self, path: str) -> pd.DataFrame:
+        """Return data loaded as DataFrame."""
+        return pd.read_csv(
+            path,
+            sep=self.get_file_separator(path),
+            skiprows=self.get_starting_commented_lines_number(path) + self.get_lines_to_skip(path),
+            header=None,
+            nrows=20000,
+            low_memory=False
+        )
+
+    def display_dataframe_preview(self, data: pd.DataFrame):
+        """Displays in the best way possible the file."""
+        if is_notebook():
+            display(data[:10])
+        else:
+            print(data[:10])
+
+    def get_node_list_path(
+        self,
+        download_report: pd.DataFrame
+    ) -> str:
+        """Return path from where to load the node files.
+
+        Parameters
+        -----------------------
+        download_report: pd.DataFrame,
+            Report from downloader.
+
+        Returns
+        -----------------------
+        The path from where to load the node files.
+        """
+        raise NotImplementedError(
+            "The method get_node_list_path must be implemented in child classes."
+        )
+
+    def get_edge_list_path(
+        self,
+        download_report: pd.DataFrame
+    ) -> str:
+        """Return path from where to load the edge files.
+
+        Parameters
+        -----------------------
+        download_report: pd.DataFrame,
+            Report from downloader.
+
+        Returns
+        -----------------------
+        The path from where to load the edge files.
+        """
+        raise NotImplementedError(
+            "The method get_edge_list_path must be implemented in child classes."
+        )
+
+    def clear_downloaded_data(self):
+        """Removes all downloaded graph files."""
+        if os.path.exists(self.repository_package_name):
+            shutil.rmtree(self.repository_package_name)
+
     def retrieve_all(self):
         """Retrives data for the graphs from the considered repository."""
         for graph_name, graph_data in tqdm(
@@ -342,15 +503,10 @@ class GraphRepository:
             desc="Retrieving graphs for {}".format(self.name),
             leave=False
         ):
-            if os.path.exists(self.repository_package_name):
-                shutil.rmtree(self.repository_package_name)
+            self.clear_downloaded_data()
             download_report = self.download(graph_data, graph_name)
-            if len(download_report) == 1:
-                edge_path = download_report.extraction_destination[0]
-                node_path = None
-            else:
-                edge_path = download_report.extraction_destination[0]
-                node_path = download_report.extraction_destination[1]
+            node_path = self.get_node_list_path(download_report)
+            edge_path = self.get_edge_list_path(download_report)
             arguments = self.build_graph_parameters(
                 graph_name,
                 edge_path=edge_path,
@@ -368,8 +524,7 @@ class GraphRepository:
                 urls=download_report.url.tolist(),
                 paths=download_report.destination.tolist(),
             )
-            if os.path.exists(self.repository_package_name):
-                shutil.rmtree(self.repository_package_name)
+            self.clear_downloaded_data()
 
     def format_references(self, references: List[str]) -> str:
         """Return formatted references model.

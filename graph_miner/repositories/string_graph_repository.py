@@ -136,7 +136,6 @@ class StringGraphRepository(GraphRepository):
                 edge_path,
                 node_path
             ),
-            "edge_separator": " ",
             "sources_column": "protein1",
             "destinations_column": "protein2",
             "weights_column": "combined_score",
@@ -148,3 +147,37 @@ class StringGraphRepository(GraphRepository):
             row
             for _, row in self._organisms.iterrows()
         ]
+
+    def get_node_list_path(
+        self,
+        download_report: pd.DataFrame
+    ) -> str:
+        """Return path from where to load the node files.
+
+        Parameters
+        -----------------------
+        download_report: pd.DataFrame,
+            Report from downloader.
+
+        Returns
+        -----------------------
+        The path from where to load the node files.
+        """
+        return None
+
+    def get_edge_list_path(
+        self,
+        download_report: pd.DataFrame
+    ) -> str:
+        """Return path from where to load the edge files.
+
+        Parameters
+        -----------------------
+        download_report: pd.DataFrame,
+            Report from downloader.
+
+        Returns
+        -----------------------
+        The path from where to load the edge files.
+        """
+        return download_report.extraction_destination[0]
