@@ -363,7 +363,11 @@ class GraphRepository:
         counter = Counter()
         with open(path, "r") as f:
             for _ in range(2000):
-                counter.update(f.readline())
+                counter.update([
+                    c
+                    for c in f.readline()
+                    if c in (";", ",", " ", "\t")
+                ])
 
         return counter.most_common(n=1)[0][0]
 
