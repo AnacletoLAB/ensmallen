@@ -718,7 +718,7 @@ class GraphRepository:
                     graph_data["graph_textual_report"],
                     graph_data["datetime"]
                 ),
-                references=graph_data["references"],
+                references=graph_data["citations"],
             )
             target_directory_path = os.path.join(
                 "bindings/python/ensmallen_graph/datasets",
