@@ -182,6 +182,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             destinations_column_number = 1
             weights_column_number = None
         else:
+            print(graph_name)
             self.display_dataframe_preview(data)
             sources_column_number = userinput(
                 "sources_column_number",
@@ -232,6 +233,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
 
         if node_path is not None:
             data = self.load_dataframe(node_path)
+            print(graph_name)
             self.display_dataframe_preview(data)
             nodes_column_number = userinput(
                 "nodes_column_number",
