@@ -2,6 +2,7 @@
 from typing import List, Dict
 import os
 import pandas as pd
+import numpy as np
 import requests
 from glob import glob
 from bs4 import BeautifulSoup
@@ -160,11 +161,24 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         data = self.load_dataframe(edge_path)
         self.display_dataframe_preview(data)
-        if len(data.columns == 3) and len(data) != len(data[0].unique()) and len(data) != len(data[1].unique()) and data[0].dtype == np.float64:
+        if (
+            len(data.columns == 3) and
+            data[0].dtype == np.int64 and
+            len(data) != len(data[0].unique()) and
+            data[1].dtype == np.int64 and
+            len(data) != len(data[1].unique()) and
+            data[2].dtype == np.float64
+        ):
             sources_column_number = 0
             destinations_column_number = 1
             weights_column_number = 2
-        elif len(data.columns == 2) and len(data) != len(data[0].unique()) and len(data) != len(data[1].unique()):
+        elif (
+            len(data.columns == 2) and
+            data[0].dtype == np.int64 and
+            len(data) != len(data[0].unique())
+            data[1].dtype == np.int64 and
+            and len(data) != len(data[1].unique())
+        ):
             sources_column_number = 0
             destinations_column_number = 1
             weights_column_number = None
