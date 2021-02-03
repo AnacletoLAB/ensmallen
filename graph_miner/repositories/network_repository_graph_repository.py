@@ -248,7 +248,13 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         candidate_file_name = None
         directory = download_report.extraction_destination[0]
-        file_names = os.listdir(directory)
+        file_names = [
+            file_name
+            for file_name in os.listdir(directory)
+            if "readme" in file_name.lower()
+        ]
+        if len(file_names) == 1:
+            return None
         for file_name in file_names:
             for target in ("node",):
                 if target in file_name:
