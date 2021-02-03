@@ -360,6 +360,8 @@ class GraphRepository:
         if path is None:
             None
 
+        print(path)
+
         counter = Counter()
         with open(path, "r") as f:
             for _ in range(2000):
