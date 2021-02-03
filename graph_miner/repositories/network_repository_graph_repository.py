@@ -378,7 +378,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         if len(file_names) == 1:
             return None
         for file_name in file_names:
-            for target in ("node",):
+            for target in ("node", "types"):
                 if target in file_name:
                     candidate_file_name = file_name
                     break
@@ -386,6 +386,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         file_name = userinput(
             "node_list_path",
             default=candidate_file_name,
+            cache=False,
             validator=set_validator(file_names),
             recoverer=set_recoverer(file_names),
             auto_clear=True
@@ -424,6 +425,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         file_name = userinput(
             "edge_list_path",
             default=candidate_file_name,
+            cache=False,
             validator=set_validator(file_names),
             recoverer=set_recoverer(file_names),
             auto_clear=True
