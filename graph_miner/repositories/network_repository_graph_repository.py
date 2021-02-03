@@ -120,6 +120,23 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         return None
 
+    def check_nominal_download(
+        self,
+        download_report: pd.DataFrame
+    ) -> bool:
+        """Return boolean representing if everything went ok.
+
+        Parameters
+        -----------------------
+        download_report: pd.DataFrame,
+            Report from downloader.
+
+        Returns
+        -----------------------
+        Boolean representing if everything went ok.
+        """
+        return "extraction_destination" in download_report.columns
+
     def build_graph_parameters(
         self,
         graph_name: str,

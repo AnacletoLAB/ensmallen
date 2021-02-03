@@ -495,6 +495,23 @@ class GraphRepository:
         raise NotImplementedError(
             "The method get_edge_list_path must be implemented in child classes."
         )
+    
+    def check_nominal_download(
+        self,
+        download_report: pd.DataFrame
+    ) -> bool:
+        """Return boolean representing if everything went ok.
+
+        Parameters
+        -----------------------
+        download_report: pd.DataFrame,
+            Report from downloader.
+
+        Returns
+        -----------------------
+        Boolean representing if everything went ok.
+        """
+        return True
 
     def clear_downloaded_data(self):
         """Removes all downloaded graph files."""
@@ -510,6 +527,9 @@ class GraphRepository:
         ):
             self.clear_downloaded_data()
             download_report = self.download(graph_data, graph_name)
+            if not self.check_nominal_download(download_report):
+                self.add_corrupted_graph(graph_name)
+                continue
             node_path = self.get_node_list_path(download_report)
             edge_path = self.get_edge_list_path(download_report)
             arguments = self.build_graph_parameters(
