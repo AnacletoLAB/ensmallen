@@ -358,9 +358,7 @@ class GraphRepository:
         Character likely used as separator in the file.
         """
         if path is None:
-            None
-
-        print(path)
+            return None
 
         counter = Counter()
         with open(path, "r") as f:
