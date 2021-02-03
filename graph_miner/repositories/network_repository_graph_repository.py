@@ -241,7 +241,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
 
         if weights_column_number is not None and (data[weights_column_number] <= 0).any():
             self.add_corrupted_graph(graph_name)
-            raise ValueError("Found illegal negative weights in graph {graph_name}!".format(graph_name))
+            raise ValueError("Found illegal negative weights in graph {}!".format(graph_name))
 
         if weights_column_number is not None and data[weights_column_number].isna().any():
             default_weight = 1.0
