@@ -160,9 +160,8 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         Dictionary to build the graph object.
         """
         data = self.load_dataframe(edge_path)
-        self.display_dataframe_preview(data)
         if (
-            len(data.columns == 3) and
+            len(data.columns) == 3 and
             data[0].dtype == np.int64 and
             len(data) != len(data[0].unique()) and
             data[1].dtype == np.int64 and
@@ -173,7 +172,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             destinations_column_number = 1
             weights_column_number = 2
         elif (
-            len(data.columns == 2) and
+            len(data.columns) == 2 and
             data[0].dtype == np.int64 and
             len(data) != len(data[0].unique()) and
             data[1].dtype == np.int64 and
@@ -183,6 +182,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             destinations_column_number = 1
             weights_column_number = None
         else:
+            self.display_dataframe_preview(data)
             sources_column_number = userinput(
                 "sources_column_number",
                 default=0,
