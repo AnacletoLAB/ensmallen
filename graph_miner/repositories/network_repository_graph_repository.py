@@ -154,7 +154,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         return (
             any(
                 graph_name.startswith(term)
-                for term in ("rec-", "ia-", "reptilia-")
+                for term in ("rec-", "ia-", "reptilia-", "mammalia-")
             ) or
             any(
                 graph_name.endswith(term)
