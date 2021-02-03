@@ -292,8 +292,8 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             for file_name in os.listdir(directory)
             if "readme" not in file_name.lower()
         ]
-        # if len(file_names) == 1:
-        #     return os.path.join(directory, file_names[0])
+        if len(file_names) == 1:
+            return os.path.join(directory, file_names[0])
         for file_name in file_names:
             for target in ("edge", ".mtx"):
                 if target in file_name:
