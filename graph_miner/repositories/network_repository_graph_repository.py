@@ -181,6 +181,20 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             sources_column_number = 0
             destinations_column_number = 1
             weights_column_number = None
+        elif (
+            len(data.columns) == 4 and
+            all([
+                data[col].dtype == np.int64
+                for col in data.columns
+            ]) and
+            len(data) != len(data[0].unique()) and
+            len(data) != len(data[1].unique()) and
+            len(data[2].unique()) == 1 and
+            (data[3] > 1_000_000).all()
+        ):
+            sources_column_number = 0
+            destinations_column_number = 1
+            weights_column_number = 3
         else:
             print(graph_name)
             self.display_dataframe_preview(data)
