@@ -152,7 +152,10 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         Wether the graph is known to be unsupported.
         """
         return (
-            graph_name.startswith("ia-") or
+            any(
+                graph_name.endswith(term)
+                for term in ("rec-", "ia-")
+            ) or
             any(
                 graph_name.endswith(term)
                 for term in ("-trapping", "-ratings")
