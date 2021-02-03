@@ -287,6 +287,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                     edge_types_column_number = None
             else:
                 edge_types_column_number = None
+            clear()
 
         if weights_column_number is not None and (data[weights_column_number] <= 0).any():
             raise UnsupportedGraphException(
@@ -321,11 +322,12 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                     node_types_column_number = None
             else:
                 node_types_column_number = None
+            clear()
         else:
             nodes_column_number = None
             node_types_column_number = None
 
-        clear()
+        
 
         return {
             **super().build_graph_parameters(
