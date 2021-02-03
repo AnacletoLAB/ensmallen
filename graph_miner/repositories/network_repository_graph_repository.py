@@ -175,7 +175,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         elif (
             len(data.columns == 2) and
             data[0].dtype == np.int64 and
-            len(data) != len(data[0].unique())
+            len(data) != len(data[0].unique()) and
             data[1].dtype == np.int64 and
             and len(data) != len(data[1].unique())
         ):
