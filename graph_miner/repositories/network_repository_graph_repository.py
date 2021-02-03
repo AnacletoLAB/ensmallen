@@ -195,6 +195,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             sources_column_number = 0
             destinations_column_number = 1
             weights_column_number = 3
+            edge_types_column_number = None
         else:
             print(graph_name)
             self.display_dataframe_preview(data)
@@ -223,6 +224,19 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             else:
                 weights_column_number = None
 
+            if len(data.columns) == 3 and weights_column_number is None or len(data.columns) > 3:
+                try:
+                    edge_types_column_number = userinput(
+                        "edge_types_column_number",
+                        default=None,
+                        validator="positive_integer",
+                        auto_clear=False
+                    )
+                except KeyboardInterrupt:
+                    edge_types_column_number = None
+            else:
+                edge_types_column_number = None
+
         if weights_column_number is not None and (data[weights_column_number] <= 0).any():
             self.add_corrupted_graph(graph_name)
             raise ValueError("Found illegal negative weights in graph {graph_name}!".format(graph_name))
@@ -231,19 +245,6 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             default_weight = 1.0
         else:
             default_weight = None
-
-        if len(data.columns) == 3 and weights_column_number is None or len(data.columns) > 3:
-            try:
-                edge_types_column_number = userinput(
-                    "edge_types_column_number",
-                    default=None,
-                    validator="positive_integer",
-                    auto_clear=False
-                )
-            except KeyboardInterrupt:
-                edge_types_column_number = None
-        else:
-            edge_types_column_number = None
 
         if node_path is not None:
             data = self.load_dataframe(node_path)
