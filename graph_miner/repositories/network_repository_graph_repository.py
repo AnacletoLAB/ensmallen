@@ -177,7 +177,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             data[0].dtype == np.int64 and
             len(data) != len(data[0].unique()) and
             data[1].dtype == np.int64 and
-            and len(data) != len(data[1].unique())
+            len(data) != len(data[1].unique())
         ):
             sources_column_number = 0
             destinations_column_number = 1
