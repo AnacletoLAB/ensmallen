@@ -20,6 +20,7 @@ class GraphRepository:
         self._downloader = BaseDownloader(
             process_number=1,
             verbose=2,
+            target_directory=self.repository_package_name
         )
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
