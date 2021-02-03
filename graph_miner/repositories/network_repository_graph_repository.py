@@ -157,18 +157,18 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         )
         if len(data.columns) > 2:
             try:
-                weight_column_number = userinput(
-                    "weight_column_number",
+                weights_column_number = userinput(
+                    "weights_column_number",
                     default=2,
                     validator="positive_integer",
                     auto_clear=False
                 )
             except KeyboardInterrupt:
-                weight_column_number = None
+                weights_column_number = None
         else:
-            weight_column_number = None
+            weights_column_number = None
 
-        if len(data.columns) == 3 and weight_column_number is None or len(data.columns) > 3:
+        if len(data.columns) == 3 and weights_column_number is None or len(data.columns) > 3:
             try:
                 edge_types_column_number = userinput(
                     "edge_types_column_number",
@@ -218,7 +218,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             "node_header":False,
             "sources_column_number": sources_column_number,
             "destinations_column_number": destinations_column_number,
-            "weight_column_number": weight_column_number,
+            "weights_column_number": weights_column_number,
             "edge_types_column_number": edge_types_column_number,
             "nodes_column_number": nodes_column_number,
             "node_types_column_number": node_types_column_number,
