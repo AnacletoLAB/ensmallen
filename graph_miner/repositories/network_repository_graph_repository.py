@@ -184,6 +184,20 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             weights_column_number = None
             edge_types_column_number = None
         elif (
+            len(data.columns) == 3 and
+            all([
+                data[col].dtype == np.int64
+                for col in data.columns
+            ]) and
+            len(data) != len(data[0].unique()) and
+            len(data) != len(data[1].unique()) and
+            ((data[2] == 0) | (data[2] > 10_000_000)).all()
+        ):
+            sources_column_number = 0
+            destinations_column_number = 1
+            weights_column_number = 2
+            edge_types_column_number = None
+        elif (
             len(data.columns) == 4 and
             all([
                 data[col].dtype == np.int64
@@ -192,7 +206,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             len(data) != len(data[0].unique()) and
             len(data) != len(data[1].unique()) and
             len(data[2].unique()) == 1 and
-            (data[3] > 1_000_000).all()
+            ((data[3] == 0) | (data[3] > 10_000_000)).all()
         ):
             sources_column_number = 0
             destinations_column_number = 1
@@ -245,7 +259,8 @@ class NetworkRepositoryGraphRepository(GraphRepository):
 
         if weights_column_number is not None and (data[weights_column_number] <= 0).any():
             self.add_corrupted_graph(graph_name)
-            raise ValueError("Found illegal negative weights in graph {}!".format(graph_name))
+            raise ValueError(
+                "Found illegal negative weights in graph {}!".format(graph_name))
 
         if weights_column_number is not None and data[weights_column_number].isna().any():
             default_weight = 1.0
