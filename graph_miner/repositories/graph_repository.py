@@ -387,7 +387,7 @@ class GraphRepository:
         Character likely used as comment identifier in the file.
         """
         if path is None:
-            None
+            return None
 
         with open(path, "r") as f:
             first_line = f.readline()
