@@ -139,6 +139,20 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         return "extraction_destination" in download_report.columns
 
+    def is_graph_unsupported(self, graph_name: str) -> bool:
+        """Return boolean representing if graph is known to be unsupported.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of graph to check if it is unsupported.
+
+        Returns
+        -----------------------
+        Wether the graph is known to be unsupported.
+        """
+        return graph_name.startswith("ia-") or super().is_graph_unsupported(graph_name)
+
     def build_graph_parameters(
         self,
         graph_name: str,
