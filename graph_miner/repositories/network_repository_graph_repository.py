@@ -205,12 +205,14 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 "sources_column_number",
                 default=0,
                 validator="positive_integer",
+                sanitizer="integer",
                 auto_clear=False
             )
             destinations_column_number = userinput(
                 "destinations_column_number",
                 default=1,
                 validator="positive_integer",
+                sanitizer="integer",
                 auto_clear=False
             )
             if len(data.columns) > 2:
@@ -219,6 +221,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                         "weights_column_number",
                         default=2,
                         validator="positive_integer",
+                        sanitizer="integer",
                         auto_clear=False
                     )
                 except KeyboardInterrupt:
@@ -230,8 +233,9 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 try:
                     edge_types_column_number = userinput(
                         "edge_types_column_number",
-                        default=None,
+                        default=2,
                         validator="positive_integer",
+                        sanitizer="integer",
                         auto_clear=False
                     )
                 except KeyboardInterrupt:
@@ -256,6 +260,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 "nodes_column_number",
                 default=0,
                 validator="positive_integer",
+                sanitizer="integer",
                 auto_clear=False
             )
             if len(data.columns) > 1:
@@ -264,6 +269,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                         "node_types_column_number",
                         default=1,
                         validator="positive_integer",
+                        sanitizer="integer",
                         auto_clear=False
                     )
                 except KeyboardInterrupt:
