@@ -1,0 +1,3 @@
+class UnsupportedGraphException(ValueError):
+
+    pass

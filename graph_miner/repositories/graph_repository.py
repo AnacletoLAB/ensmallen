@@ -12,6 +12,7 @@ from ensmallen_graph import EnsmallenGraph
 from tqdm.auto import tqdm
 from environments_utils import is_notebook
 from IPython.display import display
+from .custom_exceptions import UnsupportedGraphException
 
 
 class GraphRepository:
@@ -200,6 +201,11 @@ class GraphRepository:
         """Return path to corrupted graphs json."""
         return "corrupted_graphs/{}.json.gz".format(self.name)
 
+    @property
+    def unsupported_graphs_path(self):
+        """Return path to unsupported graphs json."""
+        return "unsupported_graphs/{}.json.gz".format(self.name)
+
     def _load_corrupted_graphs(self) -> Set[str]:
         """Return set of known corrupted graphs."""
         try:
@@ -207,9 +213,20 @@ class GraphRepository:
         except Exception:
             return list()
 
+    def _load_unsupported_graphs(self) -> Set[str]:
+        """Return set of known unsupported graphs."""
+        try:
+            return compress_json.local_load(self.unsupported_graphs_path)
+        except Exception:
+            return list()
+
     def _dump_corrupted_graphs(self, corrupted_graphs: Set[str]):
         """Return set of known corrupted graphs."""
         compress_json.local_dump(corrupted_graphs, self.corrupted_graphs_path)
+    
+    def _dump_unsupported_graphs(self, unsupported_graphs: Set[str]):
+        """Return set of known unsupported graphs."""
+        compress_json.local_dump(unsupported_graphs, self.unsupported_graphs_path)
 
     def add_corrupted_graph(self, graph_name: str):
         """Add given graph to corrupted graphs set.
@@ -222,6 +239,18 @@ class GraphRepository:
         corrupted_graphs = self._load_corrupted_graphs()
         corrupted_graphs.append(graph_name)
         self._dump_corrupted_graphs(corrupted_graphs)
+
+    def add_unsupported_graph(self, graph_name: str):
+        """Add given graph to unsupported graphs set.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of graph to add to unsupported set.
+        """
+        unsupported_graphs = self._load_unsupported_graphs()
+        unsupported_graphs.append(graph_name)
+        self._dump_unsupported_graphs(unsupported_graphs)
 
     def is_graph_corrupted(self, graph_name: str) -> bool:
         """Return boolean representing if graph is known to be corrupted.
@@ -237,6 +266,20 @@ class GraphRepository:
         """
         return graph_name in self._load_corrupted_graphs()
 
+    def is_graph_unsupported(self, graph_name: str) -> bool:
+        """Return boolean representing if graph is known to be unsupported.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of graph to check if it is unsupported.
+
+        Returns
+        -----------------------
+        Wether the graph is known to be unsupported.
+        """
+        return graph_name in self._load_unsupported_graphs()
+
     def get_graph_list(self) -> List[str]:
         """Return list of graph names."""
         raise NotImplementedError(
@@ -250,7 +293,8 @@ class GraphRepository:
             for graph_data in self.get_graph_list()
             if not (
                 self.is_graph_cached(self.get_graph_name(graph_data)) or
-                self.is_graph_corrupted(self.get_graph_name(graph_data))
+                self.is_graph_corrupted(self.get_graph_name(graph_data)) or 
+                self.is_graph_unsupported(self.get_graph_name(graph_data))
             )
         ]
 
@@ -532,13 +576,17 @@ class GraphRepository:
             if not self.check_nominal_download(download_report):
                 self.add_corrupted_graph(graph_name)
                 continue
-            node_path = self.get_node_list_path(download_report)
-            edge_path = self.get_edge_list_path(download_report)
-            arguments = self.build_graph_parameters(
-                graph_name,
-                edge_path=edge_path,
-                node_path=node_path,
-            )
+            try:
+                node_path = self.get_node_list_path(download_report)
+                edge_path = self.get_edge_list_path(download_report)
+                arguments = self.build_graph_parameters(
+                    graph_name,
+                    edge_path=edge_path,
+                    node_path=node_path,
+                )
+            except UnsupportedGraphException:
+                self.add_unsupported_graph(graph_name)
+                continue
             graph: EnsmallenGraph = EnsmallenGraph.from_unsorted_csv(
                 **arguments
             )
