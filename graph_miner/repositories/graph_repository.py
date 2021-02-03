@@ -219,9 +219,9 @@ class GraphRepository:
         graph_name: str,
             Name of graph to add to corrupted set.
         """
-        self._dump_corrupted_graphs(
-            self._load_corrupted_graphs().append(graph_name)
-        )
+        corrupted_graphs = self._load_corrupted_graphs()
+        corrupted_graphs.append(graph_name)
+        self._dump_corrupted_graphs(corrupted_graphs)
 
     def is_graph_corrupted(self, graph_name: str) -> bool:
         """Return boolean representing if graph is known to be corrupted.
