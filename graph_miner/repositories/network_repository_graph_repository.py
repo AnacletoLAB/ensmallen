@@ -153,7 +153,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         return (
             any(
-                graph_name.endswith(term)
+                graph_name.startswith(term)
                 for term in ("rec-", "ia-")
             ) or
             any(
