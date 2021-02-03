@@ -205,7 +205,7 @@ class GraphRepository:
         try:
             return compress_json.local_load(self.corrupted_graphs_path)
         except Exception:
-            return set()
+            return list()
 
     def _dump_corrupted_graphs(self, corrupted_graphs: Set[str]):
         """Return set of known corrupted graphs."""
@@ -220,7 +220,7 @@ class GraphRepository:
             Name of graph to add to corrupted set.
         """
         self._dump_corrupted_graphs(
-            self._load_corrupted_graphs().add(graph_name)
+            self._load_corrupted_graphs().append(graph_name)
         )
 
     def is_graph_corrupted(self, graph_name: str) -> bool:
