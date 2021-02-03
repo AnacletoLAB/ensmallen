@@ -208,6 +208,15 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             else:
                 weights_column_number = None
 
+        if weights_column_number is not None and (data[weights_column_number] <= 0).any():
+            self.add_corrupted_graph(graph_name)
+            raise ValueError("Found illegal negative weights in graph {graph_name}!".format(graph_name))
+
+        if weights_column_number is not None and data[weights_column_number].isna().any():
+            default_weight = 1.0
+        else:
+            default_weight = None
+
         if len(data.columns) == 3 and weights_column_number is None or len(data.columns) > 3:
             try:
                 edge_types_column_number = userinput(
@@ -256,6 +265,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             ),
             "edge_header": False,
             "node_header": False,
+            "default_weight": default_weight,
             "sources_column_number": sources_column_number,
             "destinations_column_number": destinations_column_number,
             "weights_column_number": weights_column_number,
