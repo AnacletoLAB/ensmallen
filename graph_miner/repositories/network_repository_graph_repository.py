@@ -160,30 +160,39 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         data = self.load_dataframe(edge_path)
         self.display_dataframe_preview(data)
-        sources_column_number = userinput(
-            "sources_column_number",
-            default=0,
-            validator="positive_integer",
-            auto_clear=False
-        )
-        destinations_column_number = userinput(
-            "destinations_column_number",
-            default=1,
-            validator="positive_integer",
-            auto_clear=False
-        )
-        if len(data.columns) > 2:
-            try:
-                weights_column_number = userinput(
-                    "weights_column_number",
-                    default=2,
-                    validator="positive_integer",
-                    auto_clear=False
-                )
-            except KeyboardInterrupt:
-                weights_column_number = None
-        else:
+        if len(data.columns == 3) and len(data) != len(data[0].unique()) and len(data) != len(data[1].unique()) and data[0].dtype == "float64":
+            sources_column_number = 0
+            destinations_column_number = 1
+            weights_column_number = 2
+        elif len(data.columns == 2) and len(data) != len(data[0].unique()) and len(data) != len(data[1].unique()):
+            sources_column_number = 0
+            destinations_column_number = 1
             weights_column_number = None
+        else:
+            sources_column_number = userinput(
+                "sources_column_number",
+                default=0,
+                validator="positive_integer",
+                auto_clear=False
+            )
+            destinations_column_number = userinput(
+                "destinations_column_number",
+                default=1,
+                validator="positive_integer",
+                auto_clear=False
+            )
+            if len(data.columns) > 2:
+                try:
+                    weights_column_number = userinput(
+                        "weights_column_number",
+                        default=2,
+                        validator="positive_integer",
+                        auto_clear=False
+                    )
+                except KeyboardInterrupt:
+                    weights_column_number = None
+            else:
+                weights_column_number = None
 
         if len(data.columns) == 3 and weights_column_number is None or len(data.columns) > 3:
             try:
@@ -231,8 +240,8 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 edge_path,
                 node_path
             ),
-            "edge_header":False,
-            "node_header":False,
+            "edge_header": False,
+            "node_header": False,
             "sources_column_number": sources_column_number,
             "destinations_column_number": destinations_column_number,
             "weights_column_number": weights_column_number,
