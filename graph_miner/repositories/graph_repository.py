@@ -202,9 +202,10 @@ class GraphRepository:
 
     def _load_corrupted_graphs(self) -> Set[str]:
         """Return set of known corrupted graphs."""
-        if os.path.exists(self.corrupted_graphs_path):
+        try:
             return compress_json.local_load(self.corrupted_graphs_path)
-        return set()
+        except Exception:
+            return set()
 
     def _dump_corrupted_graphs(self, corrupted_graphs: Set[str]):
         """Return set of known corrupted graphs."""
