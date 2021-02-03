@@ -319,6 +319,7 @@ class GraphRepository:
             edge_separator=self.get_file_separator(edge_path),
             node_separator=self.get_file_separator(node_path),
             edge_rows_to_skip=self.get_lines_to_skip(edge_path),
+            edge_file_comment_symbol=self.get_file_comment_symbol(edge_path),
             node_file_comment_symbol=self.get_file_comment_symbol(node_path),
             directed=False
         )
