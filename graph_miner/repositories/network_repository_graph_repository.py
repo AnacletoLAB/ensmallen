@@ -260,6 +260,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 if target in file_name:
                     candidate_file_name = file_name
                     break
+        print(file_names)
         file_name = userinput(
             "node_list_path",
             default=candidate_file_name,
@@ -292,6 +293,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 if target in file_name:
                     candidate_file_name = file_name
                     break
+        print(file_names)
         file_name = userinput(
             "edge_list_path",
             default=candidate_file_name,
