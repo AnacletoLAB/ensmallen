@@ -39,6 +39,10 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             for term in partial_graph_name.split("-")
         ])
 
+    def get_formatted_repository_name(self) -> str:
+        """Return formatted repository name."""
+        return "NetworkRepository"
+
     def get_graph_name(self, graph_data) -> str:
         """Return built graph name.
 
