@@ -304,29 +304,42 @@ class NetworkRepositoryGraphRepository(GraphRepository):
 
         if node_path is not None:
             data = self.load_dataframe(node_path)
-            print(graph_name)
-            self.display_dataframe_preview(data)
-            nodes_column_number = userinput(
-                "nodes_column_number",
-                default=0,
-                validator="positive_integer",
-                sanitizer="integer",
-                auto_clear=False
-            )
-            if len(data.columns) > 1:
-                try:
-                    node_types_column_number = userinput(
-                        "node_types_column_number",
-                        default=1,
-                        validator="positive_integer",
-                        sanitizer="integer",
-                        auto_clear=False
-                    )
-                except KeyboardInterrupt:
-                    node_types_column_number = None
+            if (
+                len(data.columns) == 2 and
+                all([
+                    data[col].dtype == np.int64
+                    for col in data.columns
+                ]) and
+                len(data) == len(data[0].unique()) and
+                len(data) != len(data[1].unique()) and
+                len(data[1].unique()) < 100
+            ):
+                nodes_column_number = 0
+                node_types_column_number = 1
             else:
-                node_types_column_number = None
-            clear()
+                print(graph_name)
+                self.display_dataframe_preview(data)
+                nodes_column_number = userinput(
+                    "nodes_column_number",
+                    default=0,
+                    validator="positive_integer",
+                    sanitizer="integer",
+                    auto_clear=False
+                )
+                if len(data.columns) > 1:
+                    try:
+                        node_types_column_number = userinput(
+                            "node_types_column_number",
+                            default=1,
+                            validator="positive_integer",
+                            sanitizer="integer",
+                            auto_clear=False
+                        )
+                    except KeyboardInterrupt:
+                        node_types_column_number = None
+                else:
+                    node_types_column_number = None
+                clear()
         else:
             nodes_column_number = None
             node_types_column_number = None
