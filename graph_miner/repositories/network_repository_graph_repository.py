@@ -399,7 +399,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 if target in file_name:
                     candidate_file_name = file_name
                     break
-        if (
+        if candidate_file_name is not None and any(
             candidate_file_name.endswith(ext)
             for ext in (
                 ".node_labels",
@@ -453,7 +453,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 if target in file_name:
                     candidate_file_name = file_name
                     break
-        if (
+        if candidate_file_name is not None and any(
             candidate_file_name.endswith(ext)
             for ext in (
                 ".edges",
