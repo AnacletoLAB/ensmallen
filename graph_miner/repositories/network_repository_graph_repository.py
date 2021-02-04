@@ -310,7 +310,6 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                     data[col].dtype == np.int64
                     for col in data.columns
                 ]) and
-                len(data) == len(data[0].unique()) and
                 len(data) != len(data[1].unique()) and
                 len(data[1].unique()) < 100
             ):
