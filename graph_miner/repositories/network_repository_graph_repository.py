@@ -304,29 +304,42 @@ class NetworkRepositoryGraphRepository(GraphRepository):
 
         if node_path is not None:
             data = self.load_dataframe(node_path)
-            print(graph_name)
-            self.display_dataframe_preview(data)
-            nodes_column_number = userinput(
-                "nodes_column_number",
-                default=0,
-                validator="positive_integer",
-                sanitizer="integer",
-                auto_clear=False
-            )
-            if len(data.columns) > 1:
-                try:
-                    node_types_column_number = userinput(
-                        "node_types_column_number",
-                        default=1,
-                        validator="positive_integer",
-                        sanitizer="integer",
-                        auto_clear=False
-                    )
-                except KeyboardInterrupt:
-                    node_types_column_number = None
+            if (
+                len(data.columns) == 2 and
+                all([
+                    data[col].dtype == np.int64
+                    for col in data.columns
+                ]) and
+                len(data) == len(data[0].unique()) and
+                len(data) != len(data[1].unique()) and
+                len(data[1].unique()) < 100
+            ):
+                nodes_column_number = 0
+                node_types_column_number = 1
             else:
-                node_types_column_number = None
-            clear()
+                print(graph_name)
+                self.display_dataframe_preview(data)
+                nodes_column_number = userinput(
+                    "nodes_column_number",
+                    default=0,
+                    validator="positive_integer",
+                    sanitizer="integer",
+                    auto_clear=False
+                )
+                if len(data.columns) > 1:
+                    try:
+                        node_types_column_number = userinput(
+                            "node_types_column_number",
+                            default=1,
+                            validator="positive_integer",
+                            sanitizer="integer",
+                            auto_clear=False
+                        )
+                    except KeyboardInterrupt:
+                        node_types_column_number = None
+                else:
+                    node_types_column_number = None
+                clear()
         else:
             nodes_column_number = None
             node_types_column_number = None
@@ -386,6 +399,13 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 if target in file_name:
                     candidate_file_name = file_name
                     break
+        if (
+            candidate_file_name.endswith(ext)
+            for ext in (
+                ".node_labels",
+            )
+        ):
+            return os.path.join(directory, candidate_file_name)
         print(file_names)
         file_name = userinput(
             "node_list_path",
@@ -426,6 +446,14 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 if target in file_name:
                     candidate_file_name = file_name
                     break
+        if (
+            candidate_file_name.endswith(ext)
+            for ext in (
+                ".edges",
+                ".mtx"
+            )
+        ):
+            return os.path.join(directory, candidate_file_name)
         file_name = userinput(
             "edge_list_path",
             default=candidate_file_name,
