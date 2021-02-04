@@ -439,6 +439,13 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             for file_name in os.listdir(directory)
             if "readme" not in file_name.lower()
         ]
+        if any(
+            file_name.endswith(".graph_idx")
+            for file_name in file_names
+        ):
+            raise UnsupportedGraphException(
+                "The graph file format with graph_idx files are not currently supported!"
+            )
         if len(file_names) == 1:
             return os.path.join(directory, file_names[0])
         for file_name in file_names:
