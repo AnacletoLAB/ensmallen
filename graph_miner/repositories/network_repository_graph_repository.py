@@ -399,6 +399,13 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 if target in file_name:
                     candidate_file_name = file_name
                     break
+        if (
+            file_name.endswith(ext)
+            for ext in (
+                ".node_labels",
+            )
+        ):
+            return os.path.join(directory, file_name)
         print(file_names)
         file_name = userinput(
             "node_list_path",
@@ -439,6 +446,14 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 if target in file_name:
                     candidate_file_name = file_name
                     break
+        if (
+            file_name.endswith(ext)
+            for ext in (
+                ".edges",
+                ".mtx"
+            )
+        ):
+            return os.path.join(directory, file_name)
         file_name = userinput(
             "edge_list_path",
             default=candidate_file_name,
