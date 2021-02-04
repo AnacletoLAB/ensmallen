@@ -394,6 +394,13 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         ]
         if len(file_names) == 1:
             return None
+        if any(
+            file_name.endswith(".graph_idx")
+            for file_name in file_names
+        ):
+            raise UnsupportedGraphException(
+                "The graph file format with graph_idx files are not currently supported!"
+            )
         for file_name in file_names:
             for target in ("node", "types"):
                 if target in file_name:
