@@ -218,7 +218,18 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         
         let (components_number, smallest, biggest) = graph.connected_components_number(false);
         assert!(biggest >= smallest, "smallest: {} biggest: {}", smallest, biggest);
-        assert_eq!(!graph.has_singletons() && !graph.has_selfloops(), smallest > 1, "singletons: {} selfloops: {} smallest: {} biggest: {}, edges: {:?}", graph.has_singletons(), graph.has_selfloops(), smallest, biggest, graph.get_unique_edges_iter(false).collect::<Vec<(NodeT, NodeT)>>());
+            
+        assert!(
+            ! (
+                smallest == 1
+                &&
+                (!graph.has_singletons())
+                &&
+                (!graph.has_selfloops())
+            ),
+            "singletons: {} selfloops: {} smallest: {} biggest: {}, edges: {:?}", 
+            graph.has_singletons(), graph.has_selfloops(), smallest, biggest, graph.get_unique_edges_iter(false).collect::<Vec<(u32, u32)>>()
+        );    
     }
 
     // Testing principal random walk algorithms

@@ -7,24 +7,32 @@ use graph::{EdgeFileReader, Graph};
 fn test_components_size() {
     let edges_reader = EdgeFileReader::new("tests/data/test_components.csv".to_string())
         .unwrap()
-        .set_separator(Some("\c".to_string()))
+        .set_separator(Some(",".to_string()))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))
         .set_header(Some(false));
 
-    let mut g =
+    let g =
         Graph::from_sorted_csv(edges_reader, None, false, false, 6108, 242, "Graph".to_owned()).unwrap();
 
-        
-    let (components_number, smallest, biggest) = graph.connected_components_number(false);
+    // THIS IS NOT DETERMINISTIC
+    for _ in 0..1_000_000 {
+        let (components_number, smallest, biggest) = g.connected_components_number(false);
 
-    assert!(biggest >= smallest, "smallest: {} biggest: {}", smallest, biggest);
+        assert!(biggest >= smallest, "smallest: {} biggest: {}", smallest, biggest);
 
-    assert_eq!(
-        !graph.has_singletons() && !graph.has_selfloops(), smallest > 1, 
-        "singletons: {} selfloops: {} smallest: {} biggest: {}, edges: {:?}", 
-        graph.has_singletons(), graph.has_selfloops(), smallest, biggest, graph.get_unique_edges_iter(false).collect::<Vec<(NodeT, NodeT)>>()
-    );
+        assert!(
+            ! (
+                smallest == 1
+                &&
+                (!g.has_singletons())
+                &&
+                (!g.has_selfloops())
+            ),
+            "singletons: {} selfloops: {} smallest: {} biggest: {}, edges: {:?}", 
+            g.has_singletons(), g.has_selfloops(), smallest, biggest, g.get_unique_edges_iter(false).collect::<Vec<(u32, u32)>>()
+        );
+    }
    
 }
