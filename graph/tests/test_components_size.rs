@@ -18,7 +18,7 @@ fn test_components_size() {
 
     // THIS IS NOT DETERMINISTIC
     for _ in 0..1_000_000 {
-        let (components_number, smallest, biggest) = g.connected_components_number(false);
+        let (components, components_number, smallest, biggest) = g.connected_components(false).unwrap();
 
         assert!(biggest >= smallest, "smallest: {} biggest: {}", smallest, biggest);
 
@@ -30,8 +30,8 @@ fn test_components_size() {
                 &&
                 (!g.has_selfloops())
             ),
-            "singletons: {} selfloops: {} smallest: {} biggest: {}, edges: {:?}", 
-            g.has_singletons(), g.has_selfloops(), smallest, biggest, g.get_unique_edges_iter(false).collect::<Vec<(u32, u32)>>()
+            "singletons: {} selfloops: {} smallest: {} biggest: {}, edges: {:?}, components: {:?}", 
+            g.has_singletons(), g.has_selfloops(), smallest, biggest, g.get_unique_edges_iter(false).collect::<Vec<(u32, u32)>>(), components
         );
     }
    
