@@ -299,7 +299,7 @@ impl Graph {
         self.get_self_loop_number() as f64 / self.get_edges_number() as f64
     }
 
-    /// Returns number a triple with (number of components, number of nodes of the biggest component, number of nodes of the smallest component )
+    /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
     pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
         info!("Computing connected components number.");
         if self.directed {
