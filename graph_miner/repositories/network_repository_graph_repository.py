@@ -409,6 +409,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             candidate_file_name.endswith(ext)
             for ext in (
                 ".node_labels",
+                ".types"
             )
         ):
             return os.path.join(directory, candidate_file_name)
