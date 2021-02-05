@@ -193,6 +193,34 @@ pub fn default_holdout_test_suite(
 pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
+
+    // Test get_edge_id_string()
+    assert_eq!(
+        graph.get_edge_id_string("NONEXISTENT", "NONEXISTENT", None),
+        None,
+        "Graph contains non-existing edge."
+    );
+
+    assert!(
+        graph.get_singleton_nodes_with_self_loops_number() <= graph.get_singleton_nodes_number(),
+        "Graph singleton nodes with selfloops is bigger than number of singleton nodes."
+    );
+
+    assert_eq!(
+        graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),
+        graph.get_nodes_number(),
+        "Sum of singleton and non singleton nodes number does not match."
+    );
+
+    if !graph.directed {
+        // let has_singletons = graph.get_node_degrees().iter().any(|degree| *degree == 0);
+        // assert_eq!(has_singletons, graph.has_singletons());
+        
+        let (components_number, smallest, biggest) = graph.connected_components_number(false);
+        assert!(biggest >= smallest, "smallest: {} biggest: {}", smallest, biggest);
+        assert_eq!(!graph.has_singletons() && !graph.has_selfloops(), smallest > 1, "singletons: {} selfloops: {} smallest: {} biggest: {}, edges: {:?}", graph.has_singletons(), graph.has_selfloops(), smallest, biggest, graph.get_unique_edges_iter(false).collect::<Vec<(NodeT, NodeT)>>());
+    }
+
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
@@ -261,29 +289,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
                 "Complete second order walks are not reproducible!"
             );
         }
-    }
-
-    // Test get_edge_id_string()
-    assert_eq!(
-        graph.get_edge_id_string("NONEXISTENT", "NONEXISTENT", None),
-        None,
-        "Graph contains non-existing edge."
-    );
-
-    assert!(
-        graph.get_singleton_nodes_with_self_loops_number() <= graph.get_singleton_nodes_number(),
-        "Graph singleton nodes with selfloops is bigger than number of singleton nodes."
-    );
-
-    assert_eq!(
-        graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),
-        graph.get_nodes_number(),
-        "Sum of singleton and non singleton nodes number does not match."
-    );
-
-    if !graph.directed {
-        let has_singletons = graph.get_node_degrees().iter().any(|degree| *degree == 0);
-        assert_eq!(has_singletons, graph.has_singletons());
     }
 
     if let Some(edge) = graph.get_unique_edges_iter(true).next() {
