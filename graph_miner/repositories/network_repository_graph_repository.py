@@ -21,6 +21,10 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         self._organisms = pd.read_html(
             "http://networkrepository.com/networks.php"
         )[0]
+        self._headers = {
+            'User-Agent': 'My User Agent 1.0',
+            'From': 'luca.cappelletti94@gmail.com'  # This is another valid field
+        }
 
         # TEMPORARY FILTER TO GET STUFF DONE!
 
@@ -40,7 +44,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 else int(value[:-1])*symbols[value[-1]]
                 for value in self._organisms[c]
             ]
-        
+
         col = self._organisms["|E|"]
         mask = [
             isinstance(v, int) and int(v) < 10000
@@ -100,6 +104,26 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             graph_name=self.get_graph_name(graph_data)
         )]
 
+    def get_graph_soup(self, graph_name: str) -> BeautifulSoup:
+        """Return soup for given graph.
+
+        Parameters
+        -----------------------
+        graph_name,
+            Name of the graph to retrieve.
+
+        Returns
+        -----------------------
+        Beautiful soup for given graph.
+        """
+        return BeautifulSoup(
+            requests.get(
+                self._graph_page_url.format(graph_name),
+                headers=self._headers
+            ).text,
+            "lxml"
+        )
+
     def get_graph_citations(self, graph_data) -> List[str]:
         """Return url for the given graph.
 
@@ -124,12 +148,8 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             }
             """
         ]
-        headers = {
-            'User-Agent': 'My User Agent 1.0',
-            'From': 'luca.cappelletti94@gmail.com'  # This is another valid field
-        }
-        url = self._graph_page_url.format(self.get_graph_name(graph_data))
-        soup = BeautifulSoup(requests.get(url, headers=headers).text, "lxml")
+
+        soup = self.get_graph_soup(self.get_graph_name(graph_data))
         return baseline_citation + [
             reference.text.strip()
             for reference in soup.find_all("blockquote")
@@ -215,13 +235,15 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         Dictionary to build the graph object.
         """
         data = self.load_dataframe(edge_path)
+        soup = self.get_graph_soup(graph_name)
+        is_weighted = "<td><b>Edge weights</b></td><td>Weighted</td>" in soup.text
         if (
             len(data.columns) == 3 and
             data[0].dtype == np.int64 and
             len(data) != len(data[0].unique()) and
             data[1].dtype == np.int64 and
             len(data) != len(data[1].unique()) and
-            data[2].dtype == np.float64
+            (data[2].dtype == np.float64 or is_weighted)
         ):
             sources_column_number = 0
             destinations_column_number = 1
@@ -368,8 +390,6 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         else:
             nodes_column_number = None
             node_types_column_number = None
-
-        
 
         return {
             **super().build_graph_parameters(
