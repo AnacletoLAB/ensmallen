@@ -43,19 +43,19 @@ fn test_components_size() {
     assert_eq!(smallest, 2); // the size of the smallest component
     assert_eq!(biggest, 2);  // the size of the biggest component
 
-    let (number_of_components2, smallest2, biggest2) = graph.connected_components_number(false).unwrap();
-    assert_eq(number_of_components, number_of_components2, "There is a difference between the number of components returned by the connected_components method and the connected_components_number.");
-    assert_eq(smallest, smallest2, "There is a difference between the smallest returned by the connected_components method and the connected_components_number.");
-    assert_eq(biggest, biggest2, "There is a difference between the biggest returned by the connected_components method and the connected_components_number.");
+    let (number_of_components2, smallest2, biggest2) = g.connected_components_number(false);
+    assert_eq!(number_of_components, number_of_components2, "There is a difference between the number of components returned by the connected_components method and the connected_components_number.");
+    assert_eq!(smallest, smallest2, "There is a difference between the smallest returned by the connected_components method and the connected_components_number.");
+    assert_eq!(biggest, biggest2, "There is a difference between the biggest returned by the connected_components method and the connected_components_number.");
 
     let mut components_size = HashMap::new();
-    for component_index in components {
-        let counter = components_size.entry(component_size).or_insert(0);
+    for component_index in &components {
+        let counter = components_size.entry(*component_index).or_insert(0);
         *counter += 1;
     }
 
-    assert_eq!(number_of_components, component_size.len(), "The number of components is wrong!");
-    assert_eq!(smallest, components_size.iter().min().unwrap(), "The smallest is wrong!");
-    assert_eq!(biggest, components_size.iter().max().unwrap(), "The biggest is wrong!");
+    assert_eq!(number_of_components as usize, components_size.len(), "The number of components is wrong!");
+    assert_eq!(smallest, *components_size.values().min().unwrap(), "The smallest is wrong!");
+    assert_eq!(biggest,  *components_size.values().max().unwrap(), "The biggest is wrong!");
 
 }
