@@ -479,6 +479,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             candidate_file_name.endswith(ext)
             for ext in (
                 ".node_labels",
+                ".nodes",
                 ".types"
             )
         ):
