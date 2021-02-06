@@ -349,7 +349,6 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             ]) and
             len(data) != len(data[0].unique()) and
             len(data) != len(data[1].unique()) and
-            len(data[2].unique()) == 1 and
             ((data[3] == 0) | (data[3] > 10_000_000)).all()
         ):
             raise UnsupportedGraphException(
