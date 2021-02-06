@@ -363,7 +363,14 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 auto_clear=False
             )
             if len(data.columns) > 2:
-                try:
+                has_weight = userinput(
+                    "has_weight",
+                    default="yes",
+                    validator="human_bool",
+                    sanitizer="human_bool",
+                    auto_clear=False
+                )
+                if has_weight:
                     weights_column_number = userinput(
                         "weights_column_number",
                         default=2,
@@ -371,22 +378,25 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                         sanitizer="integer",
                         auto_clear=False
                     )
-                except KeyboardInterrupt:
-                    weights_column_number = None
             else:
                 weights_column_number = None
 
             if len(data.columns) == 3 and weights_column_number is None or len(data.columns) > 3:
-                try:
+                has_edge_type = userinput(
+                    "has_edge_type",
+                    default="yes",
+                    validator="human_bool",
+                    sanitizer="human_bool",
+                    auto_clear=False
+                )
+                if has_edge_type:
                     edge_types_column_number = userinput(
                         "edge_types_column_number",
-                        default=2,
+                        default=2 if weights_column_number is None else 3,
                         validator="positive_integer",
                         sanitizer="integer",
                         auto_clear=False
                     )
-                except KeyboardInterrupt:
-                    edge_types_column_number = None
             else:
                 edge_types_column_number = None
             clear()
