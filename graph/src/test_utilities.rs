@@ -196,8 +196,6 @@ pub fn default_holdout_test_suite(
 pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
-<<<<<<< Updated upstream
-=======
 
     // Test get_edge_id_string()
     assert_eq!(
@@ -237,7 +235,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         );    
     }
 
->>>>>>> Stashed changes
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
