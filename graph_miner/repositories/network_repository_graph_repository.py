@@ -206,7 +206,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         return (
             any(
                 graph_name.startswith(term)
-                for term in ("rec-", "ia-", "reptilia-", "mammalia-", "insecta-")
+                for term in ("fb-pages-", "rec-", "ia-", "reptilia-", "mammalia-", "insecta-")
             ) or
             any(
                 graph_name.endswith(term)
