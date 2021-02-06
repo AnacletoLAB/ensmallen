@@ -47,7 +47,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
 
         col = self._organisms["|E|"]
         mask = [
-            isinstance(v, int) and int(v) < 100000
+            isinstance(v, int) and int(v) < 1000000
             for v in col
         ]
         self._organisms = self._organisms[mask]
