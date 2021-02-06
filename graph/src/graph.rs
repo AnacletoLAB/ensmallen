@@ -67,7 +67,7 @@ pub struct Graph {
 
 /// # Graph utility methods
 impl Graph {
-    pub fn new(
+    pub fn new<S: Into<String>>(
         directed: bool,
         unique_self_loop_number: NodeT,
         self_loop_number: EdgeT,
@@ -80,7 +80,7 @@ impl Graph {
         node_bit_mask: EdgeT,
         node_bits: u8,
         edge_types: Option<VocabularyVec<EdgeTypeT, EdgeT>>,
-        name: String,
+        name: S,
         weights: Option<Vec<WeightT>>,
         node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
     ) -> Graph {
@@ -95,7 +95,6 @@ impl Graph {
             unique_sources,
             node_bit_mask,
             node_bits,
-            name,
             weights,
             node_types: node_types.map(|nts| nts.set_numeric_ids(false)),
             edge_types: edge_types.map(|ets| ets.set_numeric_ids(false)),
@@ -105,6 +104,7 @@ impl Graph {
             destinations: None,
             outbounds: None,
             cached_destinations: None,
+            name:name.into(),
         }
     }
 

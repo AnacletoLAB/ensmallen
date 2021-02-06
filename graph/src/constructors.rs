@@ -26,6 +26,7 @@ type ParsedStringEdgesType = Result<
 >;
 
 #[macro_export]
+/// Take a vector and make it a None if its empty, Some(vector) otherwise
 macro_rules! optionify {
     ($val:expr) => {
         if $val.is_empty() {
@@ -692,14 +693,14 @@ pub(crate) fn parse_integer_edges(
 /// # Graph Constructors
 impl Graph {
 
-    pub(crate) fn build_graph(
+    pub(crate) fn build_graph<S: Into<String>>(
         edge_iter: impl Iterator<Item = Result<Quadruple, String>>,
         edges_number: EdgeT,
         nodes: Vocabulary<NodeT>,
         node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
         edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
         directed: bool,
-        name: String,
+        name: S,
         ignore_duplicated_edges: bool,
         has_edge_types: bool,
         has_weights: bool
@@ -763,12 +764,12 @@ impl Graph {
     ///     Wether to ignore duplicated edges or to raise a proper exception.
     /// * skip_self_loops: bool,
     ///     Wether to skip self loops while reading the the edges iterator.
-    pub fn from_string_unsorted(
+    pub fn from_string_unsorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
         directed: bool,
         directed_edge_list: bool,
-        name: String,
+        name: S,
         ignore_duplicated_nodes: bool,
         ignore_duplicated_edges: bool,
         verbose: bool,
@@ -862,7 +863,7 @@ impl Graph {
     }
 
     /// Create new Graph object from sorted sources.
-    pub fn from_string_sorted(
+    pub fn from_string_sorted<S: Into<String>>(
         edges_iterator: impl Iterator<Item = Result<StringQuadruple, String>>,
         nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<String>), String>>>,
         directed: bool,
@@ -877,7 +878,7 @@ impl Graph {
         numeric_node_types_ids: bool,
         has_edge_types: bool,
         has_weights: bool,
-        name: String,
+        name: S,
     ) -> Result<Graph, String> {
         let (nodes, node_types) = parse_nodes(
             nodes_iterator,

@@ -1,3 +1,5 @@
+//! Test functions used both for testing and fuzzing.
+
 use super::*;
 use rand::Rng;
 use rayon::iter::ParallelIterator;
@@ -15,7 +17,7 @@ static DEFAULT_PATH: &str = "";
 
 const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-/// Computes a random string,
+/// Computes a random string of the chosen length
 pub fn random_string(len: usize) -> String {
     let mut rng = rand::thread_rng();
 
@@ -37,7 +39,8 @@ pub fn random_path() -> String {
 }
 
 #[allow(clippy::redundant_clone)]
-/// Load PPI with given parametrization.
+/// Load the Strings Protein Protein Interaction graph with given parametrization.
+/// This is our default graph we use on tests.
 pub fn load_ppi(
     load_nodes: bool,
     load_edge_types: bool,
@@ -216,7 +219,7 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         // let has_singletons = graph.get_node_degrees().iter().any(|degree| *degree == 0);
         // assert_eq!(has_singletons, graph.has_singletons());
         
-        let (components_number, smallest, biggest) = graph.connected_components_number(false);
+        let (_components_number, smallest, biggest) = graph.connected_components_number(false);
         assert!(biggest >= smallest, "smallest: {} biggest: {}", smallest, biggest);
             
         assert!(

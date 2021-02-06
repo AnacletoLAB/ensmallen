@@ -1,9 +1,6 @@
 use indicatif::{ProgressBar, ProgressIterator, ProgressStyle};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
-use crate::max;
-use crate::min;
-
 /// Structure that saves the common parameters for reading csv files.
 ///
 /// # Attributes
@@ -34,11 +31,12 @@ impl CSVFileReader {
     ///
     /// * path: String - Path where to store/load the file.
     ///
-    pub fn new(path: String) -> Result<CSVFileReader, String> {
+    pub fn new<S: Into<String>>(path: S) -> Result<CSVFileReader, String> {
+        let path = path.into();
         // check file existance
         match File::open(&path) {
             Ok(_) => Ok(CSVFileReader {
-                path,
+                path:path.into(),
                 verbose: true,
                 separator: "\t".to_string(),
                 header: true,
@@ -47,13 +45,13 @@ impl CSVFileReader {
                 max_rows_number: None,
                 comment_symbol: None,
             }),
-            Err(_) => Err(format!("Cannot open the file at {}", path)),
+            Err(_) => Err(format!("Cannot open the file at {}", path.to_string())),
         }
     }
 
     /// Read the whole file and return how many rows it has.
     pub(crate) fn count_rows(&self) -> usize {
-        min!(
+        std::cmp::min(
             BufReader::new(File::open(&self.path).unwrap())
                 .lines()
                 .count(),
@@ -115,7 +113,7 @@ impl CSVFileReader {
                     },
                     Err(_) => Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string())
                 }
-            },
+            }, 
             None => Err(concat!(
                 "Unable to read the first non skipped line of the file.\n",
                 "The file has possibly less than the expected amount of lines"
@@ -129,7 +127,7 @@ impl CSVFileReader {
     ) -> Result<impl Iterator<Item = Result<Vec<String>, String>> + '_, String> {
         let pb = if self.verbose {
             let pb = ProgressBar::new(self.count_rows() as u64);
-            pb.set_draw_delta(max!(self.count_rows() as u64 / 1000, 1));
+            pb.set_draw_delta(std::cmp::max(self.count_rows() as u64 / 1000, 1));
             pb.set_style(ProgressStyle::default_bar().template(
                 "Reading csv {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] ({pos}/{len}, ETA {eta})",
             ));
@@ -148,7 +146,7 @@ impl CSVFileReader {
                 Ok(l) => {
                     let mut line_components = l
                         .split(&self.separator)
-                        .map(|s| s.to_string())
+                        .map(|s| s.to_string()) // TODO FIND A WAY TO USE A REF INSTEAD OF A STRING we are copying every line, this slow down a lot imho
                         .collect::<Vec<String>>();
                     // If in this line some values have been implied,
                     // we add the necessary padding.

@@ -12,14 +12,14 @@ impl Graph {
     /// * `ignore_duplicated_nodes`: bool - Wethever to ignore duplicated nodes while reading.
     /// * `ignore_duplicated_edges`: bool - Wethever to ignore duplicated edges while reading.
     /// * `skip_self_loops`: bool - Wethever to skip self-loops while reading the edge file.
-    pub fn from_sorted_csv(
+    pub fn from_sorted_csv<S: Into<String>>(
         edge_file_reader: EdgeFileReader,
         node_file_reader: Option<NodeFileReader>,
         directed: bool,
         directed_edge_list: bool,
         edges_number: EdgeT,
         nodes_number: NodeT,
-        name: String,
+        name: S,
     ) -> Result<Graph, String> {
         Graph::from_string_sorted(
             edge_file_reader.read_lines()?,
@@ -63,12 +63,12 @@ impl Graph {
     /// * `ignore_duplicated_nodes`: bool - Wethever to ignore duplicated nodes while reading.
     /// * `ignore_duplicated_edges`: bool - Wethever to ignore duplicated edges while reading.
     /// * `skip_self_loops`: bool - Wethever to skip self-loops while reading the edge file.
-    pub fn from_unsorted_csv(
+    pub fn from_unsorted_csv<S: Into<String>>(
         edge_file_reader: EdgeFileReader,
         node_file_reader: Option<NodeFileReader>,
         directed: bool,
         directed_edge_list: bool,
-        name: String,
+        name: S,
     ) -> Result<Graph, String> {
         Graph::from_string_unsorted(
             edge_file_reader.read_lines()?,
