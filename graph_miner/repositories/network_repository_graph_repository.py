@@ -236,7 +236,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         data = self.load_dataframe(edge_path)
         soup = self.get_graph_soup(graph_name)
-        is_weighted = "<td><b>Edge weights</b></td><td>Weighted</td>" in soup.text
+        is_weighted = "<td><b>Edge weights</b></td><td>Weighted</td>" in str(soup)
         if (
             len(data.columns) == 3 and
             data[0].dtype == np.int64 and
