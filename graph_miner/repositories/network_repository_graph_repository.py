@@ -240,7 +240,33 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         soup = self.get_graph_soup(graph_name)
         is_weighted = "<td><b>Edge weights</b></td><td>Weighted</td>" in str(
             soup)
+        
         if (
+            len(data.columns) == 3 and
+            data[0].dtype == np.int64 and
+            #len(data) != len(data[0].unique()) and
+            data[1].dtype == np.int64 and
+            #len(data) != len(data[1].unique()) and
+            (data[2] == 1).all()
+        ):
+            sources_column_number = 0
+            destinations_column_number = 1
+            weights_column_number = None
+            edge_types_column_number = None
+        elif (
+            len(data.columns) == 4 and
+            data[0].dtype == np.int64 and
+            #len(data) != len(data[0].unique()) and
+            data[1].dtype == np.int64 and
+            #len(data) != len(data[1].unique()) and
+            (data[2] == 1).all() and
+            data[3].isna().all()
+        ):
+            sources_column_number = 0
+            destinations_column_number = 1
+            weights_column_number = None
+            edge_types_column_number = None
+        elif (
             len(data.columns) == 3 and
             data[0].dtype == np.int64 and
             #len(data) != len(data[0].unique()) and
