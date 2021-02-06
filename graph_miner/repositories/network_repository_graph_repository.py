@@ -284,6 +284,27 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             len(data.columns) == 4 and
             all([
                 data[col].dtype == np.int64
+                for col in [0, 1]
+            ]) and
+            all([
+                data[col].dtype == np.float64
+                for col in [2, 3]
+            ])
+            #len(data) != len(data[0].unique()) and
+            #len(data) != len(data[1].unique()) and
+            #((data[2] == 0) | (data[2] > 10_000_000)).all()
+        ):
+            raise UnsupportedGraphException(
+                "Currently graphs with timestamps are not supported."
+            )
+            # sources_column_number = 0
+            # destinations_column_number = 1
+            # weights_column_number = 2
+            # edge_types_column_number = None
+        elif (
+            len(data.columns) == 4 and
+            all([
+                data[col].dtype == np.int64
                 for col in data.columns
             ]) and
             len(data) != len(data[0].unique()) and
