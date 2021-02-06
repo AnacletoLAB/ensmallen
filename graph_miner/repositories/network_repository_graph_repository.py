@@ -125,7 +125,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         except Exception:
             content = ""
         return BeautifulSoup(
-           content,
+            content,
             "lxml"
         )
 
@@ -238,13 +238,14 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         data = self.load_dataframe(edge_path)
         soup = self.get_graph_soup(graph_name)
-        is_weighted = "<td><b>Edge weights</b></td><td>Weighted</td>" in str(soup)
+        is_weighted = "<td><b>Edge weights</b></td><td>Weighted</td>" in str(
+            soup)
         if (
             len(data.columns) == 3 and
             data[0].dtype == np.int64 and
-            len(data) != len(data[0].unique()) and
+            #len(data) != len(data[0].unique()) and
             data[1].dtype == np.int64 and
-            len(data) != len(data[1].unique()) and
+            #len(data) != len(data[1].unique()) and
             (data[2].dtype == np.float64 or is_weighted)
         ):
             sources_column_number = 0
@@ -254,9 +255,9 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         elif (
             len(data.columns) == 2 and
             data[0].dtype == np.int64 and
-            len(data) != len(data[0].unique()) and
+            #len(data) != len(data[0].unique()) and
             data[1].dtype == np.int64 and
-            len(data) != len(data[1].unique())
+            #len(data) != len(data[1].unique())
         ):
             sources_column_number = 0
             destinations_column_number = 1
@@ -268,8 +269,8 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                 data[col].dtype == np.int64
                 for col in data.columns
             ]) and
-            len(data) != len(data[0].unique()) and
-            len(data) != len(data[1].unique()) and
+            #len(data) != len(data[0].unique()) and
+            #len(data) != len(data[1].unique()) and
             ((data[2] == 0) | (data[2] > 10_000_000)).all()
         ):
             raise UnsupportedGraphException(
