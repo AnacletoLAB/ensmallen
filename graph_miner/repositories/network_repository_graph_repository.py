@@ -46,7 +46,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             isinstance(v, int) and int(v) < 10000
             for v in col
         ]
-        self._organism = self._organism[mask]
+        self._organisms = self._organisms[mask]
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
         """Return built graph name.
