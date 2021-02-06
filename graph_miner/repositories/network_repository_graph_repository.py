@@ -138,15 +138,12 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         target = "The Network Data Repository"
         baseline_citation = [
-            """
-            @inproceedings{nr,
-                title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
-                author={Ryan A. Rossi and Nesreen K. Ahmed},
-                booktitle = {AAAI},
-                url={http://networkrepository.com},
-                year={2015}
-            }
-            """
+            open(
+                "{}/models/network_repository_citation.bib".format(
+                    os.path.dirname(os.path.abspath(__file__))
+                ),
+                "r"
+            ).read()
         ]
 
         soup = self.get_graph_soup(self.get_graph_name(graph_data))
