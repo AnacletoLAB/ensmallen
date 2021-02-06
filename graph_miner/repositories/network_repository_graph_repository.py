@@ -119,7 +119,8 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         return BeautifulSoup(
             requests.get(
                 self._graph_page_url.format(graph_name),
-                headers=self._headers
+                headers=self._headers,
+                timeout=5
             ).text,
             "lxml"
         )
