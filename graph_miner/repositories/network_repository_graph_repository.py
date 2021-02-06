@@ -253,6 +253,20 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             destinations_column_number = 1
             weights_column_number = None
             edge_types_column_number = None
+        if (
+            len(data.columns) == 3 and
+            data[0].dtype == np.int64 and
+            #len(data) != len(data[0].unique()) and
+            data[1].dtype == np.int64 and
+            #len(data) != len(data[1].unique()) and
+            graph_name[0] == "G" and
+            graph_name[1:].isnumeric() and
+            {1, -1} == set(data[2].values)
+        ):
+            sources_column_number = 0
+            destinations_column_number = 1
+            weights_column_number = None
+            edge_types_column_number = 2
         elif (
             len(data.columns) == 4 and
             data[0].dtype == np.int64 and
