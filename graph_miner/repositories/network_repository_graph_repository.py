@@ -26,32 +26,6 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             'From': 'luca.cappelletti94@gmail.com'  # This is another valid field
         }
 
-        # TEMPORARY FILTER TO GET STUFF DONE!
-
-        columns = ["|V|", "|E|"]
-        assert all(c in self._organisms.columns for c in columns)
-        symbols = {
-            "K": 10**3,
-            "M": 10**6,
-            "B": 10**9
-        }
-        for c in columns:
-            self._organisms[c] = [
-                "-"
-                if value == "-"
-                else int(value)
-                if not any(value.endswith(symbol) for symbol in symbols)
-                else int(value[:-1])*symbols[value[-1]]
-                for value in self._organisms[c]
-            ]
-
-        col = self._organisms["|E|"]
-        mask = [
-            isinstance(v, int) and int(v) < 10000000
-            for v in col
-        ]
-        self._organisms = self._organisms[mask]
-
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
         """Return built graph name.
 
