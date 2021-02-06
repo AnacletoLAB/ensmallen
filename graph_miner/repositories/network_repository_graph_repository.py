@@ -116,12 +116,16 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         -----------------------
         Beautiful soup for given graph.
         """
-        return BeautifulSoup(
-            requests.get(
+        try:
+            content = requests.get(
                 self._graph_page_url.format(graph_name),
                 headers=self._headers,
-                timeout=5
-            ).text,
+                timeout=10
+            ).text
+        except Exception:
+            content = ""
+        return BeautifulSoup(
+           content,
             "lxml"
         )
 
