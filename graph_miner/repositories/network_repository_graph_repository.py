@@ -378,6 +378,8 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                         sanitizer="integer",
                         auto_clear=False
                     )
+                else:
+                    weights_column_number = None
             else:
                 weights_column_number = None
 
@@ -397,6 +399,8 @@ class NetworkRepositoryGraphRepository(GraphRepository):
                         sanitizer="integer",
                         auto_clear=False
                     )
+                else:
+                    edge_types_column_number = None
             else:
                 edge_types_column_number = None
             clear()
