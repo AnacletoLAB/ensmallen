@@ -348,7 +348,11 @@ impl Graph {
     /// ```
     pub fn density(&self) -> f64 {
         let nodes_number = self.get_nodes_number() as EdgeT;
-        self.unique_edges_number as f64 / (nodes_number * (nodes_number - 1)) as f64
+        let total_nodes_number = nodes_number * match self.has_selfloops(){
+            true=>nodes_number,
+            false=>nodes_number-1
+        };
+        self.unique_edges_number as f64 / total_nodes_number as f64
     }
 
     /// Returns report relative to the graph metrics
