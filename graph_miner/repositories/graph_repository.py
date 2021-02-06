@@ -493,7 +493,7 @@ class GraphRepository:
             sep=self.get_file_separator(path),
             skiprows=self.get_starting_commented_lines_number(path) + self.get_lines_to_skip(path),
             header=None,
-            nrows=20000,
+            nrows=100000,
             low_memory=False
         )
 
