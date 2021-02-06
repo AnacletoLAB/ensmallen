@@ -237,7 +237,7 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
         let cpu_number = num_cpus::get();
-        let thread_number = min!(1 + self.scale_node_threads(), cpu_number);
+        let thread_number = std::cmp::min(1 + self.scale_node_threads(), cpu_number);
         let pool = rayon::ThreadPoolBuilder::new()
             .num_threads(thread_number)
             .build()
@@ -360,7 +360,51 @@ impl Graph {
         ))
     }
 
-    /// Returns set of roaring bitmaps representing the connected components.
+    /// Compute the connected components building in parallel a spanning tree using bader's algorithm.
+    /// **This works only for undirected graphs.**
+    /// 
+    /// This method is **not thread save and not deterministic** but by design of the algorithm this 
+    /// shouldn't matter but if we will encounter non-detemristic bugs here is where we want to look.
+    /// 
+    /// Returns (Components membership, components number, size of the smallest components, size of the biggest components).
+    /// We assign to each node the index of its component, so nodes in the same components will have the same index.
+    /// This component index is the returned Components membership vector.
+    /// 
+    /// Example:
+    /// ```rust
+    ///  use graph::Graph;
+    /// 
+    ///  // Load an undirected weightless graph with the edges
+    ///  // [(0, 1), (1, 4), (2, 3)]
+    ///  let graph = Graph::from_string_unsorted(
+    ///      [
+    ///         Ok(("0".to_string(), "1".to_string(), None, None)), 
+    ///         Ok(("1".to_string(), "4".to_string(), None, None)), 
+    ///         Ok(("2".to_string(), "3".to_string(), None, None)), 
+    ///      ].to_vec().into_iter(),
+    ///      None,      // nodes
+    ///      false,     // directed
+    ///      true,      // directe edge list
+    ///      "test graph",// name
+    ///      false,     // ignore_duplicated_nodes
+    ///      false,     // ignore_duplicated_edges
+    ///      false,     // verbose
+    ///      false,     // numeric_edge_types_ids
+    ///      false,     // numeric_node_ids
+    ///      false,     // numeric_edge_node_ids
+    ///      false,     // numeric_node_types_ids
+    ///      false,     // has_edge_types
+    ///      false,     // has_weights
+    /// ).unwrap();
+    /// 
+    /// let (components, number_of_components, smallest, biggest) = graph.connected_components(false).unwrap();
+    /// 
+    /// assert_eq!(components, [0, 0, 1, 1, 0].to_vec());
+    /// assert_eq!(number_of_components, 2);
+    /// assert_eq!(smallest, 2); // the size of the smallest component
+    /// assert_eq!(biggest, 3);  // the size of the biggest component
+    /// 
+    /// ```
     pub fn connected_components(
         &self,
         verbose: bool,
@@ -373,7 +417,7 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as usize;
         let mut components = vec![NOT_PRESENT; nodes_number];
         let cpu_number = num_cpus::get();
-        let thread_number = min!(1 + self.scale_node_threads(), cpu_number);
+        let thread_number = std::cmp::min(1 + self.scale_node_threads(), cpu_number);
         let pool = rayon::ThreadPoolBuilder::new()
             .num_threads(thread_number)
             .build()

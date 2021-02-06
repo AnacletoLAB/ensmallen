@@ -728,7 +728,7 @@ impl Graph {
         // Get the k_index-th chunk
         let chunk_size = indices.len() as f64 / k as f64;
         let start = (k_index as f64 * chunk_size).ceil() as EdgeT;
-        let end = min!(
+        let end = std::cmp::min(
             indices.len() as EdgeT,
             (((k_index + 1) as f64) * chunk_size).ceil() as EdgeT
         );

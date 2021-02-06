@@ -153,7 +153,7 @@ extern "C" {
     );
 }
 
-pub fn update_explore_weight_transition(
+fn update_explore_weight_transition(
     transition: &mut Vec<WeightT>,
     destinations: &[NodeT],
     previous_destinations: &[NodeT],
@@ -189,7 +189,7 @@ pub fn update_explore_weight_transition(
     );
 }
 
-pub fn update_return_explore_weight_transition(
+fn update_return_explore_weight_transition(
     transition: &mut Vec<WeightT>,
     destinations: &[NodeT],
     previous_destinations: &[NodeT],

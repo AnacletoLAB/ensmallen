@@ -755,8 +755,8 @@ impl Graph {
             median_node_degree=self.degrees_median(),
             mean_node_degree=self.degrees_mean(),
             mode_node_degree=self.degrees_mode(),
-            most_common_nodes_number=min!(5, self.get_nodes_number()),
-            central_nodes = self.format_node_list(self.get_top_k_central_nodes(min!(5, self.get_nodes_number())).as_slice())?
+            most_common_nodes_number=std::cmp::min(5, self.get_nodes_number()),
+            central_nodes = self.format_node_list(self.get_top_k_central_nodes(std::cmp::min(5, self.get_nodes_number())).as_slice())?
         ))
     }
 }

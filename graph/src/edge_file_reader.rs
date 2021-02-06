@@ -25,7 +25,7 @@ impl EdgeFileReader {
     ///
     /// * reader: CSVFilereader - Path where to store/load the file.
     ///
-    pub fn new(path: String) -> Result<EdgeFileReader, String> {
+    pub fn new<S: Into<String>>(path: S) -> Result<EdgeFileReader, String> {
         Ok(EdgeFileReader {
             reader: CSVFileReader::new(path)?,
             sources_column_number: 0,
@@ -48,11 +48,12 @@ impl EdgeFileReader {
     ///
     /// * sources_column: Option<String> - The source nodes column to use for the file.
     ///
-    pub fn set_sources_column(
+    pub fn set_sources_column<S: Into<String>>(
         mut self,
-        sources_column: Option<String>,
+        sources_column: Option<S>,
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = sources_column {
+            let column = column.into();
             if column.is_empty() {
                 return Err("The given node types column is empty.".to_owned());
             }
@@ -94,11 +95,12 @@ impl EdgeFileReader {
     ///
     /// * destination_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_destinations_column(
+    pub fn set_destinations_column<S: Into<String>>(
         mut self,
-        destinations_column: Option<String>,
+        destinations_column: Option<S>,
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = destinations_column {
+            let column = column.into();
             if column.is_empty() {
                 return Err("The given node types column is empty.".to_owned());
             }
@@ -139,11 +141,12 @@ impl EdgeFileReader {
     ///
     /// * destination_column: Option<String> - The node types column to use for the file.
     ///
-    pub fn set_edge_types_column(
+    pub fn set_edge_types_column<S: Into<String>>(
         mut self,
-        edge_type_column: Option<String>,
+        edge_type_column: Option<S>,
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = edge_type_column {
+            let column = column.into();
             if column.is_empty() {
                 return Err("The given node types column is empty.".to_owned());
             }
@@ -196,11 +199,12 @@ impl EdgeFileReader {
     ///
     /// * weights_column: Option<String> - The edge weights column to use for the file.
     ///
-    pub fn set_weights_column(
+    pub fn set_weights_column<S: Into<String>>(
         mut self,
-        weights_column: Option<String>,
+        weights_column: Option<S>,
     ) -> Result<EdgeFileReader, String> {
         if let Some(column) = weights_column {
+            let column = column.into();
             if column.is_empty() {
                 return Err("The given edge weights column is empty.".to_owned());
             }
@@ -394,8 +398,9 @@ impl EdgeFileReader {
     ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator(mut self, separator: Option<String>) -> Result<EdgeFileReader, String> {
+    pub fn set_separator<S: Into<String>>(mut self, separator: Option<S>) -> Result<EdgeFileReader, String> {
         if let Some(sep) = separator {
+            let sep = sep.into();
             if sep.is_empty() {
                 return Err("The separator cannot be empty.".to_owned());
             }
@@ -445,15 +450,15 @@ impl EdgeFileReader {
     /// # Arguments
     ///
     /// * vals: Vec<String> - Vector of the values of the line to be parsed
-    fn parse_edge_line(&self, vals: Vec<String>) -> Result<StringQuadruple, String> {
+    fn parse_edge_line<S: Into<String> + Clone>(&self, vals: Vec<S>) -> Result<StringQuadruple, String> {
         // exctract the values
-        let source_node_name = vals[self.sources_column_number].to_owned();
-        let destination_node_name = vals[self.destinations_column_number].to_owned();
+        let source_node_name = vals[self.sources_column_number].clone().into();
+        let destination_node_name = vals[self.destinations_column_number].clone().into();
         // extract the edge type if present
         let edge_type: Option<String> = match self.edge_types_column_number {
             None => Ok(None),
             Some(idx) => {
-                let curr = vals[idx].to_owned();
+                let curr = vals[idx].clone().into();
                 if !curr.is_empty() {
                     Ok(Some(curr))
                 } else if let Some(def) = &self.default_edge_type {
@@ -478,9 +483,9 @@ impl EdgeFileReader {
         let edge_weight = match self.weights_column_number {
             None => Ok(None),
             Some(idx) => {
-                let curr = vals[idx].to_owned();
+                let curr = vals[idx].clone().into();
                 if !curr.is_empty() {
-                    match parse_weight(Some(curr)) {
+                    match parse_weight(Some(&curr)) {
                         Ok(v) => Ok(v),
                         Err(e) => Err(e),
                     }

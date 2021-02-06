@@ -1,3 +1,5 @@
+//! Test functions used both for testing and fuzzing.
+
 use super::*;
 use rand::Rng;
 use rayon::iter::ParallelIterator;
@@ -15,7 +17,7 @@ static DEFAULT_PATH: &str = "";
 
 const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-/// Computes a random string,
+/// Computes a random string of the chosen length
 pub fn random_string(len: usize) -> String {
     let mut rng = rand::thread_rng();
 
@@ -37,7 +39,8 @@ pub fn random_path() -> String {
 }
 
 #[allow(clippy::redundant_clone)]
-/// Load PPI with given parametrization.
+/// Load the Strings Protein Protein Interaction graph with given parametrization.
+/// This is our default graph we use on tests.
 pub fn load_ppi(
     load_nodes: bool,
     load_edge_types: bool,
@@ -193,6 +196,48 @@ pub fn default_holdout_test_suite(
 pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String> {
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
+<<<<<<< Updated upstream
+=======
+
+    // Test get_edge_id_string()
+    assert_eq!(
+        graph.get_edge_id_string("NONEXISTENT", "NONEXISTENT", None),
+        None,
+        "Graph contains non-existing edge."
+    );
+
+    assert!(
+        graph.get_singleton_nodes_with_self_loops_number() <= graph.get_singleton_nodes_number(),
+        "Graph singleton nodes with selfloops is bigger than number of singleton nodes."
+    );
+
+    assert_eq!(
+        graph.get_not_singleton_nodes_number() + graph.get_singleton_nodes_number(),
+        graph.get_nodes_number(),
+        "Sum of singleton and non singleton nodes number does not match."
+    );
+
+    if !graph.directed {
+        // let has_singletons = graph.get_node_degrees().iter().any(|degree| *degree == 0);
+        // assert_eq!(has_singletons, graph.has_singletons());
+        
+        let (_components_number, smallest, biggest) = graph.connected_components_number(false);
+        assert!(biggest >= smallest, "smallest: {} biggest: {}", smallest, biggest);
+            
+        assert!(
+            ! (
+                smallest == 1
+                &&
+                (!graph.has_singletons())
+                &&
+                (!graph.has_selfloops())
+            ),
+            "singletons: {} selfloops: {} smallest: {} biggest: {}, edges: {:?}", 
+            graph.has_singletons(), graph.has_selfloops(), smallest, biggest, graph.get_unique_edges_iter(false).collect::<Vec<(u32, u32)>>()
+        );    
+    }
+
+>>>>>>> Stashed changes
     // Testing principal random walk algorithms
     let walker = first_order_walker(&graph)?;
     if !graph.directed {
