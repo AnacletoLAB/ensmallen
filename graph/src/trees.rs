@@ -464,15 +464,15 @@ impl Graph {
                             return;
                         }
                     }
-                    unsafe {
-                        // find the first not explored node (this is guardanteed to be in a new component)
-                        if self.has_singletons() && self.is_singleton(src as NodeT) {
-                            // We set singletons as self-loops for now.
-                            (*ptr)[src] =
-                                components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
-                            min_component_nodes_number.store(1, Ordering::SeqCst);
-                            return;
+
+                    // find the first not explored node (this is guardanteed to be in a new component)
+                    if self.has_singletons() && self.is_singleton(src as NodeT) {
+                        // We set singletons as self-loops for now.
+                        unsafe {
+                            (*ptr)[src] = components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
                         }
+                        min_component_nodes_number.store(1, Ordering::SeqCst);
+                        return;
                     }
                     loop {
                         unsafe {
@@ -488,8 +488,6 @@ impl Graph {
                                 (*ptr)[src] =
                                     components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
                             }
-                            shared_stacks[0].lock().unwrap().push(src as NodeT);
-                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
                             let ccnn = current_component_nodes_number.swap(1, Ordering::SeqCst);
                             if ccnn != 0 {
                                 if max_component_nodes_number.load(Ordering::SeqCst) < ccnn {
@@ -499,6 +497,8 @@ impl Graph {
                                     min_component_nodes_number.store(ccnn, Ordering::SeqCst);
                                 }
                             }
+                            shared_stacks[0].lock().unwrap().push(src as NodeT);
+                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
                             break;
                         }
                     }

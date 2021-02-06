@@ -20,7 +20,6 @@ fn test_components_size() {
     // THIS IS NOT DETERMINISTIC
     for _ in 0..1_000 {
         let (components, _components_number, smallest, biggest) = g.connected_components(false).unwrap();
-
         assert!(biggest >= smallest, "smallest: {} biggest: {}", smallest, biggest);
 
         assert!(
@@ -57,5 +56,4 @@ fn test_components_size() {
     assert_eq!(number_of_components as usize, components_size.len(), "The number of components is wrong!");
     assert_eq!(smallest, *components_size.values().min().unwrap(), "The smallest is wrong!");
     assert_eq!(biggest,  *components_size.values().max().unwrap(), "The biggest is wrong!");
-
 }

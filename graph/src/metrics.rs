@@ -299,7 +299,7 @@ impl Graph {
         self.get_self_loop_number() as f64 / self.get_edges_number() as f64
     }
 
-    /// Returns number a triple with (number of components, number of nodes of the biggest component, number of nodes of the smallest component )
+    /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
     pub fn connected_components_number(&self, verbose: bool) -> (NodeT, NodeT, NodeT) {
         info!("Computing connected components number.");
         if self.directed {
@@ -348,7 +348,11 @@ impl Graph {
     /// ```
     pub fn density(&self) -> f64 {
         let nodes_number = self.get_nodes_number() as EdgeT;
-        self.unique_edges_number as f64 / (nodes_number * (nodes_number - 1)) as f64
+        let total_nodes_number = nodes_number * match self.has_selfloops(){
+            true=>nodes_number,
+            false=>nodes_number-1
+        };
+        self.unique_edges_number as f64 / total_nodes_number as f64
     }
 
     /// Returns report relative to the graph metrics
@@ -632,7 +636,7 @@ impl Graph {
             concat!(
                 "The {direction} {graph_type} {name} has {nodes_number} nodes{node_types}{singletons} and {edges_number} {weighted} edges{edge_types}, of which {self_loops}{self_loops_multigraph_connector}{multigraph_edges}. ",
                 "The graph is {quantized_density} as it has a density of {density:.5} and {connected_components}. ",
-                "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2} and the node degree mode is {mode_node_degree}. ",
+                "The graph median node degree is {median_node_degree}, the mean node degree is {mean_node_degree:.2}, and the node degree mode is {mode_node_degree}. ",
                 "The top {most_common_nodes_number} most central nodes are {central_nodes}."
             ),
             direction = match self.directed {
