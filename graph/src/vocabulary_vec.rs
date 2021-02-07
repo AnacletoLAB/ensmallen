@@ -50,9 +50,9 @@ impl<IndexT: ToFromUsize, CountT: ToFromUsize> VocabularyVec<IndexT, CountT> {
     /// # Arguments
     ///
     /// * `value`: String - The value to be inserted.
-    pub fn insert(&mut self, value: String) -> Result<IndexT, String> {
-        self.vocabulary.insert(value.clone())?;
-        let id = *self.get(&value).unwrap();
+    pub fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<IndexT, String> {
+        self.vocabulary.insert(value.as_ref())?;
+        let id = *self.get(value.as_ref()).unwrap();
         self.ids.push(id);
         Ok(id)
     }

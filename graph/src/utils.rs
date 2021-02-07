@@ -1,29 +1,6 @@
 use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 
-#[macro_export]
-/// Macro that computes the maximum between two numbers
-macro_rules! max {
-    ($a: expr, $b: expr) => {
-        if $a >= $b {
-            $a
-        } else {
-            $b
-        }
-    };
-}
-#[macro_export]
-/// Macro that computes the minimum between two numbers
-macro_rules! min {
-    ($a: expr, $b: expr) => {
-        if $a < $b {
-            $a
-        } else {
-            $b
-        }
-    };
-}
-
 pub(crate) fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize) -> ProgressBar {
     if verbose {
         let pb = ProgressBar::new(total_iterations as u64);
@@ -70,7 +47,7 @@ pub fn validate_weight(weight: WeightT) -> Result<WeightT, String> {
     }
 }
 
-pub fn parse_weight(weight: Option<String>) -> Result<Option<WeightT>, String> {
+pub fn parse_weight(weight: Option<&str>) -> Result<Option<WeightT>, String> {
     match weight {
         None => Ok(None),
         Some(w) => match w.parse::<WeightT>() {

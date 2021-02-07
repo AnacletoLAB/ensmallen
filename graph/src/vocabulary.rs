@@ -23,10 +23,11 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// # Arguments
     ///
     /// * `value`: String - The value to be inserted.
-    pub fn insert(&mut self, value: String) -> Result<IndexT, String> {
-        if !self.map.contains_key(&value) {
+    pub fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<IndexT, String> {
+        let value = value.as_ref();
+        if !self.map.contains_key(value) {
             self.map.insert(
-                value.clone(),
+                value.to_string(),
                 IndexT::from_usize(if self.numeric_ids {
                     match value.parse::<usize>() {
                         Ok(val) => Ok(val),
@@ -37,7 +38,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
                 }),
             );
         }
-        Ok(*self.get(&value).unwrap())
+        Ok(*self.get(value).unwrap())
     }
 
     /// Compute the reverse mapping vector for fast decoding
