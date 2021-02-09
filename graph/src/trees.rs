@@ -364,40 +364,43 @@ impl Graph {
     ///
     /// Example:
     /// ```rust
-    ///  use graph::Graph;
-    ///  use graph::StringQuadruple;
-    ///
-    ///  // Load an undirected weightless graph with the edges
+    ///  # #![feature(impl_trait_in_bindings)]
+    ///  # use graph::Graph;
+    ///  // Graph is a weightless graph with the edges
     ///  // [(0, 1), (1, 4), (2, 3)]
-    /// let edge_list:Vec<Result<StringQuadruple, String>> = [
-    ///     Ok(("0".to_string(), "1".to_string(), None, None)),
-    ///     Ok(("1".to_string(), "4".to_string(), None, None)),
-    ///     Ok(("2".to_string(), "3".to_string(), None, None)),
-    ///  ].to_vec();
-    ///  let graph = Graph::from_string_unsorted(
-    ///      edge_list.into_iter(),
-    ///      None,      // nodes
-    ///      false,     // directed
-    ///      true,      // directe edge list
-    ///      "test graph",// name
-    ///      false,     // ignore_duplicated_nodes
-    ///      false,     // ignore_duplicated_edges
-    ///      false,     // verbose
-    ///      false,     // numeric_edge_types_ids
-    ///      false,     // numeric_node_ids
-    ///      false,     // numeric_edge_node_ids
-    ///      false,     // numeric_node_types_ids
-    ///      false,     // has_edge_types
-    ///      false,     // has_weights
-    /// ).unwrap();
-    ///
-    /// let (components, number_of_components, smallest, biggest) = graph.connected_components(false).unwrap();
-    ///
-    /// assert_eq!(components, [0, 0, 1, 1, 0].to_vec());
+    ///  # let edge: Vec<Result<(String, String, Option<String>, Option<f32>), String>> = vec![
+    ///  #        Ok(("0".to_string(), "1".to_string(), None, None)), 
+    ///  #        Ok(("1".to_string(), "4".to_string(), None, None)), 
+    ///  #        Ok(("2".to_string(), "3".to_string(), None, None)), 
+    ///  #     ];
+    ///  # 
+    ///  # let nodes = None.map(|x: Vec<Result<(String, Option<String>), String>>| x.into_iter());
+    ///  # 
+    ///  # let graph = Graph::from_string_unsorted(
+    ///  #     edge.into_iter(),
+    ///  #     nodes,      // nodes
+    ///  #     false,     // directed
+    ///  #     false,      // directe edge list
+    ///  #     "test graph",// name
+    ///  #     false,     // ignore_duplicated_nodes
+    ///  #     false,     // ignore_duplicated_edges
+    ///  #     false,     // verbose
+    ///  #     false,     // numeric_edge_types_ids
+    ///  #     false,     // numeric_node_ids
+    ///  #     false,     // numeric_edge_node_ids
+    ///  #     false,     // numeric_node_types_ids
+    ///  #     false,     // has_edge_types
+    ///  #     false,     // has_weights
+    ///  # ).unwrap();
+    /// let (components, number_of_components, smallest, biggest) = 
+    ///     graph.connected_components(false).unwrap();
+    /// 
+    /// //   nodes names:       0  1  4  2  3
+    /// assert_eq!(components, [0, 0, 0, 1, 1].to_vec());
+    /// 
     /// assert_eq!(number_of_components, 2);
     /// assert_eq!(smallest, 2); // the size of the smallest component
     /// assert_eq!(biggest, 3);  // the size of the biggest component
-    ///
     /// ```
     pub fn connected_components(
         &self,
