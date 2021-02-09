@@ -218,10 +218,6 @@ impl Graph {
         self.kruskal(self.get_unique_edges_iter(self.directed).progress_with(pb))
     }
 
-    fn scale_node_threads(&self) -> usize {
-        1 + (1.0 / (1.0 + 1000000.0 / (self.get_nodes_number() as f64 * 0.8))) as usize
-    }
-
     /// Returns set of edges composing a spanning tree.
     /// This is the implementaiton of [A Fast, Parallel Spanning Tree Algorithm for Symmetric Multiprocessors (SMPs)](https://smartech.gatech.edu/bitstream/handle/1853/14355/GT-CSE-06-01.pdf)
     /// by David A. Bader and Guojing Cong.
@@ -237,13 +233,12 @@ impl Graph {
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
         let cpu_number = num_cpus::get();
-        let thread_number = std::cmp::min(1 + self.scale_node_threads(), cpu_number);
         let pool = rayon::ThreadPoolBuilder::new()
-            .num_threads(thread_number)
+            .num_threads(cpu_number)
             .build()
             .unwrap();
         let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(
-            (0..(thread_number - 1))
+            (0..std::cmp::max(cpu_number - 1, 1))
                 .map(|_| Mutex::from(Vec::new()))
                 .collect::<Vec<Mutex<Vec<NodeT>>>>(),
         );
@@ -293,9 +288,6 @@ impl Graph {
                         }
                         if active_nodes_number.load(Ordering::SeqCst) == 0 {
                             unsafe {
-                                if (*ptr)[src] != NOT_PRESENT {
-                                    break;
-                                }
                                 (*ptr)[src] = src as NodeT;
                             }
                             shared_stacks[0].lock().unwrap().push(src as NodeT);
@@ -362,14 +354,14 @@ impl Graph {
 
     /// Compute the connected components building in parallel a spanning tree using bader's algorithm.
     /// **This works only for undirected graphs.**
-    /// 
-    /// This method is **not thread save and not deterministic** but by design of the algorithm this 
+    ///
+    /// This method is **not thread save and not deterministic** but by design of the algorithm this
     /// shouldn't matter but if we will encounter non-detemristic bugs here is where we want to look.
-    /// 
+    ///
     /// Returns (Components membership, components number, size of the smallest components, size of the biggest components).
     /// We assign to each node the index of its component, so nodes in the same components will have the same index.
     /// This component index is the returned Components membership vector.
-    /// 
+    ///
     /// Example:
     /// ```rust
     ///  # #![feature(impl_trait_in_bindings)]
@@ -421,25 +413,24 @@ impl Graph {
         }
         let nodes_number = self.get_nodes_number() as usize;
         let mut components = vec![NOT_PRESENT; nodes_number];
+        let mut component_sizes: Vec<NodeT> = Vec::new();
         let cpu_number = num_cpus::get();
-        let thread_number = std::cmp::min(1 + self.scale_node_threads(), cpu_number);
         let pool = rayon::ThreadPoolBuilder::new()
-            .num_threads(thread_number)
+            .num_threads(cpu_number)
             .build()
             .unwrap();
         let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(
-            (0..(thread_number - 1))
+            (0..std::cmp::max(cpu_number - 1, 1))
                 .map(|_| Mutex::from(Vec::new()))
                 .collect::<Vec<Mutex<Vec<NodeT>>>>(),
         );
         let active_nodes_number = AtomicUsize::new(0);
-        let current_component_nodes_number = AtomicUsize::new(0);
-        let components_number = AtomicUsize::new(0);
-        let max_component_nodes_number = AtomicUsize::new(1);
-        let min_component_nodes_number = AtomicUsize::new(usize::MAX);
         let completed = AtomicBool::new(false);
         let thread_safe_components = ThreadSafe {
             value: std::cell::UnsafeCell::new(&mut components),
+        };
+        let thread_safe_component_sizes = ThreadSafe {
+            value: std::cell::UnsafeCell::new(&mut component_sizes),
         };
 
         // since we were able to build a stub tree with cpu.len() leafs,
@@ -461,11 +452,13 @@ impl Graph {
                     .as_ref(),
                     nodes_number,
                 );
+                let component_sizes = thread_safe_component_sizes.value.get();
                 (0..nodes_number).progress_with(pb).for_each(|src| {
                     let ptr = thread_safe_components.value.get();
                     unsafe {
                         // If the node has already been explored we skip ahead.
                         if (*ptr)[src] != NOT_PRESENT {
+                            (*component_sizes)[(*ptr)[src] as usize] += 1;
                             return;
                         }
                     }
@@ -474,36 +467,25 @@ impl Graph {
                     if self.has_singletons() && self.is_singleton(src as NodeT) {
                         // We set singletons as self-loops for now.
                         unsafe {
-                            (*ptr)[src] = components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
+                            (*ptr)[src] = (*component_sizes).len() as NodeT;
+                            (*component_sizes).push(1);
                         }
-                        min_component_nodes_number.store(1, Ordering::SeqCst);
                         return;
                     }
                     loop {
                         unsafe {
                             if (*ptr)[src] != NOT_PRESENT {
+                                (*component_sizes)[(*ptr)[src] as usize] += 1;
                                 break;
                             }
                         }
                         if active_nodes_number.load(Ordering::SeqCst) == 0 {
                             unsafe {
-                                if (*ptr)[src] != NOT_PRESENT {
-                                    break;
-                                }
-                                (*ptr)[src] =
-                                    components_number.fetch_add(1, Ordering::SeqCst) as NodeT;
+                                (*ptr)[src] = (*component_sizes).len() as NodeT;
+                                (*component_sizes).push(1);
                             }
-                            let ccnn = current_component_nodes_number.swap(1, Ordering::SeqCst);
-                            if ccnn != 0 {
-                                if max_component_nodes_number.load(Ordering::SeqCst) < ccnn {
-                                    max_component_nodes_number.store(ccnn, Ordering::SeqCst);
-                                }
-                                if min_component_nodes_number.load(Ordering::SeqCst) > ccnn {
-                                    min_component_nodes_number.store(ccnn, Ordering::SeqCst);
-                                }
-                            }
-                            shared_stacks[0].lock().unwrap().push(src as NodeT);
                             active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                            shared_stacks[0].lock().unwrap().push(src as NodeT);
                             break;
                         }
                     }
@@ -530,34 +512,34 @@ impl Graph {
                     };
                     self.get_source_destinations_range(src).for_each(|dst| {
                         let ptr = thread_safe_components.value.get();
-                        unsafe {
-                            if (*ptr)[dst as usize] == NOT_PRESENT {
+                        if unsafe { (*ptr)[dst as usize] == NOT_PRESENT } {
+                            unsafe {
                                 (*ptr)[dst as usize] = (*ptr)[src as usize];
-                                current_component_nodes_number.fetch_add(1, Ordering::SeqCst);
-                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
-                                shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
-                                    .lock()
-                                    .unwrap()
-                                    .push(dst);
                             }
+                            active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                            shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
+                                .lock()
+                                .unwrap()
+                                .push(dst);
                         }
                     });
                     active_nodes_number.fetch_sub(1, Ordering::SeqCst);
                 });
             });
         });
-        let ccnn = current_component_nodes_number.load(Ordering::SeqCst);
-        if max_component_nodes_number.load(Ordering::SeqCst) < ccnn {
-            max_component_nodes_number.store(ccnn, Ordering::SeqCst);
-        }
-        if min_component_nodes_number.load(Ordering::SeqCst) > ccnn {
-            min_component_nodes_number.store(ccnn, Ordering::SeqCst);
-        }
+        let (min_component_size, max_component_size) = component_sizes
+            .iter()
+            .cloned()
+            .filter(|c| *c != 0)
+            .minmax()
+            .into_option()
+            .unwrap();
+
         Ok((
             components,
-            components_number.load(Ordering::SeqCst) as NodeT,
-            min_component_nodes_number.load(Ordering::SeqCst) as NodeT,
-            max_component_nodes_number.load(Ordering::SeqCst) as NodeT,
+            component_sizes.len() as NodeT,
+            min_component_size,
+            max_component_size,
         ))
     }
 }

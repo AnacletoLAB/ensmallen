@@ -375,7 +375,8 @@ pub fn default_test_suite(graph: &mut Graph, verbose: bool) -> Result<(), String
         assert_eq!(
             graph.connected_components_number(verbose),
             train.connected_components_number(verbose),
-            "The number of components of the original graph and the connected training set does not match."
+            "The number of components of the original graph and the connected training set does not match. Particularly, the number of nodes in the graph is {nodes_number}.",
+            nodes_number=graph.get_nodes_number().to_string()
         );
         if total == 1 {
             assert_eq!(min_comp, graph.get_nodes_number());
