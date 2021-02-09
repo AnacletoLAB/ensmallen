@@ -55,7 +55,7 @@ pub struct Graph {
     pub(crate) unique_sources: EliasFano,
 
     /// Optional vector of the weights of every edge.
-    /// weights[10] return the weight of the edge with edge_id 10
+    /// `weights[10]` return the weight of the edge with edge_id 10
     pub(crate) weights: Option<Vec<WeightT>>,
     /// Vocabulary that save the mappings from string to index of every node type
     pub(crate) node_types: Option<VocabularyVec<NodeTypeT, NodeT>>,
