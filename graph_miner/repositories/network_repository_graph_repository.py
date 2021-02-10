@@ -38,10 +38,13 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         -----------------------
         Complete name of the graph.
         """
-        return "".join([
+        stored_graph_name = "".join([
             term.capitalize()
             for term in partial_graph_name.split("-")
         ])
+        if stored_graph_name[0].is_digit():
+            stored_graph_name = "Graph{}".format(stored_graph_name)
+        return stored_graph_name
 
     def get_formatted_repository_name(self) -> str:
         """Return formatted repository name."""
