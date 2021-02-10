@@ -727,13 +727,13 @@ class GraphRepository:
             target_path = os.path.join(
                 target_directory_path,
                 "{}.py".format(
-                    graph_data["graph_name"].replace(" ", "_").lower()
+                    self.build_stored_graph_name(graph_data["graph_name"]).lower()
                 )
             )
             target_json_path = os.path.join(
                 target_directory_path,
                 "{}.json.gz".format(
-                    graph_data["graph_method_name"]
+                    self.build_stored_graph_name(graph_data["graph_name"])
                 )
             )
             os.makedirs(target_directory_path, exist_ok=True)
