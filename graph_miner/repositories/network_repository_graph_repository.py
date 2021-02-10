@@ -42,7 +42,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             term.capitalize()
             for term in partial_graph_name.split("-")
         ])
-        if stored_graph_name[0].is_digit():
+        if stored_graph_name[0].isnumeric():
             stored_graph_name = "Graph{}".format(stored_graph_name)
         return stored_graph_name
 
