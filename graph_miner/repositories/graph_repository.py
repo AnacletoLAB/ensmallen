@@ -223,10 +223,11 @@ class GraphRepository:
     def _dump_corrupted_graphs(self, corrupted_graphs: Set[str]):
         """Return set of known corrupted graphs."""
         compress_json.local_dump(corrupted_graphs, self.corrupted_graphs_path)
-    
+
     def _dump_unsupported_graphs(self, unsupported_graphs: Set[str]):
         """Return set of known unsupported graphs."""
-        compress_json.local_dump(unsupported_graphs, self.unsupported_graphs_path)
+        compress_json.local_dump(
+            unsupported_graphs, self.unsupported_graphs_path)
 
     def add_corrupted_graph(self, graph_name: str):
         """Add given graph to corrupted graphs set.
@@ -293,7 +294,7 @@ class GraphRepository:
             for graph_data in self.get_graph_list()
             if not (
                 self.is_graph_cached(self.get_graph_name(graph_data)) or
-                self.is_graph_corrupted(self.get_graph_name(graph_data)) or 
+                self.is_graph_corrupted(self.get_graph_name(graph_data)) or
                 self.is_graph_unsupported(self.get_graph_name(graph_data))
             )
         ]
@@ -491,7 +492,8 @@ class GraphRepository:
         return pd.read_csv(
             path,
             sep=self.get_file_separator(path),
-            skiprows=self.get_starting_commented_lines_number(path) + self.get_lines_to_skip(path),
+            skiprows=self.get_starting_commented_lines_number(
+                path) + self.get_lines_to_skip(path),
             header=None,
             nrows=1000000,
             low_memory=False
@@ -541,7 +543,7 @@ class GraphRepository:
         raise NotImplementedError(
             "The method get_edge_list_path must be implemented in child classes."
         )
-    
+
     def check_nominal_download(
         self,
         download_report: pd.DataFrame
@@ -684,6 +686,20 @@ class GraphRepository:
                 graph_method_name=self.build_stored_graph_name(graph_name)
             )
 
+    def add_tabs(self, text: str) -> str:
+        """Add tabs for formatting porposes to given text.
+
+        Parameters
+        --------------------
+        text: str,
+            The text to format.
+
+        Returns
+        --------------------
+        Formatted text.
+        """
+        return "\t" + "\n\t".join(text.split("\n")) + "\n"
+
     def format_graph_retrieval_file(
         self,
         graph_name: str,
@@ -717,43 +733,56 @@ class GraphRepository:
                 repository_name=self.get_formatted_repository_name(),
                 report=report,
                 references=self.format_references(references),
-                usage_example=self.format_usage_example(graph_name)
+                usage_example=self.format_usage_example(graph_name),
+                tabbed_report=self.add_tabs(report),
+                tabbed_references=self.add_tabs(
+                    self.format_references(references)),
+                tabbed_usage_example=self.add_tabs(
+                    self.format_usage_example(graph_name))
             )
-    
+
     def format_init_file(
         self,
-        graph_name: str,
-        report: str,
-        references: List[str]
+        graph_method_names: List[str],
+        graph_file_names: List[str]
     ) -> str:
-        """Return formatted report model.
+        """Return formatted init model.
 
         Parameters
         ---------------------
-        graph_name: str,
-            Name of the graph to retrieve.
-        report: str,
-            Report of the graph.
-        references: List[str],
-            List of the references of the graph.
+        graph_method_names: List[str],
+            Names of the methods to import.
+        graph_file_names: List[str],
+            Names of the files to import the methods from.
 
         Returns
         ---------------------
-        Formatted model of the report.
+        Formatted model of init file.
         """
+        import_pattern = "from .{graph_file_name} import {graph_method_name}"
+        imports = "\n".join([
+            import_pattern.format(
+                graph_file_name=graph_file_name,
+                graph_method_name=graph_method_name
+            )
+            for graph_method_name, graph_file_name in zip(
+                graph_method_names,
+                graph_file_names
+            )
+        ])
+        method_names = self.add_tabs("\n".join([
+            '"{}"'.format(graph_method_name)
+            for graph_method_name in graph_method_names
+        ]))
         with open(
             "{}/models/init_file_model.py".format(
                 os.path.dirname(os.path.abspath(__file__))),
             "r"
         ) as f:
             return f.read().format(
-                graph_method_name=self.build_stored_graph_name(graph_name),
-                repository_package_name=self.repository_package_name,
-                graph_name=graph_name,
-                repository_name=self.get_formatted_repository_name(),
-                report=report,
-                references=self.format_references(references),
-                usage_example=self.format_usage_example(graph_name)
+                imports=imports,
+                method_names=method_names,
+                repository_name=self.get_formatted_repository_name()
             )
 
     def build_all(self):
@@ -781,7 +810,8 @@ class GraphRepository:
             target_path = os.path.join(
                 target_directory_path,
                 "{}.py".format(
-                    self.build_stored_graph_name(graph_data["graph_name"]).lower()
+                    self.build_stored_graph_name(
+                        graph_data["graph_name"]).lower()
                 )
             )
             graph_method_names.append(
@@ -800,3 +830,9 @@ class GraphRepository:
             with open(target_path, "w") as f:
                 f.write(graph_retrieval_file)
             compress_json.dump(graph_data, target_json_path)
+        init_path = os.path.join(
+            target_directory_path,
+            "__init__.py"
+        )
+        with open(init_path, "w") as f:
+            f.write(self.format_init_file(graph_file_names, graph_file_names))
