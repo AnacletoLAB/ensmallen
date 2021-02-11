@@ -10,7 +10,14 @@ had the following characteristics:
 
 Datetime: 2021-02-06 12:32:47.222811
 
-The undirected graph web-baidu-baike-related has 415641 nodes, of which 17 are singletons (all have self-loops), and 2374062 unweighted edges, of which 18 are self-loops. The graph is extremely sparse as it has a density of 0.00003 and has 15377 connected components, where the component with most nodes has 372840 nodes and the component with the least nodes has a single node. The graph median node degree is 8, the mean node degree is 11.42, and the node degree mode is 8. The top 5 most central nodes are 5 (degree 127066), 7 (degree 127000), 8 (degree 126993), 6 (degree 126993) and 9 (degree 126992).
+The undirected graph web-baidu-baike-related has 415641 nodes, of which 17 are singletons
+(all have self-loops), and 2374062 unweighted edges, of which 18 are self-loops.
+The graph is extremely sparse as it has a density of 0.00003 and has 15377 connected
+components, where the component with most nodes has 372840 nodes and the component
+with the least nodes has a single node. The graph median node degree is 8, the mean
+node degree is 11.42, and the node degree mode is 8. The top 5 most central nodes
+are 5 (degree 127066), 7 (degree 127000), 8 (degree 126993), 6 (degree 126993) and
+9 (degree 126992).
 
 
 References
@@ -98,72 +105,82 @@ def WebBaiduBaikeRelated(
     -----------------------
     Instace of web-baidu-baike-related graph.
 
-    Report
----------------------
-At the time of rendering these methods (please see datetime below), the graph
-had the following characteristics:
-
-Datetime: 2021-02-06 12:32:47.222811
-
-The undirected graph web-baidu-baike-related has 415641 nodes, of which 17 are singletons (all have self-loops), and 2374062 unweighted edges, of which 18 are self-loops. The graph is extremely sparse as it has a density of 0.00003 and has 15377 connected components, where the component with most nodes has 372840 nodes and the component with the least nodes has a single node. The graph median node degree is 8, the mean node degree is 11.42, and the node degree mode is 8. The top 5 most central nodes are 5 (degree 127066), 7 (degree 127000), 8 (degree 126993), 6 (degree 126993) and 9 (degree 126992).
-
-
-    References
----------------------
-Please cite the following if you use the data:
-
-@inproceedings{nr,
-    title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
-    author={Ryan A. Rossi and Nesreen K. Ahmed},
-    booktitle = {AAAI},
-    url={http://networkrepository.com},
-    year={2015}
-}
-
-@incollection{niu2011zhishi,
-        title={{Zhishi.me} -- Weaving Chinese linking open data},
-        author={Niu, Xing and Sun, Xinruo and Wang, Haofen and Rong, Shu and Qi, Guilin and Yu, Yong},
-        booktitle={ISWC},
-        pages={205--220},
-        year={2011},
-        publisher={Springer}}
+	Report
+	---------------------
+	At the time of rendering these methods (please see datetime below), the graph
+	had the following characteristics:
+	
+	Datetime: 2021-02-06 12:32:47.222811
+	
+	The undirected graph web-baidu-baike-related has 415641 nodes, of which 17 are singletons
+	(all have self-loops), and 2374062 unweighted edges, of which 18 are self-loops.
+	The graph is extremely sparse as it has a density of 0.00003 and has 15377 connected
+	components, where the component with most nodes has 372840 nodes and the component
+	with the least nodes has a single node. The graph median node degree is 8, the mean
+	node degree is 11.42, and the node degree mode is 8. The top 5 most central nodes
+	are 5 (degree 127066), 7 (degree 127000), 8 (degree 126993), 6 (degree 126993) and
+	9 (degree 126992).
+	
 
 
-    Usage example
-----------------------
-The usage of this graph is relatively straightforward:
+	References
+	---------------------
+	Please cite the following if you use the data:
+	
+	@inproceedings{nr,
+	    title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
+	    author={Ryan A. Rossi and Nesreen K. Ahmed},
+	    booktitle = {AAAI},
+	    url={http://networkrepository.com},
+	    year={2015}
+	}
+	
+	@incollection{niu2011zhishi,
+	        title={{Zhishi.me} -- Weaving Chinese linking open data},
+	        author={Niu, Xing and Sun, Xinruo and Wang, Haofen and Rong, Shu and Qi, Guilin and Yu, Yong},
+	        booktitle={ISWC},
+	        pages={205--220},
+	        year={2011},
+	        publisher={Springer}}
+	
 
-.. code:: python
 
-    # First import the function to retrieve the graph from the datasets
-    from ensmallen_graph.datasets.networkrepository import WebBaiduBaikeRelated
+	Usage example
+	----------------------
+	The usage of this graph is relatively straightforward:
+	
+	.. code:: python
+	
+	    # First import the function to retrieve the graph from the datasets
+	    from ensmallen_graph.datasets.networkrepository import WebBaiduBaikeRelated
+	
+	    # Then load the graph
+	    graph = WebBaiduBaikeRelated()
+	
+	    # Finally, you can do anything with it, for instance, compute its report:
+	    print(graph)
+	
+	    # If you need to run a link prediction task with validation,
+	    # you can split the graph using a connected holdout as follows:
+	    train_graph, validation_graph = graph.connected_holdout(
+	        # You can use an 80/20 split the holdout, for example.
+	        train_size=0.8,
+	        # The random state is used to reproduce the holdout.
+	        random_state=42,
+	        # Wether to show a loading bar.
+	        verbose=True
+	    )
+	
+	    # Remember that, if you need, you can enable the memory-time trade-offs:
+	    train_graph.enable(
+	        vector_sources=True,
+	        vector_destinations=True,
+	        vector_outbounds=True
+	    )
+	
+	    # Consider using the methods made available in the Embiggen package
+	    # to run graph embedding or link prediction tasks.
 
-    # Then load the graph
-    graph = WebBaiduBaikeRelated()
-
-    # Finally, you can do anything with it, for instance, compute its report:
-    print(graph)
-
-    # If you need to run a link prediction task with validation,
-    # you can split the graph using a connected holdout as follows:
-    train_graph, validation_graph = graph.connected_holdout(
-        # You can use an 80/20 split the holdout, for example.
-        train_size=0.8,
-        # The random state is used to reproduce the holdout.
-        random_state=42,
-        # Wether to show a loading bar.
-        verbose=True
-    )
-
-    # Remember that, if you need, you can enable the memory-time trade-offs:
-    train_graph.enable(
-        vector_sources=True,
-        vector_destinations=True,
-        vector_outbounds=True
-    )
-
-    # Consider using the methods made available in the Embiggen package
-    # to run graph embedding or link prediction tasks.
     """
     return AutomaticallyRetrievedGraph(
         "WebBaiduBaikeRelated",
