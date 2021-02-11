@@ -647,7 +647,7 @@ class GraphRepository:
                 line = word
             else:
                 line += " " + word
-            if line >= 80:
+            if len(line) >= line_length:
                 lines.append(line)
                 line = None
         if line is not None:
