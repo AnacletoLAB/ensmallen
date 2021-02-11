@@ -2382,5 +2382,4 @@ __all__ = [
 	"CoPapersCiteseer"
 	"CoPapersCiteseer"
 	"CoPapersDblp"
-
 ]

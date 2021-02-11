@@ -624,6 +624,35 @@ class GraphRepository:
         ) as f:
             return f.read().format("\n\n".join(references))
 
+    def format_lines(self, text: str, line_length: int = 70) -> str:
+        """Return formatted lines.
+        
+        Parameters
+        --------------------------
+        text: str,
+            The text to be formatted.
+        line_length: int = 70,
+            Maximum length of the text lines.
+        
+        Returns
+        --------------------------
+        Formatted text.
+        """
+        line_length = 70
+        lines = []
+        line = None
+        for word in text.split(" "):
+            if line is None:
+                line = word
+            else:
+                line += " " + word
+            if len(line) >= line_length:
+                lines.append(line)
+                line = None
+        if line is not None:
+            lines.append(line)
+        return "\n".join(lines)
+
     def format_report(self, report: str, datetime: str) -> str:
         """Return formatted report model.
 
@@ -638,29 +667,13 @@ class GraphRepository:
         ---------------------
         Formatted model of the report.
         """
-        report_words = report.split(" ")
-        line_length = 70
-        lines = []
-        line = None
-        for word in report_words:
-            if line is None:
-                line = word
-            else:
-                line += " " + word
-            if len(line) >= line_length:
-                lines.append(line)
-                line = None
-        if line is not None:
-            lines.append(line)
-        report = "\n".join(lines)
-
         with open(
             "{}/models/report.rst".format(
                 os.path.dirname(os.path.abspath(__file__))),
             "r"
         ) as f:
             return f.read().format(
-                report=report,
+                report=self.format_lines(report),
                 datetime=datetime
             )
 
@@ -698,7 +711,7 @@ class GraphRepository:
         --------------------
         Formatted text.
         """
-        return "\t" + "\n\t".join(text.split("\n")) + "\n"
+        return "\t" + "\n\t".join(text.split("\n"))
 
     def format_graph_retrieval_file(
         self,
@@ -770,10 +783,11 @@ class GraphRepository:
                 graph_file_names
             )
         ])
-        method_names = self.add_tabs("\n".join([
-            '"{}"'.format(graph_method_name)
+        method_names = self.add_tabs(self.format_lines(" ".join([
+            '"{}",'.format(graph_method_name)
             for graph_method_name in graph_method_names
-        ]))
+        ])))
+
         with open(
             "{}/models/init_file_model.py".format(
                 os.path.dirname(os.path.abspath(__file__))),
@@ -835,4 +849,5 @@ class GraphRepository:
             "__init__.py"
         )
         with open(init_path, "w") as f:
-            f.write(self.format_init_file(graph_method_names, graph_file_names))
+            f.write(self.format_init_file(
+                graph_method_names, graph_file_names))
