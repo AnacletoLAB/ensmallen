@@ -4419,13 +4419,13 @@ from .arthrobacternicotinovorans import ArthrobacterNicotinovorans
 from .bradyrhizobiumjaponicum22 import BradyrhizobiumJaponicum22
 from .bradyrhizobiumjaponicumin8p8 import BradyrhizobiumJaponicumIn8p8
 from .caldicoprobacteroshimai import CaldicoprobacterOshimai
+from .chlamydiasuis import ChlamydiaSuis
 from .dechloromonasagitata import DechloromonasAgitata
 from .desulforegulaconservatrix import DesulforegulaConservatrix
 from .prochlorococcusspscb241528o2 import ProchlorococcusSpScb241528o2
 from .pseudoalteromonasspocn003 import PseudoalteromonasSpOcn003
 from .algoriphagusmarincolahl49 import AlgoriphagusMarincolaHl49
 from .pseudomonasspml96 import PseudomonasSpMl96
-from .hafniaalvei import HafniaAlvei
 from .kineosporiaaurantiaca import KineosporiaAurantiaca
 from .streptomycesthermolilacinus import StreptomycesThermolilacinus
 from .candidatedivisiontm6 import CandidateDivisionTm6
@@ -4440,7 +4440,7 @@ from .pseudoalteromonasspsm9913 import PseudoalteromonasSpSm9913
 from .ilumatobactercoccineus import IlumatobacterCoccineus
 from .pseudomonasspvlb120 import PseudomonasSpVlb120
 from .borreliacoriaceae import BorreliaCoriaceae
-from .chlamydiasuis import ChlamydiaSuis
+from .hafniaalvei import HafniaAlvei
 from .borreliaanserina import BorreliaAnserina
 from .borreliaparkeri import BorreliaParkeri
 from .thermonemarossianum import ThermonemaRossianum
@@ -5022,10 +5022,6 @@ from .synechococcusspkordi49 import SynechococcusSpKordi49
 from .synechococcussprs9916 import SynechococcusSpRs9916
 from .synechococcussprs9917 import SynechococcusSpRs9917
 from .synechococcusspwh5701 import SynechococcusSpWh5701
-from .thioalkalivibriospalj7 import ThioalkalivibrioSpAlj7
-from .thioalkalivibriospalmg11 import ThioalkalivibrioSpAlmg11
-from .thioalkalivibriospalsr1 import ThioalkalivibrioSpAlsr1
-from .thioalkalivibriospk90mix import ThioalkalivibrioSpK90mix
 from .thiomicrospiraspkp2 import ThiomicrospiraSpKp2
 from .thiomicrospiraspmilost1 import ThiomicrospiraSpMilost1
 from .thiorhodococcusspak35 import ThiorhodococcusSpAk35
@@ -5034,19 +5030,21 @@ from .treponemaspjc4 import TreponemaSpJc4
 from .tsukamurellasp1534 import TsukamurellaSp1534
 from .veillonellaspf0412 import VeillonellaSpF0412
 from .verrucomicrobiumspbvorr034 import VerrucomicrobiumSpBvorr034
+from .vibriogenomosp import VibrioGenomosp
 from .virgibacillusspvm5 import VirgibacillusSpVm5
-from .wolbachiaspculex import WolbachiaSpCulex
-from .wolbachiaspdme import WolbachiaSpDme
 from .wolbachiaspooc import WolbachiaSpOoc
+from .xanthobactersp126 import XanthobacterSp126
 from .xanthomonasspnyagatare import XanthomonasSpNyagatare
 from .synechocystissppcc6714 import SynechocystisSpPcc6714
-from .vibriogenomosp import VibrioGenomosp
 from .weeksellaspff8 import WeeksellaSpFf8
 from .wigglesworthiaglossinidiaspgmo import WigglesworthiaGlossinidiaSpGmo
-from .xanthobactersp126 import XanthobacterSp126
-from .thioalkalivibriospale6 import ThioalkalivibrioSpAle6
-from .thioalkalivibriospalj16 import ThioalkalivibrioSpAlj16
 from .xenococcussppcc7305 import XenococcusSpPcc7305
+from .thioalkalivibriospale6 import ThioalkalivibrioSpAle6
+from .thioalkalivibriospalj11 import ThioalkalivibrioSpAlj11
+from .thioalkalivibriospalj16 import ThioalkalivibrioSpAlj16
+from .thioalkalivibriospalj24 import ThioalkalivibrioSpAlj24
+from .thioalkalivibriospalmg11 import ThioalkalivibrioSpAlmg11
+from .thioalkalivibriospk90mix import ThioalkalivibrioSpK90mix
 from .synechocystissppcc6803 import SynechocystisSpPcc6803
 from .synechocystissppcc7509 import SynechocystisSpPcc7509
 from .tenacibaculumsp47agom205m import TenacibaculumSp47agom205m
@@ -5067,10 +5065,10 @@ from .thioalkalivibriospakl19 import ThioalkalivibrioSpAkl19
 from .thioalkalivibriospald1 import ThioalkalivibrioSpAld1
 from .thioalkalivibriospale19 import ThioalkalivibrioSpAle19
 from .thioalkalivibriospale31 import ThioalkalivibrioSpAle31
-from .thioalkalivibriospalj11 import ThioalkalivibrioSpAlj11
-from .thioalkalivibriospalj24 import ThioalkalivibrioSpAlj24
+from .thioalkalivibriospalj7 import ThioalkalivibrioSpAlj7
 from .thioalkalivibriospaljt import ThioalkalivibrioSpAljt
 from .thioalkalivibriospalr1721 import ThioalkalivibrioSpAlr1721
+from .thioalkalivibriospalsr1 import ThioalkalivibrioSpAlsr1
 from .thioalkalivibriosphk1 import ThioalkalivibrioSpHk1
 from .thioclavasp13d2w2 import ThioclavaSp13d2w2
 from .thioclavaspdt234 import ThioclavaSpDt234
@@ -5083,13 +5081,15 @@ from .veillonellaspas16 import VeillonellaSpAs16
 from .veillonellaspf0422 import VeillonellaSpF0422
 from .verrucomicrobiumspbvorr106 import VerrucomicrobiumSpBvorr106
 from .wigglesworthiaglossinidiaspgbr import WigglesworthiaGlossinidiaSpGbr
-from .wolbachiaspdsi import WolbachiaSpDsi
 from .atelocyanobacteriumthalassasio64986 import AtelocyanobacteriumThalassaSio64986
 from .caenorhabditistropicalis import CaenorhabditisTropicalis
 from .janthinobacteriumagaricidamnosum import JanthinobacteriumAgaricidamnosum
 from .mollicutesbacteriumhr2 import MollicutesBacteriumHr2
 from .rickettsialesbacteriumac37b import RickettsialesBacteriumAc37b
 from .wolbachiaspbma import WolbachiaSpBma
+from .wolbachiaspculex import WolbachiaSpCulex
+from .wolbachiaspdme import WolbachiaSpDme
+from .wolbachiaspdsi import WolbachiaSpDsi
 
 __all__ = [
 	"PseudomonasAeruginosa", "BurkholderiaCepacia", "PseudomonasOleovorans",
@@ -6459,23 +6459,22 @@ __all__ = [
 	"ClostridiaceaeBacteriumL21thd2", "PseudoalteromonasSpBsw20308", "DesulfovibrioMagneticusIfrc170",
 	"AminiphilusCircumscriptus", "AminobacteriumMobile", "ArthrobacterNicotinovorans",
 	"BradyrhizobiumJaponicum22", "BradyrhizobiumJaponicumIn8p8", "CaldicoprobacterOshimai",
-	"DechloromonasAgitata", "DesulforegulaConservatrix", "ProchlorococcusSpScb241528o2",
+	"ChlamydiaSuis", "DechloromonasAgitata", "DesulforegulaConservatrix", "ProchlorococcusSpScb241528o2",
 	"PseudoalteromonasSpOcn003", "AlgoriphagusMarincolaHl49", "PseudomonasSpMl96",
-	"HafniaAlvei", "KineosporiaAurantiaca", "StreptomycesThermolilacinus",
-	"CandidateDivisionTm6", "PseudomonasSpUw4", "BacillusFirmus", "PseudoalteromonasAgarivorans",
-	"PseudanabaenaSpPcc7367", "PseudomonasSpRit357", "GluconobacterFrateurii",
-	"GracilibacillusHalophilus", "PseudoalteromonasSpSm9913", "IlumatobacterCoccineus",
-	"PseudomonasSpVlb120", "BorreliaCoriaceae", "ChlamydiaSuis", "BorreliaAnserina",
-	"BorreliaParkeri", "ThermonemaRossianum", "ChitinivibrioAlkaliphilus",
-	"ProchlorococcusSpScb245a520k10", "PseudobutyrivibrioSpMd2005", "PseudomonasCorrugata",
-	"MannheimiaHaemolyticaM42548", "PhaeospirillumFulvum", "PropionibacteriumSpF0372",
-	"PseudobutyrivibrioSpLb2011", "MycoplasmaGirerdii", "MarinobacterLipolyticusSm19",
-	"CetobacteriumSomerae", "PseudomonasSpRl", "StreptococcusSuisEa183292",
-	"PropionimicrobiumSpBv2f7", "PseudogulbenkianiaSpNh8b", "ClostridialesBacteriumF0540",
-	"PseudanabaenaSpPcc6802", "PseudomonasSpM47t1", "PeptostreptococcaceaeBacteriumW5053",
-	"PseudovibrioSpFobeg1", "EubacteriumBrachy", "TreponemaLecithinolyticum",
-	"GemellaBergeriae", "DesulfovibrioPiezophilus", "RhodococcusDefluvii",
-	"PseudomonasPelagia", "HalobonumTyrrellensis", "HelicobacterFennelliae",
+	"KineosporiaAurantiaca", "StreptomycesThermolilacinus", "CandidateDivisionTm6",
+	"PseudomonasSpUw4", "BacillusFirmus", "PseudoalteromonasAgarivorans", "PseudanabaenaSpPcc7367",
+	"PseudomonasSpRit357", "GluconobacterFrateurii", "GracilibacillusHalophilus",
+	"PseudoalteromonasSpSm9913", "IlumatobacterCoccineus", "PseudomonasSpVlb120",
+	"BorreliaCoriaceae", "HafniaAlvei", "BorreliaAnserina", "BorreliaParkeri",
+	"ThermonemaRossianum", "ChitinivibrioAlkaliphilus", "ProchlorococcusSpScb245a520k10",
+	"PseudobutyrivibrioSpMd2005", "PseudomonasCorrugata", "MannheimiaHaemolyticaM42548",
+	"PhaeospirillumFulvum", "PropionibacteriumSpF0372", "PseudobutyrivibrioSpLb2011",
+	"MycoplasmaGirerdii", "MarinobacterLipolyticusSm19", "CetobacteriumSomerae",
+	"PseudomonasSpRl", "StreptococcusSuisEa183292", "PropionimicrobiumSpBv2f7",
+	"PseudogulbenkianiaSpNh8b", "ClostridialesBacteriumF0540", "PseudanabaenaSpPcc6802",
+	"PseudomonasSpM47t1", "PeptostreptococcaceaeBacteriumW5053", "PseudovibrioSpFobeg1",
+	"EubacteriumBrachy", "TreponemaLecithinolyticum", "GemellaBergeriae", "DesulfovibrioPiezophilus",
+	"RhodococcusDefluvii", "PseudomonasPelagia", "HalobonumTyrrellensis", "HelicobacterFennelliae",
 	"CatenovulumAgarivoransDs2", "WeissellaOryzae", "ThermoactinomycesDaqus",
 	"ThermusCaliditerrae", "SphingobiumLactosutens", "AcinetobacterHaemolyticus",
 	"SerratiaFonticolaAuap2c", "PseudoalteromonasHaloplanktisTb64", "PseudomonasSpS9",
@@ -6648,25 +6647,25 @@ __all__ = [
 	"SulfitobacterSpEe36", "SulfuricurvumSpMlsb", "SulfurovumSpNbc371", "SynechococcusSpJa23ba",
 	"SynechococcusSpPcc7336", "SynergistesSp31syn1", "PorphyromonadaceaeCot184oh4590",
 	"SynechococcusSpKordi49", "SynechococcusSpRs9916", "SynechococcusSpRs9917",
-	"SynechococcusSpWh5701", "ThioalkalivibrioSpAlj7", "ThioalkalivibrioSpAlmg11",
-	"ThioalkalivibrioSpAlsr1", "ThioalkalivibrioSpK90mix", "ThiomicrospiraSpKp2",
-	"ThiomicrospiraSpMilost1", "ThiorhodococcusSpAk35", "TolumonasSpBrl61",
-	"TreponemaSpJc4", "TsukamurellaSp1534", "VeillonellaSpF0412", "VerrucomicrobiumSpBvorr034",
-	"VirgibacillusSpVm5", "WolbachiaSpCulex", "WolbachiaSpDme", "WolbachiaSpOoc",
-	"XanthomonasSpNyagatare", "SynechocystisSpPcc6714", "VibrioGenomosp", "WeeksellaSpFf8",
-	"WigglesworthiaGlossinidiaSpGmo", "XanthobacterSp126", "ThioalkalivibrioSpAle6",
-	"ThioalkalivibrioSpAlj16", "XenococcusSpPcc7305", "SynechocystisSpPcc6803",
-	"SynechocystisSpPcc7509", "TenacibaculumSp47agom205m", "TerracoccusSp273mftsu31",
-	"ThalassospiraAustralica", "ThaumarchaeotaSpScgcAb629i23", "ThermococcusSp4557",
-	"ThermococcusSpAm4", "ThermocrinisSpGbs", "ThermofilumSp1910b", "ThermogemmatisporaSpPm5",
-	"ThermomicrobialesSpKi4", "ThermotogaSpMc24", "ThermusSpCcbus3uf1", "ThermusSpYim77409",
-	"ThioalkalivibrioSpAkl11", "ThioalkalivibrioSpAkl19", "ThioalkalivibrioSpAld1",
-	"ThioalkalivibrioSpAle19", "ThioalkalivibrioSpAle31", "ThioalkalivibrioSpAlj11",
-	"ThioalkalivibrioSpAlj24", "ThioalkalivibrioSpAljt", "ThioalkalivibrioSpAlr1721",
-	"ThioalkalivibrioSpHk1", "ThioclavaSp13d2w2", "ThioclavaSpDt234", "ThiomicrospiraSpMilost2",
-	"ThiomonasSpFbcd", "ThiorhodovibrioSp970", "TreponemaSpC6a8", "TreponemaSpOmz838",
-	"VeillonellaSpAs16", "VeillonellaSpF0422", "VerrucomicrobiumSpBvorr106",
-	"WigglesworthiaGlossinidiaSpGbr", "WolbachiaSpDsi", "AtelocyanobacteriumThalassaSio64986",
+	"SynechococcusSpWh5701", "ThiomicrospiraSpKp2", "ThiomicrospiraSpMilost1",
+	"ThiorhodococcusSpAk35", "TolumonasSpBrl61", "TreponemaSpJc4", "TsukamurellaSp1534",
+	"VeillonellaSpF0412", "VerrucomicrobiumSpBvorr034", "VibrioGenomosp", "VirgibacillusSpVm5",
+	"WolbachiaSpOoc", "XanthobacterSp126", "XanthomonasSpNyagatare", "SynechocystisSpPcc6714",
+	"WeeksellaSpFf8", "WigglesworthiaGlossinidiaSpGmo", "XenococcusSpPcc7305",
+	"ThioalkalivibrioSpAle6", "ThioalkalivibrioSpAlj11", "ThioalkalivibrioSpAlj16",
+	"ThioalkalivibrioSpAlj24", "ThioalkalivibrioSpAlmg11", "ThioalkalivibrioSpK90mix",
+	"SynechocystisSpPcc6803", "SynechocystisSpPcc7509", "TenacibaculumSp47agom205m",
+	"TerracoccusSp273mftsu31", "ThalassospiraAustralica", "ThaumarchaeotaSpScgcAb629i23",
+	"ThermococcusSp4557", "ThermococcusSpAm4", "ThermocrinisSpGbs", "ThermofilumSp1910b",
+	"ThermogemmatisporaSpPm5", "ThermomicrobialesSpKi4", "ThermotogaSpMc24",
+	"ThermusSpCcbus3uf1", "ThermusSpYim77409", "ThioalkalivibrioSpAkl11", "ThioalkalivibrioSpAkl19",
+	"ThioalkalivibrioSpAld1", "ThioalkalivibrioSpAle19", "ThioalkalivibrioSpAle31",
+	"ThioalkalivibrioSpAlj7", "ThioalkalivibrioSpAljt", "ThioalkalivibrioSpAlr1721",
+	"ThioalkalivibrioSpAlsr1", "ThioalkalivibrioSpHk1", "ThioclavaSp13d2w2",
+	"ThioclavaSpDt234", "ThiomicrospiraSpMilost2", "ThiomonasSpFbcd", "ThiorhodovibrioSp970",
+	"TreponemaSpC6a8", "TreponemaSpOmz838", "VeillonellaSpAs16", "VeillonellaSpF0422",
+	"VerrucomicrobiumSpBvorr106", "WigglesworthiaGlossinidiaSpGbr", "AtelocyanobacteriumThalassaSio64986",
 	"CaenorhabditisTropicalis", "JanthinobacteriumAgaricidamnosum", "MollicutesBacteriumHr2",
-	"RickettsialesBacteriumAc37b", "WolbachiaSpBma",
+	"RickettsialesBacteriumAc37b", "WolbachiaSpBma", "WolbachiaSpCulex", "WolbachiaSpDme",
+	"WolbachiaSpDsi",
 ]

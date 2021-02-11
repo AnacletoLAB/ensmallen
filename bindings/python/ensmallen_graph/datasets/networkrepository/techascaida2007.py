@@ -31,9 +31,10 @@ Please cite the following if you use the data:
 }
 
 @misc{routeviews,
-        author={{Internet-AS}},
-        title={{Oregon RouteViews} Project},
-        note={{\scriptsize \url{http://www.routeviews.org/}}}}
+    author = {{Internet-AS}},
+    title  = {{Oregon RouteViews} Project},
+    note   = {{http://www.routeviews.org/}}
+}
 
 @inproceedings{rossi2013topology,
         title={A Multi-Level Approach for Evaluating Internet Topology Generators},
@@ -136,9 +137,10 @@ def TechAsCaida2007(
 	}
 	
 	@misc{routeviews,
-	        author={{Internet-AS}},
-	        title={{Oregon RouteViews} Project},
-	        note={{\scriptsize \url{http://www.routeviews.org/}}}}
+	    author = {{Internet-AS}},
+	    title  = {{Oregon RouteViews} Project},
+	    note   = {{http://www.routeviews.org/}}
+	}
 	
 	@inproceedings{rossi2013topology,
 	        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
