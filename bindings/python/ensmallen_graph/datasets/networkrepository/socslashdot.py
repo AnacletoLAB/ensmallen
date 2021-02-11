@@ -32,14 +32,14 @@ Please cite the following if you use the data:
 }
 
 @article{leskovec2009community,
-        title={Community structure in large networks: Natural cluster sizes and the absence of large well-defined clusters},
-        author={Leskovec, Jure and Lang, Kevin J and Dasgupta, Anirban and Mahoney, Michael W},
-        journal={Internet Mathematics},
-        volume={6},
-        number={1},
-        pages={29--123},
-        year={2009},
-        publisher={Taylor \& Francis}
+        title={Community structure in large networks: Natural cluster sizes and the absence of large well-defined clusters},
+        author={Leskovec, Jure and Lang, Kevin J and Dasgupta, Anirban and Mahoney, Michael W},
+        journal={Internet Mathematics},
+        volume={6},
+        number={1},
+        pages={29--123},
+        year={2009},
+        publisher={Taylor \& Francis}
 }
 
 
@@ -136,14 +136,14 @@ def SocSlashdot(
 	}
 	
 	@article{leskovec2009community,
-	        title={Community structure in large networks: Natural cluster sizes and the absence of large well-defined clusters},
-	        author={Leskovec, Jure and Lang, Kevin J and Dasgupta, Anirban and Mahoney, Michael W},
-	        journal={Internet Mathematics},
-	        volume={6},
-	        number={1},
-	        pages={29--123},
-	        year={2009},
-	        publisher={Taylor \& Francis}
+	        title={Community structure in large networks: Natural cluster sizes and the absence of large well-defined clusters},
+	        author={Leskovec, Jure and Lang, Kevin J and Dasgupta, Anirban and Mahoney, Michael W},
+	        journal={Internet Mathematics},
+	        volume={6},
+	        number={1},
+	        pages={29--123},
+	        year={2009},
+	        publisher={Taylor \& Francis}
 	}
 	
 

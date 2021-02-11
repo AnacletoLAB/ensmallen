@@ -31,16 +31,16 @@ Please cite the following if you use the data:
 }
 
 @article{goh2007human,
-        title={The human disease network},
-        author={Goh, Kwang-Il and Cusick, Michael E and Valle, David and Childs, Barton and Vidal, Marc and Barab{\'a}si,
+        title={The human disease network},
+        author={Goh, Kwang-Il and Cusick, Michael E and Valle, David and Childs, Barton and Vidal, Marc and Barab{\'a}si,
 Albert-L{\'a}szl{\'o}
 },
-        journal={Proceedings of the National Academy of Sciences},
-        volume={104},
-        number={21},
-        pages={8685--8690},
-        year={2007},
-        publisher={National Acad Sciences}
+        journal={Proceedings of the National Academy of Sciences},
+        volume={104},
+        number={21},
+        pages={8685--8690},
+        year={2007},
+        publisher={National Acad Sciences}
 }
 
 
@@ -136,16 +136,16 @@ def BioDiseasome(
 	}
 	
 	@article{goh2007human,
-	        title={The human disease network},
-	        author={Goh, Kwang-Il and Cusick, Michael E and Valle, David and Childs, Barton and Vidal, Marc and Barab{\'a}si,
+	        title={The human disease network},
+	        author={Goh, Kwang-Il and Cusick, Michael E and Valle, David and Childs, Barton and Vidal, Marc and Barab{\'a}si,
 	Albert-L{\'a}szl{\'o}
 	},
-	        journal={Proceedings of the National Academy of Sciences},
-	        volume={104},
-	        number={21},
-	        pages={8685--8690},
-	        year={2007},
-	        publisher={National Acad Sciences}
+	        journal={Proceedings of the National Academy of Sciences},
+	        volume={104},
+	        number={21},
+	        pages={8685--8690},
+	        year={2007},
+	        publisher={National Acad Sciences}
 	}
 	
 

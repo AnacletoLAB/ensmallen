@@ -34,11 +34,11 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{hudong-xing,
-        author    = {Xing Niu and Xinruo Sun and Haofen Wang and Shu Rong and Guilin Qi and Yong Yu},
-        title     = {{Zhishi.me} -- Weaving {Chinese} Linking Open Data},
-        booktitle = {Proc. Int. Semantic Web Conf.},
-        year      = {2011},
-        pages     = {205--220},
+        author    = {Xing Niu and Xinruo Sun and Haofen Wang and Shu Rong and Guilin Qi and Yong Yu},
+        title     = {{Zhishi.me} -- Weaving {Chinese} Linking Open Data},
+        booktitle = {Proc. Int. Semantic Web Conf.},
+        year      = {2011},
+        pages     = {205--220},
 }
 
 
@@ -137,11 +137,11 @@ def WebHudong(
 	}
 	
 	@inproceedings{hudong-xing,
-	        author    = {Xing Niu and Xinruo Sun and Haofen Wang and Shu Rong and Guilin Qi and Yong Yu},
-	        title     = {{Zhishi.me} -- Weaving {Chinese} Linking Open Data},
-	        booktitle = {Proc. Int. Semantic Web Conf.},
-	        year      = {2011},
-	        pages     = {205--220},
+	        author    = {Xing Niu and Xinruo Sun and Haofen Wang and Shu Rong and Guilin Qi and Yong Yu},
+	        title     = {{Zhishi.me} -- Weaving {Chinese} Linking Open Data},
+	        booktitle = {Proc. Int. Semantic Web Conf.},
+	        year      = {2011},
+	        pages     = {205--220},
 	}
 	
 

@@ -31,14 +31,14 @@ Please cite the following if you use the data:
 }
 
 @article{watts1998collective,
-        title={Collective dynamics of small-world networks},
-        author={Watts, Duncan J and Strogatz, Steven H},
-        journal={nature},
-        volume={393},
-        number={6684},
-        pages={440--442},
-        year={1998},
-        publisher={Nature Publishing Group}
+        title={Collective dynamics of small-world networks},
+        author={Watts, Duncan J and Strogatz, Steven H},
+        journal={nature},
+        volume={393},
+        number={6684},
+        pages={440--442},
+        year={1998},
+        publisher={Nature Publishing Group}
 }
 
 
@@ -134,14 +134,14 @@ def InfPower(
 	}
 	
 	@article{watts1998collective,
-	        title={Collective dynamics of small-world networks},
-	        author={Watts, Duncan J and Strogatz, Steven H},
-	        journal={nature},
-	        volume={393},
-	        number={6684},
-	        pages={440--442},
-	        year={1998},
-	        publisher={Nature Publishing Group}
+	        title={Collective dynamics of small-world networks},
+	        author={Watts, Duncan J and Strogatz, Steven H},
+	        journal={nature},
+	        volume={393},
+	        number={6684},
+	        pages={440--442},
+	        year={1998},
+	        publisher={Nature Publishing Group}
 	}
 	
 

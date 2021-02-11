@@ -33,16 +33,16 @@ Please cite the following if you use the data:
 }
 
 @article{palla2008fundamental,
-        title={Fundamental statistical features and self-similar properties of tagged networks},
-        author={Palla, Gergely and Farkas, Ill{\'e}s J and Pollner,
+        title={Fundamental statistical features and self-similar properties of tagged networks},
+        author={Palla, Gergely and Farkas, Ill{\'e}s J and Pollner,
 P{\'e}ter and Der{\'e}nyi,
 Imre and Vicsek, Tam{\'a}s},
-        journal={New Journal of Physics},
-        volume={10},
-        number={12},
-        pages={123026},
-        year={2008},
-        publisher={IOP Publishing}
+        journal={New Journal of Physics},
+        volume={10},
+        number={12},
+        pages={123026},
+        year={2008},
+        publisher={IOP Publishing}
 }
 
 
@@ -140,16 +140,16 @@ def CaMathscinetDir(
 	}
 	
 	@article{palla2008fundamental,
-	        title={Fundamental statistical features and self-similar properties of tagged networks},
-	        author={Palla, Gergely and Farkas, Ill{\'e}s J and Pollner,
+	        title={Fundamental statistical features and self-similar properties of tagged networks},
+	        author={Palla, Gergely and Farkas, Ill{\'e}s J and Pollner,
 	P{\'e}ter and Der{\'e}nyi,
 	Imre and Vicsek, Tam{\'a}s},
-	        journal={New Journal of Physics},
-	        volume={10},
-	        number={12},
-	        pages={123026},
-	        year={2008},
-	        publisher={IOP Publishing}
+	        journal={New Journal of Physics},
+	        volume={10},
+	        number={12},
+	        pages={123026},
+	        year={2008},
+	        publisher={IOP Publishing}
 	}
 	
 

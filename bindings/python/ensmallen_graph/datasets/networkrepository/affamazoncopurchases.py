@@ -33,14 +33,14 @@ Please cite the following if you use the data:
 }
 
 @article{leskovec2007dynamics,
-        title={The dynamics of viral marketing},
-        author={Leskovec, Jure and Adamic, Lada A and Huberman, Bernardo A},
-        journal={ACM Transactions on the Web (TWEB)},
-        volume={1},
-        number={1},
-        pages={5},
-        year={2007},
-        publisher={ACM}
+        title={The dynamics of viral marketing},
+        author={Leskovec, Jure and Adamic, Lada A and Huberman, Bernardo A},
+        journal={ACM Transactions on the Web (TWEB)},
+        volume={1},
+        number={1},
+        pages={5},
+        year={2007},
+        publisher={ACM}
 }
 
 
@@ -138,14 +138,14 @@ def AffAmazonCopurchases(
 	}
 	
 	@article{leskovec2007dynamics,
-	        title={The dynamics of viral marketing},
-	        author={Leskovec, Jure and Adamic, Lada A and Huberman, Bernardo A},
-	        journal={ACM Transactions on the Web (TWEB)},
-	        volume={1},
-	        number={1},
-	        pages={5},
-	        year={2007},
-	        publisher={ACM}
+	        title={The dynamics of viral marketing},
+	        author={Leskovec, Jure and Adamic, Lada A and Huberman, Bernardo A},
+	        journal={ACM Transactions on the Web (TWEB)},
+	        volume={1},
+	        number={1},
+	        pages={5},
+	        year={2007},
+	        publisher={ACM}
 	}
 	
 

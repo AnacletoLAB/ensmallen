@@ -33,10 +33,10 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{bader2012graph,
-        title={Graph Partitioning and Graph Clustering},
-        author={Bader, David A and Meyerhenke, Henning and Sanders, Peter and Wagner, Dorothea},
-        booktitle={10th DIMACS Implementation Challenge Workshop},
-        year={2012}
+        title={Graph Partitioning and Graph Clustering},
+        author={Bader, David A and Meyerhenke, Henning and Sanders, Peter and Wagner, Dorothea},
+        booktitle={10th DIMACS Implementation Challenge Workshop},
+        year={2012}
 }
 
 
@@ -134,10 +134,10 @@ def ScShipsec1(
 	}
 	
 	@inproceedings{bader2012graph,
-	        title={Graph Partitioning and Graph Clustering},
-	        author={Bader, David A and Meyerhenke, Henning and Sanders, Peter and Wagner, Dorothea},
-	        booktitle={10th DIMACS Implementation Challenge Workshop},
-	        year={2012}
+	        title={Graph Partitioning and Graph Clustering},
+	        author={Bader, David A and Meyerhenke, Henning and Sanders, Peter and Wagner, Dorothea},
+	        booktitle={10th DIMACS Implementation Challenge Workshop},
+	        year={2012}
 	}
 	
 

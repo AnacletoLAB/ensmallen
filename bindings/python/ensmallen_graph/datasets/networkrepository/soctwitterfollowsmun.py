@@ -32,12 +32,12 @@ Please cite the following if you use the data:
 }
 
 @article{de2010does,
-        title={How does the data sampling strategy impact the discovery of information diffusion in social media?},
-        author={De Choudhury, Munmun and Lin, Yu-Ru and Sundaram, Hari and Candan, K Selcuk and Xie, Lexing and Kelliher, Aisling},
-        journal={ICWSM},
-        volume={10},
-        pages={34--41},
-        year={2010}
+        title={How does the data sampling strategy impact the discovery of information diffusion in social media?},
+        author={De Choudhury, Munmun and Lin, Yu-Ru and Sundaram, Hari and Candan, K Selcuk and Xie, Lexing and Kelliher, Aisling},
+        journal={ICWSM},
+        volume={10},
+        pages={34--41},
+        year={2010}
 }
 
 
@@ -134,12 +134,12 @@ def SocTwitterFollowsMun(
 	}
 	
 	@article{de2010does,
-	        title={How does the data sampling strategy impact the discovery of information diffusion in social media?},
-	        author={De Choudhury, Munmun and Lin, Yu-Ru and Sundaram, Hari and Candan, K Selcuk and Xie, Lexing and Kelliher, Aisling},
-	        journal={ICWSM},
-	        volume={10},
-	        pages={34--41},
-	        year={2010}
+	        title={How does the data sampling strategy impact the discovery of information diffusion in social media?},
+	        author={De Choudhury, Munmun and Lin, Yu-Ru and Sundaram, Hari and Candan, K Selcuk and Xie, Lexing and Kelliher, Aisling},
+	        journal={ICWSM},
+	        volume={10},
+	        pages={34--41},
+	        year={2010}
 	}
 	
 

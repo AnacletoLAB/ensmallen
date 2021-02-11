@@ -34,12 +34,12 @@ Please cite the following if you use the data:
 }
 
 @incollection{niu2011zhishi,
-        title={{Zhishi.me} -- Weaving Chinese linking open data},
-        author={Niu, Xing and Sun, Xinruo and Wang, Haofen and Rong, Shu and Qi, Guilin and Yu, Yong},
-        booktitle={ISWC},
-        pages={205--220},
-        year={2011},
-        publisher={Springer}}
+        title={{Zhishi.me} -- Weaving Chinese linking open data},
+        author={Niu, Xing and Sun, Xinruo and Wang, Haofen and Rong, Shu and Qi, Guilin and Yu, Yong},
+        booktitle={ISWC},
+        pages={205--220},
+        year={2011},
+        publisher={Springer}}
 
 
 Usage example
@@ -137,12 +137,12 @@ def WebWikiChInternal(
 	}
 	
 	@incollection{niu2011zhishi,
-	        title={{Zhishi.me} -- Weaving Chinese linking open data},
-	        author={Niu, Xing and Sun, Xinruo and Wang, Haofen and Rong, Shu and Qi, Guilin and Yu, Yong},
-	        booktitle={ISWC},
-	        pages={205--220},
-	        year={2011},
-	        publisher={Springer}}
+	        title={{Zhishi.me} -- Weaving Chinese linking open data},
+	        author={Niu, Xing and Sun, Xinruo and Wang, Haofen and Rong, Shu and Qi, Guilin and Yu, Yong},
+	        booktitle={ISWC},
+	        pages={205--220},
+	        year={2011},
+	        publisher={Springer}}
 	
 
 	Usage example

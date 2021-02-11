@@ -34,11 +34,11 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{meusel2014graph,
-        title={Graph structure in the web---revisited: a trick of the heavy tail},
-        author={Meusel, Robert and Vigna, Sebastiano and Lehmberg, Oliver and Bizer, Christian},
-        booktitle={WWW Companion},
-        pages={427--432},
-        year={2014}
+        title={Graph structure in the web---revisited: a trick of the heavy tail},
+        author={Meusel, Robert and Vigna, Sebastiano and Lehmberg, Oliver and Bizer, Christian},
+        booktitle={WWW Companion},
+        pages={427--432},
+        year={2014}
 }
 
 
@@ -137,11 +137,11 @@ def WebCc12Payleveldomain(
 	}
 	
 	@inproceedings{meusel2014graph,
-	        title={Graph structure in the web---revisited: a trick of the heavy tail},
-	        author={Meusel, Robert and Vigna, Sebastiano and Lehmberg, Oliver and Bizer, Christian},
-	        booktitle={WWW Companion},
-	        pages={427--432},
-	        year={2014}
+	        title={Graph structure in the web---revisited: a trick of the heavy tail},
+	        author={Meusel, Robert and Vigna, Sebastiano and Lehmberg, Oliver and Bizer, Christian},
+	        booktitle={WWW Companion},
+	        pages={427--432},
+	        year={2014}
 	}
 	
 

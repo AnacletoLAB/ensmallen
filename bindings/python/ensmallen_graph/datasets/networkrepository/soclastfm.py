@@ -32,12 +32,12 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{konstas2009social,
-        title={On social networks and collaborative recommendation},
-        author={Konstas, Ioannis and Stathopoulos, Vassilios and Jose, Joemon M},
-        booktitle={Proceedings of the 32nd international ACM SIGIR conference on Research and development in information retrieval},
-        pages={195--202},
-        year={2009},
-        organization={ACM}
+        title={On social networks and collaborative recommendation},
+        author={Konstas, Ioannis and Stathopoulos, Vassilios and Jose, Joemon M},
+        booktitle={Proceedings of the 32nd international ACM SIGIR conference on Research and development in information retrieval},
+        pages={195--202},
+        year={2009},
+        organization={ACM}
 }
 
 
@@ -134,12 +134,12 @@ def SocLastfm(
 	}
 	
 	@inproceedings{konstas2009social,
-	        title={On social networks and collaborative recommendation},
-	        author={Konstas, Ioannis and Stathopoulos, Vassilios and Jose, Joemon M},
-	        booktitle={Proceedings of the 32nd international ACM SIGIR conference on Research and development in information retrieval},
-	        pages={195--202},
-	        year={2009},
-	        organization={ACM}
+	        title={On social networks and collaborative recommendation},
+	        author={Konstas, Ioannis and Stathopoulos, Vassilios and Jose, Joemon M},
+	        booktitle={Proceedings of the 32nd international ACM SIGIR conference on Research and development in information retrieval},
+	        pages={195--202},
+	        year={2009},
+	        organization={ACM}
 	}
 	
 

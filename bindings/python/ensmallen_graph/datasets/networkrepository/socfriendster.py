@@ -32,9 +32,9 @@ Please cite the following if you use the data:
 }
 
 @misc{friendster,
-        author = {Friendster social network},
-        title = {Friendster: The online gaming social network},
-        note = {{https://archive.org/details/friendster-dataset-201107}}}
+        author = {Friendster social network},
+        title = {Friendster: The online gaming social network},
+        note = {{https://archive.org/details/friendster-dataset-201107}}}
 
 
 Usage example
@@ -130,9 +130,9 @@ def SocFriendster(
 	}
 	
 	@misc{friendster,
-	        author = {Friendster social network},
-	        title = {Friendster: The online gaming social network},
-	        note = {{https://archive.org/details/friendster-dataset-201107}}}
+	        author = {Friendster social network},
+	        title = {Friendster: The online gaming social network},
+	        note = {{https://archive.org/details/friendster-dataset-201107}}}
 	
 
 	Usage example

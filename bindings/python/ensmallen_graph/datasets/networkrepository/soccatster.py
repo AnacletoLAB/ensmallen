@@ -33,9 +33,9 @@ Please cite the following if you use the data:
 }
 
 @misc{soc-catster,
-        author={Catster},
-        title={Catster social network},
-        note={http://www.catster.com}
+        author={Catster},
+        title={Catster social network},
+        note={http://www.catster.com}
 }
 
 
@@ -133,9 +133,9 @@ def SocCatster(
 	}
 	
 	@misc{soc-catster,
-	        author={Catster},
-	        title={Catster social network},
-	        note={http://www.catster.com}
+	        author={Catster},
+	        title={Catster social network},
+	        note={http://www.catster.com}
 	}
 	
 

@@ -1109,10 +1109,6 @@ from .webitalycnr2000 import WebItalycnr2000
 from .webwikichinternal import WebWikiChInternal
 from .webwikipedia2009 import WebWikipedia2009
 from .webclueweb09 import WebClueweb09
-from .hugebubbles00010 import Hugebubbles00010
-from .in2004 import In2004
-from .indochina2004 import Indochina2004
-from .it2004 import It2004
 from .libimseti import Libimseti
 from .livejournalgroupmemberships import LivejournalGroupmemberships
 from .livejournallinks import LivejournalLinks
@@ -1139,7 +1135,6 @@ from .techip import TechIp
 from .twitter import Twitter
 from .uk2002 import Uk2002
 from .uk2005 import Uk2005
-from .wbedu import WbEdu
 from .webbaidubaike import WebBaiduBaike
 from .webclueweb0950m import WebClueweb0950m
 from .wikisignedk2 import WikisignedK2
@@ -1151,6 +1146,9 @@ from .zhishibaidurelatedpages import ZhishiBaiduRelatedpages
 from .zhishihudonginternallink import ZhishiHudongInternallink
 from .zhishihudongrelatedpages import ZhishiHudongRelatedpages
 from .zhishizhwikiinternallink import ZhishiZhwikiInternallink
+from .arabic2005 import Arabic2005
+from .asskitter import AsSkitter
+from .indochina2004 import Indochina2004
 from .soclivejournalusergroups import SocLivejournalUserGroups
 from .socljournal2008 import SocLjournal2008
 from .socphysicians import SocPhysicians
@@ -1169,11 +1167,10 @@ from .webhudong import WebHudong
 from .webuk2005 import WebUk2005
 from .wikiencat import WikiEnCat
 from .wikitalk import WikiTalk
-from .copapersciteseer import CoPapersCiteseer
 from .affdigg import AffDigg
-from .arabic2005 import Arabic2005
-from .asskitter import AsSkitter
 from .cage14 import Cage14
+from .it2004 import It2004
+from .copapersciteseer import CoPapersCiteseer
 from .cage15 import Cage15
 from .citpatents import CitPatents
 from .copapersdblp import CoPapersDblp
@@ -1186,10 +1183,13 @@ from .graph3dtube import Graph3dtube
 from .graph598a import Graph598a
 from .hollywood2009 import Hollywood2009
 from .hugebubbles00000 import Hugebubbles00000
+from .in2004 import In2004
 from .roadroadusa import RoadRoadUsa
 from .screl9 import ScRel9
 from .socanuresidence import SocAnuResidence
 from .soclivejournal import SocLivejournal
+from .wbedu import WbEdu
+from .hugebubbles00010 import Hugebubbles00010
 
 __all__ = [
 	"Graph08blocks", "Actor", "Adaptive", "Auto", "AvesSparrowSocial", "AvesWeaverSocial",
@@ -1394,22 +1394,22 @@ __all__ = [
 	"SocfbTexas84", "SocfbUf", "SocfbUf21", "SocfbUga50", "SocfbUillinois",
 	"SocfbUillinois20", "WebBerkstanDir", "WebArabic2005", "WebBaiduBaikeRelated",
 	"WebGoogleDir", "WebIt2004", "WebItalycnr2000", "WebWikiChInternal", "WebWikipedia2009",
-	"WebClueweb09", "Hugebubbles00010", "In2004", "Indochina2004", "It2004",
-	"Libimseti", "LivejournalGroupmemberships", "LivejournalLinks", "Ljournal2008",
-	"OrkutGroupmemberships", "OrkutLinks", "Patentcite", "Patents", "PetsterFriendshipsCat",
-	"PetsterFriendshipsDog", "Rail4284", "Reactome", "RoadAsiaOsm", "RoadGermanyOsm",
-	"ScLdoor", "Sk2005", "SlashdotZoo", "SocFlickrUnd", "SocHighschoolMoreno",
-	"SocLivejournal07", "SocLivejournal1", "TechAsCaida20071105", "TechIp",
-	"Twitter", "Uk2002", "Uk2005", "WbEdu", "WebBaiduBaike", "WebClueweb0950m",
+	"WebClueweb09", "Libimseti", "LivejournalGroupmemberships", "LivejournalLinks",
+	"Ljournal2008", "OrkutGroupmemberships", "OrkutLinks", "Patentcite", "Patents",
+	"PetsterFriendshipsCat", "PetsterFriendshipsDog", "Rail4284", "Reactome",
+	"RoadAsiaOsm", "RoadGermanyOsm", "ScLdoor", "Sk2005", "SlashdotZoo", "SocFlickrUnd",
+	"SocHighschoolMoreno", "SocLivejournal07", "SocLivejournal1", "TechAsCaida20071105",
+	"TechIp", "Twitter", "Uk2002", "Uk2005", "WebBaiduBaike", "WebClueweb0950m",
 	"WikisignedK2", "WordnetWords", "YoutubeGroupmemberships", "YoutubeLinks",
 	"ZhishiBaiduInternallink", "ZhishiBaiduRelatedpages", "ZhishiHudongInternallink",
-	"ZhishiHudongRelatedpages", "ZhishiZhwikiInternallink", "SocLivejournalUserGroups",
-	"SocLjournal2008", "SocPhysicians", "SocPokec", "SocPokecRelationships",
-	"SocSlashdotZoo", "SocTwitterHiggs", "SocfbAAnon", "SocfbBAnon", "SocfbKonect",
-	"SocfbUciUni", "TechAsSkitter", "TrecWt10g", "WebCc12Payleveldomain", "WebHudong",
-	"WebUk2005", "WikiEnCat", "WikiTalk", "CoPapersCiteseer", "AffDigg", "Arabic2005",
-	"AsSkitter", "Cage14", "Cage15", "CitPatents", "CoPapersDblp", "DbpediaAll",
-	"DbpediaLink", "Eu2005", "Friendster", "Graph144", "Graph3dtube", "Graph598a",
-	"Hollywood2009", "Hugebubbles00000", "RoadRoadUsa", "ScRel9", "SocAnuResidence",
-	"SocLivejournal",
+	"ZhishiHudongRelatedpages", "ZhishiZhwikiInternallink", "Arabic2005", "AsSkitter",
+	"Indochina2004", "SocLivejournalUserGroups", "SocLjournal2008", "SocPhysicians",
+	"SocPokec", "SocPokecRelationships", "SocSlashdotZoo", "SocTwitterHiggs",
+	"SocfbAAnon", "SocfbBAnon", "SocfbKonect", "SocfbUciUni", "TechAsSkitter",
+	"TrecWt10g", "WebCc12Payleveldomain", "WebHudong", "WebUk2005", "WikiEnCat",
+	"WikiTalk", "AffDigg", "Cage14", "It2004", "CoPapersCiteseer", "Cage15",
+	"CitPatents", "CoPapersDblp", "DbpediaAll", "DbpediaLink", "Eu2005", "Friendster",
+	"Graph144", "Graph3dtube", "Graph598a", "Hollywood2009", "Hugebubbles00000",
+	"In2004", "RoadRoadUsa", "ScRel9", "SocAnuResidence", "SocLivejournal",
+	"WbEdu", "Hugebubbles00010",
 ]

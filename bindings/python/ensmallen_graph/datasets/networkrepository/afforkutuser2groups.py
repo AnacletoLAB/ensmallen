@@ -32,12 +32,12 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{mislove-2007-socialnetworks,
-        author = {Alan Mislove and Massimiliano Marcon and Krishna P. Gummadi and Peter Druschel and Bobby Bhattacharjee},
-        title = {{Measurement and Analysis of Online Social Networks}},
-        booktitle = {IMC},
-        address = {San Diego, CA},
-        month = {October},
-        year = {2007}}
+        author = {Alan Mislove and Massimiliano Marcon and Krishna P. Gummadi and Peter Druschel and Bobby Bhattacharjee},
+        title = {{Measurement and Analysis of Online Social Networks}},
+        booktitle = {IMC},
+        address = {San Diego, CA},
+        month = {October},
+        year = {2007}}
 
 
 Usage example
@@ -133,12 +133,12 @@ def AffOrkutUser2groups(
 	}
 	
 	@inproceedings{mislove-2007-socialnetworks,
-	        author = {Alan Mislove and Massimiliano Marcon and Krishna P. Gummadi and Peter Druschel and Bobby Bhattacharjee},
-	        title = {{Measurement and Analysis of Online Social Networks}},
-	        booktitle = {IMC},
-	        address = {San Diego, CA},
-	        month = {October},
-	        year = {2007}}
+	        author = {Alan Mislove and Massimiliano Marcon and Krishna P. Gummadi and Peter Druschel and Bobby Bhattacharjee},
+	        title = {{Measurement and Analysis of Online Social Networks}},
+	        booktitle = {IMC},
+	        address = {San Diego, CA},
+	        month = {October},
+	        year = {2007}}
 	
 
 	Usage example

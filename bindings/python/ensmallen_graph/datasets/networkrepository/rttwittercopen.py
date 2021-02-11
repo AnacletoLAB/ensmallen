@@ -31,11 +31,11 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{ahmed2010time,
-        title={Time-based sampling of social network activity graphs},
-        author={Ahmed, N.K. and Berchmans, F. and Neville, J. and Kompella, R.},
-        booktitle={SIGKDD MLG},
-        pages={1--9},
-        year={2010},
+        title={Time-based sampling of social network activity graphs},
+        author={Ahmed, N.K. and Berchmans, F. and Neville, J. and Kompella, R.},
+        booktitle={SIGKDD MLG},
+        pages={1--9},
+        year={2010},
 }
 
 
@@ -131,11 +131,11 @@ def RtTwitterCopen(
 	}
 	
 	@inproceedings{ahmed2010time,
-	        title={Time-based sampling of social network activity graphs},
-	        author={Ahmed, N.K. and Berchmans, F. and Neville, J. and Kompella, R.},
-	        booktitle={SIGKDD MLG},
-	        pages={1--9},
-	        year={2010},
+	        title={Time-based sampling of social network activity graphs},
+	        author={Ahmed, N.K. and Berchmans, F. and Neville, J. and Kompella, R.},
+	        booktitle={SIGKDD MLG},
+	        pages={1--9},
+	        year={2010},
 	}
 	
 

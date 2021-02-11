@@ -31,17 +31,17 @@ Please cite the following if you use the data:
 }
 
 @article{boguna2004models,
-        title={Models of social networks based on social distance attachment},
-        author={Bogu{\~n}{\'a},
+        title={Models of social networks based on social distance attachment},
+        author={Bogu{\~n}{\'a},
 Mari{\'a}n and Pastor-Satorras,
 Romualdo and D{\'\i}az-Guilera,
 Albert and Arenas, Alex},
-        journal={Physical Review E},
-        volume={70},
-        number={5},
-        pages={056122},
-        year={2004},
-        publisher={APS}
+        journal={Physical Review E},
+        volume={70},
+        number={5},
+        pages={056122},
+        year={2004},
+        publisher={APS}
 }
 
 
@@ -137,17 +137,17 @@ def TechPgp(
 	}
 	
 	@article{boguna2004models,
-	        title={Models of social networks based on social distance attachment},
-	        author={Bogu{\~n}{\'a},
+	        title={Models of social networks based on social distance attachment},
+	        author={Bogu{\~n}{\'a},
 	Mari{\'a}n and Pastor-Satorras,
 	Romualdo and D{\'\i}az-Guilera,
 	Albert and Arenas, Alex},
-	        journal={Physical Review E},
-	        volume={70},
-	        number={5},
-	        pages={056122},
-	        year={2004},
-	        publisher={APS}
+	        journal={Physical Review E},
+	        volume={70},
+	        number={5},
+	        pages={056122},
+	        year={2004},
+	        publisher={APS}
 	}
 	
 

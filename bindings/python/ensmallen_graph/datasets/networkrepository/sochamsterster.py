@@ -32,9 +32,9 @@ Please cite the following if you use the data:
 }
 
 @misc{soc-hamsterster,
-        author={Hamsterster},
-        title={Hamsterster social network},
-        note={http://www.hamsterster.com}
+        author={Hamsterster},
+        title={Hamsterster social network},
+        note={http://www.hamsterster.com}
 }
 
 
@@ -131,9 +131,9 @@ def SocHamsterster(
 	}
 	
 	@misc{soc-hamsterster,
-	        author={Hamsterster},
-	        title={Hamsterster social network},
-	        note={http://www.hamsterster.com}
+	        author={Hamsterster},
+	        title={Hamsterster social network},
+	        note={http://www.hamsterster.com}
 	}
 	
 

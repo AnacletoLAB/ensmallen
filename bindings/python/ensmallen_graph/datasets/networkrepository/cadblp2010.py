@@ -32,13 +32,13 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{BoVWFI,
-        author ={Paolo Boldi and Sebastiano Vigna},
-        title = {The {W}eb{G}raph Framework {I}: {C}ompression Techniques},
-        year = {2004},
-        booktitle= {Proc. of the Thirteenth International World Wide Web Conference (WWW 2004)},
-        address={Manhattan, USA},
-        pages={595--601},
-        publisher={ACM Press}
+        author ={Paolo Boldi and Sebastiano Vigna},
+        title = {The {W}eb{G}raph Framework {I}: {C}ompression Techniques},
+        year = {2004},
+        booktitle= {Proc. of the Thirteenth International World Wide Web Conference (WWW 2004)},
+        address={Manhattan, USA},
+        pages={595--601},
+        publisher={ACM Press}
 }
 
 
@@ -135,13 +135,13 @@ def CaDblp2010(
 	}
 	
 	@inproceedings{BoVWFI,
-	        author ={Paolo Boldi and Sebastiano Vigna},
-	        title = {The {W}eb{G}raph Framework {I}: {C}ompression Techniques},
-	        year = {2004},
-	        booktitle= {Proc. of the Thirteenth International World Wide Web Conference (WWW 2004)},
-	        address={Manhattan, USA},
-	        pages={595--601},
-	        publisher={ACM Press}
+	        author ={Paolo Boldi and Sebastiano Vigna},
+	        title = {The {W}eb{G}raph Framework {I}: {C}ompression Techniques},
+	        year = {2004},
+	        booktitle= {Proc. of the Thirteenth International World Wide Web Conference (WWW 2004)},
+	        address={Manhattan, USA},
+	        pages={595--601},
+	        publisher={ACM Press}
 	}
 	
 

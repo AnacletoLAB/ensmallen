@@ -33,14 +33,14 @@ Please cite the following if you use the data:
 }
 
 @article{corman2002studying,
-        title={Studying Complex Discursive Systems.},
-        author={Corman, Steven R and Kuhn, Timothy and McPhee, Robert D and Dooley, Kevin J},
-        journal={Human communication research},
-        volume={28},
-        number={2},
-        pages={157--206},
-        year={2002},
-        publisher={Wiley Online Library}
+        title={Studying Complex Discursive Systems.},
+        author={Corman, Steven R and Kuhn, Timothy and McPhee, Robert D and Dooley, Kevin J},
+        journal={Human communication research},
+        volume={28},
+        number={2},
+        pages={157--206},
+        year={2002},
+        publisher={Wiley Online Library}
 }
 
 
@@ -138,14 +138,14 @@ def MiscReuters911(
 	}
 	
 	@article{corman2002studying,
-	        title={Studying Complex Discursive Systems.},
-	        author={Corman, Steven R and Kuhn, Timothy and McPhee, Robert D and Dooley, Kevin J},
-	        journal={Human communication research},
-	        volume={28},
-	        number={2},
-	        pages={157--206},
-	        year={2002},
-	        publisher={Wiley Online Library}
+	        title={Studying Complex Discursive Systems.},
+	        author={Corman, Steven R and Kuhn, Timothy and McPhee, Robert D and Dooley, Kevin J},
+	        journal={Human communication research},
+	        volume={28},
+	        number={2},
+	        pages={157--206},
+	        year={2002},
+	        publisher={Wiley Online Library}
 	}
 	
 

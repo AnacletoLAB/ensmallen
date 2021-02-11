@@ -32,14 +32,14 @@ Please cite the following if you use the data:
 }
 
 @article{batagelj2000some,
-        title={Some analyses of Erdos collaboration graph},
-        author={Batagelj, Vladimir and Mrvar, Andrej},
-        journal={Social Networks},
-        volume={22},
-        number={2},
-        pages={173--186},
-        year={2000},
-        publisher={Elsevier}
+        title={Some analyses of Erdos collaboration graph},
+        author={Batagelj, Vladimir and Mrvar, Andrej},
+        journal={Social Networks},
+        volume={22},
+        number={2},
+        pages={173--186},
+        year={2000},
+        publisher={Elsevier}
 }
 
 
@@ -136,14 +136,14 @@ def CaErdos992(
 	}
 	
 	@article{batagelj2000some,
-	        title={Some analyses of Erdos collaboration graph},
-	        author={Batagelj, Vladimir and Mrvar, Andrej},
-	        journal={Social Networks},
-	        volume={22},
-	        number={2},
-	        pages={173--186},
-	        year={2000},
-	        publisher={Elsevier}
+	        title={Some analyses of Erdos collaboration graph},
+	        author={Batagelj, Vladimir and Mrvar, Andrej},
+	        journal={Social Networks},
+	        volume={22},
+	        number={2},
+	        pages={173--186},
+	        year={2000},
+	        publisher={Elsevier}
 	}
 	
 

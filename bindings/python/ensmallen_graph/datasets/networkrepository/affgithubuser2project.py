@@ -34,10 +34,10 @@ Please cite the following if you use the data:
 }
 
 @misc{aff-github-user2project,
-        author = {Scott Chacon},
-        title = {The 2009 GitHub Contest},
-        month = {July},
-        year = {2009}
+        author = {Scott Chacon},
+        title = {The 2009 GitHub Contest},
+        month = {July},
+        year = {2009}
 }
 
 
@@ -136,10 +136,10 @@ def AffGithubUser2project(
 	}
 	
 	@misc{aff-github-user2project,
-	        author = {Scott Chacon},
-	        title = {The 2009 GitHub Contest},
-	        month = {July},
-	        year = {2009}
+	        author = {Scott Chacon},
+	        title = {The 2009 GitHub Contest},
+	        month = {July},
+	        year = {2009}
 	}
 	
 

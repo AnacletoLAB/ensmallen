@@ -32,12 +32,12 @@ Please cite the following if you use the data:
 }
 
 @article{read1954cultures,
-        title={Cultures of the central highlands, New Guinea},
-        author={Read, Kenneth E},
-        journal={Southwestern Journal of Anthropology},
-        pages={1--43},
-        year={1954},
-        publisher={JSTOR}
+        title={Cultures of the central highlands, New Guinea},
+        author={Read, Kenneth E},
+        journal={Southwestern Journal of Anthropology},
+        pages={1--43},
+        year={1954},
+        publisher={JSTOR}
 }
 
 
@@ -134,12 +134,12 @@ def SocTribes(
 	}
 	
 	@article{read1954cultures,
-	        title={Cultures of the central highlands, New Guinea},
-	        author={Read, Kenneth E},
-	        journal={Southwestern Journal of Anthropology},
-	        pages={1--43},
-	        year={1954},
-	        publisher={JSTOR}
+	        title={Cultures of the central highlands, New Guinea},
+	        author={Read, Kenneth E},
+	        journal={Southwestern Journal of Anthropology},
+	        pages={1--43},
+	        year={1954},
+	        publisher={JSTOR}
 	}
 	
 

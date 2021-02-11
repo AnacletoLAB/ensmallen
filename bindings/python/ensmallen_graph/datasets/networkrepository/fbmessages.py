@@ -32,14 +32,14 @@ Please cite the following if you use the data:
 }
 
 @article{opsahl2009clustering,
-        title={Clustering in weighted networks},
-        author={Opsahl, T. and Panzarasa, P.},
-        journal={Social networks},
-        volume={31},
-        number={2},
-        pages={155--163},
-        year={2009},
-        publisher={Elsevier}
+        title={Clustering in weighted networks},
+        author={Opsahl, T. and Panzarasa, P.},
+        journal={Social networks},
+        volume={31},
+        number={2},
+        pages={155--163},
+        year={2009},
+        publisher={Elsevier}
 }
 
 
@@ -136,14 +136,14 @@ def FbMessages(
 	}
 	
 	@article{opsahl2009clustering,
-	        title={Clustering in weighted networks},
-	        author={Opsahl, T. and Panzarasa, P.},
-	        journal={Social networks},
-	        volume={31},
-	        number={2},
-	        pages={155--163},
-	        year={2009},
-	        publisher={Elsevier}
+	        title={Clustering in weighted networks},
+	        author={Opsahl, T. and Panzarasa, P.},
+	        journal={Social networks},
+	        volume={31},
+	        number={2},
+	        pages={155--163},
+	        year={2009},
+	        publisher={Elsevier}
 	}
 	
 

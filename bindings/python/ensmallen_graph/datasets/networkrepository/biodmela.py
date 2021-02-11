@@ -31,13 +31,13 @@ Please cite the following if you use the data:
 }
 
 @article{singh2008-isorank-multi,
-        author = {Singh, Rohit and Xu, Jinbo and Berger, Bonnie},
-        title = {Global alignment of multiple protein interaction networks with application to functional orthology detection},
-        journal = {PNAS},
-        year = {2008},
-        volume = {105},
-        pages = {12763-12768},
-        number = {35}
+        author = {Singh, Rohit and Xu, Jinbo and Berger, Bonnie},
+        title = {Global alignment of multiple protein interaction networks with application to functional orthology detection},
+        journal = {PNAS},
+        year = {2008},
+        volume = {105},
+        pages = {12763-12768},
+        number = {35}
 }
 
 
@@ -133,13 +133,13 @@ def BioDmela(
 	}
 	
 	@article{singh2008-isorank-multi,
-	        author = {Singh, Rohit and Xu, Jinbo and Berger, Bonnie},
-	        title = {Global alignment of multiple protein interaction networks with application to functional orthology detection},
-	        journal = {PNAS},
-	        year = {2008},
-	        volume = {105},
-	        pages = {12763-12768},
-	        number = {35}
+	        author = {Singh, Rohit and Xu, Jinbo and Berger, Bonnie},
+	        title = {Global alignment of multiple protein interaction networks with application to functional orthology detection},
+	        journal = {PNAS},
+	        year = {2008},
+	        volume = {105},
+	        pages = {12763-12768},
+	        number = {35}
 	}
 	
 

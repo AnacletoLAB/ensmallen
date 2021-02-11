@@ -32,18 +32,18 @@ Please cite the following if you use the data:
 }
 
 @misc{wikipedia2009,
-        title={Wikipedia Database dump},
-        author={Various},
-        year={2009},
-        note={Version from 2009-03-06. http://en.wikipedia.org/wiki/Wikipedia:Database_download}
+        title={Wikipedia Database dump},
+        author={Various},
+        year={2009},
+        note={Version from 2009-03-06. http://en.wikipedia.org/wiki/Wikipedia:Database_download}
 }
 
 @article{rossi2012dynamical,
-        title={A Dynamical System for PageRank with Time-Dependent Teleportation},
-        author={David F. Gleich and Ryan A. Rossi},
-        journal={Internet Mathematics},
-        pages={1--30},
-        year={2014}
+        title={A Dynamical System for PageRank with Time-Dependent Teleportation},
+        author={David F. Gleich and Ryan A. Rossi},
+        journal={Internet Mathematics},
+        pages={1--30},
+        year={2014}
 }
 
 
@@ -140,18 +140,18 @@ def WebWikipedia2009(
 	}
 	
 	@misc{wikipedia2009,
-	        title={Wikipedia Database dump},
-	        author={Various},
-	        year={2009},
-	        note={Version from 2009-03-06. http://en.wikipedia.org/wiki/Wikipedia:Database_download}
+	        title={Wikipedia Database dump},
+	        author={Various},
+	        year={2009},
+	        note={Version from 2009-03-06. http://en.wikipedia.org/wiki/Wikipedia:Database_download}
 	}
 	
 	@article{rossi2012dynamical,
-	        title={A Dynamical System for PageRank with Time-Dependent Teleportation},
-	        author={David F. Gleich and Ryan A. Rossi},
-	        journal={Internet Mathematics},
-	        pages={1--30},
-	        year={2014}
+	        title={A Dynamical System for PageRank with Time-Dependent Teleportation},
+	        author={David F. Gleich and Ryan A. Rossi},
+	        journal={Internet Mathematics},
+	        pages={1--30},
+	        year={2014}
 	}
 	
 

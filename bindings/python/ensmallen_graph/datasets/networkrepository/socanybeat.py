@@ -31,10 +31,10 @@ Please cite the following if you use the data:
 }
 
 @article{Fire2012,
-        title={Link Prediction in Highly Fractional Data Sets},
-        author={Fire, M., and Puzis, R., and Elovici, Y. },
-        journal={Handbook of Computational Approaches to Counterterrorism},
-        year={2012}publisher={Springer}
+        title={Link Prediction in Highly Fractional Data Sets},
+        author={Fire, M., and Puzis, R., and Elovici, Y. },
+        journal={Handbook of Computational Approaches to Counterterrorism},
+        year={2012}publisher={Springer}
 }
 
 
@@ -130,10 +130,10 @@ def SocAnybeat(
 	}
 	
 	@article{Fire2012,
-	        title={Link Prediction in Highly Fractional Data Sets},
-	        author={Fire, M., and Puzis, R., and Elovici, Y. },
-	        journal={Handbook of Computational Approaches to Counterterrorism},
-	        year={2012}publisher={Springer}
+	        title={Link Prediction in Highly Fractional Data Sets},
+	        author={Fire, M., and Puzis, R., and Elovici, Y. },
+	        journal={Handbook of Computational Approaches to Counterterrorism},
+	        year={2012}publisher={Springer}
 	}
 	
 

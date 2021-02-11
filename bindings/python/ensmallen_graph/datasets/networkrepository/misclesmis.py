@@ -32,14 +32,14 @@ Please cite the following if you use the data:
 }
 
 @article{newman2004finding,
-        title={Finding and evaluating community structure in networks},
-        author={Newman, Mark EJ and Girvan, Michelle},
-        journal={Physical review E},
-        volume={69},
-        number={2},
-        pages={026113},
-        year={2004},
-        publisher={APS}
+        title={Finding and evaluating community structure in networks},
+        author={Newman, Mark EJ and Girvan, Michelle},
+        journal={Physical review E},
+        volume={69},
+        number={2},
+        pages={026113},
+        year={2004},
+        publisher={APS}
 }
 
 
@@ -136,14 +136,14 @@ def MiscLesmis(
 	}
 	
 	@article{newman2004finding,
-	        title={Finding and evaluating community structure in networks},
-	        author={Newman, Mark EJ and Girvan, Michelle},
-	        journal={Physical review E},
-	        volume={69},
-	        number={2},
-	        pages={026113},
-	        year={2004},
-	        publisher={APS}
+	        title={Finding and evaluating community structure in networks},
+	        author={Newman, Mark EJ and Girvan, Michelle},
+	        journal={Physical review E},
+	        volume={69},
+	        number={2},
+	        pages={026113},
+	        year={2004},
+	        publisher={APS}
 	}
 	
 

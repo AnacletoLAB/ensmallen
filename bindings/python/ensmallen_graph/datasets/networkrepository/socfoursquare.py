@@ -32,10 +32,10 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{gao2012exploring,
-        title={Exploring social-historical ties on location-based social networks},
-        author={Gao, Huiji and Tang, Jiliang and Liu, Huan},
-        booktitle={Proceedings of the 6th International AAAI Conference on Weblogs and Social Media},
-        year={2012}
+        title={Exploring social-historical ties on location-based social networks},
+        author={Gao, Huiji and Tang, Jiliang and Liu, Huan},
+        booktitle={Proceedings of the 6th International AAAI Conference on Weblogs and Social Media},
+        year={2012}
 }
 
 
@@ -132,10 +132,10 @@ def SocFoursquare(
 	}
 	
 	@inproceedings{gao2012exploring,
-	        title={Exploring social-historical ties on location-based social networks},
-	        author={Gao, Huiji and Tang, Jiliang and Liu, Huan},
-	        booktitle={Proceedings of the 6th International AAAI Conference on Weblogs and Social Media},
-	        year={2012}
+	        title={Exploring social-historical ties on location-based social networks},
+	        author={Gao, Huiji and Tang, Jiliang and Liu, Huan},
+	        booktitle={Proceedings of the 6th International AAAI Conference on Weblogs and Social Media},
+	        year={2012}
 	}
 	
 

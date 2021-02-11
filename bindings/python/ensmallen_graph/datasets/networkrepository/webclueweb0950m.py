@@ -33,10 +33,10 @@ Please cite the following if you use the data:
 }
 
 @techreport{clarke2009overview,
-        title={Overview of the trec 2009 web track},
-        author={Clarke, Charles L and Craswell, Nick and Soboroff, Ian},
-        year={2009},
-        institution={DTIC Document}
+        title={Overview of the trec 2009 web track},
+        author={Clarke, Charles L and Craswell, Nick and Soboroff, Ian},
+        year={2009},
+        institution={DTIC Document}
 }
 
 
@@ -134,10 +134,10 @@ def WebClueweb0950m(
 	}
 	
 	@techreport{clarke2009overview,
-	        title={Overview of the trec 2009 web track},
-	        author={Clarke, Charles L and Craswell, Nick and Soboroff, Ian},
-	        year={2009},
-	        institution={DTIC Document}
+	        title={Overview of the trec 2009 web track},
+	        author={Clarke, Charles L and Craswell, Nick and Soboroff, Ian},
+	        year={2009},
+	        institution={DTIC Document}
 	}
 	
 

@@ -32,12 +32,12 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{icwsm10cha,
-        author = {Meeyoung Cha and Hamed Haddadi and Fabricio Benevenuto and Krishna P. Gummadi},
-        title = {Measuring User Influence in Twitter: The Million Follower Fallacy},
-        booktitle = {ICWSM},
-        month = {May},
-        year = {2010},
-        address = {Washington DC, USA}
+        author = {Meeyoung Cha and Hamed Haddadi and Fabricio Benevenuto and Krishna P. Gummadi},
+        title = {Measuring User Influence in Twitter: The Million Follower Fallacy},
+        booktitle = {ICWSM},
+        month = {May},
+        year = {2010},
+        address = {Washington DC, USA}
 }
 
 
@@ -134,12 +134,12 @@ def SocTwitterMpiSws(
 	}
 	
 	@inproceedings{icwsm10cha,
-	        author = {Meeyoung Cha and Hamed Haddadi and Fabricio Benevenuto and Krishna P. Gummadi},
-	        title = {Measuring User Influence in Twitter: The Million Follower Fallacy},
-	        booktitle = {ICWSM},
-	        month = {May},
-	        year = {2010},
-	        address = {Washington DC, USA}
+	        author = {Meeyoung Cha and Hamed Haddadi and Fabricio Benevenuto and Krishna P. Gummadi},
+	        title = {Measuring User Influence in Twitter: The Million Follower Fallacy},
+	        booktitle = {ICWSM},
+	        month = {May},
+	        year = {2010},
+	        address = {Washington DC, USA}
 	}
 	
 

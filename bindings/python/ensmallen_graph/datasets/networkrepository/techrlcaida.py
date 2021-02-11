@@ -31,22 +31,22 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{spring2002measuring,
-        title={Measuring ISP topologies with Rocketfuel},
-        author={Spring, Neil and Mahajan, Ratul and Wetherall, David},
-        booktitle={ACM SIGCOMM Computer Communication Review},
-        volume={32},
-        number={4},
-        pages={133--145},
-        year={2002},
-        organization={ACM}
+        title={Measuring ISP topologies with Rocketfuel},
+        author={Spring, Neil and Mahajan, Ratul and Wetherall, David},
+        booktitle={ACM SIGCOMM Computer Communication Review},
+        volume={32},
+        number={4},
+        pages={133--145},
+        year={2002},
+        organization={ACM}
 }
 
 @inproceedings{rossi2013topology,
-        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
-        author={Ryan A. Rossi and Sonia Fahmy and Nilothpal Talukder},
-        booktitle={IFIP Networking},
-        pages={1--9},
-        year={2013}
+        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
+        author={Ryan A. Rossi and Sonia Fahmy and Nilothpal Talukder},
+        booktitle={IFIP Networking},
+        pages={1--9},
+        year={2013}
 }
 
 
@@ -142,22 +142,22 @@ def TechRlCaida(
 	}
 	
 	@inproceedings{spring2002measuring,
-	        title={Measuring ISP topologies with Rocketfuel},
-	        author={Spring, Neil and Mahajan, Ratul and Wetherall, David},
-	        booktitle={ACM SIGCOMM Computer Communication Review},
-	        volume={32},
-	        number={4},
-	        pages={133--145},
-	        year={2002},
-	        organization={ACM}
+	        title={Measuring ISP topologies with Rocketfuel},
+	        author={Spring, Neil and Mahajan, Ratul and Wetherall, David},
+	        booktitle={ACM SIGCOMM Computer Communication Review},
+	        volume={32},
+	        number={4},
+	        pages={133--145},
+	        year={2002},
+	        organization={ACM}
 	}
 	
 	@inproceedings{rossi2013topology,
-	        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
-	        author={Ryan A. Rossi and Sonia Fahmy and Nilothpal Talukder},
-	        booktitle={IFIP Networking},
-	        pages={1--9},
-	        year={2013}
+	        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
+	        author={Ryan A. Rossi and Sonia Fahmy and Nilothpal Talukder},
+	        booktitle={IFIP Networking},
+	        pages={1--9},
+	        year={2013}
 	}
 	
 

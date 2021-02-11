@@ -34,9 +34,9 @@ Please cite the following if you use the data:
 }
 
 @misc{soc-dogster,
-        author={Dogster},
-        title={Dogster social network},
-        note={http://www.dogster.com}
+        author={Dogster},
+        title={Dogster social network},
+        note={http://www.dogster.com}
 }
 
 
@@ -135,9 +135,9 @@ def SocDogster(
 	}
 	
 	@misc{soc-dogster,
-	        author={Dogster},
-	        title={Dogster social network},
-	        note={http://www.dogster.com}
+	        author={Dogster},
+	        title={Dogster social network},
+	        note={http://www.dogster.com}
 	}
 	
 

@@ -32,9 +32,9 @@ Please cite the following if you use the data:
 }
 
 @article{opsahl2011anchorage,
-        title={Why anchorage is not (that) important: Binary ties and sample selection},
-        author={Opsahl, Tore},
-        year={2011}
+        title={Why anchorage is not (that) important: Binary ties and sample selection},
+        author={Opsahl, Tore},
+        year={2011}
 }
 
 
@@ -131,9 +131,9 @@ def InfOpenflights(
 	}
 	
 	@article{opsahl2011anchorage,
-	        title={Why anchorage is not (that) important: Binary ties and sample selection},
-	        author={Opsahl, Tore},
-	        year={2011}
+	        title={Why anchorage is not (that) important: Binary ties and sample selection},
+	        author={Opsahl, Tore},
+	        year={2011}
 	}
 	
 

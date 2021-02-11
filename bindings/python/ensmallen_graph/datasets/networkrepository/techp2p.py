@@ -31,14 +31,14 @@ Please cite the following if you use the data:
 }
 
 @article{opsahl2009clustering,
-        title={Clustering in weighted networks},
-        author={Opsahl, Tore and Panzarasa, Pietro},
-        journal={Social networks},
-        volume={31},
-        number={2},
-        pages={155--163},
-        year={2009},
-        publisher={Elsevier}
+        title={Clustering in weighted networks},
+        author={Opsahl, Tore and Panzarasa, Pietro},
+        journal={Social networks},
+        volume={31},
+        number={2},
+        pages={155--163},
+        year={2009},
+        publisher={Elsevier}
 }
 
 
@@ -134,14 +134,14 @@ def TechP2p(
 	}
 	
 	@article{opsahl2009clustering,
-	        title={Clustering in weighted networks},
-	        author={Opsahl, Tore and Panzarasa, Pietro},
-	        journal={Social networks},
-	        volume={31},
-	        number={2},
-	        pages={155--163},
-	        year={2009},
-	        publisher={Elsevier}
+	        title={Clustering in weighted networks},
+	        author={Opsahl, Tore and Panzarasa, Pietro},
+	        journal={Social networks},
+	        volume={31},
+	        number={2},
+	        pages={155--163},
+	        year={2009},
+	        publisher={Elsevier}
 	}
 	
 

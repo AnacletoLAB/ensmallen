@@ -31,16 +31,16 @@ Please cite the following if you use the data:
 }
 
 @misc{routeviews,
-        author={{Internet-AS}},
-        title={{Oregon RouteViews} Project},
-        note={{\scriptsize \url{http://www.routeviews.org/}}}}
+        author={{Internet-AS}},
+        title={{Oregon RouteViews} Project},
+        note={{\scriptsize \url{http://www.routeviews.org/}}}}
 
 @inproceedings{rossi2013topology,
-        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
-        author={Ryan A. Rossi and Sonia Fahmy and Nilothpal Talukder},
-        booktitle={Networking},
-        pages={1--9},
-        year={2013}
+        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
+        author={Ryan A. Rossi and Sonia Fahmy and Nilothpal Talukder},
+        booktitle={Networking},
+        pages={1--9},
+        year={2013}
 }
 
 
@@ -136,16 +136,16 @@ def TechAsCaida2007(
 	}
 	
 	@misc{routeviews,
-	        author={{Internet-AS}},
-	        title={{Oregon RouteViews} Project},
-	        note={{\scriptsize \url{http://www.routeviews.org/}}}}
+	        author={{Internet-AS}},
+	        title={{Oregon RouteViews} Project},
+	        note={{\scriptsize \url{http://www.routeviews.org/}}}}
 	
 	@inproceedings{rossi2013topology,
-	        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
-	        author={Ryan A. Rossi and Sonia Fahmy and Nilothpal Talukder},
-	        booktitle={Networking},
-	        pages={1--9},
-	        year={2013}
+	        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
+	        author={Ryan A. Rossi and Sonia Fahmy and Nilothpal Talukder},
+	        booktitle={Networking},
+	        pages={1--9},
+	        year={2013}
 	}
 	
 

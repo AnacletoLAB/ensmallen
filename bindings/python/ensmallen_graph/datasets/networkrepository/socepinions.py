@@ -31,20 +31,20 @@ Please cite the following if you use the data:
 }
 
 @incollection{richardson2003trust,
-        title={Trust management for the semantic web},
-        author={Richardson, Matthew and Agrawal, Rakesh and Domingos, Pedro},
-        booktitle={The Semantic Web-ISWC 2003},
-        pages={351--368},
-        year={2003},
-        publisher={Springer}
+        title={Trust management for the semantic web},
+        author={Richardson, Matthew and Agrawal, Rakesh and Domingos, Pedro},
+        booktitle={The Semantic Web-ISWC 2003},
+        pages={351--368},
+        year={2003},
+        publisher={Springer}
 }
 
 @inproceedings{nr:massa05,
-        title = {Controversial Users Demand Local Trust Metrics: An Experimental Study on epinions.com Community},
-        author = {Paolo Massa and Paolo Avesani},
-        booktitle = {AAAI},
-        year = {2005},
-        pages = {121--126},
+        title = {Controversial Users Demand Local Trust Metrics: An Experimental Study on epinions.com Community},
+        author = {Paolo Massa and Paolo Avesani},
+        booktitle = {AAAI},
+        year = {2005},
+        pages = {121--126},
 }
 
 
@@ -140,20 +140,20 @@ def SocEpinions(
 	}
 	
 	@incollection{richardson2003trust,
-	        title={Trust management for the semantic web},
-	        author={Richardson, Matthew and Agrawal, Rakesh and Domingos, Pedro},
-	        booktitle={The Semantic Web-ISWC 2003},
-	        pages={351--368},
-	        year={2003},
-	        publisher={Springer}
+	        title={Trust management for the semantic web},
+	        author={Richardson, Matthew and Agrawal, Rakesh and Domingos, Pedro},
+	        booktitle={The Semantic Web-ISWC 2003},
+	        pages={351--368},
+	        year={2003},
+	        publisher={Springer}
 	}
 	
 	@inproceedings{nr:massa05,
-	        title = {Controversial Users Demand Local Trust Metrics: An Experimental Study on epinions.com Community},
-	        author = {Paolo Massa and Paolo Avesani},
-	        booktitle = {AAAI},
-	        year = {2005},
-	        pages = {121--126},
+	        title = {Controversial Users Demand Local Trust Metrics: An Experimental Study on epinions.com Community},
+	        author = {Paolo Massa and Paolo Avesani},
+	        booktitle = {AAAI},
+	        year = {2005},
+	        pages = {121--126},
 	}
 	
 

@@ -31,13 +31,13 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{rocketfuel,
-        title={Measuring {ISP} topologies with Rocketfuel},
-        author={Spring, N. and Mahajan, R. and Wetherall, D.},
-        booktitle={SIGCOMM},
-        volume={32},
-        number={4},
-        pages={133--145},
-        year={2002}
+        title={Measuring {ISP} topologies with Rocketfuel},
+        author={Spring, N. and Mahajan, R. and Wetherall, D.},
+        booktitle={SIGCOMM},
+        volume={32},
+        number={4},
+        pages={133--145},
+        year={2002}
 }
 
 
@@ -133,13 +133,13 @@ def TechRoutersRf(
 	}
 	
 	@inproceedings{rocketfuel,
-	        title={Measuring {ISP} topologies with Rocketfuel},
-	        author={Spring, N. and Mahajan, R. and Wetherall, D.},
-	        booktitle={SIGCOMM},
-	        volume={32},
-	        number={4},
-	        pages={133--145},
-	        year={2002}
+	        title={Measuring {ISP} topologies with Rocketfuel},
+	        author={Spring, N. and Mahajan, R. and Wetherall, D.},
+	        booktitle={SIGCOMM},
+	        volume={32},
+	        number={4},
+	        pages={133--145},
+	        year={2002}
 	}
 	
 

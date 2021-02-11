@@ -31,12 +31,12 @@ Please cite the following if you use the data:
 }
 
 @article{zachary1977information,
-        title={An information flow model for conflict and fission in small groups},
-        author={Zachary, Wayne W},
-        journal={Journal of anthropological research},
-        pages={452--473},
-        year={1977},
-        publisher={JSTOR}
+        title={An information flow model for conflict and fission in small groups},
+        author={Zachary, Wayne W},
+        journal={Journal of anthropological research},
+        pages={452--473},
+        year={1977},
+        publisher={JSTOR}
 }
 
 
@@ -132,12 +132,12 @@ def SocKarate(
 	}
 	
 	@article{zachary1977information,
-	        title={An information flow model for conflict and fission in small groups},
-	        author={Zachary, Wayne W},
-	        journal={Journal of anthropological research},
-	        pages={452--473},
-	        year={1977},
-	        publisher={JSTOR}
+	        title={An information flow model for conflict and fission in small groups},
+	        author={Zachary, Wayne W},
+	        journal={Journal of anthropological research},
+	        pages={452--473},
+	        year={1977},
+	        publisher={JSTOR}
 	}
 	
 

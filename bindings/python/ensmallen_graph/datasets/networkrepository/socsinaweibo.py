@@ -33,12 +33,12 @@ Please cite the following if you use the data:
 }
 
 @incollection{zhang2014characterizing,
-        title={Characterizing Tweeting Behaviors of Sina Weibo Users via Public Data Streaming},
-        author={Zhang, Kai and Yu, Qian and Lei, Kai and Xu, Kuai},
-        booktitle={Web-Age Information Management},
-        pages={294--297},
-        year={2014},
-        publisher={Springer}
+        title={Characterizing Tweeting Behaviors of Sina Weibo Users via Public Data Streaming},
+        author={Zhang, Kai and Yu, Qian and Lei, Kai and Xu, Kuai},
+        booktitle={Web-Age Information Management},
+        pages={294--297},
+        year={2014},
+        publisher={Springer}
 }
 
 
@@ -136,12 +136,12 @@ def SocSinaweibo(
 	}
 	
 	@incollection{zhang2014characterizing,
-	        title={Characterizing Tweeting Behaviors of Sina Weibo Users via Public Data Streaming},
-	        author={Zhang, Kai and Yu, Qian and Lei, Kai and Xu, Kuai},
-	        booktitle={Web-Age Information Management},
-	        pages={294--297},
-	        year={2014},
-	        publisher={Springer}
+	        title={Characterizing Tweeting Behaviors of Sina Weibo Users via Public Data Streaming},
+	        author={Zhang, Kai and Yu, Qian and Lei, Kai and Xu, Kuai},
+	        booktitle={Web-Age Information Management},
+	        pages={294--297},
+	        year={2014},
+	        publisher={Springer}
 	}
 	
 

@@ -32,13 +32,13 @@ Please cite the following if you use the data:
 }
 
 @article{dprIM,
-        author = {Gleich, David F. and Rossi, Ryan A.},
-        title = {A Dynamical System for PageRank with Time-Dependent Teleportation},
-        journal = {Internet Mathematics},
-        volume = {10},
-        number = {1-2},
-        pages = {188-217},
-        year = {2014},
+        author = {Gleich, David F. and Rossi, Ryan A.},
+        title = {A Dynamical System for PageRank with Time-Dependent Teleportation},
+        journal = {Internet Mathematics},
+        volume = {10},
+        number = {1-2},
+        pages = {188-217},
+        year = {2014},
 }
 
 
@@ -135,13 +135,13 @@ def SocTwitterFollows(
 	}
 	
 	@article{dprIM,
-	        author = {Gleich, David F. and Rossi, Ryan A.},
-	        title = {A Dynamical System for PageRank with Time-Dependent Teleportation},
-	        journal = {Internet Mathematics},
-	        volume = {10},
-	        number = {1-2},
-	        pages = {188-217},
-	        year = {2014},
+	        author = {Gleich, David F. and Rossi, Ryan A.},
+	        title = {A Dynamical System for PageRank with Time-Dependent Teleportation},
+	        journal = {Internet Mathematics},
+	        volume = {10},
+	        number = {1-2},
+	        pages = {188-217},
+	        year = {2014},
 	}
 	
 

@@ -31,13 +31,13 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{jung-code-dep,
-        author = {\v{S}ubelj,
+        author = {\v{S}ubelj,
 Lovro and Bajec, Marko},
-        title = {Software Systems through Complex Networks Science: Review, Analysis and Applications},
-        booktitle = {Proc. Int. Workshop on Software Mining},
-        year = {2012},
-        isbn = {978-1-4503-1560-9},
-        pages = {9--16},
+        title = {Software Systems through Complex Networks Science: Review, Analysis and Applications},
+        booktitle = {Proc. Int. Workshop on Software Mining},
+        year = {2012},
+        isbn = {978-1-4503-1560-9},
+        pages = {9--16},
 }
 
 
@@ -133,13 +133,13 @@ def MiscJungCodeDep(
 	}
 	
 	@inproceedings{jung-code-dep,
-	        author = {\v{S}ubelj,
+	        author = {\v{S}ubelj,
 	Lovro and Bajec, Marko},
-	        title = {Software Systems through Complex Networks Science: Review, Analysis and Applications},
-	        booktitle = {Proc. Int. Workshop on Software Mining},
-	        year = {2012},
-	        isbn = {978-1-4503-1560-9},
-	        pages = {9--16},
+	        title = {Software Systems through Complex Networks Science: Review, Analysis and Applications},
+	        booktitle = {Proc. Int. Workshop on Software Mining},
+	        year = {2012},
+	        isbn = {978-1-4503-1560-9},
+	        pages = {9--16},
 	}
 	
 

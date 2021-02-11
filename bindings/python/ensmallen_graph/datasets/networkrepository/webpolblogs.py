@@ -31,12 +31,12 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{adamic2005political,
-        title={The political blogosphere and the 2004 US election: divided they blog},
-        author={Adamic, Lada A and Glance, Natalie},
-        booktitle={Proceedings of the 3rd international workshop on Link discovery},
-        pages={36--43},
-        year={2005},
-        organization={ACM}
+        title={The political blogosphere and the 2004 US election: divided they blog},
+        author={Adamic, Lada A and Glance, Natalie},
+        booktitle={Proceedings of the 3rd international workshop on Link discovery},
+        pages={36--43},
+        year={2005},
+        organization={ACM}
 }
 
 
@@ -132,12 +132,12 @@ def WebPolblogs(
 	}
 	
 	@inproceedings{adamic2005political,
-	        title={The political blogosphere and the 2004 US election: divided they blog},
-	        author={Adamic, Lada A and Glance, Natalie},
-	        booktitle={Proceedings of the 3rd international workshop on Link discovery},
-	        pages={36--43},
-	        year={2005},
-	        organization={ACM}
+	        title={The political blogosphere and the 2004 US election: divided they blog},
+	        author={Adamic, Lada A and Glance, Natalie},
+	        booktitle={Proceedings of the 3rd international workshop on Link discovery},
+	        pages={36--43},
+	        year={2005},
+	        organization={ACM}
 	}
 	
 

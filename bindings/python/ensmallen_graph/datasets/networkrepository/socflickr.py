@@ -32,17 +32,17 @@ Please cite the following if you use the data:
 }
 
 @misc {soc-flickr-photo,
-        title = {Graph of Flickr Photo-Sharing Social Network Crawled in May 2006},
-        month = {Feb},
-        year = {2012},
-        author = {David Gleich}
+        title = {Graph of Flickr Photo-Sharing Social Network Crawled in May 2006},
+        month = {Feb},
+        year = {2012},
+        author = {David Gleich}
 }
 
 @inproceedings{rossi2014pmc-www,
-        title={Fast Maximum Clique Algorithms for Large Graphs},
-        author={Ryan A. Rossi and David F. Gleich and Assefaw H. Gebremedhin and     Mostofa A. Patwary},
-        booktitle={Proceedings of the 23rd International Conference on World     Wide Web (WWW)},
-        year={2014}
+        title={Fast Maximum Clique Algorithms for Large Graphs},
+        author={Ryan A. Rossi and David F. Gleich and Assefaw H. Gebremedhin and     Mostofa A. Patwary},
+        booktitle={Proceedings of the 23rd International Conference on World     Wide Web (WWW)},
+        year={2014}
 }
 
 
@@ -139,17 +139,17 @@ def SocFlickr(
 	}
 	
 	@misc {soc-flickr-photo,
-	        title = {Graph of Flickr Photo-Sharing Social Network Crawled in May 2006},
-	        month = {Feb},
-	        year = {2012},
-	        author = {David Gleich}
+	        title = {Graph of Flickr Photo-Sharing Social Network Crawled in May 2006},
+	        month = {Feb},
+	        year = {2012},
+	        author = {David Gleich}
 	}
 	
 	@inproceedings{rossi2014pmc-www,
-	        title={Fast Maximum Clique Algorithms for Large Graphs},
-	        author={Ryan A. Rossi and David F. Gleich and Assefaw H. Gebremedhin and     Mostofa A. Patwary},
-	        booktitle={Proceedings of the 23rd International Conference on World     Wide Web (WWW)},
-	        year={2014}
+	        title={Fast Maximum Clique Algorithms for Large Graphs},
+	        author={Ryan A. Rossi and David F. Gleich and Assefaw H. Gebremedhin and     Mostofa A. Patwary},
+	        booktitle={Proceedings of the 23rd International Conference on World     Wide Web (WWW)},
+	        year={2014}
 	}
 	
 

@@ -31,14 +31,14 @@ Please cite the following if you use the data:
 }
 
 @article{newman2006finding,
-        title={Finding community structure in networks using the eigenvectors of matrices},
-        author={Newman, Mark EJ},
-        journal={Physical review E},
-        volume={74},
-        number={3},
-        pages={036104},
-        year={2006},
-        publisher={APS}
+        title={Finding community structure in networks using the eigenvectors of matrices},
+        author={Newman, Mark EJ},
+        journal={Physical review E},
+        volume={74},
+        number={3},
+        pages={036104},
+        year={2006},
+        publisher={APS}
 }
 
 
@@ -134,14 +134,14 @@ def CaNetscience(
 	}
 	
 	@article{newman2006finding,
-	        title={Finding community structure in networks using the eigenvectors of matrices},
-	        author={Newman, Mark EJ},
-	        journal={Physical review E},
-	        volume={74},
-	        number={3},
-	        pages={036104},
-	        year={2006},
-	        publisher={APS}
+	        title={Finding community structure in networks using the eigenvectors of matrices},
+	        author={Newman, Mark EJ},
+	        journal={Physical review E},
+	        volume={74},
+	        number={3},
+	        pages={036104},
+	        year={2006},
+	        publisher={APS}
 	}
 	
 

@@ -31,10 +31,10 @@ Please cite the following if you use the data:
 }
 
 @article{zafarani2014users,
-        title={Users Joining Multiple Sites: Distributions and Patterns},
-        author={Zafarani, Reza and Liu, Huan},
-        booktitle = {Proceedings of the 8th International AAAI Conference on Weblogs and Social Media (ICWSM'14)},
-        year={2014}
+        title={Users Joining Multiple Sites: Distributions and Patterns},
+        author={Zafarani, Reza and Liu, Huan},
+        booktitle = {Proceedings of the 8th International AAAI Conference on Weblogs and Social Media (ICWSM'14)},
+        year={2014}
 }
 
 
@@ -130,10 +130,10 @@ def SocBlogcatalog(
 	}
 	
 	@article{zafarani2014users,
-	        title={Users Joining Multiple Sites: Distributions and Patterns},
-	        author={Zafarani, Reza and Liu, Huan},
-	        booktitle = {Proceedings of the 8th International AAAI Conference on Weblogs and Social Media (ICWSM'14)},
-	        year={2014}
+	        title={Users Joining Multiple Sites: Distributions and Patterns},
+	        author={Zafarani, Reza and Liu, Huan},
+	        booktitle = {Proceedings of the 8th International AAAI Conference on Weblogs and Social Media (ICWSM'14)},
+	        year={2014}
 	}
 	
 

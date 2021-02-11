@@ -32,13 +32,13 @@ Please cite the following if you use the data:
 }
 
 @article{matei2002mapping,
-        title={Mapping the Gnutella network},
-        author={Matei, R. and Iamnitchi, A. and Foster, P.},
-        journal={Internet Computing},
-        volume={6},
-        number={1},
-        pages={50--57},
-        year={2002},
+        title={Mapping the Gnutella network},
+        author={Matei, R. and Iamnitchi, A. and Foster, P.},
+        journal={Internet Computing},
+        volume={6},
+        number={1},
+        pages={50--57},
+        year={2002},
 }
 
 
@@ -135,13 +135,13 @@ def TechP2pGnutella(
 	}
 	
 	@article{matei2002mapping,
-	        title={Mapping the Gnutella network},
-	        author={Matei, R. and Iamnitchi, A. and Foster, P.},
-	        journal={Internet Computing},
-	        volume={6},
-	        number={1},
-	        pages={50--57},
-	        year={2002},
+	        title={Mapping the Gnutella network},
+	        author={Matei, R. and Iamnitchi, A. and Foster, P.},
+	        journal={Internet Computing},
+	        volume={6},
+	        number={1},
+	        pages={50--57},
+	        year={2002},
 	}
 	
 

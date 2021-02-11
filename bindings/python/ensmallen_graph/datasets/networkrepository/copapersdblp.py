@@ -32,12 +32,12 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{geisberger2008better,
-        title={Better Approximation of Betweenness Centrality.},
-        author={Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
-        booktitle={ALENEX},
-        pages={90--100},
-        year={2008},
-        organization={SIAM}
+        title={Better Approximation of Betweenness Centrality.},
+        author={Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
+        booktitle={ALENEX},
+        pages={90--100},
+        year={2008},
+        organization={SIAM}
 }
 
 
@@ -134,12 +134,12 @@ def CoPapersDblp(
 	}
 	
 	@inproceedings{geisberger2008better,
-	        title={Better Approximation of Betweenness Centrality.},
-	        author={Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
-	        booktitle={ALENEX},
-	        pages={90--100},
-	        year={2008},
-	        organization={SIAM}
+	        title={Better Approximation of Betweenness Centrality.},
+	        author={Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
+	        booktitle={ALENEX},
+	        pages={90--100},
+	        year={2008},
+	        organization={SIAM}
 	}
 	
 

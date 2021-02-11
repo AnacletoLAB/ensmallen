@@ -33,12 +33,12 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{massa2009bowling,
-        title={Bowling alone and trust decline in social network sites},
-        author={Massa, Paolo and Salvetti, Martino and Tomasoni, Danilo},
-        booktitle={Dependable, Autonomic and Secure Computing, 2009. DASC'09. Eighth IEEE International Conference on},
-        pages={658--663},
-        year={2009},
-        organization={IEEE}
+        title={Bowling alone and trust decline in social network sites},
+        author={Massa, Paolo and Salvetti, Martino and Tomasoni, Danilo},
+        booktitle={Dependable, Autonomic and Secure Computing, 2009. DASC'09. Eighth IEEE International Conference on},
+        pages={658--663},
+        year={2009},
+        organization={IEEE}
 }
 
 
@@ -136,12 +136,12 @@ def SocAdvogato(
 	}
 	
 	@inproceedings{massa2009bowling,
-	        title={Bowling alone and trust decline in social network sites},
-	        author={Massa, Paolo and Salvetti, Martino and Tomasoni, Danilo},
-	        booktitle={Dependable, Autonomic and Secure Computing, 2009. DASC'09. Eighth IEEE International Conference on},
-	        pages={658--663},
-	        year={2009},
-	        organization={IEEE}
+	        title={Bowling alone and trust decline in social network sites},
+	        author={Massa, Paolo and Salvetti, Martino and Tomasoni, Danilo},
+	        booktitle={Dependable, Autonomic and Secure Computing, 2009. DASC'09. Eighth IEEE International Conference on},
+	        pages={658--663},
+	        year={2009},
+	        organization={IEEE}
 	}
 	
 

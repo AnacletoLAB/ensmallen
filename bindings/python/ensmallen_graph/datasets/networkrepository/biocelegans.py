@@ -31,12 +31,12 @@ Please cite the following if you use the data:
 }
 
 @article{duch2005community,
-        title={Community identification using Extremal Optimization Phys},
-        author={Duch, J. and Arenas, A.},
-        journal={Rev. E},
-        volume={72},
-        pages={027104},
-        year={2005}
+        title={Community identification using Extremal Optimization Phys},
+        author={Duch, J. and Arenas, A.},
+        journal={Rev. E},
+        volume={72},
+        pages={027104},
+        year={2005}
 }
 
 
@@ -132,12 +132,12 @@ def BioCelegans(
 	}
 	
 	@article{duch2005community,
-	        title={Community identification using Extremal Optimization Phys},
-	        author={Duch, J. and Arenas, A.},
-	        journal={Rev. E},
-	        volume={72},
-	        pages={027104},
-	        year={2005}
+	        title={Community identification using Extremal Optimization Phys},
+	        author={Duch, J. and Arenas, A.},
+	        journal={Rev. E},
+	        volume={72},
+	        pages={027104},
+	        year={2005}
 	}
 	
 

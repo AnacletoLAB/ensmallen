@@ -31,14 +31,14 @@ Please cite the following if you use the data:
 }
 
 @article{lusseau2003bottlenose,
-        title={The bottlenose dolphin community of Doubtful Sound features a large proportion of long-lasting associations},
-        author={Lusseau, David and Schneider, Karsten and Boisseau, Oliver J and Haase, Patti and Slooten, Elisabeth and Dawson, Steve M},
-        journal={Behavioral Ecology and Sociobiology},
-        volume={54},
-        number={4},
-        pages={396--405},
-        year={2003},
-        publisher={Springer}
+        title={The bottlenose dolphin community of Doubtful Sound features a large proportion of long-lasting associations},
+        author={Lusseau, David and Schneider, Karsten and Boisseau, Oliver J and Haase, Patti and Slooten, Elisabeth and Dawson, Steve M},
+        journal={Behavioral Ecology and Sociobiology},
+        volume={54},
+        number={4},
+        pages={396--405},
+        year={2003},
+        publisher={Springer}
 }
 
 
@@ -134,14 +134,14 @@ def SocDolphins(
 	}
 	
 	@article{lusseau2003bottlenose,
-	        title={The bottlenose dolphin community of Doubtful Sound features a large proportion of long-lasting associations},
-	        author={Lusseau, David and Schneider, Karsten and Boisseau, Oliver J and Haase, Patti and Slooten, Elisabeth and Dawson, Steve M},
-	        journal={Behavioral Ecology and Sociobiology},
-	        volume={54},
-	        number={4},
-	        pages={396--405},
-	        year={2003},
-	        publisher={Springer}
+	        title={The bottlenose dolphin community of Doubtful Sound features a large proportion of long-lasting associations},
+	        author={Lusseau, David and Schneider, Karsten and Boisseau, Oliver J and Haase, Patti and Slooten, Elisabeth and Dawson, Steve M},
+	        journal={Behavioral Ecology and Sociobiology},
+	        volume={54},
+	        number={4},
+	        pages={396--405},
+	        year={2003},
+	        publisher={Springer}
 	}
 	
 

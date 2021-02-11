@@ -32,14 +32,14 @@ Please cite the following if you use the data:
 }
 
 @article{girvan2002community,
-        title={Community structure in social and biological networks},
-        author={Girvan, Michelle and Newman, Mark EJ},
-        journal={Proceedings of the National Academy of Sciences},
-        volume={99},
-        number={12},
-        pages={7821--7826},
-        year={2002},
-        publisher={National Acad Sciences}
+        title={Community structure in social and biological networks},
+        author={Girvan, Michelle and Newman, Mark EJ},
+        journal={Proceedings of the National Academy of Sciences},
+        volume={99},
+        number={12},
+        pages={7821--7826},
+        year={2002},
+        publisher={National Acad Sciences}
 }
 
 
@@ -136,14 +136,14 @@ def MiscFootball(
 	}
 	
 	@article{girvan2002community,
-	        title={Community structure in social and biological networks},
-	        author={Girvan, Michelle and Newman, Mark EJ},
-	        journal={Proceedings of the National Academy of Sciences},
-	        volume={99},
-	        number={12},
-	        pages={7821--7826},
-	        year={2002},
-	        publisher={National Acad Sciences}
+	        title={Community structure in social and biological networks},
+	        author={Girvan, Michelle and Newman, Mark EJ},
+	        journal={Proceedings of the National Academy of Sciences},
+	        volume={99},
+	        number={12},
+	        pages={7821--7826},
+	        year={2002},
+	        publisher={National Acad Sciences}
 	}
 	
 

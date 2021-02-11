@@ -34,14 +34,14 @@ Please cite the following if you use the data:
 }
 
 @article{Fire2013,
-        title={Computationally Efficient Link Prediction in Variety of Social Networks},
-        author={Fire, M., and Tenenboim, R., and Puzis, R., and Lesser, O., and Rokach, L., and Elovici, Y. },
-        journal={ACM Transactions on Intelligent Systems and Technology (TIST)},
-        volume={5},
-        number={1},
-        pages={10},
-        year={2013},
-        publisher={ACM}
+        title={Computationally Efficient Link Prediction in Variety of Social Networks},
+        author={Fire, M., and Tenenboim, R., and Puzis, R., and Lesser, O., and Rokach, L., and Elovici, Y. },
+        journal={ACM Transactions on Intelligent Systems and Technology (TIST)},
+        volume={5},
+        number={1},
+        pages={10},
+        year={2013},
+        publisher={ACM}
 }
 
 
@@ -140,14 +140,14 @@ def SocGooglePlus(
 	}
 	
 	@article{Fire2013,
-	        title={Computationally Efficient Link Prediction in Variety of Social Networks},
-	        author={Fire, M., and Tenenboim, R., and Puzis, R., and Lesser, O., and Rokach, L., and Elovici, Y. },
-	        journal={ACM Transactions on Intelligent Systems and Technology (TIST)},
-	        volume={5},
-	        number={1},
-	        pages={10},
-	        year={2013},
-	        publisher={ACM}
+	        title={Computationally Efficient Link Prediction in Variety of Social Networks},
+	        author={Fire, M., and Tenenboim, R., and Puzis, R., and Lesser, O., and Rokach, L., and Elovici, Y. },
+	        journal={ACM Transactions on Intelligent Systems and Technology (TIST)},
+	        volume={5},
+	        number={1},
+	        pages={10},
+	        year={2013},
+	        publisher={ACM}
 	}
 	
 

@@ -31,18 +31,18 @@ Please cite the following if you use the data:
 }
 
 @article{rossi2012fastclique,
-        title={What if CLIQUE were fast? Maximum Cliques in Information Networks and Strong Components in Temporal Networks},
-        author={Ryan A. Rossi and David F. Gleich and Assefaw H. Gebremedhin and Mostofa A. Patwary},
-        journal={arXiv preprint arXiv:1210.5802},
-        pages={1--11},
-        year={2012}
+        title={What if CLIQUE were fast? Maximum Cliques in Information Networks and Strong Components in Temporal Networks},
+        author={Ryan A. Rossi and David F. Gleich and Assefaw H. Gebremedhin and Mostofa A. Patwary},
+        journal={arXiv preprint arXiv:1210.5802},
+        pages={1--11},
+        year={2012}
 }
 
 @inproceedings{rossi2014pmc-www,
-        title={Fast Maximum Clique Algorithms for Large Graphs},
-        author={Ryan A. Rossi and David F. Gleich and Assefaw H. Gebremedhin and     Mostofa A. Patwary},
-        booktitle={Proceedings of the 23rd International Conference on World     Wide Web (WWW)},
-        year={2014}
+        title={Fast Maximum Clique Algorithms for Large Graphs},
+        author={Ryan A. Rossi and David F. Gleich and Assefaw H. Gebremedhin and     Mostofa A. Patwary},
+        booktitle={Proceedings of the 23rd International Conference on World     Wide Web (WWW)},
+        year={2014}
 }
 
 
@@ -138,18 +138,18 @@ def RtRetweet(
 	}
 	
 	@article{rossi2012fastclique,
-	        title={What if CLIQUE were fast? Maximum Cliques in Information Networks and Strong Components in Temporal Networks},
-	        author={Ryan A. Rossi and David F. Gleich and Assefaw H. Gebremedhin and Mostofa A. Patwary},
-	        journal={arXiv preprint arXiv:1210.5802},
-	        pages={1--11},
-	        year={2012}
+	        title={What if CLIQUE were fast? Maximum Cliques in Information Networks and Strong Components in Temporal Networks},
+	        author={Ryan A. Rossi and David F. Gleich and Assefaw H. Gebremedhin and Mostofa A. Patwary},
+	        journal={arXiv preprint arXiv:1210.5802},
+	        pages={1--11},
+	        year={2012}
 	}
 	
 	@inproceedings{rossi2014pmc-www,
-	        title={Fast Maximum Clique Algorithms for Large Graphs},
-	        author={Ryan A. Rossi and David F. Gleich and Assefaw H. Gebremedhin and     Mostofa A. Patwary},
-	        booktitle={Proceedings of the 23rd International Conference on World     Wide Web (WWW)},
-	        year={2014}
+	        title={Fast Maximum Clique Algorithms for Large Graphs},
+	        author={Ryan A. Rossi and David F. Gleich and Assefaw H. Gebremedhin and     Mostofa A. Patwary},
+	        booktitle={Proceedings of the 23rd International Conference on World     Wide Web (WWW)},
+	        year={2014}
 	}
 	
 

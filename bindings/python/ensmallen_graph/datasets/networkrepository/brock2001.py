@@ -31,9 +31,9 @@ Please cite the following if you use the data:
 }
 
 @misc{dimacs,
-        author={{DIMACS}},
-        title={DIMACS Challenge},
-        note={http://dimacs.rutgers.edu/Challenges/}}
+        author={{DIMACS}},
+        title={DIMACS Challenge},
+        note={http://dimacs.rutgers.edu/Challenges/}}
 
 
 Usage example
@@ -128,9 +128,9 @@ def Brock2001(
 	}
 	
 	@misc{dimacs,
-	        author={{DIMACS}},
-	        title={DIMACS Challenge},
-	        note={http://dimacs.rutgers.edu/Challenges/}}
+	        author={{DIMACS}},
+	        title={DIMACS Challenge},
+	        note={http://dimacs.rutgers.edu/Challenges/}}
 	
 
 	Usage example

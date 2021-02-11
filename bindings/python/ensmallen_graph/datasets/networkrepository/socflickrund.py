@@ -33,12 +33,12 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{mislove2008growth,
-        title={Growth of the flickr social network},
-        author={Mislove, Alan and Koppula, Hema Swetha and Gummadi, Krishna P and Druschel, Peter and Bhattacharjee, Bobby},
-        booktitle={Proceedings of the first workshop on Online social networks},
-        pages={25--30},
-        year={2008},
-        organization={ACM}
+        title={Growth of the flickr social network},
+        author={Mislove, Alan and Koppula, Hema Swetha and Gummadi, Krishna P and Druschel, Peter and Bhattacharjee, Bobby},
+        booktitle={Proceedings of the first workshop on Online social networks},
+        pages={25--30},
+        year={2008},
+        organization={ACM}
 }
 
 
@@ -136,12 +136,12 @@ def SocFlickrUnd(
 	}
 	
 	@inproceedings{mislove2008growth,
-	        title={Growth of the flickr social network},
-	        author={Mislove, Alan and Koppula, Hema Swetha and Gummadi, Krishna P and Druschel, Peter and Bhattacharjee, Bobby},
-	        booktitle={Proceedings of the first workshop on Online social networks},
-	        pages={25--30},
-	        year={2008},
-	        organization={ACM}
+	        title={Growth of the flickr social network},
+	        author={Mislove, Alan and Koppula, Hema Swetha and Gummadi, Krishna P and Druschel, Peter and Bhattacharjee, Bobby},
+	        booktitle={Proceedings of the first workshop on Online social networks},
+	        pages={25--30},
+	        year={2008},
+	        organization={ACM}
 	}
 	
 

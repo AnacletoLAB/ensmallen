@@ -31,19 +31,19 @@ Please cite the following if you use the data:
 }
 
 @article{duch2005community,
-        title={Community identification using Extremal Optimization Phys},
-        author={Duch, J. and Arenas, A.},
-        journal={Rev. E},
-        volume={72},
-        pages={027104},
-        year={2005}
+        title={Community identification using Extremal Optimization Phys},
+        author={Duch, J. and Arenas, A.},
+        journal={Rev. E},
+        volume={72},
+        pages={027104},
+        year={2005}
 }
 
 @inproceedings{bader2012graph,
-        title={Graph Partitioning and Graph Clustering},
-        author={Bader, David A and Meyerhenke, Henning and Sanders, Peter and Wagner, Dorothea},
-        booktitle={10th DIMACS Implementation Challenge Workshop},
-        year={2012}
+        title={Graph Partitioning and Graph Clustering},
+        author={Bader, David A and Meyerhenke, Henning and Sanders, Peter and Wagner, Dorothea},
+        booktitle={10th DIMACS Implementation Challenge Workshop},
+        year={2012}
 }
 
 
@@ -139,19 +139,19 @@ def BioCelegansneural(
 	}
 	
 	@article{duch2005community,
-	        title={Community identification using Extremal Optimization Phys},
-	        author={Duch, J. and Arenas, A.},
-	        journal={Rev. E},
-	        volume={72},
-	        pages={027104},
-	        year={2005}
+	        title={Community identification using Extremal Optimization Phys},
+	        author={Duch, J. and Arenas, A.},
+	        journal={Rev. E},
+	        volume={72},
+	        pages={027104},
+	        year={2005}
 	}
 	
 	@inproceedings{bader2012graph,
-	        title={Graph Partitioning and Graph Clustering},
-	        author={Bader, David A and Meyerhenke, Henning and Sanders, Peter and Wagner, Dorothea},
-	        booktitle={10th DIMACS Implementation Challenge Workshop},
-	        year={2012}
+	        title={Graph Partitioning and Graph Clustering},
+	        author={Bader, David A and Meyerhenke, Henning and Sanders, Peter and Wagner, Dorothea},
+	        booktitle={10th DIMACS Implementation Challenge Workshop},
+	        year={2012}
 	}
 	
 

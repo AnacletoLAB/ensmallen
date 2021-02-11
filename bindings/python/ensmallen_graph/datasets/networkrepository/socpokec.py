@@ -32,8 +32,8 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{takac2012data,
-        title={Data analysis in public social networks},
-        author={Takac, Lubos and Zabovsky, Michal}
+        title={Data analysis in public social networks},
+        author={Takac, Lubos and Zabovsky, Michal}
 }
 
 
@@ -130,8 +130,8 @@ def SocPokec(
 	}
 	
 	@inproceedings{takac2012data,
-	        title={Data analysis in public social networks},
-	        author={Takac, Lubos and Zabovsky, Michal}
+	        title={Data analysis in public social networks},
+	        author={Takac, Lubos and Zabovsky, Michal}
 	}
 	
 

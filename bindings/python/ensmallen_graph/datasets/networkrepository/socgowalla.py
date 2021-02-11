@@ -32,12 +32,12 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{cho2011friendship,
-        title={Friendship and mobility: user movement in location-based social networks},
-        author={Cho, Eunjoon and Myers, Seth A and Leskovec, Jure},
-        booktitle={Proceedings of the 17th ACM SIGKDD international conference on Knowledge discovery and data mining},
-        pages={1082--1090},
-        year={2011},
-        organization={ACM}
+        title={Friendship and mobility: user movement in location-based social networks},
+        author={Cho, Eunjoon and Myers, Seth A and Leskovec, Jure},
+        booktitle={Proceedings of the 17th ACM SIGKDD international conference on Knowledge discovery and data mining},
+        pages={1082--1090},
+        year={2011},
+        organization={ACM}
 }
 
 
@@ -134,12 +134,12 @@ def SocGowalla(
 	}
 	
 	@inproceedings{cho2011friendship,
-	        title={Friendship and mobility: user movement in location-based social networks},
-	        author={Cho, Eunjoon and Myers, Seth A and Leskovec, Jure},
-	        booktitle={Proceedings of the 17th ACM SIGKDD international conference on Knowledge discovery and data mining},
-	        pages={1082--1090},
-	        year={2011},
-	        organization={ACM}
+	        title={Friendship and mobility: user movement in location-based social networks},
+	        author={Cho, Eunjoon and Myers, Seth A and Leskovec, Jure},
+	        booktitle={Proceedings of the 17th ACM SIGKDD international conference on Knowledge discovery and data mining},
+	        pages={1082--1090},
+	        year={2011},
+	        organization={ACM}
 	}
 	
 

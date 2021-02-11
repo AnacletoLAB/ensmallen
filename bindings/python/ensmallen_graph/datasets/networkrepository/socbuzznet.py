@@ -32,12 +32,12 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{Shakarian:2012,
-        author = {Shakarian, Paulo and Paulo, Damon},
-        title = {Large Social Networks Can Be Targeted for Viral Marketing with Small Seed Sets},
-        booktitle = {Proceedings of the 2012 International Conference on Advances in Social Networks Analysis and Mining (ASONAM 2012)},
-        year = {2012},
-        pages = {1--8},
-        publisher = {IEEE Computer Society}
+        author = {Shakarian, Paulo and Paulo, Damon},
+        title = {Large Social Networks Can Be Targeted for Viral Marketing with Small Seed Sets},
+        booktitle = {Proceedings of the 2012 International Conference on Advances in Social Networks Analysis and Mining (ASONAM 2012)},
+        year = {2012},
+        pages = {1--8},
+        publisher = {IEEE Computer Society}
 }
 
 
@@ -134,12 +134,12 @@ def SocBuzznet(
 	}
 	
 	@inproceedings{Shakarian:2012,
-	        author = {Shakarian, Paulo and Paulo, Damon},
-	        title = {Large Social Networks Can Be Targeted for Viral Marketing with Small Seed Sets},
-	        booktitle = {Proceedings of the 2012 International Conference on Advances in Social Networks Analysis and Mining (ASONAM 2012)},
-	        year = {2012},
-	        pages = {1--8},
-	        publisher = {IEEE Computer Society}
+	        author = {Shakarian, Paulo and Paulo, Damon},
+	        title = {Large Social Networks Can Be Targeted for Viral Marketing with Small Seed Sets},
+	        booktitle = {Proceedings of the 2012 International Conference on Advances in Social Networks Analysis and Mining (ASONAM 2012)},
+	        year = {2012},
+	        pages = {1--8},
+	        publisher = {IEEE Computer Society}
 	}
 	
 

@@ -33,12 +33,12 @@ Please cite the following if you use the data:
 }
 
 @article{Fire2012,
-        title={Predicting Student Exam's Scores by Analyzing Social Network Data},
-        author={Michael Fire, Gilad Katz, Yuval Elovici, Bracha Shapira, and Lior Rokach},
-        booktitle={Active Media Technology},
-        pages={584--595},
-        year={2012},
-        publisher={Springer}	}
+        title={Predicting Student Exam's Scores by Analyzing Social Network Data},
+        author={Michael Fire, Gilad Katz, Yuval Elovici, Bracha Shapira, and Lior Rokach},
+        booktitle={Active Media Technology},
+        pages={584--595},
+        year={2012},
+        publisher={Springer}	}
 
 
 Usage example
@@ -135,12 +135,12 @@ def SocStudentCoop(
 	}
 	
 	@article{Fire2012,
-	        title={Predicting Student Exam's Scores by Analyzing Social Network Data},
-	        author={Michael Fire, Gilad Katz, Yuval Elovici, Bracha Shapira, and Lior Rokach},
-	        booktitle={Active Media Technology},
-	        pages={584--595},
-	        year={2012},
-	        publisher={Springer}	}
+	        title={Predicting Student Exam's Scores by Analyzing Social Network Data},
+	        author={Michael Fire, Gilad Katz, Yuval Elovici, Bracha Shapira, and Lior Rokach},
+	        booktitle={Active Media Technology},
+	        pages={584--595},
+	        year={2012},
+	        publisher={Springer}	}
 	
 
 	Usage example

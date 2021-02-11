@@ -31,16 +31,16 @@ Please cite the following if you use the data:
 }
 
 @misc{dimacs,
-        author={{DIMACS}},
-        title={DIMACS Challenge},
-        note={http://dimacs.rutgers.edu/Challenges/}}
+        author={{DIMACS}},
+        title={DIMACS Challenge},
+        note={http://dimacs.rutgers.edu/Challenges/}}
 
 @article{rossi2014coloring,
-        title={Coloring Large Complex Networks},
-        author={Ryan A. Rossi and Nesreen K. Ahmed},
-        booktitle={Social Network Analysis and Mining},
-        pages={1--51},
-        year={2014}
+        title={Coloring Large Complex Networks},
+        author={Ryan A. Rossi and Nesreen K. Ahmed},
+        booktitle={Social Network Analysis and Mining},
+        pages={1--51},
+        year={2014}
 }
 
 
@@ -136,16 +136,16 @@ def PHat7001(
 	}
 	
 	@misc{dimacs,
-	        author={{DIMACS}},
-	        title={DIMACS Challenge},
-	        note={http://dimacs.rutgers.edu/Challenges/}}
+	        author={{DIMACS}},
+	        title={DIMACS Challenge},
+	        note={http://dimacs.rutgers.edu/Challenges/}}
 	
 	@article{rossi2014coloring,
-	        title={Coloring Large Complex Networks},
-	        author={Ryan A. Rossi and Nesreen K. Ahmed},
-	        booktitle={Social Network Analysis and Mining},
-	        pages={1--51},
-	        year={2014}
+	        title={Coloring Large Complex Networks},
+	        author={Ryan A. Rossi and Nesreen K. Ahmed},
+	        booktitle={Social Network Analysis and Mining},
+	        pages={1--51},
+	        year={2014}
 	}
 	
 

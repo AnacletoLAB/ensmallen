@@ -31,19 +31,19 @@ Please cite the following if you use the data:
 }
 
 @article{mahadevan2006internet,
-        title={The Internet AS-level topology: three data sources and one definitive metric},
-        author={Mahadevan, P. and Krioukov, D. and Fomenkov, M. and Dimitropoulos, X. and Vahdat, A. and others},
-        journal={SIGCOMM},
-        volume={36},
-        number={1},
-        pages={17--26},
-        year={2006},
+        title={The Internet AS-level topology: three data sources and one definitive metric},
+        author={Mahadevan, P. and Krioukov, D. and Fomenkov, M. and Dimitropoulos, X. and Vahdat, A. and others},
+        journal={SIGCOMM},
+        volume={36},
+        number={1},
+        pages={17--26},
+        year={2006},
 }
 
 @misc{whois,
-        author={{WHOIS}},
-        title={{Internet} Routing Registries},
-        note={{\scriptsize \url{http://www.irr.net/}}}}
+        author={{WHOIS}},
+        title={{Internet} Routing Registries},
+        note={{\scriptsize \url{http://www.irr.net/}}}}
 
 
 Usage example
@@ -138,19 +138,19 @@ def TechWhois(
 	}
 	
 	@article{mahadevan2006internet,
-	        title={The Internet AS-level topology: three data sources and one definitive metric},
-	        author={Mahadevan, P. and Krioukov, D. and Fomenkov, M. and Dimitropoulos, X. and Vahdat, A. and others},
-	        journal={SIGCOMM},
-	        volume={36},
-	        number={1},
-	        pages={17--26},
-	        year={2006},
+	        title={The Internet AS-level topology: three data sources and one definitive metric},
+	        author={Mahadevan, P. and Krioukov, D. and Fomenkov, M. and Dimitropoulos, X. and Vahdat, A. and others},
+	        journal={SIGCOMM},
+	        volume={36},
+	        number={1},
+	        pages={17--26},
+	        year={2006},
 	}
 	
 	@misc{whois,
-	        author={{WHOIS}},
-	        title={{Internet} Routing Registries},
-	        note={{\scriptsize \url{http://www.irr.net/}}}}
+	        author={{WHOIS}},
+	        title={{Internet} Routing Registries},
+	        note={{\scriptsize \url{http://www.irr.net/}}}}
 	
 
 	Usage example

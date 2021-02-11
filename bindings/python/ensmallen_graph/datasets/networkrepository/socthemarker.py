@@ -33,12 +33,12 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{Fire2011,
-        title={Link Prediction in Social Networks using Computationally Efficient Topological Features},
-        author={Fire, M. and Tenenboim, L. and Lesser, O. and Puzis, R. and Rokach, L. and Elovici, Y.},
-        booktitle={ IEEE Third International Confernece on Social Computing (SocialCom)},
-        pages={73--80},
-        year={2011},
-        organization={IEEE}
+        title={Link Prediction in Social Networks using Computationally Efficient Topological Features},
+        author={Fire, M. and Tenenboim, L. and Lesser, O. and Puzis, R. and Rokach, L. and Elovici, Y.},
+        booktitle={ IEEE Third International Confernece on Social Computing (SocialCom)},
+        pages={73--80},
+        year={2011},
+        organization={IEEE}
 }
 
 
@@ -136,12 +136,12 @@ def SocThemarker(
 	}
 	
 	@inproceedings{Fire2011,
-	        title={Link Prediction in Social Networks using Computationally Efficient Topological Features},
-	        author={Fire, M. and Tenenboim, L. and Lesser, O. and Puzis, R. and Rokach, L. and Elovici, Y.},
-	        booktitle={ IEEE Third International Confernece on Social Computing (SocialCom)},
-	        pages={73--80},
-	        year={2011},
-	        organization={IEEE}
+	        title={Link Prediction in Social Networks using Computationally Efficient Topological Features},
+	        author={Fire, M. and Tenenboim, L. and Lesser, O. and Puzis, R. and Rokach, L. and Elovici, Y.},
+	        booktitle={ IEEE Third International Confernece on Social Computing (SocialCom)},
+	        pages={73--80},
+	        year={2011},
+	        organization={IEEE}
 	}
 	
 

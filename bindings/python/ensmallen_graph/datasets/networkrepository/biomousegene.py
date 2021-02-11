@@ -34,13 +34,13 @@ Please cite the following if you use the data:
 }
 
 @article{bansal2007infer,
-        title={How to infer gene networks from expression profiles},
-        author={Bansal, Mukesh and Belcastro, Vincenzo and Ambesi-Impiombato, Alberto and Di Bernardo, Diego},
-        journal={Molecular systems biology},
-        volume={3},
-        number={1},
-        year={2007},
-        publisher={Wiley Online Library}
+        title={How to infer gene networks from expression profiles},
+        author={Bansal, Mukesh and Belcastro, Vincenzo and Ambesi-Impiombato, Alberto and Di Bernardo, Diego},
+        journal={Molecular systems biology},
+        volume={3},
+        number={1},
+        year={2007},
+        publisher={Wiley Online Library}
 }
 
 
@@ -139,13 +139,13 @@ def BioMouseGene(
 	}
 	
 	@article{bansal2007infer,
-	        title={How to infer gene networks from expression profiles},
-	        author={Bansal, Mukesh and Belcastro, Vincenzo and Ambesi-Impiombato, Alberto and Di Bernardo, Diego},
-	        journal={Molecular systems biology},
-	        volume={3},
-	        number={1},
-	        year={2007},
-	        publisher={Wiley Online Library}
+	        title={How to infer gene networks from expression profiles},
+	        author={Bansal, Mukesh and Belcastro, Vincenzo and Ambesi-Impiombato, Alberto and Di Bernardo, Diego},
+	        journal={Molecular systems biology},
+	        volume={3},
+	        number={1},
+	        year={2007},
+	        publisher={Wiley Online Library}
 	}
 	
 

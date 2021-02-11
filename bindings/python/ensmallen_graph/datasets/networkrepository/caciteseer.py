@@ -32,19 +32,19 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{geisberger2008better,
-        title={Better Approximation of Betweenness Centrality.},
-        author={Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
-        booktitle={ALENEX},
-        pages={90--100},
-        year={2008},
-        organization={SIAM}
+        title={Better Approximation of Betweenness Centrality.},
+        author={Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
+        booktitle={ALENEX},
+        pages={90--100},
+        year={2008},
+        organization={SIAM}
 }
 
 @inproceedings{bader2012graph,
-        title={Graph Partitioning and Graph Clustering},
-        author={Bader, David A and Meyerhenke, Henning and Sanders, Peter and Wagner, Dorothea},
-        booktitle={10th DIMACS Implementation Challenge Workshop},
-        year={2012}
+        title={Graph Partitioning and Graph Clustering},
+        author={Bader, David A and Meyerhenke, Henning and Sanders, Peter and Wagner, Dorothea},
+        booktitle={10th DIMACS Implementation Challenge Workshop},
+        year={2012}
 }
 
 
@@ -141,19 +141,19 @@ def CaCiteseer(
 	}
 	
 	@inproceedings{geisberger2008better,
-	        title={Better Approximation of Betweenness Centrality.},
-	        author={Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
-	        booktitle={ALENEX},
-	        pages={90--100},
-	        year={2008},
-	        organization={SIAM}
+	        title={Better Approximation of Betweenness Centrality.},
+	        author={Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
+	        booktitle={ALENEX},
+	        pages={90--100},
+	        year={2008},
+	        organization={SIAM}
 	}
 	
 	@inproceedings{bader2012graph,
-	        title={Graph Partitioning and Graph Clustering},
-	        author={Bader, David A and Meyerhenke, Henning and Sanders, Peter and Wagner, Dorothea},
-	        booktitle={10th DIMACS Implementation Challenge Workshop},
-	        year={2012}
+	        title={Graph Partitioning and Graph Clustering},
+	        author={Bader, David A and Meyerhenke, Henning and Sanders, Peter and Wagner, Dorothea},
+	        booktitle={10th DIMACS Implementation Challenge Workshop},
+	        year={2012}
 	}
 	
 

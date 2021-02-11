@@ -33,9 +33,9 @@ Please cite the following if you use the data:
 }
 
 @misc{skitter,
-        title={Skitter},
-        author={{CAIDA}},
-        note={{\scriptsize \url{http://caida.org/tools/measurement/skitter/}}}}
+        title={Skitter},
+        author={{CAIDA}},
+        note={{\scriptsize \url{http://caida.org/tools/measurement/skitter/}}}}
 
 
 Usage example
@@ -132,9 +132,9 @@ def TechAsSkitter(
 	}
 	
 	@misc{skitter,
-	        title={Skitter},
-	        author={{CAIDA}},
-	        note={{\scriptsize \url{http://caida.org/tools/measurement/skitter/}}}}
+	        title={Skitter},
+	        author={{CAIDA}},
+	        note={{\scriptsize \url{http://caida.org/tools/measurement/skitter/}}}}
 	
 
 	Usage example

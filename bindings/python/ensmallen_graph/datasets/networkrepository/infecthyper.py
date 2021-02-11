@@ -31,9 +31,9 @@ Please cite the following if you use the data:
 }
 
 @misc{infect,
-        author={{SocioPatterns}},
-        title={Infectious contact networks},
-        url={http://www.sociopatterns.org/datasets/}}
+        author={{SocioPatterns}},
+        title={Infectious contact networks},
+        url={http://www.sociopatterns.org/datasets/}}
 
 
 Usage example
@@ -128,9 +128,9 @@ def InfectHyper(
 	}
 	
 	@misc{infect,
-	        author={{SocioPatterns}},
-	        title={Infectious contact networks},
-	        url={http://www.sociopatterns.org/datasets/}}
+	        author={{SocioPatterns}},
+	        title={Infectious contact networks},
+	        url={http://www.sociopatterns.org/datasets/}}
 	
 
 	Usage example

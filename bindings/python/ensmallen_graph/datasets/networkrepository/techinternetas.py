@@ -32,11 +32,11 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{rossi2013topology,
-        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
-        author={Ryan A. Rossi and Sonia Fahmy and Nilothpal Talukder},
-        booktitle={Networking},
-        pages={1--9},
-        year={2013}
+        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
+        author={Ryan A. Rossi and Sonia Fahmy and Nilothpal Talukder},
+        booktitle={Networking},
+        pages={1--9},
+        year={2013}
 }
 
 
@@ -133,11 +133,11 @@ def TechInternetAs(
 	}
 	
 	@inproceedings{rossi2013topology,
-	        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
-	        author={Ryan A. Rossi and Sonia Fahmy and Nilothpal Talukder},
-	        booktitle={Networking},
-	        pages={1--9},
-	        year={2013}
+	        title={A Multi-Level Approach for Evaluating Internet Topology Generators},
+	        author={Ryan A. Rossi and Sonia Fahmy and Nilothpal Talukder},
+	        booktitle={Networking},
+	        pages={1--9},
+	        year={2013}
 	}
 	
 

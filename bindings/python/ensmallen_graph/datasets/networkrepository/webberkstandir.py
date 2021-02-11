@@ -33,12 +33,12 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{leskovec2008statistical,
-        title={Statistical properties of community structure in large social and information networks},
-        author={Leskovec, Jure and Lang, Kevin J and Dasgupta, Anirban and Mahoney, Michael W},
-        booktitle={Proceedings of the 17th international conference on World Wide Web},
-        pages={695--704},
-        year={2008},
-        organization={ACM}
+        title={Statistical properties of community structure in large social and information networks},
+        author={Leskovec, Jure and Lang, Kevin J and Dasgupta, Anirban and Mahoney, Michael W},
+        booktitle={Proceedings of the 17th international conference on World Wide Web},
+        pages={695--704},
+        year={2008},
+        organization={ACM}
 }
 
 
@@ -136,12 +136,12 @@ def WebBerkstanDir(
 	}
 	
 	@inproceedings{leskovec2008statistical,
-	        title={Statistical properties of community structure in large social and information networks},
-	        author={Leskovec, Jure and Lang, Kevin J and Dasgupta, Anirban and Mahoney, Michael W},
-	        booktitle={Proceedings of the 17th international conference on World Wide Web},
-	        pages={695--704},
-	        year={2008},
-	        organization={ACM}
+	        title={Statistical properties of community structure in large social and information networks},
+	        author={Leskovec, Jure and Lang, Kevin J and Dasgupta, Anirban and Mahoney, Michael W},
+	        booktitle={Proceedings of the 17th international conference on World Wide Web},
+	        pages={695--704},
+	        year={2008},
+	        organization={ACM}
 	}
 	
 

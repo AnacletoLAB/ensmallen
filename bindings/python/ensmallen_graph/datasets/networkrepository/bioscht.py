@@ -32,14 +32,14 @@ Please cite the following if you use the data:
 }
 
 @article{cho2014wormnet,
-        title={WormNet v3: a network-assisted hypothesis-generating server for Caenorhabditis elegans},
-        author={Cho, Ara and Shin, Junha and Hwang, Sohyun and Kim, Chanyoung and Shim, Hongseok and Kim, Hyojin and Kim, Hanhae and Lee, Insuk},
-        journal={Nucleic acids research},
-        volume={42},
-        number={W1},
-        pages={W76--W82},
-        year={2014},
-        publisher={Oxford University Press}
+        title={WormNet v3: a network-assisted hypothesis-generating server for Caenorhabditis elegans},
+        author={Cho, Ara and Shin, Junha and Hwang, Sohyun and Kim, Chanyoung and Shim, Hongseok and Kim, Hyojin and Kim, Hanhae and Lee, Insuk},
+        journal={Nucleic acids research},
+        volume={42},
+        number={W1},
+        pages={W76--W82},
+        year={2014},
+        publisher={Oxford University Press}
 }
 
 
@@ -136,14 +136,14 @@ def BioScHt(
 	}
 	
 	@article{cho2014wormnet,
-	        title={WormNet v3: a network-assisted hypothesis-generating server for Caenorhabditis elegans},
-	        author={Cho, Ara and Shin, Junha and Hwang, Sohyun and Kim, Chanyoung and Shim, Hongseok and Kim, Hyojin and Kim, Hanhae and Lee, Insuk},
-	        journal={Nucleic acids research},
-	        volume={42},
-	        number={W1},
-	        pages={W76--W82},
-	        year={2014},
-	        publisher={Oxford University Press}
+	        title={WormNet v3: a network-assisted hypothesis-generating server for Caenorhabditis elegans},
+	        author={Cho, Ara and Shin, Junha and Hwang, Sohyun and Kim, Chanyoung and Shim, Hongseok and Kim, Hyojin and Kim, Hanhae and Lee, Insuk},
+	        journal={Nucleic acids research},
+	        volume={42},
+	        number={W1},
+	        pages={W76--W82},
+	        year={2014},
+	        publisher={Oxford University Press}
 	}
 	
 

@@ -33,24 +33,24 @@ Please cite the following if you use the data:
 }
 
 @article{traud2012social,
-        title={Social structure of {F}acebook networks},
-        author={Traud, Amanda L and Mucha, Peter J and Porter, Mason A},
-        journal={Phys. A},
-        month={Aug},
-        number={16},
-        pages={4165--4180},
-        volume={391},
-        year={2012}
+        title={Social structure of {F}acebook networks},
+        author={Traud, Amanda L and Mucha, Peter J and Porter, Mason A},
+        journal={Phys. A},
+        month={Aug},
+        number={16},
+        pages={4165--4180},
+        volume={391},
+        year={2012}
 }
 
 @article{Traud:2011fs,
-        title={Comparing Community Structure to Characteristics in Online Collegiate Social Networks},
-        author={Traud, Amanda L and Kelsic, Eric D and Mucha, Peter J and Porter, Mason A},
-        journal={SIAM Rev.},
-        number={3},
-        pages={526--543},
-        volume={53},
-        year={2011}
+        title={Comparing Community Structure to Characteristics in Online Collegiate Social Networks},
+        author={Traud, Amanda L and Kelsic, Eric D and Mucha, Peter J and Porter, Mason A},
+        journal={SIAM Rev.},
+        number={3},
+        pages={526--543},
+        volume={53},
+        year={2011}
 }
 
 
@@ -148,24 +148,24 @@ def SocfbLehigh96(
 	}
 	
 	@article{traud2012social,
-	        title={Social structure of {F}acebook networks},
-	        author={Traud, Amanda L and Mucha, Peter J and Porter, Mason A},
-	        journal={Phys. A},
-	        month={Aug},
-	        number={16},
-	        pages={4165--4180},
-	        volume={391},
-	        year={2012}
+	        title={Social structure of {F}acebook networks},
+	        author={Traud, Amanda L and Mucha, Peter J and Porter, Mason A},
+	        journal={Phys. A},
+	        month={Aug},
+	        number={16},
+	        pages={4165--4180},
+	        volume={391},
+	        year={2012}
 	}
 	
 	@article{Traud:2011fs,
-	        title={Comparing Community Structure to Characteristics in Online Collegiate Social Networks},
-	        author={Traud, Amanda L and Kelsic, Eric D and Mucha, Peter J and Porter, Mason A},
-	        journal={SIAM Rev.},
-	        number={3},
-	        pages={526--543},
-	        volume={53},
-	        year={2011}
+	        title={Comparing Community Structure to Characteristics in Online Collegiate Social Networks},
+	        author={Traud, Amanda L and Kelsic, Eric D and Mucha, Peter J and Porter, Mason A},
+	        journal={SIAM Rev.},
+	        number={3},
+	        pages={526--543},
+	        volume={53},
+	        year={2011}
 	}
 	
 

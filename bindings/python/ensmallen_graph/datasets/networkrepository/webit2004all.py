@@ -34,20 +34,20 @@ Please cite the following if you use the data:
 }
 
 @ARTICLE{boldi2004-ubicrawler,
-        author = {Paolo Boldi and Bruno Codenotti and Massimo Santini and Sebastiano Vigna},
-        title = {{UbiCrawler}: A Scalable Fully Distributed Web Crawler},
-        journal = {Software: Practice \& Experience},
-        year = {2004},
-        volume = {34},
-        pages = {711--726},
-        number = {8}}
+        author = {Paolo Boldi and Bruno Codenotti and Massimo Santini and Sebastiano Vigna},
+        title = {{UbiCrawler}: A Scalable Fully Distributed Web Crawler},
+        journal = {Software: Practice \& Experience},
+        year = {2004},
+        volume = {34},
+        pages = {711--726},
+        number = {8}}
 
 @INPROCEEDINGS{Boldi-2011-layered,
-        author = {Paolo Boldi and Marco Rosa and Massimo Santini and Sebastiano Vigna},
-        title = {Layered Label Propagation: A MultiResolution Coordinate-Free Ordering	for Compressing Social Networks},
-        booktitle = {WWW},
-        year = {2011},
-        pages = {587--596}
+        author = {Paolo Boldi and Marco Rosa and Massimo Santini and Sebastiano Vigna},
+        title = {Layered Label Propagation: A MultiResolution Coordinate-Free Ordering	for Compressing Social Networks},
+        booktitle = {WWW},
+        year = {2011},
+        pages = {587--596}
 }
 
 
@@ -146,20 +146,20 @@ def WebIt2004All(
 	}
 	
 	@ARTICLE{boldi2004-ubicrawler,
-	        author = {Paolo Boldi and Bruno Codenotti and Massimo Santini and Sebastiano Vigna},
-	        title = {{UbiCrawler}: A Scalable Fully Distributed Web Crawler},
-	        journal = {Software: Practice \& Experience},
-	        year = {2004},
-	        volume = {34},
-	        pages = {711--726},
-	        number = {8}}
+	        author = {Paolo Boldi and Bruno Codenotti and Massimo Santini and Sebastiano Vigna},
+	        title = {{UbiCrawler}: A Scalable Fully Distributed Web Crawler},
+	        journal = {Software: Practice \& Experience},
+	        year = {2004},
+	        volume = {34},
+	        pages = {711--726},
+	        number = {8}}
 	
 	@INPROCEEDINGS{Boldi-2011-layered,
-	        author = {Paolo Boldi and Marco Rosa and Massimo Santini and Sebastiano Vigna},
-	        title = {Layered Label Propagation: A MultiResolution Coordinate-Free Ordering	for Compressing Social Networks},
-	        booktitle = {WWW},
-	        year = {2011},
-	        pages = {587--596}
+	        author = {Paolo Boldi and Marco Rosa and Massimo Santini and Sebastiano Vigna},
+	        title = {Layered Label Propagation: A MultiResolution Coordinate-Free Ordering	for Compressing Social Networks},
+	        booktitle = {WWW},
+	        year = {2011},
+	        pages = {587--596}
 	}
 	
 

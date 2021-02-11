@@ -31,12 +31,12 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{leskovec2010signed,
-        title={Signed networks in social media},
-        author={Leskovec, Jure and Huttenlocher, Daniel and Kleinberg, Jon},
-        booktitle={Proceedings of the SIGCHI Conference on Human Factors in Computing Systems},
-        pages={1361--1370},
-        year={2010},
-        organization={ACM}
+        title={Signed networks in social media},
+        author={Leskovec, Jure and Huttenlocher, Daniel and Kleinberg, Jon},
+        booktitle={Proceedings of the SIGCHI Conference on Human Factors in Computing Systems},
+        pages={1361--1370},
+        year={2010},
+        organization={ACM}
 }
 
 
@@ -132,12 +132,12 @@ def SocWikiVote(
 	}
 	
 	@inproceedings{leskovec2010signed,
-	        title={Signed networks in social media},
-	        author={Leskovec, Jure and Huttenlocher, Daniel and Kleinberg, Jon},
-	        booktitle={Proceedings of the SIGCHI Conference on Human Factors in Computing Systems},
-	        pages={1361--1370},
-	        year={2010},
-	        organization={ACM}
+	        title={Signed networks in social media},
+	        author={Leskovec, Jure and Huttenlocher, Daniel and Kleinberg, Jon},
+	        booktitle={Proceedings of the SIGCHI Conference on Human Factors in Computing Systems},
+	        pages={1361--1370},
+	        year={2010},
+	        organization={ACM}
 	}
 	
 

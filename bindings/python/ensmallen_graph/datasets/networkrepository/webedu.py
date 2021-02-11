@@ -31,12 +31,12 @@ Please cite the following if you use the data:
 }
 
 @article{gleich2004fast,
-        title={Fast parallel PageRank: A linear system approach},
-        author={Gleich, David and Zhukov, Leonid and Berkhin, Pavel},
-        journal={Yahoo! Research Technical Report YRL-2004-038},
-        volume={13},
-        pages={22},
-        year={2004}
+        title={Fast parallel PageRank: A linear system approach},
+        author={Gleich, David and Zhukov, Leonid and Berkhin, Pavel},
+        journal={Yahoo! Research Technical Report YRL-2004-038},
+        volume={13},
+        pages={22},
+        year={2004}
 }
 
 
@@ -132,12 +132,12 @@ def WebEdu(
 	}
 	
 	@article{gleich2004fast,
-	        title={Fast parallel PageRank: A linear system approach},
-	        author={Gleich, David and Zhukov, Leonid and Berkhin, Pavel},
-	        journal={Yahoo! Research Technical Report YRL-2004-038},
-	        volume={13},
-	        pages={22},
-	        year={2004}
+	        title={Fast parallel PageRank: A linear system approach},
+	        author={Gleich, David and Zhukov, Leonid and Berkhin, Pavel},
+	        journal={Yahoo! Research Technical Report YRL-2004-038},
+	        volume={13},
+	        pages={22},
+	        year={2004}
 	}
 	
 

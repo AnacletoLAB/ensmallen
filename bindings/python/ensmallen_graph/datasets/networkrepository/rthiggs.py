@@ -33,12 +33,12 @@ Please cite the following if you use the data:
 }
 
 @article{de2013anatomy,
-        title={The anatomy of a scientific rumor},
-        author={De Domenico, Manlio and Lima, Antonio and Mougel, Paul and Musolesi, Mirco},
-        journal={Scientific reports},
-        volume={3},
-        year={2013},
-        publisher={Nature Publishing Group}
+        title={The anatomy of a scientific rumor},
+        author={De Domenico, Manlio and Lima, Antonio and Mougel, Paul and Musolesi, Mirco},
+        journal={Scientific reports},
+        volume={3},
+        year={2013},
+        publisher={Nature Publishing Group}
 }
 
 
@@ -136,12 +136,12 @@ def RtHiggs(
 	}
 	
 	@article{de2013anatomy,
-	        title={The anatomy of a scientific rumor},
-	        author={De Domenico, Manlio and Lima, Antonio and Mougel, Paul and Musolesi, Mirco},
-	        journal={Scientific reports},
-	        volume={3},
-	        year={2013},
-	        publisher={Nature Publishing Group}
+	        title={The anatomy of a scientific rumor},
+	        author={De Domenico, Manlio and Lima, Antonio and Mougel, Paul and Musolesi, Mirco},
+	        journal={Scientific reports},
+	        volume={3},
+	        year={2013},
+	        publisher={Nature Publishing Group}
 	}
 	
 

@@ -32,11 +32,11 @@ Please cite the following if you use the data:
 }
 
 @book{de2011exploratory,
-        title={Exploratory social network analysis with Pajek},
-        author={De Nooy, Wouter and Mrvar, Andrej and Batagelj, Vladimir},
-        volume={27},
-        year={2011},
-        publisher={Cambridge University Press}
+        title={Exploratory social network analysis with Pajek},
+        author={De Nooy, Wouter and Mrvar, Andrej and Batagelj, Vladimir},
+        volume={27},
+        year={2011},
+        publisher={Cambridge University Press}
 }
 
 
@@ -133,11 +133,11 @@ def CaCsphd(
 	}
 	
 	@book{de2011exploratory,
-	        title={Exploratory social network analysis with Pajek},
-	        author={De Nooy, Wouter and Mrvar, Andrej and Batagelj, Vladimir},
-	        volume={27},
-	        year={2011},
-	        publisher={Cambridge University Press}
+	        title={Exploratory social network analysis with Pajek},
+	        author={De Nooy, Wouter and Mrvar, Andrej and Batagelj, Vladimir},
+	        volume={27},
+	        year={2011},
+	        publisher={Cambridge University Press}
 	}
 	
 

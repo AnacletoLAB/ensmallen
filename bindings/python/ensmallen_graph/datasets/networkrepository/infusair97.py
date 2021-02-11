@@ -31,14 +31,14 @@ Please cite the following if you use the data:
 }
 
 @article{colizza2007reaction,
-        title={Reaction--diffusion processes and metapopulation models in heterogeneous networks},
-        author={Colizza, Vittoria and Pastor-Satorras, Romualdo and Vespignani, Alessandro},
-        journal={Nature Physics},
-        volume={3},
-        number={4},
-        pages={276--282},
-        year={2007},
-        publisher={Nature Publishing Group}
+        title={Reaction--diffusion processes and metapopulation models in heterogeneous networks},
+        author={Colizza, Vittoria and Pastor-Satorras, Romualdo and Vespignani, Alessandro},
+        journal={Nature Physics},
+        volume={3},
+        number={4},
+        pages={276--282},
+        year={2007},
+        publisher={Nature Publishing Group}
 }
 
 
@@ -134,14 +134,14 @@ def InfUsair97(
 	}
 	
 	@article{colizza2007reaction,
-	        title={Reaction--diffusion processes and metapopulation models in heterogeneous networks},
-	        author={Colizza, Vittoria and Pastor-Satorras, Romualdo and Vespignani, Alessandro},
-	        journal={Nature Physics},
-	        volume={3},
-	        number={4},
-	        pages={276--282},
-	        year={2007},
-	        publisher={Nature Publishing Group}
+	        title={Reaction--diffusion processes and metapopulation models in heterogeneous networks},
+	        author={Colizza, Vittoria and Pastor-Satorras, Romualdo and Vespignani, Alessandro},
+	        journal={Nature Physics},
+	        volume={3},
+	        number={4},
+	        pages={276--282},
+	        year={2007},
+	        publisher={Nature Publishing Group}
 	}
 	
 

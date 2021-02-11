@@ -31,10 +31,10 @@ Please cite the following if you use the data:
 }
 
 @inproceedings{castillo2008web,
-        title={Web spam challenge 2008},
-        author={Castillo, Carlos and Chellapilla, Kumar and Denoyer, Ludovic},
-        booktitle={Proceedings of the 4th International Workshop on Adversarial Information Retrieval on the Web (AIRWeb)},
-        year={2008}
+        title={Web spam challenge 2008},
+        author={Castillo, Carlos and Chellapilla, Kumar and Denoyer, Ludovic},
+        booktitle={Proceedings of the 4th International Workshop on Adversarial Information Retrieval on the Web (AIRWeb)},
+        year={2008}
 }
 
 
@@ -130,10 +130,10 @@ def WebSpam(
 	}
 	
 	@inproceedings{castillo2008web,
-	        title={Web spam challenge 2008},
-	        author={Castillo, Carlos and Chellapilla, Kumar and Denoyer, Ludovic},
-	        booktitle={Proceedings of the 4th International Workshop on Adversarial Information Retrieval on the Web (AIRWeb)},
-	        year={2008}
+	        title={Web spam challenge 2008},
+	        author={Castillo, Carlos and Chellapilla, Kumar and Denoyer, Ludovic},
+	        booktitle={Proceedings of the 4th International Workshop on Adversarial Information Retrieval on the Web (AIRWeb)},
+	        year={2008}
 	}
 	
 
