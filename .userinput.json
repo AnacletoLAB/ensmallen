@@ -1,0 +1,10 @@
+{
+    "sources_column_number": 0,
+    "destinations_column_number": 1,
+    "edge_types_column_number": 2,
+    "nodes_column_number": 0,
+    "node_types_column_number": 1,
+    "weights_column_number": "3",
+    "has_weight": "no",
+    "has_edge_type": "yes"
+}
