@@ -120,10 +120,12 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         skitter_target = "Skitter"
         whois_target = "WHOIS"
+        routeviews_target = "RouteViews"
         targets = [
             "The Network Data Repository",
             skitter_target,
-            whois_target
+            whois_target,
+            routeviews_target
         ]
         baseline_citations = [
             open(
@@ -150,6 +152,14 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         if any(whois_target in cite for cite in citations):
             baseline_citations.append(open(
                 "{}/models/whois.bib".format(
+                    os.path.dirname(os.path.abspath(__file__))
+                ),
+                "r"
+            ).read())
+
+        if any(routeviews_target in cite for cite in citations):
+            baseline_citations.append(open(
+                "{}/models/routeviews.bib".format(
                     os.path.dirname(os.path.abspath(__file__))
                 ),
                 "r"
