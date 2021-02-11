@@ -850,4 +850,6 @@ class GraphRepository:
         )
         with open(init_path, "w") as f:
             f.write(self.format_init_file(
-                graph_method_names, graph_file_names))
+                graph_method_names,
+                graph_file_names
+            ))
