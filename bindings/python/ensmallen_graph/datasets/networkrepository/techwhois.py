@@ -41,9 +41,10 @@ Please cite the following if you use the data:
 }
 
 @misc{whois,
-        author={{WHOIS}},
-        title={{Internet} Routing Registries},
-        note={{\scriptsize \url{http://www.irr.net/}}}}
+    author={{WHOIS}},
+    title={{Internet} Routing Registries},
+    note={{http://www.irr.net/}}
+}
 
 
 Usage example
@@ -148,9 +149,10 @@ def TechWhois(
 	}
 	
 	@misc{whois,
-	        author={{WHOIS}},
-	        title={{Internet} Routing Registries},
-	        note={{\scriptsize \url{http://www.irr.net/}}}}
+	    author={{WHOIS}},
+	    title={{Internet} Routing Registries},
+	    note={{http://www.irr.net/}}
+	}
 	
 
 	Usage example
