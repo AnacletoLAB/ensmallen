@@ -7,6 +7,7 @@ import requests
 from glob import glob
 from bs4 import BeautifulSoup
 from userinput import userinput, set_validator, set_recoverer, clear
+from unicodedata import normalize
 from .graph_repository import GraphRepository
 from .custom_exceptions import UnsupportedGraphException
 
@@ -118,8 +119,12 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         -----------------------
         Citations relative to the given Network Repository graph.
         """
-        target = "The Network Data Repository"
-        baseline_citation = [
+        skitter_target = "Skitter"
+        targets = [
+            "The Network Data Repository",
+            skitter_target
+        ]
+        baseline_citations = [
             open(
                 "{}/models/network_repository_citation.bib".format(
                     os.path.dirname(os.path.abspath(__file__))
@@ -129,10 +134,25 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         ]
 
         soup = self.get_graph_soup(self.get_graph_name(graph_data))
-        return baseline_citation + [
+        citations = [
             reference.text.strip()
             for reference in soup.find_all("blockquote")
-            if target not in reference.text.strip()
+        ]
+        if any(skitter_target in cite for cite in citations):
+            baseline_citations.append(open(
+                "{}/models/skitter.bib".format(
+                    os.path.dirname(os.path.abspath(__file__))
+                ),
+                "r"
+            ).read())
+
+        return baseline_citations + [
+            normalize('NFKD', reference).encode('ascii', 'ignore')
+            for reference in citations
+            if not any(
+                target in reference.text.strip()
+                for target in targets
+            )
         ]
 
     def get_graph_paths(self, graph_name: str, urls: List[str]) -> List[str]:
